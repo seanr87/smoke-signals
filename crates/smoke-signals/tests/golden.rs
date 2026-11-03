@@ -3,10 +3,10 @@
 //! variant, and its activation and capture battle clocks must be within the
 //! row's tolerance.
 //!
-//! The replays and game data are local inputs (gitignored). When
-//! `config.toml` or the folders it names are missing the test prints a skip
-//! notice and passes; set `SMOKE_SIGNALS_REQUIRE_REFERENCE=1` to make that a
-//! failure instead.
+//! The replays and game data are local inputs (gitignored). The test fails
+//! when `config.toml` or the folders it names are missing, unless
+//! `SMOKE_SIGNALS_SKIP_GOLDEN=1` is set, in which case it prints a notice and
+//! passes.
 
 use std::collections::HashSet;
 use std::path::PathBuf;
@@ -38,8 +38,8 @@ fn config_path() -> PathBuf {
 }
 
 fn skip(reason: &str) {
-    if std::env::var_os("SMOKE_SIGNALS_REQUIRE_REFERENCE").is_some() {
-        panic!("reference inputs required but {reason}");
+    if std::env::var_os("SMOKE_SIGNALS_SKIP_GOLDEN").is_none_or(|v| v != "1") {
+        panic!("reference inputs missing ({reason}); set SMOKE_SIGNALS_SKIP_GOLDEN=1 to skip this test");
     }
     eprintln!("skipped: {reason}");
 }

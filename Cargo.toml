@@ -20,6 +20,7 @@ members = [
     "crates/wows-replay-insights",
     "crates/wgcheck",
     "crates/wows-battle-world",
+    "crates/smoke-snap",
     "build-support/buck/reindeer-features",
 ]
 

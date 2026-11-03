@@ -1,0 +1,28 @@
+[package]
+name = "smoke-snap"
+version = "0.1.0"
+publish = false
+description = "Smoke screen analysis for World of Warships tournament replays"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "smoke_snap"
+path = "src/main.rs"
+
+[dependencies]
+# Vulkan and the assembly-optimized AV1 encoder stay off: clips use the CPU H.264 encoder.
+wows_minimap_renderer = { workspace = true, default-features = false, features = ["bin", "arc", "cpu"] }
+wows_replays = { workspace = true, features = ["arc", "parsing"] }
+wowsunpack = { workspace = true }
+wows-battle-world = { workspace = true }
+wows-replay-insights = { workspace = true, features = ["build"] }
+clap = { workspace = true }
+serde = { workspace = true }
+toml = { workspace = true }
+rootcause = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+jiff = { workspace = true }

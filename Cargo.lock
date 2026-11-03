@@ -11191,6 +11191,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "smoke-snap"
+version = "0.1.0"
+dependencies = [
+ "clap",
+ "jiff",
+ "rootcause",
+ "serde",
+ "thiserror 2.0.20",
+ "toml 1.1.6+spec-1.1.0",
+ "tracing",
+ "tracing-subscriber",
+ "wows-battle-world",
+ "wows-replay-insights",
+ "wows_minimap_renderer",
+ "wows_replays",
+ "wowsunpack",
+]
+
+[[package]]
 name = "smol"
 version = "2.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"

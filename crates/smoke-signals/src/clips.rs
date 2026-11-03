@@ -75,7 +75,13 @@ pub fn render_clip(
     let (width, height) = (width & !1, height & !1);
 
     let (worker, codec, kind) =
-        EncoderWorker::spawn(width, height, VideoCodec::H264, Mode::ForceCpu, EncoderConfig::default())?;
+        EncoderWorker::spawn(
+            width,
+            height,
+            VideoCodec::H264,
+            Mode::ForceCpu,
+            EncoderConfig { target_bitrate_bps: config.render.clip_bitrate_kbps.map(|k| k * 1000), ..Default::default() },
+        )?;
     info!(smoke = record.smoke_id, %codec, %kind, fps, speed, start = window.start, end = window.end, "Encoding clip");
 
     let activation = fraction(window, record.activation_moment().seconds);

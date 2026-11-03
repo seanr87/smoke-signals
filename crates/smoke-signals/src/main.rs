@@ -8,6 +8,7 @@ use tracing::info;
 use wowsunpack::game_params::types::GameParamProvider;
 
 use smoke_signals::analysis;
+use smoke_signals::batch;
 use smoke_signals::clips;
 use smoke_signals::clock::BattleClock;
 use smoke_signals::config::Config;
@@ -55,24 +56,71 @@ enum Command {
     },
     /// List every smoke consumable variant in the game data.
     Variants,
+    /// Write the minimap image and map info of the named maps, for the site.
+    Maps {
+        /// Map names, comma separated, with or without the `spaces/` prefix.
+        #[arg(long)]
+        names: String,
+    },
+    /// Analyse every played game in the replay inventory, one run per team
+    /// in scope with that team's replay as the primary, and write a
+    /// combined smoke table.
+    Batch {
+        /// The inventory CSV.
+        #[arg(long, default_value = "smoke/inventory.csv")]
+        inventory: PathBuf,
+        /// Only these maps, comma separated: the first played game of each.
+        #[arg(long)]
+        maps: Option<String>,
+        /// Only these match ids, comma separated.
+        #[arg(long)]
+        matches: Option<String>,
+        /// Teams in scope, comma separated.
+        #[arg(long, default_value = "H-SR,RESIN,PN")]
+        teams: String,
+        /// Games analysed at the same time.
+        #[arg(long, default_value_t = 1)]
+        jobs: usize,
+        /// Skip the frames (and the Tier 1 state and cap proximity they record).
+        #[arg(long)]
+        no_frames: bool,
+        /// Smoke ids that get a clip, comma separated.
+        #[arg(long)]
+        clips: Option<String>,
+        /// Clip speed for this run, overriding render.clip_speed.
+        #[arg(long)]
+        clip_speed: Option<f32>,
+        /// Clip bitrate in kilobits per second, overriding render.clip_bitrate_kbps.
+        #[arg(long)]
+        clip_bitrate_kbps: Option<u32>,
+    },
 }
 
+static WARNINGS: batch::WarningSink = batch::WarningSink::new();
+
 fn main() -> Result<(), Report> {
-    tracing_subscriber::fmt().with_target(false).with_writer(std::io::stderr).init();
+    use tracing_subscriber::layer::SubscriberExt as _;
+    use tracing_subscriber::util::SubscriberInitExt as _;
+    tracing_subscriber::registry()
+        .with(tracing_subscriber::filter::LevelFilter::INFO)
+        .with(tracing_subscriber::fmt::layer().with_target(false).with_writer(std::io::stderr))
+        .with(&WARNINGS)
+        .init();
     let args = Args::parse();
     let config = Config::load(&args.config)?;
 
     let out_dir = config.paths.output.join(jiff::Zoned::now().strftime("%Y%m%d-%H%M%S").to_string());
     std::fs::create_dir_all(&out_dir).attach_with(|| format!("creating {}", out_dir.display()))?;
 
-    let (replays, game) = load_inputs(&config)?;
     match args.command {
         Command::Frame { at } => {
+            let (replays, game) = load_inputs(&config)?;
             let frame = render::render_frame_at(&config, &game, &replays, at, &out_dir)?;
             write_frame_log(&out_dir, &replays, &game, &frame)?;
             println!("{}", frame.path.display());
         }
         Command::Analyze { no_frames, no_clips, only } => {
+            let (replays, game) = load_inputs(&config)?;
             let mut analysis = analysis::analyze_game(&config, &game, &replays)?;
             let selected: Vec<usize> = analysis
                 .smokes
@@ -146,13 +194,82 @@ fn main() -> Result<(), Report> {
             print!("{}", output::summary_table(&analysis.smokes));
             println!("{}", out_dir.display());
         }
-        Command::Variants => print_smoke_variants(&game),
+        Command::Variants => {
+            let (_, game) = load_inputs(&config)?;
+            print_smoke_variants(&game);
+        }
+        Command::Maps { names } => {
+            let (_, game) = load_inputs(&config)?;
+            let dir = out_dir.join("maps");
+            std::fs::create_dir_all(&dir).attach_with(|| format!("creating {}", dir.display()))?;
+            let mut info = Vec::new();
+            for name in names.split(',').map(str::trim).filter(|n| !n.is_empty()) {
+                let bare = name.strip_prefix("spaces/").unwrap_or(name);
+                let full = format!("spaces/{bare}");
+                let image = wows_minimap_renderer::assets::load_map_image(&full, &game.loaded.vfs);
+                let map_info = wows_minimap_renderer::assets::load_map_info(&full, &game.loaded.vfs);
+                match (image, map_info) {
+                    (Some(image), Some(map_info)) => {
+                        let file = frames::save_png_and_webp(&image, &dir, bare)?;
+                        info.push(serde_json::json!({
+                            "map": bare,
+                            "space_size": map_info.space_size,
+                            "width": image.width(),
+                            "height": image.height(),
+                            "image": file,
+                        }));
+                    }
+                    _ => tracing::warn!(map = bare, "Map image or map info missing"),
+                }
+            }
+            output::write_json(&dir.join("maps.json"), &info)?;
+            println!("{}", dir.display());
+        }
+        Command::Batch { inventory, maps, matches, teams, jobs, no_frames, clips, clip_speed, clip_bitrate_kbps } => {
+            let mut config = config;
+            if let Some(speed) = clip_speed {
+                config.render.clip_speed = speed;
+            }
+            if clip_bitrate_kbps.is_some() {
+                config.render.clip_bitrate_kbps = clip_bitrate_kbps;
+            }
+            let clip_ids: Vec<u32> = clips
+                .as_deref()
+                .unwrap_or("")
+                .split(',')
+                .filter_map(|s| s.trim().parse().ok())
+                .collect();
+            let teams: Vec<String> = teams.split(',').map(|t| t.trim().to_string()).filter(|t| !t.is_empty()).collect();
+            let repo_root = config.paths.replays.parent().map(Path::to_path_buf).unwrap_or_else(|| PathBuf::from("."));
+            let mut list = batch::jobs_from_inventory(&inventory, &repo_root, &teams)?;
+            if let Some(maps) = maps {
+                let wanted: Vec<String> = maps.split(',').map(|m| m.trim().to_string()).collect();
+                let mut seen: std::collections::HashSet<String> = std::collections::HashSet::new();
+                list.retain(|j| wanted.iter().any(|m| m.eq_ignore_ascii_case(&j.map)) && seen.insert(j.map.clone()));
+            }
+            if let Some(matches) = matches {
+                let wanted: Vec<String> = matches.split(',').map(|m| m.trim().to_string()).collect();
+                list.retain(|j| wanted.contains(&j.match_id));
+            }
+            info!(jobs = list.len(), "Batch jobs");
+            let game = batch::load_game_data(&config, &list)?;
+            let (smokes, reports) =
+                batch::run_batch(&config, &game, &list, &out_dir, jobs, !no_frames, &clip_ids, &WARNINGS)?;
+            print!("{}", output::summary_table(&smokes));
+            println!("runs: {}, failed: {}", reports.len(), reports.iter().filter(|r| r.error.is_some()).count());
+            println!("{}", out_dir.display());
+        }
     }
     Ok(())
 }
 
 fn load_inputs(config: &Config) -> Result<(ReplaySet, GameData), Report> {
-    let replays = replays::load_game_folder(&config.paths.replays, &config.run.team_prefix, config.run.merge)?;
+    let replays = replays::load_game_folder(
+        &config.paths.replays,
+        &config.run.team_prefix,
+        config.run.merge,
+        config.run.primary_replay.as_deref(),
+    )?;
     info!(primary = %replays.primary_path.display(), player = %replays.primary.meta.playerName, "Primary replay");
     for (path, file) in replays.merge_paths.iter().zip(&replays.merges) {
         info!(merge = %path.display(), player = %file.meta.playerName, "Merge replay");

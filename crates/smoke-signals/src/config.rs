@@ -52,6 +52,14 @@ pub struct Run {
     pub team_prefix: String,
     pub primary_team: String,
     pub merge: bool,
+    /// Name of the opposing team. Players not on the primary recorder's
+    /// team get it; without it the player-name prefix names their team.
+    #[serde(default)]
+    pub opponent_team: Option<String>,
+    /// File name of the primary replay inside the replays folder. Without it
+    /// the replay recorded by a `team_prefix` player is the primary.
+    #[serde(default)]
+    pub primary_replay: Option<String>,
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -71,6 +79,10 @@ pub struct Render {
     /// Playback speed of the clips: 1.0 is real time, 2.0 is twice as fast.
     #[serde(default = "default_clip_speed")]
     pub clip_speed: f32,
+    /// Target average bitrate of clips in kilobits per second; the encoder's
+    /// default when absent.
+    #[serde(default)]
+    pub clip_bitrate_kbps: Option<u32>,
 }
 
 fn default_trail_color() -> HexColor {

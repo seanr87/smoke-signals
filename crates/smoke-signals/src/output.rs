@@ -154,6 +154,9 @@ const TIER2_COLUMNS: &[&str] = &[
     "damage_behind_smoke_smoker",
     "damage_behind_smoke_ally",
     "damage_behind_smoke_enemy",
+    "cap_proximity_m",
+    "cap_proximity_name",
+    "selfish_smoke",
 ];
 
 const BASE_COLUMNS: &[&str] = &[
@@ -298,6 +301,9 @@ pub fn smoke_csv_row(r: &SmokeRecord) -> Vec<String> {
         opt_f(d.map(|d| d.damage_behind_smoke_smoker)),
         opt_f(d.map(|d| d.damage_behind_smoke_ally)),
         opt_f(d.map(|d| d.damage_behind_smoke_enemy)),
+        opt_f(r.cap_proximity_m),
+        r.cap_proximity_name.clone().unwrap_or_default(),
+        r.selfish_smoke.map(|b| b.to_string()).unwrap_or_default(),
     ]);
     row.extend([
         opt(r.wows_toolkit_rev.as_deref()),

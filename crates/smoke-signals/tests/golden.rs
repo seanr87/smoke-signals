@@ -95,7 +95,13 @@ fn grand_final_g1_hsr_smokes_match_reference() {
     assert!(!rows.is_empty(), "reference CSV has no rows");
 
     let replays =
-        replays::load_game_folder(&config.paths.replays, &config.run.team_prefix, config.run.merge).expect("replays");
+        replays::load_game_folder(
+            &config.paths.replays,
+            &config.run.team_prefix,
+            config.run.merge,
+            config.run.primary_replay.as_deref(),
+        )
+        .expect("replays");
     let game = session::load_game_data(&config.paths.game_data, &replays.primary).expect("game data");
     let analysis = analysis::analyze_game(&config, &game, &replays).expect("analysis");
     let ours: Vec<&SmokeRecord> =

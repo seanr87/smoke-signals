@@ -179,10 +179,13 @@ impl Tier2Tracker {
                         }
                     }
                 }
-                if !gained || was_detected {
+                // Radar and hydro count for any ship inside a smoke: the flags
+                // switch from BY_SHIP to BY_RLS when a radar takes over, so a
+                // ship spotted at close range still gets a radar event. Firing
+                // from smoke counts only when the ship was concealed before.
+                if !gained || (was_detected && kind == DetectionKind::FiredInSmoke) {
                     continue;
                 }
-                // The ship was concealed: inside a smoke and undetected.
                 let concealing: Vec<u32> =
                     self.inside_now.iter().filter(|(_, set)| set.contains(ship)).map(|(id, _)| *id).collect();
                 for smoke in concealing {

@@ -40,7 +40,7 @@ Decided 3 Nov 2026, amended the same day (Awards page, featured clips, deferrals
 **Format and hosting**
 
 - A static site (plain HTML, CSS and JavaScript, no server) that works when opened from a local folder and can be published to GitHub Pages. A public site is fine.
-- The build writes the site to `site/`, separate from `output/`. `output/` stays the raw record of every run and is never served.
+- The build writes the site to `smoke-site/` (the fork already has a `site/` folder of its own), separate from `output/`. `output/` stays the raw record of every run and is never served. The builder is `smoke/tools/inventory.py` for the replay inventory and `smoke/tools/build_site.py` for the pages; `smoke_signals batch` produces the data and frames and `smoke_signals maps` the map images.
 - Size budget: the whole site under 500 MB, no file over 100 MB. Images as WebP.
 - A top navigation bar on every page: Home, Analysis, Awards, Maps, All Smokes. Game and smoke pages are reached by links.
 - Visuals first on every page: charts, diagrams and small graphics over text. Text is limited to short takeaways.
@@ -194,6 +194,7 @@ Smoke damage has three parts: damage dealt *in* the smoke, damage dealt from *be
   - How long the ship stayed detected (until the flag clears)
 - `hydro_detections_in_smoke`: the same rows for `BY_SONAR`.
 - `fired_while_concealed_detections`: times a concealed ship became detected by firing (the `IN_SMOKE` flag).
+- Decided 3 Nov 2026: a radar or hydro detection counts for any ship inside the smoke when the flag appears, including a ship already spotted by another ship (the game switches the reason from BY_SHIP to BY_RLS). Only fired-while-concealed detections require the ship to have been undetected before.
 
 **Other context and outcomes**
 
@@ -210,7 +211,7 @@ Smoke damage has three parts: damage dealt *in* the smoke, damage dealt from *be
 
 ## Outputs
 
-Each smoke produces two frames (activation and capture), their zoom images, one clip and one metadata record. Each run writes them to a new `output/<timestamp>/` folder and never overwrites an earlier run. The Phase 2 demo site is built from runs into a separate `site/` folder (see Phase 2 demo site); `output/` is never served or published.
+Each smoke produces two frames (activation and capture), their zoom images, one clip and one metadata record. Each run writes them to a new `output/<timestamp>/` folder and never overwrites an earlier run. The Phase 2 demo site is built from a batch run into a separate `smoke-site/` folder (see Phase 2 demo site); `output/` is never served or published.
 
 **Frames**
 

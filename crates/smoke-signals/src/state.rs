@@ -9,6 +9,7 @@ use wows_battle_world::view::BattleView;
 use wows_replays::types::EntityId;
 use wowsunpack::game_types::ChargeCount;
 use wowsunpack::game_types::Consumable;
+use wowsunpack::game_types::WorldPos;
 use wowsunpack::recognized::Recognized;
 
 use crate::records::AliveCount;
@@ -20,6 +21,21 @@ use crate::timeline;
 /// Capture point letters follow the minimap: index 0 is A.
 pub fn cap_letter(index: usize) -> char {
     char::from_u32(u32::from(b'A') + index as u32).unwrap_or('?')
+}
+
+/// Edge-to-edge distance in meters from the standing puffs to the nearest
+/// enabled cap, with the cap's letter. Negative when the smoke reaches
+/// inside the cap.
+pub fn cap_proximity(view: &BattleView<'_>, puffs: &[WorldPos], radius: f32) -> Option<(f32, char)> {
+    view.capture_points()
+        .iter()
+        .filter(|cp| cp.is_enabled)
+        .filter_map(|cp| {
+            let center = cp.position?;
+            let nearest = puffs.iter().map(|p| timeline::ground_distance(*p, center)).fold(f32::INFINITY, f32::min);
+            nearest.is_finite().then(|| (timeline::meters(nearest - radius - cp.radius), cap_letter(cp.index)))
+        })
+        .min_by(|a, b| a.0.total_cmp(&b.0))
 }
 
 /// State at the view's current clock. `our_team` is the smoker's team id;

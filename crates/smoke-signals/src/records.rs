@@ -180,6 +180,13 @@ pub struct SmokeRecord {
     pub radar_detections_in_smoke: Vec<crate::tier2::DetectionEvent>,
     pub hydro_detections_in_smoke: Vec<crate::tier2::DetectionEvent>,
     pub fired_while_concealed_detections: Vec<crate::tier2::DetectionEvent>,
+    /// Distance at t_capture from the smoke's edge to the nearest cap's
+    /// edge, negative when the smoke reaches inside the cap.
+    pub cap_proximity_m: Option<f32>,
+    pub cap_proximity_name: Option<String>,
+    /// No teammate but the owner was ever inside, and no ally damage went
+    /// through it. `None` without damage data.
+    pub selfish_smoke: Option<bool>,
 
     /// Tier 3, from the M4 spike: damage by the smoker's team only.
     pub damage_in_smoke: Option<f32>,

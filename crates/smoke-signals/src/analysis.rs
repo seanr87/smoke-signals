@@ -273,8 +273,14 @@ struct Roster {
     fit: Option<SmokeFit>,
 }
 
-fn team_label(config: &Config, player_name: &str) -> String {
-    if player_name.starts_with(&config.run.team_prefix) {
+/// Team name of a player: the primary team for the recorder's side, the
+/// configured opponent for the other side, else the player-name prefix.
+fn team_label(config: &Config, player_name: &str, friendly: bool) -> String {
+    if friendly {
+        config.run.primary_team.clone()
+    } else if let Some(opponent) = &config.run.opponent_team {
+        opponent.clone()
+    } else if player_name.starts_with(&config.run.team_prefix) {
         config.run.primary_team.clone()
     } else {
         player_name.split('_').next().unwrap_or(player_name).to_string()
@@ -291,8 +297,9 @@ fn roster_entry(config: &Config, game: &GameData, player: &Player, facts: Option
         Recognized::Known(k) => format!("{k:?}"),
         Recognized::Unknown(raw) => raw.to_string(),
     });
+    let relation = player.relation();
     Roster {
-        team: team_label(config, &name),
+        team: team_label(config, &name, relation.is_self() || relation.is_ally()),
         player: name,
         clan: player.initial_state().clan().to_string(),
         team_id: player.initial_state().team_id(),
@@ -638,6 +645,9 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             radar_detections_in_smoke: Vec::new(),
             hydro_detections_in_smoke: Vec::new(),
             fired_while_concealed_detections: Vec::new(),
+            cap_proximity_m: None,
+            cap_proximity_name: None,
+            selfish_smoke: None,
             damage_in_smoke: None,
             damage_behind_smoke: None,
             smoke_damage_total: None,
@@ -700,6 +710,16 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         let owner_team =
             smokes[i].player.as_ref().and_then(|name| roster.values().find(|r| &r.player == name)).map(|r| r.team_id);
         let is_ally = |e: EntityId| roster.get(&e).map(|r| Some(r.team_id) == owner_team).unwrap_or(false);
+        let owner_entity = smokes[i]
+            .player
+            .as_ref()
+            .and_then(|name| roster.iter().find(|(_, r)| &r.player == name))
+            .map(|(e, _)| e.raw() as u32);
+        let other_ally_inside = t2
+            .ship_seconds
+            .iter()
+            .any(|(e, secs)| *secs > 0.0 && Some(*e) != owner_entity && is_ally(EntityId::from(*e)));
+        smokes[i].selfish_smoke = Some(!other_ally_inside);
         for (e, secs) in &t2.ship_seconds {
             if is_ally(EntityId::from(*e)) {
                 smokes[i].ally_ship_seconds_in_smoke += secs;
@@ -794,7 +814,15 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             smokes[i].smoke_damage_total = Some(d.smoke_damage_total());
             smokes[i].damage_in_smoke_enemy = Some(d.damage_in_smoke_enemy);
             smokes[i].damage_behind_smoke_enemy = Some(d.damage_behind_smoke_enemy);
+            if d.damage_behind_smoke_ally > 0.0 {
+                smokes[i].selfish_smoke = Some(false);
+            }
             smokes[i].damage_detail = Some(d);
+        }
+    }
+    if spike.stats.damage_events == 0 {
+        for s in smokes.iter_mut() {
+            s.selfish_smoke = None;
         }
     }
     spike.stats.events_per_replay = events_per_replay;

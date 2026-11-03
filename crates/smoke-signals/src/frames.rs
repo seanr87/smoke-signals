@@ -188,6 +188,14 @@ pub fn smoker_identity(game: &GameRecord, record: &SmokeRecord) -> (Option<i64>,
     (team, owner.map(|p| EntityId::from(p.entity_id)))
 }
 
+/// Cap proximity of one smoke at the session's current clock.
+fn cap_proximity_for(session: &mut GameSession<'_>, smoke_id: u32) -> Option<(f32, char)> {
+    let view = session.view();
+    let screens = view.smoke_screens();
+    let smoke = screens.get(&EntityId::from(smoke_id))?;
+    state::cap_proximity(&view, &smoke.points, smoke.radius.value())
+}
+
 /// Tier 1 state at the session's current clock, from the smoker's side.
 pub fn snapshot_for(session: &mut GameSession<'_>, game: &GameRecord, record: &SmokeRecord) -> StateSnapshot {
     let (team, smoker) = smoker_identity(game, record);
@@ -196,7 +204,7 @@ pub fn snapshot_for(session: &mut GameSession<'_>, game: &GameRecord, record: &S
     state::snapshot(&view, game, team, smoker, &tl)
 }
 
-fn save_png_and_webp(image: &RgbImage, dir: &Path, stem: &str) -> Result<String, Report> {
+pub fn save_png_and_webp(image: &RgbImage, dir: &Path, stem: &str) -> Result<String, Report> {
     let png = format!("{stem}.png");
     image.save(dir.join(&png)).attach_with(|| format!("writing {}", dir.join(&png).display()))?;
     let webp = dir.join(format!("{stem}.webp"));
@@ -251,6 +259,10 @@ pub fn render_smoke_frames(
         let clock = GameClock(seconds);
         session.seek_clock(clock)?;
         let snapshot = snapshot_for(&mut session, game, &smokes[i]);
+        let cap_proximity = match stage {
+            Stage::Capture => cap_proximity_for(&mut session, smokes[i].smoke_id),
+            Stage::Activation => None,
+        };
         let text = header::header_text(game, &smokes[i], i + 1, Some(&snapshot));
         let moment_clock = match stage {
             Stage::Activation => smokes[i].activation_moment().clock,
@@ -276,6 +288,8 @@ pub fn render_smoke_frames(
                 smokes[i].frame_cap = Some(name);
                 smokes[i].frame_cap_zoom = zoom_name;
                 smokes[i].state_at_capture = Some(snapshot);
+                smokes[i].cap_proximity_m = cap_proximity.map(|(m, _)| m);
+                smokes[i].cap_proximity_name = cap_proximity.map(|(_, c)| c.to_string());
             }
         }
         written += 1;

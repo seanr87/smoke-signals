@@ -2,6 +2,7 @@
 //! replays, built on the wows-toolkit renderer and merged replay session.
 
 pub mod analysis;
+pub mod batch;
 pub mod clips;
 pub mod clock;
 pub mod config;

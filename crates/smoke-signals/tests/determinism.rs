@@ -74,7 +74,13 @@ fn grand_final_g1_analysis_is_repeatable() {
         return skip("replays or game data folder missing");
     }
     let replays =
-        replays::load_game_folder(&config.paths.replays, &config.run.team_prefix, config.run.merge).expect("replays");
+        replays::load_game_folder(
+            &config.paths.replays,
+            &config.run.team_prefix,
+            config.run.merge,
+            config.run.primary_replay.as_deref(),
+        )
+        .expect("replays");
     let game = session::load_game_data(&config.paths.game_data, &replays.primary).expect("game data");
 
     let scratch = std::env::temp_dir().join(format!("smoke-signals-determinism-{}", std::process::id()));

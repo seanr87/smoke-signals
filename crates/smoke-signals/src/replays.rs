@@ -15,9 +15,15 @@ pub struct ReplaySet {
     pub merges: Vec<ReplayFile>,
 }
 
-/// Load every `.wowsreplay` in `dir` (one game per folder in Phase 1) and pick
-/// the primary by the recording player's name prefix.
-pub fn load_game_folder(dir: &Path, team_prefix: &str, merge: bool) -> Result<ReplaySet, Report> {
+/// Load every `.wowsreplay` in `dir` (one game per folder) and pick the
+/// primary: the file named `primary_file`, or else the replay recorded by a
+/// player whose name starts with `team_prefix`.
+pub fn load_game_folder(
+    dir: &Path,
+    team_prefix: &str,
+    merge: bool,
+    primary_file: Option<&str>,
+) -> Result<ReplaySet, Report> {
     let entries = std::fs::read_dir(dir).attach_with(|| format!("reading replay folder {}", dir.display()))?;
     let mut paths: Vec<PathBuf> = Vec::new();
     for entry in entries {
@@ -37,17 +43,25 @@ pub fn load_game_folder(dir: &Path, team_prefix: &str, merge: bool) -> Result<Re
         loaded.push((path, file));
     }
 
-    let is_primary = |file: &ReplayFile| file.meta.playerName.starts_with(team_prefix);
-    let primary_count = loaded.iter().filter(|(_, f)| is_primary(f)).count();
-    if primary_count != 1 {
-        let names: Vec<&str> = loaded.iter().map(|(_, f)| f.meta.playerName.as_str()).collect();
-        bail!(
-            "expected exactly one replay recorded by a {team_prefix}* player in {}, found {primary_count} (recorders: {})",
-            dir.display(),
-            names.join(", ")
-        );
-    }
-    let primary_idx = loaded.iter().position(|(_, f)| is_primary(f)).expect("counted above");
+    let primary_idx = match primary_file {
+        Some(name) => loaded
+            .iter()
+            .position(|(p, _)| p.file_name().is_some_and(|n| n == name))
+            .ok_or_else(|| report!("primary replay {name} is not in {}", dir.display()))?,
+        None => {
+            let is_primary = |file: &ReplayFile| file.meta.playerName.starts_with(team_prefix);
+            let primary_count = loaded.iter().filter(|(_, f)| is_primary(f)).count();
+            if primary_count != 1 {
+                let names: Vec<&str> = loaded.iter().map(|(_, f)| f.meta.playerName.as_str()).collect();
+                bail!(
+                    "expected exactly one replay recorded by a {team_prefix}* player in {}, found {primary_count} (recorders: {})",
+                    dir.display(),
+                    names.join(", ")
+                );
+            }
+            loaded.iter().position(|(_, f)| is_primary(f)).expect("counted above")
+        }
+    };
     let (primary_path, primary) = loaded.remove(primary_idx);
     let (merge_paths, merges) = if merge { loaded.into_iter().unzip() } else { (Vec::new(), Vec::new()) };
     Ok(ReplaySet { primary_path, primary, merge_paths, merges })

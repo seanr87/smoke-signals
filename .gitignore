@@ -52,3 +52,6 @@ profile.json.gz
 /replays/
 /output/
 /config.toml
+
+# Smoke Signals demo site build (published separately)
+/smoke-site/

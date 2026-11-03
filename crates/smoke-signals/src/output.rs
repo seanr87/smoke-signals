@@ -11,6 +11,7 @@ use crate::records::Moment;
 use crate::records::SmokeRecord;
 use crate::records::StateSnapshot;
 use crate::records::Xz;
+use crate::tier2::DetectionEvent;
 
 pub fn write_json<T: Serialize>(path: &Path, value: &T) -> Result<(), Report> {
     let text = serde_json::to_string_pretty(value).attach_with(|| format!("serializing {}", path.display()))?;
@@ -67,8 +68,43 @@ fn state_fields(s: Option<&StateSnapshot>) -> Vec<String> {
             opt(s.smoker_spotted),
             opt(s.smoker_spotted_flags.as_deref()),
             opt(s.enemy_radars_alive),
+            opt(s.nearest_enemy.as_deref()),
+            opt_f(s.nearest_enemy_dist_km),
+            opt(s.nearest_cap),
+            opt_f(s.dist_to_nearest_cap_km),
+            opt(s.cap_contested),
         ],
     }
+}
+
+/// `ship@clock<-source(dist m,in range)+dur s`, one per event.
+fn detections_text(events: &[DetectionEvent]) -> String {
+    events
+        .iter()
+        .map(|e| {
+            let mut text = format!(
+                "{}@{}",
+                e.ship.clone().unwrap_or_else(|| e.ship_entity.to_string()),
+                e.clock.map(|c| c.to_string()).unwrap_or_else(|| format!("{:.1}s", e.seconds))
+            );
+            if let Some(source) = &e.source {
+                text.push_str(&format!(
+                    "<-{source}({}m{})",
+                    e.source_distance_m.map(|d| format!("{d:.0}")).unwrap_or_default(),
+                    match e.source_in_range {
+                        Some(true) => ",in range",
+                        Some(false) => ",out of range",
+                        None => "",
+                    }
+                ));
+            }
+            if let Some(d) = e.detected_for_s {
+                text.push_str(&format!("+{d:.0}s"));
+            }
+            text
+        })
+        .collect::<Vec<_>>()
+        .join("; ")
 }
 
 const STATE_COLUMNS: &[&str] = &[
@@ -83,6 +119,34 @@ const STATE_COLUMNS: &[&str] = &[
     "smoker_spotted",
     "smoker_spotted_flags",
     "enemy_radars_alive",
+    "nearest_enemy",
+    "nearest_enemy_dist_km",
+    "nearest_cap",
+    "dist_to_nearest_cap_km",
+    "cap_contested",
+];
+
+const TIER2_COLUMNS: &[&str] = &[
+    "allies_in_smoke",
+    "allies_in_smoke_count",
+    "enemies_in_smoke",
+    "ally_ship_seconds_in_smoke",
+    "enemy_ship_seconds_in_smoke",
+    "radar_detections_in_smoke",
+    "radar_detections_count",
+    "hydro_detections_in_smoke",
+    "hydro_detections_count",
+    "fired_while_concealed_detections",
+    "fired_while_concealed_count",
+    "damage_in_smoke",
+    "damage_behind_smoke",
+    "smoke_damage_total",
+    "damage_in_smoke_smoker",
+    "damage_in_smoke_ally",
+    "damage_in_smoke_enemy",
+    "damage_behind_smoke_smoker",
+    "damage_behind_smoke_ally",
+    "damage_behind_smoke_enemy",
 ];
 
 const BASE_COLUMNS: &[&str] = &[
@@ -142,6 +206,7 @@ pub fn smoke_csv_columns() -> Vec<String> {
     let mut cols: Vec<String> = BASE_COLUMNS.iter().map(|c| c.to_string()).collect();
     cols.extend(STATE_COLUMNS.iter().map(|c| format!("{c}_act")));
     cols.extend(STATE_COLUMNS.iter().map(|c| format!("{c}_cap")));
+    cols.extend(TIER2_COLUMNS.iter().map(|c| c.to_string()));
     cols.extend(TAIL_COLUMNS.iter().map(|c| c.to_string()));
     cols
 }
@@ -196,6 +261,29 @@ pub fn smoke_csv_row(r: &SmokeRecord) -> Vec<String> {
     ];
     row.extend(state_fields(r.state_at_activate.as_ref()));
     row.extend(state_fields(r.state_at_capture.as_ref()));
+    let d = r.damage_detail.as_ref();
+    row.extend([
+        r.allies_in_smoke.join(";"),
+        r.state_at_capture.as_ref().map(|_| r.allies_in_smoke.len().to_string()).unwrap_or_default(),
+        r.enemies_in_smoke.join(";"),
+        format!("{:.1}", r.ally_ship_seconds_in_smoke),
+        format!("{:.1}", r.enemy_ship_seconds_in_smoke),
+        detections_text(&r.radar_detections_in_smoke),
+        r.radar_detections_in_smoke.len().to_string(),
+        detections_text(&r.hydro_detections_in_smoke),
+        r.hydro_detections_in_smoke.len().to_string(),
+        detections_text(&r.fired_while_concealed_detections),
+        r.fired_while_concealed_detections.len().to_string(),
+        opt_f(r.damage_in_smoke),
+        opt_f(r.damage_behind_smoke),
+        opt_f(r.smoke_damage_total),
+        opt_f(d.map(|d| d.damage_in_smoke_smoker)),
+        opt_f(d.map(|d| d.damage_in_smoke_ally)),
+        opt_f(d.map(|d| d.damage_in_smoke_enemy)),
+        opt_f(d.map(|d| d.damage_behind_smoke_smoker)),
+        opt_f(d.map(|d| d.damage_behind_smoke_ally)),
+        opt_f(d.map(|d| d.damage_behind_smoke_enemy)),
+    ]);
     row.extend([
         opt(r.wows_toolkit_rev.as_deref()),
         r.smoke_signals_version.clone(),
@@ -367,5 +455,91 @@ pub fn run_log(game: &GameRecord, smokes: &[SmokeRecord], frames_written: usize,
     for g in gaps {
         let _ = writeln!(log, "- {g}");
     }
+
+    let _ = writeln!(log, "\n## Tier 2: ships in smoke and detections while concealed\n");
+    let _ = writeln!(log, "```");
+    let _ = writeln!(
+        log,
+        "{:<5} {:<26} {:>8} {:>8} {:<30} {:>5} {:>5} {:>5}",
+        "id", "player", "ally_s", "enemy_s", "in_smoke_at_capture", "radar", "hydro", "fired"
+    );
+    for r in smokes {
+        let _ = writeln!(
+            log,
+            "{:<5} {:<26} {:>8.0} {:>8.0} {:<30} {:>5} {:>5} {:>5}",
+            r.smoke_id,
+            opt(r.player.as_deref()),
+            r.ally_ship_seconds_in_smoke,
+            r.enemy_ship_seconds_in_smoke,
+            r.allies_in_smoke.join(";"),
+            r.radar_detections_in_smoke.len(),
+            r.hydro_detections_in_smoke.len(),
+            r.fired_while_concealed_detections.len()
+        );
+    }
+    let _ = writeln!(log, "```");
+    for r in smokes {
+        for (label, events) in [
+            ("radar", &r.radar_detections_in_smoke),
+            ("hydro", &r.hydro_detections_in_smoke),
+            ("fired while concealed", &r.fired_while_concealed_detections),
+        ] {
+            if !events.is_empty() {
+                let _ = writeln!(log, "- smoke {} {label}: {}", r.smoke_id, detections_text(events));
+            }
+        }
+    }
+
+    let _ = writeln!(log, "\n## Tier 3 spike: smoke damage (smoker's team; enemy columns separate)\n");
+    let _ = writeln!(log, "```");
+    let _ = writeln!(
+        log,
+        "{:<5} {:<26} {:>9} {:>9} {:>9} {:>9} {:>9}",
+        "id", "player", "in_smoke", "behind", "total", "in_enemy", "beh_enemy"
+    );
+    for r in smokes {
+        let _ = writeln!(
+            log,
+            "{:<5} {:<26} {:>9} {:>9} {:>9} {:>9} {:>9}",
+            r.smoke_id,
+            opt(r.player.as_deref()),
+            opt_f(r.damage_in_smoke),
+            opt_f(r.damage_behind_smoke),
+            opt_f(r.smoke_damage_total),
+            opt_f(r.damage_in_smoke_enemy),
+            opt_f(r.damage_behind_smoke_enemy)
+        );
+    }
+    let _ = writeln!(log, "```");
     log
+}
+
+/// Every damage event with its attribution, for the spike write-up.
+pub fn write_damage_events_csv(
+    path: &Path,
+    events: &[crate::damage::AttributedDamage],
+    name_of: &dyn Fn(u32) -> Option<String>,
+) -> Result<(), Report> {
+    let mut text = String::from(
+        "attacker,attacker_name,victim,victim_name,amount,damage_s,fire_s,fire_source,attacker_detected_at_fire,in_smokes,behind_smokes\n",
+    );
+    for e in events {
+        let row = vec![
+            e.attacker.to_string(),
+            opt(name_of(e.attacker)),
+            e.victim.to_string(),
+            opt(name_of(e.victim)),
+            format!("{:.0}", e.amount),
+            format!("{:.2}", e.damage_seconds),
+            format!("{:.2}", e.fire_seconds),
+            format!("{:?}", e.fire_source),
+            opt(e.attacker_detected_at_fire),
+            e.in_smokes.iter().map(|i| i.to_string()).collect::<Vec<_>>().join(";"),
+            e.behind_smokes.iter().map(|i| i.to_string()).collect::<Vec<_>>().join(";"),
+        ];
+        text.push_str(&csv_line(&row));
+        text.push('\n');
+    }
+    std::fs::write(path, text).attach_with(|| format!("writing {}", path.display()))?;
+    Ok(())
 }

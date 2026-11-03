@@ -117,6 +117,9 @@ fn main() -> Result<(), Report> {
             diagnostics::write_activations_csv(&out_dir.join("activations.csv"), &activations)?;
             let tracks = diagnostics::summarize_tracks(&analysis.timeline, &analysis.game);
             diagnostics::write_tracks_csv(&out_dir.join("tracks.csv"), &tracks)?;
+            let name_of = |e: u32| analysis.game.player(e).map(|p| p.player.clone());
+            output::write_damage_events_csv(&out_dir.join("damage_events.csv"), &analysis.damage_events, &name_of)?;
+            output::write_json(&out_dir.join("damage_spike.json"), &analysis.damage_stats)?;
             let log = output::run_log(&analysis.game, &analysis.smokes, frames_written, clips_written);
             std::fs::write(out_dir.join("run_log.md"), &log).attach_with(|| "writing run_log.md")?;
             print!("{}", output::summary_table(&analysis.smokes));

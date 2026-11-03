@@ -126,9 +126,7 @@ Smoke damage has three parts: damage dealt *in* the smoke, damage dealt from *be
 
 - Each metric is broken down by shooter (smoker or ally) and by team.
 - Damage counts by when the shot was fired, even if it lands after the smoke disperses.
-- **Feasibility risk (Phase 1, M4):** the replay's damage events record the victim, not the attacker. Attacker options to test:
-  1. Match shell salvos (owner, fire time) to hits.
-  2. Take the change in each player's running damage total over time.
+- **Attacker (resolved in M4):** the replay's damage events do name the attacker ship (the toolkit's damage ledger keys `receiveDamagesOnShip` by aggressor). What has to be reconstructed is the firing moment and position; see `smoke/M4_DAMAGE_SPIKE.md` for the three sources used and the recommendation.
 
 **Decided rules (2 Nov)**
 
@@ -138,10 +136,10 @@ Smoke damage has three parts: damage dealt *in* the smoke, damage dealt from *be
 
 **Radar while concealed (Tier 2)**
 
-- `radar_detections_in_smoke`: one row for each time a ship concealed by this smoke gains the `BY_RLS` flag. The row records:
+- `radar_detections_in_smoke`: one row for each time a ship concealed by this smoke (inside it and undetected) gains the `BY_RLS` flag. The row records:
   - The ship and the time
-  - The likely radar ship: the enemy with radar active and the ship in range
-  - How long the ship stayed detected
+  - The likely radar ship: the nearest enemy with radar running at that moment, its distance, and whether the ship is within that radar's base range
+  - How long the ship stayed detected (until the flag clears)
 - `hydro_detections_in_smoke`: the same rows for `BY_SONAR`.
 - `fired_while_concealed_detections`: times a concealed ship became detected by firing (the `IN_SMOKE` flag).
 
@@ -149,9 +147,9 @@ Smoke damage has three parts: damage dealt *in* the smoke, damage dealt from *be
 
 | Metric | Tier | Definition |
 | --- | --- | --- |
-| allies_in_smoke | 2 | Ships in the smoke at t_capture, and total ship-seconds in the smoke |
-| nearest_enemy_dist_km | 2 | At t_activate and t_capture |
-| dist_to_nearest_cap_km, cap_contested | 2 | At t_activate and t_capture |
+| allies_in_smoke | 2 | Ships of the smoker's team in the smoke at t_capture, and ship-seconds in the smoke over its life (allies and enemies kept apart) |
+| nearest_enemy_dist_km | 2 | From the smoker to the nearest living enemy, at t_activate and t_capture |
+| dist_to_nearest_cap_km, cap_contested | 2 | From the smoker to the nearest enabled cap, and whether that cap has invaders, at t_activate and t_capture |
 | enemy_radars_alive | 2 | Enemy ships with radar charges left, at t_activate |
 | kills_during_smoke, deaths_in_smoke | 3 | Over the smoke's life |
 | cap_flips_during_smoke | 3 | Over the smoke's life |

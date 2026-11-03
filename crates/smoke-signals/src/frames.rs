@@ -118,8 +118,9 @@ pub fn smoker_identity(game: &GameRecord, record: &SmokeRecord) -> (Option<i64>,
 /// Tier 1 state at the session's current clock, from the smoker's side.
 pub fn snapshot_for(session: &mut GameSession<'_>, game: &GameRecord, record: &SmokeRecord) -> StateSnapshot {
     let (team, smoker) = smoker_identity(game, record);
+    let tl = session.timeline_arc();
     let view = session.view();
-    state::snapshot(&view, game, team, smoker)
+    state::snapshot(&view, game, team, smoker, &tl)
 }
 
 fn save_png_and_webp(image: &RgbImage, dir: &Path, stem: &str) -> Result<String, Report> {

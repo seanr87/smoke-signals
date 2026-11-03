@@ -27,6 +27,8 @@ use wowsunpack::game_types::WorldPos;
 use wowsunpack::recognized::Recognized;
 
 use crate::clock::BattleClockMap;
+use crate::damage;
+use crate::tier2;
 use crate::config::Config;
 use crate::records::Bbox;
 use crate::records::GameRecord;
@@ -65,6 +67,8 @@ pub struct Analysis {
     pub smokes: Vec<SmokeRecord>,
     pub clock_map: BattleClockMap,
     pub timeline: std::sync::Arc<wows_battle_world::scan::PositionTimeline>,
+    pub damage_events: Vec<damage::AttributedDamage>,
+    pub damage_stats: damage::SpikeStats,
 }
 
 /// One smoke object, observed from creation to removal.
@@ -191,6 +195,40 @@ fn smoke_fit(facts: &VehicleFacts, gp: &GameMetadataProvider, version: wowsunpac
     })
 }
 
+/// Radar and hydro ranges of one ship's build, in meters.
+fn consumable_ranges(
+    facts: &VehicleFacts,
+    gp: &GameMetadataProvider,
+    version: wowsunpack::data::Version,
+) -> Option<tier2::ConsumableRanges> {
+    let ship = GameParamProvider::game_param_by_id(gp, facts.vehicle_id)?;
+    let species = ship.species()?.known().copied()?;
+    let cfg = &facts.ship_config;
+    let captain_id = (facts.crew.params_id().raw() != 0).then(|| facts.crew.params_id());
+    let skills = facts.crew.learned_skills().for_species(&species);
+    let build = ResolvedBuild::from_ids(
+        cfg.ship_params_id(),
+        cfg.units(),
+        cfg.modernization(),
+        captain_id,
+        skills,
+        cfg.exteriors(),
+        cfg.abilities(),
+        species,
+        version,
+        gp,
+    )?;
+    let range = |consumable: Consumable| {
+        build
+            .slots
+            .iter()
+            .find(|s| s.consumable_type == Recognized::Known(consumable))
+            .and_then(|s| s.ability.ability()?.get_category(&s.variant_name)?.detection_radius())
+            .map(|m| m.value())
+    };
+    Some(tier2::ConsumableRanges { radar_m: range(Consumable::Radar), hydro_m: range(Consumable::HydroacousticSearch) })
+}
+
 /// Smoke type from the variant's name and icon. Every smoke consumable has
 /// consumableType `smokeGenerator`; only the variant tells them apart.
 pub fn classify(variant: &str, icon_id: &str) -> SmokeType {
@@ -290,6 +328,15 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
     let mut tracks: BTreeMap<EntityId, SmokeTrack> = BTreeMap::new();
     let mut seen_activations: HashSet<(EntityId, u32)> = HashSet::new();
     let mut activations: Vec<Activation> = Vec::new();
+    let tl = session.timeline_arc();
+    let ranges: HashMap<EntityId, tier2::ConsumableRanges> = session
+        .vehicle_facts()
+        .iter()
+        .filter_map(|(id, f)| consumable_ranges(f, &game.loaded.game_params, game.version).map(|r| (*id, r)))
+        .collect();
+    let mut tier2 = tier2::Tier2Tracker::new(ranges);
+    let mut hits: Vec<wows_replays::analyzer::battle_controller::state::ResolvedShotHit> = Vec::new();
+    let mut salvos: HashMap<(u32, u32, u32), wows_replays::analyzer::battle_controller::state::ActiveShot> = HashMap::new();
 
     while session.step()?.is_some() {
         let view = session.view();
@@ -297,6 +344,12 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         let smokes = view.smoke_screens();
         for (id, state) in &smokes {
             tracks.entry(*id).or_insert_with(|| SmokeTrack::new(clock, state)).observe(clock, state);
+        }
+        tier2.observe(clock, &view, &smokes, &tl);
+        hits.extend(view.shot_hits().iter().cloned());
+        for shot in view.active_shots() {
+            let key = (shot.salvo.owner_id.raw() as u32, shot.salvo.salvo_id, shot.fired_at.seconds().to_bits());
+            salvos.entry(key).or_insert(shot);
         }
         for (id, track) in tracks.iter_mut() {
             if track.removed.is_none() && !smokes.contains_key(id) {
@@ -322,7 +375,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
 
     let map = session.clock_map().clone();
     let facts = session.vehicle_facts().clone();
-    let tl = session.timeline_arc();
+    let tier2_results = tier2.finish_keep_history();
     let generated_at = jiff::Zoned::now().strftime("%Y-%m-%dT%H:%M:%S%:z").to_string();
 
     let view = session.view();
@@ -543,6 +596,19 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             t_dispersed: track.removed.map(|c| moment(&map, c)),
             state_at_activate: None,
             state_at_capture: None,
+            allies_in_smoke: Vec::new(),
+            enemies_in_smoke: Vec::new(),
+            ally_ship_seconds_in_smoke: 0.0,
+            enemy_ship_seconds_in_smoke: 0.0,
+            radar_detections_in_smoke: Vec::new(),
+            hydro_detections_in_smoke: Vec::new(),
+            fired_while_concealed_detections: Vec::new(),
+            damage_in_smoke: None,
+            damage_behind_smoke: None,
+            smoke_damage_total: None,
+            damage_in_smoke_enemy: None,
+            damage_behind_smoke_enemy: None,
+            damage_detail: None,
             wows_toolkit_rev: WOWS_TOOLKIT_REV.map(str::to_string),
             smoke_signals_version: SMOKE_SIGNALS_VERSION.to_string(),
             generated_at: generated_at.clone(),
@@ -586,6 +652,113 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         }
     }
 
+    // Tier 2: ships in the smoke and detections while concealed.
+    let (tracker, per_smoke) = tier2_results;
+    let name_of = |e: u32| roster.get(&EntityId::from(e)).map(|r| r.player.clone());
+    for (i, id) in ids.iter().enumerate() {
+        let Some(t2) = per_smoke.get(&(id.raw() as u32)) else { continue };
+        let owner_team =
+            smokes[i].player.as_ref().and_then(|name| roster.values().find(|r| &r.player == name)).map(|r| r.team_id);
+        let is_ally = |e: EntityId| roster.get(&e).map(|r| Some(r.team_id) == owner_team).unwrap_or(false);
+        for (e, secs) in &t2.ship_seconds {
+            if is_ally(EntityId::from(*e)) {
+                smokes[i].ally_ship_seconds_in_smoke += secs;
+            } else {
+                smokes[i].enemy_ship_seconds_in_smoke += secs;
+            }
+        }
+        if let Some(cap) = smokes[i].t_capture {
+            for e in t2.inside_at(cap.seconds) {
+                let name = name_of(e.raw() as u32).unwrap_or_else(|| e.raw().to_string());
+                if is_ally(*e) {
+                    smokes[i].allies_in_smoke.push(name);
+                } else {
+                    smokes[i].enemies_in_smoke.push(name);
+                }
+            }
+        }
+        for event in &t2.detections {
+            let mut event = event.clone();
+            event.ship = name_of(event.ship_entity);
+            event.source = event.source_entity.and_then(name_of);
+            event.clock = map.at(GameClock(event.seconds));
+            match event.kind {
+                tier2::DetectionKind::Radar => smokes[i].radar_detections_in_smoke.push(event),
+                tier2::DetectionKind::Hydro => smokes[i].hydro_detections_in_smoke.push(event),
+                tier2::DetectionKind::FiredInSmoke => smokes[i].fired_while_concealed_detections.push(event),
+            }
+        }
+    }
+
+    // Tier 3 spike: damage credited to smokes.
+    let ledger = {
+        let mut all: Vec<&wows_replays::ReplayFile> = vec![&replays.primary];
+        all.extend(replays.merges.iter());
+        wows_battle_world::merged::gather_damage_events(
+            &game.loaded.controller_game_params,
+            &game.constants,
+            game.version,
+            &game.loaded.specs,
+            &all,
+        )
+    };
+    let geometry: Vec<damage::SmokeGeometry> = ids
+        .iter()
+        .zip(smokes.iter())
+        .map(|(id, record)| {
+            let track = &tracks[id];
+            damage::SmokeGeometry {
+                id: id.raw() as u32,
+                radius: track.radius,
+                puffs: track.puffs.iter().map(|(c, p)| (c.seconds(), *p)).collect(),
+                puff_life: record.base_puff_life_s,
+                created: track.created.seconds(),
+                removed: track.removed.map(|c| c.seconds()),
+            }
+        })
+        .collect();
+    let smoke_owner: HashMap<u32, (Option<EntityId>, Option<i64>)> = ids
+        .iter()
+        .zip(smokes.iter())
+        .map(|(id, record)| {
+            let owner = record
+                .player
+                .as_ref()
+                .and_then(|name| roster.iter().find(|(_, r)| &r.player == name))
+                .map(|(e, r)| (*e, r.team_id));
+            (id.raw() as u32, (owner.map(|(e, _)| e), owner.map(|(_, t)| t)))
+        })
+        .collect();
+    let salvo_list: Vec<wows_replays::analyzer::battle_controller::state::ActiveShot> = salvos.into_values().collect();
+    let flags_at = |e: EntityId, c: GameClock| tracker.flags_at(e, c);
+    let team_of = |e: EntityId| roster.get(&e).map(|r| r.team_id);
+    let spike = damage::run(&damage::SpikeInput {
+        ledger: &ledger,
+        hits: &hits,
+        salvos: &salvo_list,
+        smokes: &geometry,
+        timeline: &tl,
+        flags_at: &flags_at,
+        team_of: &team_of,
+        smoke_owner: &smoke_owner,
+    });
+    for (i, id) in ids.iter().enumerate() {
+        let d = spike.per_smoke.get(&(id.raw() as u32)).cloned().unwrap_or_default();
+        smokes[i].damage_in_smoke = Some(d.damage_in_smoke());
+        smokes[i].damage_behind_smoke = Some(d.damage_behind_smoke());
+        smokes[i].smoke_damage_total = Some(d.smoke_damage_total());
+        smokes[i].damage_in_smoke_enemy = Some(d.damage_in_smoke_enemy);
+        smokes[i].damage_behind_smoke_enemy = Some(d.damage_behind_smoke_enemy);
+        smokes[i].damage_detail = Some(d);
+    }
+    info!(
+        events = spike.stats.damage_events,
+        unknown_attacker = spike.stats.events_attacker_unknown,
+        hits = spike.stats.shot_hits,
+        salvos = spike.stats.salvos,
+        "Damage spike"
+    );
+
     let game_record = GameRecord {
         tournament: config.game.tournament.clone(),
         match_id: match_id.clone(),
@@ -611,5 +784,12 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         teams,
     };
 
-    Ok(Analysis { game: game_record, smokes, clock_map: map, timeline: tl })
+    Ok(Analysis {
+        game: game_record,
+        smokes,
+        clock_map: map,
+        timeline: tl,
+        damage_events: spike.events,
+        damage_stats: spike.stats,
+    })
 }

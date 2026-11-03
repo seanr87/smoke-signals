@@ -1,0 +1,322 @@
+//! The M4 smoke-damage spike: attribute each damage event to its attacker's
+//! firing position and time, then credit it to the smokes the attacker was
+//! firing from or through.
+//!
+//! The replay's damage ledger already names the aggressor ship for every
+//! damage event, so the open question is the firing moment and position.
+//! Three sources are tried per event, best first: a resolved shot hit (same
+//! attacker and victim, impact within a second of the damage), the attacker's
+//! latest salvo before the damage, and the attacker's position at the damage
+//! clock itself.
+
+use std::collections::BTreeMap;
+use std::collections::HashMap;
+
+use serde::Serialize;
+use wows_battle_world::scan::PositionTimeline;
+use wows_replays::analyzer::battle_controller::DamageEvent;
+use wows_replays::analyzer::battle_controller::state::ActiveShot;
+use wows_replays::analyzer::battle_controller::state::ResolvedShotHit;
+use wows_replays::types::EntityId;
+use wows_replays::types::GameClock;
+use wowsunpack::game_types::VisibilityFlags;
+use wowsunpack::game_types::WorldPos;
+
+use crate::timeline;
+
+/// Largest gap between a damage event and the shot hit it is matched to.
+const HIT_MATCH_SECONDS: f32 = 1.0;
+/// Longest shell flight accepted when matching a damage event to a salvo.
+const SALVO_MATCH_SECONDS: f32 = 25.0;
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "snake_case")]
+pub enum FireSource {
+    /// A resolved shot hit gave the fire time and the shell's origin.
+    ShotHit,
+    /// The attacker's latest salvo before the damage gave both.
+    Salvo,
+    /// No shot data: the attacker's position at the damage clock.
+    DamageClock,
+}
+
+/// One damage event with the attacker's firing moment and position.
+#[derive(Debug, Clone, Serialize)]
+pub struct AttributedDamage {
+    pub attacker: u32,
+    pub victim: u32,
+    pub amount: f32,
+    pub damage_seconds: f32,
+    pub fire_seconds: f32,
+    pub fire_source: FireSource,
+    pub attacker_detected_at_fire: Option<bool>,
+    /// Smokes the attacker stood in when firing.
+    pub in_smokes: Vec<u32>,
+    /// Smokes whose standing puffs the line of fire crossed, with the attacker
+    /// outside them and undetected.
+    pub behind_smokes: Vec<u32>,
+}
+
+/// A smoke as the spike needs it: puffs with the time they were laid, the
+/// puff life, and the object's life.
+pub struct SmokeGeometry {
+    pub id: u32,
+    pub radius: f32,
+    pub puffs: Vec<(f32, WorldPos)>,
+    pub puff_life: Option<f32>,
+    pub created: f32,
+    pub removed: Option<f32>,
+}
+
+impl SmokeGeometry {
+    /// Puffs standing at `t`.
+    fn standing(&self, t: f32) -> impl Iterator<Item = WorldPos> + '_ {
+        let end = self.removed.unwrap_or(f32::INFINITY);
+        self.puffs.iter().filter(move |(laid, _)| {
+            *laid <= t && t <= end && self.puff_life.is_none_or(|life| t <= laid + life)
+        }).map(|(_, p)| *p)
+    }
+
+    fn contains(&self, t: f32, pos: WorldPos) -> bool {
+        self.standing(t).any(|puff| timeline::ground_distance(pos, puff) <= self.radius)
+    }
+
+    fn crosses(&self, t: f32, from: WorldPos, to: WorldPos) -> bool {
+        self.standing(t).any(|puff| segment_distance_xz(from, to, puff) <= self.radius)
+    }
+}
+
+/// Horizontal distance from `p` to the segment `a`-`b`.
+fn segment_distance_xz(a: WorldPos, b: WorldPos, p: WorldPos) -> f32 {
+    let (ax, az, bx, bz, px, pz) = (a.0.x, a.0.z, b.0.x, b.0.z, p.0.x, p.0.z);
+    let (dx, dz) = (bx - ax, bz - az);
+    let len2 = dx * dx + dz * dz;
+    let t = if len2 <= 0.0 { 0.0 } else { (((px - ax) * dx + (pz - az) * dz) / len2).clamp(0.0, 1.0) };
+    let (cx, cz) = (ax + dx * t, az + dz * t);
+    ((px - cx).powi(2) + (pz - cz).powi(2)).sqrt()
+}
+
+/// Totals credited to one smoke, split by the shooter's relation to the
+/// smoke's owner.
+#[derive(Debug, Clone, Default, Serialize)]
+pub struct SmokeDamage {
+    pub damage_in_smoke_smoker: f32,
+    pub damage_in_smoke_ally: f32,
+    pub damage_in_smoke_enemy: f32,
+    pub damage_behind_smoke_smoker: f32,
+    pub damage_behind_smoke_ally: f32,
+    pub damage_behind_smoke_enemy: f32,
+    pub events_in_smoke: u32,
+    pub events_behind_smoke: u32,
+}
+
+impl SmokeDamage {
+    pub fn damage_in_smoke(&self) -> f32 {
+        self.damage_in_smoke_smoker + self.damage_in_smoke_ally
+    }
+
+    pub fn damage_behind_smoke(&self) -> f32 {
+        self.damage_behind_smoke_smoker + self.damage_behind_smoke_ally
+    }
+
+    pub fn smoke_damage_total(&self) -> f32 {
+        self.damage_in_smoke() + self.damage_behind_smoke()
+    }
+}
+
+/// Coverage of the attribution on this game.
+#[derive(Debug, Clone, Default, Serialize)]
+pub struct SpikeStats {
+    pub damage_events: u32,
+    pub damage_total: f32,
+    pub events_attacker_unknown: u32,
+    pub events_by_source: BTreeMap<String, u32>,
+    pub damage_by_source: BTreeMap<String, f32>,
+    pub events_no_attacker_position: u32,
+    pub events_no_victim_position: u32,
+    pub shot_hits: u32,
+    pub salvos: u32,
+}
+
+pub struct SpikeInput<'a> {
+    pub ledger: &'a HashMap<EntityId, Vec<DamageEvent>>,
+    pub hits: &'a [ResolvedShotHit],
+    pub salvos: &'a [ActiveShot],
+    pub smokes: &'a [SmokeGeometry],
+    pub timeline: &'a PositionTimeline,
+    pub flags_at: &'a dyn Fn(EntityId, GameClock) -> Option<VisibilityFlags>,
+    pub team_of: &'a dyn Fn(EntityId) -> Option<i64>,
+    /// Owner entity and team of each smoke.
+    pub smoke_owner: &'a HashMap<u32, (Option<EntityId>, Option<i64>)>,
+}
+
+pub struct SpikeOutput {
+    pub events: Vec<AttributedDamage>,
+    pub per_smoke: HashMap<u32, SmokeDamage>,
+    pub stats: SpikeStats,
+}
+
+pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
+    let mut events = Vec::new();
+    let mut per_smoke: HashMap<u32, SmokeDamage> = HashMap::new();
+    let mut stats = SpikeStats { shot_hits: input.hits.len() as u32, salvos: input.salvos.len() as u32, ..Default::default() };
+
+    let mut salvos_by_owner: HashMap<EntityId, Vec<&ActiveShot>> = HashMap::new();
+    for s in input.salvos {
+        salvos_by_owner.entry(s.salvo.owner_id).or_default().push(s);
+    }
+    for v in salvos_by_owner.values_mut() {
+        v.sort_by(|a, b| a.fired_at.seconds().total_cmp(&b.fired_at.seconds()));
+    }
+
+    for (attacker, list) in input.ledger {
+        for event in list {
+            stats.damage_events += 1;
+            stats.damage_total += event.amount;
+            if (input.team_of)(*attacker).is_none() {
+                stats.events_attacker_unknown += 1;
+                continue;
+            }
+            let t = event.clock.seconds();
+
+            // Fire moment and position, best source first.
+            let from_hit = input
+                .hits
+                .iter()
+                .filter(|h| {
+                    h.hit.owner_id == *attacker
+                        && h.victim_entity_id == event.victim
+                        && (h.clock.seconds() - t).abs() <= HIT_MATCH_SECONDS
+                })
+                .find_map(|h| {
+                    let fired = h.fired_at?;
+                    let origin = h.salvo.as_ref()?.shots.first()?.origin;
+                    Some((fired.seconds(), origin, FireSource::ShotHit))
+                });
+            let from_salvo = from_hit.or_else(|| {
+                salvos_by_owner.get(attacker).and_then(|list| {
+                    list.iter()
+                        .rev()
+                        .find(|s| {
+                            let f = s.fired_at.seconds();
+                            f <= t && t - f <= SALVO_MATCH_SECONDS
+                        })
+                        .and_then(|s| s.salvo.shots.first().map(|shot| (s.fired_at.seconds(), shot.origin, FireSource::Salvo)))
+                })
+            });
+            let (fire_seconds, fire_pos, source) = match from_salvo {
+                Some(found) => found,
+                None => {
+                    let Some(pos) = input.timeline.get(attacker).and_then(|tr| timeline::world_pos_at(tr, event.clock))
+                    else {
+                        stats.events_no_attacker_position += 1;
+                        continue;
+                    };
+                    (t, pos, FireSource::DamageClock)
+                }
+            };
+            *stats.events_by_source.entry(format!("{source:?}")).or_default() += 1;
+            *stats.damage_by_source.entry(format!("{source:?}")).or_default() += event.amount;
+
+            let fire_clock = GameClock(fire_seconds);
+            let victim_pos = input.timeline.get(&event.victim).and_then(|tr| timeline::world_pos_at(tr, event.clock));
+            if victim_pos.is_none() {
+                stats.events_no_victim_position += 1;
+            }
+            let detected = (input.flags_at)(*attacker, fire_clock).map(|f| f.is_detected());
+            let attacker_team = (input.team_of)(*attacker);
+
+            let in_smokes: Vec<u32> =
+                input.smokes.iter().filter(|s| s.contains(fire_seconds, fire_pos)).map(|s| s.id).collect();
+            let behind_smokes: Vec<u32> = match (victim_pos, detected) {
+                (Some(target), Some(false)) => input
+                    .smokes
+                    .iter()
+                    .filter(|s| !in_smokes.contains(&s.id) && s.crosses(fire_seconds, fire_pos, target))
+                    .map(|s| s.id)
+                    .collect(),
+                _ => Vec::new(),
+            };
+
+            for id in &in_smokes {
+                let d = per_smoke.entry(*id).or_default();
+                d.events_in_smoke += 1;
+                match role(*attacker, attacker_team, input.smoke_owner.get(id)) {
+                    Role::Smoker => d.damage_in_smoke_smoker += event.amount,
+                    Role::Ally => d.damage_in_smoke_ally += event.amount,
+                    Role::Enemy => d.damage_in_smoke_enemy += event.amount,
+                }
+            }
+            for id in &behind_smokes {
+                let d = per_smoke.entry(*id).or_default();
+                d.events_behind_smoke += 1;
+                match role(*attacker, attacker_team, input.smoke_owner.get(id)) {
+                    Role::Smoker => d.damage_behind_smoke_smoker += event.amount,
+                    Role::Ally => d.damage_behind_smoke_ally += event.amount,
+                    Role::Enemy => d.damage_behind_smoke_enemy += event.amount,
+                }
+            }
+
+            events.push(AttributedDamage {
+                attacker: attacker.raw() as u32,
+                victim: event.victim.raw() as u32,
+                amount: event.amount,
+                damage_seconds: t,
+                fire_seconds,
+                fire_source: source,
+                attacker_detected_at_fire: detected,
+                in_smokes,
+                behind_smokes,
+            });
+        }
+    }
+    events.sort_by(|a, b| a.damage_seconds.total_cmp(&b.damage_seconds));
+    SpikeOutput { events, per_smoke, stats }
+}
+
+enum Role {
+    Smoker,
+    Ally,
+    Enemy,
+}
+
+fn role(attacker: EntityId, attacker_team: Option<i64>, owner: Option<&(Option<EntityId>, Option<i64>)>) -> Role {
+    match owner {
+        Some((Some(smoker), _)) if *smoker == attacker => Role::Smoker,
+        Some((_, Some(team))) if attacker_team == Some(*team) => Role::Ally,
+        _ => Role::Enemy,
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn segment_distance_handles_ends_and_middle() {
+        let a = WorldPos::new(0.0, 0.0, 0.0);
+        let b = WorldPos::new(10.0, 0.0, 0.0);
+        assert_eq!(segment_distance_xz(a, b, WorldPos::new(5.0, 0.0, 3.0)), 3.0);
+        assert_eq!(segment_distance_xz(a, b, WorldPos::new(-4.0, 0.0, 0.0)), 4.0);
+        assert_eq!(segment_distance_xz(a, b, WorldPos::new(13.0, 0.0, 4.0)), 5.0);
+    }
+
+    #[test]
+    fn standing_puffs_follow_lifetime_and_removal() {
+        let smoke = SmokeGeometry {
+            id: 1,
+            radius: 15.0,
+            puffs: vec![(10.0, WorldPos::new(0.0, 0.0, 0.0)), (20.0, WorldPos::new(100.0, 0.0, 0.0))],
+            puff_life: Some(50.0),
+            created: 10.0,
+            removed: Some(65.0),
+        };
+        assert!(smoke.contains(15.0, WorldPos::new(5.0, 0.0, 0.0)));
+        assert!(!smoke.contains(15.0, WorldPos::new(100.0, 0.0, 0.0)));
+        assert!(smoke.contains(61.0, WorldPos::new(100.0, 0.0, 0.0)));
+        assert!(!smoke.contains(61.0, WorldPos::new(0.0, 0.0, 0.0)));
+        assert!(!smoke.contains(66.0, WorldPos::new(100.0, 0.0, 0.0)));
+        assert!(smoke.crosses(30.0, WorldPos::new(50.0, 0.0, -100.0), WorldPos::new(50.0, 0.0, 100.0)) == false);
+        assert!(smoke.crosses(30.0, WorldPos::new(0.0, 0.0, -100.0), WorldPos::new(0.0, 0.0, 100.0)));
+    }
+}

@@ -95,6 +95,12 @@ pub struct StateSnapshot {
     pub smoker_spotted_flags: Option<String>,
     /// Enemy ships alive with a radar charge left.
     pub enemy_radars_alive: Option<u32>,
+    pub nearest_enemy: Option<String>,
+    pub nearest_enemy_dist_km: Option<f32>,
+    pub nearest_cap: Option<char>,
+    pub dist_to_nearest_cap_km: Option<f32>,
+    /// The nearest cap has invaders.
+    pub cap_contested: Option<bool>,
 }
 
 impl StateSnapshot {
@@ -165,6 +171,23 @@ pub struct SmokeRecord {
 
     pub state_at_activate: Option<StateSnapshot>,
     pub state_at_capture: Option<StateSnapshot>,
+
+    /// Tier 2: ships of the smoker's team inside the smoke at t_capture.
+    pub allies_in_smoke: Vec<String>,
+    pub enemies_in_smoke: Vec<String>,
+    pub ally_ship_seconds_in_smoke: f32,
+    pub enemy_ship_seconds_in_smoke: f32,
+    pub radar_detections_in_smoke: Vec<crate::tier2::DetectionEvent>,
+    pub hydro_detections_in_smoke: Vec<crate::tier2::DetectionEvent>,
+    pub fired_while_concealed_detections: Vec<crate::tier2::DetectionEvent>,
+
+    /// Tier 3, from the M4 spike: damage by the smoker's team only.
+    pub damage_in_smoke: Option<f32>,
+    pub damage_behind_smoke: Option<f32>,
+    pub smoke_damage_total: Option<f32>,
+    pub damage_in_smoke_enemy: Option<f32>,
+    pub damage_behind_smoke_enemy: Option<f32>,
+    pub damage_detail: Option<crate::damage::SmokeDamage>,
 
     pub wows_toolkit_rev: Option<String>,
     pub smoke_signals_version: String,

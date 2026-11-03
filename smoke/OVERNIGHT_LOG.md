@@ -20,3 +20,25 @@ Morning summary is added at the top when the run ends. Entries below are in orde
 - Clip progress marker: a bar at the bottom of the header strip; yellow ticks at activation and capture, the filled part is elapsed clip time, white tick is now.
 - The first test clip (Conte Verde exhaust, 65 s) encoded in 40 s, so the full set of 14 clips is expected to take about 30 minutes.
 - Not verified visually: the clips themselves (no video decoder is available here; the frame path is the same as the stills, which were checked).
+
+## M4 step 1: Tier 2
+
+- Tracked inside the analysis pass (no extra replay pass): every 0.25 s of replay time each living ship is tested against every live smoke object (inside = within the smoke radius of any puff), which gives ship-seconds in smoke and the ships inside at t_capture. Visibility flags are checked on every packet.
+- A detection counts for a smoke when a ship that was inside that smoke and undetected gains the flag: `BY_RLS` for radar, `BY_SONAR` for hydro, `IN_SMOKE` for firing from smoke. The "behind the smoke" form of concealment is not used for Tier 2, only for the damage spike, because a ship behind a smoke is usually just unspotted rather than concealed by it.
+- The likely radar or hydro ship is the nearest enemy whose consumable is running at that packet (activation time plus duration), with the distance and whether the ship is inside that consumable's base range from GameParams. `detected_for_s` is the time until the flag clears.
+- `allies_in_smoke` lists the smoker's team inside at t_capture; enemies inside are listed separately. Ship-seconds are split the same way.
+- `nearest_enemy_dist_km`, `dist_to_nearest_cap_km` and `cap_contested` (the nearest cap has invaders) are part of the Tier 1 snapshot taken at t_activate and t_capture in the frames pass, since they need a moment. `enemy_radars_alive` was already there.
+- Visibility flags come from the merged view, which carries them for the recorder's own team (the game's detection indicator) and for enemy ships as seen by the recorder's team. Detections of enemy ships inside their own smoke therefore mean "our team detected them".
+
+## M4 step 2: damage spike (method)
+
+- Surprise: the toolkit's damage ledger (`receiveDamagesOnShip` from every merged perspective, deduplicated) already names the aggressor ship for each damage event, so "who dealt it" is not the open problem DESIGN.md expected. The open problem is the firing moment and position, which the spike resolves from three sources, best first: a resolved shot hit (same attacker and victim, impact within 1 s of the damage: exact fire time and shell origin), the attacker's latest salvo in the 25 s before the damage (fire time and origin), or the attacker's position at the damage clock.
+- `damage_in_smoke`: the attacker's firing position lies within a standing puff of the smoke. `damage_behind_smoke`: the attacker is outside the smoke, undetected at the firing moment (flags as last reported), and the horizontal line from the firing position to the victim's position at impact passes within the smoke radius of a standing puff. A puff stands from the moment it was laid until its base lifetime or the object's removal.
+- Credit goes in full to every smoke that qualifies (DESIGN rule 2); the split is smoker / ally / enemy relative to the smoke's owner. `damage_in_smoke` and `damage_behind_smoke` in the table are the smoker's team only; enemy damage is in separate columns, as decided.
+- Hits and salvos are accumulated from the merged view during the pass (the toolkit's whole-match logs are crate-private). Resolved shot hits come from the primary replay only; salvos come from both replays.
+
+## M3 full run (output/20261103-012250)
+
+- 14 smokes, 56 frame files (activation and capture, PNG and WebP each), 14 clips (166 MB, 5 to 17 MB each), 23 minutes end to end.
+- Tier 1 gaps: 13, all data limits, listed with reasons in that run's run_log.md. Three RESIN smokers (Big_Boy69 twice, Fryce once) have no vehicle state in the merged view at the moment, so their HP and detection are unknown; the merge only creates enemy vehicles the primary recorder has seen. Two smokes were still standing at the replay end.
+- Decision: at the activation moment the smoke object does not exist yet (it appears about 2.5 s later), so the activation frame has no puffs to ring. A yellow ring is drawn around the smoker's own position instead, so the frame still marks where the smoke starts. Same for the first seconds of each clip.

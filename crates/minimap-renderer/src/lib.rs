@@ -15,6 +15,8 @@ pub mod encoder;
 pub mod error;
 #[cfg(feature = "rendering")]
 pub mod frame_track;
+#[cfg(feature = "bin")]
+pub mod game_data_loader;
 pub mod map_data;
 pub mod panel_math;
 #[cfg(feature = "rendering")]

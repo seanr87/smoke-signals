@@ -28,10 +28,18 @@ There are three phases. The interactive features wait until clan leadership has 
 | Phase | Goal | Scope | Main additions | Exit criteria |
 | --- | --- | --- | --- | --- |
 | 1. Prototype | Prove the pipeline end to end | Grand Final G1, H-SR only | Fork of wows-toolkit with a `smoke_signals` program; smoke detection, owner and type; capture rules; two frames, header and clip; Tier 1 and 2 metrics including radar while concealed; spike on smoke damage; golden test | Golden test passes and Sean's spot-checks match the replay |
-| 2. Demo | Show leadership everything except the interactive features | H-SR, RESIN and PN: group stage and playoffs | Replay inventory and batch runs; build data (commander skills and upgrades) and effective smoke stats; Tier 3 smoke damage and outcomes; SQLite database; CSV hand-tagging; read-only local gallery; pattern summary | Demo is presented |
+| 2. Demo | Show leadership everything except the interactive features | H-SR, RESIN and PN: group stage and playoffs | Replay inventory and batch runs; build data (commander skills and upgrades) and effective smoke stats; Tier 3 smoke damage and outcomes; SQLite database; CSV hand-tagging; static demo gallery (see below); pattern summary | Demo is presented |
 | 3. Interactive | Let clan members tag and discuss smokes | Decided after the demo | Choose a host (Supabase, the clan site, or other); login; tag dropdowns; comments; access control; move SQLite data to the host; host the clips | Leadership sign-off |
 
 **Costs:** none through Phase 2. SQLite is free, open-source software, and the database is a single file. Phase 3 hosting costs depend on the chosen host and on clip storage.
+
+**Phase 2 demo gallery (decided 3 Nov 2026)**
+
+- A static site: plain HTML, CSS and JavaScript with no server, so it works when opened from a local folder and can be published to GitHub Pages. A public site is fine.
+- The build writes the site to its own folder (`site/` by default), never into `output/`. A run's frames, zoom images, stats and tags are copied in; `output/` stays the raw record of every run.
+- One page per smoke: the activation and capture frames, both zoom images, the metadata record's stats and the hand tags. Images are the WebP copies.
+- Clips are published for one or two featured smokes only: by default Yamiyonohik's Somers smoke at 08:37 in Grand Final G1 (`smoke_id` 39292), plus one exhaust or radar example. Published clips are compressed: 2x speed (`render.clip_speed = 2.0`), at most 25 MB for all published clips together. Every other clip stays local, and its page says "clip available on request".
+- Size budget: the whole site under 500 MB, no single file over 100 MB (the GitHub file limit).
 
 ## Inputs
 
@@ -158,7 +166,7 @@ Smoke damage has three parts: damage dealt *in* the smoke, damage dealt from *be
 
 ## Outputs
 
-Each smoke produces two frames (activation and capture), one clip and one metadata record. Each run writes them to a new `output/<timestamp>/` folder and never overwrites an earlier run.
+Each smoke produces two frames (activation and capture), their zoom images, one clip and one metadata record. Each run writes them to a new `output/<timestamp>/` folder and never overwrites an earlier run. The Phase 2 gallery is built from a run into a separate `site/` folder (see Project phases); `output/` is never served or published.
 
 **Frames**
 
@@ -189,6 +197,7 @@ An example with made-up values:
 - **Gunfire must be visible:** main-battery tracers, secondary tracers and torpedoes on, with tracer pacing following the render clock as in the renderer's video mode.
 - Uses the same overlays and header, plus a progress marker showing activation → capture → now.
 - Encoder: the toolkit's CPU H.264 encoder (the `cpu` feature, openh264), so no NASM or GPU is needed.
+- Every smoke gets a clip locally. The gallery publishes clips for the featured smokes only, at 2x speed and within 25 MB in total; the other smoke pages say "clip available on request".
 
 **Metadata record (unified field names)**
 

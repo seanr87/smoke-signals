@@ -21,7 +21,7 @@ const GAP_PX: f32 = 4.0;
 pub const OUTLINE_WIDTH: f32 = 2.0;
 /// Arc sampling step along an outline, in pixels.
 const ARC_STEP_PX: f32 = 2.0;
-/// Puff centers closer than this are the same puff, drawn once.
+/// Puff centers closer than this to an earlier one are the same puff.
 const SAME_CENTER_PX: f32 = 0.01;
 
 /// What the overlay needs to know about the frame's smokes.
@@ -139,30 +139,27 @@ pub fn union_outline(smoke_id: u32, radius: f32, input: &OverlayInput<'_>) -> Ve
 /// The parts of each circle's edge that no other circle covers, as point
 /// runs. Equal radii throughout.
 fn outer_arcs(centers: &[MinimapPos], r: f32) -> Vec<Vec<MinimapPos>> {
+    let mut distinct: Vec<MinimapPos> = Vec::new();
+    for c in centers {
+        if !distinct.iter().any(|d| (d.x - c.x).abs() < SAME_CENTER_PX && (d.y - c.y).abs() < SAME_CENTER_PX) {
+            distinct.push(*c);
+        }
+    }
     let mut arcs = Vec::new();
-    for (i, c) in centers.iter().enumerate() {
+    for (i, c) in distinct.iter().enumerate() {
         let mut covered: Vec<(f32, f32)> = Vec::new();
-        let mut duplicate = false;
-        for (j, o) in centers.iter().enumerate() {
+        for (j, o) in distinct.iter().enumerate() {
             if i == j {
                 continue;
             }
             let (dx, dy) = (o.x - c.x, o.y - c.y);
             let d = (dx * dx + dy * dy).sqrt();
-            if d < SAME_CENTER_PX {
-                // Coincident puffs: the first one draws the edge.
-                duplicate |= j < i;
-                continue;
-            }
             if d >= 2.0 * r {
                 continue;
             }
             let half = (d / (2.0 * r)).acos();
             let at = dy.atan2(dx);
             push_interval(&mut covered, at - half, at + half);
-        }
-        if duplicate {
-            continue;
         }
         for (start, end) in uncovered(&covered) {
             arcs.push(arc_points(*c, r, start, end));
@@ -278,6 +275,19 @@ mod tests {
     fn coincident_circles_draw_once() {
         let arcs = outer_arcs(&[at(50.0, 50.0), at(50.0, 50.0)], 10.0);
         assert_eq!(arcs.len(), 1);
+    }
+
+    #[test]
+    fn surrounded_circle_draws_nothing_of_its_own() {
+        let r = 10.0;
+        let center = at(50.0, 50.0);
+        let ring = [at(55.0, 50.0), at(45.0, 50.0), at(50.0, 55.0), at(50.0, 45.0)];
+        let mut all = vec![center];
+        all.extend(ring);
+        for p in outer_arcs(&all, r).iter().flatten() {
+            assert!(all.iter().all(|o| dist(*p, *o) >= r - 0.05), "point {p:?} lies inside a circle");
+            assert!((dist(*p, center) - r).abs() > 0.05, "point {p:?} lies on the covered circle");
+        }
     }
 
     #[test]

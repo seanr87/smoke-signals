@@ -55,14 +55,14 @@ pub fn world_pos_at(track: &EntityTrack, clock: GameClock) -> Option<WorldPos> {
 pub enum PosSource {
     /// Position packets: full precision.
     World,
-    /// Minimap vision entries: about 2.4 m steps, and only while the ship is
-    /// shown on the recorder's minimap.
+    /// Minimap vision entries: steps of about 2.4 world units (about 73 m),
+    /// and only while the ship is shown on the recorder's minimap.
     Minimap,
 }
 
 /// World position of a minimap vision entry. The entry stores an 11-bit value
-/// over a fixed 5000 m box centered on the map, the same decoding the
-/// renderer applies before projecting it.
+/// over a fixed box of 5000 world units centered on the map, the same
+/// decoding the renderer applies before projecting it.
 pub fn minimap_world_pos(pos: NormalizedPos) -> WorldPos {
     let raw_x = (pos.0.x + 1.5) * 512.0;
     let raw_y = (pos.0.y + 1.5) * 512.0;

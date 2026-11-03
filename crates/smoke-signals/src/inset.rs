@@ -15,6 +15,9 @@ const MIN_HALF_PX: f32 = 40.0;
 /// Largest side of the inset on the frame, in pixels; the zoom is reduced
 /// when the region would not fit.
 const MAX_SIDE_PX: f32 = 340.0;
+/// Smallest magnification worth drawing. A region too large for it is cut
+/// down to its center.
+const MIN_ZOOM: f32 = 1.5;
 /// Gap between the inset and the map edge.
 const MARGIN_PX: u32 = 8;
 const BORDER: Rgb<u8> = Rgb([225, 225, 225]);
@@ -56,13 +59,27 @@ pub struct MapRect {
     pub size: u32,
 }
 
-/// The region's square on the map, clamped to the map's edges.
-fn crop_rect(region: Region, map: MapRect) -> (u32, u32, u32) {
-    let side = (region.half * 2.0).round().min(map.size as f32) as u32;
-    let limit = map.size - side;
-    let x = (region.center.x - region.half).round().clamp(0.0, limit as f32) as u32;
-    let y = (region.center.y - region.half).round().clamp(0.0, limit as f32) as u32;
-    (x, y, side)
+/// Side of the map square to magnify and the magnification: the region at
+/// `zoom_factor` when it fits, else as much of the region as fits at a
+/// lower zoom, never below [`MIN_ZOOM`].
+fn fit(region: Region, map: MapRect, zoom_factor: f32) -> (u32, f32) {
+    let wanted = (region.half * 2.0).round().clamp(1.0, map.size as f32);
+    let zoom = zoom_factor.min(MAX_SIDE_PX / wanted);
+    if zoom >= MIN_ZOOM {
+        (wanted as u32, zoom)
+    } else {
+        ((MAX_SIDE_PX / MIN_ZOOM).floor().min(map.size as f32) as u32, MIN_ZOOM)
+    }
+}
+
+/// The square of `side` map pixels centered on `center`, clamped to the
+/// map's edges.
+fn crop_rect(center: MinimapPos, side: u32, map: MapRect) -> (u32, u32) {
+    let limit = (map.size - side) as f32;
+    let half = side as f32 / 2.0;
+    let x = (center.x - half).round().clamp(0.0, limit) as u32;
+    let y = (center.y - half).round().clamp(0.0, limit) as u32;
+    (x, y)
 }
 
 /// Cut `region` out of `frame`, magnify it by up to `zoom_factor`, add the
@@ -75,9 +92,10 @@ pub fn build(
     px_per_km: f32,
     fonts: &GameFonts,
 ) -> Inset {
-    let (x, y, side) = crop_rect(region, map);
+    let (side, zoom) = fit(region, map, zoom_factor);
+    let (x, y) = crop_rect(region.center, side, map);
     let crop = image::imageops::crop_imm(frame, map.x + x, map.y + y, side, side).to_image();
-    let out_side = (side as f32 * zoom_factor).min(MAX_SIDE_PX).round().max(1.0) as u32;
+    let out_side = (side as f32 * zoom).round().max(1.0) as u32;
     let zoom = out_side as f32 / side as f32;
     let scaled = image::imageops::resize(&crop, out_side, out_side, FilterType::CatmullRom);
 
@@ -162,10 +180,30 @@ mod tests {
     #[test]
     fn crop_stays_inside_the_map() {
         let map = MapRect { x: 0, y: 0, size: 768 };
-        let (x, y, side) = crop_rect(Region { center: MinimapPos { x: 10.0, y: 760.0 }, half: 50.0 }, map);
-        assert_eq!((x, y, side), (0, 668, 100));
-        let (_, _, side) = crop_rect(Region { center: MinimapPos { x: 384.0, y: 384.0 }, half: 900.0 }, map);
-        assert_eq!(side, 768);
+        assert_eq!(crop_rect(MinimapPos { x: 10.0, y: 760.0 }, 100, map), (0, 668));
+        assert_eq!(crop_rect(MinimapPos { x: 384.0, y: 384.0 }, 768, map), (0, 0));
+    }
+
+    #[test]
+    fn fit_keeps_the_zoom_when_the_region_is_small() {
+        let map = MapRect { x: 0, y: 0, size: 768 };
+        let (side, zoom) = fit(Region { center: MinimapPos { x: 0.0, y: 0.0 }, half: 50.0 }, map, 2.5);
+        assert_eq!((side, zoom), (100, 2.5));
+    }
+
+    #[test]
+    fn fit_lowers_the_zoom_for_a_wide_region() {
+        let map = MapRect { x: 0, y: 0, size: 768 };
+        let (side, zoom) = fit(Region { center: MinimapPos { x: 0.0, y: 0.0 }, half: 100.0 }, map, 2.5);
+        assert_eq!(side, 200);
+        assert!((zoom - 1.7).abs() < 0.01);
+    }
+
+    #[test]
+    fn fit_cuts_a_huge_region_down_to_the_minimum_zoom() {
+        let map = MapRect { x: 0, y: 0, size: 768 };
+        let (side, zoom) = fit(Region { center: MinimapPos { x: 0.0, y: 0.0 }, half: 300.0 }, map, 2.5);
+        assert_eq!((side, zoom), (226, MIN_ZOOM));
     }
 
     #[test]

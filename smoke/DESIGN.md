@@ -179,7 +179,7 @@ Each smoke produces two frames (activation and capture), their zoom images, one 
   - Exhaust and crawling smoke: light orange (proposed)
   - Target smoke: a yellow outline of the union of its puffs (outer boundary only, 2 px); the fill stays so ships inside remain visible. On an activation frame the smoke does not exist yet, so a ring marks the smoker's position instead.
 - **Exhaust and crawling smoke:** a dashed 3 px outline of the trail's full path from activation to t_capture in `render.trail_color` (magenta by default, a colour nothing else on the map uses). No yellow outline over the puffs.
-- **Zoomed inset:** a copy of the map around the target smoke's bounding box, magnified `render.zoom_factor` times (2.5 by default), placed in the map corner farthest from the smoke with a thin border, a 1 km bar and the magnification. The magnification is reduced when the box would not fit; the note shows the value used. The inset is also saved on its own as `<stem>_zoom` (fields `frame_act_zoom`, `frame_cap_zoom`). Clips carry the inset too.
+- **Zoomed inset:** a copy of the map around the target smoke's bounding box, magnified `render.zoom_factor` times (2.5 by default), placed in the map corner farthest from the smoke with a thin border, a 1 km bar and the magnification. The magnification is reduced when the box would not fit, but never below 1.5x: a very long trail shows its centre. The note shows the value used. The inset is also saved on its own as `<stem>_zoom` (fields `frame_act_zoom`, `frame_cap_zoom`). Clips carry the inset too.
 - **Files:** `<match>_<game>_<team>_<player>_<ship>_s<nn>_{act|cap}_<mmss>`, as PNG plus a WebP copy for the gallery.
 
 **Header strip (about 60 px, above the render)**
@@ -204,7 +204,7 @@ An example with made-up values:
 | Group | Fields |
 | --- | --- |
 | Identity | smoke_id, activation_id, match_id, round, game_no, map, game_build, primary_replay, merged_replays, team, opponent, spawn_side, player, ship, ship_class, ship_tier |
-| Smoke | smoke_type, variant, charge_no, charges_total, base_emission_s, base_puff_life_s, base_radius, observed_emission_s, emission_cut_short, owner_flag, overlap_flag, overlapping_smoke_ids, origin_xy, bbox, puff_count, path (exhaust and crawling only) |
+| Smoke | smoke_type, variant, charge_no, charges_total, base_emission_s, base_puff_life_s, base_radius and radius (world units; 15 = 450 m), observed_emission_s, emission_cut_short, owner_flag, overlap_flag, overlapping_smoke_ids, origin_xy, bbox, puff_count, path (exhaust and crawling only) |
 | Times (replay s and battle clock) | t_activate, t_capture, t_emission_end, t_dispersed |
 | State at t_activate and t_capture (Tier 1) | score_ours, score_theirs, cap_state per cap (owner, progress, contested), ships_alive by team and class, smoker_hp_pct, smoker_spotted (with reason flags) |
 | Tier 2 | allies_in_smoke, nearest_enemy_dist_km, dist_to_nearest_cap_km, cap_contested, enemy_radars_alive, radar_detections_in_smoke, hydro_detections_in_smoke, fired_while_concealed_detections |

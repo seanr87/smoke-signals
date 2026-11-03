@@ -108,8 +108,15 @@ pub fn apply_overlays(
 }
 
 /// Map pixels the inset is centered on: the smoke's box over its whole life
-/// when known, else its origin, plus the smoker's position when given.
-fn inset_points(projection: &Projection, record: &SmokeRecord, smoker_pos: Option<WorldPos>) -> Vec<MinimapPos> {
+/// when known, else its origin. Before the smoke exists the smoker's
+/// position is included, since the ring marks it then; afterwards the inset
+/// stays on the smoke even when the smoker sails away.
+fn inset_points(
+    projection: &Projection,
+    record: &SmokeRecord,
+    smoker_pos: Option<WorldPos>,
+    has_puffs: bool,
+) -> Vec<MinimapPos> {
     let mut points = Vec::new();
     match &record.bbox {
         Some(b) => {
@@ -119,7 +126,9 @@ fn inset_points(projection: &Projection, record: &SmokeRecord, smoker_pos: Optio
         }
         None => points.extend(projection.project(WorldPos::new(record.origin_xy.x, 0.0, record.origin_xy.z))),
     }
-    points.extend(smoker_pos.and_then(|p| projection.project(p)));
+    if !has_puffs {
+        points.extend(smoker_pos.and_then(|p| projection.project(p)));
+    }
     points
 }
 
@@ -144,12 +153,14 @@ pub fn render_smoke_frame<'a>(
 ) -> Result<SmokeFrame, Report> {
     let projection = renderer.projection();
     let smoker_pos = smoker.and_then(|e| session.timeline().get(&e).and_then(|t| timeline::world_pos_at(t, clock)));
+    let mut has_puffs = false;
     let mut image = renderer.render_image(session, clock, |view, commands| {
         let puffs = current_puffs(view);
+        has_puffs = puffs.get(&record.smoke_id).is_some_and(|p| !p.is_empty());
         apply_overlays(&projection, config, record, types, &puffs, smoker_pos, commands);
     })?;
     let pad = projection.pixel_radius(record.radius) + INSET_PAD_PX;
-    let region = inset::region_around(&inset_points(&projection, record, smoker_pos), pad);
+    let region = inset::region_around(&inset_points(&projection, record, smoker_pos, has_puffs), pad);
     let zoom = region.map(|region| {
         let (x, y) = renderer.map_origin();
         let map = inset::MapRect { x, y, size: MINIMAP_SIZE };

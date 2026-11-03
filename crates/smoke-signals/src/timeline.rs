@@ -101,6 +101,23 @@ pub fn ground_distance(a: WorldPos, b: WorldPos) -> f32 {
     (dx * dx + dz * dz).sqrt()
 }
 
+/// Length of one world unit. Positions, smoke radii and map sizes are in
+/// world units; the renderer uses the same factor for its range circles.
+pub const METERS_PER_WORLD_UNIT: f32 = 30.0;
+
+pub fn meters(world_units: f32) -> f32 {
+    world_units * METERS_PER_WORLD_UNIT
+}
+
+pub fn kilometers(world_units: f32) -> f32 {
+    meters(world_units) / 1000.0
+}
+
+/// World units for a length in meters.
+pub fn world_units(meters: f32) -> f32 {
+    meters / METERS_PER_WORLD_UNIT
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

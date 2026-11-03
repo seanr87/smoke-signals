@@ -1,6 +1,7 @@
-//! Pass three: one MP4 clip per smoke, real time at the configured frame
-//! rate, from before the activation until the smoke disperses. Frames carry
-//! the same overlays and header as the still frames plus a progress marker.
+//! Pass three: one MP4 clip per smoke at the configured frame rate and
+//! playback speed, from before the activation until the smoke disperses.
+//! Frames carry the same overlays, inset and header as the still frames plus
+//! a progress marker.
 
 use std::fs::File;
 use std::io::BufWriter;
@@ -61,6 +62,7 @@ pub fn render_clip(
     path: &Path,
 ) -> Result<usize, Report> {
     let fps = config.render.clip_fps;
+    let speed = config.render.clip_speed;
     let mut session = GameSession::new(game_data, replays)?;
     let mut renderer = FrameRenderer::new(config, game_data, replays, &session)?;
     let window = clip_window(record, config.render.clip_pre_seconds as f32, session.total_duration().seconds());
@@ -74,20 +76,21 @@ pub fn render_clip(
 
     let (worker, codec, kind) =
         EncoderWorker::spawn(width, height, VideoCodec::H264, Mode::ForceCpu, EncoderConfig::default())?;
-    info!(smoke = record.smoke_id, %codec, %kind, fps, start = window.start, end = window.end, "Encoding clip");
+    info!(smoke = record.smoke_id, %codec, %kind, fps, speed, start = window.start, end = window.end, "Encoding clip");
 
     let activation = fraction(window, record.activation_moment().seconds);
     let capture = record.t_capture.map(|m| fraction(window, m.seconds));
-    let frame_count = ((window.end - window.start) * fps as f32).ceil() as usize;
+    // Each encoded frame advances the replay by `speed` frame periods.
+    let frame_count = ((window.end - window.start) * fps as f32 / speed).ceil() as usize;
     for n in 0..frame_count {
-        let seconds = window.start + n as f32 / fps as f32;
+        let seconds = window.start + n as f32 * speed / fps as f32;
         let clock = GameClock(seconds);
         session.seek_clock(clock)?;
         let snapshot = frames::snapshot_for(&mut session, game, record);
         let text = header::header_text(game, record, ordinal, Some(&snapshot));
         let progress = Progress { activation, capture, now: fraction(window, seconds) };
         let (_, smoker) = frames::smoker_identity(game, record);
-        let image = frames::render_smoke_frame(
+        let frame = frames::render_smoke_frame(
             &mut renderer,
             &mut session,
             config,
@@ -98,7 +101,7 @@ pub fn render_clip(
             &text,
             Some(progress),
         )?;
-        let cropped = image::imageops::crop_imm(&image, 0, 0, width, height).to_image();
+        let cropped = image::imageops::crop_imm(&frame.image, 0, 0, width, height).to_image();
         worker.submit(cropped.into_raw())?;
     }
     let output = worker.finish()?;

@@ -280,6 +280,7 @@ impl Tier2Tracker {
         match best {
             None => (None, None, None),
             Some((enemy, d)) => {
+                let d = timeline::meters(d);
                 let range = self.ranges.get(&enemy).and_then(|r| match kind {
                     DetectionKind::Radar => r.radar_m,
                     DetectionKind::Hydro => r.hydro_m,

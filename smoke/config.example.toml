@@ -12,10 +12,13 @@ merge = true                   # merge both teams' replays
 
 [render]
 show_player_names = true
-exhaust_color = "#FFB366"      # light orange (proposed)
-highlight_color = "#FFD700"
+exhaust_color = "#FFB366"      # light orange puffs for exhaust and crawling smoke
+highlight_color = "#FFD700"    # outline of the target smoke
+trail_color = "#FF00FF"        # dashed path of exhaust and crawling smoke (magenta: unused elsewhere on the map)
+zoom_factor = 2.5              # magnification of the inset around the target smoke
 clip_fps = 20
 clip_pre_seconds = 5           # clip starts 5 s before activation, ends when the smoke disperses
+clip_speed = 1.0               # 1.0 = real time, 2.0 = twice as fast
 
 [game]
 tournament = "KotS XIX NA"

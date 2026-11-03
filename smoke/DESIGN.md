@@ -81,7 +81,7 @@ A smoke is one smoke object in the replay. Its owner and type come from the ship
 **Owner**
 
 - Candidates are the player ships fitted with a smoke consumable. The owner is the nearest candidate that activated smoke in the 5 s before the object was created.
-- If no candidate activated smoke in that window, the nearest candidate is the owner and `owner_flag` is set with a note. The flag is also set when the owner's position came only from minimap samples (a ship outside both recorders' area of interest) or when the nearest candidate was more than 50 m from the origin.
+- If no candidate activated smoke in that window, the nearest candidate is the owner and `owner_flag` is set with a note. The flag is also set when the owner's position came only from minimap samples (a ship outside both recorders' area of interest) or when the nearest candidate was more than 600 m from the origin (the first puff is laid about one smoke radius, 450 m, from the ship). A candidate with an activation is preferred over a nearer one without only when it is within 1000 m of the origin. Replay positions and radii are in world units of 30 m; every `_m` and `_km` field is converted.
 - Each replay records smoke activations for its own team only, so a team without a replay has every smoke flagged. Using nearest-ship alone misattributed smokes to cruisers parked inside a destroyer's smoke in the test.
 - Smoke objects are tracked from the primary replay only (the merge keeps entity lifecycle with the primary), so a smoke the primary recorder never saw is not in the table even when the other team's replay is merged.
 
@@ -169,8 +169,9 @@ Each smoke produces two frames (activation and capture), one clip and one metada
 - **Smoke colors:**
   - Standard smoke: the renderer's grey
   - Exhaust and crawling smoke: light orange (proposed)
-  - Target smoke: a highlight ring
-- **Exhaust and crawling smoke:** a dashed outline of the trail's full path from activation to t_capture.
+  - Target smoke: a yellow outline of the union of its puffs (outer boundary only, 2 px); the fill stays so ships inside remain visible. On an activation frame the smoke does not exist yet, so a ring marks the smoker's position instead.
+- **Exhaust and crawling smoke:** a dashed 3 px outline of the trail's full path from activation to t_capture in `render.trail_color` (magenta by default, a colour nothing else on the map uses). No yellow outline over the puffs.
+- **Zoomed inset:** a copy of the map around the target smoke's bounding box, magnified `render.zoom_factor` times (2.5 by default), placed in the map corner farthest from the smoke with a thin border, a 1 km bar and the magnification. The magnification is reduced when the box would not fit; the note shows the value used. The inset is also saved on its own as `<stem>_zoom` (fields `frame_act_zoom`, `frame_cap_zoom`). Clips carry the inset too.
 - **Files:** `<match>_<game>_<team>_<player>_<ship>_s<nn>_{act|cap}_<mmss>`, as PNG plus a WebP copy for the gallery.
 
 **Header strip (about 60 px, above the render)**
@@ -184,7 +185,7 @@ An example with made-up values:
 
 **Clip**
 
-- Runs from t_activate − 5 s to t_dispersed (the last puff gone), at real time and 20 fps, as MP4 (H.264). Standard smoke clips run about 2–3 minutes (roughly 5–15 MB). Exhaust clips run about 1 minute.
+- Runs from t_activate − 5 s to t_dispersed (the last puff gone), at 20 fps and `render.clip_speed` times real time (1.0 by default; 2.0 halves the clip's length), as MP4 (H.264). Standard smoke clips run about 2–3 minutes (roughly 5–15 MB). Exhaust clips run about 1 minute.
 - **Gunfire must be visible:** main-battery tracers, secondary tracers and torpedoes on, with tracer pacing following the render clock as in the renderer's video mode.
 - Uses the same overlays and header, plus a progress marker showing activation → capture → now.
 - Encoder: the toolkit's CPU H.264 encoder (the `cpu` feature, openh264), so no NASM or GPU is needed.
@@ -201,7 +202,7 @@ An example with made-up values:
 | Tier 3 (Phase 2) | damage_in_smoke, damage_behind_smoke, smoke_damage_total (each broken down, plus _enemy columns), kills_during_smoke, deaths_in_smoke, cap_flips_during_smoke, score_delta_60s, smoker_survived_60s, game_result |
 | Build (Phase 2) | commander_skills, upgrades, effective_emission_s, effective_puff_life_s |
 | Provenance | wows_toolkit_rev, smoke_signals_version, generated_at |
-| Files | frame_act, frame_cap, clip |
+| Files | frame_act, frame_cap, frame_act_zoom, frame_cap_zoom, clip |
 
 ## Hand-tagging (Phase 2)
 

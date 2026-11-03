@@ -144,6 +144,11 @@ impl<'a> FrameRenderer<'a> {
         self.target.canvas_size()
     }
 
+    /// Canvas pixel of the map's top-left corner.
+    pub fn map_origin(&self) -> (u32, u32) {
+        self.target.map_origin()
+    }
+
     /// World position to minimap pixels, when the map is known.
     pub fn project(&self, pos: WorldPos) -> Option<MinimapPos> {
         self.map_info.as_ref().map(|m| m.world_to_minimap(pos, MINIMAP_SIZE))

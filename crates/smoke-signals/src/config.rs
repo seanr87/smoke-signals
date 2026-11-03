@@ -23,6 +23,10 @@ pub enum ConfigError {
     Color { text: String },
     #[error("render.clip_fps must be at least 1, got {value}")]
     ClipFps { value: u32 },
+    #[error("render.clip_speed must be greater than 0, got {value}")]
+    ClipSpeed { value: f32 },
+    #[error("render.zoom_factor must be at least 1, got {value}")]
+    ZoomFactor { value: f32 },
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -55,8 +59,30 @@ pub struct Render {
     pub show_player_names: bool,
     pub exhaust_color: HexColor,
     pub highlight_color: HexColor,
+    /// Dashed path of a trail smoke. Defaults to magenta, which nothing
+    /// else on the map uses.
+    #[serde(default = "default_trail_color")]
+    pub trail_color: HexColor,
+    /// Magnification of the inset drawn around the target smoke.
+    #[serde(default = "default_zoom_factor")]
+    pub zoom_factor: f32,
     pub clip_fps: u32,
     pub clip_pre_seconds: u32,
+    /// Playback speed of the clips: 1.0 is real time, 2.0 is twice as fast.
+    #[serde(default = "default_clip_speed")]
+    pub clip_speed: f32,
+}
+
+fn default_trail_color() -> HexColor {
+    HexColor([255, 0, 255])
+}
+
+fn default_zoom_factor() -> f32 {
+    2.5
+}
+
+fn default_clip_speed() -> f32 {
+    1.0
 }
 
 #[derive(Debug, Clone, Default, Deserialize)]
@@ -104,6 +130,12 @@ impl Config {
             toml::from_str(&text).map_err(|source| ConfigError::Parse { path: path.to_path_buf(), source })?;
         if config.render.clip_fps == 0 {
             return Err(ConfigError::ClipFps { value: config.render.clip_fps });
+        }
+        if !(config.render.clip_speed > 0.0) {
+            return Err(ConfigError::ClipSpeed { value: config.render.clip_speed });
+        }
+        if !(config.render.zoom_factor >= 1.0) {
+            return Err(ConfigError::ZoomFactor { value: config.render.zoom_factor });
         }
         let base = path.parent().filter(|p| !p.as_os_str().is_empty()).map(Path::to_path_buf);
         if let Some(base) = base {

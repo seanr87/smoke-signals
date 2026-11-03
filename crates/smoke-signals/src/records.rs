@@ -194,6 +194,9 @@ pub struct SmokeRecord {
     pub generated_at: String,
     pub frame_act: Option<String>,
     pub frame_cap: Option<String>,
+    /// The zoomed inset of each frame, saved on its own.
+    pub frame_act_zoom: Option<String>,
+    pub frame_cap_zoom: Option<String>,
     pub clip: Option<String>,
 }
 

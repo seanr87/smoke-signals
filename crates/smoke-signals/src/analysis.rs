@@ -44,16 +44,19 @@ use crate::session::GameSession;
 use crate::tier2;
 use crate::timeline;
 
-/// Farthest a ship may be from a smoke's origin at creation and still own it.
-pub const OWNER_MAX_DISTANCE: f32 = 50.0;
+/// Farthest a ship may be from a smoke's origin at creation and still own
+/// it without a flag, in meters. The first puff is laid about one smoke
+/// radius (450 m) from the ship, so the bound is a radius plus slack.
+pub const OWNER_MAX_DISTANCE_M: f32 = 600.0;
 
 /// Longest gap between a smoke activation and the smoke object's creation.
 pub const ACTIVATION_WINDOW_SECONDS: f32 = 5.0;
 
 /// Farthest a ship that activated smoke in the window may be from the origin
-/// and still be preferred over a nearer unactivated ship. A held position is
-/// up to 10 s old, and a destroyer covers about 180 m in that time.
-pub const OWNER_ACTIVATED_MAX_DISTANCE: f32 = 200.0;
+/// and still be preferred over a nearer unactivated ship, in meters. A held
+/// position is up to 10 s old, and a destroyer covers about 180 m in that
+/// time, on top of the one-radius offset of the first puff.
+pub const OWNER_ACTIVATED_MAX_DISTANCE_M: f32 = 1000.0;
 
 /// Time between two puffs of one emission. A smoker that dies within this
 /// interval after its last new puff died while still emitting.
@@ -508,13 +511,14 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             .filter(|(_, r)| r.fit.is_some())
             .filter_map(|(entity, _)| {
                 let (pos, source) = tl.get(entity).and_then(|t| timeline::ship_pos_at(t, track.created))?;
-                Some((*entity, timeline::ground_distance(pos, track.origin), source, activated(*entity).copied()))
+                let distance_m = timeline::meters(timeline::ground_distance(pos, track.origin));
+                Some((*entity, distance_m, source, activated(*entity).copied()))
             })
             .collect();
         candidates.sort_by(|a, b| a.1.total_cmp(&b.1));
         let chosen = candidates
             .iter()
-            .find(|c| c.3.is_some() && c.1 <= OWNER_ACTIVATED_MAX_DISTANCE)
+            .find(|c| c.3.is_some() && c.1 <= OWNER_ACTIVATED_MAX_DISTANCE_M)
             .or_else(|| candidates.first())
             .copied();
         let owner = chosen.map(|c| c.0);
@@ -529,7 +533,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
                 }
                 if source == timeline::PosSource::Minimap {
                     notes.push("position from minimap samples only".to_string());
-                } else if d > OWNER_MAX_DISTANCE {
+                } else if d > OWNER_MAX_DISTANCE_M {
                     notes.push(format!("nearest ship {d:.0} m from origin"));
                 }
             }
@@ -645,6 +649,8 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             generated_at: generated_at.clone(),
             frame_act: None,
             frame_cap: None,
+            frame_act_zoom: None,
+            frame_cap_zoom: None,
             clip: None,
         });
     }

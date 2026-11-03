@@ -197,8 +197,16 @@ const BASE_COLUMNS: &[&str] = &[
     "t_dispersed_clock",
 ];
 
-const TAIL_COLUMNS: &[&str] =
-    &["wows_toolkit_rev", "smoke_signals_version", "generated_at", "frame_act", "frame_cap", "clip"];
+const TAIL_COLUMNS: &[&str] = &[
+    "wows_toolkit_rev",
+    "smoke_signals_version",
+    "generated_at",
+    "frame_act",
+    "frame_cap",
+    "frame_act_zoom",
+    "frame_cap_zoom",
+    "clip",
+];
 
 /// All columns: base, Tier 1 at activation (`_act`), Tier 1 at capture
 /// (`_cap`), then provenance and files.
@@ -290,6 +298,8 @@ pub fn smoke_csv_row(r: &SmokeRecord) -> Vec<String> {
         r.generated_at.clone(),
         opt(r.frame_act.as_deref()),
         opt(r.frame_cap.as_deref()),
+        opt(r.frame_act_zoom.as_deref()),
+        opt(r.frame_cap_zoom.as_deref()),
         opt(r.clip.as_deref()),
     ]);
     row

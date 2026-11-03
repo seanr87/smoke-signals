@@ -9,6 +9,7 @@ pub mod damage;
 pub mod diagnostics;
 pub mod frames;
 pub mod header;
+pub mod inset;
 pub mod output;
 pub mod overlay;
 pub mod records;

@@ -131,9 +131,9 @@ pub fn snapshot(
         smoker_spotted_flags: flags.map(|f| f.to_string()),
         enemy_radars_alive,
         nearest_enemy: nearest_enemy.as_ref().map(|(name, _)| name.clone()),
-        nearest_enemy_dist_km: nearest_enemy.map(|(_, d)| d / 1000.0),
+        nearest_enemy_dist_km: nearest_enemy.map(|(_, d)| timeline::kilometers(d)),
         nearest_cap: nearest_cap.map(|(i, _, _)| cap_letter(i)),
-        dist_to_nearest_cap_km: nearest_cap.map(|(_, d, _)| d / 1000.0),
+        dist_to_nearest_cap_km: nearest_cap.map(|(_, d, _)| timeline::kilometers(d)),
         cap_contested: nearest_cap.map(|(_, _, c)| c),
     }
 }

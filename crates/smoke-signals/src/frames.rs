@@ -1,5 +1,6 @@
 //! Pass two: an activation frame and a capture frame per smoke, with the
-//! header strip, the smoke overlays, and the Tier 1 state at each moment.
+//! header strip, the smoke overlays, the zoomed inset, and the Tier 1 state
+//! at each moment.
 
 use std::collections::HashMap;
 use std::path::Path;
@@ -8,7 +9,9 @@ use image::RgbImage;
 use rootcause::prelude::*;
 use tracing::info;
 use wows_battle_world::view::BattleView;
+use wows_minimap_renderer::MINIMAP_SIZE;
 use wows_minimap_renderer::draw_command::DrawCommand;
+use wows_minimap_renderer::map_data::MinimapPos;
 use wows_replays::types::EntityId;
 use wows_replays::types::GameClock;
 use wowsunpack::game_types::WorldPos;
@@ -18,6 +21,7 @@ use crate::config::Config;
 use crate::header;
 use crate::header::HeaderText;
 use crate::header::Progress;
+use crate::inset;
 use crate::overlay;
 use crate::overlay::OverlayInput;
 use crate::records::GameRecord;
@@ -59,8 +63,16 @@ pub fn current_puffs(view: &BattleView<'_>) -> HashMap<u32, Vec<WorldPos>> {
     view.smoke_screens().iter().map(|(id, s)| (id.raw() as u32, s.points.clone())).collect()
 }
 
+/// Padding around the target smoke's box in the inset, beyond the puff
+/// radius, in map pixels.
+const INSET_PAD_PX: f32 = 16.0;
+/// Stroke width of a trail smoke's dashed path.
+const TRAIL_WIDTH: f32 = 3.0;
+
 /// Apply the frame overlays for `record` to `commands`. `smoker_pos` marks
 /// the smoker while the smoke object has no puffs yet (before it appears).
+/// A trail smoke gets its dashed path and no outline; a standard smoke gets
+/// the outline of its puffs' union.
 pub fn apply_overlays(
     projection: &Projection,
     config: &Config,
@@ -81,22 +93,41 @@ pub fn apply_overlays(
         highlight_color: config.render.highlight_color.rgba(255),
     };
     overlay::recolor_trail_smoke(commands, &input);
-    if let (Some(t), Some(path)) = (record.smoke_type, &record.path)
-        && t.is_trail()
-    {
-        commands.extend(overlay::dashed_path(path, &input, config.render.exhaust_color.rgba(230), 2.0));
+    let is_trail = record.smoke_type.is_some_and(|t| t.is_trail());
+    let has_puffs = puffs.get(&record.smoke_id).is_some_and(|p| !p.is_empty());
+    if is_trail && let Some(path) = &record.path {
+        commands.extend(overlay::dashed_path(path, &input, config.render.trail_color.rgba(255), TRAIL_WIDTH));
     }
-    let rings = overlay::highlight_rings(record.smoke_id, record.radius, &input);
-    if rings.is_empty()
-        && let Some(pos) = smoker_pos
-    {
-        let mut marker = HashMap::new();
-        marker.insert(record.smoke_id, vec![pos]);
-        let input = OverlayInput { puffs: &marker, ..input };
-        commands.extend(overlay::highlight_rings(record.smoke_id, record.radius, &input));
-    } else {
-        commands.extend(rings);
+    if !has_puffs {
+        if let Some(pos) = smoker_pos {
+            commands.extend(overlay::position_ring(pos, record.radius, &input));
+        }
+    } else if !is_trail {
+        commands.extend(overlay::union_outline(record.smoke_id, record.radius, &input));
     }
+}
+
+/// Map pixels the inset is centered on: the smoke's box over its whole life
+/// when known, else its origin, plus the smoker's position when given.
+fn inset_points(projection: &Projection, record: &SmokeRecord, smoker_pos: Option<WorldPos>) -> Vec<MinimapPos> {
+    let mut points = Vec::new();
+    match &record.bbox {
+        Some(b) => {
+            for (x, z) in [(b.min_x, b.min_z), (b.max_x, b.max_z)] {
+                points.extend(projection.project(WorldPos::new(x, 0.0, z)));
+            }
+        }
+        None => points.extend(projection.project(WorldPos::new(record.origin_xy.x, 0.0, record.origin_xy.z))),
+    }
+    points.extend(smoker_pos.and_then(|p| projection.project(p)));
+    points
+}
+
+/// A rendered frame with its inset, before the header is added.
+pub struct SmokeFrame {
+    pub image: RgbImage,
+    /// The inset on its own; absent when the map is unknown.
+    pub zoom: Option<RgbImage>,
 }
 
 /// Draw the frame for `record` at `clock`, with overlays and the header.
@@ -110,14 +141,30 @@ pub fn render_smoke_frame<'a>(
     smoker: Option<EntityId>,
     text: &HeaderText,
     progress: Option<Progress>,
-) -> Result<RgbImage, Report> {
+) -> Result<SmokeFrame, Report> {
     let projection = renderer.projection();
     let smoker_pos = smoker.and_then(|e| session.timeline().get(&e).and_then(|t| timeline::world_pos_at(t, clock)));
-    let image = renderer.render_image(session, clock, |view, commands| {
+    let mut image = renderer.render_image(session, clock, |view, commands| {
         let puffs = current_puffs(view);
         apply_overlays(&projection, config, record, types, &puffs, smoker_pos, commands);
     })?;
-    Ok(header::compose(&image, renderer.fonts(), text, progress))
+    let pad = projection.pixel_radius(record.radius) + INSET_PAD_PX;
+    let region = inset::region_around(&inset_points(&projection, record, smoker_pos), pad);
+    let zoom = region.map(|region| {
+        let (x, y) = renderer.map_origin();
+        let map = inset::MapRect { x, y, size: MINIMAP_SIZE };
+        let built = inset::build(
+            &image,
+            map,
+            region,
+            config.render.zoom_factor,
+            projection.pixel_radius(timeline::world_units(1000.0)),
+            renderer.fonts(),
+        );
+        inset::place(&mut image, map, region, &built.image);
+        built.image
+    });
+    Ok(SmokeFrame { image: header::compose(&image, renderer.fonts(), text, progress), zoom })
 }
 
 /// The smoker's team id and vehicle entity, from the game record.
@@ -200,17 +247,23 @@ pub fn render_smoke_frames(
         };
         let stem = file_stem(&smokes[i], i + 1, stage.name(), moment_clock);
         let (_, smoker) = smoker_identity(game, &smokes[i]);
-        let image =
+        let frame =
             render_smoke_frame(&mut renderer, &mut session, config, &smokes[i], &types, clock, smoker, &text, None)?;
-        let name = save_png_and_webp(&image, out_dir, &stem)?;
+        let name = save_png_and_webp(&frame.image, out_dir, &stem)?;
+        let zoom_name = match &frame.zoom {
+            Some(zoom) => Some(save_png_and_webp(zoom, out_dir, &format!("{stem}_zoom"))?),
+            None => None,
+        };
         info!(smoke = smokes[i].smoke_id, stage = stage.name(), file = %name, "Frame");
         match stage {
             Stage::Activation => {
                 smokes[i].frame_act = Some(name);
+                smokes[i].frame_act_zoom = zoom_name;
                 smokes[i].state_at_activate = Some(snapshot);
             }
             Stage::Capture => {
                 smokes[i].frame_cap = Some(name);
+                smokes[i].frame_cap_zoom = zoom_name;
                 smokes[i].state_at_capture = Some(snapshot);
             }
         }

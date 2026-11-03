@@ -12,6 +12,7 @@ import argparse
 import datetime
 import os
 import shutil
+import stat
 import subprocess
 import sys
 
@@ -21,6 +22,12 @@ def run(args, cwd):
     if r.returncode != 0:
         sys.exit(f"{' '.join(args)}\n{r.stdout}{r.stderr}")
     return r.stdout.strip()
+
+
+def clear_read_only(func, path, _exc):
+    """Git marks its object files read-only, which blocks their removal on Windows."""
+    os.chmod(path, stat.S_IWRITE)
+    func(path)
 
 
 def main():
@@ -36,7 +43,7 @@ def main():
         sys.exit(f"no index.html in {site}; build the site first")
     work = os.path.abspath(args.work)
     if os.path.exists(work):
-        shutil.rmtree(work)
+        shutil.rmtree(work, onexc=clear_read_only)
     shutil.copytree(site, work)
     open(os.path.join(work, ".nojekyll"), "a").close()
     name = run(["git", "config", "user.name"], cwd=os.getcwd()) or "Smoke Signals"

@@ -12,6 +12,15 @@ use crate::components::Consumables;
 use crate::components::GameId;
 use crate::resources::EntityIndex;
 
+/// Activations of one consumable closer together than this are one event.
+/// Every merged replay that can see the ship reports the same use, and a
+/// consumable cannot be activated again while it is running.
+const REPEAT_WINDOW_SECONDS: f32 = 1.0;
+
+fn is_repeat(active: &[ActiveConsumable], consumable: &Recognized<Consumable>, clock: GameClock) -> bool {
+    active.iter().any(|a| a.consumable == *consumable && (a.activated_at.0 - clock.0).abs() < REPEAT_WINDOW_SECONDS)
+}
+
 pub fn handle_consumable(
     entity: EntityId,
     consumable: Recognized<Consumable>,
@@ -35,6 +44,9 @@ pub fn handle_consumable(
     let Ok(mut entity_ref) = world.get_entity_mut(ecs_entity) else { return };
 
     if let Some(mut cons) = entity_ref.get_mut::<Consumables>() {
+        if is_repeat(&cons.active, &consumable, clock) {
+            return;
+        }
         cons.active.push(activation);
         if let Some(slot) = pick_inventory_slot(&mut cons.slots, &consumable) {
             slot.charges_used = slot.charges_used.saturating_add(1);
@@ -56,4 +68,57 @@ fn pick_inventory_slot<'a>(
                 ChargeCount::Finite(n) => n > 0,
             }
     })
+}
+
+#[cfg(test)]
+mod tests {
+    use bevy_ecs::world::World;
+    use wows_replays::types::EntityId;
+    use wows_replays::types::GameClock;
+    use wowsunpack::game_types::Consumable;
+    use wowsunpack::recognized::Recognized;
+
+    use super::*;
+    use crate::components::Consumables;
+    use crate::resources::EntityIndex;
+
+    fn activate(world: &mut World, consumable: Consumable, clock: f32) {
+        handle_consumable(EntityId::from(7u32), Recognized::Known(consumable), 20.0, None, GameClock(clock), world);
+    }
+
+    fn active(world: &mut World) -> Vec<ActiveConsumable> {
+        let entity = world.resource::<EntityIndex>().get(EntityId::from(7u32)).expect("indexed");
+        world.get::<Consumables>(entity).expect("consumables").active.clone()
+    }
+
+    fn test_world() -> World {
+        let mut world = World::new();
+        world.insert_resource(EntityIndex::default());
+        world
+    }
+
+    #[test]
+    fn same_use_seen_twice_is_recorded_once() {
+        let mut world = test_world();
+        activate(&mut world, Consumable::RepairParty, 100.0);
+        activate(&mut world, Consumable::RepairParty, 100.0);
+        activate(&mut world, Consumable::RepairParty, 100.4);
+        assert_eq!(active(&mut world).len(), 1);
+    }
+
+    #[test]
+    fn different_consumables_at_one_clock_are_both_recorded() {
+        let mut world = test_world();
+        activate(&mut world, Consumable::RepairParty, 100.0);
+        activate(&mut world, Consumable::Radar, 100.0);
+        assert_eq!(active(&mut world).len(), 2);
+    }
+
+    #[test]
+    fn later_use_of_the_same_consumable_is_recorded() {
+        let mut world = test_world();
+        activate(&mut world, Consumable::RepairParty, 100.0);
+        activate(&mut world, Consumable::RepairParty, 180.0);
+        assert_eq!(active(&mut world).len(), 2);
+    }
 }

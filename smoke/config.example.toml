@@ -16,3 +16,8 @@ exhaust_color = "#FFB366"      # light orange (proposed)
 highlight_color = "#FFD700"
 clip_fps = 20
 clip_pre_seconds = 5           # clip starts 5 s before activation, ends when the smoke disperses
+
+[game]
+match_id = "kots19na_GF"     # tournament match identifier used in file names
+round = "Grand Final"
+game_no = 1

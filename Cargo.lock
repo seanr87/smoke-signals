@@ -11192,12 +11192,13 @@ dependencies = [
 
 [[package]]
 name = "smoke-signals"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "clap",
  "jiff",
  "rootcause",
  "serde",
+ "serde_json",
  "thiserror 2.0.20",
  "toml 1.1.6+spec-1.1.0",
  "tracing",

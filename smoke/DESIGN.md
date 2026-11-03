@@ -80,9 +80,10 @@ A smoke is one smoke object in the replay. Its owner and type come from the ship
 
 **Owner**
 
-- The player ship nearest the smoke's origin when the object is created.
-- That ship must also have a smoke activation in the 5 s before creation.
-- If either check fails, set `owner_flag` and log it. Using either check alone misattributed RESIN smokes in the test.
+- Candidates are the player ships fitted with a smoke consumable. The owner is the nearest candidate that activated smoke in the 5 s before the object was created.
+- If no candidate activated smoke in that window, the nearest candidate is the owner and `owner_flag` is set with a note. The flag is also set when the owner's position came only from minimap samples (a ship outside both recorders' area of interest) or when the nearest candidate was more than 50 m from the origin.
+- Each replay records smoke activations for its own team only, so a team without a replay has every smoke flagged. Using nearest-ship alone misattributed smokes to cruisers parked inside a destroyer's smoke in the test.
+- Smoke objects are tracked from the primary replay only (the merge keeps entity lifecycle with the primary), so a smoke the primary recorder never saw is not in the table even when the other team's replay is merged.
 
 **Smoke types and capture rules**
 
@@ -103,7 +104,7 @@ The game files label every smoke `smokeGenerator`. The type comes from the varia
 
 - **Smoker dies mid-emission:** set `emission_cut_short`.
 - **One activation creating several smoke objects:** keep one record per object, linked by `activation_id`.
-- **Clock:** store replay seconds plus the battle clock (20:00 countdown from battle start).
+- **Clock:** store replay seconds plus the battle clock. The battle clock is the HUD countdown value the game reports (a whole-second server property), which runs about a second ahead of battle start plus elapsed replay time; every `mm:ss` in the outputs is the HUD value at that replay second.
 
 ## Metric definitions
 
@@ -237,10 +238,11 @@ Phase 1 is done when the golden test passes and Sean's spot-checks match the rep
 
 **Validation**
 
-- [ ] **Golden test** (`cargo test`, data in `smoke/tests/golden_gf_g1_hsr.csv`), Grand Final G1. Capture times must be within 1 s (3 s for the exhaust row until M2 confirms it).
-  - YuriSayuki, Harugumo, standard: activations at 18:05, 14:39 and 11:14; captures at 17:11, 13:46 and 10:21
-  - Yamiyonohik, Somers, standard: activations at 13:37 and 08:38; captures at 12:54 and 07:54
-  - Apex_captai, Conte Verde, exhaust: activation at 08:17; capture at the end of emission (about 07:32)
+- [x] **Golden test** (`cargo test`, data in `smoke/tests/golden_gf_g1_hsr.csv`), Grand Final G1. Activation and capture times must be within 1 s. The test skips with a message when the local replays or game data are absent.
+  - YuriSayuki, Harugumo, standard: activations at 18:04, 14:39 and 11:14; captures at 17:11, 13:46 and 10:21
+  - Yamiyonohik, Somers, standard: activations at 13:37 and 08:37; captures at 12:54 and 07:53
+  - Apex_captai, Conte Verde, exhaust: activation at 08:17; capture at the end of emission, 07:27
+  - These are HUD battle clocks (M1). The original formula-based values are kept in `smoke/tests/golden_gf_g1_hsr_v1_formula.csv`; they differ by at most 1 s for standard smoke and by 5 s for the exhaust row, whose capture rule was approximate.
 - [ ] Sean spot-checks three smokes in the replay: capture timing, positions, detection outlines, caps and score.
 - [ ] Gunfire is visible in every clip.
 - [ ] Every Tier 1 field is filled, or run_log.md says why not.
@@ -290,7 +292,7 @@ A quick test tool built on wows-toolkit found all 6 H-SR smokes in Grand Final g
   - Exhaust smoke needs its own rule.
   - Owner attribution needs both the proximity and activation checks.
   - The difference from base stats comes from player builds.
-- **Known gap:** some RESIN ships, including Fryce (the player whose replay was merged in), had no position in the merged view. That broke owner attribution for some RESIN smokes. Fix it in M2, before Phase 2.
+- **Known gap (fixed in M2):** some RESIN ships, including Fryce (the player whose replay was merged in), had no position in the merged view. Two causes: the merge never forwards a second replay's own-ship position packets (`PlayerOrientation`), and ships outside both recorders' area of interest have only minimap-resolution positions and no consumable events. Smoke Signals reads positions from the merged position timeline (which has every replay's packets) and falls back to minimap samples, flagged.
 
 ## Open questions
 

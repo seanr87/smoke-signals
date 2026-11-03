@@ -1,11 +1,15 @@
 [package]
 name = "smoke-signals"
-version = "0.1.0"
+version = "0.2.0"
 publish = false
 description = "Smoke screen analysis for World of Warships tournament replays"
 edition.workspace = true
 rust-version.workspace = true
 license.workspace = true
+
+[lib]
+name = "smoke_signals"
+path = "src/lib.rs"
 
 [[bin]]
 name = "smoke_signals"
@@ -20,6 +24,7 @@ wows-battle-world = { workspace = true }
 wows-replay-insights = { workspace = true, features = ["build"] }
 clap = { workspace = true }
 serde = { workspace = true }
+serde_json = { workspace = true }
 toml = { workspace = true }
 rootcause = { workspace = true }
 thiserror = { workspace = true }

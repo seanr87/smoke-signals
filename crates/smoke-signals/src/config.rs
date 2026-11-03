@@ -28,6 +28,9 @@ pub struct Config {
     pub paths: Paths,
     pub run: Run,
     pub render: Render,
+    /// Identity of the game in `paths.replays` (Phase 1: one game per folder).
+    #[serde(default)]
+    pub game: Game,
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -54,10 +57,25 @@ pub struct Render {
     pub clip_pre_seconds: u32,
 }
 
+#[derive(Debug, Clone, Default, Deserialize)]
+pub struct Game {
+    /// Tournament match identifier, e.g. `kots19na_GF`. Defaults to the
+    /// primary replay's file stem.
+    pub match_id: Option<String>,
+    pub round: Option<String>,
+    pub game_no: Option<u32>,
+}
+
 /// An opaque `#RRGGBB` color.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Deserialize)]
 #[serde(try_from = "String")]
 pub struct HexColor(pub [u8; 3]);
+
+impl HexColor {
+    pub fn rgba(self, alpha: u8) -> [u8; 4] {
+        [self.0[0], self.0[1], self.0[2], alpha]
+    }
+}
 
 impl TryFrom<String> for HexColor {
     type Error = ConfigError;

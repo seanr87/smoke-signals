@@ -1,8 +1,3 @@
-mod clock;
-mod config;
-mod render;
-mod replays;
-
 use std::path::Path;
 use std::path::PathBuf;
 
@@ -10,9 +5,19 @@ use clap::Parser;
 use clap::Subcommand;
 use rootcause::prelude::*;
 use tracing::info;
+use wowsunpack::game_params::types::GameParamProvider;
 
-use crate::clock::BattleClock;
-use crate::config::Config;
+use smoke_signals::analysis;
+use smoke_signals::clock::BattleClock;
+use smoke_signals::config::Config;
+use smoke_signals::diagnostics;
+use smoke_signals::frames;
+use smoke_signals::output;
+use smoke_signals::render;
+use smoke_signals::replays;
+use smoke_signals::replays::ReplaySet;
+use smoke_signals::session;
+use smoke_signals::session::GameData;
 
 /// Smoke screen analysis for tournament replays.
 #[derive(Parser)]
@@ -33,6 +38,14 @@ enum Command {
         #[arg(long)]
         at: BattleClock,
     },
+    /// Track every smoke in the game folder and write the smoke table.
+    Analyze {
+        /// Skip the per-smoke capture frames.
+        #[arg(long)]
+        no_frames: bool,
+    },
+    /// List every smoke consumable variant in the game data.
+    Variants,
 }
 
 fn main() -> Result<(), Report> {
@@ -43,34 +56,100 @@ fn main() -> Result<(), Report> {
     let out_dir = config.paths.output.join(jiff::Zoned::now().strftime("%Y%m%d-%H%M%S").to_string());
     std::fs::create_dir_all(&out_dir).attach_with(|| format!("creating {}", out_dir.display()))?;
 
+    let (replays, game) = load_inputs(&config)?;
     match args.command {
         Command::Frame { at } => {
-            let replays = replays::load_game_folder(&config.paths.replays, &config.run.team_prefix, config.run.merge)?;
-            info!(primary = %replays.primary_path.display(), player = %replays.primary.meta.playerName, "Primary replay");
-            for (path, file) in replays.merge_paths.iter().zip(&replays.merges) {
-                info!(merge = %path.display(), player = %file.meta.playerName, "Merge replay");
-            }
-            let game = render::load_game_data(&config.paths.game_data, &replays.primary)?;
-            info!(build_dir = %game.build_dir.display(), "Game data");
             let frame = render::render_frame_at(&config, &game, &replays, at, &out_dir)?;
-            write_run_log(&out_dir, &replays, &game, &frame)?;
+            write_frame_log(&out_dir, &replays, &game, &frame)?;
             println!("{}", frame.path.display());
         }
+        Command::Analyze { no_frames } => {
+            let mut analysis = analysis::analyze_game(&config, &game, &replays)?;
+            let frames_written = if no_frames {
+                0
+            } else {
+                frames::render_capture_frames(&config, &game, &replays, &mut analysis.smokes, &out_dir.join("frames"))?
+            };
+            output::write_smokes_csv(&out_dir.join("smokes.csv"), &analysis.smokes)?;
+            output::write_json(
+                &out_dir.join("smokes.json"),
+                &SmokesDocument { game: &analysis.game, smokes: &analysis.smokes },
+            )?;
+            output::write_json(&out_dir.join("game.json"), &analysis.game)?;
+            let activations = diagnostics::scan_activations(&game, &replays, &analysis.game, &analysis.clock_map);
+            diagnostics::write_activations_csv(&out_dir.join("activations.csv"), &activations)?;
+            let tracks = diagnostics::summarize_tracks(&analysis.timeline, &analysis.game);
+            diagnostics::write_tracks_csv(&out_dir.join("tracks.csv"), &tracks)?;
+            let log = output::run_log(&analysis.game, &analysis.smokes, frames_written);
+            std::fs::write(out_dir.join("run_log.md"), &log).attach_with(|| "writing run_log.md")?;
+            print!("{}", output::summary_table(&analysis.smokes));
+            println!("{}", out_dir.display());
+        }
+        Command::Variants => print_smoke_variants(&game),
     }
     Ok(())
 }
 
-/// Record the inputs and the clock placement next to the outputs.
-fn write_run_log(
+#[derive(serde::Serialize)]
+struct SmokesDocument<'a> {
+    game: &'a smoke_signals::records::GameRecord,
+    smokes: &'a [smoke_signals::records::SmokeRecord],
+}
+
+fn load_inputs(config: &Config) -> Result<(ReplaySet, GameData), Report> {
+    let replays = replays::load_game_folder(&config.paths.replays, &config.run.team_prefix, config.run.merge)?;
+    info!(primary = %replays.primary_path.display(), player = %replays.primary.meta.playerName, "Primary replay");
+    for (path, file) in replays.merge_paths.iter().zip(&replays.merges) {
+        info!(merge = %path.display(), player = %file.meta.playerName, "Merge replay");
+    }
+    let game = session::load_game_data(&config.paths.game_data, &replays.primary)?;
+    info!(build_dir = %game.build_dir.display(), "Game data");
+    Ok((replays, game))
+}
+
+/// Every `smokeGenerator` ability variant, with the fields the smoke type
+/// and base stats come from.
+fn print_smoke_variants(game: &GameData) {
+    let mut rows: Vec<String> = Vec::new();
+    for param in game.loaded.game_params.params() {
+        let Some(ability) = param.ability() else { continue };
+        for (variant, category) in ability.categories() {
+            if category.consumable_type_raw() != "smokeGenerator" {
+                continue;
+            }
+            let fields = category.effect_fields();
+            let field = |k: &str| fields.get(k).map(|v| format!("{v}")).unwrap_or_else(|| "-".to_string());
+            rows.push(format!(
+                "{:<36} {:<28} {:<9} work={:<5} life={:<5} radius={:<5} speed={:<5} charges={:<3} icon={}",
+                param.name(),
+                variant,
+                analysis::classify(variant, category.icon_id()).as_str(),
+                category.work_time(),
+                field("lifeTime"),
+                field("radius"),
+                field("speedLimit"),
+                category.num_consumables(),
+                category.icon_id()
+            ));
+        }
+    }
+    rows.sort();
+    for row in rows {
+        println!("{row}");
+    }
+}
+
+/// Record the inputs and the clock placement next to the frame.
+fn write_frame_log(
     out_dir: &Path,
-    replays: &replays::ReplaySet,
-    game: &render::GameData,
+    replays: &ReplaySet,
+    game: &GameData,
     frame: &render::RenderedFrame,
 ) -> Result<(), Report> {
     use std::fmt::Write as _;
 
     let mut log = String::new();
-    let _ = writeln!(log, "# smoke_signals run log\n");
+    let _ = writeln!(log, "# Smoke Signals run log\n");
     let _ = writeln!(log, "- generated_at: {}", jiff::Zoned::now().strftime("%Y-%m-%d %H:%M:%S %Z"));
     let _ = writeln!(log, "- game_build: {}", replays.primary.meta.clientVersionFromExe);
     let _ = writeln!(log, "- game_data: {}", game.build_dir.display());
@@ -90,7 +169,6 @@ fn write_run_log(
     let _ = writeln!(log, "- replay_seconds: {:.2}", frame.point.clock.seconds());
     let _ =
         writeln!(log, "- replay_seconds_estimate (battle start plus elapsed): {:.2}", frame.point.estimate.seconds());
-    let _ = writeln!(log, "- hud_countdown_seconds: {}", frame.point.hud);
     let path = out_dir.join("run_log.md");
     std::fs::write(&path, log).attach_with(|| format!("writing {}", path.display()))?;
     Ok(())

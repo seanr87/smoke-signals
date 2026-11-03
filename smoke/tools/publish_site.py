@@ -26,7 +26,7 @@ def run(args, cwd):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--site", default="smoke-site")
-    ap.add_argument("--work", required=True, help="scratch folder for the throwaway repository; created if missing, emptied first")
+    ap.add_argument("--work", required=True, help="short scratch path for the throwaway repository (Windows limits paths to 260 characters); created if missing, emptied first")
     ap.add_argument("--remote", default="https://github.com/seanr87/smoke-signals.git")
     ap.add_argument("--branch", default="gh-pages")
     ap.add_argument("--label", default="")
@@ -44,6 +44,7 @@ def main():
     run(["git", "init", "-q", "-b", args.branch], cwd=work)
     run(["git", "config", "user.name", name], cwd=work)
     run(["git", "config", "user.email", email], cwd=work)
+    run(["git", "config", "core.longpaths", "true"], cwd=work)
     run(["git", "add", "-A"], cwd=work)
     stamp = datetime.datetime.now().astimezone().strftime("%Y-%m-%d %H:%M %Z")
     msg = f"Site build {stamp}" + (f": {args.label}" if args.label else "")

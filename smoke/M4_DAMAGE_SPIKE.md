@@ -1,6 +1,6 @@
 # M4 smoke-damage spike
 
-3 Nov 2026, Grand Final G1 (H-SR vs RESIN, Sleeping Giant, build 15.9.0). Run: `output/20261103-021955`.
+3 Nov 2026, Grand Final G1 (H-SR vs RESIN, Sleeping Giant, build 15.9.0). Run: `output/20261103-024700` (after the review fixes).
 
 ## Question
 
@@ -27,27 +27,27 @@ The replay carries the end-of-battle results blob (`playersPublicInfo`), and the
 
 | | game | ledger | ratio |
 | --- | --- | --- | --- |
-| all 18 players | 924,639 | 918,646 | 0.99 |
-| primary recorder (Arona_daisu), also checked against the recorder's own authoritative stats | 34,902 | 34,450 | 0.99 |
+| all 18 players | 924,639 | 920,238 | 1.00 |
+| primary recorder (Arona_daisu), also checked against the recorder's own authoritative stats | 34,902 | 35,161 | 1.01 |
 | exact matches | Fryce, Klee_Fleein, PeytonThe | | 1.00 |
 | largest deviations | Big_Boy69 1.15, Apex_captai 0.87, KamiSamur 0.86, Yuzuriha_Ma 0.90 | | |
 
 Where the ledger is high (Big_Boy69, a Harugumo firing many equal HE shells), one hit was probably reported by both replays more than 1.5 s apart and kept twice. Where it is low (Apex_captai, a battleship firing at long range; KamiSamur), the victim was outside both recorders' area of interest at the impact, so neither replay recorded the hit. Both effects are a few percent of a player's total and well under the size of the smoke metrics.
 
-Fire-moment sources on this game: shot hit 637 events, salvo 361, damage clock 25 (of 1,029 deduplicated events; 916 in the H-SR replay, 778 in the RESIN replay, 665 folded as the same hit).
+Fire-moment sources on this game: shot hit 641 events, salvo 364, damage clock 25 (of 1,036 deduplicated events; 916 in the H-SR replay, 778 in the RESIN replay, 658 folded as the same hit). 2,385 resolved shot hits and 4,300 salvos were available for matching.
 
 ## Results per smoke
 
 | id | smoker | type | damage_in_smoke | damage_behind_smoke | total | in, enemy | behind, enemy |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 39283 | YuriSayuki (Harugumo) | standard | 22,268 | 6,425 | 28,692 | 0 | 0 |
+| 39283 | YuriSayuki (Harugumo) | standard | 22,928 | 6,425 | 29,353 | 0 | 0 |
 | 39284 | Big_Boy69 (Harugumo) | standard | 3,695 | 10,151 | 13,845 | 0 | 0 |
-| 39285 | YuriSayuki | standard | 7,067 | 0 | 7,067 | 0 | 0 |
+| 39285 | YuriSayuki | standard | 8,991 | 0 | 8,991 | 0 | 0 |
 | 39286 | Big_Boy69 (flagged owner) | standard | 0 | 0 | 0 | 0 | 0 |
 | 39287 | Fryce (Somers) | standard | 20,146 | 0 | 20,146 | 0 | 0 |
 | 39288 | Yamiyonohik (Somers) | standard | 924 | 4,422 | 5,346 | 0 | 0 |
 | 39289 | eagle_lan (Gdansk) | standard | 0 | 0 | 0 | 0 | 0 |
-| 39290 | YuriSayuki | standard | 0 | 0 | 0 | 0 | 0 |
+| 39290 | YuriSayuki | standard | 594 | 0 | 594 | 0 | 0 |
 | 39291 | Fryce | standard | 22,895 | 0 | 22,895 | 3,684 | 3,696 |
 | 39292 | Yamiyonohik | standard | 41,862 | 1,848 | 43,710 | 0 | 0 |
 | 39293 | Apex_captai (Conte Verde) | exhaust | 1,650 | 0 | 1,650 | 0 | 0 |
@@ -55,7 +55,7 @@ Fire-moment sources on this game: shot hit 637 events, salvo 361, damage clock 2
 | 39295 | Fryce | standard | 0 | 0 | 0 | 0 | 0 |
 | 39296 | Big_Boy69 | standard | 8,490 | 0 | 8,490 | 0 | 0 |
 
-Reading: Yamiyonohik's second smoke (08:37) was the most productive of the game, 42k dealt from inside it, mostly by VoyagingSta's Des Moines, which stood in it (142 ally ship-seconds). Three smokes produced nothing: Big_Boy69's flagged 14:30 smoke, eagle_lan's first, and YuriSayuki's third (a 39 s pass through, 0 ship-seconds inside). The "behind" column is small everywhere; the one clear case is Big_Boy69's first smoke, which hid RESIN cruisers firing past it at 17:12.
+Reading: Yamiyonohik's second smoke (08:37) was the most productive of the game, 42k dealt from inside it, mostly by VoyagingSta's Des Moines, which stood in it (142 ally ship-seconds). Three smokes produced nothing or next to nothing: Big_Boy69's flagged 14:30 smoke, eagle_lan's first, and YuriSayuki's third (a 39 s pass through, 594 damage). The "behind" column is small everywhere; the one clear case is Big_Boy69's first smoke, which hid RESIN cruisers firing past it at 17:12.
 
 ## Recommendation for Phase 2
 

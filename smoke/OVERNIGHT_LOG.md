@@ -1,6 +1,35 @@
 # Overnight log (3 Nov 2026): M3 and M4
 
-Morning summary is added at the top when the run ends. Entries below are in order of work.
+## Morning summary
+
+**Done.** M3 and M4 are complete, reviewed by a fresh subagent, fixed, committed and pushed to `seanr87/smoke-signals` (branch `smoke-signals`). The final run is `output/20261103-024700`: smoke table (smokes.csv, smokes.json) with Tier 1, Tier 2 and spike Tier 3 fields for all 14 smokes, 56 frame files (activation and capture, PNG and WebP), 14 clips (166 MB), game.json, activations.csv, tracks.csv, damage_events.csv, damage_spike.json, battle_results_players.csv and run_log.md. `cargo test` passes (9 unit tests plus the reference test). Nothing was installed.
+
+**Look at first:**
+
+1. `output/20261103-024700/frames/kots19na_GF_g1_H-SR_HSR_Yamiyonohik_KOTS19NA_Somers_s10_cap_0753.png`: the capture frame of the most productive smoke of the game (Yamiyonohik's 08:37 Somers smoke; 42k damage dealt from inside it, mostly by VoyagingSta's Des Moines, which sat in it for 142 ship-seconds). Header line 2 shows the Tier 1 state; the yellow rings mark the puffs.
+2. `output/20261103-024700/frames/kots19na_GF_g1_H-SR_HSR_Apex_captai_KOTS19NA_Conte_Verde_s11_cap_0727.png`: the exhaust smoke, puffs in light orange, the dashed outline of the full trail, and `Spotted yes (IN_SMOKE)` in the header.
+3. `output/20261103-024700/clips/kots19na_GF_g1_H-SR_HSR_Yamiyonohik_KOTS19NA_Somers_s10_clip_0837.mp4`: the clip for smoke 1 (3 min 10 s, 16 MB, 20 fps, H.264). Progress bar at the bottom of the header: yellow ticks at activation and capture, white tick is now. The clips were checked by container metadata and frame count, not by watching them; the stills use the same drawing path.
+
+Then `smoke/M4_DAMAGE_SPIKE.md` (the attacker question is answered by the data, with a 1.00 check against the game's own totals) and the Tier 2 and Tier 3 sections at the end of `output/20261103-024700/run_log.md`.
+
+**Decisions I made (details in the entries below):**
+
+- Header text is ASCII (`|` and `->`) per the fork's rules, not the middle dots and arrow in DESIGN.md.
+- At the activation moment no smoke object exists yet, so the activation frame rings the smoker's own position instead.
+- Clips are muxed by Smoke Signals at 20 fps because the toolkit's encoder is fixed at 30 fps; dropped zero-byte skip frames keep real-time length.
+- The battle clock in every output is the HUD countdown (M1 decision), which puts the Tier 1 and Tier 2 moments where the game's own timer shows them.
+- Tier 2 "concealed" means inside the smoke and undetected; "behind" is used only for damage.
+- Damage: the ledger names the attacker, so no salvo-to-hit or running-total attribution was built. Per-replay ledgers are merged by one-to-one matching (the toolkit's exact-clock union double counts; a victim-team rule under counts). `damage_behind_smoke` got a shooter-side clause. The smoke-damage columns are filled now, labeled as spike results.
+- The game's own per-player damage totals are decoded from the battle results blob every run and compared in run_log.md (overall ratio 1.00 on this game; Big_Boy69 1.15 and Apex_captai 0.87 are the extremes).
+
+**Blocked or not done:**
+
+- Nothing blocked. Tier 1 gaps (13 lines in run_log.md) are data limits: three RESIN smokers have no vehicle state in the merged view at their moments, so HP and detection are unknown for them; two smokes were still standing at the replay end.
+- Crawling smoke is classified from the game data (`SmokeGeneratorCrawler` icon) but untested on a replay.
+- Hydro detections never appear in these replays (`BY_SONAR` is never set), so that path is untested.
+- The shot-hit deduplication the review asked for changed nothing on this game (2,385 hits before and after); it stays as a guard.
+
+Entries below are in order of work.
 
 ## M3 step 1: golden test fails without inputs
 

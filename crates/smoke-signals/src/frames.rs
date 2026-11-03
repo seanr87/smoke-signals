@@ -189,7 +189,7 @@ pub fn smoker_identity(game: &GameRecord, record: &SmokeRecord) -> (Option<i64>,
 }
 
 /// Cap proximity of one smoke at the session's current clock.
-fn cap_proximity_for(session: &mut GameSession<'_>, smoke_id: u32) -> Option<(f32, char)> {
+fn cap_proximity_for(session: &mut GameSession<'_>, smoke_id: u32) -> Option<state::CapProximity> {
     let view = session.view();
     let screens = view.smoke_screens();
     let smoke = screens.get(&EntityId::from(smoke_id))?;
@@ -288,8 +288,10 @@ pub fn render_smoke_frames(
                 smokes[i].frame_cap = Some(name);
                 smokes[i].frame_cap_zoom = zoom_name;
                 smokes[i].state_at_capture = Some(snapshot);
-                smokes[i].cap_proximity_m = cap_proximity.map(|(m, _)| m);
-                smokes[i].cap_proximity_name = cap_proximity.map(|(_, c)| c.to_string());
+                smokes[i].cap_proximity_m = cap_proximity.map(|c| c.distance_m);
+                smokes[i].cap_proximity_name = cap_proximity.map(|c| c.cap.to_string());
+                smokes[i].cap_radius_m = cap_proximity.map(|c| c.radius_m);
+                smokes[i].cap_depth_pct = cap_proximity.map(|c| c.depth_pct());
             }
         }
         written += 1;

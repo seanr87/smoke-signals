@@ -156,6 +156,8 @@ const TIER2_COLUMNS: &[&str] = &[
     "damage_behind_smoke_enemy",
     "cap_proximity_m",
     "cap_proximity_name",
+    "cap_radius_m",
+    "cap_depth_pct",
     "selfish_smoke",
 ];
 
@@ -166,6 +168,7 @@ const BASE_COLUMNS: &[&str] = &[
     "round",
     "game_no",
     "map",
+    "map_display",
     "game_build",
     "primary_replay",
     "merged_replays",
@@ -237,6 +240,7 @@ pub fn smoke_csv_row(r: &SmokeRecord) -> Vec<String> {
         opt(r.round.as_deref()),
         opt(r.game_no),
         r.map.clone(),
+        r.map_display.clone(),
         r.game_build.clone(),
         r.primary_replay.clone(),
         r.merged_replays.join(";"),
@@ -303,6 +307,8 @@ pub fn smoke_csv_row(r: &SmokeRecord) -> Vec<String> {
         opt_f(d.map(|d| d.damage_behind_smoke_enemy)),
         opt_f(r.cap_proximity_m),
         r.cap_proximity_name.clone().unwrap_or_default(),
+        opt_f(r.cap_radius_m),
+        opt_f(r.cap_depth_pct),
         r.selfish_smoke.map(|b| b.to_string()).unwrap_or_default(),
     ]);
     row.extend([

@@ -40,6 +40,7 @@ Decided 3 Nov 2026, amended the same day (Awards page, featured clips, deferrals
 **Format and hosting**
 
 - A static site (plain HTML, CSS and JavaScript, no server) that works when opened from a local folder and can be published to GitHub Pages. A public site is fine.
+- Publishing (decided 3 Nov 2026): GitHub Pages serves the `gh-pages` branch of seanr87/smoke-signals, which holds only the built site. `smoke/tools/publish_site.py` copies `smoke-site/` into a throwaway repository, makes one commit and force-pushes it as the whole branch, so the branch never carries old builds or the code history. The site also writes `.nojekyll` so Pages serves every folder as-is. Public URL: https://seanr87.github.io/smoke-signals/
 - The build writes the site to `smoke-site/` (the fork already has a `site/` folder of its own), separate from `output/`. `output/` stays the raw record of every run and is never served. The builder is `smoke/tools/inventory.py` for the replay inventory and `smoke/tools/build_site.py` for the pages; `smoke_signals batch` produces the data and frames and `smoke_signals maps` the map images.
 - Size budget: the whole site under 500 MB, no file over 100 MB. Images as WebP.
 - A top navigation bar on every page: Home, Analysis, Awards, Maps, All Smokes. Game and smoke pages are reached by links.
@@ -48,7 +49,8 @@ Decided 3 Nov 2026, amended the same day (Awards page, featured clips, deferrals
 **Look and feel**
 
 - A clean, dark naval and tactical look: deep navy background, smoke-grey panels, crisp white text.
-- One colour per team (H-SR, RESIN, PN), used everywhere: map dots, cards, table tags, charts.
+- One colour per team (H-SR, RESIN, PN), used everywhere: map dots, cards, table tags, charts. Approved 3 Nov 2026: H-SR gold #F5C542, RESIN sky blue #5DADE2, PN violet #B388FF.
+- Map names are the in-game display names everywhere on the site and in frame footers (Mountain Range, Sea of Fortune), read from the game's string catalog (`map_display`); the internal name (`58_RidgeNew`) stays in the metadata only.
 - A pinch of whimsy only: the award names below and the odd cheeky line (an empty filter result reads "Nothing here, just clear skies."). No animations or gimmicks.
 
 **Pages**
@@ -59,17 +61,18 @@ Decided 3 Nov 2026, amended the same day (Awards page, featured clips, deferrals
    b. Exactly 3 headline findings across all teams, data-driven.
    c. Team cards for H-SR, RESIN and PN with an identical layout for easy comparison: headline stats (total smokes, smokes per game, smoke damage per game); a ship donut (each ship's share of the team's smokes); a timing bar (smokes across the match clock: early, mid, late); a damage split bar (in smoke, behind smoke, outside smoke); habits (share of selfish smokes, cap proximity distribution); a one-line takeaway (for example "H-SR smokes early and close to caps"); and a note that purpose and intent wait for the hand tags, so the cards are descriptive, not conclusions.
 3. Awards, in this order:
-   a. Smoke awards, one smoke each, each with a featured clip: Smoke of the Tournament (highest smoke_damage_total); Deepest Cap Smoke (most negative cap_proximity_m); Radar Bait (most enemy radar spots on allies in the smoke while it was up, radar_detections_in_smoke); Most Selfish Smoke (the selfish_smoke with the most owner damage, damage_in_smoke_smoker plus damage_behind_smoke_smoker).
+   a. Smoke awards, one smoke each, each with a featured clip. Each card shows the capture frame's zoomed close-up uncropped, the smoke's details beside it, the clip directly underneath and the two full frames folded away: Smoke of the Tournament (highest smoke_damage_total); Deepest Cap Smoke (highest cap_depth_pct, ties broken by the most negative cap_proximity_m; the card shows both); Radar Bait (most enemy radar spots on allies in the smoke while it was up, radar_detections_in_smoke); Most Selfish Smoke (the selfish_smoke with the most owner damage, damage_in_smoke_smoker plus damage_behind_smoke_smoker).
    b. Player awards as cards: Golden Cloud (most total smoke damage), The Smokefather (most smokes laid), Best in Haze (highest average smoke damage per smoke, minimum 3 smokes), Most Selfish Smoker (most selfish smokes; see selfish_smoke below).
    c. Clan awards, normalised per game played: most smokes laid, most smoke damage, most selfish smokes.
 4. Maps: one section per map with the map name, the map image with a dot for every smoke at its origin coloured by team (clicking a dot opens that smoke's page), and a few short takeaways under each map.
-5. All Smokes: a table of every analysed smoke. Filter by team, player, ship, map, game and smoke type. Sort by smoke damage (total, in, behind), radar spots in smoke, duration, score change during the smoke, and cap proximity. Each row has a small thumbnail, tiny inline bars for damage and cap proximity, and links to both the smoke page and the game page.
+5. All Smokes: a table of every analysed smoke. Filter by team, player, ship, map, game and smoke type (standard, cruiser, exhaust, crawling). Sort by smoke damage (total, in, behind), radar spots in smoke, duration, score change during the smoke, and cap proximity. Each row has a small thumbnail, tiny inline bars for damage and cap proximity, and links to both the smoke page and the game page.
 6. Game pages, one per game: a header (match, teams, map, final score, winner and how it ended); a mini map with the game's smoke dots, coloured by team and clickable; a timeline across the match showing when each smoke went up, plus a score chart with smoke markers; the game's smokes with thumbnails, linking to their pages.
 7. Smoke pages, one per smoke: a header (player, ship, team, map, game and battle time, smoke damage); the activation and capture frames side by side, the zoomed close-up, and the clip if featured; a stats panel (duration, the smoke damage split in and behind as a bar, radar spots, a cap proximity diagram, score and ships alive at the time); tags (purpose and rating from hand-tagging, or "untagged"); navigation (previous and next smoke in the same game, up to the game page, and to its dot on the map).
 
 **New metrics** (also in the metadata record)
 
 - cap_proximity_m and cap_proximity_name: the distance from the nearest edge of the smoke (the union of its puffs) to the nearest edge of the nearest capture zone, and that cap's name, measured at t_capture. Negative when the smoke overlaps the cap, by how far it reaches inside.
+- cap_radius_m and cap_depth_pct: that cap's radius, and how far the smoke's edge reaches toward the cap centre as a share of the radius (0 at the edge, 100 at the centre, capped at 100, negative outside). Caps differ in size (Hotspot 4 km, Mountain Range's A about 10 km), so depth is compared as a share, not in km.
 - selfish_smoke (true or false): true only if, during the smoke's whole life, no teammate other than the owner is ever inside it and no teammate gets any damage_behind_smoke through it.
 
 **Clips on the site**
@@ -143,7 +146,8 @@ The game files label every smoke `smokeGenerator`. The type comes from the varia
 
 | smoke_type | How it's identified | Base stats (game data) | t_capture |
 | --- | --- | --- | --- |
-| standard | Default destroyer and cruiser variants, e.g. `Lvl_10_Gold`, `US_Lvl_10_Gold` | Emission 20–30 s, puffs last 97–130 s, speed limit 12.5 | Last new puff before the first puff fades |
+| standard | Default destroyer variants, e.g. `Lvl_10_Gold`, `US_Lvl_10_Gold`, and long cruiser smokes (Smolensk 20 s / 89 s) | Emission 20–30 s, puffs last 89–130 s, speed limit 12.5 | Last new puff before the first puff fades |
+| cruiser | A standard variant whose puffs last 60 s or less (Svea: 10 s emission, 40 s puffs) | Emission 10 s, puffs last 40 s | As standard |
 | exhaust | Title contains `Oil`, e.g. `IT_Oil_Verde`; puffs last about 10 s | Emission 45 s, puffs last 10 s, no speed limit | End of emission. Draw a dashed outline of the trail's path. |
 | crawling | Crawling-smoke variant (name to confirm; not in the test game) | To confirm | End of emission, as for exhaust. Untested until a replay contains one. |
 
@@ -255,7 +259,7 @@ An example with made-up values:
 | Tier 2 | allies_in_smoke, nearest_enemy_dist_km, dist_to_nearest_cap_km, cap_contested, enemy_radars_alive, radar_detections_in_smoke, hydro_detections_in_smoke, fired_while_concealed_detections |
 | Tier 3 (Phase 2) | damage_in_smoke, damage_behind_smoke, smoke_damage_total (each broken down, plus _enemy columns), kills_during_smoke, deaths_in_smoke, cap_flips_during_smoke, score_delta_60s, smoker_survived_60s, game_result |
 | Build (Phase 2) | commander_skills, upgrades, effective_emission_s, effective_puff_life_s |
-| Site (Phase 2) | cap_proximity_m, cap_proximity_name, selfish_smoke |
+| Site (Phase 2) | map_display, cap_proximity_m, cap_proximity_name, cap_radius_m, cap_depth_pct, selfish_smoke |
 | Provenance | wows_toolkit_rev, smoke_signals_version, generated_at |
 | Files | frame_act, frame_cap, frame_act_zoom, frame_cap_zoom, clip |
 

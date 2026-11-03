@@ -213,6 +213,7 @@ fn main() -> Result<(), Report> {
                         let file = frames::save_png_and_webp(&image, &dir, bare)?;
                         info.push(serde_json::json!({
                             "map": bare,
+                            "title": smoke_signals::analysis::map_display_name(&game.loaded.game_params, &full),
                             "space_size": map_info.space_size,
                             "width": image.width(),
                             "height": image.height(),

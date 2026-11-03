@@ -49,6 +49,34 @@ def fmt_km(m):
     return "-" if m is None else f"{m / 1000:.1f} km"
 
 
+def cap_short(s):
+    """Short cap label for the diagram."""
+    m = s.get("cap_proximity_m")
+    if m is None:
+        return ""
+    name = s.get("cap_proximity_name") or "?"
+    pct = s.get("cap_depth_pct")
+    if m < 0 and pct is not None:
+        return f"{pct:.0f}% of the way to the centre, {fmt_km(-m)} inside"
+    return f"{fmt_km(m)} from the edge of cap {name}"
+
+
+def cap_text(s):
+    """One line on a smoke's cap proximity: depth as a share of the cap radius when inside."""
+    m = s.get("cap_proximity_m")
+    if m is None:
+        return "no cap proximity"
+    name = s.get("cap_proximity_name") or "?"
+    pct = s.get("cap_depth_pct")
+    r = s.get("cap_radius_m")
+    radius = f", cap radius {fmt_km(r)}" if r else ""
+    if m < 0 and pct is not None:
+        return f"{pct:.0f}% of the way to the centre of cap {name} ({fmt_km(-m)} inside the edge{radius})"
+    if m < 0:
+        return f"{fmt_km(-m)} inside cap {name}{radius}"
+    return f"{fmt_km(m)} outside cap {name}{radius}"
+
+
 class Data:
     def __init__(self, batch, maps_dir, clips_dir, inventory):
         self.batch = batch
@@ -78,8 +106,14 @@ class Data:
                 self.inventory[(r["match_id"], int(r["game_no"]))] = r
         self.maps = {}
         self.maps_dir = maps_dir
+        self.map_titles = {}
         for m in json.load(open(os.path.join(maps_dir, "maps.json"), encoding="utf-8")):
             self.maps[m["map"]] = m
+            if m.get("title"):
+                self.map_titles[m["map"]] = m["title"]
+        for s in self.smokes:
+            if s.get("map_display"):
+                self.map_titles[s["map"]] = s["map_display"]
         self.clips_dir = clips_dir
         self.clip_files = {}
         if clips_dir and os.path.isdir(clips_dir):
@@ -120,6 +154,10 @@ class Data:
         if not self.games_played:
             for (m, g, t) in self.job_by_key:
                 self.games_played[t] += 1
+
+    def map_title(self, name):
+        """In-game display name: from the records, then maps.json, then a fallback table."""
+        return self.map_titles.get(name) or FALLBACK_MAP_TITLES.get(name) or name
 
     def game_label(self, key):
         g = self.games.get(key)
@@ -278,6 +316,7 @@ class Site:
         self.copy_assets()
         self.write("style.css", CSS.replace("__TEAMCOLORS__", "".join(f'--team-{t.lower().replace("-", "")}:{c};' for t, c in self.colors.items())))
         self.write("site.js", JS)
+        self.write(".nojekyll", "")
         self.home()
         self.analysis()
         self.awards()
@@ -297,9 +336,13 @@ class Site:
             ("Maps", "maps.html", "Every smoke as a dot on its map, coloured by team."),
             ("All Smokes", "smokes.html", f"The table of all {len(d.smokes)} analysed smokes, with filters and sorting."),
         ]
+        per_team = Counter(s["team"] for s in d.smokes)
+        stats = "".join(f'<div class="stat" style="--c:{self.color(t)}"><b>{per_team[t]}</b><span>{esc(t)} smokes in {d.games_played.get(t, 0)} games</span></div>' for t in TEAMS if per_team.get(t))
+        maps = len({s["map"] for s in d.smokes})
         body = f"""<section class="briefing"><h1>Mission briefing</h1>
 <p>We want to win games. This site breaks down how top competitive teams use smoke: {len(d.smokes)} smokes from {n_games} King of the Sea XIX NA games played by H-SR, RESIN and PN, read straight from the replays.</p>
 <p class="muted">Every smoke has an activation frame, a capture frame, a zoomed close-up and its numbers. Purpose and intent tags come later by hand.</p></section>
+<section class="stats"><div class="stat"><b>{len(d.smokes)}</b><span>smokes analysed</span></div><div class="stat"><b>{n_games}</b><span>games on {maps} maps</span></div>{stats}</section>
 <section class="cards">{"".join(f'<a class="card toc" href="{h}"><h2>{esc(n)}</h2><p>{esc(t)}</p></a>' for n, h, t in cards)}</section>"""
         self.write("index.html", self.page("Home", body, active="Home"))
 
@@ -322,7 +365,7 @@ class Site:
         players = self.player_stats()
         top = sorted(players.items(), key=lambda kv: -kv[1]["damage"])[:5]
         max_damage = max((p["damage"] for _, p in top), default=1)
-        max_smokes = max((p["smokes"] for _, p in players.values() and top), default=1) if top else 1
+        max_smokes = max((p["smokes"] for _, p in top), default=1)
         cards = []
         for name, p in top:
             ships = ", ".join(f"{s} x{n}" if n > 1 else s for s, n in p["ships"].most_common())
@@ -386,6 +429,9 @@ class Site:
         team_total = sum(v for (t, _), v in d.damage_by_team_game.items() if t == team)
         outside = max(0.0, team_total - inside - behind)
         split = svg_stacked_bar([("in smoke", inside), ("behind smoke", behind), ("outside", outside)], ["#F5C542", "#5DADE2", "#475569"])
+        types = Counter(s.get("smoke_type") or "unknown" for s in rows)
+        type_parts = [(t, types[t]) for t, _ in SMOKE_TYPES if types.get(t)] + ([("unknown", types["unknown"])] if types.get("unknown") else [])
+        types_bar = svg_stacked_bar(type_parts, [dict(SMOKE_TYPES).get(t, "#94A3B8") for t, _ in type_parts])
         selfish = sum(1 for s in rows if s.get("selfish_smoke"))
         prox = Counter()
         for s in rows:
@@ -409,6 +455,7 @@ class Site:
         return f"""<div class="card team" style="--c:{self.color(team)}"><h3>{self.team_tag(team)} {esc(team)}</h3>
 <table class="kv"><tr><td>Total smokes</td><td>{len(rows)}</td></tr><tr><td>Smokes per game</td><td>{len(rows) / games:.1f}</td></tr><tr><td>Smoke damage per game</td><td>{fmt_int(total_damage / games)}</td></tr></table>
 <h4>Ships</h4>{donut}
+<h4>Smoke types</h4>{types_bar}
 <h4>Timing across the match clock</h4>{timing_bar}
 <h4>Damage split</h4>{split}
 <h4>Habits</h4><p class="small">Selfish smokes: {selfish} of {len(rows)} ({selfish / max(1, len(rows)) * 100:.0f}%)</p>{prox_bar}
@@ -421,14 +468,15 @@ class Site:
         if not rows:
             return
         best = max(rows, key=lambda s: s["_total"])
+        with_depth = [s for s in rows if s.get("cap_depth_pct") is not None]
         with_prox = [s for s in rows if s.get("cap_proximity_m") is not None]
-        deep = min(with_prox, key=lambda s: s["cap_proximity_m"]) if with_prox else None
+        deep = max(with_depth, key=lambda s: (s["cap_depth_pct"], -s["cap_proximity_m"])) if with_depth else (min(with_prox, key=lambda s: s["cap_proximity_m"]) if with_prox else None)
         bait = max(rows, key=lambda s: (s["_radar"], s["_total"]))
         selfish = [s for s in rows if s.get("selfish_smoke")]
         most_selfish = max(selfish, key=lambda s: s["_owner_damage"]) if selfish else None
         smoke_awards = [
             ("Smoke of the Tournament", best, f"{fmt_int(best['_total'])} smoke damage"),
-            ("Deepest Cap Smoke", deep, f"{fmt_km(deep['cap_proximity_m'])} inside cap {deep.get('cap_proximity_name')}" if deep else ""),
+            ("Deepest Cap Smoke", deep, cap_text(deep) if deep else ""),
             ("Radar Bait", bait, f"{bait['_radar']} radar spots on allies in the smoke"),
             ("Most Selfish Smoke", most_selfish, f"{fmt_int(most_selfish['_owner_damage'])} damage by the owner alone" if most_selfish else ""),
         ]
@@ -438,9 +486,16 @@ class Site:
                 blocks.append(f'<div class="card award"><h3>{esc(title)}</h3><p class="muted">Nothing here, just clear skies.</p></div>')
                 continue
             clip = f'<div class="clip"><video controls preload="metadata" src="{s["_clip"]}"></video><div class="clip-controls"><button class="speed" data-rate="1">1x (5x real time)</button><button class="speed" data-rate="2">2x (10x real time)</button></div></div>' if s.get("_clip") else '<p class="muted small">Clip available on request.</p>'
+            thumb = (s.get("_img") or {}).get("frame_cap_zoom") or (s.get("_img") or {}).get("frame_cap")
+            href = self.smoke_href[s["_slug"]]
+            hero = f'<a href="{href}"><img class="award-thumb" src="{thumb}" alt="capture frame close-up"></a>' if thumb else '<div class="noimg">no frame</div>'
             blocks.append(f"""<div class="card award"><h3>{esc(title)}</h3><p class="note">{esc(note)}</p>
-{self.smoke_card(s)}
-<div class="frames two">{self.img(s, 'frame_act', 0)}{self.img(s, 'frame_cap', 0)}</div>{clip}</div>""")
+<div class="award-hero">{hero}<div class="award-meta"><div>{self.team_tag(s['team'])} <b>{esc(s['player'])}</b> <span class="muted">{esc(s['ship'])}</span></div>
+<div class="muted small">{esc(s['_games_label'])}</div><div class="muted small">{esc(d.map_title(s['map']))}, activated {esc(s['_act_clock'])}</div>
+<div class="big">{fmt_int(s['_total'])} smoke damage</div><div class="small">{esc(s.get('smoke_type') or '')} smoke | {esc(cap_text(s))}</div>
+<p><a href="{href}">Open the smoke page</a></p></div></div>
+{clip}
+<details><summary>Activation and capture frames</summary><div class="frames two">{self.img(s, 'frame_act', 0)}{self.img(s, 'frame_cap', 0)}</div></details></div>""")
         players = self.player_stats()
         def top_by(key, minimum=0):
             items = [(n, p) for n, p in players.items() if p["smokes"] >= minimum]
@@ -489,7 +544,7 @@ class Site:
             if not px:
                 continue
             dots.append(f'<a href="{base}{self.smoke_href[s["_slug"]]}" id="{anchor_prefix}-{s["_slug"]}"><circle cx="{px[0]:.1f}" cy="{px[1]:.1f}" r="7" fill="{self.color(s["team"])}" stroke="#0B1C2C" stroke-width="1.5"><title>{esc(s["player"])} {esc(s["ship"])} at {esc(s["_act_clock"])}, {fmt_int(s["_total"])} dmg</title></circle></a>')
-        return f'<div class="mapwrap" style="max-width:{size}px"><img src="{base}maps/{m["map"]}.webp" alt="{esc(map_name)}"><svg viewBox="0 0 {NATIVE} {NATIVE}">{"".join(dots)}</svg></div>'
+        return f'<div class="mapwrap" style="max-width:{size}px"><img src="{base}maps/{m["map"]}.webp" alt="{esc(self.d.map_title(map_name))}"><svg viewBox="0 0 {NATIVE} {NATIVE}">{"".join(dots)}</svg></div>'
 
     def maps_page(self):
         d = self.d
@@ -507,8 +562,9 @@ class Site:
                 f"{near / max(1, len(prox)) * 100:.0f}% went up within 1 km of a cap edge." if prox else "",
                 f"Average smoke damage {fmt_int(sum(s['_total'] for s in smokes) / len(smokes))}.",
             ]
-            sections.append(f'<section class="map-section"><h2>{esc(pretty_map(map_name))}</h2>{self.map_figure(map_name, smokes)}<ul class="takeaways">{"".join(f"<li>{esc(t)}</li>" for t in take if t)}</ul></section>')
-        body = f"<h1>Maps</h1><p class=\"muted\">One dot per smoke at its origin, coloured by team. Click a dot to open the smoke.</p>{''.join(sections)}"
+            sections.append(f'<section class="map-section"><h2>{esc(self.d.map_title(map_name))}</h2>{self.map_figure(map_name, smokes)}<ul class="takeaways">{"".join(f"<li>{esc(t)}</li>" for t in take if t)}</ul></section>')
+        legend = "".join(f'<span class="legend"><i style="background:{self.color(t)}"></i>{esc(t)}</span>' for t in TEAMS if any(s["team"] == t for s in d.smokes))
+        body = f"<h1>Maps</h1><p class=\"muted\">One dot per smoke at its origin, coloured by team. Click a dot to open the smoke.</p><div class=\"legend-row\">{legend}</div>{''.join(sections)}"
         self.write("maps.html", self.page("Maps", body, active="Maps"))
 
     def all_smokes(self):
@@ -517,11 +573,11 @@ class Site:
         for s in d.smokes:
             thumb = (s.get("_img") or {}).get("frame_cap_zoom") or ""
             records.append({
-                "id": s["smoke_id"], "team": s["team"], "player": s["player"], "ship": s["ship"], "map": pretty_map(s["map"]),
+                "id": s["smoke_id"], "team": s["team"], "player": s["player"], "ship": s["ship"], "map": self.d.map_title(s["map"]),
                 "game": s["_games_label"], "game_href": f"games/{s['_match']}_g{s['game_no']}.html", "type": s.get("smoke_type") or "",
                 "clock": s["_act_clock"], "total": round(s["_total"]), "inside": round(s["_in"]), "behind": round(s["_behind"]),
                 "radar": s["_radar"], "duration": round(s["_duration"]) if s.get("_duration") is not None else None,
-                "swing": s["_score_swing"], "cap": s.get("cap_proximity_m"), "cap_name": s.get("cap_proximity_name") or "",
+                "swing": s["_score_swing"], "cap": s.get("cap_proximity_m"), "cap_name": s.get("cap_proximity_name") or "", "depth": s.get("cap_depth_pct"),
                 "selfish": bool(s.get("selfish_smoke")), "flag": bool(s.get("owner_flag")), "thumb": thumb, "href": self.smoke_href[s["_slug"]],
                 "color": self.color(s["team"]),
             })
@@ -534,9 +590,9 @@ class Site:
 <label>Map <select id="f-map"><option value="">all</option></select></label>
 <label>Game <select id="f-game"><option value="">all</option></select></label>
 <label>Type <select id="f-type"><option value="">all</option></select></label>
-<label>Sort <select id="f-sort"><option value="total">smoke damage (total)</option><option value="inside">damage in smoke</option><option value="behind">damage behind smoke</option><option value="radar">radar spots in smoke</option><option value="duration">duration</option><option value="swing">score change during the smoke</option><option value="cap">cap proximity</option></select></label>
+<label>Sort <select id="f-sort"><option value="total">smoke damage (total)</option><option value="inside">damage in smoke</option><option value="behind">damage behind smoke</option><option value="radar">radar spots in smoke</option><option value="duration">duration</option><option value="swing">score change during the smoke</option><option value="depth">cap depth (share of cap radius)</option><option value="cap">cap proximity (nearest first)</option></select></label>
 <span id="count" class="muted"></span></div>
-<table class="smokes" id="smokes"><thead><tr><th></th><th>Team</th><th>Player</th><th>Ship</th><th>Map</th><th>Game</th><th>Clock</th><th>Damage</th><th>Cap</th><th>Radar</th><th></th></tr></thead><tbody></tbody></table>
+<table class="smokes" id="smokes"><thead><tr><th></th><th>Team</th><th>Player</th><th>Ship</th><th>Map</th><th>Game</th><th>Clock</th><th>Damage</th><th>Cap (depth or distance)</th><th>Radar</th><th></th></tr></thead><tbody></tbody></table>
 <p id="empty" class="muted" hidden>Nothing here, just clear skies.</p>
 <script>window.SMOKES = {json.dumps(records)}; window.MAX_TOTAL = {max_total};</script>"""
         self.write("smokes.html", self.page("All Smokes", body, active="All Smokes"))
@@ -550,7 +606,7 @@ class Site:
         header = []
         if inv:
             header.append(f"{inv['stage']} {inv['group']} {inv['round']}".replace("  ", " "))
-            header.append(f"Game {inv['game_no']} on {pretty_map(smokes[0]['map'])}, {inv['date']}")
+            header.append(f"Game {inv['game_no']} on {self.d.map_title(smokes[0]['map'])}, {inv['date']}")
             header.append(f"Score {inv['score']}, winner {inv['winner']}")
         if g:
             header.append(f"Ended by {esc(g.get('finish_type') or '?')} at {(g.get('battle_end') or {}).get('clock', '?')}")
@@ -563,7 +619,7 @@ class Site:
         cards = "".join(self.smoke_card(s, depth=1) for s in smokes)
         body = f"""<h1>{esc(smokes[0]['_games_label'])}</h1><p class="muted">{" | ".join(esc(h) for h in header)}</p>
 <section class="two-col">{self.map_figure(smokes[0]['map'], smokes, depth=1, size=480, anchor_prefix='g')}<div><h2>Smokes across the match</h2>{timeline}<h2>Score with smoke markers</h2>{score}</div></section>
-<h2>Rosters</h2><section class="cards">{roster}</section>
+<h2>Rosters</h2><section class="cards rosters">{roster}</section>
 <h2>Smokes in this game</h2><section class="cards">{cards}</section>"""
         self.write(f"games/{key[0]}_g{key[1]}.html", self.page(smokes[0]["_games_label"], body, depth=1))
 
@@ -627,13 +683,13 @@ class Site:
             return '<p class="muted small">No cap proximity (no capture frame).</p>'
         w, h = 300, 90
         smoke_r = (s.get("radius") or 15) * 30
-        cap_r = 4000
+        cap_r = s.get("cap_radius_m") or 4000
         scale = (w - 40) / (2 * cap_r + max(0, m) + 2 * smoke_r)
         cx = 20 + cap_r * scale
         sx = cx + (cap_r + m + smoke_r) * scale
         return f"""<svg viewBox="0 0 {w} {h}" width="{w}" height="{h}" class="capdiag"><circle cx="{cx:.0f}" cy="{h / 2}" r="{cap_r * scale:.0f}" fill="none" stroke="#5DADE2" stroke-dasharray="4,3"/><text x="{cx:.0f}" y="{h / 2 + 4}" fill="#5DADE2" font-size="12" text-anchor="middle">cap {esc(s.get('cap_proximity_name') or '')}</text>
 <circle cx="{sx:.0f}" cy="{h / 2}" r="{max(4, smoke_r * scale):.0f}" fill="#CBD5E1" opacity="0.8"/><text x="{sx:.0f}" y="{h / 2 - 12}" fill="#E2E8F0" font-size="11" text-anchor="middle">smoke</text>
-<text x="{w / 2}" y="{h - 4}" fill="#94A3B8" font-size="11" text-anchor="middle">{"inside the cap by " if m < 0 else "edge to edge "}{fmt_km(abs(m))}</text></svg>"""
+<text x="{w / 2}" y="{h - 4}" fill="#94A3B8" font-size="11" text-anchor="middle">{esc(cap_short(s))}</text></svg>"""
 
     def smoke_page(self, s):
         d = self.d
@@ -655,7 +711,7 @@ class Site:
         flag = f'<p class="warn">Owner attribution flagged: {esc(s.get("owner_note"))}</p>' if s.get("owner_flag") else ""
         dur = f"{s['_duration']:.0f} s" if s.get("_duration") is not None else "still standing at the end"
         body = f"""<h1>{self.team_tag(s['team'])} {esc(s['player'])} <span class="muted">{esc(s['ship'])}</span></h1>
-<p class="muted">{esc(pretty_map(s['map']))} | {esc(s['_games_label'])} | activated {esc(s['_act_clock'])}, captured {esc(s['_cap_clock'])} | {esc(s.get('smoke_type') or '')} smoke {esc(s.get('variant') or '')}</p>
+<p class="muted">{esc(self.d.map_title(s['map']))} | {esc(s['_games_label'])} | activated {esc(s['_act_clock'])}, captured {esc(s['_cap_clock'])} | {esc(s.get('smoke_type') or '')} smoke {esc(s.get('variant') or '')}</p>
 <p class="big">{fmt_int(s['_total'])} smoke damage</p>{flag}
 <section class="frames two">{self.img(s, 'frame_act', 1)}{self.img(s, 'frame_cap', 1)}</section>
 <section class="frames two zoom">{self.img(s, 'frame_act_zoom', 1)}{self.img(s, 'frame_cap_zoom', 1)}</section>
@@ -664,6 +720,7 @@ class Site:
 <tr><td>Duration</td><td>{esc(dur)}</td></tr>
 <tr><td>Smoke damage</td><td>{split}</td></tr>
 <tr><td>Radar spots in smoke</td><td>{s['_radar']}</td></tr>
+<tr><td>Cap</td><td>{esc(cap_text(s))}</td></tr>
 <tr><td>Allies in smoke at capture</td><td>{esc(', '.join(s.get('allies_in_smoke') or [])) or 'none'}</td></tr>
 <tr><td>Selfish smoke</td><td>{'yes' if s.get('selfish_smoke') else ('no' if s.get('selfish_smoke') is not None else 'unknown')}</td></tr>
 <tr><td>Score at capture</td><td>{esc(st.get('score_ours', '-'))} : {esc(st.get('score_theirs', '-'))}</td></tr>
@@ -673,9 +730,8 @@ class Site:
         self.write(f"smokes/{s['_slug']}.html", self.page(f"{s['player']} {s['ship']} {s['_act_clock']}", body, depth=1))
 
 
-def pretty_map(name):
-    pretty = {"16_OC_bees_to_honey": "Hotspot", "45_Zigzag": "Loop", "40_Okinawa": "Okinawa", "22_tierra_del_fuego": "Land of Fire", "58_RidgeNew": "Mountain Range", "47_Sleeping_Giant": "Sleeping Giant", "25_sea_hope": "Sea of Fortune"}
-    return pretty.get(name, name)
+FALLBACK_MAP_TITLES = {"16_OC_bees_to_honey": "Hotspot", "45_Zigzag": "Loop", "40_Okinawa": "Okinawa", "22_tierra_del_fuego": "Land of Fire", "58_RidgeNew": "Mountain Range", "47_Sleeping_Giant": "Sleeping Giant", "25_sea_hope": "Sea of Fortune"}
+SMOKE_TYPES = [("standard", "#CBD5E1"), ("cruiser", "#6EE7B7"), ("exhaust", "#FB923C"), ("crawling", "#F472B6")]
 
 
 CSS = """:root{--bg:#0B1C2C;--panel:#16283A;--panel2:#1E3448;--text:#EEF2F5;--muted:#9FB0C0;--line:#2A4258;__TEAMCOLORS__}
@@ -688,19 +744,21 @@ footer{color:var(--muted);font-size:.85em;text-align:center;padding:24px 16px}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin:8px 0 20px}.cards.teams{grid-template-columns:repeat(auto-fill,minmax(340px,1fr))}.cards.awards{grid-template-columns:repeat(auto-fill,minmax(520px,1fr))}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px;color:var(--text);text-decoration:none;display:block}.card.toc h2{border:0;margin-top:0}.card.team{border-top:4px solid var(--c)}
 .smoke-card{padding:0;overflow:hidden}.smoke-card img{width:100%;display:block;aspect-ratio:1;object-fit:cover}.card-body{padding:8px 10px}
-.awards .smoke-card{display:flex;align-items:center;margin:8px 0}.awards .smoke-card img{width:160px;height:160px;flex:none}
+.award-hero{display:flex;gap:14px;align-items:flex-start;margin:8px 0}.award-hero>a{flex:0 0 300px;max-width:48%}.award-thumb{width:100%;height:auto;display:block;border-radius:8px;border:1px solid var(--line)}.award-meta{flex:1;min-width:0}.award-meta .big{margin:6px 0}
+.card.award .clip{margin-top:8px}.card.award details{margin-top:8px}.card.award summary{cursor:pointer;color:var(--muted);font-size:.9em}
+.stats{display:flex;flex-wrap:wrap;gap:12px;margin:8px 0 20px}.stat{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--c,#9FB0C0);border-radius:8px;padding:8px 14px;min-width:150px}.stat b{display:block;font-size:1.5em}.stat span{color:var(--muted);font-size:.85em}
 .tag{display:inline-block;padding:1px 7px;border-radius:999px;font-size:.78em;font-weight:700;background:var(--c);color:#07131f}
 .muted{color:var(--muted)}.small{font-size:.85em}.big{font-size:1.4em;font-weight:700}.note{color:#F5C542}.warn{color:#FB923C}
 table.kv td{padding:3px 8px 3px 0;vertical-align:top}table.kv td:first-child{color:var(--muted);white-space:nowrap}
 .mini{display:inline-block;width:92px;height:9px;background:#0B1C2C;border-radius:4px;vertical-align:middle;margin-left:6px}.mini i{display:block;height:100%;border-radius:4px}
 .legend-row{display:flex;flex-wrap:wrap;gap:8px;font-size:.8em;margin-top:4px}.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px}
 .frames.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}.frames img{width:100%;border-radius:6px;border:1px solid var(--line)}.frames.zoom img{max-width:360px}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:800px){.two-col,.frames.two{grid-template-columns:1fr}}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:800px){.two-col,.frames.two{grid-template-columns:1fr}.award-hero{flex-direction:column}.award-hero>a{flex:none;max-width:100%}.cards.awards{grid-template-columns:1fr}}
 .mapwrap{position:relative;width:100%}.mapwrap img{width:100%;display:block;border-radius:8px}.mapwrap svg{position:absolute;inset:0;width:100%;height:100%}.mapwrap circle:hover{r:10}
 .takeaways{margin:8px 0 20px}.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin:10px 0}.filters label{display:flex;flex-direction:column;font-size:.8em;color:var(--muted)}
 select{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:4px 6px}
 table.smokes{width:100%;border-collapse:collapse;font-size:.9em}table.smokes th,table.smokes td{padding:5px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}table.smokes img{width:56px;height:56px;object-fit:cover;border-radius:4px}
-table.roster{width:100%;font-size:.9em}table.roster th{text-align:left;color:var(--muted)}
+.cards.rosters{grid-template-columns:repeat(auto-fit,minmax(380px,1fr))}table.roster{width:100%;font-size:.85em;border-collapse:collapse}table.roster th{text-align:left;color:var(--muted)}table.roster td,table.roster th{padding:2px 6px 2px 0}table.roster td:last-child{text-align:right}
 .clip video{width:100%;max-width:900px;border-radius:8px;background:#000}.clip-controls{margin:6px 0}.clip-controls button{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:4px 10px;margin-right:6px;cursor:pointer}.clip-controls button.on{background:#F5C542;color:#07131f}
 .smoke-nav{margin:20px 0;display:flex;gap:12px;flex-wrap:wrap}.takeaway{font-weight:600}.findings li{margin:6px 0}.noimg{background:var(--panel2);color:var(--muted);padding:30px;text-align:center;border-radius:6px}
 """
@@ -726,7 +784,7 @@ JS = r"""(function(){
     var list = rows.filter(function(r){ return Object.keys(f).every(function(k){ return !f[k] || r[k]===f[k]; }); });
     list.sort(function(a,b){ var x=a[sort], y=b[sort]; if (x==null) x = sort==='cap'? Infinity : -Infinity; if (y==null) y = sort==='cap'? Infinity : -Infinity; return sort==='cap' ? x-y : y-x; });
     tbody.innerHTML = list.map(function(r){
-      var cap = r.cap==null ? '-' : ((r.cap<0?'-':'')+(Math.abs(r.cap)/1000).toFixed(1)+' km '+r.cap_name);
+      var cap = r.cap==null ? '-' : (r.cap<0 ? Math.round(r.depth)+'% into '+r.cap_name : (r.cap/1000).toFixed(1)+' km to '+r.cap_name);
       var capBar = r.cap==null ? '' : bar(Math.max(0, 6000-Math.max(0,r.cap)), 6000, '#5DADE2');
       return '<tr><td>'+(r.thumb?'<a href="'+r.href+'"><img src="'+r.thumb+'" loading="lazy" alt=""></a>':'')+'</td>'+
         '<td><span class="tag" style="--c:'+r.color+'">'+r.team+'</span></td><td>'+r.player+'</td><td>'+r.ship+'</td><td>'+r.map+'</td>'+

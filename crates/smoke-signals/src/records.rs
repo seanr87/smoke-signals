@@ -10,6 +10,8 @@ use crate::clock::BattleClock;
 #[serde(rename_all = "snake_case")]
 pub enum SmokeType {
     Standard,
+    /// Short cruiser smoke (puff life of a minute or less, e.g. Svea).
+    Cruiser,
     Exhaust,
     Crawling,
 }
@@ -18,6 +20,7 @@ impl SmokeType {
     pub fn as_str(self) -> &'static str {
         match self {
             Self::Standard => "standard",
+            Self::Cruiser => "cruiser",
             Self::Exhaust => "exhaust",
             Self::Crawling => "crawling",
         }
@@ -131,6 +134,8 @@ pub struct SmokeRecord {
     pub round: Option<String>,
     pub game_no: Option<u32>,
     pub map: String,
+    /// In-game display name of the map.
+    pub map_display: String,
     pub game_build: String,
     pub primary_replay: String,
     pub merged_replays: Vec<String>,
@@ -184,6 +189,11 @@ pub struct SmokeRecord {
     /// edge, negative when the smoke reaches inside the cap.
     pub cap_proximity_m: Option<f32>,
     pub cap_proximity_name: Option<String>,
+    /// Radius of that cap in meters.
+    pub cap_radius_m: Option<f32>,
+    /// How far the smoke's edge reaches toward the cap centre as a share of
+    /// the cap radius: 0 at the cap edge, 100 at the centre, negative outside.
+    pub cap_depth_pct: Option<f32>,
     /// No teammate but the owner was ever inside, and no ally damage went
     /// through it. `None` without damage data.
     pub selfish_smoke: Option<bool>,
@@ -247,6 +257,12 @@ pub enum Outcome {
     Draw,
 }
 
+/// Internal map name without its numeric prefix and underscores.
+pub fn map_title_fallback(map: &str) -> String {
+    let bare = map.split_once('_').map(|(_, rest)| rest).unwrap_or(map);
+    bare.replace('_', " ")
+}
+
 #[derive(Debug, Clone, Serialize)]
 pub struct GameRecord {
     pub tournament: Option<String>,
@@ -255,6 +271,8 @@ pub struct GameRecord {
     pub game_no: Option<u32>,
     pub map: String,
     pub map_name: String,
+    /// In-game display name of the map, e.g. `Mountain Range`.
+    pub map_display: String,
     pub game_build: String,
     pub primary_replay: String,
     pub merged_replays: Vec<String>,
@@ -295,9 +313,12 @@ impl GameRecord {
         }
     }
 
-    /// Map display name without the numeric prefix, e.g. `Sleeping Giant`.
+    /// In-game map name, falling back to the internal name without its
+    /// numeric prefix, e.g. `Sleeping Giant`.
     pub fn map_title(&self) -> String {
-        let bare = self.map.split_once('_').map(|(_, rest)| rest).unwrap_or(&self.map);
-        bare.replace('_', " ")
+        if !self.map_display.is_empty() {
+            return self.map_display.clone();
+        }
+        map_title_fallback(&self.map)
     }
 }

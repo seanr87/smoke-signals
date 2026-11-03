@@ -23,19 +23,45 @@ pub fn cap_letter(index: usize) -> char {
     char::from_u32(u32::from(b'A') + index as u32).unwrap_or('?')
 }
 
+/// Nearest enabled cap to a standing smoke.
+#[derive(Debug, Clone, Copy)]
+pub struct CapProximity {
+    /// Edge-to-edge distance in meters, negative when the smoke reaches
+    /// inside the cap.
+    pub distance_m: f32,
+    pub cap: char,
+    pub radius_m: f32,
+}
+
+impl CapProximity {
+    /// How far the smoke's edge reaches toward the cap centre as a share of
+    /// the cap radius: 0 at the edge, 100 at the centre (capped), negative
+    /// outside the cap.
+    pub fn depth_pct(&self) -> f32 {
+        if self.radius_m <= 0.0 {
+            return 0.0;
+        }
+        (-self.distance_m / self.radius_m * 100.0).min(100.0)
+    }
+}
+
 /// Edge-to-edge distance in meters from the standing puffs to the nearest
-/// enabled cap, with the cap's letter. Negative when the smoke reaches
-/// inside the cap.
-pub fn cap_proximity(view: &BattleView<'_>, puffs: &[WorldPos], radius: f32) -> Option<(f32, char)> {
+/// enabled cap, with the cap's letter and radius. Negative when the smoke
+/// reaches inside the cap.
+pub fn cap_proximity(view: &BattleView<'_>, puffs: &[WorldPos], radius: f32) -> Option<CapProximity> {
     view.capture_points()
         .iter()
         .filter(|cp| cp.is_enabled)
         .filter_map(|cp| {
             let center = cp.position?;
             let nearest = puffs.iter().map(|p| timeline::ground_distance(*p, center)).fold(f32::INFINITY, f32::min);
-            nearest.is_finite().then(|| (timeline::meters(nearest - radius - cp.radius), cap_letter(cp.index)))
+            nearest.is_finite().then(|| CapProximity {
+                distance_m: timeline::meters(nearest - radius - cp.radius),
+                cap: cap_letter(cp.index),
+                radius_m: timeline::meters(cp.radius),
+            })
         })
-        .min_by(|a, b| a.0.total_cmp(&b.0))
+        .min_by(|a, b| a.distance_m.total_cmp(&b.distance_m))
 }
 
 /// State at the view's current clock. `our_team` is the smoker's team id;

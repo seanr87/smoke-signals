@@ -198,11 +198,16 @@ fn smoke_fit(facts: &VehicleFacts, gp: &GameMetadataProvider, version: wowsunpac
         wowsunpack::game_types::ChargeCount::Finite(n) => Some(n),
         wowsunpack::game_types::ChargeCount::Unlimited => None,
     };
+    let puff_life = fields.get("lifeTime").copied();
+    let mut smoke_type = classify(&slot.variant_name, category.icon_id());
+    if smoke_type == SmokeType::Standard && puff_life.is_some_and(|l| l <= CRUISER_PUFF_LIFE_MAX_S) {
+        smoke_type = SmokeType::Cruiser;
+    }
     Some(SmokeFit {
-        smoke_type: classify(&slot.variant_name, category.icon_id()),
+        smoke_type,
         variant: slot.variant_name.clone(),
         work_time: category.work_time(),
-        puff_life: fields.get("lifeTime").copied(),
+        puff_life,
         radius: fields.get("radius").copied(),
         charges_total,
     })
@@ -242,8 +247,13 @@ fn consumable_ranges(
     Some(tier2::ConsumableRanges { radar_m: range(Consumable::Radar), hydro_m: range(Consumable::HydroacousticSearch) })
 }
 
+/// A standard smoke whose puffs last this long or less is the short cruiser
+/// kind (Svea: 10 s emission, 40 s puffs). Destroyer smokes last 89 s or more.
+const CRUISER_PUFF_LIFE_MAX_S: f32 = 60.0;
+
 /// Smoke type from the variant's name and icon. Every smoke consumable has
-/// consumableType `smokeGenerator`; only the variant tells them apart.
+/// consumableType `smokeGenerator`; only the variant tells them apart. Short
+/// cruiser smoke is told apart afterwards by puff life.
 pub fn classify(variant: &str, icon_id: &str) -> SmokeType {
     let text = format!("{variant} {icon_id}").to_ascii_lowercase();
     if text.contains("crawl") || text.contains("creep") {
@@ -253,6 +263,17 @@ pub fn classify(variant: &str, icon_id: &str) -> SmokeType {
     } else {
         SmokeType::Standard
     }
+}
+
+/// In-game display name of a map from the game's string catalog, e.g.
+/// `spaces/58_RidgeNew` -> `Mountain Range`; the bare internal name when the
+/// catalog has no entry.
+pub fn map_display_name(gp: &GameMetadataProvider, map_name: &str) -> String {
+    let full = if map_name.starts_with("spaces/") { map_name.to_string() } else { format!("spaces/{map_name}") };
+    let key = wowsunpack::data::TranslationKey::new(format!("IDS_{}", full.to_uppercase()));
+    gp.localized_name_from_id(&key)
+        .filter(|s| !s.trim().is_empty())
+        .unwrap_or_else(|| crate::records::map_title_fallback(full.strip_prefix("spaces/").unwrap_or(&full)))
 }
 
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -456,6 +477,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
     let round = config.game.round.clone();
     let map_name = replays.primary.meta.mapName.clone();
     let map_label = map_name.strip_prefix("spaces/").unwrap_or(&map_name).to_string();
+    let map_display = map_display_name(&game.loaded.game_params, &map_name);
     let file_name = |p: &std::path::Path| p.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
     let primary_replay = file_name(&replays.primary_path);
     let merged_replays: Vec<String> = replays.merge_paths.iter().map(|p| file_name(p)).collect();
@@ -554,7 +576,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         let smoke_type = fit.as_ref().map(|f| f.smoke_type);
 
         let t_emission_end = match smoke_type {
-            Some(SmokeType::Standard) | None => match track.first_fade {
+            Some(SmokeType::Standard) | Some(SmokeType::Cruiser) | None => match track.first_fade {
                 Some(fade) => track.last_new_puff_before(fade),
                 None => track.last_new_puff(),
             },
@@ -602,6 +624,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             round: round.clone(),
             game_no: config.game.game_no,
             map: map_label.clone(),
+            map_display: map_display.clone(),
             game_build: replays.primary.meta.clientVersionFromExe.clone(),
             primary_replay: primary_replay.clone(),
             merged_replays: merged_replays.clone(),
@@ -647,6 +670,8 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             fired_while_concealed_detections: Vec::new(),
             cap_proximity_m: None,
             cap_proximity_name: None,
+            cap_radius_m: None,
+            cap_depth_pct: None,
             selfish_smoke: None,
             damage_in_smoke: None,
             damage_behind_smoke: None,
@@ -848,6 +873,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         game_no: config.game.game_no,
         map: map_label.clone(),
         map_name: map_name.clone(),
+        map_display: map_display.clone(),
         game_build: replays.primary.meta.clientVersionFromExe.clone(),
         primary_replay: primary_replay.clone(),
         merged_replays: merged_replays.clone(),

@@ -28,18 +28,54 @@ There are three phases. The interactive features wait until clan leadership has 
 | Phase | Goal | Scope | Main additions | Exit criteria |
 | --- | --- | --- | --- | --- |
 | 1. Prototype | Prove the pipeline end to end | Grand Final G1, H-SR only | Fork of wows-toolkit with a `smoke_signals` program; smoke detection, owner and type; capture rules; two frames, header and clip; Tier 1 and 2 metrics including radar while concealed; spike on smoke damage; golden test | Golden test passes and Sean's spot-checks match the replay |
-| 2. Demo | Show leadership everything except the interactive features | H-SR, RESIN and PN: group stage and playoffs | Replay inventory and batch runs; build data (commander skills and upgrades) and effective smoke stats; Tier 3 smoke damage and outcomes; SQLite database; CSV hand-tagging; static demo gallery (see below); pattern summary | Demo is presented |
+| 2. Demo | Show leadership everything except the interactive features | H-SR, RESIN and PN: group stage and playoffs | Replay inventory and batch runs; build data (commander skills and upgrades) and effective smoke stats; Tier 3 smoke damage and outcomes; SQLite database; CSV hand-tagging; static demo site (see Phase 2 demo site); pattern summary | Demo is presented |
 | 3. Interactive | Let clan members tag and discuss smokes | Decided after the demo | Choose a host (Supabase, the clan site, or other); login; tag dropdowns; comments; access control; move SQLite data to the host; host the clips | Leadership sign-off |
 
 **Costs:** none through Phase 2. SQLite is free, open-source software, and the database is a single file. Phase 3 hosting costs depend on the chosen host and on clip storage.
 
-**Phase 2 demo gallery (decided 3 Nov 2026)**
+## Phase 2 demo site
 
-- A static site: plain HTML, CSS and JavaScript with no server, so it works when opened from a local folder and can be published to GitHub Pages. A public site is fine.
-- The build writes the site to its own folder (`site/` by default), never into `output/`. A run's frames, zoom images, stats and tags are copied in; `output/` stays the raw record of every run.
-- One page per smoke: the activation and capture frames, both zoom images, the metadata record's stats and the hand tags. Images are the WebP copies.
-- Clips are published for one or two featured smokes only: by default Yamiyonohik's Somers smoke at 08:37 in Grand Final G1 (`smoke_id` 39292), plus one exhaust or radar example. Published clips are compressed: 2x speed (`render.clip_speed = 2.0`), at most 25 MB for all published clips together. Every other clip stays local, and its page says "clip available on request".
-- Size budget: the whole site under 500 MB, no single file over 100 MB (the GitHub file limit).
+Decided 3 Nov 2026. Documentation only until Sean approves the build.
+
+**Format and hosting**
+
+- A static site (plain HTML, CSS and JavaScript, no server) that works when opened from a local folder and can be published to GitHub Pages. A public site is fine.
+- The build writes the site to `site/`, separate from `output/`. `output/` stays the raw record of every run and is never served.
+- Size budget: the whole site under 500 MB, no file over 100 MB. Images as WebP.
+- A top navigation bar on every page: Home, Analysis, Maps, All Smokes. Game and smoke pages are reached by links.
+- Visuals first on every page: charts, diagrams and small graphics over text. Text is limited to short takeaways.
+
+**Look and feel**
+
+- A clean, dark naval and tactical look: deep navy background, smoke-grey panels, crisp white text.
+- One colour per team (H-SR, RESIN, PN), used everywhere: map dots, cards, table tags, charts.
+- A pinch of whimsy only: the award names below and the odd cheeky line (an empty filter result reads "Nothing here, just clear skies."). No animations or gimmicks.
+
+**Pages**
+
+1. Home: a bold "mission briefing" callout box with the purpose (we want to win games; this breaks down how top competitive teams use smoke), then a table of contents with one card per page (Analysis, Maps, All Smokes) and a one-line description each.
+2. Analysis, in this order:
+   a. Smoke of the Tournament: the smoke with the highest smoke_damage_total, with its frames and featured clip.
+   b. Player awards as cards: Golden Cloud (most total smoke damage), The Smokefather (most smokes laid), Best in Haze (highest average smoke damage per smoke, minimum 3 smokes), Most Selfish Smoker (most selfish smokes; see selfish_smoke below).
+   c. Top 5 player cards: ship(s), smokes laid, total and average smoke damage, radar spots in smoke, with small icons and mini bars rather than plain numbers.
+   d. Clan awards, normalised per game played: most smokes laid, most smoke damage, most selfish smokes.
+   e. Exactly 3 headline findings across all teams, data-driven.
+   f. Team cards for H-SR, RESIN and PN with an identical layout for easy comparison: headline stats (total smokes, smokes per game, smoke damage per game); a ship donut (each ship's share of the team's smokes); a timing bar (smokes across the match clock: early, mid, late); a damage split bar (in smoke, behind smoke, outside smoke); habits (share of selfish smokes, cap proximity distribution); a one-line takeaway (for example "H-SR smokes early and close to caps"); and a note that purpose and intent wait for the hand tags, so the cards are descriptive, not conclusions.
+3. Maps: one section per map with the map name, the map image with a dot for every smoke at its origin coloured by team (clicking a dot opens that smoke's page), and a few short takeaways under each map.
+4. All Smokes: a table of every analysed smoke. Filter by team, player, ship, map, game and smoke type. Sort by smoke damage (total, in, behind), radar spots in smoke, duration, score change during the smoke, and cap proximity. Each row has a small thumbnail, tiny inline bars for damage and cap proximity, and links to both the smoke page and the game page.
+5. Game pages, one per game: a header (match, teams, map, final score, winner and how it ended); a mini map with the game's smoke dots, coloured by team and clickable; a timeline across the match showing when each smoke went up, plus a score chart with smoke markers; the game's smokes with thumbnails, linking to their pages.
+6. Smoke pages, one per smoke: a header (player, ship, team, map, game and battle time, smoke damage); the activation and capture frames side by side, the zoomed close-up, and the clip if featured; a stats panel (duration, the smoke damage split in and behind as a bar, radar spots, a cap proximity diagram, score and ships alive at the time); tags (purpose and rating from hand-tagging, or "untagged"); navigation (previous and next smoke in the same game, up to the game page, and to its dot on the map).
+
+**New metrics** (also in the metadata record)
+
+- cap_proximity_m and cap_proximity_name: the distance from the nearest edge of the smoke (the union of its puffs) to the nearest edge of the nearest capture zone, and that cap's name, measured at t_capture. Negative when the smoke overlaps the cap, by how far it reaches inside.
+- selfish_smoke (true or false): true only if, during the smoke's whole life, no teammate other than the owner is ever inside it and no teammate gets any damage_behind_smoke through it.
+
+**Clips on the site**
+
+- Only one or two featured smokes get a published clip: the Smoke of the Tournament, plus one other good example (an exhaust smoke or a radar spot).
+- Featured clips are rendered at 5x speed (`render.clip_speed = 5.0`, about 36 s for a typical smoke) and within 25 MB in total. The site's player has a 2x button so viewers can watch at 10x.
+- All other clips stay local; their pages say "clip available on request".
 
 ## Inputs
 
@@ -166,7 +202,7 @@ Smoke damage has three parts: damage dealt *in* the smoke, damage dealt from *be
 
 ## Outputs
 
-Each smoke produces two frames (activation and capture), their zoom images, one clip and one metadata record. Each run writes them to a new `output/<timestamp>/` folder and never overwrites an earlier run. The Phase 2 gallery is built from a run into a separate `site/` folder (see Project phases); `output/` is never served or published.
+Each smoke produces two frames (activation and capture), their zoom images, one clip and one metadata record. Each run writes them to a new `output/<timestamp>/` folder and never overwrites an earlier run. The Phase 2 demo site is built from runs into a separate `site/` folder (see Phase 2 demo site); `output/` is never served or published.
 
 **Frames**
 
@@ -197,7 +233,7 @@ An example with made-up values:
 - **Gunfire must be visible:** main-battery tracers, secondary tracers and torpedoes on, with tracer pacing following the render clock as in the renderer's video mode.
 - Uses the same overlays and header, plus a progress marker showing activation → capture → now.
 - Encoder: the toolkit's CPU H.264 encoder (the `cpu` feature, openh264), so no NASM or GPU is needed.
-- Every smoke gets a clip locally. The gallery publishes clips for the featured smokes only, at 2x speed and within 25 MB in total; the other smoke pages say "clip available on request".
+- Every smoke gets a clip locally. The demo site publishes clips for the featured smokes only, at 5x speed and within 25 MB in total; the other smoke pages say "clip available on request".
 
 **Metadata record (unified field names)**
 
@@ -210,6 +246,7 @@ An example with made-up values:
 | Tier 2 | allies_in_smoke, nearest_enemy_dist_km, dist_to_nearest_cap_km, cap_contested, enemy_radars_alive, radar_detections_in_smoke, hydro_detections_in_smoke, fired_while_concealed_detections |
 | Tier 3 (Phase 2) | damage_in_smoke, damage_behind_smoke, smoke_damage_total (each broken down, plus _enemy columns), kills_during_smoke, deaths_in_smoke, cap_flips_during_smoke, score_delta_60s, smoker_survived_60s, game_result |
 | Build (Phase 2) | commander_skills, upgrades, effective_emission_s, effective_puff_life_s |
+| Site (Phase 2) | cap_proximity_m, cap_proximity_name, selfish_smoke |
 | Provenance | wows_toolkit_rev, smoke_signals_version, generated_at |
 | Files | frame_act, frame_cap, frame_act_zoom, frame_cap_zoom, clip |
 
@@ -314,6 +351,8 @@ Items 1–4 were decided on 2 Nov. Proposed defaults for the rest are in bracket
 - [ ] 6. Exhaust and crawling smoke color (light orange) and the header layout: confirm from the M3 renders.
 - [ ] 7. Purpose list and rating scale for tagging: confirm before Phase 2.
 - [ ] 8. Phase 3 host: decide after the demo; clip storage affects the cost.
+- [ ] 9. Demo site team colours: three that work on dark navy and with the minimap's own colours. Sean to approve.
+- [ ] 10. Which second clip to feature on the demo site.
 - [x] Prototype game: Grand Final G1. Minimap look: wows-toolkit, merged. Smoke types: standard, exhaust and crawling. Emission differences: explained by builds, stored in Phase 2.
 
 **Upstream feature requests (an issue for the wows-toolkit author)**

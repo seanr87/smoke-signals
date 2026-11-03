@@ -1,0 +1,18 @@
+# Copy to config.toml (gitignored) and edit for this machine.
+
+[paths]
+replays = "replays"            # replays/<match>/<game>/*.wowsreplay (Phase 1: flat folder is fine)
+game_data = "game_data"        # wows-replay-data checkout/download (contains <version>_<build>/ and common/)
+output = "output"              # each run writes output/<timestamp>/
+
+[run]
+team_prefix = "HSR_"           # player-name prefix of the team being analyzed
+primary_team = "H-SR"
+merge = true                   # merge both teams' replays
+
+[render]
+show_player_names = true
+exhaust_color = "#FFB366"      # light orange (proposed)
+highlight_color = "#FFD700"
+clip_fps = 20
+clip_pre_seconds = 5           # clip starts 5 s before activation, ends when the smoke disperses

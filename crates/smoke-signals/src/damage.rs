@@ -9,6 +9,7 @@
 //! latest salvo before the damage, and the attacker's position at the damage
 //! clock itself.
 
+use std::cmp::Ordering;
 use std::collections::BTreeMap;
 use std::collections::HashMap;
 
@@ -28,6 +29,12 @@ use crate::timeline;
 const HIT_MATCH_SECONDS: f32 = 1.0;
 /// Longest shell flight accepted when matching a damage event to a salvo.
 const SALVO_MATCH_SECONDS: f32 = 25.0;
+/// Fire clocks closer than this count as the same moment.
+const SAME_FIRE_SECONDS: f32 = 0.01;
+/// Aim points closer than this to each other count as the same landing point.
+const SAME_TARGET_UNITS: f32 = 1.0;
+/// Landing clocks closer than this to each other count as the same moment.
+const SAME_LANDING_SECONDS: f32 = 0.1;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -210,6 +217,58 @@ pub fn merge_ledgers(ledgers: &[HashMap<EntityId, Vec<DamageEvent>>]) -> (HashMa
     (out, folded)
 }
 
+/// Fixed order of one owner's salvos: fire clock, salvo id, first shot id.
+fn salvo_order(a: &ActiveShot, b: &ActiveShot) -> Ordering {
+    let first = |s: &ActiveShot| s.salvo.shots.first().map(|x| x.shot_id.raw() as u64);
+    a.fired_at
+        .seconds()
+        .total_cmp(&b.fired_at.seconds())
+        .then(a.salvo.salvo_id.cmp(&b.salvo.salvo_id))
+        .then(first(a).cmp(&first(b)))
+}
+
+/// Among salvos fired at the same moment, the one whose shells best match
+/// the hit: the aim point nearest the victim at the damage clock, then the
+/// recorded landing clock of its shells nearest the damage clock, then the
+/// fixed order. `candidates` must arrive in the fixed order.
+fn best_salvo<'a>(
+    candidates: impl Iterator<Item = &'a ActiveShot>,
+    t: f32,
+    victim_pos: Option<WorldPos>,
+    hits_by_shot: &HashMap<(EntityId, u64), Vec<f32>>,
+) -> Option<&'a ActiveShot> {
+    let mut best: Option<(&'a ActiveShot, f32, f32)> = None;
+    for s in candidates {
+        let target_error = victim_pos
+            .map(|v| s.salvo.shots.iter().map(|x| timeline::ground_distance(x.target, v)).fold(f32::INFINITY, f32::min))
+            .unwrap_or(f32::INFINITY);
+        let landing_error = s
+            .salvo
+            .shots
+            .iter()
+            .filter_map(|x| hits_by_shot.get(&(s.salvo.owner_id, x.shot_id.raw() as u64)))
+            .flatten()
+            .map(|c| (c - t).abs())
+            .fold(f32::INFINITY, f32::min);
+        let better = match best {
+            None => true,
+            Some((_, best_target, best_landing)) => {
+                if (target_error - best_target).abs() > SAME_TARGET_UNITS {
+                    target_error < best_target
+                } else if (landing_error - best_landing).abs() > SAME_LANDING_SECONDS {
+                    landing_error < best_landing
+                } else {
+                    false
+                }
+            }
+        };
+        if better {
+            best = Some((s, target_error, landing_error));
+        }
+    }
+    best.map(|(s, _, _)| s)
+}
+
 /// Coverage of the attribution on this game.
 #[derive(Debug, Clone, Default, Serialize)]
 pub struct SpikeStats {
@@ -266,11 +325,18 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
         salvos_by_owner.entry(s.salvo.owner_id).or_default().push(s);
     }
     for v in salvos_by_owner.values_mut() {
-        v.sort_by(|a, b| a.fired_at.seconds().total_cmp(&b.fired_at.seconds()));
+        v.sort_by(|a, b| salvo_order(a, b));
+    }
+    let mut hits_by_shot: HashMap<(EntityId, u64), Vec<f32>> = HashMap::new();
+    for h in input.hits {
+        hits_by_shot.entry((h.hit.owner_id, h.hit.shot_id.raw() as u64)).or_default().push(h.clock.seconds());
     }
 
-    for (attacker, list) in input.ledger {
-        for event in list {
+    // Attackers in id order, so sums and the event list do not depend on map order.
+    let mut attackers: Vec<&EntityId> = input.ledger.keys().collect();
+    attackers.sort_by_key(|e| e.raw());
+    for attacker in attackers {
+        for event in &input.ledger[attacker] {
             stats.damage_events += 1;
             stats.damage_total += event.amount;
             *stats.damage_by_attacker.entry(attacker.raw() as u32).or_default() += event.amount;
@@ -294,18 +360,24 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                     let origin = h.salvo.as_ref()?.shots.first()?.origin;
                     Some((fired.seconds(), origin, FireSource::ShotHit))
                 });
+            let victim_pos = input.timeline.get(&event.victim).and_then(|tr| timeline::world_pos_at(tr, event.clock));
+            // The latest salvo before the damage; among salvos fired at the
+            // same moment, the one whose shells match the hit.
             let from_salvo = from_hit.or_else(|| {
-                salvos_by_owner.get(attacker).and_then(|list| {
-                    list.iter()
-                        .rev()
-                        .find(|s| {
-                            let f = s.fired_at.seconds();
-                            f <= t && t - f <= SALVO_MATCH_SECONDS
-                        })
-                        .and_then(|s| {
-                            s.salvo.shots.first().map(|shot| (s.fired_at.seconds(), shot.origin, FireSource::Salvo))
-                        })
-                })
+                let candidates: Vec<&ActiveShot> = salvos_by_owner
+                    .get(attacker)
+                    .into_iter()
+                    .flatten()
+                    .copied()
+                    .filter(|s| {
+                        let f = s.fired_at.seconds();
+                        f <= t && t - f <= SALVO_MATCH_SECONDS
+                    })
+                    .collect();
+                let latest = candidates.iter().map(|s| s.fired_at.seconds()).fold(f32::NEG_INFINITY, f32::max);
+                let tied = candidates.into_iter().filter(|s| latest - s.fired_at.seconds() <= SAME_FIRE_SECONDS);
+                best_salvo(tied, t, victim_pos, &hits_by_shot)
+                    .and_then(|s| s.salvo.shots.first().map(|shot| (s.fired_at.seconds(), shot.origin, FireSource::Salvo)))
             });
             let (fire_seconds, fire_pos, source) = match from_salvo {
                 Some(found) => found,
@@ -322,7 +394,6 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
             *stats.damage_by_source.entry(format!("{source:?}")).or_default() += event.amount;
 
             let fire_clock = GameClock(fire_seconds);
-            let victim_pos = input.timeline.get(&event.victim).and_then(|tr| timeline::world_pos_at(tr, event.clock));
             if victim_pos.is_none() {
                 stats.events_no_victim_position += 1;
             }
@@ -373,7 +444,14 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
             });
         }
     }
-    events.sort_by(|a, b| a.damage_seconds.total_cmp(&b.damage_seconds));
+    events.sort_by(|a, b| {
+        a.damage_seconds
+            .total_cmp(&b.damage_seconds)
+            .then(a.attacker.cmp(&b.attacker))
+            .then(a.victim.cmp(&b.victim))
+            .then(a.fire_seconds.total_cmp(&b.fire_seconds))
+            .then(a.amount.total_cmp(&b.amount))
+    });
     SpikeOutput { events, per_smoke, stats }
 }
 

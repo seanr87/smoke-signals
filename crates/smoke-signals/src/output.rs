@@ -13,6 +13,13 @@ use crate::records::StateSnapshot;
 use crate::records::Xz;
 use crate::tier2::DetectionEvent;
 
+/// The smokes.json document: the game record and every smoke record.
+#[derive(Serialize)]
+pub struct SmokesDocument<'a> {
+    pub game: &'a GameRecord,
+    pub smokes: &'a [SmokeRecord],
+}
+
 pub fn write_json<T: Serialize>(path: &Path, value: &T) -> Result<(), Report> {
     let text = serde_json::to_string_pretty(value).attach_with(|| format!("serializing {}", path.display()))?;
     std::fs::write(path, text).attach_with(|| format!("writing {}", path.display()))?;

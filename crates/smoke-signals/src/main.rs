@@ -110,7 +110,7 @@ fn main() -> Result<(), Report> {
             output::write_smokes_csv(&out_dir.join("smokes.csv"), &analysis.smokes)?;
             output::write_json(
                 &out_dir.join("smokes.json"),
-                &SmokesDocument { game: &analysis.game, smokes: &analysis.smokes },
+                &output::SmokesDocument { game: &analysis.game, smokes: &analysis.smokes },
             )?;
             output::write_json(&out_dir.join("game.json"), &analysis.game)?;
             let activations = diagnostics::scan_activations(&game, &replays, &analysis.game, &analysis.clock_map);
@@ -149,12 +149,6 @@ fn main() -> Result<(), Report> {
         Command::Variants => print_smoke_variants(&game),
     }
     Ok(())
-}
-
-#[derive(serde::Serialize)]
-struct SmokesDocument<'a> {
-    game: &'a smoke_signals::records::GameRecord,
-    smokes: &'a [smoke_signals::records::SmokeRecord],
 }
 
 fn load_inputs(config: &Config) -> Result<(ReplaySet, GameData), Report> {

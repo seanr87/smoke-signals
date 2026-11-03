@@ -227,11 +227,12 @@ impl Tier2Tracker {
         for (id, state) in smokes {
             let smoke = id.raw() as u32;
             let radius = state.radius.value();
-            let inside: Vec<EntityId> = positions
+            let mut inside: Vec<EntityId> = positions
                 .iter()
                 .filter(|(_, p)| state.points.iter().any(|puff| timeline::ground_distance(*p, *puff) <= radius))
                 .map(|(e, _)| *e)
                 .collect();
+            inside.sort_by_key(|e| e.raw());
             let entry = self.per_smoke.entry(smoke).or_default();
             for e in &inside {
                 *entry.ship_seconds.entry(e.raw() as u32).or_default() += dt;

@@ -21,6 +21,8 @@ pub enum ConfigError {
     },
     #[error("color {text:?} is not of the form #RRGGBB")]
     Color { text: String },
+    #[error("render.clip_fps must be at least 1, got {value}")]
+    ClipFps { value: u32 },
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -100,6 +102,9 @@ impl Config {
             std::fs::read_to_string(path).map_err(|source| ConfigError::Read { path: path.to_path_buf(), source })?;
         let mut config: Config =
             toml::from_str(&text).map_err(|source| ConfigError::Parse { path: path.to_path_buf(), source })?;
+        if config.render.clip_fps == 0 {
+            return Err(ConfigError::ClipFps { value: config.render.clip_fps });
+        }
         let base = path.parent().filter(|p| !p.as_os_str().is_empty()).map(Path::to_path_buf);
         if let Some(base) = base {
             for p in [&mut config.paths.replays, &mut config.paths.game_data, &mut config.paths.output] {

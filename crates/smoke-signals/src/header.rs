@@ -91,8 +91,8 @@ pub fn header_text(
                 opt_num(s.score_ours),
                 opt_num(s.score_theirs),
                 s.caps_text(),
-                s.alive_ours,
-                s.alive_theirs,
+                opt_num(s.alive_ours),
+                opt_num(s.alive_theirs),
                 s.smoker_hp_pct.map(|p| format!("{p:.0}%")).unwrap_or_else(|| "?".to_string()),
                 spotted,
                 opt_num(s.enemy_radars_alive)
@@ -186,6 +186,39 @@ fn draw_with_font(
     caret
 }
 
+/// Width of `text` at `size`, in pixels.
+pub fn text_width(fonts: &GameFonts, size: f32, text: &str) -> f32 {
+    let scaled = fonts.primary.as_scaled(PxScale::from(size * fonts.primary_scale_factor));
+    let mut width = 0.0;
+    let mut previous = None;
+    for ch in text.chars() {
+        let id = scaled.glyph_id(ch);
+        if let Some(prev) = previous {
+            width += scaled.kern(prev, id);
+        }
+        width += scaled.h_advance(id);
+        previous = Some(id);
+    }
+    width
+}
+
+/// `text` cut to `max_width` with a trailing `..` when it does not fit.
+pub fn fit_text(fonts: &GameFonts, size: f32, max_width: f32, text: &str) -> String {
+    if text_width(fonts, size, text) <= max_width {
+        return text.to_string();
+    }
+    let chars: Vec<char> = text.chars().collect();
+    let mut end = chars.len();
+    while end > 0 {
+        end -= 1;
+        let candidate: String = chars[..end].iter().collect::<String>() + "..";
+        if text_width(fonts, size, &candidate) <= max_width {
+            return candidate;
+        }
+    }
+    "..".to_string()
+}
+
 /// Rendered frame height once the header and footer are added.
 pub fn composed_height(frame_height: u32) -> u32 {
     HEADER_HEIGHT + frame_height + FOOTER_HEIGHT
@@ -194,15 +227,16 @@ pub fn composed_height(frame_height: u32) -> u32 {
 /// The frame with the header strip above it and the footer below.
 pub fn compose(frame: &RgbImage, fonts: &GameFonts, text: &HeaderText, progress: Option<Progress>) -> RgbImage {
     let width = frame.width();
+    let max = width as f32 - 16.0;
     let mut out = RgbImage::from_pixel(width, composed_height(frame.height()), BACKGROUND);
-    draw_text(&mut out, fonts, 17.0, 8.0, 4.0, TEXT, &text.line1);
-    draw_text(&mut out, fonts, 14.0, 8.0, 27.0, TEXT_DIM, &text.line2);
+    draw_text(&mut out, fonts, 17.0, 8.0, 4.0, TEXT, &fit_text(fonts, 17.0, max, &text.line1));
+    draw_text(&mut out, fonts, 14.0, 8.0, 27.0, TEXT_DIM, &fit_text(fonts, 14.0, max, &text.line2));
     if let Some(p) = progress {
         draw_progress(&mut out, p, 8, HEADER_HEIGHT as i32 - 12, width as i32 - 16);
     }
     image::imageops::replace(&mut out, frame, 0, i64::from(HEADER_HEIGHT));
     let footer_y = HEADER_HEIGHT + frame.height();
-    draw_text(&mut out, fonts, 13.0, 8.0, footer_y as f32 + 3.0, TEXT_DIM, &text.footer);
+    draw_text(&mut out, fonts, 13.0, 8.0, footer_y as f32 + 3.0, TEXT_DIM, &fit_text(fonts, 13.0, max, &text.footer));
     out
 }
 

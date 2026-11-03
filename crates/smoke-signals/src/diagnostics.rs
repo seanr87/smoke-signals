@@ -263,9 +263,10 @@ pub fn decode_public_results(constants_path: &Path, results: &str) -> Result<Vec
     let mut out = Vec::new();
     for row in players.values() {
         let Some(row) = row.as_array() else { continue };
-        let name = index("name").and_then(|i| row.get(i)).and_then(|v| v.as_str()).unwrap_or_default().to_string();
+        // A row without a name cannot be matched to a player; it is left out.
+        let Some(name) = index("name").and_then(|i| row.get(i)).and_then(|v| v.as_str()) else { continue };
         out.push(PublicResult {
-            name,
+            name: name.to_string(),
             team_id: index("team_id").and_then(|i| row.get(i)).and_then(|v| v.as_i64()),
             max_health: field(row, "max_health"),
             remained_hp: field(row, "remained_hp"),

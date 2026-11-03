@@ -125,6 +125,12 @@ impl SmokeTrack {
         self.last_point = points.last().copied();
     }
 
+    /// Puff life as seen: the last puff laid fades when the object goes.
+    /// `None` until the object was removed.
+    fn observed_puff_life(&self) -> Option<f32> {
+        Some(self.removed?.seconds() - self.last_new_puff()?.seconds())
+    }
+
     fn last_new_puff(&self) -> Option<GameClock> {
         self.puffs.last().map(|(c, _)| *c)
     }
@@ -340,6 +346,9 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         .collect();
     let mut tier2 = tier2::Tier2Tracker::new(ranges);
     let mut hits: Vec<wows_replays::analyzer::battle_controller::state::ResolvedShotHit> = Vec::new();
+    // The view's hit list is cleared when a packet is processed, not when a
+    // secondary packet is skipped, so the same hits show up on several steps.
+    let mut seen_hits: HashSet<(u32, u32, u32, u32)> = HashSet::new();
     let mut salvos: HashMap<(u32, u32, u32), wows_replays::analyzer::battle_controller::state::ActiveShot> =
         HashMap::new();
 
@@ -351,7 +360,17 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             tracks.entry(*id).or_insert_with(|| SmokeTrack::new(clock, state)).observe(clock, state);
         }
         tier2.observe(clock, &view, &smokes, &tl);
-        hits.extend(view.shot_hits().iter().cloned());
+        for hit in view.shot_hits() {
+            let key = (
+                hit.hit.owner_id.raw() as u32,
+                hit.victim_entity_id.raw() as u32,
+                hit.clock.seconds().to_bits(),
+                hit.hit.shot_id.raw(),
+            );
+            if seen_hits.insert(key) {
+                hits.push(hit.clone());
+            }
+        }
         for shot in view.active_shots() {
             let key = (shot.salvo.owner_id.raw() as u32, shot.salvo.salvo_id, shot.fired_at.seconds().to_bits());
             salvos.entry(key).or_insert(shot);
@@ -646,7 +665,10 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             if a.created.seconds() > b_end || b.created.seconds() > a_end {
                 continue;
             }
-            let (life_a, life_b) = (smokes[i].base_puff_life_s, smokes[j].base_puff_life_s);
+            let (life_a, life_b) = (
+                a.observed_puff_life().or(smokes[i].base_puff_life_s),
+                b.observed_puff_life().or(smokes[j].base_puff_life_s),
+            );
             let reach = a.radius + b.radius;
             let touching = a.puffs.iter().any(|(ta, pa)| {
                 let (a0, a1) = standing(a, life_a, *ta);
@@ -726,7 +748,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
                 id: id.raw() as u32,
                 radius: track.radius,
                 puffs: track.puffs.iter().map(|(c, p)| (c.seconds(), *p)).collect(),
-                puff_life: record.base_puff_life_s,
+                puff_life: track.observed_puff_life().or(record.base_puff_life_s),
                 created: track.created.seconds(),
                 removed: track.removed.map(|c| c.seconds()),
             }
@@ -757,14 +779,17 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         team_of: &team_of,
         smoke_owner: &smoke_owner,
     });
-    for (i, id) in ids.iter().enumerate() {
-        let d = spike.per_smoke.get(&(id.raw() as u32)).cloned().unwrap_or_default();
-        smokes[i].damage_in_smoke = Some(d.damage_in_smoke());
-        smokes[i].damage_behind_smoke = Some(d.damage_behind_smoke());
-        smokes[i].smoke_damage_total = Some(d.smoke_damage_total());
-        smokes[i].damage_in_smoke_enemy = Some(d.damage_in_smoke_enemy);
-        smokes[i].damage_behind_smoke_enemy = Some(d.damage_behind_smoke_enemy);
-        smokes[i].damage_detail = Some(d);
+    // With no damage events at all the credit is unknown, not zero.
+    if spike.stats.damage_events > 0 {
+        for (i, id) in ids.iter().enumerate() {
+            let d = spike.per_smoke.get(&(id.raw() as u32)).cloned().unwrap_or_default();
+            smokes[i].damage_in_smoke = Some(d.damage_in_smoke());
+            smokes[i].damage_behind_smoke = Some(d.damage_behind_smoke());
+            smokes[i].smoke_damage_total = Some(d.smoke_damage_total());
+            smokes[i].damage_in_smoke_enemy = Some(d.damage_in_smoke_enemy);
+            smokes[i].damage_behind_smoke_enemy = Some(d.damage_behind_smoke_enemy);
+            smokes[i].damage_detail = Some(d);
+        }
     }
     spike.stats.events_per_replay = events_per_replay;
     spike.stats.events_dropped_as_duplicates = dropped;

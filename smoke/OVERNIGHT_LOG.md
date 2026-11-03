@@ -51,3 +51,19 @@ Morning summary is added at the top when the run ends. Entries below are in orde
 - The game's own per-player damage totals are decoded from the battle results blob with the field map in the build's constants.json (`CLIENT_PUBLIC_RESULTS_INDICES`, index 426 is `damage`). Written to battle_results_players.csv every run and compared in run_log.md.
 - `damage_behind_smoke` got a shooter-side clause (the crossed puff must be nearer the shooter than the target). Without it, RESIN battleship fire crossing the Conte Verde's exhaust trail next to its targets was credited as 47k "behind" that smoke.
 - Decision: smoke-damage columns are filled in the table now (DESIGN lists them as Phase 2). They are labeled as spike results in run_log.md and M4_DAMAGE_SPIKE.md.
+
+## Review (fresh subagent, M3 and M4 together) and fixes
+
+Findings fixed before the final run:
+- Damage ledger matching could fold two shells of one salvo seen by the same replay into one event; matching now only pairs an event with an earlier replay's event, so same-replay events never fold.
+- Shot hits were collected again on every step where the merge skipped a secondary packet (the view's hit list is cleared only when a packet is processed); hits are now deduplicated by shooter, victim, clock and shot id. The attribution was unaffected, the hit count in the stats was inflated.
+- A ship concealed by two overlapping smokes recorded a detection for each smoke but only the last one got its duration; both do now.
+- Damage columns stay empty when a replay yields no damage events at all, instead of showing zero.
+- Ships alive and enemy radars are empty (not zero) when the smoker's team is unknown.
+- Puff life for the damage and overlap rules is now the observed value (last puff laid to the object's removal) when the removal was seen, and the base value otherwise. Builds lengthen puff life, and the base value would have ended credit 10 to 30 percent early.
+- Header lines are measured with the font and cut with `..` when wider than the frame.
+- `render.clip_fps` of 0 is rejected when the config is read instead of being silently raised to 1.
+- A results row with no player name is skipped instead of becoming an empty name.
+- A wrong field comment in the Tier 2 tracker.
+
+Left as is: the 1.5 s matching window assumes the two replays' clocks are aligned, which the toolkit's own merge already assumes.

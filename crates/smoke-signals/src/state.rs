@@ -65,8 +65,8 @@ pub fn snapshot(
         .iter()
         .map(|((team_id, class), n)| AliveCount { team: team_name(*team_id), ship_class: class.clone(), alive: *n })
         .collect();
-    let count_team = |team: Option<i64>| -> u32 {
-        team.map(|t| alive.iter().filter(|((id, _), _)| *id == t).map(|(_, n)| *n).sum()).unwrap_or(0)
+    let count_team = |team: Option<i64>| -> Option<u32> {
+        team.map(|t| alive.iter().filter(|((id, _), _)| *id == t).map(|(_, n)| *n).sum())
     };
 
     let props = smoker.and_then(|e| view.vehicle_props(e));
@@ -77,26 +77,24 @@ pub fn snapshot(
     let flags = props.and_then(|p| p.visibility_flags());
 
     let inventories = view.consumable_inventories();
-    let enemy_radars_alive = their_team.map(|theirs| {
-        game.team(theirs)
-            .map(|t| {
-                t.players
-                    .iter()
-                    .filter(|p| !dead.contains_key(&EntityId::from(p.entity_id)))
-                    .filter(|p| {
-                        inventories.get(&EntityId::from(p.entity_id)).is_some_and(|slots| {
-                            slots.iter().any(|s| {
-                                s.consumable == Recognized::Known(Consumable::Radar)
-                                    && match s.charges_remaining() {
-                                        ChargeCount::Unlimited => true,
-                                        ChargeCount::Finite(n) => n > 0,
-                                    }
-                            })
+    let enemy_radars_alive = their_team.and_then(|theirs| {
+        game.team(theirs).map(|t| {
+            t.players
+                .iter()
+                .filter(|p| !dead.contains_key(&EntityId::from(p.entity_id)))
+                .filter(|p| {
+                    inventories.get(&EntityId::from(p.entity_id)).is_some_and(|slots| {
+                        slots.iter().any(|s| {
+                            s.consumable == Recognized::Known(Consumable::Radar)
+                                && match s.charges_remaining() {
+                                    ChargeCount::Unlimited => true,
+                                    ChargeCount::Finite(n) => n > 0,
+                                }
                         })
                     })
-                    .count() as u32
-            })
-            .unwrap_or(0)
+                })
+                .count() as u32
+        })
     });
 
     let clock = view.clock();

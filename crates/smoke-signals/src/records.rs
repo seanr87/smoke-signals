@@ -86,8 +86,8 @@ pub struct StateSnapshot {
     pub score_theirs: Option<i64>,
     pub cap_state: Vec<CapState>,
     pub ships_alive: Vec<AliveCount>,
-    pub alive_ours: u32,
-    pub alive_theirs: u32,
+    pub alive_ours: Option<u32>,
+    pub alive_theirs: Option<u32>,
     pub smoker_hp_pct: Option<f32>,
     /// `None` when the replay carried no visibility flags for the smoker.
     pub smoker_spotted: Option<bool>,

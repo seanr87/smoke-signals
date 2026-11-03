@@ -60,7 +60,7 @@ pub fn render_clip(
     types: &std::collections::HashMap<u32, crate::records::SmokeType>,
     path: &Path,
 ) -> Result<usize, Report> {
-    let fps = config.render.clip_fps.max(1);
+    let fps = config.render.clip_fps;
     let mut session = GameSession::new(game_data, replays)?;
     let mut renderer = FrameRenderer::new(config, game_data, replays, &session)?;
     let window = clip_window(record, config.render.clip_pre_seconds as f32, session.total_duration().seconds());

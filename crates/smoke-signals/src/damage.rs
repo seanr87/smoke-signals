@@ -58,7 +58,8 @@ pub struct AttributedDamage {
 }
 
 /// A smoke as the spike needs it: puffs with the time they were laid, the
-/// puff life, and the object's life.
+/// puff life (observed from the last puff to the object's removal when the
+/// removal was seen, else the base value), and the object's life.
 pub struct SmokeGeometry {
     pub id: u32,
     pub radius: f32,
@@ -165,50 +166,44 @@ const DUPLICATE_WINDOW_SECONDS: f32 = 1.5;
 /// Union of the per-replay ledgers. A client is told every hit on a ship
 /// inside its area of interest, so perspectives overlap, and their clocks for
 /// one hit differ by a fraction of a second. An event from a later replay is
-/// matched one-to-one to an unmatched event of an earlier replay with the
-/// same attacker, victim and amount within [`DUPLICATE_WINDOW_SECONDS`];
-/// matched events are the same hit and are kept once. Several shells of one
-/// salvo with equal damage each find their own match, so they survive.
-/// Returns the ledger and how many events were folded as duplicates.
+/// matched one-to-one to an event of an earlier replay that no copy has taken
+/// yet, with the same attacker, victim and amount within
+/// [`DUPLICATE_WINDOW_SECONDS`]; a matched pair is one hit kept once. Events
+/// of the same replay never match each other, so several shells of one salvo
+/// with equal damage survive. Returns the ledger and the fold count.
 pub fn merge_ledgers(ledgers: &[HashMap<EntityId, Vec<DamageEvent>>]) -> (HashMap<EntityId, Vec<DamageEvent>>, u32) {
-    let mut merged: HashMap<EntityId, Vec<(DamageEvent, bool)>> = HashMap::new();
+    // (event, source replay, taken by a later replay's copy)
+    let mut merged: HashMap<EntityId, Vec<(DamageEvent, usize, bool)>> = HashMap::new();
     let mut folded = 0;
     for (index, ledger) in ledgers.iter().enumerate() {
         for (attacker, events) in ledger {
             let existing = merged.entry(*attacker).or_default();
             for event in events {
-                if index > 0 {
-                    let best = existing
-                        .iter_mut()
-                        .filter(|(e, matched)| {
-                            !matched
-                                && e.victim == event.victim
-                                && e.amount == event.amount
-                                && (e.clock.seconds() - event.clock.seconds()).abs() <= DUPLICATE_WINDOW_SECONDS
-                        })
-                        .min_by(|a, b| {
-                            (a.0.clock.seconds() - event.clock.seconds())
-                                .abs()
-                                .total_cmp(&(b.0.clock.seconds() - event.clock.seconds()).abs())
-                        });
-                    if let Some(slot) = best {
-                        slot.1 = true;
-                        folded += 1;
-                        continue;
-                    }
+                let best = existing
+                    .iter_mut()
+                    .filter(|(e, source, taken)| {
+                        *source < index
+                            && !taken
+                            && e.victim == event.victim
+                            && e.amount == event.amount
+                            && (e.clock.seconds() - event.clock.seconds()).abs() <= DUPLICATE_WINDOW_SECONDS
+                    })
+                    .min_by(|a, b| {
+                        (a.0.clock.seconds() - event.clock.seconds())
+                            .abs()
+                            .total_cmp(&(b.0.clock.seconds() - event.clock.seconds()).abs())
+                    });
+                if let Some(slot) = best {
+                    slot.2 = true;
+                    folded += 1;
+                } else {
+                    existing.push((*event, index, false));
                 }
-                existing.push((*event, false));
-            }
-        }
-        // Matches are only against earlier replays; reset for the next one.
-        for list in merged.values_mut() {
-            for slot in list.iter_mut() {
-                slot.1 = false;
             }
         }
     }
     let mut out: HashMap<EntityId, Vec<DamageEvent>> =
-        merged.into_iter().map(|(k, v)| (k, v.into_iter().map(|(e, _)| e).collect())).collect();
+        merged.into_iter().map(|(k, v)| (k, v.into_iter().map(|(e, _, _)| e).collect())).collect();
     for events in out.values_mut() {
         events.sort_by(|a, b| a.clock.seconds().total_cmp(&b.clock.seconds()));
     }

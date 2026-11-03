@@ -101,12 +101,14 @@ pub struct Tier2Tracker {
     ranges: HashMap<EntityId, ConsumableRanges>,
     teams: HashMap<EntityId, i64>,
     last_eval: Option<f32>,
+    /// Flags as of the previous packet, so "concealed" means undetected
+    /// before the detection packet arrived.
     prev_flags: HashMap<EntityId, VisibilityFlags>,
-    /// Flags at the last evaluation, so "concealed" means undetected before
-    /// the detection packet arrived.
+    /// Ships inside each live smoke at the last geometry evaluation.
     inside_now: HashMap<u32, HashSet<EntityId>>,
     per_smoke: HashMap<u32, SmokeTier2>,
-    open: HashMap<(EntityId, DetectionKind), OpenDetection>,
+    /// Detections whose flag is still set, one per concealing smoke.
+    open: HashMap<(EntityId, DetectionKind), Vec<OpenDetection>>,
     /// Every flag change per ship, for queries at a moment.
     flag_history: HashMap<EntityId, Vec<(GameClock, VisibilityFlags)>>,
 }
@@ -168,11 +170,13 @@ impl Tier2Tracker {
             for kind in [DetectionKind::Radar, DetectionKind::Hydro, DetectionKind::FiredInSmoke] {
                 let gained = flags.contains(kind.flag()) && !prev.is_some_and(|f| f.contains(kind.flag()));
                 let lost = !flags.contains(kind.flag()) && prev.is_some_and(|f| f.contains(kind.flag()));
-                if lost && let Some(open) = self.open.remove(&(*ship, kind)) {
-                    if let Some(event) =
-                        self.per_smoke.get_mut(&open.smoke).and_then(|s| s.detections.get_mut(open.index))
-                    {
-                        event.detected_for_s = Some(t - event.seconds);
+                if lost && let Some(opened) = self.open.remove(&(*ship, kind)) {
+                    for open in opened {
+                        if let Some(event) =
+                            self.per_smoke.get_mut(&open.smoke).and_then(|s| s.detections.get_mut(open.index))
+                        {
+                            event.detected_for_s = Some(t - event.seconds);
+                        }
                     }
                 }
                 if !gained || was_detected {
@@ -196,7 +200,8 @@ impl Tier2Tracker {
                         source_in_range: in_range,
                         detected_for_s: None,
                     });
-                    self.open.insert((*ship, kind), OpenDetection { smoke, index: entry.detections.len() - 1 });
+                    let index = entry.detections.len() - 1;
+                    self.open.entry((*ship, kind)).or_default().push(OpenDetection { smoke, index });
                 }
             }
         }

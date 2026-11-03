@@ -62,8 +62,8 @@ fn state_fields(s: Option<&StateSnapshot>) -> Vec<String> {
                 .map(|a| format!("{}/{}:{}", opt(a.team.as_deref()), opt(a.ship_class.as_deref()), a.alive))
                 .collect::<Vec<_>>()
                 .join(" "),
-            s.alive_ours.to_string(),
-            s.alive_theirs.to_string(),
+            opt(s.alive_ours),
+            opt(s.alive_theirs),
             opt_f(s.smoker_hp_pct),
             opt(s.smoker_spotted),
             opt(s.smoker_spotted_flags.as_deref()),

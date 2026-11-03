@@ -115,12 +115,33 @@ fn main() -> Result<(), Report> {
             output::write_json(&out_dir.join("game.json"), &analysis.game)?;
             let activations = diagnostics::scan_activations(&game, &replays, &analysis.game, &analysis.clock_map);
             diagnostics::write_activations_csv(&out_dir.join("activations.csv"), &activations)?;
-            let tracks = diagnostics::summarize_tracks(&analysis.timeline, &analysis.game);
+            let tracks = diagnostics::summarize_tracks(&analysis.timeline, &analysis.game, &analysis.flag_history);
+            if let Some(results) = &analysis.battle_results {
+                std::fs::write(out_dir.join("battle_results.json"), results)
+                    .attach_with(|| "writing battle_results.json")?;
+                match diagnostics::decode_public_results(&game.build_dir.join("constants.json"), results) {
+                    Ok(decoded) => {
+                        diagnostics::write_public_results_csv(&out_dir.join("battle_results_players.csv"), &decoded)?;
+                        for r in &decoded {
+                            if let (Some(p), Some(d)) = (analysis.game.player_by_name(&r.name), r.damage) {
+                                analysis.damage_stats.damage_by_attacker_authoritative.insert(p.entity_id, d as f32);
+                            }
+                        }
+                    }
+                    Err(e) => tracing::warn!("battle results not decoded: {e}"),
+                }
+            }
             diagnostics::write_tracks_csv(&out_dir.join("tracks.csv"), &tracks)?;
             let name_of = |e: u32| analysis.game.player(e).map(|p| p.player.clone());
             output::write_damage_events_csv(&out_dir.join("damage_events.csv"), &analysis.damage_events, &name_of)?;
             output::write_json(&out_dir.join("damage_spike.json"), &analysis.damage_stats)?;
-            let log = output::run_log(&analysis.game, &analysis.smokes, frames_written, clips_written);
+            let log = output::run_log(
+                &analysis.game,
+                &analysis.smokes,
+                &analysis.damage_stats,
+                frames_written,
+                clips_written,
+            );
             std::fs::write(out_dir.join("run_log.md"), &log).attach_with(|| "writing run_log.md")?;
             print!("{}", output::summary_table(&analysis.smokes));
             println!("{}", out_dir.display());
@@ -207,7 +228,8 @@ fn write_frame_log(
     let _ = writeln!(log, "- file: {}", frame.path.file_name().map(|n| n.to_string_lossy()).unwrap_or_default());
     let _ = writeln!(log, "- battle_clock: {}", frame.at);
     let _ = writeln!(log, "- replay_seconds: {:.2}", frame.point.clock.seconds());
-    let _ = writeln!(log, "- replay_seconds_estimate (battle start plus elapsed): {:.2}", frame.point.estimate.seconds());
+    let _ =
+        writeln!(log, "- replay_seconds_estimate (battle start plus elapsed): {:.2}", frame.point.estimate.seconds());
     let path = out_dir.join("run_log.md");
     std::fs::write(&path, log).attach_with(|| format!("writing {}", path.display()))?;
     Ok(())

@@ -27,9 +27,8 @@ use wowsunpack::game_types::WorldPos;
 use wowsunpack::recognized::Recognized;
 
 use crate::clock::BattleClockMap;
-use crate::damage;
-use crate::tier2;
 use crate::config::Config;
+use crate::damage;
 use crate::records::Bbox;
 use crate::records::GameRecord;
 use crate::records::Moment;
@@ -42,6 +41,7 @@ use crate::records::Xz;
 use crate::replays::ReplaySet;
 use crate::session::GameData;
 use crate::session::GameSession;
+use crate::tier2;
 use crate::timeline;
 
 /// Farthest a ship may be from a smoke's origin at creation and still own it.
@@ -69,6 +69,10 @@ pub struct Analysis {
     pub timeline: std::sync::Arc<wows_battle_world::scan::PositionTimeline>,
     pub damage_events: Vec<damage::AttributedDamage>,
     pub damage_stats: damage::SpikeStats,
+    /// Every visibility flag change per ship.
+    pub flag_history: HashMap<EntityId, Vec<(GameClock, wowsunpack::game_types::VisibilityFlags)>>,
+    /// The end-of-battle results blob, as the replay carries it.
+    pub battle_results: Option<String>,
 }
 
 /// One smoke object, observed from creation to removal.
@@ -336,7 +340,8 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         .collect();
     let mut tier2 = tier2::Tier2Tracker::new(ranges);
     let mut hits: Vec<wows_replays::analyzer::battle_controller::state::ResolvedShotHit> = Vec::new();
-    let mut salvos: HashMap<(u32, u32, u32), wows_replays::analyzer::battle_controller::state::ActiveShot> = HashMap::new();
+    let mut salvos: HashMap<(u32, u32, u32), wows_replays::analyzer::battle_controller::state::ActiveShot> =
+        HashMap::new();
 
     while session.step()?.is_some() {
         let view = session.view();
@@ -389,7 +394,14 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         Recognized::Unknown(raw) => raw.to_string(),
     });
     let battle_end = view.battle_end_clock();
+    let self_authoritative: f32 = view
+        .self_damage_stats()
+        .iter()
+        .filter(|((_, category), _)| *category == Recognized::Known(wowsunpack::game_types::DamageStatCategory::Enemy))
+        .map(|(_, entry)| entry.total as f32)
+        .sum();
     drop(view);
+    let battle_results = session.battle_results();
 
     let mut team_ids: Vec<i64> = roster.values().map(|r| r.team_id).collect();
     team_ids.sort_unstable();
@@ -691,16 +703,19 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
     }
 
     // Tier 3 spike: damage credited to smokes.
-    let ledger = {
+    let (ledger, events_per_replay, dropped) = {
         let mut all: Vec<&wows_replays::ReplayFile> = vec![&replays.primary];
         all.extend(replays.merges.iter());
-        wows_battle_world::merged::gather_damage_events(
+        let ledgers = damage::ledgers_per_replay(
             &game.loaded.controller_game_params,
             &game.constants,
             game.version,
             &game.loaded.specs,
             &all,
-        )
+        );
+        let per_replay: Vec<u32> = ledgers.iter().map(|l| l.values().map(|v| v.len() as u32).sum()).collect();
+        let (merged, dropped) = damage::merge_ledgers(&ledgers);
+        (merged, per_replay, dropped)
     };
     let geometry: Vec<damage::SmokeGeometry> = ids
         .iter()
@@ -732,7 +747,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
     let salvo_list: Vec<wows_replays::analyzer::battle_controller::state::ActiveShot> = salvos.into_values().collect();
     let flags_at = |e: EntityId, c: GameClock| tracker.flags_at(e, c);
     let team_of = |e: EntityId| roster.get(&e).map(|r| r.team_id);
-    let spike = damage::run(&damage::SpikeInput {
+    let mut spike = damage::run(&damage::SpikeInput {
         ledger: &ledger,
         hits: &hits,
         salvos: &salvo_list,
@@ -751,8 +766,16 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         smokes[i].damage_behind_smoke_enemy = Some(d.damage_behind_smoke_enemy);
         smokes[i].damage_detail = Some(d);
     }
+    spike.stats.events_per_replay = events_per_replay;
+    spike.stats.events_dropped_as_duplicates = dropped;
+    let self_entity = roster.iter().find(|(_, r)| r.player == replays.primary.meta.playerName).map(|(e, _)| *e);
+    spike.stats.self_entity = self_entity.map(|e| e.raw() as u32);
+    spike.stats.self_damage_authoritative = self_entity.map(|_| self_authoritative);
+    spike.stats.self_damage_ledger =
+        self_entity.map(|e| spike.stats.damage_by_attacker.get(&(e.raw() as u32)).copied().unwrap_or(0.0));
     info!(
         events = spike.stats.damage_events,
+        duplicates_dropped = dropped,
         unknown_attacker = spike.stats.events_attacker_unknown,
         hits = spike.stats.shot_hits,
         salvos = spike.stats.salvos,
@@ -791,5 +814,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         timeline: tl,
         damage_events: spike.events,
         damage_stats: spike.stats,
+        flag_history: tracker.flag_history().clone(),
+        battle_results,
     })
 }

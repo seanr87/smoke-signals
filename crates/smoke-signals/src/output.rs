@@ -355,13 +355,18 @@ pub fn tier1_gaps(smokes: &[SmokeRecord]) -> Vec<String> {
     for r in smokes {
         let id = r.smoke_id;
         if r.player.is_none() {
-            gaps.push(format!("smoke {id}: no owner, so player, ship, team and smoker fields are empty ({})", r.owner_note));
+            gaps.push(format!(
+                "smoke {id}: no owner, so player, ship, team and smoker fields are empty ({})",
+                r.owner_note
+            ));
         }
         if r.t_activate.is_none() {
             gaps.push(format!("smoke {id}: no activation recorded; t_activate is empty and the activation frame and clip start use the smoke's first appearance"));
         }
         if r.t_capture.is_none() {
-            gaps.push(format!("smoke {id}: no new puff was ever observed, so t_capture and the capture frame are empty"));
+            gaps.push(format!(
+                "smoke {id}: no new puff was ever observed, so t_capture and the capture frame are empty"
+            ));
         }
         if r.t_dispersed.is_none() {
             gaps.push(format!("smoke {id}: still standing when the replay ended; t_dispersed is empty and the clip ends at the replay end"));
@@ -374,7 +379,9 @@ pub fn tier1_gaps(smokes: &[SmokeRecord]) -> Vec<String> {
                         gaps.push(format!("smoke {id}: score unknown at {stage} (no team for the smoker)"));
                     }
                     if s.smoker_hp_pct.is_none() {
-                        gaps.push(format!("smoke {id}: smoker HP unknown at {stage} (no vehicle state for the smoker)"));
+                        gaps.push(format!(
+                            "smoke {id}: smoker HP unknown at {stage} (no vehicle state for the smoker)"
+                        ));
                     }
                     if s.smoker_spotted.is_none() {
                         gaps.push(format!(
@@ -391,7 +398,13 @@ pub fn tier1_gaps(smokes: &[SmokeRecord]) -> Vec<String> {
     gaps
 }
 
-pub fn run_log(game: &GameRecord, smokes: &[SmokeRecord], frames_written: usize, clips_written: usize) -> String {
+pub fn run_log(
+    game: &GameRecord,
+    smokes: &[SmokeRecord],
+    spike: &crate::damage::SpikeStats,
+    frames_written: usize,
+    clips_written: usize,
+) -> String {
     let mut log = String::new();
     let _ = writeln!(log, "# Smoke Signals run log\n");
     let _ = writeln!(log, "- generated_at: {}", game.generated_at);
@@ -510,6 +523,45 @@ pub fn run_log(game: &GameRecord, smokes: &[SmokeRecord], frames_written: usize,
             opt_f(r.damage_behind_smoke_enemy)
         );
     }
+    let _ = writeln!(log, "```");
+
+    let _ = writeln!(log, "\n## Damage ledger check against the game's results\n");
+    let _ = writeln!(
+        log,
+        "- damage events: {} (per replay {:?}, folded as duplicates {}); fire moment from shot hit {}, salvo {}, damage clock {}",
+        spike.damage_events,
+        spike.events_per_replay,
+        spike.events_dropped_as_duplicates,
+        spike.events_by_source.get("ShotHit").copied().unwrap_or(0),
+        spike.events_by_source.get("Salvo").copied().unwrap_or(0),
+        spike.events_by_source.get("DamageClock").copied().unwrap_or(0)
+    );
+    if let (Some(a), Some(l)) = (spike.self_damage_authoritative, spike.self_damage_ledger) {
+        let _ = writeln!(log, "- primary recorder: game reports {a:.0}, ledger sums {l:.0}");
+    }
+    let _ = writeln!(log, "```");
+    let _ = writeln!(log, "{:<6} {:<26} {:>9} {:>9} {:>7}", "team", "player", "game", "ledger", "ratio");
+    let (mut game_total, mut ledger_total) = (0.0f32, 0.0f32);
+    for team in &game.teams {
+        for p in &team.players {
+            let authoritative = spike.damage_by_attacker_authoritative.get(&p.entity_id).copied();
+            let ledger = spike.damage_by_attacker.get(&p.entity_id).copied().unwrap_or(0.0);
+            game_total += authoritative.unwrap_or(0.0);
+            ledger_total += ledger;
+            let ratio = authoritative.filter(|a| *a > 0.0).map(|a| format!("{:.2}", ledger / a)).unwrap_or_default();
+            let _ = writeln!(
+                log,
+                "{:<6} {:<26} {:>9} {:>9.0} {:>7}",
+                opt(team.name.as_deref()),
+                p.player,
+                authoritative.map(|a| format!("{a:.0}")).unwrap_or_default(),
+                ledger,
+                ratio
+            );
+        }
+    }
+    let overall = if game_total > 0.0 { ledger_total / game_total } else { 0.0 };
+    let _ = writeln!(log, "{:<6} {:<26} {:>9.0} {:>9.0} {:>7.2}", "all", "", game_total, ledger_total, overall);
     let _ = writeln!(log, "```");
     log
 }

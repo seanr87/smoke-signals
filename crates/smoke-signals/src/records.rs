@@ -269,6 +269,10 @@ impl GameRecord {
         self.teams.iter().find(|t| t.players.iter().any(|p| p.entity_id == entity_id))
     }
 
+    pub fn player_by_name(&self, name: &str) -> Option<&PlayerRecord> {
+        self.teams.iter().flat_map(|t| t.players.iter()).find(|p| p.player == name)
+    }
+
     pub fn player(&self, entity_id: u32) -> Option<&PlayerRecord> {
         self.teams.iter().flat_map(|t| t.players.iter()).find(|p| p.entity_id == entity_id)
     }

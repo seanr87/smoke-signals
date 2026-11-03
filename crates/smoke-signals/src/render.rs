@@ -41,7 +41,12 @@ pub struct FrameRenderer<'a> {
 }
 
 impl<'a> FrameRenderer<'a> {
-    pub fn new(config: &Config, game: &'a GameData, replays: &'a ReplaySet, session: &GameSession<'a>) -> Result<Self, Report> {
+    pub fn new(
+        config: &Config,
+        game: &'a GameData,
+        replays: &'a ReplaySet,
+        session: &GameSession<'a>,
+    ) -> Result<Self, Report> {
         let vfs = &game.loaded.vfs;
         let version = game.version;
         let primary = &replays.primary;
@@ -159,7 +164,9 @@ impl<'a> FrameRenderer<'a> {
     ) -> Result<RgbImage, Report> {
         match session.covered() {
             Some(covered) if covered.seconds() >= clock.seconds() => {}
-            covered => bail!("clock {:.2} s is not covered by the session (covered up to {:?})", clock.seconds(), covered),
+            covered => {
+                bail!("clock {:.2} s is not covered by the session (covered up to {:?})", clock.seconds(), covered)
+            }
         }
         let view = session.view();
         self.renderer.set_render_clock(clock);

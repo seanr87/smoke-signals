@@ -121,7 +121,7 @@ Smoke damage has three parts: damage dealt *in* the smoke, damage dealt from *be
 | Metric | Definition |
 | --- | --- |
 | damage_in_smoke | All damage dealt by ships that are in this smoke at the moment they fire. |
-| damage_behind_smoke | Main-gun damage from ships that are outside the smoke, undetected when they fire, and whose line of fire to the target passes through a puff of this smoke. |
+| damage_behind_smoke | Main-gun damage from ships that are outside the smoke, undetected when they fire, and whose line of fire to the target passes through a puff of this smoke that lies nearer the shooter than the target (added in M4: without that clause, fire merely crossing a smoke next to the target was credited). |
 | smoke_damage_total | damage_in_smoke + damage_behind_smoke |
 
 - Each metric is broken down by shooter (smoker or ally) and by team.

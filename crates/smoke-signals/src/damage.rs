@@ -72,17 +72,24 @@ impl SmokeGeometry {
     /// Puffs standing at `t`.
     fn standing(&self, t: f32) -> impl Iterator<Item = WorldPos> + '_ {
         let end = self.removed.unwrap_or(f32::INFINITY);
-        self.puffs.iter().filter(move |(laid, _)| {
-            *laid <= t && t <= end && self.puff_life.is_none_or(|life| t <= laid + life)
-        }).map(|(_, p)| *p)
+        self.puffs
+            .iter()
+            .filter(move |(laid, _)| *laid <= t && t <= end && self.puff_life.is_none_or(|life| t <= laid + life))
+            .map(|(_, p)| *p)
     }
 
     fn contains(&self, t: f32, pos: WorldPos) -> bool {
         self.standing(t).any(|puff| timeline::ground_distance(pos, puff) <= self.radius)
     }
 
+    /// The line from `from` to `to` passes through a standing puff that lies
+    /// on the shooter's side (nearer `from` than `to`), so the smoke hides the
+    /// shooter rather than merely standing near the target.
     fn crosses(&self, t: f32, from: WorldPos, to: WorldPos) -> bool {
-        self.standing(t).any(|puff| segment_distance_xz(from, to, puff) <= self.radius)
+        self.standing(t).any(|puff| {
+            segment_distance_xz(from, to, puff) <= self.radius
+                && timeline::ground_distance(from, puff) < timeline::ground_distance(to, puff)
+        })
     }
 }
 
@@ -124,11 +131,108 @@ impl SmokeDamage {
     }
 }
 
+/// Damage ledgers of every replay, primary first, each from its own parse.
+pub fn ledgers_per_replay<G: wowsunpack::data::ResourceLoader>(
+    game_resources: &G,
+    constants: &wows_replays::game_constants::GameConstants,
+    version: wowsunpack::data::Version,
+    specs: &[wowsunpack::rpc::entitydefs::EntitySpec],
+    replays: &[&wows_replays::ReplayFile],
+) -> Vec<HashMap<EntityId, Vec<DamageEvent>>> {
+    use wows_battle_world::BattleWorld;
+    use wows_replays::analyzer::Analyzer;
+    use wows_replays::packet2::Parser;
+
+    replays
+        .iter()
+        .map(|replay| {
+            let mut world = BattleWorld::new(&replay.meta, game_resources, Some(constants));
+            let mut parser = Parser::with_version(specs, version);
+            let mut remaining = replay.packet_data();
+            while !remaining.is_empty() {
+                let Ok(packet) = parser.parse_packet(&mut remaining) else { break };
+                world.process(&packet);
+            }
+            world.finish();
+            world.damage_ledger().clone()
+        })
+        .collect()
+}
+
+/// Largest clock difference between two perspectives' reports of one hit.
+const DUPLICATE_WINDOW_SECONDS: f32 = 1.5;
+
+/// Union of the per-replay ledgers. A client is told every hit on a ship
+/// inside its area of interest, so perspectives overlap, and their clocks for
+/// one hit differ by a fraction of a second. An event from a later replay is
+/// matched one-to-one to an unmatched event of an earlier replay with the
+/// same attacker, victim and amount within [`DUPLICATE_WINDOW_SECONDS`];
+/// matched events are the same hit and are kept once. Several shells of one
+/// salvo with equal damage each find their own match, so they survive.
+/// Returns the ledger and how many events were folded as duplicates.
+pub fn merge_ledgers(ledgers: &[HashMap<EntityId, Vec<DamageEvent>>]) -> (HashMap<EntityId, Vec<DamageEvent>>, u32) {
+    let mut merged: HashMap<EntityId, Vec<(DamageEvent, bool)>> = HashMap::new();
+    let mut folded = 0;
+    for (index, ledger) in ledgers.iter().enumerate() {
+        for (attacker, events) in ledger {
+            let existing = merged.entry(*attacker).or_default();
+            for event in events {
+                if index > 0 {
+                    let best = existing
+                        .iter_mut()
+                        .filter(|(e, matched)| {
+                            !matched
+                                && e.victim == event.victim
+                                && e.amount == event.amount
+                                && (e.clock.seconds() - event.clock.seconds()).abs() <= DUPLICATE_WINDOW_SECONDS
+                        })
+                        .min_by(|a, b| {
+                            (a.0.clock.seconds() - event.clock.seconds())
+                                .abs()
+                                .total_cmp(&(b.0.clock.seconds() - event.clock.seconds()).abs())
+                        });
+                    if let Some(slot) = best {
+                        slot.1 = true;
+                        folded += 1;
+                        continue;
+                    }
+                }
+                existing.push((*event, false));
+            }
+        }
+        // Matches are only against earlier replays; reset for the next one.
+        for list in merged.values_mut() {
+            for slot in list.iter_mut() {
+                slot.1 = false;
+            }
+        }
+    }
+    let mut out: HashMap<EntityId, Vec<DamageEvent>> =
+        merged.into_iter().map(|(k, v)| (k, v.into_iter().map(|(e, _)| e).collect())).collect();
+    for events in out.values_mut() {
+        events.sort_by(|a, b| a.clock.seconds().total_cmp(&b.clock.seconds()));
+    }
+    (out, folded)
+}
+
 /// Coverage of the attribution on this game.
 #[derive(Debug, Clone, Default, Serialize)]
 pub struct SpikeStats {
+    pub events_per_replay: Vec<u32>,
+    /// Events left out as another perspective's copy of a hit.
+    pub events_dropped_as_duplicates: u32,
     pub damage_events: u32,
     pub damage_total: f32,
+    /// Damage dealt per attacker entity, for checks against the game's totals.
+    pub damage_by_attacker: BTreeMap<u32, f32>,
+    /// The primary recorder's damage to enemies as the game's own stats report
+    /// it, and as the merged ledger sums it, for a ground-truth check.
+    pub self_damage_authoritative: Option<f32>,
+    pub self_damage_ledger: Option<f32>,
+    pub self_entity: Option<u32>,
+    /// Damage per attacker entity as the game's end-of-battle results report
+    /// it, when the replay carries them.
+    pub damage_by_attacker_authoritative: BTreeMap<u32, f32>,
     pub events_attacker_unknown: u32,
     pub events_by_source: BTreeMap<String, u32>,
     pub damage_by_source: BTreeMap<String, f32>,
@@ -159,7 +263,8 @@ pub struct SpikeOutput {
 pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
     let mut events = Vec::new();
     let mut per_smoke: HashMap<u32, SmokeDamage> = HashMap::new();
-    let mut stats = SpikeStats { shot_hits: input.hits.len() as u32, salvos: input.salvos.len() as u32, ..Default::default() };
+    let mut stats =
+        SpikeStats { shot_hits: input.hits.len() as u32, salvos: input.salvos.len() as u32, ..Default::default() };
 
     let mut salvos_by_owner: HashMap<EntityId, Vec<&ActiveShot>> = HashMap::new();
     for s in input.salvos {
@@ -173,6 +278,7 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
         for event in list {
             stats.damage_events += 1;
             stats.damage_total += event.amount;
+            *stats.damage_by_attacker.entry(attacker.raw() as u32).or_default() += event.amount;
             if (input.team_of)(*attacker).is_none() {
                 stats.events_attacker_unknown += 1;
                 continue;
@@ -201,7 +307,9 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                             let f = s.fired_at.seconds();
                             f <= t && t - f <= SALVO_MATCH_SECONDS
                         })
-                        .and_then(|s| s.salvo.shots.first().map(|shot| (s.fired_at.seconds(), shot.origin, FireSource::Salvo)))
+                        .and_then(|s| {
+                            s.salvo.shots.first().map(|shot| (s.fired_at.seconds(), shot.origin, FireSource::Salvo))
+                        })
                 })
             });
             let (fire_seconds, fire_pos, source) = match from_salvo {
@@ -316,7 +424,9 @@ mod tests {
         assert!(smoke.contains(61.0, WorldPos::new(100.0, 0.0, 0.0)));
         assert!(!smoke.contains(61.0, WorldPos::new(0.0, 0.0, 0.0)));
         assert!(!smoke.contains(66.0, WorldPos::new(100.0, 0.0, 0.0)));
-        assert!(smoke.crosses(30.0, WorldPos::new(50.0, 0.0, -100.0), WorldPos::new(50.0, 0.0, 100.0)) == false);
-        assert!(smoke.crosses(30.0, WorldPos::new(0.0, 0.0, -100.0), WorldPos::new(0.0, 0.0, 100.0)));
+        assert!(!smoke.crosses(30.0, WorldPos::new(50.0, 0.0, -100.0), WorldPos::new(50.0, 0.0, 100.0)));
+        // Puff at the shooter's end counts; the same puff at the target's end does not.
+        assert!(smoke.crosses(30.0, WorldPos::new(0.0, 0.0, -20.0), WorldPos::new(0.0, 0.0, 500.0)));
+        assert!(!smoke.crosses(30.0, WorldPos::new(0.0, 0.0, -500.0), WorldPos::new(0.0, 0.0, 20.0)));
     }
 }

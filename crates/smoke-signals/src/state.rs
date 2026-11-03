@@ -32,7 +32,9 @@ pub fn snapshot(
     tl: &PositionTimeline,
 ) -> StateSnapshot {
     let score_of = |team_id: i64| {
-        usize::try_from(team_id).ok().and_then(|i| view.team_scores().iter().find(|s| s.team_index == i).map(|s| s.score))
+        usize::try_from(team_id)
+            .ok()
+            .and_then(|i| view.team_scores().iter().find(|s| s.team_index == i).map(|s| s.score))
     };
     let their_team = our_team.and_then(|ours| game.teams.iter().map(|t| t.team_id).find(|t| *t != ours));
     let team_name = |team_id: i64| game.team(team_id).and_then(|t| t.name.clone());

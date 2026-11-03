@@ -133,6 +133,16 @@ impl<'a> GameSession<'a> {
         self.session.truncated()
     }
 
+    /// The recording player's team per replay, primary first.
+    pub fn replay_teams(&self) -> Vec<Option<i64>> {
+        self.session.self_teams().iter().map(|t| t.map(|t| t.raw())).collect()
+    }
+
+    /// The end-of-battle results blob, when the replay carries one.
+    pub fn battle_results(&self) -> Option<String> {
+        self.session.world().battle_results().cloned()
+    }
+
     pub fn view(&mut self) -> BattleView<'_> {
         self.session.world_mut().view()
     }

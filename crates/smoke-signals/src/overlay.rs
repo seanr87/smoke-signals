@@ -53,8 +53,7 @@ pub fn recolor_trail_smoke(commands: &mut [DrawCommand], input: &OverlayInput<'_
 
 /// Dashed polyline along `path`, as one annotation per dash.
 pub fn dashed_path(path: &[Xz], input: &OverlayInput<'_>, color: [u8; 4], width: f32) -> Vec<DrawCommand> {
-    let points: Vec<MinimapPos> =
-        path.iter().filter_map(|p| (input.project)(WorldPos::new(p.x, 0.0, p.z))).collect();
+    let points: Vec<MinimapPos> = path.iter().filter_map(|p| (input.project)(WorldPos::new(p.x, 0.0, p.z))).collect();
     let mut out = Vec::new();
     let mut pen_down = true;
     let mut remaining = DASH_PX;

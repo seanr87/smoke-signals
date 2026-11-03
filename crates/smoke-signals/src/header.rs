@@ -46,7 +46,12 @@ fn opt_num<T: std::fmt::Display>(v: Option<T>) -> String {
 
 /// Header lines for one smoke. `ordinal` is the smoke's number in the table;
 /// `state` is the Tier 1 state at the frame's moment.
-pub fn header_text(game: &GameRecord, record: &SmokeRecord, ordinal: usize, state: Option<&StateSnapshot>) -> HeaderText {
+pub fn header_text(
+    game: &GameRecord,
+    record: &SmokeRecord,
+    ordinal: usize,
+    state: Option<&StateSnapshot>,
+) -> HeaderText {
     let class = record.ship_class.as_deref().map(class_abbrev).unwrap_or("?");
     let tier = record.ship_tier.map(roman).unwrap_or_else(|| "?".to_string());
     let smoke = match record.smoke_type {
@@ -127,12 +132,28 @@ fn roman(tier: u32) -> String {
 }
 
 /// Text drawn with the game font. Returns the caret x after the text.
-pub fn draw_text(image: &mut RgbImage, fonts: &GameFonts, size: f32, x: f32, y: f32, color: [u8; 3], text: &str) -> f32 {
+pub fn draw_text(
+    image: &mut RgbImage,
+    fonts: &GameFonts,
+    size: f32,
+    x: f32,
+    y: f32,
+    color: [u8; 3],
+    text: &str,
+) -> f32 {
     let scale = PxScale::from(size * fonts.primary_scale_factor);
     draw_with_font(image, &fonts.primary, scale, x, y, color, text)
 }
 
-fn draw_with_font(image: &mut RgbImage, font: &FontArc, scale: PxScale, x: f32, y: f32, color: [u8; 3], text: &str) -> f32 {
+fn draw_with_font(
+    image: &mut RgbImage,
+    font: &FontArc,
+    scale: PxScale,
+    x: f32,
+    y: f32,
+    color: [u8; 3],
+    text: &str,
+) -> f32 {
     let scaled = font.as_scaled(scale);
     let baseline = y + scaled.ascent();
     let mut caret = x;

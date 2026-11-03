@@ -30,6 +30,7 @@ use crate::replays::ReplaySet;
 use crate::session::GameData;
 use crate::session::GameSession;
 use crate::state;
+use crate::timeline;
 
 /// Keep letters, digits, `-` and `.`; everything else becomes `_`.
 pub fn sanitize(text: &str) -> String {
@@ -58,13 +59,15 @@ pub fn current_puffs(view: &BattleView<'_>) -> HashMap<u32, Vec<WorldPos>> {
     view.smoke_screens().iter().map(|(id, s)| (id.raw() as u32, s.points.clone())).collect()
 }
 
-/// Apply the frame overlays for `record` to `commands`.
+/// Apply the frame overlays for `record` to `commands`. `smoker_pos` marks
+/// the smoker while the smoke object has no puffs yet (before it appears).
 pub fn apply_overlays(
     projection: &Projection,
     config: &Config,
     record: &SmokeRecord,
     types: &HashMap<u32, SmokeType>,
     puffs: &HashMap<u32, Vec<WorldPos>>,
+    smoker_pos: Option<WorldPos>,
     commands: &mut Vec<DrawCommand>,
 ) {
     let project = |p: WorldPos| projection.project(p);
@@ -83,7 +86,17 @@ pub fn apply_overlays(
     {
         commands.extend(overlay::dashed_path(path, &input, config.render.exhaust_color.rgba(230), 2.0));
     }
-    commands.extend(overlay::highlight_rings(record.smoke_id, record.radius, &input));
+    let rings = overlay::highlight_rings(record.smoke_id, record.radius, &input);
+    if rings.is_empty()
+        && let Some(pos) = smoker_pos
+    {
+        let mut marker = HashMap::new();
+        marker.insert(record.smoke_id, vec![pos]);
+        let input = OverlayInput { puffs: &marker, ..input };
+        commands.extend(overlay::highlight_rings(record.smoke_id, record.radius, &input));
+    } else {
+        commands.extend(rings);
+    }
 }
 
 /// Draw the frame for `record` at `clock`, with overlays and the header.
@@ -94,13 +107,15 @@ pub fn render_smoke_frame<'a>(
     record: &SmokeRecord,
     types: &HashMap<u32, SmokeType>,
     clock: GameClock,
+    smoker: Option<EntityId>,
     text: &HeaderText,
     progress: Option<Progress>,
 ) -> Result<RgbImage, Report> {
     let projection = renderer.projection();
+    let smoker_pos = smoker.and_then(|e| session.timeline().get(&e).and_then(|t| timeline::world_pos_at(t, clock)));
     let image = renderer.render_image(session, clock, |view, commands| {
         let puffs = current_puffs(view);
-        apply_overlays(&projection, config, record, types, &puffs, commands);
+        apply_overlays(&projection, config, record, types, &puffs, smoker_pos, commands);
     })?;
     Ok(header::compose(&image, renderer.fonts(), text, progress))
 }
@@ -184,7 +199,9 @@ pub fn render_smoke_frames(
             Stage::Capture => smokes[i].t_capture.and_then(|m| m.clock),
         };
         let stem = file_stem(&smokes[i], i + 1, stage.name(), moment_clock);
-        let image = render_smoke_frame(&mut renderer, &mut session, config, &smokes[i], &types, clock, &text, None)?;
+        let (_, smoker) = smoker_identity(game, &smokes[i]);
+        let image =
+            render_smoke_frame(&mut renderer, &mut session, config, &smokes[i], &types, clock, smoker, &text, None)?;
         let name = save_png_and_webp(&image, out_dir, &stem)?;
         info!(smoke = smokes[i].smoke_id, stage = stage.name(), file = %name, "Frame");
         match stage {

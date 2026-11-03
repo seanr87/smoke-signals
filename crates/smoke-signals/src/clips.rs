@@ -72,7 +72,8 @@ pub fn render_clip(
     // H.264 macroblocks: both dimensions must be even.
     let (width, height) = (width & !1, height & !1);
 
-    let (worker, codec, kind) = EncoderWorker::spawn(width, height, VideoCodec::H264, Mode::ForceCpu, EncoderConfig::default())?;
+    let (worker, codec, kind) =
+        EncoderWorker::spawn(width, height, VideoCodec::H264, Mode::ForceCpu, EncoderConfig::default())?;
     info!(smoke = record.smoke_id, %codec, %kind, fps, start = window.start, end = window.end, "Encoding clip");
 
     let activation = fraction(window, record.activation_moment().seconds);
@@ -85,7 +86,18 @@ pub fn render_clip(
         let snapshot = frames::snapshot_for(&mut session, game, record);
         let text = header::header_text(game, record, ordinal, Some(&snapshot));
         let progress = Progress { activation, capture, now: fraction(window, seconds) };
-        let image = frames::render_smoke_frame(&mut renderer, &mut session, config, record, types, clock, &text, Some(progress))?;
+        let (_, smoker) = frames::smoker_identity(game, record);
+        let image = frames::render_smoke_frame(
+            &mut renderer,
+            &mut session,
+            config,
+            record,
+            types,
+            clock,
+            smoker,
+            &text,
+            Some(progress),
+        )?;
         let cropped = image::imageops::crop_imm(&image, 0, 0, width, height).to_image();
         worker.submit(cropped.into_raw())?;
     }

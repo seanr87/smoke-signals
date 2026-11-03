@@ -8,6 +8,7 @@ use tracing::info;
 use wowsunpack::game_params::types::GameParamProvider;
 
 use smoke_signals::analysis;
+use smoke_signals::clips;
 use smoke_signals::clock::BattleClock;
 use smoke_signals::config::Config;
 use smoke_signals::diagnostics;
@@ -38,11 +39,19 @@ enum Command {
         #[arg(long)]
         at: BattleClock,
     },
-    /// Track every smoke in the game folder and write the smoke table.
+    /// Track every smoke in the game folder and write the smoke table,
+    /// frames and clips.
     Analyze {
-        /// Skip the per-smoke capture frames.
+        /// Skip the per-smoke activation and capture frames (and the Tier 1
+        /// state they record).
         #[arg(long)]
         no_frames: bool,
+        /// Skip the per-smoke clips.
+        #[arg(long)]
+        no_clips: bool,
+        /// Only the smoke with this id gets frames and a clip.
+        #[arg(long)]
+        only: Option<u32>,
     },
     /// List every smoke consumable variant in the game data.
     Variants,
@@ -63,12 +72,40 @@ fn main() -> Result<(), Report> {
             write_frame_log(&out_dir, &replays, &game, &frame)?;
             println!("{}", frame.path.display());
         }
-        Command::Analyze { no_frames } => {
+        Command::Analyze { no_frames, no_clips, only } => {
             let mut analysis = analysis::analyze_game(&config, &game, &replays)?;
+            let selected: Vec<usize> = analysis
+                .smokes
+                .iter()
+                .enumerate()
+                .filter(|(_, s)| only.is_none_or(|id| s.smoke_id == id))
+                .map(|(i, _)| i)
+                .collect();
             let frames_written = if no_frames {
                 0
             } else {
-                frames::render_capture_frames(&config, &game, &replays, &mut analysis.smokes, &out_dir.join("frames"))?
+                frames::render_smoke_frames(
+                    &config,
+                    &game,
+                    &replays,
+                    &analysis.game,
+                    &mut analysis.smokes,
+                    &selected,
+                    &out_dir.join("frames"),
+                )?
+            };
+            let clips_written = if no_clips {
+                0
+            } else {
+                clips::render_clips(
+                    &config,
+                    &game,
+                    &replays,
+                    &analysis.game,
+                    &mut analysis.smokes,
+                    &selected,
+                    &out_dir.join("clips"),
+                )?
             };
             output::write_smokes_csv(&out_dir.join("smokes.csv"), &analysis.smokes)?;
             output::write_json(
@@ -80,7 +117,7 @@ fn main() -> Result<(), Report> {
             diagnostics::write_activations_csv(&out_dir.join("activations.csv"), &activations)?;
             let tracks = diagnostics::summarize_tracks(&analysis.timeline, &analysis.game);
             diagnostics::write_tracks_csv(&out_dir.join("tracks.csv"), &tracks)?;
-            let log = output::run_log(&analysis.game, &analysis.smokes, frames_written);
+            let log = output::run_log(&analysis.game, &analysis.smokes, frames_written, clips_written);
             std::fs::write(out_dir.join("run_log.md"), &log).attach_with(|| "writing run_log.md")?;
             print!("{}", output::summary_table(&analysis.smokes));
             println!("{}", out_dir.display());
@@ -167,8 +204,7 @@ fn write_frame_log(
     let _ = writeln!(log, "- file: {}", frame.path.file_name().map(|n| n.to_string_lossy()).unwrap_or_default());
     let _ = writeln!(log, "- battle_clock: {}", frame.at);
     let _ = writeln!(log, "- replay_seconds: {:.2}", frame.point.clock.seconds());
-    let _ =
-        writeln!(log, "- replay_seconds_estimate (battle start plus elapsed): {:.2}", frame.point.estimate.seconds());
+    let _ = writeln!(log, "- replay_seconds_estimate (battle start plus elapsed): {:.2}", frame.point.estimate.seconds());
     let path = out_dir.join("run_log.md");
     std::fs::write(&path, log).attach_with(|| format!("writing {}", path.display()))?;
     Ok(())

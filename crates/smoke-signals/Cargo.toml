@@ -1,6 +1,6 @@
 [package]
 name = "smoke-signals"
-version = "0.2.0"
+version = "0.3.0"
 publish = false
 description = "Smoke screen analysis for World of Warships tournament replays"
 edition.workspace = true
@@ -31,3 +31,6 @@ thiserror = { workspace = true }
 tracing = { workspace = true }
 tracing-subscriber = { workspace = true }
 jiff = { workspace = true }
+image = { workspace = true, features = ["png", "webp"] }
+ab_glyph = "0.2"
+muxide = "0.2.5"

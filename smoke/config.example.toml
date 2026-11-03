@@ -18,6 +18,7 @@ clip_fps = 20
 clip_pre_seconds = 5           # clip starts 5 s before activation, ends when the smoke disperses
 
 [game]
+tournament = "KotS XIX NA"
 match_id = "kots19na_GF"     # tournament match identifier used in file names
 round = "Grand Final"
 game_no = 1

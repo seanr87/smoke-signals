@@ -9,6 +9,7 @@ use serde::Serialize;
 use crate::records::GameRecord;
 use crate::records::Moment;
 use crate::records::SmokeRecord;
+use crate::records::StateSnapshot;
 use crate::records::Xz;
 
 pub fn write_json<T: Serialize>(path: &Path, value: &T) -> Result<(), Report> {
@@ -46,7 +47,45 @@ fn xz(p: &Xz) -> String {
     format!("{:.0}:{:.0}", p.x, p.z)
 }
 
-pub const SMOKE_CSV_COLUMNS: &[&str] = &[
+/// Tier 1 columns of one moment, in `STATE_COLUMNS` order.
+fn state_fields(s: Option<&StateSnapshot>) -> Vec<String> {
+    match s {
+        None => vec![String::new(); STATE_COLUMNS.len()],
+        Some(s) => vec![
+            opt(s.score_ours),
+            opt(s.score_theirs),
+            s.caps_text(),
+            s.cap_state.iter().map(|c| format!("{}:{:.2}", c.cap, c.progress)).collect::<Vec<_>>().join(" "),
+            s.ships_alive
+                .iter()
+                .map(|a| format!("{}/{}:{}", opt(a.team.as_deref()), opt(a.ship_class.as_deref()), a.alive))
+                .collect::<Vec<_>>()
+                .join(" "),
+            s.alive_ours.to_string(),
+            s.alive_theirs.to_string(),
+            opt_f(s.smoker_hp_pct),
+            opt(s.smoker_spotted),
+            opt(s.smoker_spotted_flags.as_deref()),
+            opt(s.enemy_radars_alive),
+        ],
+    }
+}
+
+const STATE_COLUMNS: &[&str] = &[
+    "score_ours",
+    "score_theirs",
+    "cap_state",
+    "cap_progress",
+    "ships_alive",
+    "alive_ours",
+    "alive_theirs",
+    "smoker_hp_pct",
+    "smoker_spotted",
+    "smoker_spotted_flags",
+    "enemy_radars_alive",
+];
+
+const BASE_COLUMNS: &[&str] = &[
     "smoke_id",
     "activation_id",
     "match_id",
@@ -92,14 +131,23 @@ pub const SMOKE_CSV_COLUMNS: &[&str] = &[
     "t_emission_end_clock",
     "t_dispersed",
     "t_dispersed_clock",
-    "wows_toolkit_rev",
-    "smoke_signals_version",
-    "generated_at",
-    "frame_cap",
 ];
 
+const TAIL_COLUMNS: &[&str] =
+    &["wows_toolkit_rev", "smoke_signals_version", "generated_at", "frame_act", "frame_cap", "clip"];
+
+/// All columns: base, Tier 1 at activation (`_act`), Tier 1 at capture
+/// (`_cap`), then provenance and files.
+pub fn smoke_csv_columns() -> Vec<String> {
+    let mut cols: Vec<String> = BASE_COLUMNS.iter().map(|c| c.to_string()).collect();
+    cols.extend(STATE_COLUMNS.iter().map(|c| format!("{c}_act")));
+    cols.extend(STATE_COLUMNS.iter().map(|c| format!("{c}_cap")));
+    cols.extend(TAIL_COLUMNS.iter().map(|c| c.to_string()));
+    cols
+}
+
 pub fn smoke_csv_row(r: &SmokeRecord) -> Vec<String> {
-    vec![
+    let mut row = vec![
         r.smoke_id.to_string(),
         opt(r.activation_id.as_deref()),
         r.match_id.clone(),
@@ -145,20 +193,28 @@ pub fn smoke_csv_row(r: &SmokeRecord) -> Vec<String> {
         moment_clock(r.t_emission_end),
         moment_s(r.t_dispersed),
         moment_clock(r.t_dispersed),
+    ];
+    row.extend(state_fields(r.state_at_activate.as_ref()));
+    row.extend(state_fields(r.state_at_capture.as_ref()));
+    row.extend([
         opt(r.wows_toolkit_rev.as_deref()),
         r.smoke_signals_version.clone(),
         r.generated_at.clone(),
+        opt(r.frame_act.as_deref()),
         opt(r.frame_cap.as_deref()),
-    ]
+        opt(r.clip.as_deref()),
+    ]);
+    row
 }
 
 pub fn write_smokes_csv(path: &Path, smokes: &[SmokeRecord]) -> Result<(), Report> {
+    let columns = smoke_csv_columns();
     let mut text = String::new();
-    text.push_str(&SMOKE_CSV_COLUMNS.join(","));
+    text.push_str(&columns.join(","));
     text.push('\n');
     for r in smokes {
         let row = smoke_csv_row(r);
-        assert_eq!(row.len(), SMOKE_CSV_COLUMNS.len(), "smoke CSV row and column list differ");
+        assert_eq!(row.len(), columns.len(), "smoke CSV row and column list differ");
         text.push_str(&csv_line(&row));
         text.push('\n');
     }
@@ -205,11 +261,60 @@ pub fn summary_table(smokes: &[SmokeRecord]) -> String {
     out
 }
 
-pub fn run_log(game: &GameRecord, smokes: &[SmokeRecord], frames_written: usize) -> String {
+/// Tier 1 and file fields that are empty, with the reason, one line per gap.
+pub fn tier1_gaps(smokes: &[SmokeRecord]) -> Vec<String> {
+    let mut gaps = Vec::new();
+    for r in smokes {
+        let id = r.smoke_id;
+        if r.player.is_none() {
+            gaps.push(format!("smoke {id}: no owner, so player, ship, team and smoker fields are empty ({})", r.owner_note));
+        }
+        if r.t_activate.is_none() {
+            gaps.push(format!("smoke {id}: no activation recorded; t_activate is empty and the activation frame and clip start use the smoke's first appearance"));
+        }
+        if r.t_capture.is_none() {
+            gaps.push(format!("smoke {id}: no new puff was ever observed, so t_capture and the capture frame are empty"));
+        }
+        if r.t_dispersed.is_none() {
+            gaps.push(format!("smoke {id}: still standing when the replay ended; t_dispersed is empty and the clip ends at the replay end"));
+        }
+        for (stage, state) in [("activation", &r.state_at_activate), ("capture", &r.state_at_capture)] {
+            match state {
+                None => gaps.push(format!("smoke {id}: no Tier 1 state at {stage} (no frame was rendered there)")),
+                Some(s) => {
+                    if s.score_ours.is_none() || s.score_theirs.is_none() {
+                        gaps.push(format!("smoke {id}: score unknown at {stage} (no team for the smoker)"));
+                    }
+                    if s.smoker_hp_pct.is_none() {
+                        gaps.push(format!("smoke {id}: smoker HP unknown at {stage} (no vehicle state for the smoker)"));
+                    }
+                    if s.smoker_spotted.is_none() {
+                        gaps.push(format!(
+                            "smoke {id}: smoker detection unknown at {stage} (no visibilityFlags seen for the smoker)"
+                        ));
+                    }
+                    if s.enemy_radars_alive.is_none() {
+                        gaps.push(format!("smoke {id}: enemy radars unknown at {stage} (no opposing team)"));
+                    }
+                }
+            }
+        }
+    }
+    gaps
+}
+
+pub fn run_log(game: &GameRecord, smokes: &[SmokeRecord], frames_written: usize, clips_written: usize) -> String {
     let mut log = String::new();
     let _ = writeln!(log, "# Smoke Signals run log\n");
     let _ = writeln!(log, "- generated_at: {}", game.generated_at);
-    let _ = writeln!(log, "- match: {} {} game {}", game.match_id, opt(game.round.as_deref()), opt(game.game_no));
+    let _ = writeln!(
+        log,
+        "- match: {} {} {} game {}",
+        opt(game.tournament.as_deref()),
+        game.match_id,
+        opt(game.round.as_deref()),
+        opt(game.game_no)
+    );
     let _ = writeln!(log, "- map: {} ({})", game.map, game.map_name);
     let _ = writeln!(log, "- game_build: {}", game.game_build);
     let _ = writeln!(log, "- primary_replay: {}", game.primary_replay);
@@ -239,7 +344,13 @@ pub fn run_log(game: &GameRecord, smokes: &[SmokeRecord], frames_written: usize)
         moment_s(game.battle_end)
     );
     let _ = writeln!(log, "- replay_end_s: {:.1} (truncated: {})", game.replay_end_s, game.replay_truncated);
-    let _ = writeln!(log, "\n## Smokes ({}), capture frames written: {}\n", smokes.len(), frames_written);
+    let _ = writeln!(
+        log,
+        "\n## Smokes ({}), frames written: {}, clips written: {}\n",
+        smokes.len(),
+        frames_written,
+        clips_written
+    );
     let _ = writeln!(log, "```\n{}```", summary_table(smokes));
     let flagged: Vec<&SmokeRecord> = smokes.iter().filter(|s| s.owner_flag).collect();
     if !flagged.is_empty() {
@@ -247,6 +358,14 @@ pub fn run_log(game: &GameRecord, smokes: &[SmokeRecord], frames_written: usize)
         for s in flagged {
             let _ = writeln!(log, "- smoke {}: {}", s.smoke_id, s.owner_note);
         }
+    }
+    let gaps = tier1_gaps(smokes);
+    let _ = writeln!(log, "\n## Tier 1 gaps ({})\n", gaps.len());
+    if gaps.is_empty() {
+        let _ = writeln!(log, "- none: every Tier 1 field is filled for every smoke");
+    }
+    for g in gaps {
+        let _ = writeln!(log, "- {g}");
     }
     log
 }

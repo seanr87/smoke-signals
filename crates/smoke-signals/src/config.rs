@@ -59,6 +59,8 @@ pub struct Render {
 
 #[derive(Debug, Clone, Default, Deserialize)]
 pub struct Game {
+    /// Tournament name for the frame footer, e.g. `KotS XIX NA`.
+    pub tournament: Option<String>,
     /// Tournament match identifier, e.g. `kots19na_GF`. Defaults to the
     /// primary replay's file stem.
     pub match_id: Option<String>,

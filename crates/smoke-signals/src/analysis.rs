@@ -541,10 +541,14 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             t_capture: t_capture.map(|c| moment(&map, c)),
             t_emission_end: t_emission_end.map(|c| moment(&map, c)),
             t_dispersed: track.removed.map(|c| moment(&map, c)),
+            state_at_activate: None,
+            state_at_capture: None,
             wows_toolkit_rev: WOWS_TOOLKIT_REV.map(str::to_string),
             smoke_signals_version: SMOKE_SIGNALS_VERSION.to_string(),
             generated_at: generated_at.clone(),
+            frame_act: None,
             frame_cap: None,
+            clip: None,
         });
     }
 
@@ -583,6 +587,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
     }
 
     let game_record = GameRecord {
+        tournament: config.game.tournament.clone(),
         match_id: match_id.clone(),
         round: round.clone(),
         game_no: config.game.game_no,

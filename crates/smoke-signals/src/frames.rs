@@ -1,31 +1,46 @@
-//! Pass two: a capture frame per smoke, with the smoke's puffs outlined in
-//! the highlight color.
+//! Pass two: an activation frame and a capture frame per smoke, with the
+//! header strip, the smoke overlays, and the Tier 1 state at each moment.
 
+use std::collections::HashMap;
 use std::path::Path;
 
+use image::RgbImage;
 use rootcause::prelude::*;
 use tracing::info;
+use wows_battle_world::view::BattleView;
+use wows_minimap_renderer::draw_command::DrawCommand;
 use wows_replays::types::EntityId;
 use wows_replays::types::GameClock;
 use wowsunpack::game_types::WorldPos;
 
+use crate::clock::BattleClock;
 use crate::config::Config;
+use crate::header;
+use crate::header::HeaderText;
+use crate::header::Progress;
+use crate::overlay;
+use crate::overlay::OverlayInput;
+use crate::records::GameRecord;
 use crate::records::SmokeRecord;
+use crate::records::SmokeType;
+use crate::records::StateSnapshot;
 use crate::render::FrameRenderer;
+use crate::render::Projection;
 use crate::replays::ReplaySet;
 use crate::session::GameData;
 use crate::session::GameSession;
+use crate::state;
 
 /// Keep letters, digits, `-` and `.`; everything else becomes `_`.
-fn sanitize(text: &str) -> String {
+pub fn sanitize(text: &str) -> String {
     text.chars().map(|c| if c.is_ascii_alphanumeric() || c == '-' || c == '.' { c } else { '_' }).collect()
 }
 
 /// `<match>_<game>_<team>_<player>_<ship>_s<nn>_<stage>_<mmss>`. A smoke
 /// without an owner is named `unowned`, since the file still has to exist.
-fn frame_name(record: &SmokeRecord, ordinal: usize, stage: &str) -> String {
+pub fn file_stem(record: &SmokeRecord, ordinal: usize, stage: &str, clock: Option<BattleClock>) -> String {
     let game = record.game_no.map(|n| format!("g{n}")).unwrap_or_else(|| "g".to_string());
-    let clock = record.t_capture.and_then(|m| m.clock).map(|c| c.compact()).unwrap_or_else(|| "none".to_string());
+    let clock = clock.map(|c| c.compact()).unwrap_or_else(|| "none".to_string());
     let owner = match (&record.team, &record.player, &record.ship) {
         (Some(team), Some(player), Some(ship)) => format!("{team}_{player}_{ship}"),
         _ => "unowned".to_string(),
@@ -33,50 +48,154 @@ fn frame_name(record: &SmokeRecord, ordinal: usize, stage: &str) -> String {
     sanitize(&format!("{}_{game}_{owner}_s{ordinal:02}_{stage}_{clock}", record.match_id))
 }
 
-/// Render the capture frame of every smoke that has one, in clock order, and
-/// record each file name on its record. `out_dir` receives the PNGs.
-pub fn render_capture_frames(
+/// Smoke types by object id, for recoloring every trail smoke in a frame.
+pub fn smoke_types(smokes: &[SmokeRecord]) -> HashMap<u32, SmokeType> {
+    smokes.iter().filter_map(|s| s.smoke_type.map(|t| (s.smoke_id, t))).collect()
+}
+
+/// Current puffs of every smoke object in the view.
+pub fn current_puffs(view: &BattleView<'_>) -> HashMap<u32, Vec<WorldPos>> {
+    view.smoke_screens().iter().map(|(id, s)| (id.raw() as u32, s.points.clone())).collect()
+}
+
+/// Apply the frame overlays for `record` to `commands`.
+pub fn apply_overlays(
+    projection: &Projection,
     config: &Config,
-    game: &GameData,
+    record: &SmokeRecord,
+    types: &HashMap<u32, SmokeType>,
+    puffs: &HashMap<u32, Vec<WorldPos>>,
+    commands: &mut Vec<DrawCommand>,
+) {
+    let project = |p: WorldPos| projection.project(p);
+    let pixel_radius = |r: f32| projection.pixel_radius(r);
+    let input = OverlayInput {
+        project: &project,
+        pixel_radius: &pixel_radius,
+        types,
+        puffs,
+        exhaust_color: config.render.exhaust_color.0,
+        highlight_color: config.render.highlight_color.rgba(255),
+    };
+    overlay::recolor_trail_smoke(commands, &input);
+    if let (Some(t), Some(path)) = (record.smoke_type, &record.path)
+        && t.is_trail()
+    {
+        commands.extend(overlay::dashed_path(path, &input, config.render.exhaust_color.rgba(230), 2.0));
+    }
+    commands.extend(overlay::highlight_rings(record.smoke_id, record.radius, &input));
+}
+
+/// Draw the frame for `record` at `clock`, with overlays and the header.
+pub fn render_smoke_frame<'a>(
+    renderer: &mut FrameRenderer<'a>,
+    session: &mut GameSession<'a>,
+    config: &Config,
+    record: &SmokeRecord,
+    types: &HashMap<u32, SmokeType>,
+    clock: GameClock,
+    text: &HeaderText,
+    progress: Option<Progress>,
+) -> Result<RgbImage, Report> {
+    let projection = renderer.projection();
+    let image = renderer.render_image(session, clock, |view, commands| {
+        let puffs = current_puffs(view);
+        apply_overlays(&projection, config, record, types, &puffs, commands);
+    })?;
+    Ok(header::compose(&image, renderer.fonts(), text, progress))
+}
+
+/// The smoker's team id and vehicle entity, from the game record.
+pub fn smoker_identity(game: &GameRecord, record: &SmokeRecord) -> (Option<i64>, Option<EntityId>) {
+    let owner = record
+        .player
+        .as_ref()
+        .and_then(|name| game.teams.iter().flat_map(|t| t.players.iter()).find(|p| &p.player == name));
+    let team = owner.and_then(|p| game.team_of_player(p.entity_id)).map(|t| t.team_id);
+    (team, owner.map(|p| EntityId::from(p.entity_id)))
+}
+
+/// Tier 1 state at the session's current clock, from the smoker's side.
+pub fn snapshot_for(session: &mut GameSession<'_>, game: &GameRecord, record: &SmokeRecord) -> StateSnapshot {
+    let (team, smoker) = smoker_identity(game, record);
+    let view = session.view();
+    state::snapshot(&view, game, team, smoker)
+}
+
+fn save_png_and_webp(image: &RgbImage, dir: &Path, stem: &str) -> Result<String, Report> {
+    let png = format!("{stem}.png");
+    image.save(dir.join(&png)).attach_with(|| format!("writing {}", dir.join(&png).display()))?;
+    let webp = dir.join(format!("{stem}.webp"));
+    image.save(&webp).attach_with(|| format!("writing {}", webp.display()))?;
+    Ok(png)
+}
+
+/// Which frame an event produces.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+enum Stage {
+    Activation,
+    Capture,
+}
+
+impl Stage {
+    fn name(self) -> &'static str {
+        match self {
+            Self::Activation => "act",
+            Self::Capture => "cap",
+        }
+    }
+}
+
+/// Render both frames of every smoke in clock order, fill the Tier 1 state
+/// at each moment, and record the file names. Returns the frame count.
+pub fn render_smoke_frames(
+    config: &Config,
+    game_data: &GameData,
     replays: &ReplaySet,
+    game: &GameRecord,
     smokes: &mut [SmokeRecord],
+    selected: &[usize],
     out_dir: &Path,
 ) -> Result<usize, Report> {
     std::fs::create_dir_all(out_dir).attach_with(|| format!("creating {}", out_dir.display()))?;
-    let mut session = GameSession::new(game, replays)?;
-    let mut renderer = FrameRenderer::new(config, game, replays, &session)?;
-    let color = config.render.highlight_color.rgba(255);
+    let mut session = GameSession::new(game_data, replays)?;
+    let mut renderer = FrameRenderer::new(config, game_data, replays, &session)?;
+    let types = smoke_types(smokes);
 
-    let mut order: Vec<usize> = (0..smokes.len()).filter(|i| smokes[*i].t_capture.is_some()).collect();
-    order.sort_by(|a, b| {
-        let ta = smokes[*a].t_capture.map(|m| m.seconds).unwrap_or(0.0);
-        let tb = smokes[*b].t_capture.map(|m| m.seconds).unwrap_or(0.0);
-        ta.total_cmp(&tb)
-    });
+    // Ordinal: position in the table, which is creation order.
+    let mut events: Vec<(f32, usize, Stage)> = Vec::new();
+    for (i, s) in smokes.iter().enumerate().filter(|(i, _)| selected.contains(i)) {
+        events.push((s.activation_moment().seconds, i, Stage::Activation));
+        if let Some(c) = s.t_capture {
+            events.push((c.seconds, i, Stage::Capture));
+        }
+    }
+    events.sort_by(|a, b| a.0.total_cmp(&b.0));
 
     let mut written = 0;
-    for (ordinal, i) in order.iter().enumerate() {
-        let record = &smokes[*i];
-        let Some(capture) = record.t_capture else { continue };
-        let clock = GameClock(capture.seconds);
+    for (seconds, i, stage) in events {
+        let clock = GameClock(seconds);
         session.seek_clock(clock)?;
-        let id = EntityId::from(record.smoke_id);
-        let puffs: Vec<WorldPos> = {
-            let view = session.view();
-            view.smoke_screens().get(&id).map(|s| s.points.clone()).ok_or_else(|| {
-                report!(
-                    "smoke {} is absent from the merged state at its capture clock {:.2} s",
-                    record.smoke_id,
-                    capture.seconds
-                )
-            })?
+        let snapshot = snapshot_for(&mut session, game, &smokes[i]);
+        let text = header::header_text(game, &smokes[i], i + 1, Some(&snapshot));
+        let moment_clock = match stage {
+            Stage::Activation => smokes[i].activation_moment().clock,
+            Stage::Capture => smokes[i].t_capture.and_then(|m| m.clock),
         };
-        let overlay = renderer.rings(&puffs, record.radius, color);
-        let name = format!("{}.png", frame_name(record, ordinal + 1, "cap"));
-        let path = out_dir.join(&name);
-        renderer.render_png(&mut session, clock, &overlay, &path)?;
-        info!(smoke = record.smoke_id, file = %name, puffs = puffs.len(), "Capture frame");
-        smokes[*i].frame_cap = Some(name);
+        let stem = file_stem(&smokes[i], i + 1, stage.name(), moment_clock);
+        let image = render_smoke_frame(&mut renderer, &mut session, config, &smokes[i], &types, clock, &text, None)?;
+        let name = save_png_and_webp(&image, out_dir, &stem)?;
+        info!(smoke = smokes[i].smoke_id, stage = stage.name(), file = %name, "Frame");
+        match stage {
+            Stage::Activation => {
+                smokes[i].frame_act = Some(name);
+                smokes[i].state_at_activate = Some(snapshot);
+            }
+            Stage::Capture => {
+                smokes[i].frame_cap = Some(name);
+                smokes[i].state_at_capture = Some(snapshot);
+            }
+        }
         written += 1;
     }
     Ok(written)

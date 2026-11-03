@@ -4,19 +4,22 @@
 use std::path::Path;
 use std::path::PathBuf;
 
+use image::RgbImage;
 use rootcause::prelude::*;
 use tracing::info;
 use tracing::warn;
+use wows_battle_world::view::BattleView;
+use wows_minimap_renderer::GameFonts;
 use wows_minimap_renderer::MINIMAP_SIZE;
 use wows_minimap_renderer::RenderTarget;
 use wows_minimap_renderer::assets;
 use wows_minimap_renderer::config::CliOverrides;
 use wows_minimap_renderer::config::RendererConfig;
-use wows_minimap_renderer::draw_command::AnnotationShape;
 use wows_minimap_renderer::draw_command::DrawCommand;
 use wows_minimap_renderer::drawing::ImageTarget;
 use wows_minimap_renderer::drawing::SidePanelLayout;
 use wows_minimap_renderer::map_data::MapInfo;
+use wows_minimap_renderer::map_data::MinimapPos;
 use wows_minimap_renderer::renderer::MinimapRenderer;
 use wows_replays::ReplayFile;
 use wows_replays::types::GameClock;
@@ -34,15 +37,11 @@ pub struct FrameRenderer<'a> {
     renderer: MinimapRenderer<'a>,
     target: ImageTarget,
     map_info: Option<MapInfo>,
+    fonts: GameFonts,
 }
 
 impl<'a> FrameRenderer<'a> {
-    pub fn new(
-        config: &Config,
-        game: &'a GameData,
-        replays: &'a ReplaySet,
-        session: &GameSession<'a>,
-    ) -> Result<Self, Report> {
+    pub fn new(config: &Config, game: &'a GameData, replays: &'a ReplaySet, session: &GameSession<'a>) -> Result<Self, Report> {
         let vfs = &game.loaded.vfs;
         let version = game.version;
         let primary = &replays.primary;
@@ -103,7 +102,7 @@ impl<'a> FrameRenderer<'a> {
         );
 
         let mut renderer = MinimapRenderer::new(map_info.clone(), &game.loaded.game_params, version, options);
-        renderer.set_fonts(fonts);
+        renderer.set_fonts(fonts.clone());
         renderer.set_flag_icons(flag_icons);
         renderer.set_merged_perspectives(merged);
         renderer.set_vehicle_facts(session.vehicle_facts().clone());
@@ -120,43 +119,47 @@ impl<'a> FrameRenderer<'a> {
         );
         renderer.set_salvo_flight_times(std::sync::Arc::new(salvo_flight_times));
 
-        Ok(Self { renderer, target, map_info })
+        Ok(Self { renderer, target, map_info, fonts })
     }
 
-    /// Outline rings around `points`, each of world radius `radius`.
-    pub fn rings(&self, points: &[WorldPos], radius: f32, color: [u8; 4]) -> Vec<DrawCommand> {
-        let Some(map_info) = &self.map_info else {
-            return Vec::new();
-        };
-        let r = map_info.world_distance_to_minimap(radius, MINIMAP_SIZE).max(3.0);
-        points
-            .iter()
-            .map(|p| DrawCommand::Annotation {
-                shape: AnnotationShape::Circle {
-                    center: map_info.world_to_minimap(*p, MINIMAP_SIZE),
-                    radius: r,
-                    filled: false,
-                },
-                color,
-                width: 2.0,
-            })
-            .collect()
+    pub fn fonts(&self) -> &GameFonts {
+        &self.fonts
     }
 
-    /// Draw the frame at `clock` (which the session must already cover), add
-    /// `overlay` on top, and save it as PNG.
-    pub fn render_png(
+    pub fn map_info(&self) -> Option<&MapInfo> {
+        self.map_info.as_ref()
+    }
+
+    /// A copy of the map projection, usable while the renderer is drawing.
+    pub fn projection(&self) -> Projection {
+        Projection { map_info: self.map_info.clone() }
+    }
+
+    pub fn canvas_size(&self) -> (u32, u32) {
+        self.target.canvas_size()
+    }
+
+    /// World position to minimap pixels, when the map is known.
+    pub fn project(&self, pos: WorldPos) -> Option<MinimapPos> {
+        self.map_info.as_ref().map(|m| m.world_to_minimap(pos, MINIMAP_SIZE))
+    }
+
+    /// World radius to minimap pixels; zero when the map is unknown.
+    pub fn pixel_radius(&self, radius: f32) -> f32 {
+        self.map_info.as_ref().map(|m| m.world_distance_to_minimap(radius, MINIMAP_SIZE)).unwrap_or(0.0)
+    }
+
+    /// Draw the frame at `clock` (which the session must already cover),
+    /// let `edit` change the draw commands, and return the image.
+    pub fn render_image(
         &mut self,
         session: &mut GameSession<'a>,
         clock: GameClock,
-        overlay: &[DrawCommand],
-        path: &Path,
-    ) -> Result<(), Report> {
+        edit: impl FnOnce(&BattleView<'_>, &mut Vec<DrawCommand>),
+    ) -> Result<RgbImage, Report> {
         match session.covered() {
             Some(covered) if covered.seconds() >= clock.seconds() => {}
-            covered => {
-                bail!("clock {:.2} s is not covered by the session (covered up to {:?})", clock.seconds(), covered)
-            }
+            covered => bail!("clock {:.2} s is not covered by the session (covered up to {:?})", clock.seconds(), covered),
         }
         let view = session.view();
         self.renderer.set_render_clock(clock);
@@ -164,14 +167,42 @@ impl<'a> FrameRenderer<'a> {
         self.renderer.update_squadron_info(&view);
         self.renderer.update_ship_abilities(&view);
         let mut commands = self.renderer.draw_frame(&view);
-        commands.extend_from_slice(overlay);
+        edit(&view, &mut commands);
         self.target.begin_frame();
         for command in &commands {
             self.target.draw(command);
         }
         self.target.end_frame();
-        self.target.frame().save(path).attach_with(|| format!("writing {}", path.display()))?;
+        Ok(self.target.frame())
+    }
+
+    /// Draw the frame at `clock` with `overlay` on top and save it as PNG.
+    pub fn render_png(
+        &mut self,
+        session: &mut GameSession<'a>,
+        clock: GameClock,
+        overlay: &[DrawCommand],
+        path: &Path,
+    ) -> Result<(), Report> {
+        let image = self.render_image(session, clock, |_, commands| commands.extend_from_slice(overlay))?;
+        image.save(path).attach_with(|| format!("writing {}", path.display()))?;
         Ok(())
+    }
+}
+
+/// World-to-minimap projection detached from the renderer.
+#[derive(Clone)]
+pub struct Projection {
+    map_info: Option<MapInfo>,
+}
+
+impl Projection {
+    pub fn project(&self, pos: WorldPos) -> Option<MinimapPos> {
+        self.map_info.as_ref().map(|m| m.world_to_minimap(pos, MINIMAP_SIZE))
+    }
+
+    pub fn pixel_radius(&self, radius: f32) -> f32 {
+        self.map_info.as_ref().map(|m| m.world_distance_to_minimap(radius, MINIMAP_SIZE)).unwrap_or(0.0)
     }
 }
 

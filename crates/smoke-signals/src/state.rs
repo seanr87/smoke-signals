@@ -51,7 +51,7 @@ impl CapProximity {
 pub fn cap_proximity(view: &BattleView<'_>, puffs: &[WorldPos], radius: f32) -> Option<CapProximity> {
     view.capture_points()
         .iter()
-        .filter(|cp| cp.is_enabled)
+        .filter(|cp| cp.is_enabled && crate::analysis::is_capture_zone(cp))
         .filter_map(|cp| {
             let center = cp.position?;
             let nearest = puffs.iter().map(|p| timeline::ground_distance(*p, center)).fold(f32::INFINITY, f32::min);
@@ -84,7 +84,7 @@ pub fn snapshot(
     let cap_state: Vec<CapState> = view
         .capture_points()
         .iter()
-        .filter(|cp| cp.is_enabled)
+        .filter(|cp| cp.is_enabled && crate::analysis::is_capture_zone(cp))
         .map(|cp| CapState {
             cap: cap_letter(cp.index),
             owner: (cp.team_id >= 0).then(|| team_name(cp.team_id)).flatten(),
@@ -156,7 +156,7 @@ pub fn snapshot(
     let nearest_cap = smoker_pos.and_then(|pos| {
         view.capture_points()
             .iter()
-            .filter(|cp| cp.is_enabled)
+            .filter(|cp| cp.is_enabled && crate::analysis::is_capture_zone(cp))
             .filter_map(|cp| cp.position.map(|c| (cp.index, timeline::ground_distance(pos, c), cp.has_invaders)))
             .min_by(|a, b| a.1.total_cmp(&b.1))
     });

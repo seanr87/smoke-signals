@@ -30,6 +30,7 @@ use crate::clock::BattleClockMap;
 use crate::config::Config;
 use crate::damage;
 use crate::records::Bbox;
+use crate::records::CapLayout;
 use crate::records::GameRecord;
 use crate::records::Moment;
 use crate::records::Outcome;
@@ -41,6 +42,7 @@ use crate::records::Xz;
 use crate::replays::ReplaySet;
 use crate::session::GameData;
 use crate::session::GameSession;
+use crate::state;
 use crate::tier2;
 use crate::timeline;
 
@@ -91,6 +93,8 @@ struct SmokeTrack {
     last_point: Option<WorldPos>,
     first_fade: Option<GameClock>,
     removed: Option<GameClock>,
+    /// The standing puffs every `CONTEST_SAMPLE_INTERVAL_S`.
+    samples: Vec<(GameClock, Vec<WorldPos>)>,
 }
 
 impl SmokeTrack {
@@ -105,6 +109,7 @@ impl SmokeTrack {
             last_point: None,
             first_fade: None,
             removed: None,
+            samples: Vec::new(),
         }
     }
 
@@ -336,9 +341,9 @@ fn moment(map: &BattleClockMap, clock: GameClock) -> Moment {
     Moment { seconds: clock.seconds(), clock: map.at(clock) }
 }
 
-/// Side of the map a team spawned on, from the mean of its first positions.
-/// `None` when no ship of the team has a position.
-fn spawn_side(timeline: &wows_battle_world::scan::PositionTimeline, entities: &[EntityId]) -> Option<String> {
+/// Mean of a team's first positions. `None` when no ship of the team has a
+/// position.
+fn spawn_center(timeline: &wows_battle_world::scan::PositionTimeline, entities: &[EntityId]) -> Option<WorldPos> {
     let mut sum = (0.0f32, 0.0f32);
     let mut n = 0;
     for e in entities {
@@ -353,15 +358,173 @@ fn spawn_side(timeline: &wows_battle_world::scan::PositionTimeline, entities: &[
     if n == 0 {
         return None;
     }
-    let (x, z) = (sum.0 / n as f32, sum.1 / n as f32);
-    let side = if z.abs() >= x.abs() {
+    Some(WorldPos::new(sum.0 / n as f32, 0.0, sum.1 / n as f32))
+}
+
+/// Side of the map a spawn centre lies on. The two spawns are told apart
+/// along the axis they are furthest apart on; north and south unless the
+/// east-west separation is clearly larger, so corner spawns on a diagonal
+/// map get one consistent pair of labels.
+fn spawn_side(center: WorldPos, other: Option<WorldPos>) -> String {
+    let (x, z) = (center.0.x, center.0.z);
+    let east_west = match other {
+        Some(o) => (x - o.0.x).abs() > (z - o.0.z).abs() * EAST_WEST_SPAWN_RATIO,
+        None => x.abs() > z.abs() * EAST_WEST_SPAWN_RATIO,
+    };
+    let side = if !east_west {
         if z >= 0.0 { "north" } else { "south" }
     } else if x >= 0.0 {
         "east"
     } else {
         "west"
     };
-    Some(side.to_string())
+    side.to_string()
+}
+
+/// Spawns count as east and west only when their east-west separation is
+/// this many times the north-south one.
+const EAST_WEST_SPAWN_RATIO: f32 = 1.5;
+
+/// How often the standing puffs and the cap state are sampled for the
+/// contested cap distance.
+const CONTEST_SAMPLE_INTERVAL_S: f32 = 2.0;
+
+/// A capture zone of the domination kind. Size is no test: Mountain Range
+/// has a 10 km cap A at the map edge.
+pub fn is_capture_zone(cp: &wows_replays::analyzer::battle_controller::state::CapturePointState) -> bool {
+    match &cp.control_point_type {
+        Some(Recognized::Known(wowsunpack::game_types::ControlPointType::Control)) | None => true,
+        Some(_) => false,
+    }
+}
+
+/// One enabled cap at a sample.
+#[derive(Debug, Clone, Copy, PartialEq)]
+struct CapSample {
+    index: usize,
+    position: WorldPos,
+    radius: f32,
+    /// Owning team id, negative when neutral.
+    owner: i64,
+    /// The invading team while someone is inside.
+    invader: Option<i64>,
+}
+
+/// Why a cap counts as contested for a team, in the order checked.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord)]
+enum ContestReason {
+    /// The midline between the spawns crosses the cap.
+    Midline,
+    /// The cap lies wholly on the enemy's side of the midline.
+    EnemySide,
+    /// The enemy owns the cap.
+    EnemyOwned,
+}
+
+impl ContestReason {
+    fn as_str(self) -> &'static str {
+        match self {
+            Self::Midline => "midline",
+            Self::EnemySide => "enemy_side",
+            Self::EnemyOwned => "enemy_owned",
+        }
+    }
+}
+
+impl std::fmt::Display for ContestReason {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_str(self.as_str())
+    }
+}
+
+/// The midline is at right angles to the line joining the spawns, halfway
+/// along it. Returns how far the cap centre lies past the midline toward
+/// the enemy spawn, in world units.
+fn across_midline(cap: WorldPos, ours: WorldPos, theirs: WorldPos) -> f32 {
+    let (dx, dz) = (theirs.0.x - ours.0.x, theirs.0.z - ours.0.z);
+    let len = (dx * dx + dz * dz).sqrt();
+    if len == 0.0 {
+        return 0.0;
+    }
+    let (mx, mz) = ((ours.0.x + theirs.0.x) / 2.0, (ours.0.z + theirs.0.z) / 2.0);
+    ((cap.0.x - mx) * dx + (cap.0.z - mz) * dz) / len
+}
+
+fn contest_reason(cap: &CapSample, ours: Option<WorldPos>, theirs: Option<WorldPos>, enemy: i64) -> Option<ContestReason> {
+    if let (Some(o), Some(t)) = (ours, theirs) {
+        let s = across_midline(cap.position, o, t);
+        if s.abs() <= cap.radius {
+            return Some(ContestReason::Midline);
+        }
+        if s > cap.radius {
+            return Some(ContestReason::EnemySide);
+        }
+    }
+    (cap.owner == enemy).then_some(ContestReason::EnemyOwned)
+}
+
+struct ContestStats {
+    cap: char,
+    reason: ContestReason,
+    avg_distance_m: f32,
+    captured_or_held: bool,
+}
+
+/// Distance to the nearest contested cap over the smoke's sampled life,
+/// and whether the smoker's team took or defended a cap meanwhile.
+fn contested_cap_stats(
+    track: &SmokeTrack,
+    cap_history: &[(GameClock, Vec<CapSample>)],
+    ours: &TeamRecord,
+    theirs: &TeamRecord,
+) -> Option<ContestStats> {
+    let our_spawn = ours.spawn_xy.map(|p| WorldPos::new(p.x, 0.0, p.z));
+    let their_spawn = theirs.spawn_xy.map(|p| WorldPos::new(p.x, 0.0, p.z));
+    let caps_at = |clock: GameClock| {
+        cap_history.iter().rev().find(|(c, _)| c.seconds() <= clock.seconds()).map(|(_, caps)| caps.as_slice())
+    };
+    let mut distances: Vec<f32> = Vec::new();
+    let mut nearest_counts: HashMap<(usize, ContestReason), usize> = HashMap::new();
+    let mut captured_or_held = false;
+    let mut owned_before: HashMap<usize, i64> =
+        caps_at(track.created).map(|caps| caps.iter().map(|c| (c.index, c.owner)).collect()).unwrap_or_default();
+    for (clock, puffs) in &track.samples {
+        let Some(caps) = caps_at(*clock) else { continue };
+        for cap in caps {
+            let before = owned_before.insert(cap.index, cap.owner);
+            let was_contested = contest_reason(&CapSample { owner: before.unwrap_or(-1), ..*cap }, our_spawn, their_spawn, theirs.team_id).is_some();
+            let taken = before != Some(ours.team_id) && was_contested;
+            let defended = cap.invader == Some(theirs.team_id);
+            if cap.owner == ours.team_id && (taken || defended) {
+                captured_or_held = true;
+            }
+        }
+        if puffs.is_empty() {
+            continue;
+        }
+        let nearest = caps
+            .iter()
+            .filter_map(|cap| {
+                let reason = contest_reason(cap, our_spawn, their_spawn, theirs.team_id)?;
+                let d = puffs.iter().map(|p| timeline::ground_distance(*p, cap.position)).fold(f32::INFINITY, f32::min);
+                Some((d - track.radius - cap.radius, cap.index, reason))
+            })
+            .min_by(|a, b| a.0.total_cmp(&b.0));
+        if let Some((d, index, reason)) = nearest {
+            distances.push(timeline::meters(d));
+            *nearest_counts.entry((index, reason)).or_default() += 1;
+        }
+    }
+    if distances.is_empty() {
+        return None;
+    }
+    let ((index, reason), _) = nearest_counts.iter().max_by_key(|((i, r), n)| (**n, std::cmp::Reverse((*i, *r))))?;
+    Some(ContestStats {
+        cap: state::cap_letter(*index),
+        reason: *reason,
+        avg_distance_m: distances.iter().sum::<f32>() / distances.len() as f32,
+        captured_or_held,
+    })
 }
 
 pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Result<Analysis, Report> {
@@ -382,6 +545,8 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
     let mut seen_hits: HashSet<(u32, u32, u32, u32)> = HashSet::new();
     let mut salvos: HashMap<(u32, u32, u32), wows_replays::analyzer::battle_controller::state::ActiveShot> =
         HashMap::new();
+    let mut cap_history: Vec<(GameClock, Vec<CapSample>)> = Vec::new();
+    let mut next_sample: Option<f32> = None;
 
     while session.step()?.is_some() {
         let view = session.view();
@@ -389,6 +554,31 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         let smokes = view.smoke_screens();
         for (id, state) in &smokes {
             tracks.entry(*id).or_insert_with(|| SmokeTrack::new(clock, state)).observe(clock, state);
+        }
+        if next_sample.is_none_or(|t| clock.seconds() >= t) {
+            next_sample = Some(clock.seconds() + CONTEST_SAMPLE_INTERVAL_S);
+            let caps: Vec<CapSample> = view
+                .capture_points()
+                .iter()
+                .filter(|cp| cp.is_enabled && is_capture_zone(cp))
+                .filter_map(|cp| {
+                    Some(CapSample {
+                        index: cp.index,
+                        position: cp.position?,
+                        radius: cp.radius,
+                        owner: cp.team_id,
+                        invader: cp.has_invaders.then_some(cp.invader_team),
+                    })
+                })
+                .collect();
+            if cap_history.last().is_none_or(|(_, last)| *last != caps) {
+                cap_history.push((clock, caps));
+            }
+            for (id, state) in &smokes {
+                if let Some(track) = tracks.get_mut(id) {
+                    track.samples.push((clock, state.points.clone()));
+                }
+            }
         }
         tier2.observe(clock, &view, &smokes, &tl);
         for hit in view.shot_hits() {
@@ -444,6 +634,24 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         Recognized::Unknown(raw) => raw.to_string(),
     });
     let battle_end = view.battle_end_clock();
+    let caps: Vec<CapLayout> = view
+        .capture_points()
+        .iter()
+        .filter(|cp| cp.is_enabled && is_capture_zone(cp))
+        .filter_map(|cp| {
+            let p = cp.position?;
+            Some(CapLayout {
+                cap: state::cap_letter(cp.index),
+                position: Xz { x: p.0.x, z: p.0.z },
+                radius: cp.radius,
+                radius_m: timeline::meters(cp.radius),
+                kind: cp.control_point_type.as_ref().map(|k| match k {
+                    Recognized::Known(k) => k.name().to_string(),
+                    Recognized::Unknown(raw) => raw.to_string(),
+                }),
+            })
+        })
+        .collect();
     let self_authoritative: f32 = view
         .self_damage_stats()
         .iter()
@@ -507,10 +715,16 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
                     }
                 })
                 .collect();
+            let spawn = spawn_center(&tl, &entities);
+            let other_spawn = team_ids
+                .iter()
+                .find(|t| *t != team_id)
+                .and_then(|t| spawn_center(&tl, &roster.iter().filter(|(_, r)| r.team_id == *t).map(|(id, _)| *id).collect::<Vec<_>>()));
             TeamRecord {
                 name: team_name(*team_id),
                 team_id: *team_id,
-                spawn_side: spawn_side(&tl, &entities),
+                spawn_side: spawn.map(|p| spawn_side(p, other_spawn)),
+                spawn_xy: spawn.map(|p| Xz { x: p.0.x, z: p.0.z }),
                 final_score: usize::try_from(*team_id).ok().and_then(|i| scores.get(&i).copied()),
                 players,
             }
@@ -604,12 +818,12 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             (Some(e), Some(n)) => Some(format!("{}_{n}", e.raw())),
             _ => None,
         };
-        let path = match smoke_type {
-            Some(SmokeType::Exhaust) | Some(SmokeType::Crawling) => {
-                Some(track.puffs.iter().map(|(_, p)| Xz { x: p.0.x, z: p.0.z }).collect())
-            }
-            _ => None,
-        };
+        let path = Some(track.puffs.iter().map(|(_, p)| Xz { x: p.0.x, z: p.0.z }).collect());
+        let contest = r.and_then(|r| {
+            let ours = team_by_id(r.team_id)?;
+            let theirs = teams.iter().find(|t| t.team_id != r.team_id)?;
+            contested_cap_stats(track, &cap_history, ours, theirs)
+        });
         let team = r.map(|r| r.team.clone());
         let opponent = r
             .and_then(|r| team_ids.iter().find(|t| **t != r.team_id))
@@ -673,6 +887,10 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             cap_radius_m: None,
             cap_depth_pct: None,
             selfish_smoke: None,
+            contested_cap_name: contest.as_ref().map(|c| c.cap.to_string()),
+            cap_contested_reason: contest.as_ref().map(|c| c.reason.to_string()),
+            avg_contested_cap_dist_m: contest.as_ref().map(|c| c.avg_distance_m),
+            cap_captured_or_held: contest.as_ref().map(|c| c.captured_or_held),
             damage_in_smoke: None,
             damage_behind_smoke: None,
             smoke_damage_total: None,
@@ -890,6 +1108,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         smoke_signals_version: SMOKE_SIGNALS_VERSION.to_string(),
         generated_at: generated_at.clone(),
         teams,
+        caps,
     };
 
     Ok(Analysis {

@@ -158,6 +158,10 @@ const TIER2_COLUMNS: &[&str] = &[
     "cap_proximity_name",
     "cap_radius_m",
     "cap_depth_pct",
+    "contested_cap_name",
+    "cap_contested_reason",
+    "avg_contested_cap_dist_m",
+    "cap_captured_or_held",
     "selfish_smoke",
 ];
 
@@ -309,6 +313,10 @@ pub fn smoke_csv_row(r: &SmokeRecord) -> Vec<String> {
         r.cap_proximity_name.clone().unwrap_or_default(),
         opt_f(r.cap_radius_m),
         opt_f(r.cap_depth_pct),
+        r.contested_cap_name.clone().unwrap_or_default(),
+        r.cap_contested_reason.clone().unwrap_or_default(),
+        opt_f(r.avg_contested_cap_dist_m),
+        r.cap_captured_or_held.map(|b| b.to_string()).unwrap_or_default(),
         r.selfish_smoke.map(|b| b.to_string()).unwrap_or_default(),
     ]);
     row.extend([

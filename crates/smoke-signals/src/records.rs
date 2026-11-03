@@ -197,6 +197,21 @@ pub struct SmokeRecord {
     /// No teammate but the owner was ever inside, and no ally damage went
     /// through it. `None` without damage data.
     pub selfish_smoke: Option<bool>,
+    /// The contested cap nearest the smoke for most of its life. A cap is
+    /// contested for the smoker's team when the midline crosses it, it lies
+    /// on the enemy's side of the midline, or the enemy owns it.
+    pub contested_cap_name: Option<String>,
+    /// Why that cap counted as contested: `midline`, `enemy_side` or
+    /// `enemy_owned`, the first that applied most often.
+    pub cap_contested_reason: Option<String>,
+    /// Edge-to-edge distance in meters from the standing puffs to the
+    /// nearest contested cap, averaged over samples of the smoke's life.
+    /// Negative when the smoke reaches inside. `None` when no cap was
+    /// contested while the smoke stood.
+    pub avg_contested_cap_dist_m: Option<f32>,
+    /// While the smoke stood, the smoker's team took a cap or kept one that
+    /// the enemy was invading.
+    pub cap_captured_or_held: Option<bool>,
 
     /// Tier 3, from the M4 spike: damage by the smoker's team only.
     pub damage_in_smoke: Option<f32>,
@@ -246,6 +261,8 @@ pub struct TeamRecord {
     pub name: Option<String>,
     pub team_id: i64,
     pub spawn_side: Option<String>,
+    /// Mean of the team's first positions, in world units.
+    pub spawn_xy: Option<Xz>,
     pub final_score: Option<i64>,
     pub players: Vec<PlayerRecord>,
 }
@@ -255,6 +272,17 @@ pub struct TeamRecord {
 pub enum Outcome {
     Win { team_id: i64, team: Option<String> },
     Draw,
+}
+
+/// One capture zone of a game, in world units.
+#[derive(Debug, Clone, Serialize)]
+pub struct CapLayout {
+    pub cap: char,
+    pub position: Xz,
+    pub radius: f32,
+    pub radius_m: f32,
+    /// The game's control point type, e.g. `Control` or `Base`.
+    pub kind: Option<String>,
 }
 
 /// Internal map name without its numeric prefix and underscores.
@@ -277,6 +305,8 @@ pub struct GameRecord {
     pub primary_replay: String,
     pub merged_replays: Vec<String>,
     pub teams: Vec<TeamRecord>,
+    /// Enabled capture zones at the end of the replay.
+    pub caps: Vec<CapLayout>,
     pub outcome: Option<Outcome>,
     pub finish_type: Option<String>,
     pub battle_start_s: f32,

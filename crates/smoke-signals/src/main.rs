@@ -16,7 +16,7 @@ use crate::config::Config;
 
 /// Smoke screen analysis for tournament replays.
 #[derive(Parser)]
-#[command(name = "smoke_snap")]
+#[command(name = "smoke_signals")]
 struct Args {
     /// Path to config.toml. Relative paths inside it resolve against its directory.
     #[arg(long, default_value = "config.toml")]
@@ -70,7 +70,7 @@ fn write_run_log(
     use std::fmt::Write as _;
 
     let mut log = String::new();
-    let _ = writeln!(log, "# smoke_snap run log\n");
+    let _ = writeln!(log, "# smoke_signals run log\n");
     let _ = writeln!(log, "- generated_at: {}", jiff::Zoned::now().strftime("%Y-%m-%d %H:%M:%S %Z"));
     let _ = writeln!(log, "- game_build: {}", replays.primary.meta.clientVersionFromExe);
     let _ = writeln!(log, "- game_data: {}", game.build_dir.display());

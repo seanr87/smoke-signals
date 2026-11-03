@@ -1,4 +1,4 @@
-# smoke-snap project rules
+# Smoke Signals project rules
 - Read smoke/DESIGN.md before starting; it is the source of truth.
 - Never delete files or outputs; version instead (new output/<timestamp>/ per run).
 - Commit after each step; stop at each milestone (M1–M4) for Sean's review.

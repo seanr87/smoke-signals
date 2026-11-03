@@ -11191,7 +11191,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "smoke-snap"
+name = "smoke-signals"
 version = "0.1.0"
 dependencies = [
  "clap",

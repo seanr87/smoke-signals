@@ -1,5 +1,5 @@
 [package]
-name = "smoke-snap"
+name = "smoke-signals"
 version = "0.1.0"
 publish = false
 description = "Smoke screen analysis for World of Warships tournament replays"
@@ -8,7 +8,7 @@ rust-version.workspace = true
 license.workspace = true
 
 [[bin]]
-name = "smoke_snap"
+name = "smoke_signals"
 path = "src/main.rs"
 
 [dependencies]

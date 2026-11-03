@@ -48,7 +48,7 @@ profile.json.gz
 **/tests/snapshots/**/*.new.png
 **/tests/snapshots/**/*.old.png
 
-# smoke-snap local inputs, outputs and machine configuration
+# Smoke Signals local inputs, outputs and machine configuration
 /replays/
 /output/
 /config.toml

@@ -1,4 +1,4 @@
-# Smoke Analysis — Design Doc & Claude Code Handoff
+# Smoke Signals — Design Doc & Claude Code Handoff
 
 Nov 2, 2026 · Sean
 Live version: https://claude.ai/artifact/RjNfs47CQrkYWfZ6vMXPG1
@@ -27,7 +27,7 @@ There are three phases. The interactive features wait until clan leadership has 
 
 | Phase | Goal | Scope | Main additions | Exit criteria |
 | --- | --- | --- | --- | --- |
-| 1. Prototype | Prove the pipeline end to end | Grand Final G1, H-SR only | Fork of wows-toolkit with a `smoke_snap` program; smoke detection, owner and type; capture rules; two frames, header and clip; Tier 1 and 2 metrics including radar while concealed; spike on smoke damage; golden test | Golden test passes and Sean's spot-checks match the replay |
+| 1. Prototype | Prove the pipeline end to end | Grand Final G1, H-SR only | Fork of wows-toolkit with a `smoke_signals` program; smoke detection, owner and type; capture rules; two frames, header and clip; Tier 1 and 2 metrics including radar while concealed; spike on smoke damage; golden test | Golden test passes and Sean's spot-checks match the replay |
 | 2. Demo | Show leadership everything except the interactive features | H-SR, RESIN and PN: group stage and playoffs | Replay inventory and batch runs; build data (commander skills and upgrades) and effective smoke stats; Tier 3 smoke damage and outcomes; SQLite database; CSV hand-tagging; read-only local gallery; pattern summary | Demo is presented |
 | 3. Interactive | Let clan members tag and discuss smokes | Decided after the demo | Choose a host (Supabase, the clan site, or other); login; tag dropdowns; comments; access control; move SQLite data to the host; host the clips | Leadership sign-off |
 
@@ -51,11 +51,11 @@ Replays come from the tournament site. Game data comes from a public GitHub repo
 
 **Render approach**
 
-- **Fork [landaire/wows-toolkit](https://github.com/landaire/wows-toolkit)** (MIT license) and add a new workspace crate, `crates/smoke-snap`.
+- **Fork [landaire/wows-toolkit](https://github.com/landaire/wows-toolkit)** (MIT license) and add a new workspace crate, `crates/smoke-signals`.
 - **Loader move:** the game-data loading functions live in `minimap-renderer/src/main.rs`, not in its library. Move them into a small library module. This is the only change to upstream code, and it could be offered to the author upstream.
 - **Why a fork:** after a game patch, updating is just pulling the author's changes.
 - **Reused as-is:** the merged replay session, the battle state, the minimap drawing code and the image output. The look matches wows-toolkit exactly.
-- **Added by smoke_snap:**
+- **Added by smoke_signals:**
   - Rendering at any exact time
   - Smoke tracking, owner and type
   - Overlays and the header
@@ -201,7 +201,7 @@ An example with made-up values:
 | Tier 2 | allies_in_smoke, nearest_enemy_dist_km, dist_to_nearest_cap_km, cap_contested, enemy_radars_alive, radar_detections_in_smoke, hydro_detections_in_smoke, fired_while_concealed_detections |
 | Tier 3 (Phase 2) | damage_in_smoke, damage_behind_smoke, smoke_damage_total (each broken down, plus _enemy columns), kills_during_smoke, deaths_in_smoke, cap_flips_during_smoke, score_delta_60s, smoker_survived_60s, game_result |
 | Build (Phase 2) | commander_skills, upgrades, effective_emission_s, effective_puff_life_s |
-| Provenance | wows_toolkit_rev, smoke_snap_version, generated_at |
+| Provenance | wows_toolkit_rev, smoke_signals_version, generated_at |
 | Files | frame_act, frame_cap, clip |
 
 ## Hand-tagging (Phase 2)
@@ -210,7 +210,7 @@ Sean tags the demo smokes in a spreadsheet, and one command imports the tags. Re
 
 1. Each run writes `tags.csv`: one row per smoke with smoke_id, team, player, ship, map, battle clock, frame file names, and empty tag columns.
 2. Sean fills it in Excel or Google Sheets.
-3. `smoke_snap import-tags tags.csv` loads it into the `smoke_tags` table, keyed by smoke_id. It reports any rows it doesn't recognise.
+3. `smoke_signals import-tags tags.csv` loads it into the `smoke_tags` table, keyed by smoke_id. It reports any rows it doesn't recognise.
 
 | Column | Values |
 | --- | --- |
@@ -224,7 +224,7 @@ Sean tags the demo smokes in a spreadsheet, and one command imports the tags. Re
 
 Phase 1 is done when the golden test passes and Sean's spot-checks match the replay. Claude Code stops at each milestone for Sean to review.
 
-1. **M1: fork, build and one frame.** Fork wows-toolkit, add `smoke_snap`, download the 15.9.0 game data, and render one merged frame at an exact battle-clock time.
+1. **M1: fork, build and one frame.** Fork wows-toolkit, add `smoke_signals`, download the 15.9.0 game data, and render one merged frame at an exact battle-clock time.
 2. **M2: smoke table.** Track smokes and find owners and types, using the reference test code. Output must match the golden test (below). Fix the RESIN missing-position gap.
 3. **M3: images and clips.**
    - Activation and capture frames, with colors, highlight ring, exhaust path outline and header
@@ -248,12 +248,12 @@ Phase 1 is done when the golden test passes and Sean's spot-checks match the rep
 
 ## Setup and handoff
 
-The work lives in a fork of wows-toolkit, on a `smoke-snap` branch. Our own docs sit in `smoke/`, and the fork's existing AGENTS.md and CLAUDE.md conventions still apply.
+The work lives in a fork of wows-toolkit, on a `smoke-signals` branch. Our own docs sit in `smoke/`, and the fork's existing AGENTS.md and CLAUDE.md conventions still apply.
 
 **Repo layout (fork)**
 
 ```
-crates/smoke-snap/               new crate: the smoke_snap program
+crates/smoke-signals/               new crate: the smoke_signals program
 smoke/CLAUDE.md                  project rules for Claude Code
 smoke/DESIGN.md                  this document
 smoke/PROMPT_M1.md               the first Claude Code prompt
@@ -266,7 +266,7 @@ replays/  output/  game_data/  config.toml   (all gitignored)
 **Build notes (found in testing)**
 
 - The repo's `rust-toolchain.toml` pins Rust 1.97, so install that toolchain with rustup.
-- Build with `cargo build --release -p smoke-snap`. Depend on `wows_minimap_renderer` with `default-features = false, features = ["bin", "arc", "cpu"]`. This leaves out Vulkan and the assembly-optimized AV1 encoder, which needs the NASM assembler. (The test build used `bin,arc`; `cpu` for clips is untested.)
+- Build with `cargo build --release -p smoke-signals`. Depend on `wows_minimap_renderer` with `default-features = false, features = ["bin", "arc", "cpu"]`. This leaves out Vulkan and the assembly-optimized AV1 encoder, which needs the NASM assembler. (The test build used `bin,arc`; `cpu` for clips is untested.)
 - **Windows:** wows-replay-data stores files as symlinks, which Windows git checks out as plain text by default. Files are found through `metadata.toml`, so this should be harmless, but confirm in M1. If it isn't, enable `core.symlinks` with Windows Developer Mode, or use wows-data-mgr's download code.
 - The fork's AGENTS.md says to use `jj` for version control and not to add AI attribution to commits. Follow it on this branch.
 - After a game patch: pull the author's changes into the fork, download the new build's game data, and re-run the golden test.

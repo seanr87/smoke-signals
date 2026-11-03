@@ -1,4 +1,4 @@
-# Copy to config.toml (gitignored) and edit for this machine.
+# Smoke Signals: copy to config.toml (gitignored) and edit for this machine.
 
 [paths]
 replays = "replays"            # replays/<match>/<game>/*.wowsreplay (Phase 1: flat folder is fine)

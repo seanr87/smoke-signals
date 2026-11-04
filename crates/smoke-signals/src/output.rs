@@ -179,6 +179,8 @@ const TIER2_COLUMNS: &[&str] = &[
     "damage_fire",
     "salvos_credited",
     "shooters",
+    "kills_from_smoke",
+    "smoke_deaths",
     "selfish_smoke",
 ];
 
@@ -351,6 +353,8 @@ pub fn smoke_csv_row(r: &SmokeRecord) -> Vec<String> {
         opt_f(d.map(|d| d.damage_fire)),
         opt(d.map(|d| d.salvos)),
         r.shooters.join(";"),
+        r.kills_from_smoke.to_string(),
+        r.smoke_deaths.len().to_string(),
         r.selfish_smoke.map(|b| b.to_string()).unwrap_or_default(),
     ]);
     row.extend([

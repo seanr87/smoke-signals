@@ -229,6 +229,16 @@ pub struct SmokeRecord {
     pub offensive_radar: Option<OffensiveRadar>,
     /// Ships of the smoker's team credited with damage through this smoke.
     pub shooters: Vec<String>,
+    /// The same shooters with ship, salvos, damage and kills.
+    pub shooter_detail: Vec<ShooterDetail>,
+    /// Enemy ships hit by credited shots, with whether those shots sank them.
+    pub targets_hit: Vec<TargetHit>,
+    /// Enemy ships whose last damage before sinking was credited to this smoke.
+    pub kills_from_smoke: u32,
+    /// Ships of the smoker's team concealed by this smoke (inside it or
+    /// firing from behind it), detected afterwards, and sunk while it stood
+    /// or within 20 s after its last puff faded.
+    pub smoke_deaths: Vec<SmokeDeath>,
     /// Living ships near the smoke at t_capture, for the diagram.
     pub ships_at_capture: Vec<ShipMark>,
 
@@ -341,6 +351,44 @@ pub struct ShipMark {
     pub ship_class: Option<String>,
     pub position: Xz,
     pub is_owner: bool,
+}
+
+#[derive(Debug, Clone, Serialize)]
+pub struct ShooterDetail {
+    pub entity_id: u32,
+    pub player: String,
+    pub ship: String,
+    pub salvos: u32,
+    pub damage: f32,
+    pub kills: u32,
+}
+
+#[derive(Debug, Clone, Serialize)]
+pub struct TargetHit {
+    pub entity_id: u32,
+    pub player: String,
+    pub ship: String,
+    pub damage: f32,
+    pub sunk: bool,
+}
+
+/// How a smoke first concealed a ship.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "lowercase")]
+pub enum Concealment {
+    Inside,
+    Behind,
+}
+
+#[derive(Debug, Clone, Serialize)]
+pub struct SmokeDeath {
+    pub entity_id: u32,
+    pub player: String,
+    pub ship: String,
+    pub concealed: Concealment,
+    pub death: Moment,
+    /// The ship sank after the last puff faded (within the grace period).
+    pub after_cleared: bool,
 }
 
 /// One capture zone of a game, in world units.

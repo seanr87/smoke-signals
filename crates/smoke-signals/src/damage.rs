@@ -193,6 +193,21 @@ pub struct Arrow {
     samples: u32,
 }
 
+/// Credited damage, salvos and kills of one shooter of the smoker's team.
+#[derive(Debug, Clone, Default, Serialize)]
+pub struct ShooterStat {
+    pub damage: f32,
+    pub salvos: u32,
+    pub kills: u32,
+}
+
+/// Credited damage on one enemy ship and whether the smoke's shots sank it.
+#[derive(Debug, Clone, Default, Serialize)]
+pub struct TargetStat {
+    pub damage: f32,
+    pub sunk: bool,
+}
+
 /// Totals credited to one smoke, split by the shooter's relation to the
 /// smoke's owner. `in_smoke` is credit for shots fired from inside; `behind`
 /// is the shooter's share for shots fired from outside with this smoke
@@ -216,6 +231,12 @@ pub struct SmokeDamage {
     pub shooters: BTreeSet<u32>,
     /// Shooter-to-target lines for the diagram, by attacker and victim.
     pub arrows: Vec<Arrow>,
+    /// Per shooter of the smoker's team.
+    pub shooter_stats: BTreeMap<u32, ShooterStat>,
+    /// Per enemy ship hit by the smoker's team.
+    pub targets: BTreeMap<u32, TargetStat>,
+    /// Enemy ships whose last damage before sinking was credited here.
+    pub kills: BTreeSet<u32>,
     #[serde(skip)]
     salvo_keys: BTreeSet<(u32, u32)>,
     #[serde(skip)]
@@ -257,9 +278,13 @@ impl SmokeDamage {
                 _ => self.damage_shell += amount,
             }
             self.shooters.insert(event.attacker);
+            let shooter = self.shooter_stats.entry(event.attacker).or_default();
+            shooter.damage += amount;
             if event.kind == DamageKind::Shell && self.salvo_keys.insert((event.attacker, event.fire_seconds.to_bits())) {
                 self.salvos += 1;
+                shooter.salvos += 1;
             }
+            self.targets.entry(event.victim).or_default().damage += amount;
         }
         if let (Some(from), Some(to)) = (event.fire_xz, event.victim_xz) {
             let key = (event.attacker, event.victim);
@@ -762,7 +787,47 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
     for d in per_smoke.values_mut() {
         d.arrows.sort_by(|a, b| b.damage.total_cmp(&a.damage).then(a.attacker.cmp(&b.attacker)).then(a.victim.cmp(&b.victim)));
     }
+    credit_kills(&events, input, &mut per_smoke);
     SpikeOutput { events, per_smoke, stats }
+}
+
+/// Damage recorded after the death clock still belongs to the sinking.
+const KILL_WINDOW_SECONDS: f32 = 2.0;
+/// Damage older than this before the death clock is not the killing blow;
+/// the blow is then missing from the ledger and no smoke gets the kill.
+const KILL_LOOKBACK_SECONDS: f32 = 10.0;
+
+/// A kill goes to every smoke credited with the last damage a ship took
+/// before it sank, when that damage came from the smoker's team. Several
+/// events on the same final tick all count.
+fn credit_kills(events: &[AttributedDamage], input: &SpikeInput<'_>, per_smoke: &mut HashMap<u32, SmokeDamage>) {
+    let mut last_by_victim: BTreeMap<u32, f32> = BTreeMap::new();
+    for e in events {
+        if let Some(death) = input.deaths.get(&EntityId::from(e.victim))
+            && e.damage_seconds <= death + KILL_WINDOW_SECONDS
+            && e.damage_seconds >= death - KILL_LOOKBACK_SECONDS
+        {
+            let last = last_by_victim.entry(e.victim).or_insert(e.damage_seconds);
+            *last = last.max(e.damage_seconds);
+        }
+    }
+    for e in events {
+        if !e.kind.credited() || last_by_victim.get(&e.victim) != Some(&e.damage_seconds) {
+            continue;
+        }
+        let attacker = EntityId::from(e.attacker);
+        let attacker_team = (input.team_of)(attacker);
+        for (id, _) in &e.credited {
+            if matches!(role(attacker, attacker_team, input.smoke_owner.get(id)), Role::Enemy) {
+                continue;
+            }
+            let d = per_smoke.entry(*id).or_default();
+            if d.kills.insert(e.victim) {
+                d.targets.entry(e.victim).or_default().sunk = true;
+                d.shooter_stats.entry(e.attacker).or_default().kills += 1;
+            }
+        }
+    }
 }
 
 #[derive(Debug, Clone, Copy)]

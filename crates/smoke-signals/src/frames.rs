@@ -63,9 +63,8 @@ pub fn current_puffs(view: &BattleView<'_>) -> HashMap<u32, Vec<WorldPos>> {
     view.smoke_screens().iter().map(|(id, s)| (id.raw() as u32, s.points.clone())).collect()
 }
 
-/// Padding around the target smoke's box in the inset, beyond the puff
-/// radius, in map pixels.
-const INSET_PAD_PX: f32 = 16.0;
+/// Most fire lines drawn on the zoomed view, largest damage first.
+const MAX_FIRE_LINES: usize = 6;
 /// Stroke width of a trail smoke's dashed path.
 const TRAIL_WIDTH: f32 = 3.0;
 
@@ -159,13 +158,14 @@ pub fn render_smoke_frame<'a>(
         has_puffs = puffs.get(&record.smoke_id).is_some_and(|p| !p.is_empty());
         apply_overlays(&projection, config, record, types, &puffs, smoker_pos, commands);
     })?;
-    let pad = projection.pixel_radius(record.radius) + INSET_PAD_PX;
-    let region = inset::region_around(&inset_points(&projection, record, smoker_pos, has_puffs), pad);
-    // The zoomed view is kept as its own image and no longer pasted into the frame.
+    // The zoomed view: the map around the smoke, a 1/zoom_factor share of
+    // its side, magnified to the map's own size; kept as its own image.
+    let region = inset::region_around(&inset_points(&projection, record, smoker_pos, has_puffs), 0.0)
+        .map(|r| inset::Region { center: r.center, half: MINIMAP_SIZE as f32 / (2.0 * config.render.zoom_factor) });
     let zoom = region.map(|region| {
         let (x, y) = renderer.map_origin();
         let map = inset::MapRect { x, y, size: MINIMAP_SIZE };
-        let built = inset::build(
+        let mut built = inset::build(
             &image,
             map,
             region,
@@ -173,9 +173,28 @@ pub fn render_smoke_frame<'a>(
             projection.pixel_radius(timeline::world_units(1000.0)),
             renderer.fonts(),
         );
+        let lines = fire_lines(&projection, record, &built);
+        inset::draw_fire_lines(&mut built, renderer.fonts(), &lines, config.render.highlight_color.0);
         built.image
     });
     Ok(SmokeFrame { image: header::compose(&image, renderer.fonts(), text, progress), zoom })
+}
+
+/// Credited fire lines of the smoker's team for the zoomed view, in its
+/// image pixels, largest damage first.
+fn fire_lines(projection: &Projection, record: &SmokeRecord, built: &inset::Inset) -> Vec<inset::FireLine> {
+    let Some(detail) = &record.damage_detail else { return Vec::new() };
+    detail
+        .arrows
+        .iter()
+        .filter(|a| a.attacker_ally && a.damage >= 1.0)
+        .take(MAX_FIRE_LINES)
+        .filter_map(|a| {
+            let from = projection.project(WorldPos::new(a.from.x, 0.0, a.from.z))?;
+            let to = projection.project(WorldPos::new(a.to.x, 0.0, a.to.z))?;
+            Some(inset::FireLine { from: built.to_image(from), to: built.to_image(to), damage: a.damage })
+        })
+        .collect()
 }
 
 /// The smoker's team id and vehicle entity, from the game record.

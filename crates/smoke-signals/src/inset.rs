@@ -1,6 +1,5 @@
-//! The zoomed inset: a magnified copy of the map around the target smoke,
-//! placed in the map corner farthest from the smoke, with a thin border and
-//! a scale note.
+//! The zoomed view: a magnified crop of the map around the target smoke,
+//! saved on its own, with a scale note and the credited fire lines.
 
 use image::Rgb;
 use image::RgbImage;
@@ -10,19 +9,13 @@ use wows_minimap_renderer::map_data::MinimapPos;
 
 use crate::header;
 
-/// Smallest half side of the magnified region, in map pixels.
-const MIN_HALF_PX: f32 = 40.0;
-/// Largest side of the inset on the frame, in pixels; the zoom is reduced
-/// when the region would not fit.
-const MAX_SIDE_PX: f32 = 340.0;
-/// Smallest magnification worth drawing. A region too large for it is cut
-/// down to its center.
-const MIN_ZOOM: f32 = 1.5;
-/// Gap between the inset and the map edge.
-const MARGIN_PX: u32 = 8;
-const BORDER: Rgb<u8> = Rgb([225, 225, 225]);
 const NOTE_TEXT: [u8; 3] = [255, 255, 255];
 const NOTE_SHADOW: [u8; 3] = [0, 0, 0];
+const LABEL_BACK: [u8; 3] = [7, 19, 31];
+/// Stroke of a fire line on the zoomed view, in output pixels.
+const LINE_WIDTH: f32 = 2.5;
+const LABEL_SIZE: f32 = 13.0;
+const ARROW_HEAD_PX: f32 = 9.0;
 
 /// Square region of the map to magnify, in map pixels.
 #[derive(Debug, Clone, Copy)]
@@ -41,14 +34,22 @@ pub fn region_around(points: &[MinimapPos], pad: f32) -> Option<Region> {
         max_x = max_x.max(p.x);
         max_y = max_y.max(p.y);
     }
-    let half = ((max_x - min_x).max(max_y - min_y) / 2.0 + pad).max(MIN_HALF_PX);
+    let half = (max_x - min_x).max(max_y - min_y) / 2.0 + pad;
     Some(Region { center: MinimapPos { x: (min_x + max_x) / 2.0, y: (min_y + max_y) / 2.0 }, half })
 }
 
-/// A built inset and the magnification it ended up with.
+/// A built zoom image, its magnification and the map pixel at its top left.
 pub struct Inset {
     pub image: RgbImage,
     pub zoom: f32,
+    pub origin: (u32, u32),
+}
+
+impl Inset {
+    /// Where a map pixel lands on the zoom image.
+    pub fn to_image(&self, p: MinimapPos) -> (f32, f32) {
+        ((p.x - self.origin.0 as f32) * self.zoom + 1.0, (p.y - self.origin.1 as f32) * self.zoom + 1.0)
+    }
 }
 
 /// Where the map sits on the frame.
@@ -59,21 +60,8 @@ pub struct MapRect {
     pub size: u32,
 }
 
-/// Side of the map square to magnify and the magnification: the region at
-/// `zoom_factor` when it fits, else as much of the region as fits at a
-/// lower zoom, never below [`MIN_ZOOM`].
-fn fit(region: Region, map: MapRect, zoom_factor: f32) -> (u32, f32) {
-    let wanted = (region.half * 2.0).round().clamp(1.0, map.size as f32);
-    let zoom = zoom_factor.min(MAX_SIDE_PX / wanted);
-    if zoom >= MIN_ZOOM {
-        (wanted as u32, zoom)
-    } else {
-        ((MAX_SIDE_PX / MIN_ZOOM).floor().min(map.size as f32) as u32, MIN_ZOOM)
-    }
-}
-
-/// The square of `side` map pixels centered on `center`, clamped to the
-/// map's edges.
+/// The square of `side` map pixels centered on `center`, kept within the
+/// map.
 fn crop_rect(center: MinimapPos, side: u32, map: MapRect) -> (u32, u32) {
     let limit = (map.size - side) as f32;
     let half = side as f32 / 2.0;
@@ -82,8 +70,8 @@ fn crop_rect(center: MinimapPos, side: u32, map: MapRect) -> (u32, u32) {
     (x, y)
 }
 
-/// Cut `region` out of `frame`, magnify it by up to `zoom_factor`, add the
-/// border and the scale note. `px_per_km` is the map scale before zooming.
+/// Cut `region` out of `frame`, magnify it by `zoom_factor`, add the border
+/// and the scale note. `px_per_km` is the map scale before zooming.
 pub fn build(
     frame: &RgbImage,
     map: MapRect,
@@ -92,17 +80,17 @@ pub fn build(
     px_per_km: f32,
     fonts: &GameFonts,
 ) -> Inset {
-    let (side, zoom) = fit(region, map, zoom_factor);
+    let side = (region.half * 2.0).round().clamp(1.0, map.size as f32) as u32;
     let (x, y) = crop_rect(region.center, side, map);
     let crop = image::imageops::crop_imm(frame, map.x + x, map.y + y, side, side).to_image();
-    let out_side = (side as f32 * zoom).round().max(1.0) as u32;
+    let out_side = (side as f32 * zoom_factor).round().max(1.0) as u32;
     let zoom = out_side as f32 / side as f32;
     let scaled = image::imageops::resize(&crop, out_side, out_side, FilterType::CatmullRom);
 
-    let mut image = RgbImage::from_pixel(out_side + 2, out_side + 2, BORDER);
+    let mut image = RgbImage::from_pixel(out_side + 2, out_side + 2, Rgb(NOTE_TEXT));
     image::imageops::replace(&mut image, &scaled, 1, 1);
     draw_scale_note(&mut image, fonts, zoom, px_per_km * zoom);
-    Inset { image, zoom }
+    Inset { image, zoom, origin: (x, y) }
 }
 
 /// A 1 km bar at the bottom left and the magnification at the bottom right.
@@ -126,6 +114,107 @@ fn draw_scale_note(image: &mut RgbImage, fonts: &GameFonts, zoom: f32, px_per_km
     shadowed_text(image, fonts, size, w as f32 - width - 6.0, (h - 20) as f32, &note);
 }
 
+/// A credited fire line on the zoom image, from the shooter to the target,
+/// in image pixels.
+pub struct FireLine {
+    pub from: (f32, f32),
+    pub to: (f32, f32),
+    pub damage: f32,
+}
+
+/// Draw every fire line with an arrow head, then the damage labels on top.
+pub fn draw_fire_lines(inset: &mut Inset, fonts: &GameFonts, lines: &[FireLine], color: [u8; 3]) {
+    for line in lines {
+        draw_line(&mut inset.image, line.from, line.to, LINE_WIDTH + 2.0, NOTE_SHADOW);
+        draw_line(&mut inset.image, line.from, line.to, LINE_WIDTH, color);
+        draw_arrow_head(&mut inset.image, line.from, line.to, color);
+    }
+    for line in lines {
+        let label = thousands(line.damage.round() as i64);
+        let width = header::text_width(fonts, LABEL_SIZE, &label);
+        let (mx, my) = ((line.from.0 + line.to.0) / 2.0, (line.from.1 + line.to.1) / 2.0);
+        let (x, y) = (mx - width / 2.0, my - LABEL_SIZE / 2.0 - 2.0);
+        fill_rect(&mut inset.image, x - 3.0, y - 1.0, width + 6.0, LABEL_SIZE + 5.0, LABEL_BACK);
+        header::draw_text(&mut inset.image, fonts, LABEL_SIZE, x, y, color, &label);
+    }
+}
+
+fn thousands(v: i64) -> String {
+    let digits = v.abs().to_string();
+    let mut out = String::new();
+    for (i, c) in digits.chars().enumerate() {
+        if i > 0 && (digits.len() - i) % 3 == 0 {
+            out.push(',');
+        }
+        out.push(c);
+    }
+    if v < 0 { format!("-{out}") } else { out }
+}
+
+fn draw_line(image: &mut RgbImage, a: (f32, f32), b: (f32, f32), width: f32, color: [u8; 3]) {
+    let (dx, dy) = (b.0 - a.0, b.1 - a.1);
+    let len = (dx * dx + dy * dy).sqrt();
+    if len <= 0.0 {
+        return;
+    }
+    let steps = (len * 2.0).ceil() as i32;
+    let r = width / 2.0;
+    for i in 0..=steps {
+        let t = i as f32 / steps as f32;
+        fill_disc(image, a.0 + dx * t, a.1 + dy * t, r, color);
+    }
+}
+
+fn draw_arrow_head(image: &mut RgbImage, a: (f32, f32), b: (f32, f32), color: [u8; 3]) {
+    let (dx, dy) = (b.0 - a.0, b.1 - a.1);
+    let len = (dx * dx + dy * dy).sqrt();
+    if len <= 0.0 {
+        return;
+    }
+    let (ux, uy) = (dx / len, dy / len);
+    let base = (b.0 - ux * ARROW_HEAD_PX, b.1 - uy * ARROW_HEAD_PX);
+    let (px, py) = (-uy * ARROW_HEAD_PX * 0.5, ux * ARROW_HEAD_PX * 0.5);
+    fill_triangle(image, b, (base.0 + px, base.1 + py), (base.0 - px, base.1 - py), color);
+}
+
+fn fill_disc(image: &mut RgbImage, cx: f32, cy: f32, r: f32, color: [u8; 3]) {
+    let (x0, x1) = ((cx - r).floor() as i32, (cx + r).ceil() as i32);
+    let (y0, y1) = ((cy - r).floor() as i32, (cy + r).ceil() as i32);
+    for y in y0..=y1 {
+        for x in x0..=x1 {
+            if (x as f32 + 0.5 - cx).powi(2) + (y as f32 + 0.5 - cy).powi(2) <= r * r {
+                put(image, x, y, color);
+            }
+        }
+    }
+}
+
+fn fill_triangle(image: &mut RgbImage, a: (f32, f32), b: (f32, f32), c: (f32, f32), color: [u8; 3]) {
+    let (x0, x1) = (a.0.min(b.0).min(c.0).floor() as i32, a.0.max(b.0).max(c.0).ceil() as i32);
+    let (y0, y1) = (a.1.min(b.1).min(c.1).floor() as i32, a.1.max(b.1).max(c.1).ceil() as i32);
+    let edge = |p: (f32, f32), q: (f32, f32), r: (f32, f32)| (q.0 - p.0) * (r.1 - p.1) - (q.1 - p.1) * (r.0 - p.0);
+    if edge(a, b, c) == 0.0 {
+        return;
+    }
+    for y in y0..=y1 {
+        for x in x0..=x1 {
+            let p = (x as f32 + 0.5, y as f32 + 0.5);
+            let (w0, w1, w2) = (edge(a, b, p), edge(b, c, p), edge(c, a, p));
+            if (w0 >= 0.0 && w1 >= 0.0 && w2 >= 0.0) || (w0 <= 0.0 && w1 <= 0.0 && w2 <= 0.0) {
+                put(image, x, y, color);
+            }
+        }
+    }
+}
+
+fn fill_rect(image: &mut RgbImage, x: f32, y: f32, w: f32, h: f32, color: [u8; 3]) {
+    for py in y.round() as i32..(y + h).round() as i32 {
+        for px in x.round() as i32..(x + w).round() as i32 {
+            put(image, px, py, color);
+        }
+    }
+}
+
 fn put(image: &mut RgbImage, x: i32, y: i32, color: [u8; 3]) {
     if x >= 0 && y >= 0 && x < image.width() as i32 && y < image.height() as i32 {
         image.put_pixel(x as u32, y as u32, Rgb(color));
@@ -135,27 +224,6 @@ fn put(image: &mut RgbImage, x: i32, y: i32, color: [u8; 3]) {
 fn shadowed_text(image: &mut RgbImage, fonts: &GameFonts, size: f32, x: f32, y: f32, text: &str) {
     header::draw_text(image, fonts, size, x + 1.0, y + 1.0, NOTE_SHADOW, text);
     header::draw_text(image, fonts, size, x, y, NOTE_TEXT, text);
-}
-
-/// Paste `inset` into the map corner farthest from `region`.
-pub fn place(frame: &mut RgbImage, map: MapRect, region: Region, inset: &RgbImage) {
-    let (w, h) = (inset.width(), inset.height());
-    if w + 2 * MARGIN_PX > map.size || h + 2 * MARGIN_PX > map.size {
-        return;
-    }
-    let far = map.size - MARGIN_PX;
-    let corners = [(MARGIN_PX, MARGIN_PX), (far - w, MARGIN_PX), (MARGIN_PX, far - h), (far - w, far - h)];
-    let (x, y) = corners
-        .into_iter()
-        .max_by(|a, b| corner_distance(*a, w, h, region).total_cmp(&corner_distance(*b, w, h, region)))
-        .expect("four corners");
-    image::imageops::replace(frame, inset, i64::from(map.x + x), i64::from(map.y + y));
-}
-
-fn corner_distance(corner: (u32, u32), w: u32, h: u32, region: Region) -> f32 {
-    let cx = corner.0 as f32 + w as f32 / 2.0;
-    let cy = corner.1 as f32 + h as f32 / 2.0;
-    ((cx - region.center.x).powi(2) + (cy - region.center.y).powi(2)).sqrt()
 }
 
 #[cfg(test)]
@@ -172,12 +240,6 @@ mod tests {
     }
 
     #[test]
-    fn small_region_has_minimum_size() {
-        let r = region_around(&[MinimapPos { x: 5.0, y: 5.0 }], 0.0).expect("region");
-        assert_eq!(r.half, MIN_HALF_PX);
-    }
-
-    #[test]
     fn crop_stays_inside_the_map() {
         let map = MapRect { x: 0, y: 0, size: 768 };
         assert_eq!(crop_rect(MinimapPos { x: 10.0, y: 760.0 }, 100, map), (0, 668));
@@ -185,35 +247,16 @@ mod tests {
     }
 
     #[test]
-    fn fit_keeps_the_zoom_when_the_region_is_small() {
-        let map = MapRect { x: 0, y: 0, size: 768 };
-        let (side, zoom) = fit(Region { center: MinimapPos { x: 0.0, y: 0.0 }, half: 50.0 }, map, 2.5);
-        assert_eq!((side, zoom), (100, 2.5));
+    fn clamped_crop_maps_map_pixels_onto_the_image() {
+        let inset = Inset { image: RgbImage::new(770, 770), zoom: 2.0, origin: (384, 0) };
+        assert_eq!(inset.to_image(MinimapPos { x: 384.0, y: 0.0 }), (1.0, 1.0));
+        assert_eq!(inset.to_image(MinimapPos { x: 584.0, y: 100.0 }), (401.0, 201.0));
     }
 
     #[test]
-    fn fit_lowers_the_zoom_for_a_wide_region() {
-        let map = MapRect { x: 0, y: 0, size: 768 };
-        let (side, zoom) = fit(Region { center: MinimapPos { x: 0.0, y: 0.0 }, half: 100.0 }, map, 2.5);
-        assert_eq!(side, 200);
-        assert!((zoom - 1.7).abs() < 0.01);
-    }
-
-    #[test]
-    fn fit_cuts_a_huge_region_down_to_the_minimum_zoom() {
-        let map = MapRect { x: 0, y: 0, size: 768 };
-        let (side, zoom) = fit(Region { center: MinimapPos { x: 0.0, y: 0.0 }, half: 300.0 }, map, 2.5);
-        assert_eq!((side, zoom), (226, MIN_ZOOM));
-    }
-
-    #[test]
-    fn far_corner_is_chosen() {
-        let map = MapRect { x: 0, y: 0, size: 768 };
-        let region = Region { center: MinimapPos { x: 700.0, y: 700.0 }, half: 40.0 };
-        let mut frame = RgbImage::from_pixel(768, 768, Rgb([0, 0, 0]));
-        let inset = RgbImage::from_pixel(50, 50, Rgb([255, 255, 255]));
-        place(&mut frame, map, region, &inset);
-        assert_eq!(frame.get_pixel(MARGIN_PX + 1, MARGIN_PX + 1).0, [255, 255, 255]);
-        assert_eq!(frame.get_pixel(700, 700).0, [0, 0, 0]);
+    fn thousands_are_grouped() {
+        assert_eq!(thousands(80520), "80,520");
+        assert_eq!(thousands(999), "999");
+        assert_eq!(thousands(-1234567), "-1,234,567");
     }
 }

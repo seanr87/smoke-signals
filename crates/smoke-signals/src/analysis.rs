@@ -32,9 +32,13 @@ use crate::damage;
 use crate::records::Bbox;
 use crate::records::CapDenial;
 use crate::records::CapLayout;
+use crate::records::Concealment;
 use crate::records::OffensiveRadar;
 use crate::records::RadarCapCoverage;
 use crate::records::ShipMark;
+use crate::records::ShooterDetail;
+use crate::records::SmokeDeath;
+use crate::records::TargetHit;
 use crate::records::GameRecord;
 use crate::records::Moment;
 use crate::records::Outcome;
@@ -504,7 +508,9 @@ struct RadarActivation {
 }
 
 /// Ships this close to a smoke's origin at t_capture go on its diagram.
-const DIAGRAM_REACH_M: f32 = 9000.0;
+const DIAGRAM_REACH_M: f32 = 14000.0;
+/// Grace after the last puff fades during which a sinking still counts as a smoke death.
+const SMOKE_DEATH_GRACE_SECONDS: f32 = 20.0;
 /// A cap is won by the smoke when it flips this long after the last puff fades, at most.
 const CAP_WON_GRACE_SECONDS: f32 = 10.0;
 /// "Near" a cap for the denial count: this far beyond the cap's edge.
@@ -1139,6 +1145,10 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             radar_spotted_damage: 0.0,
             offensive_radar: None,
             shooters: Vec::new(),
+            shooter_detail: Vec::new(),
+            targets_hit: Vec::new(),
+            kills_from_smoke: 0,
+            smoke_deaths: Vec::new(),
             ships_at_capture,
             damage_in_smoke: None,
             damage_behind_smoke: None,
@@ -1390,6 +1400,25 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
                 smokes[i].selfish_smoke = Some(false);
             }
             smokes[i].shooters = d.shooters.iter().filter_map(|e| name_of(*e)).collect();
+            let who = |e: u32| roster.get(&EntityId::from(e)).map(|r| (r.player.clone(), r.ship.clone()));
+            smokes[i].shooter_detail = d
+                .shooter_stats
+                .iter()
+                .filter_map(|(e, s)| {
+                    let (player, ship) = who(*e)?;
+                    Some(ShooterDetail { entity_id: *e, player, ship, salvos: s.salvos, damage: s.damage, kills: s.kills })
+                })
+                .collect();
+            smokes[i].targets_hit = d
+                .targets
+                .iter()
+                .filter(|(_, s)| s.damage > 0.0 || s.sunk)
+                .filter_map(|(e, s)| {
+                    let (player, ship) = who(*e)?;
+                    Some(TargetHit { entity_id: *e, player, ship, damage: s.damage, sunk: s.sunk })
+                })
+                .collect();
+            smokes[i].kills_from_smoke = d.kills.len() as u32;
             // Damage taken by our radar-spotted ships while the spot lasted.
             let mut spotted_damage = 0.0;
             for ev in &smokes[i].radar_detections_in_smoke {
@@ -1406,6 +1435,58 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             smokes[i].radar_spotted_damage = spotted_damage;
             smokes[i].damage_detail = Some(d);
         }
+    }
+    // Smoke deaths: a ship of the smoker's team the smoke concealed (inside
+    // it, or firing from behind it), detected after that, and sunk while the
+    // smoke stood or within the grace period after its last puff faded.
+    for (i, id) in ids.iter().enumerate() {
+        let raw = id.raw() as u32;
+        let track = &tracks[id];
+        let start = track.created.seconds();
+        let cleared = track.removed.unwrap_or(session.total_duration()).seconds();
+        let owner_team = smoke_owner.get(&raw).and_then(|(_, team)| *team);
+        let mut found: Vec<SmokeDeath> = Vec::new();
+        for (e, r) in roster.iter().filter(|(_, r)| owner_team.is_some() && Some(r.team_id) == owner_team) {
+            let Some(death) = deaths_s.get(e) else { continue };
+            if *death < start || *death > cleared + SMOKE_DEATH_GRACE_SECONDS {
+                continue;
+            }
+            let inside_at = per_smoke
+                .get(&raw)
+                .and_then(|t2| t2.inside_history.iter().find(|(_, v)| v.contains(e)).map(|(t, _)| *t));
+            let behind_at = spike
+                .events
+                .iter()
+                .filter(|ev| ev.attacker == (e.raw() as u32) && ev.behind_smokes.contains(&raw))
+                .map(|ev| ev.fire_seconds)
+                .fold(None, |best: Option<f32>, t| Some(best.map_or(t, |b| b.min(t))));
+            let (concealed_at, how) = match (inside_at, behind_at) {
+                (Some(a), Some(b)) if b < a => (b, Concealment::Behind),
+                (Some(a), _) => (a, Concealment::Inside),
+                (None, Some(b)) => (b, Concealment::Behind),
+                (None, None) => continue,
+            };
+            if concealed_at > *death {
+                continue;
+            }
+            let detected = tracker
+                .flag_history()
+                .get(e)
+                .is_some_and(|h| h.iter().any(|(c, f)| c.seconds() >= concealed_at && c.seconds() <= *death && f.is_detected()));
+            if !detected {
+                continue;
+            }
+            found.push(SmokeDeath {
+                entity_id: (e.raw() as u32),
+                player: r.player.clone(),
+                ship: r.ship.clone(),
+                concealed: how,
+                death: moment(&map, GameClock(*death)),
+                after_cleared: *death > cleared,
+            });
+        }
+        found.sort_by_key(|d| d.entity_id);
+        smokes[i].smoke_deaths = found;
     }
     // Every ship's ledger sums against the game's own results, by type where
     // the results carry it (main battery AP, HE and CS plus fire).

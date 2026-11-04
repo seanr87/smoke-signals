@@ -45,7 +45,7 @@ impl Moment {
     }
 }
 
-#[derive(Debug, Clone, Copy, Serialize)]
+#[derive(Debug, Clone, Copy, Default, Serialize)]
 pub struct Xz {
     pub x: f32,
     pub z: f32,
@@ -191,9 +191,6 @@ pub struct SmokeRecord {
     pub cap_proximity_name: Option<String>,
     /// Radius of that cap in meters.
     pub cap_radius_m: Option<f32>,
-    /// How far the smoke's edge reaches toward the cap centre as a share of
-    /// the cap radius: 0 at the cap edge, 100 at the centre, negative outside.
-    pub cap_depth_pct: Option<f32>,
     /// No teammate but the owner was ever inside, and no ally damage went
     /// through it. `None` without damage data.
     pub selfish_smoke: Option<bool>,
@@ -209,9 +206,31 @@ pub struct SmokeRecord {
     /// Negative when the smoke reaches inside. `None` when no cap was
     /// contested while the smoke stood.
     pub avg_contested_cap_dist_m: Option<f32>,
-    /// While the smoke stood, the smoker's team took a cap or kept one that
-    /// the enemy was invading.
-    pub cap_captured_or_held: Option<bool>,
+    /// Depth into that cap as a share of its radius, from the average
+    /// distance of the smoke's edge to the cap centre over the smoke's life:
+    /// 0 at the edge, 100 at the centre, negative outside.
+    pub contested_cap_depth_pct: Option<f32>,
+    /// Radius of that cap in meters.
+    pub contested_cap_radius_m: Option<f32>,
+    /// Caps within stock main-gun range of a ship of the smoker's team while
+    /// it stood inside the smoke.
+    pub supported_caps: Vec<String>,
+    /// A supported cap that flipped to the smoker's team while the smoke
+    /// stood or within 10 s after its last puff faded.
+    pub cap_won: Option<String>,
+    pub cap_won_at: Option<Moment>,
+    /// A contested cap the smoker's team owned while the enemy was invading
+    /// it and the smoke stood.
+    pub cap_defended: Option<String>,
+    pub radar_cap: Option<RadarCapCoverage>,
+    pub cap_denial: Option<CapDenial>,
+    /// Damage taken by the smoke's team's ships while radar-spotted inside it.
+    pub radar_spotted_damage: f32,
+    pub offensive_radar: Option<OffensiveRadar>,
+    /// Ships of the smoker's team credited with damage through this smoke.
+    pub shooters: Vec<String>,
+    /// Living ships near the smoke at t_capture, for the diagram.
+    pub ships_at_capture: Vec<ShipMark>,
 
     /// Tier 3, from the M4 spike: damage by the smoker's team only.
     pub damage_in_smoke: Option<f32>,
@@ -252,7 +271,13 @@ pub struct PlayerRecord {
     pub smoke_variant: Option<String>,
     pub smoke_type: Option<SmokeType>,
     pub smoke_activations: u32,
+    pub smoke_charges: Option<u32>,
     pub death: Option<Moment>,
+    /// Stock main-gun range in meters.
+    pub gun_range_m: Option<f32>,
+    pub radar_m: Option<f32>,
+    /// Base surface detection range in meters.
+    pub detection_m: Option<f32>,
 }
 
 #[derive(Debug, Clone, Serialize)]
@@ -272,6 +297,50 @@ pub struct TeamRecord {
 pub enum Outcome {
     Win { team_id: i64, team: Option<String> },
     Draw,
+}
+
+/// A radar ship concealed in the smoke and how much of a cap its radar reached.
+#[derive(Debug, Clone, Serialize)]
+pub struct RadarCapCoverage {
+    pub cap: String,
+    pub ship: Option<String>,
+    /// Share of the cap's area within radar range, 0 to 100.
+    pub coverage_pct: f32,
+    /// The whole cap lay within radar range.
+    pub full: bool,
+    /// The radar was activated while the ship stood in the smoke.
+    pub activated: bool,
+}
+
+/// Enemy ships in or near the nearest contested cap, averaged over samples
+/// in the 60 s before the smoke and over its life.
+#[derive(Debug, Clone, Serialize)]
+pub struct CapDenial {
+    pub cap: String,
+    pub enemies_before: f32,
+    pub enemies_during: f32,
+}
+
+/// Enemies spotted by a radar of the smoker's team run from inside the smoke
+/// while concealed. The replay does not name the spotting radar, so a spot
+/// is inferred from the activation and the radar's range.
+#[derive(Debug, Clone, Serialize)]
+pub struct OffensiveRadar {
+    pub ship: Option<String>,
+    pub activations: u32,
+    pub enemies_spotted: u32,
+    pub inferred: bool,
+}
+
+/// A ship near a smoke at one moment, for the diagram.
+#[derive(Debug, Clone, Serialize)]
+pub struct ShipMark {
+    pub entity_id: u32,
+    pub player: String,
+    pub team: Option<String>,
+    pub ship_class: Option<String>,
+    pub position: Xz,
+    pub is_owner: bool,
 }
 
 /// One capture zone of a game, in world units.

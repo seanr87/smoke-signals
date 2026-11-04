@@ -33,18 +33,6 @@ pub struct CapProximity {
     pub radius_m: f32,
 }
 
-impl CapProximity {
-    /// How far the smoke's edge reaches toward the cap centre as a share of
-    /// the cap radius: 0 at the edge, 100 at the centre (capped), negative
-    /// outside the cap.
-    pub fn depth_pct(&self) -> f32 {
-        if self.radius_m <= 0.0 {
-            return 0.0;
-        }
-        (-self.distance_m / self.radius_m * 100.0).min(100.0)
-    }
-}
-
 /// Edge-to-edge distance in meters from the standing puffs to the nearest
 /// enabled cap, with the cap's letter and radius. Negative when the smoke
 /// reaches inside the cap.

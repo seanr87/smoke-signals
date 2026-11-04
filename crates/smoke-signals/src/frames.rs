@@ -154,13 +154,14 @@ pub fn render_smoke_frame<'a>(
     let projection = renderer.projection();
     let smoker_pos = smoker.and_then(|e| session.timeline().get(&e).and_then(|t| timeline::world_pos_at(t, clock)));
     let mut has_puffs = false;
-    let mut image = renderer.render_image(session, clock, |view, commands| {
+    let image = renderer.render_image(session, clock, |view, commands| {
         let puffs = current_puffs(view);
         has_puffs = puffs.get(&record.smoke_id).is_some_and(|p| !p.is_empty());
         apply_overlays(&projection, config, record, types, &puffs, smoker_pos, commands);
     })?;
     let pad = projection.pixel_radius(record.radius) + INSET_PAD_PX;
     let region = inset::region_around(&inset_points(&projection, record, smoker_pos, has_puffs), pad);
+    // The zoomed view is kept as its own image and no longer pasted into the frame.
     let zoom = region.map(|region| {
         let (x, y) = renderer.map_origin();
         let map = inset::MapRect { x, y, size: MINIMAP_SIZE };
@@ -172,7 +173,6 @@ pub fn render_smoke_frame<'a>(
             projection.pixel_radius(timeline::world_units(1000.0)),
             renderer.fonts(),
         );
-        inset::place(&mut image, map, region, &built.image);
         built.image
     });
     Ok(SmokeFrame { image: header::compose(&image, renderer.fonts(), text, progress), zoom })
@@ -288,10 +288,11 @@ pub fn render_smoke_frames(
                 smokes[i].frame_cap = Some(name);
                 smokes[i].frame_cap_zoom = zoom_name;
                 smokes[i].state_at_capture = Some(snapshot);
-                smokes[i].cap_proximity_m = cap_proximity.map(|c| c.distance_m);
-                smokes[i].cap_proximity_name = cap_proximity.map(|c| c.cap.to_string());
-                smokes[i].cap_radius_m = cap_proximity.map(|c| c.radius_m);
-                smokes[i].cap_depth_pct = cap_proximity.map(|c| c.depth_pct());
+                // Proximity is for smokes outside a cap only.
+                let outside = cap_proximity.filter(|c| c.distance_m > 0.0);
+                smokes[i].cap_proximity_m = outside.map(|c| c.distance_m);
+                smokes[i].cap_proximity_name = outside.map(|c| c.cap.to_string());
+                smokes[i].cap_radius_m = outside.map(|c| c.radius_m);
             }
         }
         written += 1;

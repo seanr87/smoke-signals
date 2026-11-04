@@ -95,6 +95,10 @@ struct OpenDetection {
 pub struct ConsumableRanges {
     pub radar_m: Option<f32>,
     pub hydro_m: Option<f32>,
+    /// Stock main-gun range.
+    pub gun_m: Option<f32>,
+    /// Base surface detection range of the hull.
+    pub detection_m: Option<f32>,
 }
 
 pub struct Tier2Tracker {
@@ -125,6 +129,10 @@ impl Tier2Tracker {
             open: HashMap::new(),
             flag_history: HashMap::new(),
         }
+    }
+
+    pub fn ranges(&self) -> &HashMap<EntityId, ConsumableRanges> {
+        &self.ranges
     }
 
     pub fn flag_history(&self) -> &HashMap<EntityId, Vec<(GameClock, VisibilityFlags)>> {

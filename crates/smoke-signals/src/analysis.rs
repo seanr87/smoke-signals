@@ -30,7 +30,11 @@ use crate::clock::BattleClockMap;
 use crate::config::Config;
 use crate::damage;
 use crate::records::Bbox;
+use crate::records::CapDenial;
 use crate::records::CapLayout;
+use crate::records::OffensiveRadar;
+use crate::records::RadarCapCoverage;
+use crate::records::ShipMark;
 use crate::records::GameRecord;
 use crate::records::Moment;
 use crate::records::Outcome;
@@ -249,7 +253,35 @@ fn consumable_ranges(
             .and_then(|s| s.ability.ability()?.get_category(&s.variant_name)?.detection_radius())
             .map(|m| m.value())
     };
-    Some(tier2::ConsumableRanges { radar_m: range(Consumable::Radar), hydro_m: range(Consumable::HydroacousticSearch) })
+    // Stock values on purpose: the component's own range and detection,
+    // without fire control, upgrades or skills.
+    let ttx = build.ship.vehicle().and_then(|v| v.ttx_components());
+    let equipped = |uc_type: &str, keys: Vec<&String>| -> Option<String> {
+        let module = build
+            .modules
+            .iter()
+            .find(|m| m.unit().and_then(|u| u.uc_type()).is_some_and(|t| t.eq_ignore_ascii_case(uc_type)))
+            .map(|m| m.name().to_string());
+        module.filter(|m| keys.iter().any(|k| *k == m)).or_else(|| {
+            let mut keys = keys;
+            keys.sort();
+            keys.first().map(|k| k.to_string())
+        })
+    };
+    let gun_m = ttx.and_then(|t| {
+        let key = equipped("_Artillery", t.artillery.keys().collect())?;
+        t.artillery.get(&key)?.max_dist.map(|m| m.value())
+    });
+    let detection_m = ttx.and_then(|t| {
+        let key = equipped("_Hull", t.hulls.keys().collect())?;
+        t.hulls.get(&key)?.visibility_factor.map(|km| km.value() * 1000.0)
+    });
+    Some(tier2::ConsumableRanges {
+        radar_m: range(Consumable::Radar),
+        hydro_m: range(Consumable::HydroacousticSearch),
+        gun_m,
+        detection_m,
+    })
 }
 
 /// A standard smoke whose puffs last this long or less is the short cruiser
@@ -463,40 +495,127 @@ fn contest_reason(cap: &CapSample, ours: Option<WorldPos>, theirs: Option<WorldP
     (cap.owner == enemy).then_some(ContestReason::EnemyOwned)
 }
 
-struct ContestStats {
+/// A radar activation seen in the replay.
+#[derive(Debug, Clone, Copy)]
+struct RadarActivation {
+    entity: EntityId,
+    clock: GameClock,
+    duration: f32,
+}
+
+/// Ships this close to a smoke's origin at t_capture go on its diagram.
+const DIAGRAM_REACH_M: f32 = 9000.0;
+/// A cap is won by the smoke when it flips this long after the last puff fades, at most.
+const CAP_WON_GRACE_SECONDS: f32 = 10.0;
+/// "Near" a cap for the denial count: this far beyond the cap's edge.
+const CAP_NEAR_M: f32 = 1000.0;
+/// The denial baseline covers this long before the smoke object appeared.
+const DENIAL_BEFORE_SECONDS: f32 = 60.0;
+
+struct ContestedCap {
     cap: char,
     reason: ContestReason,
     avg_distance_m: f32,
-    captured_or_held: bool,
+    /// Share of the radius from the smoke's edge to the cap centre.
+    depth_pct: f32,
+    radius_m: f32,
 }
 
-/// Distance to the nearest contested cap over the smoke's sampled life,
-/// and whether the smoker's team took or defended a cap meanwhile.
-fn contested_cap_stats(
-    track: &SmokeTrack,
-    cap_history: &[(GameClock, Vec<CapSample>)],
-    ours: &TeamRecord,
-    theirs: &TeamRecord,
-) -> Option<ContestStats> {
+struct CapMetrics {
+    contested: Option<ContestedCap>,
+    supported: Vec<usize>,
+    won: Option<(usize, GameClock)>,
+    defended: Option<usize>,
+    radar_cap: Option<RadarCapCoverage>,
+    denial: Option<CapDenial>,
+}
+
+struct CapContext<'a> {
+    cap_history: &'a [(GameClock, Vec<CapSample>)],
+    ours: &'a TeamRecord,
+    theirs: &'a TeamRecord,
+    inside: Option<&'a tier2::SmokeTier2>,
+    roster: &'a HashMap<EntityId, Roster>,
+    ranges: &'a HashMap<EntityId, tier2::ConsumableRanges>,
+    tl: &'a wows_battle_world::scan::PositionTimeline,
+    deaths: &'a HashMap<EntityId, GameClock>,
+    radar_activations: &'a [RadarActivation],
+    flags_at: &'a dyn Fn(EntityId, GameClock) -> Option<wowsunpack::game_types::VisibilityFlags>,
+    end: GameClock,
+}
+
+/// Area of the intersection of two circles with radii `r1` and `r2` whose
+/// centres are `d` apart.
+fn circle_intersection_area(r1: f32, r2: f32, d: f32) -> f32 {
+    if d >= r1 + r2 {
+        return 0.0;
+    }
+    if d <= (r1 - r2).abs() {
+        let r = r1.min(r2);
+        return std::f32::consts::PI * r * r;
+    }
+    let a1 = ((d * d + r1 * r1 - r2 * r2) / (2.0 * d * r1)).clamp(-1.0, 1.0).acos();
+    let a2 = ((d * d + r2 * r2 - r1 * r1) / (2.0 * d * r2)).clamp(-1.0, 1.0).acos();
+    let k = (-d + r1 + r2) * (d + r1 - r2) * (d - r1 + r2) * (d + r1 + r2);
+    r1 * r1 * a1 + r2 * r2 * a2 - 0.5 * k.max(0.0).sqrt()
+}
+
+/// Cap metrics over the smoke's sampled life: the nearest contested cap and
+/// its depth, caps supported by our concealed guns, a cap won or defended,
+/// radar coverage of a contested cap from inside, and the denial signal.
+fn cap_metrics(track: &SmokeTrack, ctx: &CapContext<'_>) -> Option<CapMetrics> {
+    let ours = ctx.ours;
+    let theirs = ctx.theirs;
     let our_spawn = ours.spawn_xy.map(|p| WorldPos::new(p.x, 0.0, p.z));
     let their_spawn = theirs.spawn_xy.map(|p| WorldPos::new(p.x, 0.0, p.z));
     let caps_at = |clock: GameClock| {
-        cap_history.iter().rev().find(|(c, _)| c.seconds() <= clock.seconds()).map(|(_, caps)| caps.as_slice())
+        ctx.cap_history.iter().rev().find(|(c, _)| c.seconds() <= clock.seconds()).map(|(_, caps)| caps.as_slice())
     };
+    let alive = |e: &EntityId, clock: GameClock| ctx.deaths.get(e).is_none_or(|d| d.seconds() > clock.seconds());
     let mut distances: Vec<f32> = Vec::new();
     let mut nearest_counts: HashMap<(usize, ContestReason), usize> = HashMap::new();
-    let mut captured_or_held = false;
-    let mut owned_before: HashMap<usize, i64> =
-        caps_at(track.created).map(|caps| caps.iter().map(|c| (c.index, c.owner)).collect()).unwrap_or_default();
+    let mut centre_distances: HashMap<usize, Vec<f32>> = HashMap::new();
+    let mut radii: HashMap<usize, f32> = HashMap::new();
+    let mut supported: Vec<usize> = Vec::new();
+    let mut defended: Option<usize> = None;
+    let mut radar_best: Option<(usize, f32, bool, EntityId)> = None;
+    let mut enemies_during: Vec<f32> = Vec::new();
     for (clock, puffs) in &track.samples {
         let Some(caps) = caps_at(*clock) else { continue };
+        let inside_allies: Vec<EntityId> = ctx
+            .inside
+            .map(|t2| t2.inside_at(clock.seconds()).iter().copied().filter(|e| ctx.roster.get(e).is_some_and(|r| r.team_id == ours.team_id)).collect())
+            .unwrap_or_default();
         for cap in caps {
-            let before = owned_before.insert(cap.index, cap.owner);
-            let was_contested = contest_reason(&CapSample { owner: before.unwrap_or(-1), ..*cap }, our_spawn, their_spawn, theirs.team_id).is_some();
-            let taken = before != Some(ours.team_id) && was_contested;
-            let defended = cap.invader == Some(theirs.team_id);
-            if cap.owner == ours.team_id && (taken || defended) {
-                captured_or_held = true;
+            radii.insert(cap.index, cap.radius);
+            if cap.owner == ours.team_id
+                && cap.invader == Some(theirs.team_id)
+                && contest_reason(cap, our_spawn, their_spawn, theirs.team_id).is_some()
+            {
+                defended.get_or_insert(cap.index);
+            }
+            for e in &inside_allies {
+                let Some(pos) = ctx.tl.get(e).and_then(|t| timeline::world_pos_at(t, *clock)) else { continue };
+                let d = timeline::ground_distance(pos, cap.position);
+                let r = ctx.ranges.get(e);
+                if let Some(gun) = r.and_then(|r| r.gun_m)
+                    && timeline::meters(d - cap.radius) <= gun
+                    && !supported.contains(&cap.index)
+                {
+                    supported.push(cap.index);
+                }
+                if let Some(radar) = r.and_then(|r| r.radar_m)
+                    && contest_reason(cap, our_spawn, their_spawn, theirs.team_id).is_some()
+                    && !(ctx.flags_at)(*e, *clock).is_some_and(|f| f.is_detected())
+                {
+                    let radar_wu = timeline::world_units(radar);
+                    let full = d + cap.radius <= radar_wu;
+                    let area = circle_intersection_area(radar_wu, cap.radius, d);
+                    let pct = (area / (std::f32::consts::PI * cap.radius * cap.radius) * 100.0).clamp(0.0, 100.0);
+                    if radar_best.is_none_or(|(_, best, _, _)| pct > best) {
+                        radar_best = Some((cap.index, pct, full, *e));
+                    }
+                }
             }
         }
         if puffs.is_empty() {
@@ -507,24 +626,96 @@ fn contested_cap_stats(
             .filter_map(|cap| {
                 let reason = contest_reason(cap, our_spawn, their_spawn, theirs.team_id)?;
                 let d = puffs.iter().map(|p| timeline::ground_distance(*p, cap.position)).fold(f32::INFINITY, f32::min);
-                Some((d - track.radius - cap.radius, cap.index, reason))
+                Some((d - track.radius - cap.radius, d - track.radius, cap.index, reason, cap.position, cap.radius))
             })
             .min_by(|a, b| a.0.total_cmp(&b.0));
-        if let Some((d, index, reason)) = nearest {
-            distances.push(timeline::meters(d));
+        if let Some((edge, centre, index, reason, pos, radius)) = nearest {
+            distances.push(timeline::meters(edge));
             *nearest_counts.entry((index, reason)).or_default() += 1;
+            centre_distances.entry(index).or_default().push(timeline::meters(centre));
+            let near = radius + timeline::world_units(CAP_NEAR_M);
+            let n = ctx
+                .roster
+                .iter()
+                .filter(|(e, r)| r.team_id == theirs.team_id && alive(e, *clock))
+                .filter_map(|(e, _)| ctx.tl.get(e).and_then(|t| timeline::world_pos_at(t, *clock)))
+                .filter(|p| timeline::ground_distance(*p, pos) <= near)
+                .count();
+            enemies_during.push(n as f32);
         }
     }
-    if distances.is_empty() {
-        return None;
+    let contested = if distances.is_empty() {
+        None
+    } else {
+        let ((index, reason), _) = nearest_counts.iter().max_by_key(|((i, r), n)| (**n, std::cmp::Reverse((*i, *r))))?;
+        let radius_m = timeline::meters(radii.get(index).copied().unwrap_or(0.0));
+        let centre = &centre_distances[index];
+        let avg_centre = centre.iter().sum::<f32>() / centre.len() as f32;
+        Some(ContestedCap {
+            cap: state::cap_letter(*index),
+            reason: *reason,
+            avg_distance_m: distances.iter().sum::<f32>() / distances.len() as f32,
+            depth_pct: if radius_m > 0.0 { (radius_m - avg_centre) / radius_m * 100.0 } else { 0.0 },
+            radius_m,
+        })
+    };
+    // Cap won: a supported cap that flips to us during the smoke or just after.
+    let start = track.created.seconds();
+    let until = track.removed.unwrap_or(ctx.end).seconds() + CAP_WON_GRACE_SECONDS;
+    let mut won: Option<(usize, GameClock)> = None;
+    let mut prev: HashMap<usize, i64> = caps_at(track.created).map(|c| c.iter().map(|c| (c.index, c.owner)).collect()).unwrap_or_default();
+    for (clock, caps) in ctx.cap_history.iter().filter(|(c, _)| c.seconds() >= start && c.seconds() <= until) {
+        for cap in caps {
+            let before = prev.insert(cap.index, cap.owner);
+            if won.is_none() && cap.owner == ours.team_id && before.is_some_and(|b| b != ours.team_id) && supported.contains(&cap.index) {
+                won = Some((cap.index, *clock));
+            }
+        }
     }
-    let ((index, reason), _) = nearest_counts.iter().max_by_key(|((i, r), n)| (**n, std::cmp::Reverse((*i, *r))))?;
-    Some(ContestStats {
-        cap: state::cap_letter(*index),
-        reason: *reason,
-        avg_distance_m: distances.iter().sum::<f32>() / distances.len() as f32,
-        captured_or_held,
-    })
+    // Denial baseline: enemies near the contested cap in the minute before.
+    let denial = contested.as_ref().and_then(|c| {
+        let index = (c.cap as u8 - b'A') as usize;
+        let caps = caps_at(track.created)?;
+        let cap = caps.iter().find(|x| x.index == index)?;
+        let near = cap.radius + timeline::world_units(CAP_NEAR_M);
+        let mut before: Vec<f32> = Vec::new();
+        let mut t = start - DENIAL_BEFORE_SECONDS;
+        while t < start {
+            let clock = GameClock(t);
+            let n = ctx
+                .roster
+                .iter()
+                .filter(|(e, r)| r.team_id == theirs.team_id && alive(e, clock))
+                .filter_map(|(e, _)| ctx.tl.get(e).and_then(|tr| timeline::world_pos_at(tr, clock)))
+                .filter(|p| timeline::ground_distance(*p, cap.position) <= near)
+                .count();
+            before.push(n as f32);
+            t += CONTEST_SAMPLE_INTERVAL_S;
+        }
+        Some(CapDenial {
+            cap: c.cap.to_string(),
+            enemies_before: if before.is_empty() { 0.0 } else { before.iter().sum::<f32>() / before.len() as f32 },
+            enemies_during: if enemies_during.is_empty() { 0.0 } else { enemies_during.iter().sum::<f32>() / enemies_during.len() as f32 },
+        })
+    });
+    let radar_cap = radar_best.map(|(index, pct, full, ship)| {
+        let life_end = track.removed.unwrap_or(ctx.end).seconds();
+        let activated = ctx.radar_activations.iter().any(|a| {
+            a.entity == ship
+                && a.clock.seconds() >= start
+                && a.clock.seconds() <= life_end
+                && ctx.inside.is_some_and(|t2| t2.inside_at(a.clock.seconds()).contains(&ship))
+        });
+        RadarCapCoverage {
+            cap: state::cap_letter(index).to_string(),
+            ship: ctx.roster.get(&ship).map(|r| r.player.clone()),
+            coverage_pct: pct,
+            full,
+            activated,
+        }
+    });
+    supported.sort_unstable();
+    Some(CapMetrics { contested, supported, won, defended, radar_cap, denial })
 }
 
 pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Result<Analysis, Report> {
@@ -547,6 +738,10 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         HashMap::new();
     let mut cap_history: Vec<(GameClock, Vec<CapSample>)> = Vec::new();
     let mut next_sample: Option<f32> = None;
+    let mut torpedoes: HashMap<(u32, u32, u32), wows_replays::analyzer::battle_controller::state::ActiveTorpedo> =
+        HashMap::new();
+    let mut radar_activations: Vec<RadarActivation> = Vec::new();
+    let mut seen_radar: HashSet<(EntityId, u32)> = HashSet::new();
 
     while session.step()?.is_some() {
         let view = session.view();
@@ -608,7 +803,16 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
                 {
                     activations.push(Activation { entity, clock: a.activated_at });
                 }
+                if a.consumable == Recognized::Known(Consumable::Radar)
+                    && seen_radar.insert((entity, a.activated_at.seconds().to_bits()))
+                {
+                    radar_activations.push(RadarActivation { entity, clock: a.activated_at, duration: a.duration });
+                }
             }
+        }
+        for torp in view.active_torpedoes() {
+            let key = (torp.torpedo.owner_id.raw() as u32, torp.torpedo.salvo_id, torp.torpedo.shot_id.raw());
+            torpedoes.entry(key).or_insert(torp);
         }
     }
     session.finish();
@@ -620,7 +824,8 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
 
     let map = session.clock_map().clone();
     let facts = session.vehicle_facts().clone();
-    let tier2_results = tier2.finish_keep_history();
+    let (tracker, per_smoke) = tier2.finish_keep_history();
+    radar_activations.sort_by(|a, b| a.clock.seconds().total_cmp(&b.clock.seconds()).then(a.entity.raw().cmp(&b.entity.raw())));
     let generated_at = jiff::Zoned::now().strftime("%Y-%m-%dT%H:%M:%S%:z").to_string();
 
     let view = session.view();
@@ -711,7 +916,11 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
                         smoke_variant: r.fit.as_ref().map(|f| f.variant.clone()),
                         smoke_type: r.fit.as_ref().map(|f| f.smoke_type),
                         smoke_activations: activations.iter().filter(|a| a.entity == *e).count() as u32,
+                        smoke_charges: r.fit.as_ref().and_then(|f| f.charges_total),
                         death: deaths.get(e).map(|c| moment(&map, *c)),
+                        gun_range_m: tracker.ranges().get(e).and_then(|r| r.gun_m),
+                        radar_m: tracker.ranges().get(e).and_then(|r| r.radar_m),
+                        detection_m: tracker.ranges().get(e).and_then(|r| r.detection_m),
                     }
                 })
                 .collect();
@@ -822,8 +1031,38 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         let contest = r.and_then(|r| {
             let ours = team_by_id(r.team_id)?;
             let theirs = teams.iter().find(|t| t.team_id != r.team_id)?;
-            contested_cap_stats(track, &cap_history, ours, theirs)
+            let ctx = CapContext {
+                cap_history: &cap_history,
+                ours,
+                theirs,
+                inside: per_smoke.get(&(id.raw() as u32)),
+                roster: &roster,
+                ranges: tracker.ranges(),
+                tl: &tl,
+                deaths: &deaths,
+                radar_activations: &radar_activations,
+                flags_at: &|e, c| tracker.flags_at(e, c),
+                end: session.total_duration(),
+            };
+            cap_metrics(track, &ctx)
         });
+        let mark_clock = t_capture.unwrap_or(emission_from);
+        let mut ships_at_capture: Vec<ShipMark> = roster
+            .iter()
+            .filter(|(e, _)| deaths.get(e).is_none_or(|d| d.seconds() > mark_clock.seconds()))
+            .filter_map(|(e, rr)| {
+                let pos = tl.get(e).and_then(|t| timeline::world_pos_at(t, mark_clock))?;
+                (timeline::meters(timeline::ground_distance(pos, track.origin)) <= DIAGRAM_REACH_M).then(|| ShipMark {
+                    entity_id: e.raw() as u32,
+                    player: rr.player.clone(),
+                    team: team_by_id(rr.team_id).and_then(|t| t.name.clone()),
+                    ship_class: rr.ship_class.clone(),
+                    position: Xz { x: pos.0.x, z: pos.0.z },
+                    is_owner: Some(*e) == owner,
+                })
+            })
+            .collect();
+        ships_at_capture.sort_by_key(|m| m.entity_id);
         let team = r.map(|r| r.team.clone());
         let opponent = r
             .and_then(|r| team_ids.iter().find(|t| **t != r.team_id))
@@ -885,12 +1124,22 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             cap_proximity_m: None,
             cap_proximity_name: None,
             cap_radius_m: None,
-            cap_depth_pct: None,
             selfish_smoke: None,
-            contested_cap_name: contest.as_ref().map(|c| c.cap.to_string()),
-            cap_contested_reason: contest.as_ref().map(|c| c.reason.to_string()),
-            avg_contested_cap_dist_m: contest.as_ref().map(|c| c.avg_distance_m),
-            cap_captured_or_held: contest.as_ref().map(|c| c.captured_or_held),
+            contested_cap_name: contest.as_ref().and_then(|c| c.contested.as_ref()).map(|c| c.cap.to_string()),
+            cap_contested_reason: contest.as_ref().and_then(|c| c.contested.as_ref()).map(|c| c.reason.to_string()),
+            avg_contested_cap_dist_m: contest.as_ref().and_then(|c| c.contested.as_ref()).map(|c| c.avg_distance_m),
+            contested_cap_depth_pct: contest.as_ref().and_then(|c| c.contested.as_ref()).map(|c| c.depth_pct),
+            contested_cap_radius_m: contest.as_ref().and_then(|c| c.contested.as_ref()).map(|c| c.radius_m),
+            supported_caps: contest.as_ref().map(|c| c.supported.iter().map(|i| state::cap_letter(*i).to_string()).collect()).unwrap_or_default(),
+            cap_won: contest.as_ref().and_then(|c| c.won).map(|(i, _)| state::cap_letter(i).to_string()),
+            cap_won_at: contest.as_ref().and_then(|c| c.won).map(|(_, c)| moment(&map, c)),
+            cap_defended: contest.as_ref().and_then(|c| c.defended).map(|i| state::cap_letter(i).to_string()),
+            radar_cap: contest.as_ref().and_then(|c| c.radar_cap.clone()),
+            cap_denial: contest.as_ref().and_then(|c| c.denial.clone()),
+            radar_spotted_damage: 0.0,
+            offensive_radar: None,
+            shooters: Vec::new(),
+            ships_at_capture,
             damage_in_smoke: None,
             damage_behind_smoke: None,
             smoke_damage_total: None,
@@ -945,9 +1194,21 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         }
     }
 
-    // Tier 2: ships in the smoke and detections while concealed.
-    let (tracker, per_smoke) = tier2_results;
+    // Tier 2: ships in the smoke and detections while concealed. A ship
+    // inside two overlapping smokes gets each detection counted once, for
+    // the first-laid smoke.
     let name_of = |e: u32| roster.get(&EntityId::from(e)).map(|r| r.player.clone());
+    let mut spot_owner: HashMap<(u32, u32, tier2::DetectionKind), u32> = HashMap::new();
+    for id in &ids {
+        let Some(t2) = per_smoke.get(&(id.raw() as u32)) else { continue };
+        for event in &t2.detections {
+            let key = (event.ship_entity, event.seconds.to_bits(), event.kind);
+            let current = spot_owner.entry(key).or_insert(id.raw() as u32);
+            if tracks[id].created.seconds() < tracks[&EntityId::from(*current)].created.seconds() {
+                *current = id.raw() as u32;
+            }
+        }
+    }
     for (i, id) in ids.iter().enumerate() {
         let Some(t2) = per_smoke.get(&(id.raw() as u32)) else { continue };
         let owner_team =
@@ -981,6 +1242,13 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             }
         }
         for event in &t2.detections {
+            // Only the smoking team's ships count; an enemy sitting in our smoke never does.
+            if !is_ally(EntityId::from(event.ship_entity)) {
+                continue;
+            }
+            if spot_owner.get(&(event.ship_entity, event.seconds.to_bits(), event.kind)) != Some(&(id.raw() as u32)) {
+                continue;
+            }
             let mut event = event.clone();
             event.ship = name_of(event.ship_entity);
             event.source = event.source_entity.and_then(name_of);
@@ -990,6 +1258,57 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
                 tier2::DetectionKind::Hydro => smokes[i].hydro_detections_in_smoke.push(event),
                 tier2::DetectionKind::FiredInSmoke => smokes[i].fired_while_concealed_detections.push(event),
             }
+        }
+        // Offensive radar: a radar of the smoker's team run from inside this
+        // smoke while concealed; enemies that gained the radar flag within
+        // its range during the activation count as spotted by it.
+        let track = &tracks[id];
+        let life_end = track.removed.unwrap_or(session.total_duration()).seconds();
+        let mut spotted: HashSet<EntityId> = HashSet::new();
+        let mut radar_ship: Option<EntityId> = None;
+        let mut radar_runs = 0;
+        for act in &radar_activations {
+            let t0 = act.clock.seconds();
+            if t0 < track.created.seconds() || t0 > life_end || !is_ally(act.entity) {
+                continue;
+            }
+            if !t2.inside_at(t0).contains(&act.entity) {
+                continue;
+            }
+            if tracker.flags_at(act.entity, act.clock).is_some_and(|f| f.is_detected()) {
+                continue;
+            }
+            let Some(range) = tracker.ranges().get(&act.entity).and_then(|r| r.radar_m) else { continue };
+            radar_runs += 1;
+            radar_ship.get_or_insert(act.entity);
+            for (enemy, rr) in roster.iter().filter(|(_, rr)| Some(rr.team_id) != owner_team) {
+                let _ = rr;
+                let Some(history) = tracker.flag_history().get(enemy) else { continue };
+                let gained = history.windows(2).any(|w| {
+                    let (c, f) = w[1];
+                    let s = c.seconds();
+                    s >= t0
+                        && s <= t0 + act.duration
+                        && f.contains(wowsunpack::game_types::VisionFlag::Rls)
+                        && !w[0].1.contains(wowsunpack::game_types::VisionFlag::Rls)
+                        && {
+                            let ours = tl.get(&act.entity).and_then(|t| timeline::world_pos_at(t, c));
+                            let theirs = tl.get(enemy).and_then(|t| timeline::world_pos_at(t, c));
+                            matches!((ours, theirs), (Some(a), Some(b)) if timeline::meters(timeline::ground_distance(a, b)) <= range)
+                        }
+                });
+                if gained {
+                    spotted.insert(*enemy);
+                }
+            }
+        }
+        if radar_runs > 0 {
+            smokes[i].offensive_radar = Some(OffensiveRadar {
+                ship: radar_ship.and_then(|e| name_of(e.raw() as u32)),
+                activations: radar_runs,
+                enemies_spotted: spotted.len() as u32,
+                inferred: true,
+            });
         }
     }
 
@@ -1036,16 +1355,26 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         })
         .collect();
     let salvo_list: Vec<wows_replays::analyzer::battle_controller::state::ActiveShot> = salvos.into_values().collect();
+    let mut torpedo_list: Vec<wows_replays::analyzer::battle_controller::state::ActiveTorpedo> =
+        torpedoes.into_values().collect();
+    torpedo_list.sort_by(|a, b| {
+        a.launched_at.seconds().total_cmp(&b.launched_at.seconds()).then(a.torpedo.shot_id.raw().cmp(&b.torpedo.shot_id.raw()))
+    });
+    let deaths_s: HashMap<EntityId, f32> = deaths.iter().map(|(e, c)| (*e, c.seconds())).collect();
     let flags_at = |e: EntityId, c: GameClock| tracker.flags_at(e, c);
     let team_of = |e: EntityId| roster.get(&e).map(|r| r.team_id);
+    let detection_m_of = |e: EntityId| tracker.ranges().get(&e).and_then(|r| r.detection_m);
     let mut spike = damage::run(&damage::SpikeInput {
         ledger: &ledger,
         hits: &hits,
         salvos: &salvo_list,
+        torpedoes: &torpedo_list,
         smokes: &geometry,
         timeline: &tl,
         flags_at: &flags_at,
         team_of: &team_of,
+        detection_m_of: &detection_m_of,
+        deaths: &deaths_s,
         smoke_owner: &smoke_owner,
     });
     // With no damage events at all the credit is unknown, not zero.
@@ -1060,8 +1389,64 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             if d.damage_behind_smoke_ally > 0.0 {
                 smokes[i].selfish_smoke = Some(false);
             }
+            smokes[i].shooters = d.shooters.iter().filter_map(|e| name_of(*e)).collect();
+            // Damage taken by our radar-spotted ships while the spot lasted.
+            let mut spotted_damage = 0.0;
+            for ev in &smokes[i].radar_detections_in_smoke {
+                let until = ev.detected_for_s.map(|d| ev.seconds + d).unwrap_or(f32::INFINITY);
+                for events in ledger.values() {
+                    for e in events.iter().filter(|e| e.victim.raw() as u32 == ev.ship_entity) {
+                        let t = e.clock.seconds();
+                        if t >= ev.seconds && t <= until {
+                            spotted_damage += e.amount;
+                        }
+                    }
+                }
+            }
+            smokes[i].radar_spotted_damage = spotted_damage;
             smokes[i].damage_detail = Some(d);
         }
+    }
+    // Every ship's ledger sums against the game's own results, by type where
+    // the results carry it (main battery AP, HE and CS plus fire).
+    if let Some(results) = session.battle_results()
+        && let Ok(decoded) = crate::diagnostics::decode_public_results(&game.build_dir.join("constants.json"), &results)
+    {
+        let mut ledger_sum = 0.0;
+        let mut game_sum = 0.0;
+        let mut ledger_sf = 0.0;
+        let mut game_sf = 0.0;
+        for r in &decoded {
+            let Some((e, _)) = roster.iter().find(|(_, rr)| rr.player == r.name) else { continue };
+            let id = e.raw() as u32;
+            let entry = damage::ShipReconciliation {
+                entity: id,
+                player: r.name.clone(),
+                ledger_total: spike.stats.damage_by_attacker.get(&id).copied().unwrap_or(0.0),
+                ledger_shell_fire: spike.stats.damage_by_attacker_shell_fire.get(&id).copied().unwrap_or(0.0),
+                game_total: r.damage.map(|d| d as f32),
+                game_shell_fire: [r.damage_main_ap, r.damage_main_he, r.damage_main_cs, r.damage_fire]
+                    .iter()
+                    .filter_map(|v| *v)
+                    .map(|v| v as f32)
+                    .reduce(|a, b| a + b),
+            };
+            if let Some(g) = entry.game_total {
+                spike.stats.damage_by_attacker_authoritative.insert(id, g);
+                ledger_sum += entry.ledger_total;
+                game_sum += g;
+            }
+            if let Some(g) = entry.game_shell_fire {
+                ledger_sf += entry.ledger_shell_fire;
+                game_sf += g;
+            }
+            spike.stats.reconciliation.push(entry);
+        }
+        spike.stats.reconciliation.sort_by(|a, b| a.player.cmp(&b.player));
+        spike.stats.reconciliation_ratio = (game_sum > 0.0).then(|| ledger_sum / game_sum);
+        spike.stats.reconciliation_ratio_shell_fire = (game_sf > 0.0).then(|| ledger_sf / game_sf);
+        spike.stats.reconciliation_source =
+            "battle results playersPublicInfo: damage, damage_main_ap, damage_main_he, damage_main_cs, damage_fire".to_string();
     }
     if spike.stats.damage_events == 0 {
         for s in smokes.iter_mut() {

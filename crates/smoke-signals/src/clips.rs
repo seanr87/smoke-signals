@@ -106,6 +106,7 @@ pub fn render_clip(
             smoker,
             &text,
             Some(progress),
+            frames::ZoomScope::None,
         )?;
         let cropped = image::imageops::crop_imm(&frame.image, 0, 0, width, height).to_image();
         worker.submit(cropped.into_raw())?;

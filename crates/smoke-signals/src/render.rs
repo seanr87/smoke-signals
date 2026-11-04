@@ -38,6 +38,8 @@ pub struct FrameRenderer<'a> {
     target: ImageTarget,
     map_info: Option<MapInfo>,
     fonts: GameFonts,
+    /// Options of the full frame, restored after a bare render.
+    full: wows_minimap_renderer::config::RenderOptions,
 }
 
 impl<'a> FrameRenderer<'a> {
@@ -106,6 +108,7 @@ impl<'a> FrameRenderer<'a> {
             &all_replays,
         );
 
+        let full = options.clone();
         let mut renderer = MinimapRenderer::new(map_info.clone(), &game.loaded.game_params, version, options);
         renderer.set_fonts(fonts.clone());
         renderer.set_flag_icons(flag_icons);
@@ -124,7 +127,29 @@ impl<'a> FrameRenderer<'a> {
         );
         renderer.set_salvo_flight_times(std::sync::Arc::new(salvo_flight_times));
 
-        Ok(Self { renderer, target, map_info, fonts })
+        Ok(Self { renderer, target, map_info, fonts, full })
+    }
+
+    /// Draw only icons, headings, smoke, torpedoes, caps and the map: no
+    /// names, HP bars, range circles, planes, buildings, trails, armament or
+    /// weather. `false` restores the full frame options.
+    pub fn set_bare(&mut self, bare: bool) {
+        let o = &mut self.renderer.options;
+        let keep = |full: bool| !bare && full;
+        o.show_player_names = keep(self.full.show_player_names);
+        o.show_ship_names = keep(self.full.show_ship_names);
+        o.show_dead_ship_names = keep(self.full.show_dead_ship_names);
+        o.show_hp_bars = keep(self.full.show_hp_bars);
+        o.show_planes = keep(self.full.show_planes);
+        o.show_buildings = keep(self.full.show_buildings);
+        o.show_consumables = keep(self.full.show_consumables);
+        o.show_ship_config = keep(self.full.show_ship_config);
+        o.show_trails = keep(self.full.show_trails);
+        o.show_dead_trails = keep(self.full.show_dead_trails);
+        o.show_speed_trails = keep(self.full.show_speed_trails);
+        o.show_armament = keep(self.full.show_armament);
+        o.show_camera_direction = keep(self.full.show_camera_direction);
+        o.show_weather = keep(self.full.show_weather);
     }
 
     pub fn fonts(&self) -> &GameFonts {

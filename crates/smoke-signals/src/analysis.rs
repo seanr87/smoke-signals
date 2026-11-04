@@ -1186,6 +1186,8 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             smoke_damage_total: None,
             damage_in_smoke_enemy: None,
             damage_behind_smoke_enemy: None,
+            damage_split: None,
+            dd_damage: None,
             damage_detail: None,
             wows_toolkit_rev: WOWS_TOOLKIT_REV.map(str::to_string),
             smoke_signals_version: SMOKE_SIGNALS_VERSION.to_string(),
@@ -1404,6 +1406,8 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
     let deaths_s: HashMap<EntityId, f32> = deaths.iter().map(|(e, c)| (*e, c.seconds())).collect();
     let flags_at = |e: EntityId, c: GameClock| tracker.flags_at(e, c);
     let team_of = |e: EntityId| roster.get(&e).map(|r| r.team_id);
+    let mut roster_ids: Vec<EntityId> = roster.keys().copied().collect();
+    roster_ids.sort_by_key(|e| e.raw());
     let detection_m_of = |e: EntityId| tracker.ranges().get(&e).and_then(|r| r.detection_m);
     let mut spike = damage::run(&damage::SpikeInput {
         ledger: &ledger,
@@ -1414,6 +1418,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         timeline: &tl,
         flags_at: &flags_at,
         team_of: &team_of,
+        roster: &roster_ids,
         detection_m_of: &detection_m_of,
         deaths: &deaths_s,
         smoke_owner: &smoke_owner,
@@ -1437,7 +1442,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
                 .iter()
                 .filter_map(|(e, s)| {
                     let (player, ship) = who(*e)?;
-                    Some(ShooterDetail { entity_id: *e, player, ship, salvos: s.salvos, damage: s.damage, kills: s.kills })
+                    Some(ShooterDetail { entity_id: *e, player, ship, salvos: s.salvos, damage: s.damage, split: s.split.to_record(), kills: s.kills })
                 })
                 .collect();
             smokes[i].targets_hit = d
@@ -1446,9 +1451,12 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
                 .filter(|(_, s)| s.damage > 0.0 || s.sunk)
                 .filter_map(|(e, s)| {
                     let (player, ship) = who(*e)?;
-                    Some(TargetHit { entity_id: *e, player, ship, damage: s.damage, sunk: s.sunk })
+                    let ship_class = roster.get(&EntityId::from(*e)).and_then(|r| r.ship_class.clone());
+                    Some(TargetHit { entity_id: *e, player, ship, ship_class, damage: s.damage, split: s.split.to_record(), sunk: s.sunk })
                 })
                 .collect();
+            smokes[i].damage_split = Some(d.split.to_record());
+            smokes[i].dd_damage = Some(smokes[i].targets_hit.iter().filter(|t| t.ship_class.as_deref().is_some_and(|c| c.eq_ignore_ascii_case("destroyer"))).map(|t| t.damage).sum());
             smokes[i].kills_from_smoke = d.kills.len() as u32;
             // Damage taken by our radar-spotted ships while the spot lasted.
             let mut spotted_damage = 0.0;

@@ -2,7 +2,7 @@
 
 Usage:
   python -I -X utf8 export_data.py --batch output/<batch> --maps output/<maps>/maps
-         [--inventory smoke/inventory.csv] [--out output/<batch>/smoke-signals-data-r5.zip]
+         [--inventory smoke/inventory.csv] [--out output/<batch>/smoke-signals-data-r6.zip]
 
 The zip holds smokes.csv (the batch's combined table, every field, plus the
 profile zone and grid square), games.csv (one row per played game: match,
@@ -43,7 +43,8 @@ def games_rows(data):
 
 
 METRIC_NAMES = {
-    "smokes_per_game": "Smokes per game", "damage_per_game": "Smoke damage per game", "avg_damage": "Average damage per smoke",
+    "smokes_per_game": "Smokes per game", "damage_per_game": "Smoke damage per game", "concealed_per_game": "Concealed smoke damage per game",
+    "dd_per_game": "DD damage per game", "avg_damage": "Average damage per smoke",
     "uptime": "Smoke uptime (s per game)", "charge": "Charge use (%)", "stacking": "Stacking rate (%)",
     "contested": "Contested-cap share (%)", "selfish": "Selfish smoke share (%)", "swing": "Score swing while smoke up (pts)",
     "punished": "Radar-punished share (%)", "offensive": "Radar spots from smoke (per game)", "kills": "Kills from smoke (per game)",
@@ -114,7 +115,7 @@ def main():
     args = ap.parse_args()
     data = build_site.Data(args.batch, args.maps, None, args.inventory)
     site = build_site.Site(data, os.path.join(args.batch, "export-unused"), build_site.parse_colors(""))
-    out = args.out or os.path.join(args.batch, "smoke-signals-data-r5.zip")
+    out = args.out or os.path.join(args.batch, "smoke-signals-data-r6.zip")
     enriched = os.path.join(args.batch, "smokes-enriched.csv")
     build_site.write_enriched_csv(data, enriched)
     games = games_rows(data)

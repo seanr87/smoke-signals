@@ -70,20 +70,13 @@ fn crop_rect(center: MinimapPos, side: u32, map: MapRect) -> (u32, u32) {
     (x, y)
 }
 
-/// Cut `region` out of `frame`, magnify it by `zoom_factor`, add the border
-/// and the scale note. `px_per_km` is the map scale before zooming.
-pub fn build(
-    frame: &RgbImage,
-    map: MapRect,
-    region: Region,
-    zoom_factor: f32,
-    px_per_km: f32,
-    fonts: &GameFonts,
-) -> Inset {
+/// Cut `region` out of `frame`, magnify it to `out_side` pixels, add the
+/// border and the scale note. `px_per_km` is the map scale before zooming.
+pub fn build(frame: &RgbImage, map: MapRect, region: Region, out_side: u32, px_per_km: f32, fonts: &GameFonts) -> Inset {
     let side = (region.half * 2.0).round().clamp(1.0, map.size as f32) as u32;
     let (x, y) = crop_rect(region.center, side, map);
     let crop = image::imageops::crop_imm(frame, map.x + x, map.y + y, side, side).to_image();
-    let out_side = (side as f32 * zoom_factor).round().max(1.0) as u32;
+    let out_side = out_side.max(1);
     let zoom = out_side as f32 / side as f32;
     let scaled = image::imageops::resize(&crop, out_side, out_side, FilterType::CatmullRom);
 
@@ -136,6 +129,39 @@ pub fn draw_fire_lines(inset: &mut Inset, fonts: &GameFonts, lines: &[FireLine],
         let (x, y) = (mx - width / 2.0, my - LABEL_SIZE / 2.0 - 2.0);
         fill_rect(&mut inset.image, x - 3.0, y - 1.0, width + 6.0, LABEL_SIZE + 5.0, LABEL_BACK);
         header::draw_text(&mut inset.image, fonts, LABEL_SIZE, x, y, color, &label);
+    }
+}
+
+/// A numbered marker on an allied ship, in image pixels.
+pub struct Badge {
+    pub at: (f32, f32),
+    pub number: u32,
+}
+
+const BADGE_RADIUS: f32 = 9.0;
+const BADGE_SIZE: f32 = 12.0;
+
+/// Draw each badge as a filled disc with its number, offset up and right of
+/// the ship so the icon stays visible.
+pub fn draw_badges(inset: &mut Inset, fonts: &GameFonts, badges: &[Badge], color: [u8; 3]) {
+    for b in badges {
+        let (cx, cy) = (b.at.0 + BADGE_RADIUS + 3.0, b.at.1 - BADGE_RADIUS - 3.0);
+        fill_circle(&mut inset.image, cx, cy, BADGE_RADIUS + 1.5, NOTE_SHADOW);
+        fill_circle(&mut inset.image, cx, cy, BADGE_RADIUS, color);
+        let label = b.number.to_string();
+        let width = header::text_width(fonts, BADGE_SIZE, &label);
+        header::draw_text(&mut inset.image, fonts, BADGE_SIZE, cx - width / 2.0, cy - BADGE_SIZE / 2.0 - 1.0, LABEL_BACK, &label);
+    }
+}
+
+fn fill_circle(image: &mut RgbImage, cx: f32, cy: f32, r: f32, color: [u8; 3]) {
+    for py in (cy - r).floor() as i32..=(cy + r).ceil() as i32 {
+        for px in (cx - r).floor() as i32..=(cx + r).ceil() as i32 {
+            let (dx, dy) = (px as f32 + 0.5 - cx, py as f32 + 0.5 - cy);
+            if dx * dx + dy * dy <= r * r {
+                put(image, px, py, color);
+            }
+        }
     }
 }
 

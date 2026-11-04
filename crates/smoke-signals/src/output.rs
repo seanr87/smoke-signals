@@ -207,6 +207,11 @@ const TIER2_COLUMNS: &[&str] = &[
     "smokees",
     "smokees_detected",
     "offensive_hydro_spots",
+    "smoke_damage_concealed",
+    "smoke_damage_detected",
+    "smoke_damage_unknown",
+    "detected_damage_by",
+    "dd_damage",
 ];
 
 const BASE_COLUMNS: &[&str] = &[
@@ -413,6 +418,14 @@ pub fn smoke_csv_row(r: &SmokeRecord) -> Vec<String> {
         r.smokees.len().to_string(),
         r.smokees.iter().filter(|m| !m.detections.is_empty()).count().to_string(),
         opt(r.offensive_hydro.as_ref().map(|o| o.enemies_spotted)),
+        opt_f(r.damage_split.as_ref().map(|s| s.concealed)),
+        opt_f(r.damage_split.as_ref().map(|s| s.detected)),
+        opt_f(r.damage_split.as_ref().map(|s| s.unknown)),
+        r.damage_split
+            .as_ref()
+            .map(|s| s.detected_by.iter().map(|r| format!("{}:{:.0}", r.reason, r.damage)).collect::<Vec<_>>().join(";"))
+            .unwrap_or_default(),
+        opt_f(r.dd_damage),
     ]);
     row.extend([
         opt(r.wows_toolkit_rev.as_deref()),

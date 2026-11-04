@@ -25,7 +25,7 @@ NATIVE = 768
 THUMB_SIDE = NATIVE / 2
 GRID_LETTERS = "ABCDEFGHIJ"
 PHASES = [("opening", 0, 400), ("mid", 400, 800), ("endgame", 800, MATCH_SECONDS)]
-SELFISH_DEF = "Selfish smoke: no teammate other than the owner was ever inside it, and no teammate fired through it from behind."
+SELFISH_DEF = "Selfish smoke: no teammate other than the owner was ever inside it, and no teammate fired through it from behind. A tendency, not a flaw: some ships (Gdansk, for one) smoke selfishly by design. How often a clan or player smokes selfishly is a style signal."
 CONTEST_DEF = "A cap is contested for a team when it sits on the midline between the two spawns, lies on the enemy's side of the midline, or is held by the enemy."
 REASON_TEXT = {"midline": "it sits on the midline between the spawns", "enemy_side": "it lies on the enemy's side of the midline", "enemy_owned": "the enemy held it"}
 METRIC_DEFS = {
@@ -36,21 +36,23 @@ METRIC_DEFS = {
     "swing": "Score swing: change in the point gap (ours minus theirs) from activation to capture, averaged.",
     "deaths": "Smoke deaths: ships of the clan that a smoke concealed (inside it, or firing from behind it), were then detected, and sank while the smoke stood or within 20 s after its last puff faded.",
     "kills": "Kills from smoke: enemy ships whose last damage before sinking was a shell or fire tick credited to the smoke.",
-    "punished": "Radar-punished share: share of smokes in which at least one of the clan's ships was radar-spotted while inside.",
+    "punished": "Radar-punished share: share of smokes in which at least one of the clan's ships was radar-spotted while inside. Possibly a mistake: smokes are often laid knowing radar is a risk, and one spot is not a failure, but a high rate for a clan or player is a warning sign.",
+    "concealed": "Concealed smoke damage: the part of the smoke damage fired while the shooter was undetected. Detected damage is the rest, broken down by how the shooter was spotted (radar, surface lit, hydro, proximity, aircraft, smoke fire penalty).",
+    "dd": "DD damage: smoke damage, concealed and detected, dealt to enemy destroyers; same credit rules as smoke damage.",
     "offensive": "Radar spots from smoke: enemies spotted by the clan's own radar run from inside its smoke while concealed, inferred from the activation and radar range.",
     "won": "Smoke near a cap capture: a cap within stock gun range of a concealed ship flipped to the clan during the smoke or within 10 s after it.",
     "coverage": "Radar cap coverage: share of a contested cap's area within the range of a radar ship concealed in the smoke.",
 }
 AWARD_DEFS = {
-    "Smoke of the Tournament": "Highest smoke damage: main-gun shells fired from or through the smoke by the smoking team, plus the fires they started.",
+    "Smoke of the Tournament": "Highest concealed smoke damage: main-gun shells fired from or through the smoke by the smoking team while the shooter was undetected, plus the fires they started.",
     "Deepest Cap Smoke": "Deepest into a contested cap as a share of the cap's radius, among smokes near a cap capture or a defended cap.",
     "Radar Bait": "Most radar spots on the smoking team's ships inside the smoke while it stood; ties broken by the damage those ships took while spotted.",
     "Peekaboo": "Most enemies spotted by the smoking team's own radar, run from inside the smoke while concealed.",
-    "Most Selfish Smoke": "The selfish smoke with the most damage by its owner.",
-    "Golden Cloud": "Most total smoke damage.",
+    "Most Selfish Smoke": "The selfish smoke with the most concealed damage by its owner.",
+    "Golden Cloud": "Most total concealed smoke damage.",
     "The Smokefather": "Most smokes laid.",
-    "Best in Haze": "Highest average smoke damage per smoke, minimum 5 smokes.",
-    "Most Selfish Smoker": "Most selfish smokes.",
+    "Best in Haze": "Highest average concealed smoke damage per smoke, minimum 5 smokes.",
+    "Most Selfish Smoker": "Most selfish smokes: a style signal, not a flaw.",
 }
 # Round 5 lenses: smoker class and smoke type, used by every filter.
 CLASSES = ["destroyer", "cruiser", "battleship"]
@@ -58,17 +60,18 @@ SMOKE_TYPE_NAMES = ["standard", "cruiser", "exhaust", "crawling"]
 CLASS_SHORT = {"destroyer": "DD", "cruiser": "CA", "battleship": "BB"}
 PURPOSE_ORDER = ["cap_control", "cap_contest", "radar_trap", "hydro_trap", "counter_smoke", "island_dive", "reposition", "damage", "escape"]
 PURPOSE_DEFS = {
-    "cap_control": "Cap control: a radar ship concealed in the smoke whose radar covered at least 90% of a cap.",
+    "cap_control": "Cap control: a radar ship concealed in the smoke activated its radar while covering at least 90% of a contested cap.",
     "cap_contest": "Cap contest: the smoke stood inside or within 1 km of a contested cap, without that radar coverage.",
     "radar_trap": "Radar trap: a concealed radar ship in the smoke caught an enemy with its radar, and the smoke is not cap control.",
     "hydro_trap": "Hydro trap: hydro run from inside the smoke spotted a nearby enemy.",
-    "counter_smoke": "Counter smoke: laid within 3 km of an enemy smoke, within 25 s after it appeared.",
+    "counter_smoke": "Counter smoke: laid within 12 km of an enemy smoke, within 45 s after it appeared.",
     "island_dive": "Island dive: a covered ship moved at least 2 km under the smoke and ended within 1 km of an island (a kind of reposition).",
     "reposition": "Reposition: a covered ship moved at least 3 km under the smoke without ever being detected.",
-    "damage": "Damage: 20,000 or more smoke damage, or two or more enemies hit. Sub-label: target_rich (2+ enemies), hunt (one enemy in the open), island_killer (one enemy parked by an island).",
+    "damage": "Damage: 20,000 or more smoke damage. The sub-label describes the damage: target_rich (2+ enemies), hunt (one enemy in the open), island_killer (one enemy parked by an island).",
     "escape": "Escape: laid while kiting and spotted, at 50% HP or less, or behind on points.",
 }
 MOVEMENT_DEFS = {
+    "stationary": "Stationary: the smoker moved under 500 m while laying.",
     "pushing": "Pushing: the smoker closed on the nearest enemies while laying (within 60 degrees of the line to them).",
     "kiting": "Kiting: the smoker moved away from the nearest enemies while laying (more than 120 degrees off the line to them).",
     "horizontal": "Horizontal: laid roughly across the line to the nearest enemies.",
@@ -76,13 +79,17 @@ MOVEMENT_DEFS = {
 COVERAGE_DEFS = {
     "stacked": "Stacked: a destroyer laid it within 2.5 km of an allied cruiser or battleship.",
     "screen": "Screen: it hid teammates who sat inside it or fired from behind it.",
-    "selfish": "Selfish: no teammate other than the owner was ever inside it, and no teammate fired through it from behind.",
+    "selfish": "Selfish: no teammate other than the owner was ever inside it, and no teammate fired through it from behind. A tendency, not a flaw.",
 }
+# Tags kept in the data but not shown on the site.
+HIDDEN_PURPOSES = {"hydro_trap"}
 AUTO_NOTE = "auto-tagged: rule-based from the replay; fuzzy tags carry a confidence"
 # Clan metrics where a lower value is the better one (charts sort best first).
-LOWER_IS_BETTER = {"selfish", "punished", "deaths"}
-DAMAGE_DEF = "Smoke damage: main-gun shells fired from or through a smoke by the smoking team, plus the fires they started; each shot is credited to one smoke."
-RADAR_BAIT_DEF = "Radar bait: a smoke where enemy radar spotted our ships inside it. A mistake, not a good thing."
+LOWER_IS_BETTER = {"deaths"}
+DAMAGE_DEF = "Smoke damage: main-gun shells fired from or through a smoke by the smoking team, plus the fires they started; each shot is credited to one smoke. Concealed damage is the part fired while the shooter was undetected; detected damage is the rest."
+CONCEALED_DEF = METRIC_DEFS["concealed"]
+DD_DEF = METRIC_DEFS["dd"]
+RADAR_BAIT_DEF = "Radar bait: a smoke where enemy radar spotted our ships inside it. Possibly a mistake: smokes are often laid knowing radar is a risk, and one spot is not a failure, but a high rate of radar-punished smokes for a clan or player is a warning sign."
 # Playoff bracket shape: rounds in display order with the number of series in each.
 BRACKET = [
     ("WB Round 1", "Winners round 1", 8), ("WB Round 2", "Winners round 2", 4), ("WB Round 3", "Winners round 3", 2), ("WB Round 4", "Winners final", 1),
@@ -255,6 +262,14 @@ class Data:
             s["_fire"] = d.get("damage_fire") or 0.0
             s["_salvos"] = d.get("salvos") or 0
             s["_owner_damage"] = (d.get("damage_in_smoke_smoker") or 0) + (d.get("damage_behind_smoke_smoker") or 0)
+            sp = s.get("damage_split") or {}
+            s["_concealed"] = sp.get("concealed") or 0.0
+            s["_detected"] = sp.get("detected") or 0.0
+            s["_unknown"] = sp.get("unknown") or 0.0
+            s["_detected_by"] = sp.get("detected_by") or []
+            s["_dd"] = s.get("dd_damage") or 0.0
+            owner_row = next((x for x in s.get("shooter_detail") or [] if x["player"] == s["player"]), None)
+            s["_owner_concealed"] = ((owner_row or {}).get("split") or {}).get("concealed") or 0.0
             s["_radar"] = len(s.get("radar_detections_in_smoke") or [])
             s["_radar_dmg"] = s.get("radar_spotted_damage") or 0.0
             o = s.get("offensive_radar") or {}
@@ -280,8 +295,8 @@ class Data:
             s["_movement"] = mv.get("label") or ""
             s["_movement_conf"] = mv.get("confidence") or ""
             s["_cover"] = (c.get("coverage") or {}).get("label") or ""
-            s["_purposes"] = [p["tag"] for p in c.get("purposes") or []]
-            s["_primary"] = c.get("primary_purpose") or "none"
+            s["_purposes"] = [p["tag"] for p in c.get("purposes") or [] if p["tag"] not in HIDDEN_PURPOSES]
+            s["_primary"] = s["_purposes"][0] if s["_purposes"] else "none"
             s["_lane"] = c.get("lane") or ""
             s["_cap_role"] = c.get("cap_role") or ""
             s["_zone"] = ""
@@ -409,9 +424,24 @@ def scalar(v):
 
 
 def grid_square(space_size, x, z):
+    """The game's grid: numbers 1 to 10 across the top, letters A to J down the side."""
     col = min(max(int((x + space_size / 2) / space_size * 10), 0), 9)
     row = min(max(int((space_size / 2 - z) / space_size * 10), 0), 9)
-    return f"{GRID_LETTERS[col]}{row + 1}"
+    return f"{GRID_LETTERS[row]}{col + 1}"
+
+
+def grid_cell(square):
+    """(column, row) indexes of a grid square such as D7."""
+    return int(square[1:]) - 1, GRID_LETTERS.index(square[0].upper())
+
+
+def grid_labels(step):
+    return "".join(f'<text x="{(i + 0.5) * step:.0f}" y="14">{i + 1}</text><text x="6" y="{(i + 0.5) * step + 4:.0f}" text-anchor="start">{GRID_LETTERS[i]}</text>' for i in range(10))
+
+
+def map_svg(href, alt, inner, extra_class=""):
+    """The map image inside the overlay SVG, so both share one coordinate system."""
+    return f'<svg viewBox="0 0 {NATIVE} {NATIVE}" class="mapsvg {extra_class}" role="img" aria-label="{esc(alt)}"><image href="{href}" width="{NATIVE}" height="{NATIVE}"/>{inner}</svg>'
 
 
 def map_px(data, map_name, x, z):
@@ -802,11 +832,13 @@ class Site:
             self.smoke_page(s)
 
     def player_stats(self, rows):
-        by_player = defaultdict(lambda: {"smokes": 0, "damage": 0.0, "radar": 0, "ships": Counter(), "team": "", "selfish": 0, "games": set(), "won": 0, "offensive": 0, "maps": Counter(), "kills": 0, "deaths": 0})
+        by_player = defaultdict(lambda: {"smokes": 0, "damage": 0.0, "concealed": 0.0, "dd": 0.0, "radar": 0, "ships": Counter(), "team": "", "selfish": 0, "games": set(), "won": 0, "offensive": 0, "maps": Counter(), "kills": 0, "deaths": 0})
         for s in rows:
             p = by_player[s["player"]]
             p["smokes"] += 1
             p["damage"] += s["_total"]
+            p["concealed"] += s["_concealed"]
+            p["dd"] += s["_dd"]
             p["radar"] += s["_radar"]
             p["ships"][s["ship"]] += 1
             p["team"] = s["team"]
@@ -821,7 +853,7 @@ class Site:
 
     def compute_awards(self, rows, players):
         d = self.d
-        best = max(rows, key=lambda s: s["_total"]) if rows else None
+        best = max(rows, key=lambda s: (s["_concealed"], s["_total"])) if rows else None
         eligible = [s for s in rows if s["_depth"] is not None and (s["_won"] or s["_defended"])]
         deep = max(eligible, key=lambda s: (s["_depth"], s["_total"])) if eligible else None
         bait = max(rows, key=lambda s: (s["_radar"], s["_radar_dmg"], s["_total"])) if rows else None
@@ -831,7 +863,7 @@ class Site:
         if peek and peek["_offensive"] == 0:
             peek = None
         selfish = [s for s in rows if s.get("selfish_smoke")]
-        most_selfish = max(selfish, key=lambda s: s["_owner_damage"]) if selfish else None
+        most_selfish = max(selfish, key=lambda s: (s["_owner_concealed"], s["_owner_damage"])) if selfish else None
         smokes = {"Smoke of the Tournament": best, "Deepest Cap Smoke": deep, "Radar Bait": bait, "Peekaboo": peek, "Most Selfish Smoke": most_selfish}
 
         def top_by(key, minimum=0):
@@ -839,9 +871,9 @@ class Site:
             return max(items, key=lambda kv: key(kv[1])) if items else (None, None)
 
         pawards = {
-            "Golden Cloud": top_by(lambda p: p["damage"]),
+            "Golden Cloud": top_by(lambda p: p["concealed"]),
             "The Smokefather": top_by(lambda p: p["smokes"]),
-            "Best in Haze": top_by(lambda p: p["damage"] / p["smokes"], minimum=5),
+            "Best in Haze": top_by(lambda p: p["concealed"] / p["smokes"], minimum=5),
             "Most Selfish Smoker": top_by(lambda p: p["selfish"]),
         }
         clan_rows = {}
@@ -849,9 +881,9 @@ class Site:
             rows_t = [s for s in rows if s["team"] == t]
             g = d.games_played.get(t) or 0
             if g:
-                clan_rows[t] = {"smokes": len(rows_t) / g, "damage": sum(s["_total"] for s in rows_t) / g, "selfish": sum(1 for s in rows_t if s.get("selfish_smoke")) / g, "games": g}
+                clan_rows[t] = {"smokes": len(rows_t) / g, "damage": sum(s["_concealed"] for s in rows_t) / g, "selfish": sum(1 for s in rows_t if s.get("selfish_smoke")) / g, "games": g}
         cawards = {}
-        for title, key in [("Most smokes laid", "smokes"), ("Most smoke damage", "damage"), ("Most selfish smokes", "selfish")]:
+        for title, key in [("Most smokes laid", "smokes"), ("Most concealed smoke damage", "damage"), ("Most selfish smokes", "selfish")]:
             if clan_rows:
                 w = max(clan_rows, key=lambda t: clan_rows[t][key])
                 cawards[title] = (w, clan_rows[w][key], clan_rows[w]["games"])
@@ -859,7 +891,7 @@ class Site:
 
     def award_note(self, title, s):
         if title == "Smoke of the Tournament":
-            return f"{fmt_int(s['_total'])} smoke damage"
+            return f"{fmt_int(s['_concealed'])} concealed smoke damage ({fmt_int(s['_total'])} in all)"
         if title == "Deepest Cap Smoke":
             return f"{s['_depth']:.0f}% of the way into contested cap {s['contested_cap_name']} (cap radius {fmt_km(s.get('contested_cap_radius_m'))}); {cap_outcome_text(s)}"
         if title == "Radar Bait":
@@ -868,7 +900,7 @@ class Site:
             o = s.get("offensive_radar") or {}
             return f"{s['_offensive']} enemies spotted by {o.get('ship') or 'its radar ship'}'s radar from inside the smoke (inferred from the activation and radar range)"
         if title == "Most Selfish Smoke":
-            return f"{fmt_int(s['_owner_damage'])} damage by the smoker (no teammate benefited)"
+            return f"{fmt_int(s['_owner_concealed'])} concealed damage by the smoker ({fmt_int(s['_owner_damage'])} in all; no teammate benefited)"
         return ""
 
     def award_card(self, title, s, depth=0, with_clip=True):
@@ -883,7 +915,7 @@ class Site:
         return f"""<div class="card award"><h3>{sub}</h3><p class="note">{esc(self.award_note(title, s))}</p>
 <div class="award-hero"><a href="{href}">{self.thumb(s, depth)}</a><div class="award-meta"><div>{self.team_tag(s['team'])} <a href="{self.player_href(s['player'], depth)}"><b>{esc(s['player'])}</b></a> <span class="muted">{esc(s['ship'])}</span></div>
 <div class="muted small">{esc(s['_games_label'])}</div><div class="muted small">{esc(self.d.map_title(s['map']))}, activated {esc(s['_act_clock'])}</div>
-<div class="big">{fmt_int(s['_total'])} smoke damage</div><p><a href="{href}">Open the smoke page</a></p></div></div>{clip}</div>"""
+<div class="big">{fmt_int(s['_total'])} smoke damage</div><div class="muted small">{fmt_int(s['_concealed'])} concealed, {fmt_int(s['_detected'])} detected</div><p><a href="{href}">Open the smoke page</a></p></div></div>{clip}</div>"""
 
     def home(self):
         d = self.d
@@ -895,7 +927,7 @@ class Site:
         strip = f'<div class="lens-toggle"><button class="on" data-lens="destroyer">Destroyer smokes</button><button data-lens="all">All smokes</button></div><section class="cards awards lens-set" data-lens="destroyer">{strips["destroyer"]}</section><section class="cards awards lens-set" data-lens="all" hidden>{strips["all"]}</section>'
         per_team = Counter(s["team"] for s in d.smokes)
         stats = "".join(f'<div class="stat" style="--c:{self.color(t)}"><b>{per_team[t]}</b><span>{esc(t)} smokes in {d.games_played.get(t, 0)} games</span></div>' for t in TEAMS if per_team.get(t))
-        terms = [("Smoke damage", DAMAGE_DEF.split(": ", 1)[1]), ("Selfish smoke", SELFISH_DEF.split(": ", 1)[1]), ("Radar bait", RADAR_BAIT_DEF.split(": ", 1)[1])]
+        terms = [("Smoke damage", DAMAGE_DEF.split(": ", 1)[1]), ("Concealed smoke damage", CONCEALED_DEF.split(": ", 1)[1]), ("DD damage", DD_DEF.split(": ", 1)[1]), ("Selfish smoke", SELFISH_DEF.split(": ", 1)[1]), ("Radar bait", RADAR_BAIT_DEF.split(": ", 1)[1])]
         key_terms = "".join(f'<li><b>{esc(k)}:</b> {esc(v)}</li>' for k, v in terms)
         body = f"""<section class="briefing"><h1>Smoke Signals</h1>
 <p>This site breaks down how top competitive teams use smoke: {len(d.smokes)} smokes from {games_text} of King of the Sea XIX NA played by H-SR, RESIN and PN.</p></section>
@@ -940,6 +972,8 @@ class Site:
             "n": n, "games": n_games,
             "smokes_per_game": (n / n_games, n),
             "damage_per_game": (sum(s["_total"] for s in rows) / n_games, n),
+            "concealed_per_game": (sum(s["_concealed"] for s in rows) / n_games, n),
+            "dd_per_game": (sum(s["_dd"] for s in rows) / n_games, n),
             "avg_damage": (mean([s["_total"] for s in rows]), n),
             "uptime": (uptime / n_games, n_games),
             "charge": (100.0 * used / charges if charges else None, charges),
@@ -971,6 +1005,8 @@ class Site:
         ("Volume", "charge", "Charge use", "pct", "charge"),
         ("Volume", "stacking", "Stacking rate", "pct", "stacking"),
         ("Damage", "damage_per_game", "Smoke damage per game", "int", ""),
+        ("Damage", "concealed_per_game", "Concealed smoke damage per game", "int", "concealed"),
+        ("Damage", "dd_per_game", "DD damage per game", "int", "dd"),
         ("Damage", "avg_damage", "Average damage per smoke", "int", ""),
         ("Damage", "kills", "Kills from smoke (per game)", "f2", "kills"),
         ("Objectives", "contested", "Contested-cap share", "pct", "contested"),
@@ -978,8 +1014,8 @@ class Site:
         ("Objectives", "swing", "Score swing while smoke up", "pts", "swing"),
         ("Radar plays", "offensive", "Radar spots from smoke (per game)", "f2", "offensive"),
         ("Radar plays", "coverage", "Radar cap coverage (mean %)", "pct", "coverage"),
-        ("Risks", "selfish", "Selfish smoke share", "pct", "selfish_def"),
-        ("Risks", "punished", "Radar-punished share", "pct", "punished"),
+        ("Tendencies", "selfish", "Selfish smoke share", "pct", "selfish_def"),
+        ("Tendencies", "punished", "Radar-punished share", "pct", "punished"),
         ("Risks", "deaths", "Smoke deaths (per game)", "f2", "deaths"),
     ]
 
@@ -1008,12 +1044,12 @@ class Site:
             dd = sum(1 for s in d.smokes if s["team"] == t and s["_class"] == "destroyer")
             cards.append(f'<a class="card toc" href="{self.clan_href(t)}" style="border-top:4px solid {self.color(t)}"><h2>{self.team_tag(t)} {esc(t)}</h2><p>{m["n"]} smokes ({dd} by destroyers) in {m["games"]} games, {fmt_int(m["damage_per_game"][0])} smoke damage per game, uptime {m["uptime"][0]:.0f} s per game.</p><p class="muted small">Scouting report to come.</p></a>')
         groups = []
-        for group in ["Volume", "Damage", "Objectives", "Radar plays", "Risks"]:
+        for group in ["Volume", "Damage", "Objectives", "Radar plays", "Tendencies", "Risks"]:
             panels = "".join(f'<div class="panel cchart" data-key="{key}"></div>' for g, key, _, _, _ in self.CLAN_SPEC if g == group)
             groups.append(f'<h2>{esc(group)}</h2><section class="charts">{panels}</section>')
         body = f"""<h1>Clans</h1><section class="cards">{"".join(cards)}</section>
 <div class="filters lens"><span class="muted small">Compare</span>{self.lens_selects("clans")}<span class="count muted small" id="clans-count"></span></div>
-<p class="muted small">One bar per clan, best first, with the count (n) on every bar. Lower is better for the risks. Destroyer smokes are the default lens; pick "all" to include every smoke.</p>
+<p class="muted small">One bar per clan, best first, with the count (n) on every bar. Lower is better for the risks; the tendencies are style signals, not scores. Destroyer smokes are the default lens; pick "all" to include every smoke.</p>
 {"".join(groups)}
 <script>window.CLAN_METRICS = {json.dumps(self.lens_metrics(clans))}; window.CLAN_SPEC = {self.clan_spec_json()}; window.TEAM_COLORS = {json.dumps(self.colors)}; window.CLAN_TEAMS = {json.dumps(clans)};</script>"""
         self.write("clans.html", self.page("Clans", body, active="Clans"))
@@ -1036,9 +1072,10 @@ class Site:
                 if p:
                     cells[(min(9, max(0, int(p[0] // (NATIVE / 10)))), min(9, max(0, int(p[1] // (NATIVE / 10)))))] += 1
             peak = max(cells.values()) if cells else 1
-            rects = "".join(f'<rect x="{cx * NATIVE / 10:.0f}" y="{cy * NATIVE / 10:.0f}" width="{NATIVE / 10:.0f}" height="{NATIVE / 10:.0f}" fill="{self.color(team)}" fill-opacity="{0.15 + 0.7 * n / peak:.2f}"><title>{GRID_LETTERS[cx]}{cy + 1}: {n} smokes</title></rect>' for (cx, cy), n in cells.items())
-            labels = "".join(f'<text x="{(i + 0.5) * NATIVE / 10:.0f}" y="14">{GRID_LETTERS[i]}</text><text x="6" y="{(i + 0.5) * NATIVE / 10 + 4:.0f}" text-anchor="start">{i + 1}</text>' for i in range(10))
-            out.append(f'<figure class="heat"><div class="mapwrap"><img src="{"../" * depth}maps/{m["map"]}.webp" alt="{esc(d.map_title(map_name))}"><svg viewBox="0 0 {NATIVE} {NATIVE}">{rects}<g class="gridlabels">{labels}</g></svg></div><figcaption>{esc(d.map_title(map_name))}: {len(smokes)} smokes (n = {len({s["_key"] for s in smokes})} games)</figcaption></figure>')
+            rects = "".join(f'<rect x="{cx * NATIVE / 10:.0f}" y="{cy * NATIVE / 10:.0f}" width="{NATIVE / 10:.0f}" height="{NATIVE / 10:.0f}" fill="{self.color(team)}" fill-opacity="{0.15 + 0.7 * n / peak:.2f}"><title>{GRID_LETTERS[cy]}{cx + 1}: {n} smokes</title></rect>' for (cx, cy), n in cells.items())
+            labels = grid_labels(NATIVE / 10)
+            heat_svg = map_svg(f'{"../" * depth}maps/{m["map"]}.webp', d.map_title(map_name), f'{rects}<g class="gridlabels">{labels}</g>')
+            out.append(f'<figure class="heat"><div class="mapwrap">{heat_svg}</div><figcaption>{esc(d.map_title(map_name))}: {len(smokes)} smokes (n = {len({s["_key"] for s in smokes})} games)</figcaption></figure>')
         return f'<div class="heats">{"".join(out)}</div>'
 
     def clan_page(self, team):
@@ -1059,6 +1096,7 @@ class Site:
                 + stat(term("score swing while smoke up", METRIC_DEFS["swing"]), "swing", fmt=lambda v: f"{v:+.0f} pts")
                 + stat(term("radar-punished share", METRIC_DEFS["punished"]), "punished", fmt=pctf))
         more = (stat("smokes per game", "smokes_per_game", fmt=lambda v: f"{v:.1f}") + stat("smoke damage per game", "damage_per_game")
+                + stat(term("concealed smoke damage per game", CONCEALED_DEF), "concealed_per_game") + stat(term("DD damage per game", DD_DEF), "dd_per_game")
                 + stat(term("charge use", METRIC_DEFS["charge"]), "charge", fmt=pctf) + stat(term("stacking rate", METRIC_DEFS["stacking"]), "stacking", fmt=pctf)
                 + stat(term("contested-cap share", METRIC_DEFS["contested"]), "contested", fmt=pctf) + stat(term("kills from smoke per game", METRIC_DEFS["kills"]), "kills", fmt=lambda v: f"{v:.2f}")
                 + stat(term("smoke deaths per game", METRIC_DEFS["deaths"]), "deaths", fmt=lambda v: f"{v:.2f}")
@@ -1111,7 +1149,7 @@ class Site:
         strip = "".join(f'<a class="card" href="{self.player_href(name, 1)}"><div>{self.team_tag(team)} <b>{esc(name)}</b></div><div class="big">{p["damage"] / total_damage * 100:.0f}%</div><div class="muted small">of the clan\'s smoke damage, {fmt_int(p["damage"])} over {p["smokes"]} smokes</div></a>' for name, p in top)
         cawards = "".join(f'<div class="card award-p"><h3>{esc(t)}</h3><p>{self.team_tag(w)} <b>{esc(w)}</b></p><p class="note">{fmt_int(v) if "damage" in t else f"{v:.1f}"} per game over {g} games</p></div>' for t, (w, v, g) in self.awards["clans"].items() if w == team) or '<p class="muted">No clan award.</p>'
         tag_counts = Counter(p for s in rows for p in s["_purposes"])
-        tag_rows = "".join(f'<tr><td>{term(tag, PURPOSE_DEFS.get(tag, ""))}</td><td>{tag_counts.get(tag, 0)}</td><td>{100 * tag_counts.get(tag, 0) / n:.0f}%</td></tr>' for tag in PURPOSE_ORDER)
+        tag_rows = "".join(f'<tr><td>{term(tag, PURPOSE_DEFS.get(tag, ""))}</td><td>{tag_counts.get(tag, 0)}</td><td>{100 * tag_counts.get(tag, 0) / n:.0f}%</td></tr>' for tag in PURPOSE_ORDER if tag not in HIDDEN_PURPOSES)
         mv_counts = Counter(s["_movement"] for s in rows if s["_movement"])
         cov_counts = Counter(s["_cover"] for s in rows if s["_cover"])
         mix = f'<div class="two-col"><div><h3>Purposes ({esc(AUTO_NOTE)}; every tag that applied, n = {n})</h3><table class="games small"><thead><tr><th>Tag</th><th>Smokes</th><th>Share</th></tr></thead><tbody>{tag_rows}</tbody></table></div><div><h3>Movement and coverage (n = {n})</h3>{bar_chart("Movement while laying", [(k, v, color, None) for k, v in mv_counts.most_common()])}{bar_chart("Coverage", [(k, v, color, None) for k, v in cov_counts.most_common()])}</div></div>'
@@ -1132,22 +1170,22 @@ class Site:
         for name, p in sorted(self.players.items(), key=lambda kv: -kv[1]["damage"]):
             badges = "".join(f'<span class="badge{" all" if lens == "all" else ""}" title="{esc(AWARD_DEFS.get(b, ""))} ({lens} smokes)">{esc(b)}</span>' for b, lens in self.badges.get(name, []))
             ships = ", ".join(f"{s} x{n}" if n > 1 else s for s, n in p["ships"].most_common())
-            rows.append(f'<tr data-damage="{p["damage"]:.0f}" data-smokes="{p["smokes"]}" data-avg="{p["damage"] / p["smokes"]:.0f}" data-selfish="{p["selfish"]}" data-radar="{p["radar"]}" data-won="{p["won"]}" data-offensive="{p["offensive"]}" data-kills="{p["kills"]}"><td>{self.team_tag(p["team"])}</td><td><a href="{self.player_href(name)}">{esc(name)}</a> {badges}</td><td class="small">{esc(ships)}</td><td>{p["smokes"]}</td><td>{fmt_int(p["damage"])}</td><td>{fmt_int(p["damage"] / p["smokes"])}</td><td>{p["kills"]}</td><td>{p["selfish"]}</td><td>{p["radar"]}</td><td>{p["won"]}</td><td>{p["offensive"]}</td></tr>')
+            rows.append(f'<tr data-damage="{p["damage"]:.0f}" data-concealed="{p["concealed"]:.0f}" data-dd="{p["dd"]:.0f}" data-smokes="{p["smokes"]}" data-avg="{p["damage"] / p["smokes"]:.0f}" data-selfish="{p["selfish"]}" data-radar="{p["radar"]}" data-won="{p["won"]}" data-offensive="{p["offensive"]}" data-kills="{p["kills"]}"><td>{self.team_tag(p["team"])}</td><td><a href="{self.player_href(name)}">{esc(name)}</a> {badges}</td><td class="small">{esc(ships)}</td><td>{p["smokes"]}</td><td>{fmt_int(p["damage"])}</td><td>{fmt_int(p["concealed"])}</td><td>{fmt_int(p["dd"])}</td><td>{fmt_int(p["damage"] / p["smokes"])}</td><td>{p["kills"]}</td><td>{p["selfish"]}</td><td>{p["radar"]}</td><td>{p["won"]}</td><td>{p["offensive"]}</td></tr>')
         def pcards(awards):
             return "".join(f'<div class="card award-p"><h3>{term(t, AWARD_DEFS.get(t, ""))}</h3><p>{self.team_tag(p["team"])} <a href="{self.player_href(name)}"><b>{esc(name)}</b></a></p><p class="note">{esc(self.player_award_note(t, p))}</p></div>' if name else f'<div class="card award-p"><h3>{esc(t)}</h3><p class="muted">Nothing here, just clear skies.</p></div>' for t, (name, p) in awards["players"].items())
         pawards = f'<div class="lens-toggle"><button class="on" data-lens="destroyer">Destroyer smokes</button><button data-lens="all">All smokes</button></div><section class="cards lens-set" data-lens="destroyer">{pcards(self.awards_by_lens["destroyer"])}</section><section class="cards lens-set" data-lens="all" hidden>{pcards(self.awards_by_lens["all"])}</section>'
         body = f"""<h1>Players</h1><p class="muted">Click a column heading to sort. Badges are awards (gold for the destroyer lens, grey for all smokes); hover for the rule. No limit on awards per player. The leaderboard counts every smoke.</p>
 <h2>Player awards</h2>{pawards}
-<h2>Leaderboard (n = {len(self.players)} players)</h2><div class="scroll-x"><table class="games sortable" id="players"><thead><tr><th>Clan</th><th>Player</th><th>Ships</th><th data-key="smokes">Smokes</th><th data-key="damage">Smoke damage</th><th data-key="avg">Per smoke</th><th data-key="kills">{term("Kills", METRIC_DEFS["kills"])}</th><th data-key="selfish">{term("Selfish")}</th><th data-key="radar">Radar spots</th><th data-key="won">{term("Near cap capture", METRIC_DEFS["won"])}</th><th data-key="offensive">{term("Own radar spots", METRIC_DEFS["offensive"])}</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>"""
+<h2>Leaderboard (n = {len(self.players)} players)</h2><div class="scroll-x"><table class="games sortable" id="players"><thead><tr><th>Clan</th><th>Player</th><th>Ships</th><th data-key="smokes">Smokes</th><th data-key="damage">Smoke damage</th><th data-key="concealed">{term("Concealed", CONCEALED_DEF)}</th><th data-key="dd">{term("DD damage", DD_DEF)}</th><th data-key="avg">Per smoke</th><th data-key="kills">{term("Kills", METRIC_DEFS["kills"])}</th><th data-key="selfish">{term("Selfish")}</th><th data-key="radar">Radar spots</th><th data-key="won">{term("Near cap capture", METRIC_DEFS["won"])}</th><th data-key="offensive">{term("Own radar spots", METRIC_DEFS["offensive"])}</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>"""
         self.write("players.html", self.page("Players", body, active="Players"))
 
     def player_award_note(self, title, p):
         if title == "Golden Cloud":
-            return f"{fmt_int(p['damage'])} damage over {p['smokes']} smokes"
+            return f"{fmt_int(p['concealed'])} concealed damage over {p['smokes']} smokes ({fmt_int(p['damage'])} in all)"
         if title == "The Smokefather":
             return f"{p['smokes']} smokes in {len(p['games'])} games"
         if title == "Best in Haze":
-            return f"{fmt_int(p['damage'] / p['smokes'])} per smoke over {p['smokes']} smokes"
+            return f"{fmt_int(p['concealed'] / p['smokes'])} concealed damage per smoke over {p['smokes']} smokes"
         return f"{p['selfish']} selfish smokes of {p['smokes']}"
 
     def player_page(self, name):
@@ -1157,7 +1195,7 @@ class Site:
         ship_order = [sh for sh, _ in p["ships"].most_common()]
         ship_color = {sh: PALETTE[i % len(PALETTE)] for i, sh in enumerate(ship_order)}
         ships = svg_donut(p["ships"].most_common(), PALETTE)
-        kv = f"""<table class="kv"><tr><td>Smokes laid</td><td>{p['smokes']} in {len(p['games'])} games</td></tr><tr><td>Smoke damage</td><td>{fmt_int(p['damage'])}</td></tr><tr><td>Average per smoke</td><td>{fmt_int(p['damage'] / p['smokes'])}</td></tr>
+        kv = f"""<table class="kv"><tr><td>Smokes laid</td><td>{p['smokes']} in {len(p['games'])} games</td></tr><tr><td>Smoke damage</td><td>{fmt_int(p['damage'])}</td></tr><tr><td>{term('Concealed smoke damage', CONCEALED_DEF)}</td><td>{fmt_int(p['concealed'])}</td></tr><tr><td>{term('DD damage', DD_DEF)}</td><td>{fmt_int(p['dd'])}</td></tr><tr><td>Average per smoke</td><td>{fmt_int(p['damage'] / p['smokes'])}</td></tr>
 <tr><td>{term('Kills from smoke', METRIC_DEFS['kills'])}</td><td>{p['kills']}</td></tr><tr><td>{term('Smoke deaths', METRIC_DEFS['deaths'])}</td><td>{p['deaths']}</td></tr>
 <tr><td>{term('Selfish smokes')}</td><td>{p['selfish']}</td></tr><tr><td>Radar spots on the team inside</td><td>{p['radar']}</td></tr><tr><td>{term('Smokes near a cap capture', METRIC_DEFS['won'])}</td><td>{p['won']}</td></tr><tr><td>{term('Enemies spotted by own radar', METRIC_DEFS['offensive'])}</td><td>{p['offensive']}</td></tr></table>"""
         cards = "".join(self.smoke_card(s, depth=1, note=f"{phase_of(s['_elapsed']) or ''}") for s in sorted(rows, key=lambda s: -s["_total"]))
@@ -1187,7 +1225,7 @@ class Site:
             return '<p class="muted">Map image missing.</p>'
         step = NATIVE / 10
         grid = "".join(f'<line x1="{i * step:.0f}" y1="0" x2="{i * step:.0f}" y2="{NATIVE}"/><line x1="0" y1="{i * step:.0f}" x2="{NATIVE}" y2="{i * step:.0f}"/>' for i in range(1, 10))
-        labels = "".join(f'<text x="{(i + 0.5) * step:.0f}" y="14">{GRID_LETTERS[i]}</text><text x="6" y="{(i + 0.5) * step + 4:.0f}" text-anchor="start">{i + 1}</text>' for i in range(10))
+        labels = grid_labels(step)
         caps = []
         for c in d.caps_by_map.get(map_name, []):
             px = map_px(d, map_name, c["position"]["x"], c["position"]["z"])
@@ -1211,7 +1249,9 @@ class Site:
             title = f'{s["player"]} {s["ship"]} at {s["_act_clock"]} ({elapsed_text(elapsed) if elapsed >= 0 else "?"} elapsed), {fmt_int(s["_total"])} dmg, {s.get("smoke_type") or ""} smoke'
             paths.append(f'<a href="{base}{self.smoke_href[s["_slug"]]}" id="{anchor_prefix}-{s["_slug"]}" class="smokepath" {data}><polyline points="{points}" stroke="{self.color(s["team"])}"{dashed} marker-end="url(#{marker})"><title>{esc(title)}</title></polyline></a>')
         zones = self.zone_overlay(map_name)
-        return f'<div class="mapwrap" style="max-width:{size}px"><img src="{base}maps/{m["map"]}.webp" alt="{esc(self.d.map_title(map_name))}"><svg viewBox="0 0 {NATIVE} {NATIVE}"><defs>{markers}</defs><g class="grid">{grid}</g><g class="gridlabels">{labels}</g>{zones}<g class="caps">{"".join(caps)}</g><g class="paths">{"".join(paths)}</g></svg></div>'
+        inner = f'<defs>{markers}</defs><g class="grid">{grid}</g><g class="gridlabels">{labels}</g>{zones}<g class="caps">{"".join(caps)}</g><g class="paths">{"".join(paths)}</g>'
+        figure = map_svg(f'{base}maps/{m["map"]}.webp', self.d.map_title(map_name), inner)
+        return f'<div class="mapwrap" style="max-width:{size}px">{figure}</div>'
 
     ZONE_COLORS = {"west": "#5DADE2", "east": "#F5C542", "north": "#5DADE2", "south": "#F5C542", "center": "#B388FF"}
 
@@ -1226,7 +1266,7 @@ class Site:
             color = self.ZONE_COLORS.get(zname, "#6EE7B7")
             xs, ys = [], []
             for sq in squares:
-                col, row = GRID_LETTERS.index(sq[0]), int(sq[1:]) - 1
+                col, row = grid_cell(sq)
                 xs.append((col + 0.5) * step)
                 ys.append((row + 0.5) * step)
                 out.append(f'<rect x="{col * step:.0f}" y="{row * step:.0f}" width="{step:.0f}" height="{step:.0f}" fill="{color}" fill-opacity="0.16"/>')
@@ -1238,7 +1278,7 @@ class Site:
                 if isinstance(spot, dict) and spot.get("grid"):
                     xs, ys = [], []
                     for sq in spot["grid"]:
-                        col, row = GRID_LETTERS.index(sq[0]), int(sq[1:]) - 1
+                        col, row = grid_cell(sq)
                         xs.append((col + 0.5) * step)
                         ys.append((row + 0.5) * step)
                         out.append(f'<rect x="{col * step:.0f}" y="{row * step:.0f}" width="{step:.0f}" height="{step:.0f}" fill="none" stroke="#fff" stroke-dasharray="4,3"/>')
@@ -1368,7 +1408,7 @@ class Site:
             records.append({
                 "id": s["smoke_id"], "team": s["team"], "player": s["player"], "ship": s["ship"], "map": self.d.map_title(s["map"]),
                 "game": s["_games_label"], "game_short": s["_short_game"], "type": s.get("smoke_type") or "",
-                "elapsed": s["_elapsed"], "phase": s["_phase"] or "", "total": round(s["_total"]), "inside": round(s["_in"]), "behind": round(s["_behind"]), "fire": round(s["_fire"]),
+                "elapsed": s["_elapsed"], "phase": s["_phase"] or "", "total": round(s["_total"]), "concealed": round(s["_concealed"]), "detected": round(s["_detected"]), "dd": round(s["_dd"]), "inside": round(s["_in"]), "behind": round(s["_behind"]), "fire": round(s["_fire"]),
                 "radar": s["_radar"], "offensive": s["_offensive"], "kills": s["_kills"], "deaths": s["_deaths"],
                 "swing": s["_score_swing"],
                 "contested": s.get("avg_contested_cap_dist_m"), "contested_name": s.get("contested_cap_name") or "", "depth": s["_depth"],
@@ -1377,10 +1417,10 @@ class Site:
                 "color": self.color(s["team"]),
                 "cls": s["_class"], "cls_short": CLASS_SHORT.get(s["_class"], "?"), "movement": s["_movement"], "movement_conf": s["_movement_conf"], "coverage": s["_cover"],
                 "purposes": s["_purposes"], "primary": s["_primary"], "zone": s["_zone"], "lane": s["_lane"], "cap_role": s["_cap_role"],
-                "tags_text": ", ".join(f"{p['tag']}{' (' + p['confidence'] + ')' if p.get('confidence') else ''}" for p in (s["_c"].get("purposes") or [])),
+                "tags_text": ", ".join(f"{p['tag']}{' (' + p['confidence'] + ')' if p.get('confidence') else ''}" for p in (s["_c"].get("purposes") or []) if p["tag"] not in HIDDEN_PURPOSES),
             })
         max_total = max((r["total"] for r in records), default=1)
-        body = f"""<h1>Smokes</h1><p class="muted">All {len(records)} smokes from the tournament. Click a row to open it. Tags are {esc(AUTO_NOTE)}.</p>
+        body = f"""<h1>Smokes</h1><p class="muted">All {len(records)} smokes from the tournament. Click a row to open it. Tags are {esc(AUTO_NOTE)}. Damage shows the total with the concealed and detected parts under it.</p>
 <div class="filters">
 <label>Clan <select id="f-team"><option value="">all</option></select></label>
 <label>Player <select id="f-player"><option value="">all</option></select></label>
@@ -1396,9 +1436,9 @@ class Site:
 <label>Zone <select id="f-zone"><option value="">all</option></select></label>
 <label>Lane <select id="f-lane"><option value="">all</option></select></label>
 <label>Phase <select id="f-phase"><option value="">all</option></select></label>
-<label>Sort <select id="f-sort"><option value="total">smoke damage</option><option value="kills">kills from smoke</option><option value="deaths">smoke deaths</option><option value="radar">radar on us</option><option value="offensive">our radar detections</option><option value="swing">score change during the smoke</option><option value="depth">depth into a contested cap</option><option value="contested">distance to contested cap (nearest first)</option><option value="elapsed">time elapsed</option></select></label>
+<label>Sort <select id="f-sort"><option value="total">smoke damage</option><option value="concealed">concealed damage</option><option value="dd">DD damage</option><option value="kills">kills from smoke</option><option value="deaths">smoke deaths</option><option value="radar">radar on us</option><option value="offensive">our radar detections</option><option value="swing">score change during the smoke</option><option value="depth">depth into a contested cap</option><option value="contested">distance to contested cap (nearest first)</option><option value="elapsed">time elapsed</option></select></label>
 <span id="count" class="muted"></span></div>
-<div class="scroll-x"><table class="smokes" id="smokes"><thead><tr><th></th><th>Clan</th><th>Player</th><th>Ship</th><th>Map</th><th>Game</th><th>Clock</th><th><abbr class="term" title="{esc(AUTO_NOTE)}">Tags</abbr></th><th>Zone / lane</th><th>{term("Damage", DAMAGE_DEF)}</th><th>Distance to <abbr class="term" title="{esc(CONTEST_DEF)}">contested cap</abbr></th><th>Cap outcome</th><th><abbr class="term" title="{esc(RADAR_BAIT_DEF)}">Radar on us</abbr></th><th>{term("Our radar detections", METRIC_DEFS["offensive"])}</th><th>{term("Kills", METRIC_DEFS["kills"])}</th><th>{term("Smoke deaths", METRIC_DEFS["deaths"])}</th><th>{term("Selfish")}</th></tr></thead><tbody></tbody></table></div>
+<div class="scroll-x"><table class="smokes" id="smokes"><thead><tr><th></th><th>Clan</th><th>Player</th><th>Ship</th><th>Map</th><th>Game</th><th>Clock</th><th><abbr class="term" title="{esc(AUTO_NOTE)}">Tags</abbr></th><th>Zone / lane</th><th>{term("Damage", DAMAGE_DEF)}<br><span class="muted small">concealed / detected</span></th><th>{term("DD damage", DD_DEF)}</th><th>Distance to <abbr class="term" title="{esc(CONTEST_DEF)}">contested cap</abbr></th><th>Cap outcome</th><th><abbr class="term" title="{esc(RADAR_BAIT_DEF)}">Radar on us</abbr></th><th>{term("Our radar detections", METRIC_DEFS["offensive"])}</th><th>{term("Kills", METRIC_DEFS["kills"])}</th><th>{term("Smoke deaths", METRIC_DEFS["deaths"])}</th><th>{term("Selfish")}</th></tr></thead><tbody></tbody></table></div>
 <p id="empty" class="muted" hidden>Nothing here, just clear skies.</p>
 <script>window.SMOKES = {json.dumps(records)}; window.MAX_TOTAL = {max_total}; window.SELFISH_DEF = {json.dumps(SELFISH_DEF)};</script>"""
         self.write("smokes.html", self.page("Smokes", body, active="Smokes"))
@@ -1538,23 +1578,27 @@ class Site:
         denial = f"{den['enemies_before']:.1f} enemy ships in or near cap {den['cap']} in the minute before, {den['enemies_during']:.1f} while the smoke stood" if den else "-"
         o = s.get("offensive_radar")
         offensive = f"{o['enemies_spotted']} enemies spotted over {o['activations']} activation(s) by {o.get('ship') or 'a radar ship'} (inferred from the activation and radar range)" if o else "none"
-        # Violence: the damage split once, the shooters, the targets, then the bad news.
+        # Violence: the damage splits, the targets, then the bad news. Shooters live in the Smokees table.
         if s["_total"] > 0:
             split = svg_stacked_bar([("fired from inside", s["_in"]), ("fired from outside, hidden by it", s["_behind"])], ["#F5C542", "#5DADE2"])
+            parts = [("concealed", s["_concealed"]), ("detected", s["_detected"])] + ([("unknown", s["_unknown"])] if s["_unknown"] > 0 else [])
+            conceal = svg_stacked_bar(parts, ["#6EE7B7", "#F87171", "#64748B"])
             kinds = f"shells {fmt_int(s['_shell'])}, fires they started {fmt_int(s['_fire'])}"
+            by = ", ".join(f"{r['reason']} {fmt_int(r['damage'])}" for r in sorted(s["_detected_by"], key=lambda r: -r["damage"])) or "none"
         else:
             split = '<span class="muted">no smoke damage</span>'
+            conceal = '<span class="muted">-</span>'
             kinds = "-"
-        shooters = s.get("shooter_detail") or []
-        if shooters:
-            srows = "".join(f'<tr><td>{(f"<a href=\"{self.player_href(x["player"], 1)}\">{esc(x["player"])}</a>" if x["player"] in self.players else esc(x["player"]))}</td><td>{esc(x["ship"])}</td><td>{x["salvos"]}</td><td>{fmt_int(x["damage"])}</td><td>{x["kills"]}</td></tr>' for x in sorted(shooters, key=lambda x: -x["damage"]))
-            shooter_table = f'<table class="games small"><thead><tr><th>Shooter</th><th>Ship</th><th>Salvos</th><th>Damage</th><th>Kills</th></tr></thead><tbody>{srows}</tbody></table>'
-        else:
-            shooter_table = '<p class="muted small">No shooter was credited.</p>'
+            by = "-"
         targets = s.get("targets_hit") or []
         if targets:
-            trows = "".join(f'<tr><td>{esc(x["ship"])}</td><td>{esc(x["player"])}</td><td>{fmt_int(x["damage"])}</td><td>{"yes" if x["sunk"] else "no"}</td></tr>' for x in sorted(targets, key=lambda x: -x["damage"]))
-            target_table = f'<table class="games small"><thead><tr><th>Ship</th><th>Player</th><th>Damage</th><th>Sunk</th></tr></thead><tbody>{trows}</tbody></table>'
+            def trow(x):
+                cls = (x.get("ship_class") or "").lower()
+                mark = ' <span class="pill dd">DD</span>' if cls == "destroyer" else ""
+                sp = x.get("split") or {}
+                return f'<tr><td>{esc(x["ship"])}{mark}</td><td>{esc(x["player"])}</td><td>{fmt_int(sp.get("concealed", 0))}</td><td>{fmt_int(sp.get("detected", 0))}</td><td><b>{fmt_int(x["damage"])}</b></td><td>{"yes" if x["sunk"] else "no"}</td></tr>'
+            trows = "".join(trow(x) for x in sorted(targets, key=lambda x: -x["damage"]))
+            target_table = f'<table class="games small"><thead><tr><th>Ship</th><th>Player</th><th>Concealed</th><th>Detected</th><th>Total</th><th>Sunk</th></tr></thead><tbody>{trows}</tbody></table>'
         else:
             target_table = '<p class="muted small">No enemy ship was damaged from this smoke.</p>'
         spots = s.get("radar_detections_in_smoke") or []
@@ -1567,77 +1611,120 @@ class Site:
             smoke_deaths = f"{len(deaths)}: " + "; ".join(f"{x['player']} ({x['ship']}) sunk at {x['death'].get('clock') or '?'}, concealed {x['concealed']} the smoke" + (", after it cleared" if x.get("after_cleared") else "") for x in deaths)
         else:
             smoke_deaths = "none"
+        # Classification: plain values, a confidence dot, the numbers in tooltips.
         c = s["_c"]
         mv = c.get("movement") or {}
         cov = c.get("coverage") or {}
-        conf_tag = lambda conf: f' <span class="conf {conf}">{conf}</span>' if conf else ""
-        purposes = c.get("purposes") or []
+
+        def dot(conf):
+            if conf:
+                return f'<i class="dot {esc(conf)}" title="{esc(conf)} confidence"></i>'
+            return '<i class="dot rule" title="rule-based, no confidence"></i>'
+
+        def nice(label):
+            return (label or "").replace("_", " ").capitalize()
+
+        def val(text, definition, detail):
+            title = definition + (f" | {detail}" if detail else "")
+            return f'<abbr class="term val" title="{esc(title)}">{esc(text)}</abbr>'
+
+        purposes = [p for p in c.get("purposes") or [] if p["tag"] not in HIDDEN_PURPOSES]
         if purposes:
-            plist = "".join(f'<li>{"<b>" if i == 0 else ""}{term(p["tag"], PURPOSE_DEFS.get(p["tag"], ""))}{"</b> (primary)" if i == 0 else ""}{conf_tag(p.get("confidence"))}<span class="muted small"> {esc(p.get("reason") or "")}</span></li>' for i, p in enumerate(purposes))
+            plist = "".join(f'<li>{val(nice(p["tag"]), PURPOSE_DEFS.get(p["tag"], ""), p.get("reason") or "")}{" <span class=\"muted small\">primary</span>" if i == 0 else ""}{dot(p.get("confidence"))}</li>' for i, p in enumerate(purposes))
             purposes_html = f'<ul class="tags">{plist}</ul>'
         else:
             purposes_html = '<span class="muted">none of the tactic tags applied</span>'
         special = ", ".join(c.get("special") or [])
-        smoker = f"{esc(s['_class'])} ({esc(s['_type'])} smoke)" + (f' <span class="note">{esc(special)}</span>' if special else "")
-        movement = (f'{term(mv["label"], MOVEMENT_DEFS.get(mv["label"], ""))}{conf_tag(mv.get("confidence"))} <span class="muted small">{esc(mv.get("reason") or "")}</span>' if mv else '<span class="muted">unknown (no enemy or smoker position)</span>')
-        coverage = f'{term(cov.get("label") or "?", COVERAGE_DEFS.get(cov.get("label") or "", ""))} <span class="muted small">{esc(cov.get("reason") or "")}</span>'
+        smoker = f"{esc(nice(s['_class']))}, {esc(s['_type'])} smoke" + (f' <span class="note">{esc(special)}</span>' if special else "")
+        if mv:
+            movement = val(nice(mv["label"]), MOVEMENT_DEFS.get(mv["label"], ""), mv.get("reason") or "") + dot(mv.get("confidence"))
+        else:
+            movement = '<span class="muted">unknown (no enemy or smoker position)</span>'
+        coverage = val(nice(cov.get("label") or "?"), COVERAGE_DEFS.get(cov.get("label") or "", ""), cov.get("reason") or "") + dot(None)
         where = []
+        where_detail = []
         if s["_zone"]:
             where.append(f"zone {s['_zone']}")
+            if s.get("_grid"):
+                where_detail.append(f"grid {s['_grid']}")
         if s["_lane"]:
-            where.append(f"{s['_lane']} lane" + (f" ({c['lane_offset_m'] / 1000:+.1f} km from the spawn axis)" if c.get("lane_offset_m") is not None else ""))
+            where.append(f"{s['_lane']} lane")
+            if c.get("lane_offset_m") is not None:
+                where_detail.append(f"{c['lane_offset_m'] / 1000:+.1f} km from the spawn axis")
         if s["_cap_role"]:
             where.append(f"nearest cap {c.get('cap_role_cap') or '?'} is a {s['_cap_role']} cap" + (" on the flank" if c.get("cap_flank") else ""))
-        front = []
+        location = val("; ".join(where), "Zone from the map profile, lane and cap role from the smoker's spawn facing the enemy.", "; ".join(where_detail)) if where else "-"
+        front_detail = []
+        front_text = "-"
         if c.get("frontline_distance_m") is not None:
             v = c["frontline_distance_m"] / 1000
-            front.append(f"{abs(v):.1f} km {'past' if v > 0 else 'behind'} the midpoint between the fleets")
+            front_text = f"{'past' if v > 0 else 'behind'} the midpoint between the fleets"
+            front_detail.append(f"{abs(v):.1f} km {'past' if v > 0 else 'behind'} the midpoint")
         if c.get("nearest_enemy_m") is not None:
-            front.append(f"nearest enemy {c['nearest_enemy_m'] / 1000:.1f} km")
+            front_detail.append(f"nearest enemy {c['nearest_enemy_m'] / 1000:.1f} km")
         if c.get("land_distance_m") is not None:
-            front.append(f"land {c['land_distance_m'] / 1000:.1f} km away")
+            front_detail.append(f"land {c['land_distance_m'] / 1000:.1f} km away")
+            if front_text == "-":
+                front_text = "near land" if c["land_distance_m"] <= 1000 else "in open water"
+        front = val(front_text, "Where the smoke stood relative to the two fleets at activation.", "; ".join(front_detail)) if front_detail else "-"
         counter = ""
         if c.get("counter_smoke_of"):
             other = next((x for x in self.d.by_game.get(s["_key"], []) if x["smoke_id"] == c["counter_smoke_of"]), None)
             link = f'<a href="{other["_slug"]}.html">{esc(other["player"])} {esc(other["ship"])}</a>' if other else f'enemy smoke {c["counter_smoke_of"]}'
-            counter = f'<tr><td>Counter to</td><td>{link}</td></tr>'
-        classification = f"""<div class="card classify"><h3>Classification <span class="muted small">{esc(AUTO_NOTE)}</span></h3><table class="kv">
+            reason = next((p.get("reason") for p in purposes if p["tag"] == "counter_smoke"), "")
+            counter = f'<tr><td>Counter to</td><td>{link} <span class="muted small">{esc(reason)}</span></td></tr>'
+        classification = f"""<div class="card classify"><h3>Classification <span class="muted small">{esc(AUTO_NOTE)}; hover a value for the numbers</span></h3><table class="kv">
 <tr><td>Smoker</td><td>{smoker}</td></tr>
 <tr><td>Movement</td><td>{movement}</td></tr>
 <tr><td>Coverage</td><td>{coverage}</td></tr>
 <tr><td>Purpose</td><td>{purposes_html}</td></tr>
-<tr><td>Location</td><td>{esc("; ".join(where)) or "-"}</td></tr>
-<tr><td>Front line</td><td>{esc("; ".join(front)) or "-"}</td></tr>
-<tr><td>Caps in range</td><td>{esc(", ".join(c.get("caps_in_range") or [])) or "none"}</td></tr>{counter}</table></div>"""
+<tr><td>Location</td><td>{location}</td></tr>
+<tr><td>Front line</td><td>{front}</td></tr>
+<tr><td>Caps in range</td><td>{esc(", ".join(c.get("caps_in_range") or [])) or "none"}</td></tr>{counter}</table>
+<p class="conf-key">Confidence: <i class="dot high"></i> high <i class="dot medium"></i> medium <i class="dot low"></i> low <i class="dot rule"></i> rule-based</p></div>"""
+        # Smokees: every covered ally and every credited shooter, numbered as on the zoomed view.
         smokees = s.get("smokees") or []
         if smokees:
-            def det(m):
-                if not m["detections"]:
-                    return '<span class="muted">not detected</span>'
-                return ", ".join(f'{esc(x["kind"])}{" (inferred)" if x.get("inferred") else ""}' for x in m["detections"])
-            how_text = {"inside": "inside", "behind": "fired from behind", "line_of_fire": "smoke in the line of fire"}
-            mrows = "".join(f'<tr><td>{esc(m["ship"])}</td><td>{(f"<a href=\"{self.player_href(m["player"], 1)}\">" + esc(m["player"]) + "</a>") if m["player"] in self.players else esc(m["player"])}</td><td class="small muted">{how_text.get(m["how"], m["how"])}, {m["seconds_concealed"]:.0f} s</td><td>{det(m)}</td><td>{fmt_int(m["damage"])}</td><td>{m["kills"]}</td></tr>' for m in sorted(smokees, key=lambda m: -m["damage"]))
-            smokees_html = f'<div class="card"><h3>Smokees <span class="muted small">allied ships inside, firing from behind, or with the smoke in their line of fire</span></h3><table class="games small"><thead><tr><th>Ship</th><th>Player</th><th>How</th><th>Detected</th><th>Damage dealt</th><th>Kills</th></tr></thead><tbody>{mrows}</tbody></table></div>'
+            role_text = {"smoker": "smoker", "inside": "inside", "behind": "behind", "line_of_fire": "line of fire"}
+
+            def reasons(m):
+                by = sorted(m.get("detected_by") or [], key=lambda r: -r["seconds"])
+                if by:
+                    return ", ".join(f'{esc(r["kind"])}{" (inferred)" if r.get("inferred") else ""} {r["seconds"]:.0f} s' for r in by)
+                if m.get("detections"):
+                    return ", ".join(f'{esc(x["kind"])}{" (inferred)" if x.get("inferred") else ""}' for x in m["detections"])
+                return '<span class="muted">-</span>'
+
+            def mrow(m):
+                sp = m.get("split") or {}
+                pct = f'{m["undetected_pct"]:.0f}%' if m.get("undetected_pct") is not None else '<span class="muted">-</span>'
+                who = (f'<a href="{self.player_href(m["player"], 1)}">' + esc(m["player"]) + "</a>") if m["player"] in self.players else esc(m["player"])
+                return (f'<tr><td><span class="nbadge">{m.get("badge", "")}</span></td><td>{esc(m["ship"])}</td><td>{who}</td><td>{role_text.get(m.get("role"), m.get("role"))}</td>'
+                        f'<td title="{m["seconds_concealed"]:.0f} s covered">{pct}</td><td class="small">{reasons(m)}</td><td>{fmt_int(sp.get("concealed", 0))} / {fmt_int(sp.get("detected", 0))}</td><td>{fmt_int(m.get("damage_taken", 0))}</td><td>{m["kills"]}</td></tr>')
+            mrows = "".join(mrow(m) for m in sorted(smokees, key=lambda m: m.get("badge", 0)))
+            smokees_html = f'<div class="card"><h3>Smokees <span class="muted small">the smoker, every ally the smoke covered (inside it, firing undetected from behind it, or with it in their line of fire) and every credited shooter; numbers match the zoomed view</span></h3><div class="scroll-x"><table class="games small"><thead><tr><th></th><th>Ship</th><th>Player</th><th>Role</th><th title="share of the covered time while undetected">Undetected</th><th>Detected by (time)</th><th>{term("Damage dealt", CONCEALED_DEF)}<br><span class="muted">concealed / detected</span></th><th>Damage taken while covered</th><th>Kills</th></tr></thead><tbody>{mrows}</tbody></table></div></div>'
         else:
             smokees_html = '<div class="card"><h3>Smokees</h3><p class="muted small">No allied ship was covered by this smoke.</p></div>'
         deployment = f"""<div class="card"><h3>Deployment</h3><table class="kv">
 <tr><td>Duration</td><td>{esc(dur)}</td></tr>
 <tr><td>Allies in smoke at capture</td><td>{esc(', '.join(s.get('allies_in_smoke') or [])) or 'none'}</td></tr>
 <tr><td>{term('Selfish smoke')}</td><td>{selfish}</td></tr>
-<tr><td>Tags</td><td class="muted">untagged</td></tr></table></div>"""
+<tr><td>Hand tags</td><td class="muted">untagged</td></tr></table></div>"""
         violence = f"""<div class="card"><h3>Violence</h3><table class="kv">
 <tr><td>{term('Smoke damage', DAMAGE_DEF)}</td><td><b>{fmt_int(s['_total'])}</b></td></tr>
+<tr><td>{term('Concealed vs detected', CONCEALED_DEF)}</td><td>{conceal}</td></tr>
+<tr><td>Detected shooters were spotted by</td><td>{esc(by)}</td></tr>
 <tr><td>By where the shooter sat</td><td>{split}</td></tr>
 <tr><td>By kind</td><td>{esc(kinds)}</td></tr>
+<tr><td>{term('DD damage', DD_DEF)}</td><td><b>{fmt_int(s['_dd'])}</b></td></tr>
 <tr><td>{term('Kills from smoke', METRIC_DEFS['kills'])}</td><td><b>{s['_kills']}</b></td></tr></table>
-<h4>Shooters credited</h4>{shooter_table}
+<p class="muted small">Shooters credited are in the Smokees table below.</p>
 <h4>Enemy ships damaged from the smoke</h4>{target_table}
 <div class="bad"><h4>The bad news</h4><table class="kv">
 <tr><td><abbr class="term" title="{esc(RADAR_BAIT_DEF)}">Radar spots on us</abbr></td><td>{esc(radar_on_us)}</td></tr>
 <tr><td>{term('Smoke deaths', METRIC_DEFS['deaths'])}</td><td>{esc(smoke_deaths)}</td></tr></table></div></div>"""
         objectives = f"""<div class="card"><h3>Objectives</h3><table class="kv">
-<tr><td>Cap proximity at capture</td><td>{esc(cap_text(s))}</td></tr>
-<tr><td>{term('Contested cap', CONTEST_DEF)}</td><td>{esc(contested_text(s))}</td></tr>
+<tr><td><abbr class="term" title="{esc(CONTEST_DEF)} Averaged over the smoke's life, edge to edge. At capture: {esc(cap_text(s))}.">Distance to contested cap</abbr></td><td>{esc(contested_text(s))}</td></tr>
 <tr><td>Cap outcome</td><td>{esc(cap_outcome_text(s))}</td></tr>
 <tr><td>Denial signal</td><td>{esc(denial)}</td></tr>
 <tr><td>Score at capture</td><td>{esc(st.get('score_ours', '-'))} : {esc(st.get('score_theirs', '-'))}{(' (swing ' + f"{s['_score_swing']:+d}" + ')') if s['_score_swing'] is not None else ''}</td></tr>
@@ -1645,16 +1732,15 @@ class Site:
 <tr><td>{term('Radar cap coverage', METRIC_DEFS['coverage'])}</td><td>{esc(radar_cap)}</td></tr></table></div>"""
         body = f"""<h1>{self.team_tag(s['team'])} <a href="{self.player_href(s['player'], 1)}">{esc(s['player'])}</a> <span class="muted">{esc(s['ship'])}</span></h1>
 <p class="muted">{esc(self.d.map_title(s['map']))} | {esc(s['_games_label'])} | activated {esc(s['_act_clock'])} ({elapsed_text(s['_elapsed']) if s['_elapsed'] is not None else '?'} elapsed, {s['_phase'] or ''}), captured {esc(s['_cap_clock'])} | {esc(s.get('smoke_type') or '')} smoke {esc(s.get('variant') or '')}</p>
-<p class="big">{fmt_int(s['_total'])} smoke damage{(', ' + str(s['_kills']) + (' kill' if s['_kills'] == 1 else ' kills')) if s['_kills'] else ''}</p>{flag}{overlap}
+<p class="big">{fmt_int(s['_total'])} smoke damage{(', ' + str(s['_kills']) + (' kill' if s['_kills'] == 1 else ' kills')) if s['_kills'] else ''} <span class="muted small">{fmt_int(s['_concealed'])} concealed, {fmt_int(s['_detected'])} detected</span></p>{flag}{overlap}
 <section class="frames one"><figure>{self.img(s, 'frame_cap', 1, lazy=False)}<figcaption>The full map at capture, when the smoke was fully laid ({esc(s['_cap_clock'])}).</figcaption></figure></section>
-<section class="frames zoomed"><figure>{self.img(s, 'frame_cap_zoom', 1, lazy=False)}<figcaption>Zoomed to half the map, centred on the smoke: the ships in and around it, their headings, and the credited fire lines labelled with damage.</figcaption></figure></section>
+<section class="frames zoomed"><figure>{self.img(s, 'frame_cap_zoom', 1, lazy=False)}<figcaption>Zoomed to the smoke, every smokee (numbered as in the Smokees table) and every enemy damaged from it, at least half the map: ships and headings, the smoke, the caps, and the credited fire lines labelled with damage.</figcaption></figure></section>
 {clip}
 {classification}
 <div class="groups"><div>{deployment}{objectives}</div>{violence}</div>
 {smokees_html}
 <nav class="smoke-nav">{" | ".join(nav)}</nav>"""
         self.write(f"smokes/{s['_slug']}.html", self.page(f"{s['player']} {s['ship']} {s['_act_clock']}", body, depth=1, active="Smokes"))
-
 
 FALLBACK_MAP_TITLES = {"16_OC_bees_to_honey": "Hotspot", "45_Zigzag": "Loop", "40_Okinawa": "Okinawa", "22_tierra_del_fuego": "Land of Fire", "58_RidgeNew": "Mountain Range", "47_Sleeping_Giant": "Sleeping Giant", "25_sea_hope": "Sea of Fortune"}
 SMOKE_TYPES = [("standard", "#CBD5E1"), ("cruiser", "#6EE7B7"), ("exhaust", "#FB923C"), ("crawling", "#F472B6")]
@@ -1678,6 +1764,10 @@ abbr.term{text-decoration:underline dotted;cursor:help}
 .pill{display:inline-block;padding:0 6px;border-radius:999px;background:#2A4258;font-size:.8em}.pill.cls{background:#F5C542;color:#07131f;font-weight:700}.tagcell{min-width:150px}
 .conf{display:inline-block;padding:0 5px;border-radius:4px;font-size:.75em;margin-left:4px}.conf.high{background:#166534;color:#DCFCE7}.conf.medium{background:#854D0E;color:#FEF9C3}.conf.low{background:#7F1D1D;color:#FEE2E2}
 .tags{margin:0;padding-left:18px}.tags li{margin:2px 0}.classify{border-left:5px solid #B388FF;margin:12px 0}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-left:6px;vertical-align:middle;cursor:help;border:1px solid #07131f}.dot.high{background:#22C55E}.dot.medium{background:#EAB308}.dot.low{background:#EF4444}.dot.rule{background:#94A3B8}
+.classify .val{cursor:help;text-decoration:underline dotted}.classify .tags li{list-style:none;margin-left:-18px}
+.nbadge{display:inline-block;min-width:20px;height:20px;line-height:18px;border-radius:50%;background:#F5C542;color:#07131f;font-weight:700;text-align:center;font-size:.8em;border:1px solid #07131f}.pill.dd{background:#F87171;color:#07131f;font-weight:700}
+.conf-key{font-size:.8em;color:var(--muted)}
 .badge.all{background:#334155;color:#CBD5E1}.filters.lens{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 10px;align-items:center}
 .lens-toggle{margin:8px 0}.lens-toggle button{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:4px 10px;margin-right:6px;cursor:pointer}.lens-toggle button.on{background:#F5C542;color:#07131f}
 .mapwrap .zones{display:none}.mapwrap.showzones .zones{display:block}
@@ -1694,12 +1784,12 @@ table.kv td{padding:3px 8px 3px 0;vertical-align:top}table.kv td:first-child{col
 .frames.one{margin:8px 0}.frames.zoomed{max-width:780px;margin:8px auto 12px}.frames img{width:100%;border-radius:6px;border:1px solid var(--line)}
 .groups{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0}.groups .card{margin-bottom:16px}.groups h4{margin:12px 0 4px}.bad{border-top:2px solid #F87171;margin-top:12px;padding-top:6px}.bad h4{color:#F87171;margin-top:4px}table.games.small{font-size:.85em}.frames figure{margin:0}.frames figcaption{color:var(--muted);font-size:.8em;margin-top:4px}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.mapwrap{position:relative;width:100%}.mapwrap img{width:100%;display:block;border-radius:8px}.mapwrap svg{position:absolute;inset:0;width:100%;height:100%}
+.mapwrap{position:relative;width:100%;align-self:start}.mapwrap svg.mapsvg{display:block;width:100%;height:auto;aspect-ratio:1/1;border-radius:8px}
 .mapwrap .grid line{stroke:#fff;stroke-opacity:.18;stroke-width:1}.mapwrap .gridlabels text{fill:#fff;fill-opacity:.7;font-size:12px;text-anchor:middle;font-weight:600}
 .mapwrap .caps circle{fill:#fff;fill-opacity:.08;stroke:#fff;stroke-opacity:.6;stroke-width:1.5;stroke-dasharray:5,4}.mapwrap .caplabel{fill:#fff;fill-opacity:.85;font-size:20px;font-weight:700;text-anchor:middle}
 .mapwrap .smokepath polyline{fill:none;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;opacity:.9}.mapwrap .smokepath:hover polyline{stroke-width:6;opacity:1}.mapwrap .smokepath.hide{display:none}
 .ships{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}.ships .legend-row{flex-direction:column;gap:2px}
-.mapcol{grid-template-columns:3fr 2fr}.chart{display:grid;gap:10px}.charts{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:12px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 10px}.panel h4{margin:0 0 4px;font-size:.9em;color:var(--muted)}
+.mapcol{grid-template-columns:3fr 2fr;align-items:start}.chart{display:grid;gap:10px}.charts{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:12px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 10px}.panel h4{margin:0 0 4px;font-size:.9em;color:var(--muted)}
 svg.chart .lbl{fill:var(--text);font-size:11px}svg.chart .val{fill:var(--muted);font-size:11px}svg.chart .zero{stroke:#94A3B8;stroke-width:1}
 .chart .row,.cchart .row,#player-chart .row{display:grid;grid-template-columns:52px 1fr 90px;align-items:center;gap:6px;font-size:.85em;margin:2px 0}.chart .row .bar,.cchart .row .bar,#player-chart .row .bar{position:relative;height:12px;background:#0B1C2C;border-radius:3px}.chart .row .bar i,.cchart .row .bar i,#player-chart .row .bar i{position:absolute;top:0;height:100%;border-radius:3px}.chart .row .bar b,.cchart .row .bar b{position:absolute;top:-2px;bottom:-2px;width:1px;background:#94A3B8}.chart .row span:last-child,.cchart .row span:last-child,#player-chart .row span:last-child{text-align:right}.chart .row.dim{opacity:.4}
 .lens-set[hidden]{display:none}
@@ -1966,7 +2056,8 @@ JS = r"""(function(){
         '<td class="small" title="'+r.game.replace(/"/g,'&quot;')+'">'+r.game_short+'</td><td>'+(r.elapsed!=null?clockText(r.elapsed):'?')+'</td>'+
         '<td class="small tagcell" title="'+r.tags_text.replace(/"/g,'&quot;')+'"><span class="pill cls">'+r.cls_short+'</span> <span class="pill">'+r.movement+'</span> <span class="pill">'+r.coverage+'</span><br>'+(r.primary==='none'?'<span class="muted">no tactic</span>':'<b>'+r.primary+'</b>')+(r.purposes.length>1?' <span class="muted">+'+(r.purposes.length-1)+'</span>':'')+'</td>'+
         '<td class="small">'+(r.zone||'-')+'<br><span class="muted">'+(r.lane?r.lane+' lane':'')+'</span></td>'+
-        '<td>'+r.total.toLocaleString()+' '+bar(r.total, window.MAX_TOTAL, '#F5C542')+'</td>'+
+        '<td>'+r.total.toLocaleString()+' '+bar(r.total, window.MAX_TOTAL, '#F5C542')+'<br><span class="muted small">'+r.concealed.toLocaleString()+' / '+r.detected.toLocaleString()+'</span></td>'+
+        '<td>'+r.dd.toLocaleString()+'</td>'+
         '<td>'+con+'</td><td>'+outcome+'</td><td>'+r.radar+'</td><td>'+r.offensive+'</td><td>'+r.kills+'</td><td>'+r.deaths+'</td><td>'+(r.selfish?'yes':'no')+'</td></tr>';
     }).join('');
     Array.from(tbody.querySelectorAll('tr[data-href]')).forEach(function(tr){ tr.addEventListener('click', function(){ location.href = tr.dataset.href; }); });

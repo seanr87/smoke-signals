@@ -24,6 +24,7 @@ use crate::records::OffensiveRadar;
 use crate::records::PurposeTag;
 use crate::records::Smokee;
 use crate::records::SmokeeDetection;
+use crate::records::SmokeeReason;
 use crate::records::SmokeType;
 use crate::tier2::ConsumableRanges;
 use crate::tier2::SmokeTier2;
@@ -31,6 +32,8 @@ use crate::timeline;
 
 /// Ships cover map distance at about 2.6 times their listed speed, so a
 /// destroyer lays a standard smoke over 2 to 5 km of map.
+/// Movement: a displacement under this while laying is stationary.
+pub const STATIONARY_M: f32 = 500.0;
 /// Movement: a laying path shorter than this is too short to judge.
 pub const MOVE_MIN_PATH_M: f32 = 1000.0;
 /// Movement: a path at least this long gives high confidence.
@@ -44,13 +47,16 @@ pub const MOVE_ANGLE_MARGIN_DEG: f32 = 15.0;
 pub const MOVE_ENEMY_GROUP: usize = 3;
 /// Coverage: a destroyer within this of an allied cruiser or battleship at laying start is stacked.
 pub const STACKED_M: f32 = 2500.0;
-/// Purpose: a concealed radar covering at least this share of a cap is cap control.
+/// Purpose: cap control needs a concealed radar activated while covering at
+/// least this share of the contested cap.
 pub const CAP_CONTROL_PCT: f32 = 90.0;
 /// Purpose: a smoke within this of a contested cap's edge on average contests it.
 pub const CAP_CONTEST_M: f32 = 1000.0;
 /// Purpose: a counter smoke is laid within this of an enemy smoke, this long after it.
-pub const COUNTER_SMOKE_M: f32 = 3000.0;
-pub const COUNTER_SMOKE_SECONDS: f32 = 25.0;
+pub const COUNTER_SMOKE_M: f32 = 12000.0;
+pub const COUNTER_SMOKE_SECONDS: f32 = 45.0;
+/// A counter smoke candidate this close to the distance limit is borderline.
+pub const COUNTER_SMOKE_MARGIN_M: f32 = 100.0;
 /// Purpose: "next to an island" is within this of land.
 pub const ISLAND_M: f32 = 1000.0;
 /// Purpose: island dive and reposition need at least this displacement under the smoke.
@@ -59,8 +65,10 @@ pub const DIVE_HIGH_M: f32 = 4000.0;
 pub const REPOSITION_MIN_M: f32 = 3000.0;
 pub const REPOSITION_MEDIUM_M: f32 = 4000.0;
 pub const REPOSITION_HIGH_M: f32 = 6000.0;
-/// Purpose: damage qualifies at this total, or at two or more enemies hit.
+/// Purpose: the damage purpose needs this much smoke damage.
 pub const DAMAGE_QUALIFY: f32 = 20000.0;
+/// Smokee: a damage event this close to a covered sample happened while covered.
+pub const COVERED_HIT_SECONDS: f32 = 2.0;
 /// Purpose: escape needs the smoker's HP at or below this share.
 pub const ESCAPE_LOW_HP_PCT: f32 = 50.0;
 /// Smokee: an enemy within this is a proximity detection.
@@ -213,6 +221,48 @@ fn detected(g: &GameContext<'_>, e: EntityId, t: f32) -> bool {
     (g.flags_at)(e, GameClock(t)).is_some_and(|f| f.is_detected())
 }
 
+/// Every way `flags` says a ship is spotted, in priority order, with whether
+/// the kind is inferred. The ship flag is proximity when an enemy is within
+/// `PROXIMITY_M` (`near`), else surface lit.
+pub fn detection_kinds(flags: VisibilityFlags, near: bool) -> Vec<(&'static str, bool)> {
+    let mut kinds: Vec<(&'static str, bool)> = Vec::new();
+    if flags.contains(VisionFlag::Rls) || flags.contains(VisionFlag::RlsPersonal) {
+        kinds.push(("radar", false));
+    }
+    if flags.contains(VisionFlag::Sonar) {
+        kinds.push(("hydro", false));
+    }
+    if flags.contains(VisionFlag::Smoke) {
+        kinds.push(("smoke fire penalty", false));
+    }
+    if flags.contains(VisionFlag::MainPlane) || flags.contains(VisionFlag::MiscPlane) || flags.contains(VisionFlag::Recon) {
+        kinds.push(("aircraft", false));
+    }
+    if flags.contains(VisionFlag::Pinger) || flags.contains(VisionFlag::SubmarineLocator) {
+        kinds.push(("submarine", false));
+    }
+    if flags.contains(VisionFlag::CommonXRay) {
+        kinds.push(("proximity", false));
+    }
+    if flags.contains(VisionFlag::Ship) {
+        kinds.push(if near { ("proximity", true) } else { ("surface lit", false) });
+    }
+    if kinds.is_empty() {
+        kinds.push(("other", true));
+    }
+    kinds
+}
+
+/// The one reason a spotted ship is charged with: the first of `detection_kinds`.
+pub fn detection_reason(flags: VisibilityFlags, near: bool) -> (&'static str, bool) {
+    detection_kinds(flags, near)[0]
+}
+
+fn near_enemy(g: &GameContext<'_>, enemy: i64, pos: WorldPos, t: f32) -> bool {
+    let proximity = timeline::world_units(PROXIMITY_M);
+    ships_of_team(g, enemy).filter(|x| alive(g, *x, t)).filter_map(|x| pos_at(g, x, t)).any(|x| timeline::ground_distance(pos, x) <= proximity)
+}
+
 fn centroid(points: &[WorldPos]) -> Option<WorldPos> {
     if points.is_empty() {
         return None;
@@ -306,9 +356,11 @@ pub fn movement(g: &GameContext<'_>, s: &SmokeContext<'_>) -> Option<Movement> {
     let path_m = timeline::meters(timeline::ground_distance(start, end));
     let angle = angle_deg(end.0.x - start.0.x, end.0.z - start.0.z, target.0.x - start.0.x, target.0.z - start.0.z);
     let closing_m = timeline::meters(timeline::ground_distance(end, target) - timeline::ground_distance(start, target));
-    let label = if path_m < 1.0 {
-        "horizontal"
-    } else if angle <= MOVE_PUSH_ANGLE_DEG {
+    if path_m < STATIONARY_M {
+        let reason = format!("moved only {} while laying", fmt_m(path_m));
+        return Some(Movement { label: "stationary".to_string(), confidence: "high".to_string(), path_m, angle_deg: angle, closing_m, reason });
+    }
+    let label = if angle <= MOVE_PUSH_ANGLE_DEG {
         "pushing"
     } else if angle >= MOVE_KITE_ANGLE_DEG {
         "kiting"
@@ -352,7 +404,8 @@ pub fn coverage(g: &GameContext<'_>, s: &SmokeContext<'_>, smokees: &[Smokee], o
             }
         }
     }
-    let covered: Vec<&Smokee> = smokees.iter().filter(|m| Some(EntityId::from(m.entity_id)) != s.owner).collect();
+    // Shooters credited between samples are listed as smokees but were never seen covered.
+    let covered: Vec<&Smokee> = smokees.iter().filter(|m| Some(EntityId::from(m.entity_id)) != s.owner && m.how != "none").collect();
     let screen = !covered.is_empty();
     let selfish = stacked_with.is_none() && !screen;
     let (label, reason) = if let Some((who, d)) = &stacked_with {
@@ -366,31 +419,62 @@ pub fn coverage(g: &GameContext<'_>, s: &SmokeContext<'_>, smokees: &[Smokee], o
     Coverage { label: label.to_string(), stacked: stacked_with.is_some(), screen, selfish, reason }
 }
 
-/// Smokees: allies inside the smoke, firing from behind it, or with the
-/// smoke between them and an enemy in their line of fire, sampled over the
-/// smoke's life, with every detection while covered.
+/// Cover seen for one ally over the smoke's samples.
+#[derive(Default)]
+struct Cover {
+    rank: u8,
+    seconds: f32,
+    times: Vec<f32>,
+    undetected_s: f32,
+    detected_s: f32,
+    /// Covered seconds while spotted, by (kind, inferred).
+    by_reason: BTreeMap<(String, bool), f32>,
+    detections: Vec<SmokeeDetection>,
+}
+
+/// Smokees: allies inside the smoke, firing undetected from behind it, or
+/// with the smoke between them and an enemy in their line of fire, sampled
+/// over the smoke's life, with every detection while covered. The smoker
+/// and every credited shooter are listed even when never covered at a
+/// sample.
 pub fn smokees(g: &GameContext<'_>, s: &SmokeContext<'_>) -> Vec<Smokee> {
     let Some(team) = s.owner_team else { return Vec::new() };
     let Some(enemy) = enemy_team(g, team) else { return Vec::new() };
-    // Firing moments with this smoke in the shooter's behind_smokes.
-    let behind_fires: Vec<(EntityId, f32)> =
-        g.events.iter().filter(|e| e.behind_smokes.contains(&s.id)).map(|e| (EntityId::from(e.attacker), e.fire_seconds)).collect();
-    let mut covered: BTreeMap<u32, (u8, f32, Vec<f32>)> = BTreeMap::new();
+    let behind_fires: Vec<(EntityId, f32)> = g
+        .events
+        .iter()
+        .filter(|e| e.behind_smokes.contains(&s.id) && e.attacker_detected_at_fire == Some(false))
+        .map(|e| (EntityId::from(e.attacker), e.fire_seconds))
+        .collect();
+    let mut covered: BTreeMap<u32, Cover> = BTreeMap::new();
+    if let Some(owner) = s.owner.filter(|o| g.ships.contains_key(o)) {
+        covered.entry(owner.raw() as u32).or_default();
+    }
+    for e in s.damage.map(|d| d.shooter_stats.keys().copied().collect::<Vec<_>>()).unwrap_or_default() {
+        if g.ships.contains_key(&EntityId::from(e)) {
+            covered.entry(e).or_default();
+        }
+    }
     let mut prev_t: Option<f32> = None;
     let mut prev_covered: HashSet<EntityId> = HashSet::new();
+    // The smoker stands in its newest puff while laying; the replay shows
+    // the puff some seconds later, by which time a moving destroyer has
+    // sailed clear of it. The same fallback for the end as `movement`.
+    let laying_end = s.emission_end.unwrap_or(s.removed.unwrap_or(s.emission_from + 20.0));
     for (clock, puffs) in s.samples {
         let t = clock.seconds();
         let dt = prev_t.map(|p| t - p).unwrap_or(0.0);
         prev_t = Some(t);
-        if puffs.is_empty() {
-            prev_covered.clear();
-            continue;
-        }
+        let laying = t >= s.emission_from && t <= laying_end;
         let enemies: Vec<WorldPos> = ships_of_team(g, enemy).filter(|e| alive(g, *e, t)).filter_map(|e| pos_at(g, e, t)).collect();
         let mut now_covered: HashSet<EntityId> = HashSet::new();
         for ally in ships_of_team(g, team).filter(|e| alive(g, *e, t)) {
             let Some(pos) = pos_at(g, ally, t) else { continue };
-            let rank = if inside(pos, puffs, s.radius) {
+            let owner_laying = laying && s.owner == Some(ally);
+            if puffs.is_empty() && !owner_laying {
+                continue;
+            }
+            let rank = if owner_laying || inside(pos, puffs, s.radius) {
                 HOW_INSIDE
             } else if behind_fires.iter().any(|(e, f)| *e == ally && (f - t).abs() <= BEHIND_WINDOW_SECONDS) {
                 HOW_BEHIND
@@ -403,85 +487,102 @@ pub fn smokees(g: &GameContext<'_>, s: &SmokeContext<'_>) -> Vec<Smokee> {
                 }
             };
             now_covered.insert(ally);
-            let entry = covered.entry(ally.raw() as u32).or_insert_with(|| (rank, 0.0, Vec::new()));
-            entry.0 = entry.0.max(rank);
-            if prev_covered.contains(&ally) {
-                entry.1 += dt;
+            let entry = covered.entry(ally.raw() as u32).or_default();
+            entry.rank = entry.rank.max(rank);
+            let continuous = prev_covered.contains(&ally);
+            if continuous {
+                entry.seconds += dt;
             }
-            entry.2.push(t);
-        }
-        prev_covered = now_covered;
-    }
-    let proximity = timeline::world_units(PROXIMITY_M);
-    covered
-        .into_iter()
-        .map(|(raw, (rank, seconds, times))| {
-            let e = EntityId::from(raw);
-            let info = &g.ships[&e];
-            let how = match rank {
-                HOW_INSIDE => "inside",
-                HOW_BEHIND => "behind",
-                _ => "line_of_fire",
-            }
-            .to_string();
-            let mut detections: Vec<SmokeeDetection> = Vec::new();
-            let mut seen: HashSet<String> = HashSet::new();
-            for t in &times {
-                let Some(flags) = (g.flags_at)(e, GameClock(*t)) else { continue };
+            entry.times.push(t);
+            if let Some(flags) = (g.flags_at)(ally, GameClock(t)) {
                 if !flags.is_detected() {
+                    if continuous {
+                        entry.undetected_s += dt;
+                    }
                     continue;
                 }
-                let mut kinds: Vec<(&str, bool)> = Vec::new();
-                if flags.contains(VisionFlag::Rls) || flags.contains(VisionFlag::RlsPersonal) {
-                    kinds.push(("radar", false));
-                }
-                if flags.contains(VisionFlag::Sonar) {
-                    kinds.push(("hydro", false));
-                }
-                if flags.contains(VisionFlag::Smoke) {
-                    kinds.push(("smoke fire penalty", false));
-                }
-                if flags.contains(VisionFlag::MainPlane) || flags.contains(VisionFlag::MiscPlane) || flags.contains(VisionFlag::Recon) {
-                    kinds.push(("aircraft", false));
-                }
-                if flags.contains(VisionFlag::Pinger) || flags.contains(VisionFlag::SubmarineLocator) {
-                    kinds.push(("submarine", false));
-                }
-                if flags.contains(VisionFlag::CommonXRay) {
-                    kinds.push(("proximity", false));
-                }
-                if flags.contains(VisionFlag::Ship) {
-                    let near = pos_at(g, e, *t).is_some_and(|p| {
-                        ships_of_team(g, enemy)
-                            .filter(|x| alive(g, *x, *t))
-                            .filter_map(|x| pos_at(g, x, *t))
-                            .any(|x| timeline::ground_distance(p, x) <= proximity)
-                    });
-                    kinds.push(if near { ("proximity", true) } else { ("surface lit", false) });
-                }
-                if kinds.is_empty() {
-                    kinds.push(("other", true));
+                let near = near_enemy(g, enemy, pos, t);
+                let kinds = detection_kinds(flags, near);
+                if continuous {
+                    entry.detected_s += dt;
+                    for (kind, inferred) in &kinds {
+                        *entry.by_reason.entry((kind.to_string(), *inferred)).or_default() += dt;
+                    }
                 }
                 for (kind, inferred) in kinds {
-                    if seen.insert(kind.to_string()) {
-                        detections.push(SmokeeDetection { kind: kind.to_string(), inferred, seconds: *t, clock: None });
+                    if !entry.detections.iter().any(|d| d.kind == kind) {
+                        entry.detections.push(SmokeeDetection { kind: kind.to_string(), inferred, seconds: t, clock: None });
                     }
                 }
             }
+        }
+        prev_covered = now_covered;
+    }
+    let mut out: Vec<Smokee> = covered
+        .into_iter()
+        .map(|(raw, cover)| {
+            let e = EntityId::from(raw);
+            let info = &g.ships[&e];
+            let is_owner = s.owner == Some(e);
+            let how = match cover.rank {
+                HOW_INSIDE => "inside",
+                HOW_BEHIND => "behind",
+                HOW_LINE_OF_FIRE => "line_of_fire",
+                _ => "none",
+            };
+            // A shooter credited between samples: where its credited shots came from.
+            let role = if is_owner {
+                "smoker"
+            } else if cover.rank == 0 {
+                let fired_inside = g.events.iter().any(|ev| ev.attacker == raw && ev.credited.iter().any(|(id, _)| *id == s.id) && ev.in_smokes.contains(&s.id));
+                if fired_inside { "inside" } else { "behind" }
+            } else {
+                how
+            };
+            let damage_taken: f32 = g
+                .events
+                .iter()
+                .filter(|ev| ev.victim == raw)
+                .filter(|ev| {
+                    let i = cover.times.partition_point(|t| *t < ev.damage_seconds);
+                    [i.checked_sub(1), Some(i)].iter().flatten().any(|j| cover.times.get(*j).is_some_and(|t| (t - ev.damage_seconds).abs() <= COVERED_HIT_SECONDS))
+                })
+                .map(|ev| ev.amount)
+                .sum::<f32>()
+                .max(0.0);
+            let known = cover.undetected_s + cover.detected_s;
             let stat = s.damage.and_then(|d| d.shooter_stats.get(&raw));
             Smokee {
                 entity_id: raw,
                 player: info.player.clone(),
                 ship: info.ship.clone(),
                 ship_class: info.ship_class.clone(),
-                how,
-                seconds_concealed: seconds,
-                detections,
+                badge: 0,
+                role: role.to_string(),
+                how: how.to_string(),
+                seconds_concealed: cover.seconds,
+                undetected_pct: (known > 0.0).then(|| 100.0 * cover.undetected_s / known),
+                detected_by: cover.by_reason.iter().map(|((kind, inferred), secs)| SmokeeReason { kind: kind.clone(), inferred: *inferred, seconds: *secs }).collect(),
+                detections: cover.detections,
                 damage: stat.map(|x| x.damage).unwrap_or(0.0),
+                split: stat.map(|x| x.split.to_record()).unwrap_or_default(),
+                damage_taken,
                 kills: stat.map(|x| x.kills).unwrap_or(0),
             }
         })
-        .collect()
+        .collect();
+    out.sort_by(|a, b| {
+        let owner = |m: &Smokee| s.owner == Some(EntityId::from(m.entity_id));
+        owner(b)
+            .cmp(&owner(a))
+            .then(b.damage.total_cmp(&a.damage))
+            .then(b.seconds_concealed.total_cmp(&a.seconds_concealed))
+            .then(a.entity_id.cmp(&b.entity_id))
+    });
+    for (i, m) in out.iter_mut().enumerate() {
+        m.badge = i as u32 + 1;
+    }
+    out
 }
 
 /// Hydro run from inside the smoke while concealed, mirrored on the radar rule.
@@ -552,6 +653,36 @@ fn best_radar_cap(g: &GameContext<'_>, s: &SmokeContext<'_>) -> Option<(char, f3
                     best = Some((*letter, pct, g.ships[&e].player.clone()));
                 }
             }
+        }
+    }
+    best
+}
+
+/// Cap control: a radar activated by a concealed ship inside the smoke while
+/// its radar covered at least `CAP_CONTROL_PCT` of the contested cap. Returns
+/// the cap, the coverage at the activation and the ship.
+fn radar_cap_control(g: &GameContext<'_>, s: &SmokeContext<'_>) -> Option<(char, f32, String)> {
+    let team = s.owner_team?;
+    let t2 = s.tier2?;
+    let cap = s.contested_cap?;
+    let (letter, centre, radius) = g.caps.iter().find(|(l, _, _)| *l == cap)?;
+    let life_end = s.removed.unwrap_or(f32::INFINITY);
+    let mut best: Option<(char, f32, String)> = None;
+    for act in g.radar_activations {
+        let t0 = act.seconds;
+        if t0 < s.created || t0 > life_end || g.ships.get(&act.entity).is_none_or(|i| i.team_id != team) {
+            continue;
+        }
+        if !t2.inside_at(t0).contains(&act.entity) || detected(g, act.entity, t0) {
+            continue;
+        }
+        let Some(radar) = g.ranges.get(&act.entity).and_then(|r| r.radar_m) else { continue };
+        let Some(pos) = pos_at(g, act.entity, t0) else { continue };
+        let radar_wu = timeline::world_units(radar);
+        let d = timeline::ground_distance(pos, *centre);
+        let pct = (circle_intersection_area(radar_wu, *radius, d) / (std::f32::consts::PI * radius * radius) * 100.0).clamp(0.0, 100.0);
+        if pct >= CAP_CONTROL_PCT && best.as_ref().is_none_or(|(_, b, _)| pct > *b) {
+            best = Some((*letter, pct, g.ships[&act.entity].player.clone()));
         }
     }
     best
@@ -628,9 +759,9 @@ pub fn classify(g: &GameContext<'_>, s: &SmokeContext<'_>, smokees: &[Smokee]) -
 
     // Cap control, else cap contest.
     let radar_cap = best_radar_cap(g, s);
-    let cap_control = radar_cap.as_ref().filter(|(_, pct, _)| *pct >= CAP_CONTROL_PCT);
-    if let Some((cap, pct, who)) = cap_control {
-        tag("cap_control", None, format!("{who}'s radar covered {pct:.0}% of cap {cap} from inside the smoke while concealed"));
+    let cap_control = radar_cap_control(g, s);
+    if let Some((cap, pct, who)) = &cap_control {
+        tag("cap_control", None, format!("{who} activated radar from inside the smoke while concealed, covering {pct:.0}% of contested cap {cap}"));
     } else if let (Some(cap), Some(d)) = (s.contested_cap, s.avg_contested_cap_dist_m)
         && d <= CAP_CONTEST_M
     {
@@ -656,10 +787,13 @@ pub fn classify(g: &GameContext<'_>, s: &SmokeContext<'_>, smokees: &[Smokee]) -
             .filter(|o| s.created - o.created >= 0.0 && s.created - o.created <= COUNTER_SMOKE_SECONDS)
             .filter(|o| timeline::ground_distance(o.origin, s.origin) <= reach)
             .collect();
-        candidates.sort_by(|a, b| b.created.total_cmp(&a.created).then(a.id.cmp(&b.id)));
+        let distance = |o: &OtherSmoke| timeline::ground_distance(o.origin, s.origin);
+        candidates.sort_by(|a, b| distance(a).total_cmp(&distance(b)).then(a.id.cmp(&b.id)));
         if let Some(o) = candidates.first() {
             counter_smoke_of = Some(o.id);
-            tag("counter_smoke", None, format!("laid {:.0} s after enemy smoke {} and {} from it", s.created - o.created, o.id, fmt_m(timeline::meters(timeline::ground_distance(o.origin, s.origin)))));
+            let d_m = timeline::meters(distance(o));
+            let borderline = if COUNTER_SMOKE_M - d_m <= COUNTER_SMOKE_MARGIN_M { " (borderline)" } else { "" };
+            tag("counter_smoke", None, format!("laid {:.0} s after enemy smoke {} and {} from it{borderline}", s.created - o.created, o.id, fmt_m(d_m)));
         }
     }
     // Island dive and reposition from the covered moves.
@@ -719,7 +853,7 @@ pub fn classify(g: &GameContext<'_>, s: &SmokeContext<'_>, smokees: &[Smokee]) -
     let damage_20k = total >= DAMAGE_QUALIFY;
     let damage_qualified = damage_20k || targets.len() >= 2;
     let mut damage_label = None;
-    if damage_qualified {
+    if total > 0.0 {
         let (label, conf, reason) = if targets.len() >= 2 {
             ("target_rich", None, format!("{} damage on {} enemies", total.round(), targets.len()))
         } else if let Some((victim, dmg)) = targets.first().copied() {
@@ -736,7 +870,9 @@ pub fn classify(g: &GameContext<'_>, s: &SmokeContext<'_>, smokees: &[Smokee]) -
             ("hunt", Some("low"), format!("{} damage with no target recorded", total.round()))
         };
         damage_label = Some(label.to_string());
-        tag("damage", conf, format!("{label}: {reason}"));
+        if damage_20k {
+            tag("damage", conf, format!("{label}: {reason}"));
+        }
     }
     // Escape.
     if let (Some(owner), Some(team), Some(mv)) = (s.owner, s.owner_team, movement.as_ref()) {
@@ -870,6 +1006,18 @@ mod tests {
         assert!(crosses(a, b, &[WorldPos::new(20.0, 0.0, 5.0)], 15.0));
         assert!(!crosses(a, b, &[WorldPos::new(80.0, 0.0, 5.0)], 15.0));
         assert!(!crosses(a, b, &[WorldPos::new(20.0, 0.0, 50.0)], 15.0));
+    }
+
+    #[test]
+    fn detection_reason_prefers_radar_and_infers_proximity() {
+        let radar_and_ship = VisibilityFlags::new(VisionFlag::Rls.bit() | VisionFlag::Ship.bit());
+        assert_eq!(detection_reason(radar_and_ship, true), ("radar", false));
+        let ship = VisibilityFlags::new(VisionFlag::Ship.bit());
+        assert_eq!(detection_reason(ship, true), ("proximity", true));
+        assert_eq!(detection_reason(ship, false), ("surface lit", false));
+        let smoke = VisibilityFlags::new(VisionFlag::Smoke.bit());
+        assert_eq!(detection_kinds(smoke, false), vec![("smoke fire penalty", false)]);
+        assert_eq!(detection_kinds(VisibilityFlags::new(1 << 20), false), vec![("other", true)]);
     }
 
     #[test]

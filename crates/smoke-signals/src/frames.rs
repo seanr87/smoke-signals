@@ -3,6 +3,7 @@
 //! at each moment.
 
 use std::collections::HashMap;
+use std::collections::HashSet;
 use std::path::Path;
 
 use image::RgbImage;
@@ -131,6 +132,15 @@ fn inset_points(
     points
 }
 
+/// What the zoomed view covers: nothing (clips), the smoke, or the smoke
+/// with every smokee, damaged enemy and fire line (the capture frame).
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum ZoomScope {
+    None,
+    Smoke,
+    Wide,
+}
+
 /// A rendered frame with its inset, before the header is added.
 pub struct SmokeFrame {
     pub image: RgbImage,
@@ -149,34 +159,69 @@ pub fn render_smoke_frame<'a>(
     smoker: Option<EntityId>,
     text: &HeaderText,
     progress: Option<Progress>,
+    scope: ZoomScope,
 ) -> Result<SmokeFrame, Report> {
     let projection = renderer.projection();
-    let smoker_pos = smoker.and_then(|e| session.timeline().get(&e).and_then(|t| timeline::world_pos_at(t, clock)));
+    let tl = session.timeline_arc();
+    let pos_of = |e: u32| tl.get(&EntityId::from(e)).and_then(|t| timeline::world_pos_at(t, clock));
+    let smoker_pos = smoker.and_then(|e| pos_of(e.raw() as u32));
     let mut has_puffs = false;
+    let mut dead: HashSet<u32> = HashSet::new();
     let image = renderer.render_image(session, clock, |view, commands| {
         let puffs = current_puffs(view);
         has_puffs = puffs.get(&record.smoke_id).is_some_and(|p| !p.is_empty());
+        dead = view.dead_ships().iter().filter(|(_, d)| d.clock.seconds() <= clock.seconds()).map(|(e, _)| e.raw() as u32).collect();
         apply_overlays(&projection, config, record, types, &puffs, smoker_pos, commands);
     })?;
-    // The zoomed view: the map around the smoke, a 1/zoom_factor share of
-    // its side, magnified to the map's own size; kept as its own image.
-    let region = inset::region_around(&inset_points(&projection, record, smoker_pos, has_puffs), 0.0)
-        .map(|r| inset::Region { center: r.center, half: MINIMAP_SIZE as f32 / (2.0 * config.render.zoom_factor) });
-    let zoom = region.map(|region| {
-        let (x, y) = renderer.map_origin();
-        let map = inset::MapRect { x, y, size: MINIMAP_SIZE };
-        let mut built = inset::build(
-            &image,
-            map,
-            region,
-            config.render.zoom_factor,
-            projection.pixel_radius(timeline::world_units(1000.0)),
-            renderer.fonts(),
-        );
-        let lines = fire_lines(&projection, record, &built);
-        inset::draw_fire_lines(&mut built, renderer.fonts(), &lines, config.render.highlight_color.0);
-        built.image
+    // The zoomed view: the map around the smoke, every smokee and every
+    // enemy it damaged, at least 1/zoom_factor of the map side, magnified
+    // to the map's own size from a bare render; kept as its own image.
+    let living = |e: u32| (!dead.contains(&e)).then(|| pos_of(e)).flatten();
+    let mut points = inset_points(&projection, record, smoker_pos, has_puffs);
+    if scope == ZoomScope::Wide {
+        points.extend(record.smokees.iter().filter_map(|m| living(m.entity_id)).filter_map(|p| projection.project(p)));
+        points.extend(record.targets_hit.iter().filter_map(|t| living(t.entity_id)).filter_map(|p| projection.project(p)));
+        // Both ends of every drawn fire line, so none runs off the crop.
+        if let Some(detail) = &record.damage_detail {
+            for a in detail.arrows.iter().filter(|a| a.attacker_ally && a.damage >= 1.0).take(MAX_FIRE_LINES) {
+                points.extend(projection.project(WorldPos::new(a.from.x, 0.0, a.from.z)));
+                points.extend(projection.project(WorldPos::new(a.to.x, 0.0, a.to.z)));
+            }
+        }
+    }
+    let px_per_km = projection.pixel_radius(timeline::world_units(1000.0));
+    let region = inset::region_around(&points, px_per_km).filter(|_| scope != ZoomScope::None).map(|r| inset::Region {
+        center: r.center,
+        half: r.half.max(MINIMAP_SIZE as f32 / (2.0 * config.render.zoom_factor)).min(MINIMAP_SIZE as f32 / 2.0),
     });
+    let zoom = match region {
+        Some(region) => {
+            renderer.set_bare(true);
+            let bare = renderer.render_image(session, clock, |view, commands| {
+                let puffs = current_puffs(view);
+                apply_overlays(&projection, config, record, types, &puffs, smoker_pos, commands);
+            });
+            renderer.set_bare(false);
+            let bare = bare?;
+            let (x, y) = renderer.map_origin();
+            let map = inset::MapRect { x, y, size: MINIMAP_SIZE };
+            let mut built = inset::build(&bare, map, region, MINIMAP_SIZE, px_per_km, renderer.fonts());
+            let lines = fire_lines(&projection, record, &built);
+            inset::draw_fire_lines(&mut built, renderer.fonts(), &lines, config.render.highlight_color.0);
+            let badges: Vec<inset::Badge> = record
+                .smokees
+                .iter()
+                .filter_map(|m| {
+                    let at = built.to_image(projection.project(living(m.entity_id)?)?);
+                    let inside = at.0 >= 0.0 && at.1 >= 0.0 && at.0 < built.image.width() as f32 && at.1 < built.image.height() as f32;
+                    inside.then_some(inset::Badge { at, number: m.badge })
+                })
+                .collect();
+            inset::draw_badges(&mut built, renderer.fonts(), &badges, config.render.highlight_color.0);
+            Some(built.image)
+        }
+        None => None,
+    };
     Ok(SmokeFrame { image: header::compose(&image, renderer.fonts(), text, progress), zoom })
 }
 
@@ -289,8 +334,12 @@ pub fn render_smoke_frames(
         };
         let stem = file_stem(&smokes[i], i + 1, stage.name(), moment_clock);
         let (_, smoker) = smoker_identity(game, &smokes[i]);
+        let scope = match stage {
+            Stage::Activation => ZoomScope::Smoke,
+            Stage::Capture => ZoomScope::Wide,
+        };
         let frame =
-            render_smoke_frame(&mut renderer, &mut session, config, &smokes[i], &types, clock, smoker, &text, None)?;
+            render_smoke_frame(&mut renderer, &mut session, config, &smokes[i], &types, clock, smoker, &text, None, scope)?;
         let name = save_png_and_webp(&frame.image, out_dir, &stem)?;
         let zoom_name = match &frame.zoom {
             Some(zoom) => Some(save_png_and_webp(zoom, out_dir, &format!("{stem}_zoom"))?),

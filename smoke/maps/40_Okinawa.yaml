@@ -1,5 +1,5 @@
 # DRAFT map profile for Sean's review. Generated 2026-11-04 from the replay data; edit freely.
-# Zones are thirds of the map across the spawn-to-spawn axis; lanes on the site are relative to each team's spawn.
+# Zones are thirds of the map across the spawn-to-spawn axis; lanes on the site are relative to each team's spawn. Grid squares use the game's convention: numbers 1 to 10 across the top, letters A to J down the side.
 map: 40_Okinawa
 title: Okinawa
 size_km: 42
@@ -7,11 +7,11 @@ layout: 4 caps spread over the map, corner spawns
 terrain: island-heavy
 land_share: 0.132
 spawns:
-  north: {x: 321, z: 309, grid: H3}
-  south: {x: -307, z: -321, grid: C8}
+  north: {x: 321, z: 309, grid: C8}
+  south: {x: -307, z: -321, grid: H3}
 caps:
-  A: {grid: B3, radius_km: 2.0, from_north: enemy, from_south: home, flank: true, north_lane: right, south_lane: left}
-  B: {grid: C2, radius_km: 2.0, from_north: home, from_south: enemy, flank: true, north_lane: right, south_lane: left}
+  A: {grid: C2, radius_km: 2.0, from_north: enemy, from_south: home, flank: true, north_lane: right, south_lane: left}
+  B: {grid: B3, radius_km: 2.0, from_north: home, from_south: enemy, flank: true, north_lane: right, south_lane: left}
   C: {grid: E5, radius_km: 5.0, from_north: center, from_south: center, flank: false, north_lane: center, south_lane: center}
   D: {grid: H8, radius_km: 3.0, from_north: center, from_south: center, flank: true, north_lane: left, south_lane: right}
 zones:

@@ -121,6 +121,8 @@ pub struct AttributedDamage {
     pub fire_seconds: f32,
     pub fire_source: FireSource,
     pub attacker_detected_at_fire: Option<bool>,
+    /// Why the attacker was spotted when it fired, when it was.
+    pub detected_reason: Option<String>,
     /// Smokes the attacker stood in when firing.
     pub in_smokes: Vec<u32>,
     /// Smokes that hid the attacker from an enemy in detection range, with the
@@ -193,10 +195,44 @@ pub struct Arrow {
     samples: u32,
 }
 
+/// Damage by whether the shooter was detected when it fired, with the
+/// detected part by reason.
+#[derive(Debug, Clone, Default, Serialize)]
+pub struct Split {
+    pub concealed: f32,
+    pub detected: f32,
+    pub unknown: f32,
+    pub by_reason: BTreeMap<String, f32>,
+}
+
+impl Split {
+    fn add(&mut self, event: &AttributedDamage, amount: f32) {
+        match event.attacker_detected_at_fire {
+            Some(false) => self.concealed += amount,
+            Some(true) => {
+                self.detected += amount;
+                let reason = event.detected_reason.clone().unwrap_or_else(|| "other".to_string());
+                *self.by_reason.entry(reason).or_default() += amount;
+            }
+            None => self.unknown += amount,
+        }
+    }
+
+    pub fn to_record(&self) -> crate::records::DamageSplit {
+        crate::records::DamageSplit {
+            concealed: self.concealed,
+            detected: self.detected,
+            unknown: self.unknown,
+            detected_by: self.by_reason.iter().map(|(r, d)| crate::records::ReasonDamage { reason: r.clone(), damage: *d }).collect(),
+        }
+    }
+}
+
 /// Credited damage, salvos and kills of one shooter of the smoker's team.
 #[derive(Debug, Clone, Default, Serialize)]
 pub struct ShooterStat {
     pub damage: f32,
+    pub split: Split,
     pub salvos: u32,
     pub kills: u32,
 }
@@ -205,6 +241,7 @@ pub struct ShooterStat {
 #[derive(Debug, Clone, Default, Serialize)]
 pub struct TargetStat {
     pub damage: f32,
+    pub split: Split,
     pub sunk: bool,
 }
 
@@ -223,6 +260,8 @@ pub struct SmokeDamage {
     /// Credited shell and fire damage of the smoker's team.
     pub damage_shell: f32,
     pub damage_fire: f32,
+    /// The smoker's team's credit by the shooter's detection when firing.
+    pub split: Split,
     pub events_in_smoke: u32,
     pub events_behind_smoke: u32,
     /// Distinct firing moments of the smoker's team credited to this smoke.
@@ -277,14 +316,18 @@ impl SmokeDamage {
                 DamageKind::Fire => self.damage_fire += amount,
                 _ => self.damage_shell += amount,
             }
+            self.split.add(event, amount);
             self.shooters.insert(event.attacker);
             let shooter = self.shooter_stats.entry(event.attacker).or_default();
             shooter.damage += amount;
+            shooter.split.add(event, amount);
             if event.kind == DamageKind::Shell && self.salvo_keys.insert((event.attacker, event.fire_seconds.to_bits())) {
                 self.salvos += 1;
                 shooter.salvos += 1;
             }
-            self.targets.entry(event.victim).or_default().damage += amount;
+            let target = self.targets.entry(event.victim).or_default();
+            target.damage += amount;
+            target.split.add(event, amount);
         }
         if let (Some(from), Some(to)) = (event.fire_xz, event.victim_xz) {
             let key = (event.attacker, event.victim);
@@ -526,6 +569,9 @@ pub struct SpikeInput<'a> {
     pub timeline: &'a PositionTimeline,
     pub flags_at: &'a dyn Fn(EntityId, GameClock) -> Option<VisibilityFlags>,
     pub team_of: &'a dyn Fn(EntityId) -> Option<i64>,
+    /// Every ship in the game, so the proximity test sees ships that never
+    /// dealt damage.
+    pub roster: &'a [EntityId],
     /// Surface detection range of a ship in meters, from its build.
     pub detection_m_of: &'a dyn Fn(EntityId) -> Option<f32>,
     /// Death clock of each ship that died.
@@ -597,7 +643,7 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
         hits_by_shot.entry((h.hit.owner_id, h.hit.shot_id.raw() as u64)).or_default().push(h.clock.seconds());
     }
     let mut ships: Vec<(EntityId, i64)> = Vec::new();
-    for e in input.ledger.keys().chain(input.deaths.keys()) {
+    for e in input.roster.iter().chain(input.ledger.keys()).chain(input.deaths.keys()) {
         if let Some(team) = (input.team_of)(*e)
             && !ships.iter().any(|(s, _)| s == e)
         {
@@ -710,7 +756,17 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
             }
 
             let fire_clock = GameClock(fire_seconds);
-            let detected = (input.flags_at)(*attacker, fire_clock).map(|f| f.is_detected());
+            let flags = (input.flags_at)(*attacker, fire_clock);
+            let detected = flags.map(|f| f.is_detected());
+            let detected_reason = flags.filter(|f| f.is_detected()).map(|f| {
+                let proximity = timeline::world_units(crate::classify::PROXIMITY_M);
+                let near = ships
+                    .iter()
+                    .filter(|(e, team)| Some(*team) != attacker_team && input.deaths.get(e).is_none_or(|d| *d > fire_seconds))
+                    .filter_map(|(e, _)| input.timeline.get(e).and_then(|tr| timeline::world_pos_at(tr, fire_clock)))
+                    .any(|p| timeline::ground_distance(fire_pos, p) <= proximity);
+                crate::classify::detection_reason(f, near).0.to_string()
+            });
 
             let (in_smokes, behind_smokes, credited) = match &linked {
                 Some((_, _, _, credited, inside, behind)) => (inside.clone(), behind.clone(), credited.clone()),
@@ -760,6 +816,7 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                 fire_seconds,
                 fire_source: source,
                 attacker_detected_at_fire: detected,
+                detected_reason,
                 in_smokes,
                 behind_smokes,
                 credited,
@@ -881,6 +938,39 @@ mod tests {
 
     fn event(victim: u32, t: f32, amount: f32) -> DamageEvent {
         DamageEvent { amount, victim: EntityId::from(victim), clock: GameClock(t) }
+    }
+
+    #[test]
+    fn split_buckets_by_detection_at_fire() {
+        let attributed = |detected: Option<bool>, reason: Option<&str>| AttributedDamage {
+            attacker: 1,
+            victim: 2,
+            amount: 100.0,
+            kind: DamageKind::Shell,
+            damage_seconds: 10.0,
+            fire_seconds: 8.0,
+            fire_source: FireSource::Salvo,
+            attacker_detected_at_fire: detected,
+            detected_reason: reason.map(str::to_string),
+            in_smokes: Vec::new(),
+            behind_smokes: Vec::new(),
+            credited: Vec::new(),
+            fire_xz: None,
+            victim_xz: None,
+        };
+        let mut split = Split::default();
+        split.add(&attributed(Some(false), None), 100.0);
+        split.add(&attributed(Some(true), Some("radar")), 50.0);
+        split.add(&attributed(Some(true), Some("radar")), 25.0);
+        split.add(&attributed(Some(true), None), 5.0);
+        split.add(&attributed(None, None), 7.0);
+        assert_eq!(split.concealed, 100.0);
+        assert_eq!(split.detected, 80.0);
+        assert_eq!(split.unknown, 7.0);
+        assert_eq!(split.by_reason["radar"], 75.0);
+        assert_eq!(split.by_reason["other"], 5.0);
+        let record = split.to_record();
+        assert_eq!(record.detected_by.len(), 2);
     }
 
     #[test]

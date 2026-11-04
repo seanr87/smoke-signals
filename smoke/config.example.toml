@@ -11,11 +11,11 @@ primary_team = "H-SR"
 merge = true                   # merge both teams' replays
 
 [render]
-show_player_names = true
+show_player_names = false
 exhaust_color = "#FFB366"      # light orange puffs for exhaust and crawling smoke
 highlight_color = "#FFD700"    # outline of the target smoke
 trail_color = "#FF00FF"        # dashed path of exhaust and crawling smoke (magenta: unused elsewhere on the map)
-zoom_factor = 2                # the zoomed view shows 1/zoom_factor of the map side, magnified to the map size
+zoom_factor = 2                # the zoomed view covers at least 1/zoom_factor of the map side (more to hold the smokees and targets), magnified to the map size
 clip_fps = 20
 clip_pre_seconds = 5           # clip starts 5 s before activation, ends when the smoke disperses
 clip_speed = 1.0               # 1.0 = real time, 2.0 = twice as fast

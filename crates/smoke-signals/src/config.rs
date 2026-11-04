@@ -71,7 +71,8 @@ pub struct Render {
     /// else on the map uses.
     #[serde(default = "default_trail_color")]
     pub trail_color: HexColor,
-    /// Magnification of the zoomed view: it shows 1/zoom_factor of the map side.
+    /// The zoomed view covers at least 1/zoom_factor of the map side; it
+    /// grows to hold the smokees and the damaged enemies.
     #[serde(default = "default_zoom_factor")]
     pub zoom_factor: f32,
     pub clip_fps: u32,

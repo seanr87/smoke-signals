@@ -254,6 +254,10 @@ pub struct SmokeRecord {
     pub smoke_damage_total: Option<f32>,
     pub damage_in_smoke_enemy: Option<f32>,
     pub damage_behind_smoke_enemy: Option<f32>,
+    /// Smoke damage by whether the shooter was detected when it fired.
+    pub damage_split: Option<DamageSplit>,
+    /// Smoke damage dealt to enemy destroyers.
+    pub dd_damage: Option<f32>,
     pub damage_detail: Option<crate::damage::SmokeDamage>,
 
     pub wows_toolkit_rev: Option<String>,
@@ -359,6 +363,23 @@ pub struct ShipMark {
     pub is_owner: bool,
 }
 
+/// Credited damage split by whether the shooter was detected when it fired.
+/// `unknown` is damage whose shooter had no visibility record at that moment.
+#[derive(Debug, Clone, Default, Serialize)]
+pub struct DamageSplit {
+    pub concealed: f32,
+    pub detected: f32,
+    pub unknown: f32,
+    /// Detected damage by the reason the shooter was spotted.
+    pub detected_by: Vec<ReasonDamage>,
+}
+
+#[derive(Debug, Clone, Serialize)]
+pub struct ReasonDamage {
+    pub reason: String,
+    pub damage: f32,
+}
+
 #[derive(Debug, Clone, Serialize)]
 pub struct ShooterDetail {
     pub entity_id: u32,
@@ -366,6 +387,7 @@ pub struct ShooterDetail {
     pub ship: String,
     pub salvos: u32,
     pub damage: f32,
+    pub split: DamageSplit,
     pub kills: u32,
 }
 
@@ -374,7 +396,9 @@ pub struct TargetHit {
     pub entity_id: u32,
     pub player: String,
     pub ship: String,
+    pub ship_class: Option<String>,
     pub damage: f32,
+    pub split: DamageSplit,
     pub sunk: bool,
 }
 
@@ -400,7 +424,7 @@ pub struct SmokeDeath {
 /// How the smoker moved relative to the nearest enemies while laying.
 #[derive(Debug, Clone, Serialize)]
 pub struct Movement {
-    /// `pushing`, `kiting` or `horizontal`.
+    /// `stationary`, `pushing`, `kiting` or `horizontal`.
     pub label: String,
     pub confidence: String,
     /// Straight-line displacement while laying, in meters.
@@ -441,11 +465,12 @@ pub struct Classification {
     /// Every purpose that applies, in priority order.
     pub purposes: Vec<PurposeTag>,
     pub primary_purpose: Option<String>,
-    /// Smoke damage of 20,000 or more.
+    /// Smoke damage of 20,000 or more: the damage purpose.
     pub damage_20k: bool,
-    /// 20,000 damage or two or more enemies hit.
+    /// Two or more enemies hit, or 20,000 damage.
     pub damage_qualified: bool,
-    /// `target_rich`, `hunt` or `island_killer`.
+    /// `target_rich`, `hunt` or `island_killer`, describing any smoke that
+    /// dealt damage.
     pub damage_label: Option<String>,
     /// `left`, `center` or `right`, from the smoker's team's spawn facing the enemy.
     pub lane: Option<String>,
@@ -476,19 +501,42 @@ pub struct SmokeeDetection {
     pub clock: Option<BattleClock>,
 }
 
-/// An allied ship the smoke concealed: inside it, firing from behind it, or
-/// with the smoke between it and an enemy in its line of fire.
+/// Seconds a smokee was covered while spotted for one reason.
+#[derive(Debug, Clone, Serialize)]
+pub struct SmokeeReason {
+    pub kind: String,
+    pub inferred: bool,
+    pub seconds: f32,
+}
+
+/// An allied ship the smoke covered: inside it, firing undetected from behind
+/// it, or with the smoke between it and an enemy in its line of fire. The
+/// smoker is always listed, and so is every shooter credited with damage.
 #[derive(Debug, Clone, Serialize)]
 pub struct Smokee {
     pub entity_id: u32,
     pub player: String,
     pub ship: String,
     pub ship_class: Option<String>,
-    /// `inside`, `behind` or `line_of_fire`, the best that applied.
+    /// Number on the zoomed view: 1 is the smoker when known, then by damage.
+    pub badge: u32,
+    /// `smoker`, `inside`, `behind` or `line_of_fire`; for a shooter never
+    /// seen covered at a sample, where its credited shots came from.
+    pub role: String,
+    /// `inside`, `behind` or `line_of_fire`, the best seen at a sample;
+    /// `none` for a credited shooter never seen covered.
     pub how: String,
     pub seconds_concealed: f32,
+    /// Share of the covered time with the ship undetected; absent without
+    /// covered time.
+    pub undetected_pct: Option<f32>,
+    /// Covered time while spotted, by reason.
+    pub detected_by: Vec<SmokeeReason>,
     pub detections: Vec<SmokeeDetection>,
     pub damage: f32,
+    pub split: DamageSplit,
+    /// Damage the ship took while covered.
+    pub damage_taken: f32,
     pub kills: u32,
 }
 

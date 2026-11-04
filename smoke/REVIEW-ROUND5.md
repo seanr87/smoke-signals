@@ -1,6 +1,6 @@
 # Round 5 review list (25 smokes)
 
-Generated 4 Nov 2026 from batch output/20261104-000453. 85 of 217 smokes carry at least one low-confidence tag; 15 of them are listed first, then 10 picked at random (seed 5). Each shows every tag with the reason the rule gave. Tick a verdict and add notes; the rules live in DECISIONS-ROUND5.md.
+Generated 4 Nov 2026 from batch output/20261104-004230. 85 of 217 smokes carry at least one low-confidence tag; 15 of them are listed first, then 10 picked at random (seed 5). Each shows every tag with the reason the rule gave. Tick a verdict and add notes; the rules live in DECISIONS-ROUND5.md.
 
 ## Low-confidence tags
 

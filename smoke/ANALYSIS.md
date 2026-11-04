@@ -1,6 +1,6 @@
 # Smoke Signals analysis method (DRAFT, round 5, 4 Nov 2026)
 
-How every smoke in King of the Sea XIX NA is classified, what the location fields mean, and how to compare clans without fooling yourself. Numbers are from batch `output/20261104-000453` (217 smokes: H-SR 100, RESIN 103, PN 14). Thresholds are constants in `crates/smoke-signals/src/classify.rs`; the reasoning behind each is in `DECISIONS-ROUND5.md`.
+How every smoke in King of the Sea XIX NA is classified, what the location fields mean, and how to compare clans without fooling yourself. Numbers are from batch `output/20261104-004230` (217 smokes: H-SR 100, RESIN 103, PN 14). Thresholds are constants in `crates/smoke-signals/src/classify.rs`; the reasoning behind each is in `DECISIONS-ROUND5.md`.
 
 A note on scale: the game compresses distance, so ships cover map distance at about 2.6 times their listed speed. A destroyer lays a 40 to 55 s smoke over 2 to 5 km of map. All distances here are map metres as the replay records them.
 
@@ -82,7 +82,7 @@ Counts: lane left 86, centre 51, right 80; cap role centre 162, enemy 47, home 8
 
 ## 3. Smokees
 
-A smokee is an allied ship the smoke covered: inside it, firing from behind it, or with the smoke between it and an enemy in its line of fire (an enemy within 15 km), at any 2 s sample. Each carries how it was covered first, the seconds covered, its credited damage and kills, and every detection while covered: radar, hydro, smoke fire penalty (the smoke flag), aircraft, submarine, proximity (an enemy within 2 km; inferred when it comes from the ship flag, direct when it comes from the x-ray flag) and surface lit (the ship flag with no enemy within 2 km: an enemy had line of sight, so the smoke failed). Averages 2.0 smokees per smoke; detections over all smokees: surface lit 166, radar 94, smoke fire penalty 58, aircraft 6, hydro 5, proximity 1.
+A smokee is an allied ship the smoke covered: inside it, firing from behind it, or with the smoke between it and an enemy in its line of fire (an enemy within 15 km), at any 2 s sample. Each carries how it was covered first, the seconds covered, its credited damage and kills, and every detection while covered: radar, hydro, smoke fire penalty (the smoke flag), aircraft, submarine, proximity (an enemy within 2 km; inferred when it comes from the ship flag, direct when it comes from the x-ray flag) and surface lit (the ship flag with no enemy within 2 km: an enemy had line of sight, so the smoke failed). Averages 2.0 smokees per smoke; detections over all smokees: surface lit 155, radar 94, smoke fire penalty 57, aircraft 6, hydro 5, proximity 1.
 
 ## 4. How to compare clans fairly
 

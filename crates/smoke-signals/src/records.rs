@@ -243,7 +243,7 @@ pub struct SmokeRecord {
     pub ships_at_capture: Vec<ShipMark>,
     /// Hydro run by the smoker's team from inside the smoke while concealed.
     pub offensive_hydro: Option<OffensiveRadar>,
-    /// Round 5 classification: smoker, movement, coverage, purposes, location.
+    /// Smoker, movement, coverage, purposes and location.
     pub classification: Option<Classification>,
     /// Allied ships the smoke concealed, with how they were detected.
     pub smokees: Vec<Smokee>,
@@ -484,7 +484,7 @@ pub struct Smokee {
     pub player: String,
     pub ship: String,
     pub ship_class: Option<String>,
-    /// `inside`, `behind` or `line_of_fire`, the first that applied.
+    /// `inside`, `behind` or `line_of_fire`, the best that applied.
     pub how: String,
     pub seconds_concealed: f32,
     pub detections: Vec<SmokeeDetection>,

@@ -1,7 +1,7 @@
-//! Round 5 classification of a smoke: the smoker, how it moved while laying,
-//! who the smoke covered, the purposes it served (chess-style tactic tags
-//! with a priority order), the location relative to the team's spawn and
-//! the fleets, and the smokees with how each was detected.
+//! Classification of a smoke: the smoker, how it moved while laying, who
+//! the smoke covered, the purposes it served (tactic tags with a priority
+//! order), the location relative to the team's spawn and the fleets, and the
+//! smokees with how each was detected.
 
 use std::collections::BTreeMap;
 use std::collections::HashMap;
@@ -71,6 +71,12 @@ pub const LANE_CENTER_SHARE: f32 = 0.125;
 pub const CAP_HOME_SHARE: f32 = 0.4;
 /// Smokee line-of-fire test: enemies within this of the ally.
 pub const LINE_OF_FIRE_M: f32 = 15000.0;
+/// Smokee: a shot from behind the smoke covers the shooter at samples this close to the firing moment.
+pub const BEHIND_WINDOW_SECONDS: f32 = 4.0;
+/// How a smokee was covered, ranked so the best seen wins.
+const HOW_LINE_OF_FIRE: u8 = 1;
+const HOW_BEHIND: u8 = 2;
+const HOW_INSIDE: u8 = 3;
 
 /// Land pixels of the map, from the minimap's land layer.
 pub struct LandMask {
@@ -158,7 +164,8 @@ pub struct GameContext<'a> {
     pub caps: &'a [(char, WorldPos, f32)],
     /// Spawn centre per team id.
     pub spawns: &'a HashMap<i64, WorldPos>,
-    pub space_size: f32,
+    /// Side of the map in world units, when the map's settings were found.
+    pub space_size: Option<f32>,
     pub land: Option<&'a LandMask>,
     /// Scores sampled over the game: (seconds, score per team id).
     pub scores: &'a [(f32, Vec<(i64, i64)>)],
@@ -347,7 +354,7 @@ pub fn coverage(g: &GameContext<'_>, s: &SmokeContext<'_>, smokees: &[Smokee], o
     }
     let covered: Vec<&Smokee> = smokees.iter().filter(|m| Some(EntityId::from(m.entity_id)) != s.owner).collect();
     let screen = !covered.is_empty();
-    let selfish = s.selfish == Some(true) || (s.selfish.is_none() && !screen);
+    let selfish = stacked_with.is_none() && !screen;
     let (label, reason) = if let Some((who, d)) = &stacked_with {
         ("stacked", format!("laid within {} of {who}", fmt_m(*d)))
     } else if screen {
@@ -365,47 +372,58 @@ pub fn coverage(g: &GameContext<'_>, s: &SmokeContext<'_>, smokees: &[Smokee], o
 pub fn smokees(g: &GameContext<'_>, s: &SmokeContext<'_>) -> Vec<Smokee> {
     let Some(team) = s.owner_team else { return Vec::new() };
     let Some(enemy) = enemy_team(g, team) else { return Vec::new() };
-    let behind_shooters: HashSet<EntityId> = g
-        .events
-        .iter()
-        .filter(|e| e.behind_smokes.contains(&s.id))
-        .map(|e| EntityId::from(e.attacker))
-        .collect();
-    let mut covered: BTreeMap<u32, (String, f32, Vec<f32>)> = BTreeMap::new();
+    // Firing moments with this smoke in the shooter's behind_smokes.
+    let behind_fires: Vec<(EntityId, f32)> =
+        g.events.iter().filter(|e| e.behind_smokes.contains(&s.id)).map(|e| (EntityId::from(e.attacker), e.fire_seconds)).collect();
+    let mut covered: BTreeMap<u32, (u8, f32, Vec<f32>)> = BTreeMap::new();
     let mut prev_t: Option<f32> = None;
+    let mut prev_covered: HashSet<EntityId> = HashSet::new();
     for (clock, puffs) in s.samples {
         let t = clock.seconds();
         let dt = prev_t.map(|p| t - p).unwrap_or(0.0);
         prev_t = Some(t);
         if puffs.is_empty() {
+            prev_covered.clear();
             continue;
         }
         let enemies: Vec<WorldPos> = ships_of_team(g, enemy).filter(|e| alive(g, *e, t)).filter_map(|e| pos_at(g, e, t)).collect();
+        let mut now_covered: HashSet<EntityId> = HashSet::new();
         for ally in ships_of_team(g, team).filter(|e| alive(g, *e, t)) {
             let Some(pos) = pos_at(g, ally, t) else { continue };
-            let how = if inside(pos, puffs, s.radius) {
-                "inside"
-            } else if behind_shooters.contains(&ally) {
-                "behind"
+            let rank = if inside(pos, puffs, s.radius) {
+                HOW_INSIDE
+            } else if behind_fires.iter().any(|(e, f)| *e == ally && (f - t).abs() <= BEHIND_WINDOW_SECONDS) {
+                HOW_BEHIND
             } else {
                 let reach = timeline::world_units(LINE_OF_FIRE_M);
                 if enemies.iter().any(|e| timeline::ground_distance(pos, *e) <= reach && crosses(pos, *e, puffs, s.radius)) {
-                    "line_of_fire"
+                    HOW_LINE_OF_FIRE
                 } else {
                     continue;
                 }
             };
-            let entry = covered.entry(ally.raw() as u32).or_insert_with(|| (how.to_string(), 0.0, Vec::new()));
-            entry.1 += dt;
+            now_covered.insert(ally);
+            let entry = covered.entry(ally.raw() as u32).or_insert_with(|| (rank, 0.0, Vec::new()));
+            entry.0 = entry.0.max(rank);
+            if prev_covered.contains(&ally) {
+                entry.1 += dt;
+            }
             entry.2.push(t);
         }
+        prev_covered = now_covered;
     }
     let proximity = timeline::world_units(PROXIMITY_M);
     covered
         .into_iter()
-        .map(|(raw, (how, seconds, times))| {
+        .map(|(raw, (rank, seconds, times))| {
             let e = EntityId::from(raw);
             let info = &g.ships[&e];
+            let how = match rank {
+                HOW_INSIDE => "inside",
+                HOW_BEHIND => "behind",
+                _ => "line_of_fire",
+            }
+            .to_string();
             let mut detections: Vec<SmokeeDetection> = Vec::new();
             let mut seen: HashSet<String> = HashSet::new();
             for t in &times {
@@ -608,7 +626,7 @@ pub fn classify(g: &GameContext<'_>, s: &SmokeContext<'_>, smokees: &[Smokee]) -
         purposes.push(PurposeTag { tag: tag.to_string(), confidence: confidence.map(str::to_string), reason });
     };
 
-    // 1. cap_control, 2. cap_contest.
+    // Cap control, else cap contest.
     let radar_cap = best_radar_cap(g, s);
     let cap_control = radar_cap.as_ref().filter(|(_, pct, _)| *pct >= CAP_CONTROL_PCT);
     if let Some((cap, pct, who)) = cap_control {
@@ -620,14 +638,14 @@ pub fn classify(g: &GameContext<'_>, s: &SmokeContext<'_>, smokees: &[Smokee]) -
         let radar_note = radar_cap.as_ref().map(|(c, pct, _)| format!("; best concealed radar coverage {pct:.0}% of cap {c}")).unwrap_or_default();
         tag("cap_contest", None, format!("on average {where_} contested cap {cap}{radar_note}"));
     }
-    // 3. radar_trap, 4. hydro_trap.
+    // Radar and hydro traps.
     if cap_control.is_none() && let Some(o) = s.offensive_radar.filter(|o| o.enemies_spotted > 0) {
         tag("radar_trap", None, format!("{} spotted {} enemies with radar run from inside the smoke", o.ship.clone().unwrap_or_else(|| "a radar ship".to_string()), o.enemies_spotted));
     }
     if let Some(o) = s.offensive_hydro.filter(|o| o.enemies_spotted > 0) {
         tag("hydro_trap", None, format!("{} spotted {} enemies with hydro run from inside the smoke", o.ship.clone().unwrap_or_else(|| "a hydro ship".to_string()), o.enemies_spotted));
     }
-    // 5. counter_smoke.
+    // Counter smoke.
     let mut counter_smoke_of = None;
     if let Some(team) = s.owner_team {
         let reach = timeline::world_units(COUNTER_SMOKE_M);
@@ -644,7 +662,7 @@ pub fn classify(g: &GameContext<'_>, s: &SmokeContext<'_>, smokees: &[Smokee]) -
             tag("counter_smoke", None, format!("laid {:.0} s after enemy smoke {} and {} from it", s.created - o.created, o.id, fmt_m(timeline::meters(timeline::ground_distance(o.origin, s.origin)))));
         }
     }
-    // 6. island_dive, 7. reposition.
+    // Island dive and reposition from the covered moves.
     let moves = covered_moves(g, s, smokees);
     let mut dive: Option<(String, String, String)> = None;
     let mut reposition: Option<(String, String, String)> = None;
@@ -692,7 +710,7 @@ pub fn classify(g: &GameContext<'_>, s: &SmokeContext<'_>, smokees: &[Smokee]) -
     if let Some((_, conf, reason)) = &reposition {
         tag("reposition", Some(conf), reason.clone());
     }
-    // 8. damage.
+    // Damage.
     let total = s.damage.map(|d| d.smoke_damage_total()).unwrap_or(0.0);
     let targets: Vec<(u32, f32)> = s
         .damage
@@ -704,8 +722,7 @@ pub fn classify(g: &GameContext<'_>, s: &SmokeContext<'_>, smokees: &[Smokee]) -
     if damage_qualified {
         let (label, conf, reason) = if targets.len() >= 2 {
             ("target_rich", None, format!("{} damage on {} enemies", total.round(), targets.len()))
-        } else {
-            let (victim, dmg) = targets[0];
+        } else if let Some((victim, dmg)) = targets.first().copied() {
             let victim_pos = s.damage.and_then(|d| d.arrows.iter().find(|a| a.victim == victim && a.attacker_ally).map(|a| WorldPos::new(a.to.x, 0.0, a.to.z)));
             let land = victim_pos.and_then(|p| g.land.and_then(|l| l.distance_to_land_m(p, ISLAND_M * 2.0)));
             let who = g.ships.get(&EntityId::from(victim)).map(|i| format!("{} ({})", i.player, i.ship)).unwrap_or_default();
@@ -715,11 +732,13 @@ pub fn classify(g: &GameContext<'_>, s: &SmokeContext<'_>, smokees: &[Smokee]) -
                 None if victim_pos.is_some() && g.land.is_some() => ("hunt", Some("high"), format!("{dmg:.0} damage on {who} in open water")),
                 None => ("hunt", Some("low"), format!("{dmg:.0} damage on {who}; its position or the land layer is unknown")),
             }
+        } else {
+            ("hunt", Some("low"), format!("{} damage with no target recorded", total.round()))
         };
         damage_label = Some(label.to_string());
         tag("damage", conf, format!("{label}: {reason}"));
     }
-    // 9. escape.
+    // Escape.
     if let (Some(owner), Some(team), Some(mv)) = (s.owner, s.owner_team, movement.as_ref()) {
         let t0 = s.emission_from;
         let spotted = detected(g, owner, t0);
@@ -763,7 +782,7 @@ pub fn classify(g: &GameContext<'_>, s: &SmokeContext<'_>, smokees: &[Smokee]) -
     if let Some(team) = s.owner_team
         && let Some(enemy) = enemy_team(g, team)
     {
-        if let (Some(own), Some(theirs)) = (g.spawns.get(&team), g.spawns.get(&enemy)) {
+        if let (Some(own), Some(theirs), Some(space)) = (g.spawns.get(&team), g.spawns.get(&enemy), g.space_size) {
             let (ax, az) = (theirs.0.x - own.0.x, theirs.0.z - own.0.z);
             let len = (ax * ax + az * az).sqrt();
             if len > 0.0 {
@@ -771,7 +790,7 @@ pub fn classify(g: &GameContext<'_>, s: &SmokeContext<'_>, smokees: &[Smokee]) -
                 let (rx, rz) = (uz, -ux);
                 let lateral = |p: WorldPos| (p.0.x - own.0.x) * rx + (p.0.z - own.0.z) * rz;
                 let along = |p: WorldPos| ((p.0.x - own.0.x) * ux + (p.0.z - own.0.z) * uz) / len;
-                let band = g.space_size * LANE_CENTER_SHARE;
+                let band = space * LANE_CENTER_SHARE;
                 let off = lateral(s.origin);
                 lane_offset_m = Some(timeline::meters(off));
                 lane = Some(if off.abs() <= band { "center" } else if off > 0.0 { "right" } else { "left" }.to_string());

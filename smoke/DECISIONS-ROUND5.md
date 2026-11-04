@@ -17,6 +17,7 @@ Each entry: the decision, why, and the alternative. Thresholds live in `crates/s
 
 - **Precedence: stacked over screen over selfish.** Stacked is the most specific description of how the smoke protects; screen and selfish are each other's complement by the existing selfish definition. All three booleans are kept in the record. Alternative: screen over stacked (a stacked smoke that a cruiser actually fired from would then read "screen").
 - **Stacked only applies to destroyer smokers**, as the brief says: within 2.5 km of an allied cruiser or battleship at the start of laying.
+- **Selfish is exactly the complement of stacked and screen**, so the label and the three booleans never contradict each other (the round 2 `selfish_smoke` field stays as it was).
 - **Screen includes teammates who sheltered inside without firing**, since the selfish definition counts them as benefiting.
 
 ## Purposes
@@ -45,6 +46,7 @@ Each entry: the decision, why, and the alternative. Thresholds live in `crates/s
 ## Smokees
 
 - **A smokee is an allied ship that was inside the smoke, fired a shot with the smoke in its `behind_smokes`, or had the smoke between it and an enemy within 15 km, at any 2 s sample of the smoke's life.** Alternative: inside only.
+- **"Firing from behind" covers the shooter only at samples within 4 s of such a shot**, and a smokee's "how" is the best cover seen over the smoke's life (inside over behind over line of fire). Seconds covered count only between two consecutive covered samples. These came out of the adversarial review of the first cut, which had counted a behind-smoke shooter as covered for the smoke's whole life.
 - **Detection kinds come from the replay's visibility flags at the samples where the ship was covered: radar (RLS or personal RLS), hydro (sonar), smoke fire penalty (the smoke flag), aircraft (plane flags), submarine (pinger or locator).** The ship flag splits into "proximity" (inferred: an enemy within 2 km at that sample) and "surface lit" (an enemy had line of sight). The x-ray flag is proximity from the flag itself. Only "proximity" from the ship flag is inferred; everything else is a flag the replay carries.
 
 ## Site

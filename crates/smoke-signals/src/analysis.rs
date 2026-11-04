@@ -1519,7 +1519,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         found.sort_by_key(|d| d.entity_id);
         smokes[i].smoke_deaths = found;
     }
-    // Round 5: the classification of every smoke, from the facts above.
+    // The classification of every smoke, from the facts above.
     let land_share: Option<f32>;
     {
         use crate::classify;
@@ -1562,7 +1562,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             ranges: tracker.ranges(),
             caps: &cap_list,
             spawns: &spawns,
-            space_size: map_info.as_ref().map(|m| m.space_size as f32).unwrap_or(1600.0),
+            space_size: map_info.as_ref().map(|m| m.space_size as f32),
             land: land.as_ref(),
             scores: &score_history,
             hp: &hp_history,
@@ -1575,7 +1575,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         for (i, id) in ids.iter().enumerate() {
             let raw = id.raw() as u32;
             let track = &tracks[id];
-            let owner = smokes[i].player.as_ref().and_then(|name| roster.iter().find(|(_, r)| &r.player == name)).map(|(e, _)| *e);
+            let owner = smoke_owner.get(&raw).and_then(|(o, _)| *o);
             let t2 = per_smoke.get(&raw);
             let emission_from = smokes[i].t_activate.unwrap_or(smokes[i].t_created).seconds;
             let base = classify::SmokeContext {

@@ -3,6 +3,7 @@
 
 pub mod analysis;
 pub mod batch;
+pub mod classify;
 pub mod clips;
 pub mod clock;
 pub mod config;

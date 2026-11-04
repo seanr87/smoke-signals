@@ -241,6 +241,12 @@ pub struct SmokeRecord {
     pub smoke_deaths: Vec<SmokeDeath>,
     /// Living ships near the smoke at t_capture, for the diagram.
     pub ships_at_capture: Vec<ShipMark>,
+    /// Hydro run by the smoker's team from inside the smoke while concealed.
+    pub offensive_hydro: Option<OffensiveRadar>,
+    /// Round 5 classification: smoker, movement, coverage, purposes, location.
+    pub classification: Option<Classification>,
+    /// Allied ships the smoke concealed, with how they were detected.
+    pub smokees: Vec<Smokee>,
 
     /// Tier 3, from the M4 spike: damage by the smoker's team only.
     pub damage_in_smoke: Option<f32>,
@@ -391,6 +397,101 @@ pub struct SmokeDeath {
     pub after_cleared: bool,
 }
 
+/// How the smoker moved relative to the nearest enemies while laying.
+#[derive(Debug, Clone, Serialize)]
+pub struct Movement {
+    /// `pushing`, `kiting` or `horizontal`.
+    pub label: String,
+    pub confidence: String,
+    /// Straight-line displacement while laying, in meters.
+    pub path_m: f32,
+    /// Angle between the movement and the direction to the enemy group.
+    pub angle_deg: f32,
+    /// Change in the distance to the enemy group, in meters; negative closes.
+    pub closing_m: f32,
+    pub reason: String,
+}
+
+/// Who the smoke protects: `stacked`, `screen` or `selfish`.
+#[derive(Debug, Clone, Serialize)]
+pub struct Coverage {
+    pub label: String,
+    pub stacked: bool,
+    pub screen: bool,
+    pub selfish: bool,
+    pub reason: String,
+}
+
+/// One purpose tag with its confidence (`None` for rule-based tags).
+#[derive(Debug, Clone, Serialize)]
+pub struct PurposeTag {
+    pub tag: String,
+    pub confidence: Option<String>,
+    pub reason: String,
+}
+
+#[derive(Debug, Clone, Serialize)]
+pub struct Classification {
+    /// `destroyer`, `cruiser` or `battleship`.
+    pub smoker_class: Option<String>,
+    /// Special cases: `svea`, `battleship_exhaust`, `battleship_crawling`.
+    pub special: Vec<String>,
+    pub movement: Option<Movement>,
+    pub coverage: Coverage,
+    /// Every purpose that applies, in priority order.
+    pub purposes: Vec<PurposeTag>,
+    pub primary_purpose: Option<String>,
+    /// Smoke damage of 20,000 or more.
+    pub damage_20k: bool,
+    /// 20,000 damage or two or more enemies hit.
+    pub damage_qualified: bool,
+    /// `target_rich`, `hunt` or `island_killer`.
+    pub damage_label: Option<String>,
+    /// `left`, `center` or `right`, from the smoker's team's spawn facing the enemy.
+    pub lane: Option<String>,
+    /// Lateral offset from the spawn-to-spawn axis in meters; positive to the right.
+    pub lane_offset_m: Option<f32>,
+    /// Role of the nearest contested cap (else the nearest cap): `home`, `center`, `enemy`.
+    pub cap_role: Option<String>,
+    pub cap_role_cap: Option<String>,
+    pub cap_flank: Option<bool>,
+    /// Distance from the midpoint between the two fleets at activation, in
+    /// meters; positive toward the enemy fleet.
+    pub frontline_distance_m: Option<f32>,
+    pub nearest_enemy_m: Option<f32>,
+    /// Caps within stock gun range of a concealed ship (the supported caps).
+    pub caps_in_range: Vec<String>,
+    pub counter_smoke_of: Option<u32>,
+    /// Distance from the smoke origin to the nearest land, in meters.
+    pub land_distance_m: Option<f32>,
+}
+
+/// One detection of a smokee while the smoke concealed it.
+#[derive(Debug, Clone, Serialize)]
+pub struct SmokeeDetection {
+    /// `surface lit`, `smoke fire penalty`, `radar`, `hydro`, `proximity`, `aircraft`.
+    pub kind: String,
+    pub inferred: bool,
+    pub seconds: f32,
+    pub clock: Option<BattleClock>,
+}
+
+/// An allied ship the smoke concealed: inside it, firing from behind it, or
+/// with the smoke between it and an enemy in its line of fire.
+#[derive(Debug, Clone, Serialize)]
+pub struct Smokee {
+    pub entity_id: u32,
+    pub player: String,
+    pub ship: String,
+    pub ship_class: Option<String>,
+    /// `inside`, `behind` or `line_of_fire`, the first that applied.
+    pub how: String,
+    pub seconds_concealed: f32,
+    pub detections: Vec<SmokeeDetection>,
+    pub damage: f32,
+    pub kills: u32,
+}
+
 /// One capture zone of a game, in world units.
 #[derive(Debug, Clone, Serialize)]
 pub struct CapLayout {
@@ -430,6 +531,8 @@ pub struct GameRecord {
     pub battle_end: Option<Moment>,
     pub replay_end_s: f32,
     pub replay_truncated: bool,
+    /// Share of the minimap that is land, from the map's land layer.
+    pub land_share: Option<f32>,
     pub wows_toolkit_rev: Option<String>,
     pub smoke_signals_version: String,
     pub generated_at: String,

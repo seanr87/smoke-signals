@@ -748,6 +748,10 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         HashMap::new();
     let mut radar_activations: Vec<RadarActivation> = Vec::new();
     let mut seen_radar: HashSet<(EntityId, u32)> = HashSet::new();
+    let mut hydro_activations: Vec<RadarActivation> = Vec::new();
+    let mut seen_hydro: HashSet<(EntityId, u32)> = HashSet::new();
+    let mut score_history: Vec<(f32, Vec<(i64, i64)>)> = Vec::new();
+    let mut hp_history: HashMap<EntityId, Vec<(f32, f32)>> = HashMap::new();
 
     while session.step()?.is_some() {
         let view = session.view();
@@ -778,6 +782,24 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             for (id, state) in &smokes {
                 if let Some(track) = tracks.get_mut(id) {
                     track.samples.push((clock, state.points.clone()));
+                }
+            }
+            let mut scores: Vec<(i64, i64)> = view.team_scores().iter().map(|s| (s.team_index as i64, s.score)).collect();
+            scores.sort_unstable();
+            if score_history.last().is_none_or(|(_, last)| *last != scores) {
+                score_history.push((clock.seconds(), scores));
+            }
+            let mut props: Vec<(EntityId, f32)> = view
+                .vehicle_props_all()
+                .iter()
+                .filter(|(_, p)| p.max_health() > 0.0)
+                .map(|(e, p)| (*e, (p.health() / p.max_health() * 100.0).clamp(0.0, 100.0)))
+                .collect();
+            props.sort_by_key(|(e, _)| e.raw());
+            for (e, pct) in props {
+                let h = hp_history.entry(e).or_default();
+                if h.last().is_none_or(|(_, last)| (*last - pct).abs() > 0.01) {
+                    h.push((clock.seconds(), pct));
                 }
             }
         }
@@ -814,6 +836,11 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
                 {
                     radar_activations.push(RadarActivation { entity, clock: a.activated_at, duration: a.duration });
                 }
+                if a.consumable == Recognized::Known(Consumable::HydroacousticSearch)
+                    && seen_hydro.insert((entity, a.activated_at.seconds().to_bits()))
+                {
+                    hydro_activations.push(RadarActivation { entity, clock: a.activated_at, duration: a.duration });
+                }
             }
         }
         for torp in view.active_torpedoes() {
@@ -832,6 +859,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
     let facts = session.vehicle_facts().clone();
     let (tracker, per_smoke) = tier2.finish_keep_history();
     radar_activations.sort_by(|a, b| a.clock.seconds().total_cmp(&b.clock.seconds()).then(a.entity.raw().cmp(&b.entity.raw())));
+    hydro_activations.sort_by(|a, b| a.clock.seconds().total_cmp(&b.clock.seconds()).then(a.entity.raw().cmp(&b.entity.raw())));
     let generated_at = jiff::Zoned::now().strftime("%Y-%m-%dT%H:%M:%S%:z").to_string();
 
     let view = session.view();
@@ -1150,6 +1178,9 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             kills_from_smoke: 0,
             smoke_deaths: Vec::new(),
             ships_at_capture,
+            offensive_hydro: None,
+            classification: None,
+            smokees: Vec::new(),
             damage_in_smoke: None,
             damage_behind_smoke: None,
             smoke_damage_total: None,
@@ -1488,6 +1519,100 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         found.sort_by_key(|d| d.entity_id);
         smokes[i].smoke_deaths = found;
     }
+    // Round 5: the classification of every smoke, from the facts above.
+    let land_share: Option<f32>;
+    {
+        use crate::classify;
+        let bare_map = map_name.strip_prefix("spaces/").unwrap_or(&map_name);
+        let map_info = wows_minimap_renderer::assets::load_map_info(&map_name, &game.loaded.vfs);
+        let land = map_info.clone().and_then(|info| {
+            let image = wows_minimap_renderer::assets::load_packed_image(&format!("spaces/{bare_map}/minimap.png"), &game.loaded.vfs)?;
+            let mask = classify::LandMask::new(&image, info);
+            info!(land_share = mask.land_share(), "Land mask");
+            Some(mask)
+        });
+        land_share = land.as_ref().map(|l| l.land_share());
+        let ships: HashMap<EntityId, classify::ShipInfo> = roster
+            .iter()
+            .map(|(e, r)| {
+                (*e, classify::ShipInfo { team_id: r.team_id, player: r.player.clone(), ship: r.ship.clone(), ship_class: r.ship_class.clone() })
+            })
+            .collect();
+        let cap_list: Vec<(char, WorldPos, f32)> = caps.iter().map(|c| (c.cap, WorldPos::new(c.position.x, 0.0, c.position.z), c.radius)).collect();
+        let spawns: HashMap<i64, WorldPos> =
+            teams.iter().filter_map(|t| t.spawn_xy.map(|p| (t.team_id, WorldPos::new(p.x, 0.0, p.z)))).collect();
+        let to_activation = |a: &RadarActivation| classify::Activation { entity: a.entity, seconds: a.clock.seconds(), duration: a.duration };
+        let radar_list: Vec<classify::Activation> = radar_activations.iter().map(to_activation).collect();
+        let hydro_list: Vec<classify::Activation> = hydro_activations.iter().map(to_activation).collect();
+        let others: Vec<classify::OtherSmoke> = ids
+            .iter()
+            .map(|id| classify::OtherSmoke {
+                id: id.raw() as u32,
+                team_id: smoke_owner.get(&(id.raw() as u32)).and_then(|(_, t)| *t),
+                created: tracks[id].created.seconds(),
+                origin: tracks[id].origin,
+            })
+            .collect();
+        let flags_at = |e: EntityId, c: GameClock| tracker.flags_at(e, c);
+        let g = classify::GameContext {
+            ships: &ships,
+            tl: &tl,
+            deaths: &deaths_s,
+            flags_at: &flags_at,
+            ranges: tracker.ranges(),
+            caps: &cap_list,
+            spawns: &spawns,
+            space_size: map_info.as_ref().map(|m| m.space_size as f32).unwrap_or(1600.0),
+            land: land.as_ref(),
+            scores: &score_history,
+            hp: &hp_history,
+            radar_activations: &radar_list,
+            hydro_activations: &hydro_list,
+            events: &spike.events,
+            flag_history: tracker.flag_history(),
+            smokes: &others,
+        };
+        for (i, id) in ids.iter().enumerate() {
+            let raw = id.raw() as u32;
+            let track = &tracks[id];
+            let owner = smokes[i].player.as_ref().and_then(|name| roster.iter().find(|(_, r)| &r.player == name)).map(|(e, _)| *e);
+            let t2 = per_smoke.get(&raw);
+            let emission_from = smokes[i].t_activate.unwrap_or(smokes[i].t_created).seconds;
+            let base = classify::SmokeContext {
+                id: raw,
+                owner,
+                owner_team: smoke_owner.get(&raw).and_then(|(_, t)| *t),
+                smoke_type: smokes[i].smoke_type,
+                created: track.created.seconds(),
+                removed: track.removed.map(|c| c.seconds()),
+                emission_from,
+                emission_end: smokes[i].t_emission_end.map(|m| m.seconds),
+                origin: track.origin,
+                radius: track.radius,
+                samples: &track.samples,
+                tier2: t2,
+                damage: smokes[i].damage_detail.as_ref(),
+                selfish: smokes[i].selfish_smoke,
+                contested_cap: smokes[i].contested_cap_name.as_ref().and_then(|c| c.chars().next()),
+                avg_contested_cap_dist_m: smokes[i].avg_contested_cap_dist_m,
+                supported_caps: &smokes[i].supported_caps,
+                offensive_radar: smokes[i].offensive_radar.as_ref(),
+                offensive_hydro: None,
+            };
+            let hydro = classify::offensive_hydro(&g, &base);
+            let ctx = classify::SmokeContext { offensive_hydro: hydro.as_ref(), ..base };
+            let mut smokees = classify::smokees(&g, &ctx);
+            for m in smokees.iter_mut() {
+                for d in m.detections.iter_mut() {
+                    d.clock = map.at(GameClock(d.seconds));
+                }
+            }
+            let classification = classify::classify(&g, &ctx, &smokees);
+            smokes[i].offensive_hydro = hydro;
+            smokes[i].smokees = smokees;
+            smokes[i].classification = Some(classification);
+        }
+    }
     // Every ship's ledger sums against the game's own results, by type where
     // the results carry it (main battery AP, HE and CS plus fire).
     if let Some(results) = session.battle_results()
@@ -1570,6 +1695,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         battle_end: battle_end.map(|c| moment(&map, c)),
         replay_end_s: session.total_duration().seconds(),
         replay_truncated: session.truncated(),
+        land_share,
         wows_toolkit_rev: WOWS_TOOLKIT_REV.map(str::to_string),
         smoke_signals_version: SMOKE_SIGNALS_VERSION.to_string(),
         generated_at: generated_at.clone(),

@@ -634,6 +634,8 @@ class Site:
         self.write("style.css", CSS.replace("__TEAMCOLORS__", "".join(f'--team-{t.lower().replace("-", "")}:{c};' for t, c in self.colors.items())))
         self.write("site.js", JS)
         self.write(".nojekyll", "")
+        os.makedirs(os.path.join(self.out, "data"), exist_ok=True)
+        shutil.copyfile(os.path.join(self.d.batch, "smokes.csv"), os.path.join(self.out, "data", "smokes.csv"))
         self.home()
         self.analysis_redirect()
         self.clans_index()

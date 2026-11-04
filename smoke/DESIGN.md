@@ -76,7 +76,7 @@ The second command exports the minimap images and `maps.json` (with in-game titl
 python -I -X utf8 smoke/tools/build_site.py --batch output/<batch> --maps output/<maps>/maps --clips <folder of id.mp4> --out smoke-site
 ```
 
-The builder prints the award winners. `smoke-site/` is gitignored and about 317 MB; the fork's own tracked `site/` folder must not be touched. A rebuild overwrites frames that are newer in the batch and leaves other old files alone (stale clips must be removed by hand).
+The builder also copies the batch's `smokes.csv` to `data/smokes.csv` on the site, and `smoke/tools/export_data.py --batch <batch> --maps <maps>` zips `smokes.csv`, `games.csv` (played games with winner, end clock and phase) and `clans.csv` (every Clans chart value) for sharing. The builder prints the award winners. `smoke-site/` is gitignored and about 317 MB; the fork's own tracked `site/` folder must not be touched. A rebuild overwrites frames that are newer in the batch and leaves other old files alone (stale clips must be removed by hand).
 
 **Verify.** Serve `smoke-site/` locally (`python -m http.server 8765 --directory smoke-site`; the desktop app's launch entry `smoke-site` does the same) and take headless screenshots of every page type:
 

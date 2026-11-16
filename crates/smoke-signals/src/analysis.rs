@@ -1356,7 +1356,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
     }
 
     // Tier 3 spike: damage credited to smokes.
-    let (ledger, events_per_replay, dropped) = {
+    let (ledger, events_per_replay, dropped, offsets) = {
         let mut all: Vec<&wows_replays::ReplayFile> = vec![&replays.primary];
         all.extend(replays.merges.iter());
         let ledgers = damage::ledgers_per_replay(
@@ -1367,8 +1367,8 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             &all,
         );
         let per_replay: Vec<u32> = ledgers.iter().map(|l| l.values().map(|v| v.len() as u32).sum()).collect();
-        let (merged, dropped) = damage::merge_ledgers(&ledgers);
-        (merged, per_replay, dropped)
+        let (merged, dropped, offsets) = damage::merge_ledgers(&ledgers);
+        (merged, per_replay, dropped, offsets)
     };
     let geometry: Vec<damage::SmokeGeometry> = ids
         .iter()
@@ -1669,6 +1669,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
     }
     spike.stats.events_per_replay = events_per_replay;
     spike.stats.events_dropped_as_duplicates = dropped;
+    spike.stats.perspective_offsets = offsets;
     let self_entity = roster.iter().find(|(_, r)| r.player == replays.primary.meta.playerName).map(|(e, _)| *e);
     spike.stats.self_entity = self_entity.map(|e| e.raw() as u32);
     spike.stats.self_damage_authoritative = self_entity.map(|_| self_authoritative);

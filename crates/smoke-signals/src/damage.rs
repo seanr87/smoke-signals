@@ -381,9 +381,27 @@ pub fn ledgers_per_replay<G: wowsunpack::data::ResourceLoader>(
 /// once the perspectives' clock offset is taken out.
 const DUPLICATE_WINDOW_SECONDS: f32 = 0.8;
 /// Largest offset between two perspectives' clocks that is searched for.
-const PERSPECTIVE_OFFSET_MAX_SECONDS: f32 = 6.0;
+const PERSPECTIVE_OFFSET_MAX_SECONDS: f32 = 12.0;
+/// Offsets beyond this are accepted only when their bin holds at least
+/// [`FAR_OFFSET_MIN_RATIO`] times the pairs of the best nearer bin.
+const PERSPECTIVE_OFFSET_NEAR_SECONDS: f32 = 6.0;
+const FAR_OFFSET_MIN_RATIO: f32 = 2.0;
+/// Match window at offset zero when no offset estimate is trusted.
+const FALLBACK_WINDOW_SECONDS: f32 = 3.0;
 /// Candidate pairs needed before the median offset is trusted.
 const OFFSET_MIN_PAIRS: usize = 10;
+
+/// Clock offset estimated for one merged replay against the earlier ones.
+#[derive(Debug, Clone, Copy, Default, Serialize)]
+pub struct PerspectiveOffset {
+    pub offset_s: f32,
+    /// Candidate pairs in the chosen bin.
+    pub pairs_in_bin: u32,
+    /// Candidate pairs over the whole search range.
+    pub pairs: u32,
+    /// False when the fallback window at offset zero was used.
+    pub trusted: bool,
+}
 
 /// Union of the per-replay ledgers. A client is told every hit on a ship
 /// inside its area of interest, so perspectives overlap, and their clocks for
@@ -394,11 +412,17 @@ const OFFSET_MIN_PAIRS: usize = 10;
 /// to an earlier event within [`DUPLICATE_WINDOW_SECONDS`] of that offset, and
 /// a matched pair is one hit kept once. Events of the same replay never match
 /// each other, so several shells of one salvo with equal damage survive.
-/// Returns the ledger and the fold count.
-pub fn merge_ledgers(ledgers: &[HashMap<EntityId, Vec<DamageEvent>>]) -> (HashMap<EntityId, Vec<DamageEvent>>, u32) {
+/// An offset beyond [`PERSPECTIVE_OFFSET_NEAR_SECONDS`] wins only when its
+/// bin clearly outweighs the best nearer bin, so a chance alignment of
+/// repeated equal hits cannot pull the estimate away from a real near peak.
+/// Returns the ledger, the fold count and the offset estimate per later replay.
+pub fn merge_ledgers(
+    ledgers: &[HashMap<EntityId, Vec<DamageEvent>>],
+) -> (HashMap<EntityId, Vec<DamageEvent>>, u32, Vec<PerspectiveOffset>) {
     // (event, source replay, taken by a later replay's copy)
     let mut merged: HashMap<EntityId, Vec<(DamageEvent, usize, bool)>> = HashMap::new();
     let mut folded = 0;
+    let mut offsets = Vec::new();
     for (index, ledger) in ledgers.iter().enumerate() {
         // Clock offset of this replay against the earlier ones: the most
         // common clock difference over candidate pairs, counted in quarter
@@ -424,11 +448,34 @@ pub fn merge_ledgers(ledgers: &[HashMap<EntityId, Vec<DamageEvent>>]) -> (HashMa
                 }
             }
         }
-        let peak = bins.iter().max_by_key(|(bin, n)| (**n, std::cmp::Reverse(bin.abs()))).map(|(bin, _)| *bin as f32 / 4.0);
-        let (offset, window) = match peak {
-            Some(p) if pairs >= OFFSET_MIN_PAIRS => (p, DUPLICATE_WINDOW_SECONDS),
-            _ => (0.0, PERSPECTIVE_OFFSET_MAX_SECONDS / 2.0),
+        let best_bin = |near_only: bool| {
+            bins.iter()
+                .filter(|(bin, _)| !near_only || (**bin as f32 / 4.0).abs() <= PERSPECTIVE_OFFSET_NEAR_SECONDS)
+                .max_by_key(|(bin, n)| (**n, std::cmp::Reverse(bin.abs())))
+                .map(|(bin, n)| (*bin as f32 / 4.0, *n))
         };
+        let peak = match (best_bin(false), best_bin(true)) {
+            (Some((far, n_far)), Some((near, n_near))) if far.abs() > PERSPECTIVE_OFFSET_NEAR_SECONDS => {
+                if n_far as f32 >= FAR_OFFSET_MIN_RATIO * n_near as f32 {
+                    Some((far, n_far))
+                } else {
+                    Some((near, n_near))
+                }
+            }
+            (any, _) => any,
+        };
+        let (offset, window, trusted) = match peak {
+            Some((p, _)) if pairs >= OFFSET_MIN_PAIRS => (p, DUPLICATE_WINDOW_SECONDS, true),
+            _ => (0.0, FALLBACK_WINDOW_SECONDS, false),
+        };
+        if index > 0 {
+            offsets.push(PerspectiveOffset {
+                offset_s: offset,
+                pairs_in_bin: peak.map(|(_, n)| n as u32).unwrap_or(0),
+                pairs: pairs as u32,
+                trusted,
+            });
+        }
         for (attacker, events) in ledger {
             let existing = merged.entry(*attacker).or_default();
             for event in events {
@@ -453,7 +500,7 @@ pub fn merge_ledgers(ledgers: &[HashMap<EntityId, Vec<DamageEvent>>]) -> (HashMa
     for events in out.values_mut() {
         events.sort_by(|a, b| a.clock.seconds().total_cmp(&b.clock.seconds()));
     }
-    (out, folded)
+    (out, folded, offsets)
 }
 
 /// Fixed order of one owner's salvos: fire clock, salvo id, first shot id.
@@ -526,6 +573,8 @@ pub struct SpikeStats {
     pub events_per_replay: Vec<u32>,
     /// Events left out as another perspective's copy of a hit.
     pub events_dropped_as_duplicates: u32,
+    /// Clock offset of each merged replay against the primary.
+    pub perspective_offsets: Vec<PerspectiveOffset>,
     pub damage_events: u32,
     pub damage_total: f32,
     /// Damage dealt per attacker entity, for checks against the game's totals.

@@ -585,6 +585,10 @@ pub struct ShipReconciliation {
     pub game_shell_fire: Option<f32>,
     /// Ledger damage by classified kind.
     pub ledger_by_kind: BTreeMap<String, f32>,
+    /// Shell and secondary damage by the salvo's projectile name, and the
+    /// main-battery projectile names the ship's build lists.
+    pub ledger_by_projectile: BTreeMap<String, f32>,
+    pub main_ammo: Vec<String>,
     /// The game's results by damage field, non-zero fields only.
     pub game_by_type: BTreeMap<String, f32>,
 }
@@ -605,6 +609,8 @@ pub struct SpikeStats {
     pub damage_by_attacker_shell_fire: BTreeMap<u32, f32>,
     /// Damage per attacker entity and classified kind.
     pub damage_by_attacker_kind: BTreeMap<u32, BTreeMap<String, f32>>,
+    /// Shell and secondary damage per attacker entity and projectile id.
+    pub damage_by_attacker_projectile: BTreeMap<u32, BTreeMap<u32, f32>>,
     /// The primary recorder's damage to enemies as the game's own stats report
     /// it, and as the merged ledger sums it, for a ground-truth check.
     pub self_damage_authoritative: Option<f32>,
@@ -852,6 +858,16 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                 .or_default()
                 .entry(kind.as_str().to_string())
                 .or_default() += event.amount;
+            if let Some(p) = projectile
+                && matches!(kind, DamageKind::Shell | DamageKind::Secondary)
+            {
+                *stats
+                    .damage_by_attacker_projectile
+                    .entry(attacker.raw() as u32)
+                    .or_default()
+                    .entry(p.raw() as u32)
+                    .or_default() += event.amount;
+            }
 
             let fire_clock = GameClock(fire_seconds);
             let flags = (input.flags_at)(*attacker, fire_clock);

@@ -1692,6 +1692,22 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
                     .map(|v| v as f32)
                     .reduce(|a, b| a + b),
                 ledger_by_kind: spike.stats.damage_by_attacker_kind.get(&id).cloned().unwrap_or_default(),
+                ledger_by_projectile: spike
+                    .stats
+                    .damage_by_attacker_projectile
+                    .get(&id)
+                    .map(|m| {
+                        m.iter()
+                            .map(|(p, v)| {
+                                let name = GameParamProvider::game_param_by_id(gp, wows_replays::types::GameParamId::from(*p))
+                                    .map(|q| q.name().to_string())
+                                    .unwrap_or_else(|| p.to_string());
+                                (name, *v)
+                            })
+                            .collect()
+                    })
+                    .unwrap_or_default(),
+                main_ammo: tracker.ranges().get(e).map(|r| r.main_ammo.clone()).unwrap_or_default(),
                 game_by_type: r.damage_by_type.iter().map(|(k, v)| (k.clone(), *v as f32)).collect(),
             };
             if let Some(g) = entry.game_total {

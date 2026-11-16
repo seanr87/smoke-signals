@@ -1,30 +1,49 @@
-"""Build the KotS XIX NA replay inventory for H-SR, RESIN and PN.
+"""Build the KotS XIX NA replay inventory.
 
-Usage: python -I inventory.py <repo root> <scratch dir> [first id] [last id]
+Usage: python -I inventory.py <repo root> <scratch dir> [options]
+
+Options:
+  --first N / --last N   match id range to enumerate (default 7850..8200)
+  --teams all|TAG,TAG    teams in scope (default H-SR,RESIN,PN); "all" keeps
+                         every match and puts both teams in our_teams
+  --no-download          do not fetch replays; only record which replays the
+                         site offers and which files already exist
+  --out PATH             inventory path (default <repo root>/smoke/inventory.csv)
 
 Enumerates match ids over the tournament's id range through the public
-match API, keeps matches with one of our teams, reads each game's report
-page for replay ids, downloads the replays into replays/<game folder>/ and
-writes replays/inventory.csv.
+match API, keeps matches with a team in scope, reads each game's report
+page for replay ids, downloads the replays into replays/<game folder>/
+(unless --no-download) and writes the inventory CSV.
 """
+import argparse
 import csv
 import json
 import os
 import re
 import struct
-import sys
 import time
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
-ROOT = sys.argv[1]
-SCRATCH = sys.argv[2]
-FIRST = int(sys.argv[3]) if len(sys.argv) > 3 else 7850
-LAST = int(sys.argv[4]) if len(sys.argv) > 4 else 8200
-OURS = {"H-SR", "RESIN", "PN"}
+ap = argparse.ArgumentParser()
+ap.add_argument("root")
+ap.add_argument("scratch")
+ap.add_argument("--first", type=int, default=7850)
+ap.add_argument("--last", type=int, default=8200)
+ap.add_argument("--teams", default="H-SR,RESIN,PN")
+ap.add_argument("--no-download", action="store_true")
+ap.add_argument("--out", default=None)
+args = ap.parse_args()
+
+ROOT = args.root
+SCRATCH = args.scratch
+FIRST, LAST = args.first, args.last
+ALL_TEAMS = args.teams.strip().lower() == "all"
+OURS = set() if ALL_TEAMS else {t.strip() for t in args.teams.split(",") if t.strip()}
 SITE = "https://wows-tournaments.com"
 HEADERS = {"x-tournament-name": "king-of-the-sea-xix", "x-tournament-region": "NA", "User-Agent": "smoke-signals-inventory"}
 REPLAY_DIR = os.path.join(ROOT, "replays")
+OUT = args.out or os.path.join(ROOT, "smoke", "inventory.csv")
 
 
 def get(url, binary=False):
@@ -64,7 +83,10 @@ with ThreadPoolExecutor(max_workers=8) as pool:
 print("matches found", len(found), "ids", min(m["id"] for m in found), "to", max(m["id"] for m in found))
 json.dump(found, open(os.path.join(SCRATCH, "all_matches.json"), "w", encoding="utf-8"), indent=1)
 
-selected = [m for m in found if OURS & {o["signup"]["teamTag"] for o in m["matchOpponents"]}]
+if ALL_TEAMS:
+    selected = found
+else:
+    selected = [m for m in found if OURS & {o["signup"]["teamTag"] for o in m["matchOpponents"]}]
 print("selected matches", len(selected))
 
 rows = []
@@ -91,26 +113,31 @@ for m in sorted(selected, key=lambda m: (m["scheduledTime"], m["id"])):
         score = " - ".join(f"{tags[oid]} {r['score']}" for oid, r in results.items())
         folder = f"kots19na_{slug(stage)}_{slug(group)}_{slug(rnd)}_{slug(teams[0])}-vs-{slug(teams[1])}_g{number}"
         game_dir = os.path.join(REPLAY_DIR, folder)
-        files, versions, missing = [], [], []
+        files, versions, missing, on_site, to_fetch = [], [], [], [], []
         for oid, tag in tags.items():
             rid, has_file = reports.get(oid, (None, False))
             if rid is None or not has_file:
                 missing.append(tag)
                 continue
-            os.makedirs(game_dir, exist_ok=True)
-            existing = [f for f in os.listdir(game_dir) if f.endswith(f"_{slug(tag)}.wowsreplay")]
+            on_site.append(tag)
+            suffixes = (f"_{slug(tag)}.wowsreplay", f"_{tag.lower()}.wowsreplay")
+            existing = [f for f in os.listdir(game_dir) if f.endswith(suffixes)] if os.path.isdir(game_dir) else []
             if existing:
                 path = os.path.join(game_dir, existing[0])
+            elif args.no_download:
+                to_fetch.append(tag)
+                continue
             else:
+                os.makedirs(game_dir, exist_ok=True)
                 status, data, headers = get(f"{SITE}/api/matches/report/replay?id={rid}", binary=True)
                 if status != 200 or not data or not data.startswith(b"\x12\x32\x34\x11"):
                     missing.append(f"{tag} (download failed, http {status})")
                     continue
                 name = None
                 cd = headers.get("Content-Disposition", "") if headers else ""
-                nm = re.search(r'filename=([^;]+)', cd)
+                nm = re.search(r"filename=([^;]+)", cd)
                 if nm:
-                    name = nm.group(1).strip('" ')
+                    name = nm.group(1).strip("\" ")
                 if not name or not name.endswith(".wowsreplay"):
                     name = f"report_{rid}_{slug(tag)}.wowsreplay"
                 path = os.path.join(game_dir, name)
@@ -120,6 +147,16 @@ for m in sorted(selected, key=lambda m: (m["scheduledTime"], m["id"])):
             version, recorder = replay_version(path)
             files.append(os.path.relpath(path, ROOT).replace("\\", "/"))
             versions.append(f"{tag}:{version}")
+        if not results:
+            state = "not played"
+        elif "BYE" in teams:
+            state = "bye"
+        elif files:
+            state = "played"
+        elif any(r.get("forfeit") for r in results.values()):
+            state = "forfeit"
+        else:
+            state = "no replay"
         rows.append({
             "match_id": m["id"],
             "game_id": gid,
@@ -130,7 +167,7 @@ for m in sorted(selected, key=lambda m: (m["scheduledTime"], m["id"])):
             "date": m["scheduledTime"][:10],
             "map": g.get("mapName", ""),
             "teams": " vs ".join(teams),
-            "our_teams": ";".join(t for t in teams if t in OURS),
+            "our_teams": ";".join(t for t in teams if ALL_TEAMS or t in OURS),
             "winner": winner,
             "score": score,
             "replay_folder": f"replays/{folder}" if files else "",
@@ -139,12 +176,14 @@ for m in sorted(selected, key=lambda m: (m["scheduledTime"], m["id"])):
             "replays_found": len(files),
             "missing_replays": ";".join(missing),
             "missing_flag": "yes" if missing else "no",
+            "status": state,
+            "replays_on_site": ";".join(on_site),
+            "to_download": ";".join(to_fetch),
         })
-        print(f"{m['id']}/{gid} {stage}/{group}/{rnd} g{number} {teams} map={g.get('mapName')} files={len(files)} missing={missing}")
+        print(f"{m['id']}/{gid} {stage}/{group}/{rnd} g{number} {teams} map={g.get('mapName')} files={len(files)} on_site={on_site} to_download={to_fetch} missing={missing}")
 
-out = os.path.join(ROOT, "smoke", "inventory.csv")
-with open(out, "w", newline="", encoding="utf-8") as f:
+with open(OUT, "w", newline="", encoding="utf-8") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
     w.writeheader()
     w.writerows(rows)
-print("wrote", out, "rows", len(rows))
+print("wrote", OUT, "rows", len(rows))

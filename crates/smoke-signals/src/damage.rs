@@ -61,8 +61,20 @@ const TICK_GAP_MAX_SECONDS: f32 = 1.4;
 const FIRE_LINK_SECONDS: f32 = 75.0;
 /// A torpedo launched this long before the damage, at most, can be its cause.
 const TORPEDO_MAX_RUN_SECONDS: f32 = 150.0;
-/// Tolerance on the torpedo's run length against its launch-to-victim distance.
-const TORPEDO_RUN_TOLERANCE: f32 = 0.15;
+/// Farthest the torpedo's dead-reckoned position may be from the victim at
+/// the damage clock, in meters.
+const TORPEDO_HIT_TOLERANCE_M: f32 = 400.0;
+/// A torpedo that hits leaves the view, so the damage clock must fall within
+/// this of the torpedo's last sighting.
+const TORPEDO_GONE_SECONDS: f32 = 3.0;
+
+/// A torpedo as the merged view tracked it.
+#[derive(Debug, Clone)]
+pub struct TorpedoTrack {
+    pub torpedo: ActiveTorpedo,
+    /// Clock of the last step the torpedo was in the view.
+    pub last_seen: GameClock,
+}
 /// Detection range used for the line-of-sight test when a ship's build gives none.
 const DEFAULT_DETECTION_M: f32 = 12_000.0;
 
@@ -613,7 +625,7 @@ pub struct SpikeInput<'a> {
     pub ledger: &'a HashMap<EntityId, Vec<DamageEvent>>,
     pub hits: &'a [ResolvedShotHit],
     pub salvos: &'a [ActiveShot],
-    pub torpedoes: &'a [ActiveTorpedo],
+    pub torpedoes: &'a [TorpedoTrack],
     pub smokes: &'a [SmokeGeometry],
     pub timeline: &'a PositionTimeline,
     pub flags_at: &'a dyn Fn(EntityId, GameClock) -> Option<VisibilityFlags>,
@@ -646,23 +658,23 @@ fn in_tick_train(events: &[DamageEvent], index: usize) -> bool {
     events[..index].iter().rev().take(8).any(near) || events[index + 1..].iter().take(8).any(near)
 }
 
-/// A torpedo the attacker launched whose run length at the damage clock
-/// matches the distance from its launch point to the victim.
-fn torpedo_fits(torpedoes: &[&ActiveTorpedo], t: f32, victim_pos: Option<WorldPos>) -> bool {
+/// A torpedo the attacker launched that vanished from the view at the damage
+/// clock with its dead-reckoned position on the victim. The direction vector
+/// is in world units per second, like the origin.
+fn torpedo_fits(torpedoes: &[&TorpedoTrack], t: f32, victim_pos: Option<WorldPos>) -> bool {
     let Some(victim) = victim_pos else { return false };
-    torpedoes.iter().any(|torp| {
+    torpedoes.iter().any(|track| {
+        let torp = &track.torpedo;
         let run = t - torp.launched_at.seconds();
         if !(1.0..=TORPEDO_MAX_RUN_SECONDS).contains(&run) {
             return false;
         }
-        let d = torp.torpedo.direction;
-        let speed_mps = (d.x * d.x + d.z * d.z).sqrt();
-        if speed_mps <= 0.0 {
+        if (t - track.last_seen.seconds()).abs() > TORPEDO_GONE_SECONDS {
             return false;
         }
-        let travelled_m = speed_mps * run;
-        let needed_m = timeline::meters(timeline::ground_distance(torp.torpedo.origin, victim));
-        (travelled_m - needed_m).abs() <= needed_m.max(500.0) * TORPEDO_RUN_TOLERANCE
+        let elapsed = t - torp.updated_at.seconds();
+        let at = WorldPos(*torp.torpedo.origin + *torp.torpedo.direction * elapsed);
+        timeline::meters(timeline::ground_distance(at, victim)) <= TORPEDO_HIT_TOLERANCE_M
     })
 }
 
@@ -683,9 +695,9 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
     for v in salvos_by_owner.values_mut() {
         v.sort_by(|a, b| salvo_order(a, b));
     }
-    let mut torpedoes_by_owner: HashMap<EntityId, Vec<&ActiveTorpedo>> = HashMap::new();
+    let mut torpedoes_by_owner: HashMap<EntityId, Vec<&TorpedoTrack>> = HashMap::new();
     for t in input.torpedoes {
-        torpedoes_by_owner.entry(t.torpedo.owner_id).or_default().push(t);
+        torpedoes_by_owner.entry(t.torpedo.torpedo.owner_id).or_default().push(t);
     }
     let mut hits_by_shot: HashMap<(EntityId, u64), Vec<f32>> = HashMap::new();
     for h in input.hits {
@@ -736,9 +748,10 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                     Some((fired.seconds(), origin, FireSource::ShotHit))
                 });
             let tick = in_tick_train(ledger, index);
-            let torpedo = from_hit.is_none()
-                && !tick
-                && torpedo_fits(torpedoes_by_owner.get(attacker).map(Vec::as_slice).unwrap_or(&[]), t, victim_pos);
+            // A tick's damage is one amount per attacker and victim, so a
+            // torpedo landing beside a shell hit is still torpedo damage.
+            let torpedo =
+                !tick && torpedo_fits(torpedoes_by_owner.get(attacker).map(Vec::as_slice).unwrap_or(&[]), t, victim_pos);
             // The latest salvo before the damage; among salvos fired at the
             // same moment, the one whose shells match the hit.
             let from_salvo = from_hit.or_else(|| {

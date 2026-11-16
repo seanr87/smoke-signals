@@ -191,6 +191,7 @@ class Data:
         self.jobs = json.load(open(os.path.join(batch, "jobs.json"), encoding="utf-8"))
         self.job_by_key = {(j["match_id"], j["game_no"], j["team"]): j for j in self.jobs}
         self.games = {}
+        self.games_by_team = {}
         self.damage_by_team_game = defaultdict(float)
         self.spikes = {}
         for j in self.jobs:
@@ -201,6 +202,9 @@ class Data:
             g = json.load(open(gpath, encoding="utf-8"))
             key = (j["match_id"], j["game_no"])
             self.games.setdefault(key, g)
+            # A replay sees its own team's consumable setup in full; the
+            # opponent's can miss a charge, so a clan's roster comes from its own run.
+            self.games_by_team[(key, j["team"])] = g
             spath = os.path.join(gdir, "damage_spike.json")
             if os.path.exists(spath):
                 spike = json.load(open(spath, encoding="utf-8"))
@@ -957,7 +961,7 @@ class Site:
                 uptime += cur[1] - cur[0]
         used = charges = 0
         for key in games:
-            g = d.games.get(key)
+            g = d.games_by_team.get((key, team)) or d.games.get(key)
             if not g:
                 continue
             for t in g["teams"]:

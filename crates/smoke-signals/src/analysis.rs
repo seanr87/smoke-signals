@@ -1675,6 +1675,8 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
                     .filter_map(|v| *v)
                     .map(|v| v as f32)
                     .reduce(|a, b| a + b),
+                ledger_by_kind: spike.stats.damage_by_attacker_kind.get(&id).cloned().unwrap_or_default(),
+                game_by_type: r.damage_by_type.iter().map(|(k, v)| (k.clone(), *v as f32)).collect(),
             };
             if let Some(g) = entry.game_total {
                 spike.stats.damage_by_attacker_authoritative.insert(id, g);

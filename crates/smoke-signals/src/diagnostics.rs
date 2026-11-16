@@ -223,6 +223,8 @@ pub struct PublicResult {
     pub damage_flood: Option<f64>,
     pub received_damage_main: Option<f64>,
     pub scouting_damage: Option<f64>,
+    /// Every non-zero `damage_*` field dealt by the player, by field name.
+    pub damage_by_type: std::collections::BTreeMap<String, f64>,
 }
 
 #[derive(Debug, thiserror::Error)]
@@ -283,6 +285,11 @@ pub fn decode_public_results(constants_path: &Path, results: &str) -> Result<Vec
                 .filter_map(|n| field(row, n))
                 .reduce(|a, b| a + b),
             scouting_damage: field(row, "scouting_damage"),
+            damage_by_type: indices
+                .keys()
+                .filter(|k| k.starts_with("damage_"))
+                .filter_map(|k| field(row, k).filter(|v| *v != 0.0).map(|v| (k.clone(), v)))
+                .collect(),
         });
     }
     out.sort_by(|a, b| a.name.cmp(&b.name));

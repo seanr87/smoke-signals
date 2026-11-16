@@ -567,6 +567,10 @@ pub struct ShipReconciliation {
     pub game_total: Option<f32>,
     /// Main-battery plus fire damage from the game's results.
     pub game_shell_fire: Option<f32>,
+    /// Ledger damage by classified kind.
+    pub ledger_by_kind: BTreeMap<String, f32>,
+    /// The game's results by damage field, non-zero fields only.
+    pub game_by_type: BTreeMap<String, f32>,
 }
 
 /// Coverage of the attribution on this game.
@@ -583,6 +587,8 @@ pub struct SpikeStats {
     pub damage_by_attacker: BTreeMap<u32, f32>,
     /// Shell plus fire damage per attacker entity.
     pub damage_by_attacker_shell_fire: BTreeMap<u32, f32>,
+    /// Damage per attacker entity and classified kind.
+    pub damage_by_attacker_kind: BTreeMap<u32, BTreeMap<String, f32>>,
     /// The primary recorder's damage to enemies as the game's own stats report
     /// it, and as the merged ledger sums it, for a ground-truth check.
     pub self_damage_authoritative: Option<f32>,
@@ -802,6 +808,12 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
             if kind.credited() {
                 *stats.damage_by_attacker_shell_fire.entry(attacker.raw() as u32).or_default() += event.amount;
             }
+            *stats
+                .damage_by_attacker_kind
+                .entry(attacker.raw() as u32)
+                .or_default()
+                .entry(kind.as_str().to_string())
+                .or_default() += event.amount;
 
             let fire_clock = GameClock(fire_seconds);
             let flags = (input.flags_at)(*attacker, fire_clock);

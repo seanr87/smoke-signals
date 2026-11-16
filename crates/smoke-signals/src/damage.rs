@@ -35,6 +35,7 @@ use wows_replays::analyzer::battle_controller::state::ActiveTorpedo;
 use wows_replays::analyzer::battle_controller::state::ResolvedShotHit;
 use wows_replays::types::EntityId;
 use wows_replays::types::GameClock;
+use wows_replays::types::GameParamId;
 use wowsunpack::game_types::VisibilityFlags;
 use wowsunpack::game_types::WorldPos;
 
@@ -96,6 +97,9 @@ pub enum FireSource {
 pub enum DamageKind {
     /// A main-gun shell matched to a hit or a salvo.
     Shell,
+    /// A secondary-battery shell: its salvo's projectile is not one the
+    /// ship's main battery fires.
+    Secondary,
     /// A fire tick linked to the shooter's earlier shell on the same target.
     Fire,
     /// A hit that fits a torpedo the attacker launched.
@@ -110,6 +114,7 @@ impl DamageKind {
     pub fn as_str(self) -> &'static str {
         match self {
             Self::Shell => "shell",
+            Self::Secondary => "secondary",
             Self::Fire => "fire",
             Self::Torpedo => "torpedo",
             Self::Flood => "flood",
@@ -646,6 +651,9 @@ pub struct SpikeInput<'a> {
     pub deaths: &'a HashMap<EntityId, f32>,
     /// Owner entity and team of each smoke.
     pub smoke_owner: &'a HashMap<u32, (Option<EntityId>, Option<i64>)>,
+    /// Whether a salvo's projectile is one the ship's main battery fires;
+    /// `None` when the ship's main battery ammunition is unknown.
+    pub is_main_battery: &'a dyn Fn(EntityId, GameParamId) -> Option<bool>,
 }
 
 pub struct SpikeOutput {
@@ -754,8 +762,9 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                 })
                 .find_map(|h| {
                     let fired = h.fired_at?;
-                    let origin = h.salvo.as_ref()?.shots.first()?.origin;
-                    Some((fired.seconds(), origin, FireSource::ShotHit))
+                    let salvo = h.salvo.as_ref()?;
+                    let origin = salvo.shots.first()?.origin;
+                    Some((fired.seconds(), origin, FireSource::ShotHit, Some(salvo.params_id)))
                 });
             let tick = in_tick_train(ledger, index);
             // A tick's damage is one amount per attacker and victim, so a
@@ -783,10 +792,11 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                     .collect();
                 let latest = candidates.iter().map(|s| s.fired_at.seconds()).fold(f32::NEG_INFINITY, f32::max);
                 let tied = candidates.into_iter().filter(|s| latest - s.fired_at.seconds() <= SAME_FIRE_SECONDS);
-                best_salvo(tied, t, victim_pos, &hits_by_shot)
-                    .and_then(|s| s.salvo.shots.first().map(|shot| (s.fired_at.seconds(), shot.origin, FireSource::Salvo)))
+                best_salvo(tied, t, victim_pos, &hits_by_shot).and_then(|s| {
+                    s.salvo.shots.first().map(|shot| (s.fired_at.seconds(), shot.origin, FireSource::Salvo, Some(s.salvo.params_id)))
+                })
             });
-            let (fire_seconds, fire_pos, source) = match from_salvo {
+            let (fire_seconds, fire_pos, source, projectile) = match from_salvo {
                 Some(found) => found,
                 None => {
                     let Some(pos) = input.timeline.get(attacker).and_then(|tr| timeline::world_pos_at(tr, event.clock))
@@ -794,7 +804,7 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                         stats.events_no_attacker_position += 1;
                         continue;
                     };
-                    (t, pos, FireSource::DamageClock)
+                    (t, pos, FireSource::DamageClock, None)
                 }
             };
             if victim_pos.is_none() {
@@ -823,6 +833,13 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                 (_, _, true, _) => DamageKind::Torpedo,
                 (_, _, _, FireSource::ShotHit | FireSource::Salvo) => DamageKind::Shell,
                 (_, _, _, FireSource::DamageClock) => DamageKind::Unknown,
+            };
+            // A shell whose salvo fired a projectile the main battery does
+            // not use came from the secondary battery; it earns no credit and
+            // starts no credited fire.
+            let kind = match (kind, projectile.and_then(|p| (input.is_main_battery)(*attacker, p))) {
+                (DamageKind::Shell, Some(false)) => DamageKind::Secondary,
+                (k, _) => k,
             };
             *stats.events_by_kind.entry(kind.as_str().to_string()).or_default() += 1;
             *stats.damage_by_kind.entry(kind.as_str().to_string()).or_default() += event.amount;

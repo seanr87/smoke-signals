@@ -279,10 +279,15 @@ fn consumable_ranges(
             keys.first().map(|k| k.to_string())
         })
     };
-    let gun_m = ttx.and_then(|t| {
+    let artillery = ttx.and_then(|t| {
         let key = equipped("_Artillery", t.artillery.keys().collect())?;
-        t.artillery.get(&key)?.max_dist.map(|m| m.value())
+        t.artillery.get(&key)
     });
+    let gun_m = artillery.and_then(|a| a.max_dist.map(|m| m.value()));
+    let mut main_ammo: Vec<String> =
+        artillery.map(|a| a.guns.iter().flat_map(|g| g.ammo.iter().cloned()).collect()).unwrap_or_default();
+    main_ammo.sort();
+    main_ammo.dedup();
     let detection_m = ttx.and_then(|t| {
         let key = equipped("_Hull", t.hulls.keys().collect())?;
         t.hulls.get(&key)?.visibility_factor.map(|km| km.value() * 1000.0)
@@ -292,6 +297,7 @@ fn consumable_ranges(
         hydro_m: range(Consumable::HydroacousticSearch),
         gun_m,
         detection_m,
+        main_ammo,
     })
 }
 
@@ -1440,6 +1446,15 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
     let mut roster_ids: Vec<EntityId> = roster.keys().copied().collect();
     roster_ids.sort_by_key(|e| e.raw());
     let detection_m_of = |e: EntityId| tracker.ranges().get(&e).and_then(|r| r.detection_m);
+    let gp = &game.loaded.game_params;
+    let is_main_battery = |e: EntityId, projectile: wows_replays::types::GameParamId| -> Option<bool> {
+        let ammo = &tracker.ranges().get(&e)?.main_ammo;
+        if ammo.is_empty() {
+            return None;
+        }
+        let name = GameParamProvider::game_param_by_id(gp, projectile)?;
+        Some(ammo.iter().any(|a| a == name.name()))
+    };
     let mut spike = damage::run(&damage::SpikeInput {
         ledger: &ledger,
         hits: &hits,
@@ -1453,6 +1468,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         detection_m_of: &detection_m_of,
         deaths: &deaths_s,
         smoke_owner: &smoke_owner,
+        is_main_battery: &is_main_battery,
     });
     // With no damage events at all the credit is unknown, not zero.
     if spike.stats.damage_events > 0 {

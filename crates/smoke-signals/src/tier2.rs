@@ -99,6 +99,9 @@ pub struct ConsumableRanges {
     pub gun_m: Option<f32>,
     /// Base surface detection range of the hull.
     pub detection_m: Option<f32>,
+    /// Projectile names the equipped main battery fires; a salvo of any
+    /// other projectile is the secondary battery.
+    pub main_ammo: Vec<String>,
 }
 
 pub struct Tier2Tracker {

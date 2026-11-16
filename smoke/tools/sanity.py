@@ -68,12 +68,49 @@ for name in sorted(os.listdir(GAMES)):
     if os.path.exists(os.path.join(d, "game.json")) and os.path.exists(os.path.join(d, "damage_spike.json")):
         runs[name] = (json.load(open(os.path.join(d, "game.json"), encoding="utf-8")), json.load(open(os.path.join(d, "damage_spike.json"), encoding="utf-8")))
 
-print("# 1. Ledger reconciliation (shell plus fire, ledger over the game's own result)")
+print("# 1. Ledger reconciliation (shell plus fire, ledger over the game's own main battery, secondaries and fire)")
+
+
+def group_types(bt):
+    """Game result damage fields grouped into main, secondaries, fire, flood, torpedo, ram, other."""
+    g = Counter()
+    for k, v in (bt or {}).items():
+        if k.startswith("damage_main_"):
+            g["main"] += v
+        elif k.startswith("damage_atba_"):
+            g["secondaries"] += v
+        elif k == "damage_fire":
+            g["fire"] += v
+        elif k == "damage_flood":
+            g["flood"] += v
+        elif k.startswith("damage_tpd"):
+            g["torpedo"] += v
+        elif k == "damage_ram":
+            g["ram"] += v
+        elif k != "damage":
+            g["other"] += v
+    return g
+
+
+def run_ratio(spike):
+    """Ledger shell plus fire over the result's main plus secondaries plus fire, or the
+    older shell-plus-fire ratio when the record has no per-type results."""
+    recon = spike.get("reconciliation") or []
+    if recon and all("game_by_type" in r for r in recon):
+        l = sum((r.get("ledger_by_kind") or {}).get("shell", 0.0) + (r.get("ledger_by_kind") or {}).get("secondary", 0.0) + (r.get("ledger_by_kind") or {}).get("fire", 0.0) for r in recon)
+        gt = Counter()
+        for r in recon:
+            gt.update(group_types(r.get("game_by_type")))
+        res = gt["main"] + gt["secondaries"] + gt["fire"]
+        return (l / res) if res else None
+    return spike.get("reconciliation_ratio_shell_fire")
+
+
 ratios = []
 outside = []
 offsets_untrusted = []
 for name, (g, spike) in runs.items():
-    r = spike.get("reconciliation_ratio_shell_fire")
+    r = run_ratio(spike)
     if r is None:
         outside.append((name, None, "no game result in the replay"))
         continue

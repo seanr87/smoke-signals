@@ -153,12 +153,13 @@ Every metric is measured over the smoke's life unless stated. "Inside" a smoke: 
 
 ### 6.2 Weapon classification (`kind` on every damage event)
 
-- shell: matched to a resolved shot hit (same attacker and victim, impact within 1 s) or to the attacker's latest salvo within 25 s before the damage.
+- shell: matched to a resolved shot hit (same attacker and victim, impact within 1 s) or to the attacker's latest salvo within 25 s before the damage, and the salvo's projectile is one the ship's equipped main battery fires (the artillery component's `ammoList`).
+- secondary: a shell whose salvo's projectile is not a main-battery one. Not credited, and a fire tick that follows only secondary hits is unknown, not fire. When a ship's main-battery ammunition is unknown every shell counts as main.
 - fire: the event sits in a tick train (a same-amount neighbour 0.7 to 1.4 s away on the same victim) and the attacker's latest shell on that victim was within 75 s before it; the tick is credited like that shell.
-- torpedo: not a tick, and a torpedo the attacker launched 1 to 150 s earlier has its dead-reckoned position at the damage clock (origin plus direction times elapsed, in world units) within 400 m of the victim. The view keeps a torpedo to the end of the replay, so its disappearance cannot mark the hit. A torpedo landing on the same tick as a shell hit is torpedo damage, since the event carries one amount per attacker and victim. The earlier run-length test compared world units with meters and matched almost nothing.
+- torpedo: not a tick, the amount is at least 3,000 (or the victim dies within 1 s, a finishing hit), and a torpedo the attacker launched 1 to 150 s earlier has its dead-reckoned track (origin plus direction times elapsed, in world units, stepped every 0.25 s) pass within 400 m of the victim's position at some clock within 12 s before or after the damage clock. The window exists because the victim's position is a held sample when it is not spotted and the hit is reported late; the floor exists because no torpedo in the field has an alpha under 10,000 and small ticks near a passing torpedo were shells two times in three. The view keeps a torpedo to the end of the replay, so its disappearance cannot mark the hit. A torpedo landing on the same tick as a shell hit is torpedo damage, since the event carries one amount per attacker and victim. The earlier run-length test compared world units with meters and matched almost nothing.
 - flood: a tick train whose latest linked event is a torpedo.
 - unknown: nothing recorded explains it (secondaries, shells with no salvo seen, and so on).
-- Only shells and fires earn smoke credit. Torpedo, flood and unknown damage are reported in `damage_spike.json` (events and damage by kind) and never credited.
+- Only main-battery shells and fires earn smoke credit. Secondary, torpedo, flood and unknown damage are reported in `damage_spike.json` (events and damage by kind) and never credited.
 
 ### 6.3 Smoke credit (one smoke per shot)
 
@@ -267,7 +268,8 @@ History: round 1 and 2 Deepest Cap Smoke went to PN_Sean_O_Reill's Harugumo on M
 ## 10. Known limits
 
 - Damage kinds are inferred from timing. Fire ticks are linked to the shooter's latest shell on the same target within 75 s, so a long burn is credited to one salvo; "unknown" damage (about 9% of all damage) includes secondaries and shells whose salvo was not seen.
-- Reconciliation per game ranges from 0.71 to 1.16 of the game's totals. Games below 1 are missing hits neither perspective saw or where equal-amount events were folded that were real; games above 1 still carry some duplicates whose clocks drifted more than the window. The per-ship table on each game page shows where.
+- Reconciliation per game ranges from 0.71 to 1.16 of the game's totals. Games below 1 are missing hits neither perspective saw or where equal-amount events were folded that were real; games above 1 still carry some duplicates whose clocks drifted more than the window. The per-ship table on each game page shows where. A game whose shell-plus-fire ledger exceeds the game's result by more than 25% (`LEDGER_RATIO_MAX` in build_site.py) is flagged in games.csv, noted on its page and left out of awards and leaderboards (three games in the full field).
+- Replay coverage: a client is told about hits in its area of interest, so hits far from both recorders are in neither ledger. Over the full field the ledger holds about 89% of the torpedo damage the game's results report (the shell ledger has the same kind of gap, smaller). Torpedo and shell totals on the site are what the two replays saw, not the game's own totals.
 - Offensive radar spots are inferred from our activation and range, not read from the replay, so a spot by another radar in range at the same time is counted too.
 - The line-of-sight test uses the hull's base detection range, not the build's concealment; enemies within the base range but outside the real detection range can mark a smoke as needed.
 - The Deepest Cap Smoke can be a zero-damage smoke, since defending a contested cap is enough for eligibility (current winner).

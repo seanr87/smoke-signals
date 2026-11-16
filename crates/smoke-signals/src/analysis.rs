@@ -54,9 +54,10 @@ use crate::state;
 use crate::tier2;
 use crate::timeline;
 
-/// Farthest a ship may be from a smoke's origin at creation and still own
-/// it without a flag, in meters. The first puff is laid about one smoke
-/// radius (450 m) from the ship, so the bound is a radius plus slack.
+/// Farthest the nearest fitted ship may be from a smoke's origin at creation
+/// and still own it without a flag when no activation confirms it, in
+/// meters. The first puff is laid about one smoke radius (450 m) from the
+/// ship, so the bound is a radius plus slack.
 pub const OWNER_MAX_DISTANCE_M: f32 = 600.0;
 
 /// Longest gap between a smoke activation and the smoke object's creation.
@@ -1017,9 +1018,11 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
                 if act.is_none() {
                     notes.push(format!("no smoke activation within {ACTIVATION_WINDOW_SECONDS} s before creation"));
                 }
+                // An activation within the window confirms the owner, so
+                // the distance note applies only to the nearest-ship fallback.
                 if source == timeline::PosSource::Minimap {
                     notes.push("position from minimap samples only".to_string());
-                } else if d > OWNER_MAX_DISTANCE_M {
+                } else if act.is_none() && d > OWNER_MAX_DISTANCE_M {
                     notes.push(format!("nearest ship {d:.0} m from origin"));
                 }
             }

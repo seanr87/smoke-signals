@@ -79,8 +79,10 @@ pub fn jobs_from_inventory(path: &Path, repo_root: &Path, teams_in_scope: &[Stri
             if !teams_in_scope.is_empty() && !teams_in_scope.iter().any(|t| t == team) {
                 continue;
             }
-            let suffix = format!("_{}.wowsreplay", slug(team));
-            let Some(primary) = files.iter().find(|p| p.ends_with(&suffix)) else {
+            // The site names a file by the lower-cased tag, which keeps the
+            // dashes of a tag like -BN-; the slug drops them.
+            let suffixes = [format!("_{}.wowsreplay", slug(team)), format!("_{}.wowsreplay", team.to_ascii_lowercase())];
+            let Some(primary) = files.iter().find(|p| suffixes.iter().any(|s| p.ends_with(s.as_str()))) else {
                 tracing::warn!(match_id = f[c_match], game = f[c_game], team, "No replay for this team; skipped");
                 continue;
             };

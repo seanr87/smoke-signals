@@ -55,9 +55,7 @@ METRIC_NAMES = {
 
 def clan_rows(site, subset):
     rows = []
-    for team in build_site.TEAMS:
-        if not any(s["team"] == team for s in subset):
-            continue
+    for team in sorted({s["team"] for s in subset}):
         m = site.clan_metrics(team, subset)
         for key, label in METRIC_NAMES.items():
             value, n = m[key]

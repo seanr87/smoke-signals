@@ -161,6 +161,8 @@ pub struct SmokeRecord {
     pub owner_flag: bool,
     pub owner_note: String,
     pub owner_distance_m: Option<f32>,
+    /// The game had one replay, so every value is one perspective's view.
+    pub one_sided: bool,
     pub overlap_flag: bool,
     pub overlapping_smoke_ids: Vec<u32>,
     pub origin_xy: Xz,

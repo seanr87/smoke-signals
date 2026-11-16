@@ -272,6 +272,7 @@ const TAIL_COLUMNS: &[&str] = &[
     "frame_act_zoom",
     "frame_cap_zoom",
     "clip",
+    "one_sided",
 ];
 
 /// All columns: base, Tier 1 at activation (`_act`), Tier 1 at capture
@@ -436,6 +437,7 @@ pub fn smoke_csv_row(r: &SmokeRecord) -> Vec<String> {
         opt(r.frame_act_zoom.as_deref()),
         opt(r.frame_cap_zoom.as_deref()),
         opt(r.clip.as_deref()),
+        r.one_sided.to_string(),
     ]);
     row
 }

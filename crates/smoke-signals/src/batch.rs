@@ -1,6 +1,7 @@
 //! Batch analysis over the replay inventory: one run per game and per team
 //! in scope, each with that team's replay as the primary, keeping only that
-//! team's smokes.
+//! team's smokes. The one run of a single-replay game also keeps the
+//! opponent's smokes, marked one-sided.
 
 use std::collections::BTreeMap;
 use std::fmt::Write as _;
@@ -36,6 +37,8 @@ pub struct Job {
     pub opponent: String,
     pub folder: PathBuf,
     pub primary_file: String,
+    /// The game has no other replay, so this run is its only view.
+    pub sole_run: bool,
 }
 
 impl Job {
@@ -100,6 +103,7 @@ pub fn jobs_from_inventory(path: &Path, repo_root: &Path, teams_in_scope: &[Stri
                 opponent,
                 folder: repo_root.join(&f[c_folder]),
                 primary_file,
+                sole_run: files.len() < 2,
             });
         }
     }
@@ -208,7 +212,7 @@ pub fn run_job(
         .smokes
         .iter()
         .enumerate()
-        .filter(|(_, s)| s.team.as_deref() == Some(job.team.as_str()))
+        .filter(|(_, s)| s.team.as_deref() == Some(job.team.as_str()) || (job.sole_run && s.one_sided))
         .map(|(i, _)| i)
         .collect();
     std::fs::create_dir_all(out_dir).attach_with(|| format!("creating {}", out_dir.display()))?;

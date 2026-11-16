@@ -69,6 +69,12 @@ pub const ACTIVATION_WINDOW_SECONDS: f32 = 5.0;
 /// time, on top of the one-radius offset of the first puff.
 pub const OWNER_ACTIVATED_MAX_DISTANCE_M: f32 = 1000.0;
 
+/// Beyond this distance the nearest positioned ship cannot be the owner: a
+/// smoke starts at its ship. A fitted ship with no position at creation
+/// (an unspotted enemy, seen from one replay) is then the owner when it is
+/// the only such ship.
+pub const OWNER_INFERRED_MIN_DISTANCE_M: f32 = 2000.0;
+
 /// Time between two puffs of one emission. A smoker that dies within this
 /// interval after its last new puff died while still emitting.
 pub const PUFF_INTERVAL_SECONDS: f32 = 4.0;
@@ -1008,13 +1014,34 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             .find(|c| c.3.is_some() && c.1 <= OWNER_ACTIVATED_MAX_DISTANCE_M)
             .or_else(|| candidates.first())
             .copied();
-        let owner = chosen.map(|c| c.0);
-        let distance = chosen.map(|c| c.1);
-        let activation: Option<Activation> = chosen.and_then(|c| c.3);
+        // Fitted ships alive at creation with no position at all.
+        let unpositioned: Vec<EntityId> = roster
+            .iter()
+            .filter(|(e, r)| {
+                r.fit.is_some()
+                    && !candidates.iter().any(|c| c.0 == **e)
+                    && deaths.get(e).is_none_or(|d| d.seconds() > track.created.seconds())
+            })
+            .map(|(e, _)| *e)
+            .collect();
+        let inferred = match (chosen, unpositioned.as_slice()) {
+            (None, [only]) => Some(*only),
+            (Some(c), [only]) if c.1 > OWNER_INFERRED_MIN_DISTANCE_M => Some(*only),
+            _ => None,
+        };
+        let owner = inferred.or(chosen.map(|c| c.0));
+        let distance = if inferred.is_some() { None } else { chosen.map(|c| c.1) };
+        let activation: Option<Activation> = if inferred.is_some() { None } else { chosen.and_then(|c| c.3) };
         let mut notes: Vec<String> = Vec::new();
-        match chosen {
-            None => notes.push("no ship with a smoke consumable had a position at creation".to_string()),
-            Some((_, d, source, act)) => {
+        match (inferred, chosen) {
+            (Some(_), c) => notes.push(match c {
+                Some((_, d, _, _)) => format!(
+                    "owner inferred: the only fitted ship without a position; nearest positioned ship {d:.0} m from origin"
+                ),
+                None => "owner inferred: the only fitted ship without a position; no positioned fitted ship".to_string(),
+            }),
+            (None, None) => notes.push("no ship with a smoke consumable had a position at creation".to_string()),
+            (None, Some((_, d, source, act))) => {
                 if act.is_none() {
                     notes.push(format!("no smoke activation within {ACTIVATION_WINDOW_SECONDS} s before creation"));
                 }
@@ -1138,6 +1165,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             owner_flag,
             owner_note: notes.join("; "),
             owner_distance_m: distance,
+            one_sided: merged_replays.is_empty(),
             overlap_flag: false,
             overlapping_smoke_ids: Vec::new(),
             origin_xy: Xz { x: track.origin.0.x, z: track.origin.0.z },

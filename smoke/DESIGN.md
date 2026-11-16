@@ -23,6 +23,7 @@ For every smoke laid by H-SR, RESIN and PN in King of the Sea XIX NA, the tool p
 | 2. Demo site, round 4 | Kills from smoke, smoke deaths, shooter and target tables, 14 km ship reach, half-map zoomed view with fire lines; map-crop thumbnails, Analysis folded into Clans (grouped charts, best first), Home key terms, smoke page in three groups, Maps filters fixed plus ships pie, Smokes table reworked, player chart labelled and clickable | Done and published 3 Nov 2026 |
 | 2. Demo site, round 5 | Classification of every smoke (smoker, movement, coverage, purpose tags with priority and confidence, counter_smoke), location context (map profiles, zone, lane, cap role, front line, caps in range), smokees with detection kinds, class and type lenses sitewide with destroyer defaults, Maps zone overlay, ANALYSIS and DECISIONS docs, review list, r5 export | Done and published 4 Nov 2026 (overnight, no approval stops) |
 | 2. Demo site, round 6 | Concealed vs detected damage with reasons, DD damage, stationary movement, cap_control on the contested cap with radar activated, damage purpose at 20k only, counter_smoke at 45 s and 12 km, merged Smokees table with badges, bare zoomed view sized to the smokees and targets, Maps overlay and grid orientation fixed with an overlay test, Tendencies group and softer wording, r6 export | Done and published 4 Nov 2026 |
+| 2. Full field, round 7 | Every clan and game (171 games, 341 replays, 30 clans): inventory of the whole tournament, one run per team per game, own-run rosters, one-sided runs, offset search to 12 s, torpedo classification by dead reckoning, owner note only without an activation, standing sanity script, STEP reports in smoke/STEP*.md | Analysis done 16 Nov 2026; site plan approved, build pending |
 | 3. Interactive | Tagging, comments, hosting, login | Decided after the demo is presented |
 
 Deferred past the demo: build data (commander skills and upgrades) and effective smoke stats; hand tagging (pages show "untagged"); clips for every smoke; a second golden test game; image compression; the desktop app integration.
@@ -113,7 +114,7 @@ The work folder must be a short path (Windows 260-character limit); the script s
 - Replay positions, smoke radii (15 = 450 m) and map sizes are in world units of 30 m; every `_m` and `_km` field is converted.
 - The HUD countdown runs about 1.5 s ahead of battle start plus elapsed replay time; every `mm:ss` is the HUD value at that replay second.
 - Each replay records the smoke activations its own team made and the enemies it could see; a second replay's recorder has no live merged position, so positions come from the pre-scanned timeline with a minimap fallback.
-- A client is told about every hit in its area of interest, so the two perspectives report the same hit twice with a clock offset that is near constant within a game but differs between games (1 to 5 s seen).
+- A client is told about every hit in its area of interest, so the two perspectives report the same hit twice with a clock offset that is near constant within a game but differs between games (1 to 8.5 s seen over the full field).
 - The results blob at the end of a replay carries every player's totals (`playersPublicInfo`, decoded with `CLIENT_PUBLIC_RESULTS_INDICES` from constants.json: damage, damage_main_ap, damage_main_he, damage_main_cs, damage_fire, and others).
 
 ## 5. Smoke definitions
@@ -122,7 +123,7 @@ A smoke is one smoke object in the replay. `view.smoke_screens()` gives its radi
 
 **Lifecycle.** `t_activate` (the consumable is used), emission until `t_emission_end`, standing, `t_dispersed` (the object is removed). `t_created` is when the object appeared.
 
-**Owner.** Candidates are the ships fitted with a smoke consumable. The owner is the nearest candidate that activated smoke in the 5 s before the object was created; a candidate with an activation beats a nearer one without only within 1000 m of the origin. Otherwise the nearest candidate is the owner and `owner_flag` is set with a note (no activation in the window; position from minimap samples only; nearest candidate more than 600 m away). Smoke objects are tracked from the primary replay only.
+**Owner.** Candidates are the ships fitted with a smoke consumable. The owner is the nearest candidate that activated smoke in the 5 s before the object was created; a candidate with an activation beats a nearer one without only within 1000 m of the origin. Otherwise the nearest candidate is the owner and `owner_flag` is set with a note (no activation in the window; position from minimap samples only; nearest candidate more than 600 m away, which applies only without an activation since an activation confirms the owner). When the nearest positioned candidate is more than 2 km away, or there is none, and exactly one fitted ship alive at creation has no position at all (an unspotted enemy seen from one replay), that ship is the owner, flagged "owner inferred". Smoke objects are tracked from the primary replay only. Every record of a single-replay game carries `one_sided` = true, and the batch keeps the opponent's smokes from such a run as well as the primary team's.
 
 **Types and capture moment.**
 
@@ -147,14 +148,14 @@ Every metric is measured over the smoke's life unless stated. "Inside" a smoke: 
 
 ### 6.1 Damage ledger
 
-- Each replay's `receiveDamagesOnShip` events give attacker, victim, amount and clock, but not the weapon. Both replays are parsed and merged. The merge estimates each later replay's clock offset against the earlier ones as the most common clock difference (quarter-second bins, at least 10 pairs) over same-attacker, same-victim, same-amount pairs, leaving out fire and flood ticks, then folds an event onto an unmatched earlier event within 0.8 s of that offset. Without the offset, games with a 4 to 5 s skew doubled every ship's total.
+- Each replay's `receiveDamagesOnShip` events give attacker, victim, amount and clock, but not the weapon. Both replays are parsed and merged. The merge estimates each later replay's clock offset against the earlier ones as the most common clock difference (quarter-second bins, at least 10 pairs, searched up to 12 s) over same-attacker, same-victim, same-amount pairs, leaving out fire and flood ticks, then folds an event onto an unmatched earlier event within 0.8 s of that offset. A bin beyond 6 s wins only with at least twice the pairs of the best bin within 6 s, so a chance alignment of repeated equal hits cannot displace a real near peak; without a trusted estimate the fold uses offset zero and a 3 s window. The estimates are written to `damage_spike.json` as `perspective_offsets`. Without the offset, games with a 4 to 8.5 s skew doubled every ship's total.
 - Reconciliation: for every ship, the ledger total and the ledger's shell-plus-fire total are compared with the game's own results (damage; damage_main_ap + damage_main_he + damage_main_cs + damage_fire). Each game page shows the per-ship table; the cross-game share is no longer on the site. Round 3 batch: ledger over game total averages 0.98 per game (range 0.71 to 1.16); shell-plus-fire averages 1.05 (0.81 to 1.36).
 
 ### 6.2 Weapon classification (`kind` on every damage event)
 
 - shell: matched to a resolved shot hit (same attacker and victim, impact within 1 s) or to the attacker's latest salvo within 25 s before the damage.
 - fire: the event sits in a tick train (a same-amount neighbour 0.7 to 1.4 s away on the same victim) and the attacker's latest shell on that victim was within 75 s before it; the tick is credited like that shell.
-- torpedo: no hit, not a tick, and a torpedo the attacker launched 1 to 150 s earlier has run (speed times run time) within 15% of the distance from its launch point to the victim.
+- torpedo: not a tick, and a torpedo the attacker launched 1 to 150 s earlier left the view within 3 s of the damage clock with its dead-reckoned position (origin plus direction times elapsed, in world units) within 400 m of the victim. A torpedo landing on the same tick as a shell hit is torpedo damage, since the event carries one amount per attacker and victim. The earlier run-length test compared world units with meters and matched almost nothing.
 - flood: a tick train whose latest linked event is a torpedo.
 - unknown: nothing recorded explains it (secondaries, shells with no salvo seen, and so on).
 - Only shells and fires earn smoke credit. Torpedo, flood and unknown damage are reported in `damage_spike.json` (events and damage by kind) and never credited.

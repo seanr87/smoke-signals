@@ -83,6 +83,19 @@ COVERAGE_DEFS = {
 }
 # Tags kept in the data but not shown on the site.
 HIDDEN_PURPOSES = {"hydro_trap"}
+# A run whose shell-plus-fire ledger exceeds the game's own result by more
+# than this has unmerged duplicate hits (clock drift between the replays).
+# Its game is flagged, kept on the site, and left out of awards and leaderboards.
+LEDGER_RATIO_MAX = 1.25
+
+
+def game_quality(spikes):
+    """Data-quality note for a game from its runs' damage_spike records, or ''."""
+    ratios = [sp.get("reconciliation_ratio_shell_fire") for sp in spikes if sp.get("reconciliation_ratio_shell_fire")]
+    high = [r for r in ratios if r > LEDGER_RATIO_MAX]
+    if not high:
+        return ""
+    return "ledger drift: the replay ledger is " + " and ".join(f"{r:.2f}" for r in sorted(ratios)) + " times the game's own shell and fire damage (unmerged duplicate hits between the two replays); smoke damage in this game is overstated"
 AUTO_NOTE = "auto-tagged: rule-based from the replay; fuzzy tags carry a confidence"
 # Clan metrics where a lower value is the better one (charts sort best first).
 LOWER_IS_BETTER = {"deaths"}
@@ -213,6 +226,10 @@ class Data:
                 for ent, dmg in spike.get("damage_by_attacker_shell_fire", spike.get("damage_by_attacker", {})).items():
                     if owner_team.get(ent) == j["team"]:
                         self.damage_by_team_game[(j["team"], key)] += dmg
+        self.game_quality = {}
+        for (_, key), sp in self.spikes.items():
+            if key not in self.game_quality:
+                self.game_quality[key] = game_quality([s for (_, k), s in self.spikes.items() if k == key])
         self.inventory = {}
         self.inventory_rows = []
         if inventory and os.path.exists(inventory):
@@ -318,6 +335,7 @@ class Data:
                         s["_zone"] = f"{s['_zone']} ({spot.get('name')})" if s["_zone"] else str(spot.get("name"))
             s["_low_conf"] = [p["tag"] for p in c.get("purposes") or [] if p.get("confidence") == "low"] + (["movement"] if mv.get("confidence") == "low" else [])
             s["_short_game"] = f"vs {s.get('opponent') or '?'}, game {s['game_no']}"
+            s["_quality"] = self.game_quality.get(s["_key"], "")
         self.smokes.sort(key=lambda s: (s["_key"], s["_act_s"]))
         self.by_game = defaultdict(list)
         for s in self.smokes:
@@ -591,9 +609,13 @@ class Site:
         for s in data.smokes:
             s["_slug"] = f"{s['_match']}_g{s['game_no']}_{s['smoke_id']}"
             self.smoke_href[s["_slug"]] = f"smokes/{s['_slug']}.html"
-        self.players = self.player_stats(data.smokes)
-        self.players_dd = self.player_stats(self.lens_rows("destroyer"))
-        self.awards_by_lens = {"destroyer": self.compute_awards(self.lens_rows("destroyer"), self.players_dd), "all": self.compute_awards(data.smokes, self.players)}
+        # Awards and leaderboards leave out games with a data-quality flag.
+        clean = [s for s in data.smokes if not s["_quality"]]
+        clean_dd = [s for s in clean if self.lens_match(s, "destroyer")]
+        self.flagged_games = sorted({s["_key"] for s in data.smokes if s["_quality"]})
+        self.players = self.player_stats(clean)
+        self.players_dd = self.player_stats(clean_dd)
+        self.awards_by_lens = {"destroyer": self.compute_awards(clean_dd, self.players_dd), "all": self.compute_awards(clean, self.players)}
         self.awards = self.awards_by_lens["destroyer"]
         self.badges = defaultdict(list)
         for lens, awards in self.awards_by_lens.items():
@@ -1178,7 +1200,8 @@ class Site:
         def pcards(awards):
             return "".join(f'<div class="card award-p"><h3>{term(t, AWARD_DEFS.get(t, ""))}</h3><p>{self.team_tag(p["team"])} <a href="{self.player_href(name)}"><b>{esc(name)}</b></a></p><p class="note">{esc(self.player_award_note(t, p))}</p></div>' if name else f'<div class="card award-p"><h3>{esc(t)}</h3><p class="muted">Nothing here, just clear skies.</p></div>' for t, (name, p) in awards["players"].items())
         pawards = f'<div class="lens-toggle"><button class="on" data-lens="destroyer">Destroyer smokes</button><button data-lens="all">All smokes</button></div><section class="cards lens-set" data-lens="destroyer">{pcards(self.awards_by_lens["destroyer"])}</section><section class="cards lens-set" data-lens="all" hidden>{pcards(self.awards_by_lens["all"])}</section>'
-        body = f"""<h1>Players</h1><p class="muted">Click a column heading to sort. Badges are awards (gold for the destroyer lens, grey for all smokes); hover for the rule. No limit on awards per player. The leaderboard counts every smoke.</p>
+        excluded = f" Smokes from {len(self.flagged_games)} game{'s' if len(self.flagged_games) != 1 else ''} with a data-quality flag are left out of the leaderboard and the awards." if self.flagged_games else ""
+        body = f"""<h1>Players</h1><p class="muted">Click a column heading to sort. Badges are awards (gold for the destroyer lens, grey for all smokes); hover for the rule. No limit on awards per player. The leaderboard counts every smoke.{esc(excluded)}</p>
 <h2>Player awards</h2>{pawards}
 <h2>Leaderboard (n = {len(self.players)} players)</h2><div class="scroll-x"><table class="games sortable" id="players"><thead><tr><th>Clan</th><th>Player</th><th>Ships</th><th data-key="smokes">Smokes</th><th data-key="damage">Smoke damage</th><th data-key="concealed">{term("Concealed", CONCEALED_DEF)}</th><th data-key="dd">{term("DD damage", DD_DEF)}</th><th data-key="avg">Per smoke</th><th data-key="kills">{term("Kills", METRIC_DEFS["kills"])}</th><th data-key="selfish">{term("Selfish")}</th><th data-key="radar">Radar spots</th><th data-key="won">{term("Near cap capture", METRIC_DEFS["won"])}</th><th data-key="offensive">{term("Own radar spots", METRIC_DEFS["offensive"])}</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>"""
         self.write("players.html", self.page("Players", body, active="Players"))
@@ -1482,7 +1505,9 @@ class Site:
         timeline = self.timeline_svg(smokes, g)
         score = self.score_svg(smokes, teams, g)
         cards = "".join(self.smoke_card(s, depth=1) for s in smokes)
-        body = f"""<h1>{esc(smokes[0]['_games_label'])}</h1><p class="muted">{" | ".join(esc(h) for h in header)} | {" | ".join(links)}</p>
+        quality = d.game_quality.get(key, "")
+        quality_note = f'<p class="warn">Data quality: {esc(quality)}. This game is left out of the awards and the Players leaderboard.</p>' if quality else ""
+        body = f"""<h1>{esc(smokes[0]['_games_label'])}</h1><p class="muted">{" | ".join(esc(h) for h in header)} | {" | ".join(links)}</p>{quality_note}
 <section class="two-col">{self.map_figure(smokes[0]['map'], smokes, depth=1, size=480, anchor_prefix='g', fig_id='g')}<div><h2>Smokes across the match (n = {len(smokes)})</h2>{timeline}<h2>Score with smoke markers</h2>{score}</div></section>
 <h2>Rosters</h2><section class="cards rosters">{roster}</section>{recon}
 <h2>Smokes in this game</h2><section class="cards">{cards}</section>"""

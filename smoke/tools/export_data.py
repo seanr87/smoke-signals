@@ -38,6 +38,7 @@ def games_rows(data):
             "end_clock": end_clock, "end_elapsed": build_site.elapsed_text(elapsed) if elapsed is not None else "",
             "end_phase": build_site.phase_of(elapsed) or "" if elapsed is not None else "", "finish_type": g.get("finish_type") or "",
             "smokes_analysed": len(data.by_game.get(key, [])),
+            "data_quality": data.game_quality.get(key, ""),
         })
     return rows
 

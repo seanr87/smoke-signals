@@ -155,7 +155,7 @@ Every metric is measured over the smoke's life unless stated. "Inside" a smoke: 
 
 - shell: matched to a resolved shot hit (same attacker and victim, impact within 1 s) or to the attacker's latest salvo within 25 s before the damage.
 - fire: the event sits in a tick train (a same-amount neighbour 0.7 to 1.4 s away on the same victim) and the attacker's latest shell on that victim was within 75 s before it; the tick is credited like that shell.
-- torpedo: not a tick, and a torpedo the attacker launched 1 to 150 s earlier left the view within 3 s of the damage clock with its dead-reckoned position (origin plus direction times elapsed, in world units) within 400 m of the victim. A torpedo landing on the same tick as a shell hit is torpedo damage, since the event carries one amount per attacker and victim. The earlier run-length test compared world units with meters and matched almost nothing.
+- torpedo: not a tick, and a torpedo the attacker launched 1 to 150 s earlier has its dead-reckoned position at the damage clock (origin plus direction times elapsed, in world units) within 400 m of the victim. The view keeps a torpedo to the end of the replay, so its disappearance cannot mark the hit. A torpedo landing on the same tick as a shell hit is torpedo damage, since the event carries one amount per attacker and victim. The earlier run-length test compared world units with meters and matched almost nothing.
 - flood: a tick train whose latest linked event is a torpedo.
 - unknown: nothing recorded explains it (secondaries, shells with no salvo seen, and so on).
 - Only shells and fires earn smoke credit. Torpedo, flood and unknown damage are reported in `damage_spike.json` (events and damage by kind) and never credited.

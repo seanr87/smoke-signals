@@ -751,7 +751,8 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         HashMap::new();
     let mut cap_history: Vec<(GameClock, Vec<CapSample>)> = Vec::new();
     let mut next_sample: Option<f32> = None;
-    let mut torpedoes: HashMap<(u32, u32, u32), damage::TorpedoTrack> = HashMap::new();
+    let mut torpedoes: HashMap<(u32, u32, u32), wows_replays::analyzer::battle_controller::state::ActiveTorpedo> =
+        HashMap::new();
     let mut radar_activations: Vec<RadarActivation> = Vec::new();
     let mut seen_radar: HashSet<(EntityId, u32)> = HashSet::new();
     let mut hydro_activations: Vec<RadarActivation> = Vec::new();
@@ -851,10 +852,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         }
         for torp in view.active_torpedoes() {
             let key = (torp.torpedo.owner_id.raw() as u32, torp.torpedo.salvo_id, torp.torpedo.shot_id.raw());
-            torpedoes
-                .entry(key)
-                .and_modify(|track| track.last_seen = clock)
-                .or_insert(damage::TorpedoTrack { torpedo: torp, last_seen: clock });
+            torpedoes.entry(key).or_insert(torp);
         }
     }
     session.finish();
@@ -1431,9 +1429,9 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         })
         .collect();
     let salvo_list: Vec<wows_replays::analyzer::battle_controller::state::ActiveShot> = salvos.into_values().collect();
-    let mut torpedo_list: Vec<damage::TorpedoTrack> = torpedoes.into_values().collect();
+    let mut torpedo_list: Vec<wows_replays::analyzer::battle_controller::state::ActiveTorpedo> =
+        torpedoes.into_values().collect();
     torpedo_list.sort_by(|a, b| {
-        let (a, b) = (&a.torpedo, &b.torpedo);
         a.launched_at.seconds().total_cmp(&b.launched_at.seconds()).then(a.torpedo.shot_id.raw().cmp(&b.torpedo.shot_id.raw()))
     });
     let deaths_s: HashMap<EntityId, f32> = deaths.iter().map(|(e, c)| (*e, c.seconds())).collect();

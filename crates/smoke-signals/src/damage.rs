@@ -61,10 +61,21 @@ const TICK_GAP_MAX_SECONDS: f32 = 1.4;
 const FIRE_LINK_SECONDS: f32 = 75.0;
 /// A torpedo launched this long before the damage, at most, can be its cause.
 const TORPEDO_MAX_RUN_SECONDS: f32 = 150.0;
-/// Farthest the torpedo's dead-reckoned position may be from the victim at
-/// the damage clock, in meters. The view keeps a torpedo to the end of the
-/// replay, so its disappearance cannot mark the hit.
+/// Farthest the torpedo's dead-reckoned track may pass from the victim, in
+/// meters. The view keeps a torpedo to the end of the replay, so its
+/// disappearance cannot mark the hit.
 const TORPEDO_HIT_TOLERANCE_M: f32 = 400.0;
+/// The track may pass the victim this long before or after the damage
+/// clock: the victim's position is a held sample when the ship is not
+/// spotted, and the hit is reported late.
+const TORPEDO_PASS_WINDOW_SECONDS: f32 = 12.0;
+/// Step of the pass search along the track.
+const TORPEDO_PASS_STEP_SECONDS: f32 = 0.25;
+/// A torpedo tick carries at least this much damage, unless it sinks the
+/// victim: no torpedo in the field has an alpha under 10,000.
+const TORPEDO_MIN_DAMAGE: f32 = 3000.0;
+/// A hit this close to the victim's death clock is a finishing hit.
+const FINISHING_HIT_SECONDS: f32 = 1.0;
 /// Detection range used for the line-of-sight test when a ship's build gives none.
 const DEFAULT_DETECTION_M: f32 = 12_000.0;
 
@@ -654,9 +665,9 @@ fn in_tick_train(events: &[DamageEvent], index: usize) -> bool {
     events[..index].iter().rev().take(8).any(near) || events[index + 1..].iter().take(8).any(near)
 }
 
-/// A torpedo the attacker launched whose dead-reckoned position at the
-/// damage clock is on the victim. The direction vector is in world units per
-/// second, like the origin.
+/// A torpedo the attacker launched whose dead-reckoned track passes the
+/// victim within the pass window around the damage clock. The direction
+/// vector is in world units per second, like the origin.
 fn torpedo_fits(torpedoes: &[&ActiveTorpedo], t: f32, victim_pos: Option<WorldPos>) -> bool {
     let Some(victim) = victim_pos else { return false };
     torpedoes.iter().any(|torp| {
@@ -664,9 +675,16 @@ fn torpedo_fits(torpedoes: &[&ActiveTorpedo], t: f32, victim_pos: Option<WorldPo
         if !(1.0..=TORPEDO_MAX_RUN_SECONDS).contains(&run) {
             return false;
         }
-        let elapsed = t - torp.updated_at.seconds();
-        let at = WorldPos(*torp.torpedo.origin + *torp.torpedo.direction * elapsed);
-        timeline::meters(timeline::ground_distance(at, victim)) <= TORPEDO_HIT_TOLERANCE_M
+        let mut s = (t - TORPEDO_PASS_WINDOW_SECONDS).max(torp.launched_at.seconds());
+        while s <= t + TORPEDO_PASS_WINDOW_SECONDS {
+            let elapsed = s - torp.updated_at.seconds();
+            let at = WorldPos(*torp.torpedo.origin + *torp.torpedo.direction * elapsed);
+            if timeline::meters(timeline::ground_distance(at, victim)) <= TORPEDO_HIT_TOLERANCE_M {
+                return true;
+            }
+            s += TORPEDO_PASS_STEP_SECONDS;
+        }
+        false
     })
 }
 
@@ -741,9 +759,12 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                 });
             let tick = in_tick_train(ledger, index);
             // A tick's damage is one amount per attacker and victim, so a
-            // torpedo landing beside a shell hit is still torpedo damage.
-            let torpedo =
-                !tick && torpedo_fits(torpedoes_by_owner.get(attacker).map(Vec::as_slice).unwrap_or(&[]), t, victim_pos);
+            // torpedo landing beside a shell hit is still torpedo damage,
+            // when the amount is a torpedo's or the hit sinks the victim.
+            let finishing = input.deaths.get(&event.victim).is_some_and(|d| (d - t).abs() <= FINISHING_HIT_SECONDS);
+            let torpedo = !tick
+                && (event.amount >= TORPEDO_MIN_DAMAGE || finishing)
+                && torpedo_fits(torpedoes_by_owner.get(attacker).map(Vec::as_slice).unwrap_or(&[]), t, victim_pos);
             // The latest salvo before the damage; among salvos fired at the
             // same moment, the one whose shells match the hit.
             let from_salvo = from_hit.or_else(|| {

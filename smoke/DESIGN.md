@@ -75,7 +75,7 @@ target/release/smoke_signals.exe --config config.toml maps --names "Hotspot,Loop
 target/release/smoke_signals.exe --config config.toml batch --jobs 5 --matches 7924,8178,7901,7981,8147 --clips 46513,106317,27145,174224,120803 --clip-speed 5 --clip-bitrate-kbps 1200
 ```
 
-The second command exports the minimap images and `maps.json` (with in-game titles) that the site needs; the third renders the award clips (the ids are the current winners). Batch options: `--matches`, `--teams`, `--maps`, `--no-frames`, `--clips <ids>`, `--clip-speed`, `--clip-bitrate-kbps`. Never delete an output folder; every run gets its own timestamp. A full batch with frames takes about 7 minutes (the zoomed view is a second render). Current data: batch `output/20261104-180332`, maps `output/20261103-143026/maps`, clips in `output/20261103-185636/site-clips` (the award clips as `<match>_g<n>_<id>.mp4`, the folder the builder reads).
+The second command exports the minimap images and `maps.json` (with in-game titles) that the site needs; the third renders the award clips (the ids are the current winners). Batch options: `--matches`, `--teams`, `--maps`, `--no-frames`, `--clips <ids>`, `--clip-speed`, `--clip-bitrate-kbps`. Never delete an output folder; every run gets its own timestamp. A full batch with frames takes about 7 minutes (the zoomed view is a second render). Current data: batch `output/20261117-104945`, maps `output/20261103-143026/maps`, clips in `output/20261116-225332/site-clips` (the award clips as `<match>_g<n>_<id>.mp4`, the folder the builder reads).
 
 **Build the site.** Clips are passed as a folder of `<smoke_id>.mp4`.
 

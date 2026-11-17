@@ -20,6 +20,7 @@ import shutil
 from collections import Counter, defaultdict
 
 MATCH_SECONDS = 20 * 60
+MAP_DRAW_MAX = 25
 # Minimum samples: a clan board or clan award needs this many games; a
 # per-smoke average (Best in Haze) this many smokes; the leaderboard hides
 # players under PLAYER_MIN_SMOKES by default.
@@ -38,6 +39,7 @@ CONTEST_DEF = "A cap is contested for a team when it sits on the midline between
 REASON_TEXT = {"midline": "it sits on the midline between the spawns", "enemy_side": "it lies on the enemy's side of the midline", "enemy_owned": "the enemy held it"}
 METRIC_DEFS = {
     "uptime": "Smoke uptime: seconds per game with at least one of the clan's smokes standing.",
+    "first_smoke": "First smoke: seconds since battle start of the clan's first smoke in a game, averaged over the games with a smoke in the lens.",
     "charge": "Charge use: smoke charges used over charges carried by the clan's smoke ships.",
     "stacking": "Stacking rate: share of the clan's smokes that overlapped another smoke.",
     "contested": "Contested-cap share: share of smokes that stood within 1 km of a contested cap on average over their life.",
@@ -654,6 +656,7 @@ def mean(xs):
 
 PALETTE = ["#F5C542", "#5DADE2", "#B388FF", "#6EE7B7", "#FB923C", "#F472B6", "#A3E635", "#94A3B8", "#F87171", "#22D3EE"]
 ENEMY_COLOR = "#F87171"
+UNCOUNTED_KIND_TEXT = {"torpedo": "torpedoes", "secondary": "secondaries", "flood": "flooding", "unknown": "unclassified hits"}
 
 
 class Site:
@@ -1060,7 +1063,7 @@ class Site:
 <h2>Method in brief</h2>
 <ul class="terms">
 <li><b>Smokes:</b> every smoke-screen object the primary replay shows, matched to the ship that activated it (a flag marks the few whose owner is inferred from position alone).</li>
-<li><b>Damage credit:</b> each damage event in the replay ledger is classified by weapon from its timing and the shots in flight (shell, secondary, fire, airstrike, torpedo, flood, unknown). Main-battery shells, air-support bombs and the fires they start count as smoke damage when the shot was fired from inside a smoke, or from outside by an undetected shooter whose line to an enemy in detection range crossed the smoke. Secondary, torpedo, flood and unknown damage never earn credit.</li>
+<li><b>Damage credit:</b> each damage event in the replay ledger is classified by weapon from its timing and the shots in flight (shell, secondary, fire, airstrike, torpedo, flood, unknown). Main-battery shells, air-support bombs and the fires they start count as smoke damage when the shot was fired from inside a smoke, or from outside by an undetected shooter whose line to an enemy in detection range crossed the smoke. Secondary, torpedo, flood and unknown damage never earn credit; when a ship fired such a weapon from a smoke (a torpedo is placed at its launch), the smoke's page lists those hits as not counted, so the enemies table and the smoke's total stay main battery, airstrikes and fires only.</li>
 <li><b>Concealed vs detected:</b> by the shooter's visibility flags at the firing moment; the detected part is split by reason (radar, hydro, smoke fire penalty, aircraft, proximity, surface lit).</li>
 <li><b>Lenses:</b> most boards default to destroyer smokes; "all" includes cruiser and battleship smokes. Tags (purpose, movement, coverage) are rule-based from the replay, with a confidence where the rule is fuzzy.</li>
 <li><b>Minimum samples:</b> clan boards and clan awards need {CLAN_MIN_GAMES} games; Best in Haze needs {AVG_MIN_SMOKES} smokes; Most Selfish Smoker {SELFISH_MIN_SMOKES}; the leaderboard hides players under {PLAYER_MIN_SMOKES} smokes by default.</li>
@@ -1175,9 +1178,18 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
                         used += p["smoke_activations"]
                         charges += p["smoke_charges"]
         n = len(rows)
+        wins = sum(1 for w in games.values() if w is True)
+        losses = sum(1 for w in games.values() if w is False)
+        firsts = []
+        for key in games:
+            starts = [s["_elapsed"] for s in rows if s["_key"] == key and s["_elapsed"] is not None]
+            if starts:
+                firsts.append(min(starts))
         return {
             "n": n, "games": n_games,
+            "wins": wins, "losses": losses, "win_pct": 100.0 * wins / (wins + losses) if wins + losses else None,
             "smokes_per_game": (n / n_games, n),
+            "first_smoke": (mean(firsts), len(firsts)),
             "damage_per_game": (sum(s["_total"] for s in rows) / n_games, n),
             "concealed_per_game": (sum(s["_concealed"] for s in rows) / n_games, n),
             "dd_per_game": (sum(s["_dd"] for s in rows) / n_games, n),
@@ -1206,8 +1218,43 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
                 out[f"{cls}|{typ}"] = {team: {k: list(v) if isinstance(v, tuple) else v for k, v in self.clan_metrics(team, rows).items()} for team in clans}
         return out
 
+    @staticmethod
+    def percentile_rank(value, others):
+        """Percent of `others` below `value`, ties counted half; None without a value or a base."""
+        others = [o for o in others if o is not None]
+        if value is None or not others:
+            return None
+        below = sum(1 for o in others if o < value)
+        equal = sum(1 for o in others if o == value)
+        return 100.0 * (below + 0.5 * equal) / len(others)
+
+    def percentiles(self, metrics):
+        """Each clan's percentile per metric against the other clans with at least CLAN_MIN_GAMES games."""
+        base = [t for t in metrics if metrics[t]["games"] >= CLAN_MIN_GAMES]
+        out = {}
+        for t in metrics:
+            others = [o for o in base if o != t]
+            out[t] = {key: self.percentile_rank(metrics[t][key][0], [metrics[o][key][0] for o in others]) for _, key, _, _, _ in self.CLAN_SPEC}
+        return out
+
+    def lens_percentiles(self, clans, lenses):
+        """Percentiles for every lens: {"cls|type": {team: {metric: pct}}}, from lens_metrics' output."""
+        return {lens: self.percentiles(lenses[lens]) for lens in lenses}
+
+    TENDENCY = [
+        ("smokes_per_game", "smokes per game", "prolific", "sparing"),
+        ("first_smoke", "first smoke", "late", "early"),
+        ("stacking", "stacked share", "stacker", "spread"),
+        ("selfish", "selfish share", "selfish", "sharing"),
+        ("contested", "cap-contest share", "cap-focused", "off-cap"),
+        ("concealed_per_game", "concealed damage per game", "lethal", "quiet"),
+        ("deaths", "smoke deaths per game", "exposed", "safe"),
+        ("offensive", "radar spots per game", "radar-hunter", "radar-shy"),
+    ]
+
     CLAN_SPEC = [
         ("Volume", "smokes_per_game", "Smokes per game", "f1", ""),
+        ("Volume", "first_smoke", "First smoke (s elapsed, mean of each game's first)", "s", "first_smoke"),
         ("Volume", "uptime", "Smoke uptime (s per game)", "s", "uptime"),
         ("Volume", "charge", "Charge use", "pct", "charge"),
         ("Volume", "stacking", "Stacking rate", "pct", "stacking"),
@@ -1259,15 +1306,18 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
             groups.append(f'<h2>{esc(group)}</h2><section class="charts">{panels}</section>')
         heads = "".join(f'<th data-key="{key}">{term(title, SELFISH_DEF if def_key == "selfish_def" else METRIC_DEFS.get(def_key, "")) if def_key else esc(title)}</th>' for g, key, title, fmt, def_key in self.CLAN_SPEC)
         games_of = {t: metrics[t]["games"] for t in clans}
+        base = [t for t in clans if metrics[t]["games"] >= CLAN_MIN_GAMES]
+        lenses = self.lens_metrics(clans)
         body = f"""<h1>Clans</h1><p class="muted">{len(clans)} clans. Smokes analysed and games played on each chip; click a clan for its page. Clans with fewer than {CLAN_MIN_GAMES} games are greyed: they stay in the table and the charts but cannot win a clan award.</p>
 <div class="chips">{"".join(chips)}</div>{scouting}
 <div class="filters lens"><span class="muted small">Lens</span>{self.lens_selects("clans")}<span class="count muted small" id="clans-count"></span></div>
-<h2>Every clan, every metric</h2><p class="muted small">Click a heading to sort. The count behind each value is its n. Lower is better for smoke deaths.</p>
-<div class="scroll-x"><table class="games sortable clan-table" id="clan-table"><thead><tr><th>Clan</th><th data-key="games">Games</th><th data-key="n">Smokes</th>{heads}</tr></thead><tbody></tbody></table></div>
+<h2>Every clan, every metric</h2><p class="muted small">Click a heading to sort (by the value in both modes). The count behind each value is its n. Lower is better for smoke deaths. Percentiles rank a clan against the other clans with {CLAN_MIN_GAMES} or more games ({len(base)} clans in that base); clans under {CLAN_MIN_GAMES} games are ranked against the same base, greyed and marked. Cells are shaded by percentile, light to strong; a high percentile is not always good (smoke deaths, selfish share, radar-punished share).</p>
+<div class="lens-toggle mode-toggle" id="clans-mode"><button data-mode="values" class="on">Values</button><button data-mode="pct">Percentiles</button></div>
+<div class="scroll-x"><table class="games sortable clan-table" id="clan-table"><thead><tr><th>Clan</th><th data-key="games">Games</th><th data-key="wins">W-L</th><th data-key="win_pct">Win %</th><th data-key="n">Smokes</th>{heads}</tr></thead><tbody></tbody></table></div>
 <h2>Charts</h2><div class="filters"><label class="check"><input type="checkbox" id="clans-all"> show all {len(clans)} clans (default: top 12 of each chart)</label></div>
 <p class="muted small">One bar per clan, best first, with the count (n) on every bar. Lower is better for the risks; the tendencies are style signals, not scores. Destroyer smokes are the default lens; pick "all" to include every smoke.</p>
 {"".join(groups)}
-<script>window.CLAN_METRICS = {json.dumps(self.lens_metrics(clans))}; window.CLAN_SPEC = {self.clan_spec_json()}; window.TEAM_COLORS = {json.dumps(self.colors)}; window.CLAN_TEAMS = {json.dumps(clans)}; window.CLAN_GAMES = {json.dumps(games_of)}; window.CLAN_MIN_GAMES = {CLAN_MIN_GAMES}; window.CLAN_HREF = {json.dumps({t: self.clan_href(t) for t in clans})};</script>"""
+<script>window.CLAN_METRICS = {json.dumps(lenses)}; window.CLAN_PCT = {json.dumps(self.lens_percentiles(clans, lenses))}; window.CLAN_BASE = {len(base)}; window.CLAN_SPEC = {self.clan_spec_json()}; window.TEAM_COLORS = {json.dumps(self.colors)}; window.CLAN_TEAMS = {json.dumps(clans)}; window.CLAN_GAMES = {json.dumps(games_of)}; window.CLAN_MIN_GAMES = {CLAN_MIN_GAMES}; window.CLAN_HREF = {json.dumps({t: self.clan_href(t) for t in clans})};</script>"""
         self.write("clans.html", self.page("Clans", body, active="Clans"))
 
     def heatmap(self, team, depth=1):
@@ -1370,14 +1420,22 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
         cov_counts = Counter(s["_cover"] for s in rows if s["_cover"])
         mix = f'<div class="two-col"><div><h3>Purposes ({esc(AUTO_NOTE)}; every tag that applied, n = {n})</h3><table class="games small"><thead><tr><th>Tag</th><th>Smokes</th><th>Share</th></tr></thead><tbody>{tag_rows}</tbody></table></div><div><h3>Movement and coverage (n = {n})</h3>{bar_chart("Movement while laying", [(k, v, color, None) for k, v in mv_counts.most_common()])}{bar_chart("Coverage", [(k, v, color, None) for k, v in cov_counts.most_common()])}</div></div>'
         small = f' Fewer than {CLAN_MIN_GAMES} games: the per-game figures are a small sample and the clan cannot win a clan award.' if m["games"] < CLAN_MIN_GAMES else ""
+        all_clans = [t for t in d.teams if any(s["team"] == t for s in d.smokes)]
+        if not hasattr(self, "_all_pcts"):
+            lenses = self.lens_metrics(all_clans)
+            self._all_pcts = self.lens_percentiles(all_clans, lenses)
+            self._all_clans_base = [t for t in all_clans if lenses["all|all"][t]["games"] >= CLAN_MIN_GAMES]
+        all_pcts, all_clans_base = self._all_pcts, self._all_clans_base
         note = f'<div class="briefing"><p>{esc(d.clan_note(team))}</p></div>' if d.clan_note(team) else ""
         group = f" | {esc(d.clan_group(team))}" if d.clan_group(team) else ""
         body = f"""<h1>{self.team_tag(team)} {esc(self.d.clan_name(team))}</h1><p class="muted">{n} smokes in {m['games']} games{group}. Counts (n) on every number.{esc(small)}</p>{note}
 <div class="filters lens"><span class="muted small">Tiles show</span>{self.lens_selects("clan")}</div>
 <section class="stats lead" id="clan-lead">{lead}</section><section class="stats" id="clan-more">{more}</section>
+<h2>Tendencies</h2><p class="muted small">Percentile among the clans with {CLAN_MIN_GAMES} or more games ({len(all_clans_base)} in the base{"; this clan is a small sample, ranked against that base" if m["games"] < CLAN_MIN_GAMES else ""}), for the lens chosen above. A word appears at the 80th percentile or above and the 20th or below. Shade is rank only: high is not always good.</p>
+<div class="tendency" id="clan-tendency"></div>
 <p class="muted small">The charts below cover every smoke by the clan.</p>
 {mix}
-<script>window.CLAN_METRICS = {json.dumps(self.lens_metrics([team]))}; window.CLAN_SPEC = {self.clan_spec_json()}; window.CLAN_TEAM = {json.dumps(team)}; window.TEAM_COLORS = {json.dumps(self.colors)};</script>
+<script>window.CLAN_METRICS = {json.dumps(self.lens_metrics([team]))}; window.CLAN_PCT = {json.dumps({lens: pcts[team] for lens, pcts in all_pcts.items()})}; window.CLAN_TENDENCY = {json.dumps(self.TENDENCY)}; window.CLAN_SPEC = {self.clan_spec_json()}; window.CLAN_TEAM = {json.dumps(team)}; window.TEAM_COLORS = {json.dumps(self.colors)};</script>
 <div class="two-col"><div><h2>Where their games ended</h2>{ended_svg}</div><div><h2>Timing</h2>{timing}</div></div>
 <h2>Most-smoked spots</h2>{self.heatmap(team)}
 <div class="two-col"><div><h2>Ship lineup</h2>{lineup}<div class="scroll-x"><table class="games"><thead><tr><th>Ship</th><th>Class</th><th>Smoke</th><th>Stock gun range</th><th>Radar</th><th>Detection</th></tr></thead><tbody>{"".join(ship_rows)}</tbody></table></div></div>
@@ -1482,7 +1540,7 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
             title = f'{s["player"]} {s["ship"]} at {s["_act_clock"]} ({elapsed_text(elapsed) if elapsed >= 0 else "?"} elapsed), {fmt_int(s["_total"])} dmg, {s.get("smoke_type") or ""} smoke'
             paths.append(f'<a href="{base}{self.smoke_href[s["_slug"]]}" id="{anchor_prefix}-{s["_slug"]}" class="smokepath" {data}><polyline points="{points}" stroke="{self.color(s["team"])}"{dashed} marker-end="url(#{marker})"><title>{esc(title)}</title></polyline></a>')
         zones = self.zone_overlay(map_name)
-        heat_g = f'<g class="heat">{self.heat_rects(smokes)}</g>' if heat else ""
+        heat_g = f'<g class="heat">{self.heat_rects(smokes) if heat else ""}</g>'
         inner = f'<defs>{markers}</defs>{heat_g}<g class="grid">{grid}</g><g class="gridlabels">{labels}</g>{zones}<g class="caps">{"".join(caps)}</g><g class="paths">{"".join(paths) if lines else ""}</g>'
         figure = map_svg(f'{base}maps/{m["map"]}.webp', self.d.map_title(map_name), inner)
         return f'<div class="mapwrap{" lines" if lines else ""}" style="max-width:{size}px">{figure}</div>'
@@ -1525,43 +1583,42 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
         by_map = defaultdict(list)
         for s in d.smokes:
             by_map[s["map"]].append(s)
-        for n, (map_name, smokes) in enumerate(sorted(by_map.items(), key=lambda kv: -len(kv[1]))):
-            counts = Counter(s["team"] for s in smokes)
-            near = sum(1 for s in smokes if s.get("avg_contested_cap_dist_m") is not None and s["avg_contested_cap_dist_m"] <= 1000)
+        map_order = sorted(by_map.items(), key=lambda kv: -len(kv[1]))
+        for n, (map_name, smokes) in enumerate(map_order):
             games = len({s["_key"] for s in smokes})
-            sides = d.spawn_sides_on(map_name)
-            if sides & {"east", "west"}:
-                spawn_opts = [("east", "East spawn"), ("west", "West spawn")]
-                spawn_note = " (this map spawns east and west)"
-            else:
-                spawn_opts = [("north", "North spawn"), ("south", "South spawn")]
-                spawn_note = ""
-            clans = "".join(f'<option value="{esc(t)}">{esc(t)} ({counts[t]})</option>' for t in d.teams if counts.get(t))
-            players = "".join(f'<option value="{esc(pl)}">{esc(pl)}</option>' for pl in sorted({s["player"] for s in smokes}))
-            ships = "".join(f'<option value="{esc(sh)}">{esc(sh)}</option>' for sh in sorted({s["ship"] for s in smokes}))
-            spawns = "".join(f'<option value="{v}">{l}</option>' for v, l in spawn_opts)
-            fig = self.map_figure(map_name, smokes, fig_id=f"m{n}", heat=True, lines=False)
+            fig = self.map_figure(map_name, smokes, fig_id=f"m{n}", heat=False, lines=False)
             self.write_map_paths(map_name, smokes, f"m{n}")
-            filters = f"""<div class="filters mapfilters">
-<label class="range">Time elapsed <span class="rangevals"><b class="lo">0:00</b> to <b class="hi">20:00</b></span><span class="dual"><input type="range" class="t-lo" min="0" max="{MATCH_SECONDS}" value="0" step="10"><input type="range" class="t-hi" min="0" max="{MATCH_SECONDS}" value="{MATCH_SECONDS}" step="10"></span><span class="muted small">smokes activated between the handles; battle start on the left, 20:00 on the right</span></label>
-<label>Clan <select class="f-clan"><option value="">all (density)</option>{clans}</select></label>
-<label>Player <select class="f-player"><option value="">all</option>{players}</select></label>
-<label>Spawn{spawn_note} <select class="f-spawn"><option value="">both</option>{spawns}</select></label>
-<label>Ship <select class="f-ship"><option value="">all</option>{ships}</select></label>
-<label>Smoker class <select class="f-cls"><option value="">all</option>{"".join(f'<option value="{c}">{c}</option>' for c in CLASSES if any(s["_class"] == c for s in smokes))}</select></label>
-<label>Smoke type <select class="f-type"><option value="">all</option>{"".join(f'<option value="{x}">{x}</option>' for x in SMOKE_TYPE_NAMES if any(s["_type"] == x for s in smokes))}</select></label>
-<span class="count muted"></span></div>"""
-            sections.append(f'<section class="map-section" data-map="{esc(map_name)}" data-paths="data/maps/m{n}.json"><h2>{esc(self.d.map_title(map_name))} <span class="muted small">{len(smokes)} smokes in {games} games</span></h2>{filters}<div class="two-col mapcol">{fig}<div><h3>By clan, for the smokes shown</h3><p class="muted small">With every clan shown: the top 10 by smokes on this map, the rest as "others". Clans with fewer than 5 smokes shown are greyed out.</p><div class="chart"></div><h3>Ships that smoked here</h3><div class="ships"></div></div></div></section>')
+            sections.append(f'<section class="map-section" data-map="{esc(map_name)}" data-paths="data/maps/m{n}.json" data-total="{len(smokes)}"><h2>{esc(self.d.map_title(map_name))} <span class="muted small">{len(smokes)} smokes in {games} games</span> <span class="count muted small"></span></h2><div class="two-col mapcol">{fig}<div><h3>By clan, for the smokes shown</h3><p class="muted small">With every clan shown: the top 10 by smokes on this map, the rest as "others". Clans with fewer than 5 smokes shown are greyed out.</p><div class="chart"></div><h3>Ships that smoked here</h3><div class="ships"></div></div></div></section>')
+        clan_counts = Counter(s["team"] for s in d.smokes)
         ship_counts = Counter(s["ship"] for s in d.smokes)
         ship_colors = {sh: PALETTE[i % len(PALETTE)] for i, (sh, _) in enumerate(ship_counts.most_common())}
         slug_index = {s["_slug"]: [s["map"], s["team"]] for s in d.smokes}
-        body = f"""<h1>Maps</h1><p class="muted">Each map opens as a density of smoke origins over all clans (gold squares, darker where more smokes started). Pick a clan, player or ship to draw those smokes' paths with the time, spawn, class and type filters. Crawling and exhaust smokes are dashed; click a line to open the smoke. Comparing clans side by side is on the backlog.</p><div class="legend-row"><label class="legend"><input type="checkbox" id="showzones"> show zones (draft map profiles)</label></div>{''.join(sections)}
-<script>window.TEAM_COLORS = {json.dumps(self.colors)}; window.SHIP_COLORS = {json.dumps(ship_colors)}; window.SELFISH_DEF = {json.dumps(SELFISH_DEF)}; window.CONTEST_DEF = {json.dumps(CONTEST_DEF)}; window.SMOKE_MAP = {json.dumps(slug_index)};</script>"""
+        map_opts = "".join(f'<option value="{esc(m)}">{esc(self.d.map_title(m))} ({len(ss)})</option>' for m, ss in map_order)
+        players = "".join(f'<option value="{esc(pl)}">{esc(pl)}</option>' for pl in sorted({s["player"] for s in d.smokes}))
+        purposes = "".join(f'<option value="{esc(p)}">{esc(p)}</option>' for p, _ in Counter(p for s in d.smokes for p in s["_purposes"]).most_common())
+        spawns = "".join(f'<option value="{v}">{v}</option>' for v in ("north", "south", "east", "west") if any(s.get("spawn_side") == v for s in d.smokes))
+        classes = "".join(f'<option value="{c}">{c}</option>' for c in CLASSES if any(s["_class"] == c for s in d.smokes))
+        types = "".join(f'<option value="{x}">{x}</option>' for x in SMOKE_TYPE_NAMES if any(s["_type"] == x for s in d.smokes))
+        filters = f"""<div class="filters mapfilters sticky" id="maps-filters">
+<label>Map <select id="m-map"><option value="">all maps</option>{map_opts}</select></label>
+<label>Clans <span class="multi" id="m-clan"></span></label>
+<label>Ships <span class="multi" id="m-ship"></span></label>
+<label>Player <select id="m-player"><option value="">all</option>{players}</select></label>
+<label>Purpose (any tag) <select id="m-purpose"><option value="">any</option>{purposes}</select></label>
+<label>Spawn <select id="m-spawn"><option value="">all</option>{spawns}</select></label>
+<label>Smoker class <select id="m-cls"><option value="">all</option>{classes}</select></label>
+<label>Smoke type <select id="m-type"><option value="">all</option>{types}</select></label>
+<label class="range">Time elapsed <span class="rangevals"><b class="lo">0:00</b> to <b class="hi">20:00</b></span><span class="dual"><input type="range" id="m-lo" min="0" max="20" value="0" step="1"><input type="range" id="m-hi" min="0" max="20" value="20" step="1"></span><span class="muted small">minutes since battle start, 1-minute steps</span></label>
+<label>View <span class="seg"><label><input type="radio" name="m-view" value="auto" checked> auto</label><label><input type="radio" name="m-view" value="heat"> heat map</label><label><input type="radio" name="m-view" value="smokes"> smokes</label></span></label>
+<span id="m-count" class="count muted"></span> <a id="m-clear" class="small clear" href="maps.html">clear filters</a></div>"""
+        body = f"""<h1>Maps</h1><p class="muted">Each map shows a density of smoke origins (gold squares, darker where more smokes started) for the smokes the filters leave; when {MAP_DRAW_MAX} or fewer remain, the smokes themselves are drawn: the cloud, the path while laying, and an arrow at the end, in the clan's colour. Click a drawn smoke to open its page. The View switch forces either picture. Filters apply to every map and are kept in the address bar, so a view can be shared.</p><div class="legend-row"><label class="legend"><input type="checkbox" id="showzones"> show zones (draft map profiles)</label></div>{filters}{''.join(sections)}
+<script>window.TEAM_COLORS = {json.dumps(self.colors)}; window.SHIP_COLORS = {json.dumps(ship_colors)}; window.SELFISH_DEF = {json.dumps(SELFISH_DEF)}; window.CONTEST_DEF = {json.dumps(CONTEST_DEF)}; window.SMOKE_MAP = {json.dumps(slug_index)}; window.MAP_DRAW_MAX = {MAP_DRAW_MAX}; window.MAPS_OPTS = {json.dumps({"clans": [[t, clan_counts[t]] for t in d.teams if clan_counts.get(t)], "ships": [[sh, n] for sh, n in sorted(ship_counts.items())]})};</script>"""
         self.write("maps.html", self.page("Maps", body, active="Maps"))
 
     def write_map_paths(self, map_name, smokes, fig_id):
-        """One JSON per map with every smoke's path in map pixels, fetched when a filter asks for lines."""
+        """One JSON per map with every smoke's path in map pixels, loaded by the maps page for the density and the drawn smokes."""
         d = self.d
+        m = d.maps.get(map_name)
         rows = []
         for s in smokes:
             pts = [map_px(d, map_name, p["x"], p["z"]) for p in thin(s.get("path") or [s["origin_xy"]])]
@@ -1572,11 +1629,14 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
                 pts = pts * 2
             elapsed = s["_elapsed"] if s["_elapsed"] is not None else -1
             contested = s.get("avg_contested_cap_dist_m")
+            radius_px = (s.get("radius") or 0) * NATIVE / m["space_size"] if m else 0
             rows.append({
                 "slug": s["_slug"], "href": self.smoke_href[s["_slug"]], "team": s["team"], "player": s["player"], "spawn": s.get("spawn_side") or "", "ship": s["ship"],
                 "cls": s["_class"], "type": s["_type"], "t": elapsed, "dmg": round(s["_total"]), "contested": None if contested is None else round(contested),
                 "selfish": (1 if s.get("selfish_smoke") else 0) if s.get("selfish_smoke") is not None else None,
+                "purposes": s["_purposes"],
                 "dashed": s.get("smoke_type") in ("exhaust", "crawling"),
+                "r": round(radius_px, 1),
                 "pts": [[round(x, 1), round(y, 1)] for x, y in pts],
                 "title": f'{s["player"]} {s["ship"]} at {s["_act_clock"]} ({elapsed_text(elapsed) if elapsed >= 0 else "?"} elapsed), {fmt_int(s["_total"])} dmg, {s.get("smoke_type") or ""} smoke',
             })
@@ -1720,9 +1780,9 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
         self.write("data/smokes.json", json.dumps(records, separators=(",", ":")))
         body = f"""<h1>Smokes</h1><p class="muted">All {len(records)} smokes from the tournament. Click a row to open it. Tags are {esc(AUTO_NOTE)}. Damage shows the total with the concealed and detected parts under it. One-sided smokes (one replay for the game) and smokes from games with a data-quality flag are marked; both are left out of awards and leaderboards.</p>
 <div class="filters">
-<label>Clan <select id="f-team"><option value="">all</option></select></label>
+<label>Clans <span class="multi" id="f-team"></span></label>
 <label>Player <select id="f-player"><option value="">all</option></select></label>
-<label>Ship <select id="f-ship"><option value="">all</option></select></label>
+<label>Ships <span class="multi" id="f-ship"></span></label>
 <label>Map <select id="f-map"><option value="">all</option></select></label>
 <label>Game <select id="f-game"><option value="">all</option></select></label>
 <label>Type <select id="f-type"><option value="">all</option></select></label>
@@ -1735,7 +1795,7 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
 <label>Lane <select id="f-lane"><option value="">all</option></select></label>
 <label>Phase <select id="f-phase"><option value="">all</option></select></label>
 <label>Sort <select id="f-sort"><option value="total">smoke damage</option><option value="concealed">concealed damage</option><option value="dd">DD damage</option><option value="kills">kills from smoke</option><option value="deaths">smoke deaths</option><option value="radar">radar on us</option><option value="offensive">our radar detections</option><option value="swing">score change during the smoke</option><option value="depth">depth into a contested cap</option><option value="contested">distance to contested cap (nearest first)</option><option value="elapsed">time elapsed</option></select></label>
-<span id="count" class="muted"></span></div>
+<span id="count" class="muted"></span> <a id="f-clear" class="small clear" href="smokes.html">clear filters</a></div>
 <div class="scroll-x"><table class="smokes" id="smokes"><thead><tr><th></th><th>Clan</th><th>Player</th><th>Ship</th><th>Map</th><th>Game</th><th>Clock</th><th><abbr class="term" title="{esc(AUTO_NOTE)}">Tags</abbr></th><th>Zone / lane</th><th>{term("Damage", DAMAGE_DEF)}<br><span class="muted small">concealed / detected</span></th><th>{term("DD damage", DD_DEF)}</th><th>Distance to <abbr class="term" title="{esc(CONTEST_DEF)}">contested cap</abbr></th><th>Cap outcome</th><th><abbr class="term" title="{esc(RADAR_BAIT_DEF)}">Radar on us</abbr></th><th>{term("Our radar detections", METRIC_DEFS["offensive"])}</th><th>{term("Kills", METRIC_DEFS["kills"])}</th><th>{term("Smoke deaths", METRIC_DEFS["deaths"])}</th><th>{term("Selfish")}</th></tr></thead><tbody></tbody></table></div>
 <p id="empty" class="muted" hidden>Nothing here, just clear skies.</p>
 <button class="showmore" id="showmore" hidden>Show 100 more</button>
@@ -1920,6 +1980,16 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
             target_table = f'<table class="games small"><thead><tr><th>Ship</th><th>Player</th><th>Concealed</th><th>Detected</th><th>Total</th><th>Sunk</th></tr></thead><tbody>{trows}</tbody></table>'
         else:
             target_table = '<p class="muted small">No enemy ship was damaged from this smoke.</p>'
+        uncounted = s.get("targets_not_counted") or []
+        if uncounted:
+            if not targets:
+                target_table = '<p class="muted small">No enemy ship took counted damage from this smoke.</p>'
+            items = []
+            for x in sorted(uncounted, key=lambda x: -x["damage"]):
+                by_kind = sorted(x["by_kind"].items(), key=lambda kv: -kv[1])
+                kinds = UNCOUNTED_KIND_TEXT.get(by_kind[0][0], by_kind[0][0]) if len(by_kind) == 1 else ", ".join(f"{UNCOUNTED_KIND_TEXT.get(k, k)} {fmt_int(v)}" for k, v in by_kind)
+                items.append(f'<li>{esc(x["ship"])} ({esc(x["player"])}): {fmt_int(x["damage"])} from {kinds}{", sunk" if x["sunk"] else ""}</li>')
+            target_table += f'<p class="muted small">Not counted as smoke damage: hits from this smoke by weapons that never earn credit (torpedoes, secondaries, flooding, unclassified hits; see About).</p><ul class="muted small uncounted">{"".join(items)}</ul>'
         spots = s.get("radar_detections_in_smoke") or []
         if spots:
             radar_on_us = f"{len(spots)} ({fmt_int(s['_radar_dmg'])} damage taken while spotted): " + "; ".join(f"{x.get('ship') or '?'} at {x.get('clock') or '?'}" + (f" by {x['source']}" if x.get("source") else "") for x in spots)
@@ -2125,6 +2195,18 @@ svg.chart .lbl{fill:var(--text);font-size:11px}svg.chart .val{fill:var(--muted);
 .dual input[type=range]::-webkit-slider-runnable-track{height:4px;background:var(--line);border-radius:2px}
 .dual input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;pointer-events:auto;width:16px;height:16px;border-radius:50%;background:#F5C542;border:2px solid #07131f;margin-top:-6px;cursor:pointer}
 .dual input[type=range]::-moz-range-track{height:4px;background:var(--line)}.dual input[type=range]::-moz-range-thumb{pointer-events:auto;width:14px;height:14px;border-radius:50%;background:#F5C542;border:2px solid #07131f;cursor:pointer}
+.multi{position:relative;display:inline-block}.multi .msel-btn{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:4px 8px;cursor:pointer;min-width:130px;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left;font:inherit;font-size:.95em}.multi .msel-btn.on{border-color:#F5C542;color:#F5C542}
+.multi .msel-pop{position:absolute;z-index:30;top:100%;left:0;min-width:230px;max-height:340px;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px;box-shadow:0 8px 24px rgba(0,0,0,.45)}.multi .msel-pop[hidden]{display:none}
+.multi .msel-search{width:100%;box-sizing:border-box;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:4px 6px;margin-bottom:4px;font:inherit;font-size:.9em}
+.multi .msel-acts{display:flex;gap:12px;font-size:.85em;margin:2px 0 6px}.multi .msel-acts a{cursor:pointer;color:#9CD3FF}
+.multi .msel-list label{display:flex;flex-direction:row;align-items:center;gap:6px;color:var(--text);font-size:.9em;padding:2px;cursor:pointer}.multi .msel-list label.hide{display:none}.multi .msel-list label .n{color:var(--muted);margin-left:auto}
+.seg{display:flex;gap:10px;padding:4px 0}.seg label{display:flex;flex-direction:row;align-items:center;gap:4px;color:var(--text);font-size:1em}
+.mapwrap .smokepath polyline.cloud{stroke-opacity:.26;opacity:1}.mapwrap .smokepath:hover polyline.cloud{stroke-opacity:.5}
+.filters.sticky{position:sticky;top:0;z-index:20;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line)}a.clear{color:#9CD3FF;align-self:center}
+ul.uncounted{margin:4px 0 8px 18px}
+.mode-toggle{display:inline-block}table.clan-table td.pcell{text-align:right}table.clan-table td:nth-child(-n+5){white-space:nowrap}table.clan-table th[data-key]{text-decoration:underline dotted}
+.tendency{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin:8px 0 14px}.tcell{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 10px;display:flex;flex-direction:column;gap:2px}.tcell b{font-size:1.5em;line-height:1.1}.tcell span{font-size:.78em;color:var(--muted)}.tcell em{font-style:normal;font-weight:700;font-size:.85em;color:#F5C542}.tcell em.none{visibility:hidden}
+
 .bracket{display:flex;gap:16px;overflow-x:auto;padding:4px 0 12px}.bside{flex:1 1 auto}.bside h4{margin:6px 0;color:var(--muted)}.brow{display:flex;gap:10px}.bfinal{display:flex;align-items:center}.bcol{display:flex;flex-direction:column;justify-content:space-around;gap:8px;flex:1 1 0;min-width:150px}.bcol h3{margin:0;font-size:.85em;color:var(--muted);text-align:center}
 .series,a.series{display:block;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 8px;color:var(--text);text-decoration:none;font-size:.9em}a.series:hover{border-color:#9CD3FF}.series.tbd{opacity:.45}.srow{display:flex;align-items:center;gap:6px;padding:2px 0}.srow .sname{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.srow.won{font-weight:700}.srow.won b{color:#F5C542}
 table.games{width:100%;border-collapse:collapse;font-size:.9em}table.games th,table.games td{padding:5px 6px;border-bottom:1px solid var(--line);text-align:left}table.games tr[hidden]{display:none}table.sortable th[data-key]{cursor:pointer;text-decoration:underline dotted}
@@ -2181,14 +2263,17 @@ JS = r"""(function(){
   function noteFor(spec){ return spec.key === 'charge' ? 'n = charges carried' : (spec.key === 'coverage' ? 'n = smokes with a concealed radar ship' : (spec.key === 'offensive' ? 'n = games' : '')); }
   function termHtml(spec){ return spec.def ? '<abbr class="term" title="' + spec.def.replace(/"/g, '&quot;') + '">' + spec.title + '</abbr>' : spec.title; }
 
-  // Clans page: the sortable table and the charts for the chosen lens, bars sorted best first.
+  // Clans page: the sortable table (values or percentiles) and the charts for the chosen lens, bars sorted best first.
+  function pctShade(p){ return p === null || p === undefined ? '' : ' style="background:rgba(93,173,226,' + (0.05 + 0.55 * p / 100).toFixed(2) + ')"'; }
   if (window.CLAN_METRICS && window.CLAN_SPEC && document.getElementById('clans-class')) {
     var clansSel = ['clans-class', 'clans-type'].map(function(id){ return document.getElementById(id); });
     clansSel[0].value = 'destroyer';
     var allBox = document.getElementById('clans-all');
     var tableSort = {key: 'concealed_per_game', asc: false};
+    var tableMode = new URLSearchParams(location.search).get('mode') === 'pct' ? 'pct' : 'values';
+    document.querySelectorAll('#clans-mode button').forEach(function(b){ b.classList.toggle('on', b.dataset.mode === tableMode); });
     var renderClans = function(){
-      var key = lensKey('clans'), data = window.CLAN_METRICS[key] || {};
+      var key = lensKey('clans'), data = window.CLAN_METRICS[key] || {}, pcts = (window.CLAN_PCT || {})[key] || {};
       var total = 0;
       window.CLAN_TEAMS.forEach(function(t){ total += (data[t] && data[t].n) || 0; });
       document.getElementById('clans-count').textContent = total + ' smokes in this lens';
@@ -2203,21 +2288,36 @@ JS = r"""(function(){
         if (!(allBox && allBox.checked)) list = list.slice(0, 12);
         el.innerHTML = panelHtml(termHtml(spec), list, spec.fmt, noteFor(spec) + (list.length < rows.length ? (noteFor(spec) ? '; ' : '') + 'top ' + list.length + ' of ' + rows.length : ''));
       });
-      // The table: one row per clan, sorted by the chosen column.
+      // The table: one row per clan, sorted by the chosen column's value in both modes.
       var tbody = document.querySelector('#clan-table tbody');
       if (tbody) {
-        var rowsT = window.CLAN_TEAMS.map(function(t){ var m = data[t] || {}; return {team: t, m: m, games: m.games || 0, n: m.n || 0}; });
-        var val = function(r){ if (tableSort.key === 'games') return r.games; if (tableSort.key === 'n') return r.n; var x = (r.m[tableSort.key] || [null])[0]; return x === null || x === undefined ? (tableSort.asc ? Infinity : -Infinity) : x; };
+        var rowsT = window.CLAN_TEAMS.map(function(t){ var m = data[t] || {}; return {team: t, m: m, games: m.games || 0, n: m.n || 0, wins: m.wins || 0, losses: m.losses || 0, win_pct: m.win_pct}; });
+        var val = function(r){
+          if (tableSort.key === 'games') return r.games;
+          if (tableSort.key === 'n') return r.n;
+          if (tableSort.key === 'wins') return r.wins + (r.win_pct || 0) / 1000;
+          if (tableSort.key === 'win_pct') return r.win_pct === null || r.win_pct === undefined ? (tableSort.asc ? Infinity : -Infinity) : r.win_pct;
+          var x = (r.m[tableSort.key] || [null])[0]; return x === null || x === undefined ? (tableSort.asc ? Infinity : -Infinity) : x;
+        };
         rowsT.sort(function(a, b){ return tableSort.asc ? val(a) - val(b) : val(b) - val(a); });
+        var base = window.CLAN_BASE || 0;
         tbody.innerHTML = rowsT.map(function(r){
-          var cells = '<td><a href="' + (window.CLAN_HREF||{})[r.team] + '"><span class="tag" style="--c:' + ((window.TEAM_COLORS||{})[r.team]||'#94A3B8') + '">' + r.team + '</span></a>' + (small(r.team) ? ' <span class="muted small">small sample</span>' : '') + '</td><td>' + r.games + '</td><td>' + r.n + '</td>';
-          window.CLAN_SPEC.forEach(function(spec){ var m = r.m[spec.key] || [null, 0]; cells += '<td>' + fmtVal(m[0], spec.fmt) + ' <span class="n">(' + m[1] + ')</span></td>'; });
+          var cells = '<td><a href="' + (window.CLAN_HREF||{})[r.team] + '"><span class="tag" style="--c:' + ((window.TEAM_COLORS||{})[r.team]||'#94A3B8') + '">' + r.team + '</span></a>' + (small(r.team) ? ' <span class="pill warn-pill" title="fewer than ' + window.CLAN_MIN_GAMES + ' games: ranked against the ' + base + ' clans with enough games">small sample</span>' : '') + '</td>'
+            + '<td>' + r.games + '</td><td>' + r.wins + '-' + r.losses + '</td><td>' + (r.win_pct === null || r.win_pct === undefined ? '-' : Math.round(r.win_pct) + '%') + '</td><td>' + r.n + '</td>';
+          window.CLAN_SPEC.forEach(function(spec){
+            var m = r.m[spec.key] || [null, 0], p = (pcts[r.team] || {})[spec.key];
+            var pTxt = p === null || p === undefined ? '-' : String(Math.round(p));
+            var vTxt = fmtVal(m[0], spec.fmt) + ' (n=' + m[1] + ')';
+            if (tableMode === 'pct') cells += '<td class="pcell"' + pctShade(p) + ' title="' + vTxt.replace(/"/g, '&quot;') + '">' + pTxt + '</td>';
+            else cells += '<td class="pcell"' + pctShade(p) + ' title="percentile ' + pTxt + ' among ' + base + ' clans with ' + window.CLAN_MIN_GAMES + '+ games">' + fmtVal(m[0], spec.fmt) + ' <span class="n">(' + m[1] + ')</span></td>';
+          });
           return '<tr class="' + (small(r.team) ? 'small-sample' : '') + '">' + cells + '</tr>';
         }).join('');
       }
     };
     clansSel.forEach(function(s){ s.addEventListener('change', renderClans); });
     if (allBox) allBox.addEventListener('change', renderClans);
+    document.querySelectorAll('#clans-mode button').forEach(function(b){ b.addEventListener('click', function(){ tableMode = b.dataset.mode; document.querySelectorAll('#clans-mode button').forEach(function(x){ x.classList.toggle('on', x === b); }); renderClans(); }); });
     document.querySelectorAll('#clan-table th[data-key]').forEach(function(th){
       th.addEventListener('click', function(){ if (tableSort.key === th.dataset.key) tableSort.asc = !tableSort.asc; else { tableSort.key = th.dataset.key; tableSort.asc = th.dataset.key === 'deaths'; } renderClans(); });
     });
@@ -2237,18 +2337,29 @@ JS = r"""(function(){
     prender();
   }
 
-  // Clan page: the stat tiles for the chosen lens.
+  // Clan page: the stat tiles and the tendency strip for the chosen lens.
   if (window.CLAN_METRICS && window.CLAN_TEAM && document.getElementById('clan-class')) {
     var leadKeys = ['uptime', 'swing', 'punished'];
     var tile = function(spec, m){
       return '<div class="stat" style="--c:' + ((window.TEAM_COLORS||{})[window.CLAN_TEAM] || '#94A3B8') + '"><b>' + fmtVal(m[0], spec.fmt) + '</b><span>' + termHtml(spec) + ' (n = ' + m[1] + ')</span></div>';
     };
+    var specOf = {}; window.CLAN_SPEC.forEach(function(s){ specOf[s.key] = s; });
     var renderClan = function(){
-      var data = (window.CLAN_METRICS[lensKey('clan')] || {})[window.CLAN_TEAM] || {};
+      var key = lensKey('clan');
+      var data = (window.CLAN_METRICS[key] || {})[window.CLAN_TEAM] || {};
       var leadHtml = '', moreHtml = '';
       window.CLAN_SPEC.forEach(function(spec){ var m = data[spec.key] || [null, 0]; if (leadKeys.indexOf(spec.key) >= 0) leadHtml += tile(spec, m); else moreHtml += tile(spec, m); });
       document.getElementById('clan-lead').innerHTML = leadHtml;
       document.getElementById('clan-more').innerHTML = moreHtml + '<div class="stat"><b>' + (data.n || 0) + '</b><span>smokes in this lens (' + (data.games || 0) + ' games)</span></div>';
+      var strip = document.getElementById('clan-tendency'), pcts = (window.CLAN_PCT || {})[key] || {};
+      if (strip) {
+        strip.innerHTML = (window.CLAN_TENDENCY || []).map(function(t){
+          var p = pcts[t[0]], m = data[t[0]] || [null, 0], spec = specOf[t[0]] || {fmt: 'int'};
+          var word = p === null || p === undefined ? '' : (p >= 80 ? t[2] : (p <= 20 ? t[3] : ''));
+          var pTxt = p === null || p === undefined ? '-' : Math.round(p);
+          return '<div class="tcell"' + pctShade(p) + ' title="' + fmtVal(m[0], spec.fmt).replace(/"/g, '&quot;') + ' (n=' + m[1] + ')"><b>' + pTxt + '</b><span>' + t[1] + '</span>' + (word ? '<em>' + word + '</em>' : '<em class="none">&nbsp;</em>') + '</div>';
+        }).join('');
+      }
     };
     document.getElementById('clan-class').value = 'destroyer';
     ['clan-class', 'clan-type'].forEach(function(id){ document.getElementById(id).addEventListener('change', renderClan); });
@@ -2290,60 +2401,63 @@ JS = r"""(function(){
     if (location.hash.indexOf('zones') >= 0 || new URLSearchParams(location.search).get('zones')) { zonesBox.checked = true; applyZones(); }
   }
 
-  // Maps page: a density heatmap until a clan, player or ship is picked; then that selection's paths, fetched once per map.
-  var wantedSlug = location.hash.indexOf('#smoke-') === 0 ? location.hash.slice(7) : '';
-  document.querySelectorAll('.map-section').forEach(function(sec){
-    var paths = [];
-    var loaded = false, loading = false;
-    var wrap = sec.querySelector('.mapwrap'), svg = wrap ? wrap.querySelector('svg') : null, group = svg ? svg.querySelector('g.paths') : null;
-    var lo = sec.querySelector('.t-lo'), hi = sec.querySelector('.t-hi');
-    var clan = sec.querySelector('.f-clan'), fplayer = sec.querySelector('.f-player'), spawn = sec.querySelector('.f-spawn'), ship = sec.querySelector('.f-ship'), fcls = sec.querySelector('.f-cls'), ftype = sec.querySelector('.f-type');
-    var chart = sec.querySelector('.chart'), count = sec.querySelector('.count'), ships = sec.querySelector('.ships');
+  // Multi-select: a button that opens a searchable checkbox list. Empty selection means all.
+  function makeMulti(el, options, onChange){
+    var selected = [];
+    el.innerHTML = '<button type="button" class="msel-btn">all</button><div class="msel-pop" hidden><input class="msel-search" placeholder="search"><div class="msel-acts"><a class="msel-clear">clear</a><a class="msel-close">close</a></div><div class="msel-list"></div></div>';
+    var btn = el.querySelector('.msel-btn'), pop = el.querySelector('.msel-pop'), list = el.querySelector('.msel-list'), search = el.querySelector('.msel-search');
+    list.innerHTML = options.map(function(o){ return '<label data-v="' + escA(o.value) + '"><input type="checkbox" value="' + escA(o.value) + '"> <span>' + escA(o.label) + '</span>' + (o.count !== undefined ? '<span class="n">' + o.count + '</span>' : '') + '</label>'; }).join('');
+    function label(){ if (!selected.length) return 'all'; var names = selected.slice(0, 3).join(', '); return selected.length > 3 ? names + ' +' + (selected.length - 3) : names; }
+    function sync(){ btn.textContent = label(); btn.classList.toggle('on', selected.length > 0); list.querySelectorAll('input').forEach(function(i){ i.checked = selected.indexOf(i.value) >= 0; }); }
+    list.addEventListener('change', function(){ selected = Array.from(list.querySelectorAll('input:checked')).map(function(i){ return i.value; }); sync(); onChange(); });
+    search.addEventListener('input', function(){ var q = search.value.toLowerCase(); list.querySelectorAll('label').forEach(function(l){ l.classList.toggle('hide', q && l.dataset.v.toLowerCase().indexOf(q) < 0); }); });
+    btn.addEventListener('click', function(e){ e.preventDefault(); pop.hidden = !pop.hidden; if (!pop.hidden) search.focus(); });
+    el.querySelector('.msel-clear').addEventListener('click', function(){ selected = []; sync(); onChange(); });
+    el.querySelector('.msel-close').addEventListener('click', function(){ pop.hidden = true; });
+    document.addEventListener('click', function(e){ if (!el.contains(e.target)) pop.hidden = true; });
+    sync();
+    return { get: function(){ return selected.slice(); }, set: function(vals){ selected = (vals || []).filter(function(v){ return options.some(function(o){ return o.value === v; }); }); sync(); } };
+  }
+  function escA(t){ return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
+  function listParam(q, name){ var v = q.get(name); return v ? v.split(',').map(function(x){ return x.trim(); }).filter(Boolean) : []; }
+
+  // Maps page: one filter bar for every map; a density of origins, or the smokes themselves when few remain.
+  var mapsBar = document.getElementById('maps-filters');
+  if (mapsBar) {
+    var wantedSlug = location.hash.indexOf('#smoke-') === 0 ? location.hash.slice(7) : '';
+    var opts = window.MAPS_OPTS || {clans: [], ships: []};
+    var mMap = document.getElementById('m-map'), mPlayer = document.getElementById('m-player'), mPurpose = document.getElementById('m-purpose'), mSpawn = document.getElementById('m-spawn'), mCls = document.getElementById('m-cls'), mType = document.getElementById('m-type');
+    var lo = document.getElementById('m-lo'), hi = document.getElementById('m-hi'), mCount = document.getElementById('m-count');
+    var DRAW_MAX = window.MAP_DRAW_MAX || 25, N = 768;
+    var mClan = makeMulti(document.getElementById('m-clan'), opts.clans.map(function(c){ return {value: c[0], label: c[0], count: c[1]}; }), renderAll);
+    var mShip = makeMulti(document.getElementById('m-ship'), opts.ships.map(function(c){ return {value: c[0], label: c[0], count: c[1]}; }), renderAll);
     var slugId = function(t){ return String(t).replace(/[^A-Za-z0-9_-]+/g, '_').replace(/^_+|_+$/g, '') || 'x'; };
-    function esc(t){ return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
-    function wantLines(){ return !!(clan.value || (fplayer && fplayer.value) || ship.value); }
-    function load(then){
-      if (loaded) { then(); return; }
-      if (loading) return;
-      loading = true;
-      fetch(sec.dataset.paths).then(function(r){ return r.json(); }).then(function(rows){
-        var html = rows.map(function(r){
-          var pts = r.pts.map(function(p){ return p[0] + ',' + p[1]; }).join(' ');
-          var color = (window.TEAM_COLORS||{})[r.team] || '#94A3B8';
-          return '<a href="' + r.href + '" id="smoke-' + r.slug + '" class="smokepath" data-team="' + esc(r.team) + '" data-player="' + esc(r.player) + '" data-spawn="' + esc(r.spawn) + '" data-ship="' + esc(r.ship) + '" data-cls="' + esc(r.cls) + '" data-type="' + esc(r.type) + '" data-t="' + r.t + '" data-dmg="' + r.dmg + '" data-contested="' + (r.contested === null ? '' : r.contested) + '" data-selfish="' + (r.selfish === null ? '' : r.selfish) + '"><polyline points="' + pts + '" stroke="' + color + '"' + (r.dashed ? ' stroke-dasharray="6,4"' : '') + ' marker-end="url(#' + wrap.querySelector('marker') .id.replace(/-arrow-.*$/, '') + '-arrow-' + slugId(r.team) + ')"><title>' + esc(r.title) + '</title></polyline></a>';
-        }).join('');
-        group.innerHTML = html;
-        paths = Array.from(group.querySelectorAll('a.smokepath'));
-        loaded = true; loading = false;
-        then();
-      }).catch(function(){ loading = false; count.textContent = 'paths could not be loaded'; });
-    }
-    var all = Array.from(sec.querySelectorAll('.f-clan option')).slice(1).map(function(o){ return o.value; });
-    function donut(counts){
-      var names = Object.keys(counts).sort(function(a,b){ return counts[b] - counts[a]; });
-      var total = names.reduce(function(a,n){ return a + counts[n]; }, 0);
-      if (!total) return '<span class="muted small">Nothing here, just clear skies.</span>';
-      var size = 120, cx = 60, cy = 60, r = 58, angle = -Math.PI/2, svg = '', legend = '';
-      names.forEach(function(n){
-        var frac = counts[n]/total, a2 = angle + frac*2*Math.PI, color = (window.SHIP_COLORS||{})[n] || '#94A3B8';
-        if (frac >= 0.999) svg += '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+color+'"><title>'+n+': '+counts[n]+'</title></circle>';
-        else svg += '<path d="M'+cx+','+cy+' L'+(cx+r*Math.cos(angle)).toFixed(1)+','+(cy+r*Math.sin(angle)).toFixed(1)+' A'+r+','+r+' 0 '+(frac>0.5?1:0)+',1 '+(cx+r*Math.cos(a2)).toFixed(1)+','+(cy+r*Math.sin(a2)).toFixed(1)+' Z" fill="'+color+'"><title>'+n+': '+counts[n]+' ('+Math.round(frac*100)+'%)</title></path>';
-        legend += '<span class="legend"><i style="background:'+color+'"></i>'+n+' '+counts[n]+'</span>';
-        angle = a2;
-      });
-      svg += '<circle cx="'+cx+'" cy="'+cy+'" r="'+(r*0.6)+'" fill="var(--panel)"/>';
-      return '<svg viewBox="0 0 '+size+' '+size+'" width="'+size+'" height="'+size+'" class="donut">'+svg+'</svg><div class="legend-row">'+legend+'</div>';
-    }
-    function shown(p){
-      var t = parseInt(p.dataset.t, 10);
-      if (t >= 0 && (t < parseInt(lo.value,10) || t > parseInt(hi.value,10))) return false;
-      if (clan.value && p.dataset.team !== clan.value) return false;
-      if (fplayer && fplayer.value && p.dataset.player !== fplayer.value) return false;
-      if (spawn.value && p.dataset.spawn !== spawn.value) return false;
-      if (ship.value && p.dataset.ship !== ship.value) return false;
-      if (fcls && fcls.value && p.dataset.cls !== fcls.value) return false;
-      if (ftype && ftype.value && p.dataset.type !== ftype.value) return false;
+    function view(){ var r = document.querySelector('input[name=m-view]:checked'); return r ? r.value : 'auto'; }
+    function setView(v){ var r = document.querySelector('input[name=m-view][value="' + v + '"]'); if (r) r.checked = true; }
+    function shown(r){
+      var t = r.t;
+      if (t >= 0 && (t < parseInt(lo.value,10) * 60 || t >= parseInt(hi.value,10) * 60 + (parseInt(hi.value,10) === 20 ? 1 : 0))) return false;
+      var clans = mClan.get(), ships = mShip.get();
+      if (clans.length && clans.indexOf(r.team) < 0) return false;
+      if (ships.length && ships.indexOf(r.ship) < 0) return false;
+      if (mPlayer.value && r.player !== mPlayer.value) return false;
+      if (mPurpose.value && r.purposes.indexOf(mPurpose.value) < 0) return false;
+      if (mSpawn.value && r.spawn !== mSpawn.value) return false;
+      if (mCls.value && r.cls !== mCls.value) return false;
+      if (mType.value && r.type !== mType.value) return false;
       return true;
+    }
+    function heatRects(rows){
+      var cells = {}, peak = 0, step = N / 10;
+      rows.forEach(function(r){ var p = r.pts[0]; var cx = Math.min(9, Math.max(0, Math.floor(p[0] / step))), cy = Math.min(9, Math.max(0, Math.floor(p[1] / step))); var k = cx + ',' + cy; cells[k] = (cells[k] || 0) + 1; if (cells[k] > peak) peak = cells[k]; });
+      var letters = 'ABCDEFGHIJ';
+      return Object.keys(cells).map(function(k){ var cx = parseInt(k.split(',')[0], 10), cy = parseInt(k.split(',')[1], 10), n = cells[k]; return '<rect x="' + (cx * step) + '" y="' + (cy * step) + '" width="' + step + '" height="' + step + '" fill="#F5C542" fill-opacity="' + (0.12 + 0.68 * n / peak).toFixed(2) + '"><title>' + letters[cy] + (cx + 1) + ': ' + n + ' smokes</title></rect>'; }).join('');
+    }
+    function smokeMarkup(r, markerPrefix){
+      var pts = r.pts.map(function(p){ return p[0] + ',' + p[1]; }).join(' ');
+      var color = (window.TEAM_COLORS||{})[r.team] || '#94A3B8';
+      var cloud = r.r > 0 ? '<polyline class="cloud" points="' + pts + '" stroke="' + color + '" style="stroke-width:' + (2 * r.r).toFixed(1) + 'px"/>' : '';
+      return '<a href="' + r.href + '" id="smoke-' + r.slug + '" class="smokepath" data-team="' + escA(r.team) + '">' + cloud + '<polyline points="' + pts + '" stroke="' + color + '"' + (r.dashed ? ' stroke-dasharray="6,4"' : '') + ' marker-end="url(#' + markerPrefix + '-arrow-' + slugId(r.team) + ')"/><title>' + escA(r.title) + '</title></a>';
     }
     function panel(title, rows, unit, pct){
       var vals = rows.map(function(r){ return r.v; }).filter(function(v){ return v !== null; });
@@ -2361,47 +2475,107 @@ JS = r"""(function(){
       });
       return '<div class="panel">' + html + '</div>';
     }
-    function render(){
-      if (!loaded) { load(render); return; }
-      var lines = wantLines();
-      if (wrap) wrap.classList.toggle('lines', lines);
-      var vis = paths.filter(function(p){ var s = shown(p); p.classList.toggle('hide', !s); return s; });
-      count.textContent = vis.length + ' of ' + paths.length + ' smokes' + (lines ? ' drawn' : ' in the density; pick a clan, player or ship to draw paths');
-      sec.querySelector('.lo').textContent = clockText(parseInt(lo.value,10));
-      sec.querySelector('.hi').textContent = clockText(parseInt(hi.value,10));
-      var teams = Array.from(new Set(paths.map(function(p){ return p.dataset.team; })));
-      var counts0 = {}; vis.forEach(function(p){ counts0[p.dataset.team] = (counts0[p.dataset.team]||0) + 1; }); teams.sort(function(a,b){ return (counts0[b]||0) - (counts0[a]||0) || a.localeCompare(b); });
+    function donut(counts){
+      var names = Object.keys(counts).sort(function(a,b){ return counts[b] - counts[a]; });
+      var total = names.reduce(function(a,n){ return a + counts[n]; }, 0);
+      if (!total) return '<span class="muted small">Nothing here, just clear skies.</span>';
+      var size = 120, cx = 60, cy = 60, r = 58, angle = -Math.PI/2, svg = '', legend = '';
+      names.forEach(function(n){
+        var frac = counts[n]/total, a2 = angle + frac*2*Math.PI, color = (window.SHIP_COLORS||{})[n] || '#94A3B8';
+        if (frac >= 0.999) svg += '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+color+'"><title>'+n+': '+counts[n]+'</title></circle>';
+        else svg += '<path d="M'+cx+','+cy+' L'+(cx+r*Math.cos(angle)).toFixed(1)+','+(cy+r*Math.sin(angle)).toFixed(1)+' A'+r+','+r+' 0 '+(frac>0.5?1:0)+',1 '+(cx+r*Math.cos(a2)).toFixed(1)+','+(cy+r*Math.sin(a2)).toFixed(1)+' Z" fill="'+color+'"><title>'+n+': '+counts[n]+' ('+Math.round(frac*100)+'%)</title></path>';
+        legend += '<span class="legend"><i style="background:'+color+'"></i>'+n+' '+counts[n]+'</span>';
+        angle = a2;
+      });
+      svg += '<circle cx="'+cx+'" cy="'+cy+'" r="'+(r*0.6)+'" fill="var(--panel)"/>';
+      return '<svg viewBox="0 0 '+size+' '+size+'" width="'+size+'" height="'+size+'" class="donut">'+svg+'</svg><div class="legend-row">'+legend+'</div>';
+    }
+    var sections = Array.from(document.querySelectorAll('.map-section')).map(function(sec){
+      var wrap = sec.querySelector('.mapwrap'), svg = wrap ? wrap.querySelector('svg') : null;
+      var marker = svg ? svg.querySelector('marker') : null;
+      return { el: sec, map: sec.dataset.map, url: sec.dataset.paths, rows: null, wrap: wrap, heat: svg ? svg.querySelector('g.heat') : null, paths: svg ? svg.querySelector('g.paths') : null,
+        markerPrefix: marker ? marker.id.replace(/-arrow-.*$/, '') : 'm', chart: sec.querySelector('.chart'), count: sec.querySelector('.count'), ships: sec.querySelector('.ships') };
+    });
+    function renderSection(s){
+      var hidden = !!(mMap.value && mMap.value !== s.map);
+      s.el.hidden = hidden;
+      if (hidden || !s.rows) return 0;
+      var vis = s.rows.filter(shown);
+      var v = view(), drawn = v === 'smokes' || (v === 'auto' && vis.length <= DRAW_MAX);
+      if (s.wrap) s.wrap.classList.toggle('lines', drawn);
+      if (drawn) { s.paths.innerHTML = vis.map(function(r){ return smokeMarkup(r, s.markerPrefix); }).join(''); s.heat.innerHTML = ''; }
+      else { s.heat.innerHTML = heatRects(vis); s.paths.innerHTML = ''; }
+      s.count.textContent = vis.length + ' smokes ' + (drawn ? 'drawn' : 'in the density') + (v === 'auto' && !drawn ? ' (narrow to ' + DRAW_MAX + ' or fewer to draw them)' : '');
+      var teams = Array.from(new Set(s.rows.map(function(r){ return r.team; })));
+      if (mClan.get().length) teams = teams.filter(function(t){ return mClan.get().indexOf(t) >= 0; });
+      var counts0 = {}; vis.forEach(function(r){ counts0[r.team] = (counts0[r.team]||0) + 1; });
+      teams.sort(function(a,b){ return (counts0[b]||0) - (counts0[a]||0) || a.localeCompare(b); });
       var others = [];
-      if (!clan.value && teams.length > 10) { others = teams.slice(10); teams = teams.slice(0, 10); }
+      if (!mClan.get().length && teams.length > 10) { others = teams.slice(10); teams = teams.slice(0, 10); }
       function rows(f){
-        var out = teams.map(function(t){ var list = vis.filter(function(p){ return p.dataset.team === t; }); return {team:t, v:f(list), n:list.length, color:(window.TEAM_COLORS||{})[t]||'#94A3B8'}; });
-        if (others.length) { var list = vis.filter(function(p){ return others.indexOf(p.dataset.team) >= 0; }); out.push({team:'others (' + others.length + ')', v:f(list), n:list.length, color:'#475569'}); }
+        var out = teams.map(function(t){ var list = vis.filter(function(r){ return r.team === t; }); return {team:t, v:f(list), n:list.length, color:(window.TEAM_COLORS||{})[t]||'#94A3B8'}; });
+        if (others.length) { var list = vis.filter(function(r){ return others.indexOf(r.team) >= 0; }); out.push({team:'others (' + others.length + ')', v:f(list), n:list.length, color:'#475569'}); }
         return out;
       }
-      function avg(list, key){ var xs = list.map(function(p){ return p.dataset[key]; }).filter(function(x){ return x !== ''; }).map(Number); return xs.length ? xs.reduce(function(a,b){return a+b;},0)/xs.length : null; }
-      chart.innerHTML =
+      function avg(list, key){ var xs = list.map(function(r){ return r[key]; }).filter(function(x){ return x !== null && x !== undefined; }).map(Number); return xs.length ? xs.reduce(function(a,b){return a+b;},0)/xs.length : null; }
+      s.chart.innerHTML =
         panel('Smokes', rows(function(l){ return l.length ? l.length : null; }), '', false) +
         panel('Average smoke damage', rows(function(l){ return avg(l, 'dmg'); }), '', false) +
         panel('<abbr class="term" title="' + (window.CONTEST_DEF||'') + '">Average distance to the nearest contested cap</abbr> (negative = inside)', rows(function(l){ return avg(l, 'contested'); }), 'km', false) +
         panel('<abbr class="term" title="' + (window.SELFISH_DEF||'') + '">Selfish smoke</abbr> share', rows(function(l){ var v = avg(l, 'selfish'); return v === null ? null : v * 100; }), '', true);
-      if (ships) { var counts = {}; vis.forEach(function(p){ counts[p.dataset.ship] = (counts[p.dataset.ship]||0) + 1; }); ships.innerHTML = donut(counts); }
+      if (s.ships) { var counts = {}; vis.forEach(function(r){ counts[r.ship] = (counts[r.ship]||0) + 1; }); s.ships.innerHTML = donut(counts); }
+      return vis.length;
+    }
+    function writeUrl(){
+      var q = new URLSearchParams();
+      if (mMap.value) q.set('map', mMap.value);
+      if (mClan.get().length) q.set('clan', mClan.get().join(','));
+      if (mShip.get().length) q.set('ship', mShip.get().join(','));
+      if (mPlayer.value) q.set('player', mPlayer.value);
+      if (mPurpose.value) q.set('purpose', mPurpose.value);
+      if (mSpawn.value) q.set('spawn', mSpawn.value);
+      if (mCls.value) q.set('cls', mCls.value);
+      if (mType.value) q.set('type', mType.value);
+      if (lo.value !== '0' || hi.value !== '20') q.set('t', lo.value + '-' + hi.value);
+      if (view() !== 'auto') q.set('view', view());
+      var s = q.toString().replace(/%2C/g, ',');
+      history.replaceState(null, '', location.pathname + (s ? '?' + s : '') + (wantedSlug ? '#smoke-' + wantedSlug : ''));
+    }
+    function renderAll(){
+      document.querySelector('#maps-filters .lo').textContent = clockText(parseInt(lo.value,10) * 60);
+      document.querySelector('#maps-filters .hi').textContent = clockText(parseInt(hi.value,10) * 60);
+      var total = 0, all = 0;
+      sections.forEach(function(s){ total += renderSection(s); if (!s.el.hidden && s.rows) all += s.rows.length; });
+      mCount.textContent = total + ' of ' + all + ' smokes';
+      writeUrl();
     }
     function clamp(){ if (parseInt(lo.value,10) > parseInt(hi.value,10)) { if (document.activeElement === lo) hi.value = lo.value; else lo.value = hi.value; } }
-    [lo, hi].forEach(function(r){ r.addEventListener('input', function(){ clamp(); render(); }); });
-    [clan, fplayer, spawn, ship, fcls, ftype].forEach(function(s){ if (s) s.addEventListener('change', render); });
-    // Filters can be preset from the query string: ?clan=RESIN&spawn=north&ship=Harugumo&from=0&to=600 (seconds since battle start).
+    [lo, hi].forEach(function(r){ r.addEventListener('input', function(){ clamp(); renderAll(); }); });
+    [mMap, mPlayer, mPurpose, mSpawn, mCls, mType].forEach(function(s){ s.addEventListener('change', renderAll); });
+    document.querySelectorAll('input[name=m-view]').forEach(function(r){ r.addEventListener('change', renderAll); });
+    // Filters from the address bar: ?map=...&clan=A,B&ship=X,Y&player=...&purpose=...&spawn=...&cls=...&type=...&t=0-4&view=smokes (older links: from/to in seconds).
     var q = new URLSearchParams(location.search);
-    if (q.get('clan')) clan.value = q.get('clan');
-    if (q.get('player') && fplayer) fplayer.value = q.get('player');
-    if (q.get('spawn')) spawn.value = q.get('spawn');
-    if (q.get('ship')) ship.value = q.get('ship');
-    if (q.get('from')) lo.value = q.get('from');
-    if (q.get('to')) hi.value = q.get('to');
-    // A smoke page's "its path on the map" link: draw that smoke's clan on its map and scroll there.
+    if (q.get('map')) mMap.value = q.get('map');
+    mClan.set(listParam(q, 'clan'));
+    mShip.set(listParam(q, 'ship'));
+    if (q.get('player')) mPlayer.value = q.get('player');
+    if (q.get('purpose')) mPurpose.value = q.get('purpose');
+    if (q.get('spawn')) mSpawn.value = q.get('spawn');
+    if (q.get('cls')) mCls.value = q.get('cls');
+    if (q.get('type')) mType.value = q.get('type');
+    if (q.get('t') && /^\d+-\d+$/.test(q.get('t'))) { lo.value = q.get('t').split('-')[0]; hi.value = q.get('t').split('-')[1]; }
+    if (q.get('from')) lo.value = Math.floor(parseInt(q.get('from'),10) / 60);
+    if (q.get('to')) hi.value = Math.ceil(parseInt(q.get('to'),10) / 60);
+    if (q.get('view')) setView(q.get('view'));
+    // A smoke page's "its path on the map" link: that smoke's map and clan, drawn, and scrolled to.
     var target = wantedSlug && (window.SMOKE_MAP||{})[wantedSlug];
-    if (target && target[0] === sec.dataset.map) { clan.value = target[1]; load(function(){ render(); var el = document.getElementById('smoke-' + wantedSlug); if (el) { el.querySelector('polyline').style.strokeWidth = '7'; el.scrollIntoView({block: 'center'}); } }); return; }
-    clamp(); render();
-  });
+    if (target) { mMap.value = target[0]; mClan.set([target[1]]); setView('smokes'); }
+    clamp();
+    Promise.all(sections.map(function(s){ return fetch(s.url).then(function(r){ return r.json(); }).then(function(rows){ s.rows = rows; }).catch(function(){ s.rows = []; s.count.textContent = 'paths could not be loaded'; }); })).then(function(){
+      renderAll();
+      if (target) { var el = document.getElementById('smoke-' + wantedSlug); if (el) { el.querySelectorAll('polyline:not(.cloud)').forEach(function(p){ p.style.strokeWidth = '7px'; }); el.scrollIntoView({block: 'center'}); } }
+    });
+  }
 
   // Games page: group stage filters.
   var gtable = document.getElementById('games');
@@ -2434,25 +2608,45 @@ JS = r"""(function(){
   if (!window.SMOKES_URL) return;
   var rows = [], tbody = document.querySelector('#smokes tbody'), PAGE = 100, limit = PAGE;
   var more = document.getElementById('showmore');
+  var multi = {};
   more.addEventListener('click', function(){ limit += PAGE; render(); });
   fetch(window.SMOKES_URL).then(function(r){ return r.json(); }).then(function(data){ rows = data; start(); }).catch(function(){ document.getElementById('count').textContent = 'the smoke table could not be loaded'; });
   function start(){
   function fill(id, key){ var sel = document.getElementById(id); var vals = Array.from(new Set(rows.map(function(r){return r[key];}))).filter(Boolean).sort(); vals.forEach(function(v){ var o=document.createElement('option'); o.value=v; o.textContent=v; sel.appendChild(o); }); sel.addEventListener('change', function(){ limit = PAGE; render(); }); }
-  fill('f-team','team'); fill('f-player','player'); fill('f-ship','ship'); fill('f-map','map'); fill('f-game','game'); fill('f-type','type'); fill('f-phase','phase');
+  function fillMulti(id, key){ var counts = {}; rows.forEach(function(r){ if (r[key]) counts[r[key]] = (counts[r[key]]||0) + 1; }); var vals = Object.keys(counts).sort(); multi[key] = makeMulti(document.getElementById(id), vals.map(function(v){ return {value: v, label: v, count: counts[v]}; }), function(){ limit = PAGE; render(); }); }
+  fillMulti('f-team','team'); fill('f-player','player'); fillMulti('f-ship','ship'); fill('f-map','map'); fill('f-game','game'); fill('f-type','type'); fill('f-phase','phase');
   fill('f-cls','cls'); fill('f-movement','movement'); fill('f-coverage','coverage'); fill('f-primary','primary'); fill('f-zone','zone'); fill('f-lane','lane');
   (function(){ var sel = document.getElementById('f-purpose'); var vals = Array.from(new Set(rows.flatMap(function(r){ return r.purposes; }))).sort(); vals.forEach(function(v){ var o=document.createElement('option'); o.value=v; o.textContent=v; sel.appendChild(o); }); sel.addEventListener('change', function(){ limit = PAGE; render(); }); })();
   document.getElementById('f-sort').addEventListener('change', function(){ limit = PAGE; render(); });
+  // Filters from the address bar: ?clan=A,B&ship=X,Y plus any single select by its name (player, map, game, type, cls, ...); 'team' is the older name of 'clan'.
   var q = new URLSearchParams(location.search);
-  ['team','player','ship','map'].forEach(function(k){ if (q.get(k)) document.getElementById('f-' + k).value = q.get(k); });
+  multi.team.set(listParam(q, 'clan').concat(listParam(q, 'team')));
+  multi.ship.set(listParam(q, 'ship'));
+  SINGLE.forEach(function(k){ if (q.get(k)) document.getElementById('f-' + k).value = q.get(k); });
+  if (q.get('purpose')) document.getElementById('f-purpose').value = q.get('purpose');
+  if (q.get('sort')) document.getElementById('f-sort').value = q.get('sort');
   render();
   }
+  var SINGLE = ['player','map','game','type','phase','cls','movement','coverage','primary','zone','lane'];
   function val(id){ return document.getElementById(id).value; }
   function bar(v, max, color){ var w = max ? Math.max(0, Math.min(1, v/max))*80 : 0; return '<span class="mini"><i style="width:'+w.toFixed(0)+'px;background:'+color+'"></i></span>'; }
+  function writeUrl(f, purpose, sort){
+    var q = new URLSearchParams();
+    if (multi.team.get().length) q.set('clan', multi.team.get().join(','));
+    if (multi.ship.get().length) q.set('ship', multi.ship.get().join(','));
+    SINGLE.forEach(function(k){ if (f[k]) q.set(k, f[k]); });
+    if (purpose) q.set('purpose', purpose);
+    if (sort !== 'total') q.set('sort', sort);
+    var s = q.toString().replace(/%2C/g, ',');
+    history.replaceState(null, '', location.pathname + (s ? '?' + s : ''));
+  }
   function render(){
-    var f = {team:val('f-team'), player:val('f-player'), ship:val('f-ship'), map:val('f-map'), game:val('f-game'), type:val('f-type'), phase:val('f-phase'), cls:val('f-cls'), movement:val('f-movement'), coverage:val('f-coverage'), primary:val('f-primary'), zone:val('f-zone'), lane:val('f-lane')};
+    var f = {};
+    SINGLE.forEach(function(k){ f[k] = val('f-' + k); });
+    var clans = multi.team.get(), ships = multi.ship.get();
     var purpose = val('f-purpose');
     var sort = val('f-sort'), asc = sort==='contested' || sort==='elapsed';
-    var list = rows.filter(function(r){ return Object.keys(f).every(function(k){ return !f[k] || r[k]===f[k]; }) && (!purpose || r.purposes.indexOf(purpose) >= 0); });
+    var list = rows.filter(function(r){ return Object.keys(f).every(function(k){ return !f[k] || r[k]===f[k]; }) && (!clans.length || clans.indexOf(r.team) >= 0) && (!ships.length || ships.indexOf(r.ship) >= 0) && (!purpose || r.purposes.indexOf(purpose) >= 0); });
     list.sort(function(a,b){ var x=a[sort], y=b[sort]; if (x==null) x = asc? Infinity : -Infinity; if (y==null) y = asc? Infinity : -Infinity; return asc ? x-y : y-x; });
     var shownRows = list.slice(0, limit);
     more.hidden = list.length <= limit;
@@ -2474,6 +2668,7 @@ JS = r"""(function(){
     Array.from(tbody.querySelectorAll('tr[data-href]')).forEach(function(tr){ tr.addEventListener('click', function(){ location.href = tr.dataset.href; }); });
     document.getElementById('empty').hidden = list.length>0;
     document.getElementById('count').textContent = list.length + ' of ' + rows.length + ' smokes';
+    writeUrl(f, purpose, sort);
   }
 })();"""
 

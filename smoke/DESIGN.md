@@ -315,3 +315,10 @@ Sean tags smokes in a spreadsheet and one command imports the tags; reruns never
 - 4 Nov 2026 (round 5, overnight): classification, location context, smokees, lenses, map profiles, docs and the r5 export; 22 unit tests, golden and determinism pass; award winners unchanged in both lenses except the clan and selfish-smoker counts, which are smaller under the destroyer lens.
 - 4 Nov 2026 (round 6): the damage split, DD damage, stationary, the retuned classifier, the merged Smokees table, the bare zoomed view, the Maps fix (a CSS grid stretch recentred the overlay; the grid labels were transposed) with the overlay test, Tendencies and wording; 24 unit tests, golden, determinism and the overlay test pass. No award winner moved: under concealed damage HSR_Yamiyonohik's 46513 still leads (90,686 after the line-of-sight fix) ahead of RESIN_Big_Boy69's 90084 (80,375). A clip of 90084 was rendered while it led and stays on its page.
 - Upstream feature requests for the wows-toolkit author: dump a frame at an exact battle clock; a smoke-event export (smoke id, owner, puff timestamps, variant); move the game-data loader into the library (done in the fork as the only upstream change).
+
+## 14. Conventions for future analyses
+
+- All analysis code stays in this repository, one folder or crate per analysis (`crates/smoke-signals` and `smoke/` for Smoke Signals; the next analysis gets its own).
+- Each analysis publishes its site to its own GitHub Pages repository, which keeps every site under the 1 GB Pages limit; the hub at the root of this site links to them.
+- Large outputs (replays, frames, batch outputs) stay out of git. Data zips go on GitHub releases instead of being committed (the round 7 zips already in the tree stay; nothing is rewritten).
+- Published sites are tagged before anything is taken down (`site-r6-archive` holds the round 6 site; `r6` the source that built it), so any site can be republished from its tag.

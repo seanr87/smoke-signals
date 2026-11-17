@@ -1074,6 +1074,7 @@ class Site:
 <li><b>Lenses:</b> most boards default to destroyer smokes; "all" includes cruiser and battleship smokes. Tags (purpose, movement, coverage) are rule-based from the replay, with a confidence where the rule is fuzzy.</li>
 <li><b>Minimum samples:</b> clan boards and clan awards need {CLAN_MIN_GAMES} games; Best in Haze needs {AVG_MIN_SMOKES} smokes; Most Selfish Smoker {SELFISH_MIN_SMOKES}; the leaderboard hides players under {PLAYER_MIN_SMOKES} smokes by default.</li>
 <li><b>Awards:</b> award names are tongue-in-cheek; they describe a single smoke, not a player.</li>
+<li><b>Round 6:</b> Round 6 (H-SR, RESIN, PN only) is archived at git tag site-r6-archive.</li>
 </ul>
 <h2>Data limits</h2>
 <ul class="terms">
@@ -1135,6 +1136,10 @@ class Site:
             stub = f'<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=smoke/{page}"><title>Moved</title></head><body><p>Moved to <a href="smoke/{page}">smoke/{page}</a>.</p></body></html>'
             with open(os.path.join(root, page), "w", encoding="utf-8", newline="\n") as f:
                 f.write(stub)
+        # The round 6 site is archived at git tag site-r6-archive; its old address goes to the hub.
+        os.makedirs(os.path.join(root, "r6"), exist_ok=True)
+        with open(os.path.join(root, "r6", "index.html"), "w", encoding="utf-8", newline="\n") as f:
+            f.write('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=../index.html"><title>Round 6 archived</title></head><body><p>The round 6 site (H-SR, RESIN, PN only) is archived at git tag site-r6-archive. <a href="../index.html">Open the hub</a>.</p></body></html>')
         not_found = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Moved</title><script>
 (function(){var p=location.pathname;var i=p.indexOf('/smoke/');if(i<0){var parts=p.split('/');var root=parts.slice(0,-1);var tail=parts[parts.length-1];
 // Smoke Signals moved under smoke/: /x/clans.html -> /x/smoke/clans.html, /x/smokes/<id>.html -> /x/smoke/smokes/<id>.html

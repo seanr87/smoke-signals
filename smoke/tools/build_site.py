@@ -20,7 +20,7 @@ import shutil
 from collections import Counter, defaultdict
 
 MATCH_SECONDS = 20 * 60
-MAP_DRAW_MAX = 25
+MAP_DRAW_MAX = 50
 # Minimum samples: a clan board or clan award needs this many games; a
 # per-smoke average (Best in Haze) this many smokes; the leaderboard hides
 # players under PLAYER_MIN_SMOKES by default.
@@ -45,16 +45,18 @@ METRIC_DEFS = {
     "contested": "Contested-cap share: share of smokes that stood within 1 km of a contested cap on average over their life.",
     "swing": "Score swing: change in the point gap (ours minus theirs) from activation to capture, averaged.",
     "deaths": "Smoke deaths: ships of the clan that a smoke concealed (inside it, or firing from behind it), were then detected, and sank while the smoke stood or within 20 s after its last puff faded.",
-    "kills": "Kills from smoke: enemy ships whose last damage before sinking was a shell or fire tick credited to the smoke.",
+    "kills": "Kills from smoke: enemy ships whose last damage before sinking was a shell, fire tick, bomb or torpedo credited to the smoke.",
     "punished": "Radar-punished share: share of smokes in which at least one of the clan's ships was radar-spotted while inside. Possibly a mistake: smokes are often laid knowing radar is a risk, and one spot is not a failure, but a high rate for a clan or player is a warning sign.",
     "concealed": "Concealed smoke damage: the part of the smoke damage fired while the shooter was undetected. Detected damage is the rest, broken down by how the shooter was spotted (radar, surface lit, hydro, proximity, aircraft, smoke fire penalty).",
     "dd": "DD damage: smoke damage, concealed and detected, dealt to enemy destroyers; same credit rules as smoke damage.",
+    "guns": "Guns-only smoke damage: main-battery shells and the fires they start, the round 6 definition, without airstrikes and torpedoes.",
+    "torpedo": "Torpedo smoke damage: torpedoes launched from inside the smoke or from behind it by an undetected ship.",
     "offensive": "Radar spots from smoke: enemies spotted by the clan's own radar run from inside its smoke while concealed, inferred from the activation and radar range.",
     "won": "Smoke near a cap capture: a cap within stock gun range of a concealed ship flipped to the clan during the smoke or within 10 s after it.",
     "coverage": "Radar cap coverage: share of a contested cap's area within the range of a radar ship concealed in the smoke.",
 }
 AWARD_DEFS = {
-    "Smoke of the Tournament": "Highest concealed smoke damage: main-gun shells fired from or through the smoke by the smoking team while the shooter was undetected, plus the fires they started.",
+    "Smoke of the Tournament": "Highest concealed smoke damage: main-gun shells, bombs and torpedoes fired from or through the smoke by the smoking team while the shooter was undetected, plus the fires shells and bombs started.",
     "Deepest Cap Smoke": "Deepest into a contested cap as a share of the cap's radius, among smokes near a cap capture or a defended cap.",
     "Radar Bait": "Most radar spots on the smoking team's ships inside the smoke while it stood; ties broken by the damage those ships took while spotted.",
     "Peekaboo": "Most enemies spotted by the smoking team's own radar, run from inside the smoke while concealed.",
@@ -109,7 +111,7 @@ def game_quality(spikes):
 AUTO_NOTE = "auto-tagged: rule-based from the replay; fuzzy tags carry a confidence"
 # Clan metrics where a lower value is the better one (charts sort best first).
 LOWER_IS_BETTER = {"deaths"}
-DAMAGE_DEF = "Smoke damage: main-gun shells and air-support bombs fired from or through a smoke by the smoking team, plus the fires they started; each shot is credited to one smoke. Concealed damage is the part fired while the shooter was undetected; detected damage is the rest."
+DAMAGE_DEF = "Smoke damage: main-gun shells, air-support bombs and torpedoes fired from or through a smoke by the smoking team, plus the fires shells and bombs started; each shot is credited to one smoke. Concealed damage is the part fired while the shooter was undetected; detected damage is the rest."
 CONCEALED_DEF = METRIC_DEFS["concealed"]
 DD_DEF = METRIC_DEFS["dd"]
 RADAR_BAIT_DEF = "Radar bait: a smoke where enemy radar spotted our ships inside it. Possibly a mistake: smokes are often laid knowing radar is a risk, and one spot is not a failure, but a high rate of radar-punished smokes for a clan or player is a warning sign."
@@ -318,6 +320,8 @@ class Data:
             s["_shell"] = d.get("damage_shell") or 0.0
             s["_fire"] = d.get("damage_fire") or 0.0
             s["_airstrike"] = d.get("damage_airstrike") or 0.0
+            s["_torpedo"] = d.get("damage_torpedo") or 0.0
+            s["_guns"] = s["_shell"] + s["_fire"]
             s["_salvos"] = d.get("salvos") or 0
             s["_owner_damage"] = (d.get("damage_in_smoke_smoker") or 0) + (d.get("damage_behind_smoke_smoker") or 0)
             sp = s.get("damage_split") or {}
@@ -944,11 +948,13 @@ class Site:
             self.smoke_page(s)
 
     def player_stats(self, rows):
-        by_player = defaultdict(lambda: {"smokes": 0, "damage": 0.0, "concealed": 0.0, "dd": 0.0, "radar": 0, "ships": Counter(), "team": "", "selfish": 0, "games": set(), "won": 0, "offensive": 0, "maps": Counter(), "kills": 0, "deaths": 0})
+        by_player = defaultdict(lambda: {"smokes": 0, "damage": 0.0, "guns": 0.0, "torpedo": 0.0, "concealed": 0.0, "dd": 0.0, "radar": 0, "ships": Counter(), "team": "", "selfish": 0, "games": set(), "won": 0, "offensive": 0, "maps": Counter(), "kills": 0, "deaths": 0})
         for s in rows:
             p = by_player[s["player"]]
             p["smokes"] += 1
             p["damage"] += s["_total"]
+            p["guns"] += s["_guns"]
+            p["torpedo"] += s["_torpedo"]
             p["concealed"] += s["_concealed"]
             p["dd"] += s["_dd"]
             p["radar"] += s["_radar"]
@@ -1063,7 +1069,7 @@ class Site:
 <h2>Method in brief</h2>
 <ul class="terms">
 <li><b>Smokes:</b> every smoke-screen object the primary replay shows, matched to the ship that activated it (a flag marks the few whose owner is inferred from position alone).</li>
-<li><b>Damage credit:</b> each damage event in the replay ledger is classified by weapon from its timing and the shots in flight (shell, secondary, fire, airstrike, torpedo, flood, unknown). Main-battery shells, air-support bombs and the fires they start count as smoke damage when the shot was fired from inside a smoke, or from outside by an undetected shooter whose line to an enemy in detection range crossed the smoke. Secondary, torpedo, flood and unknown damage never earn credit; when a ship fired such a weapon from a smoke (a torpedo is placed at its launch), the smoke's page lists those hits as not counted, so the enemies table and the smoke's total stay main battery, airstrikes and fires only.</li>
+<li><b>Damage credit:</b> each damage event in the replay ledger is classified by weapon from its timing and the shots in flight (shell, secondary, fire, airstrike, torpedo, flood, unknown). Main-battery shells, air-support bombs, torpedoes and the fires shells and bombs start count as smoke damage when the shot was fired from inside a smoke, or from outside by an undetected shooter whose line to an enemy in detection range crossed the smoke; a torpedo or an airstrike is placed where and when the ship launched it, and its concealed or detected part follows the launcher's spotted state then. Secondary, flood and unknown damage never earn credit; when a ship fired such a weapon from a smoke, the smoke's page lists those hits as not counted. Clan and player tables also carry a guns-only total (shells and fires), the round 6 definition, for comparison.</li>
 <li><b>Concealed vs detected:</b> by the shooter's visibility flags at the firing moment; the detected part is split by reason (radar, hydro, smoke fire penalty, aircraft, proximity, surface lit).</li>
 <li><b>Lenses:</b> most boards default to destroyer smokes; "all" includes cruiser and battleship smokes. Tags (purpose, movement, coverage) are rule-based from the replay, with a confidence where the rule is fuzzy.</li>
 <li><b>Minimum samples:</b> clan boards and clan awards need {CLAN_MIN_GAMES} games; Best in Haze needs {AVG_MIN_SMOKES} smokes; Most Selfish Smoker {SELFISH_MIN_SMOKES}; the leaderboard hides players under {PLAYER_MIN_SMOKES} smokes by default.</li>
@@ -1191,6 +1197,8 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
             "smokes_per_game": (n / n_games, n),
             "first_smoke": (mean(firsts), len(firsts)),
             "damage_per_game": (sum(s["_total"] for s in rows) / n_games, n),
+            "guns_per_game": (sum(s["_guns"] for s in rows) / n_games, n),
+            "torpedo_per_game": (sum(s["_torpedo"] for s in rows) / n_games, n),
             "concealed_per_game": (sum(s["_concealed"] for s in rows) / n_games, n),
             "dd_per_game": (sum(s["_dd"] for s in rows) / n_games, n),
             "avg_damage": (mean([s["_total"] for s in rows]), n),
@@ -1259,6 +1267,8 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
         ("Volume", "charge", "Charge use", "pct", "charge"),
         ("Volume", "stacking", "Stacking rate", "pct", "stacking"),
         ("Damage", "damage_per_game", "Smoke damage per game", "int", ""),
+        ("Damage", "guns_per_game", "Guns-only smoke damage per game", "int", "guns"),
+        ("Damage", "torpedo_per_game", "Torpedo smoke damage per game", "int", "torpedo"),
         ("Damage", "concealed_per_game", "Concealed smoke damage per game", "int", "concealed"),
         ("Damage", "dd_per_game", "DD damage per game", "int", "dd"),
         ("Damage", "avg_damage", "Average damage per smoke", "int", ""),
@@ -1362,6 +1372,7 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
                 + stat(term("score swing while smoke up", METRIC_DEFS["swing"]), "swing", fmt=lambda v: f"{v:+.0f} pts")
                 + stat(term("radar-punished share", METRIC_DEFS["punished"]), "punished", fmt=pctf))
         more = (stat("smokes per game", "smokes_per_game", fmt=lambda v: f"{v:.1f}") + stat("smoke damage per game", "damage_per_game")
+                + stat(term("guns-only smoke damage per game", METRIC_DEFS["guns"]), "guns_per_game") + stat(term("torpedo smoke damage per game", METRIC_DEFS["torpedo"]), "torpedo_per_game")
                 + stat(term("concealed smoke damage per game", CONCEALED_DEF), "concealed_per_game") + stat(term("DD damage per game", DD_DEF), "dd_per_game")
                 + stat(term("charge use", METRIC_DEFS["charge"]), "charge", fmt=pctf) + stat(term("stacking rate", METRIC_DEFS["stacking"]), "stacking", fmt=pctf)
                 + stat(term("contested-cap share", METRIC_DEFS["contested"]), "contested", fmt=pctf) + stat(term("kills from smoke per game", METRIC_DEFS["kills"]), "kills", fmt=lambda v: f"{v:.2f}")
@@ -1447,7 +1458,7 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
         for name, p in sorted(self.players.items(), key=lambda kv: -kv[1]["damage"]):
             badges = "".join(f'<span class="badge{" all" if lens == "all" else ""}" title="{esc(AWARD_DEFS.get(b, ""))} ({lens} smokes)">{esc(b)}</span>' for b, lens in self.badges.get(name, []))
             ships = ", ".join(f"{s} x{n}" if n > 1 else s for s, n in p["ships"].most_common())
-            rows.append(f'<tr data-team="{esc(p["team"])}" data-damage="{p["damage"]:.0f}" data-concealed="{p["concealed"]:.0f}" data-dd="{p["dd"]:.0f}" data-smokes="{p["smokes"]}" data-avg="{p["damage"] / p["smokes"]:.0f}" data-selfish="{p["selfish"]}" data-radar="{p["radar"]}" data-won="{p["won"]}" data-offensive="{p["offensive"]}" data-kills="{p["kills"]}"><td>{self.team_tag(p["team"])}</td><td><a href="{self.player_href(name)}">{esc(name)}</a> {badges}</td><td class="small">{esc(ships)}</td><td>{p["smokes"]}</td><td>{fmt_int(p["damage"])}</td><td>{fmt_int(p["concealed"])}</td><td>{fmt_int(p["dd"])}</td><td>{fmt_int(p["damage"] / p["smokes"])}</td><td>{p["kills"]}</td><td>{p["selfish"]}</td><td>{p["radar"]}</td><td>{p["won"]}</td><td>{p["offensive"]}</td></tr>')
+            rows.append(f'<tr data-team="{esc(p["team"])}" data-damage="{p["damage"]:.0f}" data-concealed="{p["concealed"]:.0f}" data-dd="{p["dd"]:.0f}" data-smokes="{p["smokes"]}" data-avg="{p["damage"] / p["smokes"]:.0f}" data-guns="{p["guns"]:.0f}" data-torpedo="{p["torpedo"]:.0f}" data-selfish="{p["selfish"]}" data-radar="{p["radar"]}" data-won="{p["won"]}" data-offensive="{p["offensive"]}" data-kills="{p["kills"]}"><td>{self.team_tag(p["team"])}</td><td><a href="{self.player_href(name)}">{esc(name)}</a> {badges}</td><td class="small">{esc(ships)}</td><td>{p["smokes"]}</td><td>{fmt_int(p["damage"])}</td><td>{fmt_int(p["guns"])}</td><td>{fmt_int(p["torpedo"])}</td><td>{fmt_int(p["concealed"])}</td><td>{fmt_int(p["dd"])}</td><td>{fmt_int(p["damage"] / p["smokes"])}</td><td>{p["kills"]}</td><td>{p["selfish"]}</td><td>{p["radar"]}</td><td>{p["won"]}</td><td>{p["offensive"]}</td></tr>')
         def pcards(awards):
             return "".join(f'<div class="card award-p"><h3>{term(t, AWARD_DEFS.get(t, ""))}</h3><p>{self.team_tag(p["team"])} <a href="{self.player_href(name)}"><b>{esc(name)}</b></a></p><p class="note">{esc(self.player_award_note(t, p))}</p></div>' if name else f'<div class="card award-p"><h3>{esc(t)}</h3><p class="muted">Nothing here, just clear skies.</p></div>' for t, (name, p) in awards["players"].items())
         pawards = f'<div class="lens-toggle"><button class="on" data-lens="destroyer">Destroyer smokes</button><button data-lens="all">All smokes</button></div><section class="cards lens-set" data-lens="destroyer">{pcards(self.awards_by_lens["destroyer"])}</section><section class="cards lens-set" data-lens="all" hidden>{pcards(self.awards_by_lens["all"])}</section>'
@@ -1457,7 +1468,7 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
 <h2>Player awards</h2>{pawards}
 <h2>Leaderboard (n = {len(self.players)} players)</h2>
 <div class="filters"><label>Clan <select id="p-clan"><option value="">all</option>{clan_opts}</select></label><label class="check"><input type="checkbox" id="p-min" checked> at least {PLAYER_MIN_SMOKES} smokes</label><span id="p-count" class="muted"></span></div>
-<div class="scroll-x"><table class="games sortable" id="players"><thead><tr><th>Clan</th><th>Player</th><th>Ships</th><th data-key="smokes">Smokes</th><th data-key="damage">Smoke damage</th><th data-key="concealed">{term("Concealed", CONCEALED_DEF)}</th><th data-key="dd">{term("DD damage", DD_DEF)}</th><th data-key="avg">Per smoke</th><th data-key="kills">{term("Kills", METRIC_DEFS["kills"])}</th><th data-key="selfish">{term("Selfish")}</th><th data-key="radar">Radar spots</th><th data-key="won">{term("Near cap capture", METRIC_DEFS["won"])}</th><th data-key="offensive">{term("Own radar spots", METRIC_DEFS["offensive"])}</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>"""
+<div class="scroll-x"><table class="games sortable" id="players"><thead><tr><th>Clan</th><th>Player</th><th>Ships</th><th data-key="smokes">Smokes</th><th data-key="damage">Smoke damage</th><th data-key="guns">{term("Guns only", METRIC_DEFS["guns"])}</th><th data-key="torpedo">{term("Torpedoes", METRIC_DEFS["torpedo"])}</th><th data-key="concealed">{term("Concealed", CONCEALED_DEF)}</th><th data-key="dd">{term("DD damage", DD_DEF)}</th><th data-key="avg">Per smoke</th><th data-key="kills">{term("Kills", METRIC_DEFS["kills"])}</th><th data-key="selfish">{term("Selfish")}</th><th data-key="radar">Radar spots</th><th data-key="won">{term("Near cap capture", METRIC_DEFS["won"])}</th><th data-key="offensive">{term("Own radar spots", METRIC_DEFS["offensive"])}</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>"""
         self.write("players.html", self.page("Players", body, active="Players"))
 
     def player_award_note(self, title, p):
@@ -1760,7 +1771,7 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
             records.append({
                 "id": s["smoke_id"], "team": s["team"], "player": s["player"], "ship": s["ship"], "map": self.d.map_title(s["map"]),
                 "game": s["_games_label"], "game_short": s["_short_game"], "type": s.get("smoke_type") or "",
-                "elapsed": s["_elapsed"], "phase": s["_phase"] or "", "total": round(s["_total"]), "concealed": round(s["_concealed"]), "detected": round(s["_detected"]), "dd": round(s["_dd"]), "inside": round(s["_in"]), "behind": round(s["_behind"]), "fire": round(s["_fire"]),
+                "elapsed": s["_elapsed"], "phase": s["_phase"] or "", "total": round(s["_total"]), "concealed": round(s["_concealed"]), "detected": round(s["_detected"]), "dd": round(s["_dd"]), "inside": round(s["_in"]), "behind": round(s["_behind"]), "fire": round(s["_fire"]), "shell": round(s["_shell"]), "airstrike": round(s["_airstrike"]), "torpedo": round(s["_torpedo"]), "guns": round(s["_guns"]),
                 "radar": s["_radar"], "offensive": s["_offensive"], "kills": s["_kills"], "deaths": s["_deaths"],
                 "swing": s["_score_swing"],
                 "contested": s.get("avg_contested_cap_dist_m"), "contested_name": s.get("contested_cap_name") or "", "depth": s["_depth"],
@@ -1963,6 +1974,9 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
             kinds = f"shells {fmt_int(s['_shell'])}, fires they started {fmt_int(s['_fire'])}"
             if s["_airstrike"] > 0:
                 kinds += f", airstrikes {fmt_int(s['_airstrike'])}"
+            if s["_torpedo"] > 0:
+                kinds += f", torpedoes {fmt_int(s['_torpedo'])}"
+            kinds += f" (guns only {fmt_int(s['_guns'])})"
             by = ", ".join(f"{r['reason']} {fmt_int(r['damage'])}" for r in sorted(s["_detected_by"], key=lambda r: -r["damage"])) or "none"
         else:
             split = '<span class="muted">no smoke damage</span>'
@@ -1989,7 +2003,7 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
                 by_kind = sorted(x["by_kind"].items(), key=lambda kv: -kv[1])
                 kinds = UNCOUNTED_KIND_TEXT.get(by_kind[0][0], by_kind[0][0]) if len(by_kind) == 1 else ", ".join(f"{UNCOUNTED_KIND_TEXT.get(k, k)} {fmt_int(v)}" for k, v in by_kind)
                 items.append(f'<li>{esc(x["ship"])} ({esc(x["player"])}): {fmt_int(x["damage"])} from {kinds}{", sunk" if x["sunk"] else ""}</li>')
-            target_table += f'<p class="muted small">Not counted as smoke damage: hits from this smoke by weapons that never earn credit (torpedoes, secondaries, flooding, unclassified hits; see About).</p><ul class="muted small uncounted">{"".join(items)}</ul>'
+            target_table += f'<p class="muted small">Not counted as smoke damage: hits from this smoke by weapons that never earn credit (secondaries, flooding, unclassified hits; see About).</p><ul class="muted small uncounted">{"".join(items)}</ul>'
         spots = s.get("radar_detections_in_smoke") or []
         if spots:
             radar_on_us = f"{len(spots)} ({fmt_int(s['_radar_dmg'])} damage taken while spotted): " + "; ".join(f"{x.get('ship') or '?'} at {x.get('clock') or '?'}" + (f" by {x['source']}" if x.get("source") else "") for x in spots)

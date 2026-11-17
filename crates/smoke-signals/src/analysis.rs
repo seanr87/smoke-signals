@@ -740,6 +740,27 @@ fn cap_metrics(track: &SmokeTrack, ctx: &CapContext<'_>) -> Option<CapMetrics> {
     Some(CapMetrics { contested, supported, won, defended, radar_cap, denial })
 }
 
+/// A plane squadron seen on the minimap: its team, when it appeared, and
+/// where it went. The packet names no launching ship.
+struct PlaneTrack {
+    team: u32,
+    params_id: wows_replays::types::GameParamId,
+    launched_at: GameClock,
+    track: Vec<(f32, WorldPos)>,
+    removed_at: Option<GameClock>,
+}
+
+/// The ship name an air-support squadron's game param carries after `_AS_`,
+/// and the same part of a ship's game param name (after the index), both
+/// in upper case, e.g. `PHAD020_AS_UTRECHT` and `PHSC520_Utrecht`.
+fn air_support_ship_key(plane_param: &str) -> Option<String> {
+    plane_param.split_once("_AS_").map(|(_, ship)| ship.to_ascii_uppercase())
+}
+
+fn ship_param_key(ship_param: &str) -> Option<String> {
+    ship_param.split_once('_').map(|(_, ship)| ship.to_ascii_uppercase())
+}
+
 pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Result<Analysis, Report> {
     let mut session = GameSession::new(game, replays)?;
     let mut tracks: BTreeMap<EntityId, SmokeTrack> = BTreeMap::new();
@@ -768,6 +789,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
     let mut seen_hydro: HashSet<(EntityId, u32)> = HashSet::new();
     let mut score_history: Vec<(f32, Vec<(i64, i64)>)> = Vec::new();
     let mut hp_history: HashMap<EntityId, Vec<(f32, f32)>> = HashMap::new();
+    let mut planes: HashMap<wowsunpack::game_types::PlaneId, PlaneTrack> = HashMap::new();
 
     while session.step()?.is_some() {
         let view = session.view();
@@ -862,6 +884,25 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         for torp in view.active_torpedoes() {
             let key = (torp.torpedo.owner_id.raw() as u32, torp.torpedo.salvo_id, torp.torpedo.shot_id.raw());
             torpedoes.entry(key).or_insert(torp);
+        }
+        let active_planes = view.active_planes();
+        for (id, plane) in &active_planes {
+            let pos = WorldPos::new(plane.position.x, 0.0, plane.position.z);
+            let track = planes.entry(*id).or_insert_with(|| PlaneTrack {
+                team: plane.team_id,
+                params_id: plane.params_id,
+                launched_at: clock,
+                track: Vec::new(),
+                removed_at: None,
+            });
+            if track.track.last().is_none_or(|(_, p)| p.0.x != pos.0.x || p.0.z != pos.0.z) {
+                track.track.push((clock.seconds(), pos));
+            }
+        }
+        for (id, track) in planes.iter_mut() {
+            if track.removed_at.is_none() && !active_planes.contains_key(id) {
+                track.removed_at = Some(clock);
+            }
         }
     }
     session.finish();
@@ -1466,11 +1507,64 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         Some(torpedo.alpha_damage()? / wowsunpack::game_params::ttx::constants::TORPEDO_DAMAGE_CONSTANT + torpedo.damage()?)
     };
     let torpedo_protection = |e: EntityId| tracker.ranges().get(&e)?.torpedo_protection;
+    // Air-support squadrons only: catapult planes and carrier squadrons are
+    // not airstrikes. The squadron packet names no launching ship, so the
+    // owner is the one ship of the squadron's team whose ship param matches
+    // the squadron param's ship name; with none or several the squadron is
+    // left out and counted.
+    let mut airstrikes: Vec<damage::AirstrikeTrack> = Vec::new();
+    let mut airstrikes_without_owner = 0u32;
+    for p in planes.values() {
+        let Some(param) = GameParamProvider::game_param_by_id(gp, p.params_id) else { continue };
+        let air_support =
+            param.aircraft().is_some_and(|a| matches!(a.category(), wowsunpack::game_params::types::PlaneCategory::Airsupport));
+        if !air_support {
+            continue;
+        }
+        let key = air_support_ship_key(param.name());
+        let candidates: Vec<EntityId> = roster
+            .iter()
+            .filter(|(e, r)| {
+                r.team_id == p.team as i64
+                    && facts
+                        .get(e)
+                        .and_then(|f| GameParamProvider::game_param_by_id(gp, f.vehicle_id))
+                        .and_then(|q| ship_param_key(q.name()))
+                        == key
+            })
+            .map(|(e, _)| *e)
+            .collect();
+        match candidates.as_slice() {
+            [owner] => airstrikes.push(damage::AirstrikeTrack {
+                owner: *owner,
+                launched_at: p.launched_at.seconds(),
+                track: p.track.clone(),
+                removed_at: p.removed_at.map(|c| c.seconds()),
+            }),
+            _ => {
+                airstrikes_without_owner += 1;
+                warn!(plane = param.name(), team = p.team, candidates = candidates.len(), "Air-support squadron without a single owner");
+            }
+        }
+    }
+    airstrikes.sort_by(|a, b| a.launched_at.total_cmp(&b.launched_at).then(a.owner.raw().cmp(&b.owner.raw())));
+    // Largest listed damage of a main-battery shell; a tick at or under it
+    // cannot be told from a salvo.
+    let main_shell_damage_max = |e: EntityId| -> Option<f32> {
+        tracker
+            .ranges()
+            .get(&e)?
+            .main_ammo
+            .iter()
+            .filter_map(|name| GameParamProvider::game_param_by_name(gp, name)?.projectile()?.alpha_damage())
+            .reduce(f32::max)
+    };
     let mut spike = damage::run(&damage::SpikeInput {
         ledger: &ledger,
         hits: &hits,
         salvos: &salvo_list,
         torpedoes: &torpedo_list,
+        airstrikes: &airstrikes,
         smokes: &geometry,
         timeline: &tl,
         flags_at: &flags_at,
@@ -1482,7 +1576,9 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         is_main_battery: &is_main_battery,
         torpedo_damage: &torpedo_damage,
         torpedo_protection: &torpedo_protection,
+        main_shell_damage_max: &main_shell_damage_max,
     });
+    spike.stats.airstrikes_without_owner = airstrikes_without_owner;
     // With no damage events at all the credit is unknown, not zero.
     if spike.stats.damage_events > 0 {
         for (i, id) in ids.iter().enumerate() {

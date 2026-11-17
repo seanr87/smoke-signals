@@ -77,6 +77,14 @@ const TORPEDO_PASS_STEP_SECONDS: f32 = 0.25;
 const TORPEDO_FLOOR_SHARE: f32 = 0.8;
 /// A hit this close to the victim's death clock is a finishing hit.
 const FINISHING_HIT_SECONDS: f32 = 1.0;
+/// Farthest an air-support squadron's minimap position may be from the
+/// victim at the damage clock for the damage to be its bombs, in meters. The
+/// squadron is sampled about once a second at some 370 m/s.
+const AIRSTRIKE_HIT_TOLERANCE_M: f32 = 1500.0;
+/// The squadron flies in from off the map; nothing lands sooner than this.
+const AIRSTRIKE_MIN_FLIGHT_SECONDS: f32 = 5.0;
+/// Bombs reported this long after the squadron left the minimap still count.
+const AIRSTRIKE_AFTER_REMOVAL_SECONDS: f32 = 10.0;
 /// Detection range used for the line-of-sight test when a ship's build gives none.
 const DEFAULT_DETECTION_M: f32 = 12_000.0;
 
@@ -89,6 +97,8 @@ pub enum FireSource {
     Salvo,
     /// No shot data: the attacker's position at the damage clock.
     DamageClock,
+    /// An air-support squadron: the launch clock and the ship's position then.
+    PlaneLaunch,
 }
 
 /// What dealt the damage, inferred from the ledger's timing.
@@ -100,8 +110,11 @@ pub enum DamageKind {
     /// A secondary-battery shell: its salvo's projectile is not one the
     /// ship's main battery fires.
     Secondary,
-    /// A fire tick linked to the shooter's earlier shell on the same target.
+    /// A fire tick linked to the shooter's earlier shell or airstrike on the
+    /// same target.
     Fire,
+    /// Bombs of an air-support squadron the attacker launched.
+    Airstrike,
     /// A hit that fits a torpedo the attacker launched.
     Torpedo,
     /// A tick train that follows a torpedo hit.
@@ -116,15 +129,16 @@ impl DamageKind {
             Self::Shell => "shell",
             Self::Secondary => "secondary",
             Self::Fire => "fire",
+            Self::Airstrike => "airstrike",
             Self::Torpedo => "torpedo",
             Self::Flood => "flood",
             Self::Unknown => "unknown",
         }
     }
 
-    /// Only shells and the fires they start earn smoke credit.
+    /// Main-battery shells, airstrikes and the fires they start earn smoke credit.
     pub fn credited(self) -> bool {
-        matches!(self, Self::Shell | Self::Fire)
+        matches!(self, Self::Shell | Self::Fire | Self::Airstrike)
     }
 }
 
@@ -186,6 +200,31 @@ impl SmokeGeometry {
             segment_distance_xz(from, to, puff) <= self.radius
                 && timeline::ground_distance(from, puff) < timeline::ground_distance(to, puff)
         })
+    }
+}
+
+/// An air-support squadron of one ship: its minimap positions from launch
+/// to removal.
+pub struct AirstrikeTrack {
+    pub owner: EntityId,
+    pub launched_at: f32,
+    pub track: Vec<(f32, WorldPos)>,
+    pub removed_at: Option<f32>,
+}
+
+impl AirstrikeTrack {
+    /// The squadron's position at `t`, interpolated between samples and held
+    /// after the last one.
+    fn position_at(&self, t: f32) -> Option<WorldPos> {
+        let idx = self.track.partition_point(|(c, _)| *c <= t);
+        let (c0, p0) = self.track.get(idx.checked_sub(1)?)?;
+        match self.track.get(idx) {
+            Some((c1, p1)) if c1 > c0 => {
+                let f = (t - c0) / (c1 - c0);
+                Some(WorldPos(p0.0 + (p1.0 - p0.0) * f))
+            }
+            _ => Some(*p0),
+        }
     }
 }
 
@@ -253,6 +292,8 @@ pub struct ShooterStat {
     pub split: Split,
     pub salvos: u32,
     pub kills: u32,
+    /// Credited damage by kind: shell, fire, airstrike.
+    pub by_kind: BTreeMap<String, f32>,
 }
 
 /// Credited damage on one enemy ship and whether the smoke's shots sank it.
@@ -275,9 +316,10 @@ pub struct SmokeDamage {
     pub damage_behind_smoke_smoker: f32,
     pub damage_behind_smoke_ally: f32,
     pub damage_behind_smoke_enemy: f32,
-    /// Credited shell and fire damage of the smoker's team.
+    /// Credited shell, fire and airstrike damage of the smoker's team.
     pub damage_shell: f32,
     pub damage_fire: f32,
+    pub damage_airstrike: f32,
     /// The smoker's team's credit by the shooter's detection when firing.
     pub split: Split,
     pub events_in_smoke: u32,
@@ -332,12 +374,14 @@ impl SmokeDamage {
         if ally {
             match event.kind {
                 DamageKind::Fire => self.damage_fire += amount,
+                DamageKind::Airstrike => self.damage_airstrike += amount,
                 _ => self.damage_shell += amount,
             }
             self.split.add(event, amount);
             self.shooters.insert(event.attacker);
             let shooter = self.shooter_stats.entry(event.attacker).or_default();
             shooter.damage += amount;
+            *shooter.by_kind.entry(event.kind.as_str().to_string()).or_default() += amount;
             shooter.split.add(event, amount);
             if event.kind == DamageKind::Shell && self.salvo_keys.insert((event.attacker, event.fire_seconds.to_bits())) {
                 self.salvos += 1;
@@ -637,6 +681,9 @@ pub struct SpikeStats {
     pub shot_hits: u32,
     pub salvos: u32,
     pub torpedoes: u32,
+    /// Air-support squadrons with a single owner, and those left out.
+    pub airstrikes: u32,
+    pub airstrikes_without_owner: u32,
     /// Shell events on a resolved hit whose tick a torpedo track also fits;
     /// the torpedo damage the resolved-hit rule gives up.
     pub shell_hits_fitting_torpedo: Vec<ShellHitFittingTorpedo>,
@@ -657,6 +704,8 @@ pub struct SpikeInput<'a> {
     pub hits: &'a [ResolvedShotHit],
     pub salvos: &'a [ActiveShot],
     pub torpedoes: &'a [ActiveTorpedo],
+    /// Air-support squadrons, by the ship that launched them.
+    pub airstrikes: &'a [AirstrikeTrack],
     pub smokes: &'a [SmokeGeometry],
     pub timeline: &'a PositionTimeline,
     pub flags_at: &'a dyn Fn(EntityId, GameClock) -> Option<VisibilityFlags>,
@@ -678,6 +727,8 @@ pub struct SpikeInput<'a> {
     /// A ship's torpedo protection as a fraction of damage taken away, from
     /// its hull's game params.
     pub torpedo_protection: &'a dyn Fn(EntityId) -> Option<f32>,
+    /// Largest listed damage of a shell the ship's main battery fires.
+    pub main_shell_damage_max: &'a dyn Fn(EntityId) -> Option<f32>,
 }
 
 pub struct SpikeOutput {
@@ -732,6 +783,22 @@ fn torpedo_fits(
     })
 }
 
+/// An air-support squadron of the attacker's in flight at the damage clock
+/// (or removed shortly before it) and over the victim, for an amount above
+/// one main-battery shell's listed damage: a smaller tick with the squadron
+/// overhead cannot be told from a salvo and stays a shell.
+fn airstrike_fits(strikes: &[&AirstrikeTrack], t: f32, victim_pos: Option<WorldPos>, amount: f32, shell_max: Option<f32>) -> bool {
+    let Some(victim) = victim_pos else { return false };
+    if shell_max.is_some_and(|m| amount <= m) {
+        return false;
+    }
+    strikes.iter().any(|s| {
+        t >= s.launched_at + AIRSTRIKE_MIN_FLIGHT_SECONDS
+            && s.removed_at.is_none_or(|r| t <= r + AIRSTRIKE_AFTER_REMOVAL_SECONDS)
+            && s.position_at(t).is_some_and(|p| timeline::meters(timeline::ground_distance(p, victim)) <= AIRSTRIKE_HIT_TOLERANCE_M)
+    })
+}
+
 pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
     let mut events = Vec::new();
     let mut per_smoke: HashMap<u32, SmokeDamage> = HashMap::new();
@@ -739,8 +806,13 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
         shot_hits: input.hits.len() as u32,
         salvos: input.salvos.len() as u32,
         torpedoes: input.torpedoes.len() as u32,
+        airstrikes: input.airstrikes.len() as u32,
         ..Default::default()
     };
+    let mut strikes_by_owner: HashMap<EntityId, Vec<&AirstrikeTrack>> = HashMap::new();
+    for s in input.airstrikes {
+        strikes_by_owner.entry(s.owner).or_default().push(s);
+    }
 
     let mut salvos_by_owner: HashMap<EntityId, Vec<&ActiveShot>> = HashMap::new();
     for s in input.salvos {
@@ -830,12 +902,23 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                 });
             }
             let torpedo = torpedo_track && from_hit.is_none();
+            // Bombs: an air-support squadron of the attacker's over the victim.
+            let airstrike = !tick
+                && from_hit.is_none()
+                && !torpedo
+                && airstrike_fits(
+                    strikes_by_owner.get(attacker).map(Vec::as_slice).unwrap_or(&[]),
+                    t,
+                    victim_pos,
+                    event.amount,
+                    (input.main_shell_damage_max)(*attacker),
+                );
             // The latest main-battery salvo before the damage; among salvos
             // fired at the same moment, the one whose shells match the hit.
             // Secondary salvos are left out: a battleship's secondaries fire
             // every few seconds, so they would claim main-battery hits.
             let from_salvo = from_hit.or_else(|| {
-                if tick || torpedo {
+                if tick || torpedo || airstrike {
                     return None;
                 }
                 let candidates: Vec<&ActiveShot> = salvos_by_owner
@@ -854,7 +937,18 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                     s.salvo.shots.first().map(|shot| (s.fired_at.seconds(), shot.origin, FireSource::Salvo, Some(s.salvo.params_id)))
                 })
             });
-            let (fire_seconds, fire_pos, source, projectile) = match from_salvo {
+            // An airstrike is credited where and when the ship launched it.
+            let from_launch = airstrike
+                .then(|| {
+                    let strike = strikes_by_owner[attacker]
+                        .iter()
+                        .filter(|s| s.launched_at <= t)
+                        .max_by(|a, b| a.launched_at.total_cmp(&b.launched_at))?;
+                    let pos = input.timeline.get(attacker).and_then(|tr| timeline::world_pos_at(tr, GameClock(strike.launched_at)))?;
+                    Some((strike.launched_at, pos, FireSource::PlaneLaunch, None))
+                })
+                .flatten();
+            let (fire_seconds, fire_pos, source, projectile) = match from_salvo.or(from_launch) {
                 Some(found) => found,
                 None => {
                     let Some(pos) = input.timeline.get(attacker).and_then(|tr| timeline::world_pos_at(tr, event.clock))
@@ -878,18 +972,21 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                     .iter()
                     .rev()
                     .find(|(v, at, kind, _, _, _)| {
-                        *v == event.victim && t - at <= FIRE_LINK_SECONDS && matches!(kind, DamageKind::Shell | DamageKind::Torpedo)
+                        *v == event.victim
+                            && t - at <= FIRE_LINK_SECONDS
+                            && matches!(kind, DamageKind::Shell | DamageKind::Airstrike | DamageKind::Torpedo)
                     })
                     .cloned()
             } else {
                 None
             };
             let kind = match (&linked, tick, torpedo, source) {
-                (Some((_, _, DamageKind::Shell, _, _, _)), _, _, _) => DamageKind::Fire,
+                (Some((_, _, DamageKind::Shell | DamageKind::Airstrike, _, _, _)), _, _, _) => DamageKind::Fire,
                 (Some((_, _, DamageKind::Torpedo, _, _, _)), _, _, _) => DamageKind::Flood,
                 (_, true, _, _) => DamageKind::Unknown,
                 (_, _, true, _) => DamageKind::Torpedo,
                 (_, _, _, FireSource::ShotHit | FireSource::Salvo) => DamageKind::Shell,
+                (_, _, _, FireSource::PlaneLaunch) => DamageKind::Airstrike,
                 (_, _, _, FireSource::DamageClock) => DamageKind::Unknown,
             };
             // A shell whose salvo fired a projectile the main battery does
@@ -966,7 +1063,7 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                     }
                 }
             };
-            if matches!(kind, DamageKind::Shell | DamageKind::Torpedo) {
+            if matches!(kind, DamageKind::Shell | DamageKind::Airstrike | DamageKind::Torpedo) {
                 recent.push((event.victim, t, kind, credited.clone(), in_smokes.clone(), behind_smokes.clone()));
                 if recent.len() > 64 {
                     recent.remove(0);

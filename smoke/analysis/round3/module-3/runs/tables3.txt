@@ -1,0 +1,57 @@
+
+(a) HEADLINE radar cruiser inside, ALL early DD smokes
+  ALL: top 61 of 102 (60%) | rest 70 of 200 (35%) | diff +25 CI +12.7 to +35.8
+  Sleeping Giant: top 15 of 32 (47%) | rest 22 of 37 (59%) | diff -13 CI -40.5 to +18.0
+  Hotspot: top 20 of 23 (87%) | rest 17 of 45 (38%) | diff +49 CI +29.9 to +70.3
+  Mountain Range: top 9 of 14 (64%) (small n) | rest 8 of 25 (32%) | diff +32 CI -10.0 to +71.4
+  Land of Fire: top 5 of 12 (42%) (small n) | rest 8 of 25 (32%) | diff +10 CI -22.6 to +47.3
+  Loop: top 4 of 9 (44%) (small n) | rest 5 of 23 (22%) | diff +23 CI -23.3 to +47.5
+  Okinawa: top 2 of 3 (67%) (small n) | rest 4 of 23 (17%) | diff +49 CI -16.7 to +91.7
+  Sea of Fortune: top 6 of 9 (67%) (small n) | rest 6 of 22 (27%) | diff +39 CI +15.0 to +61.8
+  PN: 4 of 5
+
+(b) HEADLINE radar cruiser inside, early STACKED DD smokes
+  ALL: top 42 of 56 (75%) | rest 53 of 85 (62%) | diff +13 CI -0.5 to +28.7
+  Sleeping Giant: top 10 of 19 (53%) | rest 15 of 20 (75%) | diff -22 CI -50.4 to +8.8
+  Hotspot: top 11 of 12 (92%) (small n) | rest 14 of 22 (64%) | diff +28 CI +1.0 to +52.4
+  Mountain Range: top 6 of 6 (100%) (small n) | rest 8 of 9 (89%) (small n) | diff +11 CI +0.0 to +30.0
+  Land of Fire: top 5 of 7 (71%) (small n) | rest 6 of 11 (55%) (small n) | diff +17 CI -33.3 to +70.0
+  Loop: top 3 of 4 (75%) (small n) | rest 4 of 9 (44%) (small n) | diff +31 CI -62.5 to +75.0
+  Okinawa: top 2 of 2 (100%) (small n) | rest 2 of 6 (33%) (small n) | diff +67 CI +33.3 to +100.0
+  Sea of Fortune: top 5 of 6 (83%) (small n) | rest 4 of 8 (50%) (small n) | diff +33 CI -14.3 to +72.2
+  PN: 3 of 3
+
+old Module 3: radar ship of any class inside, early stacked DD smokes
+  ALL: top 43 of 56 (77%) | rest 54 of 85 (64%) | diff +13 CI -2.1 to +30.2
+  Sleeping Giant: top 10 of 19 (53%) | rest 16 of 20 (80%) | diff -27 CI -53.3 to +3.6
+  Hotspot: top 11 of 12 (92%) (small n) | rest 14 of 22 (64%) | diff +28 CI -2.4 to +53.8
+  Mountain Range: top 6 of 6 (100%) (small n) | rest 8 of 9 (89%) (small n) | diff +11 CI +0.0 to +30.0
+  Land of Fire: top 5 of 7 (71%) (small n) | rest 6 of 11 (55%) (small n) | diff +17 CI -39.0 to +76.9
+  Loop: top 3 of 4 (75%) (small n) | rest 4 of 9 (44%) (small n) | diff +31 CI -66.7 to +75.0
+  Okinawa: top 2 of 2 (100%) (small n) | rest 2 of 6 (33%) (small n) | diff +67 CI +33.3 to +100.0
+  Sea of Fortune: top 6 of 6 (100%) (small n) | rest 4 of 8 (50%) (small n) | diff +50 CI +14.3 to +80.0
+  PN: 3 of 3
+
+old Module 2: radar cruiser covered any way, early smokes by Harugumo/Somers/Gearing
+  ALL: top 63 of 68 (93%) | rest 83 of 119 (70%) | diff +23 CI +10.3 to +36.2
+  Sleeping Giant: top 19 of 22 (86%) | rest 23 of 26 (88%) | diff -2 CI -17.4 to +21.4
+  Hotspot: top 18 of 18 (100%) | rest 20 of 28 (71%) | diff +29 CI +10.0 to +51.6
+  Mountain Range: top 9 of 10 (90%) (small n) | rest 11 of 15 (73%) | diff +17 CI -16.7 to +46.2
+  Land of Fire: top 5 of 5 (100%) (small n) | rest 5 of 16 (31%) | diff +69 CI +42.9 to +93.3
+  Loop: top 3 of 3 (100%) (small n) | rest 7 of 10 (70%) (small n) | diff +30 CI +0.0 to +66.7
+  Okinawa: top 2 of 3 (67%) (small n) | rest 6 of 12 (50%) (small n) | diff +17 CI -45.5 to +64.3
+  Sea of Fortune: top 7 of 7 (100%) (small n) | rest 11 of 12 (92%) (small n) | diff +8 CI +0.0 to +27.3
+  PN: 4 of 5
+
+ships of early DD smokes [('Somers', 89), ('Gearing', 68), ('Daring', 39), ('Harugumo', 30), ('Gdańsk', 29), ('Shimakaze', 11), ('Z-42', 11), ('Delny', 9), ('Grozovoi', 5), ('Fuyutsuki', 3), ('La Pampa', 2), ('F. Sherman', 2), ('Vampire II', 1), ('A. da Barbiano', 1), ('Yueyang', 1), ('Z-52', 1)]
+Sleeping Giant early stacks, Top 6: radar_in but not radar_ca_inside: [('RSR', [('Thor', 'battleship', 'inside'), ('Stalingrad', 'cruiser', 'line_of_fire')])]
+all early stacks where the two differ: Counter({('rest', 'Sleeping Giant'): 1, ('top', 'Sea of Fortune'): 1})
+all early radar_ca_inside=True: n=131 cap taken 61% of 120 conc mean 14,397
+all early radar_ca_inside=False: n=171 cap taken 31% of 150 conc mean 8,266
+   cap taken diff 29.5 +21.3 to +37.8 *
+early stacked radar_ca_inside=True: n=95 cap taken 52% of 88 conc mean 15,025
+early stacked radar_ca_inside=False: n=46 cap taken 37% of 41 conc mean 15,022
+   cap taken diff 15.7 -1.8 to +33.3
+SG west flank (ncap A) early stacks: top 7 of 13 | rest 8 of 12
+SG by ncap, all early, top/rest with/total: {('A', 'top'): (12, 22), ('A', 'rest'): (10, 17), ('B', 'top'): (0, 3), ('B', 'rest'): (3, 10), ('C', 'top'): (3, 7), ('C', 'rest'): (9, 10)}
+Hotspot by ncap, all early: {('A', 'top'): (3, 3), ('A', 'rest'): (1, 2), ('B', 'top'): (0, 0), ('B', 'rest'): (0, 0), ('C', 'top'): (7, 8), ('C', 'rest'): (5, 19), ('D', 'top'): (10, 12), ('D', 'rest'): (11, 24)}

@@ -1,0 +1,223 @@
+
+## 1a. Spread within ship
+| ship | n | clans | pos_spread_km | stationary_pct | inside_pct | edge_med_m | edge_iqr_m | path_med_m | stacked_pct | screen_pct | selfish_pct |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Grozovoi | 30 | 8 | 12.3 (8.0 to 17.6) | 20 (6 to 44) | 33 (21 to 62) | 998 (-500 to 2,142) | 4,725 (1,569 to 7,428) | 818 (592 to 2,338) | 20 (12 to 42) | 33 (21 to 59) | 47 (12 to 66) |
+| Shimakaze | 58 | 12 | 13.5 (9.8 to 14.4) | 26 (12 to 37) | 33 (21 to 48) | 3,288 (251 to 4,934) | 7,838 (4,763 to 9,858) | 1,717 (1,297 to 1,864) | 48 (37 to 62) | 26 (15 to 39) | 26 (15 to 37) |
+| Daring | 200 | 20 | 9.7 (7.6 to 10.1) | 64 (55 to 73) | 42 (32 to 51) | 671 (-218 to 1,365) | 4,127 (3,230 to 4,691) | 386 (317 to 466) | 10 (3 to 17) | 34 (28 to 41) | 56 (50 to 62) |
+| Gdańsk | 118 | 16 | 10.3 (7.8 to 10.9) | 41 (34 to 47) | 26 (16 to 38) | 1,544 (631 to 2,398) | 4,968 (3,419 to 6,291) | 765 (546 to 1,035) | 16 (10 to 26) | 41 (29 to 53) | 43 (31 to 53) |
+| ship | map | n | spread km | edge med m | stationary % |
+|---|---|---|---|---|---|
+| Grozovoi | Hotspot | 14 | 12.7 | 830 | 21 |
+| Shimakaze | Hotspot | 13 | 15.6 | 251 | 15 |
+| Shimakaze | Okinawa | 11 | 13.0 | 8,532 | 9 |
+| Shimakaze | Loop | 9 | 8.9 | 2,758 | 22 |
+| Shimakaze | Mountain Range | 8 | 13.6 | -1,222 | 38 |
+| Daring | Loop | 48 | 7.8 | -564 | 67 |
+| Daring | Sleeping Giant | 38 | 9.4 | 756 | 63 |
+| Daring | Hotspot | 36 | 10.2 | -536 | 69 |
+| Daring | Land of Fire | 31 | 9.2 | 1,554 | 68 |
+| Daring | Okinawa | 22 | 10.7 | 2,545 | 59 |
+| Daring | Sea of Fortune | 15 | 12.1 | 3,364 | 53 |
+| Daring | Mountain Range | 10 | 8.6 | -257 | 40 |
+| Gdańsk | Sleeping Giant | 37 | 8.0 | 3,012 | 46 |
+| Gdańsk | Hotspot | 23 | 8.8 | 1,051 | 48 |
+| Gdańsk | Mountain Range | 20 | 10.7 | 554 | 40 |
+| Gdańsk | Loop | 13 | 9.4 | -482 | 38 |
+| Gdańsk | Sea of Fortune | 11 | 14.1 | 3,559 | 36 |
+
+Differences vs Daring (ship - Daring), 95% interval by resampling clans
+  Grozovoi   pos_spread_km        +2.6  (-1.3 to +8.5)
+  Grozovoi   stationary_pct      -43.5  (-63.2 to -19.7) *
+  Grozovoi   stacked_pct         +10.0  (-0.8 to +32.0)
+  Grozovoi   path_med_m         +432.1  (+174.3 to +1651.6) *
+  Grozovoi   edge_iqr_m         +598.8  (-2349.6 to +3509.9)
+  Grozovoi   inside_pct           -9.2  (-23.3 to +17.2)
+  Shimakaze  pos_spread_km        +3.8  (+0.6 to +5.9) *
+  Shimakaze  stationary_pct      -37.6  (-51.9 to -24.6) *
+  Shimakaze  stacked_pct         +38.3  (+25.8 to +54.5) *
+  Shimakaze  path_med_m        +1330.8  (+909.2 to +1495.9) *
+  Shimakaze  edge_iqr_m        +3711.4  (+563.2 to +6038.5) *
+  Shimakaze  inside_pct           -9.7  (-25.6 to +8.7)
+  Gdańsk     pos_spread_km        +0.6  (-1.6 to +2.4)
+  Gdańsk     stationary_pct      -22.8  (-34.8 to -11.9) *
+  Gdańsk     stacked_pct          +6.1  (-2.5 to +19.0)
+  Gdańsk     path_med_m         +379.1  (+153.1 to +647.8) *
+  Gdańsk     edge_iqr_m         +841.5  (-634.3 to +2564.7)
+  Gdańsk     inside_pct          -16.2  (-31.5 to -0.7) *
+
+## 1b. Two-cluster split (k-means, k=2) on standardized features, per ship
+  Grozovoi   n= 30 silhouette=0.258 variance explained=0.30 sizes=15/15
+  Shimakaze  n= 58 silhouette=0.246 variance explained=0.26 sizes=30/28
+  Daring     n=200 silhouette=0.264 variance explained=0.24 sizes=127/73
+  Gdańsk     n=118 silhouette=0.277 variance explained=0.29 sizes=47/71
+  Reference: the same split on random subsamples of Daring and Gdansk (300 draws each)
+  Daring     n=30: silhouette median 0.271 (95% of draws 0.210 to 0.356); variance explained 0.27 (0.22 to 0.34)
+  Daring     n=58: silhouette median 0.265 (95% of draws 0.232 to 0.323); variance explained 0.25 (0.21 to 0.29)
+  Gdańsk     n=30: silhouette median 0.281 (95% of draws 0.234 to 0.342); variance explained 0.31 (0.25 to 0.38)
+  Gdańsk     n=58: silhouette median 0.278 (95% of draws 0.248 to 0.309); variance explained 0.29 (0.26 to 0.33)
+  Grozovoi: 57% of Daring subsamples (n=30) split at least as cleanly
+  Grozovoi: 78% of Gdańsk subsamples (n=30) split at least as cleanly
+  Shimakaze: 78% of Daring subsamples (n=58) split at least as cleanly
+  Shimakaze: 98% of Gdańsk subsamples (n=58) split at least as cleanly
+  Grozovoi without MACHX n=15: silhouette 0.247, variance explained 0.32
+  Grozovoi MACHX only n=15: silhouette 0.301, variance explained 0.35
+
+## 1c. Reference modes: nearer the cap-sitter profile (Daring, Z-42, Gdansk) or the smoke-line profile (Somers, Gearing, Harugumo, Delny)
+| ship | n | line-like % | 95% interval |
+|---|---|---|---|
+| Grozovoi | 30 | 53 | 34 to 83 |
+| Shimakaze | 58 | 64 | 52 to 78 |
+| Daring | 200 | 10 | 3 to 16 |
+| Gdańsk | 118 | 41 | 33 to 51 |
+| Z-42 | 56 | 16 | 6 to 24 |
+| Somers | 260 | 95 | 91 to 98 |
+| Gearing | 180 | 90 | 76 to 98 |
+| Harugumo | 100 | 88 | 79 to 97 |
+| Delny | 22 | 91 | 50 to 100 |
+  Grozovoi - Daring line-like share: +43 points (+25 to +73)
+  Shimakaze - Daring line-like share: +54 points (+40 to +67)
+  Gdańsk - Daring line-like share: +31 points (+21 to +42)
+  Grozovoi - Gdansk line-like share: +13 points (-7 to +44)
+  Shimakaze - Gdansk line-like share: +23 points (+7 to +38)
+  Grozovoi: reference mode agrees with the k-means split on 97% of smokes
+  Shimakaze: reference mode agrees with the k-means split on 71% of smokes
+  Daring: reference mode agrees with the k-means split on 74% of smokes
+  Gdańsk: reference mode agrees with the k-means split on 81% of smokes
+
+Mode profiles
+| ship | mode | n | stationary_pct | path_med_m | edge_med_m | inside_pct | stacked_pct | screen_pct | selfish_pct | lateral_med | el_med_s | conc_mean | torp_mean | cap_contest_pct | partners_mean | win_pct |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Grozovoi | sit | 14 | 43 | 564 | 1,671 | 43 | 0 | 7 | 93 | 0.29 | 560 | 6,033 | 732 | 43 | 0.14 | 71 |
+| Grozovoi | line | 16 | 0 | 1,477 | 830 | 25 | 38 | 56 | 6 | 0.69 | 452 | 6,818 | 0 | 50 | 1.12 | 56 |
+| Shimakaze | sit | 21 | 71 | 358 | 1,875 | 38 | 19 | 29 | 52 | 0.45 | 564 | 2,455 | 1,572 | 43 | 0.48 | 43 |
+| Shimakaze | line | 37 | 0 | 1,999 | 3,573 | 30 | 65 | 24 | 11 | 0.68 | 460 | 7,399 | 1,189 | 32 | 1.11 | 41 |
+| Daring | sit | 180 | 71 | 343 | 473 | 44 | 3 | 34 | 63 | 0.21 | 527 | 3,513 | 197 | 57 | 0.43 | 64 |
+| Daring | line | 20 | 0 | 957 | 1,698 | 25 | 70 | 30 | 0 | 0.57 | 386 | 4,621 | 0 | 35 | 1.30 | 45 |
+| Gdańsk | sit | 70 | 67 | 417 | 716 | 31 | 1 | 34 | 64 | 0.27 | 463 | 7,113 | 624 | 41 | 0.51 | 69 |
+| Gdańsk | line | 48 | 2 | 1,503 | 3,056 | 19 | 38 | 50 | 12 | 0.46 | 480 | 9,797 | 907 | 29 | 1.29 | 50 |
+
+## 1d. Do the modes line up with clan, player, map or time?
+  Grozovoi   permutation p: clan 0.040, player 0.010, map 0.405, game 0.030, win/loss 0.485; line minus sit median time -109 s (p 0.163); players with 5+ smokes using both modes 1/1; player-games with 3+ smokes using both 1/4
+  Shimakaze  permutation p: clan 0.231, player 0.499, map 0.455, game 0.421, win/loss 1.000; line minus sit median time -104 s (p 0.171); players with 5+ smokes using both modes 5/5; player-games with 3+ smokes using both 3/4
+  Daring     permutation p: clan 0.052, player 0.012, map 0.251, game 0.002, win/loss 0.145; line minus sit median time -142 s (p 0.034); players with 5+ smokes using both modes 4/14; player-games with 3+ smokes using both 9/42
+  Gdańsk     permutation p: clan 0.338, player 0.800, map 0.355, game 0.172, win/loss 0.046; line minus sit median time +17 s (p 0.793); players with 5+ smokes using both modes 10/10; player-games with 3+ smokes using both 11/14
+
+By clan (and player where a clan has several)
+Grozovoi
+| clan | n | games | players | line-like | stationary % | stacked % | inside % | edge med m | path med m | maps |
+|---|---|---|---|---|---|---|---|---|---|---|
+| MACHX | 15 | 6 | 4 | 7/15 | 13 | 13 | 27 | 1,381 | 890 | Hotspot 6, Sea of Fortune 5, Loop 4 |
+|   MACHX_SPAAAAAAA | 11 | 5 |  | 3/11 | 18 | 0 | 27 | 2,315 | 657 |  |
+|   MACHX_JulioElGu | 2 | 1 |  | 2/2 | 0 | 100 | 0 | 163 | 1,900 |  |
+|   MACHX_JustAMath | 1 | 1 |  | 1/1 | 0 | 0 | 100 | -749 | 747 |  |
+|   MACHX_Yoshi_44 | 1 | 1 |  | 1/1 | 0 | 0 | 0 | 1,381 | 2,391 |  |
+| H-SR (top 6) | 3 | 1 | 1 | 3/3 | 0 | 33 | 0 | 692 | 2,962 | Hotspot 3 |
+| RESIN (top 6) | 3 | 1 | 1 | 0/3 | 67 | 0 | 67 | -1,989 | 485 | Mountain Range 3 |
+| MZY | 3 | 1 | 1 | 1/3 | 67 | 33 | 33 | 2,046 | 110 | Hotspot 3 |
+| RMN | 2 | 1 | 1 | 2/2 | 0 | 0 | 0 | 5,970 | 639 | Mountain Range 2 |
+| EPOXY | 2 | 1 | 1 | 2/2 | 0 | 50 | 50 | 542 | 1,461 | Loop 2 |
+| INCA | 1 | 1 | 1 | 0/1 | 0 | 0 | 100 | -500 | 612 | Hotspot 1 |
+| MACH | 1 | 1 | 1 | 1/1 | 0 | 100 | 100 | -2,875 | 1,783 | Hotspot 1 |
+  by map: {'Hotspot': '7/14', 'Loop': '5/6', 'Mountain Range': '2/5', 'Sea of Fortune': '2/5'}
+Shimakaze
+| clan | n | games | players | line-like | stationary % | stacked % | inside % | edge med m | path med m | maps |
+|---|---|---|---|---|---|---|---|---|---|---|
+| HFANS | 13 | 7 | 1 | 9/13 | 23 | 54 | 23 | 5,610 | 1,900 | Okinawa 5, Sea of Fortune 4, Mountain Range 3, Land of Fire 1 |
+| 5D | 8 | 5 | 2 | 3/8 | 50 | 25 | 50 | -46 | 934 | Hotspot 4, Land of Fire 2, Sleeping Giant 2 |
+|   5D_Tsushimoid | 5 | 3 |  | 2/5 | 40 | 0 | 60 | -343 | 1,391 |  |
+|   5D_SlugBoy65 | 3 | 2 |  | 1/3 | 67 | 67 | 33 | 251 | 477 |  |
+| UYSC | 7 | 5 | 1 | 4/7 | 43 | 29 | 29 | 1,875 | 1,716 | Mountain Range 3, Loop 2, Sleeping Giant 1, Sea of Fortune 1 |
+| VRTUS (top 6) | 6 | 3 | 2 | 4/6 | 33 | 50 | 17 | 4,361 | 1,861 | Hotspot 3, Loop 3 |
+|   VRTUS_ItsAGameT | 5 | 2 |  | 3/5 | 40 | 40 | 20 | 4,934 | 1,793 |  |
+|   VRTUS_WhiskiLea | 1 | 1 |  | 1/1 | 0 | 100 | 0 | 3,169 | 1,928 |  |
+| MANBA | 5 | 3 | 1 | 3/5 | 0 | 40 | 0 | 5,852 | 1,999 | Hotspot 2, Okinawa 2, Land of Fire 1 |
+| RMN | 4 | 2 | 2 | 4/4 | 0 | 100 | 100 | -1,521 | 1,599 | Hotspot 3, Loop 1 |
+|   RMN_Captain_Gad | 2 | 1 |  | 2/2 | 0 | 100 | 100 | -1,515 | 1,941 |  |
+|   RMN_Siadant | 2 | 2 |  | 2/2 | 0 | 100 | 100 | -2,504 | 1,158 |  |
+| HTDOG (top 6) | 4 | 3 | 1 | 1/4 | 50 | 25 | 50 | 4,116 | 505 | Loop 3, Okinawa 1 |
+| EPOXY | 3 | 1 | 1 | 3/3 | 0 | 67 | 0 | 8,827 | 2,244 | Okinawa 3 |
+| RESIN (top 6) | 3 | 3 | 3 | 3/3 | 0 | 33 | 33 | 3,573 | 2,059 | Land of Fire 2, Hotspot 1 |
+|   RESIN_Itllbefin | 1 | 1 |  | 1/1 | 0 | 0 | 100 | -526 | 2,059 |  |
+|   RESIN_Big_Boy69 | 1 | 1 |  | 1/1 | 0 | 100 | 0 | 8,687 | 1,011 |  |
+|   RESIN_Fryce | 1 | 1 |  | 1/1 | 0 | 0 | 0 | 3,573 | 2,462 |  |
+| INCA | 2 | 1 | 1 | 2/2 | 0 | 100 | 50 | 5,264 | 1,728 | Mountain Range 2 |
+| BONKZ (top 6) | 2 | 2 | 2 | 1/2 | 0 | 50 | 50 | 2,770 | 1,460 | Sea of Fortune 1, Sleeping Giant 1 |
+|   BONKZ_Dyr3 | 1 | 1 |  | 0/1 | 0 | 0 | 100 | -605 | 1,269 |  |
+|   BONKZ_CheshireZ | 1 | 1 |  | 1/1 | 0 | 100 | 0 | 6,145 | 1,652 |  |
+| BONKY | 1 | 1 | 1 | 0/1 | 100 | 100 | 0 | 2,730 | 187 | Land of Fire 1 |
+  by map: {'Hotspot': '10/13', 'Loop': '6/9', 'Okinawa': '9/11', 'Mountain Range': '4/8', 'Land of Fire': '4/7', 'Sleeping Giant': '2/4', 'Sea of Fortune': '2/6'}
+  Grozovoi MACHX {'n': 15, 'clans': 1, 'line_pct': 46.7, 'stationary_pct': 13.3, 'inside_pct': 26.7, 'edge_med_m': 1380.8, 'path_med_m': 889.6, 'stacked_pct': 13.3, 'selfish_pct': 60.0, 'pos_spread_km': 8.2, 'maps': {'Hotspot': 6, 'Loop': 4, 'Sea of Fortune': 5}}
+  Grozovoi others {'n': 15, 'clans': 7, 'line_pct': 60.0, 'stationary_pct': 26.7, 'inside_pct': 40.0, 'edge_med_m': 692.0, 'path_med_m': 688.0, 'stacked_pct': 26.7, 'selfish_pct': 33.3, 'pos_spread_km': 15.9, 'maps': {'Hotspot': 8, 'Mountain Range': 5, 'Loop': 2}}
+  Grozovoi: line-like share leaving one clan out ranges 48 to 60% (drop H-SR for the low, MACHX for the high)
+  Shimakaze: line-like share leaving one clan out ranges 61 to 68% (drop RMN for the low, 5D for the high)
+  Shimakaze: Top 6 n=15 line-like 60% vs Rest n=43 65%, diff interval -36 to +26; stationary 27% vs 26%, -26 to +23
+  Grozovoi: Top 6 n=6, Rest n=24: too few for a Top 6 vs Rest comparison
+  Gdańsk: Top 6 n=60 line-like 30% vs Rest n=58 52%, diff interval -35 to -10 *; stationary 47% vs 34%, +1 to +24 *
+  Daring: Top 6 n=34 line-like 18% vs Rest n=166 8%, diff interval -13 to +21; stationary 59% vs 64%, -19 to +25
+  PN on these four ships: [('Gdańsk', 'Okinawa', 'line', 'horizontal', 4110)]
+
+## 2. Observed emission and radius, ships with 20+ smokes
+| ship | n | base s | median s | quartiles | ratio | cut short | short, not flagged | players 3+ | between-player share | % near own median | within-player IQR s | player medians by step | changed between games | radius m |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Somers | 260 | 30 | 39.7 | 39.5 to 43.4 | 1.32 | 10 (4%) | 2 | 25 | 0.60 | 91 | 0.3 | 1.1x:3 1.2x:1 1.3x:14 1.4x:3 1.5x:4 | 3/16 | 450 |
+| Daring | 200 | 10 | 11.0 | 10.3 to 11.3 | 1.10 | 6 (3%) | 7 | 24 | 0.39 | 96 | 0.4 | 1.0x:5 1.1x:14 1.2x:5 | 1/13 | 600 |
+| Svea | 199 | 10 | 12.0 | 11.0 to 12.6 | 1.20 | 2 (1%) | 1 | 27 | 0.63 | 94 | 0.7 | 1.1x:6 1.2x:15 1.3x:4 1.4x:1 1.5x:1 | 4/12 | 600 |
+| Gearing | 180 | 30 | 39.6 | 33.3 to 40.1 | 1.32 | 8 (4%) | 1 | 21 | 0.98 | 96 | 0.3 | 1.1x:5 1.2x:1 1.3x:9 1.4x:4 1.5x:2 | 1/9 | 450 |
+| Napoli | 147 | 40 | 48.3 | 44.3 to 48.6 | 1.21 | 16 (11%) | 0 | 11 | 0.97 | 100 | 0.4 | 1.1x:3 1.2x:8 | 0/6 | 450/510 |
+| Gdańsk | 118 | 20 | 22.2 | 22.0 to 22.5 | 1.11 | 9 (8%) | 1 | 13 | 0.72 | 98 | 0.4 | 1.0x:1 1.1x:11 1.2x:1 | 0/8 | 450 |
+| Harugumo | 100 | 20 | 52.7 | 44.0 to 55.6 | 2.64 | 3 (3%) | 0 | 12 | 0.57 | 88 | 0.5 | 2.1x:1 2.2x:3 2.4x:1 2.6x:2 2.7x:2 2.9x:3 | 2/6 | 450 |
+| Shimakaze | 58 | 20 | 22.1 | 22.0 to 23.0 | 1.11 | 4 (7%) | 0 | 6 | 0.55 | 81 | 0.5 | 1.1x:5 1.3x:1 | 1/4 | 450 |
+| Z-42 | 56 | 10 | 11.4 | 10.5 to 12.2 | 1.14 | 2 (4%) | 1 | 11 | 0.88 | 100 | 0.2 | 1.0x:2 1.1x:3 1.2x:5 1.3x:1 | 0/3 | 600 |
+| Jinan | 42 | 30 | 31.2 | 30.3 to 33.3 | 1.04 | 3 (7%) | 0 | 6 | 0.84 | 94 | 0.7 | 1.0x:2 1.1x:4 | 0/2 | 450 |
+| Grozovoi | 30 | 20 | 21.8 | 20.2 to 22.4 | 1.09 | 2 (7%) | 0 | 2 | 0.95 | 100 | 0.3 | 1.0x:1 1.1x:1 | 0/1 | 450 |
+| Delny | 22 | 30 | 43.4 | 40.0 to 43.7 | 1.45 | 0 (0%) | 1 | 3 | 0.26 | 94 | 0.3 | 1.3x:1 1.5x:2 | 0/2 | 450 |
+| Venezia | 21 | 40 | 48.6 | 44.2 to 53.4 | 1.21 | 3 (14%) | 0 | 3 | 0.92 | 83 | 5.2 | 1.1x:1 1.2x:1 1.5x:1 | 1/1 | 510 |
+| C. Colombo | 20 | 45 | 49.5 | 45.1 to 49.9 | 1.10 | 4 (20%) | 0 | 0 | - | - | - |  | 0/0 | 510 |
+  radius differs from base on 1 of 1547 smokes (all ships)
+  the one Napoli smoke at 450 m: [('true', 'no smoke activation within 5 s before creation')]
+
+Player medians (clean smokes, 3+), ships with more than one step
+  Somers MACHX_TheLastB 33s n3 | UYSC_Docmatheu 33s n4 | KITED_Timeless 34s n3 | MACHX_SPAAAAAA 37s n3 | EPOXY_Your_SAT 40s n15 | RESIN_Fryce 40s n15 | MACHX_JustAMat 40s n5 | BN_jordi_92T 40s n6 | BONKZ_Dyr3 40s n5 | HFANS_T_Sakuya 40s n6 | REEEE_Harmonie 40s n17 | RESIN_eagle_la 40s n7 | MACHX_JulioElG 40s n6 | BONKY_bartimus 40s n6 | NGA_Edward_the 40s n10 | RESIN_Big_Boy6 40s n12 | HSR_Mixic37 40s n4 | BONKY_BookinIt 40s n4 | VRTUS_themanwi 41s n6 | HSR_Yamiyonohi 43s n26 | PFANS_Mugu_9 43s n6 | MZY_Inori_Taki 44s n14 | BN_TheRuzzO 44s n4 | HFANS_YuanShen 44s n18 | REEEE_Daka_Dak 44s n3
+  Svea BONKZ_Satori_M 11s n10 | SCCC2_HarmXIII 11s n5 | HTDOG_Rei 11s n5 | EPOXY_TheMoose 11s n4 | VRTUS_AgentTan 11s n23 | INCA_Sicilia_I 11s n13 | HTDOG_Drashiro 12s n14 | BONKZ_1for1gam 12s n5 | PFANS_Howell11 12s n3 | BN_DeiMoonKboo 12s n9 | SCCC2_IQ_Check 12s n4 | BN_NotAWeekndP 12s n4 | BONKZ_Bows3r 12s n4 | EPOXY_Mkatx5 12s n3 | UYSC_Robson_Si 12s n3 | HFANS_SoulCora 12s n3 | BONKY_BookinIt 12s n4 | EPOXY_alysa_li 12s n3 | KSC_Show_Me_Yo 12s n5 | MACHX_GSPatton 12s n4 | HTDOG_SockMySo 12s n15 | MACH_Ridonc 13s n3 | RESIN_thepregn 13s n8 | MACHX_xXBandit 13s n4 | BN_NAB_LV 13s n6 | KSC_Universal1 14s n5 | RSR_Sir_Booman 15s n8
+  Gearing RSR_Nick_Jacob 33s n4 | KSC_PidgeyArmy 33s n14 | BONKZ_Cheshire 33s n18 | HFANS_T_Sakuya 33s n5 | KSC_ganser 34s n3 | KITE_Rebrand_S 36s n5 | BTLST_Voldigar 40s n3 | KSC_NakiriAyam 40s n6 | BN_jordi_92T 40s n14 | VRTUS_WhiskiLe 40s n9 | 5D_SlugBoy65 40s n9 | KITE_BB_Mighty 40s n7 | OGF_Ryygar 40s n6 | KITE_CodeMaste 40s n4 | EPOXY_Your_SAT 40s n3 | BONKZ_Dyr3 43s n14 | KITE_Gebus 43s n4 | INCA_run_for_y 43s n3 | INCA_AmilcarFr 43s n4 | BTLST_Charcoal 44s n4 | BONKZ_Garp 44s n3
+  Harugumo HTDOG_Drashiro 43s n4 | RESIN_Fryce 44s n4 | RESIN_Maddog24 44s n11 | RESIN_Big_Boy6 45s n5 | SCCC2_KnightHe 48s n3 | BN_jordi_92T 53s n6 | BONKZ_Cheshire 53s n6 | HSR_YuriSayuki 53s n10 | BONKY_BookinIt 54s n4 | PFANS_Mugu_9 58s n3 | EPOXY_FlakFien 58s n8 | HSR_Yamiyonohi 58s n4
+  Shimakaze VRTUS_ItsAGame 22s n5 | UYSC_DMR7575 22s n6 | MANBA_Catoverf 22s n5 | HTDOG_frostie1 22s n4 | 5D_Tsushimoid 23s n3 | HFANS_T_Sakuya 26s n13
+  Grozovoi MACHX_SPAAAAAA 20s n11 | RESIN_Maddog24 22s n3
+
+Usage by observed emission (clean smokes): longer group minus shorter group, 95% interval by resampling clans
+  Grozovoi: long n=3, short n=22: too few
+| ship | split at s | long n | short n | stationary_pct | path_med_m | stacked_pct | selfish_pct | inside_pct | conc_mean | win_pct |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Somers | 36.5 | 202 (15 clans) | 24 (10 clans) | 0 vs 4 (-12 to +0) | 3,874 vs 2,650 (+792 to +2,023 *) | 67 vs 42 (+8 to +47 *) | 2 vs 33 (-56 to -11 *) | 17 vs 21 (-24 to +14) | 16,221 vs 8,704 (+2,096 to +13,622 *) | 54 vs 62 (-33 to +19) |
+| Gearing | 36.5 | 103 (13 clans) | 55 (8 clans) | 2 vs 0 (+0 to +6) | 3,368 vs 2,981 (-139 to +761) | 56 vs 62 (-22 to +27) | 9 vs 9 (-16 to +12) | 19 vs 20 (-11 to +17) | 15,736 vs 19,537 (-8,646 to +5,787) | 63 vs 49 (-6 to +45) |
+| Harugumo | 49 | 48 (10 clans) | 35 (9 clans) | 2 vs 6 (-8 to +6) | 4,123 vs 3,117 (-227 to +1,830) | 69 vs 60 (-24 to +30) | 6 vs 20 (-27 to +12) | 23 vs 23 (-12 to +23) | 21,295 vs 16,264 (-2,915 to +16,801) | 48 vs 60 (-47 to +33) |
+| Svea | 11.6 | 133 (20 clans) | 55 (8 clans) | 68 vs 87 (-31 to -6 *) | 345 vs 199 (+35 to +238 *) | 0 vs 0 (+0 to +0) | 78 vs 75 (-10 to +18) | 13 vs 18 (-20 to +8) | 7,104 vs 8,307 (-3,521 to +1,474) | 40 vs 51 (-43 to +9) |
+| Shimakaze | 24.5 | 9 (1 clans) | 44 (12 clans) | 33 vs 18 (+6 to +27 *) | 1,326 vs 1,766 (-624 to -273 *) | 56 vs 50 (-12 to +17) | 33 vs 25 (-1 to +20) | 22 vs 36 (-30 to +2) | 3,785 vs 6,389 (-7,638 to +1,480) | 100 vs 32 (+51 to +86 *) |
+| Daring | 10.6 | 134 (20 clans) | 49 (12 clans) | 61 vs 67 (-22 to +8) | 360 vs 392 (-137 to +72) | 10 vs 8 (-8 to +16) | 54 vs 57 (-20 to +12) | 44 vs 39 (-16 to +26) | 4,094 vs 2,651 (+585 to +2,445 *) | 66 vs 59 (-20 to +27) |
+| Gdańsk | 21.2 | 94 (14 clans) | 11 (6 clans) | 41 vs 27 (-9 to +43) | 794 vs 690 (-881 to +569) | 16 vs 18 (-28 to +19) | 41 vs 45 (-37 to +18) | 29 vs 18 (-45 to +35) | 7,738 vs 15,225 (-15,371 to +7,760) | 64 vs 45 (-20 to +72) |
+| Napoli | 46.5 | 89 (19 clans) | 32 (10 clans) | 3 vs 6 (-12 to +3) | 2,879 vs 2,774 (-607 to +748) | 0 vs 0 (+0 to +0) | 67 vs 72 (-21 to +14) | 19 vs 16 (-14 to +15) | 4,020 vs 4,994 (-4,034 to +1,353) | 52 vs 47 (-19 to +26) |
+
+Median observed emission (clean) by usage, within ship
+| ship | stationary | moving | selfish | screen | stacked | inside cap | outside cap | conc dmg > 0 | no conc dmg |
+|---|---|---|---|---|---|---|---|---|---|
+| Somers | 33.0 (1) | 39.7 (223) | 33.3 (13) | 39.7 (68) | 39.9 (145) | 39.7 (40) | 39.7 (186) | 39.7 (174) | 39.7 (52) |
+| Daring | 11.0 (115) | 11.1 (68) | 11.1 (101) | 11.0 (64) | 11.1 (18) | 11.0 (78) | 11.1 (105) | 11.1 (102) | 11.0 (81) |
+| Svea | 12.0 (139) | 12.4 (44) | 12.0 (145) | 12.1 (43) | - (0) | 12.0 (27) | 12.1 (161) | 12.0 (143) | 12.3 (45) |
+| Gearing | 40.2 (2) | 39.6 (155) | 39.6 (14) | 39.7 (52) | 39.6 (92) | 39.6 (31) | 39.6 (127) | 39.6 (123) | 39.6 (35) |
+| Napoli | 48.3 (5) | 48.4 (112) | 48.4 (83) | 48.3 (38) | - (0) | 48.3 (22) | 48.4 (99) | 48.3 (66) | 48.4 (55) |
+| Gdańsk | 22.2 (42) | 22.3 (62) | 22.2 (44) | 22.2 (44) | 22.3 (17) | 22.2 (29) | 22.3 (76) | 22.3 (84) | 22.2 (21) |
+| Harugumo | 44.3 (3) | 52.7 (78) | 44.1 (10) | 52.7 (19) | 52.8 (54) | 52.7 (19) | 52.7 (64) | 52.7 (73) | 52.9 (10) |
+| Shimakaze | 22.1 (11) | 22.2 (41) | 22.5 (14) | 22.1 (12) | 22.2 (27) | 22.2 (18) | 22.2 (35) | 22.2 (30) | 22.0 (23) |
+| Z-42 | 11.6 (33) | 12.0 (19) | 12.0 (31) | 11.1 (13) | 10.5 (8) | 12.0 (23) | 11.1 (29) | 12.0 (33) | 12.0 (19) |
+| Jinan | 33.0 (14) | 31.2 (23) | 31.2 (32) | 33.0 (7) | - (0) | 30.3 (5) | 33.0 (34) | 31.3 (32) | 33.0 (7) |
+| Grozovoi | 21.6 (5) | 22.0 (20) | 20.4 (13) | 22.4 (7) | 22.2 (5) | 22.0 (8) | 21.6 (17) | 20.6 (19) | 22.1 (6) |
+| Delny | - (0) | 43.4 (17) | 43.7 (2) | 43.4 (4) | 43.4 (12) | 43.4 (4) | 43.4 (14) | 43.4 (14) | 43.4 (4) |
+| Venezia | - (0) | 48.8 (16) | 51.1 (10) | 48.5 (6) | - (0) | 46.5 (2) | 51.1 (14) | 58.3 (7) | 48.2 (9) |
+| C. Colombo | - (0) | 49.5 (15) | 49.7 (10) | 49.4 (5) | - (0) | 49.4 (3) | 49.6 (12) | 49.5 (9) | 49.6 (6) |
+  cut short overall: {'n': 80, 'pct': 5.171299288946348, 'inside_pct': 28.75, 'inside_pct_others': 23.449216087252896, 'deaths_mean': 0.5, 'win_pct': 22.5}
+  path length vs emission, moving clean smokes, Spearman by ship:
+    Somers: 0.37 (n=225)
+    Gearing: 0.33 (n=156)
+    Harugumo: 0.42 (n=80)
+figures saved

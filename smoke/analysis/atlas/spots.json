@@ -1,0 +1,4224 @@
+{
+ "batch": "output/20261117-122135",
+ "frame": "0-1 minimap frame: origin at the top-left corner of the minimap image, u to the right (west to east), v down (north to south), both 0 to 1 across the full image. Positions are team-normalized so the smoking team spawn is at the bottom (bottom-left on Okinawa): north-spawn teams are mirrored north-south (v -> 1 - v) on Hotspot, Loop, Land of Fire, Mountain Range, Sleeping Giant and Sea of Fortune, and across the NW-SE diagonal ((u, v) -> (v, u)) on Okinawa, whose spawns are NE and SW. The mirror is applied to positions only: the frame is the minimap image in its native orientation, so the images need no flipping. Lengths: radius_u, ru and rv are fractions of the image width. An ellipse angle_deg is the rotation of the ru axis clockwise on screen from the u axis (as SVG rotate).",
+ "rules": {
+  "min_n": 8,
+  "small_n": "8 to 14",
+  "interval": "95%, resampling clans",
+  "wording": "association, not cause",
+  "placebo": "Six Rest clans standing in as the top group pass 2.5 signature spots on average, so 2 to 3 of the spots are the kind any group shows."
+ },
+ "spots": [
+  {
+   "id": "sg-harugumo-g1",
+   "map": "Sleeping Giant",
+   "kind": "signature",
+   "label": "west edge, own side of cap A",
+   "subject": "Harugumo",
+   "parent": null,
+   "centre_uv": [
+    0.0655,
+    0.621
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1229,
+    "rv": 0.0758,
+    "angle_deg": 69.6
+   },
+   "numbers": {
+    "n": 11,
+    "top6_n_total": 24,
+    "top6_share_pct": 45.8,
+    "rest_n_in": 1,
+    "rest_n_total": 9,
+    "rest_share_pct": 11.1,
+    "gap_pts": 34.7,
+    "gap_ci_lo": 20.0,
+    "gap_ci_hi": 56.2,
+    "top6_clans": "RESIN 5, H-SR 4, BONKZ 2",
+    "concealed_damage_per_smoke": 16315,
+    "deaths_per_100": 9.1,
+    "cap_won_pct": 85.7,
+    "cap_won_n": 7,
+    "median_time_s": 167,
+    "formation_count": 4,
+    "formation_of": 11,
+    "rest_formation_count": 1,
+    "rest_formation_of": 1,
+    "usual_partner": "Des Moines",
+    "cells": "G1/F1"
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120797.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166103.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g1_39283.html"
+   ],
+   "notes": "Formation: Harugumo smoke at G1/F1 + a cruiser inside (Des Moines 5) + second destroyer forward of the smoke (most often in F1): 4 of 11 Top 6 smokes; Rest 1 of 1 in the same spot. without RESIN the Top 6 share is 43%; other scales: 1.5 km: passes; 2.5 km: found, interval touches zero"
+  },
+  {
+   "id": "sg-harugumo-g1-cruiser",
+   "map": "Sleeping Giant",
+   "kind": "cast_cruiser",
+   "label": "cruiser inside the smoke: 3.9 km short of cap A (own side), cells G1/H1",
+   "subject": "Des Moines",
+   "parent": "sg-harugumo-g1",
+   "centre_uv": [
+    0.0451,
+    0.6427
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.0792,
+    "rv": 0.0489,
+    "angle_deg": 71.8
+   },
+   "numbers": {
+    "n": 9,
+    "n_parent": 11,
+    "share_of_parent_pct": 81.8,
+    "top6_n": 9,
+    "rest_n": 0,
+    "median_km_from_nearest_puff": 0.7,
+    "median_km_forward_of_smoke_centre": -1.2,
+    "forward_n": 1,
+    "forward_share_pct": 11.1,
+    "most_common_ships": "Des Moines 5, Worcester 3, Petropavlovsk 1",
+    "radar_cruiser_n": 9,
+    "km_from_nearest_cap_edge": 3.9,
+    "nearest_cap": "A"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest cruiser inside each smoke."
+  },
+  {
+   "id": "sg-harugumo-g1-dd2",
+   "map": "Sleeping Giant",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 0.7 km short of cap A (own side), cells F1/G1",
+   "subject": "Marceau",
+   "parent": "sg-harugumo-g1",
+   "centre_uv": [
+    0.129,
+    0.5862
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.2461,
+    "rv": 0.1088,
+    "angle_deg": 10.7
+   },
+   "numbers": {
+    "n": 7,
+    "n_parent": 11,
+    "share_of_parent_pct": 63.6,
+    "top6_n": 7,
+    "rest_n": 0,
+    "median_km_from_nearest_puff": 3.2,
+    "median_km_forward_of_smoke_centre": 3.2,
+    "forward_n": 5,
+    "forward_share_pct": 71.4,
+    "most_common_ships": "Marceau 5, Châteaurenault 1, Ragnar 1",
+    "km_from_nearest_cap_edge": 0.7,
+    "nearest_cap": "A"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent. Count is below 8: drawn for the formation only."
+  },
+  {
+   "id": "sg-flank-f9",
+   "map": "Sleeping Giant",
+   "kind": "signature",
+   "label": "east edge, outside cap D",
+   "subject": "flank smoke lines",
+   "parent": null,
+   "centre_uv": [
+    0.9078,
+    0.6207
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1191,
+    "rv": 0.0884,
+    "angle_deg": 63.7
+   },
+   "numbers": {
+    "n": 14,
+    "top6_n_total": 67,
+    "top6_share_pct": 20.9,
+    "rest_n_in": 5,
+    "rest_n_total": 74,
+    "rest_share_pct": 6.8,
+    "gap_pts": 14.1,
+    "gap_ci_lo": 1.4,
+    "gap_ci_hi": 25.9,
+    "top6_clans": "BONKZ 6, H-SR 4, RESIN 3, VRTUS 1",
+    "concealed_damage_per_smoke": 17229,
+    "deaths_per_100": 0.0,
+    "cap_won_pct": 14.3,
+    "cap_won_n": 14,
+    "median_time_s": 315,
+    "formation_count": 7,
+    "formation_of": 14,
+    "rest_formation_count": 1,
+    "rest_formation_of": 5,
+    "usual_partner": "Brisbane",
+    "cells": "F9/G9/G10/F10"
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166105.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8069_g1_190203.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g2_84815.html"
+   ],
+   "notes": "Formation: flank-line destroyer smoke at F9/G9 + a cruiser inside (Brisbane 4) + second destroyer forward of the smoke (most often in F10): 7 of 14 Top 6 smokes; Rest 1 of 5 in the same spot. ships in the spot: Somers 11, Harugumo 2, Gearing 1; without BONKZ the Top 6 share is 16%; other scales: 1.5 km: passes; 2.5 km: passes"
+  },
+  {
+   "id": "sg-flank-f9-cruiser",
+   "map": "Sleeping Giant",
+   "kind": "cast_cruiser",
+   "label": "cruiser inside the smoke: 5.3 km beside cap D, cells F9/G9",
+   "subject": "Brisbane",
+   "parent": "sg-flank-f9",
+   "centre_uv": [
+    0.8953,
+    0.613
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1132,
+    "rv": 0.0801,
+    "angle_deg": 82.2
+   },
+   "numbers": {
+    "n": 11,
+    "n_parent": 14,
+    "share_of_parent_pct": 78.6,
+    "top6_n": 11,
+    "rest_n": 0,
+    "median_km_from_nearest_puff": 0.2,
+    "median_km_forward_of_smoke_centre": -0.4,
+    "forward_n": 5,
+    "forward_share_pct": 45.5,
+    "most_common_ships": "Brisbane 4, Des Moines 2, Utrecht 2",
+    "radar_cruiser_n": 9,
+    "km_from_nearest_cap_edge": 5.3,
+    "nearest_cap": "D"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest cruiser inside each smoke."
+  },
+  {
+   "id": "sg-flank-f9-dd2",
+   "map": "Sleeping Giant",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 1.9 km beside cap D, cells F10/G10",
+   "subject": "Yueyang",
+   "parent": "sg-flank-f9",
+   "centre_uv": [
+    0.8113,
+    0.5716
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.2672,
+    "rv": 0.1212,
+    "angle_deg": 13.3
+   },
+   "numbers": {
+    "n": 10,
+    "n_parent": 14,
+    "share_of_parent_pct": 71.4,
+    "top6_n": 10,
+    "rest_n": 0,
+    "median_km_from_nearest_puff": 2.5,
+    "median_km_forward_of_smoke_centre": 2.0,
+    "forward_n": 9,
+    "forward_share_pct": 90.0,
+    "most_common_ships": "Yueyang 2, Châteaurenault 2, Marceau 2",
+    "km_from_nearest_cap_edge": 1.9,
+    "nearest_cap": "D"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "sg-somers-f9",
+   "map": "Sleeping Giant",
+   "kind": "lead",
+   "label": "east edge, outside cap D",
+   "subject": "Somers",
+   "parent": null,
+   "centre_uv": [
+    0.9201,
+    0.6038
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1275,
+    "rv": 0.0638,
+    "angle_deg": 55.1
+   },
+   "numbers": {
+    "n": 10,
+    "top6_n_total": 30,
+    "top6_share_pct": 33.3,
+    "rest_n_in": 5,
+    "rest_n_total": 45,
+    "rest_share_pct": 11.1,
+    "gap_pts": 22.2,
+    "gap_ci_lo": -1.8,
+    "gap_ci_hi": 58.7,
+    "top6_clans": "BONKZ 5, RESIN 3, VRTUS 1, H-SR 1",
+    "concealed_damage_per_smoke": 9723,
+    "deaths_per_100": 0.0,
+    "cap_won_pct": 20.0,
+    "cap_won_n": 10,
+    "median_time_s": 334,
+    "formation_count": 4,
+    "formation_of": 10,
+    "rest_formation_count": 1,
+    "rest_formation_of": 5,
+    "usual_partner": null,
+    "cells": "F9/G10/F10"
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g2_84823.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120798.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g1_39292.html"
+   ],
+   "notes": "Formation: Somers smoke at F9/G10 + a cruiser inside (Des Moines 2) + second destroyer forward of the smoke (most often in E7): 4 of 10 Top 6 smokes; Rest 1 of 5 in the same spot. same place as signature spot sg-flank-f9; without BONKZ the Top 6 share is 23%; other scales: 1.5 km: not found; 2.5 km: not found"
+  },
+  {
+   "id": "sg-somers-f9-cruiser",
+   "map": "Sleeping Giant",
+   "kind": "cast_cruiser",
+   "label": "cruiser inside the smoke: 5.4 km beside cap D, cells F9/F10",
+   "subject": "Des Moines",
+   "parent": "sg-somers-f9",
+   "centre_uv": [
+    0.8992,
+    0.5859
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.0819,
+    "rv": 0.0662,
+    "angle_deg": 43.7
+   },
+   "numbers": {
+    "n": 8,
+    "n_parent": 10,
+    "share_of_parent_pct": 80.0,
+    "top6_n": 8,
+    "rest_n": 0,
+    "median_km_from_nearest_puff": 0.2,
+    "median_km_forward_of_smoke_centre": 0.2,
+    "forward_n": 5,
+    "forward_share_pct": 62.5,
+    "most_common_ships": "Des Moines 2, Brisbane 2, Minotaur 1",
+    "radar_cruiser_n": 7,
+    "km_from_nearest_cap_edge": 5.4,
+    "nearest_cap": "D"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest cruiser inside each smoke."
+  },
+  {
+   "id": "sg-somers-f9-dd2",
+   "map": "Sleeping Giant",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 1.5 km beside cap D, cells E7/F10",
+   "subject": "Châteaurenault",
+   "parent": "sg-somers-f9",
+   "centre_uv": [
+    0.7906,
+    0.5452
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.2038,
+    "rv": 0.1086,
+    "angle_deg": 4.6
+   },
+   "numbers": {
+    "n": 6,
+    "n_parent": 10,
+    "share_of_parent_pct": 60.0,
+    "top6_n": 6,
+    "rest_n": 0,
+    "median_km_from_nearest_puff": 4.7,
+    "median_km_forward_of_smoke_centre": 2.0,
+    "forward_n": 5,
+    "forward_share_pct": 83.3,
+    "most_common_ships": "Châteaurenault 2, Kléber 1, Ragnar 1",
+    "km_from_nearest_cap_edge": 1.5,
+    "nearest_cap": "D"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent. Count is below 8: drawn for the formation only."
+  },
+  {
+   "id": "sg-gdansk-g6",
+   "map": "Sleeping Giant",
+   "kind": "lead",
+   "label": "between caps B and D, own side",
+   "subject": "Gdańsk",
+   "parent": null,
+   "centre_uv": [
+    0.57,
+    0.6504
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1501,
+    "rv": 0.0864,
+    "angle_deg": 26.2
+   },
+   "numbers": {
+    "n": 10,
+    "top6_n_total": 21,
+    "top6_share_pct": 47.6,
+    "rest_n_in": 6,
+    "rest_n_total": 16,
+    "rest_share_pct": 37.5,
+    "gap_pts": 10.1,
+    "gap_ci_lo": -36.1,
+    "gap_ci_hi": 56.9,
+    "top6_clans": "HTDOG 7, RESIN 1, BONKZ 1, KITE 1",
+    "concealed_damage_per_smoke": 13614,
+    "deaths_per_100": 0.0,
+    "cap_won_pct": 14.3,
+    "cap_won_n": 7,
+    "median_time_s": 538,
+    "formation_count": 5,
+    "formation_of": 10,
+    "rest_formation_count": 2,
+    "rest_formation_of": 6,
+    "usual_partner": null,
+    "cells": "G6/H6"
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8150_g2_188202.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120805.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8153_g1_92181.html"
+   ],
+   "notes": "Formation: Gdańsk smoke at G6/H6 + no other cruiser inside + second destroyer level with or behind the smoke (most often in F6): 5 of 10 Top 6 smokes; Rest 2 of 6 in the same spot. wide zone, not a tight spot; without HTDOG the Top 6 share is 25%; other scales: 1.5 km: found, interval touches zero; 2.5 km: found, interval touches zero"
+  },
+  {
+   "id": "sg-gdansk-g6-dd2",
+   "map": "Sleeping Giant",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 2.8 km short of cap B (own side), cells F6/H7",
+   "subject": "Delny",
+   "parent": "sg-gdansk-g6",
+   "centre_uv": [
+    0.5581,
+    0.6073
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.3427,
+    "rv": 0.1206,
+    "angle_deg": 50.3
+   },
+   "numbers": {
+    "n": 9,
+    "n_parent": 10,
+    "share_of_parent_pct": 90.0,
+    "top6_n": 9,
+    "rest_n": 0,
+    "median_km_from_nearest_puff": 4.5,
+    "median_km_forward_of_smoke_centre": -0.3,
+    "forward_n": 4,
+    "forward_share_pct": 44.4,
+    "most_common_ships": "Delny 5, Kléber 3, Marceau 1",
+    "km_from_nearest_cap_edge": 2.8,
+    "nearest_cap": "B"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "sg-cell-e1",
+   "map": "Sleeping Giant",
+   "kind": "paying_high",
+   "label": "cell E1: 0.4 km beside cap A",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.05,
+    0.45
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.0,
+      0.4
+     ],
+     [
+      0.1,
+      0.4
+     ],
+     [
+      0.1,
+      0.5
+     ],
+     [
+      0.0,
+      0.5
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 10,
+    "concealed_damage_per_smoke": 25542,
+    "median_concealed_damage": 19337,
+    "deaths_per_100": 10.0,
+    "cap_won_pct_all_smokes": 40.0,
+    "top6_n": 3,
+    "rest_n": 7,
+    "top6_share_pct": 2.7,
+    "rest_share_pct": 5.5,
+    "map_avg_concealed_damage": 11890,
+    "times_map_average": 2.15,
+    "flag": "high",
+    "median_time_s": 276
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7933_g1_178673.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g2_84821.html"
+   ],
+   "notes": "Rated high by Module 4. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "sg-cell-g1",
+   "map": "Sleeping Giant",
+   "kind": "paying_high",
+   "label": "cell G1: 3.8 km short of cap A (own side)",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.05,
+    0.65
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.0,
+      0.6
+     ],
+     [
+      0.1,
+      0.6
+     ],
+     [
+      0.1,
+      0.7
+     ],
+     [
+      0.0,
+      0.7
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 21,
+    "concealed_damage_per_smoke": 24101,
+    "median_concealed_damage": 21944,
+    "deaths_per_100": 14.3,
+    "cap_won_pct_all_smokes": 28.6,
+    "top6_n": 12,
+    "rest_n": 9,
+    "top6_share_pct": 10.9,
+    "rest_share_pct": 7.0,
+    "map_avg_concealed_damage": 11890,
+    "times_map_average": 2.03,
+    "flag": "high",
+    "median_time_s": 160
+   },
+   "small_n": false,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166102.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166103.html"
+   ],
+   "notes": "Rated high by Module 4. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "sg-cell-g9",
+   "map": "Sleeping Giant",
+   "kind": "paying_high",
+   "label": "cell G9: 4.0 km beside cap D",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.85,
+    0.65
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.8,
+      0.6
+     ],
+     [
+      0.9,
+      0.6
+     ],
+     [
+      0.9,
+      0.7
+     ],
+     [
+      0.8,
+      0.7
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 8,
+    "concealed_damage_per_smoke": 22459,
+    "median_concealed_damage": 16744,
+    "deaths_per_100": 0.0,
+    "cap_won_pct_all_smokes": 12.5,
+    "top6_n": 4,
+    "rest_n": 4,
+    "top6_share_pct": 3.6,
+    "rest_share_pct": 3.1,
+    "map_avg_concealed_damage": 11890,
+    "times_map_average": 1.89,
+    "flag": "high",
+    "median_time_s": 240
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8069_g1_190203.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7906_g1_188244.html"
+   ],
+   "notes": "Rated high by Module 4. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "sg-cell-f5",
+   "map": "Sleeping Giant",
+   "kind": "paying_low",
+   "label": "cell F5: inside cap B, own half",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.45,
+    0.55
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.4,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.4,
+      0.6
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 12,
+    "concealed_damage_per_smoke": 6700,
+    "median_concealed_damage": 0,
+    "deaths_per_100": 8.3,
+    "cap_won_pct_all_smokes": 25.0,
+    "top6_n": 6,
+    "rest_n": 6,
+    "top6_share_pct": 5.5,
+    "rest_share_pct": 4.7,
+    "map_avg_concealed_damage": 11890,
+    "times_map_average": 0.56,
+    "flag": "low",
+    "median_time_s": 451
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7990_g1_188228.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120808.html"
+   ],
+   "notes": "Rated low by Module 4. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "sg-cell-f6",
+   "map": "Sleeping Giant",
+   "kind": "paying_low",
+   "label": "cell F6: 1.0 km short of cap B (own side)",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.55,
+    0.55
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.6,
+      0.5
+     ],
+     [
+      0.6,
+      0.6
+     ],
+     [
+      0.5,
+      0.6
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 10,
+    "concealed_damage_per_smoke": 5111,
+    "median_concealed_damage": 2477,
+    "deaths_per_100": 20.0,
+    "cap_won_pct_all_smokes": 30.0,
+    "top6_n": 1,
+    "rest_n": 9,
+    "top6_share_pct": 0.9,
+    "rest_share_pct": 7.0,
+    "map_avg_concealed_damage": 11890,
+    "times_map_average": 0.43,
+    "flag": "low",
+    "median_time_s": 406
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8140_g2_125929.html"
+   ],
+   "notes": "Rated low by Module 4. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "sg-cell-g6",
+   "map": "Sleeping Giant",
+   "kind": "paying_low",
+   "label": "cell G6: 2.8 km short of cap B (own side)",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.55,
+    0.65
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.6,
+      0.6
+     ],
+     [
+      0.6,
+      0.7
+     ],
+     [
+      0.5,
+      0.7
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 11,
+    "concealed_damage_per_smoke": 3906,
+    "median_concealed_damage": 1122,
+    "deaths_per_100": 0.0,
+    "cap_won_pct_all_smokes": 9.1,
+    "top6_n": 6,
+    "rest_n": 5,
+    "top6_share_pct": 5.5,
+    "rest_share_pct": 3.9,
+    "map_avg_concealed_damage": 11890,
+    "times_map_average": 0.33,
+    "flag": "low",
+    "median_time_s": 353
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8074_g3_176171.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7990_g1_188231.html"
+   ],
+   "notes": "Rated low by Module 4. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "sg-early-g1",
+   "map": "Sleeping Giant",
+   "kind": "early_smoke",
+   "label": "west flank, short of cap A on the own side",
+   "subject": "destroyer smoke, first 5 minutes",
+   "parent": null,
+   "centre_uv": [
+    0.0788,
+    0.5889
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1622,
+    "rv": 0.0937,
+    "angle_deg": -86.7
+   },
+   "numbers": {
+    "n": 39,
+    "top6_n": 22,
+    "rest_n": 17,
+    "pn_n": 0,
+    "clans": 16,
+    "games": 28,
+    "concealed_damage_per_smoke": 19792,
+    "deaths_per_100": 7.7,
+    "cap_won_pct": 46.9,
+    "cap_won_n": 32,
+    "median_time_s": 151,
+    "share_of_map_early_smokes_pct": 56.5,
+    "cells": "G1/F1/E1",
+    "top6_share_of_top6_early_pct": 68.8,
+    "rest_share_of_rest_early_pct": 45.9,
+    "radar_cruiser_inside_n": 22,
+    "radar_cruiser_inside_pct": 56.4,
+    "top6_radar_cruiser_inside_n": 12,
+    "rest_radar_cruiser_inside_n": 10,
+    "inside_cap_pct": 28.2,
+    "median_km_smoke_edge_to_contested_cap_edge": 1.5,
+    "km_centre_to_nearest_cap_edge": 1.2,
+    "nearest_cap": "A",
+    "stacked_pct": 64.1,
+    "ships": "Somers 12, Gearing 10, Harugumo 9, Daring 4",
+    "second_dd_recorded_n": 10,
+    "second_dd_forward_n": 7,
+    "top6_second_dd_forward_n": 4,
+    "rest_second_dd_forward_n": 3,
+    "radius_km_long": 6.8,
+    "radius_km_short": 3.9
+   },
+   "small_n": false,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g1_29455.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166103.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120797.html"
+   ],
+   "notes": "Mean-shift cluster (2 km) of all early destroyer smoke centres on the map, both groups; the ellipse is 2 standard deviations. Cap won counts only smokes whose contested cap was not already ours. Links are Top 6 smokes nearest the centre."
+  },
+  {
+   "id": "sg-early-g1-cruiser",
+   "map": "Sleeping Giant",
+   "kind": "cast_cruiser",
+   "label": "cruiser inside the smoke: 2.0 km short of cap A (own side), cells G1/F1",
+   "subject": "Des Moines",
+   "parent": "sg-early-g1",
+   "centre_uv": [
+    0.0722,
+    0.6051
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1731,
+    "rv": 0.0967,
+    "angle_deg": -86.3
+   },
+   "numbers": {
+    "n": 26,
+    "n_parent": 39,
+    "share_of_parent_pct": 66.7,
+    "top6_n": 13,
+    "rest_n": 13,
+    "median_km_from_nearest_puff": 0.3,
+    "median_km_forward_of_smoke_centre": -0.6,
+    "forward_n": 3,
+    "forward_share_pct": 11.5,
+    "most_common_ships": "Des Moines 10, Brisbane 4, Worcester 3",
+    "radar_cruiser_n": 22,
+    "km_from_nearest_cap_edge": 2.0,
+    "nearest_cap": "A"
+   },
+   "small_n": false,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest cruiser inside each smoke."
+  },
+  {
+   "id": "sg-early-g1-dd2",
+   "map": "Sleeping Giant",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 2.3 km beside cap A, cells F1/F5",
+   "subject": "Marceau",
+   "parent": "sg-early-g1",
+   "centre_uv": [
+    0.2355,
+    0.5604
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.3813,
+    "rv": 0.1174,
+    "angle_deg": -1.1
+   },
+   "numbers": {
+    "n": 10,
+    "n_parent": 39,
+    "share_of_parent_pct": 25.6,
+    "top6_n": 6,
+    "rest_n": 4,
+    "median_km_from_nearest_puff": 6.8,
+    "median_km_forward_of_smoke_centre": 1.2,
+    "forward_n": 7,
+    "forward_share_pct": 70.0,
+    "most_common_ships": "Marceau 4, 20 de Julio 2, Z-52 1",
+    "km_from_nearest_cap_edge": 2.3,
+    "nearest_cap": "A"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "sg-early-g9",
+   "map": "Sleeping Giant",
+   "kind": "early_smoke",
+   "label": "east edge, beside cap D",
+   "subject": "destroyer smoke, first 5 minutes",
+   "parent": null,
+   "centre_uv": [
+    0.8311,
+    0.6178
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1433,
+    "rv": 0.084,
+    "angle_deg": -83.0
+   },
+   "numbers": {
+    "n": 15,
+    "top6_n": 6,
+    "rest_n": 9,
+    "pn_n": 0,
+    "clans": 9,
+    "games": 14,
+    "concealed_damage_per_smoke": 16552,
+    "deaths_per_100": 0.0,
+    "cap_won_pct": 13.3,
+    "cap_won_n": 15,
+    "median_time_s": 226,
+    "share_of_map_early_smokes_pct": 21.7,
+    "cells": "G9/F9/H8",
+    "top6_share_of_top6_early_pct": 18.8,
+    "rest_share_of_rest_early_pct": 24.3,
+    "radar_cruiser_inside_n": 12,
+    "radar_cruiser_inside_pct": 80.0,
+    "top6_radar_cruiser_inside_n": 3,
+    "rest_radar_cruiser_inside_n": 9,
+    "inside_cap_pct": 0.0,
+    "median_km_smoke_edge_to_contested_cap_edge": 7.0,
+    "km_centre_to_nearest_cap_edge": 2.6,
+    "nearest_cap": "D",
+    "stacked_pct": 80.0,
+    "ships": "Somers 10, Gearing 2, Harugumo 2, Gdańsk 1",
+    "second_dd_recorded_n": 10,
+    "second_dd_forward_n": 7,
+    "top6_second_dd_forward_n": 4,
+    "rest_second_dd_forward_n": 3,
+    "radius_km_long": 6.0,
+    "radius_km_short": 3.5
+   },
+   "small_n": false,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7933_g1_178671.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8069_g1_190203.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g2_84815.html"
+   ],
+   "notes": "Mean-shift cluster (2 km) of all early destroyer smoke centres on the map, both groups; the ellipse is 2 standard deviations. Cap won counts only smokes whose contested cap was not already ours. Links are Top 6 smokes nearest the centre."
+  },
+  {
+   "id": "sg-early-g9-cruiser",
+   "map": "Sleeping Giant",
+   "kind": "cast_cruiser",
+   "label": "cruiser inside the smoke: 2.5 km beside cap D, cells G9/H8",
+   "subject": "Des Moines",
+   "parent": "sg-early-g9",
+   "centre_uv": [
+    0.8231,
+    0.6405
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1164,
+    "rv": 0.0877,
+    "angle_deg": -66.9
+   },
+   "numbers": {
+    "n": 14,
+    "n_parent": 15,
+    "share_of_parent_pct": 93.3,
+    "top6_n": 5,
+    "rest_n": 9,
+    "median_km_from_nearest_puff": 0.3,
+    "median_km_forward_of_smoke_centre": -0.7,
+    "forward_n": 2,
+    "forward_share_pct": 14.3,
+    "most_common_ships": "Des Moines 5, Minotaur 3, Brisbane 3",
+    "radar_cruiser_n": 12,
+    "km_from_nearest_cap_edge": 2.5,
+    "nearest_cap": "D"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest cruiser inside each smoke."
+  },
+  {
+   "id": "sg-early-g9-dd2",
+   "map": "Sleeping Giant",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: inside cap D, far half, cells F10/F6",
+   "subject": "20 de Julio",
+   "parent": "sg-early-g9",
+   "centre_uv": [
+    0.7463,
+    0.5664
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.3996,
+    "rv": 0.1265,
+    "angle_deg": -0.5
+   },
+   "numbers": {
+    "n": 10,
+    "n_parent": 15,
+    "share_of_parent_pct": 66.7,
+    "top6_n": 5,
+    "rest_n": 5,
+    "median_km_from_nearest_puff": 6.2,
+    "median_km_forward_of_smoke_centre": 2.9,
+    "forward_n": 7,
+    "forward_share_pct": 70.0,
+    "most_common_ships": "20 de Julio 2, Daring 2, Yueyang 1",
+    "km_from_nearest_cap_edge": -0.6,
+    "nearest_cap": "D"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "sg-early-f5",
+   "map": "Sleeping Giant",
+   "kind": "early_smoke",
+   "label": "centre, own-side rim of cap B",
+   "subject": "destroyer smoke, first 5 minutes",
+   "parent": null,
+   "centre_uv": [
+    0.4744,
+    0.5827
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1321,
+    "rv": 0.0514,
+    "angle_deg": 24.6
+   },
+   "numbers": {
+    "n": 13,
+    "top6_n": 3,
+    "rest_n": 10,
+    "pn_n": 0,
+    "clans": 9,
+    "games": 9,
+    "concealed_damage_per_smoke": 2643,
+    "deaths_per_100": 7.7,
+    "cap_won_pct": 50.0,
+    "cap_won_n": 10,
+    "median_time_s": 233,
+    "share_of_map_early_smokes_pct": 18.8,
+    "cells": "F5/G6/F6",
+    "top6_share_of_top6_early_pct": 9.4,
+    "rest_share_of_rest_early_pct": 27.0,
+    "radar_cruiser_inside_n": 3,
+    "radar_cruiser_inside_pct": 23.1,
+    "top6_radar_cruiser_inside_n": 0,
+    "rest_radar_cruiser_inside_n": 3,
+    "inside_cap_pct": 46.2,
+    "median_km_smoke_edge_to_contested_cap_edge": 0.8,
+    "km_centre_to_nearest_cap_edge": 0.5,
+    "nearest_cap": "B",
+    "stacked_pct": 7.7,
+    "ships": "Daring 4, Gdańsk 4, Z-42 2, Harugumo 1",
+    "second_dd_recorded_n": 10,
+    "second_dd_forward_n": 2,
+    "top6_second_dd_forward_n": 0,
+    "rest_second_dd_forward_n": 2,
+    "radius_km_long": 5.5,
+    "radius_km_short": 2.2
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7990_g1_188225.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8074_g3_176171.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7991_g1_78225.html"
+   ],
+   "notes": "Mean-shift cluster (2 km) of all early destroyer smoke centres on the map, both groups; the ellipse is 2 standard deviations. Cap won counts only smokes whose contested cap was not already ours. Links are Top 6 smokes nearest the centre."
+  },
+  {
+   "id": "sg-early-f5-dd2",
+   "map": "Sleeping Giant",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 2.0 km short of cap B (own side), cells G5/G6",
+   "subject": "Daring",
+   "parent": "sg-early-f5",
+   "centre_uv": [
+    0.5284,
+    0.6028
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.2829,
+    "rv": 0.1209,
+    "angle_deg": 16.1
+   },
+   "numbers": {
+    "n": 10,
+    "n_parent": 13,
+    "share_of_parent_pct": 76.9,
+    "top6_n": 2,
+    "rest_n": 8,
+    "median_km_from_nearest_puff": 6.6,
+    "median_km_forward_of_smoke_centre": -0.7,
+    "forward_n": 2,
+    "forward_share_pct": 20.0,
+    "most_common_ships": "Daring 3, Marceau 2, Lüshun 1",
+    "km_from_nearest_cap_edge": 2.0,
+    "nearest_cap": "B"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "sg-radar-c",
+   "map": "Sleeping Giant",
+   "kind": "radar",
+   "label": "far east cap C, smoked from the east side around cap D (wide)",
+   "subject": "destroyer smoke with a radar play",
+   "parent": null,
+   "centre_uv": [
+    0.8146,
+    0.5306
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1809,
+    "rv": 0.15,
+    "angle_deg": 82.0
+   },
+   "numbers": {
+    "n": 13,
+    "top6_n": 6,
+    "rest_n": 7,
+    "pn_n": 0,
+    "clans": 8,
+    "games": 10,
+    "concealed_damage_per_smoke": 15439,
+    "deaths_per_100": 0.0,
+    "cap_won_pct": 30.8,
+    "cap_won_n": 13,
+    "median_time_s": 395,
+    "contested_cap": "C",
+    "cap_control_n": 6,
+    "radar_trap_n": 7,
+    "first_5_min_pct": 23.1,
+    "cap_won_count": 4,
+    "cells": "F8/E10/H10",
+    "usual_radar_ships": "Des Moines 4, Brisbane 3, Gdańsk 3",
+    "plays_inside_drawn_shape": 10,
+    "tightest_core_n": 7,
+    "tightest_core_cells": "F8/E10",
+    "inside_cap_pct": 15.4,
+    "radius_km_long": 7.6,
+    "radius_km_short": 6.3
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8069_g1_190203.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g2_84823.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g1_125604.html"
+   ],
+   "notes": "Destroyer smokes whose primary purpose is a radar play (cap control or radar trap), grouped by the cap they contested, as in Module 3. The ellipse (2 standard deviations) is where those smokes were laid, not the cap; it is drawn from the 10 of 13 plays within 8 km of the group median, so far-flung plays do not stretch it. All numbers are for the whole group. tightest_core is the largest 2 km cluster inside the group. Wide: the smokes are spread, read it as a zone."
+  },
+  {
+   "id": "sg-radar-a",
+   "map": "Sleeping Giant",
+   "kind": "radar",
+   "label": "west cap A, smoked from below it",
+   "subject": "destroyer smoke with a radar play",
+   "parent": null,
+   "centre_uv": [
+    0.0734,
+    0.5662
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1336,
+    "rv": 0.103,
+    "angle_deg": -77.3
+   },
+   "numbers": {
+    "n": 10,
+    "top6_n": 6,
+    "rest_n": 4,
+    "pn_n": 0,
+    "clans": 4,
+    "games": 5,
+    "concealed_damage_per_smoke": 23855,
+    "deaths_per_100": 0.0,
+    "cap_won_pct": 60.0,
+    "cap_won_n": 5,
+    "median_time_s": 290,
+    "contested_cap": "A",
+    "cap_control_n": 9,
+    "radar_trap_n": 1,
+    "first_5_min_pct": 50.0,
+    "cap_won_count": 3,
+    "cells": "G1/F2/E1",
+    "usual_radar_ships": "Brisbane 6, Worcester 3, Des Moines 1",
+    "plays_inside_drawn_shape": 8,
+    "tightest_core_n": 7,
+    "tightest_core_cells": "G1/F2",
+    "inside_cap_pct": 30.0,
+    "radius_km_long": 5.6,
+    "radius_km_short": 4.3
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166103.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7933_g1_178668.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g1_125602.html"
+   ],
+   "notes": "Destroyer smokes whose primary purpose is a radar play (cap control or radar trap), grouped by the cap they contested, as in Module 3. The ellipse (2 standard deviations) is where those smokes were laid, not the cap; it is drawn from the 8 of 10 plays within 8 km of the group median, so far-flung plays do not stretch it. All numbers are for the whole group. tightest_core is the largest 2 km cluster inside the group."
+  },
+  {
+   "id": "sg-deaths-f1",
+   "map": "Sleeping Giant",
+   "kind": "deaths",
+   "label": "west flank, below cap A",
+   "subject": "smokes with a death in them, all classes",
+   "parent": null,
+   "centre_uv": [
+    0.0809,
+    0.5917
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1686,
+    "rv": 0.1206,
+    "angle_deg": 51.8
+   },
+   "numbers": {
+    "n": 11,
+    "deaths": 11,
+    "top6_n": 3,
+    "rest_n": 8,
+    "clans": 10,
+    "games": 10,
+    "share_of_map_death_smokes_pct": 32.4,
+    "all_smokes_in_ellipse_n": 85,
+    "deaths_per_100_in_ellipse": 11.8,
+    "map_deaths_per_100_all_classes": 11.5,
+    "behind_by_50_n": 4,
+    "enemy_radar_reached_n": 4,
+    "game_lost_n": 7,
+    "destroyer_smoke_n": 10,
+    "cells": "F1/G1/G2",
+    "median_time_s": 376,
+    "ships": "Gearing 3, Somers 3, La Pampa 1, Gdańsk 1",
+    "radius_km_long": 7.1,
+    "radius_km_short": 5.1
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7992_g1_29782.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166106.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7949_g1_46625.html"
+   ],
+   "notes": "Mean-shift cluster (2.5 km) of the centres of smokes, any class, in which the smoker or a covered teammate was lost. The ellipse is 2 standard deviations. deaths_per_100_in_ellipse counts every smoke laid inside the ellipse. Association only: deaths go with being behind and with enemy radar (Module 5). Wide: read it as a zone."
+  },
+  {
+   "id": "sg-deaths-e9",
+   "map": "Sleeping Giant",
+   "kind": "deaths",
+   "label": "east, between caps C and D",
+   "subject": "smokes with a death in them, all classes",
+   "parent": null,
+   "centre_uv": [
+    0.7641,
+    0.4866
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1687,
+    "rv": 0.1172,
+    "angle_deg": -17.3
+   },
+   "numbers": {
+    "n": 8,
+    "deaths": 9,
+    "top6_n": 3,
+    "rest_n": 5,
+    "clans": 7,
+    "games": 7,
+    "share_of_map_death_smokes_pct": 23.5,
+    "all_smokes_in_ellipse_n": 35,
+    "deaths_per_100_in_ellipse": 22.9,
+    "map_deaths_per_100_all_classes": 11.5,
+    "behind_by_50_n": 4,
+    "enemy_radar_reached_n": 3,
+    "game_lost_n": 6,
+    "destroyer_smoke_n": 5,
+    "cells": "E9/E7/E8",
+    "median_time_s": 560,
+    "ships": "Somers 3, Gearing 1, Harugumo 1, Napoli 1",
+    "radius_km_long": 7.1,
+    "radius_km_short": 4.9
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g1_63098.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7933_g1_178675.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120806.html"
+   ],
+   "notes": "Mean-shift cluster (2.5 km) of the centres of smokes, any class, in which the smoker or a covered teammate was lost. The ellipse is 2 standard deviations. deaths_per_100_in_ellipse counts every smoke laid inside the ellipse. Association only: deaths go with being behind and with enemy radar (Module 5). Wide: read it as a zone."
+  },
+  {
+   "id": "hs-flank-g6",
+   "map": "Hotspot",
+   "kind": "lead",
+   "label": "own-side rim of cap C, centre",
+   "subject": "flank smoke lines",
+   "parent": null,
+   "centre_uv": [
+    0.5661,
+    0.6193
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.0878,
+    "rv": 0.0622,
+    "angle_deg": -21.8
+   },
+   "numbers": {
+    "n": 13,
+    "top6_n_total": 64,
+    "top6_share_pct": 20.3,
+    "rest_n_in": 7,
+    "rest_n_total": 80,
+    "rest_share_pct": 8.8,
+    "gap_pts": 11.6,
+    "gap_ci_lo": -7.5,
+    "gap_ci_hi": 27.8,
+    "top6_clans": "RESIN 7, BONKZ 4, H-SR 2",
+    "concealed_damage_per_smoke": 17336,
+    "deaths_per_100": 7.7,
+    "cap_won_pct": 85.7,
+    "cap_won_n": 7,
+    "median_time_s": 255,
+    "formation_count": 5,
+    "formation_of": 13,
+    "rest_formation_count": 2,
+    "rest_formation_of": 7,
+    "usual_partner": "Moskva",
+    "cells": "G6/F6/G7"
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g3_85022.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g1_60864.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8140_g1_190365.html"
+   ],
+   "notes": "Formation: flank-line destroyer smoke at G6/F6 + a cruiser inside (Moskva 5) + second destroyer forward of the smoke (most often in F5): 5 of 13 Top 6 smokes; Rest 2 of 7 in the same spot. ships in the spot: Somers 8, Gearing 4, Delny 1; without RESIN the Top 6 share is 12%; other scales: 1.5 km: not found; 2.5 km: found, interval touches zero"
+  },
+  {
+   "id": "hs-flank-g6-cruiser",
+   "map": "Hotspot",
+   "kind": "cast_cruiser",
+   "label": "cruiser inside the smoke: 3.4 km short of cap C (own side), cells G6/G7",
+   "subject": "Moskva",
+   "parent": "hs-flank-g6",
+   "centre_uv": [
+    0.5803,
+    0.6363
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.097,
+    "rv": 0.0614,
+    "angle_deg": -26.1
+   },
+   "numbers": {
+    "n": 12,
+    "n_parent": 13,
+    "share_of_parent_pct": 92.3,
+    "top6_n": 12,
+    "rest_n": 0,
+    "median_km_from_nearest_puff": 0.3,
+    "median_km_forward_of_smoke_centre": -0.7,
+    "forward_n": 4,
+    "forward_share_pct": 33.3,
+    "most_common_ships": "Moskva 5, Brisbane 4, Petropavlovsk 2",
+    "radar_cruiser_n": 11,
+    "km_from_nearest_cap_edge": 3.4,
+    "nearest_cap": "C"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest cruiser inside each smoke."
+  },
+  {
+   "id": "hs-flank-g6-dd2",
+   "map": "Hotspot",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 2.6 km short of cap C (own side), cells F5/G6",
+   "subject": "Ragnar",
+   "parent": "hs-flank-g6",
+   "centre_uv": [
+    0.472,
+    0.6351
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.2,
+    "rv": 0.1208,
+    "angle_deg": -41.8
+   },
+   "numbers": {
+    "n": 9,
+    "n_parent": 13,
+    "share_of_parent_pct": 69.2,
+    "top6_n": 9,
+    "rest_n": 0,
+    "median_km_from_nearest_puff": 3.7,
+    "median_km_forward_of_smoke_centre": 0.3,
+    "forward_n": 5,
+    "forward_share_pct": 55.6,
+    "most_common_ships": "Ragnar 3, Gdańsk 2, Kléber 2",
+    "km_from_nearest_cap_edge": 2.6,
+    "nearest_cap": "C"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "hs-cell-g6",
+   "map": "Hotspot",
+   "kind": "paying_high",
+   "label": "cell G6: 2.5 km short of cap C (own side)",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.55,
+    0.65
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.6,
+      0.6
+     ],
+     [
+      0.6,
+      0.7
+     ],
+     [
+      0.5,
+      0.7
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 14,
+    "concealed_damage_per_smoke": 16679,
+    "median_concealed_damage": 2673,
+    "deaths_per_100": 0.0,
+    "cap_won_pct_all_smokes": 42.9,
+    "top6_n": 7,
+    "rest_n": 7,
+    "top6_share_pct": 8.8,
+    "rest_share_pct": 4.5,
+    "map_avg_concealed_damage": 12331,
+    "times_map_average": 1.35,
+    "flag": "best_rated_cell_not_high",
+    "median_time_s": 383
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g2_139975.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7915_g1_5497.html"
+   ],
+   "notes": "Not rated high: the best of the rated cells on a map with no high cell. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "hs-cell-g5",
+   "map": "Hotspot",
+   "kind": "paying_low",
+   "label": "cell G5: 2.2 km short of cap C (own side)",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.45,
+    0.65
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.4,
+      0.6
+     ],
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.5,
+      0.7
+     ],
+     [
+      0.4,
+      0.7
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 12,
+    "concealed_damage_per_smoke": 6297,
+    "median_concealed_damage": 1320,
+    "deaths_per_100": 0.0,
+    "cap_won_pct_all_smokes": 33.3,
+    "top6_n": 3,
+    "rest_n": 9,
+    "top6_share_pct": 3.8,
+    "rest_share_pct": 5.8,
+    "map_avg_concealed_damage": 12331,
+    "times_map_average": 0.51,
+    "flag": "low",
+    "median_time_s": 242
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7915_g1_5502.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8144_g1_27547.html"
+   ],
+   "notes": "Rated low by Module 4. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "hs-cell-f9",
+   "map": "Hotspot",
+   "kind": "paying_low",
+   "label": "cell F9: inside cap D, own half",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.85,
+    0.55
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.8,
+      0.5
+     ],
+     [
+      0.9,
+      0.5
+     ],
+     [
+      0.9,
+      0.6
+     ],
+     [
+      0.8,
+      0.6
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 11,
+    "concealed_damage_per_smoke": 5994,
+    "median_concealed_damage": 842,
+    "deaths_per_100": 9.1,
+    "cap_won_pct_all_smokes": 27.3,
+    "top6_n": 0,
+    "rest_n": 11,
+    "top6_share_pct": 0.0,
+    "rest_share_pct": 7.1,
+    "map_avg_concealed_damage": 12331,
+    "times_map_average": 0.49,
+    "flag": "low",
+    "median_time_s": 412
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7916_g1_26979.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7959_g1_86998.html"
+   ],
+   "notes": "Rated low by Module 4. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "hs-cell-f6",
+   "map": "Hotspot",
+   "kind": "paying_low",
+   "label": "cell F6: 0.1 km short of cap C (own side)",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.55,
+    0.55
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.6,
+      0.5
+     ],
+     [
+      0.6,
+      0.6
+     ],
+     [
+      0.5,
+      0.6
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 17,
+    "concealed_damage_per_smoke": 5370,
+    "median_concealed_damage": 0,
+    "deaths_per_100": 0.0,
+    "cap_won_pct_all_smokes": 23.5,
+    "top6_n": 6,
+    "rest_n": 11,
+    "top6_share_pct": 7.5,
+    "rest_share_pct": 7.1,
+    "map_avg_concealed_damage": 12331,
+    "times_map_average": 0.44,
+    "flag": "low",
+    "median_time_s": 348
+   },
+   "small_n": false,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g2_224003.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g2_139986.html"
+   ],
+   "notes": "Rated low by Module 4. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "hs-cell-f5",
+   "map": "Hotspot",
+   "kind": "paying_low",
+   "label": "cell F5: inside cap C, own half",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.45,
+    0.55
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.4,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.4,
+      0.6
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 15,
+    "concealed_damage_per_smoke": 3875,
+    "median_concealed_damage": 570,
+    "deaths_per_100": 13.3,
+    "cap_won_pct_all_smokes": 20.0,
+    "top6_n": 0,
+    "rest_n": 15,
+    "top6_share_pct": 0.0,
+    "rest_share_pct": 9.7,
+    "map_avg_concealed_damage": 12331,
+    "times_map_average": 0.31,
+    "flag": "low",
+    "median_time_s": 348
+   },
+   "small_n": false,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8174_g1_94360.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8174_g1_94346.html"
+   ],
+   "notes": "Rated low by Module 4. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "hs-early-g10",
+   "map": "Hotspot",
+   "kind": "early_smoke",
+   "label": "east edge, short of cap D on the own side",
+   "subject": "destroyer smoke, first 5 minutes",
+   "parent": null,
+   "centre_uv": [
+    0.9305,
+    0.6094
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.079,
+    "rv": 0.0516,
+    "angle_deg": -1.5
+   },
+   "numbers": {
+    "n": 36,
+    "top6_n": 12,
+    "rest_n": 24,
+    "pn_n": 1,
+    "clans": 20,
+    "games": 23,
+    "concealed_damage_per_smoke": 16512,
+    "deaths_per_100": 5.6,
+    "cap_won_pct": 50.0,
+    "cap_won_n": 32,
+    "median_time_s": 157,
+    "share_of_map_early_smokes_pct": 52.9,
+    "cells": "G10/F10/G9",
+    "top6_share_of_top6_early_pct": 52.2,
+    "rest_share_of_rest_early_pct": 53.3,
+    "radar_cruiser_inside_n": 21,
+    "radar_cruiser_inside_pct": 58.3,
+    "top6_radar_cruiser_inside_n": 10,
+    "rest_radar_cruiser_inside_n": 11,
+    "inside_cap_pct": 27.8,
+    "median_km_smoke_edge_to_contested_cap_edge": 1.0,
+    "km_centre_to_nearest_cap_edge": 1.5,
+    "nearest_cap": "D",
+    "stacked_pct": 61.1,
+    "ships": "Somers 16, Gearing 7, Harugumo 5, Shimakaze 3",
+    "second_dd_recorded_n": 4,
+    "second_dd_forward_n": 2,
+    "top6_second_dd_forward_n": 1,
+    "rest_second_dd_forward_n": 1,
+    "radius_km_long": 3.8,
+    "radius_km_short": 2.5
+   },
+   "small_n": false,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7915_g1_5498.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g2_224002.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g2_224001.html"
+   ],
+   "notes": "Mean-shift cluster (2 km) of all early destroyer smoke centres on the map, both groups; the ellipse is 2 standard deviations. Cap won counts only smokes whose contested cap was not already ours. Links are Top 6 smokes nearest the centre."
+  },
+  {
+   "id": "hs-early-g10-cruiser",
+   "map": "Hotspot",
+   "kind": "cast_cruiser",
+   "label": "cruiser inside the smoke: 2.5 km short of cap D (own side), cells G10/G9",
+   "subject": "Brisbane",
+   "parent": "hs-early-g10",
+   "centre_uv": [
+    0.9297,
+    0.6319
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1002,
+    "rv": 0.0487,
+    "angle_deg": -13.5
+   },
+   "numbers": {
+    "n": 23,
+    "n_parent": 36,
+    "share_of_parent_pct": 63.9,
+    "top6_n": 10,
+    "rest_n": 13,
+    "median_km_from_nearest_puff": 0.3,
+    "median_km_forward_of_smoke_centre": -0.6,
+    "forward_n": 4,
+    "forward_share_pct": 17.4,
+    "most_common_ships": "Brisbane 9, Des Moines 8, Utrecht 2",
+    "radar_cruiser_n": 21,
+    "km_from_nearest_cap_edge": 2.5,
+    "nearest_cap": "D"
+   },
+   "small_n": false,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest cruiser inside each smoke."
+  },
+  {
+   "id": "hs-early-g5",
+   "map": "Hotspot",
+   "kind": "early_smoke",
+   "label": "centre, short of cap C on the own side",
+   "subject": "destroyer smoke, first 5 minutes",
+   "parent": null,
+   "centre_uv": [
+    0.52,
+    0.6012
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.0985,
+    "rv": 0.0671,
+    "angle_deg": -6.6
+   },
+   "numbers": {
+    "n": 27,
+    "top6_n": 8,
+    "rest_n": 19,
+    "pn_n": 0,
+    "clans": 13,
+    "games": 18,
+    "concealed_damage_per_smoke": 5173,
+    "deaths_per_100": 0.0,
+    "cap_won_pct": 53.8,
+    "cap_won_n": 26,
+    "median_time_s": 146,
+    "share_of_map_early_smokes_pct": 39.7,
+    "cells": "G5/F5/F6",
+    "top6_share_of_top6_early_pct": 34.8,
+    "rest_share_of_rest_early_pct": 42.2,
+    "radar_cruiser_inside_n": 12,
+    "radar_cruiser_inside_pct": 44.4,
+    "top6_radar_cruiser_inside_n": 7,
+    "rest_radar_cruiser_inside_n": 5,
+    "inside_cap_pct": 33.3,
+    "median_km_smoke_edge_to_contested_cap_edge": 0.6,
+    "km_centre_to_nearest_cap_edge": 1.0,
+    "nearest_cap": "C",
+    "stacked_pct": 29.6,
+    "ships": "Gearing 7, Somers 7, Gdańsk 6, Daring 5",
+    "second_dd_recorded_n": 22,
+    "second_dd_forward_n": 9,
+    "top6_second_dd_forward_n": 4,
+    "rest_second_dd_forward_n": 5,
+    "radius_km_long": 4.7,
+    "radius_km_short": 3.2
+   },
+   "small_n": false,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g1_60864.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7915_g1_5497.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g2_139975.html"
+   ],
+   "notes": "Mean-shift cluster (2 km) of all early destroyer smoke centres on the map, both groups; the ellipse is 2 standard deviations. Cap won counts only smokes whose contested cap was not already ours. Links are Top 6 smokes nearest the centre."
+  },
+  {
+   "id": "hs-early-g5-cruiser",
+   "map": "Hotspot",
+   "kind": "cast_cruiser",
+   "label": "cruiser inside the smoke: 2.7 km short of cap C (own side), cells G6/G5",
+   "subject": "Petropavlovsk",
+   "parent": "hs-early-g5",
+   "centre_uv": [
+    0.5515,
+    0.629
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1317,
+    "rv": 0.0691,
+    "angle_deg": -13.9
+   },
+   "numbers": {
+    "n": 12,
+    "n_parent": 27,
+    "share_of_parent_pct": 44.4,
+    "top6_n": 7,
+    "rest_n": 5,
+    "median_km_from_nearest_puff": 0.3,
+    "median_km_forward_of_smoke_centre": -0.4,
+    "forward_n": 5,
+    "forward_share_pct": 41.7,
+    "most_common_ships": "Petropavlovsk 3, Brisbane 2, Minotaur 2",
+    "radar_cruiser_n": 11,
+    "km_from_nearest_cap_edge": 2.7,
+    "nearest_cap": "C"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest cruiser inside each smoke."
+  },
+  {
+   "id": "hs-early-g5-dd2",
+   "map": "Hotspot",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 1.1 km short of cap C (own side), cells F5/G5",
+   "subject": "20 de Julio",
+   "parent": "hs-early-g5",
+   "centre_uv": [
+    0.4687,
+    0.6012
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1554,
+    "rv": 0.0492,
+    "angle_deg": 1.6
+   },
+   "numbers": {
+    "n": 22,
+    "n_parent": 27,
+    "share_of_parent_pct": 81.5,
+    "top6_n": 6,
+    "rest_n": 16,
+    "median_km_from_nearest_puff": 3.5,
+    "median_km_forward_of_smoke_centre": -0.2,
+    "forward_n": 9,
+    "forward_share_pct": 40.9,
+    "most_common_ships": "20 de Julio 3, Daring 3, Kléber 2",
+    "km_from_nearest_cap_edge": 1.1,
+    "nearest_cap": "C"
+   },
+   "small_n": false,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "hs-radar-d",
+   "map": "Hotspot",
+   "kind": "radar",
+   "label": "east cap D, smoked from its own side",
+   "subject": "destroyer smoke with a radar play",
+   "parent": null,
+   "centre_uv": [
+    0.927,
+    0.5908
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1153,
+    "rv": 0.083,
+    "angle_deg": 85.5
+   },
+   "numbers": {
+    "n": 10,
+    "top6_n": 4,
+    "rest_n": 6,
+    "pn_n": 0,
+    "clans": 7,
+    "games": 7,
+    "concealed_damage_per_smoke": 22067,
+    "deaths_per_100": 10.0,
+    "cap_won_pct": 57.1,
+    "cap_won_n": 7,
+    "median_time_s": 161,
+    "contested_cap": "D",
+    "cap_control_n": 10,
+    "radar_trap_n": 0,
+    "first_5_min_pct": 60.0,
+    "cap_won_count": 4,
+    "cells": "G10/E10/F9",
+    "usual_radar_ships": "Brisbane 5, Des Moines 3, Stalingrad 1",
+    "plays_inside_drawn_shape": 10,
+    "tightest_core_n": 8,
+    "tightest_core_cells": "G10/F9",
+    "inside_cap_pct": 30.0,
+    "radius_km_long": 5.5,
+    "radius_km_short": 4.0
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8073_g1_34486.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7972_g1_5611.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g3_85028.html"
+   ],
+   "notes": "Destroyer smokes whose primary purpose is a radar play (cap control or radar trap), grouped by the cap they contested, as in Module 3. The ellipse (2 standard deviations) is where those smokes were laid, not the cap; it is drawn from the 10 of 10 plays within 8 km of the group median, so far-flung plays do not stretch it. All numbers are for the whole group. tightest_core is the largest 2 km cluster inside the group."
+  },
+  {
+   "id": "hs-radar-c",
+   "map": "Hotspot",
+   "kind": "radar",
+   "label": "centre cap C, smoked from the south",
+   "subject": "destroyer smoke with a radar play",
+   "parent": null,
+   "centre_uv": [
+    0.5462,
+    0.6179
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1261,
+    "rv": 0.0609,
+    "angle_deg": -15.9
+   },
+   "numbers": {
+    "n": 9,
+    "top6_n": 7,
+    "rest_n": 2,
+    "pn_n": 0,
+    "clans": 5,
+    "games": 7,
+    "concealed_damage_per_smoke": 10912,
+    "deaths_per_100": 11.1,
+    "cap_won_pct": 50.0,
+    "cap_won_n": 4,
+    "median_time_s": 348,
+    "contested_cap": "C",
+    "cap_control_n": 7,
+    "radar_trap_n": 2,
+    "first_5_min_pct": 44.4,
+    "cap_won_count": 2,
+    "cells": "G5/G7/F6",
+    "usual_radar_ships": "Moskva 4, Brisbane 2, Gdańsk 1",
+    "plays_inside_drawn_shape": 8,
+    "tightest_core_n": 4,
+    "tightest_core_cells": "G5/F5",
+    "inside_cap_pct": 22.2,
+    "radius_km_long": 6.1,
+    "radius_km_short": 2.9
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g2_139975.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8073_g1_34490.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g1_60872.html"
+   ],
+   "notes": "Destroyer smokes whose primary purpose is a radar play (cap control or radar trap), grouped by the cap they contested, as in Module 3. The ellipse (2 standard deviations) is where those smokes were laid, not the cap; it is drawn from the 8 of 9 plays within 8 km of the group median, so far-flung plays do not stretch it. All numbers are for the whole group. tightest_core is the largest 2 km cluster inside the group. Wide: the smokes are spread, read it as a zone."
+  },
+  {
+   "id": "hs-deaths-g10",
+   "map": "Hotspot",
+   "kind": "deaths",
+   "label": "east edge, below cap D",
+   "subject": "smokes with a death in them, all classes",
+   "parent": null,
+   "centre_uv": [
+    0.9141,
+    0.6385
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1424,
+    "rv": 0.0817,
+    "angle_deg": 87.5
+   },
+   "numbers": {
+    "n": 8,
+    "deaths": 9,
+    "top6_n": 4,
+    "rest_n": 4,
+    "clans": 7,
+    "games": 8,
+    "share_of_map_death_smokes_pct": 47.1,
+    "all_smokes_in_ellipse_n": 91,
+    "deaths_per_100_in_ellipse": 9.9,
+    "map_deaths_per_100_all_classes": 6.2,
+    "behind_by_50_n": 2,
+    "enemy_radar_reached_n": 0,
+    "game_lost_n": 5,
+    "destroyer_smoke_n": 8,
+    "cells": "G10/F10/G9",
+    "median_time_s": 556,
+    "ships": "Harugumo 3, Shimakaze 2, Somers 2, Gearing 1",
+    "radius_km_long": 6.8,
+    "radius_km_short": 3.9
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g1_60868.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7916_g1_26982.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7972_g1_5618.html"
+   ],
+   "notes": "Mean-shift cluster (2.5 km) of the centres of smokes, any class, in which the smoker or a covered teammate was lost. The ellipse is 2 standard deviations. deaths_per_100_in_ellipse counts every smoke laid inside the ellipse. Association only: deaths go with being behind and with enemy radar (Module 5). Wide: read it as a zone."
+  },
+  {
+   "id": "loop-cap-f7",
+   "map": "Loop",
+   "kind": "signature",
+   "label": "own-side and east half of cap B",
+   "subject": "cap sitters",
+   "parent": null,
+   "centre_uv": [
+    0.666,
+    0.5323
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1768,
+    "rv": 0.111,
+    "angle_deg": -17.4
+   },
+   "numbers": {
+    "n": 15,
+    "top6_n_total": 23,
+    "top6_share_pct": 65.2,
+    "rest_n_in": 13,
+    "rest_n_total": 65,
+    "rest_share_pct": 20.0,
+    "gap_pts": 45.2,
+    "gap_ci_lo": 24.6,
+    "gap_ci_hi": 70.0,
+    "top6_clans": "RESIN 4, KITE 3, BONKZ 3, H-SR 2, HTDOG 2, VRTUS 1",
+    "concealed_damage_per_smoke": 5834,
+    "deaths_per_100": 6.7,
+    "cap_won_pct": 70.0,
+    "cap_won_n": 10,
+    "median_time_s": 514,
+    "formation_count": 7,
+    "formation_of": 15,
+    "rest_formation_count": 5,
+    "rest_formation_of": 13,
+    "usual_partner": null,
+    "cells": "F7/F8/E6"
+   },
+   "small_n": false,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7976_g1_219218.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g4_180813.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8150_g1_34881.html"
+   ],
+   "notes": "Formation: cap-sitter smoke at F7/F8 + no other cruiser inside + second destroyer level with or behind the smoke (most often in F8): 7 of 15 Top 6 smokes; Rest 5 of 13 in the same spot. wide zone, not a tight spot; ships in the spot: Gdańsk 9, Shimakaze 3, Z-42 2, Daring 1; without RESIN the Top 6 share is 58%; other scales: 1.5 km: not found; 2.5 km: passes"
+  },
+  {
+   "id": "loop-cap-f7-dd2",
+   "map": "Loop",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 0.0 km short of cap B (own side), cells F8/G7",
+   "subject": "Marceau",
+   "parent": "loop-cap-f7",
+   "centre_uv": [
+    0.7306,
+    0.5493
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.3225,
+    "rv": 0.1467,
+    "angle_deg": 6.7
+   },
+   "numbers": {
+    "n": 15,
+    "n_parent": 15,
+    "share_of_parent_pct": 100.0,
+    "top6_n": 15,
+    "rest_n": 0,
+    "median_km_from_nearest_puff": 6.2,
+    "median_km_forward_of_smoke_centre": 0.7,
+    "forward_n": 8,
+    "forward_share_pct": 53.3,
+    "most_common_ships": "Marceau 6, Delny 2, 20 de Julio 2",
+    "km_from_nearest_cap_edge": 0.0,
+    "nearest_cap": "B"
+   },
+   "small_n": false,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "loop-gdansk-f8",
+   "map": "Loop",
+   "kind": "lead",
+   "label": "own-side rim of cap B",
+   "subject": "Gdańsk",
+   "parent": null,
+   "centre_uv": [
+    0.6781,
+    0.5702
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1329,
+    "rv": 0.0438,
+    "angle_deg": -22.4
+   },
+   "numbers": {
+    "n": 8,
+    "top6_n_total": 12,
+    "top6_share_pct": 66.7,
+    "rest_n_in": 0,
+    "rest_n_total": 1,
+    "rest_share_pct": 0.0,
+    "gap_pts": 66.7,
+    "gap_ci_lo": 40.0,
+    "gap_ci_hi": 100.0,
+    "top6_clans": "BONKZ 3, RESIN 3, H-SR 2",
+    "concealed_damage_per_smoke": 6042,
+    "deaths_per_100": 0.0,
+    "cap_won_pct": 60.0,
+    "cap_won_n": 5,
+    "median_time_s": 527,
+    "formation_count": 4,
+    "formation_of": 8,
+    "rest_formation_count": 0,
+    "rest_formation_of": 0,
+    "usual_partner": null,
+    "cells": "F8/F7"
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g4_180813.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7920_g1_144966.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g2_111344.html"
+   ],
+   "notes": "Formation: Gdańsk smoke at F8/F7 + no other cruiser inside + second destroyer level with or behind the smoke (most often in F8): 4 of 8 Top 6 smokes; Rest 0 of 0 in the same spot. wide zone, not a tight spot; same place as signature spot loop-cap-f7; Rest barely field this subject on this map (n 1), so the shares cannot be compared; without BONKZ the Top 6 share is 56%; other scales: 1.5 km: not found; 2.5 km: found, interval touches zero"
+  },
+  {
+   "id": "loop-gdansk-f8-dd2",
+   "map": "Loop",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 0.2 km short of cap B (own side), cells F8/G7",
+   "subject": "20 de Julio",
+   "parent": "loop-gdansk-f8",
+   "centre_uv": [
+    0.7052,
+    0.5812
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.2351,
+    "rv": 0.0817,
+    "angle_deg": 3.0
+   },
+   "numbers": {
+    "n": 8,
+    "n_parent": 8,
+    "share_of_parent_pct": 100.0,
+    "top6_n": 8,
+    "rest_n": 0,
+    "median_km_from_nearest_puff": 3.4,
+    "median_km_forward_of_smoke_centre": 0.1,
+    "forward_n": 4,
+    "forward_share_pct": 50.0,
+    "most_common_ships": "20 de Julio 2, Marceau 2, Châteaurenault 1",
+    "km_from_nearest_cap_edge": 0.2,
+    "nearest_cap": "B"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "loop-cell-f10",
+   "map": "Loop",
+   "kind": "paying_high",
+   "label": "cell F10: inside cap C, own half",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.95,
+    0.55
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.9,
+      0.5
+     ],
+     [
+      1.0,
+      0.5
+     ],
+     [
+      1.0,
+      0.6
+     ],
+     [
+      0.9,
+      0.6
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 9,
+    "concealed_damage_per_smoke": 20728,
+    "median_concealed_damage": 9903,
+    "deaths_per_100": 33.3,
+    "cap_won_pct_all_smokes": 44.4,
+    "top6_n": 2,
+    "rest_n": 7,
+    "top6_share_pct": 4.9,
+    "rest_share_pct": 6.9,
+    "map_avg_concealed_damage": 8039,
+    "times_map_average": 2.58,
+    "flag": "high",
+    "median_time_s": 548
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g4_180811.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7920_g1_144963.html"
+   ],
+   "notes": "Rated high by Module 4. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "loop-cell-f8",
+   "map": "Loop",
+   "kind": "paying_high",
+   "label": "cell F8: 1.2 km short of cap B (own side)",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.75,
+    0.55
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.7,
+      0.5
+     ],
+     [
+      0.8,
+      0.5
+     ],
+     [
+      0.8,
+      0.6
+     ],
+     [
+      0.7,
+      0.6
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 15,
+    "concealed_damage_per_smoke": 18318,
+    "median_concealed_damage": 7970,
+    "deaths_per_100": 13.3,
+    "cap_won_pct_all_smokes": 40.0,
+    "top6_n": 7,
+    "rest_n": 8,
+    "top6_share_pct": 17.1,
+    "rest_share_pct": 7.9,
+    "map_avg_concealed_damage": 8039,
+    "times_map_average": 2.28,
+    "flag": "high",
+    "median_time_s": 463
+   },
+   "small_n": false,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g2_111344.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7920_g1_144966.html"
+   ],
+   "notes": "Rated high by Module 4. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "loop-cell-g4",
+   "map": "Loop",
+   "kind": "paying_low",
+   "label": "cell G4: 2.2 km short of cap A (own side)",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.35,
+    0.65
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.3,
+      0.6
+     ],
+     [
+      0.4,
+      0.6
+     ],
+     [
+      0.4,
+      0.7
+     ],
+     [
+      0.3,
+      0.7
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 9,
+    "concealed_damage_per_smoke": 4759,
+    "median_concealed_damage": 1683,
+    "deaths_per_100": 0.0,
+    "cap_won_pct_all_smokes": 44.4,
+    "top6_n": 2,
+    "rest_n": 7,
+    "top6_share_pct": 4.9,
+    "rest_share_pct": 6.9,
+    "map_avg_concealed_damage": 8039,
+    "times_map_average": 0.59,
+    "flag": "low",
+    "median_time_s": 549
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7889_g1_178494.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7920_g1_144958.html"
+   ],
+   "notes": "Rated low by Module 4. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "loop-cell-f7",
+   "map": "Loop",
+   "kind": "paying_low",
+   "label": "cell F7: inside cap B, own half",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.65,
+    0.55
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.6,
+      0.5
+     ],
+     [
+      0.7,
+      0.5
+     ],
+     [
+      0.7,
+      0.6
+     ],
+     [
+      0.6,
+      0.6
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 15,
+    "concealed_damage_per_smoke": 3113,
+    "median_concealed_damage": 792,
+    "deaths_per_100": 0.0,
+    "cap_won_pct_all_smokes": 53.3,
+    "top6_n": 6,
+    "rest_n": 9,
+    "top6_share_pct": 14.6,
+    "rest_share_pct": 8.9,
+    "map_avg_concealed_damage": 8039,
+    "times_map_average": 0.39,
+    "flag": "low",
+    "median_time_s": 566
+   },
+   "small_n": false,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g4_180813.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8150_g1_34886.html"
+   ],
+   "notes": "Rated low by Module 4. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "loop-early-f4",
+   "map": "Loop",
+   "kind": "early_smoke",
+   "label": "west, own half of cap A",
+   "subject": "destroyer smoke, first 5 minutes",
+   "parent": null,
+   "centre_uv": [
+    0.3442,
+    0.5926
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1103,
+    "rv": 0.0727,
+    "angle_deg": 15.9
+   },
+   "numbers": {
+    "n": 14,
+    "top6_n": 4,
+    "rest_n": 10,
+    "pn_n": 0,
+    "clans": 10,
+    "games": 12,
+    "concealed_damage_per_smoke": 5647,
+    "deaths_per_100": 14.3,
+    "cap_won_pct": 60.0,
+    "cap_won_n": 10,
+    "median_time_s": 126,
+    "share_of_map_early_smokes_pct": 43.8,
+    "cells": "F4/G4/F3",
+    "top6_share_of_top6_early_pct": 44.4,
+    "rest_share_of_rest_early_pct": 43.5,
+    "radar_cruiser_inside_n": 3,
+    "radar_cruiser_inside_pct": 21.4,
+    "top6_radar_cruiser_inside_n": 2,
+    "rest_radar_cruiser_inside_n": 1,
+    "inside_cap_pct": 57.1,
+    "median_km_smoke_edge_to_contested_cap_edge": -0.1,
+    "km_centre_to_nearest_cap_edge": -0.0,
+    "nearest_cap": "A",
+    "stacked_pct": 35.7,
+    "ships": "Daring 6, Somers 4, Shimakaze 1, Gearing 1",
+    "second_dd_recorded_n": 9,
+    "second_dd_forward_n": 2,
+    "top6_second_dd_forward_n": 0,
+    "rest_second_dd_forward_n": 2,
+    "radius_km_long": 5.3,
+    "radius_km_short": 3.5
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7889_g1_178494.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g3_178569.html"
+   ],
+   "notes": "Mean-shift cluster (2 km) of all early destroyer smoke centres on the map, both groups; the ellipse is 2 standard deviations. Cap won counts only smokes whose contested cap was not already ours. Links are Top 6 smokes nearest the centre."
+  },
+  {
+   "id": "loop-early-f4-dd2",
+   "map": "Loop",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 4.3 km short of cap A (own side), cells G5/G6",
+   "subject": "Kléber",
+   "parent": "loop-early-f4",
+   "centre_uv": [
+    0.4517,
+    0.6529
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.2225,
+    "rv": 0.0642,
+    "angle_deg": 23.0
+   },
+   "numbers": {
+    "n": 9,
+    "n_parent": 14,
+    "share_of_parent_pct": 64.3,
+    "top6_n": 4,
+    "rest_n": 5,
+    "median_km_from_nearest_puff": 7.5,
+    "median_km_forward_of_smoke_centre": -1.7,
+    "forward_n": 2,
+    "forward_share_pct": 22.2,
+    "most_common_ships": "Kléber 2, Somers 2, Grozovoi 2",
+    "km_from_nearest_cap_edge": 4.3,
+    "nearest_cap": "A"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "loop-early-f8",
+   "map": "Loop",
+   "kind": "early_smoke",
+   "label": "between caps B and C, own side",
+   "subject": "destroyer smoke, first 5 minutes",
+   "parent": null,
+   "centre_uv": [
+    0.7557,
+    0.5836
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1088,
+    "rv": 0.0668,
+    "angle_deg": -66.9
+   },
+   "numbers": {
+    "n": 10,
+    "top6_n": 2,
+    "rest_n": 8,
+    "pn_n": 0,
+    "clans": 10,
+    "games": 10,
+    "concealed_damage_per_smoke": 11990,
+    "deaths_per_100": 10.0,
+    "cap_won_pct": 37.5,
+    "cap_won_n": 8,
+    "median_time_s": 271,
+    "share_of_map_early_smokes_pct": 31.2,
+    "cells": "F8/G8/F7",
+    "top6_share_of_top6_early_pct": 22.2,
+    "rest_share_of_rest_early_pct": 34.8,
+    "radar_cruiser_inside_n": 4,
+    "radar_cruiser_inside_pct": 40.0,
+    "top6_radar_cruiser_inside_n": 1,
+    "rest_radar_cruiser_inside_n": 3,
+    "inside_cap_pct": 30.0,
+    "median_km_smoke_edge_to_contested_cap_edge": 0.2,
+    "km_centre_to_nearest_cap_edge": 2.0,
+    "nearest_cap": "B",
+    "stacked_pct": 50.0,
+    "ships": "Somers 3, Gearing 1, Harugumo 1, Vampire II 1",
+    "second_dd_recorded_n": 8,
+    "second_dd_forward_n": 6,
+    "top6_second_dd_forward_n": 0,
+    "rest_second_dd_forward_n": 6,
+    "radius_km_long": 5.2,
+    "radius_km_short": 3.2
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7889_g1_178499.html"
+   ],
+   "notes": "Mean-shift cluster (2 km) of all early destroyer smoke centres on the map, both groups; the ellipse is 2 standard deviations. Cap won counts only smokes whose contested cap was not already ours. Links are Top 6 smokes nearest the centre."
+  },
+  {
+   "id": "loop-early-f8-dd2",
+   "map": "Loop",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 1.5 km beside cap C, cells F8/G9",
+   "subject": "Châteaurenault",
+   "parent": "loop-early-f8",
+   "centre_uv": [
+    0.7793,
+    0.5599
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.2331,
+    "rv": 0.0919,
+    "angle_deg": -13.2
+   },
+   "numbers": {
+    "n": 8,
+    "n_parent": 10,
+    "share_of_parent_pct": 80.0,
+    "top6_n": 1,
+    "rest_n": 7,
+    "median_km_from_nearest_puff": 4.2,
+    "median_km_forward_of_smoke_centre": 1.6,
+    "forward_n": 6,
+    "forward_share_pct": 75.0,
+    "most_common_ships": "Châteaurenault 4, Kléber 1, Småland 1",
+    "km_from_nearest_cap_edge": 1.5,
+    "nearest_cap": "C"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "mr-parked-h1",
+   "map": "Mountain Range",
+   "kind": "signature",
+   "label": "far west edge, own-side rim of the big cap A",
+   "subject": "parked cruiser smoke",
+   "parent": null,
+   "centre_uv": [
+    0.0621,
+    0.695
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1262,
+    "rv": 0.0712,
+    "angle_deg": -73.9
+   },
+   "numbers": {
+    "n": 12,
+    "top6_n_total": 33,
+    "top6_share_pct": 36.4,
+    "rest_n_in": 0,
+    "rest_n_total": 13,
+    "rest_share_pct": 0.0,
+    "gap_pts": 36.4,
+    "gap_ci_lo": 30.8,
+    "gap_ci_hi": 40.0,
+    "top6_clans": "HTDOG 8, BONKZ 4",
+    "concealed_damage_per_smoke": 19028,
+    "deaths_per_100": 8.3,
+    "cap_won_pct": 9.1,
+    "cap_won_n": 11,
+    "median_time_s": 490,
+    "formation_count": 7,
+    "formation_of": 12,
+    "rest_formation_count": 0,
+    "rest_formation_of": 0,
+    "usual_partner": null,
+    "cells": "H1/G1/H2"
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159434.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g3_159290.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159428.html"
+   ],
+   "notes": "Formation: parked cruiser smoke at H1/G1 + no other cruiser inside + second destroyer forward of the smoke (most often in G2): 7 of 12 Top 6 smokes; Rest 0 of 0 in the same spot. wide zone, not a tight spot; ships in the spot: Jinan 8, Svea 4; without HTDOG the Top 6 share is 31%; other scales: 1.5 km: passes; 2.5 km: passes"
+  },
+  {
+   "id": "mr-parked-h1-dd2",
+   "map": "Mountain Range",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 2.1 km short of cap A (own side), cells G2/H3",
+   "subject": "20 de Julio",
+   "parent": "mr-parked-h1",
+   "centre_uv": [
+    0.1799,
+    0.679
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1263,
+    "rv": 0.0439,
+    "angle_deg": 18.7
+   },
+   "numbers": {
+    "n": 8,
+    "n_parent": 12,
+    "share_of_parent_pct": 66.7,
+    "top6_n": 8,
+    "rest_n": 0,
+    "median_km_from_nearest_puff": 6.8,
+    "median_km_forward_of_smoke_centre": 1.2,
+    "forward_n": 7,
+    "forward_share_pct": 87.5,
+    "most_common_ships": "20 de Julio 3, Marceau 2, Châteaurenault 1",
+    "km_from_nearest_cap_edge": 2.1,
+    "nearest_cap": "A"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "mr-svea-g4",
+   "map": "Mountain Range",
+   "kind": "lead",
+   "label": "own side of cap B, west-centre",
+   "subject": "Svea",
+   "parent": null,
+   "centre_uv": [
+    0.3729,
+    0.6127
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.083,
+    "rv": 0.0655,
+    "angle_deg": -87.0
+   },
+   "numbers": {
+    "n": 10,
+    "top6_n_total": 24,
+    "top6_share_pct": 41.7,
+    "rest_n_in": 3,
+    "rest_n_total": 13,
+    "rest_share_pct": 23.1,
+    "gap_pts": 18.6,
+    "gap_ci_lo": -28.0,
+    "gap_ci_hi": 61.5,
+    "top6_clans": "BONKZ 8, HTDOG 2",
+    "concealed_damage_per_smoke": 7657,
+    "deaths_per_100": 10.0,
+    "cap_won_pct": 57.1,
+    "cap_won_n": 7,
+    "median_time_s": 845,
+    "formation_count": 5,
+    "formation_of": 10,
+    "rest_formation_count": 2,
+    "rest_formation_of": 3,
+    "usual_partner": null,
+    "cells": "G4/F4"
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159423.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g2_121108.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159426.html"
+   ],
+   "notes": "Formation: Svea smoke at G4/F4 + no other cruiser inside + second destroyer forward of the smoke (most often in G3): 5 of 10 Top 6 smokes; Rest 2 of 3 in the same spot. without BONKZ the Top 6 share is 18%; other scales: 1.5 km: found, interval touches zero; 2.5 km: found, interval touches zero; cruiser smoke: the cruiser slot is for a second cruiser inside"
+  },
+  {
+   "id": "mr-svea-g4-dd2",
+   "map": "Mountain Range",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 1.6 km short of cap B (own side), cells G3/F5",
+   "subject": "20 de Julio",
+   "parent": "mr-svea-g4",
+   "centre_uv": [
+    0.3406,
+    0.5889
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.2435,
+    "rv": 0.0811,
+    "angle_deg": -43.1
+   },
+   "numbers": {
+    "n": 7,
+    "n_parent": 10,
+    "share_of_parent_pct": 70.0,
+    "top6_n": 7,
+    "rest_n": 0,
+    "median_km_from_nearest_puff": 5.4,
+    "median_km_forward_of_smoke_centre": 0.8,
+    "forward_n": 5,
+    "forward_share_pct": 71.4,
+    "most_common_ships": "20 de Julio 5, Marceau 2",
+    "km_from_nearest_cap_edge": 1.6,
+    "nearest_cap": "B"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent. Count is below 8: drawn for the formation only."
+  },
+  {
+   "id": "mr-cell-g7",
+   "map": "Mountain Range",
+   "kind": "paying_high",
+   "label": "cell G7: 2.5 km short of cap C (own side)",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.65,
+    0.65
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.6,
+      0.6
+     ],
+     [
+      0.7,
+      0.6
+     ],
+     [
+      0.7,
+      0.7
+     ],
+     [
+      0.6,
+      0.7
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 13,
+    "concealed_damage_per_smoke": 11510,
+    "median_concealed_damage": 5280,
+    "deaths_per_100": 15.4,
+    "cap_won_pct_all_smokes": 23.1,
+    "top6_n": 6,
+    "rest_n": 7,
+    "top6_share_pct": 10.9,
+    "rest_share_pct": 9.1,
+    "map_avg_concealed_damage": 10865,
+    "times_map_average": 1.06,
+    "flag": "best_rated_cell_not_high",
+    "median_time_s": 300
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_175994.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7930_g1_51291.html"
+   ],
+   "notes": "Not rated high: the best of the rated cells on a map with no high cell. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "mr-cell-g4",
+   "map": "Mountain Range",
+   "kind": "paying_low",
+   "label": "cell G4: 2.8 km short of cap B (own side)",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.35,
+    0.65
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.3,
+      0.6
+     ],
+     [
+      0.4,
+      0.6
+     ],
+     [
+      0.4,
+      0.7
+     ],
+     [
+      0.3,
+      0.7
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 13,
+    "concealed_damage_per_smoke": 7584,
+    "median_concealed_damage": 3053,
+    "deaths_per_100": 7.7,
+    "cap_won_pct_all_smokes": 30.8,
+    "top6_n": 5,
+    "rest_n": 8,
+    "top6_share_pct": 9.1,
+    "rest_share_pct": 10.4,
+    "map_avg_concealed_damage": 10865,
+    "times_map_average": 0.7,
+    "flag": "lowest_rated_cell_not_low",
+    "median_time_s": 199
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7930_g1_51297.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7930_g1_51292.html"
+   ],
+   "notes": "Not rated low: the lowest of the rated cells on a map with no low cell. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "mr-early-g7",
+   "map": "Mountain Range",
+   "kind": "early_smoke",
+   "label": "east-centre, short of cap C on the own side",
+   "subject": "destroyer smoke, first 5 minutes",
+   "parent": null,
+   "centre_uv": [
+    0.6858,
+    0.5897
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1412,
+    "rv": 0.0514,
+    "angle_deg": -33.0
+   },
+   "numbers": {
+    "n": 17,
+    "top6_n": 6,
+    "rest_n": 11,
+    "pn_n": 0,
+    "clans": 12,
+    "games": 14,
+    "concealed_damage_per_smoke": 6259,
+    "deaths_per_100": 0.0,
+    "cap_won_pct": 57.1,
+    "cap_won_n": 14,
+    "median_time_s": 163,
+    "share_of_map_early_smokes_pct": 43.6,
+    "cells": "G7/F7/F8",
+    "top6_share_of_top6_early_pct": 42.9,
+    "rest_share_of_rest_early_pct": 44.0,
+    "radar_cruiser_inside_n": 7,
+    "radar_cruiser_inside_pct": 41.2,
+    "top6_radar_cruiser_inside_n": 3,
+    "rest_radar_cruiser_inside_n": 4,
+    "inside_cap_pct": 11.8,
+    "median_km_smoke_edge_to_contested_cap_edge": 1.3,
+    "km_centre_to_nearest_cap_edge": 1.7,
+    "nearest_cap": "C",
+    "stacked_pct": 41.2,
+    "ships": "Somers 5, Gearing 4, Gdańsk 2, Daring 2",
+    "second_dd_recorded_n": 12,
+    "second_dd_forward_n": 7,
+    "top6_second_dd_forward_n": 3,
+    "rest_second_dd_forward_n": 4,
+    "radius_km_long": 6.8,
+    "radius_km_short": 2.5
+   },
+   "small_n": false,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g2_121098.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8069_g2_143189.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7930_g1_51291.html"
+   ],
+   "notes": "Mean-shift cluster (2 km) of all early destroyer smoke centres on the map, both groups; the ellipse is 2 standard deviations. Cap won counts only smokes whose contested cap was not already ours. Links are Top 6 smokes nearest the centre."
+  },
+  {
+   "id": "mr-early-g7-cruiser",
+   "map": "Mountain Range",
+   "kind": "cast_cruiser",
+   "label": "cruiser inside the smoke: 3.0 km short of cap C (own side), cells G7/F8",
+   "subject": "Minotaur",
+   "parent": "mr-early-g7",
+   "centre_uv": [
+    0.6697,
+    0.6274
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1284,
+    "rv": 0.0364,
+    "angle_deg": -27.8
+   },
+   "numbers": {
+    "n": 8,
+    "n_parent": 17,
+    "share_of_parent_pct": 47.1,
+    "top6_n": 4,
+    "rest_n": 4,
+    "median_km_from_nearest_puff": 0.3,
+    "median_km_forward_of_smoke_centre": -0.9,
+    "forward_n": 1,
+    "forward_share_pct": 12.5,
+    "most_common_ships": "Minotaur 3, Des Moines 2, Brisbane 2",
+    "radar_cruiser_n": 7,
+    "km_from_nearest_cap_edge": 3.0,
+    "nearest_cap": "C"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest cruiser inside each smoke."
+  },
+  {
+   "id": "mr-early-g7-dd2",
+   "map": "Mountain Range",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 1.8 km short of cap B (own side), cells F5/F4",
+   "subject": "20 de Julio",
+   "parent": "mr-early-g7",
+   "centre_uv": [
+    0.4788,
+    0.5778
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.244,
+    "rv": 0.0975,
+    "angle_deg": -10.8
+   },
+   "numbers": {
+    "n": 12,
+    "n_parent": 17,
+    "share_of_parent_pct": 70.6,
+    "top6_n": 6,
+    "rest_n": 6,
+    "median_km_from_nearest_puff": 9.9,
+    "median_km_forward_of_smoke_centre": 1.1,
+    "forward_n": 7,
+    "forward_share_pct": 58.3,
+    "most_common_ships": "20 de Julio 2, Vampire II 1, Shimakaze 1",
+    "km_from_nearest_cap_edge": 1.8,
+    "nearest_cap": "B"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "mr-early-g4",
+   "map": "Mountain Range",
+   "kind": "early_smoke",
+   "label": "west-centre, short of cap B on the own side",
+   "subject": "destroyer smoke, first 5 minutes",
+   "parent": null,
+   "centre_uv": [
+    0.3722,
+    0.6125
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.0696,
+    "rv": 0.0322,
+    "angle_deg": 13.9
+   },
+   "numbers": {
+    "n": 15,
+    "top6_n": 7,
+    "rest_n": 8,
+    "pn_n": 1,
+    "clans": 11,
+    "games": 13,
+    "concealed_damage_per_smoke": 5870,
+    "deaths_per_100": 6.7,
+    "cap_won_pct": 40.0,
+    "cap_won_n": 15,
+    "median_time_s": 115,
+    "share_of_map_early_smokes_pct": 38.5,
+    "cells": "G4/F4/G5",
+    "top6_share_of_top6_early_pct": 50.0,
+    "rest_share_of_rest_early_pct": 32.0,
+    "radar_cruiser_inside_n": 8,
+    "radar_cruiser_inside_pct": 53.3,
+    "top6_radar_cruiser_inside_n": 5,
+    "rest_radar_cruiser_inside_n": 3,
+    "inside_cap_pct": 0.0,
+    "median_km_smoke_edge_to_contested_cap_edge": 1.7,
+    "km_centre_to_nearest_cap_edge": 2.1,
+    "nearest_cap": "B",
+    "stacked_pct": 46.7,
+    "ships": "Gearing 6, Somers 5, Gdańsk 3, Fuyutsuki 1",
+    "second_dd_recorded_n": 15,
+    "second_dd_forward_n": 11,
+    "top6_second_dd_forward_n": 4,
+    "rest_second_dd_forward_n": 7,
+    "radius_km_long": 3.3,
+    "radius_km_short": 1.5
+   },
+   "small_n": false,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7930_g1_51292.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_175995.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8149_g1_68154.html"
+   ],
+   "notes": "Mean-shift cluster (2 km) of all early destroyer smoke centres on the map, both groups; the ellipse is 2 standard deviations. Cap won counts only smokes whose contested cap was not already ours. Links are Top 6 smokes nearest the centre."
+  },
+  {
+   "id": "mr-early-g4-cruiser",
+   "map": "Mountain Range",
+   "kind": "cast_cruiser",
+   "label": "cruiser inside the smoke: 2.9 km short of cap B (own side), cells G4/G5",
+   "subject": "Brisbane",
+   "parent": "mr-early-g4",
+   "centre_uv": [
+    0.3849,
+    0.6316
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.0799,
+    "rv": 0.0287,
+    "angle_deg": 12.9
+   },
+   "numbers": {
+    "n": 9,
+    "n_parent": 15,
+    "share_of_parent_pct": 60.0,
+    "top6_n": 5,
+    "rest_n": 4,
+    "median_km_from_nearest_puff": 0.6,
+    "median_km_forward_of_smoke_centre": -0.6,
+    "forward_n": 0,
+    "forward_share_pct": 0.0,
+    "most_common_ships": "Brisbane 3, Minotaur 2, Des Moines 1",
+    "radar_cruiser_n": 8,
+    "km_from_nearest_cap_edge": 2.9,
+    "nearest_cap": "B"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest cruiser inside each smoke."
+  },
+  {
+   "id": "mr-early-g4-dd2",
+   "map": "Mountain Range",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 1.8 km short of cap B (own side), cells F4/G4",
+   "subject": "20 de Julio",
+   "parent": "mr-early-g4",
+   "centre_uv": [
+    0.3371,
+    0.5915
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.3378,
+    "rv": 0.0592,
+    "angle_deg": -1.0
+   },
+   "numbers": {
+    "n": 15,
+    "n_parent": 15,
+    "share_of_parent_pct": 100.0,
+    "top6_n": 7,
+    "rest_n": 8,
+    "median_km_from_nearest_puff": 5.0,
+    "median_km_forward_of_smoke_centre": 1.2,
+    "forward_n": 11,
+    "forward_share_pct": 73.3,
+    "most_common_ships": "20 de Julio 4, Kléber 2, Châteaurenault 2",
+    "km_from_nearest_cap_edge": 1.8,
+    "nearest_cap": "B"
+   },
+   "small_n": false,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "mr-radar-b",
+   "map": "Mountain Range",
+   "kind": "radar",
+   "label": "centre cap B, smoked from its own side",
+   "subject": "destroyer smoke with a radar play",
+   "parent": null,
+   "centre_uv": [
+    0.3828,
+    0.5976
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1252,
+    "rv": 0.0874,
+    "angle_deg": 36.1
+   },
+   "numbers": {
+    "n": 10,
+    "top6_n": 7,
+    "rest_n": 3,
+    "pn_n": 0,
+    "clans": 5,
+    "games": 7,
+    "concealed_damage_per_smoke": 11144,
+    "deaths_per_100": 0.0,
+    "cap_won_pct": 16.7,
+    "cap_won_n": 6,
+    "median_time_s": 308,
+    "contested_cap": "B",
+    "cap_control_n": 9,
+    "radar_trap_n": 1,
+    "first_5_min_pct": 40.0,
+    "cap_won_count": 1,
+    "cells": "G5/F4/F5",
+    "usual_radar_ships": "Brisbane 3, Gdańsk 3, Minotaur 3",
+    "plays_inside_drawn_shape": 10,
+    "tightest_core_n": 10,
+    "tightest_core_cells": "G5/F4",
+    "inside_cap_pct": 10.0,
+    "radius_km_long": 6.0,
+    "radius_km_short": 4.2
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_175996.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8149_g1_68154.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7930_g1_51294.html"
+   ],
+   "notes": "Destroyer smokes whose primary purpose is a radar play (cap control or radar trap), grouped by the cap they contested, as in Module 3. The ellipse (2 standard deviations) is where those smokes were laid, not the cap; it is drawn from the 10 of 10 plays within 8 km of the group median, so far-flung plays do not stretch it. All numbers are for the whole group. tightest_core is the largest 2 km cluster inside the group. Wide: the smokes are spread, read it as a zone."
+  },
+  {
+   "id": "lof-svea-f5",
+   "map": "Land of Fire",
+   "kind": "signature",
+   "label": "own-side rim of cap B, centre of the map",
+   "subject": "Svea",
+   "parent": null,
+   "centre_uv": [
+    0.4627,
+    0.5715
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.0617,
+    "rv": 0.0461,
+    "angle_deg": 7.4
+   },
+   "numbers": {
+    "n": 14,
+    "top6_n_total": 19,
+    "top6_share_pct": 73.7,
+    "rest_n_in": 4,
+    "rest_n_total": 21,
+    "rest_share_pct": 19.0,
+    "gap_pts": 54.6,
+    "gap_ci_lo": 8.9,
+    "gap_ci_hi": 87.0,
+    "top6_clans": "VRTUS 8, HTDOG 4, RESIN 2",
+    "concealed_damage_per_smoke": 14161,
+    "deaths_per_100": 0.0,
+    "cap_won_pct": 50.0,
+    "cap_won_n": 10,
+    "median_time_s": 426,
+    "formation_count": 6,
+    "formation_of": 14,
+    "rest_formation_count": 3,
+    "rest_formation_of": 4,
+    "usual_partner": "Ragnar",
+    "cells": "F5"
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8074_g2_70765.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g3_12945.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8143_g2_214594.html"
+   ],
+   "notes": "Formation: Svea smoke at F5 + no other cruiser inside + second destroyer forward of the smoke (most often in F5): 6 of 14 Top 6 smokes; Rest 3 of 4 in the same spot. same place at habit level: parked cruiser smoke (14/19 vs 4/21, gap +55); without VRTUS the Top 6 share is 60%; other scales: 1.5 km: passes; 2.5 km: passes; cruiser smoke: the cruiser slot is for a second cruiser inside"
+  },
+  {
+   "id": "lof-svea-f5-dd2",
+   "map": "Land of Fire",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 0.7 km short of cap B (own side), cells F5/F6",
+   "subject": "Z-42",
+   "parent": "lof-svea-f5",
+   "centre_uv": [
+    0.4623,
+    0.5769
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1269,
+    "rv": 0.0627,
+    "angle_deg": 32.9
+   },
+   "numbers": {
+    "n": 12,
+    "n_parent": 14,
+    "share_of_parent_pct": 85.7,
+    "top6_n": 12,
+    "rest_n": 0,
+    "median_km_from_nearest_puff": 2.7,
+    "median_km_forward_of_smoke_centre": 0.1,
+    "forward_n": 6,
+    "forward_share_pct": 50.0,
+    "most_common_ships": "Z-42 7, Ragnar 4, Gearing 1",
+    "km_from_nearest_cap_edge": 0.7,
+    "nearest_cap": "B"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "lof-cell-f6",
+   "map": "Land of Fire",
+   "kind": "paying_high",
+   "label": "cell F6: 2.2 km short of cap B (own side)",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.55,
+    0.55
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.6,
+      0.5
+     ],
+     [
+      0.6,
+      0.6
+     ],
+     [
+      0.5,
+      0.6
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 11,
+    "concealed_damage_per_smoke": 8775,
+    "median_concealed_damage": 1964,
+    "deaths_per_100": 18.2,
+    "cap_won_pct_all_smokes": 54.5,
+    "top6_n": 5,
+    "rest_n": 6,
+    "top6_share_pct": 10.4,
+    "rest_share_pct": 7.5,
+    "map_avg_concealed_damage": 7560,
+    "times_map_average": 1.16,
+    "flag": "best_rated_cell_not_high",
+    "median_time_s": 318
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8074_g2_70755.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8074_g2_70753.html"
+   ],
+   "notes": "Not rated high: the best of the rated cells on a map with no high cell. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "lof-cell-f5",
+   "map": "Land of Fire",
+   "kind": "paying_low",
+   "label": "cell F5: 0.1 km short of cap B (own side)",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.45,
+    0.55
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.4,
+      0.5
+     ],
+     [
+      0.5,
+      0.5
+     ],
+     [
+      0.5,
+      0.6
+     ],
+     [
+      0.4,
+      0.6
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 16,
+    "concealed_damage_per_smoke": 4017,
+    "median_concealed_damage": 2314,
+    "deaths_per_100": 6.2,
+    "cap_won_pct_all_smokes": 37.5,
+    "top6_n": 7,
+    "rest_n": 9,
+    "top6_share_pct": 14.6,
+    "rest_share_pct": 11.2,
+    "map_avg_concealed_damage": 7560,
+    "times_map_average": 0.53,
+    "flag": "low",
+    "median_time_s": 328
+   },
+   "small_n": false,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8143_g2_214600.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7982_g1_197655.html"
+   ],
+   "notes": "Rated low by Module 4. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "lof-early-f5",
+   "map": "Land of Fire",
+   "kind": "early_smoke",
+   "label": "centre, own-side rim of cap B",
+   "subject": "destroyer smoke, first 5 minutes",
+   "parent": null,
+   "centre_uv": [
+    0.4742,
+    0.5736
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1449,
+    "rv": 0.0496,
+    "angle_deg": 5.4
+   },
+   "numbers": {
+    "n": 15,
+    "top6_n": 6,
+    "rest_n": 9,
+    "pn_n": 0,
+    "clans": 10,
+    "games": 11,
+    "concealed_damage_per_smoke": 4422,
+    "deaths_per_100": 20.0,
+    "cap_won_pct": 66.7,
+    "cap_won_n": 15,
+    "median_time_s": 194,
+    "share_of_map_early_smokes_pct": 40.5,
+    "cells": "F5/F6/F4",
+    "top6_share_of_top6_early_pct": 50.0,
+    "rest_share_of_rest_early_pct": 36.0,
+    "radar_cruiser_inside_n": 3,
+    "radar_cruiser_inside_pct": 20.0,
+    "top6_radar_cruiser_inside_n": 0,
+    "rest_radar_cruiser_inside_n": 3,
+    "inside_cap_pct": 40.0,
+    "median_km_smoke_edge_to_contested_cap_edge": 0.7,
+    "km_centre_to_nearest_cap_edge": 0.6,
+    "nearest_cap": "B",
+    "stacked_pct": 46.7,
+    "ships": "Daring 4, Gearing 3, Z-42 3, Delny 2",
+    "second_dd_recorded_n": 12,
+    "second_dd_forward_n": 6,
+    "top6_second_dd_forward_n": 2,
+    "rest_second_dd_forward_n": 4,
+    "radius_km_long": 7.0,
+    "radius_km_short": 2.4
+   },
+   "small_n": false,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8073_g2_166402.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g3_12944.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8143_g2_214593.html"
+   ],
+   "notes": "Mean-shift cluster (2 km) of all early destroyer smoke centres on the map, both groups; the ellipse is 2 standard deviations. Cap won counts only smokes whose contested cap was not already ours. Links are Top 6 smokes nearest the centre."
+  },
+  {
+   "id": "lof-early-f5-dd2",
+   "map": "Land of Fire",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 1.4 km short of cap B (own side), cells F3/F2",
+   "subject": "Daring",
+   "parent": "lof-early-f5",
+   "centre_uv": [
+    0.4153,
+    0.5766
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.4421,
+    "rv": 0.0455,
+    "angle_deg": 8.8
+   },
+   "numbers": {
+    "n": 12,
+    "n_parent": 15,
+    "share_of_parent_pct": 80.0,
+    "top6_n": 5,
+    "rest_n": 7,
+    "median_km_from_nearest_puff": 8.7,
+    "median_km_forward_of_smoke_centre": 0.1,
+    "forward_n": 6,
+    "forward_share_pct": 50.0,
+    "most_common_ships": "Daring 2, 20 de Julio 2, Somers 2",
+    "km_from_nearest_cap_edge": 1.4,
+    "nearest_cap": "B"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "lof-early-f3",
+   "map": "Land of Fire",
+   "kind": "early_smoke",
+   "label": "west, short of cap A on the own side",
+   "subject": "destroyer smoke, first 5 minutes",
+   "parent": null,
+   "centre_uv": [
+    0.2188,
+    0.5904
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.0974,
+    "rv": 0.0683,
+    "angle_deg": -27.9
+   },
+   "numbers": {
+    "n": 13,
+    "top6_n": 5,
+    "rest_n": 8,
+    "pn_n": 0,
+    "clans": 9,
+    "games": 8,
+    "concealed_damage_per_smoke": 8563,
+    "deaths_per_100": 15.4,
+    "cap_won_pct": 54.5,
+    "cap_won_n": 11,
+    "median_time_s": 153,
+    "share_of_map_early_smokes_pct": 35.1,
+    "cells": "F3/F2/G2",
+    "top6_share_of_top6_early_pct": 41.7,
+    "rest_share_of_rest_early_pct": 32.0,
+    "radar_cruiser_inside_n": 8,
+    "radar_cruiser_inside_pct": 61.5,
+    "top6_radar_cruiser_inside_n": 4,
+    "rest_radar_cruiser_inside_n": 4,
+    "inside_cap_pct": 23.1,
+    "median_km_smoke_edge_to_contested_cap_edge": 1.1,
+    "km_centre_to_nearest_cap_edge": 1.5,
+    "nearest_cap": "A",
+    "stacked_pct": 53.8,
+    "ships": "Gearing 6, Somers 4, Daring 1, Gdańsk 1",
+    "second_dd_recorded_n": 12,
+    "second_dd_forward_n": 11,
+    "top6_second_dd_forward_n": 4,
+    "rest_second_dd_forward_n": 7,
+    "radius_km_long": 4.7,
+    "radius_km_short": 3.3
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8074_g2_70750.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8143_g2_214591.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g4_108988.html"
+   ],
+   "notes": "Mean-shift cluster (2 km) of all early destroyer smoke centres on the map, both groups; the ellipse is 2 standard deviations. Cap won counts only smokes whose contested cap was not already ours. Links are Top 6 smokes nearest the centre."
+  },
+  {
+   "id": "lof-early-f3-cruiser",
+   "map": "Land of Fire",
+   "kind": "cast_cruiser",
+   "label": "cruiser inside the smoke: 3.0 km short of cap A (own side), cells G2/F3",
+   "subject": "Des Moines",
+   "parent": "lof-early-f3",
+   "centre_uv": [
+    0.1908,
+    0.6134
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.103,
+    "rv": 0.0715,
+    "angle_deg": -55.5
+   },
+   "numbers": {
+    "n": 9,
+    "n_parent": 13,
+    "share_of_parent_pct": 69.2,
+    "top6_n": 4,
+    "rest_n": 5,
+    "median_km_from_nearest_puff": 0.4,
+    "median_km_forward_of_smoke_centre": -0.4,
+    "forward_n": 2,
+    "forward_share_pct": 22.2,
+    "most_common_ships": "Des Moines 5, Brisbane 2, Napoli 1",
+    "radar_cruiser_n": 8,
+    "km_from_nearest_cap_edge": 3.0,
+    "nearest_cap": "A"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest cruiser inside each smoke."
+  },
+  {
+   "id": "lof-early-f3-dd2",
+   "map": "Land of Fire",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 2.0 km short of cap B (own side), cells F5/F4",
+   "subject": "Daring",
+   "parent": "lof-early-f3",
+   "centre_uv": [
+    0.3753,
+    0.5545
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.2146,
+    "rv": 0.0849,
+    "angle_deg": -3.4
+   },
+   "numbers": {
+    "n": 12,
+    "n_parent": 13,
+    "share_of_parent_pct": 92.3,
+    "top6_n": 5,
+    "rest_n": 7,
+    "median_km_from_nearest_puff": 9.8,
+    "median_km_forward_of_smoke_centre": 2.2,
+    "forward_n": 11,
+    "forward_share_pct": 91.7,
+    "most_common_ships": "Daring 4, Z-42 3, Ragnar 2",
+    "km_from_nearest_cap_edge": 2.0,
+    "nearest_cap": "B"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "lof-deaths-f3",
+   "map": "Land of Fire",
+   "kind": "deaths",
+   "label": "west, below cap A",
+   "subject": "smokes with a death in them, all classes",
+   "parent": null,
+   "centre_uv": [
+    0.1865,
+    0.5965
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1234,
+    "rv": 0.0636,
+    "angle_deg": -41.9
+   },
+   "numbers": {
+    "n": 8,
+    "deaths": 8,
+    "top6_n": 0,
+    "rest_n": 8,
+    "clans": 5,
+    "games": 5,
+    "share_of_map_death_smokes_pct": 29.6,
+    "all_smokes_in_ellipse_n": 21,
+    "deaths_per_100_in_ellipse": 33.3,
+    "map_deaths_per_100_all_classes": 15.3,
+    "behind_by_50_n": 1,
+    "enemy_radar_reached_n": 1,
+    "game_lost_n": 5,
+    "destroyer_smoke_n": 5,
+    "cells": "F3/F2/G2",
+    "median_time_s": 298,
+    "ships": "Somers 3, Napoli 2, Gearing 1, Daring 1",
+    "radius_km_long": 5.9,
+    "radius_km_short": 3.1
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8154_g1_175936.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8154_g1_175937.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7941_g1_214654.html"
+   ],
+   "notes": "Mean-shift cluster (2.5 km) of the centres of smokes, any class, in which the smoker or a covered teammate was lost. The ellipse is 2 standard deviations. deaths_per_100_in_ellipse counts every smoke laid inside the ellipse. Association only: deaths go with being behind and with enemy radar (Module 5)."
+  },
+  {
+   "id": "lof-deaths-f6",
+   "map": "Land of Fire",
+   "kind": "deaths",
+   "label": "centre, own-side rim of cap B",
+   "subject": "smokes with a death in them, all classes",
+   "parent": null,
+   "centre_uv": [
+    0.4738,
+    0.5854
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1455,
+    "rv": 0.0569,
+    "angle_deg": 0.8
+   },
+   "numbers": {
+    "n": 8,
+    "deaths": 9,
+    "top6_n": 1,
+    "rest_n": 7,
+    "clans": 6,
+    "games": 6,
+    "share_of_map_death_smokes_pct": 29.6,
+    "all_smokes_in_ellipse_n": 60,
+    "deaths_per_100_in_ellipse": 13.3,
+    "map_deaths_per_100_all_classes": 15.3,
+    "behind_by_50_n": 5,
+    "enemy_radar_reached_n": 3,
+    "game_lost_n": 7,
+    "destroyer_smoke_n": 5,
+    "cells": "F6/F5/F4",
+    "median_time_s": 471,
+    "ships": "Gearing 4, Svea 2, Venezia 1, Gdańsk 1",
+    "radius_km_long": 7.0,
+    "radius_km_short": 2.7
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7942_g1_200104.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7925_g1_53745.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7942_g1_200103.html"
+   ],
+   "notes": "Mean-shift cluster (2.5 km) of the centres of smokes, any class, in which the smoker or a covered teammate was lost. The ellipse is 2 standard deviations. deaths_per_100_in_ellipse counts every smoke laid inside the ellipse. Association only: deaths go with being behind and with enemy radar (Module 5). Wide: read it as a zone."
+  },
+  {
+   "id": "sof-svea-h7",
+   "map": "Sea of Fortune",
+   "kind": "signature",
+   "label": "open water on the own side of cap D, south-east",
+   "subject": "Svea",
+   "parent": null,
+   "centre_uv": [
+    0.6694,
+    0.7063
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.2053,
+    "rv": 0.1326,
+    "angle_deg": -15.6
+   },
+   "numbers": {
+    "n": 15,
+    "top6_n_total": 18,
+    "top6_share_pct": 83.3,
+    "rest_n_in": 1,
+    "rest_n_total": 14,
+    "rest_share_pct": 7.1,
+    "gap_pts": 76.2,
+    "gap_ci_lo": 41.7,
+    "gap_ci_hi": 100.0,
+    "top6_clans": "HTDOG 7, VRTUS 6, H-SR 2",
+    "concealed_damage_per_smoke": 10222,
+    "deaths_per_100": 0.0,
+    "cap_won_pct": 16.7,
+    "cap_won_n": 12,
+    "median_time_s": 450,
+    "formation_count": 10,
+    "formation_of": 15,
+    "rest_formation_count": 0,
+    "rest_formation_of": 1,
+    "usual_partner": null,
+    "cells": "H7/G7/H8/G8/G6"
+   },
+   "small_n": false,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8143_g1_54022.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g1_185491.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g2_3191.html"
+   ],
+   "notes": "Formation: Svea smoke at H7/G7 + no other cruiser inside + second destroyer forward of the smoke (most often in F8): 10 of 15 Top 6 smokes; Rest 0 of 1 in the same spot. wide zone, not a tight spot; same place at habit level: parked cruiser smoke (16/21 vs 6/24, gap +51); without HTDOG the Top 6 share is 73%; other scales: 1.5 km: not found; 2.5 km: passes; cruiser smoke: the cruiser slot is for a second cruiser inside"
+  },
+  {
+   "id": "sof-svea-h7-dd2",
+   "map": "Sea of Fortune",
+   "kind": "cast_second_dd",
+   "label": "nearest other allied destroyer: 3.7 km short of cap D (own side), cells F8/G7",
+   "subject": "Z-42",
+   "parent": "sof-svea-h7",
+   "centre_uv": [
+    0.7365,
+    0.6377
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.2125,
+    "rv": 0.091,
+    "angle_deg": -64.7
+   },
+   "numbers": {
+    "n": 11,
+    "n_parent": 15,
+    "share_of_parent_pct": 73.3,
+    "top6_n": 11,
+    "rest_n": 0,
+    "median_km_from_nearest_puff": 4.8,
+    "median_km_forward_of_smoke_centre": 2.9,
+    "forward_n": 10,
+    "forward_share_pct": 90.9,
+    "most_common_ships": "Z-42 6, Marceau 4, Kléber 1",
+    "km_from_nearest_cap_edge": 3.7,
+    "nearest_cap": "D"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest other allied destroyer with a recorded position; forward = toward the enemy spawn relative to the smoke centre. Not recorded does not mean absent."
+  },
+  {
+   "id": "sof-cell-f2",
+   "map": "Sea of Fortune",
+   "kind": "paying_high",
+   "label": "cell F2: 1.5 km past cap B (enemy side)",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.15,
+    0.55
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.1,
+      0.5
+     ],
+     [
+      0.2,
+      0.5
+     ],
+     [
+      0.2,
+      0.6
+     ],
+     [
+      0.1,
+      0.6
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 14,
+    "concealed_damage_per_smoke": 11972,
+    "median_concealed_damage": 7003,
+    "deaths_per_100": 14.3,
+    "cap_won_pct_all_smokes": 21.4,
+    "top6_n": 3,
+    "rest_n": 11,
+    "top6_share_pct": 7.9,
+    "rest_share_pct": 13.9,
+    "map_avg_concealed_damage": 11566,
+    "times_map_average": 1.04,
+    "flag": "only_rated_cell_not_high",
+    "median_time_s": 275
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7995_g1_25167.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8144_g2_39532.html"
+   ],
+   "notes": "Not rated high: the only cell on this map with 8 or more smokes. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "sof-early-f2",
+   "map": "Sea of Fortune",
+   "kind": "early_smoke",
+   "label": "west, in and around cap B",
+   "subject": "destroyer smoke, first 5 minutes",
+   "parent": null,
+   "centre_uv": [
+    0.1501,
+    0.6017
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1377,
+    "rv": 0.0683,
+    "angle_deg": 73.1
+   },
+   "numbers": {
+    "n": 14,
+    "top6_n": 4,
+    "rest_n": 10,
+    "pn_n": 1,
+    "clans": 14,
+    "games": 11,
+    "concealed_damage_per_smoke": 16839,
+    "deaths_per_100": 14.3,
+    "cap_won_pct": 30.8,
+    "cap_won_n": 13,
+    "median_time_s": 234,
+    "share_of_map_early_smokes_pct": 45.2,
+    "cells": "F2/G3/H2",
+    "top6_share_of_top6_early_pct": 44.4,
+    "rest_share_of_rest_early_pct": 45.5,
+    "radar_cruiser_inside_n": 7,
+    "radar_cruiser_inside_pct": 50.0,
+    "top6_radar_cruiser_inside_n": 3,
+    "rest_radar_cruiser_inside_n": 4,
+    "inside_cap_pct": 0.0,
+    "median_km_smoke_edge_to_contested_cap_edge": 6.5,
+    "km_centre_to_nearest_cap_edge": -0.7,
+    "nearest_cap": "B",
+    "stacked_pct": 50.0,
+    "ships": "Somers 6, Gearing 5, Harugumo 1, Shimakaze 1",
+    "second_dd_recorded_n": 4,
+    "second_dd_forward_n": 4,
+    "top6_second_dd_forward_n": 1,
+    "rest_second_dd_forward_n": 3,
+    "radius_km_long": 6.6,
+    "radius_km_short": 3.3
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7995_g1_25167.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7938_g1_214880.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g3_106312.html"
+   ],
+   "notes": "Mean-shift cluster (2 km) of all early destroyer smoke centres on the map, both groups; the ellipse is 2 standard deviations. Cap won counts only smokes whose contested cap was not already ours. Links are Top 6 smokes nearest the centre."
+  },
+  {
+   "id": "sof-early-f2-cruiser",
+   "map": "Sea of Fortune",
+   "kind": "cast_cruiser",
+   "label": "cruiser inside the smoke: inside cap B, cells G3/F2",
+   "subject": "Brisbane",
+   "parent": "sof-early-f2",
+   "centre_uv": [
+    0.1812,
+    0.6434
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1242,
+    "rv": 0.1041,
+    "angle_deg": 14.5
+   },
+   "numbers": {
+    "n": 9,
+    "n_parent": 14,
+    "share_of_parent_pct": 64.3,
+    "top6_n": 3,
+    "rest_n": 6,
+    "median_km_from_nearest_puff": 0.5,
+    "median_km_forward_of_smoke_centre": -0.5,
+    "forward_n": 1,
+    "forward_share_pct": 11.1,
+    "most_common_ships": "Brisbane 2, Worcester 2, Salem 1",
+    "radar_cruiser_n": 7,
+    "km_from_nearest_cap_edge": -3.0,
+    "nearest_cap": "B"
+   },
+   "small_n": true,
+   "links": [],
+   "notes": "Mean position at the moment each smoke was fully laid (the only moment the batch records positions). The nearest cruiser inside each smoke."
+  },
+  {
+   "id": "sof-early-f9",
+   "map": "Sea of Fortune",
+   "kind": "early_smoke",
+   "label": "east, short of cap D on the own side",
+   "subject": "destroyer smoke, first 5 minutes",
+   "parent": null,
+   "centre_uv": [
+    0.8125,
+    0.5906
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1444,
+    "rv": 0.0574,
+    "angle_deg": -11.6
+   },
+   "numbers": {
+    "n": 10,
+    "top6_n": 2,
+    "rest_n": 8,
+    "pn_n": 0,
+    "clans": 8,
+    "games": 7,
+    "concealed_damage_per_smoke": 20959,
+    "deaths_per_100": 10.0,
+    "cap_won_pct": 20.0,
+    "cap_won_n": 10,
+    "median_time_s": 140,
+    "share_of_map_early_smokes_pct": 32.3,
+    "cells": "F9/F8/G9",
+    "top6_share_of_top6_early_pct": 22.2,
+    "rest_share_of_rest_early_pct": 36.4,
+    "radar_cruiser_inside_n": 4,
+    "radar_cruiser_inside_pct": 40.0,
+    "top6_radar_cruiser_inside_n": 2,
+    "rest_radar_cruiser_inside_n": 2,
+    "inside_cap_pct": 20.0,
+    "median_km_smoke_edge_to_contested_cap_edge": 2.5,
+    "km_centre_to_nearest_cap_edge": 2.0,
+    "nearest_cap": "D",
+    "stacked_pct": 50.0,
+    "ships": "Harugumo 2, Daring 2, Somers 2, Gdańsk 1",
+    "second_dd_recorded_n": 6,
+    "second_dd_forward_n": 5,
+    "top6_second_dd_forward_n": 2,
+    "rest_second_dd_forward_n": 3,
+    "radius_km_long": 6.9,
+    "radius_km_short": 2.8
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7938_g1_214879.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8144_g2_39530.html"
+   ],
+   "notes": "Mean-shift cluster (2 km) of all early destroyer smoke centres on the map, both groups; the ellipse is 2 standard deviations. Cap won counts only smokes whose contested cap was not already ours. Links are Top 6 smokes nearest the centre."
+  },
+  {
+   "id": "sof-deaths-f2",
+   "map": "Sea of Fortune",
+   "kind": "deaths",
+   "label": "west lane between caps A and B (wide)",
+   "subject": "smokes with a death in them, all classes",
+   "parent": null,
+   "centre_uv": [
+    0.159,
+    0.4883
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.2193,
+    "rv": 0.1067,
+    "angle_deg": -73.0
+   },
+   "numbers": {
+    "n": 13,
+    "deaths": 13,
+    "top6_n": 4,
+    "rest_n": 9,
+    "clans": 9,
+    "games": 9,
+    "share_of_map_death_smokes_pct": 48.1,
+    "all_smokes_in_ellipse_n": 55,
+    "deaths_per_100_in_ellipse": 20.0,
+    "map_deaths_per_100_all_classes": 14.1,
+    "behind_by_50_n": 6,
+    "enemy_radar_reached_n": 2,
+    "game_lost_n": 11,
+    "destroyer_smoke_n": 8,
+    "cells": "F2/E2/F1",
+    "median_time_s": 551,
+    "ships": "Gearing 4, Napoli 2, Cerberus 2, Harugumo 1",
+    "radius_km_long": 10.5,
+    "radius_km_short": 5.1
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7994_g1_37572.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7994_g1_37575.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7954_g1_166727.html"
+   ],
+   "notes": "Mean-shift cluster (2.5 km) of the centres of smokes, any class, in which the smoker or a covered teammate was lost. The ellipse is 2 standard deviations. deaths_per_100_in_ellipse counts every smoke laid inside the ellipse. Association only: deaths go with being behind and with enemy radar (Module 5). Wide: read it as a zone."
+  },
+  {
+   "id": "oki-cell-d1",
+   "map": "Okinawa",
+   "kind": "paying_high",
+   "label": "cell D1: 3.6 km short of cap A (own side)",
+   "subject": null,
+   "parent": null,
+   "centre_uv": [
+    0.05,
+    0.35
+   ],
+   "shape": {
+    "type": "polygon",
+    "points_uv": [
+     [
+      0.0,
+      0.3
+     ],
+     [
+      0.1,
+      0.3
+     ],
+     [
+      0.1,
+      0.4
+     ],
+     [
+      0.0,
+      0.4
+     ]
+    ]
+   },
+   "numbers": {
+    "n": 8,
+    "concealed_damage_per_smoke": 12029,
+    "median_concealed_damage": 2389,
+    "deaths_per_100": 25.0,
+    "cap_won_pct_all_smokes": 25.0,
+    "top6_n": 2,
+    "rest_n": 6,
+    "top6_share_pct": 13.3,
+    "rest_share_pct": 9.0,
+    "map_avg_concealed_damage": 11864,
+    "times_map_average": 1.01,
+    "flag": "only_rated_cell_not_high",
+    "median_time_s": 378
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8074_g1_211815.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7896_g1_51110.html"
+   ],
+   "notes": "Not rated high: the only cell on this map with 8 or more smokes. Destroyer smokes whose centre falls in the grid cell. Association only: what smokes laid here returned."
+  },
+  {
+   "id": "oki-early-d2",
+   "map": "Okinawa",
+   "kind": "early_smoke",
+   "label": "north-west, own-side rim of cap A",
+   "subject": "destroyer smoke, first 5 minutes",
+   "parent": null,
+   "centre_uv": [
+    0.0947,
+    0.2737
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.1213,
+    "rv": 0.0945,
+    "angle_deg": 49.1
+   },
+   "numbers": {
+    "n": 12,
+    "top6_n": 1,
+    "rest_n": 11,
+    "pn_n": 0,
+    "clans": 9,
+    "games": 10,
+    "concealed_damage_per_smoke": 8801,
+    "deaths_per_100": 8.3,
+    "cap_won_pct": 33.3,
+    "cap_won_n": 12,
+    "median_time_s": 214,
+    "share_of_map_early_smokes_pct": 46.2,
+    "cells": "D2/C2/B1",
+    "top6_share_of_top6_early_pct": 33.3,
+    "rest_share_of_rest_early_pct": 47.8,
+    "radar_cruiser_inside_n": 3,
+    "radar_cruiser_inside_pct": 25.0,
+    "top6_radar_cruiser_inside_n": 1,
+    "rest_radar_cruiser_inside_n": 2,
+    "inside_cap_pct": 0.0,
+    "median_km_smoke_edge_to_contested_cap_edge": 5.8,
+    "km_centre_to_nearest_cap_edge": 0.3,
+    "nearest_cap": "A",
+    "stacked_pct": 33.3,
+    "ships": "Harugumo 3, Somers 3, Fuyutsuki 2, Gearing 2",
+    "second_dd_recorded_n": 4,
+    "second_dd_forward_n": 3,
+    "top6_second_dd_forward_n": 1,
+    "rest_second_dd_forward_n": 2,
+    "radius_km_long": 5.1,
+    "radius_km_short": 4.0
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7896_g1_51110.html"
+   ],
+   "notes": "Mean-shift cluster (2 km) of all early destroyer smoke centres on the map, both groups; the ellipse is 2 standard deviations. Cap won counts only smokes whose contested cap was not already ours. Links are Top 6 smokes nearest the centre."
+  },
+  {
+   "id": "oki-deaths-h4",
+   "map": "Okinawa",
+   "kind": "deaths",
+   "label": "south-west water on the own side of cap C (wide)",
+   "subject": "smokes with a death in them, all classes",
+   "parent": null,
+   "centre_uv": [
+    0.2457,
+    0.6435
+   ],
+   "shape": {
+    "type": "ellipse",
+    "ru": 0.2397,
+    "rv": 0.1501,
+    "angle_deg": 34.5
+   },
+   "numbers": {
+    "n": 12,
+    "deaths": 15,
+    "top6_n": 2,
+    "rest_n": 10,
+    "clans": 9,
+    "games": 10,
+    "share_of_map_death_smokes_pct": 48.0,
+    "all_smokes_in_ellipse_n": 39,
+    "deaths_per_100_in_ellipse": 30.8,
+    "map_deaths_per_100_all_classes": 17.7,
+    "behind_by_50_n": 7,
+    "enemy_radar_reached_n": 3,
+    "game_lost_n": 9,
+    "destroyer_smoke_n": 8,
+    "cells": "H4/G2/E3",
+    "median_time_s": 596,
+    "ships": "Harugumo 3, Smolensk 2, Gearing 1, Daring 1",
+    "radius_km_long": 10.1,
+    "radius_km_short": 6.3
+   },
+   "small_n": true,
+   "links": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7923_g1_130526.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8074_g1_211814.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8174_g2_58493.html"
+   ],
+   "notes": "Mean-shift cluster (2.5 km) of the centres of smokes, any class, in which the smoker or a covered teammate was lost. The ellipse is 2 standard deviations. deaths_per_100_in_ellipse counts every smoke laid inside the ellipse. Association only: deaths go with being behind and with enemy radar (Module 5). Wide: read it as a zone."
+  }
+ ]
+}

@@ -1,0 +1,168 @@
+games without winner 0
+
+== Sleeping Giant (32 games with a winner)
+  first cap taken in the game (ties counted for each): {'B': 2, 'C': 23, 'D': 25, 'A': 9}
+  cap A (real letter): first observed owner won the game 59% of 32 games, 95% 38 to 75 *; median first-owned at 289s
+  cap B (real letter): first observed owner won the game 58% of 26 games, 95% 36 to 77 *; median first-owned at 403s
+  cap C (real letter): first observed owner won the game 53% of 32 games, 95% 35 to 69 *; median first-owned at 190s
+  cap D (real letter): first observed owner won the game 53% of 32 games, 95% 32 to 68 *; median first-owned at 186s
+  team's first cap = A (normalized letter): won 67% of 12 team-games, 95% 33 to 92 *
+  team's first cap = B (normalized letter): won 67% of 3 team-games, 95% 0 to 100
+  team's first cap = C (normalized letter): won 0% of 1 team-games, 95% 0 to 0
+  team's first cap = D (normalized letter): won 48% of 54 team-games, 95% 31 to 62 *
+  holder of cap A (normalized) at about 8:00 elapsed won 50% of 30, 95% 26 to 68 *
+  holder of cap B (normalized) at about 8:00 elapsed won 71% of 14, 95% 46 to 92 *
+  holder of cap C (normalized) at about 8:00 elapsed won 57% of 7, 95% 29 to 100 *
+  holder of cap D (normalized) at about 8:00 elapsed won 52% of 54, 95% 35 to 65 *
+  first DD smoke of each team-game by zone: {'A': 37, 'D': 11, 'B': 12} n 60 | median el 191.0
+     first smoke at A: n 37 team won 51% conc 19.7k top 19
+     first smoke at B: n 12 team won 42% conc 3.4k top 4
+     first smoke at D: n 11 team won 55% conc 12.7k top 4
+     zone A: first 4 min n 30 conc 23.6k d100 7 capwon 50% | later n 61 conc 10.4k d100 15 capwon 8%
+     zone B: first 4 min n 8 conc 2.7k d100 0 capwon 50% | later n 44 conc 5.9k d100 16 capwon 16%
+     zone C: first 4 min n 2 conc 32.9k d100 50 capwon 100% | later n 26 conc 12.8k d100 19 capwon 23%
+     zone D: first 4 min n 9 conc 17.6k d100 0 capwon 11% | later n 58 conc 11.1k d100 7 capwon 9%
+
+== Hotspot (31 games with a winner)
+  first cap taken in the game (ties counted for each): {'C': 21, 'D': 15, 'A': 12, 'B': 13}
+  cap A (real letter): first observed owner won the game 45% of 31 games, 95% 28 to 61 *; median first-owned at 306s
+  cap B (real letter): first observed owner won the game 55% of 31 games, 95% 32 to 72 *; median first-owned at 307s
+  cap C (real letter): first observed owner won the game 77% of 31 games, 95% 62 to 91 *; median first-owned at 294s
+  cap D (real letter): first observed owner won the game 67% of 30 games, 95% 48 to 80 *; median first-owned at 316s
+  team's first cap = B (normalized letter): won 38% of 42 team-games, 95% 20 to 54 *
+  team's first cap = C (normalized letter): won 74% of 23 team-games, 95% 56 to 89 *
+  team's first cap = D (normalized letter): won 70% of 20 team-games, 95% 52 to 86 *
+  holder of cap A (normalized) at about 8:00 elapsed won 71% of 7, 95% 43 to 100 *
+  holder of cap B (normalized) at about 8:00 elapsed won 53% of 53, 95% 38 to 66 *
+  holder of cap C (normalized) at about 8:00 elapsed won 71% of 28, 95% 52 to 88 *
+  holder of cap D (normalized) at about 8:00 elapsed won 52% of 29, 95% 29 to 70 *
+  first DD smoke of each team-game by zone: {'D': 36, 'C': 21, 'B': 3, 'A': 1} n 61 | median el 157
+     first smoke at A: n 1 team won 100% conc 65.4k top 1
+     first smoke at B: n 3 team won 33% conc 10.0k top 2
+     first smoke at C: n 21 team won 48% conc 5.0k top 6
+     first smoke at D: n 36 team won 50% conc 15.9k top 8
+     zone C: first 4 min n 22 conc 5.1k d100 0 capwon 64% | later n 55 conc 9.8k d100 7 capwon 16%
+     zone D: first 4 min n 32 conc 17.6k d100 6 capwon 50% | later n 76 conc 11.1k d100 11 capwon 11%
+
+== Loop (23 games with a winner)
+  first cap taken in the game (ties counted for each): {'A': 18, 'B': 15, 'C': 5}
+  cap A (real letter): first observed owner won the game 43% of 21 games, 95% 24 to 67 *; median first-owned at 272s
+  cap B (real letter): first observed owner won the game 48% of 21 games, 95% 25 to 68 *; median first-owned at 286s
+  cap C (real letter): first observed owner won the game 55% of 22 games, 95% 26 to 76 *; median first-owned at 316s
+  team's first cap = A (normalized letter): won 44% of 18 team-games, 95% 23 to 71 *
+  team's first cap = B (normalized letter): won 56% of 16 team-games, 95% 31 to 76 *
+  team's first cap = C (normalized letter): won 67% of 9 team-games, 95% 25 to 92 *
+  team's first cap = none (normalized letter): won 60% of 10 team-games, 95% 25 to 90 *
+  holder of cap A (normalized) at about 8:00 elapsed won 33% of 18, 95% 15 to 56 *
+  holder of cap B (normalized) at about 8:00 elapsed won 75% of 20, 95% 52 to 94 *
+  holder of cap C (normalized) at about 8:00 elapsed won 44% of 16, 95% 14 to 68 *
+  first DD smoke of each team-game by zone: {'B': 19, 'A': 19, 'C': 2} n 40 | median el 266.0
+     first smoke at A: n 19 team won 58% conc 3.8k top 4
+     first smoke at B: n 19 team won 42% conc 7.1k top 7
+     first smoke at C: n 2 team won 50% conc 5.0k top 1
+     zone A: first 4 min n 11 conc 6.4k d100 18 capwon 55% | later n 48 conc 4.5k d100 4 capwon 8%
+     zone B: first 4 min n 6 conc 3.3k d100 0 capwon 83% | later n 41 conc 8.7k d100 15 capwon 37%
+
+== Mountain Range (21 games with a winner)
+  first cap taken in the game (ties counted for each): {'C': 13, 'B': 13, 'A': 6}
+  cap A (real letter): first observed owner won the game 53% of 17 games, 95% 33 to 71 *; median first-owned at 269s
+  cap B (real letter): first observed owner won the game 71% of 21 games, 95% 52 to 90 *; median first-owned at 300s
+  cap C (real letter): first observed owner won the game 57% of 21 games, 95% 31 to 76 *; median first-owned at 297s
+  team's first cap = A (normalized letter): won 50% of 10 team-games, 95% 20 to 78 *
+  team's first cap = B (normalized letter): won 71% of 17 team-games, 95% 50 to 89 *
+  team's first cap = C (normalized letter): won 53% of 17 team-games, 95% 27 to 74 *
+  team's first cap = none (normalized letter): won 0% of 4 team-games, 95% 0 to 0
+  holder of cap A (normalized) at about 8:00 elapsed won 54% of 13, 95% 30 to 77 *
+  holder of cap B (normalized) at about 8:00 elapsed won 63% of 19, 95% 41 to 84 *
+  holder of cap C (normalized) at about 8:00 elapsed won 55% of 20, 95% 31 to 75 *
+  first DD smoke of each team-game by zone: {'C': 14, 'A': 4, 'B': 14} n 32 | median el 159.5
+     first smoke at A: n 4 team won 50% conc 9.4k top 1
+     first smoke at B: n 14 team won 43% conc 6.8k top 6
+     first smoke at C: n 14 team won 43% conc 8.2k top 6
+     zone A: first 4 min n 5 conc 7.3k d100 0 capwon 20% | later n 25 conc 17.1k d100 8 capwon 24%
+     zone B: first 4 min n 15 conc 5.9k d100 7 capwon 40% | later n 34 conc 11.5k d100 9 capwon 32%
+     zone C: first 4 min n 14 conc 7.0k d100 0 capwon 43% | later n 39 conc 10.1k d100 13 capwon 13%
+
+== Land of Fire (25 games with a winner)
+  first cap taken in the game (ties counted for each): {'A': 11, 'B': 10, 'C': 16, 'D': 17}
+  cap A (real letter): first observed owner won the game 72% of 25 games, 95% 52 to 88 *; median first-owned at 320s
+  cap B (real letter): first observed owner won the game 70% of 23 games, 95% 48 to 88 *; median first-owned at 321s
+  cap C (real letter): first observed owner won the game 44% of 25 games, 95% 20 to 62 *; median first-owned at 253s
+  cap D (real letter): first observed owner won the game 44% of 25 games, 95% 24 to 61 *; median first-owned at 237s
+  team's first cap = A (normalized letter): won 75% of 12 team-games, 95% 44 to 94 *
+  team's first cap = B (normalized letter): won 67% of 12 team-games, 95% 30 to 94 *
+  team's first cap = C (normalized letter): won 50% of 2 team-games, 95% 0 to 100
+  team's first cap = D (normalized letter): won 41% of 39 team-games, 95% 24 to 56 *
+  holder of cap A (normalized) at about 8:00 elapsed won 80% of 20, 95% 62 to 96 *
+  holder of cap B (normalized) at about 8:00 elapsed won 81% of 21, 95% 59 to 96 *
+  holder of cap C (normalized) at about 8:00 elapsed won 42% of 12, 95% 9 to 69 *
+  holder of cap D (normalized) at about 8:00 elapsed won 47% of 38, 95% 31 to 61 *
+  first DD smoke of each team-game by zone: {'A': 23, 'B': 11, 'D': 7, 'C': 1} n 42 | median el 197.5
+     first smoke at A: n 23 team won 48% conc 7.2k top 7
+     first smoke at B: n 11 team won 64% conc 4.2k top 3
+     first smoke at C: n 1 team won 0% conc 0.0k top 0
+     first smoke at D: n 7 team won 57% conc 12.4k top 4
+     zone A: first 4 min n 17 conc 5.8k d100 6 capwon 47% | later n 35 conc 7.4k d100 17 capwon 11%
+     zone B: first 4 min n 12 conc 3.9k d100 17 capwon 67% | later n 38 conc 8.7k d100 13 capwon 13%
+     zone D: first 4 min n 2 conc 10.4k d100 0 capwon 100% | later n 17 conc 8.6k d100 12 capwon 6%
+
+== Sea of Fortune (21 games with a winner)
+  first cap taken in the game (ties counted for each): {'A': 16, 'B': 16, 'D': 12, 'C': 7}
+  cap A (real letter): first observed owner won the game 62% of 21 games, 95% 41 to 81 *; median first-owned at 225s
+  cap B (real letter): first observed owner won the game 38% of 21 games, 95% 19 to 57 *; median first-owned at 227s
+  cap C (real letter): first observed owner won the game 40% of 20 games, 95% 21 to 60 *; median first-owned at 304s
+  cap D (real letter): first observed owner won the game 55% of 20 games, 95% 33 to 76 *; median first-owned at 256s
+  team's first cap = B (normalized letter): won 50% of 38 team-games, 95% 34 to 67 *
+  team's first cap = C (normalized letter): won 43% of 7 team-games, 95% 14 to 75 *
+  team's first cap = D (normalized letter): won 50% of 12 team-games, 95% 25 to 75 *
+  holder of cap A (normalized) at about 8:00 elapsed won 33% of 6, 95% 0 to 62
+  holder of cap B (normalized) at about 8:00 elapsed won 47% of 36, 95% 32 to 61 *
+  holder of cap C (normalized) at about 8:00 elapsed won 35% of 17, 95% 13 to 55 *
+  holder of cap D (normalized) at about 8:00 elapsed won 56% of 18, 95% 33 to 78 *
+  first DD smoke of each team-game by zone: {'B': 13, 'C': 6, 'D': 13, 'A': 2} n 34 | median el 227.0
+     first smoke at A: n 2 team won 0% conc 6.3k top 1
+     first smoke at B: n 13 team won 62% conc 19.6k top 3
+     first smoke at C: n 6 team won 33% conc 5.6k top 1
+     first smoke at D: n 13 team won 62% conc 18.8k top 4
+     zone B: first 4 min n 10 conc 21.7k d100 10 capwon 30% | later n 33 conc 8.7k d100 12 capwon 15%
+     zone C: first 4 min n 2 conc 14.4k d100 0 capwon 0% | later n 17 conc 5.8k d100 24 capwon 24%
+     zone D: first 4 min n 10 conc 22.8k d100 10 capwon 20% | later n 27 conc 8.7k d100 11 capwon 7%
+
+== Okinawa (18 games with a winner)
+  first cap taken in the game (ties counted for each): {'A': 9, 'B': 9, 'C': 11, 'D': 9}
+  cap A (real letter): first observed owner won the game 44% of 18 games, 95% 24 to 65 *; median first-owned at 256s
+  cap B (real letter): first observed owner won the game 47% of 17 games, 95% 25 to 69 *; median first-owned at 258s
+  cap C (real letter): first observed owner won the game 65% of 17 games, 95% 38 to 88 *; median first-owned at 253s
+  cap D (real letter): first observed owner won the game 53% of 17 games, 95% 21 to 76 *; median first-owned at 276s
+  team's first cap = A (normalized letter): won 39% of 28 team-games, 95% 21 to 58 *
+  team's first cap = B (normalized letter): won 0% of 1 team-games, 95% 0 to 0
+  team's first cap = C (normalized letter): won 75% of 12 team-games, 95% 45 to 100 *
+  team's first cap = D (normalized letter): won 64% of 11 team-games, 95% 30 to 90 *
+  holder of cap A (normalized) at about 8:00 elapsed won 52% of 27, 95% 33 to 70 *
+  holder of cap B (normalized) at about 8:00 elapsed won 50% of 8, 95% 14 to 78 *
+  holder of cap C (normalized) at about 8:00 elapsed won 47% of 17, 95% 24 to 71 *
+  holder of cap D (normalized) at about 8:00 elapsed won 38% of 16, 95% 8 to 63 *
+  first DD smoke of each team-game by zone: {'D': 9, 'C': 9, 'A': 11, 'B': 1} n 30 | median el 237.0
+     first smoke at A: n 11 team won 27% conc 9.6k top 2
+     first smoke at B: n 1 team won 100% conc 1.9k top 0
+     first smoke at C: n 9 team won 78% conc 9.3k top 1
+     first smoke at D: n 9 team won 33% conc 7.4k top 2
+     zone A: first 4 min n 7 conc 11.5k d100 14 capwon 43% | later n 19 conc 14.0k d100 21 capwon 21%
+     zone C: first 4 min n 3 conc 2.2k d100 0 capwon 0% | later n 37 conc 13.9k d100 27 capwon 8%
+     zone D: first 4 min n 7 conc 7.7k d100 29 capwon 29% | later n 6 conc 7.1k d100 0 capwon 0%
+
+SG G1 by time: [(116, 26713, 'H-SR', False), (122, 57685, 'VRTUS', True), (122, 11178, 'RESIN', True), (123, 21944, 'RESIN', True), (128, 23044, 'BONKY', True), (139, 11962, 'KSC', False), (142, 20064, 'PFANS', False), (143, 7242, 'RESIN', True), (144, 53197, 'KSC', True), (151, 43689, 'BONKZ', True), (160, 0, 'VRTUS', False), (167, 17871, 'BONKZ', False), (190, 15391, 'HTDOG', True), (222, 26722, '-BN-', True), (303, 44181, 'NGA', False), (318, 40310, 'RESIN', True), (328, 14522, 'PFANS', False), (329, 0, 'RESIN', True), (387, 36519, 'VRTUS', True), (505, 11266, 'BONKY', True), (685, 22629, 'BONKY', True)]
+SG G1 ships {'Gearing': 7, 'Somers': 6, 'Daring': 1, 'Harugumo': 7} kinds {'long DD': 20, 'short DD': 1} pp {'damage': 5, 'counter_smoke': 1, 'reposition': 5, 'cap_control': 3, 'cap_contest': 1, 'none': 6} torp share 0.024602480469516894
+SG G1 partners/smoke 1.2857142857142858 vs map 0.9621848739495799 | shooters cls {'cruiser': 20, 'battleship': 2, 'destroyer': 5}
+SG G1 conc by smoker vs partners 45936.5 460190.35109999997
+SG zone A: early(<=240) n 30 of 91
+SG team-games with a G1/E1 smoke: won 54.166666666666664 of 24 | without 47.22222222222222 of 36
+Hotspot: mean share of a team-game DD smokes in zone D, winners 49.42857142857143 30 losers 51.344086021505376 31
+Hotspot D zone pp {'cap_control': 10, 'none': 26, 'reposition': 12, 'cap_contest': 44, 'damage': 8, 'counter_smoke': 5, 'hydro_trap': 1, 'escape': 2} cells {'G10': 35, 'F8': 1, 'G9': 11, 'F9': 11, 'F10': 22, 'E10': 5, 'G8': 4, 'D9': 1, 'J8': 3, 'H9': 2, 'C9': 2, 'H10': 5, 'D10': 2, 'H8': 1, 'E9': 1, 'I10': 1, 'B8': 1}
+Hotspot D own-side edge (F10,G10,H10) n 62 16.0k d100 11.29032258064516 capw 24.193548387096776 | other D n 46 9.1k 6.521739130434782 19.565217391304348
+  col 10 vs rest of map -637 to +10,774
+LoF: mean share of team-game DD smokes in zone B, winners 42.66955266955267 22 losers 30.833333333333332 20
+LoF B zone win% of smokes 72.0 A 55.76923076923077 cells {'G5': 6, 'F4': 2, 'F6': 11, 'F5': 16, 'E6': 1, 'H6': 1, 'E5': 3, 'I5': 2, 'G4': 1, 'G6': 2, 'E4': 1, 'D6': 2, 'H5': 1, 'B4': 1}
+LoF B capwon by win 27.77777777777778 21.428571428571427
+LoF F6 teams {'5D': 2, 'MACHX': 4, 'H-SR': 1, 'HTDOG': 4}
+PN [('Hotspot', 'F10', 'D', 0, 0, 1), ('Loop', 'G5', 'A', 0, 0, 0), ('Okinawa', 'H4', 'C', 45824, 1, 0), ('Land of Fire', 'G1', 'A', 0, 0, 0), ('Land of Fire', 'F9', 'D', 41564, 1, 0), ('Land of Fire', 'E9', 'C', 174, 0, 0), ('Mountain Range', 'G4', 'B', 3053, 1, 0), ('Mountain Range', 'F1', 'A', 1848, 0, 0), ('Sea of Fortune', 'G2', 'B', 17216, 0, 0), ('Sea of Fortune', 'F1', 'B', 14459, 0, 0)]

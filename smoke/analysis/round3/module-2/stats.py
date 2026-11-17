@@ -28,7 +28,7 @@ P('share of these ships smokes that are early', f1(100 * len(E) / sum(s['ship'] 
 for sh in SHIPS:
     e = [s for s in E if s['ship'] == sh]
     P(sh, len(e), 'top', sum(s['grp'] == 'top' for s in e), 'windows', [sum(s['w'] == i for s in e) for i in range(3)], 'stacked%', f1(pct(e, lambda s: s['coverage'] == 'stacked')),
-      'radarCA%', f1(pct(e, lambda s: s['pt'] == 'radar cruiser')), 'inside%', f1(pct(e, lambda s: s['inside'])), 'conc', n0(mean(s['conc'] for s in e)))
+      'radarCA inside%', f1(pct(e, lambda s: s['radar_ca_inside'])), 'radarCA any%', f1(pct(e, lambda s: s['radar_ca_any'])), 'inside%', f1(pct(e, lambda s: s['inside'])), 'conc', n0(mean(s['conc'] for s in e)))
 for g in ('top', 'rest'):
     e = [s for s in E if s['grp'] == g]; P(g, 'windows', [sum(s['w'] == i for s in e) for i in range(3)], 'coverage', dict(C(s['coverage'] for s in e)), 'pt', dict(C(s['pt'] for s in e)))
 P('window x coverage', sorted(C((s['w'], s['coverage']) for s in E).items()))
@@ -37,7 +37,7 @@ P('window x movement', [(i, C(s['movement'] for s in E if s['w'] == i).most_comm
 
 P('\n== B. top minus rest (early smokes of the three ships)')
 noA = [s for s in E if not s['mrA']]
-tests = [('stacked %', E, lambda v: pct(v, lambda s: s['coverage'] == 'stacked'), f1), ('radar cruiser partner %', E, lambda v: pct(v, lambda s: s['pt'] == 'radar cruiser'), f1),
+tests = [('stacked %', E, lambda v: pct(v, lambda s: s['coverage'] == 'stacked'), f1), ('radar cruiser inside %', E, lambda v: pct(v, lambda s: s['radar_ca_inside']), f1), ('radar cruiser covered any way %', E, lambda v: pct(v, lambda s: s['radar_ca_any']), f1),
          ('2+ partners %', E, lambda v: pct(v, lambda s: len(s['partners']) >= 2), f1),
          ('inside cap %', E, lambda v: pct(v, lambda s: s['inside']), f1), ('inside cap % (no MR A)', noA, lambda v: pct(v, lambda s: s['inside']), f1),
          ('median edge m', E, lambda v: med(s['edge'] for s in v), n0), ('median edge m (no MR A)', noA, lambda v: med(s['edge'] for s in v), n0),
@@ -51,6 +51,25 @@ for name, ss, st, fm in tests:
     P(f'{name:28s} top {fm(a):>8s} rest {fm(b):>8s} diff {fm(a - b):>8s} CI {fm(lo)} to {fm(hi)}' + (' *' if lo is not None and lo * hi > 0 else ''))
 pn = [s for s in E if s['is_pn']]
 P('PN early:', len(pn), [(s['ship'], s['map'], s['ncap'], s['ncell_name'], WIN_LABEL[s['w']], s['coverage'], s['pt'], round(s['conc'])) for s in pn])
+
+P('\n== R. radar-partner reconciliation (headline: a radar cruiser inside the smoke, radar_ca_inside)')
+def recon(name, pop, st, label):
+    P(f'-- {name}: {label}')
+    for m in ['ALL'] + sorted(MAPS):
+        e = [s for s in pop if m == 'ALL' or s['map'] == m]
+        a, b = [s for s in e if s['grp'] == 'top'], [s for s in e if s['grp'] == 'rest']
+        if not a or not b: P(f'{m:15s} top n {len(a)} rest n {len(b)}: no comparison'); continue
+        lo, hi = boot_diff(e, st)
+        P(f'{m:15s} top {f1(st(a))}% (n {len(a)}, clans {len({s["team"] for s in a})}) rest {f1(st(b))}% (n {len(b)}, clans {len({s["team"] for s in b})}) diff {f1(st(a) - st(b))} CI {f1(lo)} to {f1(hi)}' + (' *' if lo is not None and lo * hi > 0 else ''))
+    pn = [s for s in pop if s['is_pn']]
+    P(f'PN: {sum(1 for s in pn if st([s]) == 100)} of {len(pn)}')
+rin = lambda v: pct(v, lambda s: s['radar_ca_inside']); rany = lambda v: pct(v, lambda s: s['radar_ca_any'])
+m3 = lambda v: pct(v, lambda s: any(p['radar'] and p['how'] == 'inside' for p in s['partners']))
+recon('three ships early', E, rin, 'radar cruiser inside (HEADLINE)')
+recon('all early destroyer smokes', DDE, rin, 'radar cruiser inside (HEADLINE)')
+recon('three ships early', E, rany, 'old Module 2 definition: radar cruiser covered in any way')
+recon('early STACKED destroyer smokes', [s for s in DDE if s['coverage'] == 'stacked'], m3, 'old Module 3 definition: radar ship of any class inside')
+P('all early DD smokes n', len(DDE), 'ships', C(s['ship'] for s in DDE).most_common(12))
 
 P('\n== C. pairings')
 for g in ('top', 'rest'):
@@ -73,7 +92,7 @@ def geom(s, p):
 for s in E:
     s['geo'] = geom(s, s['mp']) if s['mp'] and s['mp']['nx'] is not None else None
 for lab, f in (('all', lambda s: True), ('top', lambda s: s['grp'] == 'top'), ('rest', lambda s: s['grp'] == 'rest'), ('inside', lambda s: s['mp']['how'] == 'inside'), ('behind', lambda s: s['mp']['how'] == 'behind'),
-               ('line_of_fire', lambda s: s['mp']['how'] == 'line_of_fire'), ('radar CA', lambda s: s['pt'] == 'radar cruiser'), ('non-radar CA', lambda s: s['pt'] == 'non-radar cruiser')):
+               ('line_of_fire', lambda s: s['mp']['how'] == 'line_of_fire'), ('radar CA inside', lambda s: s['pt'] == RI), ('radar CA not inside', lambda s: s['pt'] == RN), ('non-radar CA', lambda s: s['pt'] == 'non-radar cruiser')):
     e = [s for s in E if s['geo'] and f(s)]
     if not e: continue
     P(f'{lab:13s} n {len(e):3d} | partner behind smoke centre % {f1(pct(e, lambda s: s["geo"][0] < 0))} | median ahead m {n0(med(s["geo"][0] for s in e))} | median dist m {n0(med(s["geo"][1] for s in e))}'
@@ -92,12 +111,13 @@ def outcome_block(groups):
         if not e: continue
         P(f'{lab:22s} n {len(e):3d} clans {len({s["team"] for s in e}):2d} | ' + ' | '.join(f'{nm} {fm(st(e))} [{fm(boot_stat(e, st)[0])}, {fm(boot_stat(e, st)[1])}]' for nm, st, fm in OUTS))
 outcome_block([(t, [s for s in E if s['pt'] == t]) for t in PT_ORDER])
-a, b = [s for s in E if s['pt'] == 'radar cruiser'], [s for s in E if s['pt'] == 'non-radar cruiser']
-for nm, st, fm in OUTS:
-    lo, hi = boot_cmp(a, b, st); P(f'  radar CA minus non-radar CA, {nm}: {fm(st(a) - st(b))} CI {fm(lo)} to {fm(hi)}' + (' *' if lo * hi > 0 else ''))
-a, b = [s for s in E if s['pt'] == 'radar cruiser'], [s for s in E if s['pt'] != 'radar cruiser']
-for nm, st, fm in OUTS:
-    lo, hi = boot_cmp(a, b, st); P(f'  radar CA minus everything else, {nm}: {fm(st(a) - st(b))} CI {fm(lo)} to {fm(hi)}' + (' *' if lo * hi > 0 else ''))
+for lab, a, b in (('radar CA inside minus non-radar cruiser', [s for s in E if s['pt'] == RI], [s for s in E if s['pt'] == 'non-radar cruiser']),
+                  ('radar CA inside minus radar CA not inside', [s for s in E if s['pt'] == RI], [s for s in E if s['pt'] == RN]),
+                  ('radar CA inside minus everything else', [s for s in E if s['pt'] == RI], [s for s in E if s['pt'] != RI]),
+                  ('radar CA covered any way minus everything else', [s for s in E if s['radar_ca_any']], [s for s in E if not s['radar_ca_any']])):
+    for nm, st, fm in OUTS:
+        lo, hi = boot_cmp(a, b, st); P(f'  {lab}, {nm}: {fm(st(a) - st(b))} CI {fm(lo)} to {fm(hi)}' + (' *' if lo * hi > 0 else ''))
+outcome_block([('radar CA covered any way', [s for s in E if s['radar_ca_any']])])
 P('-- with / without a battleship among partners')
 outcome_block([('has battleship', [s for s in E if any(p['cls'] == 'battleship' for p in s['partners'])]), ('no battleship', [s for s in E if s['partners'] and not any(p['cls'] == 'battleship' for p in s['partners'])])])
 P('-- by coverage')
@@ -171,7 +191,7 @@ ocmp('three ships vs any other first smoker', [o for o in have if o['smokes'][0]
 P('-- first smoke partner type (first smoke by the three ships, in first 5 min)')
 core = [o for o in have if o['smokes'][0]['ship'] in SHIPS and o['smokes'][0]['el'] < 300]
 for t in PT_ORDER: oline('first smoke partner: ' + t, [o for o in core if o['smokes'][0]['pt'] == t])
-ocmp('radar cruiser partner vs not', [o for o in core if o['smokes'][0]['pt'] == 'radar cruiser'], [o for o in core if o['smokes'][0]['pt'] != 'radar cruiser'])
+ocmp('radar cruiser inside vs not', [o for o in core if o['smokes'][0]['pt'] == RI], [o for o in core if o['smokes'][0]['pt'] != RI])
 for c in ('stacked', 'screen'): oline('first smoke ' + c, [o for o in core if o['smokes'][0]['coverage'] == c])
 ocmp('stacked vs screen', [o for o in core if o['smokes'][0]['coverage'] == 'stacked'], [o for o in core if o['smokes'][0]['coverage'] == 'screen'])
 oline('first smoke inside cap', [o for o in core if o['smokes'][0]['inside']]); oline('first smoke outside cap', [o for o in core if not o['smokes'][0]['inside']])
@@ -186,7 +206,7 @@ for g in ('top', 'rest'):
     v = [o for o in have if o['grp'] == g]
     oline(g, [o for o in O if o['grp'] == g])
     P('   ', g, 'first smoke median el', n0(med(o['smokes'][0]['el'] for o in v)), 'before 4:00 %', f1(pct(v, lambda o: o['smokes'][0]['w'] <= 1)), 'by three ships %', f1(pct(v, lambda o: o['smokes'][0]['ship'] in SHIPS)),
-      'radar CA partner %', f1(pct(v, lambda o: o['smokes'][0]['pt'] == 'radar cruiser')), 'same cap first two %', f1(pct([o for o in v if o['n'] == 2], lambda o: o['smokes'][0]['ncap'] == o['smokes'][1]['ncap'])))
+      'radar CA inside %', f1(pct(v, lambda o: o['smokes'][0]['radar_ca_inside'])), 'same cap first two %', f1(pct([o for o in v if o['n'] == 2], lambda o: o['smokes'][0]['ncap'] == o['smokes'][1]['ncap'])))
 P('-- per map: first-smoke cap, then common cap pairs for the first two smokes')
 for m in sorted(MAPS):
     v = [o for o in have if o['map'] == m]

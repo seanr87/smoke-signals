@@ -3,7 +3,7 @@ import sys, os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from m5lib import *
 
 FEATS = ['smokes per game', 'stacked %', 'screen %', 'selfish %', 'cap contest %', 'damage %', 'escape %', 'reposition %',
-         'pushing %', 'kiting %', 'stationary %', 'inside cap %', 'median km to cap', 'first smoke (s)', 'long DD %', 'short DD %', 'cruiser smoke %', 'exhaust %']
+         'pushing %', 'kiting %', 'stationary %', 'inside cap %', 'median km to cap', 'first smoke (s)', 'flank smoke lines %', 'cap sitters %', 'parked cruiser smoke %', 'moving exhaust %']
 
 def features(min_games=7):
     """All classes. Returns clans, feature names, raw matrix, standardized matrix (z-scores across clans)."""
@@ -17,7 +17,7 @@ def features(min_games=7):
                   sh(lambda s: 'cap_contest' in s['tags']), sh(lambda s: 'damage' in s['tags']), sh(lambda s: 'escape' in s['tags']), sh(lambda s: 'reposition' in s['tags']),
                   sh(lambda s: s['movement'] == 'pushing'), sh(lambda s: s['movement'] == 'kiting'), sh(lambda s: s['movement'] == 'stationary'),
                   sh(lambda s: s['inside']), med(max(0, s['edge']) for s in ss) / 1000, med(first),
-                  sh(lambda s: s['kind'] == 'long DD'), sh(lambda s: s['kind'] == 'short DD'), sh(lambda s: s['kind'] == 'cruiser'), sh(lambda s: s['kind'] == 'exhaust')])
+                  sh(lambda s: s['habit'] == 'flank smoke lines'), sh(lambda s: s['habit'] == 'cap sitters'), sh(lambda s: s['habit'] == 'parked cruiser smoke'), sh(lambda s: s['habit'] == 'moving exhaust')])
     Z = [[0.0] * len(FEATS) for _ in clans]
     for j in range(len(FEATS)):
         col = [r[j] for r in X]; m = mean(col); sd = statistics.pstdev(col) or 1

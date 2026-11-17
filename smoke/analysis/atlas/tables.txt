@@ -1,0 +1,437 @@
+Smoke Atlas tables. Batch output/20261117-122135 | 1547 smokes, 171 games, 1074 destroyer smokes
+Top 6 W-L: {'BONKZ': (13, 8), 'H-SR': (20, 2), 'HTDOG': (12, 6), 'KITE': (9, 5), 'RESIN': (17, 7), 'VRTUS': (7, 4)} | PN (3, 4)
+Early = first 5 minutes (elapsed < 300 s). Destroyer smokes unless a line says otherwise.
+ALL MAPS early destroyer smokes: Top 6 102 Rest 200 | radar cruiser inside: Top 6 61 Rest 70
+ALL MAPS destroyer smokes: Top 6 387 Rest 687 | radar cruiser inside %: Top 6 47.3 Rest 29.0
+
+==============================================================================================================
+Sleeping Giant | north-spawn teams mirrored north-south | map 42 km across | destroyer smokes 238 (Top 6 110, Rest 128, PN 0) | all classes 305 | map average concealed damage per destroyer smoke 11,890
+ CAPS AND CAP CHOICE (zone = nearest cap; source module-4/cells.json; interval from module-4/tables-r4.txt)
+   cap A uv [0.1253, 0.5] r_u 0.0707 (2.97 km) | zone n 91 | Top 6 41.8% (46) vs Rest 35.2% (45) gap +6.6 (-9 to +21) | 14,758 per smoke, 12.1 deaths/100, cap won after 22.0% of smokes
+   cap B uv [0.4719, 0.5] r_u 0.0707 (2.97 km) | zone n 52 | Top 6 19.1% (21) vs Rest 24.2% (31) gap -5.1 (-20 to +12) | 5,442 per smoke, 13.5 deaths/100, cap won after 21.2% of smokes
+   cap C uv [0.6993, 0.4012] r_u 0.0707 (2.97 km) | zone n 28 | Top 6 8.2% (9) vs Rest 14.8% (19) gap -6.6 (-17 to +3) | 14,249 per smoke, 21.4 deaths/100, cap won after 28.6% of smokes
+   cap D uv [0.6993, 0.5988] r_u 0.0707 (2.97 km) | zone n 67 | Top 6 30.9% (34) vs Rest 25.8% (33) gap +5.1 (-11 to +19) | 12,014 per smoke, 6.0 deaths/100, cap won after 9.0% of smokes
+ SIGNATURE SPOTS AND LEADS (source round4/part-b/spots.json; cast shapes recomputed here from the same smokes)
+   SIGNATURE sg-harugumo-g1: Harugumo, west edge, own side of cap A (G1/F1) | Top 6 11 of 24 (45.8%) vs Rest 1 of 9 (11.1%) gap +34.7 (+20.0 to +56.2) | clans RESIN 5, H-SR 4, BONKZ 2 | 16,315 per smoke, 9.1 deaths/100, cap won 85.7% of 7 | median 2:47 | membership recomputed 11 (matches)
+     formation: Harugumo smoke at G1/F1 + a cruiser inside (Des Moines 5) + second destroyer forward of the smoke (most often in F1): 4 of 11 Top 6 smokes; Rest 1 of 1 in the same spot
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120797.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166103.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g1_39283.html
+     cast_cruiser: n 9 of 11 | centre uv [0.0451, 0.6427] | cruiser inside the smoke: 3.9 km short of cap A (own side), cells G1/H1 | ships Des Moines 5, Worcester 3, Petropavlovsk 1 | 0.7 km from puff, -1.2 km fwd, forward 1 of 9 | radar cruiser 9
+     cast_second_dd: n 7 of 11 | centre uv [0.129, 0.5862] | nearest other allied destroyer: 0.7 km short of cap A (own side), cells F1/G1 | ships Marceau 5, Châteaurenault 1, Ragnar 1 | 3.2 km from puff, +3.2 km fwd, forward 5 of 7
+   SIGNATURE sg-flank-f9: flank smoke lines, east edge, outside cap D (F9/G9/G10/F10) | Top 6 14 of 67 (20.9%) vs Rest 5 of 74 (6.8%) gap +14.1 (+1.4 to +25.9) | clans BONKZ 6, H-SR 4, RESIN 3, VRTUS 1 | 17,229 per smoke, 0.0 deaths/100, cap won 14.3% of 14 | median 5:15 | membership recomputed 14 (matches)
+     formation: flank-line destroyer smoke at F9/G9 + a cruiser inside (Brisbane 4) + second destroyer forward of the smoke (most often in F10): 7 of 14 Top 6 smokes; Rest 1 of 5 in the same spot
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166105.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8069_g1_190203.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g2_84815.html
+     cast_cruiser: n 11 of 14 | centre uv [0.8953, 0.613] | cruiser inside the smoke: 5.3 km beside cap D, cells F9/G9 | ships Brisbane 4, Des Moines 2, Utrecht 2 | 0.2 km from puff, -0.4 km fwd, forward 5 of 11 | radar cruiser 9
+     cast_second_dd: n 10 of 14 | centre uv [0.8113, 0.5716] | nearest other allied destroyer: 1.9 km beside cap D, cells F10/G10 | ships Yueyang 2, Châteaurenault 2, Marceau 2 | 2.5 km from puff, +2.0 km fwd, forward 9 of 10
+   LEAD sg-somers-f9: Somers, east edge, outside cap D (F9/G10/F10) | Top 6 10 of 30 (33.3%) vs Rest 5 of 45 (11.1%) gap +22.2 (-1.8 to +58.7) | clans BONKZ 5, RESIN 3, VRTUS 1, H-SR 1 | 9,723 per smoke, 0.0 deaths/100, cap won 20.0% of 10 | median 5:34 | membership recomputed 10 (matches)
+     formation: Somers smoke at F9/G10 + a cruiser inside (Des Moines 2) + second destroyer forward of the smoke (most often in E7): 4 of 10 Top 6 smokes; Rest 1 of 5 in the same spot
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g2_84823.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120798.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g1_39292.html
+     cast_cruiser: n 8 of 10 | centre uv [0.8992, 0.5859] | cruiser inside the smoke: 5.4 km beside cap D, cells F9/F10 | ships Des Moines 2, Brisbane 2, Minotaur 1 | 0.2 km from puff, +0.2 km fwd, forward 5 of 8 | radar cruiser 7
+     cast_second_dd: n 6 of 10 | centre uv [0.7906, 0.5452] | nearest other allied destroyer: 1.5 km beside cap D, cells E7/F10 | ships Châteaurenault 2, Kléber 1, Ragnar 1 | 4.7 km from puff, +2.0 km fwd, forward 5 of 6
+   LEAD sg-gdansk-g6: Gdańsk, between caps B and D, own side (G6/H6) | Top 6 10 of 21 (47.6%) vs Rest 6 of 16 (37.5%) gap +10.1 (-36.1 to +56.9) | clans HTDOG 7, RESIN 1, BONKZ 1, KITE 1 | 13,614 per smoke, 0.0 deaths/100, cap won 14.3% of 7 | median 8:58 | membership recomputed 10 (matches)
+     formation: Gdańsk smoke at G6/H6 + no other cruiser inside + second destroyer level with or behind the smoke (most often in F6): 5 of 10 Top 6 smokes; Rest 2 of 6 in the same spot
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8150_g2_188202.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120805.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8153_g1_92181.html
+     cast_cruiser: recorded for 0 of 10 (below 4, no record)
+     cast_second_dd: n 9 of 10 | centre uv [0.5581, 0.6073] | nearest other allied destroyer: 2.8 km short of cap B (own side), cells F6/H7 | ships Delny 5, Kléber 3, Marceau 1 | 4.5 km from puff, -0.3 km fwd, forward 4 of 9
+ PAYING CELLS (source module-4/cells.json; high = at least 1.4x the map average, low = at most 0.6x; cap won here is after % of all smokes in the cell)
+   paying_high E1 [high] n 10* | 25,542 per smoke (median 19,337; 2.15x map avg) | 10.0 deaths/100 | cap won after 40.0% | Top 6 3 Rest 7 | median 4:36 | cell E1: 0.4 km beside cap A
+   paying_high G1 [high] n 21 | 24,101 per smoke (median 21,944; 2.03x map avg) | 14.3 deaths/100 | cap won after 28.6% | Top 6 12 Rest 9 | median 2:40 | cell G1: 3.8 km short of cap A (own side)
+   paying_high G9 [high] n 8* | 22,459 per smoke (median 16,744; 1.89x map avg) | 0.0 deaths/100 | cap won after 12.5% | Top 6 4 Rest 4 | median 4:00 | cell G9: 4.0 km beside cap D
+   paying_low F5 [low] n 12* | 6,700 per smoke (median 0; 0.56x map avg) | 8.3 deaths/100 | cap won after 25.0% | Top 6 6 Rest 6 | median 7:31 | cell F5: inside cap B, own half
+   paying_low F6 [low] n 10* | 5,111 per smoke (median 2,477; 0.43x map avg) | 20.0 deaths/100 | cap won after 30.0% | Top 6 1 Rest 9 | median 6:46 | cell F6: 1.0 km short of cap B (own side)
+   paying_low G6 [low] n 11* | 3,906 per smoke (median 1,122; 0.33x map avg) | 0.0 deaths/100 | cap won after 9.1% | Top 6 6 Rest 5 | median 5:53 | cell G6: 2.8 km short of cap B (own side)
+ EARLY SETUP (destroyer smokes in the first 5 minutes): n 69 (Top 6 32, Rest 37) | radar cruiser inside: Top 6 15 of 32 (47%), Rest 22 of 37 (59%)
+   EARLY sg-early-g1: west flank, short of cap A on the own side | cells G1/F1/E1 | centre uv [0.0788, 0.5889] radii 6.8 x 3.9 km | n 39 = 56.5% of the map (Top 6 22 = 68.8% of theirs, Rest 17 = 45.9%)
+     radar cruiser inside 22 of 39 (Top 6 12 of 22, Rest 10 of 17) | 19,792 per smoke, 7.7 deaths/100, cap won 46.9% of 32 | median 2:31 | inside a cap 28.2%, smoke edge 1.5 km from the contested cap edge; centre 1.2 km from cap A edge | stacked 64.1% | Somers 12, Gearing 10, Harugumo 9, Daring 4
+     second destroyer recorded 10 of 39, forward 7 (Top 6 4 of 22, Rest 3 of 17)
+     example H-SR Harugumo 1:44 https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g1_29455.html
+     example BONKZ Harugumo 2:47 https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166103.html
+     example RESIN Harugumo 2:23 https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120797.html
+     cast_cruiser: n 26 of 39 | centre uv [0.0722, 0.6051] | cruiser inside the smoke: 2.0 km short of cap A (own side), cells G1/F1 | ships Des Moines 10, Brisbane 4, Worcester 3 | 0.3 km from puff, -0.6 km fwd, forward 3 of 26 | radar cruiser 22
+     cast_second_dd: n 10 of 39 | centre uv [0.2355, 0.5604] | nearest other allied destroyer: 2.3 km beside cap A, cells F1/F5 | ships Marceau 4, 20 de Julio 2, Z-52 1 | 6.8 km from puff, +1.2 km fwd, forward 7 of 10
+   EARLY sg-early-g9: east edge, beside cap D | cells G9/F9/H8 | centre uv [0.8311, 0.6178] radii 6.0 x 3.5 km | n 15 = 21.7% of the map (Top 6 6 = 18.8% of theirs, Rest 9 = 24.3%)
+     radar cruiser inside 12 of 15 (Top 6 3 of 6, Rest 9 of 9) | 16,552 per smoke, 0.0 deaths/100, cap won 13.3% of 15 | median 3:46 | inside a cap 0.0%, smoke edge 7.0 km from the contested cap edge; centre 2.6 km from cap D edge | stacked 80.0% | Somers 10, Gearing 2, Harugumo 2, Gdańsk 1
+     second destroyer recorded 10 of 15, forward 7 (Top 6 4 of 6, Rest 3 of 9)
+     example H-SR Harugumo 3:46 https://seanr87.github.io/smoke-signals/smoke/smokes/7933_g1_178671.html
+     example RESIN Somers 3:58 https://seanr87.github.io/smoke-signals/smoke/smokes/8069_g1_190203.html
+     example VRTUS Somers 4:09 https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g2_84815.html
+     cast_cruiser: n 14 of 15 | centre uv [0.8231, 0.6405] | cruiser inside the smoke: 2.5 km beside cap D, cells G9/H8 | ships Des Moines 5, Minotaur 3, Brisbane 3 | 0.3 km from puff, -0.7 km fwd, forward 2 of 14 | radar cruiser 12
+     cast_second_dd: n 10 of 15 | centre uv [0.7463, 0.5664] | nearest other allied destroyer: inside cap D, far half, cells F10/F6 | ships 20 de Julio 2, Daring 2, Yueyang 1 | 6.2 km from puff, +2.9 km fwd, forward 7 of 10
+   EARLY sg-early-f5: centre, own-side rim of cap B | cells F5/G6/F6 | centre uv [0.4744, 0.5827] radii 5.5 x 2.2 km | n 13 = 18.8% of the map (Top 6 3 = 9.4% of theirs, Rest 10 = 27.0%)
+     radar cruiser inside 3 of 13 (Top 6 0 of 3, Rest 3 of 10) | 2,643 per smoke, 7.7 deaths/100, cap won 50.0% of 10 | median 3:53 | inside a cap 46.2%, smoke edge 0.8 km from the contested cap edge; centre 0.5 km from cap B edge | stacked 7.7% | Daring 4, Gdańsk 4, Z-42 2, Harugumo 1
+     second destroyer recorded 10 of 13, forward 2 (Top 6 0 of 3, Rest 2 of 10)
+     example VRTUS Daring 3:53 https://seanr87.github.io/smoke-signals/smoke/smokes/7990_g1_188225.html
+     example HTDOG Gdańsk 3:54 https://seanr87.github.io/smoke-signals/smoke/smokes/8074_g3_176171.html
+     example HTDOG Gdańsk 3:53 https://seanr87.github.io/smoke-signals/smoke/smokes/7991_g1_78225.html
+     cast_cruiser: recorded for 3 of 13 (below 8, no record)
+     cast_second_dd: n 10 of 13 | centre uv [0.5284, 0.6028] | nearest other allied destroyer: 2.0 km short of cap B (own side), cells G5/G6 | ships Daring 3, Marceau 2, Lüshun 1 | 6.6 km from puff, -0.7 km fwd, forward 2 of 10
+   (cluster of 2, below 8, not reported: E7/F7, 1.3 km past cap D (enemy side); Top 6 1)
+ RADAR FROM SMOKE: destroyer radar plays 29 (Top 6 14) = 0.45 per team-game (64 team-games) | by contested cap {'A': 10, 'B': 6, 'C': 13} | Svea radar plays 2 (Top 6 1; cells {'J1': 1, 'F2': 1}; contested cap {'A': 2})
+   RADAR sg-radar-c: far east cap C, smoked from the east side around cap D (wide) | cells F8/E10/H10 | centre uv [0.8146, 0.5306] radii 7.6 x 6.3 km | n 13 (cap control 6, Top 6 6) | first 5 min 23.1% | cap won 4 of 13 | 15,439 per smoke | radar ships Des Moines 4, Brisbane 3, Gdańsk 3 | tightest core 7 in F8/E10 | inside a cap 15.4% | drawn shape uses 10 of 13 plays
+     example RESIN Somers 3:58 https://seanr87.github.io/smoke-signals/smoke/smokes/8069_g1_190203.html
+     example BONKZ Somers 10:06 https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g2_84823.html
+     example H-SR Somers 5:22 https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g1_125604.html
+   RADAR sg-radar-a: west cap A, smoked from below it | cells G1/F2/E1 | centre uv [0.0734, 0.5662] radii 5.6 x 4.3 km | n 10 (cap control 9, Top 6 6) | first 5 min 50.0% | cap won 3 of 5 | 23,855 per smoke | radar ships Brisbane 6, Worcester 3, Des Moines 1 | tightest core 7 in G1/F2 | inside a cap 30.0% | drawn shape uses 8 of 10 plays
+     example BONKZ Harugumo 2:47 https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166103.html
+     example H-SR Somers 1:18 https://seanr87.github.io/smoke-signals/smoke/smokes/7933_g1_178668.html
+     example H-SR Harugumo 3:37 https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g1_125602.html
+   (cap B: 6 plays, below 8, not reported; cells F5/G7/H7)
+ DEATHS IN SMOKE (all classes; clusters at 2.5 km because deaths are sparse): smokes with a death 34 of 305 (35 deaths; 11.5 per 100 smokes) | destroyer smokes only: 27 of 238 (28 deaths; 11.8 per 100)
+   DEATHS sg-deaths-f1: west flank, below cap A | centre uv [0.0809, 0.5917] radii 7.1 x 5.1 km | 11 smokes with a death (11 deaths; Top 6 3, Rest 8; 10 clans) = 32.4% of the map | all smokes in the ellipse 85: 11.8 deaths/100 (map 11.5) | behind by 50+ 4, enemy radar reached 4, game lost 7 | Gearing 3, Somers 3, La Pampa 1, Gdańsk 1 | median 6:16
+   DEATHS sg-deaths-e9: east, between caps C and D | centre uv [0.7641, 0.4866] radii 7.1 x 4.9 km | 8 smokes with a death (9 deaths; Top 6 3, Rest 5; 7 clans) = 23.5% of the map | all smokes in the ellipse 35: 22.9 deaths/100 (map 11.5) | behind by 50+ 4, enemy radar reached 3, game lost 6 | Somers 3, Gearing 1, Harugumo 1, Napoli 1 | median 9:20
+   (group of 4, below 8, not reported: F6/G4, 0.7 km short of cap B (own side))
+   (group of 3, below 8, not reported: D6/C6, 4.2 km past cap C (enemy side))
+   (group of 2, below 8, not reported: F4, 2.6 km beside cap B)
+   (group of 1, below 8, not reported: H8, 5.1 km short of cap D (own side))
+   (group of 1, below 8, not reported: D4, 7.3 km past cap B (enemy side))
+   (group of 1, below 8, not reported: C3, 8.8 km past cap A (enemy side))
+   (group of 1, below 8, not reported: C10, 9.1 km beside cap C)
+   (group of 1, below 8, not reported: I4, 13.2 km short of cap B (own side))
+   (group of 1, below 8, not reported: J10, 13.1 km short of cap D (own side))
+   destroyer-smoke death rate by cap zone (cells.json): A 12.1 (n 91), B 13.5 (n 52), C 21.4 (n 28), D 6.0 (n 67)
+   highest destroyer-smoke death rate by rated cell (cells.json): E8 25.0 (n 8*), F6 20.0 (n 10*), F1 16.7 (n 18)
+ PN destroyer smokes on this map: 0
+ EXAMPLE POOL (Top 6): signature examples are listed above; early and radar examples are listed under their clusters.
+
+==============================================================================================================
+Hotspot | north-spawn teams mirrored north-south | map 48 km across | destroyer smokes 235 (Top 6 80, Rest 155, PN 1) | all classes 288 | map average concealed damage per destroyer smoke 12,331
+ CAPS AND CAP CHOICE (zone = nearest cap; source module-4/cells.json; interval from module-4/tables-r4.txt)
+   cap A uv [0.1658, 0.4026] r_u 0.0832 (4.0 km) | zone n 14 | Top 6 13.8% (11) vs Rest 1.9% (3) gap +11.9 (+5 to +16 *) | 19,657 per smoke, 7.1 deaths/100, cap won after 57.1% of smokes
+   cap B uv [0.1658, 0.5974] r_u 0.0832 (4.0 km) | zone n 36 | Top 6 22.5% (18) vs Rest 11.6% (18) gap +10.9 (+2 to +23 *) | 15,626 per smoke, 8.3 deaths/100, cap won after 16.7% of smokes
+   cap C uv [0.5, 0.5] r_u 0.0832 (4.0 km) | zone n 77 | Top 6 28.8% (23) vs Rest 34.8% (54) gap -6.0 (-25 to +9) | 8,465 per smoke, 5.2 deaths/100, cap won after 29.9% of smokes
+   cap D uv [0.9, 0.5] r_u 0.0832 (4.0 km) | zone n 108 | Top 6 35.0% (28) vs Rest 51.6% (80) gap -16.6 (-31 to -4 *) | 13,039 per smoke, 9.3 deaths/100, cap won after 22.2% of smokes
+ SIGNATURE SPOTS AND LEADS (source round4/part-b/spots.json; cast shapes recomputed here from the same smokes)
+   LEAD hs-flank-g6: flank smoke lines, own-side rim of cap C, centre (G6/F6/G7) | Top 6 13 of 64 (20.3%) vs Rest 7 of 80 (8.8%) gap +11.6 (-7.5 to +27.8) | clans RESIN 7, BONKZ 4, H-SR 2 | 17,336 per smoke, 7.7 deaths/100, cap won 85.7% of 7 | median 4:15 | membership recomputed 13 (matches)
+     formation: flank-line destroyer smoke at G6/F6 + a cruiser inside (Moskva 5) + second destroyer forward of the smoke (most often in F5): 5 of 13 Top 6 smokes; Rest 2 of 7 in the same spot
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g3_85022.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g1_60864.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8140_g1_190365.html
+     note: cast_cruiser centre recomputed here [0.5783, 0.6337] n 12; Part B has [0.5803, 0.6363] n 12; the Part B centre is kept
+     cast_cruiser: n 12 of 13 | centre uv [0.5803, 0.6363] | cruiser inside the smoke: 3.4 km short of cap C (own side), cells G6/G7 | ships Moskva 5, Brisbane 4, Petropavlovsk 2 | 0.3 km from puff, -0.7 km fwd, forward 4 of 12 | radar cruiser 11
+     cast_second_dd: n 9 of 13 | centre uv [0.472, 0.6351] | nearest other allied destroyer: 2.6 km short of cap C (own side), cells F5/G6 | ships Ragnar 3, Gdańsk 2, Kléber 2 | 3.7 km from puff, +0.3 km fwd, forward 5 of 9
+ PAYING CELLS (source module-4/cells.json; high = at least 1.4x the map average, low = at most 0.6x; cap won here is after % of all smokes in the cell)
+   paying_high G6 [best_rated_cell_not_high] n 14* | 16,679 per smoke (median 2,673; 1.35x map avg) | 0.0 deaths/100 | cap won after 42.9% | Top 6 7 Rest 7 | median 6:23 | cell G6: 2.5 km short of cap C (own side)
+   paying_low G5 [low] n 12* | 6,297 per smoke (median 1,320; 0.51x map avg) | 0.0 deaths/100 | cap won after 33.3% | Top 6 3 Rest 9 | median 4:02 | cell G5: 2.2 km short of cap C (own side)
+   paying_low F9 [low] n 11* | 5,994 per smoke (median 842; 0.49x map avg) | 9.1 deaths/100 | cap won after 27.3% | Top 6 0 Rest 11 | median 6:52 | cell F9: inside cap D, own half
+   paying_low F6 [low] n 17 | 5,370 per smoke (median 0; 0.44x map avg) | 0.0 deaths/100 | cap won after 23.5% | Top 6 6 Rest 11 | median 5:48 | cell F6: 0.1 km short of cap C (own side)
+   paying_low F5 [low] n 15 | 3,875 per smoke (median 570; 0.31x map avg) | 13.3 deaths/100 | cap won after 20.0% | Top 6 0 Rest 15 | median 5:48 | cell F5: inside cap C, own half
+ EARLY SETUP (destroyer smokes in the first 5 minutes): n 68 (Top 6 23, Rest 45) | radar cruiser inside: Top 6 20 of 23 (87%), Rest 17 of 45 (38%)
+   EARLY hs-early-g10: east edge, short of cap D on the own side | cells G10/F10/G9 | centre uv [0.9305, 0.6094] radii 3.8 x 2.5 km | n 36 = 52.9% of the map (Top 6 12 = 52.2% of theirs, Rest 24 = 53.3%)
+     radar cruiser inside 21 of 36 (Top 6 10 of 12, Rest 11 of 24) | 16,512 per smoke, 5.6 deaths/100, cap won 50.0% of 32 | median 2:37 | inside a cap 27.8%, smoke edge 1.0 km from the contested cap edge; centre 1.5 km from cap D edge | stacked 61.1% | Somers 16, Gearing 7, Harugumo 5, Shimakaze 3
+     second destroyer recorded 4 of 36, forward 2 (Top 6 1 of 12, Rest 1 of 24)
+     example H-SR Somers 1:40 https://seanr87.github.io/smoke-signals/smoke/smokes/7915_g1_5498.html
+     example BONKZ Harugumo 2:45 https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g2_224002.html
+     example RESIN Somers 2:29 https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g2_224001.html
+     cast_cruiser: n 23 of 36 | centre uv [0.9297, 0.6319] | cruiser inside the smoke: 2.5 km short of cap D (own side), cells G10/G9 | ships Brisbane 9, Des Moines 8, Utrecht 2 | 0.3 km from puff, -0.6 km fwd, forward 4 of 23 | radar cruiser 21
+     cast_second_dd: recorded for 4 of 36 (below 8, no record)
+   EARLY hs-early-g5: centre, short of cap C on the own side | cells G5/F5/F6 | centre uv [0.52, 0.6012] radii 4.7 x 3.2 km | n 27 = 39.7% of the map (Top 6 8 = 34.8% of theirs, Rest 19 = 42.2%)
+     radar cruiser inside 12 of 27 (Top 6 7 of 8, Rest 5 of 19) | 5,173 per smoke, 0.0 deaths/100, cap won 53.8% of 26 | median 2:26 | inside a cap 33.3%, smoke edge 0.6 km from the contested cap edge; centre 1.0 km from cap C edge | stacked 29.6% | Gearing 7, Somers 7, Gdańsk 6, Daring 5
+     second destroyer recorded 22 of 27, forward 9 (Top 6 4 of 8, Rest 5 of 19)
+     example BONKZ Gearing 4:15 https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g1_60864.html
+     example H-SR Delny 1:29 https://seanr87.github.io/smoke-signals/smoke/smokes/7915_g1_5497.html
+     example RESIN Somers 1:31 https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g2_139975.html
+     cast_cruiser: n 12 of 27 | centre uv [0.5515, 0.629] | cruiser inside the smoke: 2.7 km short of cap C (own side), cells G6/G5 | ships Petropavlovsk 3, Brisbane 2, Minotaur 2 | 0.3 km from puff, -0.4 km fwd, forward 5 of 12 | radar cruiser 11
+     cast_second_dd: n 22 of 27 | centre uv [0.4687, 0.6012] | nearest other allied destroyer: 1.1 km short of cap C (own side), cells F5/G5 | ships 20 de Julio 3, Daring 3, Kléber 2 | 3.5 km from puff, -0.2 km fwd, forward 9 of 22
+   (cluster of 5, below 8, not reported: G2/G1, inside cap B, own half; Top 6 3)
+ RADAR FROM SMOKE: destroyer radar plays 25 (Top 6 14) = 0.40 per team-game (62 team-games) | by contested cap {'A': 4, 'B': 2, 'C': 9, 'D': 10} | Svea radar plays 3 (Top 6 1; cells {'F10': 2, 'E2': 1}; contested cap {'D': 2, 'A': 1})
+   RADAR hs-radar-d: east cap D, smoked from its own side | cells G10/E10/F9 | centre uv [0.927, 0.5908] radii 5.5 x 4.0 km | n 10 (cap control 10, Top 6 4) | first 5 min 60.0% | cap won 4 of 7 | 22,067 per smoke | radar ships Brisbane 5, Des Moines 3, Stalingrad 1 | tightest core 8 in G10/F9 | inside a cap 30.0% | drawn shape uses 10 of 10 plays
+     example H-SR Grozovoi 2:05 https://seanr87.github.io/smoke-signals/smoke/smokes/8073_g1_34486.html
+     example HTDOG Harugumo 2:38 https://seanr87.github.io/smoke-signals/smoke/smokes/7972_g1_5611.html
+     example H-SR Somers 9:07 https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g3_85028.html
+   RADAR hs-radar-c: centre cap C, smoked from the south | cells G5/G7/F6 | centre uv [0.5462, 0.6179] radii 6.1 x 2.9 km | n 9 (cap control 7, Top 6 7) | first 5 min 44.4% | cap won 2 of 4 | 10,912 per smoke | radar ships Moskva 4, Brisbane 2, Gdańsk 1 | tightest core 4 in G5/F5 | inside a cap 22.2% | drawn shape uses 8 of 9 plays
+     example RESIN Somers 1:31 https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g2_139975.html
+     example H-SR Gdańsk 8:30 https://seanr87.github.io/smoke-signals/smoke/smokes/8073_g1_34490.html
+     example BONKZ Gearing 10:27 https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g1_60872.html
+   (cap A: 4 plays, below 8, not reported; cells D2/E1/F2)
+   (cap B: 2 plays, below 8, not reported; cells H4)
+ DEATHS IN SMOKE (all classes; clusters at 2.5 km because deaths are sparse): smokes with a death 17 of 288 (18 deaths; 6.2 per 100 smokes) | destroyer smokes only: 17 of 235 (18 deaths; 7.7 per 100)
+   DEATHS hs-deaths-g10: east edge, below cap D | centre uv [0.9141, 0.6385] radii 6.8 x 3.9 km | 8 smokes with a death (9 deaths; Top 6 4, Rest 4; 7 clans) = 47.1% of the map | all smokes in the ellipse 91: 9.9 deaths/100 (map 6.2) | behind by 50+ 2, enemy radar reached 0, game lost 5 | Harugumo 3, Shimakaze 2, Somers 2, Gearing 1 | median 9:16
+   (group of 3, below 8, not reported: G7/H8, 7.3 km short of cap C (own side))
+   (group of 2, below 8, not reported: F5, inside cap C, own half)
+   (group of 2, below 8, not reported: F1/E1, 2.0 km short of cap A (own side))
+   (group of 1, below 8, not reported: H2, 1.9 km short of cap B (own side))
+   (group of 1, below 8, not reported: G2, inside cap B, own half)
+   destroyer-smoke death rate by cap zone (cells.json): A 7.1 (n 14), B 8.3 (n 36), C 5.2 (n 77), D 9.3 (n 108)
+   highest destroyer-smoke death rate by rated cell (cells.json): F10 13.6 (n 22), F5 13.3 (n 15), F9 9.1 (n 11*)
+ PN destroyer smokes on this map: 1 | Somers F10 3:16 0
+ EXAMPLE POOL (Top 6): signature examples are listed above; early and radar examples are listed under their clusters.
+
+==============================================================================================================
+Loop | north-spawn teams mirrored north-south | map 48 km across | destroyer smokes 142 (Top 6 41, Rest 101, PN 1) | all classes 189 | map average concealed damage per destroyer smoke 8,039
+ CAPS AND CAP CHOICE (zone = nearest cap; source module-4/cells.json; interval from module-4/tables-r4.txt)
+   cap A uv [0.35, 0.5] r_u 0.0938 (4.5 km) | zone n 59 | Top 6 22.0% (9) vs Rest 49.5% (50) gap -27.5 (-49 to -7 *) | 4,823 per smoke, 6.8 deaths/100, cap won after 16.9% of smokes
+   cap B uv [0.65, 0.5] r_u 0.0938 (4.5 km) | zone n 47 | Top 6 43.9% (18) vs Rest 28.7% (29) gap +15.2 (-1 to +45) | 7,969 per smoke, 12.8 deaths/100, cap won after 42.6% of smokes
+   cap C uv [0.89, 0.5] r_u 0.0938 (4.5 km) | zone n 36 | Top 6 34.1% (14) vs Rest 21.8% (22) gap +12.3 (-10 to +32) | 13,403 per smoke, 13.9 deaths/100, cap won after 19.4% of smokes
+ SIGNATURE SPOTS AND LEADS (source round4/part-b/spots.json; cast shapes recomputed here from the same smokes)
+   SIGNATURE loop-cap-f7: cap sitters, own-side and east half of cap B (F7/F8/E6) | Top 6 15 of 23 (65.2%) vs Rest 13 of 65 (20.0%) gap +45.2 (+24.6 to +70.0) | clans RESIN 4, KITE 3, BONKZ 3, H-SR 2, HTDOG 2, VRTUS 1 | 5,834 per smoke, 6.7 deaths/100, cap won 70.0% of 10 | median 8:34 | membership recomputed 15 (matches)
+     formation: cap-sitter smoke at F7/F8 + no other cruiser inside + second destroyer level with or behind the smoke (most often in F8): 7 of 15 Top 6 smokes; Rest 5 of 13 in the same spot
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/7976_g1_219218.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g4_180813.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8150_g1_34881.html
+     cast_cruiser: recorded for 1 of 15 (below 4, no record)
+     cast_second_dd: n 15 of 15 | centre uv [0.7306, 0.5493] | nearest other allied destroyer: 0.0 km short of cap B (own side), cells F8/G7 | ships Marceau 6, Delny 2, 20 de Julio 2 | 6.2 km from puff, +0.7 km fwd, forward 8 of 15
+   LEAD loop-gdansk-f8: Gdańsk, own-side rim of cap B (F8/F7) | Top 6 8 of 12 (66.7%) vs Rest 0 of 1 (0.0%) gap +66.7 (+40.0 to +100.0) | clans BONKZ 3, RESIN 3, H-SR 2 | 6,042 per smoke, 0.0 deaths/100, cap won 60.0% of 5 | median 8:47 | membership recomputed 8 (matches)
+     formation: Gdańsk smoke at F8/F7 + no other cruiser inside + second destroyer level with or behind the smoke (most often in F8): 4 of 8 Top 6 smokes; Rest 0 of 0 in the same spot
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g4_180813.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/7920_g1_144966.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g2_111344.html
+     cast_cruiser: recorded for 1 of 8 (below 4, no record)
+     cast_second_dd: n 8 of 8 | centre uv [0.7052, 0.5812] | nearest other allied destroyer: 0.2 km short of cap B (own side), cells F8/G7 | ships 20 de Julio 2, Marceau 2, Châteaurenault 1 | 3.4 km from puff, +0.1 km fwd, forward 4 of 8
+ PAYING CELLS (source module-4/cells.json; high = at least 1.4x the map average, low = at most 0.6x; cap won here is after % of all smokes in the cell)
+   paying_high F10 [high] n 9* | 20,728 per smoke (median 9,903; 2.58x map avg) | 33.3 deaths/100 | cap won after 44.4% | Top 6 2 Rest 7 | median 9:08 | cell F10: inside cap C, own half
+   paying_high F8 [high] n 15 | 18,318 per smoke (median 7,970; 2.28x map avg) | 13.3 deaths/100 | cap won after 40.0% | Top 6 7 Rest 8 | median 7:43 | cell F8: 1.2 km short of cap B (own side)
+   paying_low G4 [low] n 9* | 4,759 per smoke (median 1,683; 0.59x map avg) | 0.0 deaths/100 | cap won after 44.4% | Top 6 2 Rest 7 | median 9:09 | cell G4: 2.2 km short of cap A (own side)
+   paying_low F7 [low] n 15 | 3,113 per smoke (median 792; 0.39x map avg) | 0.0 deaths/100 | cap won after 53.3% | Top 6 6 Rest 9 | median 9:26 | cell F7: inside cap B, own half
+ EARLY SETUP (destroyer smokes in the first 5 minutes): n 32 (Top 6 9, Rest 23) | radar cruiser inside: Top 6 4 of 9 (44%), Rest 5 of 23 (22%)
+   EARLY loop-early-f4: west, own half of cap A | cells F4/G4/F3 | centre uv [0.3442, 0.5926] radii 5.3 x 3.5 km | n 14 = 43.8% of the map (Top 6 4 = 44.4% of theirs, Rest 10 = 43.5%)
+     radar cruiser inside 3 of 14 (Top 6 2 of 4, Rest 1 of 10) | 5,647 per smoke, 14.3 deaths/100, cap won 60.0% of 10 | median 2:06 | inside a cap 57.1%, smoke edge -0.1 km from the contested cap edge; centre -0.0 km from cap A edge | stacked 35.7% | Daring 6, Somers 4, Shimakaze 1, Gearing 1
+     second destroyer recorded 9 of 14, forward 2 (Top 6 0 of 4, Rest 2 of 10)
+     example RESIN Somers 1:26 https://seanr87.github.io/smoke-signals/smoke/smokes/7889_g1_178494.html
+     example RESIN Somers 1:30 https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g3_178569.html
+     cast_cruiser: recorded for 4 of 14 (below 8, no record)
+     cast_second_dd: n 9 of 14 | centre uv [0.4517, 0.6529] | nearest other allied destroyer: 4.3 km short of cap A (own side), cells G5/G6 | ships Kléber 2, Somers 2, Grozovoi 2 | 7.5 km from puff, -1.7 km fwd, forward 2 of 9
+   EARLY loop-early-f8: between caps B and C, own side | cells F8/G8/F7 | centre uv [0.7557, 0.5836] radii 5.2 x 3.2 km | n 10 = 31.2% of the map (Top 6 2 = 22.2% of theirs, Rest 8 = 34.8%)
+     radar cruiser inside 4 of 10 (Top 6 1 of 2, Rest 3 of 8) | 11,990 per smoke, 10.0 deaths/100, cap won 37.5% of 8 | median 4:31 | inside a cap 30.0%, smoke edge 0.2 km from the contested cap edge; centre 2.0 km from cap B edge | stacked 50.0% | Somers 3, Gearing 1, Harugumo 1, Vampire II 1
+     second destroyer recorded 8 of 10, forward 6 (Top 6 0 of 2, Rest 6 of 8)
+     example RESIN Somers 4:59 https://seanr87.github.io/smoke-signals/smoke/smokes/7889_g1_178499.html
+     cast_cruiser: recorded for 4 of 10 (below 8, no record)
+     cast_second_dd: n 8 of 10 | centre uv [0.7793, 0.5599] | nearest other allied destroyer: 1.5 km beside cap C, cells F8/G9 | ships Châteaurenault 4, Kléber 1, Småland 1 | 4.2 km from puff, +1.6 km fwd, forward 6 of 8
+   (cluster of 7, below 8, not reported: F7/F6, inside cap B, own half; Top 6 3)
+   (cluster of 1, below 8, not reported: I5, 11.1 km short of cap A (own side); Top 6 0)
+ RADAR FROM SMOKE: destroyer radar plays 6 (Top 6 4) = 0.13 per team-game (46 team-games) | by contested cap {'A': 1, 'B': 3, 'C': 2} | Svea radar plays 2 (Top 6 2; cells {'C10': 1, 'G4': 1}; contested cap {'C': 1, 'A': 1})
+   (cap B: 3 plays, below 8, not reported; cells F7/F8)
+   (cap C: 2 plays, below 8, not reported; cells F10)
+   (cap A: 1 plays, below 8, not reported; cells E5)
+ DEATHS IN SMOKE (all classes; clusters at 2.5 km because deaths are sparse): smokes with a death 19 of 189 (19 deaths; 10.1 per 100 smokes) | destroyer smokes only: 15 of 142 (15 deaths; 10.6 per 100)
+   (group of 5, below 8, not reported: F10/F9, inside cap C, own half)
+   (group of 2, below 8, not reported: F8, 1.1 km short of cap B (own side))
+   (group of 2, below 8, not reported: H9/H8, 9.5 km short of cap C (own side))
+   (group of 2, below 8, not reported: F3/F4, 0.3 km short of cap A (own side))
+   (group of 1, below 8, not reported: G6, 2.1 km short of cap B (own side))
+   (group of 1, below 8, not reported: F1, 8.9 km beside cap A)
+   (group of 1, below 8, not reported: D10, 4.0 km past cap C (enemy side))
+   (group of 1, below 8, not reported: D4, 3.4 km past cap A (enemy side))
+   (group of 1, below 8, not reported: D7, 1.4 km past cap B (enemy side))
+   (group of 1, below 8, not reported: H4, 6.4 km short of cap A (own side))
+   (group of 1, below 8, not reported: E6, 0.4 km beside cap B)
+   (group of 1, below 8, not reported: H10, 7.7 km short of cap C (own side))
+   destroyer-smoke death rate by cap zone (cells.json): A 6.8 (n 59), B 12.8 (n 47), C 13.9 (n 36)
+   highest destroyer-smoke death rate by rated cell (cells.json): F10 33.3 (n 9*), F8 13.3 (n 15), F4 5.9 (n 17)
+ PN destroyer smokes on this map: 1 | Harugumo G5 13:02 0
+ EXAMPLE POOL (Top 6): signature examples are listed above; early and radar examples are listed under their clusters.
+
+==============================================================================================================
+Mountain Range | north-spawn teams mirrored north-south | map 48 km across | destroyer smokes 132 (Top 6 55, Rest 77, PN 2) | all classes 207 | map average concealed damage per destroyer smoke 10,865
+ CAPS AND CAP CHOICE (zone = nearest cap; source module-4/cells.json; interval from module-4/tables-r4.txt)
+   cap A uv [0.0, 0.5017] r_u 0.2083 (10.0 km) | zone n 30 | Top 6 25.5% (14) vs Rest 20.8% (16) gap +4.7 (-12 to +24) | 15,474 per smoke, 6.7 deaths/100, cap won after 23.3% of smokes
+   cap B uv [0.4, 0.5] r_u 0.0729 (3.5 km) | zone n 49 | Top 6 43.6% (24) vs Rest 32.5% (25) gap +11.1 (-6 to +30) | 9,751 per smoke, 8.2 deaths/100, cap won after 34.7% of smokes
+   cap C uv [0.625, 0.5] r_u 0.0729 (3.5 km) | zone n 53 | Top 6 30.9% (17) vs Rest 46.8% (36) gap -15.9 (-40 to +3) | 9,285 per smoke, 9.4 deaths/100, cap won after 20.8% of smokes
+ SIGNATURE SPOTS AND LEADS (source round4/part-b/spots.json; cast shapes recomputed here from the same smokes)
+   SIGNATURE mr-parked-h1: parked cruiser smoke, far west edge, own-side rim of the big cap A (H1/G1/H2) | Top 6 12 of 33 (36.4%) vs Rest 0 of 13 (0.0%) gap +36.4 (+30.8 to +40.0) | clans HTDOG 8, BONKZ 4 | 19,028 per smoke, 8.3 deaths/100, cap won 9.1% of 11 | median 8:10 | membership recomputed 12 (matches)
+     formation: parked cruiser smoke at H1/G1 + no other cruiser inside + second destroyer forward of the smoke (most often in G2): 7 of 12 Top 6 smokes; Rest 0 of 0 in the same spot
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159434.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g3_159290.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159428.html
+     cast_cruiser: recorded for 0 of 12 (below 4, no record)
+     cast_second_dd: n 8 of 12 | centre uv [0.1799, 0.679] | nearest other allied destroyer: 2.1 km short of cap A (own side), cells G2/H3 | ships 20 de Julio 3, Marceau 2, Châteaurenault 1 | 6.8 km from puff, +1.2 km fwd, forward 7 of 8
+   LEAD mr-svea-g4: Svea, own side of cap B, west-centre (G4/F4) | Top 6 10 of 24 (41.7%) vs Rest 3 of 13 (23.1%) gap +18.6 (-28.0 to +61.5) | clans BONKZ 8, HTDOG 2 | 7,657 per smoke, 10.0 deaths/100, cap won 57.1% of 7 | median 14:05 | membership recomputed 10 (matches)
+     formation: Svea smoke at G4/F4 + no other cruiser inside + second destroyer forward of the smoke (most often in G3): 5 of 10 Top 6 smokes; Rest 2 of 3 in the same spot
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159423.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g2_121108.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159426.html
+     cast_cruiser: recorded for 0 of 10 (below 4, no record)
+     cast_second_dd: n 7 of 10 | centre uv [0.3406, 0.5889] | nearest other allied destroyer: 1.6 km short of cap B (own side), cells G3/F5 | ships 20 de Julio 5, Marceau 2 | 5.4 km from puff, +0.8 km fwd, forward 5 of 7
+ PAYING CELLS (source module-4/cells.json; high = at least 1.4x the map average, low = at most 0.6x; cap won here is after % of all smokes in the cell)
+   paying_high G7 [best_rated_cell_not_high] n 13* | 11,510 per smoke (median 5,280; 1.06x map avg) | 15.4 deaths/100 | cap won after 23.1% | Top 6 6 Rest 7 | median 5:00 | cell G7: 2.5 km short of cap C (own side)
+   paying_low G4 [lowest_rated_cell_not_low] n 13* | 7,584 per smoke (median 3,053; 0.7x map avg) | 7.7 deaths/100 | cap won after 30.8% | Top 6 5 Rest 8 | median 3:19 | cell G4: 2.8 km short of cap B (own side)
+ EARLY SETUP (destroyer smokes in the first 5 minutes): n 39 (Top 6 14, Rest 25) | radar cruiser inside: Top 6 9 of 14 (64%), Rest 8 of 25 (32%)
+   EARLY mr-early-g7: east-centre, short of cap C on the own side | cells G7/F7/F8 | centre uv [0.6858, 0.5897] radii 6.8 x 2.5 km | n 17 = 43.6% of the map (Top 6 6 = 42.9% of theirs, Rest 11 = 44.0%)
+     radar cruiser inside 7 of 17 (Top 6 3 of 6, Rest 4 of 11) | 6,259 per smoke, 0.0 deaths/100, cap won 57.1% of 14 | median 2:43 | inside a cap 11.8%, smoke edge 1.3 km from the contested cap edge; centre 1.7 km from cap C edge | stacked 41.2% | Somers 5, Gearing 4, Gdańsk 2, Daring 2
+     second destroyer recorded 12 of 17, forward 7 (Top 6 3 of 6, Rest 4 of 11)
+     example H-SR Harugumo 1:34 https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g2_121098.html
+     example RESIN Somers 1:44 https://seanr87.github.io/smoke-signals/smoke/smokes/8069_g2_143189.html
+     example H-SR Somers 1:36 https://seanr87.github.io/smoke-signals/smoke/smokes/7930_g1_51291.html
+     cast_cruiser: n 8 of 17 | centre uv [0.6697, 0.6274] | cruiser inside the smoke: 3.0 km short of cap C (own side), cells G7/F8 | ships Minotaur 3, Des Moines 2, Brisbane 2 | 0.3 km from puff, -0.9 km fwd, forward 1 of 8 | radar cruiser 7
+     cast_second_dd: n 12 of 17 | centre uv [0.4788, 0.5778] | nearest other allied destroyer: 1.8 km short of cap B (own side), cells F5/F4 | ships 20 de Julio 2, Vampire II 1, Shimakaze 1 | 9.9 km from puff, +1.1 km fwd, forward 7 of 12
+   EARLY mr-early-g4: west-centre, short of cap B on the own side | cells G4/F4/G5 | centre uv [0.3722, 0.6125] radii 3.3 x 1.5 km | n 15 = 38.5% of the map (Top 6 7 = 50.0% of theirs, Rest 8 = 32.0%)
+     radar cruiser inside 8 of 15 (Top 6 5 of 7, Rest 3 of 8) | 5,870 per smoke, 6.7 deaths/100, cap won 40.0% of 15 | median 1:55 | inside a cap 0.0%, smoke edge 1.7 km from the contested cap edge; centre 2.1 km from cap B edge | stacked 46.7% | Gearing 6, Somers 5, Gdańsk 3, Fuyutsuki 1
+     second destroyer recorded 15 of 15, forward 11 (Top 6 4 of 7, Rest 7 of 8)
+     example H-SR Somers 1:54 https://seanr87.github.io/smoke-signals/smoke/smokes/7930_g1_51292.html
+     example BONKZ Somers 1:49 https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_175995.html
+     example KITE Gearing 1:37 https://seanr87.github.io/smoke-signals/smoke/smokes/8149_g1_68154.html
+     cast_cruiser: n 9 of 15 | centre uv [0.3849, 0.6316] | cruiser inside the smoke: 2.9 km short of cap B (own side), cells G4/G5 | ships Brisbane 3, Minotaur 2, Des Moines 1 | 0.6 km from puff, -0.6 km fwd, forward 0 of 9 | radar cruiser 8
+     cast_second_dd: n 15 of 15 | centre uv [0.3371, 0.5915] | nearest other allied destroyer: 1.8 km short of cap B (own side), cells F4/G4 | ships 20 de Julio 4, Kléber 2, Châteaurenault 2 | 5.0 km from puff, +1.2 km fwd, forward 11 of 15
+   (cluster of 7, below 8, not reported: F2/G2, inside cap A, own half; Top 6 1)
+ RADAR FROM SMOKE: destroyer radar plays 15 (Top 6 11) = 0.36 per team-game (42 team-games) | by contested cap {'A': 1, 'B': 10, 'C': 4} | Svea radar plays 7 (Top 6 4; cells {'G7': 1, 'F6': 2, 'F5': 1, 'F4': 3}; contested cap {'C': 3, 'B': 4})
+   RADAR mr-radar-b: centre cap B, smoked from its own side | cells G5/F4/F5 | centre uv [0.3828, 0.5976] radii 6.0 x 4.2 km | n 10 (cap control 9, Top 6 7) | first 5 min 40.0% | cap won 1 of 6 | 11,144 per smoke | radar ships Brisbane 3, Gdańsk 3, Minotaur 3 | tightest core 10 in G5/F4 | inside a cap 10.0% | drawn shape uses 10 of 10 plays
+     example RESIN Gdańsk 3:34 https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_175996.html
+     example KITE Gearing 1:37 https://seanr87.github.io/smoke-signals/smoke/smokes/8149_g1_68154.html
+     example H-SR Somers 5:07 https://seanr87.github.io/smoke-signals/smoke/smokes/7930_g1_51294.html
+   (cap C: 4 plays, below 8, not reported; cells F8/E10/G7)
+   (cap A: 1 plays, below 8, not reported; cells F3)
+ DEATHS IN SMOKE (all classes; clusters at 2.5 km because deaths are sparse): smokes with a death 18 of 207 (18 deaths; 8.7 per 100 smokes) | destroyer smokes only: 11 of 132 (11 deaths; 8.3 per 100)
+   (group of 6, below 8, not reported: G7/F7, 1.2 km short of cap C (own side))
+   (group of 5, below 8, not reported: F4/G5, 3.2 km short of cap B (own side))
+   (group of 2, below 8, not reported: E3/E4, 2.3 km beside cap B)
+   (group of 2, below 8, not reported: G2/H1, inside cap A, own half)
+   (group of 1, below 8, not reported: D1, inside cap A, far half)
+   (group of 1, below 8, not reported: A2, 11.4 km past cap A (enemy side))
+   (group of 1, below 8, not reported: F1, inside cap A)
+   destroyer-smoke death rate by cap zone (cells.json): A 6.7 (n 30), B 8.2 (n 49), C 9.4 (n 53)
+   highest destroyer-smoke death rate by rated cell (cells.json): G7 15.4 (n 13*), F7 12.5 (n 16), G5 12.5 (n 8*)
+ PN destroyer smokes on this map: 2 | Somers G4 2:37 3,053; Harugumo F1 4:18 1,848
+ EXAMPLE POOL (Top 6): signature examples are listed above; early and radar examples are listed under their clusters.
+
+==============================================================================================================
+Land of Fire | north-spawn teams mirrored north-south | map 48 km across | destroyer smokes 128 (Top 6 48, Rest 80, PN 3) | all classes 202 | map average concealed damage per destroyer smoke 7,560
+ CAPS AND CAP CHOICE (zone = nearest cap; source module-4/cells.json; interval from module-4/tables-r4.txt)
+   cap A uv [0.2444, 0.5] r_u 0.0619 (2.97 km) | zone n 52 | Top 6 27.1% (13) vs Rest 48.8% (39) gap -21.7 (-36 to -8 *) | 6,883 per smoke, 13.5 deaths/100, cap won after 23.1% of smokes
+   cap B uv [0.4644, 0.5] r_u 0.0619 (2.97 km) | zone n 50 | Top 6 45.8% (22) vs Rest 35.0% (28) gap +10.8 (-19 to +37) | 7,582 per smoke, 14.0 deaths/100, cap won after 26.0% of smokes
+   cap C uv [0.7698, 0.4017] r_u 0.0619 (2.97 km) | zone n 7 | Top 6 2.1% (1) vs Rest 7.5% (6) gap -5.4 (-13 to +2) | 9,153 per smoke, 28.6 deaths/100, cap won after 0.0% of smokes | NOT RATED (n < 8)
+   cap D uv [0.7698, 0.5983] r_u 0.0619 (2.97 km) | zone n 19 | Top 6 25.0% (12) vs Rest 8.8% (7) gap +16.2 (-6 to +41) | 8,768 per smoke, 10.5 deaths/100, cap won after 15.8% of smokes
+ SIGNATURE SPOTS AND LEADS (source round4/part-b/spots.json; cast shapes recomputed here from the same smokes)
+   SIGNATURE lof-svea-f5: Svea, own-side rim of cap B, centre of the map (F5) | Top 6 14 of 19 (73.7%) vs Rest 4 of 21 (19.0%) gap +54.6 (+8.9 to +87.0) | clans VRTUS 8, HTDOG 4, RESIN 2 | 14,161 per smoke, 0.0 deaths/100, cap won 50.0% of 10 | median 7:06 | membership recomputed 14 (matches)
+     formation: Svea smoke at F5 + no other cruiser inside + second destroyer forward of the smoke (most often in F5): 6 of 14 Top 6 smokes; Rest 3 of 4 in the same spot
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8074_g2_70765.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g3_12945.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8143_g2_214594.html
+     cast_cruiser: recorded for 0 of 14 (below 4, no record)
+     cast_second_dd: n 12 of 14 | centre uv [0.4623, 0.5769] | nearest other allied destroyer: 0.7 km short of cap B (own side), cells F5/F6 | ships Z-42 7, Ragnar 4, Gearing 1 | 2.7 km from puff, +0.1 km fwd, forward 6 of 12
+ PAYING CELLS (source module-4/cells.json; high = at least 1.4x the map average, low = at most 0.6x; cap won here is after % of all smokes in the cell)
+   paying_high F6 [best_rated_cell_not_high] n 11* | 8,775 per smoke (median 1,964; 1.16x map avg) | 18.2 deaths/100 | cap won after 54.5% | Top 6 5 Rest 6 | median 5:18 | cell F6: 2.2 km short of cap B (own side)
+   paying_low F5 [low] n 16 | 4,017 per smoke (median 2,314; 0.53x map avg) | 6.2 deaths/100 | cap won after 37.5% | Top 6 7 Rest 9 | median 5:28 | cell F5: 0.1 km short of cap B (own side)
+ EARLY SETUP (destroyer smokes in the first 5 minutes): n 37 (Top 6 12, Rest 25) | radar cruiser inside: Top 6 5 of 12 (42%), Rest 8 of 25 (32%)
+   EARLY lof-early-f5: centre, own-side rim of cap B | cells F5/F6/F4 | centre uv [0.4742, 0.5736] radii 7.0 x 2.4 km | n 15 = 40.5% of the map (Top 6 6 = 50.0% of theirs, Rest 9 = 36.0%)
+     radar cruiser inside 3 of 15 (Top 6 0 of 6, Rest 3 of 9) | 4,422 per smoke, 20.0 deaths/100, cap won 66.7% of 15 | median 3:14 | inside a cap 40.0%, smoke edge 0.7 km from the contested cap edge; centre 0.6 km from cap B edge | stacked 46.7% | Daring 4, Gearing 3, Z-42 3, Delny 2
+     second destroyer recorded 12 of 15, forward 6 (Top 6 2 of 6, Rest 4 of 9)
+     example H-SR Delny 2:57 https://seanr87.github.io/smoke-signals/smoke/smokes/8073_g2_166402.html
+     example BONKZ Gdańsk 3:17 https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g3_12944.html
+     example VRTUS Z-42 3:59 https://seanr87.github.io/smoke-signals/smoke/smokes/8143_g2_214593.html
+     cast_cruiser: recorded for 4 of 15 (below 8, no record)
+     cast_second_dd: n 12 of 15 | centre uv [0.4153, 0.5766] | nearest other allied destroyer: 1.4 km short of cap B (own side), cells F3/F2 | ships Daring 2, 20 de Julio 2, Somers 2 | 8.7 km from puff, +0.1 km fwd, forward 6 of 12
+   EARLY lof-early-f3: west, short of cap A on the own side | cells F3/F2/G2 | centre uv [0.2188, 0.5904] radii 4.7 x 3.3 km | n 13 = 35.1% of the map (Top 6 5 = 41.7% of theirs, Rest 8 = 32.0%)
+     radar cruiser inside 8 of 13 (Top 6 4 of 5, Rest 4 of 8) | 8,563 per smoke, 15.4 deaths/100, cap won 54.5% of 11 | median 2:33 | inside a cap 23.1%, smoke edge 1.1 km from the contested cap edge; centre 1.5 km from cap A edge | stacked 53.8% | Gearing 6, Somers 4, Daring 1, Gdańsk 1
+     second destroyer recorded 12 of 13, forward 11 (Top 6 4 of 5, Rest 7 of 8)
+     example HTDOG Gearing 2:28 https://seanr87.github.io/smoke-signals/smoke/smokes/8074_g2_70750.html
+     example VRTUS Somers 2:34 https://seanr87.github.io/smoke-signals/smoke/smokes/8143_g2_214591.html
+     example RESIN Harugumo 3:14 https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g4_108988.html
+     cast_cruiser: n 9 of 13 | centre uv [0.1908, 0.6134] | cruiser inside the smoke: 3.0 km short of cap A (own side), cells G2/F3 | ships Des Moines 5, Brisbane 2, Napoli 1 | 0.4 km from puff, -0.4 km fwd, forward 2 of 9 | radar cruiser 8
+     cast_second_dd: n 12 of 13 | centre uv [0.3753, 0.5545] | nearest other allied destroyer: 2.0 km short of cap B (own side), cells F5/F4 | ships Daring 4, Z-42 3, Ragnar 2 | 9.8 km from puff, +2.2 km fwd, forward 11 of 12
+   (cluster of 5, below 8, not reported: G1/F1, 7.6 km beside cap A; Top 6 0)
+   (cluster of 2, below 8, not reported: F8, 0.9 km past cap D (enemy side); Top 6 0)
+   (cluster of 1, below 8, not reported: G9, inside cap D, own half; Top 6 0)
+   (cluster of 1, below 8, not reported: H4, 8.8 km short of cap A (own side); Top 6 1)
+ RADAR FROM SMOKE: destroyer radar plays 9 (Top 6 4) = 0.18 per team-game (50 team-games) | by contested cap {'A': 5, 'B': 3, 'C': 1} | Svea radar plays 3 (Top 6 2; cells {'F5': 3}; contested cap {'B': 3})
+   (cap A: 5 plays, below 8, not reported; cells E2/F3/G3)
+   (cap B: 3 plays, below 8, not reported; cells F5/F6)
+   (cap C: 1 plays, below 8, not reported; cells F9)
+ DEATHS IN SMOKE (all classes; clusters at 2.5 km because deaths are sparse): smokes with a death 27 of 202 (31 deaths; 15.3 per 100 smokes) | destroyer smokes only: 16 of 128 (18 deaths; 14.1 per 100)
+   DEATHS lof-deaths-f3: west, below cap A | centre uv [0.1865, 0.5965] radii 5.9 x 3.1 km | 8 smokes with a death (8 deaths; Top 6 0, Rest 8; 5 clans) = 29.6% of the map | all smokes in the ellipse 21: 33.3 deaths/100 (map 15.3) | behind by 50+ 1, enemy radar reached 1, game lost 5 | Somers 3, Napoli 2, Gearing 1, Daring 1 | median 4:58
+   DEATHS lof-deaths-f6: centre, own-side rim of cap B | centre uv [0.4738, 0.5854] radii 7.0 x 2.7 km | 8 smokes with a death (9 deaths; Top 6 1, Rest 7; 6 clans) = 29.6% of the map | all smokes in the ellipse 60: 13.3 deaths/100 (map 15.3) | behind by 50+ 5, enemy radar reached 3, game lost 7 | Gearing 4, Svea 2, Venezia 1, Gdańsk 1 | median 7:51
+   (group of 6, below 8, not reported: F10/F8, 3.9 km past cap D (enemy side))
+   (group of 1, below 8, not reported: D7, 2.3 km past cap C (enemy side))
+   (group of 1, below 8, not reported: I3, 14.1 km short of cap A (own side))
+   (group of 1, below 8, not reported: D2, 8.1 km past cap A (enemy side))
+   (group of 1, below 8, not reported: B4, 14.8 km past cap B (enemy side))
+   (group of 1, below 8, not reported: G10, 8.9 km beside cap D)
+   destroyer-smoke death rate by cap zone (cells.json): A 13.5 (n 52), B 14.0 (n 50), D 10.5 (n 19)
+   highest destroyer-smoke death rate by rated cell (cells.json): F3 18.2 (n 11*), F6 18.2 (n 11*), F5 6.2 (n 16)
+ PN destroyer smokes on this map: 3 | Somers G1 3:57 0; Harugumo F9 5:21 41,564; Harugumo E9 9:20 174
+ EXAMPLE POOL (Top 6): signature examples are listed above; early and radar examples are listed under their clusters.
+
+==============================================================================================================
+Sea of Fortune | north-spawn teams mirrored north-south | map 48 km across | destroyer smokes 117 (Top 6 38, Rest 79, PN 2) | all classes 198 | map average concealed damage per destroyer smoke 11,566
+ CAPS AND CAP CHOICE (zone = nearest cap; source module-4/cells.json; interval from module-4/tables-r4.txt)
+   cap A uv [0.2, 0.35] r_u 0.0833 (4.0 km) | zone n 18 | Top 6 18.4% (7) vs Rest 13.9% (11) gap +4.5 (-17 to +23) | 14,275 per smoke, 16.7 deaths/100, cap won after 33.3% of smokes
+   cap B uv [0.2, 0.65] r_u 0.0833 (4.0 km) | zone n 43 | Top 6 26.3% (10) vs Rest 41.8% (33) gap -15.5 (-36 to +5) | 11,751 per smoke, 11.6 deaths/100, cap won after 18.6% of smokes
+   cap C uv [0.44, 0.5] r_u 0.0625 (3.0 km) | zone n 19 | Top 6 18.4% (7) vs Rest 15.2% (12) gap +3.2 (-13 to +20) | 6,746 per smoke, 21.1 deaths/100, cap won after 21.1% of smokes
+   cap D uv [0.76, 0.5] r_u 0.0625 (3.0 km) | zone n 37 | Top 6 36.8% (14) vs Rest 29.1% (23) gap +7.7 (-9 to +30) | 12,508 per smoke, 10.8 deaths/100, cap won after 10.8% of smokes
+ SIGNATURE SPOTS AND LEADS (source round4/part-b/spots.json; cast shapes recomputed here from the same smokes)
+   SIGNATURE sof-svea-h7: Svea, open water on the own side of cap D, south-east (H7/G7/H8/G8/G6) | Top 6 15 of 18 (83.3%) vs Rest 1 of 14 (7.1%) gap +76.2 (+41.7 to +100.0) | clans HTDOG 7, VRTUS 6, H-SR 2 | 10,222 per smoke, 0.0 deaths/100, cap won 16.7% of 12 | median 7:30 | membership recomputed 15 (matches)
+     formation: Svea smoke at H7/G7 + no other cruiser inside + second destroyer forward of the smoke (most often in F8): 10 of 15 Top 6 smokes; Rest 0 of 1 in the same spot
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8143_g1_54022.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g1_185491.html
+     example https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g2_3191.html
+     cast_cruiser: recorded for 0 of 15 (below 4, no record)
+     cast_second_dd: n 11 of 15 | centre uv [0.7365, 0.6377] | nearest other allied destroyer: 3.7 km short of cap D (own side), cells F8/G7 | ships Z-42 6, Marceau 4, Kléber 1 | 4.8 km from puff, +2.9 km fwd, forward 10 of 11
+ PAYING CELLS (source module-4/cells.json; high = at least 1.4x the map average, low = at most 0.6x; cap won here is after % of all smokes in the cell)
+   paying_high F2 [only_rated_cell_not_high] n 14* | 11,972 per smoke (median 7,003; 1.04x map avg) | 14.3 deaths/100 | cap won after 21.4% | Top 6 3 Rest 11 | median 4:35 | cell F2: 1.5 km past cap B (enemy side)
+ EARLY SETUP (destroyer smokes in the first 5 minutes): n 31 (Top 6 9, Rest 22) | radar cruiser inside: Top 6 6 of 9 (67%), Rest 6 of 22 (27%)
+   EARLY sof-early-f2: west, in and around cap B | cells F2/G3/H2 | centre uv [0.1501, 0.6017] radii 6.6 x 3.3 km | n 14 = 45.2% of the map (Top 6 4 = 44.4% of theirs, Rest 10 = 45.5%)
+     radar cruiser inside 7 of 14 (Top 6 3 of 4, Rest 4 of 10) | 16,839 per smoke, 14.3 deaths/100, cap won 30.8% of 13 | median 3:54 | inside a cap 0.0%, smoke edge 6.5 km from the contested cap edge; centre -0.7 km from cap B edge | stacked 50.0% | Somers 6, Gearing 5, Harugumo 1, Shimakaze 1
+     second destroyer recorded 4 of 14, forward 4 (Top 6 1 of 4, Rest 3 of 10)
+     example VRTUS Gearing 3:29 https://seanr87.github.io/smoke-signals/smoke/smokes/7995_g1_25167.html
+     example H-SR Somers 2:19 https://seanr87.github.io/smoke-signals/smoke/smokes/7938_g1_214880.html
+     example RESIN Somers 3:56 https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g3_106312.html
+     cast_cruiser: n 9 of 14 | centre uv [0.1812, 0.6434] | cruiser inside the smoke: inside cap B, cells G3/F2 | ships Brisbane 2, Worcester 2, Salem 1 | 0.5 km from puff, -0.5 km fwd, forward 1 of 9 | radar cruiser 7
+     cast_second_dd: recorded for 4 of 14 (below 8, no record)
+   EARLY sof-early-f9: east, short of cap D on the own side | cells F9/F8/G9 | centre uv [0.8125, 0.5906] radii 6.9 x 2.8 km | n 10 = 32.3% of the map (Top 6 2 = 22.2% of theirs, Rest 8 = 36.4%)
+     radar cruiser inside 4 of 10 (Top 6 2 of 2, Rest 2 of 8) | 20,959 per smoke, 10.0 deaths/100, cap won 20.0% of 10 | median 2:20 | inside a cap 20.0%, smoke edge 2.5 km from the contested cap edge; centre 2.0 km from cap D edge | stacked 50.0% | Harugumo 2, Daring 2, Somers 2, Gdańsk 1
+     second destroyer recorded 6 of 10, forward 5 (Top 6 2 of 2, Rest 3 of 8)
+     example H-SR Harugumo 1:56 https://seanr87.github.io/smoke-signals/smoke/smokes/7938_g1_214879.html
+     example BONKZ Gearing 2:41 https://seanr87.github.io/smoke-signals/smoke/smokes/8144_g2_39530.html
+     cast_cruiser: recorded for 4 of 10 (below 8, no record)
+     cast_second_dd: recorded for 6 of 10 (below 8, no record)
+   (cluster of 5, below 8, not reported: F4/F3, 3.1 km short of cap C (own side); Top 6 2)
+   (cluster of 2, below 8, not reported: D9, 4.3 km past cap D (enemy side); Top 6 1)
+ RADAR FROM SMOKE: destroyer radar plays 5 (Top 6 4) = 0.12 per team-game (42 team-games) | by contested cap {'A': 1, 'D': 4} | Svea radar plays 2 (Top 6 2; cells {'F6': 1, 'G8': 1}; contested cap {'C': 1, 'D': 1})
+   (cap D: 4 plays, below 8, not reported; cells F9/G7)
+   (cap A: 1 plays, below 8, not reported; cells E1)
+ DEATHS IN SMOKE (all classes; clusters at 2.5 km because deaths are sparse): smokes with a death 27 of 198 (28 deaths; 14.1 per 100 smokes) | destroyer smokes only: 16 of 117 (16 deaths; 13.7 per 100)
+   DEATHS sof-deaths-f2: west lane between caps A and B (wide) | centre uv [0.159, 0.4883] radii 10.5 x 5.1 km | 13 smokes with a death (13 deaths; Top 6 4, Rest 9; 9 clans) = 48.1% of the map | all smokes in the ellipse 55: 20.0 deaths/100 (map 14.1) | behind by 50+ 6, enemy radar reached 2, game lost 11 | Gearing 4, Napoli 2, Cerberus 2, Harugumo 1 | median 9:11
+   (group of 6, below 8, not reported: F5/G5, inside cap C, own half)
+   (group of 4, below 8, not reported: H8/G7, 8.7 km short of cap D (own side))
+   (group of 1, below 8, not reported: C7, 11.6 km past cap D (enemy side))
+   (group of 1, below 8, not reported: E8, 1.8 km past cap D (enemy side))
+   (group of 1, below 8, not reported: F8, inside cap D, own half)
+   (group of 1, below 8, not reported: H4, 2.2 km short of cap B (own side))
+   destroyer-smoke death rate by cap zone (cells.json): A 16.7 (n 18), B 11.6 (n 43), C 21.1 (n 19), D 10.8 (n 37)
+   highest destroyer-smoke death rate by rated cell (cells.json): F2 14.3 (n 14*)
+ PN destroyer smokes on this map: 2 | Somers G2 3:26 17,216; Somers F1 6:52 14,459
+ EXAMPLE POOL (Top 6): signature examples are listed above; early and radar examples are listed under their clusters.
+
+==============================================================================================================
+Okinawa | north-spawn teams mirrored across the NW-SE diagonal (spawns are NE and SW) | map 42 km across | destroyer smokes 82 (Top 6 15, Rest 67, PN 1) | all classes 158 | map average concealed damage per destroyer smoke 11,864
+ CAPS AND CAP CHOICE (zone = nearest cap; source module-4/cells.json; interval from module-4/tables-r4.txt)
+   cap A uv [0.1, 0.22] r_u 0.0476 (2.0 km) | zone n 26 | Top 6 13.3% (2) vs Rest 35.8% (24) gap -22.5 (-43 to +9) | 13,339 per smoke, 19.2 deaths/100, cap won after 26.9% of smokes
+   cap B uv [0.22, 0.1] r_u 0.0476 (2.0 km) | zone n 3 | Top 6 13.3% (2) vs Rest 1.5% (1) gap +11.8 (-4 to +36) | 3,294 per smoke, 33.3 deaths/100, cap won after 0.0% of smokes | NOT RATED (n < 8)
+   cap C uv [0.467, 0.467] r_u 0.1186 (4.98 km) | zone n 40 | Top 6 53.3% (8) vs Rest 47.8% (32) gap +5.5 (-25 to +33) | 12,987 per smoke, 25.0 deaths/100, cap won after 7.5% of smokes
+   cap D uv [0.7, 0.7] r_u 0.0714 (3.0 km) | zone n 13 | Top 6 20.0% (3) vs Rest 14.9% (10) gap +5.1 (-20 to +23) | 7,435 per smoke, 15.4 deaths/100, cap won after 15.4% of smokes
+ SIGNATURE SPOTS AND LEADS (source round4/part-b/spots.json; cast shapes recomputed here from the same smokes)
+ PAYING CELLS (source module-4/cells.json; high = at least 1.4x the map average, low = at most 0.6x; cap won here is after % of all smokes in the cell)
+   paying_high D1 [only_rated_cell_not_high] n 8* | 12,029 per smoke (median 2,389; 1.01x map avg) | 25.0 deaths/100 | cap won after 25.0% | Top 6 2 Rest 6 | median 6:18 | cell D1: 3.6 km short of cap A (own side)
+ EARLY SETUP (destroyer smokes in the first 5 minutes): n 26 (Top 6 3, Rest 23) | radar cruiser inside: Top 6 2 of 3 (67%), Rest 4 of 23 (17%)
+   EARLY oki-early-d2: north-west, own-side rim of cap A | cells D2/C2/B1 | centre uv [0.0947, 0.2737] radii 5.1 x 4.0 km | n 12 = 46.2% of the map (Top 6 1 = 33.3% of theirs, Rest 11 = 47.8%)
+     radar cruiser inside 3 of 12 (Top 6 1 of 1, Rest 2 of 11) | 8,801 per smoke, 8.3 deaths/100, cap won 33.3% of 12 | median 3:34 | inside a cap 0.0%, smoke edge 5.8 km from the contested cap edge; centre 0.3 km from cap A edge | stacked 33.3% | Harugumo 3, Somers 3, Fuyutsuki 2, Gearing 2
+     second destroyer recorded 4 of 12, forward 3 (Top 6 1 of 1, Rest 2 of 11)
+     example BONKZ Gearing 4:12 https://seanr87.github.io/smoke-signals/smoke/smokes/7896_g1_51110.html
+     cast_cruiser: recorded for 3 of 12 (below 8, no record)
+     cast_second_dd: recorded for 4 of 12 (below 8, no record)
+   (cluster of 6, below 8, not reported: H7/I7, 1.6 km short of cap D (own side); Top 6 2)
+   (cluster of 6, below 8, not reported: E3/E4, 0.9 km short of cap C (own side); Top 6 0)
+   (cluster of 1, below 8, not reported: E5, inside cap C; Top 6 0)
+   (cluster of 1, below 8, not reported: I5, 8.6 km short of cap D (own side); Top 6 0)
+ RADAR FROM SMOKE: destroyer radar plays 7 (Top 6 1) = 0.19 per team-game (36 team-games) | by contested cap {'B': 2, 'C': 4, 'D': 1} | Svea radar plays 2 (Top 6 0; cells {'I8': 1, 'I6': 1}; contested cap {'D': 2})
+   (cap C: 4 plays, below 8, not reported; cells F3/F4/H4)
+   (cap B: 2 plays, below 8, not reported; cells A3/C1)
+   (cap D: 1 plays, below 8, not reported; cells H7)
+ DEATHS IN SMOKE (all classes; clusters at 2.5 km because deaths are sparse): smokes with a death 25 of 158 (28 deaths; 17.7 per 100 smokes) | destroyer smokes only: 15 of 82 (18 deaths; 22.0 per 100)
+   DEATHS oki-deaths-h4: south-west water on the own side of cap C (wide) | centre uv [0.2457, 0.6435] radii 10.1 x 6.3 km | 12 smokes with a death (15 deaths; Top 6 2, Rest 10; 9 clans) = 48.0% of the map | all smokes in the ellipse 39: 30.8 deaths/100 (map 17.7) | behind by 50+ 7, enemy radar reached 3, game lost 9 | Harugumo 3, Smolensk 2, Gearing 1, Daring 1 | median 9:56
+   (group of 6, below 8, not reported: D1/C1, 1.4 km short of cap A (own side))
+   (group of 3, below 8, not reported: B4/A3, 0.3 km beside cap B)
+   (group of 2, below 8, not reported: D6/D5, 1.3 km past cap C (enemy side))
+   (group of 1, below 8, not reported: G7, inside cap D, far half)
+   (group of 1, below 8, not reported: C7, 6.9 km past cap C (enemy side))
+   destroyer-smoke death rate by cap zone (cells.json): A 19.2 (n 26), C 25.0 (n 40), D 15.4 (n 13)
+   highest destroyer-smoke death rate by rated cell (cells.json): D1 25.0 (n 8*)
+ PN destroyer smokes on this map: 1 | Gdańsk H4 8:07 45,824
+ EXAMPLE POOL (Top 6): signature examples are listed above; early and radar examples are listed under their clusters.
+
+records by kind: {'signature': 6, 'cast_cruiser': 12, 'cast_second_dd': 21, 'lead': 5, 'paying_high': 10, 'paying_low': 11, 'early_smoke': 14, 'radar': 5, 'deaths': 7} | total 91

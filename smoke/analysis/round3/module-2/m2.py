@@ -5,23 +5,25 @@ OUT = os.path.dirname(os.path.abspath(__file__))
 S, G = load()
 SHIPS = ('Harugumo', 'Somers', 'Gearing')
 WIN_LABEL = ['0-2 min', '2-4 min', '4-5 min']
-PT_ORDER = ['radar cruiser', 'non-radar cruiser', 'battleship', 'none']
-PT_COLOR = {'radar cruiser': RED, 'non-radar cruiser': YELLOW, 'battleship': INK, 'none': MUTED}
+RI, RN = 'radar cruiser inside', 'radar cruiser, not inside'
+PT_ORDER = [RI, RN, 'non-radar cruiser', 'battleship only', 'none']
 SHIP_COLOR = {'Harugumo': VIOLET, 'Somers': BLUE, 'Gearing': GREEN}
 
 def window(el): return 0 if el < 120 else 1 if el < 240 else 2 if el < 300 else 3
 def ptype(s):
-    """Partner type of a smoke: radar cruiser beats non-radar cruiser beats battleship; destroyer-only or no partner = none."""
+    """Partner type of a smoke. Headline definition (round 4): a radar cruiser INSIDE the smoke (radar_ca_inside). Then a radar cruiser
+    covered but only behind / in the line of fire, then a non-radar cruiser, then battleship only; destroyer-only or no partner = none."""
     ps = s['partners']
-    if any(p['cls'] == 'cruiser' and p['radar'] for p in ps): return 'radar cruiser'
+    if s['radar_ca_inside']: return RI
+    if s['radar_ca_any']: return RN
     if any(p['cls'] == 'cruiser' for p in ps): return 'non-radar cruiser'
-    if any(p['cls'] == 'battleship' for p in ps): return 'battleship'
+    if any(p['cls'] == 'battleship' for p in ps): return 'battleship only'
     return 'none'
 def main_partner(s):
     """The partner that defines the smoke's partner type (longest concealed among those of that type)."""
     t = s['pt']
-    ps = [p for p in s['partners'] if (t == 'radar cruiser' and p['cls'] == 'cruiser' and p['radar']) or (t == 'non-radar cruiser' and p['cls'] == 'cruiser')
-          or (t == 'battleship' and p['cls'] == 'battleship')]
+    ps = [p for p in s['partners'] if (t == RI and p['cls'] == 'cruiser' and p['radar'] and p['how'] == 'inside') or (t == RN and p['cls'] == 'cruiser' and p['radar'])
+          or (t == 'non-radar cruiser' and p['cls'] == 'cruiser') or (t == 'battleship only' and p['cls'] == 'battleship')]
     return max(ps, key=lambda p: p['secs'] or 0) if ps else None
 def fwd(mapname):
     """Unit vector pointing from own spawn toward the enemy spawn in the normalized frame."""
@@ -32,6 +34,7 @@ for s in S:
     nc = next((c for c in ncaps(g, s['map'], s['side']) if c['cap'] == s['cap']), None)  # contested cap in the normalized frame
     s['capxz'] = (nc['x'], nc['z'], nc['r']) if nc else None
 E = [s for s in S if s['ship'] in SHIPS and s['el'] < 300]
+DDE = [s for s in S if s['cls'] == 'destroyer' and s['el'] < 300]  # Module 3 population: every early destroyer smoke
 
 def boot_cmp(a, b, stat, reps=1000):
     """95% interval of stat(a) - stat(b), resampling clans across the pooled set (a clan keeps its smokes in both sets)."""

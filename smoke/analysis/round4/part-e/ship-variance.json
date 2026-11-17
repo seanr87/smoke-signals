@@ -1,0 +1,4352 @@
+{
+ "batch": "output/20261117-122135",
+ "ships": {
+  "Grozovoi": {
+   "n": 30,
+   "clans": 8,
+   "players": 11,
+   "top_clan": [
+    "MACHX",
+    15
+   ],
+   "pos_spread_km": 12.331843116520131,
+   "pos_spread_km_ci": [
+    8.035792404737824,
+    17.573053147901273
+   ],
+   "stationary_pct": 20.0,
+   "stationary_pct_ci": [
+    6.25,
+    44.44444444444444
+   ],
+   "inside_pct": 33.333333333333336,
+   "inside_pct_ci": [
+    21.05263157894737,
+    61.53846153846154
+   ],
+   "edge_med_m": 997.595,
+   "edge_med_m_ci": [
+    -499.95,
+    2141.86
+   ],
+   "edge_iqr_m": 4725.3925,
+   "edge_iqr_m_ci": [
+    1569.455,
+    7428.084999999999
+   ],
+   "path_med_m": 818.0699999999999,
+   "path_med_m_ci": [
+    591.615,
+    2338.3300349615606
+   ],
+   "stacked_pct": 20.0,
+   "stacked_pct_ci": [
+    11.764705882352942,
+    41.666666666666664
+   ],
+   "screen_pct": 33.333333333333336,
+   "screen_pct_ci": [
+    20.689655172413794,
+    58.8235294117647
+   ],
+   "selfish_pct": 46.666666666666664,
+   "selfish_pct_ci": [
+    12.5,
+    65.78947368421052
+   ],
+   "by_map": {
+    "Hotspot": {
+     "n": 14,
+     "pos_spread_km": 12.673458803132133,
+     "edge_med_m": 829.62,
+     "stationary_pct": 21.428571428571427
+    }
+   },
+   "by_clan": {
+    "MACHX": {
+     "n": 15,
+     "grp": "rest",
+     "line_pct": 46.666666666666664,
+     "stationary_pct": 13.333333333333334,
+     "stacked_pct": 13.333333333333334,
+     "selfish_pct": 60.0,
+     "inside_pct": 26.666666666666668,
+     "edge_med_m": 1380.81,
+     "path_med_m": 889.58,
+     "maps": {
+      "Hotspot": 6,
+      "Loop": 4,
+      "Sea of Fortune": 5
+     },
+     "games": 6,
+     "players": 4
+    },
+    "H-SR": {
+     "n": 3,
+     "grp": "top",
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "stacked_pct": 33.333333333333336,
+     "selfish_pct": 0.0,
+     "inside_pct": 0.0,
+     "edge_med_m": 692.04,
+     "path_med_m": 2961.9234738157006,
+     "maps": {
+      "Hotspot": 3
+     },
+     "games": 1,
+     "players": 1
+    },
+    "RESIN": {
+     "n": 3,
+     "grp": "top",
+     "line_pct": 0.0,
+     "stationary_pct": 66.66666666666667,
+     "stacked_pct": 0.0,
+     "selfish_pct": 100.0,
+     "inside_pct": 66.66666666666667,
+     "edge_med_m": -1988.61,
+     "path_med_m": 484.77,
+     "maps": {
+      "Mountain Range": 3
+     },
+     "games": 1,
+     "players": 1
+    },
+    "MZY": {
+     "n": 3,
+     "grp": "rest",
+     "line_pct": 33.333333333333336,
+     "stationary_pct": 66.66666666666667,
+     "stacked_pct": 33.333333333333336,
+     "selfish_pct": 33.333333333333336,
+     "inside_pct": 33.333333333333336,
+     "edge_med_m": 2046.32,
+     "path_med_m": 109.74,
+     "maps": {
+      "Hotspot": 3
+     },
+     "games": 1,
+     "players": 1
+    },
+    "RMN": {
+     "n": 2,
+     "grp": "rest",
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "stacked_pct": 0.0,
+     "selfish_pct": 0.0,
+     "inside_pct": 0.0,
+     "edge_med_m": 5969.9,
+     "path_med_m": 638.96,
+     "maps": {
+      "Mountain Range": 2
+     },
+     "games": 1,
+     "players": 1
+    },
+    "EPOXY": {
+     "n": 2,
+     "grp": "rest",
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "stacked_pct": 50.0,
+     "selfish_pct": 0.0,
+     "inside_pct": 50.0,
+     "edge_med_m": 541.91,
+     "path_med_m": 1461.075,
+     "maps": {
+      "Loop": 2
+     },
+     "games": 1,
+     "players": 1
+    },
+    "INCA": {
+     "n": 1,
+     "grp": "rest",
+     "line_pct": 0.0,
+     "stationary_pct": 0.0,
+     "stacked_pct": 0.0,
+     "selfish_pct": 100.0,
+     "inside_pct": 100.0,
+     "edge_med_m": -499.95,
+     "path_med_m": 611.6288503644365,
+     "maps": {
+      "Hotspot": 1
+     },
+     "games": 1,
+     "players": 1
+    },
+    "MACH": {
+     "n": 1,
+     "grp": "rest",
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "stacked_pct": 100.0,
+     "selfish_pct": 0.0,
+     "inside_pct": 100.0,
+     "edge_med_m": -2875.04,
+     "path_med_m": 1783.14,
+     "maps": {
+      "Hotspot": 1
+     },
+     "games": 1,
+     "players": 1
+    }
+   },
+   "by_player": {
+    "MACHX_SPAAAAAAA": {
+     "n": 11,
+     "line_pct": 27.272727272727273,
+     "stationary_pct": 18.181818181818183,
+     "edge_med_m": 2314.9
+    },
+    "MACHX_JulioElGu": {
+     "n": 2,
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "edge_med_m": 163.01
+    },
+    "MACHX_JustAMath": {
+     "n": 1,
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "edge_med_m": -749.44
+    },
+    "MACHX_Yoshi_44": {
+     "n": 1,
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "edge_med_m": 1380.81
+    }
+   },
+   "MACHX_vs_others": {
+    "MACHX": {
+     "n": 15,
+     "clans": 1,
+     "line_pct": 46.666666666666664,
+     "stationary_pct": 13.333333333333334,
+     "inside_pct": 26.666666666666668,
+     "edge_med_m": 1380.81,
+     "path_med_m": 889.58,
+     "stacked_pct": 13.333333333333334,
+     "selfish_pct": 60.0,
+     "pos_spread_km": 8.187756650359356,
+     "maps": {
+      "Hotspot": 6,
+      "Loop": 4,
+      "Sea of Fortune": 5
+     }
+    },
+    "others": {
+     "n": 15,
+     "clans": 7,
+     "line_pct": 60.0,
+     "stationary_pct": 26.666666666666668,
+     "inside_pct": 40.0,
+     "edge_med_m": 692.04,
+     "path_med_m": 688.01,
+     "stacked_pct": 26.666666666666668,
+     "selfish_pct": 33.333333333333336,
+     "pos_spread_km": 15.858087362069806,
+     "maps": {
+      "Hotspot": 8,
+      "Mountain Range": 5,
+      "Loop": 2
+     }
+    }
+   }
+  },
+  "Shimakaze": {
+   "n": 58,
+   "clans": 12,
+   "players": 18,
+   "top_clan": [
+    "HFANS",
+    13
+   ],
+   "pos_spread_km": 13.487611814823136,
+   "pos_spread_km_ci": [
+    9.755568696203067,
+    14.353521487426006
+   ],
+   "stationary_pct": 25.862068965517242,
+   "stationary_pct_ci": [
+    11.904761904761905,
+    36.734693877551024
+   ],
+   "inside_pct": 32.758620689655174,
+   "inside_pct_ci": [
+    20.895522388059703,
+    47.540983606557376
+   ],
+   "edge_med_m": 3287.9700000000003,
+   "edge_med_m_ci": [
+    250.71,
+    4933.84
+   ],
+   "edge_iqr_m": 7837.962500000001,
+   "edge_iqr_m_ci": [
+    4763.43,
+    9857.6325
+   ],
+   "path_med_m": 1716.709368854656,
+   "path_med_m_ci": [
+    1297.445,
+    1863.94
+   ],
+   "stacked_pct": 48.275862068965516,
+   "stacked_pct_ci": [
+    37.03703703703704,
+    62.5
+   ],
+   "screen_pct": 25.862068965517242,
+   "screen_pct_ci": [
+    15.0,
+    38.983050847457626
+   ],
+   "selfish_pct": 25.862068965517242,
+   "selfish_pct_ci": [
+    15.0,
+    36.8421052631579
+   ],
+   "by_map": {
+    "Hotspot": {
+     "n": 13,
+     "pos_spread_km": 15.564613564928333,
+     "edge_med_m": 250.71,
+     "stationary_pct": 15.384615384615385
+    },
+    "Okinawa": {
+     "n": 11,
+     "pos_spread_km": 12.966741050172853,
+     "edge_med_m": 8531.89,
+     "stationary_pct": 9.090909090909092
+    },
+    "Loop": {
+     "n": 9,
+     "pos_spread_km": 8.902611843978796,
+     "edge_med_m": 2758.2,
+     "stationary_pct": 22.22222222222222
+    },
+    "Mountain Range": {
+     "n": 8,
+     "pos_spread_km": 13.574276918010701,
+     "edge_med_m": -1222.28,
+     "stationary_pct": 37.5
+    }
+   },
+   "by_clan": {
+    "HFANS": {
+     "n": 13,
+     "grp": "rest",
+     "line_pct": 69.23076923076923,
+     "stationary_pct": 23.076923076923077,
+     "stacked_pct": 53.84615384615385,
+     "selfish_pct": 23.076923076923077,
+     "inside_pct": 23.076923076923077,
+     "edge_med_m": 5610.42,
+     "path_med_m": 1900.17,
+     "maps": {
+      "Land of Fire": 1,
+      "Mountain Range": 3,
+      "Sea of Fortune": 4,
+      "Okinawa": 5
+     },
+     "games": 7,
+     "players": 1
+    },
+    "5D": {
+     "n": 8,
+     "grp": "rest",
+     "line_pct": 37.5,
+     "stationary_pct": 50.0,
+     "stacked_pct": 25.0,
+     "selfish_pct": 12.5,
+     "inside_pct": 50.0,
+     "edge_med_m": -45.95,
+     "path_med_m": 933.63,
+     "maps": {
+      "Hotspot": 4,
+      "Land of Fire": 2,
+      "Sleeping Giant": 2
+     },
+     "games": 5,
+     "players": 2
+    },
+    "UYSC": {
+     "n": 7,
+     "grp": "rest",
+     "line_pct": 57.142857142857146,
+     "stationary_pct": 42.857142857142854,
+     "stacked_pct": 28.571428571428573,
+     "selfish_pct": 57.142857142857146,
+     "inside_pct": 28.571428571428573,
+     "edge_med_m": 1875.22,
+     "path_med_m": 1716.43,
+     "maps": {
+      "Loop": 2,
+      "Mountain Range": 3,
+      "Sleeping Giant": 1,
+      "Sea of Fortune": 1
+     },
+     "games": 5,
+     "players": 1
+    },
+    "VRTUS": {
+     "n": 6,
+     "grp": "top",
+     "line_pct": 66.66666666666667,
+     "stationary_pct": 33.333333333333336,
+     "stacked_pct": 50.0,
+     "selfish_pct": 16.666666666666668,
+     "inside_pct": 16.666666666666668,
+     "edge_med_m": 4361.215,
+     "path_med_m": 1860.57,
+     "maps": {
+      "Hotspot": 3,
+      "Loop": 3
+     },
+     "games": 3,
+     "players": 2
+    },
+    "MANBA": {
+     "n": 5,
+     "grp": "rest",
+     "line_pct": 60.0,
+     "stationary_pct": 0.0,
+     "stacked_pct": 40.0,
+     "selfish_pct": 40.0,
+     "inside_pct": 0.0,
+     "edge_med_m": 5851.55,
+     "path_med_m": 1999.37,
+     "maps": {
+      "Hotspot": 2,
+      "Okinawa": 2,
+      "Land of Fire": 1
+     },
+     "games": 3,
+     "players": 1
+    },
+    "RMN": {
+     "n": 4,
+     "grp": "rest",
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "stacked_pct": 100.0,
+     "selfish_pct": 0.0,
+     "inside_pct": 100.0,
+     "edge_med_m": -1521.0700000000002,
+     "path_med_m": 1598.6950000000002,
+     "maps": {
+      "Hotspot": 3,
+      "Loop": 1
+     },
+     "games": 2,
+     "players": 2
+    },
+    "HTDOG": {
+     "n": 4,
+     "grp": "top",
+     "line_pct": 25.0,
+     "stationary_pct": 50.0,
+     "stacked_pct": 25.0,
+     "selfish_pct": 50.0,
+     "inside_pct": 50.0,
+     "edge_med_m": 4116.295,
+     "path_med_m": 504.54999999999995,
+     "maps": {
+      "Okinawa": 1,
+      "Loop": 3
+     },
+     "games": 3,
+     "players": 1
+    },
+    "EPOXY": {
+     "n": 3,
+     "grp": "rest",
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "stacked_pct": 66.66666666666667,
+     "selfish_pct": 0.0,
+     "inside_pct": 0.0,
+     "edge_med_m": 8827.1,
+     "path_med_m": 2243.83,
+     "maps": {
+      "Okinawa": 3
+     },
+     "games": 1,
+     "players": 1
+    },
+    "RESIN": {
+     "n": 3,
+     "grp": "top",
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "stacked_pct": 33.333333333333336,
+     "selfish_pct": 33.333333333333336,
+     "inside_pct": 33.333333333333336,
+     "edge_med_m": 3573.43,
+     "path_med_m": 2059.42,
+     "maps": {
+      "Land of Fire": 2,
+      "Hotspot": 1
+     },
+     "games": 3,
+     "players": 3
+    },
+    "INCA": {
+     "n": 2,
+     "grp": "rest",
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "stacked_pct": 100.0,
+     "selfish_pct": 0.0,
+     "inside_pct": 50.0,
+     "edge_med_m": 5264.445000000001,
+     "path_med_m": 1727.83,
+     "maps": {
+      "Mountain Range": 2
+     },
+     "games": 1,
+     "players": 1
+    },
+    "BONKZ": {
+     "n": 2,
+     "grp": "top",
+     "line_pct": 50.0,
+     "stationary_pct": 0.0,
+     "stacked_pct": 50.0,
+     "selfish_pct": 50.0,
+     "inside_pct": 50.0,
+     "edge_med_m": 2769.88,
+     "path_med_m": 1460.36,
+     "maps": {
+      "Sea of Fortune": 1,
+      "Sleeping Giant": 1
+     },
+     "games": 2,
+     "players": 2
+    },
+    "BONKY": {
+     "n": 1,
+     "grp": "rest",
+     "line_pct": 0.0,
+     "stationary_pct": 100.0,
+     "stacked_pct": 100.0,
+     "selfish_pct": 0.0,
+     "inside_pct": 0.0,
+     "edge_med_m": 2729.85,
+     "path_med_m": 186.79,
+     "maps": {
+      "Land of Fire": 1
+     },
+     "games": 1,
+     "players": 1
+    }
+   },
+   "by_player": {
+    "5D_Tsushimoid": {
+     "n": 5,
+     "line_pct": 40.0,
+     "stationary_pct": 40.0,
+     "edge_med_m": -342.61
+    },
+    "5D_SlugBoy65": {
+     "n": 3,
+     "line_pct": 33.333333333333336,
+     "stationary_pct": 66.66666666666667,
+     "edge_med_m": 250.71
+    },
+    "VRTUS_ItsAGameT": {
+     "n": 5,
+     "line_pct": 60.0,
+     "stationary_pct": 40.0,
+     "edge_med_m": 4933.84
+    },
+    "VRTUS_WhiskiLea": {
+     "n": 1,
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "edge_med_m": 3169.4
+    },
+    "RMN_Captain_Gad": {
+     "n": 2,
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "edge_med_m": -1514.9299999999998
+    },
+    "RMN_Siadant": {
+     "n": 2,
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "edge_med_m": -2503.925
+    },
+    "RESIN_Itllbefin": {
+     "n": 1,
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "edge_med_m": -526.4
+    },
+    "RESIN_Big_Boy69": {
+     "n": 1,
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "edge_med_m": 8687.45
+    },
+    "RESIN_Fryce": {
+     "n": 1,
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "edge_med_m": 3573.43
+    },
+    "BONKZ_Dyr3": {
+     "n": 1,
+     "line_pct": 0.0,
+     "stationary_pct": 0.0,
+     "edge_med_m": -605.01
+    },
+    "BONKZ_CheshireZ": {
+     "n": 1,
+     "line_pct": 100.0,
+     "stationary_pct": 0.0,
+     "edge_med_m": 6144.77
+    }
+   }
+  },
+  "Daring": {
+   "n": 200,
+   "clans": 20,
+   "players": 39,
+   "top_clan": [
+    "SCCC2",
+    26
+   ],
+   "pos_spread_km": 9.694209114552981,
+   "pos_spread_km_ci": [
+    7.570872488538408,
+    10.074935574844254
+   ],
+   "stationary_pct": 63.5,
+   "stationary_pct_ci": [
+    55.02392344497608,
+    73.18181818181819
+   ],
+   "inside_pct": 42.5,
+   "inside_pct_ci": [
+    32.417582417582416,
+    51.46443514644351
+   ],
+   "edge_med_m": 670.885,
+   "edge_med_m_ci": [
+    -217.54,
+    1364.7150000000001
+   ],
+   "edge_iqr_m": 4126.57,
+   "edge_iqr_m_ci": [
+    3229.745,
+    4690.61
+   ],
+   "path_med_m": 385.92499999999995,
+   "path_med_m_ci": [
+    317.45,
+    466.23
+   ],
+   "stacked_pct": 10.0,
+   "stacked_pct_ci": [
+    3.3783783783783785,
+    16.75392670157068
+   ],
+   "screen_pct": 33.5,
+   "screen_pct_ci": [
+    27.522935779816514,
+    40.84507042253521
+   ],
+   "selfish_pct": 56.5,
+   "selfish_pct_ci": [
+    50.42372881355932,
+    62.091503267973856
+   ],
+   "by_map": {
+    "Loop": {
+     "n": 48,
+     "pos_spread_km": 7.824376484924589,
+     "edge_med_m": -563.7,
+     "stationary_pct": 66.66666666666667
+    },
+    "Sleeping Giant": {
+     "n": 38,
+     "pos_spread_km": 9.415674467422384,
+     "edge_med_m": 755.87,
+     "stationary_pct": 63.1578947368421
+    },
+    "Hotspot": {
+     "n": 36,
+     "pos_spread_km": 10.197592534005304,
+     "edge_med_m": -535.865,
+     "stationary_pct": 69.44444444444444
+    },
+    "Land of Fire": {
+     "n": 31,
+     "pos_spread_km": 9.191199916493407,
+     "edge_med_m": 1553.7,
+     "stationary_pct": 67.74193548387096
+    },
+    "Okinawa": {
+     "n": 22,
+     "pos_spread_km": 10.735949446060626,
+     "edge_med_m": 2544.8599999999997,
+     "stationary_pct": 59.09090909090909
+    },
+    "Sea of Fortune": {
+     "n": 15,
+     "pos_spread_km": 12.093325004270262,
+     "edge_med_m": 3364.17,
+     "stationary_pct": 53.333333333333336
+    },
+    "Mountain Range": {
+     "n": 10,
+     "pos_spread_km": 8.592143820087331,
+     "edge_med_m": -257.09000000000003,
+     "stationary_pct": 40.0
+    }
+   }
+  },
+  "Gdańsk": {
+   "n": 118,
+   "clans": 16,
+   "players": 24,
+   "top_clan": [
+    "RESIN",
+    21
+   ],
+   "pos_spread_km": 10.259557830277311,
+   "pos_spread_km_ci": [
+    7.8190340403536345,
+    10.929935477406403
+   ],
+   "stationary_pct": 40.67796610169491,
+   "stationary_pct_ci": [
+    33.72093023255814,
+    47.44525547445255
+   ],
+   "inside_pct": 26.271186440677965,
+   "inside_pct_ci": [
+    15.833333333333334,
+    37.5
+   ],
+   "edge_med_m": 1544.08,
+   "edge_med_m_ci": [
+    630.63,
+    2397.59
+   ],
+   "edge_iqr_m": 4968.0975,
+   "edge_iqr_m_ci": [
+    3418.52,
+    6290.9
+   ],
+   "path_med_m": 765.065,
+   "path_med_m_ci": [
+    545.88,
+    1035.26
+   ],
+   "stacked_pct": 16.10169491525424,
+   "stacked_pct_ci": [
+    9.770114942528735,
+    26.041666666666668
+   ],
+   "screen_pct": 40.67796610169491,
+   "screen_pct_ci": [
+    28.74251497005988,
+    52.713178294573645
+   ],
+   "selfish_pct": 43.220338983050844,
+   "selfish_pct_ci": [
+    31.35593220338983,
+    52.94117647058823
+   ],
+   "by_map": {
+    "Sleeping Giant": {
+     "n": 37,
+     "pos_spread_km": 7.977683818349176,
+     "edge_med_m": 3011.66,
+     "stationary_pct": 45.945945945945944
+    },
+    "Hotspot": {
+     "n": 23,
+     "pos_spread_km": 8.807879539847942,
+     "edge_med_m": 1050.61,
+     "stationary_pct": 47.82608695652174
+    },
+    "Mountain Range": {
+     "n": 20,
+     "pos_spread_km": 10.724368177556254,
+     "edge_med_m": 554.1949999999999,
+     "stationary_pct": 40.0
+    },
+    "Loop": {
+     "n": 13,
+     "pos_spread_km": 9.364590578593322,
+     "edge_med_m": -482.38,
+     "stationary_pct": 38.46153846153846
+    },
+    "Sea of Fortune": {
+     "n": 11,
+     "pos_spread_km": 14.103706490102436,
+     "edge_med_m": 3559.43,
+     "stationary_pct": 36.36363636363637
+    }
+   }
+  }
+ },
+ "emission": {
+  "Somers": {
+   "n": 260,
+   "base_s": 30.0,
+   "median_s": 39.71,
+   "q1_s": 39.55,
+   "q3_s": 43.39,
+   "p10_s": 33.167,
+   "p90_s": 43.68,
+   "ratio_median": 1.3236666666666668,
+   "cut_short_n": 10,
+   "cut_short_pct": 3.8461538461538463,
+   "short_not_flagged_n": 2,
+   "clean_n": 226,
+   "clean_median_s": 39.724999999999994,
+   "clean_ratio_q1": 1.319,
+   "clean_ratio_q3": 1.4473333333333334,
+   "players_3plus": 25,
+   "between_player_variance_share": 0.6032895737918891,
+   "between_player_perm_p": 0.001996007984031936,
+   "share_within_tolerance_of_player_median": 0.9134615384615384,
+   "within_player_iqr_s": 0.269999999999996,
+   "player_median_steps": {
+    "1.1": 3,
+    "1.2": 1,
+    "1.3": 14,
+    "1.4": 3,
+    "1.5": 4
+   },
+   "players_multi_game": 16,
+   "players_changed_between_games": 3,
+   "radius_m": [
+    450
+   ],
+   "radius_values": {
+    "450": 260
+   },
+   "radius_equals_base_pct": 100.0,
+   "spearman_path_vs_emission_moving": 0.3660661609776654
+  },
+  "Daring": {
+   "n": 200,
+   "base_s": 10.0,
+   "median_s": 11.015,
+   "q1_s": 10.35,
+   "q3_s": 11.3,
+   "p10_s": 9.891,
+   "p90_s": 11.784999999999998,
+   "ratio_median": 1.1015000000000001,
+   "cut_short_n": 6,
+   "cut_short_pct": 3.0,
+   "short_not_flagged_n": 7,
+   "clean_n": 183,
+   "clean_median_s": 11.03,
+   "clean_ratio_q1": 1.0565,
+   "clean_ratio_q3": 1.1300000000000001,
+   "players_3plus": 24,
+   "between_player_variance_share": 0.39091284740224985,
+   "between_player_perm_p": 0.001996007984031936,
+   "share_within_tolerance_of_player_median": 0.9629629629629629,
+   "within_player_iqr_s": 0.4150000000000009,
+   "player_median_steps": {
+    "1.0": 5,
+    "1.1": 14,
+    "1.2": 5
+   },
+   "players_multi_game": 13,
+   "players_changed_between_games": 1,
+   "radius_m": [
+    600
+   ],
+   "radius_values": {
+    "600": 200
+   },
+   "radius_equals_base_pct": 100.0
+  },
+  "Svea": {
+   "n": 199,
+   "base_s": 10.0,
+   "median_s": 12.03,
+   "q1_s": 11.024999999999999,
+   "q3_s": 12.55,
+   "p10_s": 10.538,
+   "p90_s": 13.434000000000003,
+   "ratio_median": 1.2029999999999998,
+   "cut_short_n": 2,
+   "cut_short_pct": 1.0050251256281406,
+   "short_not_flagged_n": 1,
+   "clean_n": 188,
+   "clean_median_s": 12.105,
+   "clean_ratio_q1": 1.1165,
+   "clean_ratio_q3": 1.256,
+   "players_3plus": 27,
+   "between_player_variance_share": 0.633695129027708,
+   "between_player_perm_p": 0.001996007984031936,
+   "share_within_tolerance_of_player_median": 0.9378531073446328,
+   "within_player_iqr_s": 0.661249999999999,
+   "player_median_steps": {
+    "1.1": 6,
+    "1.2": 15,
+    "1.3": 4,
+    "1.4": 1,
+    "1.5": 1
+   },
+   "players_multi_game": 12,
+   "players_changed_between_games": 4,
+   "radius_m": [
+    600
+   ],
+   "radius_values": {
+    "600": 199
+   },
+   "radius_equals_base_pct": 100.0
+  },
+  "Gearing": {
+   "n": 180,
+   "base_s": 30.0,
+   "median_s": 39.575,
+   "q1_s": 33.2725,
+   "q3_s": 40.144999999999996,
+   "p10_s": 32.862,
+   "p90_s": 43.44,
+   "ratio_median": 1.3191666666666668,
+   "cut_short_n": 8,
+   "cut_short_pct": 4.444444444444445,
+   "short_not_flagged_n": 1,
+   "clean_n": 158,
+   "clean_median_s": 39.59,
+   "clean_ratio_q1": 1.1148333333333333,
+   "clean_ratio_q3": 1.348,
+   "players_3plus": 21,
+   "between_player_variance_share": 0.9783449404184767,
+   "between_player_perm_p": 0.001996007984031936,
+   "share_within_tolerance_of_player_median": 0.9647887323943662,
+   "within_player_iqr_s": 0.2849999999999966,
+   "player_median_steps": {
+    "1.1": 5,
+    "1.2": 1,
+    "1.3": 9,
+    "1.4": 4,
+    "1.5": 2
+   },
+   "players_multi_game": 9,
+   "players_changed_between_games": 1,
+   "radius_m": [
+    450
+   ],
+   "radius_values": {
+    "450": 180
+   },
+   "radius_equals_base_pct": 100.0,
+   "spearman_path_vs_emission_moving": 0.330046940936606
+  },
+  "Napoli": {
+   "n": 147,
+   "base_s": 40.0,
+   "median_s": 48.28,
+   "q1_s": 44.295,
+   "q3_s": 48.585,
+   "p10_s": 40.918,
+   "p90_s": 49.01,
+   "ratio_median": 1.207,
+   "cut_short_n": 16,
+   "cut_short_pct": 10.884353741496598,
+   "short_not_flagged_n": 0,
+   "clean_n": 121,
+   "clean_median_s": 48.37,
+   "clean_ratio_q1": 1.12775,
+   "clean_ratio_q3": 1.216,
+   "players_3plus": 11,
+   "between_player_variance_share": 0.9700049947855746,
+   "between_player_perm_p": 0.001996007984031936,
+   "share_within_tolerance_of_player_median": 1.0,
+   "within_player_iqr_s": 0.3749999999999929,
+   "player_median_steps": {
+    "1.1": 3,
+    "1.2": 8
+   },
+   "players_multi_game": 6,
+   "players_changed_between_games": 0,
+   "radius_m": [
+    450,
+    510
+   ],
+   "radius_values": {
+    "510": 146,
+    "450": 1
+   },
+   "radius_equals_base_pct": 99.31972789115646
+  },
+  "Gdańsk": {
+   "n": 118,
+   "base_s": 20.0,
+   "median_s": 22.165,
+   "q1_s": 22.0,
+   "q3_s": 22.54,
+   "p10_s": 20.366999999999997,
+   "p90_s": 23.444,
+   "ratio_median": 1.10825,
+   "cut_short_n": 9,
+   "cut_short_pct": 7.627118644067797,
+   "short_not_flagged_n": 1,
+   "clean_n": 105,
+   "clean_median_s": 22.27,
+   "clean_ratio_q1": 1.1005,
+   "clean_ratio_q3": 1.1285,
+   "players_3plus": 13,
+   "between_player_variance_share": 0.7176573457309766,
+   "between_player_perm_p": 0.001996007984031936,
+   "share_within_tolerance_of_player_median": 0.9775280898876404,
+   "within_player_iqr_s": 0.38750000000000284,
+   "player_median_steps": {
+    "1.0": 1,
+    "1.1": 11,
+    "1.2": 1
+   },
+   "players_multi_game": 8,
+   "players_changed_between_games": 0,
+   "radius_m": [
+    450
+   ],
+   "radius_values": {
+    "450": 118
+   },
+   "radius_equals_base_pct": 100.0
+  },
+  "Harugumo": {
+   "n": 100,
+   "base_s": 20.0,
+   "median_s": 52.73,
+   "q1_s": 44.01,
+   "q3_s": 55.58,
+   "p10_s": 29.320999999999998,
+   "p90_s": 58.133,
+   "ratio_median": 2.6365,
+   "cut_short_n": 3,
+   "cut_short_pct": 3.0,
+   "short_not_flagged_n": 0,
+   "clean_n": 83,
+   "clean_median_s": 52.73,
+   "clean_ratio_q1": 2.202,
+   "clean_ratio_q3": 2.6805000000000003,
+   "players_3plus": 12,
+   "between_player_variance_share": 0.5687165922681314,
+   "between_player_perm_p": 0.001996007984031936,
+   "share_within_tolerance_of_player_median": 0.8823529411764706,
+   "within_player_iqr_s": 0.463750000000001,
+   "player_median_steps": {
+    "2.1": 1,
+    "2.2": 3,
+    "2.4": 1,
+    "2.6": 2,
+    "2.7": 2,
+    "2.9": 3
+   },
+   "players_multi_game": 6,
+   "players_changed_between_games": 2,
+   "radius_m": [
+    450
+   ],
+   "radius_values": {
+    "450": 100
+   },
+   "radius_equals_base_pct": 100.0,
+   "spearman_path_vs_emission_moving": 0.42116736990154713
+  },
+  "Shimakaze": {
+   "n": 58,
+   "base_s": 20.0,
+   "median_s": 22.130000000000003,
+   "q1_s": 22.0,
+   "q3_s": 23.005000000000003,
+   "p10_s": 20.51,
+   "p90_s": 26.406,
+   "ratio_median": 1.1065,
+   "cut_short_n": 4,
+   "cut_short_pct": 6.896551724137931,
+   "short_not_flagged_n": 0,
+   "clean_n": 53,
+   "clean_median_s": 22.17,
+   "clean_ratio_q1": 1.1005,
+   "clean_ratio_q3": 1.1505,
+   "players_3plus": 6,
+   "between_player_variance_share": 0.548574561432512,
+   "between_player_perm_p": 0.001996007984031936,
+   "share_within_tolerance_of_player_median": 0.8055555555555556,
+   "within_player_iqr_s": 0.48999999999999844,
+   "player_median_steps": {
+    "1.1": 5,
+    "1.3": 1
+   },
+   "players_multi_game": 4,
+   "players_changed_between_games": 1,
+   "radius_m": [
+    450
+   ],
+   "radius_values": {
+    "450": 58
+   },
+   "radius_equals_base_pct": 100.0
+  },
+  "Z-42": {
+   "n": 56,
+   "base_s": 10.0,
+   "median_s": 11.425,
+   "q1_s": 10.545,
+   "q3_s": 12.16,
+   "p10_s": 10.004999999999999,
+   "p90_s": 12.59,
+   "ratio_median": 1.1425,
+   "cut_short_n": 2,
+   "cut_short_pct": 3.5714285714285716,
+   "short_not_flagged_n": 1,
+   "clean_n": 52,
+   "clean_median_s": 11.985,
+   "clean_ratio_q1": 1.0775000000000001,
+   "clean_ratio_q3": 1.2165,
+   "players_3plus": 11,
+   "between_player_variance_share": 0.8825624746650002,
+   "between_player_perm_p": 0.001996007984031936,
+   "share_within_tolerance_of_player_median": 1.0,
+   "within_player_iqr_s": 0.245000000000001,
+   "player_median_steps": {
+    "1.0": 2,
+    "1.1": 3,
+    "1.2": 5,
+    "1.3": 1
+   },
+   "players_multi_game": 3,
+   "players_changed_between_games": 0,
+   "radius_m": [
+    600
+   ],
+   "radius_values": {
+    "600": 56
+   },
+   "radius_equals_base_pct": 100.0
+  },
+  "Jinan": {
+   "n": 42,
+   "base_s": 30.0,
+   "median_s": 31.17,
+   "q1_s": 30.335,
+   "q3_s": 33.265,
+   "p10_s": 29.936,
+   "p90_s": 33.992999999999995,
+   "ratio_median": 1.0390000000000001,
+   "cut_short_n": 3,
+   "cut_short_pct": 7.142857142857143,
+   "short_not_flagged_n": 0,
+   "clean_n": 39,
+   "clean_median_s": 31.44,
+   "clean_ratio_q1": 1.0168333333333333,
+   "clean_ratio_q3": 1.1093333333333333,
+   "players_3plus": 6,
+   "between_player_variance_share": 0.8408174767905634,
+   "between_player_perm_p": 0.001996007984031936,
+   "share_within_tolerance_of_player_median": 0.9444444444444444,
+   "within_player_iqr_s": 0.7374999999999972,
+   "player_median_steps": {
+    "1.0": 2,
+    "1.1": 4
+   },
+   "players_multi_game": 2,
+   "players_changed_between_games": 0,
+   "radius_m": [
+    450
+   ],
+   "radius_values": {
+    "450": 42
+   },
+   "radius_equals_base_pct": 100.0
+  },
+  "Grozovoi": {
+   "n": 30,
+   "base_s": 20.0,
+   "median_s": 21.814999999999998,
+   "q1_s": 20.195,
+   "q3_s": 22.37,
+   "p10_s": 19.944,
+   "p90_s": 26.923,
+   "ratio_median": 1.0907499999999999,
+   "cut_short_n": 2,
+   "cut_short_pct": 6.666666666666667,
+   "short_not_flagged_n": 0,
+   "clean_n": 25,
+   "clean_median_s": 21.99,
+   "clean_ratio_q1": 1.0175,
+   "clean_ratio_q3": 1.1095000000000002,
+   "players_3plus": 2,
+   "between_player_variance_share": 0.9507543109672283,
+   "between_player_perm_p": 0.001996007984031936,
+   "share_within_tolerance_of_player_median": 1.0,
+   "within_player_iqr_s": 0.3000000000000007,
+   "player_median_steps": {
+    "1.0": 1,
+    "1.1": 1
+   },
+   "players_multi_game": 1,
+   "players_changed_between_games": 0,
+   "radius_m": [
+    450
+   ],
+   "radius_values": {
+    "450": 30
+   },
+   "radius_equals_base_pct": 100.0
+  },
+  "Delny": {
+   "n": 22,
+   "base_s": 30.0,
+   "median_s": 43.43,
+   "q1_s": 40.0,
+   "q3_s": 43.6775,
+   "p10_s": 37.49,
+   "p90_s": 43.976,
+   "ratio_median": 1.4476666666666667,
+   "cut_short_n": 0,
+   "cut_short_pct": 0.0,
+   "short_not_flagged_n": 1,
+   "clean_n": 18,
+   "clean_median_s": 43.43,
+   "clean_ratio_q1": 1.3930833333333332,
+   "clean_ratio_q3": 1.4575,
+   "players_3plus": 3,
+   "between_player_variance_share": 0.25900822422532177,
+   "between_player_perm_p": 0.06986027944111776,
+   "share_within_tolerance_of_player_median": 0.9444444444444444,
+   "within_player_iqr_s": 0.2949999999999946,
+   "player_median_steps": {
+    "1.3": 1,
+    "1.5": 2
+   },
+   "players_multi_game": 2,
+   "players_changed_between_games": 0,
+   "radius_m": [
+    450
+   ],
+   "radius_values": {
+    "450": 22
+   },
+   "radius_equals_base_pct": 100.0
+  },
+  "Venezia": {
+   "n": 21,
+   "base_s": 40.0,
+   "median_s": 48.59,
+   "q1_s": 44.2,
+   "q3_s": 53.41,
+   "p10_s": 39.21,
+   "p90_s": 58.28,
+   "ratio_median": 1.21475,
+   "cut_short_n": 3,
+   "cut_short_pct": 14.285714285714286,
+   "short_not_flagged_n": 0,
+   "clean_n": 16,
+   "clean_median_s": 48.765,
+   "clean_ratio_q1": 1.1808125,
+   "clean_ratio_q3": 1.45525,
+   "players_3plus": 3,
+   "between_player_variance_share": 0.9161320364817814,
+   "between_player_perm_p": 0.001996007984031936,
+   "share_within_tolerance_of_player_median": 0.8333333333333334,
+   "within_player_iqr_s": 5.150000000000006,
+   "player_median_steps": {
+    "1.1": 1,
+    "1.2": 1,
+    "1.5": 1
+   },
+   "players_multi_game": 1,
+   "players_changed_between_games": 1,
+   "radius_m": [
+    510
+   ],
+   "radius_values": {
+    "510": 21
+   },
+   "radius_equals_base_pct": 100.0
+  },
+  "C. Colombo": {
+   "n": 20,
+   "base_s": 45.0,
+   "median_s": 49.46,
+   "q1_s": 45.084999999999994,
+   "q3_s": 49.925,
+   "p10_s": 32.269000000000005,
+   "p90_s": 50.433,
+   "ratio_median": 1.0991111111111111,
+   "cut_short_n": 4,
+   "cut_short_pct": 20.0,
+   "short_not_flagged_n": 0,
+   "clean_n": 15,
+   "clean_median_s": 49.55,
+   "clean_ratio_q1": 1.0982222222222222,
+   "clean_ratio_q3": 1.1108888888888888,
+   "players_3plus": 0,
+   "between_player_variance_share": null,
+   "between_player_perm_p": null,
+   "share_within_tolerance_of_player_median": null,
+   "within_player_iqr_s": null,
+   "player_median_steps": {},
+   "players_multi_game": 0,
+   "players_changed_between_games": 0,
+   "radius_m": [
+    510
+   ],
+   "radius_values": {
+    "510": 20
+   },
+   "radius_equals_base_pct": 100.0
+  }
+ },
+ "vs_daring": {
+  "Grozovoi": {
+   "pos_spread_km": {
+    "diff": 2.6376340019671503,
+    "ci": [
+     -1.3273913957480943,
+     8.535049812799494
+    ]
+   },
+   "stationary_pct": {
+    "diff": -43.5,
+    "ci": [
+     -63.19444444444444,
+     -19.70899470899471
+    ]
+   },
+   "stacked_pct": {
+    "diff": 10.0,
+    "ci": [
+     -0.78838174273859,
+     32.01376936316695
+    ]
+   },
+   "path_med_m": {
+    "diff": 432.145,
+    "ci": [
+     174.265,
+     1651.58
+    ]
+   },
+   "edge_iqr_m": {
+    "diff": 598.8225000000002,
+    "ci": [
+     -2349.63,
+     3509.8549999999996
+    ]
+   },
+   "inside_pct": {
+    "diff": -9.166666666666664,
+    "ci": [
+     -23.268617791944365,
+     17.22708429295256
+    ]
+   }
+  },
+  "Shimakaze": {
+   "pos_spread_km": {
+    "diff": 3.793402700270155,
+    "ci": [
+     0.5807686051701992,
+     5.863149094884172
+    ]
+   },
+   "stationary_pct": {
+    "diff": -37.63793103448276,
+    "ci": [
+     -51.89637498835151,
+     -24.561403508771928
+    ]
+   },
+   "stacked_pct": {
+    "diff": 38.275862068965516,
+    "ci": [
+     25.7768835233624,
+     54.523809523809526
+    ]
+   },
+   "path_med_m": {
+    "diff": 1330.7843688546561,
+    "ci": [
+     909.1999999999998,
+     1495.92
+    ]
+   },
+   "edge_iqr_m": {
+    "diff": 3711.392500000001,
+    "ci": [
+     563.1999999999989,
+     6038.5025000000005
+    ]
+   },
+   "inside_pct": {
+    "diff": -9.741379310344826,
+    "ci": [
+     -25.639344262295083,
+     8.658008658008654
+    ]
+   }
+  },
+  "Gdańsk": {
+   "pos_spread_km": {
+    "diff": 0.5653487157243298,
+    "ci": [
+     -1.5773110996363204,
+     2.416472041913453
+    ]
+   },
+   "stationary_pct": {
+    "diff": -22.822033898305087,
+    "ci": [
+     -34.83166515013648,
+     -11.910669975186103
+    ]
+   },
+   "stacked_pct": {
+    "diff": 6.101694915254239,
+    "ci": [
+     -2.537878787878789,
+     19.02173913043478
+    ]
+   },
+   "path_med_m": {
+    "diff": 379.1400000000001,
+    "ci": [
+     153.07999999999993,
+     647.8100000000001
+    ]
+   },
+   "edge_iqr_m": {
+    "diff": 841.5275000000001,
+    "ci": [
+     -634.2800000000002,
+     2564.6975
+    ]
+   },
+   "inside_pct": {
+    "diff": -16.228813559322035,
+    "ci": [
+     -31.51908023483366,
+     -0.7102653444116847
+    ]
+   }
+  }
+ },
+ "two_cluster_split": {
+  "Grozovoi": {
+   "silhouette": 0.25795097822324725,
+   "var_explained": 0.2950237633512841,
+   "n_short": 15,
+   "n_long": 15,
+   "share_Daring_draws_at_least_as_separated": 0.5733333333333334,
+   "share_Gdańsk_draws_at_least_as_separated": 0.78,
+   "without_MACHX": {
+    "n": 15,
+    "silhouette": 0.24691602982599373,
+    "var_explained": 0.3168253677288718
+   },
+   "MACHX_only": {
+    "n": 15,
+    "silhouette": 0.30051116406237266,
+    "var_explained": 0.34739188718988323
+   }
+  },
+  "Shimakaze": {
+   "silhouette": 0.24624712480451638,
+   "var_explained": 0.25551061896223726,
+   "n_short": 30,
+   "n_long": 28,
+   "share_Daring_draws_at_least_as_separated": 0.7833333333333333,
+   "share_Gdańsk_draws_at_least_as_separated": 0.98
+  },
+  "Daring": {
+   "silhouette": 0.2636809175565451,
+   "var_explained": 0.23522906439509272,
+   "n_short": 127,
+   "n_long": 73,
+   "sub30": {
+    "sil_med": 0.2706483416811589,
+    "sil_lo": 0.20950804525353883,
+    "sil_hi": 0.3556248263607706,
+    "expl_med": 0.26641566241135356,
+    "expl_lo": 0.21685265273376025,
+    "expl_hi": 0.3385298208237674
+   },
+   "sub58": {
+    "sil_med": 0.2646208194677851,
+    "sil_lo": 0.23172947025490745,
+    "sil_hi": 0.3227468659945787,
+    "expl_med": 0.24789557692387215,
+    "expl_lo": 0.21386669215804902,
+    "expl_hi": 0.2918485655158936
+   }
+  },
+  "Gdańsk": {
+   "silhouette": 0.27738315367488653,
+   "var_explained": 0.28796028648911476,
+   "n_short": 47,
+   "n_long": 71,
+   "sub30": {
+    "sil_med": 0.2807771432470505,
+    "sil_lo": 0.2336441959299381,
+    "sil_hi": 0.3423051704671477,
+    "expl_med": 0.3084375837430117,
+    "expl_lo": 0.24897719150786293,
+    "expl_hi": 0.3817892427047263
+   },
+   "sub58": {
+    "sil_med": 0.27789297559102577,
+    "sil_lo": 0.24791703889328304,
+    "sil_hi": 0.30877510049010254,
+    "expl_med": 0.2938651868412611,
+    "expl_lo": 0.25526277454671564,
+    "expl_hi": 0.3309349262592337
+   }
+  }
+ },
+ "modes": {
+  "definition": "line = nearer the smoke-line ship profile than the cap-sitter ship profile on 7 standardized features; the ship itself is left out of the profiles",
+  "features": [
+   "log path",
+   "edge km",
+   "lateral",
+   "forward",
+   "stationary",
+   "stacked",
+   "selfish"
+  ],
+  "ships": {
+   "Grozovoi": {
+    "n": 30,
+    "line_pct": 53.333333333333336,
+    "ci": [
+     34.48275862068966,
+     83.33333333333333
+    ],
+    "minus_daring": {
+     "diff": 43.333333333333336,
+     "ci": [
+      24.83930211202938,
+      73.28966521106258
+     ]
+    },
+    "minus_gdansk": {
+     "diff": 12.655367231638422,
+     "ci": [
+      -7.142857142857146,
+      44.48529411764706
+     ]
+    },
+    "agreement_with_kmeans": 0.9666666666666667,
+    "profile": {
+     "sit": {
+      "n": 14,
+      "stationary_pct": 42.857142857142854,
+      "path_med_m": 563.86,
+      "edge_med_m": 1671.4450000000002,
+      "inside_pct": 42.857142857142854,
+      "stacked_pct": 0.0,
+      "screen_pct": 7.142857142857143,
+      "selfish_pct": 92.85714285714286,
+      "lateral_med": 0.2902527103125,
+      "el_med_s": 560.5,
+      "conc_mean": 6032.842857142858,
+      "torp_mean": 731.9692857142857,
+      "cap_contest_pct": 42.857142857142854,
+      "partners_mean": 0.14285714285714285,
+      "win_pct": 71.42857142857143
+     },
+     "line": {
+      "n": 16,
+      "stationary_pct": 0.0,
+      "path_med_m": 1476.805,
+      "edge_med_m": 829.62,
+      "inside_pct": 25.0,
+      "stacked_pct": 37.5,
+      "screen_pct": 56.25,
+      "selfish_pct": 6.25,
+      "lateral_med": 0.6941972437499999,
+      "el_med_s": 451.5,
+      "conc_mean": 6818.41,
+      "torp_mean": 0.0,
+      "cap_contest_pct": 50.0,
+      "partners_mean": 1.125,
+      "win_pct": 56.25
+     }
+    },
+    "lines_up_with": {
+     "clan_p": 0.04047976011994003,
+     "player_p": 0.009995002498750625,
+     "map_p": 0.4052973513243378,
+     "game_p": 0.030484757621189407,
+     "result_p": 0.4852573713143428,
+     "time_diff_s": -109.0,
+     "time_p": 0.1629185407296352,
+     "players_5plus": 1,
+     "players_5plus_using_both": 1,
+     "player_games_3plus": 4,
+     "player_games_3plus_using_both": 1
+    },
+    "leave_one_clan_out_line_pct": [
+     48.148148148148145,
+     60.0
+    ]
+   },
+   "Shimakaze": {
+    "n": 58,
+    "line_pct": 63.793103448275865,
+    "ci": [
+     51.61290322580645,
+     77.77777777777777
+    ],
+    "minus_daring": {
+     "diff": 53.793103448275865,
+     "ci": [
+      40.30714616453157,
+      67.17896865520729
+     ]
+    },
+    "minus_gdansk": {
+     "diff": 23.11513734658095,
+     "ci": [
+      6.913622396722431,
+      38.35839598997494
+     ]
+    },
+    "agreement_with_kmeans": 0.7068965517241379,
+    "profile": {
+     "sit": {
+      "n": 21,
+      "stationary_pct": 71.42857142857143,
+      "path_med_m": 358.25,
+      "edge_med_m": 1875.22,
+      "inside_pct": 38.095238095238095,
+      "stacked_pct": 19.047619047619047,
+      "screen_pct": 28.571428571428573,
+      "selfish_pct": 52.38095238095238,
+      "lateral_med": 0.4460169425367643,
+      "el_med_s": 564,
+      "conc_mean": 2455.2566666666667,
+      "torp_mean": 1572.2161904761906,
+      "cap_contest_pct": 42.857142857142854,
+      "partners_mean": 0.47619047619047616,
+      "win_pct": 42.857142857142854
+     },
+     "line": {
+      "n": 37,
+      "stationary_pct": 0.0,
+      "path_med_m": 1999.37,
+      "edge_med_m": 3573.43,
+      "inside_pct": 29.72972972972973,
+      "stacked_pct": 64.86486486486487,
+      "screen_pct": 24.324324324324323,
+      "selfish_pct": 10.81081081081081,
+      "lateral_med": 0.68100115,
+      "el_med_s": 460,
+      "conc_mean": 7399.029729729729,
+      "torp_mean": 1189.1897297297296,
+      "cap_contest_pct": 32.432432432432435,
+      "partners_mean": 1.1081081081081081,
+      "win_pct": 40.54054054054054
+     }
+    },
+    "lines_up_with": {
+     "clan_p": 0.23088455772113944,
+     "player_p": 0.4992503748125937,
+     "map_p": 0.4547726136931534,
+     "game_p": 0.4207896051974013,
+     "result_p": 1.0,
+     "time_diff_s": -104,
+     "time_p": 0.1714142928535732,
+     "players_5plus": 5,
+     "players_5plus_using_both": 5,
+     "player_games_3plus": 4,
+     "player_games_3plus_using_both": 3
+    },
+    "leave_one_clan_out_line_pct": [
+     61.111111111111114,
+     68.0
+    ],
+    "top_vs_rest": {
+     "n_top": 15,
+     "n_rest": 43,
+     "line_top": 60.0,
+     "line_rest": 65.11627906976744,
+     "line_diff_ci": [
+      -35.71428571428572,
+      26.289308176100633
+     ],
+     "stat_top": 26.666666666666668,
+     "stat_rest": 25.58139534883721,
+     "stat_diff_ci": [
+      -25.58139534883721,
+      23.214285714285715
+     ]
+    }
+   },
+   "Daring": {
+    "n": 200,
+    "line_pct": 10.0,
+    "ci": [
+     3.1446540880503147,
+     16.25
+    ],
+    "agreement_with_kmeans": 0.735,
+    "profile": {
+     "sit": {
+      "n": 180,
+      "stationary_pct": 70.55555555555556,
+      "path_med_m": 342.85,
+      "edge_med_m": 473.28,
+      "inside_pct": 44.44444444444444,
+      "stacked_pct": 3.3333333333333335,
+      "screen_pct": 33.888888888888886,
+      "selfish_pct": 62.77777777777778,
+      "lateral_med": 0.2137111328920535,
+      "el_med_s": 527.0,
+      "conc_mean": 3512.5168888888893,
+      "torp_mean": 197.39611111111108,
+      "cap_contest_pct": 57.22222222222222,
+      "partners_mean": 0.42777777777777776,
+      "win_pct": 63.888888888888886
+     },
+     "line": {
+      "n": 20,
+      "stationary_pct": 0.0,
+      "path_med_m": 956.7750000000001,
+      "edge_med_m": 1698.0900000000001,
+      "inside_pct": 25.0,
+      "stacked_pct": 70.0,
+      "screen_pct": 30.0,
+      "selfish_pct": 0.0,
+      "lateral_med": 0.5712914479166666,
+      "el_med_s": 385.5,
+      "conc_mean": 4621.4945,
+      "torp_mean": 0.0,
+      "cap_contest_pct": 35.0,
+      "partners_mean": 1.3,
+      "win_pct": 45.0
+     }
+    },
+    "lines_up_with": {
+     "clan_p": 0.051974012993503245,
+     "player_p": 0.01249375312343828,
+     "map_p": 0.25087456271864067,
+     "game_p": 0.001999000499750125,
+     "result_p": 0.14492753623188406,
+     "time_diff_s": -141.5,
+     "time_p": 0.03398300849575212,
+     "players_5plus": 14,
+     "players_5plus_using_both": 4,
+     "player_games_3plus": 42,
+     "player_games_3plus_using_both": 9
+    },
+    "top_vs_rest": {
+     "n_top": 34,
+     "n_rest": 166,
+     "line_top": 17.647058823529413,
+     "line_rest": 8.433734939759036,
+     "line_diff_ci": [
+      -12.658227848101266,
+      21.385799828913605
+     ],
+     "stat_top": 58.8235294117647,
+     "stat_rest": 64.4578313253012,
+     "stat_diff_ci": [
+      -19.325931800158607,
+      24.8051948051948
+     ]
+    }
+   },
+   "Gdańsk": {
+    "n": 118,
+    "line_pct": 40.67796610169491,
+    "ci": [
+     33.333333333333336,
+     51.16279069767442
+    ],
+    "minus_daring": {
+     "diff": 30.677966101694913,
+     "ci": [
+      20.852565843062724,
+      42.15628672150411
+     ]
+    },
+    "agreement_with_kmeans": 0.8050847457627118,
+    "profile": {
+     "sit": {
+      "n": 70,
+      "stationary_pct": 67.14285714285714,
+      "path_med_m": 416.73,
+      "edge_med_m": 716.12,
+      "inside_pct": 31.428571428571427,
+      "stacked_pct": 1.4285714285714286,
+      "screen_pct": 34.285714285714285,
+      "selfish_pct": 64.28571428571429,
+      "lateral_med": 0.2686936890625,
+      "el_med_s": 463.0,
+      "conc_mean": 7113.041285714286,
+      "torp_mean": 624.3544285714286,
+      "cap_contest_pct": 41.42857142857143,
+      "partners_mean": 0.5142857142857142,
+      "win_pct": 68.57142857142857
+     },
+     "line": {
+      "n": 48,
+      "stationary_pct": 2.0833333333333335,
+      "path_med_m": 1502.78,
+      "edge_med_m": 3056.29,
+      "inside_pct": 18.75,
+      "stacked_pct": 37.5,
+      "screen_pct": 50.0,
+      "selfish_pct": 12.5,
+      "lateral_med": 0.45680611422193873,
+      "el_med_s": 480.0,
+      "conc_mean": 9797.297083333333,
+      "torp_mean": 907.1770833333334,
+      "cap_contest_pct": 29.166666666666668,
+      "partners_mean": 1.2916666666666667,
+      "win_pct": 50.0
+     }
+    },
+    "lines_up_with": {
+     "clan_p": 0.3378310844577711,
+     "player_p": 0.8000999500249875,
+     "map_p": 0.3553223388305847,
+     "game_p": 0.1724137931034483,
+     "result_p": 0.04597701149425287,
+     "time_diff_s": 17.0,
+     "time_p": 0.7931034482758621,
+     "players_5plus": 10,
+     "players_5plus_using_both": 10,
+     "player_games_3plus": 14,
+     "player_games_3plus_using_both": 11
+    },
+    "top_vs_rest": {
+     "n_top": 60,
+     "n_rest": 58,
+     "line_top": 30.0,
+     "line_rest": 51.724137931034484,
+     "line_diff_ci": [
+      -34.521313766596776,
+      -10.32770605759682
+     ],
+     "stat_top": 46.666666666666664,
+     "stat_rest": 34.48275862068966,
+     "stat_diff_ci": [
+      1.3213530655391068,
+      24.49612403100775
+     ]
+    }
+   },
+   "Z-42": {
+    "n": 56,
+    "line_pct": 16.071428571428573,
+    "ci": [
+     5.882352941176471,
+     23.943661971830984
+    ]
+   },
+   "Somers": {
+    "n": 260,
+    "line_pct": 95.0,
+    "ci": [
+     91.20879120879121,
+     97.67441860465117
+    ]
+   },
+   "Gearing": {
+    "n": 180,
+    "line_pct": 90.0,
+    "ci": [
+     76.41509433962264,
+     98.08429118773947
+    ]
+   },
+   "Harugumo": {
+    "n": 100,
+    "line_pct": 88.0,
+    "ci": [
+     78.72340425531915,
+     97.05882352941177
+    ]
+   },
+   "Delny": {
+    "n": 22,
+    "line_pct": 90.9090909090909,
+    "ci": [
+     50.0,
+     100.0
+    ]
+   }
+  }
+ },
+ "pn": [
+  {
+   "ship": "Gdańsk",
+   "map": "Okinawa",
+   "mode": "line",
+   "movement": "horizontal",
+   "edge_m": 4110.23,
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7977_g1_43943.html"
+  }
+ ],
+ "emission_players": {
+  "Somers": [
+   {
+    "player": "MACHX_TheLastBe",
+    "clan": "MACHX",
+    "n": 3,
+    "median_s": 33.03,
+    "min_s": 32.97,
+    "max_s": 33.37
+   },
+   {
+    "player": "UYSC_Docmatheus",
+    "clan": "UYSC",
+    "n": 4,
+    "median_s": 33.355000000000004,
+    "min_s": 33.01,
+    "max_s": 33.56
+   },
+   {
+    "player": "KITED_Timeless",
+    "clan": "KITED",
+    "n": 3,
+    "median_s": 33.57,
+    "min_s": 33.13,
+    "max_s": 41.25
+   },
+   {
+    "player": "MACHX_SPAAAAAAA",
+    "clan": "MACHX",
+    "n": 3,
+    "median_s": 37.15,
+    "min_s": 36.44,
+    "max_s": 37.26
+   },
+   {
+    "player": "EPOXY_Your_SAT_",
+    "clan": "EPOXY",
+    "n": 15,
+    "median_s": 39.56,
+    "min_s": 28.25,
+    "max_s": 40.46
+   },
+   {
+    "player": "RESIN_Fryce",
+    "clan": "RESIN",
+    "n": 15,
+    "median_s": 39.57,
+    "min_s": 39.54,
+    "max_s": 39.59
+   },
+   {
+    "player": "MACHX_JustAMath",
+    "clan": "MACHX",
+    "n": 5,
+    "median_s": 39.57,
+    "min_s": 39.54,
+    "max_s": 39.99
+   },
+   {
+    "player": "BN_jordi_92T",
+    "clan": "-BN-",
+    "n": 6,
+    "median_s": 39.58,
+    "min_s": 39.55,
+    "max_s": 40.27
+   },
+   {
+    "player": "BONKZ_Dyr3",
+    "clan": "BONKZ",
+    "n": 5,
+    "median_s": 39.58,
+    "min_s": 39.57,
+    "max_s": 39.71
+   },
+   {
+    "player": "HFANS_T_Sakuya",
+    "clan": "HFANS",
+    "n": 6,
+    "median_s": 39.585,
+    "min_s": 39.54,
+    "max_s": 40.42
+   },
+   {
+    "player": "REEEE_Harmonieu",
+    "clan": "REEEE",
+    "n": 17,
+    "median_s": 39.59,
+    "min_s": 33.13,
+    "max_s": 40.46
+   },
+   {
+    "player": "RESIN_eagle_lan",
+    "clan": "RESIN",
+    "n": 7,
+    "median_s": 39.6,
+    "min_s": 39.55,
+    "max_s": 40.3
+   },
+   {
+    "player": "MACHX_JulioElGu",
+    "clan": "MACHX",
+    "n": 6,
+    "median_s": 39.66,
+    "min_s": 39.55,
+    "max_s": 40.72
+   },
+   {
+    "player": "BONKY_bartimus_",
+    "clan": "BONKY",
+    "n": 6,
+    "median_s": 39.715,
+    "min_s": 39.58,
+    "max_s": 40.15
+   },
+   {
+    "player": "NGA_Edward_the_",
+    "clan": "NGA",
+    "n": 10,
+    "median_s": 39.785,
+    "min_s": 39.67,
+    "max_s": 40.4
+   },
+   {
+    "player": "RESIN_Big_Boy69",
+    "clan": "RESIN",
+    "n": 12,
+    "median_s": 39.785,
+    "min_s": 39.55,
+    "max_s": 40.58
+   },
+   {
+    "player": "HSR_Mixic37",
+    "clan": "H-SR",
+    "n": 4,
+    "median_s": 39.87,
+    "min_s": 39.7,
+    "max_s": 40.44
+   },
+   {
+    "player": "BONKY_BookinIt",
+    "clan": "BONKY",
+    "n": 4,
+    "median_s": 39.995000000000005,
+    "min_s": 39.7,
+    "max_s": 40.32
+   },
+   {
+    "player": "VRTUS_themanwit",
+    "clan": "VRTUS",
+    "n": 6,
+    "median_s": 41.495,
+    "min_s": 39.53,
+    "max_s": 43.73
+   },
+   {
+    "player": "HSR_Yamiyonohik",
+    "clan": "H-SR",
+    "n": 26,
+    "median_s": 43.445,
+    "min_s": 30.03,
+    "max_s": 44.33
+   },
+   {
+    "player": "PFANS_Mugu_9",
+    "clan": "PFANS",
+    "n": 6,
+    "median_s": 43.445,
+    "min_s": 31.92,
+    "max_s": 43.46
+   },
+   {
+    "player": "MZY_Inori_Takim",
+    "clan": "MZY",
+    "n": 14,
+    "median_s": 43.57,
+    "min_s": 43.38,
+    "max_s": 44.13
+   },
+   {
+    "player": "BN_TheRuzzO",
+    "clan": "-BN-",
+    "n": 4,
+    "median_s": 43.58,
+    "min_s": 41.16,
+    "max_s": 44.13
+   },
+   {
+    "player": "HFANS_YuanShenG",
+    "clan": "HFANS",
+    "n": 18,
+    "median_s": 43.68,
+    "min_s": 41.9,
+    "max_s": 45.03
+   },
+   {
+    "player": "REEEE_Daka_Daka",
+    "clan": "REEEE",
+    "n": 3,
+    "median_s": 43.78,
+    "min_s": 32.98,
+    "max_s": 44.1
+   }
+  ],
+  "Daring": [
+   {
+    "player": "KSE_RiemannZ12",
+    "clan": "KSE",
+    "n": 4,
+    "median_s": 10.085,
+    "min_s": 9.75,
+    "max_s": 10.18
+   },
+   {
+    "player": "SCCC2_KnightHei",
+    "clan": "SCCC2",
+    "n": 9,
+    "median_s": 10.29,
+    "min_s": 10.0,
+    "max_s": 11.0
+   },
+   {
+    "player": "BONKY_BookinIt",
+    "clan": "BONKY",
+    "n": 3,
+    "median_s": 10.3,
+    "min_s": 9.99,
+    "max_s": 10.43
+   },
+   {
+    "player": "BN_AngelaUwU",
+    "clan": "-BN-",
+    "n": 11,
+    "median_s": 10.43,
+    "min_s": 10.03,
+    "max_s": 11.44
+   },
+   {
+    "player": "KSC__Sait",
+    "clan": "KSC",
+    "n": 9,
+    "median_s": 10.46,
+    "min_s": 10.0,
+    "max_s": 11.74
+   },
+   {
+    "player": "BTLST_Karlag",
+    "clan": "BTLST",
+    "n": 4,
+    "median_s": 10.684999999999999,
+    "min_s": 9.93,
+    "max_s": 11.88
+   },
+   {
+    "player": "MACHX_TheLastBe",
+    "clan": "MACHX",
+    "n": 9,
+    "median_s": 10.7,
+    "min_s": 10.0,
+    "max_s": 11.58
+   },
+   {
+    "player": "REEEE_Harmonieu",
+    "clan": "REEEE",
+    "n": 11,
+    "median_s": 10.98,
+    "min_s": 10.94,
+    "max_s": 11.18
+   },
+   {
+    "player": "EPOXY_Your_SAT_",
+    "clan": "EPOXY",
+    "n": 6,
+    "median_s": 11.0,
+    "min_s": 10.99,
+    "max_s": 11.15
+   },
+   {
+    "player": "KITED_Uncle_Bor",
+    "clan": "KITED",
+    "n": 5,
+    "median_s": 11.0,
+    "min_s": 9.34,
+    "max_s": 11.4
+   },
+   {
+    "player": "BONKY_Hachimyaa",
+    "clan": "BONKY",
+    "n": 3,
+    "median_s": 11.01,
+    "min_s": 10.99,
+    "max_s": 11.11
+   },
+   {
+    "player": "SCCC2_MiqoteGam",
+    "clan": "SCCC2",
+    "n": 14,
+    "median_s": 11.02,
+    "min_s": 9.05,
+    "max_s": 12.07
+   },
+   {
+    "player": "MZY_NagatoYuki",
+    "clan": "MZY",
+    "n": 9,
+    "median_s": 11.02,
+    "min_s": 9.81,
+    "max_s": 11.56
+   },
+   {
+    "player": "HFANS_j_i_u_m_i",
+    "clan": "HFANS",
+    "n": 3,
+    "median_s": 11.04,
+    "min_s": 10.99,
+    "max_s": 11.32
+   },
+   {
+    "player": "HTDOG_frostie1_",
+    "clan": "HTDOG",
+    "n": 3,
+    "median_s": 11.13,
+    "min_s": 11.03,
+    "max_s": 11.3
+   },
+   {
+    "player": "HFANS_SoulCoral",
+    "clan": "HFANS",
+    "n": 10,
+    "median_s": 11.14,
+    "min_s": 10.17,
+    "max_s": 11.7
+   },
+   {
+    "player": "EPOXY_Dra",
+    "clan": "EPOXY",
+    "n": 9,
+    "median_s": 11.14,
+    "min_s": 10.97,
+    "max_s": 11.83
+   },
+   {
+    "player": "VRTUS_ItsAGameT",
+    "clan": "VRTUS",
+    "n": 4,
+    "median_s": 11.215,
+    "min_s": 11.0,
+    "max_s": 11.57
+   },
+   {
+    "player": "KITED_Nard3au",
+    "clan": "KITED",
+    "n": 8,
+    "median_s": 11.26,
+    "min_s": 10.99,
+    "max_s": 11.7
+   },
+   {
+    "player": "BN_Dominic_MacP",
+    "clan": "-BN-",
+    "n": 6,
+    "median_s": 11.5,
+    "min_s": 10.98,
+    "max_s": 12.44
+   },
+   {
+    "player": "BN_BAN_CV_SUB",
+    "clan": "-BN-",
+    "n": 3,
+    "median_s": 11.58,
+    "min_s": 10.98,
+    "max_s": 11.7
+   },
+   {
+    "player": "HTDOG_Battleshi",
+    "clan": "HTDOG",
+    "n": 3,
+    "median_s": 11.63,
+    "min_s": 11.05,
+    "max_s": 11.99
+   },
+   {
+    "player": "HTDOG_DandeIion",
+    "clan": "HTDOG",
+    "n": 13,
+    "median_s": 11.72,
+    "min_s": 10.04,
+    "max_s": 12.78
+   },
+   {
+    "player": "KITE_CodeMaster",
+    "clan": "KITE",
+    "n": 3,
+    "median_s": 12.0,
+    "min_s": 11.34,
+    "max_s": 12.15
+   }
+  ],
+  "Svea": [
+   {
+    "player": "BONKZ_Satori_Ma",
+    "clan": "BONKZ",
+    "n": 10,
+    "median_s": 10.594999999999999,
+    "min_s": 10.0,
+    "max_s": 11.15
+   },
+   {
+    "player": "SCCC2_HarmXIII",
+    "clan": "SCCC2",
+    "n": 5,
+    "median_s": 10.98,
+    "min_s": 10.95,
+    "max_s": 11.01
+   },
+   {
+    "player": "HTDOG_Rei",
+    "clan": "HTDOG",
+    "n": 5,
+    "median_s": 10.99,
+    "min_s": 9.92,
+    "max_s": 12.13
+   },
+   {
+    "player": "EPOXY_TheMooseo",
+    "clan": "EPOXY",
+    "n": 4,
+    "median_s": 11.0,
+    "min_s": 10.97,
+    "max_s": 11.03
+   },
+   {
+    "player": "VRTUS_AgentTang",
+    "clan": "VRTUS",
+    "n": 23,
+    "median_s": 11.15,
+    "min_s": 9.83,
+    "max_s": 13.11
+   },
+   {
+    "player": "INCA_Sicilia_Im",
+    "clan": "INCA",
+    "n": 13,
+    "median_s": 11.17,
+    "min_s": 10.98,
+    "max_s": 12.35
+   },
+   {
+    "player": "HTDOG_DrashiroV",
+    "clan": "HTDOG",
+    "n": 14,
+    "median_s": 12.0,
+    "min_s": 9.86,
+    "max_s": 13.15
+   },
+   {
+    "player": "BONKZ_1for1gami",
+    "clan": "BONKZ",
+    "n": 5,
+    "median_s": 12.0,
+    "min_s": 11.99,
+    "max_s": 12.18
+   },
+   {
+    "player": "PFANS_Howell119",
+    "clan": "PFANS",
+    "n": 3,
+    "median_s": 12.01,
+    "min_s": 11.93,
+    "max_s": 12.03
+   },
+   {
+    "player": "BN_DeiMoonKboom",
+    "clan": "-BN-",
+    "n": 9,
+    "median_s": 12.02,
+    "min_s": 10.49,
+    "max_s": 13.16
+   },
+   {
+    "player": "SCCC2_IQ_Check_",
+    "clan": "SCCC2",
+    "n": 4,
+    "median_s": 12.03,
+    "min_s": 12.0,
+    "max_s": 12.16
+   },
+   {
+    "player": "BN_NotAWeekndPl",
+    "clan": "-BN-",
+    "n": 4,
+    "median_s": 12.06,
+    "min_s": 11.99,
+    "max_s": 12.42
+   },
+   {
+    "player": "BONKZ_Bows3r",
+    "clan": "BONKZ",
+    "n": 4,
+    "median_s": 12.065,
+    "min_s": 12.0,
+    "max_s": 12.73
+   },
+   {
+    "player": "EPOXY_Mkatx5",
+    "clan": "EPOXY",
+    "n": 3,
+    "median_s": 12.12,
+    "min_s": 11.99,
+    "max_s": 12.29
+   },
+   {
+    "player": "UYSC_Robson_Sil",
+    "clan": "UYSC",
+    "n": 3,
+    "median_s": 12.15,
+    "min_s": 12.13,
+    "max_s": 12.29
+   },
+   {
+    "player": "HFANS_SoulCoral",
+    "clan": "HFANS",
+    "n": 3,
+    "median_s": 12.17,
+    "min_s": 12.03,
+    "max_s": 12.45
+   },
+   {
+    "player": "BONKY_BookinIt",
+    "clan": "BONKY",
+    "n": 4,
+    "median_s": 12.23,
+    "min_s": 12.01,
+    "max_s": 12.81
+   },
+   {
+    "player": "EPOXY_alysa_liu",
+    "clan": "EPOXY",
+    "n": 3,
+    "median_s": 12.24,
+    "min_s": 12.22,
+    "max_s": 12.83
+   },
+   {
+    "player": "KSC_Show_Me_You",
+    "clan": "KSC",
+    "n": 5,
+    "median_s": 12.4,
+    "min_s": 12.14,
+    "max_s": 12.87
+   },
+   {
+    "player": "MACHX_GSPatton_",
+    "clan": "MACHX",
+    "n": 4,
+    "median_s": 12.41,
+    "min_s": 12.09,
+    "max_s": 13.78
+   },
+   {
+    "player": "HTDOG_SockMySon",
+    "clan": "HTDOG",
+    "n": 15,
+    "median_s": 12.46,
+    "min_s": 9.87,
+    "max_s": 13.94
+   },
+   {
+    "player": "MACH_Ridonc",
+    "clan": "MACH",
+    "n": 3,
+    "median_s": 12.69,
+    "min_s": 12.56,
+    "max_s": 13.3
+   },
+   {
+    "player": "RESIN_thepregna",
+    "clan": "RESIN",
+    "n": 8,
+    "median_s": 12.815,
+    "min_s": 12.0,
+    "max_s": 14.41
+   },
+   {
+    "player": "MACHX_xXBandit1",
+    "clan": "MACHX",
+    "n": 4,
+    "median_s": 12.99,
+    "min_s": 12.91,
+    "max_s": 13.19
+   },
+   {
+    "player": "BN_NAB_LV",
+    "clan": "-BN-",
+    "n": 6,
+    "median_s": 13.129999999999999,
+    "min_s": 12.18,
+    "max_s": 14.97
+   },
+   {
+    "player": "KSC_Universal19",
+    "clan": "KSC",
+    "n": 5,
+    "median_s": 13.57,
+    "min_s": 9.13,
+    "max_s": 14.04
+   },
+   {
+    "player": "RSR_Sir_Booman",
+    "clan": "RSR",
+    "n": 8,
+    "median_s": 15.36,
+    "min_s": 14.43,
+    "max_s": 15.4
+   }
+  ],
+  "Gearing": [
+   {
+    "player": "RSR_Nick_Jacob",
+    "clan": "RSR",
+    "n": 4,
+    "median_s": 32.974999999999994,
+    "min_s": 31.59,
+    "max_s": 32.99
+   },
+   {
+    "player": "KSC_PidgeyArmy",
+    "clan": "KSC",
+    "n": 14,
+    "median_s": 33.02,
+    "min_s": 32.97,
+    "max_s": 34.11
+   },
+   {
+    "player": "BONKZ_CheshireZ",
+    "clan": "BONKZ",
+    "n": 18,
+    "median_s": 33.305,
+    "min_s": 32.97,
+    "max_s": 34.11
+   },
+   {
+    "player": "HFANS_T_Sakuya",
+    "clan": "HFANS",
+    "n": 5,
+    "median_s": 33.46,
+    "min_s": 33.24,
+    "max_s": 33.73
+   },
+   {
+    "player": "KSC_ganser",
+    "clan": "KSC",
+    "n": 3,
+    "median_s": 33.72,
+    "min_s": 33.42,
+    "max_s": 34.0
+   },
+   {
+    "player": "KITE_Rebrand_St",
+    "clan": "KITE",
+    "n": 5,
+    "median_s": 36.3,
+    "min_s": 33.0,
+    "max_s": 36.76
+   },
+   {
+    "player": "BTLST_Voldigar",
+    "clan": "BTLST",
+    "n": 3,
+    "median_s": 39.55,
+    "min_s": 37.97,
+    "max_s": 39.99
+   },
+   {
+    "player": "KSC_NakiriAyame",
+    "clan": "KSC",
+    "n": 6,
+    "median_s": 39.585,
+    "min_s": 39.58,
+    "max_s": 40.01
+   },
+   {
+    "player": "BN_jordi_92T",
+    "clan": "-BN-",
+    "n": 14,
+    "median_s": 39.585,
+    "min_s": 39.53,
+    "max_s": 40.46
+   },
+   {
+    "player": "VRTUS_WhiskiLea",
+    "clan": "VRTUS",
+    "n": 9,
+    "median_s": 39.71,
+    "min_s": 39.57,
+    "max_s": 40.1
+   },
+   {
+    "player": "5D_SlugBoy65",
+    "clan": "5D",
+    "n": 9,
+    "median_s": 39.74,
+    "min_s": 39.6,
+    "max_s": 40.79
+   },
+   {
+    "player": "KITE_BB_MightyM",
+    "clan": "KITE",
+    "n": 7,
+    "median_s": 39.85,
+    "min_s": 39.58,
+    "max_s": 42.01
+   },
+   {
+    "player": "OGF_Ryygar",
+    "clan": "OGF",
+    "n": 6,
+    "median_s": 39.875,
+    "min_s": 39.57,
+    "max_s": 41.02
+   },
+   {
+    "player": "KITE_CodeMaster",
+    "clan": "KITE",
+    "n": 4,
+    "median_s": 40.06,
+    "min_s": 39.7,
+    "max_s": 40.29
+   },
+   {
+    "player": "EPOXY_Your_SAT_",
+    "clan": "EPOXY",
+    "n": 3,
+    "median_s": 40.29,
+    "min_s": 39.85,
+    "max_s": 40.73
+   },
+   {
+    "player": "BONKZ_Dyr3",
+    "clan": "BONKZ",
+    "n": 14,
+    "median_s": 43.43,
+    "min_s": 41.0,
+    "max_s": 43.7
+   },
+   {
+    "player": "KITE_Gebus",
+    "clan": "KITE",
+    "n": 4,
+    "median_s": 43.435,
+    "min_s": 43.42,
+    "max_s": 43.5
+   },
+   {
+    "player": "INCA_run_for_yo",
+    "clan": "INCA",
+    "n": 3,
+    "median_s": 43.44,
+    "min_s": 43.42,
+    "max_s": 43.6
+   },
+   {
+    "player": "INCA_AmilcarFro",
+    "clan": "INCA",
+    "n": 4,
+    "median_s": 43.45,
+    "min_s": 43.44,
+    "max_s": 43.47
+   },
+   {
+    "player": "BTLST_Charcoal_",
+    "clan": "BTLST",
+    "n": 4,
+    "median_s": 43.565,
+    "min_s": 39.84,
+    "max_s": 43.7
+   },
+   {
+    "player": "BONKZ_Garp",
+    "clan": "BONKZ",
+    "n": 3,
+    "median_s": 43.86,
+    "min_s": 43.59,
+    "max_s": 43.88
+   }
+  ],
+  "Napoli": [
+   {
+    "player": "BTLST_Prime_Min",
+    "clan": "BTLST",
+    "n": 7,
+    "median_s": 44.15,
+    "min_s": 44.0,
+    "max_s": 44.66
+   },
+   {
+    "player": "HFANS_tokai_tei",
+    "clan": "HFANS",
+    "n": 7,
+    "median_s": 44.26,
+    "min_s": 44.0,
+    "max_s": 44.9
+   },
+   {
+    "player": "VRTUS_LightTheB",
+    "clan": "VRTUS",
+    "n": 3,
+    "median_s": 45.11,
+    "min_s": 44.72,
+    "max_s": 45.59
+   },
+   {
+    "player": "UYSC_KIKO_ZINHO",
+    "clan": "UYSC",
+    "n": 5,
+    "median_s": 48.39,
+    "min_s": 48.28,
+    "max_s": 48.75
+   },
+   {
+    "player": "NGA_HeakyAether",
+    "clan": "NGA",
+    "n": 3,
+    "median_s": 48.42,
+    "min_s": 48.27,
+    "max_s": 48.57
+   },
+   {
+    "player": "REEEE_Malphuus",
+    "clan": "REEEE",
+    "n": 6,
+    "median_s": 48.435,
+    "min_s": 48.26,
+    "max_s": 49.12
+   },
+   {
+    "player": "5D_death1351",
+    "clan": "5D",
+    "n": 12,
+    "median_s": 48.47,
+    "min_s": 48.25,
+    "max_s": 49.22
+   },
+   {
+    "player": "MZY_poi_The_Mer",
+    "clan": "MZY",
+    "n": 4,
+    "median_s": 48.515,
+    "min_s": 48.26,
+    "max_s": 49.58
+   },
+   {
+    "player": "UYSC_JUAUMXP",
+    "clan": "UYSC",
+    "n": 3,
+    "median_s": 48.58,
+    "min_s": 48.54,
+    "max_s": 49.42
+   },
+   {
+    "player": "KITED_Tomahawks",
+    "clan": "KITED",
+    "n": 6,
+    "median_s": 48.66,
+    "min_s": 48.27,
+    "max_s": 49.3
+   },
+   {
+    "player": "MACHX_JustAMath",
+    "clan": "MACHX",
+    "n": 14,
+    "median_s": 48.675,
+    "min_s": 48.27,
+    "max_s": 49.31
+   }
+  ],
+  "Gdańsk": [
+   {
+    "player": "KSC__Sait",
+    "clan": "KSC",
+    "n": 4,
+    "median_s": 20.865000000000002,
+    "min_s": 20.43,
+    "max_s": 21.01
+   },
+   {
+    "player": "HFANS_j_i_u_m_i",
+    "clan": "HFANS",
+    "n": 12,
+    "median_s": 22.009999999999998,
+    "min_s": 20.14,
+    "max_s": 23.13
+   },
+   {
+    "player": "SCCC2_KnightHei",
+    "clan": "SCCC2",
+    "n": 3,
+    "median_s": 22.02,
+    "min_s": 22.01,
+    "max_s": 22.51
+   },
+   {
+    "player": "UYSC_Russo_Loko",
+    "clan": "UYSC",
+    "n": 6,
+    "median_s": 22.13,
+    "min_s": 22.0,
+    "max_s": 22.44
+   },
+   {
+    "player": "HTDOG_frostie1_",
+    "clan": "HTDOG",
+    "n": 9,
+    "median_s": 22.13,
+    "min_s": 21.99,
+    "max_s": 22.57
+   },
+   {
+    "player": "RESIN_eagle_lan",
+    "clan": "RESIN",
+    "n": 18,
+    "median_s": 22.22,
+    "min_s": 21.37,
+    "max_s": 23.36
+   },
+   {
+    "player": "RESIN_Maddog242",
+    "clan": "RESIN",
+    "n": 3,
+    "median_s": 22.3,
+    "min_s": 22.29,
+    "max_s": 22.59
+   },
+   {
+    "player": "EPOXY_Dra",
+    "clan": "EPOXY",
+    "n": 8,
+    "median_s": 22.34,
+    "min_s": 21.02,
+    "max_s": 23.23
+   },
+   {
+    "player": "KSE_WomenUndPan",
+    "clan": "KSE",
+    "n": 3,
+    "median_s": 22.42,
+    "min_s": 22.11,
+    "max_s": 22.74
+   },
+   {
+    "player": "HSR_YuriSayuki",
+    "clan": "H-SR",
+    "n": 7,
+    "median_s": 22.44,
+    "min_s": 21.99,
+    "max_s": 22.83
+   },
+   {
+    "player": "HSR_Mixic37",
+    "clan": "H-SR",
+    "n": 4,
+    "median_s": 22.509999999999998,
+    "min_s": 22.27,
+    "max_s": 22.69
+   },
+   {
+    "player": "PFANS_THIS_IS_N",
+    "clan": "PFANS",
+    "n": 3,
+    "median_s": 22.73,
+    "min_s": 22.17,
+    "max_s": 23.64
+   },
+   {
+    "player": "BONKZ_Dyr3",
+    "clan": "BONKZ",
+    "n": 9,
+    "median_s": 24.15,
+    "min_s": 24.1,
+    "max_s": 24.72
+   }
+  ],
+  "Harugumo": [
+   {
+    "player": "HTDOG_DrashiroV",
+    "clan": "HTDOG",
+    "n": 4,
+    "median_s": 42.91,
+    "min_s": 26.0,
+    "max_s": 44.89
+   },
+   {
+    "player": "RESIN_Fryce",
+    "clan": "RESIN",
+    "n": 4,
+    "median_s": 43.985,
+    "min_s": 43.81,
+    "max_s": 44.03
+   },
+   {
+    "player": "RESIN_Maddog242",
+    "clan": "RESIN",
+    "n": 11,
+    "median_s": 44.0,
+    "min_s": 21.99,
+    "max_s": 44.86
+   },
+   {
+    "player": "RESIN_Big_Boy69",
+    "clan": "RESIN",
+    "n": 5,
+    "median_s": 44.57,
+    "min_s": 18.41,
+    "max_s": 45.28
+   },
+   {
+    "player": "SCCC2_KnightHei",
+    "clan": "SCCC2",
+    "n": 3,
+    "median_s": 48.28,
+    "min_s": 48.27,
+    "max_s": 48.29
+   },
+   {
+    "player": "BN_jordi_92T",
+    "clan": "-BN-",
+    "n": 6,
+    "median_s": 52.84,
+    "min_s": 52.71,
+    "max_s": 53.01
+   },
+   {
+    "player": "BONKZ_CheshireZ",
+    "clan": "BONKZ",
+    "n": 6,
+    "median_s": 52.875,
+    "min_s": 52.68,
+    "max_s": 53.54
+   },
+   {
+    "player": "HSR_YuriSayuki",
+    "clan": "H-SR",
+    "n": 10,
+    "median_s": 53.225,
+    "min_s": 19.44,
+    "max_s": 55.05
+   },
+   {
+    "player": "BONKY_BookinIt",
+    "clan": "BONKY",
+    "n": 4,
+    "median_s": 53.635,
+    "min_s": 52.85,
+    "max_s": 54.02
+   },
+   {
+    "player": "PFANS_Mugu_9",
+    "clan": "PFANS",
+    "n": 3,
+    "median_s": 58.02,
+    "min_s": 57.99,
+    "max_s": 58.46
+   },
+   {
+    "player": "EPOXY_FlakFiend",
+    "clan": "EPOXY",
+    "n": 8,
+    "median_s": 58.265,
+    "min_s": 58.0,
+    "max_s": 59.3
+   },
+   {
+    "player": "HSR_Yamiyonohik",
+    "clan": "H-SR",
+    "n": 4,
+    "median_s": 58.28,
+    "min_s": 58.16,
+    "max_s": 58.44
+   }
+  ],
+  "Shimakaze": [
+   {
+    "player": "VRTUS_ItsAGameT",
+    "clan": "VRTUS",
+    "n": 5,
+    "median_s": 22.02,
+    "min_s": 21.99,
+    "max_s": 23.32
+   },
+   {
+    "player": "UYSC_DMR7575",
+    "clan": "UYSC",
+    "n": 6,
+    "median_s": 22.1,
+    "min_s": 22.02,
+    "max_s": 22.75
+   },
+   {
+    "player": "MANBA_Catoverfl",
+    "clan": "MANBA",
+    "n": 5,
+    "median_s": 22.12,
+    "min_s": 20.57,
+    "max_s": 24.19
+   },
+   {
+    "player": "HTDOG_frostie1_",
+    "clan": "HTDOG",
+    "n": 4,
+    "median_s": 22.205,
+    "min_s": 20.74,
+    "max_s": 22.54
+   },
+   {
+    "player": "5D_Tsushimoid",
+    "clan": "5D",
+    "n": 3,
+    "median_s": 22.53,
+    "min_s": 22.11,
+    "max_s": 22.58
+   },
+   {
+    "player": "HFANS_T_Sakuya",
+    "clan": "HFANS",
+    "n": 13,
+    "median_s": 26.4,
+    "min_s": 21.96,
+    "max_s": 27.34
+   }
+  ],
+  "Z-42": [
+   {
+    "player": "MACH_SureBridge",
+    "clan": "MACH",
+    "n": 3,
+    "median_s": 9.77,
+    "min_s": 9.75,
+    "max_s": 11.01
+   },
+   {
+    "player": "VRTUS_Cobra_was",
+    "clan": "VRTUS",
+    "n": 11,
+    "median_s": 10.12,
+    "min_s": 10.0,
+    "max_s": 10.58
+   },
+   {
+    "player": "HFANS_Flipy47",
+    "clan": "HFANS",
+    "n": 3,
+    "median_s": 10.99,
+    "min_s": 10.99,
+    "max_s": 11.03
+   },
+   {
+    "player": "KSC_ganser",
+    "clan": "KSC",
+    "n": 3,
+    "median_s": 11.15,
+    "min_s": 11.13,
+    "max_s": 11.3
+   },
+   {
+    "player": "MACHX_pasterk",
+    "clan": "MACHX",
+    "n": 4,
+    "median_s": 11.22,
+    "min_s": 11.12,
+    "max_s": 11.55
+   },
+   {
+    "player": "REEEE_Daka_Daka",
+    "clan": "REEEE",
+    "n": 6,
+    "median_s": 12.0,
+    "min_s": 11.98,
+    "max_s": 12.0
+   },
+   {
+    "player": "HFANS_YuanShenG",
+    "clan": "HFANS",
+    "n": 4,
+    "median_s": 12.085,
+    "min_s": 12.0,
+    "max_s": 12.3
+   },
+   {
+    "player": "KITE_Destroyer_",
+    "clan": "KITE",
+    "n": 6,
+    "median_s": 12.09,
+    "min_s": 12.0,
+    "max_s": 12.85
+   },
+   {
+    "player": "MACH_CC2341",
+    "clan": "MACH",
+    "n": 5,
+    "median_s": 12.27,
+    "min_s": 10.84,
+    "max_s": 12.6
+   },
+   {
+    "player": "RSR_Digital_Vxy",
+    "clan": "RSR",
+    "n": 3,
+    "median_s": 12.43,
+    "min_s": 12.18,
+    "max_s": 12.71
+   },
+   {
+    "player": "VRTUS_ItsAGameT",
+    "clan": "VRTUS",
+    "n": 3,
+    "median_s": 12.72,
+    "min_s": 12.31,
+    "max_s": 13.97
+   }
+  ],
+  "Jinan": [
+   {
+    "player": "HTDOG_Amogussy",
+    "clan": "HTDOG",
+    "n": 17,
+    "median_s": 30.44,
+    "min_s": 28.69,
+    "max_s": 31.44
+   },
+   {
+    "player": "SCCC2_littlefox",
+    "clan": "SCCC2",
+    "n": 4,
+    "median_s": 31.17,
+    "min_s": 31.01,
+    "max_s": 33.04
+   },
+   {
+    "player": "MACHX_xXBandit1",
+    "clan": "MACHX",
+    "n": 3,
+    "median_s": 33.03,
+    "min_s": 32.99,
+    "max_s": 33.25
+   },
+   {
+    "player": "HFANS_tokai_tei",
+    "clan": "HFANS",
+    "n": 3,
+    "median_s": 33.13,
+    "min_s": 33.05,
+    "max_s": 33.29
+   },
+   {
+    "player": "MACHX_Yoshi_44",
+    "clan": "MACHX",
+    "n": 3,
+    "median_s": 33.46,
+    "min_s": 33.0,
+    "max_s": 33.54
+   },
+   {
+    "player": "KITED_Barchetta",
+    "clan": "KITED",
+    "n": 6,
+    "median_s": 33.615,
+    "min_s": 31.78,
+    "max_s": 34.28
+   }
+  ],
+  "Grozovoi": [
+   {
+    "player": "MACHX_SPAAAAAAA",
+    "clan": "MACHX",
+    "n": 11,
+    "median_s": 20.27,
+    "min_s": 19.99,
+    "max_s": 20.57
+   },
+   {
+    "player": "RESIN_Maddog242",
+    "clan": "RESIN",
+    "n": 3,
+    "median_s": 22.0,
+    "min_s": 21.99,
+    "max_s": 22.03
+   }
+  ],
+  "Delny": [
+   {
+    "player": "HSR_Arona_daisu",
+    "clan": "H-SR",
+    "n": 4,
+    "median_s": 39.58,
+    "min_s": 39.56,
+    "max_s": 41.26
+   },
+   {
+    "player": "HSR_Yamiyonohik",
+    "clan": "H-SR",
+    "n": 10,
+    "median_s": 43.51,
+    "min_s": 33.97,
+    "max_s": 44.24
+   },
+   {
+    "player": "MZY_mmhanbing",
+    "clan": "MZY",
+    "n": 4,
+    "median_s": 43.71,
+    "min_s": 43.39,
+    "max_s": 43.99
+   }
+  ],
+  "Venezia": [
+   {
+    "player": "5D_Adaw451",
+    "clan": "5D",
+    "n": 4,
+    "median_s": 44.195,
+    "min_s": 44.14,
+    "max_s": 44.21
+   },
+   {
+    "player": "NGA_Nezalon",
+    "clan": "NGA",
+    "n": 3,
+    "median_s": 48.28,
+    "min_s": 48.24,
+    "max_s": 48.32
+   },
+   {
+    "player": "KITED_The_Mongo",
+    "clan": "KITED",
+    "n": 5,
+    "median_s": 58.27,
+    "min_s": 53.35,
+    "max_s": 58.84
+   }
+  ],
+  "C. Colombo": []
+ },
+ "emission_usage": {
+  "Somers": {
+   "cut_s": 36.5,
+   "n_long": 202,
+   "n_short": 24,
+   "clans_long": 15,
+   "clans_short": 10,
+   "stationary_pct": {
+    "long": 0.0,
+    "short": 4.166666666666667,
+    "diff": -4.166666666666667,
+    "ci": [
+     -12.5,
+     0.0
+    ]
+   },
+   "path_med_m": {
+    "long": 3873.575,
+    "short": 2650.2349999999997,
+    "diff": 1223.3400000000001,
+    "ci": [
+     792.3500000000004,
+     2022.68
+    ]
+   },
+   "stacked_pct": {
+    "long": 66.83168316831683,
+    "short": 41.666666666666664,
+    "diff": 25.165016501650165,
+    "ci": [
+     7.538091419406577,
+     47.38493723849372
+    ]
+   },
+   "selfish_pct": {
+    "long": 2.4752475247524752,
+    "short": 33.333333333333336,
+    "diff": -30.85808580858086,
+    "ci": [
+     -56.03023332237923,
+     -11.42981312472838
+    ]
+   },
+   "inside_pct": {
+    "long": 17.326732673267326,
+    "short": 20.833333333333332,
+    "diff": -3.506600660066006,
+    "ci": [
+     -24.22545072641344,
+     13.738738738738737
+    ]
+   },
+   "conc_mean": {
+    "long": 16221.20881188119,
+    "short": 8703.832083333333,
+    "diff": 7517.376728547857,
+    "ci": [
+     2095.739308252427,
+     13621.601777626813
+    ]
+   },
+   "win_pct": {
+    "long": 54.45544554455446,
+    "short": 62.5,
+    "diff": -8.044554455445542,
+    "ci": [
+     -32.6080100914538,
+     19.373776908023483
+    ]
+   }
+  },
+  "Gearing": {
+   "cut_s": 36.5,
+   "n_long": 103,
+   "n_short": 55,
+   "clans_long": 13,
+   "clans_short": 8,
+   "stationary_pct": {
+    "long": 1.941747572815534,
+    "short": 0.0,
+    "diff": 1.941747572815534,
+    "ci": [
+     0.0,
+     6.349206349206349
+    ]
+   },
+   "path_med_m": {
+    "long": 3367.59,
+    "short": 2980.54,
+    "diff": 387.0500000000002,
+    "ci": [
+     -139.45499999999993,
+     760.5049999999997
+    ]
+   },
+   "stacked_pct": {
+    "long": 56.310679611650485,
+    "short": 61.81818181818182,
+    "diff": -5.507502206531335,
+    "ci": [
+     -22.235872235872243,
+     27.425474254742547
+    ]
+   },
+   "selfish_pct": {
+    "long": 8.737864077669903,
+    "short": 9.090909090909092,
+    "diff": -0.35304501323918913,
+    "ci": [
+     -16.29084215370456,
+     12.422360248447205
+    ]
+   },
+   "inside_pct": {
+    "long": 19.41747572815534,
+    "short": 20.0,
+    "diff": -0.5825242718446617,
+    "ci": [
+     -11.16152450090744,
+     17.023809523809526
+    ]
+   },
+   "conc_mean": {
+    "long": 15736.092427184467,
+    "short": 19536.894545454543,
+    "diff": -3800.802118270076,
+    "ci": [
+     -8646.374936662782,
+     5786.618910891089
+    ]
+   },
+   "win_pct": {
+    "long": 63.10679611650485,
+    "short": 49.09090909090909,
+    "diff": 14.01588702559576,
+    "ci": [
+     -6.388888888888893,
+     44.761904761904766
+    ]
+   }
+  },
+  "Harugumo": {
+   "cut_s": 49,
+   "n_long": 48,
+   "n_short": 35,
+   "clans_long": 10,
+   "clans_short": 9,
+   "stationary_pct": {
+    "long": 2.0833333333333335,
+    "short": 5.714285714285714,
+    "diff": -3.630952380952381,
+    "ci": [
+     -8.219178082191782,
+     5.660377358490566
+    ]
+   },
+   "path_med_m": {
+    "long": 4123.235000000001,
+    "short": 3117.0,
+    "diff": 1006.2350000000006,
+    "ci": [
+     -226.60500000000002,
+     1830.35
+    ]
+   },
+   "stacked_pct": {
+    "long": 68.75,
+    "short": 60.0,
+    "diff": 8.75,
+    "ci": [
+     -23.84615384615384,
+     29.82456140350878
+    ]
+   },
+   "selfish_pct": {
+    "long": 6.25,
+    "short": 20.0,
+    "diff": -13.75,
+    "ci": [
+     -26.8944099378882,
+     11.551724137931036
+    ]
+   },
+   "inside_pct": {
+    "long": 22.916666666666668,
+    "short": 22.857142857142858,
+    "diff": 0.0595238095238102,
+    "ci": [
+     -12.274959083469723,
+     23.284313725490197
+    ]
+   },
+   "conc_mean": {
+    "long": 21294.755,
+    "short": 16264.416285714284,
+    "diff": 5030.338714285717,
+    "ci": [
+     -2914.9359999999997,
+     16800.691279569895
+    ]
+   },
+   "win_pct": {
+    "long": 47.916666666666664,
+    "short": 60.0,
+    "diff": -12.083333333333336,
+    "ci": [
+     -46.63461538461539,
+     33.446519524618
+    ]
+   }
+  },
+  "Svea": {
+   "cut_s": 11.6,
+   "n_long": 133,
+   "n_short": 55,
+   "clans_long": 20,
+   "clans_short": 8,
+   "stationary_pct": {
+    "long": 68.42105263157895,
+    "short": 87.27272727272727,
+    "diff": -18.85167464114832,
+    "ci": [
+     -30.98229583095374,
+     -5.90733590733592
+    ]
+   },
+   "path_med_m": {
+    "long": 344.54,
+    "short": 198.93,
+    "diff": 145.61,
+    "ci": [
+     34.620000000000005,
+     237.565
+    ]
+   },
+   "stacked_pct": {
+    "long": 0.0,
+    "short": 0.0,
+    "diff": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "selfish_pct": {
+    "long": 78.19548872180451,
+    "short": 74.54545454545455,
+    "diff": 3.650034176349962,
+    "ci": [
+     -10.459401709401718,
+     18.17063166529943
+    ]
+   },
+   "inside_pct": {
+    "long": 12.781954887218046,
+    "short": 18.181818181818183,
+    "diff": -5.399863294600138,
+    "ci": [
+     -20.13888888888889,
+     8.440366972477065
+    ]
+   },
+   "conc_mean": {
+    "long": 7103.523684210527,
+    "short": 8307.237636363636,
+    "diff": -1203.713952153109,
+    "ci": [
+     -3520.8264286345566,
+     1474.400110526316
+    ]
+   },
+   "win_pct": {
+    "long": 39.849624060150376,
+    "short": 50.90909090909091,
+    "diff": -11.05946684894053,
+    "ci": [
+     -43.324491600353674,
+     9.4353881032063
+    ]
+   }
+  },
+  "Shimakaze": {
+   "cut_s": 24.5,
+   "n_long": 9,
+   "n_short": 44,
+   "clans_long": 1,
+   "clans_short": 12,
+   "stationary_pct": {
+    "long": 33.333333333333336,
+    "short": 18.181818181818183,
+    "diff": 15.151515151515152,
+    "ci": [
+     5.673758865248228,
+     26.515151515151516
+    ]
+   },
+   "path_med_m": {
+    "long": 1326.02,
+    "short": 1765.85,
+    "diff": -439.8299999999999,
+    "ci": [
+     -623.75,
+     -272.6750000000002
+    ]
+   },
+   "stacked_pct": {
+    "long": 55.55555555555556,
+    "short": 50.0,
+    "diff": 5.555555555555557,
+    "ci": [
+     -12.301587301587304,
+     16.95906432748538
+    ]
+   },
+   "selfish_pct": {
+    "long": 33.333333333333336,
+    "short": 25.0,
+    "diff": 8.333333333333336,
+    "ci": [
+     -0.7092198581560254,
+     20.370370370370374
+    ]
+   },
+   "inside_pct": {
+    "long": 22.22222222222222,
+    "short": 36.36363636363637,
+    "diff": -14.141414141414145,
+    "ci": [
+     -30.409356725146196,
+     1.8140589569160994
+    ]
+   },
+   "conc_mean": {
+    "long": 3785.213333333333,
+    "short": 6388.7413636363635,
+    "diff": -2603.5280303030304,
+    "ci": [
+     -7638.340714285714,
+     1479.5788435374147
+    ]
+   },
+   "win_pct": {
+    "long": 100.0,
+    "short": 31.818181818181817,
+    "diff": 68.18181818181819,
+    "ci": [
+     51.16279069767442,
+     86.48648648648648
+    ]
+   }
+  },
+  "Daring": {
+   "cut_s": 10.6,
+   "n_long": 134,
+   "n_short": 49,
+   "clans_long": 20,
+   "clans_short": 12,
+   "stationary_pct": {
+    "long": 61.19402985074627,
+    "short": 67.34693877551021,
+    "diff": -6.152908924763942,
+    "ci": [
+     -21.609756097560975,
+     7.646454265159299
+    ]
+   },
+   "path_med_m": {
+    "long": 359.57,
+    "short": 391.53,
+    "diff": -31.95999999999998,
+    "ci": [
+     -136.92000000000002,
+     72.20499999999998
+    ]
+   },
+   "stacked_pct": {
+    "long": 10.447761194029852,
+    "short": 8.16326530612245,
+    "diff": 2.2844958879074024,
+    "ci": [
+     -8.479067302596714,
+     15.555555555555555
+    ]
+   },
+   "selfish_pct": {
+    "long": 54.47761194029851,
+    "short": 57.142857142857146,
+    "diff": -2.665245202558637,
+    "ci": [
+     -19.526627218934905,
+     11.538461538461533
+    ]
+   },
+   "inside_pct": {
+    "long": 44.02985074626866,
+    "short": 38.775510204081634,
+    "diff": 5.254340542187023,
+    "ci": [
+     -15.979137031768612,
+     25.94268476621418
+    ]
+   },
+   "conc_mean": {
+    "long": 4094.127089552239,
+    "short": 2650.5773469387755,
+    "diff": 1443.5497426134634,
+    "ci": [
+     585.068567682727,
+     2444.7115942028977
+    ]
+   },
+   "win_pct": {
+    "long": 66.41791044776119,
+    "short": 59.183673469387756,
+    "diff": 7.234236978373431,
+    "ci": [
+     -20.407407407407405,
+     26.634699215344376
+    ]
+   }
+  },
+  "Gdańsk": {
+   "cut_s": 21.2,
+   "n_long": 94,
+   "n_short": 11,
+   "clans_long": 14,
+   "clans_short": 6,
+   "stationary_pct": {
+    "long": 41.48936170212766,
+    "short": 27.272727272727273,
+    "diff": 14.216634429400386,
+    "ci": [
+     -8.522114347357068,
+     43.373493975903614
+    ]
+   },
+   "path_med_m": {
+    "long": 793.8,
+    "short": 690.28,
+    "diff": 103.51999999999998,
+    "ci": [
+     -881.15,
+     568.8299999999999
+    ]
+   },
+   "stacked_pct": {
+    "long": 15.957446808510639,
+    "short": 18.181818181818183,
+    "diff": -2.2243713733075445,
+    "ci": [
+     -28.194444444444443,
+     19.17808219178082
+    ]
+   },
+   "selfish_pct": {
+    "long": 41.48936170212766,
+    "short": 45.45454545454545,
+    "diff": -3.9651837524177935,
+    "ci": [
+     -36.71641791044776,
+     17.857142857142854
+    ]
+   },
+   "inside_pct": {
+    "long": 28.72340425531915,
+    "short": 18.181818181818183,
+    "diff": 10.541586073500966,
+    "ci": [
+     -45.406824146981634,
+     34.73684210526316
+    ]
+   },
+   "conc_mean": {
+    "long": 7737.824893617022,
+    "short": 15225.076363636363,
+    "diff": -7487.251470019341,
+    "ci": [
+     -15370.764989898988,
+     7760.387741935485
+    ]
+   },
+   "win_pct": {
+    "long": 63.829787234042556,
+    "short": 45.45454545454545,
+    "diff": 18.375241779497102,
+    "ci": [
+     -20.07026789635485,
+     71.64179104477611
+    ]
+   }
+  },
+  "Napoli": {
+   "cut_s": 46.5,
+   "n_long": 89,
+   "n_short": 32,
+   "clans_long": 19,
+   "clans_short": 10,
+   "stationary_pct": {
+    "long": 3.3707865168539324,
+    "short": 6.25,
+    "diff": -2.8792134831460676,
+    "ci": [
+     -12.5,
+     3.1578947368421053
+    ]
+   },
+   "path_med_m": {
+    "long": 2879.26,
+    "short": 2774.355,
+    "diff": 104.9050000000002,
+    "ci": [
+     -606.6300000000001,
+     747.5800000000004
+    ]
+   },
+   "stacked_pct": {
+    "long": 0.0,
+    "short": 0.0,
+    "diff": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "selfish_pct": {
+    "long": 67.41573033707866,
+    "short": 71.875,
+    "diff": -4.4592696629213435,
+    "ci": [
+     -21.185316231755863,
+     13.636363636363626
+    ]
+   },
+   "inside_pct": {
+    "long": 19.10112359550562,
+    "short": 15.625,
+    "diff": 3.4761235955056193,
+    "ci": [
+     -14.285714285714285,
+     15.456790123456791
+    ]
+   },
+   "conc_mean": {
+    "long": 4020.218876404494,
+    "short": 4994.2259375,
+    "diff": -974.0070610955063,
+    "ci": [
+     -4033.822575757576,
+     1352.7075641025644
+    ]
+   },
+   "win_pct": {
+    "long": 51.68539325842696,
+    "short": 46.875,
+    "diff": 4.810393258426963,
+    "ci": [
+     -19.493670886075947,
+     26.024844720496894
+    ]
+   }
+  }
+ },
+ "emission_by_usage": {
+  "Somers": {
+   "stationary": {
+    "n": 1,
+    "median_s": 33.01
+   },
+   "moving": {
+    "n": 223,
+    "median_s": 39.73
+   },
+   "selfish": {
+    "n": 13,
+    "median_s": 33.32
+   },
+   "screen": {
+    "n": 68,
+    "median_s": 39.72
+   },
+   "stacked": {
+    "n": 145,
+    "median_s": 39.85
+   },
+   "inside cap": {
+    "n": 40,
+    "median_s": 39.724999999999994
+   },
+   "outside cap": {
+    "n": 186,
+    "median_s": 39.724999999999994
+   },
+   "conc dmg > 0": {
+    "n": 174,
+    "median_s": 39.745000000000005
+   },
+   "no conc dmg": {
+    "n": 52,
+    "median_s": 39.715
+   }
+  },
+  "Daring": {
+   "stationary": {
+    "n": 115,
+    "median_s": 11.01
+   },
+   "moving": {
+    "n": 68,
+    "median_s": 11.125
+   },
+   "selfish": {
+    "n": 101,
+    "median_s": 11.13
+   },
+   "screen": {
+    "n": 64,
+    "median_s": 11.0
+   },
+   "stacked": {
+    "n": 18,
+    "median_s": 11.135
+   },
+   "inside cap": {
+    "n": 78,
+    "median_s": 11.03
+   },
+   "outside cap": {
+    "n": 105,
+    "median_s": 11.1
+   },
+   "conc dmg > 0": {
+    "n": 102,
+    "median_s": 11.05
+   },
+   "no conc dmg": {
+    "n": 81,
+    "median_s": 11.02
+   }
+  },
+  "Svea": {
+   "stationary": {
+    "n": 139,
+    "median_s": 12.0
+   },
+   "moving": {
+    "n": 44,
+    "median_s": 12.350000000000001
+   },
+   "selfish": {
+    "n": 145,
+    "median_s": 12.04
+   },
+   "screen": {
+    "n": 43,
+    "median_s": 12.13
+   },
+   "stacked": {
+    "n": 0,
+    "median_s": null
+   },
+   "inside cap": {
+    "n": 27,
+    "median_s": 11.99
+   },
+   "outside cap": {
+    "n": 161,
+    "median_s": 12.13
+   },
+   "conc dmg > 0": {
+    "n": 143,
+    "median_s": 12.01
+   },
+   "no conc dmg": {
+    "n": 45,
+    "median_s": 12.29
+   }
+  },
+  "Gearing": {
+   "stationary": {
+    "n": 2,
+    "median_s": 40.195
+   },
+   "moving": {
+    "n": 155,
+    "median_s": 39.58
+   },
+   "selfish": {
+    "n": 14,
+    "median_s": 39.585
+   },
+   "screen": {
+    "n": 52,
+    "median_s": 39.72
+   },
+   "stacked": {
+    "n": 92,
+    "median_s": 39.58
+   },
+   "inside cap": {
+    "n": 31,
+    "median_s": 39.58
+   },
+   "outside cap": {
+    "n": 127,
+    "median_s": 39.59
+   },
+   "conc dmg > 0": {
+    "n": 123,
+    "median_s": 39.6
+   },
+   "no conc dmg": {
+    "n": 35,
+    "median_s": 39.58
+   }
+  },
+  "Napoli": {
+   "stationary": {
+    "n": 5,
+    "median_s": 48.34
+   },
+   "moving": {
+    "n": 112,
+    "median_s": 48.379999999999995
+   },
+   "selfish": {
+    "n": 83,
+    "median_s": 48.4
+   },
+   "screen": {
+    "n": 38,
+    "median_s": 48.325
+   },
+   "stacked": {
+    "n": 0,
+    "median_s": null
+   },
+   "inside cap": {
+    "n": 22,
+    "median_s": 48.34
+   },
+   "outside cap": {
+    "n": 99,
+    "median_s": 48.39
+   },
+   "conc dmg > 0": {
+    "n": 66,
+    "median_s": 48.3
+   },
+   "no conc dmg": {
+    "n": 55,
+    "median_s": 48.42
+   }
+  },
+  "Gdańsk": {
+   "stationary": {
+    "n": 42,
+    "median_s": 22.18
+   },
+   "moving": {
+    "n": 62,
+    "median_s": 22.27
+   },
+   "selfish": {
+    "n": 44,
+    "median_s": 22.23
+   },
+   "screen": {
+    "n": 44,
+    "median_s": 22.23
+   },
+   "stacked": {
+    "n": 17,
+    "median_s": 22.27
+   },
+   "inside cap": {
+    "n": 29,
+    "median_s": 22.19
+   },
+   "outside cap": {
+    "n": 76,
+    "median_s": 22.27
+   },
+   "conc dmg > 0": {
+    "n": 84,
+    "median_s": 22.27
+   },
+   "no conc dmg": {
+    "n": 21,
+    "median_s": 22.19
+   }
+  },
+  "Harugumo": {
+   "stationary": {
+    "n": 3,
+    "median_s": 44.27
+   },
+   "moving": {
+    "n": 78,
+    "median_s": 52.72
+   },
+   "selfish": {
+    "n": 10,
+    "median_s": 44.14
+   },
+   "screen": {
+    "n": 19,
+    "median_s": 52.71
+   },
+   "stacked": {
+    "n": 54,
+    "median_s": 52.8
+   },
+   "inside cap": {
+    "n": 19,
+    "median_s": 52.73
+   },
+   "outside cap": {
+    "n": 64,
+    "median_s": 52.72
+   },
+   "conc dmg > 0": {
+    "n": 73,
+    "median_s": 52.71
+   },
+   "no conc dmg": {
+    "n": 10,
+    "median_s": 52.865
+   }
+  },
+  "Shimakaze": {
+   "stationary": {
+    "n": 11,
+    "median_s": 22.14
+   },
+   "moving": {
+    "n": 41,
+    "median_s": 22.17
+   },
+   "selfish": {
+    "n": 14,
+    "median_s": 22.545
+   },
+   "screen": {
+    "n": 12,
+    "median_s": 22.130000000000003
+   },
+   "stacked": {
+    "n": 27,
+    "median_s": 22.17
+   },
+   "inside cap": {
+    "n": 18,
+    "median_s": 22.21
+   },
+   "outside cap": {
+    "n": 35,
+    "median_s": 22.17
+   },
+   "conc dmg > 0": {
+    "n": 30,
+    "median_s": 22.225
+   },
+   "no conc dmg": {
+    "n": 23,
+    "median_s": 22.02
+   }
+  },
+  "Z-42": {
+   "stationary": {
+    "n": 33,
+    "median_s": 11.55
+   },
+   "moving": {
+    "n": 19,
+    "median_s": 12.0
+   },
+   "selfish": {
+    "n": 31,
+    "median_s": 12.0
+   },
+   "screen": {
+    "n": 13,
+    "median_s": 11.14
+   },
+   "stacked": {
+    "n": 8,
+    "median_s": 10.51
+   },
+   "inside cap": {
+    "n": 23,
+    "median_s": 12.0
+   },
+   "outside cap": {
+    "n": 29,
+    "median_s": 11.13
+   },
+   "conc dmg > 0": {
+    "n": 33,
+    "median_s": 11.98
+   },
+   "no conc dmg": {
+    "n": 19,
+    "median_s": 12.0
+   }
+  },
+  "Jinan": {
+   "stationary": {
+    "n": 14,
+    "median_s": 33.015
+   },
+   "moving": {
+    "n": 23,
+    "median_s": 31.17
+   },
+   "selfish": {
+    "n": 32,
+    "median_s": 31.17
+   },
+   "screen": {
+    "n": 7,
+    "median_s": 33.03
+   },
+   "stacked": {
+    "n": 0,
+    "median_s": null
+   },
+   "inside cap": {
+    "n": 5,
+    "median_s": 30.28
+   },
+   "outside cap": {
+    "n": 34,
+    "median_s": 32.995000000000005
+   },
+   "conc dmg > 0": {
+    "n": 32,
+    "median_s": 31.305
+   },
+   "no conc dmg": {
+    "n": 7,
+    "median_s": 33.0
+   }
+  },
+  "Grozovoi": {
+   "stationary": {
+    "n": 5,
+    "median_s": 21.64
+   },
+   "moving": {
+    "n": 20,
+    "median_s": 21.99
+   },
+   "selfish": {
+    "n": 13,
+    "median_s": 20.35
+   },
+   "screen": {
+    "n": 7,
+    "median_s": 22.43
+   },
+   "stacked": {
+    "n": 5,
+    "median_s": 22.19
+   },
+   "inside cap": {
+    "n": 8,
+    "median_s": 21.994999999999997
+   },
+   "outside cap": {
+    "n": 17,
+    "median_s": 21.64
+   },
+   "conc dmg > 0": {
+    "n": 19,
+    "median_s": 20.57
+   },
+   "no conc dmg": {
+    "n": 6,
+    "median_s": 22.095
+   }
+  },
+  "Delny": {
+   "stationary": {
+    "n": 0,
+    "median_s": null
+   },
+   "moving": {
+    "n": 17,
+    "median_s": 43.43
+   },
+   "selfish": {
+    "n": 2,
+    "median_s": 43.71
+   },
+   "screen": {
+    "n": 4,
+    "median_s": 43.41
+   },
+   "stacked": {
+    "n": 12,
+    "median_s": 43.435
+   },
+   "inside cap": {
+    "n": 4,
+    "median_s": 43.41
+   },
+   "outside cap": {
+    "n": 14,
+    "median_s": 43.435
+   },
+   "conc dmg > 0": {
+    "n": 14,
+    "median_s": 43.435
+   },
+   "no conc dmg": {
+    "n": 4,
+    "median_s": 43.41
+   }
+  },
+  "Venezia": {
+   "stationary": {
+    "n": 0,
+    "median_s": null
+   },
+   "moving": {
+    "n": 16,
+    "median_s": 48.765
+   },
+   "selfish": {
+    "n": 10,
+    "median_s": 51.085
+   },
+   "screen": {
+    "n": 6,
+    "median_s": 48.495000000000005
+   },
+   "stacked": {
+    "n": 0,
+    "median_s": null
+   },
+   "inside cap": {
+    "n": 2,
+    "median_s": 46.455
+   },
+   "outside cap": {
+    "n": 14,
+    "median_s": 51.085
+   },
+   "conc dmg > 0": {
+    "n": 7,
+    "median_s": 58.27
+   },
+   "no conc dmg": {
+    "n": 9,
+    "median_s": 48.24
+   }
+  },
+  "C. Colombo": {
+   "stationary": {
+    "n": 0,
+    "median_s": null
+   },
+   "moving": {
+    "n": 15,
+    "median_s": 49.55
+   },
+   "selfish": {
+    "n": 10,
+    "median_s": 49.72
+   },
+   "screen": {
+    "n": 5,
+    "median_s": 49.42
+   },
+   "stacked": {
+    "n": 0,
+    "median_s": null
+   },
+   "inside cap": {
+    "n": 3,
+    "median_s": 49.42
+   },
+   "outside cap": {
+    "n": 12,
+    "median_s": 49.565
+   },
+   "conc dmg > 0": {
+    "n": 9,
+    "median_s": 49.55
+   },
+   "no conc dmg": {
+    "n": 6,
+    "median_s": 49.59
+   }
+  }
+ },
+ "cut_short_all": {
+  "n": 80,
+  "pct": 5.171299288946348,
+  "inside_pct": 28.75,
+  "inside_pct_others": 23.449216087252896,
+  "deaths_mean": 0.5,
+  "win_pct": 22.5
+ }
+}

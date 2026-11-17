@@ -1,0 +1,914 @@
+[
+ {
+  "id": "sof-svea-h7",
+  "map": "Sea of Fortune",
+  "kind": "signature",
+  "subject": "Svea",
+  "label": "open water on the own side of cap D, south-east",
+  "cells": [
+   "H7",
+   "G7",
+   "H8",
+   "G8",
+   "G6"
+  ],
+  "centre_uv": [
+   0.6694,
+   0.7063
+  ],
+  "ellipse_uv": {
+   "ru": 0.2053,
+   "rv": 0.1326,
+   "angle_deg": -15.6
+  },
+  "top6": {
+   "n_in": 15,
+   "n_total": 18,
+   "share_pct": 83.3,
+   "clans": {
+    "HTDOG": 7,
+    "VRTUS": 6,
+    "H-SR": 2
+   }
+  },
+  "rest": {
+   "n_in": 1,
+   "n_total": 14,
+   "share_pct": 7.1
+  },
+  "gap_pts": 76.2,
+  "ci_pts": [
+   41.7,
+   100.0
+  ],
+  "median_time_s": 450,
+  "usual_partner": null,
+  "conc_per_smoke": 10222,
+  "deaths_per_100": 0.0,
+  "cap_won_pct": 16.7,
+  "cap_won_n": 12,
+  "formation": "Svea smoke at H7/G7 + no other cruiser inside + second destroyer forward of the smoke (most often in F8): 10 of 15 Top 6 smokes; Rest 0 of 1 in the same spot",
+  "formation_top6": {
+   "count": 10,
+   "of": 15
+  },
+  "formation_rest": {
+   "count": 0,
+   "of": 1
+  },
+  "cast": {
+   "cruiser": null,
+   "second_dd": {
+    "ship": "Z-42",
+    "centre_uv": [
+     0.7365,
+     0.6377
+    ],
+    "n": 11,
+    "forward_share_pct": 90.9
+   },
+   "nearest_to_target": {
+    "description": "of 15 damaged enemies with a recorded position, the nearest ally was another ship 13 (Z-42 (destroyer) 5, Marceau (destroyer) 5), the smoker 2 (Svea (cruiser) 2); median 8.5 km away",
+    "n": 15
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8143_g1_54022.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g1_185491.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g2_3191.html"
+  ],
+  "small_n": false,
+  "notes": "wide zone, not a tight spot; same place at habit level: parked cruiser smoke (16/21 vs 6/24, gap +51); without HTDOG the Top 6 share is 73%; other scales: 1.5 km: not found; 2.5 km: passes; cruiser smoke: the cruiser slot is for a second cruiser inside"
+ },
+ {
+  "id": "lof-svea-f5",
+  "map": "Land of Fire",
+  "kind": "signature",
+  "subject": "Svea",
+  "label": "own-side rim of cap B, centre of the map",
+  "cells": [
+   "F5"
+  ],
+  "centre_uv": [
+   0.4627,
+   0.5715
+  ],
+  "ellipse_uv": {
+   "ru": 0.0617,
+   "rv": 0.0461,
+   "angle_deg": 7.4
+  },
+  "top6": {
+   "n_in": 14,
+   "n_total": 19,
+   "share_pct": 73.7,
+   "clans": {
+    "VRTUS": 8,
+    "HTDOG": 4,
+    "RESIN": 2
+   }
+  },
+  "rest": {
+   "n_in": 4,
+   "n_total": 21,
+   "share_pct": 19.0
+  },
+  "gap_pts": 54.6,
+  "ci_pts": [
+   8.9,
+   87.0
+  ],
+  "median_time_s": 426,
+  "usual_partner": "Ragnar",
+  "conc_per_smoke": 14161,
+  "deaths_per_100": 0.0,
+  "cap_won_pct": 50.0,
+  "cap_won_n": 10,
+  "formation": "Svea smoke at F5 + no other cruiser inside + second destroyer forward of the smoke (most often in F5): 6 of 14 Top 6 smokes; Rest 3 of 4 in the same spot",
+  "formation_top6": {
+   "count": 6,
+   "of": 14
+  },
+  "formation_rest": {
+   "count": 3,
+   "of": 4
+  },
+  "cast": {
+   "cruiser": null,
+   "second_dd": {
+    "ship": "Z-42",
+    "centre_uv": [
+     0.4623,
+     0.5769
+    ],
+    "n": 12,
+    "forward_share_pct": 50.0
+   },
+   "nearest_to_target": {
+    "description": "of 20 damaged enemies with a recorded position, the nearest ally was another ship 12 (Z-42 (destroyer) 5, Daring (destroyer) 4), the smoker 8 (Svea (cruiser) 8); median 9.1 km away",
+    "n": 20
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8074_g2_70765.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g3_12945.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8143_g2_214594.html"
+  ],
+  "small_n": true,
+  "notes": "same place at habit level: parked cruiser smoke (14/19 vs 4/21, gap +55); without VRTUS the Top 6 share is 60%; other scales: 1.5 km: passes; 2.5 km: passes; cruiser smoke: the cruiser slot is for a second cruiser inside"
+ },
+ {
+  "id": "loop-cap-f7",
+  "map": "Loop",
+  "kind": "signature",
+  "subject": "cap sitters",
+  "label": "own-side and east half of cap B",
+  "cells": [
+   "F7",
+   "F8",
+   "E6"
+  ],
+  "centre_uv": [
+   0.666,
+   0.5323
+  ],
+  "ellipse_uv": {
+   "ru": 0.1768,
+   "rv": 0.111,
+   "angle_deg": -17.4
+  },
+  "top6": {
+   "n_in": 15,
+   "n_total": 23,
+   "share_pct": 65.2,
+   "clans": {
+    "RESIN": 4,
+    "KITE": 3,
+    "BONKZ": 3,
+    "H-SR": 2,
+    "HTDOG": 2,
+    "VRTUS": 1
+   }
+  },
+  "rest": {
+   "n_in": 13,
+   "n_total": 65,
+   "share_pct": 20.0
+  },
+  "gap_pts": 45.2,
+  "ci_pts": [
+   24.6,
+   70.0
+  ],
+  "median_time_s": 514,
+  "usual_partner": null,
+  "conc_per_smoke": 5834,
+  "deaths_per_100": 6.7,
+  "cap_won_pct": 70.0,
+  "cap_won_n": 10,
+  "formation": "cap-sitter smoke at F7/F8 + no other cruiser inside + second destroyer level with or behind the smoke (most often in F8): 7 of 15 Top 6 smokes; Rest 5 of 13 in the same spot",
+  "formation_top6": {
+   "count": 7,
+   "of": 15
+  },
+  "formation_rest": {
+   "count": 5,
+   "of": 13
+  },
+  "cast": {
+   "cruiser": {
+    "ship": "Minotaur",
+    "centre_uv": [
+     0.5691,
+     0.6006
+    ],
+    "n": 1
+   },
+   "second_dd": {
+    "ship": "Marceau",
+    "centre_uv": [
+     0.7306,
+     0.5493
+    ],
+    "n": 15,
+    "forward_share_pct": 53.3
+   },
+   "nearest_to_target": {
+    "description": "of 16 damaged enemies with a recorded position, the nearest ally was the smoker 10 (Gdańsk (destroyer) 5, Z-42 (destroyer) 2), another ship 5 (20 de Julio (destroyer) 3, Z-42 (destroyer) 1), a ship inside the smoke 1 (Delny (destroyer) 1); median 8.2 km away",
+    "n": 16
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7976_g1_219218.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g4_180813.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8150_g1_34881.html"
+  ],
+  "small_n": false,
+  "notes": "wide zone, not a tight spot; ships in the spot: Gdańsk 9, Shimakaze 3, Z-42 2, Daring 1; without RESIN the Top 6 share is 58%; other scales: 1.5 km: not found; 2.5 km: passes"
+ },
+ {
+  "id": "mr-parked-h1",
+  "map": "Mountain Range",
+  "kind": "signature",
+  "subject": "parked cruiser smoke",
+  "label": "far west edge, own-side rim of the big cap A",
+  "cells": [
+   "H1",
+   "G1",
+   "H2"
+  ],
+  "centre_uv": [
+   0.0621,
+   0.695
+  ],
+  "ellipse_uv": {
+   "ru": 0.1262,
+   "rv": 0.0712,
+   "angle_deg": -73.9
+  },
+  "top6": {
+   "n_in": 12,
+   "n_total": 33,
+   "share_pct": 36.4,
+   "clans": {
+    "HTDOG": 8,
+    "BONKZ": 4
+   }
+  },
+  "rest": {
+   "n_in": 0,
+   "n_total": 13,
+   "share_pct": 0.0
+  },
+  "gap_pts": 36.4,
+  "ci_pts": [
+   30.8,
+   40.0
+  ],
+  "median_time_s": 490,
+  "usual_partner": null,
+  "conc_per_smoke": 19028,
+  "deaths_per_100": 8.3,
+  "cap_won_pct": 9.1,
+  "cap_won_n": 11,
+  "formation": "parked cruiser smoke at H1/G1 + no other cruiser inside + second destroyer forward of the smoke (most often in G2): 7 of 12 Top 6 smokes; Rest 0 of 0 in the same spot",
+  "formation_top6": {
+   "count": 7,
+   "of": 12
+  },
+  "formation_rest": {
+   "count": 0,
+   "of": 0
+  },
+  "cast": {
+   "cruiser": null,
+   "second_dd": {
+    "ship": "20 de Julio",
+    "centre_uv": [
+     0.1799,
+     0.679
+    ],
+    "n": 8,
+    "forward_share_pct": 87.5
+   },
+   "nearest_to_target": {
+    "description": "of 17 damaged enemies with a recorded position, the nearest ally was another ship 12 (Salem (cruiser) 7, 20 de Julio (destroyer) 2), the smoker 5 (Jinan (cruiser) 3, Svea (cruiser) 2); median 8.8 km away",
+    "n": 17
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159434.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g3_159290.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159428.html"
+  ],
+  "small_n": true,
+  "notes": "wide zone, not a tight spot; ships in the spot: Jinan 8, Svea 4; without HTDOG the Top 6 share is 31%; other scales: 1.5 km: passes; 2.5 km: passes"
+ },
+ {
+  "id": "sg-harugumo-g1",
+  "map": "Sleeping Giant",
+  "kind": "signature",
+  "subject": "Harugumo",
+  "label": "west edge, own side of cap A",
+  "cells": [
+   "G1",
+   "F1"
+  ],
+  "centre_uv": [
+   0.0655,
+   0.621
+  ],
+  "ellipse_uv": {
+   "ru": 0.1229,
+   "rv": 0.0758,
+   "angle_deg": 69.6
+  },
+  "top6": {
+   "n_in": 11,
+   "n_total": 24,
+   "share_pct": 45.8,
+   "clans": {
+    "RESIN": 5,
+    "H-SR": 4,
+    "BONKZ": 2
+   }
+  },
+  "rest": {
+   "n_in": 1,
+   "n_total": 9,
+   "share_pct": 11.1
+  },
+  "gap_pts": 34.7,
+  "ci_pts": [
+   20.0,
+   56.2
+  ],
+  "median_time_s": 167,
+  "usual_partner": "Des Moines",
+  "conc_per_smoke": 16315,
+  "deaths_per_100": 9.1,
+  "cap_won_pct": 85.7,
+  "cap_won_n": 7,
+  "formation": "Harugumo smoke at G1/F1 + a cruiser inside (Des Moines 5) + second destroyer forward of the smoke (most often in F1): 4 of 11 Top 6 smokes; Rest 1 of 1 in the same spot",
+  "formation_top6": {
+   "count": 4,
+   "of": 11
+  },
+  "formation_rest": {
+   "count": 1,
+   "of": 1
+  },
+  "cast": {
+   "cruiser": {
+    "ship": "Des Moines",
+    "centre_uv": [
+     0.0451,
+     0.6427
+    ],
+    "n": 9
+   },
+   "second_dd": {
+    "ship": "Marceau",
+    "centre_uv": [
+     0.129,
+     0.5862
+    ],
+    "n": 7,
+    "forward_share_pct": 71.4
+   },
+   "nearest_to_target": {
+    "description": "of 20 damaged enemies with a recorded position, the nearest ally was another ship 12 (Moskva (cruiser) 4, Petropavlovsk (cruiser) 2), the smoker 4 (Harugumo (destroyer) 4), a ship inside the smoke 4 (Châteaurenault (destroyer) 3, Worcester (cruiser) 1); median 8.7 km away",
+    "n": 20
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120797.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166103.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g1_39283.html"
+  ],
+  "small_n": true,
+  "notes": "without RESIN the Top 6 share is 43%; other scales: 1.5 km: passes; 2.5 km: found, interval touches zero"
+ },
+ {
+  "id": "sg-flank-f9",
+  "map": "Sleeping Giant",
+  "kind": "signature",
+  "subject": "flank smoke lines",
+  "label": "east edge, outside cap D",
+  "cells": [
+   "F9",
+   "G9",
+   "G10",
+   "F10"
+  ],
+  "centre_uv": [
+   0.9078,
+   0.6207
+  ],
+  "ellipse_uv": {
+   "ru": 0.1191,
+   "rv": 0.0884,
+   "angle_deg": 63.7
+  },
+  "top6": {
+   "n_in": 14,
+   "n_total": 67,
+   "share_pct": 20.9,
+   "clans": {
+    "BONKZ": 6,
+    "H-SR": 4,
+    "RESIN": 3,
+    "VRTUS": 1
+   }
+  },
+  "rest": {
+   "n_in": 5,
+   "n_total": 74,
+   "share_pct": 6.8
+  },
+  "gap_pts": 14.1,
+  "ci_pts": [
+   1.4,
+   25.9
+  ],
+  "median_time_s": 315,
+  "usual_partner": "Brisbane",
+  "conc_per_smoke": 17229,
+  "deaths_per_100": 0.0,
+  "cap_won_pct": 14.3,
+  "cap_won_n": 14,
+  "formation": "flank-line destroyer smoke at F9/G9 + a cruiser inside (Brisbane 4) + second destroyer forward of the smoke (most often in F10): 7 of 14 Top 6 smokes; Rest 1 of 5 in the same spot",
+  "formation_top6": {
+   "count": 7,
+   "of": 14
+  },
+  "formation_rest": {
+   "count": 1,
+   "of": 5
+  },
+  "cast": {
+   "cruiser": {
+    "ship": "Brisbane",
+    "centre_uv": [
+     0.8953,
+     0.613
+    ],
+    "n": 11
+   },
+   "second_dd": {
+    "ship": "Yueyang",
+    "centre_uv": [
+     0.8113,
+     0.5716
+    ],
+    "n": 10,
+    "forward_share_pct": 90.0
+   },
+   "nearest_to_target": {
+    "description": "of 16 damaged enemies with a recorded position, the nearest ally was the smoker 7 (Somers (destroyer) 6, Gearing (destroyer) 1), a ship inside the smoke 6 (Yueyang (destroyer) 3, Brisbane (cruiser) 1), another ship 3 (Kléber (destroyer) 1, 20 de Julio (destroyer) 1); median 8.6 km away",
+    "n": 16
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166105.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8069_g1_190203.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g2_84815.html"
+  ],
+  "small_n": true,
+  "notes": "ships in the spot: Somers 11, Harugumo 2, Gearing 1; without BONKZ the Top 6 share is 16%; other scales: 1.5 km: passes; 2.5 km: passes"
+ },
+ {
+  "id": "loop-gdansk-f8",
+  "map": "Loop",
+  "kind": "lead",
+  "subject": "Gdańsk",
+  "label": "own-side rim of cap B",
+  "cells": [
+   "F8",
+   "F7"
+  ],
+  "centre_uv": [
+   0.6781,
+   0.5702
+  ],
+  "ellipse_uv": {
+   "ru": 0.1329,
+   "rv": 0.0438,
+   "angle_deg": -22.4
+  },
+  "top6": {
+   "n_in": 8,
+   "n_total": 12,
+   "share_pct": 66.7,
+   "clans": {
+    "BONKZ": 3,
+    "RESIN": 3,
+    "H-SR": 2
+   }
+  },
+  "rest": {
+   "n_in": 0,
+   "n_total": 1,
+   "share_pct": 0.0
+  },
+  "gap_pts": 66.7,
+  "ci_pts": [
+   40.0,
+   100.0
+  ],
+  "median_time_s": 527,
+  "usual_partner": null,
+  "conc_per_smoke": 6042,
+  "deaths_per_100": 0.0,
+  "cap_won_pct": 60.0,
+  "cap_won_n": 5,
+  "formation": "Gdańsk smoke at F8/F7 + no other cruiser inside + second destroyer level with or behind the smoke (most often in F8): 4 of 8 Top 6 smokes; Rest 0 of 0 in the same spot",
+  "formation_top6": {
+   "count": 4,
+   "of": 8
+  },
+  "formation_rest": {
+   "count": 0,
+   "of": 0
+  },
+  "cast": {
+   "cruiser": {
+    "ship": "Minotaur",
+    "centre_uv": [
+     0.5691,
+     0.6006
+    ],
+    "n": 1
+   },
+   "second_dd": {
+    "ship": "20 de Julio",
+    "centre_uv": [
+     0.7052,
+     0.5812
+    ],
+    "n": 8,
+    "forward_share_pct": 50.0
+   },
+   "nearest_to_target": {
+    "description": "of 8 damaged enemies with a recorded position, the nearest ally was the smoker 4 (Gdańsk (destroyer) 4), another ship 4 (20 de Julio (destroyer) 3, Harugumo (destroyer) 1); median 9.0 km away",
+    "n": 8
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g4_180813.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7920_g1_144966.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g2_111344.html"
+  ],
+  "small_n": true,
+  "notes": "wide zone, not a tight spot; same place as signature spot loop-cap-f7; Rest barely field this subject on this map (n 1), so the shares cannot be compared; without BONKZ the Top 6 share is 56%; other scales: 1.5 km: not found; 2.5 km: found, interval touches zero"
+ },
+ {
+  "id": "sg-somers-f9",
+  "map": "Sleeping Giant",
+  "kind": "lead",
+  "subject": "Somers",
+  "label": "east edge, outside cap D",
+  "cells": [
+   "F9",
+   "G10",
+   "F10"
+  ],
+  "centre_uv": [
+   0.9201,
+   0.6038
+  ],
+  "ellipse_uv": {
+   "ru": 0.1275,
+   "rv": 0.0638,
+   "angle_deg": 55.1
+  },
+  "top6": {
+   "n_in": 10,
+   "n_total": 30,
+   "share_pct": 33.3,
+   "clans": {
+    "BONKZ": 5,
+    "RESIN": 3,
+    "VRTUS": 1,
+    "H-SR": 1
+   }
+  },
+  "rest": {
+   "n_in": 5,
+   "n_total": 45,
+   "share_pct": 11.1
+  },
+  "gap_pts": 22.2,
+  "ci_pts": [
+   -1.8,
+   58.7
+  ],
+  "median_time_s": 334,
+  "usual_partner": null,
+  "conc_per_smoke": 9723,
+  "deaths_per_100": 0.0,
+  "cap_won_pct": 20.0,
+  "cap_won_n": 10,
+  "formation": "Somers smoke at F9/G10 + a cruiser inside (Des Moines 2) + second destroyer forward of the smoke (most often in E7): 4 of 10 Top 6 smokes; Rest 1 of 5 in the same spot",
+  "formation_top6": {
+   "count": 4,
+   "of": 10
+  },
+  "formation_rest": {
+   "count": 1,
+   "of": 5
+  },
+  "cast": {
+   "cruiser": {
+    "ship": "Des Moines",
+    "centre_uv": [
+     0.8992,
+     0.5859
+    ],
+    "n": 8
+   },
+   "second_dd": {
+    "ship": "Châteaurenault",
+    "centre_uv": [
+     0.7906,
+     0.5452
+    ],
+    "n": 6,
+    "forward_share_pct": 83.3
+   },
+   "nearest_to_target": {
+    "description": "of 9 damaged enemies with a recorded position, the nearest ally was the smoker 5 (Somers (destroyer) 5), another ship 2 (Kléber (destroyer) 1, 20 de Julio (destroyer) 1), a ship inside the smoke 2 (Utrecht (cruiser) 1, San Martín (cruiser) 1); median 8.0 km away",
+    "n": 9
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g2_84823.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120798.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g1_39292.html"
+  ],
+  "small_n": true,
+  "notes": "same place as signature spot sg-flank-f9; without BONKZ the Top 6 share is 23%; other scales: 1.5 km: not found; 2.5 km: not found"
+ },
+ {
+  "id": "mr-svea-g4",
+  "map": "Mountain Range",
+  "kind": "lead",
+  "subject": "Svea",
+  "label": "own side of cap B, west-centre",
+  "cells": [
+   "G4",
+   "F4"
+  ],
+  "centre_uv": [
+   0.3729,
+   0.6127
+  ],
+  "ellipse_uv": {
+   "ru": 0.083,
+   "rv": 0.0655,
+   "angle_deg": -87.0
+  },
+  "top6": {
+   "n_in": 10,
+   "n_total": 24,
+   "share_pct": 41.7,
+   "clans": {
+    "BONKZ": 8,
+    "HTDOG": 2
+   }
+  },
+  "rest": {
+   "n_in": 3,
+   "n_total": 13,
+   "share_pct": 23.1
+  },
+  "gap_pts": 18.6,
+  "ci_pts": [
+   -28.0,
+   61.5
+  ],
+  "median_time_s": 845,
+  "usual_partner": null,
+  "conc_per_smoke": 7657,
+  "deaths_per_100": 10.0,
+  "cap_won_pct": 57.1,
+  "cap_won_n": 7,
+  "formation": "Svea smoke at G4/F4 + no other cruiser inside + second destroyer forward of the smoke (most often in G3): 5 of 10 Top 6 smokes; Rest 2 of 3 in the same spot",
+  "formation_top6": {
+   "count": 5,
+   "of": 10
+  },
+  "formation_rest": {
+   "count": 2,
+   "of": 3
+  },
+  "cast": {
+   "cruiser": null,
+   "second_dd": {
+    "ship": "20 de Julio",
+    "centre_uv": [
+     0.3406,
+     0.5889
+    ],
+    "n": 7,
+    "forward_share_pct": 71.4
+   },
+   "nearest_to_target": {
+    "description": "of 7 damaged enemies with a recorded position, the nearest ally was the smoker 4 (Svea (cruiser) 4), another ship 2 (20 de Julio (destroyer) 2), a ship inside the smoke 1 (20 de Julio (destroyer) 1); median 9.0 km away",
+    "n": 7
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159423.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g2_121108.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159426.html"
+  ],
+  "small_n": true,
+  "notes": "without BONKZ the Top 6 share is 18%; other scales: 1.5 km: found, interval touches zero; 2.5 km: found, interval touches zero; cruiser smoke: the cruiser slot is for a second cruiser inside"
+ },
+ {
+  "id": "hs-flank-g6",
+  "map": "Hotspot",
+  "kind": "lead",
+  "subject": "flank smoke lines",
+  "label": "own-side rim of cap C, centre",
+  "cells": [
+   "G6",
+   "F6",
+   "G7"
+  ],
+  "centre_uv": [
+   0.5661,
+   0.6193
+  ],
+  "ellipse_uv": {
+   "ru": 0.0878,
+   "rv": 0.0622,
+   "angle_deg": -21.8
+  },
+  "top6": {
+   "n_in": 13,
+   "n_total": 64,
+   "share_pct": 20.3,
+   "clans": {
+    "RESIN": 7,
+    "BONKZ": 4,
+    "H-SR": 2
+   }
+  },
+  "rest": {
+   "n_in": 7,
+   "n_total": 80,
+   "share_pct": 8.8
+  },
+  "gap_pts": 11.6,
+  "ci_pts": [
+   -7.5,
+   27.8
+  ],
+  "median_time_s": 255,
+  "usual_partner": "Moskva",
+  "conc_per_smoke": 17336,
+  "deaths_per_100": 7.7,
+  "cap_won_pct": 85.7,
+  "cap_won_n": 7,
+  "formation": "flank-line destroyer smoke at G6/F6 + a cruiser inside (Moskva 5) + second destroyer forward of the smoke (most often in F5): 5 of 13 Top 6 smokes; Rest 2 of 7 in the same spot",
+  "formation_top6": {
+   "count": 5,
+   "of": 13
+  },
+  "formation_rest": {
+   "count": 2,
+   "of": 7
+  },
+  "cast": {
+   "cruiser": {
+    "ship": "Moskva",
+    "centre_uv": [
+     0.5803,
+     0.6363
+    ],
+    "n": 12
+   },
+   "second_dd": {
+    "ship": "Ragnar",
+    "centre_uv": [
+     0.472,
+     0.6351
+    ],
+    "n": 9,
+    "forward_share_pct": 55.6
+   },
+   "nearest_to_target": {
+    "description": "of 10 damaged enemies with a recorded position, the nearest ally was another ship 5 (Châteaurenault (destroyer) 1, Stalingrad (cruiser) 1), a ship inside the smoke 4 (Moskva (cruiser) 3, Brisbane (cruiser) 1), the smoker 1 (Gearing (destroyer) 1); median 10.9 km away",
+    "n": 10
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g3_85022.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g1_60864.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8140_g1_190365.html"
+  ],
+  "small_n": true,
+  "notes": "ships in the spot: Somers 8, Gearing 4, Delny 1; without RESIN the Top 6 share is 12%; other scales: 1.5 km: not found; 2.5 km: found, interval touches zero"
+ },
+ {
+  "id": "sg-gdansk-g6",
+  "map": "Sleeping Giant",
+  "kind": "lead",
+  "subject": "Gdańsk",
+  "label": "between caps B and D, own side",
+  "cells": [
+   "G6",
+   "H6"
+  ],
+  "centre_uv": [
+   0.57,
+   0.6504
+  ],
+  "ellipse_uv": {
+   "ru": 0.1501,
+   "rv": 0.0864,
+   "angle_deg": 26.2
+  },
+  "top6": {
+   "n_in": 10,
+   "n_total": 21,
+   "share_pct": 47.6,
+   "clans": {
+    "HTDOG": 7,
+    "RESIN": 1,
+    "BONKZ": 1,
+    "KITE": 1
+   }
+  },
+  "rest": {
+   "n_in": 6,
+   "n_total": 16,
+   "share_pct": 37.5
+  },
+  "gap_pts": 10.1,
+  "ci_pts": [
+   -36.1,
+   56.9
+  ],
+  "median_time_s": 538,
+  "usual_partner": null,
+  "conc_per_smoke": 13614,
+  "deaths_per_100": 0.0,
+  "cap_won_pct": 14.3,
+  "cap_won_n": 7,
+  "formation": "Gdańsk smoke at G6/H6 + no other cruiser inside + second destroyer level with or behind the smoke (most often in F6): 5 of 10 Top 6 smokes; Rest 2 of 6 in the same spot",
+  "formation_top6": {
+   "count": 5,
+   "of": 10
+  },
+  "formation_rest": {
+   "count": 2,
+   "of": 6
+  },
+  "cast": {
+   "cruiser": null,
+   "second_dd": {
+    "ship": "Delny",
+    "centre_uv": [
+     0.5581,
+     0.6073
+    ],
+    "n": 9,
+    "forward_share_pct": 44.4
+   },
+   "nearest_to_target": {
+    "description": "of 17 damaged enemies with a recorded position, the nearest ally was another ship 14 (Sibir (battleship) 5, Delny (destroyer) 5), the smoker 3 (Gdańsk (destroyer) 3); median 8.7 km away",
+    "n": 17
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8150_g2_188202.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120805.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8153_g1_92181.html"
+  ],
+  "small_n": true,
+  "notes": "wide zone, not a tight spot; without HTDOG the Top 6 share is 25%; other scales: 1.5 km: found, interval touches zero; 2.5 km: found, interval touches zero"
+ }
+]

@@ -66,20 +66,21 @@ if '1' in which:
     fig.save(OUT('fig1-partnerships'))
 
 if '2' in which:
-    kinds = ['long DD', 'short DD', 'cruiser', 'exhaust']
-    lab = ['long\nDD', 'short\nDD', 'cruiser', 'exhaust']
+    kinds = HABITS
+    lab = ['flank\nsmoke\nlines', 'cap\nsitters', 'parked\ncruiser\nsmoke', 'moving\nexhaust']
     own = lambda ss: (100 * sum(x['conc'] for s in ss for x in s['shooters'] if x['is_smoker']) / max(1, sum(x['conc'] for s in ss for x in s['shooters'])))
-    K = {kd: [s for s in S if s['kind'] == kd] for kd in kinds}
-    fig = Fig(1240, 400, 'Four kinds of smoke, field-wide', 'All classes, all clans. Long DD = standard destroyer smoke; short DD = Daring and Z-42 (10 s lay, 40 s life). Black lines: 95% interval. n: ' + ', '.join(f'{kd} {len(K[kd])}' for kd in kinds) + '.')
+    K = {kd: [s for s in S if s['habit'] == kd] for kd in kinds}
+    use = lambda clans, hb: sum(1 for c in clans for s in S if s['team'] == c and s['habit'] == hb) / sum(NG[c] for c in clans)
+    fig = Fig(1240, 410, 'Four smoke habits, field-wide', 'All classes, all clans. Habit = Module 1 ship cluster. Black lines: 95% interval (resampling clans). ' + str(sum(1 for s in S if s['habit'] == 'other')) + ' smokes by other ships left out. n: ' + ', '.join(f'{kd} {len(K[kd])}' for kd in kinds) + '.')
     col = {'v': BLUE}
-    panels = [('Smokes per team-game', [len(K[kd]) / len(TG) for kd in kinds], None, '{:.2f}'),
+    panels = [('Smokes per team-game', [len(K[kd]) / len(TG) for kd in kinds], [boot_clans(lambda cl, kd=kd: use(cl, kd), groups=False) for kd in kinds], '{:.2f}'),
               ('Concealed damage per smoke (thousands)', [conc_per(K[kd]) / 1000 for kd in kinds], [tuple(v / 1000 for v in boot_stat(K[kd], conc_per)) for kd in kinds], '{:.1f}'),
               ('Deaths in the smoke per 100 smokes', [d100(K[kd]) for kd in kinds], [boot_stat(K[kd], d100) for kd in kinds], '{:.1f}'),
               ('Own-gun share: % of damage by the smoker', [own(K[kd]) for kd in kinds], [boot_stat(K[kd], own) for kd in kinds], '{:.0f}')]
     for i, (title, vals, err, fmt) in enumerate(panels):
         x = 60 + i * 300
         fig.add(T(x - 20, 92, title, size=12, fill=INK, anchor='start', weight='600'))
-        vbars(fig, x, 120, 240, 200, lab, [('v', vals)], fmt=fmt, colors=col, err={'v': err} if err else None, ymax=[2.8, 16, 24, 100][i])
+        vbars(fig, x, 120, 240, 200, lab, [('v', vals)], fmt=fmt, colors=col, err={'v': err} if err else None, ymax=[2.4, 20, 28, 100][i])
     fig.save(OUT('fig2-smoke-types'))
 
 if '3' in which:
@@ -157,7 +158,7 @@ if '5' in which:
     clans, feats, X, Z = features()
     merges, order = agglomerate(Z)
     h = clans.index('H-SR')
-    n = len(clans); rh = 21; cw = 46; x_d, x_l, x_h = 30, 170, 250; y0 = 190
+    n = len(clans); rh = 21; cw = 46; x_d, x_l, x_h = 30, 170, 250; y0 = 215
     fig = Fig(x_h + cw * len(feats) + 110, y0 + rh * n + 60, 'Clan smoke-style fingerprints', 'All classes, clans with 7+ games. Cell: the clan\'s value; colour: how far above (blue) or below (orange) the 24-clan average. Clans that sit together play alike.')
     ypos = {i: y0 + (order.index(i) + .5) * rh for i in range(n)}
     hmax = merges[-1][2]; xs = lambda d: x_d + (x_l - 14 - x_d) * (1 - d / hmax)
@@ -183,7 +184,7 @@ if '5' in which:
             fig.add(f'<rect x="{x_h + j * cw + 1}" y="{y - rh / 2 + 1:.1f}" width="{cw - 2}" height="{rh - 2}" rx="2" fill="{div_color(z, 2.5)}"/>' + T(x_h + (j + .5) * cw, y + 3.5, txt, size=9.5, fill=BG if dark else INK))
         dh = dist(Z[h], Z[i])
         fig.add(T(x_h + len(feats) * cw + 14, y + 4, '-' if i == h else f'{dh:.2f}', size=10.5, fill=INK, anchor='start', weight='600' if 0 < dh < 1.1 else '400'))
-    fig.add(T(x_l - 8, y0 + rh * n + 22, 'Blue name = Top 6. Violet = PN (7 games, 14 smokes: small n). W-L beside the name. Distance: 0 = same style as H-SR; the typical gap between two clans is 1.4.', size=10.5, anchor='start'))
+    fig.add(T(x_l - 8, y0 + rh * n + 22, 'Blue name = Top 6. Violet = PN (7 games, 14 smokes: small n). W-L beside the name. Distance: 0 = same style as H-SR; typical gap between two clans: ' + f'{mean(dist(Z[a], Z[b]) for a in range(n) for b in range(a)):.1f}' + '.', size=10.5, anchor='start'))
     fig.add(T(x_l - 8, y0 + rh * n + 38, 'Features are shares of the clan\'s smokes (%), except smokes per game, median km from smoke edge to the cap, and the median time of the first smoke (seconds).', size=10.5, anchor='start'))
     fig.save(OUT('fig5-clan-fingerprints'))
     # stability: drop one feature at a time, how often does each clan stay in H-SR's nearest 3
@@ -202,9 +203,9 @@ if '5' in which:
 
 if '6' in which:
     byid = {}
-    for s in S: byid.setdefault(s['id'], []).append(s)
+    for s in S: byid.setdefault((s['game'], s['id']), []).append(s)
     def answered(s):
-        c = [b for b in byid.get(s['counter_of'], []) if b['game'] == s['game'] and b['team'] != s['team']]
+        c = [b for b in byid.get((s['game'], s['counter_of']), []) if b['team'] != s['team']]
         return c[0] if c else None
     cs = [s for s in DD if s['counter_of'] and answered(s)]
     print('counter DD', len([s for s in DD if s['counter_of']]), 'matched', len(cs), 'PN', len([s for s in cs if s['is_pn']]))
@@ -221,20 +222,20 @@ if '6' in which:
         fig.add(p)
         print(m, 'cells', C(s['ncell_name'] for s in ss).most_common(4), 'own half', pct(ss, lambda s: s['ncell'][1] >= 5), 'dist km', med(math.hypot(s['x'] - answered(s)['x'], s['z'] - answered(s)['z']) * WU / 1000 for s in ss))
     fig.legend(40, 76, [('counter-smoke (destroyer)', BLUE), ('the enemy smoke it answers', ORANGE)])
-    x = 1000
+    x = 990
     col = {'counter': BLUE, 'other': GREY}
-    L = [s for s in DD if s['kind'] == 'long DD']; Sh = [s for s in DD if s['kind'] == 'short DD']
+    L = [s for s in DD if s['habit'] == 'flank smoke lines']; Sh = [s for s in DD if s['habit'] == 'cap sitters']
     sp = lambda ss: {'counter': [s for s in ss if s['counter_of']], 'other': [s for s in ss if not s['counter_of']]}
     fig.add(T(x, 96, 'Counter-smoke vs other smokes', size=12.5, fill=INK, anchor='start', weight='600'))
     fig.legend(x, 118, [('counter', BLUE), ('other', GREY)])
     fig.add(T(x, 146, 'Concealed damage per smoke', size=11, fill=INK, anchor='start'))
-    y = bar_rows(fig, x, 152, 230, [(lab, {g: conc_per(v) for g, v in sp(ss).items()}, None) for lab, ss in (('long DD', L), ('short DD', Sh))], label_w=62, row_h=34, colors=col)
+    y = bar_rows(fig, x, 152, 230, [(lab, {g: conc_per(v) for g, v in sp(ss).items()}, None) for lab, ss in (('flank lines', L), ('cap sitters', Sh))], label_w=78, row_h=34, colors=col)
     fig.add(T(x, y + 26, 'Deaths in the smoke per 100', size=11, fill=INK, anchor='start'))
-    y = bar_rows(fig, x, y + 32, 230, [(lab, {g: d100(v) for g, v in sp(ss).items()}, None) for lab, ss in (('long DD', L), ('short DD', Sh))], label_w=62, row_h=34, colors=col, fmt='{:.1f}')
+    y = bar_rows(fig, x, y + 32, 230, [(lab, {g: d100(v) for g, v in sp(ss).items()}, None) for lab, ss in (('flank lines', L), ('cap sitters', Sh))], label_w=78, row_h=34, colors=col, fmt='{:.1f}')
     fig.add(T(x, y + 26, 'Counter-smoke return by group', size=11, fill=INK, anchor='start'))
-    y = bar_rows(fig, x, y + 32, 230, [(GROUP_LABEL[g], conc_per([s for s in cs if s['grp'] == g]), None) for g in ('top', 'rest')], label_w=62, row_h=22)
-    fig.add(T(x, y + 22, f'n: long DD {len(sp(L)["counter"])} counter / {len(sp(L)["other"])} other;', size=10, anchor='start'))
-    fig.add(T(x, y + 36, f'short DD {len(sp(Sh)["counter"])} / {len(sp(Sh)["other"])}; top 6 {len([s for s in cs if s["grp"]=="top"])}, rest {len([s for s in cs if s["grp"]=="rest"])}', size=10, anchor='start'))
+    y = bar_rows(fig, x, y + 32, 230, [(GROUP_LABEL[g], conc_per([s for s in cs if s['grp'] == g]), None) for g in ('top', 'rest')], label_w=78, row_h=22)
+    fig.add(T(x, y + 22, f'n: flank lines {len(sp(L)["counter"])} counter / {len(sp(L)["other"])} other;', size=10, anchor='start'))
+    fig.add(T(x, y + 36, f'cap sitters {len(sp(Sh)["counter"])} / {len(sp(Sh)["other"])}; top 6 {len([s for s in cs if s["grp"]=="top"])}, rest {len([s for s in cs if s["grp"]=="rest"])}', size=10, anchor='start'))
     fig.save(OUT('fig6-counter-smoke'))
     h2h = [(s, answered(s)) for s in cs]
     print('h2h counter out-damages answered %', pct(h2h, lambda p: p[0]['conc'] > p[1]['conc']), 'ci', boot_stat(cs, lambda ss: pct(ss, lambda s: s['conc'] > answered(s)['conc'])))

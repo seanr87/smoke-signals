@@ -1,0 +1,288 @@
+=== 1 partnerships
+shooter conc sum 14878662.69153 smoke conc sum 14878662.61 DD 11597003.09
+unknown cls shooters Counter({'cruiser': 817, 'destroyer': 405, 'battleship': 114})
+(('Gearing', 'Des Moines'), 54, 17189.666181481483, 12, 85.18518518518519)
+(('Harugumo', 'Des Moines'), 30, 16733.762453333333, 8, 86.66666666666667)
+(('Harugumo', 'Worcester'), 22, 16052.429818181818, 7, 95.45454545454545)
+(('Somers', 'Utrecht'), 30, 15804.444206666667, 7, 66.66666666666667)
+(('Somers', 'Des Moines'), 76, 15271.537265789475, 15, 78.94736842105263)
+(('Gearing', 'Brisbane'), 51, 15245.071060784314, 4, 74.50980392156863)
+(('Somers', 'Minotaur'), 32, 13417.205246875, 8, 84.375)
+(('Somers', 'Brisbane'), 52, 9707.438857692307, 9, 73.07692307692308)
+self Somers 260 0.9k all 14.5k
+self Daring 200 2.8k all 3.6k
+self Gearing 180 0.5k all 16.3k
+self Gdańsk 118 5.5k all 8.2k
+self Harugumo 100 4.0k all 18.4k
+self Shimakaze 58 1.6k all 5.6k
+self Z-42 56 3.4k all 4.1k
+self Grozovoi 30 3.6k all 6.5k
+self Delny 22 0.2k all 14.5k
+self Fuyutsuki 10 11.2k all 11.8k
+self Z-52 10 2.0k all 2.0k
+self Yueyang 7 0.0k all 6.1k
+self La Pampa 6 0.1k all 0.6k
+self G. Hoffmann 6 4.6k all 7.3k
+self A. da Barbiano 5 6.7k all 7.7k
+self F. Sherman 4 1.7k all 4.9k
+self Vampire II 1 0.0k all 0.0k
+self Elbing 1 0.7k all 0.7k
+top 387 smoker 18.7 cruiser 71.0 bb 8.8 other dd 1.5 dd all 20.2
+rest 687 smoker 23.8 cruiser 68.6 bb 5.6 other dd 2.1 dd all 25.9
+H-SR 89 smoker 7.1 cruiser 75.2 bb 16.3 other dd 1.4 dd all 8.5
+PN 10 smoker 21.9 cruiser 78.1 bb 0.0 other dd 0.0 dd all 21.9
+cruiser diff ci -7.7 to +11.3
+battleship diff ci -1.7 to +8.2
+smoker diff ci -15.7 to +8.9
+   RESIN 87 cruiser share 63.9 smoker 30.2 conc/smoke 14.0k
+   H-SR 89 cruiser share 75.2 smoker 7.1 conc/smoke 16.3k
+   BONKZ 76 cruiser share 77.5 smoker 12.7 conc/smoke 15.7k
+   MZY 43 cruiser share 78.5 smoker 20.4 conc/smoke 8.2k
+   HTDOG 46 cruiser share 40.8 smoker 56.2 conc/smoke 6.1k
+   EPOXY 68 cruiser share 75.6 smoker 14.0 conc/smoke 11.9k
+   HFANS 79 cruiser share 53.0 smoker 33.0 conc/smoke 9.6k
+   KITE 43 cruiser share 66.7 smoker 22.2 conc/smoke 7.9k
+   -BN- 64 cruiser share 74.6 smoker 20.5 conc/smoke 14.6k
+   MACHX 49 cruiser share 57.9 smoker 32.6 conc/smoke 8.7k
+   KITED 25 cruiser share 66.5 smoker 33.5 conc/smoke 4.0k
+   REEEE 44 cruiser share 85.2 smoker 12.6 conc/smoke 10.5k
+   PFANS 18 cruiser share 76.2 smoker 15.1 conc/smoke 18.6k
+   KSC 51 cruiser share 68.5 smoker 23.4 conc/smoke 14.8k
+   VRTUS 46 cruiser share 81.4 smoker 15.1 conc/smoke 9.7k
+   5D 17 cruiser share 12.7 smoker 75.6 conc/smoke 5.4k
+   KSE 15 cruiser share 48.8 smoker 51.2 conc/smoke 1.8k
+   PN 10 cruiser share 78.1 smoker 21.9 conc/smoke 12.4k
+   RSR 18 cruiser share 92.0 smoker 6.6 conc/smoke 8.3k
+   UYSC 22 cruiser share 30.8 smoker 60.5 conc/smoke 4.9k
+   NGA 17 cruiser share 87.2 smoker 2.1 conc/smoke 5.3k
+   MACH 18 cruiser share 40.7 smoker 59.3 conc/smoke 1.3k
+   SCCC2 32 cruiser share 29.3 smoker 52.9 conc/smoke 5.8k
+   BONKY 25 cruiser share 94.9 smoker 3.0 conc/smoke 10.8k
+   BTLST 17 cruiser share 95.3 smoker 0.6 conc/smoke 4.5k
+   OGF 9 cruiser share 42.3 smoker 57.7 conc/smoke 7.6k
+   RMN 11 cruiser share 52.0 smoker 36.3 conc/smoke 1.2k
+   MANBA 5 cruiser share 76.5 smoker 23.5 conc/smoke 5.0k
+   INCA 20 cruiser share 65.0 smoker 22.4 conc/smoke 17.5k
+   KM 10 cruiser share 46.8 smoker 48.8 conc/smoke 13.9k
+H-SR all classes cruiser share 73.2
+=== 2 smoke type lens (all classes)
+other (left out) 94 [('Smolensk', 14), ('Cerberus', 13), ('Fuyutsuki', 10), ('Z-52', 10), ('Conte Verde', 9), ('Yueyang', 7), ('La Pampa', 6), ('G. Hoffmann', 6), ('A. da Barbiano', 5), ('F. Sherman', 4), ('Sicilia', 3), ('Almte. Irízar', 2), ('Irresistible', 2), ('Vampire II', 1), ('Plymouth', 1), ('Elbing', 1)]
+flank smoke lines use interval 1.26 to 1.97 * clans 27 classes {'destroyer': 562}
+flank smoke lines n 562 per team-game 1.64 team-games using 198 per using tg 2.84 conc 15.8k 13,573 to 17,427 * median 9.2k zero% 24.0 d100 14.2 10.7 to 18.5 * own 8.0 5 to 13 * selfish% 11.0 radius 450.0 life 130.0 emis 30.0
+cap sitters use interval 1.10 to 1.62 * clans 28 classes {'destroyer': 462}
+cap sitters n 462 per team-game 1.35 team-games using 172 per using tg 2.69 conc 5.3k 4,403 to 6,087 * median 1.4k zero% 37.4 d100 7.4 4.9 to 10.8 * own 65.3 52 to 77 * selfish% 48.7 radius 600.0 life 40.0 emis 10.0
+parked cruiser smoke use interval 0.43 to 1.07 * clans 20 classes {'cruiser': 241}
+parked cruiser smoke n 241 per team-game 0.70 team-games using 70 per using tg 3.44 conc 8.4k 6,126 to 9,744 * median 4.8k zero% 24.1 d100 6.2 3.9 to 9.4 * own 94.3 90 to 99 * selfish% 77.6 radius 600.0 life 40.0 emis 10.0
+moving exhaust use interval 0.36 to 0.79 * clans 26 classes {'cruiser': 168, 'battleship': 20}
+moving exhaust n 188 per team-game 0.55 team-games using 105 per using tg 1.79 conc 4.1k 3,291 to 5,113 * median 0.0k zero% 51.6 d100 17.0 12.7 to 22.8 * own 90.6 81 to 97 * selfish% 69.1 radius 510.0 life 10.0 emis 40.0
+flank smoke lines minus cap sitters conc +8,495 to +12,415 * d100 +2.9 to +11.3 *
+flank smoke lines minus parked cruiser smoke conc +4,510 to +10,195 * d100 +3.7 to +13.1 *
+flank smoke lines minus moving exhaust conc +9,269 to +13,608 * d100 -10.0 to +3.6
+   Somers flank smoke lines 260 14.5k d100 10.4 emis 30.0 life 130.0 r 450.0
+   Daring cap sitters 200 3.6k d100 4.5 emis 10.0 life 40.0 r 600.0
+   Svea parked cruiser smoke 199 7.4k d100 5.5 emis 10.0 life 40.0 r 600.0
+   Gearing flank smoke lines 180 16.3k d100 17.8 emis 30.0 life 130.0 r 450.0
+   Napoli moving exhaust 147 4.1k d100 16.3 emis 40.0 life 10.0 r 510.0
+   Gdańsk cap sitters 118 8.2k d100 7.6 emis 20.0 life 97.0 r 450.0
+   Harugumo flank smoke lines 100 18.4k d100 21.0 emis 20.0 life 97.0 r 450.0
+   Shimakaze cap sitters 58 5.6k d100 24.1 emis 20.0 life 97.0 r 450.0
+   Z-42 cap sitters 56 4.1k d100 3.6 emis 10.0 life 40.0 r 600.0
+   Jinan parked cruiser smoke 42 13.1k d100 9.5 emis 30.0 life 70.0 r 450.0
+   Grozovoi cap sitters 30 6.5k d100 0.0 emis 20.0 life 97.0 r 450.0
+   Delny flank smoke lines 22 14.5k d100 0.0 emis 30.0 life 100.0 r 450.0
+   Venezia moving exhaust 21 3.2k d100 28.6 emis 40.0 life 10.0 r 510.0
+   C. Colombo moving exhaust 20 5.4k d100 10.0 emis 45.0 life 10.0 r 510.0
+=== 3 timing (DD)
+top
+   0 expo 108.0 n 25 rate 0.23 conc 10.0k d100 4.0
+   2 expo 108.0 n 55 rate 0.51 conc 13.7k d100 3.6
+   4 expo 108.0 n 65 rate 0.60 conc 11.7k d100 1.5
+   6 expo 106.5 n 67 rate 0.63 conc 15.8k d100 10.4
+   8 expo 104.0 n 66 rate 0.63 conc 13.4k d100 10.6
+   10 expo 86.5 n 54 rate 0.62 conc 13.5k d100 13.0
+   12 expo 60.1 n 32 rate 0.53 conc 6.9k d100 3.1
+   14 expo 35.9 n 12 rate 0.33 conc 12.1k d100 8.3
+   16 expo 17.9 n 3 rate 0.17 conc 4.7k d100 66.7
+   18 expo 9.6 n 2 rate 0.21 conc 1.5k d100 0.0
+rest
+   0 expo 228.0 n 27 rate 0.12 conc 6.0k d100 3.7
+   2 expo 228.0 n 114 rate 0.50 conc 13.2k d100 10.5
+   4 expo 228.0 n 136 rate 0.60 conc 9.0k d100 16.9
+   6 expo 223.1 n 119 rate 0.53 conc 10.8k d100 12.6
+   8 expo 215.4 n 112 rate 0.52 conc 10.0k d100 13.4
+   10 expo 170.5 n 86 rate 0.50 conc 8.1k d100 19.8
+   12 expo 101.7 n 53 rate 0.52 conc 9.3k d100 17.0
+   14 expo 53.4 n 19 rate 0.36 conc 6.1k d100 0.0
+   16 expo 19.1 n 5 rate 0.26 conc 2.5k d100 20.0
+   18 expo 9.6 n 5 rate 0.52 conc 2.7k d100 20.0
+rate diff 0 120 0.23 0.12 -0.06 to +0.28 conc diff -2,614 to +11,658
+rate diff 120 240 0.51 0.50 -0.13 to +0.15 conc diff -6,537 to +6,990
+rate diff 240 480 0.62 0.57 -0.09 to +0.19 conc diff -907 to +8,480
+rate diff 480 720 0.63 0.51 -0.01 to +0.24 conc diff -104 to +8,138
+rate diff 720 1200 0.40 0.45 -0.22 to +0.15 conc diff -4,301 to +3,789
+first DD smoke time per team-game: top 170 rest 208.5
+top ahead 50+ n 167 share 43.2 conc 13.4k d100 5.4 selfish 25.7 inside 28.7 escape 10.2 kite 21.6 push 20.4 | after 4 min n 163 13.2k 5.5
+top level n 161 share 41.6 conc 13.3k d100 3.7 selfish 15.5 inside 20.5 escape 8.1 kite 11.2 push 23.6 | after 4 min n 84 14.0k 3.6
+top behind 50+ n 59 share 15.2 conc 9.4k d100 23.7 selfish 28.8 inside 20.3 escape 22.0 kite 22.0 push 33.9 | after 4 min n 59 9.4k 23.7
+rest ahead 50+ n 205 share 29.8 conc 9.4k d100 7.3 selfish 41.0 inside 28.8 escape 13.2 kite 20.0 push 16.1 | after 4 min n 199 9.4k 7.5
+rest level n 264 share 38.4 conc 11.8k d100 11.4 selfish 20.8 inside 29.9 escape 12.5 kite 16.7 push 17.8 | after 4 min n 134 11.4k 12.7
+rest behind 50+ n 218 share 31.7 conc 7.5k d100 22.9 selfish 37.2 inside 27.1 escape 27.1 kite 27.1 push 13.8 | after 4 min n 211 7.5k 23.7
+all ahead 50+ n 372 share 34.6 conc 11.2k d100 6.5 selfish 34.1 inside 28.8 escape 11.8 kite 20.7 push 18.0 | after 4 min n 362 11.1k 6.6
+all level n 425 share 39.6 conc 12.4k d100 8.5 selfish 18.8 inside 26.4 escape 10.8 kite 14.6 push 20.0 | after 4 min n 218 12.4k 9.2
+all behind 50+ n 277 share 25.8 conc 7.9k d100 23.1 selfish 35.4 inside 25.6 escape 26.0 kite 26.0 push 18.1 | after 4 min n 270 7.9k 23.7
+ahead 50+ top-rest conc -683 to +7,894 d100 -6.8 to +2.4
+level top-rest conc -2,860 to +5,053 d100 -11.6 to -4.5 *
+behind 50+ top-rest conc -2,488 to +5,364 d100 -15.2 to +12.7
+ahead - behind (after 4 min): conc +668 to +5,505 * d100 -24.8 to -10.5 *
+=== 4 survival (DD smokes)
+all DD 1074 deaths 124 11.5 smokes with a death 117
+who: smoker 69 partner 55 concealed Counter({'inside': 99, 'behind': 25}) after_cleared Counter({False: 97, True: 27})
+partner death ships Counter({'Des Moines': 11, 'Minotaur': 6, 'San\xa0Martín': 5, 'Brisbane': 5, 'Utrecht': 4, 'Salem': 4, 'Worcester': 3, 'Napoli': 2, 'Prinz Adalbert': 2, 'Svea': 2, 'Småland': 1, 'Kremlin': 1, 'Bremen': 1, 'Schlieffen': 1, 'Rhode Island': 1, 'Cerberus': 1, 'Willem de Eerste': 1, 'Petropavlovsk': 1, 'Marceau': 1, 'Conqueror': 1, 'Moskva': 1}) cls Counter({'Cruiser': 48, 'Battleship': 5, 'Destroyer': 2})
+all classes: smoker 116 partner 61
+   ship Somers n 260 d100 10.4 7.2 to 13.5 * smoker 3.8 partner 6.5 conc 14.5k partners/smoke 1.3
+   ship Daring n 200 d100 4.5 1.9 to 7.8 * smoker 4.5 partner 0.0 conc 3.6k partners/smoke 0.5
+   ship Gearing n 180 d100 17.8 11.8 to 26.6 * smoker 8.3 partner 9.4 conc 16.3k partners/smoke 1.2
+   ship Gdańsk n 118 d100 7.6 3.6 to 12.4 * smoker 5.1 partner 2.5 conc 8.2k partners/smoke 0.8
+   ship Harugumo n 100 d100 21.0 12.6 to 35.7 * smoker 10.0 partner 11.0 conc 18.4k partners/smoke 1.3
+   ship Shimakaze n 58 d100 24.1 15.6 to 32.3 * smoker 15.5 partner 8.6 conc 5.6k partners/smoke 0.9
+   ship Z-42 n 56 d100 3.6 0.0 to 8.3 smoker 3.6 partner 0.0 conc 4.1k partners/smoke 0.5
+   ship Grozovoi n 30 d100 0.0 0.0 to 0.0 smoker 0.0 partner 0.0 conc 6.5k partners/smoke 0.7
+   ship Delny n 22 d100 0.0 0.0 to 0.0 smoker 0.0 partner 0.0 conc 14.5k partners/smoke 1.7
+   ship Fuyutsuki n 10 d100 0.0 0.0 to 0.0 smoker 0.0 partner 0.0 conc 11.8k partners/smoke 0.9
+   ship Z-52 n 10 d100 30.0 12.5 to 100.0 * smoker 30.0 partner 0.0 conc 2.0k partners/smoke 0.3
+   cov stacked n 407 d100 13.3 9.6 to 17.8 * smoker 3.9 partner 9.3 conc 16.2k partners/smoke 1.4
+   cov screen n 362 d100 11.3 7.9 to 14.7 * smoker 6.6 partner 4.7 conc 10.3k partners/smoke 1.4
+   cov selfish n 305 d100 9.5 5.1 to 15.2 * smoker 9.5 partner 0.0 conc 4.2k partners/smoke 0.0
+   band inside cap n 290 d100 12.1 8.1 to 16.8 * smoker 6.9 partner 5.2 conc 8.8k partners/smoke 0.9
+   band 0 to 1 km n 143 d100 6.3 2.6 to 11.6 * smoker 4.9 partner 1.4 conc 11.4k partners/smoke 1.1
+   band 1 to 3 km n 238 d100 10.1 5.2 to 16.9 * smoker 5.5 partner 4.6 conc 12.3k partners/smoke 1.1
+   band 3 to 5 km n 122 d100 10.7 5.1 to 18.6 * smoker 4.9 partner 5.7 conc 10.9k partners/smoke 1.0
+   band 5 km + n 281 d100 15.3 10.3 to 20.7 * smoker 8.2 partner 7.1 conc 11.3k partners/smoke 1.0
+   radar False n 954 d100 9.9 7.6 to 12.9 * smoker 5.6 partner 4.3 conc 10.7k partners/smoke 1.0
+   radar True n 120 d100 25.0 16.2 to 35.6 * smoker 13.3 partner 11.7 conc 11.3k partners/smoke 1.0
+   grp rest n 687 d100 13.8 10.8 to 17.6 * smoker 8.4 partner 5.4 conc 9.7k partners/smoke 0.9
+   grp top n 387 d100 7.5 5.0 to 10.2 * smoker 2.8 partner 4.7 conc 12.7k partners/smoke 1.1
+   move horizontal n 331 d100 13.6 9.2 to 18.8 * smoker 6.9 partner 6.6 conc 14.2k partners/smoke 1.3
+   move stationary n 257 d100 8.9 5.2 to 13.9 * smoker 7.8 partner 1.2 conc 5.2k partners/smoke 0.5
+   move kiting n 211 d100 11.8 7.1 to 17.0 * smoker 5.7 partner 6.2 conc 8.0k partners/smoke 0.8
+   move pushing n 202 d100 11.4 7.5 to 16.3 * smoker 5.9 partner 5.4 conc 14.7k partners/smoke 1.3
+   move unclassified n 73 d100 11.0 3.8 to 20.4 * smoker 2.7 partner 8.2 conc 12.2k partners/smoke 0.9
+   pp cap_contest n 391 d100 10.2 7.4 to 13.8 * smoker 6.9 partner 3.3 conc 8.4k partners/smoke 0.9
+   pp none n 262 d100 13.7 8.9 to 20.0 * smoker 8.8 partner 5.0 conc 4.4k partners/smoke 0.8
+   pp reposition n 87 d100 6.9 1.9 to 13.4 * smoker 2.3 partner 4.6 conc 15.7k partners/smoke 1.4
+   pp cap_control n 73 d100 8.2 2.3 to 17.3 * smoker 0.0 partner 8.2 conc 19.1k partners/smoke 1.5
+   pp damage n 73 d100 16.4 7.5 to 24.5 * smoker 6.8 partner 9.6 conc 38.6k partners/smoke 1.3
+   pp counter_smoke n 70 d100 17.1 8.6 to 26.6 * smoker 8.6 partner 8.6 conc 8.5k partners/smoke 0.8
+   pp escape n 56 d100 10.7 3.6 to 19.0 * smoker 7.1 partner 3.6 conc 3.1k partners/smoke 0.8
+   pp island_dive n 38 d100 7.9 0.0 to 16.1 smoker 2.6 partner 5.3 conc 10.4k partners/smoke 1.7
+   pp radar_trap n 23 d100 13.0 0.0 to 28.0 smoker 4.3 partner 8.7 conc 16.9k partners/smoke 1.1
+   band no mrA inside cap n 271 d100 12.5 8.9 to 17.2 * smoker 7.0 partner 5.5 conc 8.6k partners/smoke 0.8
+   band no mrA 0 to 1 km n 140 d100 6.4 2.6 to 12.4 * smoker 5.0 partner 1.4 conc 11.0k partners/smoke 1.1
+   band no mrA 1 to 3 km n 233 d100 9.9 5.5 to 17.2 * smoker 5.2 partner 4.7 conc 12.3k partners/smoke 1.1
+   band no mrA 3 to 5 km n 120 d100 10.8 5.1 to 18.9 * smoker 5.0 partner 5.8 conc 10.5k partners/smoke 1.0
+   band no mrA 5 km + n 279 d100 15.4 10.6 to 21.2 * smoker 8.2 partner 7.2 conc 11.3k partners/smoke 1.0
+   band no mrA mrA n 31 d100 6.5 0.0 to 15.2 smoker 6.5 partner 0.0 conc 13.7k partners/smoke 1.2
+   time 1 n 392 d100 12.0 7.8 to 18.0 * smoker 6.6 partner 5.4 conc 11.2k partners/smoke 1.0
+   time 2 n 325 d100 14.2 9.7 to 18.5 * smoker 8.3 partner 5.8 conc 10.7k partners/smoke 0.9
+   time 0 n 224 d100 7.1 4.2 to 10.4 * smoker 3.1 partner 4.0 conc 12.2k partners/smoke 1.4
+   time 3 n 116 d100 9.5 4.8 to 16.1 * smoker 6.0 partner 3.4 conc 8.4k partners/smoke 0.7
+   time 4 n 17 d100 23.5 5.9 to 42.9 * smoker 11.8 partner 11.8 conc 2.8k partners/smoke 0.3
+radar diff +6.9 to +27.5 *
+inside vs 3km+ diff -7.6 to +4.5
+top-rest -11.0 to -2.1 *
+PN 10 30.0
+radar x inside {(True, False): (83, '22.9'), (False, True): (253, '9.5'), (False, False): (701, '10.0'), (True, True): (37, '29.7')}
+deaths by map {'Hotspot': (235, 18, '7.7'), 'Loop': (142, 15, '10.6'), 'Okinawa': (82, 18, '22.0'), 'Land of Fire': (128, 18, '14.1'), 'Mountain Range': (132, 11, '8.3'), 'Sleeping Giant': (238, 28, '11.8'), 'Sea of Fortune': (117, 16, '13.7')}
+smoker hp at act: died 67.94 lived 89.69
+--- Somers vs Gearing (DD smokes)
+Somers n 260 clans 18 conc 14.5k 12,613 to 15,994 * d100 10.4 7.3 to 13.7 *
+Gearing n 180 clans 16 conc 16.3k 11,564 to 19,491 * d100 17.8 11.5 to 27.2 *
+Somers - Gearing: conc -1,771 -5,370 to +3,404 d100 -7.4 -16.5 to -0.6 *
+clans using both 8 top share Somers 34.6 Gearing 41.1 stacked Somers 56.9 Gearing 51.7 radar caught Somers 11.9 Gearing 6.7
+flank smoke lines n 562 d100 14.2 11.1 to 18.7 * smoker 6.2 partner 8.0 conc 15.8k
+cap sitters n 462 d100 7.4 4.8 to 10.7 * smoker 5.6 partner 1.7 conc 5.3k
+flank - cap sitters d100 +2.9 to +11.2 * DD other 50
+=== 6 counter-smoke and chains (DD smokes; answered smoke can be any class). Lookups match on game + id.
+counter n 133 all classes 183 answered found 133 enemy 133 answered class Counter({'destroyer': 102, 'cruiser': 27, 'battleship': 4}) PN 2
+counter ('n', 133, 'conc', '8.0k', 'd100', '15.0', 'capwon', '18.0', 'inside', '33.1', 'selfish', '36.8', 'el', 447)
+not ('n', 941, 'conc', '11.2k', 'd100', '11.1', 'capwon', '23.0', 'inside', '26.1', 'selfish', '27.2', 'el', 423)
+top counter share 11.4 ('n', 44, 'conc', '11.1k', 'd100', '11.4', 'capwon', '15.9', 'inside', '22.7', 'selfish', '31.8', 'el', 493.5)
+rest counter share 13.0 ('n', 89, 'conc', '6.5k', 'd100', '16.9', 'capwon', '19.1', 'inside', '38.2', 'selfish', '39.3', 'el', 443)
+share diff -6.4 to +4.8 top-rest counter conc -146 to +8,810
+all DD counter - not: conc -5,510 to -913 * d100 -2.7 to +11.2
+flank smoke lines counter 52 13.7k 23.1 not 510 16.0k 13.3 diff -7,196 to +2,141 -4.1 to +26.7 counter share 9.3
+cap sitters counter 74 4.0k 8.1 not 388 5.5k 7.2 diff -3,042 to +200 -4.7 to +5.9 counter share 16.0
+DD other habit 50 of which counter 7
+head to head n 133 counter conc 8.0k answered conc 8.8k counter wins 37.6 31 to 43 * gap s 17 dist km 8.964670392125946 same cap 72.9
+counter by map {'Hotspot': (26, '11.1', 'own half', '80.8'), 'Loop': (13, '9.2', 'own half', '53.8'), 'Okinawa': (11, '13.4', 'own half', '27.3'), 'Land of Fire': (23, '18.0', 'own half', '87.0'), 'Mountain Range': (18, '13.6', 'own half', '88.9'), 'Sleeping Giant': (22, '9.2', 'own half', '86.4'), 'Sea of Fortune': (20, '17.1', 'own half', '80.0')}
+lim 500 chains 14 Counter({2: 14}) DD in 16 9.6k 18.8 solo 1058 10.8k 11.4 same player 0 cls mix [((('cruiser', 1), ('destroyer', 1)), 8), ((('destroyer', 2),), 4), ((('cruiser', 2),), 2)]
+lim 1000 chains 16 Counter({2: 16}) DD in 17 9.2k 17.6 solo 1057 10.8k 11.4 same player 0 cls mix [((('cruiser', 1), ('destroyer', 1)), 9), ((('destroyer', 2),), 4), ((('cruiser', 2),), 3)]
+lim 1500 chains 18 Counter({2: 15, 3: 2, 4: 1}) DD in 18 11.2k 16.7 solo 1056 10.8k 11.5 same player 0 cls mix [((('cruiser', 1), ('destroyer', 1)), 9), ((('destroyer', 2),), 3), ((('cruiser', 2),), 3), ((('cruiser', 1), ('destroyer', 2)), 1)]
+chain - solo: conc -8,915 to +6,296 d100 -10.9 to +33.5
+by clan [('HTDOG', 5), ('HFANS', 3), ('VRTUS', 3), ('KM', 1), ('SCCC2', 1), ('BTLST', 1), ('KITED', 1), ('UYSC', 1)] grp Counter({'rest': 8, 'top': 8}) habits [(('cap sitters', 'parked cruiser smoke'), 5), (('other', 'other'), 2), (('moving exhaust', 'moving exhaust'), 2), (('cap sitters', 'other'), 2), (('cap sitters', 'flank smoke lines'), 1), (('parked cruiser smoke', 'parked cruiser smoke'), 1)]
+ids unique 1544 game+id unique 1547 smokes 1547
+=== 5 clusters
+24 ['H-SR', 'RESIN', 'HTDOG', 'KITE', 'VRTUS', 'MZY', 'BONKZ', 'REEEE', 'HFANS', 'MACHX', 'KSC', 'EPOXY', 'KITED', 'PN', '-BN-', 'SCCC2', 'BONKY', 'PFANS', '5D', 'KSE', 'UYSC', 'MACH', 'RSR', 'NGA']
+H-SR   22 (20, 2)   4.55  50.00  32.00  18.00  31.00  35.00   8.00  29.00  26.00  13.00   8.00  16.00   1.55 120.50  71.00  18.00   2.00   1.00
+RESIN  24 (17, 7)   4.29  33.98  34.95  31.07  33.98  27.18  11.65  15.53  23.30  18.45  21.36  27.18   1.90 174.00  58.25  26.21   9.71   3.88
+HTDOG  18 (12, 6)   5.89  14.15  33.02  52.83  28.30  12.26  20.75   5.66  16.04  23.58  46.23  24.53   2.28 233.00   9.43  32.08  54.72   1.89
+KITE   14 (9, 5)   3.21  24.44  33.33  42.22  26.67  11.11  20.00  20.00  17.78  24.44  22.22  20.00   3.00 150.00  51.11  31.11   0.00   0.00
+VRTUS  11 (7, 4)   7.45  28.05  24.39  47.56  32.93  14.63   9.76  13.41  15.85  13.41  43.90  17.07   3.23 224.00  20.73  30.49  31.71   8.54
+MZY    19 (12, 7)   2.63  26.00  42.00  32.00  20.00  10.00  10.00  26.00  34.00  14.00  16.00  18.00   3.49 271.00  56.00  24.00   0.00  14.00
+BONKZ  21 (13, 8)   4.86  35.29  34.31  30.39  37.25  26.47   9.80  17.65  23.53  15.69  29.41  29.41   1.43 198.00  54.90  16.67  18.63   2.94
+REEEE  13 (8, 5)   4.00  26.92  28.85  44.23  44.23  25.00  17.31  25.00   7.69  19.23  28.85  36.54   1.06 185.00  51.92  32.69   0.00  15.38
+HFANS  17 (10, 7)   6.47  27.27  30.91  41.82  27.27  19.09  15.45  19.09  23.64  20.00  25.45  22.73   2.42 143.00  30.00  41.82   6.36  10.91
+MACHX  14 (8, 6)   5.86  20.73  23.17  56.10  31.71   9.76  17.07  12.20  24.39  24.39  28.05  19.51   1.84 146.00  20.73  39.02  17.07  19.51
+KSC    11 (6, 5)   5.73  33.33  23.81  42.86  26.98  22.22   6.35   7.94  19.05   7.94  34.92  26.98   2.38 157.00  46.03  34.92  17.46   1.59
+EPOXY  17 (9, 8)   4.82  36.59  41.46  21.95  39.02  19.51  14.63  17.07  18.29  19.51  31.71  31.71   1.74 192.00  42.68  36.59  13.41   2.44
+KITED  14 (7, 7)   4.50  11.11  23.81  65.08  28.57   4.76  22.22  14.29  20.63  28.57  23.81  23.81   2.97 223.00   7.94  26.98  12.70  47.62
+PN     7 (3, 4)   2.00  35.71  14.29  50.00  21.43  14.29  14.29  14.29  35.71  14.29  14.29   7.14   3.83 221.50  64.29   7.14   7.14  21.43
+-BN-   14 (6, 8)   6.50  25.27  32.97  41.76  25.27  21.98  13.19  15.38  18.68  13.19  32.97   9.89   2.92 192.00  39.56  24.18  21.98   4.40
+SCCC2  7 (3, 4)   6.86  16.67  25.00  58.33  35.42   8.33  16.67  10.42  14.58  22.92  50.00  25.00   1.55 201.00   6.25  60.42  27.08   2.08
+BONKY  7 (3, 4)   5.14  33.33  30.56  36.11  27.78  16.67  16.67  19.44  11.11  16.67  27.78  13.89   1.91 139.00  50.00  19.44  16.67  13.89
+PFANS  12 (5, 7)   2.00  33.33  25.00  41.67  37.50  37.50  12.50  20.83   8.33  20.83  25.00  16.67   1.86 231.50  50.00  25.00  12.50  12.50
+5D     10 (3, 7)   3.70   5.41  51.35  43.24  40.54   2.70  10.81  16.22  32.43  16.22  16.22  37.84   1.39 218.00  24.32  21.62   0.00  51.35
+KSE    7 (2, 5)   2.86  15.00  35.00  50.00  25.00   0.00  30.00  10.00  25.00  30.00  35.00  10.00   2.32 308.00   0.00  75.00   0.00  25.00
+UYSC   7 (1, 6)   5.14  11.11  30.56  58.33  33.33   8.33  36.11  19.44   8.33  41.67  27.78  27.78   2.01 163.00  16.67  44.44   8.33  30.56
+MACH   7 (1, 6)   4.14  17.24  13.79  68.97  65.52  10.34  20.69   3.45  17.24  20.69  44.83  51.72   0.00 193.00   0.00  55.17  20.69  10.34
+RSR    7 (0, 7)   3.71  30.77  19.23  50.00  38.46  15.38  38.46   3.85  26.92  38.46  19.23  34.62   2.44 184.00  42.31  19.23  30.77   0.00
+NGA    7 (0, 7)   4.00   7.14  50.00  42.86  28.57   7.14  10.71  25.00  14.29  14.29  14.29  21.43   2.83 141.00  39.29  14.29   0.00  39.29
+['smokes per game', 'stacked %', 'screen %', 'selfish %', 'cap contest %', 'damage %', 'escape %', 'reposition %', 'pushing %', 'kiting %', 'stationary %', 'inside cap %', 'median km to cap', 'first smoke (s)', 'flank smoke lines %', 'cap sitters %', 'parked cruiser smoke %', 'moving exhaust %']
+feature means [('smokes per game', 4.6), ('stacked %', 25.0), ('screen %', 30.6), ('selfish %', 44.5), ('cap contest %', 32.8), ('damage %', 15.8), ('escape %', 16.8), ('reposition %', 15.9), ('pushing %', 20.1), ('kiting %', 20.5), ('stationary %', 27.8), ('inside cap %', 23.7), ('median km to cap', 2.2), ('first smoke (s)', 192.0), ('flank smoke lines %', 35.6), ('cap sitters %', 31.5), ('parked cruiser smoke %', 13.7), ('moving exhaust %', 14.2)]
+leaf order ['H-SR', 'RESIN', 'BONKZ', 'EPOXY', 'KITE', 'BONKY', 'HFANS', 'MACHX', 'VRTUS', '-BN-', 'KSC', 'REEEE', 'PFANS', 'HTDOG', 'SCCC2', 'MZY', 'PN', '5D', 'NGA', 'KITED', 'UYSC', 'KSE', 'RSR', 'MACH']
+3 {0: ['H-SR', 'RESIN', 'HTDOG', 'KITE', 'VRTUS', 'MZY', 'BONKZ', 'REEEE', 'HFANS', 'MACHX', 'KSC', 'EPOXY', 'PN', '-BN-', 'SCCC2', 'BONKY', 'PFANS', '5D', 'NGA'], 1: ['KITED', 'KSE', 'UYSC', 'RSR'], 2: ['MACH']}
+4 {0: ['H-SR', 'RESIN', 'HTDOG', 'KITE', 'VRTUS', 'MZY', 'BONKZ', 'REEEE', 'HFANS', 'MACHX', 'KSC', 'EPOXY', 'PN', '-BN-', 'SCCC2', 'BONKY', 'PFANS'], 1: ['KITED', 'KSE', 'UYSC', 'RSR'], 2: ['5D', 'NGA'], 3: ['MACH']}
+5 {0: ['H-SR', 'RESIN', 'HTDOG', 'KITE', 'VRTUS', 'MZY', 'BONKZ', 'REEEE', 'HFANS', 'MACHX', 'KSC', 'EPOXY', 'PN', '-BN-', 'SCCC2', 'BONKY', 'PFANS'], 1: ['KITED', 'KSE', 'UYSC'], 2: ['5D', 'NGA'], 3: ['MACH'], 4: ['RSR']}
+6 {0: ['H-SR', 'RESIN', 'HTDOG', 'KITE', 'VRTUS', 'BONKZ', 'REEEE', 'HFANS', 'MACHX', 'KSC', 'EPOXY', '-BN-', 'SCCC2', 'BONKY', 'PFANS'], 1: ['MZY', 'PN'], 2: ['KITED', 'KSE', 'UYSC'], 3: ['5D', 'NGA'], 4: ['MACH'], 5: ['RSR']}
+distance to H-SR [(0.9, 'RESIN'), (1.02, 'BONKZ'), (1.13, 'BONKY'), (1.2, 'EPOXY'), (1.26, 'HFANS'), (1.3, 'PFANS'), (1.32, 'KITE'), (1.38, 'REEEE'), (1.39, '-BN-'), (1.39, 'KSC'), (1.46, 'MZY'), (1.58, 'PN'), (1.63, 'NGA'), (1.68, 'MACHX'), (1.82, 'VRTUS'), (1.98, 'RSR'), (1.99, '5D'), (2.15, 'KITED'), (2.18, 'SCCC2'), (2.18, 'UYSC'), (2.25, 'HTDOG'), (2.45, 'KSE'), (2.61, 'MACH')]
+nearest to PN [(1.06, 'MZY'), (1.22, 'KITE'), (1.31, 'RESIN'), (1.32, '-BN-'), (1.37, 'BONKY'), (1.41, 'KSC')]
+H-SR z [('smokes per game', -0.0), ('stacked %', 2.3), ('screen %', 0.2), ('selfish %', -2.2), ('cap contest %', -0.2), ('damage %', 2.0), ('escape %', -1.1), ('reposition %', 2.0), ('pushing %', 0.8), ('kiting %', -1.0), ('stationary %', -1.9), ('inside cap %', -0.8), ('median km to cap', -0.8), ('first smoke (s)', -1.6), ('flank smoke lines %', 1.7), ('cap sitters %', -0.9), ('parked cruiser smoke %', -0.9), ('moving exhaust %', -0.9)]
+PN z [('smokes per game', -1.8), ('stacked %', 1.0), ('screen %', -1.8), ('selfish %', 0.5), ('cap contest %', -1.2), ('damage %', -0.2), ('escape %', -0.3), ('reposition %', -0.2), ('pushing %', 2.1), ('kiting %', -0.8), ('stationary %', -1.3), ('inside cap %', -1.7), ('median km to cap', 2.0), ('first smoke (s)', 0.7), ('flank smoke lines %', 1.4), ('cap sitters %', -1.6), ('parked cruiser smoke %', -0.5), ('moving exhaust %', 0.5)]
+typical gap 1.391539707583713
+nearest-3 to H-SR when dropping one feature (of 18): [('RESIN', 18), ('BONKZ', 18), ('BONKY', 18)]
+corr(win rate, distance to H-SR) -0.51 (-0.7801889799976728, -0.16621869198471684) n 23
+wrote clan-styles.json
+('Gearing', 'Des Moines') 54 17.2k clans 12 ci 11,296 to 23,258 * maps [('Hotspot', 19), ('Sleeping Giant', 15), ('Mountain Range', 8)]
+('Harugumo', 'Des Moines') 30 16.7k clans 8 ci 12,041 to 22,628 * maps [('Sleeping Giant', 15), ('Loop', 4), ('Mountain Range', 4)]
+('Harugumo', 'Worcester') 22 16.1k clans 7 ci 11,081 to 20,955 * maps [('Sleeping Giant', 9), ('Hotspot', 5), ('Loop', 3)]
+('Somers', 'Utrecht') 30 15.8k clans 7 ci 11,853 to 20,088 * maps [('Land of Fire', 7), ('Sleeping Giant', 7), ('Mountain Range', 6)]
+('Somers', 'Des Moines') 76 15.3k clans 15 ci 10,975 to 19,764 * maps [('Sleeping Giant', 24), ('Hotspot', 22), ('Loop', 11)]
+('Gearing', 'Brisbane') 51 15.2k clans 4 ci 5,276 to 17,634 * maps [('Hotspot', 15), ('Sleeping Giant', 10), ('Sea of Fortune', 10)]
+('Somers', 'Minotaur') 32 13.4k clans 8 ci 9,506 to 18,511 * maps [('Sleeping Giant', 10), ('Hotspot', 6), ('Okinawa', 5)]
+('Somers', 'Brisbane') 52 9.7k clans 9 ci 6,291 to 11,886 * maps [('Hotspot', 20), ('Sleeping Giant', 13), ('Mountain Range', 9)]
+map Sleeping Giant 24 conc on map 17.6k clans Counter({'MACHX': 8, 'HFANS': 5, 'RESIN': 4, 'REEEE': 2, 'PFANS': 2, 'H-SR': 2, 'KITED': 1}) cells [('E9', 2), ('E8', 2), ('H6', 2), ('E10', 2), ('E3', 1)] dist smoke-partner m 1310.7181500922438 how Counter({'inside': 21, 'behind': 3})
+bin n {'top': [26, 55, 66, 68, 67, 56, 32, 12], 'rest': [27, 116, 137, 121, 114, 88, 53, 19]}
+PN DD smokes el [157, 196, 206, 237, 258, 321, 412, 487, 560, 782] states Counter({'level': 5, 'behind by 50+': 4, 'ahead by 50+': 1}) conc 12.4k
+Sleeping Giant death cells [('F1', 3), ('G1', 3), ('F6', 2), ('E8', 2), ('F4', 1)] own half share of deaths 62.96296296296296 of smokes 74.78991596638656
+Okinawa death cells [('H4', 2), ('G2', 2), ('D1', 2), ('E3', 1), ('D6', 1)] own half share of deaths 46.666666666666664 of smokes 42.68292682926829
+Land of Fire death cells [('F3', 2), ('F6', 2), ('G5', 1), ('F5', 1), ('F9', 1)] own half share of deaths 81.25 of smokes 76.5625
+Sea of Fortune death cells [('F5', 3), ('F2', 2), ('G7', 1), ('G5', 1), ('C3', 1)] own half share of deaths 75.0 of smokes 73.5042735042735
+nearest-3 to H-SR when dropping one feature (of 18): [('RESIN', 18), ('BONKZ', 18), ('BONKY', 18)]
+corr -0.5096662581782803 (-0.7662464000100717, -0.17197128979497459)
+counter DD 133 matched 133 PN 2
+Land of Fire cells [('F5', 5), ('F3', 3), ('F6', 3), ('F8', 2)] own half 86.95652173913044 dist km 8.705981707170917
+Sea of Fortune cells [('G2', 3), ('F2', 2), ('F9', 2), ('E6', 1)] own half 80.0 dist km 9.491333477707231
+Hotspot cells [('F10', 5), ('F9', 3), ('F6', 3), ('G10', 3)] own half 80.76923076923077 dist km 9.304059002806854
+h2h counter out-damages answered % 37.59398496240601 ci (31.428571428571427, 43.67088607594937)
+top vs rest counter conc diff -170 to +8,676
+duplicate smoke ids [] []

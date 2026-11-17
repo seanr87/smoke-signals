@@ -1,0 +1,81 @@
+== A. radar pressed vs not, same setup: DD smokes with a radar ship inside (stack or screen)
+  radar run from inside: n=95 | cap taken (not ours at start) 52% of 67 | conc mean 19,662 med 15,301 | >=20k 40% | DD dmg mean 3,888 DD hit 62% DD sunk/100 2 | kills/100 9 deaths/100 12 | taken while radar-spotted mean 1,646 | enemy near cap change -0.01
+  radar ship inside, radar not run: n=292 | cap taken (not ours at start) 45% of 202 | conc mean 16,400 med 11,514 | >=20k 32% | DD dmg mean 1,951 DD hit 36% DD sunk/100 3 | kills/100 13 deaths/100 13 | taken while radar-spotted mean 741 | enemy near cap change +0.02
+    run, 0 spotted: n=30 | cap taken (not ours at start) 63% of 27 | conc mean 18,567 med 14,556 | >=20k 37% | DD dmg mean 3,172 DD hit 53% DD sunk/100 0 | kills/100 3 deaths/100 7 | taken while radar-spotted mean 2,612 | enemy near cap change +0.15
+    run, 1 spotted: n=34 | cap taken (not ours at start) 43% of 23 | conc mean 14,868 med 11,457 | >=20k 32% | DD dmg mean 4,573 DD hit 65% DD sunk/100 3 | kills/100 6 deaths/100 6 | taken while radar-spotted mean 192 | enemy near cap change -0.24
+    run, 2+ spotted: n=31 | cap taken (not ours at start) 47% of 17 | conc mean 25,979 med 20,414 | >=20k 52% | DD dmg mean 3,830 DD hit 68% DD sunk/100 3 | kills/100 19 deaths/100 23 | taken while radar-spotted mean 2,305 | enemy near cap change +0.08
+    run top: n=54 | cap taken (not ours at start) 50% of 36 | conc mean 17,976 med 13,718 | >=20k 39% | DD dmg mean 3,734 DD hit 65% DD sunk/100 2 | kills/100 7 deaths/100 4 | taken while radar-spotted mean 315 | enemy near cap change -0.02
+    not run top: n=130 | cap taken (not ours at start) 45% of 89 | conc mean 16,968 med 12,295 | >=20k 35% | DD dmg mean 2,023 DD hit 35% DD sunk/100 3 | kills/100 18 deaths/100 9 | taken while radar-spotted mean 193 | enemy near cap change -0.05
+    run rest: n=41 | cap taken (not ours at start) 55% of 31 | conc mean 21,882 med 18,896 | >=20k 41% | DD dmg mean 4,090 DD hit 59% DD sunk/100 2 | kills/100 12 deaths/100 22 | taken while radar-spotted mean 3,398 | enemy near cap change -0.00
+    not run rest: n=162 | cap taken (not ours at start) 44% of 113 | conc mean 15,943 med 10,964 | >=20k 29% | DD dmg mean 1,893 DD hit 37% DD sunk/100 4 | kills/100 10 deaths/100 16 | taken while radar-spotted mean 1,180 | enemy near cap change +0.08
+   run minus not run, conc: +3,262 CI -648 to +7,816
+   run minus not run, DD dmg: +1,937 CI +761 to +2,980 *
+   run minus not run, DD hit pts: +26 CI +17 to +34 *
+   run minus not run, cap taken pts (takeable): +8 CI -7 to +21
+   run minus not run, kills/100: -4 CI -8 to +2
+   run minus not run, deaths/100: -1 CI -7 to +6
+   run minus not run, >=20k pts: +8 CI -3 to +18
+  share run: top 29.347826086956523 rest 20.19704433497537 CI +0 to +17 * n 184 203
+  spots per radar run smoke: top 1.1111111111111112 rest 1.0975609756097562 CI -0.46 to +0.34
+  enemies spotted per team-game: top 0.61 rest 0.25 CI +0.13 to +0.61 *
+  radar-run DD smokes per team-game: top 0.58 rest 0.21 CI +0.18 to +0.53 *
+
+== B. cap_control vs cap_contest, takeable caps only
+  cap_control: n=73 | cap taken (not ours at start) 58% of 50 | conc mean 19,121 med 11,728 | >=20k 36% | DD dmg mean 4,019 DD hit 63% DD sunk/100 1 | kills/100 8 deaths/100 8 | taken while radar-spotted mean 1,242 | enemy near cap change +0.03
+  cap_contest: n=391 | cap taken (not ours at start) 42% of 212 | conc mean 8,431 med 1,980 | >=20k 15% | DD dmg mean 1,487 DD hit 36% DD sunk/100 3 | kills/100 10 deaths/100 10 | taken while radar-spotted mean 654 | enemy near cap change -0.00
+  cap_contest with radar ship inside (radar not at 90% or not run): n=106 | cap taken (not ours at start) 74% of 53 | conc mean 16,984 med 11,650 | >=20k 35% | DD dmg mean 1,533 DD hit 29% DD sunk/100 5 | kills/100 14 deaths/100 11 | taken while radar-spotted mean 915 | enemy near cap change -0.04
+  cap_contest no radar ship inside: n=285 | cap taken (not ours at start) 32% of 159 | conc mean 5,250 med 792 | >=20k 7% | DD dmg mean 1,470 DD hit 39% DD sunk/100 3 | kills/100 9 deaths/100 10 | taken while radar-spotted mean 556 | enemy near cap change +0.01
+  cap taken diff (takeable): 15.547169811320757 +0 to +30 *
+  cc top: n=40 | cap taken (not ours at start) 58% of 24 | conc mean 17,751 med 13,718 | >=20k 35% | DD dmg mean 3,983 DD hit 65% DD sunk/100 2 | kills/100 8 deaths/100 5 | taken while radar-spotted mean 426 | enemy near cap change -0.03
+  cc rest: n=33 | cap taken (not ours at start) 58% of 26 | conc mean 20,783 med 11,525 | >=20k 36% | DD dmg mean 4,062 DD hit 61% DD sunk/100 0 | kills/100 9 deaths/100 12 | taken while radar-spotted mean 2,231 | enemy near cap change +0.11
+  cc conc top-rest CI -13,074 to +4,675  cap taken top-rest -33 to +30
+  radar_trap: n=27 | cap taken (not ours at start) 20% of 20 | conc mean 19,953 med 11,104 | >=20k 41% | DD dmg mean 3,707 DD hit 63% DD sunk/100 4 | kills/100 11 deaths/100 11 | taken while radar-spotted mean 185 | enemy near cap change -0.15
+  trap inside cap? Counter({False: 25, True: 2}) edge med m 6187.48 cc edge med 715.09
+  trap coverage_pct [0, 0, 0, 0, 1, 8, 11, 16, 18, 21, 26, 27, 33, 38, 40, 44, 47, 48, 55, 60, 75, 79, 82, 83, 94, 100, 100]
+  trap score_diff mean top/rest 222.0 -75.66666666666667 cc 6.876712328767123
+
+== C. per map x cap (DD plays)
+   ('Sleeping Giant', 'A', 10, 9, 6, '50%', '3/5', '23,855', '1.2', [('G1', 3), ('F2', 2), ('E1', 2)], [('Brisbane', 6), ('Worcester', 3)])
+   ('Sleeping Giant', 'B', 6, 2, 2, '17%', '1/5', '29,909', '1.2', [('F5', 2), ('G7', 1), ('H7', 1)], [('Gdańsk', 5), ('Des Moines', 1)])
+   ('Sleeping Giant', 'C', 13, 6, 6, '23%', '4/13', '15,439', '1.2', [('F8', 2), ('E10', 1), ('H10', 1)], [('Des Moines', 4), ('Brisbane', 3)])
+   ('Hotspot', 'A', 4, 4, 2, '0%', '3/3', '24,352', '1.2', [('D2', 1), ('E1', 1), ('F2', 1)], [('Brisbane', 1), ('Minotaur', 1)])
+   ('Hotspot', 'C', 9, 7, 7, '44%', '2/4', '10,912', '1.2', [('G5', 2), ('G7', 2), ('F6', 2)], [('Moskva', 4), ('Brisbane', 2)])
+   ('Hotspot', 'D', 10, 10, 4, '60%', '4/7', '22,067', '0.5', [('G10', 6), ('E10', 2), ('F9', 1)], [('Brisbane', 5), ('Des Moines', 3)])
+   ('Mountain Range', 'A', 4, 0, 3, '25%', '1/3', '23,558', '2.2', [('E3', 2), ('F1', 1), ('F3', 1)], [('Des Moines', 3), ('Minotaur', 1)])
+   ('Mountain Range', 'B', 10, 9, 7, '40%', '1/6', '11,144', '1.0', [('G5', 3), ('F4', 3), ('F5', 1)], [('Brisbane', 3), ('Gdańsk', 3)])
+   ('Mountain Range', 'C', 4, 3, 3, '75%', '3/3', '14,228', '1.2', [('F8', 1), ('E10', 1), ('G7', 1)], [('Minotaur', 3), ('Gdańsk', 1)])
+   ('Land of Fire', 'A', 5, 4, 2, '40%', '2/4', '11,442', '1.4', [('E2', 1), ('F3', 1), ('G3', 1)], [('Des Moines', 2), ('Brisbane', 1)])
+   ('Okinawa', 'C', 4, 1, 0, '0%', '0/0', '27,404', '2.2', [('F3', 2), ('F4', 1), ('H4', 1)], [('Des Moines', 2), ('Minotaur', 2)])
+   ('Sea of Fortune', 'D', 4, 3, 3, '50%', '1/4', '25,755', '1.0', [('F9', 3), ('G7', 1)], [('Brisbane', 2), ('Des Moines', 1)])
+
+== D. top6 per clan: plays, per game, cc, trap, radar ships
+  BONKY: games 7 plays 5 per game 0.71 cc 5 trap 0 | CA plays 1 | ships [('Brisbane', 4), ('Des Moines', 1)] | maps [('Sleeping Giant', 3), ('Hotspot', 1), ('Sea of Fortune', 1)]
+  RESIN*: games 24 plays 17 per game 0.71 cc 10 trap 7 | CA plays 1 | ships [('Gdańsk', 5), ('Des Moines', 4), ('Moskva', 4)] | maps [('Mountain Range', 6), ('Hotspot', 6), ('Loop', 3)]
+  H-SR*: games 22 plays 14 per game 0.64 cc 12 trap 2 | CA plays 0 | ships [('Brisbane', 7), ('Minotaur', 2), ('Worcester', 2)] | maps [('Sleeping Giant', 6), ('Mountain Range', 3), ('Hotspot', 3)]
+  HFANS: games 17 plays 9 per game 0.53 cc 7 trap 2 | CA plays 0 | ships [('Des Moines', 4), ('Brisbane', 2), ('Minotaur', 1)] | maps [('Sleeping Giant', 3), ('Hotspot', 3), ('Mountain Range', 2)]
+  BONKZ*: games 21 plays 10 per game 0.48 cc 7 trap 3 | CA plays 6 | ships [('Brisbane', 8), ('Gdańsk', 1), ('Worcester', 1)] | maps [('Sleeping Giant', 4), ('Hotspot', 2), ('Loop', 1)]
+  KSC: games 11 plays 4 per game 0.36 cc 2 trap 2 | CA plays 0 | ships [('Gdańsk', 2), ('Minotaur', 1), ('Des Moines', 1)] | maps [('Sleeping Giant', 2), ('Hotspot', 2)]
+  VRTUS*: games 11 plays 4 per game 0.36 cc 3 trap 1 | CA plays 1 | ships [('Brisbane', 2), ('Svea', 2)] | maps [('Sea of Fortune', 2), ('Hotspot', 1), ('Land of Fire', 1)]
+  MACHX: games 14 plays 5 per game 0.36 cc 4 trap 1 | CA plays 0 | ships [('Brisbane', 2), ('Des Moines', 2), ('Minotaur', 1)] | maps [('Land of Fire', 2), ('Okinawa', 1), ('Loop', 1)]
+  HTDOG*: games 18 plays 6 per game 0.33 cc 5 trap 1 | CA plays 5 | ships [('Brisbane', 2), ('Des Moines', 2), ('Gdańsk', 2)] | maps [('Hotspot', 2), ('Land of Fire', 2), ('Sleeping Giant', 2)]
+  REEEE: games 13 plays 4 per game 0.31 cc 2 trap 2 | CA plays 0 | ships [('Minotaur', 2), ('Des Moines', 1), ('Stalingrad', 1)] | maps [('Okinawa', 2), ('Sleeping Giant', 1), ('Hotspot', 1)]
+  PN: games 7 plays 2 per game 0.29 cc 1 trap 1 | CA plays 0 | ships [('Salem', 1), ('Des Moines', 1)] | maps [('Land of Fire', 1), ('Mountain Range', 1)]
+  KITE*: games 14 plays 4 per game 0.29 cc 3 trap 1 | CA plays 0 | ships [('Minotaur', 3), ('Des Moines', 1)] | maps [('Mountain Range', 4)]
+
+== E. radar ship distance from smoke centre / cap, and how far inside its own half
+  radar ship to cap centre km: median 6.472321206849141 q25/q75 4.395010235333304 6.8429151610692625
+  cc inside cap 35.61643835616438 cap_contest inside 67.51918158567774
+  radar range by ship {('Moskva', 12000.0): 178, ('Gdańsk', 9000.0): 66, ('San Martín', 9000.0): 111, ('Salem', 8499.899): 68, ('Stalingrad', 12000.0): 86, ('Brisbane', 12000.0): 60, ('Ragnar', 7500.0): 32, ('Des Moines', 9999.899): 149, ('Yueyang', 7500.0): 35, ('Petropavlovsk', 12000.0): 113, ('Småland', 7500.0): 39, ('Svea', 9000.0): 65, ('Thor', 9999.899): 30, ('Minotaur', 9999.899): 26, ('Puerto Rico', 9999.899): 12, ('Worcester', 9000.0): 18, ('Rhode Island', 9000.0): 2, ('Plymouth', 9000.0): 1}
+
+== F. timing
+  cc: n=73 early 42% median 5:26 | bins 0-2:8 2-5:23 5-10:31 10+:11
+  trap: n=27 early 19% median 10:06 | bins 0-2:0 2-5:5 5-10:7 10+:15
+  all DD: n=1074 early 28% median 7:07 | bins 0-2:53 2-5:249 5-10:495 10+:277
+  cc early minus other DD early 15.392826351730463 +4 to +25 *
+  early stack overall CI exact (0.0, 31.14973262032086)
+  early stack with radar ship: n=97 | cap taken (not ours at start) 53% of 90 | conc mean 15,591 med 8,749 | >=20k 32% | DD dmg mean 2,555 DD hit 46% DD sunk/100 0 | kills/100 5 deaths/100 6 | taken while radar-spotted mean 885 | enemy near cap change +0.16
+  early stack without: n=44 | cap taken (not ours at start) 33% of 39 | conc mean 13,775 med 4,368 | >=20k 23% | DD dmg mean 3,199 DD hit 34% DD sunk/100 0 | kills/100 0 deaths/100 14 | taken while radar-spotted mean 465 | enemy near cap change +0.05
+  early stack cap taken diff radar vs none 20.0 +2 to +38 *
+  CA: Svea smokes total 199 by grp Counter({'rest': 106, 'top': 93}) plays Counter({'top': 13, 'rest': 9}) CA plays ncap [(('Mountain Range', 'B'), 4), (('Land of Fire', 'B'), 3), (('Mountain Range', 'C'), 3), (('Okinawa', 'D'), 2), (('Sleeping Giant', 'A'), 2)]
+  CA radar plays: n=22 | cap taken (not ours at start) 25% of 12 | conc mean 10,950 med 9,642 | >=20k 18% | DD dmg mean 1,678 DD hit 36% DD sunk/100 5 | kills/100 9 deaths/100 9 | taken while radar-spotted mean 1,301 | enemy near cap change -0.07
+  Svea smokes no play: n=177 | cap taken (not ours at start) 16% of 125 | conc mean 6,979 med 4,048 | >=20k 8% | DD dmg mean 1,028 DD hit 26% DD sunk/100 1 | kills/100 3 deaths/100 5 | taken while radar-spotted mean 437 | enemy near cap change +0.02

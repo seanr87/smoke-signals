@@ -23,7 +23,7 @@ def two(a, b, fn, reps=1000):
         o.append(fn([x for c in random.choices(ka, k=len(ka)) for x in ca[c]]) - fn([x for c in random.choices(kb, k=len(kb)) for x in cb[c]]))
     o.sort(); return o[int(.025 * len(o))], o[int(.975 * len(o)) - 1]
 for nm, fn, f in (('conc per smoke', st_conc, '{:+,.0f}'), ('deaths per 100', st_deaths, '{:+.1f}'), ('median edge m', st_edge, '{:+,.0f}'), ('% inside', st_inside, '{:+.0f}'), ('% stationary', FKEY['stat'][2], '{:+.0f}'), ('% stacked', FKEY['stacked'][2], '{:+.0f}'), ('% selfish', FKEY['selfish'][2], '{:+.0f}')):
-    P(f'flank lines (n={len(A)}) vs cap sitters (n={len(B)}): {nm}: {fn(A):,.1f} vs {fn(B):,.1f}, diff {f.format(fn(A)-fn(B))} [{ci(two(A, B, fn), f)}]')
+    P(f'flank smoke lines (n={len(A)}) vs cap sitters (n={len(B)}): {nm}: {fn(A):,.1f} vs {fn(B):,.1f}, diff {f.format(fn(A)-fn(B))} [{ci(two(A, B, fn), f)}]')
 # Gdansk vs the other long 20 s smokes and vs Daring
 for nm, fn, f in (('% stationary', FKEY['stat'][2], '{:+.0f}'), ('conc per smoke', st_conc, '{:+,.0f}'), ('% stacked', FKEY['stacked'][2], '{:+.0f}')):
     P(f'Gdańsk vs Harugumo (same 20 s smoke): {nm}: {fn(BY["Gdańsk"]):,.1f} vs {fn(BY["Harugumo"]):,.1f}, diff [{ci(two(BY["Gdańsk"], BY["Harugumo"], fn), f)}]')

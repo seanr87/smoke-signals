@@ -3,6 +3,7 @@ import sys, os; sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspa
 from common import *
 S, G = load()
 OUT = os.path.dirname(os.path.abspath(__file__))
+OLDDEF = os.environ.get('M3_OLDDEF') == '1'
 MAPORDER = ['Sleeping Giant', 'Hotspot', 'Mountain Range', 'Land of Fire', 'Loop', 'Okinawa', 'Sea of Fortune']
 NAME2 = {}
 for g in G.values():
@@ -21,8 +22,10 @@ def radar_ship(s):
     return dict(player=name, ship=sm['ship'].replace('\xa0', ' '), cls=sm['ship_class'].lower(), is_smoker=sm['role'] == 'smoker', how=sm['how'], nx=nx, nz=nz)
 
 for s in S:
-    s['cc'] = 'cap_control' in s['tags']
-    s['rt'] = 'radar_trap' in s['tags']
+    if OLDDEF:  # round 3 definition: any radar tag
+        s['cc'] = 'cap_control' in s['tags']; s['rt'] = 'radar_trap' in s['tags']
+    else:  # round 4: primary purpose is a radar play (common.py radar_play)
+        s['cc'] = s['pp'] == 'cap_control'; s['rt'] = s['pp'] == 'radar_trap'
     s['play'] = 'cap_control' if s['cc'] else 'radar_trap' if s['rt'] else None
     s['rship'] = radar_ship(s) if (s['cc'] or s['rt'] or s['off_radar']) else None
     s['spots'] = (s['off_radar'] or {}).get('enemies_spotted', 0)
@@ -31,6 +34,7 @@ for s in S:
     s['stack'] = s['coverage'] == 'stacked'
     s['radar_in'] = any(p['radar'] and p['how'] == 'inside' for p in s['partners'])
     s['radar_any'] = any(p['radar'] for p in s['partners'])
+    if not OLDDEF: assert (s['play'] is not None) == s['radar_play']
 DD = [s for s in S if s['cls'] == 'destroyer']
 CA = [s for s in S if s['cls'] == 'cruiser']
 TG = team_games(G)

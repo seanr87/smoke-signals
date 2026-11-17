@@ -2,6 +2,10 @@ import sys, os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from m3lib import *
 NG = C(g['map'] for g in G.values())
 ddp = [s for s in DD if s['play']]
+cap_ = [s for s in CA if s['play']]
+cnt = C(s['team'] for s in ddp)
+ptg = lambda m: sum(1 for s in ddp if s['map'] == m) / (2 * NG[m])
+lo_, hi_ = boot_rate_diff(cnt)
 cap_xy = lambda m: {c['cap']: (c['x'], c['z']) for c in map_caps(G, m)}
 
 def diamond(p, x, z, r, fill, opacity=0.8, stroke=None):
@@ -19,7 +23,7 @@ def note(fig, x, y, lines, size=11.5):
     for i, l in enumerate(lines): fig.add(T(x, y + i * 17, l, size=size, fill=INK if l.startswith('#') else MUTED, anchor='start', weight='600' if l.startswith('#') else '400').replace('>#', '>'))
 
 # ---------- Fig 1: where radar-smoke plays happen, all maps
-fig = Fig(1220, 800, 'Where radar is run from inside a smoke (100 destroyer smokes, 22 cruiser smokes)',
+fig = Fig(1220, 800, f'Where radar is run from inside a smoke ({len(ddp)} destroyer smokes, {len(cap_)} cruiser smokes; primary purpose is a radar play)',
           'Team-normalized: own spawn at the bottom (Okinawa: bottom left). Marker = centre of the laid smoke. n under a cap letter = destroyer plays tied to that cap (shown when 8 or more).')
 for i, m in enumerate(MAPORDER):
     ss = [s for s in ddp if s['map'] == m]
@@ -39,9 +43,9 @@ key_circle(fig, kx + 8, ky + 30, 5, ORANGE, 'Rest, cap control')
 key_diamond(fig, kx + 8, ky + 50, 6, BLUE, 'Top 6, radar trap (radar spotted an enemy)')
 key_diamond(fig, kx + 8, ky + 70, 6, ORANGE, 'Rest, radar trap')
 fig.add(f'<rect x="{kx+4}" y="{ky+86}" width="8" height="8" fill="{BG}" stroke="{VIOLET}" stroke-width="1.6"/>' + T(kx + 22, ky + 94, 'Cruiser smoke (Svea radar from its own smoke)', size=11.5, fill=INK, anchor='start'))
-note(fig, kx, ky + 130, ['#Per team-game (destroyer smokes)', 'Top 6: 0.50 plays   Rest: 0.19',
-                         'Sleeping Giant 0.45, Mountain Range 0.43,', 'Hotspot 0.40; other maps 0.12 to 0.19.', '* = small n (8 to 14).',
-                         'Mountain Range cap A (10 km cap):', '4 plays, all radar traps.'])
+note(fig, kx, ky + 130, ['#Per team-game (destroyer smokes)', f'Top 6: {rate(cnt, "top"):.2f} plays   Rest: {rate(cnt, "rest"):.2f}', f'(difference interval {lo_:+.2f} to {hi_:+.2f})',
+                         f'Sleeping Giant {ptg("Sleeping Giant"):.2f}, Hotspot {ptg("Hotspot"):.2f},', f'Mountain Range {ptg("Mountain Range"):.2f}; other maps {min(ptg(m) for m in MAPORDER[3:]):.2f} to {max(ptg(m) for m in MAPORDER[3:]):.2f}.', '* = small n (8 to 14).',
+                         'Mountain Range cap A (10 km cap):', f'{sum(s["mrA"] for s in ddp)} play, a radar trap.'])
 fig.save(os.path.join(OUT, 'fig1-radar-plays-where'))
 
 # ---------- Fig 2: pay-off and radar ship position on the three busiest maps
@@ -86,33 +90,37 @@ fig.add(T(x, 528, 'enemies lit', size=11, fill=INK, anchor='start'))
 fig.save(os.path.join(OUT, 'fig2-radar-plays-payoff'))
 
 # ---------- Fig 3: early stacks with and without a radar ship
-es = [s for s in DD if s['early'] and s['stack']]
-fig = Fig(1220, 810, 'Early stacked destroyer smokes (first 5 minutes): is a radar ship inside?',
-          'Team-normalized: own spawn at the bottom (Okinawa: bottom left). Filled = a radar ship of the team is inside the smoke, hollow = none. Blue = Top 6, orange = Rest.')
+es = [s for s in DD if s['early']]
+RK = 'radar_ca_inside'
+fsh = lambda x: pct(x, lambda s: s[RK])
+lo3, hi3 = boot_diff(es, fsh)
+fig = Fig(1220, 810, 'Early destroyer smokes (first 5 minutes, all destroyers): is a radar cruiser inside the smoke?',
+          'Team-normalized: own spawn at the bottom (Okinawa: bottom left). Filled = a radar cruiser of the team is inside the smoke, hollow = none. Blue = Top 6, orange = Rest.')
 rows = []
 for i, m in enumerate(MAPORDER):
     ss = [s for s in es if s['map'] == m]
     a = [s for s in ss if s['grp'] == 'top']; b = [s for s in ss if s['grp'] == 'rest']
-    p = Panel(m, 40 + (i % 4) * 295, 120 + (i // 4) * 345, 260, G, title=f'{m}: {len(ss)} early stacks')
+    p = Panel(m, 40 + (i % 4) * 295, 120 + (i // 4) * 345, 260, G, title=f'{m}: {len(ss)} early smokes')
     for s in ss:
-        if not s['radar_in']: p.ring(s['nx'], s['nz'], 4.2, stroke=GROUP_COLOR[s['grp']], width=1.8)
+        if not s[RK]: p.ring(s['nx'], s['nz'], 4.2, stroke=GROUP_COLOR[s['grp']], width=1.8)
     for s in ss:
-        if s['radar_in']: p.dot(s['nx'], s['nz'], r=4.6, fill=GROUP_COLOR[s['grp']], opacity=0.72, stroke=BG)
+        if s[RK]: p.dot(s['nx'], s['nz'], r=4.6, fill=GROUP_COLOR[s['grp']], opacity=0.72, stroke=BG)
     fig.add(p)
-    cap = f'Top 6: {sum(s["radar_in"] for s in a)} of {len(a)}{"*" if len(a) < 15 else ""} with radar   Rest: {sum(s["radar_in"] for s in b)} of {len(b)}{"*" if len(b) < 15 else ""}'
+    cap = f'Top 6: {sum(s[RK] for s in a)} of {len(a)}{"*" if len(a) < 15 else ""} with radar cruiser   Rest: {sum(s[RK] for s in b)} of {len(b)}{"*" if len(b) < 15 else ""}'
     fig.add(T(40 + (i % 4) * 295, 120 + (i // 4) * 345 + 260 + 28, cap, size=10.5, fill=INK, anchor='start'))
-    rows.append((m, {'top': pct(a, lambda s: s['radar_in']) if len(a) >= 8 else None, 'rest': pct(b, lambda s: s['radar_in']) if len(b) >= 8 else None}, None))
+    rows.append((m, {'top': pct(a, lambda s: s[RK]) if len(a) >= 8 else None, 'rest': pct(b, lambda s: s[RK]) if len(b) >= 8 else None}, None))
 kx, ky = 40 + 3 * 295, 120 + 345 - 20
 a = [s for s in es if s['grp'] == 'top']; b = [s for s in es if s['grp'] == 'rest']
-fig.add(T(kx, ky, 'Share with a radar ship inside (%)', size=12.5, fill=INK, anchor='start', weight='600'))
-y = bar_rows(fig, kx - 10, ky + 10, 290, [('All maps', {'top': pct(a, lambda s: s['radar_in']), 'rest': pct(b, lambda s: s['radar_in'])}, None)] + rows, vmax=100, label_w=100, row_h=26)
-note(fig, kx, y + 18, ['Top 6 77% of 56, Rest 62% of 85', '(difference +15 pts, 95% interval +1 to +32).', 'Bars are hidden under 8 smokes;', '* in the captions = under 15 smokes (small n).'], size=10.5)
+fig.add(T(kx, ky, 'Share with a radar cruiser inside (%)', size=12.5, fill=INK, anchor='start', weight='600'))
+y = bar_rows(fig, kx - 10, ky + 10, 290, [('All maps', {'top': pct(a, lambda s: s[RK]), 'rest': pct(b, lambda s: s[RK])}, None)] + rows, vmax=100, label_w=100, row_h=26)
+note(fig, kx, y + 18, [f'Top 6 {fsh(a):.0f}% of {len(a)}, Rest {fsh(b):.0f}% of {len(b)}', f'(difference {fsh(a)-fsh(b):+.0f} pts, 95% interval {lo3:+.0f} to {hi3:+.0f}).', 'Bars are hidden under 8 smokes;', '* in the captions = under 15 smokes (small n).'], size=10.5)
 fig.legend(kx, y + 100, [('Top 6', BLUE), ('Rest', ORANGE)])
 fig.save(os.path.join(OUT, 'fig3-early-stacks-radar'))
 
 # ---------- Fig 4: who and when
-fig = Fig(1100, 560, 'Who runs radar from smoke, and when', 'Destroyer smokes with a radar play (cap control or radar trap). Clans with 7 or more games. Blue = Top 6, orange = Rest.')
-cnt = C(s['team'] for s in ddp)
+RS = C(s['rship']['ship'] for s in ddp); NCR = sum(s['rship']['cls'] == 'cruiser' for s in ddp); NB3 = RS['Brisbane'] + RS['Des Moines'] + RS['Minotaur']
+print('radar ships', RS, 'cruisers', NCR, 'DD ships', C(s['rship']['ship'] for s in ddp if s['rship']['cls'] == 'destroyer'), 'CA play ships', C(s['rship']['ship'] for s in cap_))
+fig = Fig(1100, 560, 'Who runs radar from smoke, and when', 'Destroyer smokes whose primary purpose is a radar play (cap control or radar trap). Clans with 7 or more games. Blue = Top 6, orange = Rest.')
 cl = sorted([t for t in GAMES if GAMES[t] >= 7], key=lambda t: -cnt[t] / GAMES[t])
 fig.add(T(40, 86, 'Radar plays per game, by clan (right: plays / games)', size=12.5, fill=INK, anchor='start', weight='600'))
 bar_rows(fig, 40, 96, 470, [(t, {'top' if t in TOP else 'rest': cnt[t] / GAMES[t]}, f'{cnt[t]} / {GAMES[t]}') for t in cl], fmt='{:.2f}', row_h=18.5, label_w=70)
@@ -134,7 +142,7 @@ x = 580
 for j, (lo, hi, bl) in enumerate(bins):
     col = SEQ[1 + j * 2 - (1 if j == 3 else 0)]
     fig.add(f'<rect x="{x}" y="{y+2}" width="12" height="12" rx="2" fill="{col}"/>' + T(x + 17, y + 12, bl, size=11.5, fill=INK, anchor='start')); x += 110
-note(fig, 580, y + 50, ['#Which ship carries the radar (100 destroyer smokes)', 'Brisbane 28, Des Moines 23, Minotaur 16, other cruisers 17:', 'a cruiser sitting in a destroyer\'s smoke in 84 of 100.',
-                        'Gdansk 16: a radar destroyer using its own smoke.', 'Cruiser smokes (22 plays): all Svea, radar from its own smoke.'])
+note(fig, 580, y + 50, [f'#Which ship carries the radar ({len(ddp)} destroyer smokes)', f'Brisbane {RS["Brisbane"]}, Des Moines {RS["Des Moines"]}, Minotaur {RS["Minotaur"]}, other cruisers {NCR - NB3}:', 'a cruiser sitting in a destroyer\'s smoke in %d of %d.' % (NCR, len(ddp)),
+                        'Gdansk %d: a radar destroyer using its own smoke.' % (len(ddp) - NCR), 'Cruiser smokes (%d plays): all Svea, radar from its own smoke.' % len(cap_)])
 fig.save(os.path.join(OUT, 'fig4-who-when'))
 print('ok')

@@ -36,22 +36,26 @@ if '1' in which:
 if '2' in which:
     print('=== 2 smoke type lens (all classes)')
     ntg = len(TG)
-    for kind in ('long DD', 'short DD', 'cruiser', 'exhaust'):
-        ss = [s for s in S if s['kind'] == kind]
+    print('other (left out)', sum(1 for s in S if s['habit'] == 'other'), C(s['ship'] for s in S if s['habit'] == 'other').most_common())
+    def use(clans, hb):
+        return sum(1 for c in clans for s in S if s['team'] == c and s['habit'] == hb) / sum(NG[c] for c in clans)
+    for kind in HABITS:
+        ss = [s for s in S if s['habit'] == kind]
+        print(kind, 'use interval', ci(boot_clans(lambda cl: use(cl, kind), groups=False), '{:.2f}'), 'clans', len({s['team'] for s in ss}), 'classes', dict(C(s['cls'] for s in ss)))
         own = lambda ss: (100 * sum(x['conc'] for s in ss for x in s['shooters'] if x['is_smoker']) / max(1, sum(x['conc'] for s in ss for x in s['shooters'])))
         tgs = len({(s['game'], s['team']) for s in ss})
         print(kind, 'n', len(ss), 'per team-game', f1(len(ss) / ntg, '{:.2f}'), 'team-games using', tgs, 'per using tg', f1(len(ss) / tgs, '{:.2f}'),
               'conc', k(conc_per(ss)), ci(boot_stat(ss, conc_per), '{:,.0f}'), 'median', k(med(s['conc'] for s in ss)), 'zero%', f1(pct(ss, lambda s: s['conc'] == 0)),
               'd100', f1(d100(ss)), ci(boot_stat(ss, d100), '{:.1f}'), 'own', f1(own(ss)), ci(boot_stat(ss, own), '{:.0f}'),
               'selfish%', f1(pct(ss, lambda s: s['coverage'] == 'selfish')), 'radius', med(s['radius_m'] for s in ss), 'life', med(s['life_s'] for s in ss), 'emis', med(s['emission_s'] for s in ss))
-    for a, b in (('long DD', 'short DD'),):
-        ss = [s for s in S if s['kind'] in (a, b)]
+    for a, b in (('flank smoke lines', 'cap sitters'), ('flank smoke lines', 'parked cruiser smoke'), ('flank smoke lines', 'moving exhaust')):
+        ss = [s for s in S if s['habit'] in (a, b)]
         def diff(ss, f):
-            x, y = f([s for s in ss if s['kind'] == a]), f([s for s in ss if s['kind'] == b])
+            x, y = f([s for s in ss if s['habit'] == a]), f([s for s in ss if s['habit'] == b])
             return None if x is None or y is None or not x and x != 0 else x - y
-        print('long-short conc', ci(boot_stat(ss, lambda ss: diff(ss, lambda v: conc_per(v) if v else None)), '{:+,.0f}'), 'd100', ci(boot_stat(ss, lambda ss: diff(ss, lambda v: d100(v) if v else None)), '{:+.1f}'))
+        print(a, 'minus', b, 'conc', ci(boot_stat(ss, lambda ss: diff(ss, lambda v: conc_per(v) if v else None)), '{:+,.0f}'), 'd100', ci(boot_stat(ss, lambda ss: diff(ss, lambda v: d100(v) if v else None)), '{:+.1f}'))
     for ship, ss in sorted(by(S, 'ship').items(), key=lambda a: -len(a[1])):
-        if len(ss) >= 15: print('  ', ship, ss[0]['kind'], len(ss), k(conc_per(ss)), 'd100', f1(d100(ss)), 'emis', ss[0]['emission_s'], 'life', ss[0]['life_s'], 'r', ss[0]['radius_m'])
+        if len(ss) >= 15: print('  ', ship, ss[0]['habit'], len(ss), k(conc_per(ss)), 'd100', f1(d100(ss)), 'emis', ss[0]['emission_s'], 'life', ss[0]['life_s'], 'r', ss[0]['radius_m'])
 
 if '3' in which:
     print('=== 3 timing (DD)')
@@ -112,52 +116,52 @@ if '4' in which:
     print('deaths by map', {m: (len(v), sum(s['deaths'] for s in v), f1(d100(v))) for m, v in by(DD, 'map').items()})
     print('smoker hp at act: died', med(F(s['r']['smoker_hp_pct_act']) for s in DD if F(s['r']['smoker_hp_pct_act']) is not None and any(d['player'] == s['player'] for d in s['j']['smoke_deaths'])), 'lived', med(F(s['r']['smoker_hp_pct_act']) for s in DD if F(s['r']['smoker_hp_pct_act']) is not None and not s['deaths']))
 
+    print('--- Somers vs Gearing (DD smokes)')
+    so, ge = [s for s in DD if s['ship'] == 'Somers'], [s for s in DD if s['ship'] == 'Gearing']
+    sgd = lambda ss, fn: (fn([s for s in ss if s['ship'] == 'Somers']) - fn([s for s in ss if s['ship'] == 'Gearing'])) if any(s['ship'] == 'Somers' for s in ss) and any(s['ship'] == 'Gearing' for s in ss) else None
+    both = so + ge
+    print('Somers n', len(so), 'clans', len({s['team'] for s in so}), 'conc', k(conc_per(so)), ci(boot_stat(so, conc_per), '{:,.0f}'), 'd100', f1(d100(so)), ci(boot_stat(so, d100), '{:.1f}'))
+    print('Gearing n', len(ge), 'clans', len({s['team'] for s in ge}), 'conc', k(conc_per(ge)), ci(boot_stat(ge, conc_per), '{:,.0f}'), 'd100', f1(d100(ge)), ci(boot_stat(ge, d100), '{:.1f}'))
+    print('Somers - Gearing: conc', sg(conc_per(so) - conc_per(ge)), ci(boot_stat(both, lambda ss: sgd(ss, conc_per))), 'd100', f1(d100(so) - d100(ge), '{:+.1f}'), ci(boot_stat(both, lambda ss: sgd(ss, d100)), '{:+.1f}'))
+    print('clans using both', len({s['team'] for s in so} & {s['team'] for s in ge}), 'top share Somers', f1(pct(so, lambda s: s['grp'] == 'top')), 'Gearing', f1(pct(ge, lambda s: s['grp'] == 'top')),
+          'stacked Somers', f1(pct(so, lambda s: s['coverage'] == 'stacked')), 'Gearing', f1(pct(ge, lambda s: s['coverage'] == 'stacked')), 'radar caught Somers', f1(pct(so, lambda s: s['radar_on_us'] > 0)), 'Gearing', f1(pct(ge, lambda s: s['radar_on_us'] > 0)))
+    for hb in ('flank smoke lines', 'cap sitters'):
+        ss = [s for s in DD if s['habit'] == hb]
+        print(hb, 'n', len(ss), 'd100', f1(d100(ss)), ci(boot_stat(ss, d100), '{:.1f}'), 'smoker', f1(sd(ss)), 'partner', f1(pd(ss)), 'conc', k(conc_per(ss)))
+    fl = [s for s in DD if s['habit'] in ('flank smoke lines', 'cap sitters')]
+    hd = lambda ss: (d100([s for s in ss if s['habit'] == 'flank smoke lines']) - d100([s for s in ss if s['habit'] == 'cap sitters'])) if any(s['habit'] == 'cap sitters' for s in ss) and any(s['habit'] == 'flank smoke lines' for s in ss) else None
+    print('flank - cap sitters d100', ci(boot_stat(fl, hd), '{:+.1f}'), 'DD other', sum(1 for s in DD if s['habit'] == 'other'))
+
 if '6' in which:
-    print('=== 6 counter-smoke and chains (DD smokes; answered smoke can be any class)')
-    byid = {s['id']: s for s in S}
+    print('=== 6 counter-smoke and chains (DD smokes; answered smoke can be any class). Lookups match on game + id.')
+    gid = lambda s: (s['game'], s['id'])
+    byid = {gid(s): s for s in S}
+    ans_of = lambda s: byid.get((s['game'], s['counter_of'])) if s['counter_of'] else None
     cs = [s for s in DD if s['counter_of']]; non = [s for s in DD if not s['counter_of']]
-    print('counter n', len(cs), 'all classes', sum(1 for s in S if s['counter_of']), 'answered found', sum(1 for s in cs if s['counter_of'] in byid), 'answered class', C(byid[s['counter_of']]['cls'] for s in cs if s['counter_of'] in byid))
-    f = lambda ss: ('n', len(ss), 'conc', k(conc_per(ss)), 'd100', f1(d100(ss)), 'capwon', f1(pct(ss, lambda s: s['cap_won'])), 'capdef', f1(pct(ss, lambda s: s['cap_def'])), 'inside', f1(pct(ss, lambda s: s['inside'])), 'selfish', f1(pct(ss, lambda s: s['coverage'] == 'selfish')), 'el', med(s['el'] for s in ss), 'win', f1(pct(ss, lambda s: s['win'])))
+    print('counter n', len(cs), 'all classes', sum(1 for s in S if s['counter_of']), 'answered found', sum(1 for s in cs if ans_of(s)), 'enemy', sum(1 for s in cs if ans_of(s) and ans_of(s)['team'] != s['team']), 'answered class', C(ans_of(s)['cls'] for s in cs if ans_of(s)), 'PN', sum(1 for s in cs if s['is_pn']))
+    f = lambda ss: ('n', len(ss), 'conc', k(conc_per(ss)), 'd100', f1(d100(ss)), 'capwon', f1(pct(ss, lambda s: s['cap_won'])), 'inside', f1(pct(ss, lambda s: s['inside'])), 'selfish', f1(pct(ss, lambda s: s['coverage'] == 'selfish')), 'el', med(s['el'] for s in ss))
     print('counter', f(cs)); print('not', f(non))
     for g in ('top', 'rest'): print(g, 'counter share', f1(pct([s for s in DD if s['grp'] == g], lambda s: bool(s['counter_of']))), f([s for s in cs if s['grp'] == g]))
-    print('share diff', ci(boot_diff(DD, lambda ss: pct(ss, lambda s: bool(s['counter_of']))), '{:+.1f}'))
-    dif = lambda ss, fn: (fn([s for s in ss if s['counter_of']]) - fn([s for s in ss if not s['counter_of']])) if any(s['counter_of'] for s in ss) else None
-    print('counter - not: conc', ci(boot_stat(DD, lambda ss: dif(ss, conc_per))), 'd100', ci(boot_stat(DD, lambda ss: dif(ss, d100)), '{:+.1f}'))
-    answered_ids = {s['counter_of'] for s in S if s['counter_of']}
-    ans = [s for s in DD if s['id'] in answered_ids]; unans = [s for s in DD if s['id'] not in answered_ids]
-    print('answered DD smokes', f(ans)); print('unanswered', f(unans))
-    dif2 = lambda ss, fn: (fn([s for s in ss if s['id'] in answered_ids]) - fn([s for s in ss if s['id'] not in answered_ids])) if any(s['id'] in answered_ids for s in ss) else None
-    print('answered - not: conc', ci(boot_stat(DD, lambda ss: dif2(ss, conc_per))), 'd100', ci(boot_stat(DD, lambda ss: dif2(ss, d100)), '{:+.1f}'))
-    # head to head: counter smoke vs the smoke it answered
-    h = [(s, byid[s['counter_of']]) for s in cs if s['counter_of'] in byid]
-    print('head to head n', len(h), 'counter conc', k(mean(a['conc'] for a, b in h)), 'answered conc', k(mean(b['conc'] for a, b in h)), 'counter wins', f1(pct(h, lambda p: p[0]['conc'] > p[1]['conc'])), 'gap s', med(a['el'] - b['el'] for a, b in h),
-          'dist m', med(math.hypot(a['x'] - b['x'], a['z'] - b['z']) * WU for a, b in h))
-    print('counter by map', {m: (len(v), f1(100 * len(v) / sum(1 for s in DD if s['map'] == m))) for m, v in by(cs, 'map').items()})
-    print('counter by ship', {m: (len(v), f1(100 * len(v) / sum(1 for s in DD if s['ship'] == m))) for m, v in by(cs, 'ship').items() if len(v) >= 5})
-    # chains: same-team smokes (all classes) within 1 km (centroid) and 60 s
-    par = {s['id']: s['id'] for s in S}
-    def find(a):
-        while par[a] != a: par[a] = par[par[a]]; a = par[a]
-        return a
-    links = 0
-    for (gk, t), ss in by(S, lambda s: (s['game'], s['team'])).items():
-        ss.sort(key=lambda s: s['el'])
-        for i, a in enumerate(ss):
-            for b in ss[i + 1:]:
-                if b['el'] - a['el'] > 60: break
-                if b['id'] in a['overlap_ids'] or a['id'] in b['overlap_ids'] or math.hypot(a['x'] - b['x'], a['z'] - b['z']) * WU <= 1000:
-                    par[find(a['id'])] = find(b['id']); links += 1
-    comp = by(S, lambda s: find(s['id']))
-    chains = [v for v in comp.values() if len(v) > 1]
-    print('links', links, 'chains', len(chains), 'sizes', C(len(v) for v in chains), 'smokes in chains', sum(len(v) for v in chains), 'overlap flagged', sum(1 for s in S if s['overlap_ids']))
-    print('same player chains', sum(1 for v in chains if len({s['player'] for s in v}) == 1), 'class mix', C(tuple(sorted(C(s['cls'] for s in v).items())) for v in chains).most_common(6))
-    inch = {s['id'] for v in chains for s in v}
-    a, b = [s for s in DD if s['id'] in inch], [s for s in DD if s['id'] not in inch]
-    print('DD in chain', f(a)); print('DD solo', f(b))
-    dif3 = lambda ss, fn: (fn([s for s in ss if s['id'] in inch]) - fn([s for s in ss if s['id'] not in inch])) if any(s['id'] in inch for s in ss) else None
-    print('chain - solo: conc', ci(boot_stat(DD, lambda ss: dif3(ss, conc_per))), 'd100', ci(boot_stat(DD, lambda ss: dif3(ss, d100)), '{:+.1f}'), 'capwon', ci(boot_stat(DD, lambda ss: dif3(ss, lambda v: pct(v, lambda s: s['cap_won']))), '{:+.1f}'))
-    print('chain as unit: conc per chain', k(mean(sum(s['conc'] for s in v) for v in chains)), 'per smoke in chain', k(mean(s['conc'] for v in chains for s in v)), 'solo all classes', k(conc_per([s for s in S if s['id'] not in inch])))
-    for g in ('top', 'rest'): print(g, 'chain share of DD smokes', f1(pct([s for s in DD if s['grp'] == g], lambda s: s['id'] in inch)))
-    print('share diff', ci(boot_diff(DD, lambda ss: pct(ss, lambda s: s['id'] in inch)), '{:+.1f}'))
-    print('chains by clan', C(v[0]['team'] for v in chains).most_common(8), 'by map', C(v[0]['map'] for v in chains))
-    print('chain time', med(v[0]['el'] for v in chains), 'inside', f1(pct(chains, lambda v: any(s['inside'] for s in v))))
+    print('share diff', ci(boot_diff(DD, lambda ss: pct(ss, lambda s: bool(s['counter_of']))), '{:+.1f}'), 'top-rest counter conc', ci(boot_diff(cs, conc_per)))
+    dif = lambda ss, fn: (fn([s for s in ss if s['counter_of']]) - fn([s for s in ss if not s['counter_of']])) if any(s['counter_of'] for s in ss) and any(not s['counter_of'] for s in ss) else None
+    print('all DD counter - not: conc', ci(boot_stat(DD, lambda ss: dif(ss, conc_per))), 'd100', ci(boot_stat(DD, lambda ss: dif(ss, d100)), '{:+.1f}'))
+    for hb in ('flank smoke lines', 'cap sitters'):
+        ss = [s for s in DD if s['habit'] == hb]
+        a, b = [s for s in ss if s['counter_of']], [s for s in ss if not s['counter_of']]
+        print(hb, 'counter', len(a), k(conc_per(a)), f1(d100(a)), 'not', len(b), k(conc_per(b)), f1(d100(b)), 'diff', ci(boot_stat(ss, lambda v: dif(v, conc_per))), ci(boot_stat(ss, lambda v: dif(v, d100)), '{:+.1f}'), 'counter share', f1(100 * len(a) / len(ss)))
+    print('DD other habit', sum(1 for s in DD if s['habit'] not in ('flank smoke lines', 'cap sitters')), 'of which counter', sum(1 for s in cs if s['habit'] not in ('flank smoke lines', 'cap sitters')))
+    h = [(s, ans_of(s)) for s in cs if ans_of(s)]
+    print('head to head n', len(h), 'counter conc', k(mean(a['conc'] for a, b in h)), 'answered conc', k(mean(b['conc'] for a, b in h)), 'counter wins', f1(pct(h, lambda p: p[0]['conc'] > p[1]['conc'])),
+          ci(boot_stat([a for a, b in h], lambda ss: pct(ss, lambda s: s['conc'] > ans_of(s)['conc'])), '{:.0f}'), 'gap s', med(a['el'] - b['el'] for a, b in h),
+          'dist km', med(math.hypot(a['x'] - b['x'], a['z'] - b['z']) * WU / 1000 for a, b in h), 'same cap', f1(pct(h, lambda p: p[0]['cap'] == p[1]['cap'])))
+    print('counter by map', {m: (len(v), f1(100 * len(v) / sum(1 for s in DD if s['map'] == m)), 'own half', f1(pct(v, lambda s: s['ncell'][1] >= 5))) for m, v in by(cs, 'map').items()})
+    from m5_cluster import chains
+    for lim in (500, 1000, 1500):
+        ch = chains(S, lim, 60); inch = {gid(s) for v in ch for s in v}
+        a, b = [s for s in DD if gid(s) in inch], [s for s in DD if gid(s) not in inch]
+        print('lim', lim, 'chains', len(ch), C(len(v) for v in ch), 'DD in', len(a), k(conc_per(a)), f1(d100(a)), 'solo', len(b), k(conc_per(b)), f1(d100(b)), 'same player', sum(1 for v in ch if len({s['player'] for s in v}) == 1),
+              'cls mix', C(tuple(sorted(C(s['cls'] for s in v).items())) for v in ch).most_common(4))
+    ch = chains(S, 1000, 60); inch = {gid(s) for v in ch for s in v}
+    dif3 = lambda ss, fn: (fn([s for s in ss if gid(s) in inch]) - fn([s for s in ss if gid(s) not in inch])) if any(gid(s) in inch for s in ss) else None
+    print('chain - solo: conc', ci(boot_stat(DD, lambda ss: dif3(ss, conc_per))), 'd100', ci(boot_stat(DD, lambda ss: dif3(ss, d100)), '{:+.1f}'))
+    print('by clan', C(v[0]['team'] for v in ch).most_common(10), 'grp', C(v[0]['grp'] for v in ch), 'habits', C(tuple(sorted(s['habit'] for s in v)) for v in ch).most_common(6))

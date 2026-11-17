@@ -63,6 +63,25 @@ def cell_centre(mapname, c, r):
     size = MAPS[mapname]['space_size']
     return (c + 0.5) / 10 * size - size / 2, size / 2 - (r + 0.5) / 10 * size
 
+SITE = 'https://seanr87.github.io/smoke-signals/smoke/'
+# Module 1's four smoke habits (ship clusters). Ships outside the 14 clustered there are 'other'.
+HABIT = {**{k: 'flank smoke lines' for k in ('Somers', 'Gearing', 'Harugumo', 'Delny')},
+         **{k: 'cap sitters' for k in ('Daring', 'Z-42', 'Gda\u0144sk', 'Grozovoi', 'Shimakaze')},
+         **{k: 'parked cruiser smoke' for k in ('Svea', 'Jinan')},
+         **{k: 'moving exhaust' for k in ('Napoli', 'Venezia', 'C. Colombo')}}
+HABITS = ['flank smoke lines', 'cap sitters', 'parked cruiser smoke', 'moving exhaust']
+def forward(mapname, dx, dz):
+    """Metres toward the enemy spawn (positive = forward) of a team-normalized offset in world units.
+    North-south maps: +z. Okinawa: along the south-west to north-east diagonal."""
+    return ((dx + dz) / math.sqrt(2) if mapname in DIAGONAL else dz) * WU
+def uv(mapname, nx, nz):
+    """Team-normalized world position to the 0-1 minimap frame: origin top-left, u to the right (west to east),
+    v down (north to south); own spawn at the bottom (bottom-left on Okinawa). Same frame as the map image."""
+    size = MAPS[mapname]['space_size']
+    return (nx + size / 2) / size, (size / 2 - nz) / size
+def uv_len(mapname, metres):
+    return metres / WU / MAPS[mapname]['space_size']
+
 # ---------- load
 _cache = None
 def load():
@@ -81,6 +100,13 @@ def load():
       radar_cap {cap, ship, coverage_pct, full, activated} or None, off_radar {ship, activations, enemies_spotted} or None,
       radar_on_us (count of radar detections of our ships inside), targets: list of {ship, cls, dmg, sunk},
       r (csv row), j (json record).
+    Round 4 additions: habit (Module 1 cluster of the ship, or 'other'), radar_ca_inside (a radar cruiser was inside the smoke),
+      radar_ca_any (a radar cruiser was covered: inside, behind or in the line of fire), radar_play (primary purpose is cap_control or
+      radar_trap), slug, link (smoke page on the published site), obs_emission_s, cut_short, path_m (length laid),
+      cast: every ship with a known position at the moment the smoke was fully laid (the only moment the batch records positions):
+        {eid, ally, ship, cls, radar, nx, nz, dist_m (to the nearest puff centre), is_smoker, how ('inside'|'behind'|'line_of_fire'|
+        'outside' for allies, 'enemy' for enemies), fwd_m (metres toward the enemy relative to the smoke centre)},
+      targets also carry eid, nx, nz (position at that same moment, None if unknown).
     Game fields: key, map, mapid, teams (names), winner, len (seconds), caps [{cap, x, z, r}], sides {team: side},
       roster {entity_id: player dict + team}, j."""
     global _cache
@@ -103,12 +129,12 @@ def load():
         be = j.get('battle_end') or {}
         if be.get('clock'): G[k]['len'] = 1200 - secs(be['clock'])
     rows = list(csv.DictReader(open(os.path.join(BATCH, 'smokes.csv'), encoding='utf-8')))
-    js = {str(s['smoke_id']): s for s in json.load(open(os.path.join(BATCH, 'smokes.json'), encoding='utf-8'))}
+    js = {(s['match_id'], int(s['game_no']), str(s['smoke_id'])): s for s in json.load(open(os.path.join(BATCH, 'smokes.json'), encoding='utf-8'))}
     S = []
     for r in rows:
-        j = js[r['smoke_id']]; g = G[(r['match_id'], int(r['game_no']))]
+        j = js[(r['match_id'], int(r['game_no']), r['smoke_id'])]; g = G[(r['match_id'], int(r['game_no']))]
         s = dict(r=r, j=j, id=r['smoke_id'], team=r['team'], opponent=r['opponent'], grp='top' if r['team'] in TOP else 'rest', is_pn=r['team'] == PN,
-                 cls=r['smoker_class'], ship=r['ship'], map=r['map_display'], side=r['spawn_side'], game=g['key'], player=r['player'])
+                 cls=r['smoker_class'], ship=r['ship'].replace('\xa0', ' '), map=r['map_display'], side=r['spawn_side'], game=g['key'], player=r['player'])
         c = r['t_activate_clock'] or r['t_created_clock']
         s['el'] = 1200 - secs(c)
         s['win'] = g['winner'] == r['team']
@@ -157,6 +183,30 @@ def load():
         s['radar_cap'] = j.get('radar_cap'); s['off_radar'] = j.get('offensive_radar')
         s['radar_on_us'] = int(r['radar_detections_count'] or 0)
         s['targets'] = [dict(ship=x['ship'], cls=x['ship_class'].lower(), dmg=x['damage'], sunk=x['sunk']) for x in j['targets_hit']]
+        # round 4 additions
+        s['habit'] = HABIT.get(s['ship'], 'other')
+        s['radar_ca_inside'] = any(p['cls'] == 'cruiser' and p['radar'] and p['how'] == 'inside' for p in s['partners'])
+        s['radar_ca_any'] = any(p['cls'] == 'cruiser' and p['radar'] for p in s['partners'])
+        s['radar_play'] = s['pp'] in ('cap_control', 'radar_trap')
+        s['slug'] = f"{r['match_id'].split('_')[1]}_g{r['game_no']}_{r['smoke_id']}"; s['link'] = SITE + 'smokes/' + s['slug'] + '.html'
+        s['obs_emission_s'] = F(r['observed_emission_s']); s['cut_short'] = r['emission_cut_short'] == 'true'
+        s['path_m'] = F(r['movement_path_m'])
+        how = {x['entity_id']: x['how'] for x in j['smokees']}
+        s['smoker_eid'] = smoker_eid
+        cast = []
+        for p in j['ships_at_capture']:
+            if not p.get('position'): continue
+            pl = ro.get(p['entity_id'], {})
+            nx, nz = norm(s['map'], s['side'], p['position']['x'], p['position']['z'])
+            d = min(math.hypot(nx - a, nz - b) for a, b in s['npath']) * WU
+            cast.append(dict(eid=p['entity_id'], ally=p['team'] == r['team'], ship=(pl.get('ship') or '?').replace('\xa0', ' '), cls=p['ship_class'].lower(),
+                             radar=bool(pl.get('radar_m')), nx=nx, nz=nz, dist_m=d, is_smoker=p['entity_id'] == smoker_eid,
+                             how=how.get(p['entity_id'], 'outside') if p['team'] == r['team'] else 'enemy',
+                             fwd_m=forward(s['map'], nx - s['nx'], nz - s['nz'])))
+        s['cast'] = cast
+        tpos = {c['eid']: c for c in cast}
+        for t, x in zip(s['targets'], j['targets_hit']):
+            c = tpos.get(x['entity_id']); t['eid'] = x['entity_id']; t['nx'], t['nz'] = (c['nx'], c['nz']) if c else (None, None)
         S.append(s)
     _cache = (S, G)
     return _cache

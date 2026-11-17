@@ -121,7 +121,7 @@ if __name__ == '__main__':
     cl = cut(merges, SHIPS, 4)
     pick = lambda sh: next(c for c in cl if sh in c)
     clusters = [pick('Somers'), pick('Daring'), pick('Svea'), pick('Napoli')]
-    names = ['Flank smoke lines', 'Cap sitters', 'Parked cruiser smoke', 'Moving exhaust cover']; ccol = [BLUE, ORANGE, VIOLET, AQUA]
+    names = ['flank smoke lines', 'cap sitters', 'parked cruiser smoke', 'moving exhaust']; ccol = [BLUE, ORANGE, VIOLET, AQUA]
     if '1' in which:
         ship_by_map(['Somers', 'Gearing', 'Harugumo', 'Delny', 'Gdańsk', 'Shimakaze'], 'fig1a-ship-by-map-long-smoke', 'Where each ship smokes, by map (1 of 2): standard long destroyer smoke')
         ship_by_map(['Grozovoi', 'Daring', 'Z-42', 'Svea', 'Napoli'], 'fig1b-ship-by-map-short-cruiser-exhaust', 'Where each ship smokes, by map (2 of 2): Grozovoi, short destroyer smoke, cruiser smoke, exhaust')

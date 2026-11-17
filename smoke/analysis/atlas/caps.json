@@ -1,0 +1,757 @@
+{
+ "batch": "output/20261117-122135",
+ "frame": "0-1 minimap frame: origin at the top-left corner of the minimap image, u to the right (west to east), v down (north to south), both 0 to 1 across the full image. Positions are team-normalized so the smoking team spawn is at the bottom (bottom-left on Okinawa): north-spawn teams are mirrored north-south (v -> 1 - v) on Hotspot, Loop, Land of Fire, Mountain Range, Sleeping Giant and Sea of Fortune, and across the NW-SE diagonal ((u, v) -> (v, u)) on Okinawa, whose spawns are NE and SW. The mirror is applied to positions only: the frame is the minimap image in its native orientation, so the images need no flipping. Lengths: radius_u, ru and rv are fractions of the image width. An ellipse angle_deg is the rotation of the ru axis clockwise on screen from the u axis (as SVG rotate).",
+ "maps": {
+  "Sleeping Giant": {
+   "space_km": 42.0,
+   "transform": "north-spawn teams mirrored north-south",
+   "own_spawn": "bottom",
+   "caps": [
+    {
+     "letter": "A",
+     "centre_uv": [
+      0.1253,
+      0.5
+     ],
+     "radius_u": 0.0707,
+     "radius_km": 2.97,
+     "zone": {
+      "n": 91,
+      "top6_share_pct": 41.8,
+      "rest_share_pct": 35.2,
+      "top6_n": 46,
+      "rest_n": 45,
+      "gap_pts": 6.6,
+      "gap_ci_pts": [
+       -9,
+       21
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 14758,
+      "deaths_per_100": 12.1,
+      "cap_won_pct_all_smokes": 22.0,
+      "rated": true,
+      "small_n": false
+     }
+    },
+    {
+     "letter": "B",
+     "centre_uv": [
+      0.4719,
+      0.5
+     ],
+     "radius_u": 0.0707,
+     "radius_km": 2.97,
+     "zone": {
+      "n": 52,
+      "top6_share_pct": 19.1,
+      "rest_share_pct": 24.2,
+      "top6_n": 21,
+      "rest_n": 31,
+      "gap_pts": -5.1,
+      "gap_ci_pts": [
+       -20,
+       12
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 5442,
+      "deaths_per_100": 13.5,
+      "cap_won_pct_all_smokes": 21.2,
+      "rated": true,
+      "small_n": false
+     }
+    },
+    {
+     "letter": "C",
+     "centre_uv": [
+      0.6993,
+      0.4012
+     ],
+     "radius_u": 0.0707,
+     "radius_km": 2.97,
+     "zone": {
+      "n": 28,
+      "top6_share_pct": 8.2,
+      "rest_share_pct": 14.8,
+      "top6_n": 9,
+      "rest_n": 19,
+      "gap_pts": -6.6,
+      "gap_ci_pts": [
+       -17,
+       3
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 14249,
+      "deaths_per_100": 21.4,
+      "cap_won_pct_all_smokes": 28.6,
+      "rated": true,
+      "small_n": false
+     }
+    },
+    {
+     "letter": "D",
+     "centre_uv": [
+      0.6993,
+      0.5988
+     ],
+     "radius_u": 0.0707,
+     "radius_km": 2.97,
+     "zone": {
+      "n": 67,
+      "top6_share_pct": 30.9,
+      "rest_share_pct": 25.8,
+      "top6_n": 34,
+      "rest_n": 33,
+      "gap_pts": 5.1,
+      "gap_ci_pts": [
+       -11,
+       19
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 12014,
+      "deaths_per_100": 6.0,
+      "cap_won_pct_all_smokes": 9.0,
+      "rated": true,
+      "small_n": false
+     }
+    }
+   ]
+  },
+  "Hotspot": {
+   "space_km": 48.0,
+   "transform": "north-spawn teams mirrored north-south",
+   "own_spawn": "bottom",
+   "caps": [
+    {
+     "letter": "A",
+     "centre_uv": [
+      0.1658,
+      0.4026
+     ],
+     "radius_u": 0.0832,
+     "radius_km": 4.0,
+     "zone": {
+      "n": 14,
+      "top6_share_pct": 13.8,
+      "rest_share_pct": 1.9,
+      "top6_n": 11,
+      "rest_n": 3,
+      "gap_pts": 11.9,
+      "gap_ci_pts": [
+       5,
+       16
+      ],
+      "gap_clear_of_zero": true,
+      "concealed_damage_per_smoke": 19657,
+      "deaths_per_100": 7.1,
+      "cap_won_pct_all_smokes": 57.1,
+      "rated": true,
+      "small_n": true
+     }
+    },
+    {
+     "letter": "B",
+     "centre_uv": [
+      0.1658,
+      0.5974
+     ],
+     "radius_u": 0.0832,
+     "radius_km": 4.0,
+     "zone": {
+      "n": 36,
+      "top6_share_pct": 22.5,
+      "rest_share_pct": 11.6,
+      "top6_n": 18,
+      "rest_n": 18,
+      "gap_pts": 10.9,
+      "gap_ci_pts": [
+       2,
+       23
+      ],
+      "gap_clear_of_zero": true,
+      "concealed_damage_per_smoke": 15626,
+      "deaths_per_100": 8.3,
+      "cap_won_pct_all_smokes": 16.7,
+      "rated": true,
+      "small_n": false
+     }
+    },
+    {
+     "letter": "C",
+     "centre_uv": [
+      0.5,
+      0.5
+     ],
+     "radius_u": 0.0832,
+     "radius_km": 4.0,
+     "zone": {
+      "n": 77,
+      "top6_share_pct": 28.8,
+      "rest_share_pct": 34.8,
+      "top6_n": 23,
+      "rest_n": 54,
+      "gap_pts": -6.0,
+      "gap_ci_pts": [
+       -25,
+       9
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 8465,
+      "deaths_per_100": 5.2,
+      "cap_won_pct_all_smokes": 29.9,
+      "rated": true,
+      "small_n": false
+     }
+    },
+    {
+     "letter": "D",
+     "centre_uv": [
+      0.9,
+      0.5
+     ],
+     "radius_u": 0.0832,
+     "radius_km": 4.0,
+     "zone": {
+      "n": 108,
+      "top6_share_pct": 35.0,
+      "rest_share_pct": 51.6,
+      "top6_n": 28,
+      "rest_n": 80,
+      "gap_pts": -16.6,
+      "gap_ci_pts": [
+       -31,
+       -4
+      ],
+      "gap_clear_of_zero": true,
+      "concealed_damage_per_smoke": 13039,
+      "deaths_per_100": 9.3,
+      "cap_won_pct_all_smokes": 22.2,
+      "rated": true,
+      "small_n": false
+     }
+    }
+   ]
+  },
+  "Loop": {
+   "space_km": 48.0,
+   "transform": "north-spawn teams mirrored north-south",
+   "own_spawn": "bottom",
+   "caps": [
+    {
+     "letter": "A",
+     "centre_uv": [
+      0.35,
+      0.5
+     ],
+     "radius_u": 0.0938,
+     "radius_km": 4.5,
+     "zone": {
+      "n": 59,
+      "top6_share_pct": 22.0,
+      "rest_share_pct": 49.5,
+      "top6_n": 9,
+      "rest_n": 50,
+      "gap_pts": -27.5,
+      "gap_ci_pts": [
+       -49,
+       -7
+      ],
+      "gap_clear_of_zero": true,
+      "concealed_damage_per_smoke": 4823,
+      "deaths_per_100": 6.8,
+      "cap_won_pct_all_smokes": 16.9,
+      "rated": true,
+      "small_n": false
+     }
+    },
+    {
+     "letter": "B",
+     "centre_uv": [
+      0.65,
+      0.5
+     ],
+     "radius_u": 0.0938,
+     "radius_km": 4.5,
+     "zone": {
+      "n": 47,
+      "top6_share_pct": 43.9,
+      "rest_share_pct": 28.7,
+      "top6_n": 18,
+      "rest_n": 29,
+      "gap_pts": 15.2,
+      "gap_ci_pts": [
+       -1,
+       45
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 7969,
+      "deaths_per_100": 12.8,
+      "cap_won_pct_all_smokes": 42.6,
+      "rated": true,
+      "small_n": false
+     }
+    },
+    {
+     "letter": "C",
+     "centre_uv": [
+      0.89,
+      0.5
+     ],
+     "radius_u": 0.0938,
+     "radius_km": 4.5,
+     "zone": {
+      "n": 36,
+      "top6_share_pct": 34.1,
+      "rest_share_pct": 21.8,
+      "top6_n": 14,
+      "rest_n": 22,
+      "gap_pts": 12.3,
+      "gap_ci_pts": [
+       -10,
+       32
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 13403,
+      "deaths_per_100": 13.9,
+      "cap_won_pct_all_smokes": 19.4,
+      "rated": true,
+      "small_n": false
+     }
+    }
+   ]
+  },
+  "Mountain Range": {
+   "space_km": 48.0,
+   "transform": "north-spawn teams mirrored north-south",
+   "own_spawn": "bottom",
+   "caps": [
+    {
+     "letter": "A",
+     "centre_uv": [
+      0.0,
+      0.5017
+     ],
+     "radius_u": 0.2083,
+     "radius_km": 10.0,
+     "zone": {
+      "n": 30,
+      "top6_share_pct": 25.5,
+      "rest_share_pct": 20.8,
+      "top6_n": 14,
+      "rest_n": 16,
+      "gap_pts": 4.7,
+      "gap_ci_pts": [
+       -12,
+       24
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 15474,
+      "deaths_per_100": 6.7,
+      "cap_won_pct_all_smokes": 23.3,
+      "rated": true,
+      "small_n": false
+     }
+    },
+    {
+     "letter": "B",
+     "centre_uv": [
+      0.4,
+      0.5
+     ],
+     "radius_u": 0.0729,
+     "radius_km": 3.5,
+     "zone": {
+      "n": 49,
+      "top6_share_pct": 43.6,
+      "rest_share_pct": 32.5,
+      "top6_n": 24,
+      "rest_n": 25,
+      "gap_pts": 11.1,
+      "gap_ci_pts": [
+       -6,
+       30
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 9751,
+      "deaths_per_100": 8.2,
+      "cap_won_pct_all_smokes": 34.7,
+      "rated": true,
+      "small_n": false
+     }
+    },
+    {
+     "letter": "C",
+     "centre_uv": [
+      0.625,
+      0.5
+     ],
+     "radius_u": 0.0729,
+     "radius_km": 3.5,
+     "zone": {
+      "n": 53,
+      "top6_share_pct": 30.9,
+      "rest_share_pct": 46.8,
+      "top6_n": 17,
+      "rest_n": 36,
+      "gap_pts": -15.9,
+      "gap_ci_pts": [
+       -40,
+       3
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 9285,
+      "deaths_per_100": 9.4,
+      "cap_won_pct_all_smokes": 20.8,
+      "rated": true,
+      "small_n": false
+     }
+    }
+   ]
+  },
+  "Land of Fire": {
+   "space_km": 48.0,
+   "transform": "north-spawn teams mirrored north-south",
+   "own_spawn": "bottom",
+   "caps": [
+    {
+     "letter": "A",
+     "centre_uv": [
+      0.2444,
+      0.5
+     ],
+     "radius_u": 0.0619,
+     "radius_km": 2.97,
+     "zone": {
+      "n": 52,
+      "top6_share_pct": 27.1,
+      "rest_share_pct": 48.8,
+      "top6_n": 13,
+      "rest_n": 39,
+      "gap_pts": -21.7,
+      "gap_ci_pts": [
+       -36,
+       -8
+      ],
+      "gap_clear_of_zero": true,
+      "concealed_damage_per_smoke": 6883,
+      "deaths_per_100": 13.5,
+      "cap_won_pct_all_smokes": 23.1,
+      "rated": true,
+      "small_n": false
+     }
+    },
+    {
+     "letter": "B",
+     "centre_uv": [
+      0.4644,
+      0.5
+     ],
+     "radius_u": 0.0619,
+     "radius_km": 2.97,
+     "zone": {
+      "n": 50,
+      "top6_share_pct": 45.8,
+      "rest_share_pct": 35.0,
+      "top6_n": 22,
+      "rest_n": 28,
+      "gap_pts": 10.8,
+      "gap_ci_pts": [
+       -19,
+       37
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 7582,
+      "deaths_per_100": 14.0,
+      "cap_won_pct_all_smokes": 26.0,
+      "rated": true,
+      "small_n": false
+     }
+    },
+    {
+     "letter": "C",
+     "centre_uv": [
+      0.7698,
+      0.4017
+     ],
+     "radius_u": 0.0619,
+     "radius_km": 2.97,
+     "zone": {
+      "n": 7,
+      "top6_share_pct": 2.1,
+      "rest_share_pct": 7.5,
+      "top6_n": 1,
+      "rest_n": 6,
+      "gap_pts": -5.4,
+      "gap_ci_pts": [
+       -13,
+       2
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 9153,
+      "deaths_per_100": 28.6,
+      "cap_won_pct_all_smokes": 0.0,
+      "rated": false,
+      "small_n": true
+     }
+    },
+    {
+     "letter": "D",
+     "centre_uv": [
+      0.7698,
+      0.5983
+     ],
+     "radius_u": 0.0619,
+     "radius_km": 2.97,
+     "zone": {
+      "n": 19,
+      "top6_share_pct": 25.0,
+      "rest_share_pct": 8.8,
+      "top6_n": 12,
+      "rest_n": 7,
+      "gap_pts": 16.2,
+      "gap_ci_pts": [
+       -6,
+       41
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 8768,
+      "deaths_per_100": 10.5,
+      "cap_won_pct_all_smokes": 15.8,
+      "rated": true,
+      "small_n": false
+     }
+    }
+   ]
+  },
+  "Sea of Fortune": {
+   "space_km": 48.0,
+   "transform": "north-spawn teams mirrored north-south",
+   "own_spawn": "bottom",
+   "caps": [
+    {
+     "letter": "A",
+     "centre_uv": [
+      0.2,
+      0.35
+     ],
+     "radius_u": 0.0833,
+     "radius_km": 4.0,
+     "zone": {
+      "n": 18,
+      "top6_share_pct": 18.4,
+      "rest_share_pct": 13.9,
+      "top6_n": 7,
+      "rest_n": 11,
+      "gap_pts": 4.5,
+      "gap_ci_pts": [
+       -17,
+       23
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 14275,
+      "deaths_per_100": 16.7,
+      "cap_won_pct_all_smokes": 33.3,
+      "rated": true,
+      "small_n": false
+     }
+    },
+    {
+     "letter": "B",
+     "centre_uv": [
+      0.2,
+      0.65
+     ],
+     "radius_u": 0.0833,
+     "radius_km": 4.0,
+     "zone": {
+      "n": 43,
+      "top6_share_pct": 26.3,
+      "rest_share_pct": 41.8,
+      "top6_n": 10,
+      "rest_n": 33,
+      "gap_pts": -15.5,
+      "gap_ci_pts": [
+       -36,
+       5
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 11751,
+      "deaths_per_100": 11.6,
+      "cap_won_pct_all_smokes": 18.6,
+      "rated": true,
+      "small_n": false
+     }
+    },
+    {
+     "letter": "C",
+     "centre_uv": [
+      0.44,
+      0.5
+     ],
+     "radius_u": 0.0625,
+     "radius_km": 3.0,
+     "zone": {
+      "n": 19,
+      "top6_share_pct": 18.4,
+      "rest_share_pct": 15.2,
+      "top6_n": 7,
+      "rest_n": 12,
+      "gap_pts": 3.2,
+      "gap_ci_pts": [
+       -13,
+       20
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 6746,
+      "deaths_per_100": 21.1,
+      "cap_won_pct_all_smokes": 21.1,
+      "rated": true,
+      "small_n": false
+     }
+    },
+    {
+     "letter": "D",
+     "centre_uv": [
+      0.76,
+      0.5
+     ],
+     "radius_u": 0.0625,
+     "radius_km": 3.0,
+     "zone": {
+      "n": 37,
+      "top6_share_pct": 36.8,
+      "rest_share_pct": 29.1,
+      "top6_n": 14,
+      "rest_n": 23,
+      "gap_pts": 7.7,
+      "gap_ci_pts": [
+       -9,
+       30
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 12508,
+      "deaths_per_100": 10.8,
+      "cap_won_pct_all_smokes": 10.8,
+      "rated": true,
+      "small_n": false
+     }
+    }
+   ]
+  },
+  "Okinawa": {
+   "space_km": 42.0,
+   "transform": "north-spawn teams mirrored across the NW-SE diagonal (spawns are NE and SW)",
+   "own_spawn": "bottom-left",
+   "caps": [
+    {
+     "letter": "A",
+     "centre_uv": [
+      0.1,
+      0.22
+     ],
+     "radius_u": 0.0476,
+     "radius_km": 2.0,
+     "zone": {
+      "n": 26,
+      "top6_share_pct": 13.3,
+      "rest_share_pct": 35.8,
+      "top6_n": 2,
+      "rest_n": 24,
+      "gap_pts": -22.5,
+      "gap_ci_pts": [
+       -43,
+       9
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 13339,
+      "deaths_per_100": 19.2,
+      "cap_won_pct_all_smokes": 26.9,
+      "rated": true,
+      "small_n": false
+     }
+    },
+    {
+     "letter": "B",
+     "centre_uv": [
+      0.22,
+      0.1
+     ],
+     "radius_u": 0.0476,
+     "radius_km": 2.0,
+     "zone": {
+      "n": 3,
+      "top6_share_pct": 13.3,
+      "rest_share_pct": 1.5,
+      "top6_n": 2,
+      "rest_n": 1,
+      "gap_pts": 11.8,
+      "gap_ci_pts": [
+       -4,
+       36
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 3294,
+      "deaths_per_100": 33.3,
+      "cap_won_pct_all_smokes": 0.0,
+      "rated": false,
+      "small_n": true
+     }
+    },
+    {
+     "letter": "C",
+     "centre_uv": [
+      0.467,
+      0.467
+     ],
+     "radius_u": 0.1186,
+     "radius_km": 4.98,
+     "zone": {
+      "n": 40,
+      "top6_share_pct": 53.3,
+      "rest_share_pct": 47.8,
+      "top6_n": 8,
+      "rest_n": 32,
+      "gap_pts": 5.5,
+      "gap_ci_pts": [
+       -25,
+       33
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 12987,
+      "deaths_per_100": 25.0,
+      "cap_won_pct_all_smokes": 7.5,
+      "rated": true,
+      "small_n": false
+     }
+    },
+    {
+     "letter": "D",
+     "centre_uv": [
+      0.7,
+      0.7
+     ],
+     "radius_u": 0.0714,
+     "radius_km": 3.0,
+     "zone": {
+      "n": 13,
+      "top6_share_pct": 20.0,
+      "rest_share_pct": 14.9,
+      "top6_n": 3,
+      "rest_n": 10,
+      "gap_pts": 5.1,
+      "gap_ci_pts": [
+       -20,
+       23
+      ],
+      "gap_clear_of_zero": false,
+      "concealed_damage_per_smoke": 7435,
+      "deaths_per_100": 15.4,
+      "cap_won_pct_all_smokes": 15.4,
+      "rated": true,
+      "small_n": true
+     }
+    }
+   ]
+  }
+ }
+}

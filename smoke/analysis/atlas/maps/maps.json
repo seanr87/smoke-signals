@@ -1,0 +1,86 @@
+[
+ {
+  "title": "Sleeping Giant",
+  "file": "47_Sleeping_Giant.png",
+  "webp": "47_Sleeping_Giant.webp",
+  "map_id": "47_Sleeping_Giant",
+  "width_px": 768,
+  "height_px": 768,
+  "size_km": 42.0,
+  "km_per_grid_cell": 4.2,
+  "transform": "north-spawn teams mirrored north-south",
+  "own_spawn": "bottom"
+ },
+ {
+  "title": "Hotspot",
+  "file": "16_OC_bees_to_honey.png",
+  "webp": "16_OC_bees_to_honey.webp",
+  "map_id": "16_OC_bees_to_honey",
+  "width_px": 768,
+  "height_px": 768,
+  "size_km": 48.0,
+  "km_per_grid_cell": 4.8,
+  "transform": "north-spawn teams mirrored north-south",
+  "own_spawn": "bottom"
+ },
+ {
+  "title": "Loop",
+  "file": "45_Zigzag.png",
+  "webp": "45_Zigzag.webp",
+  "map_id": "45_Zigzag",
+  "width_px": 768,
+  "height_px": 768,
+  "size_km": 48.0,
+  "km_per_grid_cell": 4.8,
+  "transform": "north-spawn teams mirrored north-south",
+  "own_spawn": "bottom"
+ },
+ {
+  "title": "Mountain Range",
+  "file": "58_RidgeNew.png",
+  "webp": "58_RidgeNew.webp",
+  "map_id": "58_RidgeNew",
+  "width_px": 768,
+  "height_px": 768,
+  "size_km": 48.0,
+  "km_per_grid_cell": 4.8,
+  "transform": "north-spawn teams mirrored north-south",
+  "own_spawn": "bottom"
+ },
+ {
+  "title": "Land of Fire",
+  "file": "22_tierra_del_fuego.png",
+  "webp": "22_tierra_del_fuego.webp",
+  "map_id": "22_tierra_del_fuego",
+  "width_px": 768,
+  "height_px": 768,
+  "size_km": 48.0,
+  "km_per_grid_cell": 4.8,
+  "transform": "north-spawn teams mirrored north-south",
+  "own_spawn": "bottom"
+ },
+ {
+  "title": "Sea of Fortune",
+  "file": "25_sea_hope.png",
+  "webp": "25_sea_hope.webp",
+  "map_id": "25_sea_hope",
+  "width_px": 768,
+  "height_px": 768,
+  "size_km": 48.0,
+  "km_per_grid_cell": 4.8,
+  "transform": "north-spawn teams mirrored north-south",
+  "own_spawn": "bottom"
+ },
+ {
+  "title": "Okinawa",
+  "file": "40_Okinawa.png",
+  "webp": "40_Okinawa.webp",
+  "map_id": "40_Okinawa",
+  "width_px": 768,
+  "height_px": 768,
+  "size_km": 42.0,
+  "km_per_grid_cell": 4.2,
+  "transform": "north-spawn teams mirrored across the NW-SE diagonal (spawns are NE and SW)",
+  "own_spawn": "bottom-left"
+ }
+]

@@ -78,13 +78,13 @@ Gearing       0.94   0.58   0.37   0.00   1.29   1.73   1.62   1.23   1.49   1.8
 Shimakaze     1.74   1.43   1.36   1.29   0.00   1.29   1.24   1.07   1.00   1.28   1.23   1.40   1.18   1.39
 Daring        1.93   1.85   1.92   1.73   1.29   0.00   0.56   0.97   0.88   1.45   1.76   1.87   1.75   1.59
 Z-42          1.86   1.73   1.75   1.62   1.24   0.56   0.00   1.02   1.01   1.44   1.59   1.74   1.78   1.71
-Gdańsk        1.74   1.46   1.35   1.23   1.07   0.97   1.02   0.00   0.78   1.40   1.44   1.39   1.33   1.10
+Gdańsk        1.74   1.46   1.35   1.23   1.07   0.97   1.02   0.00   0.78   1.40   1.44   1.39   1.33   1.11
 Grozovoi      1.87   1.76   1.65   1.49   1.00   0.88   1.01   0.78   0.00   1.55   1.66   1.61   1.43   1.13
 Svea          2.15   1.84   1.88   1.85   1.28   1.45   1.44   1.40   1.55   0.00   0.98   1.53   1.31   1.61
 Jinan         2.01   1.60   1.68   1.67   1.23   1.76   1.59   1.44   1.66   0.98   0.00   1.39   1.19   1.46
 Venezia       1.69   1.33   1.01   1.08   1.40   1.87   1.74   1.39   1.61   1.53   1.39   0.00   1.00   1.50
 Napoli        1.73   1.48   1.48   1.38   1.18   1.75   1.78   1.33   1.43   1.31   1.19   1.00   0.00   0.98
-C. Colombo    1.71   1.61   1.62   1.42   1.39   1.59   1.71   1.10   1.13   1.61   1.46   1.50   0.98   0.00
+C. Colombo    1.71   1.61   1.62   1.42   1.39   1.59   1.71   1.11   1.13   1.61   1.46   1.50   0.98   0.00
 
 ## Robustness: with outcome features too
 k=3: [['Delny', 'Harugumo', 'Somers', 'Gearing'], ['Shimakaze', 'Daring', 'Z-42', 'Gdańsk', 'Grozovoi'], ['Svea', 'Jinan', 'Venezia', 'Napoli', 'C. Colombo']]
@@ -114,7 +114,7 @@ clusters [['Svea', 'Jinan'], ['Delny', 'Harugumo', 'Somers', 'Gearing'], ['Shima
   Gearing    Sleeping Giant  n= 33 own cluster 1 nearest 1 ok | edge   2380 inside  12% fwd  46 stat   3% selfish  12% capc  18%
   Gearing    Hotspot         n= 43 own cluster 1 nearest 1 ok | edge   2078 inside  14% fwd  43 stat   2% selfish   5% capc  23%
   Gearing    Mountain Range  n= 34 own cluster 1 nearest 1 ok | edge   1336 inside  21% fwd  40 stat   0% selfish   9% capc  41%
-  Gearing    Land of Fire    n= 22 own cluster 1 nearest 1 ok | edge   2353 inside  27% fwd  45 stat   0% selfish  18% capc  32%
+  Gearing    Land of Fire    n= 22 own cluster 1 nearest 1 ok | edge   2353 inside  27% fwd  44 stat   0% selfish  18% capc  32%
   Gearing    Sea of Fortune  n= 19 own cluster 1 nearest 1 ok | edge   3739 inside  21% fwd  46 stat  11% selfish  16% capc  21%
   Gearing    Okinawa         n= 17 own cluster 1 nearest 1 ok | edge   1783 inside  24% fwd  44 stat   0% selfish  35% capc  24%
   Gdańsk     Sleeping Giant  n= 37 own cluster 2 nearest 2 ok | edge   3012 inside  22% fwd  39 stat  46% selfish  38% capc  16%
@@ -166,7 +166,7 @@ Somers: top n=90 (4 clans), rest n=170 (14 clans)
 Gearing: top n=74 (4 clans), rest n=106 (12 clans)
     edge     top    1995.3 rest    2033.9 diff      -39  [-1,287 to +1,034]
     inside   top      17.6 rest      22.6 diff       -5  [-16 to +6]
-    fwd      top      45.6 rest      41.8 diff     +3.8  [-0.5 to +6.8]
+    fwd      top      45.6 rest      41.7 diff     +3.9  [-0.4 to +6.9]
     el       top     406.0 rest     338.5 diff      +68  [-3 to +114]
     stat     top       0.0 rest       3.8 diff       -4  [-10 to +0]
     selfish  top       4.1 rest      19.8 diff      -16  [-30 to -4 *]
@@ -177,7 +177,7 @@ Delny: top n=18, rest n=4: too few for a comparison
 Gdańsk: top n=60 (5 clans), rest n=58 (11 clans)
     edge     top    1381.7 rest    1857.7 diff     -476  [-2,269 to +1,764]
     inside   top      23.3 rest      29.3 diff       -6  [-30 to +14]
-    fwd      top      40.7 rest      41.1 diff     -0.4  [-5.4 to +4.0]
+    fwd      top      40.7 rest      41.0 diff     -0.3  [-5.4 to +4.1]
     el       top     536.0 rest     401.0 diff     +135  [+10 to +223 *]
     stat     top      46.7 rest      34.5 diff      +12  [+2 to +25 *]
     selfish  top      45.0 rest      41.4 diff       +4  [-18 to +25]
@@ -369,11 +369,11 @@ Svea on Sea of Fortune: top n=18 (3 clans), rest n=14 (4 clans)
   Gearing    Sleeping Giant  n= 33 G1 21%, E1 12%, G2 6% | cells used 20
   Gearing    Hotspot         n= 43 G10 19%, G5 9%, G6 9% | cells used 23
   Gearing    Mountain Range  n= 34 G5 15%, F4 12%, G7 9% | cells used 21
-  Gearing    Land of Fire    n= 22 F3 14%, F6 9%, F2 9% | cells used 17
+  Gearing    Land of Fire    n= 22 F3 18%, F6 9%, F2 9% | cells used 16
   Gearing    Sea of Fortune  n= 19 F2 26%, F9 11%, F4 5% | cells used 14
   Gearing    Okinawa         n= 17 H7 12%, F4 12%, D1 12% | cells used 14
   Gdańsk     Sleeping Giant  n= 37 G6 16%, F5 11%, E8 8% | cells used 19
-  Gdańsk     Hotspot         n= 23 F6 22%, G5 17%, G6 13% | cells used 12
+  Gdańsk     Hotspot         n= 23 F6 22%, G5 17%, G4 13% | cells used 11
   Gdańsk     Mountain Range  n= 20 F4 25%, F7 20%, F2 10% | cells used 12
   Harugumo   Sleeping Giant  n= 33 G1 21%, F1 15%, E1 6% | cells used 19
   Harugumo   Hotspot         n= 22 G10 32%, F10 14%, E10 9% | cells used 13

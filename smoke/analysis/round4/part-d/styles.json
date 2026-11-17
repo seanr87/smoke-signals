@@ -1,0 +1,2008 @@
+{
+ "batch": "output/20261117-122135",
+ "scope": "all classes",
+ "transform": "own spawn at the bottom; north-spawn teams mirrored north-south (the 4 main maps all spawn north and south)",
+ "grouping": {
+  "confirmed": true,
+  "note": "H-SR, RESIN, BONKZ and HTDOG, VRTUS hold as two ends of one scale. KITE is not midway: by the 9-number distance it sits nearer the long-smoke style (destroyer smoke only, no parked cruiser smoke), with a selfish share closer to the cruiser-smoke style. BONKZ is the long-smoke clan that leans furthest toward the other end."
+ },
+ "styles": {
+  "A": {
+   "name": "Long smoke, early, for a teammate",
+   "clans": [
+    "H-SR",
+    "RESIN",
+    "BONKZ"
+   ],
+   "define": {
+    "flank_lines_pct": 61.31,
+    "cap_sitters_pct": 20.33,
+    "parked_cruiser_pct": 10.16,
+    "moving_exhaust_pct": 2.62,
+    "other_ship_pct": 5.57,
+    "destroyer_smoke_pct": 82.62,
+    "long_dd_pct": 81.97,
+    "stacked_pct": 39.67,
+    "screen_pct": 33.77,
+    "selfish_pct": 26.56,
+    "stationary_pct": 19.67,
+    "first_smoke_s": 163.5,
+    "cruiser_dmg_pct": 73.28,
+    "early_pct": 27.54,
+    "n_smokes": 305,
+    "n_games": 67,
+    "smokes_per_game": 4.55,
+    "wins": 50,
+    "losses": 17,
+    "smoker_own_dmg_pct": 23.18
+   },
+   "cast": {
+    "n_team_games": 67,
+    "dd_per_game": 3.31,
+    "dd_lineups": {
+     "2": 4,
+     "3": 39,
+     "4": 23,
+     "5": 1
+    },
+    "smoke_ships_per_game": 2.18,
+    "smoke_cruisers_per_game": 0.31,
+    "radar_ships_per_game": 3.72,
+    "n_dd_smokes": 252,
+    "second_dd_fwd_pct": 28.97,
+    "second_dd_alive_pct": 60.71,
+    "second_dd_fwd_pct_early": 38.36,
+    "n_dd_smokes_early": 73,
+    "second_dd_fwd_any_dist_pct": 36.9,
+    "radar_cruiser_covered_pct": 64.68,
+    "dd_without_smoke_per_game": 1.64
+   }
+  },
+  "B": {
+   "name": "Cruiser smoke, selfish, stationary",
+   "clans": [
+    "HTDOG",
+    "VRTUS"
+   ],
+   "define": {
+    "flank_lines_pct": 14.36,
+    "cap_sitters_pct": 31.38,
+    "parked_cruiser_pct": 44.68,
+    "moving_exhaust_pct": 4.79,
+    "other_ship_pct": 4.79,
+    "destroyer_smoke_pct": 48.94,
+    "long_dd_pct": 26.6,
+    "stacked_pct": 20.21,
+    "screen_pct": 29.26,
+    "selfish_pct": 50.53,
+    "stationary_pct": 45.21,
+    "first_smoke_s": 230.0,
+    "cruiser_dmg_pct": 82.33,
+    "early_pct": 20.74,
+    "n_smokes": 188,
+    "n_games": 29,
+    "smokes_per_game": 6.48,
+    "wins": 19,
+    "losses": 10,
+    "smoker_own_dmg_pct": 64.91
+   },
+   "cast": {
+    "n_team_games": 29,
+    "dd_per_game": 3.28,
+    "dd_lineups": {
+     "2": 3,
+     "3": 15,
+     "4": 11
+    },
+    "smoke_ships_per_game": 2.76,
+    "smoke_cruisers_per_game": 1.21,
+    "radar_ships_per_game": 3.55,
+    "n_dd_smokes": 92,
+    "second_dd_fwd_pct": 18.48,
+    "second_dd_alive_pct": 52.17,
+    "second_dd_fwd_pct_early": 15.0,
+    "n_dd_smokes_early": 20,
+    "second_dd_fwd_any_dist_pct": 28.26,
+    "radar_cruiser_covered_pct": 50.0,
+    "dd_without_smoke_per_game": 1.76
+   }
+  },
+  "K": {
+   "name": "KITE (between)",
+   "clans": [
+    "KITE"
+   ],
+   "define": {
+    "flank_lines_pct": 51.11,
+    "cap_sitters_pct": 31.11,
+    "parked_cruiser_pct": 0.0,
+    "moving_exhaust_pct": 0.0,
+    "other_ship_pct": 17.78,
+    "destroyer_smoke_pct": 95.56,
+    "long_dd_pct": 68.89,
+    "stacked_pct": 24.44,
+    "screen_pct": 33.33,
+    "selfish_pct": 42.22,
+    "stationary_pct": 22.22,
+    "first_smoke_s": 150,
+    "cruiser_dmg_pct": 68.39,
+    "early_pct": 24.44,
+    "n_smokes": 45,
+    "n_games": 14,
+    "smokes_per_game": 3.21,
+    "wins": 9,
+    "losses": 5,
+    "smoker_own_dmg_pct": 26.14
+   },
+   "cast": {
+    "n_team_games": 14,
+    "dd_per_game": 2.86,
+    "dd_lineups": {
+     "2": 3,
+     "3": 10,
+     "4": 1
+    },
+    "smoke_ships_per_game": 1.71,
+    "smoke_cruisers_per_game": 0.07,
+    "radar_ships_per_game": 2.93,
+    "n_dd_smokes": 43,
+    "second_dd_fwd_pct": 25.58,
+    "second_dd_alive_pct": 55.81,
+    "second_dd_fwd_pct_early": 30.0,
+    "n_dd_smokes_early": 10,
+    "second_dd_fwd_any_dist_pct": 39.53,
+    "radar_cruiser_covered_pct": 48.84,
+    "dd_without_smoke_per_game": 1.21
+   }
+  }
+ },
+ "rest": {
+  "clans": [
+   "-BN-",
+   "5D",
+   "BONKY",
+   "BTLST",
+   "EPOXY",
+   "HFANS",
+   "INCA",
+   "KITED",
+   "KM",
+   "KSC",
+   "KSE",
+   "MACH",
+   "MACHX",
+   "MANBA",
+   "MZY",
+   "NGA",
+   "OGF",
+   "PFANS",
+   "PN",
+   "REEEE",
+   "RMN",
+   "RSR",
+   "SCCC2",
+   "UYSC"
+  ],
+  "define": {
+   "flank_lines_pct": 32.21,
+   "cap_sitters_pct": 32.41,
+   "parked_cruiser_pct": 12.49,
+   "moving_exhaust_pct": 16.95,
+   "other_ship_pct": 5.95,
+   "destroyer_smoke_pct": 68.09,
+   "long_dd_pct": 46.68,
+   "stacked_pct": 23.49,
+   "screen_pct": 31.32,
+   "selfish_pct": 45.19,
+   "stationary_pct": 27.45,
+   "first_smoke_s": 198.0,
+   "cruiser_dmg_pct": 73.19,
+   "early_pct": 27.45,
+   "n_smokes": 1009,
+   "n_games": 232,
+   "smokes_per_game": 4.35,
+   "wins": 93,
+   "losses": 139,
+   "smoker_own_dmg_pct": 40.01
+  },
+  "cast": {
+   "n_team_games": 232,
+   "dd_per_game": 3.0,
+   "dd_lineups": {
+    "1": 2,
+    "2": 34,
+    "3": 160,
+    "4": 35,
+    "5": 1
+   },
+   "smoke_ships_per_game": 2.31,
+   "smoke_cruisers_per_game": 0.72,
+   "radar_ships_per_game": 3.01,
+   "n_dd_smokes": 687,
+   "second_dd_fwd_pct": 18.2,
+   "second_dd_alive_pct": 46.72,
+   "second_dd_fwd_pct_early": 21.39,
+   "n_dd_smokes_early": 201,
+   "second_dd_fwd_any_dist_pct": 25.91,
+   "radar_cruiser_covered_pct": 42.65,
+   "dd_without_smoke_per_game": 1.55
+  }
+ },
+ "pn": {
+  "small_n": true,
+  "define": {
+   "flank_lines_pct": 64.29,
+   "cap_sitters_pct": 7.14,
+   "parked_cruiser_pct": 7.14,
+   "moving_exhaust_pct": 21.43,
+   "other_ship_pct": 0.0,
+   "destroyer_smoke_pct": 71.43,
+   "long_dd_pct": 71.43,
+   "stacked_pct": 35.71,
+   "screen_pct": 14.29,
+   "selfish_pct": 50.0,
+   "stationary_pct": 14.29,
+   "first_smoke_s": 221.5,
+   "cruiser_dmg_pct": 69.29,
+   "early_pct": 50.0,
+   "n_smokes": 14,
+   "n_games": 7,
+   "smokes_per_game": 2.0,
+   "wins": 3,
+   "losses": 4,
+   "smoker_own_dmg_pct": 30.71
+  },
+  "cast": {
+   "n_team_games": 7,
+   "dd_per_game": 2.71,
+   "dd_lineups": {
+    "2": 3,
+    "3": 3,
+    "4": 1
+   },
+   "smoke_ships_per_game": 1.86,
+   "smoke_cruisers_per_game": 0.57,
+   "radar_ships_per_game": 4.29,
+   "n_dd_smokes": 10,
+   "second_dd_fwd_pct": 20.0,
+   "second_dd_alive_pct": 40.0,
+   "second_dd_fwd_pct_early": 20.0,
+   "n_dd_smokes_early": 5,
+   "second_dd_fwd_any_dist_pct": 20.0,
+   "radar_cruiser_covered_pct": 70.0,
+   "dd_without_smoke_per_game": 1.57
+  },
+  "dist_long": 2.9,
+  "dist_cruiser": 5.33,
+  "nearest": "long smoke"
+ },
+ "clans": {
+  "-BN-": {
+   "style": "rest",
+   "wins": 6,
+   "losses": 8,
+   "define": {
+    "flank_lines_pct": 39.56,
+    "cap_sitters_pct": 24.18,
+    "parked_cruiser_pct": 21.98,
+    "moving_exhaust_pct": 4.4,
+    "other_ship_pct": 9.89,
+    "destroyer_smoke_pct": 70.33,
+    "long_dd_pct": 40.66,
+    "stacked_pct": 25.27,
+    "screen_pct": 32.97,
+    "selfish_pct": 41.76,
+    "stationary_pct": 32.97,
+    "first_smoke_s": 192.0,
+    "cruiser_dmg_pct": 79.68,
+    "early_pct": 21.98,
+    "n_smokes": 91,
+    "n_games": 14,
+    "smokes_per_game": 6.5,
+    "wins": 6,
+    "losses": 8,
+    "smoker_own_dmg_pct": 40.06
+   },
+   "cast": {
+    "n_team_games": 14,
+    "dd_per_game": 3.36,
+    "dd_lineups": {
+     "2": 1,
+     "3": 7,
+     "4": 6
+    },
+    "smoke_ships_per_game": 2.79,
+    "smoke_cruisers_per_game": 0.79,
+    "radar_ships_per_game": 3.14,
+    "n_dd_smokes": 64,
+    "second_dd_fwd_pct": 23.44,
+    "second_dd_alive_pct": 53.12,
+    "second_dd_fwd_pct_early": 25.0,
+    "n_dd_smokes_early": 16,
+    "second_dd_fwd_any_dist_pct": 34.38,
+    "radar_cruiser_covered_pct": 40.62,
+    "dd_without_smoke_per_game": 1.64
+   },
+   "dist_long": 2.76,
+   "dist_cruiser": 2.64,
+   "nearest": "between"
+  },
+  "5D": {
+   "style": "rest",
+   "wins": 3,
+   "losses": 7,
+   "define": {
+    "flank_lines_pct": 24.32,
+    "cap_sitters_pct": 21.62,
+    "parked_cruiser_pct": 0.0,
+    "moving_exhaust_pct": 51.35,
+    "other_ship_pct": 2.7,
+    "destroyer_smoke_pct": 45.95,
+    "long_dd_pct": 45.95,
+    "stacked_pct": 5.41,
+    "screen_pct": 51.35,
+    "selfish_pct": 43.24,
+    "stationary_pct": 16.22,
+    "first_smoke_s": 218.0,
+    "cruiser_dmg_pct": 48.28,
+    "early_pct": 45.95,
+    "n_smokes": 37,
+    "n_games": 10,
+    "smokes_per_game": 3.7,
+    "wins": 3,
+    "losses": 7,
+    "smoker_own_dmg_pct": 78.59
+   },
+   "cast": {
+    "n_team_games": 10,
+    "dd_per_game": 3.0,
+    "dd_lineups": {
+     "3": 10
+    },
+    "smoke_ships_per_game": 2.6,
+    "smoke_cruisers_per_game": 1.2,
+    "radar_ships_per_game": 3.1,
+    "n_dd_smokes": 17,
+    "second_dd_fwd_pct": 5.88,
+    "second_dd_alive_pct": 58.82,
+    "second_dd_fwd_pct_early": 11.11,
+    "n_dd_smokes_early": 9,
+    "second_dd_fwd_any_dist_pct": 11.76,
+    "radar_cruiser_covered_pct": 23.53,
+    "dd_without_smoke_per_game": 1.7
+   },
+   "dist_long": 5.68,
+   "dist_cruiser": 6.22,
+   "nearest": "between"
+  },
+  "BONKY": {
+   "style": "rest",
+   "wins": 3,
+   "losses": 4,
+   "define": {
+    "flank_lines_pct": 50.0,
+    "cap_sitters_pct": 19.44,
+    "parked_cruiser_pct": 16.67,
+    "moving_exhaust_pct": 13.89,
+    "other_ship_pct": 0.0,
+    "destroyer_smoke_pct": 69.44,
+    "long_dd_pct": 52.78,
+    "stacked_pct": 33.33,
+    "screen_pct": 30.56,
+    "selfish_pct": 36.11,
+    "stationary_pct": 27.78,
+    "first_smoke_s": 139,
+    "cruiser_dmg_pct": 96.02,
+    "early_pct": 27.78,
+    "n_smokes": 36,
+    "n_games": 7,
+    "smokes_per_game": 5.14,
+    "wins": 3,
+    "losses": 4,
+    "smoker_own_dmg_pct": 24.53
+   },
+   "cast": {
+    "n_team_games": 7,
+    "dd_per_game": 2.86,
+    "dd_lineups": {
+     "2": 1,
+     "3": 6
+    },
+    "smoke_ships_per_game": 2.57,
+    "smoke_cruisers_per_game": 0.71,
+    "radar_ships_per_game": 3.71,
+    "n_dd_smokes": 25,
+    "second_dd_fwd_pct": 0.0,
+    "second_dd_alive_pct": 12.0,
+    "second_dd_fwd_pct_early": 0.0,
+    "n_dd_smokes_early": 6,
+    "second_dd_fwd_any_dist_pct": 8.0,
+    "radar_cruiser_covered_pct": 84.0,
+    "dd_without_smoke_per_game": 1.14
+   },
+   "dist_long": 2.5,
+   "dist_cruiser": 4.29,
+   "nearest": "long smoke"
+  },
+  "BONKZ": {
+   "style": "A",
+   "wins": 13,
+   "losses": 8,
+   "define": {
+    "flank_lines_pct": 54.9,
+    "cap_sitters_pct": 16.67,
+    "parked_cruiser_pct": 18.63,
+    "moving_exhaust_pct": 2.94,
+    "other_ship_pct": 6.86,
+    "destroyer_smoke_pct": 74.51,
+    "long_dd_pct": 72.55,
+    "stacked_pct": 35.29,
+    "screen_pct": 34.31,
+    "selfish_pct": 30.39,
+    "stationary_pct": 29.41,
+    "first_smoke_s": 198.0,
+    "cruiser_dmg_pct": 80.23,
+    "early_pct": 22.55,
+    "n_smokes": 102,
+    "n_games": 21,
+    "smokes_per_game": 4.86,
+    "wins": 13,
+    "losses": 8,
+    "smoker_own_dmg_pct": 25.89
+   },
+   "cast": {
+    "n_team_games": 21,
+    "dd_per_game": 3.14,
+    "dd_lineups": {
+     "2": 1,
+     "3": 16,
+     "4": 4
+    },
+    "smoke_ships_per_game": 2.33,
+    "smoke_cruisers_per_game": 0.57,
+    "radar_ships_per_game": 3.76,
+    "n_dd_smokes": 76,
+    "second_dd_fwd_pct": 27.63,
+    "second_dd_alive_pct": 56.58,
+    "second_dd_fwd_pct_early": 36.84,
+    "n_dd_smokes_early": 19,
+    "second_dd_fwd_any_dist_pct": 34.21,
+    "radar_cruiser_covered_pct": 71.05,
+    "dd_without_smoke_per_game": 1.52
+   },
+   "dist_long": 2.43,
+   "dist_cruiser": 3.91,
+   "nearest": "long smoke"
+  },
+  "EPOXY": {
+   "style": "rest",
+   "wins": 9,
+   "losses": 8,
+   "define": {
+    "flank_lines_pct": 42.68,
+    "cap_sitters_pct": 36.59,
+    "parked_cruiser_pct": 13.41,
+    "moving_exhaust_pct": 2.44,
+    "other_ship_pct": 4.88,
+    "destroyer_smoke_pct": 82.93,
+    "long_dd_pct": 63.41,
+    "stacked_pct": 36.59,
+    "screen_pct": 41.46,
+    "selfish_pct": 21.95,
+    "stationary_pct": 31.71,
+    "first_smoke_s": 192,
+    "cruiser_dmg_pct": 75.91,
+    "early_pct": 24.39,
+    "n_smokes": 82,
+    "n_games": 17,
+    "smokes_per_game": 4.82,
+    "wins": 9,
+    "losses": 8,
+    "smoker_own_dmg_pct": 19.32
+   },
+   "cast": {
+    "n_team_games": 17,
+    "dd_per_game": 3.35,
+    "dd_lineups": {
+     "2": 2,
+     "3": 7,
+     "4": 8
+    },
+    "smoke_ships_per_game": 2.29,
+    "smoke_cruisers_per_game": 0.29,
+    "radar_ships_per_game": 3.71,
+    "n_dd_smokes": 68,
+    "second_dd_fwd_pct": 22.06,
+    "second_dd_alive_pct": 66.18,
+    "second_dd_fwd_pct_early": 10.0,
+    "n_dd_smokes_early": 20,
+    "second_dd_fwd_any_dist_pct": 32.35,
+    "radar_cruiser_covered_pct": 52.94,
+    "dd_without_smoke_per_game": 1.76
+   },
+   "dist_long": 2.0,
+   "dist_cruiser": 4.15,
+   "nearest": "long smoke"
+  },
+  "H-SR": {
+   "style": "A",
+   "wins": 20,
+   "losses": 2,
+   "define": {
+    "flank_lines_pct": 71.0,
+    "cap_sitters_pct": 18.0,
+    "parked_cruiser_pct": 2.0,
+    "moving_exhaust_pct": 1.0,
+    "other_ship_pct": 8.0,
+    "destroyer_smoke_pct": 89.0,
+    "long_dd_pct": 89.0,
+    "stacked_pct": 50.0,
+    "screen_pct": 32.0,
+    "selfish_pct": 18.0,
+    "stationary_pct": 8.0,
+    "first_smoke_s": 120.5,
+    "cruiser_dmg_pct": 73.18,
+    "early_pct": 32.0,
+    "n_smokes": 100,
+    "n_games": 22,
+    "smokes_per_game": 4.55,
+    "wins": 20,
+    "losses": 2,
+    "smoker_own_dmg_pct": 9.77
+   },
+   "cast": {
+    "n_team_games": 22,
+    "dd_per_game": 3.45,
+    "dd_lineups": {
+     "2": 1,
+     "3": 10,
+     "4": 11
+    },
+    "smoke_ships_per_game": 2.05,
+    "smoke_cruisers_per_game": 0.09,
+    "radar_ships_per_game": 3.55,
+    "n_dd_smokes": 89,
+    "second_dd_fwd_pct": 35.96,
+    "second_dd_alive_pct": 57.3,
+    "second_dd_fwd_pct_early": 46.67,
+    "n_dd_smokes_early": 30,
+    "second_dd_fwd_any_dist_pct": 43.82,
+    "radar_cruiser_covered_pct": 65.17,
+    "dd_without_smoke_per_game": 1.86
+   },
+   "dist_long": 3.08,
+   "dist_cruiser": 7.15,
+   "nearest": "long smoke"
+  },
+  "HFANS": {
+   "style": "rest",
+   "wins": 10,
+   "losses": 7,
+   "define": {
+    "flank_lines_pct": 30.0,
+    "cap_sitters_pct": 41.82,
+    "parked_cruiser_pct": 6.36,
+    "moving_exhaust_pct": 10.91,
+    "other_ship_pct": 10.91,
+    "destroyer_smoke_pct": 71.82,
+    "long_dd_pct": 53.64,
+    "stacked_pct": 27.27,
+    "screen_pct": 30.91,
+    "selfish_pct": 41.82,
+    "stationary_pct": 25.45,
+    "first_smoke_s": 143.0,
+    "cruiser_dmg_pct": 60.69,
+    "early_pct": 27.27,
+    "n_smokes": 110,
+    "n_games": 17,
+    "smokes_per_game": 6.47,
+    "wins": 10,
+    "losses": 7,
+    "smoker_own_dmg_pct": 47.44
+   },
+   "cast": {
+    "n_team_games": 17,
+    "dd_per_game": 3.29,
+    "dd_lineups": {
+     "3": 12,
+     "4": 5
+    },
+    "smoke_ships_per_game": 3.24,
+    "smoke_cruisers_per_game": 1.0,
+    "radar_ships_per_game": 2.82,
+    "n_dd_smokes": 79,
+    "second_dd_fwd_pct": 30.38,
+    "second_dd_alive_pct": 59.49,
+    "second_dd_fwd_pct_early": 37.5,
+    "n_dd_smokes_early": 24,
+    "second_dd_fwd_any_dist_pct": 35.44,
+    "radar_cruiser_covered_pct": 44.3,
+    "dd_without_smoke_per_game": 1.24
+   },
+   "dist_long": 3.02,
+   "dist_cruiser": 4.49,
+   "nearest": "long smoke"
+  },
+  "HTDOG": {
+   "style": "B",
+   "wins": 12,
+   "losses": 6,
+   "define": {
+    "flank_lines_pct": 9.43,
+    "cap_sitters_pct": 32.08,
+    "parked_cruiser_pct": 54.72,
+    "moving_exhaust_pct": 1.89,
+    "other_ship_pct": 1.89,
+    "destroyer_smoke_pct": 43.4,
+    "long_dd_pct": 21.7,
+    "stacked_pct": 14.15,
+    "screen_pct": 33.02,
+    "selfish_pct": 52.83,
+    "stationary_pct": 46.23,
+    "first_smoke_s": 233,
+    "cruiser_dmg_pct": 76.78,
+    "early_pct": 23.58,
+    "n_smokes": 106,
+    "n_games": 18,
+    "smokes_per_game": 5.89,
+    "wins": 12,
+    "losses": 6,
+    "smoker_own_dmg_pct": 77.3
+   },
+   "cast": {
+    "n_team_games": 18,
+    "dd_per_game": 3.5,
+    "dd_lineups": {
+     "2": 1,
+     "3": 7,
+     "4": 10
+    },
+    "smoke_ships_per_game": 2.5,
+    "smoke_cruisers_per_game": 1.28,
+    "radar_ships_per_game": 3.39,
+    "n_dd_smokes": 46,
+    "second_dd_fwd_pct": 21.74,
+    "second_dd_alive_pct": 67.39,
+    "second_dd_fwd_pct_early": 10.0,
+    "n_dd_smokes_early": 10,
+    "second_dd_fwd_any_dist_pct": 34.78,
+    "radar_cruiser_covered_pct": 41.3,
+    "dd_without_smoke_per_game": 2.28
+   },
+   "dist_long": 6.15,
+   "dist_cruiser": 2.55,
+   "nearest": "cruiser smoke"
+  },
+  "KITE": {
+   "style": "K",
+   "wins": 9,
+   "losses": 5,
+   "define": {
+    "flank_lines_pct": 51.11,
+    "cap_sitters_pct": 31.11,
+    "parked_cruiser_pct": 0.0,
+    "moving_exhaust_pct": 0.0,
+    "other_ship_pct": 17.78,
+    "destroyer_smoke_pct": 95.56,
+    "long_dd_pct": 68.89,
+    "stacked_pct": 24.44,
+    "screen_pct": 33.33,
+    "selfish_pct": 42.22,
+    "stationary_pct": 22.22,
+    "first_smoke_s": 150,
+    "cruiser_dmg_pct": 68.39,
+    "early_pct": 24.44,
+    "n_smokes": 45,
+    "n_games": 14,
+    "smokes_per_game": 3.21,
+    "wins": 9,
+    "losses": 5,
+    "smoker_own_dmg_pct": 26.14
+   },
+   "cast": {
+    "n_team_games": 14,
+    "dd_per_game": 2.86,
+    "dd_lineups": {
+     "2": 3,
+     "3": 10,
+     "4": 1
+    },
+    "smoke_ships_per_game": 1.71,
+    "smoke_cruisers_per_game": 0.07,
+    "radar_ships_per_game": 2.93,
+    "n_dd_smokes": 43,
+    "second_dd_fwd_pct": 25.58,
+    "second_dd_alive_pct": 55.81,
+    "second_dd_fwd_pct_early": 30.0,
+    "n_dd_smokes_early": 10,
+    "second_dd_fwd_any_dist_pct": 39.53,
+    "radar_cruiser_covered_pct": 48.84,
+    "dd_without_smoke_per_game": 1.21
+   },
+   "dist_long": 2.32,
+   "dist_cruiser": 4.88,
+   "nearest": "long smoke"
+  },
+  "KITED": {
+   "style": "rest",
+   "wins": 7,
+   "losses": 7,
+   "define": {
+    "flank_lines_pct": 7.94,
+    "cap_sitters_pct": 26.98,
+    "parked_cruiser_pct": 12.7,
+    "moving_exhaust_pct": 47.62,
+    "other_ship_pct": 4.76,
+    "destroyer_smoke_pct": 39.68,
+    "long_dd_pct": 14.29,
+    "stacked_pct": 11.11,
+    "screen_pct": 23.81,
+    "selfish_pct": 65.08,
+    "stationary_pct": 23.81,
+    "first_smoke_s": 223.0,
+    "cruiser_dmg_pct": 80.89,
+    "early_pct": 20.63,
+    "n_smokes": 63,
+    "n_games": 14,
+    "smokes_per_game": 4.5,
+    "wins": 7,
+    "losses": 7,
+    "smoker_own_dmg_pct": 74.27
+   },
+   "cast": {
+    "n_team_games": 14,
+    "dd_per_game": 2.86,
+    "dd_lineups": {
+     "2": 2,
+     "3": 12
+    },
+    "smoke_ships_per_game": 2.57,
+    "smoke_cruisers_per_game": 1.29,
+    "radar_ships_per_game": 3.07,
+    "n_dd_smokes": 25,
+    "second_dd_fwd_pct": 4.0,
+    "second_dd_alive_pct": 20.0,
+    "second_dd_fwd_pct_early": 0.0,
+    "n_dd_smokes_early": 4,
+    "second_dd_fwd_any_dist_pct": 4.0,
+    "radar_cruiser_covered_pct": 20.0,
+    "dd_without_smoke_per_game": 1.86
+   },
+   "dist_long": 5.98,
+   "dist_cruiser": 4.52,
+   "nearest": "cruiser smoke"
+  },
+  "KSC": {
+   "style": "rest",
+   "wins": 6,
+   "losses": 5,
+   "define": {
+    "flank_lines_pct": 46.03,
+    "cap_sitters_pct": 34.92,
+    "parked_cruiser_pct": 17.46,
+    "moving_exhaust_pct": 1.59,
+    "other_ship_pct": 0.0,
+    "destroyer_smoke_pct": 80.95,
+    "long_dd_pct": 53.97,
+    "stacked_pct": 33.33,
+    "screen_pct": 23.81,
+    "selfish_pct": 42.86,
+    "stationary_pct": 34.92,
+    "first_smoke_s": 157,
+    "cruiser_dmg_pct": 69.42,
+    "early_pct": 23.81,
+    "n_smokes": 63,
+    "n_games": 11,
+    "smokes_per_game": 5.73,
+    "wins": 6,
+    "losses": 5,
+    "smoker_own_dmg_pct": 25.38
+   },
+   "cast": {
+    "n_team_games": 11,
+    "dd_per_game": 3.09,
+    "dd_lineups": {
+     "3": 10,
+     "4": 1
+    },
+    "smoke_ships_per_game": 2.64,
+    "smoke_cruisers_per_game": 0.36,
+    "radar_ships_per_game": 3.09,
+    "n_dd_smokes": 51,
+    "second_dd_fwd_pct": 7.84,
+    "second_dd_alive_pct": 29.41,
+    "second_dd_fwd_pct_early": 14.29,
+    "n_dd_smokes_early": 14,
+    "second_dd_fwd_any_dist_pct": 11.76,
+    "radar_cruiser_covered_pct": 47.06,
+    "dd_without_smoke_per_game": 1.0
+   },
+   "dist_long": 2.48,
+   "dist_cruiser": 3.55,
+   "nearest": "long smoke"
+  },
+  "KSE": {
+   "style": "rest",
+   "wins": 2,
+   "losses": 5,
+   "define": {
+    "flank_lines_pct": 0.0,
+    "cap_sitters_pct": 75.0,
+    "parked_cruiser_pct": 0.0,
+    "moving_exhaust_pct": 25.0,
+    "other_ship_pct": 0.0,
+    "destroyer_smoke_pct": 75.0,
+    "long_dd_pct": 50.0,
+    "stacked_pct": 15.0,
+    "screen_pct": 35.0,
+    "selfish_pct": 50.0,
+    "stationary_pct": 35.0,
+    "first_smoke_s": 308,
+    "cruiser_dmg_pct": 48.79,
+    "early_pct": 15.0,
+    "n_smokes": 20,
+    "n_games": 7,
+    "smokes_per_game": 2.86,
+    "wins": 2,
+    "losses": 5,
+    "smoker_own_dmg_pct": 51.21
+   },
+   "cast": {
+    "n_team_games": 7,
+    "dd_per_game": 2.86,
+    "dd_lineups": {
+     "2": 1,
+     "3": 6
+    },
+    "smoke_ships_per_game": 2.14,
+    "smoke_cruisers_per_game": 0.86,
+    "radar_ships_per_game": 3.57,
+    "n_dd_smokes": 15,
+    "second_dd_fwd_pct": 6.67,
+    "second_dd_alive_pct": 53.33,
+    "second_dd_fwd_pct_early": 0.0,
+    "n_dd_smokes_early": 2,
+    "second_dd_fwd_any_dist_pct": 26.67,
+    "radar_cruiser_covered_pct": 33.33,
+    "dd_without_smoke_per_game": 1.57
+   },
+   "dist_long": 7.08,
+   "dist_cruiser": 5.77,
+   "nearest": "cruiser smoke"
+  },
+  "MACH": {
+   "style": "rest",
+   "wins": 1,
+   "losses": 6,
+   "define": {
+    "flank_lines_pct": 0.0,
+    "cap_sitters_pct": 55.17,
+    "parked_cruiser_pct": 20.69,
+    "moving_exhaust_pct": 10.34,
+    "other_ship_pct": 13.79,
+    "destroyer_smoke_pct": 62.07,
+    "long_dd_pct": 3.45,
+    "stacked_pct": 17.24,
+    "screen_pct": 13.79,
+    "selfish_pct": 68.97,
+    "stationary_pct": 44.83,
+    "first_smoke_s": 193,
+    "cruiser_dmg_pct": 86.48,
+    "early_pct": 37.93,
+    "n_smokes": 29,
+    "n_games": 7,
+    "smokes_per_game": 4.14,
+    "wins": 1,
+    "losses": 6,
+    "smoker_own_dmg_pct": 90.72
+   },
+   "cast": {
+    "n_team_games": 7,
+    "dd_per_game": 2.86,
+    "dd_lineups": {
+     "2": 1,
+     "3": 6
+    },
+    "smoke_ships_per_game": 1.86,
+    "smoke_cruisers_per_game": 0.57,
+    "radar_ships_per_game": 2.86,
+    "n_dd_smokes": 18,
+    "second_dd_fwd_pct": 22.22,
+    "second_dd_alive_pct": 38.89,
+    "second_dd_fwd_pct_early": 33.33,
+    "n_dd_smokes_early": 6,
+    "second_dd_fwd_any_dist_pct": 22.22,
+    "radar_cruiser_covered_pct": 27.78,
+    "dd_without_smoke_per_game": 1.57
+   },
+   "dist_long": 6.21,
+   "dist_cruiser": 3.06,
+   "nearest": "cruiser smoke"
+  },
+  "MACHX": {
+   "style": "rest",
+   "wins": 8,
+   "losses": 6,
+   "define": {
+    "flank_lines_pct": 20.73,
+    "cap_sitters_pct": 39.02,
+    "parked_cruiser_pct": 17.07,
+    "moving_exhaust_pct": 19.51,
+    "other_ship_pct": 3.66,
+    "destroyer_smoke_pct": 59.76,
+    "long_dd_pct": 41.46,
+    "stacked_pct": 20.73,
+    "screen_pct": 23.17,
+    "selfish_pct": 56.1,
+    "stationary_pct": 28.05,
+    "first_smoke_s": 146,
+    "cruiser_dmg_pct": 68.08,
+    "early_pct": 26.83,
+    "n_smokes": 82,
+    "n_games": 14,
+    "smokes_per_game": 5.86,
+    "wins": 8,
+    "losses": 6,
+    "smoker_own_dmg_pct": 56.55
+   },
+   "cast": {
+    "n_team_games": 14,
+    "dd_per_game": 3.0,
+    "dd_lineups": {
+     "2": 2,
+     "3": 10,
+     "4": 2
+    },
+    "smoke_ships_per_game": 2.79,
+    "smoke_cruisers_per_game": 1.14,
+    "radar_ships_per_game": 3.0,
+    "n_dd_smokes": 49,
+    "second_dd_fwd_pct": 22.45,
+    "second_dd_alive_pct": 63.27,
+    "second_dd_fwd_pct_early": 30.77,
+    "n_dd_smokes_early": 13,
+    "second_dd_fwd_any_dist_pct": 38.78,
+    "radar_cruiser_covered_pct": 44.9,
+    "dd_without_smoke_per_game": 1.43
+   },
+   "dist_long": 4.12,
+   "dist_cruiser": 3.6,
+   "nearest": "between"
+  },
+  "MZY": {
+   "style": "rest",
+   "wins": 12,
+   "losses": 7,
+   "define": {
+    "flank_lines_pct": 56.0,
+    "cap_sitters_pct": 24.0,
+    "parked_cruiser_pct": 0.0,
+    "moving_exhaust_pct": 14.0,
+    "other_ship_pct": 6.0,
+    "destroyer_smoke_pct": 86.0,
+    "long_dd_pct": 68.0,
+    "stacked_pct": 26.0,
+    "screen_pct": 42.0,
+    "selfish_pct": 32.0,
+    "stationary_pct": 16.0,
+    "first_smoke_s": 271,
+    "cruiser_dmg_pct": 80.05,
+    "early_pct": 28.0,
+    "n_smokes": 50,
+    "n_games": 19,
+    "smokes_per_game": 2.63,
+    "wins": 12,
+    "losses": 7,
+    "smoker_own_dmg_pct": 27.8
+   },
+   "cast": {
+    "n_team_games": 19,
+    "dd_per_game": 3.05,
+    "dd_lineups": {
+     "2": 5,
+     "3": 9,
+     "4": 4,
+     "5": 1
+    },
+    "smoke_ships_per_game": 1.32,
+    "smoke_cruisers_per_game": 0.32,
+    "radar_ships_per_game": 2.16,
+    "n_dd_smokes": 43,
+    "second_dd_fwd_pct": 34.88,
+    "second_dd_alive_pct": 58.14,
+    "second_dd_fwd_pct_early": 33.33,
+    "n_dd_smokes_early": 12,
+    "second_dd_fwd_any_dist_pct": 41.86,
+    "radar_cruiser_covered_pct": 58.14,
+    "dd_without_smoke_per_game": 2.16
+   },
+   "dist_long": 3.09,
+   "dist_cruiser": 5.13,
+   "nearest": "long smoke"
+  },
+  "NGA": {
+   "style": "rest",
+   "wins": 0,
+   "losses": 7,
+   "define": {
+    "flank_lines_pct": 39.29,
+    "cap_sitters_pct": 14.29,
+    "parked_cruiser_pct": 0.0,
+    "moving_exhaust_pct": 39.29,
+    "other_ship_pct": 7.14,
+    "destroyer_smoke_pct": 60.71,
+    "long_dd_pct": 46.43,
+    "stacked_pct": 7.14,
+    "screen_pct": 50.0,
+    "selfish_pct": 42.86,
+    "stationary_pct": 14.29,
+    "first_smoke_s": 141,
+    "cruiser_dmg_pct": 80.03,
+    "early_pct": 39.29,
+    "n_smokes": 28,
+    "n_games": 7,
+    "smokes_per_game": 4.0,
+    "wins": 0,
+    "losses": 7,
+    "smoker_own_dmg_pct": 39.15
+   },
+   "cast": {
+    "n_team_games": 7,
+    "dd_per_game": 2.86,
+    "dd_lineups": {
+     "2": 1,
+     "3": 6
+    },
+    "smoke_ships_per_game": 2.14,
+    "smoke_cruisers_per_game": 0.86,
+    "radar_ships_per_game": 2.43,
+    "n_dd_smokes": 17,
+    "second_dd_fwd_pct": 11.76,
+    "second_dd_alive_pct": 35.29,
+    "second_dd_fwd_pct_early": 16.67,
+    "n_dd_smokes_early": 6,
+    "second_dd_fwd_any_dist_pct": 29.41,
+    "radar_cruiser_covered_pct": 41.18,
+    "dd_without_smoke_per_game": 1.71
+   },
+   "dist_long": 4.47,
+   "dist_cruiser": 5.78,
+   "nearest": "long smoke"
+  },
+  "PFANS": {
+   "style": "rest",
+   "wins": 5,
+   "losses": 7,
+   "define": {
+    "flank_lines_pct": 50.0,
+    "cap_sitters_pct": 25.0,
+    "parked_cruiser_pct": 12.5,
+    "moving_exhaust_pct": 12.5,
+    "other_ship_pct": 0.0,
+    "destroyer_smoke_pct": 75.0,
+    "long_dd_pct": 75.0,
+    "stacked_pct": 33.33,
+    "screen_pct": 25.0,
+    "selfish_pct": 41.67,
+    "stationary_pct": 25.0,
+    "first_smoke_s": 231.5,
+    "cruiser_dmg_pct": 79.82,
+    "early_pct": 20.83,
+    "n_smokes": 24,
+    "n_games": 12,
+    "smokes_per_game": 2.0,
+    "wins": 5,
+    "losses": 7,
+    "smoker_own_dmg_pct": 27.87
+   },
+   "cast": {
+    "n_team_games": 12,
+    "dd_per_game": 3.0,
+    "dd_lineups": {
+     "2": 2,
+     "3": 8,
+     "4": 2
+    },
+    "smoke_ships_per_game": 1.5,
+    "smoke_cruisers_per_game": 0.67,
+    "radar_ships_per_game": 2.5,
+    "n_dd_smokes": 18,
+    "second_dd_fwd_pct": 11.11,
+    "second_dd_alive_pct": 27.78,
+    "second_dd_fwd_pct_early": 25.0,
+    "n_dd_smokes_early": 4,
+    "second_dd_fwd_any_dist_pct": 11.11,
+    "radar_cruiser_covered_pct": 61.11,
+    "dd_without_smoke_per_game": 2.25
+   },
+   "dist_long": 2.39,
+   "dist_cruiser": 3.77,
+   "nearest": "long smoke"
+  },
+  "PN": {
+   "style": "PN",
+   "wins": 3,
+   "losses": 4,
+   "define": {
+    "flank_lines_pct": 64.29,
+    "cap_sitters_pct": 7.14,
+    "parked_cruiser_pct": 7.14,
+    "moving_exhaust_pct": 21.43,
+    "other_ship_pct": 0.0,
+    "destroyer_smoke_pct": 71.43,
+    "long_dd_pct": 71.43,
+    "stacked_pct": 35.71,
+    "screen_pct": 14.29,
+    "selfish_pct": 50.0,
+    "stationary_pct": 14.29,
+    "first_smoke_s": 221.5,
+    "cruiser_dmg_pct": 69.29,
+    "early_pct": 50.0,
+    "n_smokes": 14,
+    "n_games": 7,
+    "smokes_per_game": 2.0,
+    "wins": 3,
+    "losses": 4,
+    "smoker_own_dmg_pct": 30.71
+   },
+   "cast": {
+    "n_team_games": 7,
+    "dd_per_game": 2.71,
+    "dd_lineups": {
+     "2": 3,
+     "3": 3,
+     "4": 1
+    },
+    "smoke_ships_per_game": 1.86,
+    "smoke_cruisers_per_game": 0.57,
+    "radar_ships_per_game": 4.29,
+    "n_dd_smokes": 10,
+    "second_dd_fwd_pct": 20.0,
+    "second_dd_alive_pct": 40.0,
+    "second_dd_fwd_pct_early": 20.0,
+    "n_dd_smokes_early": 5,
+    "second_dd_fwd_any_dist_pct": 20.0,
+    "radar_cruiser_covered_pct": 70.0,
+    "dd_without_smoke_per_game": 1.57
+   },
+   "dist_long": 2.9,
+   "dist_cruiser": 5.33,
+   "nearest": "long smoke"
+  },
+  "REEEE": {
+   "style": "rest",
+   "wins": 8,
+   "losses": 5,
+   "define": {
+    "flank_lines_pct": 51.92,
+    "cap_sitters_pct": 32.69,
+    "parked_cruiser_pct": 0.0,
+    "moving_exhaust_pct": 15.38,
+    "other_ship_pct": 0.0,
+    "destroyer_smoke_pct": 84.62,
+    "long_dd_pct": 51.92,
+    "stacked_pct": 26.92,
+    "screen_pct": 28.85,
+    "selfish_pct": 44.23,
+    "stationary_pct": 28.85,
+    "first_smoke_s": 185,
+    "cruiser_dmg_pct": 85.55,
+    "early_pct": 21.15,
+    "n_smokes": 52,
+    "n_games": 13,
+    "smokes_per_game": 4.0,
+    "wins": 8,
+    "losses": 5,
+    "smoker_own_dmg_pct": 14.83
+   },
+   "cast": {
+    "n_team_games": 13,
+    "dd_per_game": 3.0,
+    "dd_lineups": {
+     "2": 1,
+     "3": 11,
+     "4": 1
+    },
+    "smoke_ships_per_game": 1.69,
+    "smoke_cruisers_per_game": 0.54,
+    "radar_ships_per_game": 2.85,
+    "n_dd_smokes": 44,
+    "second_dd_fwd_pct": 9.09,
+    "second_dd_alive_pct": 36.36,
+    "second_dd_fwd_pct_early": 9.09,
+    "n_dd_smokes_early": 11,
+    "second_dd_fwd_any_dist_pct": 18.18,
+    "radar_cruiser_covered_pct": 18.18,
+    "dd_without_smoke_per_game": 1.85
+   },
+   "dist_long": 2.78,
+   "dist_cruiser": 4.31,
+   "nearest": "long smoke"
+  },
+  "RESIN": {
+   "style": "A",
+   "wins": 17,
+   "losses": 7,
+   "define": {
+    "flank_lines_pct": 58.25,
+    "cap_sitters_pct": 26.21,
+    "parked_cruiser_pct": 9.71,
+    "moving_exhaust_pct": 3.88,
+    "other_ship_pct": 1.94,
+    "destroyer_smoke_pct": 84.47,
+    "long_dd_pct": 84.47,
+    "stacked_pct": 33.98,
+    "screen_pct": 34.95,
+    "selfish_pct": 31.07,
+    "stationary_pct": 21.36,
+    "first_smoke_s": 174.0,
+    "cruiser_dmg_pct": 65.77,
+    "early_pct": 28.16,
+    "n_smokes": 103,
+    "n_games": 24,
+    "smokes_per_game": 4.29,
+    "wins": 17,
+    "losses": 7,
+    "smoker_own_dmg_pct": 35.44
+   },
+   "cast": {
+    "n_team_games": 24,
+    "dd_per_game": 3.33,
+    "dd_lineups": {
+     "2": 2,
+     "3": 13,
+     "4": 8,
+     "5": 1
+    },
+    "smoke_ships_per_game": 2.17,
+    "smoke_cruisers_per_game": 0.29,
+    "radar_ships_per_game": 3.83,
+    "n_dd_smokes": 87,
+    "second_dd_fwd_pct": 22.99,
+    "second_dd_alive_pct": 67.82,
+    "second_dd_fwd_pct_early": 29.17,
+    "n_dd_smokes_early": 24,
+    "second_dd_fwd_any_dist_pct": 32.18,
+    "radar_cruiser_covered_pct": 58.62,
+    "dd_without_smoke_per_game": 1.54
+   },
+   "dist_long": 1.51,
+   "dist_cruiser": 4.82,
+   "nearest": "long smoke"
+  },
+  "RSR": {
+   "style": "rest",
+   "wins": 0,
+   "losses": 7,
+   "define": {
+    "flank_lines_pct": 42.31,
+    "cap_sitters_pct": 19.23,
+    "parked_cruiser_pct": 30.77,
+    "moving_exhaust_pct": 0.0,
+    "other_ship_pct": 7.69,
+    "destroyer_smoke_pct": 69.23,
+    "long_dd_pct": 53.85,
+    "stacked_pct": 30.77,
+    "screen_pct": 19.23,
+    "selfish_pct": 50.0,
+    "stationary_pct": 19.23,
+    "first_smoke_s": 184.0,
+    "cruiser_dmg_pct": 92.97,
+    "early_pct": 30.77,
+    "n_smokes": 26,
+    "n_games": 7,
+    "smokes_per_game": 3.71,
+    "wins": 0,
+    "losses": 7,
+    "smoker_own_dmg_pct": 18.14
+   },
+   "cast": {
+    "n_team_games": 7,
+    "dd_per_game": 3.0,
+    "dd_lineups": {
+     "3": 7
+    },
+    "smoke_ships_per_game": 2.29,
+    "smoke_cruisers_per_game": 0.29,
+    "radar_ships_per_game": 3.29,
+    "n_dd_smokes": 18,
+    "second_dd_fwd_pct": 5.56,
+    "second_dd_alive_pct": 38.89,
+    "second_dd_fwd_pct_early": 0.0,
+    "n_dd_smokes_early": 7,
+    "second_dd_fwd_any_dist_pct": 16.67,
+    "radar_cruiser_covered_pct": 50.0,
+    "dd_without_smoke_per_game": 1.0
+   },
+   "dist_long": 3.23,
+   "dist_cruiser": 3.42,
+   "nearest": "between"
+  },
+  "SCCC2": {
+   "style": "rest",
+   "wins": 3,
+   "losses": 4,
+   "define": {
+    "flank_lines_pct": 6.25,
+    "cap_sitters_pct": 60.42,
+    "parked_cruiser_pct": 27.08,
+    "moving_exhaust_pct": 2.08,
+    "other_ship_pct": 4.17,
+    "destroyer_smoke_pct": 66.67,
+    "long_dd_pct": 12.5,
+    "stacked_pct": 16.67,
+    "screen_pct": 25.0,
+    "selfish_pct": 58.33,
+    "stationary_pct": 50.0,
+    "first_smoke_s": 201,
+    "cruiser_dmg_pct": 61.93,
+    "early_pct": 25.0,
+    "n_smokes": 48,
+    "n_games": 7,
+    "smokes_per_game": 6.86,
+    "wins": 3,
+    "losses": 4,
+    "smoker_own_dmg_pct": 74.33
+   },
+   "cast": {
+    "n_team_games": 7,
+    "dd_per_game": 2.0,
+    "dd_lineups": {
+     "1": 1,
+     "2": 5,
+     "3": 1
+    },
+    "smoke_ships_per_game": 2.14,
+    "smoke_cruisers_per_game": 0.71,
+    "radar_ships_per_game": 3.57,
+    "n_dd_smokes": 32,
+    "second_dd_fwd_pct": 18.75,
+    "second_dd_alive_pct": 53.12,
+    "second_dd_fwd_pct_early": 25.0,
+    "n_dd_smokes_early": 8,
+    "second_dd_fwd_any_dist_pct": 25.0,
+    "radar_cruiser_covered_pct": 21.88,
+    "dd_without_smoke_per_game": 0.57
+   },
+   "dist_long": 6.06,
+   "dist_cruiser": 3.05,
+   "nearest": "cruiser smoke"
+  },
+  "UYSC": {
+   "style": "rest",
+   "wins": 1,
+   "losses": 6,
+   "define": {
+    "flank_lines_pct": 16.67,
+    "cap_sitters_pct": 44.44,
+    "parked_cruiser_pct": 8.33,
+    "moving_exhaust_pct": 30.56,
+    "other_ship_pct": 0.0,
+    "destroyer_smoke_pct": 61.11,
+    "long_dd_pct": 52.78,
+    "stacked_pct": 11.11,
+    "screen_pct": 30.56,
+    "selfish_pct": 58.33,
+    "stationary_pct": 27.78,
+    "first_smoke_s": 163,
+    "cruiser_dmg_pct": 50.41,
+    "early_pct": 30.56,
+    "n_smokes": 36,
+    "n_games": 7,
+    "smokes_per_game": 5.14,
+    "wins": 1,
+    "losses": 6,
+    "smoker_own_dmg_pct": 69.38
+   },
+   "cast": {
+    "n_team_games": 7,
+    "dd_per_game": 3.0,
+    "dd_lineups": {
+     "3": 7
+    },
+    "smoke_ships_per_game": 3.71,
+    "smoke_cruisers_per_game": 1.29,
+    "radar_ships_per_game": 3.14,
+    "n_dd_smokes": 22,
+    "second_dd_fwd_pct": 18.18,
+    "second_dd_alive_pct": 54.55,
+    "second_dd_fwd_pct_early": 14.29,
+    "n_dd_smokes_early": 7,
+    "second_dd_fwd_any_dist_pct": 27.27,
+    "radar_cruiser_covered_pct": 18.18,
+    "dd_without_smoke_per_game": 0.71
+   },
+   "dist_long": 5.34,
+   "dist_cruiser": 4.85,
+   "nearest": "between"
+  },
+  "VRTUS": {
+   "style": "B",
+   "wins": 7,
+   "losses": 4,
+   "define": {
+    "flank_lines_pct": 20.73,
+    "cap_sitters_pct": 30.49,
+    "parked_cruiser_pct": 31.71,
+    "moving_exhaust_pct": 8.54,
+    "other_ship_pct": 8.54,
+    "destroyer_smoke_pct": 56.1,
+    "long_dd_pct": 32.93,
+    "stacked_pct": 28.05,
+    "screen_pct": 24.39,
+    "selfish_pct": 47.56,
+    "stationary_pct": 43.9,
+    "first_smoke_s": 224,
+    "cruiser_dmg_pct": 88.98,
+    "early_pct": 17.07,
+    "n_smokes": 82,
+    "n_games": 11,
+    "smokes_per_game": 7.45,
+    "wins": 7,
+    "losses": 4,
+    "smoker_own_dmg_pct": 50.07
+   },
+   "cast": {
+    "n_team_games": 11,
+    "dd_per_game": 2.91,
+    "dd_lineups": {
+     "2": 2,
+     "3": 8,
+     "4": 1
+    },
+    "smoke_ships_per_game": 3.18,
+    "smoke_cruisers_per_game": 1.09,
+    "radar_ships_per_game": 3.82,
+    "n_dd_smokes": 46,
+    "second_dd_fwd_pct": 15.22,
+    "second_dd_alive_pct": 36.96,
+    "second_dd_fwd_pct_early": 20.0,
+    "n_dd_smokes_early": 10,
+    "second_dd_fwd_any_dist_pct": 21.74,
+    "radar_cruiser_covered_pct": 58.7,
+    "dd_without_smoke_per_game": 0.91
+   },
+   "dist_long": 4.47,
+   "dist_cruiser": 2.55,
+   "nearest": "cruiser smoke"
+  }
+ },
+ "a_minus_b_intervals_95": {
+  "flank_lines_pct": [
+   34.3,
+   57.03
+  ],
+  "parked_cruiser_pct": [
+   -47.65,
+   -22.71
+  ],
+  "cap_sitters_pct": [
+   -21.26,
+   -0.13
+  ],
+  "stacked_pct": [
+   9.29,
+   29.37
+  ],
+  "selfish_pct": [
+   -36.3,
+   -12.07
+  ],
+  "stationary_pct": [
+   -37.3,
+   -12.88
+  ],
+  "first_smoke_s": [
+   -94.0,
+   -37
+  ],
+  "cruiser_dmg_pct": [
+   -17.99,
+   -0.6
+  ],
+  "smokes_per_game": [
+   -3.33,
+   -0.61
+  ],
+  "smoker_own_dmg_pct": [
+   -53.7,
+   -27.55
+  ],
+  "second_dd_fwd_pct": [
+   -1.28,
+   22.07
+  ],
+  "second_dd_fwd_pct_A_vs_rest": [
+   3.32,
+   17.97
+  ],
+  "second_dd_fwd_pct_early": [
+   7.58,
+   40.28
+  ],
+  "dd_per_game": [
+   -0.22,
+   0.32
+  ],
+  "smoke_cruisers_per_game": [
+   -1.21,
+   -0.58
+  ],
+  "smoke_ships_per_game": [
+   -1.04,
+   -0.13
+  ]
+ },
+ "second_dd_rule": "an allied destroyer other than the smoker, ahead of the smoke centre (fwd_m > 0) and within 10 km of the smoke, at the moment the smoke was fully laid",
+ "distance": {
+  "features": [
+   "flank_lines_pct",
+   "cap_sitters_pct",
+   "parked_cruiser_pct",
+   "moving_exhaust_pct",
+   "stacked_pct",
+   "selfish_pct",
+   "stationary_pct",
+   "first_smoke_s",
+   "cruiser_dmg_pct"
+  ],
+  "method": "each number scaled to mean 0 and spread 1 across the 24 clans with 7+ games; straight-line distance; a clan is compared with the centre of each style (leaving itself out)",
+  "pairwise": {
+   "H-SR": {
+    "H-SR": 0.0,
+    "RESIN": 2.8,
+    "BONKZ": 3.55,
+    "KITE": 3.7,
+    "HTDOG": 8.06,
+    "VRTUS": 6.36,
+    "PN": 4.14
+   },
+   "RESIN": {
+    "H-SR": 2.8,
+    "RESIN": 0.0,
+    "BONKZ": 1.75,
+    "KITE": 1.68,
+    "HTDOG": 5.68,
+    "VRTUS": 4.18,
+    "PN": 2.7
+   },
+   "BONKZ": {
+    "H-SR": 3.55,
+    "RESIN": 1.75,
+    "BONKZ": 0.0,
+    "KITE": 2.74,
+    "HTDOG": 4.9,
+    "VRTUS": 3.13,
+    "PN": 2.93
+   },
+   "KITE": {
+    "H-SR": 3.7,
+    "RESIN": 1.68,
+    "BONKZ": 2.74,
+    "KITE": 0.0,
+    "HTDOG": 5.7,
+    "VRTUS": 4.28,
+    "PN": 3.17
+   },
+   "HTDOG": {
+    "H-SR": 8.06,
+    "RESIN": 5.68,
+    "BONKZ": 4.9,
+    "KITE": 5.7,
+    "HTDOG": 0.0,
+    "VRTUS": 2.55,
+    "PN": 6.19
+   },
+   "VRTUS": {
+    "H-SR": 6.36,
+    "RESIN": 4.18,
+    "BONKZ": 3.13,
+    "KITE": 4.28,
+    "HTDOG": 2.55,
+    "VRTUS": 0.0,
+    "PN": 4.66
+   },
+   "PN": {
+    "H-SR": 4.14,
+    "RESIN": 2.7,
+    "BONKZ": 2.93,
+    "KITE": 3.17,
+    "HTDOG": 6.19,
+    "VRTUS": 4.66,
+    "PN": 0.0
+   }
+  }
+ },
+ "maps": {
+  "Sleeping Giant": {
+   "caption": "The long-smoke style works both flanks (39% of smokes in the west third, 46% in the east third; 80 smokes, 17 games); the cruiser-smoke style stays west and centre (59% west, 33% middle, 8% east; 51 smokes, 7 games; east-third gap +25 to +51 * points) and parks more (41% stationary against 14%; gap -48 to -6 *).",
+   "A": {
+    "n": 80,
+    "games": 17,
+    "destroyer_pct": 91.25,
+    "cruiser_pct": 6.25,
+    "west_pct": 38.75,
+    "middle_pct": 15.0,
+    "east_pct": 46.25,
+    "own_half_pct": 71.25,
+    "inside_cap_pct": 15.0,
+    "stationary_pct": 13.75,
+    "caps": {
+     "C": 35,
+     "A": 31,
+     "B": 10,
+     "D": 4
+    },
+    "top_cells": [
+     [
+      "G1",
+      9
+     ],
+     [
+      "G9",
+      5
+     ],
+     [
+      "F1",
+      5
+     ]
+    ]
+   },
+   "B": {
+    "n": 51,
+    "games": 7,
+    "destroyer_pct": 60.78,
+    "cruiser_pct": 37.25,
+    "west_pct": 58.82,
+    "middle_pct": 33.33,
+    "east_pct": 7.84,
+    "own_half_pct": 80.39,
+    "inside_cap_pct": 25.49,
+    "stationary_pct": 41.18,
+    "caps": {
+     "A": 30,
+     "B": 17,
+     "C": 4
+    },
+    "top_cells": [
+     [
+      "G1",
+      6
+     ],
+     [
+      "G2",
+      6
+     ],
+     [
+      "G6",
+      5
+     ]
+    ]
+   },
+   "K": {
+    "n": 6,
+    "games": 3,
+    "destroyer_pct": 100.0,
+    "cruiser_pct": 0.0,
+    "west_pct": 50.0,
+    "middle_pct": 33.33,
+    "east_pct": 16.67,
+    "own_half_pct": 83.33,
+    "inside_cap_pct": 16.67,
+    "stationary_pct": 33.33,
+    "caps": {
+     "B": 3,
+     "A": 2,
+     "C": 1
+    },
+    "top_cells": [
+     [
+      "G2",
+      1
+     ],
+     [
+      "D8",
+      1
+     ],
+     [
+      "I5",
+      1
+     ]
+    ]
+   }
+  },
+  "Hotspot": {
+   "caption": "Not enough to separate the styles: the cruiser-smoke clans have 14 smokes in 3 games here (small n), and all 14 are destroyer smokes; they left the smoke cruisers out on this map. The long-smoke style (71 smokes, 14 games, 86% destroyer) uses the east edge most (column 10, rows F and G: 21 of 71).",
+   "A": {
+    "n": 71,
+    "games": 14,
+    "destroyer_pct": 85.92,
+    "cruiser_pct": 9.86,
+    "west_pct": 26.76,
+    "middle_pct": 33.8,
+    "east_pct": 39.44,
+    "own_half_pct": 77.46,
+    "inside_cap_pct": 19.72,
+    "stationary_pct": 14.08,
+    "caps": {
+     "D": 27,
+     "C": 24,
+     "A": 17,
+     "B": 3
+    },
+    "top_cells": [
+     [
+      "G10",
+      13
+     ],
+     [
+      "F10",
+      8
+     ],
+     [
+      "G6",
+      7
+     ]
+    ]
+   },
+   "B": {
+    "n": 14,
+    "games": 3,
+    "destroyer_pct": 100.0,
+    "cruiser_pct": 0.0,
+    "west_pct": 50.0,
+    "middle_pct": 14.29,
+    "east_pct": 35.71,
+    "own_half_pct": 64.29,
+    "inside_cap_pct": 14.29,
+    "stationary_pct": 7.14,
+    "caps": {
+     "A": 6,
+     "D": 5,
+     "C": 2,
+     "B": 1
+    },
+    "top_cells": [
+     [
+      "G2",
+      3
+     ],
+     [
+      "G10",
+      2
+     ],
+     [
+      "G9",
+      1
+     ]
+    ]
+   },
+   "K": {
+    "n": 5,
+    "games": 1,
+    "destroyer_pct": 100.0,
+    "cruiser_pct": 0.0,
+    "west_pct": 40.0,
+    "middle_pct": 0.0,
+    "east_pct": 60.0,
+    "own_half_pct": 60.0,
+    "inside_cap_pct": 20.0,
+    "stationary_pct": 0.0,
+    "caps": {
+     "D": 3,
+     "B": 2
+    },
+    "top_cells": [
+     [
+      "H4",
+      2
+     ],
+     [
+      "G10",
+      1
+     ],
+     [
+      "E9",
+      1
+     ]
+    ]
+   }
+  },
+  "Mountain Range": {
+   "caption": "Who smokes flips: 74% destroyer smoke for the long-smoke style (50 smokes, 8 games) against 23% for the cruiser-smoke style (26 smokes, 5 games; gap +8 to +91 * points). The long-smoke style smokes the middle third (64%); the cruiser-smoke style spreads west (54% west, 19% middle; middle gap +27 to +70 *).",
+   "A": {
+    "n": 50,
+    "games": 8,
+    "destroyer_pct": 74.0,
+    "cruiser_pct": 26.0,
+    "west_pct": 30.0,
+    "middle_pct": 64.0,
+    "east_pct": 6.0,
+    "own_half_pct": 90.0,
+    "inside_cap_pct": 38.0,
+    "stationary_pct": 42.0,
+    "caps": {
+     "B": 21,
+     "C": 17,
+     "A": 12
+    },
+    "top_cells": [
+     [
+      "G4",
+      7
+     ],
+     [
+      "F7",
+      6
+     ],
+     [
+      "G7",
+      6
+     ]
+    ]
+   },
+   "B": {
+    "n": 26,
+    "games": 5,
+    "destroyer_pct": 23.08,
+    "cruiser_pct": 76.92,
+    "west_pct": 53.85,
+    "middle_pct": 19.23,
+    "east_pct": 26.92,
+    "own_half_pct": 84.62,
+    "inside_cap_pct": 26.92,
+    "stationary_pct": 30.77,
+    "caps": {
+     "A": 13,
+     "C": 8,
+     "B": 5
+    },
+    "top_cells": [
+     [
+      "H1",
+      6
+     ],
+     [
+      "G4",
+      3
+     ],
+     [
+      "D8",
+      2
+     ]
+    ]
+   },
+   "K": {
+    "n": 12,
+    "games": 3,
+    "destroyer_pct": 100.0,
+    "cruiser_pct": 0.0,
+    "west_pct": 66.67,
+    "middle_pct": 33.33,
+    "east_pct": 0.0,
+    "own_half_pct": 83.33,
+    "inside_cap_pct": 25.0,
+    "stationary_pct": 0.0,
+    "caps": {
+     "B": 8,
+     "A": 4
+    },
+    "top_cells": [
+     [
+      "G5",
+      3
+     ],
+     [
+      "F4",
+      2
+     ],
+     [
+      "F3",
+      2
+     ]
+    ]
+   }
+  },
+  "Land of Fire": {
+   "caption": "Same place, different smoke: both styles smoke the middle around cap B (15 of 24 and 28 of 40 smokes). The cruiser-smoke style parks there (60% stationary against 17%, gap -59 to -24 * points; 16 of 40 smokes in cell F5) and half of it is cruiser smoke (48% against 21%). 24 smokes in 8 games against 40 in 4.",
+   "A": {
+    "n": 24,
+    "games": 8,
+    "destroyer_pct": 75.0,
+    "cruiser_pct": 20.83,
+    "west_pct": 16.67,
+    "middle_pct": 62.5,
+    "east_pct": 20.83,
+    "own_half_pct": 83.33,
+    "inside_cap_pct": 25.0,
+    "stationary_pct": 16.67,
+    "caps": {
+     "B": 15,
+     "C": 4,
+     "A": 4,
+     "D": 1
+    },
+    "top_cells": [
+     [
+      "F5",
+      5
+     ],
+     [
+      "F4",
+      2
+     ],
+     [
+      "G6",
+      2
+     ]
+    ]
+   },
+   "B": {
+    "n": 40,
+    "games": 4,
+    "destroyer_pct": 52.5,
+    "cruiser_pct": 47.5,
+    "west_pct": 12.5,
+    "middle_pct": 75.0,
+    "east_pct": 12.5,
+    "own_half_pct": 90.0,
+    "inside_cap_pct": 17.5,
+    "stationary_pct": 60.0,
+    "caps": {
+     "B": 28,
+     "A": 6,
+     "C": 6
+    },
+    "top_cells": [
+     [
+      "F5",
+      16
+     ],
+     [
+      "F6",
+      5
+     ],
+     [
+      "F10",
+      3
+     ]
+    ]
+   },
+   "K": {
+    "n": 9,
+    "games": 3,
+    "destroyer_pct": 100.0,
+    "cruiser_pct": 0.0,
+    "west_pct": 33.33,
+    "middle_pct": 0.0,
+    "east_pct": 66.67,
+    "own_half_pct": 77.78,
+    "inside_cap_pct": 0.0,
+    "stationary_pct": 11.11,
+    "caps": {
+     "C": 3,
+     "D": 3,
+     "A": 3
+    },
+    "top_cells": [
+     [
+      "F8",
+      1
+     ],
+     [
+      "F7",
+      1
+     ],
+     [
+      "H8",
+      1
+     ]
+    ]
+   }
+  }
+ },
+ "figures": [
+  "fig-style-maps.png",
+  "fig-style-numbers.png"
+ ]
+}

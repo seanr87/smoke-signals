@@ -17,7 +17,7 @@ MEAS = [('Concealed damage per smoke', SEQ, 25000, lambda x: f"{x['conc']/1000:.
 def sheet(m):
     ms, avg, cells = map_cells(m); st = stats(ms)
     slug = m.lower().replace(' ', '-')
-    fig = Fig(1280, 640, f'{m}: where destroyer smoke pays, by grid cell (team-normalized)',
+    fig = Fig(1280, 640, f'{m}: what destroyer smoke returned, by grid cell (team-normalized)',
               f"{GAMES_PER_MAP[m]} games, {st['n']} destroyer smokes. Map average: {k(avg)} concealed damage per smoke, {st['d100']:.0f} deaths per 100, cap won {st['capw']:.0f}%. "
               f"Cells with {MIN_N}+ smokes are rated; dashed = small n ({MIN_N} to {SOLID_N-1}); grey number = n too small to rate.")
     size = 380
@@ -73,13 +73,13 @@ def hypo():
     p = Panel(m, 44, y0, size, G, title='Hotspot: "D flank"', dim=0.5)
     dots(p, ms, lambda s: (VIOLET, 0.7) if s['zone'] == 'D' else (MUTED, 0.45)); cell_box(p, ['F10', 'G10', 'H10']); cell_box(p, ['F9'], stroke=RED); cap_labels(p)
     fig.add(p); fig.legend(44, y0 + size + 34, [('nearest cap is D', VIOLET), ('other caps', MUTED)])
-    notes(fig, 44, y0 + size + 58, ['D zone: 109 of 235 smokes (46%), 13.2k per smoke vs 11.6k elsewhere;',
-                                    'difference -4.3k to +6.4k, not separable from zero.',
-                                    'Own-side edge F10+G10+H10 (black): n 63, 16.3k, 11 deaths per 100.',
+    notes(fig, 44, y0 + size + 58, ['D zone: 108 of 235 smokes (46%), 13.0k per smoke vs 11.7k elsewhere;',
+                                    'difference -4.4k to +5.8k, not separable from zero.',
+                                    'Own-side edge F10+G10+H10 (black): n 62, 16.0k, 11 deaths per 100.',
                                     'F9 inside the cap (red): n 11, 6.0k, small n.',
-                                    'First observed owner of D won 67% of 30 games (48 to 80);',
-                                    'of centre cap C, 77% of 31 (62 to 91).',
-                                    'Top 6 lay 35% of their Hotspot smokes at D, Rest 52% (-31 to -5 pts).'])
+                                    'The first observed owner of D was the winner in 67% of 30 games',
+                                    '(48 to 80); of centre cap C, 77% of 31 (62 to 91). Approximate.',
+                                    'Top 6 lay 35% of their Hotspot smokes at D, Rest 52% (-31 to -4 pts).'])
     # Sleeping Giant: A first
     m = 'Sleeping Giant'; ms = [s for s in DD if s['map'] == m]
     p = Panel(m, 456, y0, size, G, title='Sleeping Giant: "A first"', dim=0.5)
@@ -90,20 +90,20 @@ def hypo():
                                      'A-zone later: n 61, 10.4k, 15 deaths per 100.',
                                      'G1 (black, own side of A): n 21, 24.1k; +8.5k to +20.5k vs rest of map.',
                                      'E1 (black, far side of A): n 10, 25.5k, small n.',
-                                     'First observed owner of A won 59% of 32 games (38 to 75): not separable',
-                                     'from a coin flip. Centre cap B zone: n 52, 5.4k per smoke.'])
+                                     'The first observed owner of A was the winner in 59% of 32 games',
+                                     '(38 to 75): no clear link. Centre cap B zone: n 52, 5.4k per smoke.'])
     # Land of Fire: B
     m = 'Land of Fire'; ms = [s for s in DD if s['map'] == m]
     p = Panel(m, 868, y0, size, G, title='Land of Fire: "B"', dim=0.5)
     dots(p, ms, lambda s: (VIOLET, 0.75) if s['zone'] == 'B' else (AQUA, 0.6) if s['zone'] == 'A' else (MUTED, 0.45)); cell_box(p, ['F5', 'F6']); cap_labels(p)
     fig.add(p); fig.legend(868, y0 + size + 34, [('nearest cap is B', VIOLET), ('A', AQUA), ('C or D', MUTED)])
-    notes(fig, 868, y0 + size + 58, ['B zone: n 49, 7.7k per smoke, cap won 24%; A zone: n 53, 6.8k, 25%.',
+    notes(fig, 868, y0 + size + 58, ['B zone: n 50, 7.6k per smoke, cap won 26%; A zone: n 52, 6.9k, 23%.',
                                      'F5 + F6 (black, own half of B): n 27, 6.0k per smoke, cap won 44%.',
-                                     'First observed owner of B won 70% of 23 games (45 to 92);',
-                                     'of A, 72% of 25 (52 to 88); of C or D, 44% of 25 each.',
-                                     'Holder at 8:00: B 81% of 21 (60 to 96), A 80% of 20 (62 to 95).',
-                                     'Top 6 lay 46% of their smokes at B and 27% at A; Rest 34% and 50%',
-                                     '(A difference -37 to -9 pts; B difference -18 to +38, not clear).'])
+                                     'First observed owner was the winner: B 70% of 23 games (48 to 88);',
+                                     'A 72% of 25 (52 to 88); C and D 44% of 25 each. Approximate.',
+                                     'Holder at 8:00 was the winner: B 81% of 21 (59 to 96), A 80% of 20 (62 to 96).',
+                                     'Top 6 lay 46% of their smokes at B and 27% at A; Rest 35% and 49%',
+                                     '(A difference -36 to -8 pts; B difference -19 to +37, not clear).'])
     fig.save(os.path.join(OUT, 'claims-hotspot-sleeping-giant-land-of-fire'))
     print('saved claims')
 
@@ -111,12 +111,12 @@ def usage():
     fig = Fig(1280, 680, 'Where Top 6 and Rest put their destroyer smoke on the three maps where it differs',
               'Dot = one destroyer smoke, team-normalized. Labels = share of each group\'s smokes on that map laid nearest that cap (Top 6 / Rest).')
     size = 380; y0 = 104
-    info = {'Hotspot': ['Top 6 use the west caps more: A+B 36% vs 13% of smokes',
-                        '(A +5 to +16 pts, B +3 to +23 pts) and D less: 35% vs 52%',
-                        '(-31 to -5 pts).',
+    info = {'Hotspot': ['Top 6 use the west caps more: A+B 36% vs 14% of smokes',
+                        '(A +5 to +16 pts, B +2 to +23 pts) and D less: 35% vs 52%',
+                        '(-31 to -4 pts).',
                         'Low cells F5, G5, F6, F9 (red): Top 6 11% of smokes,',
                         'Rest 30% (-34 to -5 pts).',
-                        'West caps return 15k to 20k per smoke (n 49);',
+                        'West zones returned 15.6k (B) and 19.7k (A) per smoke (n 50);',
                         'those four low cells 5.3k (n 55).'],
             'Loop': ['Rest lay half their smokes at A: 50% vs Top 6 22%',
                      '(-49 to -7 pts).',
@@ -124,15 +124,15 @@ def usage():
                      'vs elsewhere), cap won 17%.',
                      'F8 and F10 (green): 18.3k (n 15) and 20.7k (n 9, small n,',
                      '33 deaths per 100).',
-                     'Holder of B at 8:00 won 75% of 20 games (52 to 94);',
-                     'holder of A 33% of 18 (15 to 56).'],
-            'Land of Fire': ['Rest lay half their smokes at A: 50% vs Top 6 27%',
-                             '(-37 to -9 pts).',
-                             'Top 6 go to B (46% vs 34%) and near cap D (25% vs 9%);',
+                     'Observed (approximate): the holder of B at 8:00 was the winner',
+                     'in 75% of 20 games (52 to 94); the holder of A in 33% of 18.'],
+            'Land of Fire': ['Rest lay half their smokes at A: 49% vs Top 6 27%',
+                             '(-36 to -8 pts).',
+                             'Top 6 go to B (46% vs 35%) and near cap D (25% vs 9%);',
                              'neither gap is clear.',
-                             'Damage is flat across zones here (6.8k to 9.2k), so this',
-                             'is about caps, not damage: A and B holders at 8:00',
-                             'won about 80% of games.']}
+                             'Damage is flat across zones here (6.9k to 9.2k). Observed',
+                             '(approximate): the holders of A and of B at 8:00 were the',
+                             'winners in about 80% of games.']}
     boxes = {'Hotspot': (['F5', 'G5', 'F6', 'F9'], RED), 'Loop': (['F8', 'F10'], GREEN), 'Land of Fire': ([], INK)}
     for i, m in enumerate(['Hotspot', 'Loop', 'Land of Fire']):
         ms = [s for s in DD if s['map'] == m]; x0 = 44 + i * 412

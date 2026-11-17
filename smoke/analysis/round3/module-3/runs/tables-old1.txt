@@ -1,0 +1,161 @@
+roster keys ['entity_id', 'player', 'clan', 'ship', 'ship_index', 'ship_class', 'ship_tier', 'smoke_variant', 'smoke_type', 'smoke_activations', 'smoke_charges', 'death', 'gun_range_m', 'radar_m', 'detection_m', 'team']
+team games top/rest 110 232 PN 7
+
+== 1. counts
+  DD cc: n=73 top=40 rest=33 PN=1
+    per team-game top 0.36 rest 0.14 diff CI +0.11 to +0.33 *
+    share of smokes top 10.3% rest 4.8% CI +2.5 to +8.2 *
+  DD rt: n=27 top=15 rest=12 PN=1
+    per team-game top 0.14 rest 0.05 diff CI +0.01 to +0.17 *
+    share of smokes top 3.9% rest 1.7% CI +0.2 to +4.4 *
+  CA cc: n=17 top=10 rest=7 PN=0
+    per team-game top 0.09 rest 0.03 diff CI -0.01 to +0.14
+    share of smokes top 7.1% rest 2.3% CI +0.2 to +9.7 *
+  CA rt: n=5 top=3 rest=2 PN=0
+    per team-game top 0.03 rest 0.01 diff CI -0.01 to +0.06
+    share of smokes top 2.1% rest 0.7% CI -1.0 to +5.0
+DD any radar play per team-game: top 0.50 rest 0.19 CI +0.14 to +0.44 *
+per clan DD plays/games: [('BONKY', 5, 7, 0.71), ('RESIN', 17, 24, 0.71), ('H-SR', 14, 22, 0.64), ('HFANS', 9, 17, 0.53), ('BONKZ', 10, 21, 0.48), ('SCCC2', 3, 7, 0.43), ('KSC', 4, 11, 0.36), ('VRTUS', 4, 11, 0.36), ('MACHX', 5, 14, 0.36), ('HTDOG', 6, 18, 0.33), ('REEEE', 4, 13, 0.31), ('PN', 2, 7, 0.29), ('RSR', 2, 7, 0.29), ('KITE', 4, 14, 0.29), ('BTLST', 1, 6, 0.17), ('INCA', 1, 6, 0.17), ('MZY', 3, 19, 0.16), ('KSE', 1, 7, 0.14), ('UYSC', 1, 7, 0.14), ('EPOXY', 2, 17, 0.12), ('PFANS', 1, 12, 0.08), ('-BN-', 1, 14, 0.07), ('OGF', 0, 6, 0.0), ('RMN', 0, 6, 0.0), ('5D', 0, 10, 0.0), ('NGA', 0, 7, 0.0), ('KITED', 0, 14, 0.0), ('MACH', 0, 7, 0.0), ('MANBA', 0, 6, 0.0), ('KM', 0, 5, 0.0)]
+top team-games with >=1 radar play (any class): 44 of 110 = 40%
+rest team-games with >=1 radar play (any class): 40 of 232 = 17%
+
+== 2. who is the radar ship (DD smokes with a play)
+ ship [('Brisbane', 28), ('Des Moines', 23), ('Gdańsk', 16), ('Minotaur', 16), ('Moskva', 4), ('Petropavlovsk', 4), ('Worcester', 3), ('Svea', 2), ('San Martín', 2), ('Salem', 1), ('Stalingrad', 1)]
+ is_smoker Counter({('cap_control', False): 63, ('radar_trap', False): 21, ('cap_control', True): 10, ('radar_trap', True): 6})
+ cls Counter({('cap_control', 'cruiser', 'top'): 36, ('cap_control', 'cruiser', 'rest'): 27, ('radar_trap', 'cruiser', 'top'): 11, ('radar_trap', 'cruiser', 'rest'): 10, ('cap_control', 'destroyer', 'rest'): 6, ('radar_trap', 'destroyer', 'top'): 4, ('cap_control', 'destroyer', 'top'): 4, ('radar_trap', 'destroyer', 'rest'): 2})
+ how Counter({'inside': 100})
+ CA plays: ship [('Svea', 22)] is_smoker Counter({True: 21, False: 1})
+ coverage Counter({('cap_control', 'stacked'): 51, ('radar_trap', 'stacked'): 21, ('cap_control', 'screen'): 19, ('radar_trap', 'selfish'): 3, ('cap_control', 'selfish'): 3, ('radar_trap', 'screen'): 3})
+ kind Counter({('cap_control', 'long DD'): 72, ('radar_trap', 'long DD'): 26, ('radar_trap', 'short DD'): 1, ('cap_control', 'short DD'): 1})
+ pos missing 0
+
+== 3. when
+ cap_control top n=40 median 5:47 q25 2:35 q75 8:41 early% 40
+ cap_control rest n=33 median 5:09 q25 2:37 q75 8:05 early% 45
+ radar_trap top n=15 median 10:42 q25 8:30 q75 12:02 early% 13
+ radar_trap rest n=12 median 6:24 q25 5:17 q75 10:17 early% 25
+ minute hist cc [(0, 8), (2, 21), (4, 12), (6, 9), (8, 12), (10, 8), (12, 3)]
+ minute hist rt [(2, 2), (4, 5), (6, 5), (10, 8), (12, 5), (14, 2)]
+ all DD smokes early% 28.119180633147113
+
+== 4. where: map x ncap, cells
+ Sleeping Giant games 32 plays 29 (cc 17, rt 12) top 14 rest 15 | per team-game 0.45
+    ncap [('C', 13), ('A', 10), ('B', 6)] mrA 0
+    cells [('G1', 3), ('F2', 2), ('E1', 2), ('F8', 2), ('F5', 2), ('G7', 1)]
+    own Counter({'theirs': 16, 'neutral': 7, 'ours': 6}) cap_won 9
+    CA plays 2 [('A', 2)]
+ Hotspot games 31 plays 25 (cc 22, rt 3) top 14 rest 11 | per team-game 0.40
+    ncap [('D', 10), ('C', 9), ('A', 4), ('B', 2)] mrA 0
+    cells [('G10', 6), ('E10', 2), ('G5', 2), ('G7', 2), ('F6', 2), ('H4', 2)]
+    own Counter({'neutral': 10, 'ours': 9, 'theirs': 6}) cap_won 12
+    CA plays 3 [('D', 2), ('A', 1)]
+ Mountain Range games 21 plays 18 (cc 12, rt 6) top 13 rest 5 | per team-game 0.43
+    ncap [('B', 10), ('A', 4), ('C', 4)] mrA 4
+    cells [('G5', 3), ('F4', 3), ('E3', 2), ('F3', 2), ('F1', 1), ('F8', 1)]
+    own Counter({'neutral': 9, 'ours': 6, 'theirs': 3}) cap_won 7
+    CA plays 8 [('B', 4), ('C', 3), ('A', 1)]
+ Land of Fire games 25 plays 9 (cc 8, rt 1) top 4 rest 5 | per team-game 0.18
+    ncap [('A', 5), ('B', 3), ('C', 1)] mrA 0
+    cells [('F5', 2), ('F9', 1), ('E2', 1), ('F6', 1), ('F3', 1), ('G3', 1)]
+    own Counter({'neutral': 6, 'theirs': 2, 'ours': 1}) cap_won 5
+    CA plays 3 [('B', 3)]
+ Loop games 23 plays 7 (cc 6, rt 1) top 5 rest 2 | per team-game 0.15
+    ncap [('C', 3), ('B', 3), ('A', 1)] mrA 0
+    cells [('F8', 2), ('F10', 2), ('F7', 2), ('E5', 1)]
+    own Counter({'ours': 3, 'neutral': 2, 'theirs': 2}) cap_won 3
+    CA plays 2 [('C', 1), ('A', 1)]
+ Okinawa games 18 plays 7 (cc 4, rt 3) top 1 rest 6 | per team-game 0.19
+    ncap [('C', 4), ('B', 2), ('D', 1)] mrA 0
+    cells [('F3', 2), ('F4', 1), ('H7', 1), ('A3', 1), ('C1', 1), ('H4', 1)]
+    own Counter({'ours': 5, 'neutral': 2}) cap_won 2
+    CA plays 2 [('D', 2)]
+ Sea of Fortune games 21 plays 5 (cc 4, rt 1) top 4 rest 1 | per team-game 0.12
+    ncap [('D', 4), ('A', 1)] mrA 0
+    cells [('F9', 3), ('E1', 1), ('G7', 1)]
+    own Counter({'neutral': 3, 'theirs': 2}) cap_won 1
+    CA plays 2 [('C', 1), ('D', 1)]
+
+== 5. outcomes: DD smokes near a cap, radar play vs none
+  cap_control: n=73 cap_won 48% conc mean 19,121 med 11,728 kills/smoke 0.08 deaths/smoke 0.08 radar_on_us% 18 win% 60 swing +3
+  cap_contest (no radar play): n=391 cap_won 28% conc mean 8,431 med 1,980 kills/smoke 0.10 deaths/smoke 0.10 radar_on_us% 13 win% 60 swing +12
+  cap_control top: n=40 cap_won 45% conc mean 17,751 med 13,718 kills/smoke 0.07 deaths/smoke 0.05 radar_on_us% 15 win% 72 swing +2
+  cap_control rest: n=33 cap_won 52% conc mean 20,783 med 11,525 kills/smoke 0.09 deaths/smoke 0.12 radar_on_us% 21 win% 45 swing +5
+  cap_contest top: n=130 cap_won 35% conc mean 11,939 med 5,341 kills/smoke 0.17 deaths/smoke 0.09 radar_on_us% 16 win% 77 swing +25
+  cap_contest rest: n=261 cap_won 24% conc mean 6,684 med 1,122 kills/smoke 0.07 deaths/smoke 0.11 radar_on_us% 11 win% 51 swing +5
+   cap_control minus cap_contest cap_won pts: +20.32 CI +8.53 to +33.58 *
+   cap_control minus cap_contest conc: +10690.36 CI +6193.79 to +16375.51 *
+   cap_control minus cap_contest kills: -0.02 CI -0.08 to +0.07
+   cap_control minus cap_contest deaths: -0.02 CI -0.09 to +0.09
+  cap_control own=neutral: n=34 cap_won 53% conc mean 15,629 med 9,836 kills/smoke 0.00 deaths/smoke 0.00 radar_on_us% 18 win% 59 swing +3
+  cap_contest own=neutral: n=112 cap_won 47% conc mean 6,198 med 1,215 kills/smoke 0.02 deaths/smoke 0.12 radar_on_us% 12 win% 57 swing +2
+  cap_control own=theirs: n=16 cap_won 69% conc mean 23,560 med 19,406 kills/smoke 0.19 deaths/smoke 0.19 radar_on_us% 6 win% 56 swing -13
+  cap_contest own=theirs: n=100 cap_won 37% conc mean 7,542 med 762 kills/smoke 0.10 deaths/smoke 0.11 radar_on_us% 17 win% 55 swing +3
+  cap_control own=ours: n=23 cap_won 26% conc mean 21,197 med 18,760 kills/smoke 0.13 deaths/smoke 0.13 radar_on_us% 26 win% 65 swing +16
+  cap_contest own=ours: n=179 cap_won 10% conc mean 10,325 med 4,224 kills/smoke 0.16 deaths/smoke 0.09 radar_on_us% 11 win% 64 swing +23
+  cap_control early: n=31 cap_won 55% conc mean 17,370 med 10,382 kills/smoke 0.03 deaths/smoke 0.00 radar_on_us% 16 win% 58 swing +1
+  cap_contest early: n=118 cap_won 48% conc mean 7,560 med 1,089 kills/smoke 0.03 deaths/smoke 0.10 radar_on_us% 9 win% 58 swing +5
+  cap_control not mrA: n=73 cap_won 48% conc mean 19,121 med 11,728 kills/smoke 0.08 deaths/smoke 0.08 radar_on_us% 18 win% 60 swing +3
+  radar_trap DD: n=27 cap_won 15% conc mean 19,953 med 11,104 kills/smoke 0.11 deaths/smoke 0.11 radar_on_us% 7 win% 67 swing -1
+  all other DD: n=974 cap_won 21% conc mean 9,920 med 3,061 kills/smoke 0.10 deaths/smoke 0.12 radar_on_us% 11 win% 55 swing +7
+  CA cap_control: n=17 cap_won 24% conc mean 10,593 med 9,944 kills/smoke 0.12 deaths/smoke 0.12 radar_on_us% 18 win% 24 swing +4
+  CA radar_trap: n=5 (small n) cap_won 0% conc mean 12,163 med 4,381 kills/smoke 0.00 deaths/smoke 0.00 radar_on_us% 0 win% 40 swing -20
+  CA other: n=417 cap_won 17% conc mean 6,779 med 2,499 kills/smoke 0.05 deaths/smoke 0.12 radar_on_us% 10 win% 47 swing +3
+
+== 6. offensive radar from smoke (all inferred)
+ DD smokes with radar run inside: 113 ; spotted>=1: 79 ; total spots 124
+   spots=0 n=34 rsd mean 2,304 med 0 rsd>0 6% conc 17,156 kills 0.03 cap_won 53% deaths 0.06
+   spots=1 n=44 rsd mean 221 med 0 rsd>0 9% conc 16,138 kills 0.07 cap_won 30% deaths 0.05
+   spots>=2 n=35 rsd mean 2,042 med 0 rsd>0 17% conc 23,506 kills 0.17 cap_won 34% deaths 0.20
+   spotted top n=44 rsd mean 387 med 0 spots/smoke 1.52 kills 0.07 cap_won 25%
+   spotted rest n=35 rsd mean 1,832 med 0 spots/smoke 1.63 kills 0.17 cap_won 40%
+   rsd top-rest CI -3,944 to -15 *  spots/smoke CI -0.48 to +0.17
+   spotting smokes per team-game top 0.40 rest 0.15 CI +0.11 to +0.37 *
+   radar-spotted dmg per team-game top 155 rest 276 CI -507 to +149
+   by map spotted n, rsd mean, total: [('Sleeping Giant', 24, 264, 6339), ('Hotspot', 17, 786, 13357), ('Mountain Range', 15, 338, 5073), ('Land of Fire', 8, 4170, 33358), ('Loop', 5, 1970, 9851), ('Okinawa', 6, 2198, 13186), ('Sea of Fortune', 4, 0, 0)]
+   by ncap: [('Sleeping Giant', 'A', 7, 399), ('Sleeping Giant', 'B', 6, 0), ('Sleeping Giant', 'C', 11, 323), ('Hotspot', 'C', 8, 1670), ('Mountain Range', 'B', 7, 581)]
+   radar ship type (spotting smokes):  [('Brisbane', 20, 140, 1.7), ('Des Moines', 17, 984, 1.94), ('Minotaur', 15, 995, 1.33), ('Gdańsk', 14, 227, 1.36), ('Moskva', 4, 2544, 1.5), ('Petropavlovsk', 3, 0, 1.33), ('Svea', 2, 0, 1.0), ('Worcester', 2, 0, 1.0), ('Salem', 1, 31904, 3.0), ('San Martín', 1, 1454, 1.0)]
+   targets hit classes in top-rsd smokes: Counter({'cruiser': 9, 'destroyer': 8, 'battleship': 7})
+   share of conc that is rsd among spotting smokes 0.048579929486200026
+   biggest rsd: [('PN', 'Land of Fire', 'C', 'F9', '5:21', 31904, 'Salem', 3, 0), ('RSR', 'Okinawa', 'C', 'F4', '8:05', 13186, 'Des Moines', 3, 0), ('RESIN', 'Hotspot', 'C', 'G7', '8:33', 10177, 'Moskva', 2, 0), ('MZY', 'Loop', 'C', 'F10', '12:25', 9851, 'Minotaur', 2, 1), ('H-SR', 'Mountain Range', 'B', 'F3', '13:58', 4067, 'Minotaur', 1, 0), ('INCA', 'Sleeping Giant', 'C', 'E10', '6:00', 3548, 'Des Moines', 2, 1), ('UYSC', 'Hotspot', 'C', 'F5', '2:20', 3180, 'Gdańsk', 1, 0), ('H-SR', 'Sleeping Giant', 'A', 'D2', '7:44', 2791, 'Brisbane', 2, 0)]
+ CA smokes with radar run inside: 25 ; spotted>=1: 17 ; total spots 22
+   spots=0 n=8 (small n) rsd mean 0 med 0 rsd>0 0% conc 18,415 kills 0.12 cap_won 25% deaths 0.00
+   spots=1 n=13 (small n) rsd mean 2,202 med 0 rsd>0 15% conc 10,884 kills 0.08 cap_won 8% deaths 0.08
+   spots>=2 n=4 (small n) rsd mean 0 med 0 rsd>0 0% conc 4,285 kills 0.25 cap_won 25% deaths 0.25
+   spotted top n=11 rsd mean 2,602 med 0 spots/smoke 1.36 kills 0.18 cap_won 18%
+   spotted rest n=6 rsd mean 0 med 0 spots/smoke 1.17 kills 0.00 cap_won 0%
+ rsd<=total? 58 rsd>conc 69
+ off_radar without play tag 16  of which spots>0 0
+ cc without off_radar 0
+
+== 7. early stacks with a radar ship (DD smokes, el<300, stacked)
+ radar partner inside: top 77% (n=56) rest 64% (n=85) CI -0 to +31
+    Sleeping Giant: top 53% n=19 | rest 80% n=20 | CI -56 to +5
+    Hotspot: top 92% n=12 (small n) | rest 64% n=22 | CI -2 to +53
+    Mountain Range: top 100% n=6 (small n) | rest 89% n=9 (small n) | CI +0 to +30
+    Land of Fire: top 71% n=7 (small n) | rest 55% n=11 (small n) | CI -39 to +73
+    Loop: top 75% n=4 (small n) | rest 44% n=9 (small n) | CI -62 to +75
+    Okinawa: top 100% n=2 (small n) | rest 33% n=6 (small n) | CI +33 to +100 *
+    Sea of Fortune: top 100% n=6 (small n) | rest 50% n=8 (small n) | CI +14 to +80 *
+ radar partner covered (any how): top 89% (n=56) rest 76% (n=85) CI +2 to +28 *
+    Sleeping Giant: top 74% n=19 | rest 90% n=20 | CI -31 to +4
+    Hotspot: top 100% n=12 (small n) | rest 73% n=22 | CI +5 to +52 *
+    Mountain Range: top 100% n=6 (small n) | rest 89% n=9 (small n) | CI +0 to +30
+    Land of Fire: top 86% n=7 (small n) | rest 55% n=11 (small n) | CI -7 to +78
+    Loop: top 100% n=4 (small n) | rest 78% n=9 (small n) | CI +0 to +56
+    Okinawa: top 100% n=2 (small n) | rest 83% n=6 (small n) | CI +0 to +50
+    Sea of Fortune: top 100% n=6 (small n) | rest 62% n=8 (small n) | CI +0 to +78
+ PN early stacks 3 with radar inside 3
+ smoker itself radar DD among early stacks 2.127659574468085 top 1.7857142857142858 rest 2.3529411764705883
+ early stack share of early DD smokes: top 54.90196078431372 rest 42.5
+ early radar stacks per team-game: top 0.39 rest 0.23 +0.03 to +0.29 *
+ of early radar stacks, radar actually used (off_radar or cc): 30.927835051546392 top 37.2093023255814 rest 25.925925925925927
+  early stack with radar: n=97 cap_won 52% conc mean 15,591 med 8,749 kills/smoke 0.05 deaths/smoke 0.06 radar_on_us% 11 win% 60 swing -1
+  early stack no radar: n=44 cap_won 32% conc mean 13,775 med 4,368 kills/smoke 0.00 deaths/smoke 0.14 radar_on_us% 11 win% 52 swing -10
+ radar partner ship types in early stacks [('Des Moines', 33), ('Brisbane', 32), ('Minotaur', 18), ('Worcester', 5), ('Moskva', 3), ('Svea', 3), ('Ragnar', 2), ('Petropavlovsk', 2)]
+ early radar stack ncap by map [('Sleeping Giant', [('A', 15), ('C', 11)]), ('Hotspot', [('D', 13), ('C', 8), ('A', 4)]), ('Mountain Range', [('C', 7), ('B', 6), ('A', 1)]), ('Land of Fire', [('A', 7), ('B', 3), ('C', 1)]), ('Loop', [('A', 4), ('B', 2), ('C', 1)]), ('Okinawa', [('B', 3), ('D', 1)]), ('Sea of Fortune', [('D', 5), ('A', 3), ('C', 2)])]
+
+== 8. radar ready (full cover) but not activated, DD smokes
+ >=90% cover n 285 activated top 29.37062937062937 rest 25.35211267605634 CI -5 to +13 n top/rest 143 142
+ activated but <90 40
+ PN plays: [('destroyer', 'cap_control', 'Land of Fire', 'C', 'F9', '5:21', 'Salem', 3, 31904, 0), ('destroyer', 'radar_trap', 'Mountain Range', 'A', 'F1', '4:18', 'Des Moines', 1, 0, 0)]
+ PN DD smokes 10 PN off_radar [('destroyer', 3, 31904), ('destroyer', 1, 0)]

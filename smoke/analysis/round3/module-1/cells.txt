@@ -1,0 +1,12 @@
+habit counts {'flank smoke lines': 562, 'cap sitters': 462, 'moving exhaust': 188, 'parked cruiser smoke': 241, 'other': 94}
+flank smoke lines on Hotspot: G10 = 29 of 144 = 20.1%
+flank smoke lines on Hotspot: G9/G10/F10 = 49 of 144 = 34.0%
+cap sitters on Hotspot: F5/F6/G5/G6 = 36 of 90 = 40.0%
+flank smoke lines on Sleeping Giant: G1 = 20 of 141 = 14.2%
+flank smoke lines on Sleeping Giant: E1/F1/G1/G2 = 46 of 141 = 32.6%
+cap sitters on Sleeping Giant: F5/F6/G6 = 26 of 87 = 29.9%
+Daring on Loop: F4 = 14 of 48 = 29.2%
+flank smoke lines on Loop: F8 = 8 of 45 = 17.8%
+flank smoke lines on Loop: F10 = 7 of 45 = 15.6%
+Daring on Land of Fire: F5/F6 = 15 of 31 = 48.4%
+Somers on Land of Fire: G1/F1 = 8 of 22 = 36.4%

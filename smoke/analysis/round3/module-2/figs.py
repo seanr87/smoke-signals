@@ -1,7 +1,7 @@
 import sys, os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from m2 import *
 which = sys.argv[1:] or ['1', '2', '3', '4', '5']
-LEG = [(sh + ' smoke', SHIP_COLOR[sh]) for sh in SHIPS] + [('radar cruiser partner', RED), ('non-radar cruiser partner', YELLOW), ('battleship partner', INK)]
+LEG = [(sh + ' smoke', SHIP_COLOR[sh]) for sh in SHIPS] + [('radar cruiser', RED), ('non-radar cruiser', YELLOW), ('battleship', INK)]
 
 def draw_setup(p, ss, mark_top=False):
     """Smokes as arrows along the laid path (first puff to last), partners as dots linked to the smoke centre."""
@@ -10,7 +10,8 @@ def draw_setup(p, ss, mark_top=False):
             if pr['nx'] is None or pr['cls'] == 'destroyer': continue
             col = RED if pr['cls'] == 'cruiser' and pr['radar'] else YELLOW if pr['cls'] == 'cruiser' else INK
             p.line([(s['nx'], s['nz']), (pr['nx'], pr['nz'])], stroke=MUTED, width=0.6, opacity=0.45)
-            p.dot(pr['nx'], pr['nz'], r=2.6, fill=col, opacity=0.85, stroke=BG)
+            if pr['how'] == 'inside': p.dot(pr['nx'], pr['nz'], r=2.8, fill=col, opacity=0.9, stroke=BG)
+            else: p.dot(pr['nx'], pr['nz'], r=2.6, fill='#ffffff', opacity=0.95, stroke=col)
     for s in ss:
         p.line(s['npath'], stroke=SHIP_COLOR[s['ship']], width=3.2, opacity=0.8, arrow=True)
         if mark_top and s['grp'] == 'top': p.ring(s['nx'], s['nz'], 7, stroke=INK, width=1.2)
@@ -18,7 +19,7 @@ def draw_setup(p, ss, mark_top=False):
 if '1' in which:
     maps = ['Hotspot', 'Sleeping Giant', 'Mountain Range']
     fig = Fig(1290, 1010, 'Early smokes (first 5 min) by Harugumo, Somers, Gearing: typical setup, Top 6 vs Rest',
-              'Arrow = the smoke as laid (start to end). Dots = allies it covered, at the moment the smoke was fully laid, linked to their smoke. Team-normalized.')
+              'Arrow = the smoke as laid (start to end). Dots = allies it covered when the smoke was fully laid: filled = inside it, hollow = behind / line of fire. Team-normalized.')
     fig.legend(40, 74, LEG)
     for i, m in enumerate(maps):
         for j, g in enumerate(('top', 'rest')):
@@ -30,7 +31,7 @@ if '1' in which:
 if '2' in which:
     maps = ['Land of Fire', 'Sea of Fortune', 'Okinawa', 'Loop']
     fig = Fig(1290, 480, 'Early smokes by Harugumo, Somers, Gearing: the four maps with too few Top 6 smokes to split',
-              'All teams pooled. Black ring = a Top 6 smoke (under 8 per map, do not read as a pattern). Arrow = smoke as laid; dots = covered allies. Team-normalized.')
+              'All teams pooled. Black ring = a Top 6 smoke (under 8 per map, do not read as a pattern). Arrow = smoke as laid; dots = covered allies (filled = inside). Team-normalized.')
     fig.legend(40, 74, LEG)
     for i, m in enumerate(maps):
         ss = [s for s in E if s['map'] == m]
@@ -64,9 +65,9 @@ if '3' in which:
     fig.save(os.path.join(OUT, 'partner-offsets'))
 
 if '4' in which:
-    fig = Fig(1180, 530, 'Early smokes by Harugumo, Somers, Gearing: outcomes by partner, coverage and window',
+    fig = Fig(1180, 560, 'Early smokes by Harugumo, Somers, Gearing: outcomes by partner, coverage and window',
               'Bar = value, line = 95% interval (resampling clans). n after each label. Association only.')
-    def block(x, y, title, rows, vmax, fmt, w=330, lw=150):
+    def block(x, y, title, rows, vmax, fmt, w=365, lw=185):
         fig.add(T(x, y - 8, title, size=12.5, fill=INK, anchor='start', weight='600'))
         for lab, e, st in rows:
             if len(e) < 8:

@@ -1,0 +1,981 @@
+{
+ "scales": {
+  "1.5": {
+   "subjects": 43,
+   "clusters": 387,
+   "candidates": 13,
+   "passed": 5,
+   "rows": [
+    {
+     "map": "Land of Fire",
+     "subject": "Svea",
+     "cx": -59.681681476470594,
+     "cz": -114.38882305490196,
+     "passes": true,
+     "gap": 54.636591478696744,
+     "lo": 1.904761904761905,
+     "hi": 86.95652173913044,
+     "n_in": 14
+    },
+    {
+     "map": "Land of Fire",
+     "subject": "parked cruiser smoke",
+     "cx": -59.681681476470594,
+     "cz": -114.38882305490196,
+     "passes": true,
+     "gap": 54.636591478696744,
+     "lo": 3.636363636363633,
+     "hi": 86.95652173913044,
+     "n_in": 14
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "Harugumo",
+     "cx": -619.4094794122873,
+     "cz": -156.7079237927997,
+     "passes": true,
+     "gap": 30.555555555555554,
+     "lo": 16.666666666666664,
+     "hi": 55.55555555555556,
+     "n_in": 10
+    },
+    {
+     "map": "Mountain Range",
+     "subject": "parked cruiser smoke",
+     "cx": -744.0780663541667,
+     "cz": -326.17450140625,
+     "passes": true,
+     "gap": 24.242424242424242,
+     "lo": 20.0,
+     "hi": 30.76923076923077,
+     "n_in": 8
+    },
+    {
+     "map": "Mountain Range",
+     "subject": "Svea",
+     "cx": -216.43927233333335,
+     "cz": -172.49690276666666,
+     "passes": false,
+     "gap": 14.423076923076923,
+     "lo": -27.97202797202797,
+     "hi": 53.84615384615385,
+     "n_in": 9
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "flank smoke lines",
+     "cx": 570.9895675908508,
+     "cz": -169.0352594974187,
+     "passes": true,
+     "gap": 14.138765631302945,
+     "lo": 1.5981735159817365,
+     "hi": 25.714285714285715,
+     "n_in": 14
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "Gda\u0144sk",
+     "cx": 74.52677521933333,
+     "cz": -206.70937106904762,
+     "passes": false,
+     "gap": 13.095238095238095,
+     "lo": -34.38914027149321,
+     "hi": 51.10294117647059,
+     "n_in": 8
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "flank smoke lines",
+     "cx": -612.4898512808103,
+     "cz": -179.7933514078293,
+     "passes": false,
+     "gap": 7.018959257765228,
+     "lo": -14.436619718309856,
+     "hi": 33.82740447957839,
+     "n_in": 21
+    },
+    {
+     "map": "Mountain Range",
+     "subject": "flank smoke lines",
+     "cx": 196.7741710330185,
+     "cz": -165.49107434297522,
+     "passes": false,
+     "gap": 4.548450889914303,
+     "lo": -13.928112965340182,
+     "hi": 22.80701754385965,
+     "n_in": 8
+    },
+    {
+     "map": "Mountain Range",
+     "subject": "parked cruiser smoke",
+     "cx": -216.43927233333335,
+     "cz": -172.49690276666666,
+     "passes": false,
+     "gap": 4.195804195804197,
+     "lo": -36.15384615384615,
+     "hi": 53.84615384615385,
+     "n_in": 9
+    },
+    {
+     "map": "Land of Fire",
+     "subject": "cap sitters",
+     "cx": -105.6047994153439,
+     "cz": -125.61390988492063,
+     "passes": false,
+     "gap": 3.742203742203742,
+     "lo": -34.52380952380952,
+     "hi": 31.75,
+     "n_in": 8
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "cap sitters",
+     "cx": 36.87518629952381,
+     "cz": -176.7844060017007,
+     "passes": false,
+     "gap": -7.21153846153846,
+     "lo": -35.42553191489362,
+     "hi": 25.9094942324756,
+     "n_in": 11
+    },
+    {
+     "map": "Hotspot",
+     "subject": "flank smoke lines",
+     "cx": 725.1080248819763,
+     "cz": -161.01830792000368,
+     "passes": false,
+     "gap": -9.6875,
+     "lo": -24.724724724724723,
+     "hi": 2.2077922077922096,
+     "n_in": 13
+    }
+   ]
+  },
+  "2.0": {
+   "subjects": 43,
+   "clusters": 275,
+   "candidates": 24,
+   "passed": 8,
+   "rows": [
+    {
+     "map": "Sea of Fortune",
+     "subject": "Svea",
+     "cx": 271.0712828148148,
+     "cz": -330.1338363888889,
+     "passes": true,
+     "gap": 76.19047619047619,
+     "lo": 41.66666666666667,
+     "hi": 100.0,
+     "n_in": 15
+    },
+    {
+     "map": "Loop",
+     "subject": "Gda\u0144sk",
+     "cx": 284.9833837973485,
+     "cz": -112.35010790056818,
+     "passes": false,
+     "gap": 66.66666666666667,
+     "lo": 40.0,
+     "hi": 100.0,
+     "n_in": 8
+    },
+    {
+     "map": "Land of Fire",
+     "subject": "Svea",
+     "cx": -59.681681476470594,
+     "cz": -114.38882305490196,
+     "passes": true,
+     "gap": 54.636591478696744,
+     "lo": 8.888888888888893,
+     "hi": 86.95652173913044,
+     "n_in": 14
+    },
+    {
+     "map": "Land of Fire",
+     "subject": "parked cruiser smoke",
+     "cx": -59.681681476470594,
+     "cz": -114.38882305490196,
+     "passes": true,
+     "gap": 54.636591478696744,
+     "lo": 6.274509803921568,
+     "hi": 86.95652173913044,
+     "n_in": 14
+    },
+    {
+     "map": "Sea of Fortune",
+     "subject": "parked cruiser smoke",
+     "cx": 265.5520480350877,
+     "cz": -322.6185735263158,
+     "passes": true,
+     "gap": 51.19047619047619,
+     "lo": 25.595238095238095,
+     "hi": 76.92307692307692,
+     "n_in": 16
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "parked cruiser smoke",
+     "cx": -480.66041705357145,
+     "cz": -118.27544530531463,
+     "passes": false,
+     "gap": 50.90909090909091,
+     "lo": -17.647058823529413,
+     "hi": 66.66666666666667,
+     "n_in": 12
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "Daring",
+     "cx": -530.0157137962964,
+     "cz": -79.6427750962963,
+     "passes": false,
+     "gap": 50.0,
+     "lo": 0.0,
+     "hi": 66.66666666666667,
+     "n_in": 8
+    },
+    {
+     "map": "Loop",
+     "subject": "cap sitters",
+     "cx": 265.62633272228163,
+     "cz": -51.687725088502674,
+     "passes": true,
+     "gap": 45.21739130434783,
+     "lo": 24.615384615384613,
+     "hi": 70.0,
+     "n_in": 15
+    },
+    {
+     "map": "Mountain Range",
+     "subject": "parked cruiser smoke",
+     "cx": -700.5685772414965,
+     "cz": -312.03451616411564,
+     "passes": true,
+     "gap": 36.36363636363637,
+     "lo": 30.76923076923077,
+     "hi": 40.0,
+     "n_in": 12
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "Harugumo",
+     "cx": -608.2725532136653,
+     "cz": -169.36290521361477,
+     "passes": true,
+     "gap": 34.72222222222223,
+     "lo": 20.0,
+     "hi": 56.25,
+     "n_in": 11
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "Somers",
+     "cx": 588.1808650778918,
+     "cz": -145.32156856195624,
+     "passes": false,
+     "gap": 22.222222222222225,
+     "lo": -1.778656126482213,
+     "hi": 58.73684210526316,
+     "n_in": 10
+    },
+    {
+     "map": "Mountain Range",
+     "subject": "Svea",
+     "cx": -203.28789906060604,
+     "cz": -180.27104554545454,
+     "passes": false,
+     "gap": 18.589743589743588,
+     "lo": -27.97202797202797,
+     "hi": 61.53846153846154,
+     "n_in": 10
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "cap sitters",
+     "cx": -543.8325810833333,
+     "cz": -102.30879592,
+     "passes": false,
+     "gap": 14.743589743589743,
+     "lo": -17.647058823529413,
+     "hi": 31.553884711779446,
+     "n_in": 9
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "flank smoke lines",
+     "cx": 570.9895675908508,
+     "cz": -169.0352594974187,
+     "passes": true,
+     "gap": 14.138765631302945,
+     "lo": 1.3636363636363633,
+     "hi": 25.925925925925927,
+     "n_in": 14
+    },
+    {
+     "map": "Hotspot",
+     "subject": "flank smoke lines",
+     "cx": 105.81205117081502,
+     "cz": -190.94021294276556,
+     "passes": false,
+     "gap": 11.5625,
+     "lo": -7.46031746031746,
+     "hi": 27.777777777777775,
+     "n_in": 13
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "Gda\u0144sk",
+     "cx": 98.05983974484849,
+     "cz": -210.57678051731602,
+     "passes": false,
+     "gap": 10.11904761904762,
+     "lo": -36.134453781512605,
+     "hi": 56.857142857142854,
+     "n_in": 10
+    },
+    {
+     "map": "Mountain Range",
+     "subject": "parked cruiser smoke",
+     "cx": -203.28789906060604,
+     "cz": -180.27104554545454,
+     "passes": false,
+     "gap": 7.226107226107228,
+     "lo": -27.5,
+     "hi": 61.53846153846154,
+     "n_in": 10
+    },
+    {
+     "map": "Mountain Range",
+     "subject": "flank smoke lines",
+     "cx": -325.3184873339729,
+     "cz": -70.29889749566213,
+     "passes": false,
+     "gap": 4.812129202373104,
+     "lo": -16.071428571428573,
+     "hi": 22.05159705159705,
+     "n_in": 9
+    },
+    {
+     "map": "Mountain Range",
+     "subject": "flank smoke lines",
+     "cx": 196.7741710330185,
+     "cz": -165.49107434297522,
+     "passes": false,
+     "gap": 4.548450889914303,
+     "lo": -13.557993730407523,
+     "hi": 23.958333333333336,
+     "n_in": 8
+    },
+    {
+     "map": "Land of Fire",
+     "subject": "cap sitters",
+     "cx": -105.6047994153439,
+     "cz": -125.61390988492063,
+     "passes": false,
+     "gap": 3.742203742203742,
+     "lo": -32.234432234432234,
+     "hi": 32.0,
+     "n_in": 8
+    },
+    {
+     "map": "Hotspot",
+     "subject": "flank smoke lines",
+     "cx": -655.2339002923011,
+     "cz": 27.18835284385402,
+     "passes": false,
+     "gap": 3.4375,
+     "lo": -13.698630136986301,
+     "hi": 19.139784946236556,
+     "n_in": 11
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "flank smoke lines",
+     "cx": -608.5158259198887,
+     "cz": -147.20861167022443,
+     "passes": false,
+     "gap": 0.5445744251714402,
+     "lo": -20.930880713489408,
+     "hi": 26.40449438202247,
+     "n_in": 23
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "cap sitters",
+     "cx": 28.54514814302521,
+     "cz": -157.8030160717087,
+     "passes": false,
+     "gap": -5.28846153846154,
+     "lo": -28.900138057984357,
+     "hi": 29.545454545454547,
+     "n_in": 15
+    },
+    {
+     "map": "Hotspot",
+     "subject": "flank smoke lines",
+     "cx": 714.2273783024549,
+     "cz": -162.53242578209762,
+     "passes": false,
+     "gap": -17.8125,
+     "lo": -32.51282051282051,
+     "hi": -6.300366300366296,
+     "n_in": 15
+    }
+   ]
+  },
+  "2.5": {
+   "subjects": 43,
+   "clusters": 215,
+   "candidates": 24,
+   "passed": 8,
+   "rows": [
+    {
+     "map": "Sea of Fortune",
+     "subject": "Svea",
+     "cx": 271.0712828148148,
+     "cz": -330.1338363888889,
+     "passes": true,
+     "gap": 76.19047619047619,
+     "lo": 41.66666666666667,
+     "hi": 100.0,
+     "n_in": 15
+    },
+    {
+     "map": "Loop",
+     "subject": "Gda\u0144sk",
+     "cx": 283.54367612787877,
+     "cz": -69.97751641045454,
+     "passes": false,
+     "gap": 66.66666666666667,
+     "lo": 40.0,
+     "hi": 100.0,
+     "n_in": 8
+    },
+    {
+     "map": "Land of Fire",
+     "subject": "Svea",
+     "cx": -59.681681476470594,
+     "cz": -114.38882305490196,
+     "passes": true,
+     "gap": 54.636591478696744,
+     "lo": 8.888888888888893,
+     "hi": 86.95652173913044,
+     "n_in": 14
+    },
+    {
+     "map": "Land of Fire",
+     "subject": "parked cruiser smoke",
+     "cx": -59.681681476470594,
+     "cz": -114.38882305490196,
+     "passes": true,
+     "gap": 54.636591478696744,
+     "lo": 6.274509803921568,
+     "hi": 86.95652173913044,
+     "n_in": 14
+    },
+    {
+     "map": "Sea of Fortune",
+     "subject": "parked cruiser smoke",
+     "cx": 265.5520480350877,
+     "cz": -322.6185735263158,
+     "passes": true,
+     "gap": 51.19047619047619,
+     "lo": 25.595238095238095,
+     "hi": 76.92307692307692,
+     "n_in": 16
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "parked cruiser smoke",
+     "cx": -480.66041705357145,
+     "cz": -118.27544530531463,
+     "passes": false,
+     "gap": 50.90909090909091,
+     "lo": -17.647058823529413,
+     "hi": 66.66666666666667,
+     "n_in": 12
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "Daring",
+     "cx": -530.0157137962964,
+     "cz": -79.6427750962963,
+     "passes": false,
+     "gap": 50.0,
+     "lo": 0.0,
+     "hi": 66.66666666666667,
+     "n_in": 8
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "Somers",
+     "cx": 548.6496169778593,
+     "cz": -244.06516655764352,
+     "passes": true,
+     "gap": 45.55555555555556,
+     "lo": 22.75132275132275,
+     "hi": 74.24242424242424,
+     "n_in": 19
+    },
+    {
+     "map": "Loop",
+     "subject": "cap sitters",
+     "cx": 288.93405082501204,
+     "cz": -49.392879689935064,
+     "passes": true,
+     "gap": 37.525083612040135,
+     "lo": 16.269841269841265,
+     "hi": 60.47430830039525,
+     "n_in": 15
+    },
+    {
+     "map": "Mountain Range",
+     "subject": "parked cruiser smoke",
+     "cx": -700.5685772414965,
+     "cz": -312.03451616411564,
+     "passes": true,
+     "gap": 36.36363636363637,
+     "lo": 30.76923076923077,
+     "hi": 40.0,
+     "n_in": 12
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "Harugumo",
+     "cx": -609.6862591105321,
+     "cz": -146.34465797715157,
+     "passes": false,
+     "gap": 27.77777777777778,
+     "lo": 0.0,
+     "hi": 56.25,
+     "n_in": 12
+    },
+    {
+     "map": "Mountain Range",
+     "subject": "Svea",
+     "cx": -203.28789906060604,
+     "cz": -180.27104554545454,
+     "passes": false,
+     "gap": 18.589743589743588,
+     "lo": -27.97202797202797,
+     "hi": 61.53846153846154,
+     "n_in": 10
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "flank smoke lines",
+     "cx": 547.2715117074559,
+     "cz": -247.57062276947124,
+     "passes": true,
+     "gap": 17.82977006857604,
+     "lo": 3.899855560905152,
+     "hi": 29.87249544626594,
+     "n_in": 21
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "cap sitters",
+     "cx": -543.8325810833333,
+     "cz": -102.30879592,
+     "passes": false,
+     "gap": 14.743589743589743,
+     "lo": -17.647058823529413,
+     "hi": 31.553884711779446,
+     "n_in": 9
+    },
+    {
+     "map": "Mountain Range",
+     "subject": "flank smoke lines",
+     "cx": -245.10788058422762,
+     "cz": -84.78853405715482,
+     "passes": false,
+     "gap": 14.238628872775212,
+     "lo": -19.696969696969695,
+     "hi": 41.860465116279066,
+     "n_in": 17
+    },
+    {
+     "map": "Hotspot",
+     "subject": "flank smoke lines",
+     "cx": 105.81205117081502,
+     "cz": -190.94021294276556,
+     "passes": false,
+     "gap": 11.5625,
+     "lo": -7.46031746031746,
+     "hi": 27.777777777777775,
+     "n_in": 13
+    },
+    {
+     "map": "Mountain Range",
+     "subject": "parked cruiser smoke",
+     "cx": -203.28789906060604,
+     "cz": -180.27104554545454,
+     "passes": false,
+     "gap": 7.226107226107228,
+     "lo": -27.5,
+     "hi": 61.53846153846154,
+     "n_in": 10
+    },
+    {
+     "map": "Mountain Range",
+     "subject": "flank smoke lines",
+     "cx": 196.7741710330185,
+     "cz": -165.49107434297522,
+     "passes": false,
+     "gap": 4.548450889914303,
+     "lo": -13.557993730407523,
+     "hi": 23.958333333333336,
+     "n_in": 8
+    },
+    {
+     "map": "Hotspot",
+     "subject": "flank smoke lines",
+     "cx": -655.2339002923011,
+     "cz": 27.18835284385402,
+     "passes": false,
+     "gap": 3.4375,
+     "lo": -13.698630136986301,
+     "hi": 19.139784946236556,
+     "n_in": 11
+    },
+    {
+     "map": "Land of Fire",
+     "subject": "cap sitters",
+     "cx": -139.34008680891333,
+     "cz": -158.33210480750915,
+     "passes": false,
+     "gap": 1.7671517671517663,
+     "lo": -34.88649940262843,
+     "hi": 28.632478632478634,
+     "n_in": 11
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "flank smoke lines",
+     "cx": -608.5158259198887,
+     "cz": -147.20861167022443,
+     "passes": false,
+     "gap": 0.5445744251714402,
+     "lo": -20.930880713489408,
+     "hi": 26.40449438202247,
+     "n_in": 23
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "Gda\u0144sk",
+     "cx": 85.06957698190476,
+     "cz": -178.94618849761903,
+     "passes": false,
+     "gap": -2.3809523809523796,
+     "lo": -46.03580562659846,
+     "hi": 40.92307692307692,
+     "n_in": 10
+    },
+    {
+     "map": "Sleeping Giant",
+     "subject": "cap sitters",
+     "cx": 24.470501364812026,
+     "cz": -157.63549765626567,
+     "passes": false,
+     "gap": -15.224358974358971,
+     "lo": -37.19704952581665,
+     "hi": 16.92789968652037,
+     "n_in": 16
+    },
+    {
+     "map": "Hotspot",
+     "subject": "flank smoke lines",
+     "cx": 712.1369193483386,
+     "cz": -105.22237821359143,
+     "passes": false,
+     "gap": -20.0,
+     "lo": -35.27265745007681,
+     "hi": -8.274200026777347,
+     "n_in": 16
+    }
+   ]
+  }
+ },
+ "placebo": [
+  {
+   "fake": [
+    "-BN-",
+    "5D",
+    "KSC",
+    "MACHX",
+    "REEEE",
+    "SCCC2"
+   ],
+   "smokes": 373,
+   "subjects": 37,
+   "candidates": 11,
+   "passed": 3
+  },
+  {
+   "fake": [
+    "-BN-",
+    "5D",
+    "EPOXY",
+    "HFANS",
+    "KSC",
+    "REEEE"
+   ],
+   "smokes": 435,
+   "subjects": 40,
+   "candidates": 9,
+   "passed": 4
+  },
+  {
+   "fake": [
+    "-BN-",
+    "EPOXY",
+    "HFANS",
+    "KITED",
+    "MACHX",
+    "SCCC2"
+   ],
+   "smokes": 476,
+   "subjects": 43,
+   "candidates": 14,
+   "passed": 2
+  },
+  {
+   "fake": [
+    "-BN-",
+    "HFANS",
+    "KITED",
+    "KSC",
+    "MACHX",
+    "REEEE"
+   ],
+   "smokes": 461,
+   "subjects": 42,
+   "candidates": 10,
+   "passed": 1
+  },
+  {
+   "fake": [
+    "5D",
+    "EPOXY",
+    "KSC",
+    "MACHX",
+    "MZY",
+    "REEEE"
+   ],
+   "smokes": 366,
+   "subjects": 34,
+   "candidates": 7,
+   "passed": 5
+  },
+  {
+   "fake": [
+    "-BN-",
+    "5D",
+    "INCA",
+    "KITED",
+    "MACHX",
+    "MZY"
+   ],
+   "smokes": 362,
+   "subjects": 40,
+   "candidates": 4,
+   "passed": 2
+  },
+  {
+   "fake": [
+    "5D",
+    "EPOXY",
+    "INCA",
+    "MACHX",
+    "MZY",
+    "SCCC2"
+   ],
+   "smokes": 338,
+   "subjects": 33,
+   "candidates": 5,
+   "passed": 1
+  },
+  {
+   "fake": [
+    "-BN-",
+    "EPOXY",
+    "HFANS",
+    "INCA",
+    "KSC",
+    "SCCC2"
+   ],
+   "smokes": 433,
+   "subjects": 38,
+   "candidates": 12,
+   "passed": 3
+  },
+  {
+   "fake": [
+    "5D",
+    "INCA",
+    "KSC",
+    "MACHX",
+    "REEEE",
+    "SCCC2"
+   ],
+   "smokes": 321,
+   "subjects": 31,
+   "candidates": 10,
+   "passed": 2
+  },
+  {
+   "fake": [
+    "-BN-",
+    "EPOXY",
+    "KSC",
+    "MZY",
+    "REEEE",
+    "SCCC2"
+   ],
+   "smokes": 386,
+   "subjects": 36,
+   "candidates": 11,
+   "passed": 1
+  },
+  {
+   "fake": [
+    "-BN-",
+    "HFANS",
+    "INCA",
+    "KITED",
+    "KSC",
+    "MACHX"
+   ],
+   "smokes": 448,
+   "subjects": 40,
+   "candidates": 11,
+   "passed": 2
+  },
+  {
+   "fake": [
+    "EPOXY",
+    "INCA",
+    "KITED",
+    "KSC",
+    "MZY",
+    "SCCC2"
+   ],
+   "smokes": 345,
+   "subjects": 31,
+   "candidates": 9,
+   "passed": 0
+  },
+  {
+   "fake": [
+    "-BN-",
+    "EPOXY",
+    "KITED",
+    "MACHX",
+    "REEEE",
+    "SCCC2"
+   ],
+   "smokes": 418,
+   "subjects": 38,
+   "candidates": 13,
+   "passed": 5
+  },
+  {
+   "fake": [
+    "5D",
+    "EPOXY",
+    "INCA",
+    "KSC",
+    "MACHX",
+    "MZY"
+   ],
+   "smokes": 353,
+   "subjects": 34,
+   "candidates": 4,
+   "passed": 3
+  },
+  {
+   "fake": [
+    "EPOXY",
+    "HFANS",
+    "INCA",
+    "KITED",
+    "MACHX",
+    "SCCC2"
+   ],
+   "smokes": 424,
+   "subjects": 38,
+   "candidates": 13,
+   "passed": 3
+  },
+  {
+   "fake": [
+    "5D",
+    "EPOXY",
+    "HFANS",
+    "INCA",
+    "KSC",
+    "MACHX"
+   ],
+   "smokes": 413,
+   "subjects": 39,
+   "candidates": 7,
+   "passed": 5
+  },
+  {
+   "fake": [
+    "5D",
+    "EPOXY",
+    "HFANS",
+    "KSC",
+    "MZY",
+    "SCCC2"
+   ],
+   "smokes": 390,
+   "subjects": 40,
+   "candidates": 10,
+   "passed": 2
+  },
+  {
+   "fake": [
+    "-BN-",
+    "EPOXY",
+    "HFANS",
+    "KITED",
+    "KSC",
+    "REEEE"
+   ],
+   "smokes": 461,
+   "subjects": 42,
+   "candidates": 9,
+   "passed": 1
+  },
+  {
+   "fake": [
+    "-BN-",
+    "EPOXY",
+    "INCA",
+    "KITED",
+    "KSC",
+    "REEEE"
+   ],
+   "smokes": 390,
+   "subjects": 28,
+   "candidates": 9,
+   "passed": 2
+  },
+  {
+   "fake": [
+    "5D",
+    "EPOXY",
+    "INCA",
+    "KSC",
+    "MACHX",
+    "MZY"
+   ],
+   "smokes": 353,
+   "subjects": 34,
+   "candidates": 4,
+   "passed": 3
+  }
+ ]
+}

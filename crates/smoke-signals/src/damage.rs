@@ -830,8 +830,10 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                 });
             }
             let torpedo = torpedo_track && from_hit.is_none();
-            // The latest salvo before the damage; among salvos fired at the
-            // same moment, the one whose shells match the hit.
+            // The latest main-battery salvo before the damage; among salvos
+            // fired at the same moment, the one whose shells match the hit.
+            // Secondary salvos are left out: a battleship's secondaries fire
+            // every few seconds, so they would claim main-battery hits.
             let from_salvo = from_hit.or_else(|| {
                 if tick || torpedo {
                     return None;
@@ -843,7 +845,7 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                     .copied()
                     .filter(|s| {
                         let f = s.fired_at.seconds();
-                        f <= t && t - f <= SALVO_MATCH_SECONDS
+                        f <= t && t - f <= SALVO_MATCH_SECONDS && (input.is_main_battery)(*attacker, s.salvo.params_id) != Some(false)
                     })
                     .collect();
                 let latest = candidates.iter().map(|s| s.fired_at.seconds()).fold(f32::NEG_INFINITY, f32::max);

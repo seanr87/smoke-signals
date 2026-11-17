@@ -106,6 +106,8 @@ pub enum FireSource {
     DamageClock,
     /// An air-support squadron: the launch clock and the ship's position then.
     PlaneLaunch,
+    /// A torpedo: the launch clock and the ship's position then.
+    TorpedoLaunch,
 }
 
 /// What dealt the damage, inferred from the ledger's timing.
@@ -311,6 +313,16 @@ pub struct TargetStat {
     pub sunk: bool,
 }
 
+/// Damage of kinds that earn no credit (torpedo, secondary, flood, unknown)
+/// dealt by the smoker's team from this smoke to one enemy ship, listed so
+/// the page can say what the smoke's total leaves out.
+#[derive(Debug, Clone, Default, Serialize)]
+pub struct UncountedStat {
+    pub damage: f32,
+    pub by_kind: BTreeMap<String, f32>,
+    pub sunk: bool,
+}
+
 /// Totals credited to one smoke, split by the shooter's relation to the
 /// smoke's owner. `in_smoke` is credit for shots fired from inside; `behind`
 /// is the shooter's share for shots fired from outside with this smoke
@@ -341,6 +353,8 @@ pub struct SmokeDamage {
     pub shooter_stats: BTreeMap<u32, ShooterStat>,
     /// Per enemy ship hit by the smoker's team.
     pub targets: BTreeMap<u32, TargetStat>,
+    /// Per enemy ship hit from this smoke by weapons that earn no credit.
+    pub uncounted_targets: BTreeMap<u32, UncountedStat>,
     /// Enemy ships whose last damage before sinking was credited here.
     pub kills: BTreeSet<u32>,
     #[serde(skip)]
@@ -360,6 +374,13 @@ impl SmokeDamage {
 
     pub fn smoke_damage_total(&self) -> f32 {
         self.damage_in_smoke() + self.damage_behind_smoke()
+    }
+
+    fn note_uncounted(&mut self, event: &AttributedDamage, share: f32) {
+        let amount = event.amount * share;
+        let target = self.uncounted_targets.entry(event.victim).or_default();
+        target.damage += amount;
+        *target.by_kind.entry(event.kind.as_str().to_string()).or_default() += amount;
     }
 
     fn credit(&mut self, event: &AttributedDamage, share: f32, role: Role, inside: bool) {
@@ -763,16 +784,16 @@ fn in_tick_train(events: &[DamageEvent], index: usize) -> bool {
 /// floor the event reaches (a finishing hit reaches any floor). The direction
 /// vector is in world units per second, like the origin. A torpedo whose
 /// listed damage is unknown fits only a finishing hit.
-fn torpedo_fits(
-    torpedoes: &[&ActiveTorpedo],
+fn torpedo_fits<'a>(
+    torpedoes: &[&'a ActiveTorpedo],
     t: f32,
     victim_pos: Option<WorldPos>,
     amount: f32,
     finishing: bool,
     floor_of: &dyn Fn(&ActiveTorpedo) -> Option<f32>,
-) -> bool {
-    let Some(victim) = victim_pos else { return false };
-    torpedoes.iter().any(|torp| {
+) -> Option<&'a ActiveTorpedo> {
+    let victim = victim_pos?;
+    torpedoes.iter().copied().find(|torp| {
         let run = t - torp.launched_at.seconds();
         if !(1.0..=TORPEDO_MAX_RUN_SECONDS).contains(&run) {
             return false;
@@ -913,15 +934,19 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
             let floor_of = |torp: &ActiveTorpedo| -> Option<f32> {
                 (input.torpedo_damage)(torp.torpedo.params_id).map(|d| TORPEDO_FLOOR_SHARE * d * (1.0 - protection))
             };
-            let torpedo_track = !tick
-                && torpedo_fits(
+            let torpedo_match = if tick {
+                None
+            } else {
+                torpedo_fits(
                     torpedoes_by_owner.get(attacker).map(Vec::as_slice).unwrap_or(&[]),
                     t,
                     victim_pos,
                     event.amount,
                     finishing,
                     &floor_of,
-                );
+                )
+            };
+            let torpedo_track = torpedo_match.is_some();
             let beyond_salvo = (input.main_salvo_damage_max)(*attacker).is_some_and(|m| event.amount > m);
             if torpedo_track && from_hit.is_some() && !beyond_salvo {
                 stats.shell_hits_fitting_torpedo.push(ShellHitFittingTorpedo {
@@ -981,7 +1006,18 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                     Some((strike.launched_at, pos, FireSource::PlaneLaunch, None))
                 })
                 .flatten();
-            let (fire_seconds, fire_pos, source, projectile) = match from_salvo.or(from_launch) {
+            // A torpedo is placed where and when the ship launched it, so the
+            // smokes it was fired from are known; it still earns no credit.
+            let from_torpedo = torpedo_match.filter(|_| torpedo).map(|torp| {
+                let launched = torp.launched_at.seconds();
+                let pos = input
+                    .timeline
+                    .get(attacker)
+                    .and_then(|tr| timeline::world_pos_at(tr, torp.launched_at))
+                    .unwrap_or(WorldPos(*torp.torpedo.origin));
+                (launched, pos, FireSource::TorpedoLaunch, None)
+            });
+            let (fire_seconds, fire_pos, source, projectile) = match from_salvo.or(from_launch).or(from_torpedo) {
                 Some(found) => found,
                 None => {
                     let Some(pos) = input.timeline.get(attacker).and_then(|tr| timeline::world_pos_at(tr, event.clock))
@@ -1017,7 +1053,7 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                 (Some((_, _, DamageKind::Shell | DamageKind::Airstrike, _, _, _)), _, _, _) => DamageKind::Fire,
                 (Some((_, _, DamageKind::Torpedo, _, _, _)), _, _, _) => DamageKind::Flood,
                 (_, true, _, _) => DamageKind::Unknown,
-                (_, _, true, _) => DamageKind::Torpedo,
+                (_, _, true, _) | (_, _, _, FireSource::TorpedoLaunch) => DamageKind::Torpedo,
                 (_, _, _, FireSource::ShotHit | FireSource::Salvo) => DamageKind::Shell,
                 (_, _, _, FireSource::PlaneLaunch) => DamageKind::Airstrike,
                 (_, _, _, FireSource::DamageClock) => DamageKind::Unknown,
@@ -1125,6 +1161,12 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                     let role = role(*attacker, attacker_team, input.smoke_owner.get(id));
                     per_smoke.entry(*id).or_default().credit(&attributed, *share, role, inside);
                 }
+            } else {
+                for (id, share) in &attributed.credited {
+                    if !matches!(role(*attacker, attacker_team, input.smoke_owner.get(id)), Role::Enemy) {
+                        per_smoke.entry(*id).or_default().note_uncounted(&attributed, *share);
+                    }
+                }
             }
             events.push(attributed);
         }
@@ -1165,7 +1207,7 @@ fn credit_kills(events: &[AttributedDamage], input: &SpikeInput<'_>, per_smoke: 
         }
     }
     for e in events {
-        if !e.kind.credited() || last_by_victim.get(&e.victim) != Some(&e.damage_seconds) {
+        if last_by_victim.get(&e.victim) != Some(&e.damage_seconds) {
             continue;
         }
         let attacker = EntityId::from(e.attacker);
@@ -1175,6 +1217,12 @@ fn credit_kills(events: &[AttributedDamage], input: &SpikeInput<'_>, per_smoke: 
                 continue;
             }
             let d = per_smoke.entry(*id).or_default();
+            if !e.kind.credited() {
+                if let Some(target) = d.uncounted_targets.get_mut(&e.victim) {
+                    target.sunk = true;
+                }
+                continue;
+            }
             if d.kills.insert(e.victim) {
                 d.targets.entry(e.victim).or_default().sunk = true;
                 d.shooter_stats.entry(e.attacker).or_default().kills += 1;

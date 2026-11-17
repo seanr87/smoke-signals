@@ -12,6 +12,8 @@ Checks:
 4. Smokes found against roster activations per team-game.
 5. Per-clan summary with outlier flags.
 6. Runtime and failures from the run log.
+7. Enemies table: per smoke, the distinct victims of credited events equal
+   the rows of targets_hit and the rows sum to the smoke total.
 """
 import argparse
 import csv
@@ -256,3 +258,56 @@ fails = re.findall(r"- error: (.*)", log)
 print("errors:", len(fails))
 for f in fails:
     print("  ", f)
+
+print()
+print("# 7. Enemies table vs credited events, per smoke")
+# Per run: the distinct victims of credited events (shell, fire, airstrike)
+# fired by the smoker's team with a positive share must equal the rows of the
+# smoke's targets_hit, and the rows' total must equal the smoke's total.
+# A victim whose only credited row is a sinking with no damage is allowed.
+CREDITED_KINDS = {"shell", "fire", "airstrike"}
+victim_mismatch, total_mismatch, checked, with_uncounted = [], [], 0, 0
+for name, (g, _) in runs.items():
+    d = os.path.join(GAMES, name)
+    events_path = os.path.join(d, "damage_events.csv")
+    if not os.path.exists(events_path):
+        continue
+    team_of = {}
+    for t in g["teams"]:
+        for pl in t.get("players", []):
+            team_of[str(pl["entity_id"])] = t["name"]
+    smokes_run = json.load(open(os.path.join(d, "smokes.json"), encoding="utf-8"))
+    smokes_run = smokes_run["smokes"] if isinstance(smokes_run, dict) else smokes_run
+    smoke_team = {s["smoke_id"]: s["team"] for s in smokes_run}
+    victims = defaultdict(lambda: defaultdict(float))
+    for r in csv.DictReader(open(events_path, encoding="utf-8")):
+        if r["kind"] not in CREDITED_KINDS or not r["credited"]:
+            continue
+        for c in r["credited"].split(";"):
+            sid, share = c.split(":")
+            sid = int(sid)
+            amount = fl(r["amount"]) * fl(share)
+            if team_of.get(r["attacker"]) == smoke_team.get(sid) and amount > 0:
+                victims[sid][r["victim"]] += amount
+    for s in smokes_run:
+        if s.get("one_sided") or s.get("smoke_damage_total") is None:
+            continue
+        checked += 1
+        if s.get("targets_not_counted"):
+            with_uncounted += 1
+        ev = victims.get(s["smoke_id"], {})
+        rows = {str(t["entity_id"]): t for t in s.get("targets_hit") or []}
+        missing = sorted(set(ev) - set(rows))
+        extra = sorted(e for e in set(rows) - set(ev) if not (rows[e]["sunk"] and rows[e]["damage"] == 0))
+        if missing or extra:
+            victim_mismatch.append((name, s["smoke_id"], s["player"], missing, extra))
+        table_total = sum(t["damage"] for t in rows.values())
+        if abs(table_total - s["smoke_damage_total"]) > 1.0:
+            total_mismatch.append((name, s["smoke_id"], s["player"], table_total, s["smoke_damage_total"]))
+print(f"smokes checked: {checked} (two-replay games); smokes with uncounted hits listed: {with_uncounted}")
+print(f"smokes whose enemies table misses or adds a victim: {len(victim_mismatch)}")
+for v in victim_mismatch[:20]:
+    print("  ", v)
+print(f"smokes whose table total differs from the smoke total by more than 1: {len(total_mismatch)}")
+for v in total_mismatch[:20]:
+    print("  ", v)

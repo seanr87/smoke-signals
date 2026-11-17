@@ -235,6 +235,9 @@ pub struct SmokeRecord {
     pub shooter_detail: Vec<ShooterDetail>,
     /// Enemy ships hit by credited shots, with whether those shots sank them.
     pub targets_hit: Vec<TargetHit>,
+    /// Enemy ships hit from this smoke by the smoker's team with weapons that
+    /// earn no credit (torpedo, secondary, flood, unknown).
+    pub targets_not_counted: Vec<UncountedHit>,
     /// Enemy ships whose last damage before sinking was credited to this smoke.
     pub kills_from_smoke: u32,
     /// Ships of the smoker's team concealed by this smoke (inside it or
@@ -391,6 +394,17 @@ pub struct ShooterDetail {
     pub damage: f32,
     pub split: DamageSplit,
     pub kills: u32,
+}
+
+#[derive(Debug, Clone, Serialize)]
+pub struct UncountedHit {
+    pub entity_id: u32,
+    pub player: String,
+    pub ship: String,
+    pub ship_class: Option<String>,
+    pub damage: f32,
+    pub by_kind: std::collections::BTreeMap<String, f32>,
+    pub sunk: bool,
 }
 
 #[derive(Debug, Clone, Serialize)]

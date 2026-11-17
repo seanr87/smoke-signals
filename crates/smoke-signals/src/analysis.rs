@@ -39,6 +39,7 @@ use crate::records::ShipMark;
 use crate::records::ShooterDetail;
 use crate::records::SmokeDeath;
 use crate::records::TargetHit;
+use crate::records::UncountedHit;
 use crate::records::GameRecord;
 use crate::records::Moment;
 use crate::records::Outcome;
@@ -1271,6 +1272,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             shooters: Vec::new(),
             shooter_detail: Vec::new(),
             targets_hit: Vec::new(),
+            targets_not_counted: Vec::new(),
             kills_from_smoke: 0,
             smoke_deaths: Vec::new(),
             ships_at_capture,
@@ -1628,6 +1630,16 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
                     let (player, ship) = who(*e)?;
                     let ship_class = roster.get(&EntityId::from(*e)).and_then(|r| r.ship_class.clone());
                     Some(TargetHit { entity_id: *e, player, ship, ship_class, damage: s.damage, split: s.split.to_record(), sunk: s.sunk })
+                })
+                .collect();
+            smokes[i].targets_not_counted = d
+                .uncounted_targets
+                .iter()
+                .filter(|(_, s)| s.damage > 0.0)
+                .filter_map(|(e, s)| {
+                    let (player, ship) = who(*e)?;
+                    let ship_class = roster.get(&EntityId::from(*e)).and_then(|r| r.ship_class.clone());
+                    Some(UncountedHit { entity_id: *e, player, ship, ship_class, damage: s.damage, by_kind: s.by_kind.clone(), sunk: s.sunk })
                 })
                 .collect();
             smokes[i].damage_split = Some(d.split.to_record());

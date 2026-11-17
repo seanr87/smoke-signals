@@ -1,5 +1,8 @@
-"""Validation after P1 to P4 (resolved hit is a shell, victim-aware torpedo
-floor, main-battery salvo fallback, airstrike kind).
+"""Validation after P1 to P8 (resolved hit is a shell unless beyond a whole
+salvo, victim-aware torpedo floor, main-battery salvo fallback and hit
+preference, airstrike kind). Gates of 16 Nov 2026: false positives, torpedo
+ledger 30M to 33.1M, secondaries within 10%, shell within 3%, airstrikes at
+least 80% with every Dutch ship, kills unchanged or explained.
 
 python -I -X utf8 validate_p.py <repo root> <before batch (R1 to R3)> <after batch> <round 6 batch> <F4 frames batch>
 """
@@ -98,7 +101,7 @@ for label, rows in (("before", rb), ("after", ra)):
 lt_after = sum(x["lt"] for x in ra)
 fp = sorted([x for x in ra if x["lt"] > 0 and x["gt"] == 0], key=lambda x: -x["lt"])
 verdict("false positives at most 139 player-runs and 273k", len(fp) <= 139 and sum(x["lt"] for x in fp) <= 273_000, f"{len(fp)} player-runs, {sum(x['lt'] for x in fp):,.0f}")
-verdict("torpedo ledger at most the 33.1M ceiling", lt_after <= 33_100_000, f"{lt_after:,.0f}")
+verdict("torpedo ledger between 30M and the 33.1M ceiling", 30_000_000 <= lt_after <= 33_100_000, f"{lt_after:,.0f}")
 print("False positives after, largest 10:")
 for x in fp[:10]:
     print(f"  {short(x['run'])} {name(x['player'])} {x['ship']}: {x['lt']:,.0f}")
@@ -106,13 +109,15 @@ for x in fp[:10]:
 print("\n# 2. Overreach: ledger torpedo above the result by more than 10%")
 over = sorted([x for x in ra if x["gt"] > 0 and x["lt"] > 1.1 * x["gt"]], key=lambda x: -(x["lt"] - x["gt"]))
 excess = sum(x["lt"] - x["gt"] for x in over)
-verdict("overreach at most 40 player-runs and under 0.5M excess", len(over) <= 40 and excess < 500_000, f"{len(over)} player-runs, excess {excess:,.0f}")
+print(f"overreach (report only): {len(over)} player-runs, excess {excess:,.0f}")
+boats = [x for x in over if x["gt_all"]["main"] == 0 and x["gt_all"]["secondaries"] == 0]
+print(f"  of which torpedo boats that fired no gun (ledger duplicates, not classification): {len(boats)} player-runs, excess {sum(x['lt'] - x['gt'] for x in boats):,.0f}")
 print("| run | player | ship | ledger torpedo | result torpedo | excess | ledger shell | result main |")
 print("|---|---|---|---|---|---|---|---|")
 for x in over[:10]:
     print(f"| {short(x['run'])} | {name(x['player'])} | {x['ship']} | {x['lt']:,.0f} | {x['gt']:,.0f} | {x['lt'] - x['gt']:+,.0f} | {x['lk'].get('shell', 0):,.0f} | {x['gt_all']['main']:,.0f} |")
 
-print("\n# 3. P1: torpedo damage given up on ticks with a resolved shell hit")
+print("\n# 3. P6: torpedo damage given up on ticks with a resolved shell hit (report only)")
 given = []
 for run, (g, sp) in after.items():
     names = {p["entity_id"]: (p["player"], p["ship"]) for t in g["teams"] for p in t["players"]}
@@ -123,7 +128,7 @@ for run, (g, sp) in after.items():
 tot = sum(x[0] for x in given)
 share = tot / lt_after if lt_after else 0
 print(f"events {len(given)}; damage {tot:,.0f}; {100 * share:.2f}% of the torpedo ledger after ({lt_after:,.0f})")
-verdict("P1 gives up under about 1% of torpedo damage", share < 0.012, f"{100 * share:.2f}%")
+print(f"(not a gate) given up: {100 * share:.2f}%")
 print("largest 10:")
 print("| amount | run | attacker | ship | victim | clock s |")
 print("|---|---|---|---|---|---|")
@@ -173,6 +178,14 @@ for x in ra:
     if x["lk"].get("airstrike", 0) > 0:
         strike_ships[x["ship"]] += x["lk"]["airstrike"]
 print("ledger airstrike by ship: " + ", ".join(f"{s} {v:,.0f}" for s, v in strike_ships.most_common()))
+result_ships = Counter()
+for x in ra:
+    if x["gt_all"].get("airstrike", 0) > 0:
+        result_ships[x["ship"]] += x["gt_all"]["airstrike"]
+print("result bombs by ship: " + ", ".join(f"{s} {v:,.0f} (ledger {strike_ships.get(s, 0):,.0f}, {100 * strike_ships.get(s, 0) / v:.0f}%)" for s, v in result_ships.most_common()))
+verdict("airstrike ledger at least 80% of the game's air-support bombs", airstrike_after[0] >= 0.8 * airstrike_after[1], f"{100 * airstrike_after[0] / airstrike_after[1]:.1f}%")
+verdict("every ship with air-support bombs in the result has airstrike in the ledger", all(strike_ships.get(s, 0) > 0 for s in result_ships), ", ".join(f"{s} {100 * strike_ships.get(s, 0) / v:.0f}%" for s, v in result_ships.most_common()))
+print("squadrons with an owner: " + str(sum(sp.get("airstrikes", 0) for _, sp in after.values())) + "; without: " + str(sum(sp.get("airstrikes_without_owner", 0) for _, sp in after.values())))
 no_strike_fp = [x for x in ra if x["lk"].get("airstrike", 0) > 0 and x["gt_all"].get("airstrike", 0) == 0]
 print(f"ships credited airstrike with no airstrike in the result: {len(no_strike_fp)} player-runs, {sum(x['lk']['airstrike'] for x in no_strike_fp):,.0f}")
 over_strike = [x for x in ra if x["gt_all"].get("airstrike", 0) > 0 and x["lk"].get("airstrike", 0) > 1.1 * x["gt_all"]["airstrike"]]
@@ -207,10 +220,17 @@ for sid, run, d, bk in sorted(va_rows, key=lambda x: -x[2])[:8]:
 
 print("\n# 6. Kills from smoke")
 sf4 = smokes(F4)
-for label, rows in (("F4 frames batch", sf4), ("before (R1 to R3)", sb), ("after", sa)):
+kills = {}
+for label, rows in (("F4 frames batch", sf4), ("before", sb), ("after", sa)):
     k = sum(int(r["kills_from_smoke"] or 0) for r in rows)
     per = {t: sum(int(r["kills_from_smoke"] or 0) for r in rows if r["team"] == t) for t in ORIG}
+    kills[label] = per
     print(f"{label}: kills from smoke {k} (H-SR {per['H-SR']}, RESIN {per['RESIN']}, PN {per['PN']})")
+verdict("kills from smoke for H-SR, RESIN, PN unchanged", kills["before"] == kills["after"], f"before {kills['before']} after {kills['after']}")
+kb = {(r["smoke_id"], r["team"]): int(r["kills_from_smoke"] or 0) for r in sb if r["team"] in ORIG}
+for r in sa:
+    if r["team"] in ORIG and kb.get((r["smoke_id"], r["team"])) != int(r["kills_from_smoke"] or 0):
+        print(f"  kill change: {r['smoke_id']} {r['team']} {name(r['player'])} {r['ship']} {r['round']} vs {r['opponent']} g{r['game_no']}: {kb.get((r['smoke_id'], r['team']))} -> {r['kills_from_smoke']}")
 
 print("\n# 7. Original 217 rows against round 6 (damage and flag columns; a no-frames run leaves the state columns empty)")
 STATE_PREFIX = ("score_", "ships_alive", "hp_", "spotting", "cap_proximity", "nearest_enemy", "frame_", "allies_hp", "enemies_hp", "our_", "their_")

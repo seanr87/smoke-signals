@@ -68,7 +68,7 @@ for name in sorted(os.listdir(GAMES)):
     if os.path.exists(os.path.join(d, "game.json")) and os.path.exists(os.path.join(d, "damage_spike.json")):
         runs[name] = (json.load(open(os.path.join(d, "game.json"), encoding="utf-8")), json.load(open(os.path.join(d, "damage_spike.json"), encoding="utf-8")))
 
-print("# 1. Ledger reconciliation (shell plus fire, ledger over the game's own main battery, secondaries and fire)")
+print("# 1. Ledger reconciliation (ledger shell, secondary, fire and airstrike over the game's own main battery, secondaries, fire and air-support bombs)")
 
 
 def group_types(bt):
@@ -85,23 +85,26 @@ def group_types(bt):
             g["flood"] += v
         elif k.startswith("damage_tpd"):
             g["torpedo"] += v
+        elif k == "damage_bomb_airsupport":
+            g["airstrike"] += v
         elif k == "damage_ram":
             g["ram"] += v
-        elif k != "damage":
+        elif k not in ("damage", "damage_bomb"):
             g["other"] += v
     return g
 
 
 def run_ratio(spike):
-    """Ledger shell plus fire over the result's main plus secondaries plus fire, or the
-    older shell-plus-fire ratio when the record has no per-type results."""
+    """Ledger shell, secondary, fire and airstrike over the result's main, secondaries,
+    fire and air-support bombs, or the older shell-plus-fire ratio when the record has
+    no per-type results."""
     recon = spike.get("reconciliation") or []
     if recon and all("game_by_type" in r for r in recon):
-        l = sum((r.get("ledger_by_kind") or {}).get("shell", 0.0) + (r.get("ledger_by_kind") or {}).get("secondary", 0.0) + (r.get("ledger_by_kind") or {}).get("fire", 0.0) for r in recon)
+        l = sum(sum((r.get("ledger_by_kind") or {}).get(k, 0.0) for k in ("shell", "secondary", "fire", "airstrike")) for r in recon)
         gt = Counter()
         for r in recon:
             gt.update(group_types(r.get("game_by_type")))
-        res = gt["main"] + gt["secondaries"] + gt["fire"]
+        res = gt["main"] + gt["secondaries"] + gt["fire"] + gt["airstrike"]
         return (l / res) if res else None
     return spike.get("reconciliation_ratio_shell_fire")
 

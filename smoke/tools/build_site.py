@@ -281,6 +281,7 @@ class Data:
             d = s.get("damage_detail") or {}
             s["_shell"] = d.get("damage_shell") or 0.0
             s["_fire"] = d.get("damage_fire") or 0.0
+            s["_airstrike"] = d.get("damage_airstrike") or 0.0
             s["_salvos"] = d.get("salvos") or 0
             s["_owner_damage"] = (d.get("damage_in_smoke_smoker") or 0) + (d.get("damage_behind_smoke_smoker") or 0)
             sp = s.get("damage_split") or {}
@@ -1613,6 +1614,8 @@ class Site:
             parts = [("concealed", s["_concealed"]), ("detected", s["_detected"])] + ([("unknown", s["_unknown"])] if s["_unknown"] > 0 else [])
             conceal = svg_stacked_bar(parts, ["#6EE7B7", "#F87171", "#64748B"])
             kinds = f"shells {fmt_int(s['_shell'])}, fires they started {fmt_int(s['_fire'])}"
+            if s["_airstrike"] > 0:
+                kinds += f", airstrikes {fmt_int(s['_airstrike'])}"
             by = ", ".join(f"{r['reason']} {fmt_int(r['damage'])}" for r in sorted(s["_detected_by"], key=lambda r: -r["damage"])) or "none"
         else:
             split = '<span class="muted">no smoke damage</span>'

@@ -1,0 +1,6 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Moved</title><script>
+(function(){var p=location.pathname;var i=p.indexOf('/smoke/');if(i<0){var parts=p.split('/');var root=parts.slice(0,-1);var tail=parts[parts.length-1];
+// Smoke Signals moved under smoke/: /x/clans.html -> /x/smoke/clans.html, /x/smokes/<id>.html -> /x/smoke/smokes/<id>.html
+var m=p.match(/^(.*?)\/(smokes|games|players|clans|img|clips|data|maps)\/(.*)$/);if(m){location.replace(m[1]+'/smoke/'+m[2]+'/'+m[3]+location.search+location.hash);return;}
+if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location.hash);return;}}
+})();</script></head><body><p>This page moved. <a href="/">Open the hub</a>.</p></body></html>

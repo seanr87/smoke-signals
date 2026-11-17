@@ -637,6 +637,19 @@ pub struct SpikeStats {
     pub shot_hits: u32,
     pub salvos: u32,
     pub torpedoes: u32,
+    /// Shell events on a resolved hit whose tick a torpedo track also fits;
+    /// the torpedo damage the resolved-hit rule gives up.
+    pub shell_hits_fitting_torpedo: Vec<ShellHitFittingTorpedo>,
+}
+
+/// A damage event classified as a shell by its resolved hit although a
+/// torpedo of the attacker's also passed the victim at that clock.
+#[derive(Debug, Clone, Copy, Serialize)]
+pub struct ShellHitFittingTorpedo {
+    pub attacker: u32,
+    pub victim: u32,
+    pub damage_seconds: f32,
+    pub amount: f32,
 }
 
 pub struct SpikeInput<'a> {
@@ -773,13 +786,22 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                     Some((fired.seconds(), origin, FireSource::ShotHit, Some(salvo.params_id)))
                 });
             let tick = in_tick_train(ledger, index);
-            // A tick's damage is one amount per attacker and victim, so a
-            // torpedo landing beside a shell hit is still torpedo damage,
-            // when the amount is a torpedo's or the hit sinks the victim.
+            // A resolved shell hit settles the kind: the event is a shell even
+            // when a torpedo of the attacker's passed the victim on the same
+            // tick. Such cases are counted so the damage given up is known.
             let finishing = input.deaths.get(&event.victim).is_some_and(|d| (d - t).abs() <= FINISHING_HIT_SECONDS);
-            let torpedo = !tick
+            let torpedo_track = !tick
                 && (event.amount >= TORPEDO_MIN_DAMAGE || finishing)
                 && torpedo_fits(torpedoes_by_owner.get(attacker).map(Vec::as_slice).unwrap_or(&[]), t, victim_pos);
+            if torpedo_track && from_hit.is_some() {
+                stats.shell_hits_fitting_torpedo.push(ShellHitFittingTorpedo {
+                    attacker: attacker.raw() as u32,
+                    victim: event.victim.raw() as u32,
+                    damage_seconds: t,
+                    amount: event.amount,
+                });
+            }
+            let torpedo = torpedo_track && from_hit.is_none();
             // The latest salvo before the damage; among salvos fired at the
             // same moment, the one whose shells match the hit.
             let from_salvo = from_hit.or_else(|| {

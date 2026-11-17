@@ -1,0 +1,25 @@
+import sys, os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from m2 import *
+print('pt', C(s['pt'] for s in E), 'by grp', sorted(C((s['grp'], s['pt']) for s in E).items()))
+print('radar non-cruiser partners', C((p['ship'], p['cls']) for s in E for p in s['partners'] if p['radar'] and p['cls'] != 'cruiser'))
+print('dd partners only', sum(1 for s in E if s['partners'] and all(p['cls'] == 'destroyer' for p in s['partners'])))
+print('main partner pos missing', sum(1 for s in E if s['mp'] and s['mp']['nx'] is None), 'of', sum(1 for s in E if s['mp']))
+# path order: is path[0] the origin?
+for s in E[:5]:
+    print(s['r']['origin_xy'], s['path'][0], s['path'][-1], s['r']['movement'], s['r']['movement_angle_deg'], s['side'])
+O = openings()
+print('team-games', len(O), 'n smokes', C(o['n'] for o in O))
+print('fc', C(o['fc'] for o in O), 'fc_el med', med(o['fc_el'] for o in O if o['fc_el'] is not None), q([o['fc_el'] for o in O if o['fc_el'] is not None], .9))
+print('lead known', sum(o['lead'] is not None for o in O), 'gap med', med(o['lead_gap'] for o in O if o['lead_gap'] is not None))
+print('lead dist', q([o['lead'] for o in O if o['lead'] is not None], .1), q([o['lead'] for o in O if o['lead'] is not None], .9))
+print('first smoke el', med(o['smokes'][0]['el'] for o in O if o['n']), 'second', med(o['smokes'][1]['el'] for o in O if o['n'] > 1))
+print('first smoke w', C(o['smokes'][0]['w'] for o in O if o['n']), 'second w', C(o['smokes'][1]['w'] for o in O if o['n'] > 1))
+print('first smoke ship', C(o['smokes'][0]['ship'] for o in O if o['n']).most_common(12))
+print('first smoke cls', C(o['smokes'][0]['cls'] for o in O if o['n']))
+print('first cap before first smoke?', sum(1 for o in O if o['n'] and o['fc_el'] is not None and o['fc_el'] <= o['smokes'][0]['el']))
+print('first-cap ncaps', C((o['map'], c) for o in O for c in o['fc_caps']).most_common(30))
+# score start
+k = next(iter(G)); print(snapshots(S, k)[:4])
+print('games', len(G), 'games with any smoke', len({s['game'] for s in S}))
+print('edge by mrA', [(s['edge'], s['ncell_name'], s['team']) for s in E if s['mrA']])
+print('capxz missing', sum(s['capxz'] is None for s in E))

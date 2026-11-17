@@ -1,0 +1,247 @@
+== A. counts
+early smokes 187 top 68 rest 119 games 116 clans 27
+share of these ships smokes that are early 34.6
+Harugumo 30 top 15 windows [6, 21, 3] stacked% 53.3 radarCA% 90.0 inside% 13.3 conc 17,522
+Somers 89 top 30 windows [25, 48, 16] stacked% 65.2 radarCA% 80.9 inside% 10.1 conc 15,468
+Gearing 68 top 23 windows [11, 43, 14] stacked% 52.9 radarCA% 69.1 inside% 19.1 conc 13,426
+top windows [23, 33, 12] coverage {'stacked': 44, 'screen': 23, 'selfish': 1} pt {'radar cruiser': 63, 'none': 1, 'non-radar cruiser': 4}
+rest windows [19, 79, 21] coverage {'stacked': 66, 'screen': 44, 'selfish': 9} pt {'radar cruiser': 83, 'non-radar cruiser': 23, 'none': 12, 'battleship': 1}
+window x coverage [((0, 'screen'), 22), ((0, 'stacked'), 20), ((1, 'screen'), 34), ((1, 'selfish'), 7), ((1, 'stacked'), 71), ((2, 'screen'), 11), ((2, 'selfish'), 3), ((2, 'stacked'), 19)]
+window x pp [(0, [('cap_contest', 14), ('none', 9), ('cap_control', 8), ('reposition', 6)]), (1, [('cap_contest', 26), ('none', 25), ('reposition', 20), ('cap_control', 15)]), (2, [('cap_contest', 11), ('none', 8), ('reposition', 5), ('escape', 3)])]
+window x movement [(0, [('horizontal', 35), ('pushing', 6), ('unclassified', 1)]), (1, [('horizontal', 67), ('pushing', 26), ('kiting', 11), ('unclassified', 8)]), (2, [('horizontal', 16), ('pushing', 7), ('kiting', 7), ('unclassified', 3)])]
+
+== B. top minus rest (early smokes of the three ships)
+stacked %                    top     64.7 rest     55.5 diff      9.2 CI -3.5 to 28.0
+radar cruiser partner %      top     92.6 rest     69.7 diff     22.9 CI 10.3 to 35.8 *
+2+ partners %                top     45.6 rest     38.7 diff      6.9 CI -4.6 to 15.6
+inside cap %                 top      8.8 rest     16.8 diff     -8.0 CI -18.6 to 2.8
+inside cap % (no MR A)       top      7.5 rest     16.2 diff     -8.8 CI -20.3 to 2.8
+median edge m                top    1,854 rest    1,708 diff      146 CI -893 to 900
+median edge m (no MR A)      top    1,924 rest    1,726 diff      199 CI -932 to 860
+mean elapsed s               top      164 rest      179 diff      -16 CI -37 to 6
+in 0-2 window %              top     33.8 rest     16.0 diff     17.9 CI -0.6 to 32.9
+mean conc                    top   15,236 rest   14,951 diff      285 CI -7,298 to 6,354
+median conc                  top    9,827 rest    6,911 diff    2,916 CI -3,723 to 9,540
+conc >= 20k %                top     29.4 rest     30.3 diff     -0.8 CI -21.6 to 20.2
+kills / smoke                top     0.06 rest     0.03 diff     0.03 CI -0.05 to 0.10
+deaths / smoke               top     0.04 rest     0.14 diff    -0.10 CI -0.18 to -0.02 *
+cap won %                    top     50.0 rest     43.7 diff      6.3 CI -7.5 to 20.9
+mean swing                   top      4.8 rest     -4.2 diff      9.1 CI -0.8 to 18.9
+PN early: 5 [('Somers', 'Hotspot', 'D', 'F10', '2-4 min', 'screen', 'radar cruiser', 0), ('Somers', 'Land of Fire', 'A', 'G1', '2-4 min', 'selfish', 'none', 0), ('Somers', 'Mountain Range', 'B', 'G4', '2-4 min', 'stacked', 'radar cruiser', 3053), ('Harugumo', 'Mountain Range', 'A', 'F1', '4-5 min', 'stacked', 'radar cruiser', 1848), ('Somers', 'Sea of Fortune', 'A', 'G2', '2-4 min', 'stacked', 'radar cruiser', 17216)]
+
+== C. pairings
+top Harugumo 15 main partners: [('Des Moines*', 5), ('Worcester*', 5), ('Brisbane*', 3), ('Minotaur*', 1), ('Petropavlovsk*', 1)]
+top Somers 30 main partners: [('Des Moines*', 8), ('Brisbane*', 7), ('Worcester*', 3), ('Utrecht', 3), ('Minotaur*', 2), ('Moskva*', 2)]
+top Gearing 23 main partners: [('Brisbane*', 12), ('Des Moines*', 5), ('Minotaur*', 2), ('Utrecht', 1), ('Salem*', 1), ('Worcester*', 1)]
+rest Harugumo 15 main partners: [('Des Moines*', 6), ('Brisbane*', 2), ('Worcester*', 2), ('Utrecht', 1), ('Svea*', 1), ('Petropavlovsk*', 1)]
+rest Somers 59 main partners: [('Brisbane*', 14), ('Des Moines*', 13), ('Minotaur*', 13), ('Utrecht', 7), ('Bremen', 3), ('Worcester*', 1)]
+rest Gearing 45 main partners: [('Des Moines*', 14), ('Brisbane*', 4), ('Napoli', 4), ('Smolensk', 4), ('Minotaur*', 3), ('Utrecht', 2)]
+top main partner ship share: [('Brisbane', '32.8'), ('Des Moines', '26.9'), ('Worcester', '13.4'), ('Minotaur', '7.5'), ('Utrecht', '6.0'), ('Petropavlovsk', '4.5')] n 67
+rest main partner ship share: [('Des Moines', '30.8'), ('Brisbane', '18.7'), ('Minotaur', '15.0'), ('Utrecht', '9.3'), ('Napoli', '3.7'), ('Worcester', '3.7')] n 107
+main partner how {'inside': 131, 'behind': 25, 'line_of_fire': 18} by grp [(('rest', 'behind'), 19), (('rest', 'inside'), 72), (('rest', 'line_of_fire'), 16), (('top', 'behind'), 6), (('top', 'inside'), 59), (('top', 'line_of_fire'), 2)]
+all partners: cls x how [(('battleship', 'behind'), 20), (('battleship', 'inside'), 11), (('battleship', 'line_of_fire'), 15), (('cruiser', 'behind'), 36), (('cruiser', 'inside'), 144), (('cruiser', 'line_of_fire'), 29), (('destroyer', 'behind'), 2), (('destroyer', 'inside'), 13), (('destroyer', 'line_of_fire'), 5)]
+radar x how (cruisers) [((False, 'behind'), 13), ((False, 'inside'), 22), ((False, 'line_of_fire'), 11), ((True, 'behind'), 23), ((True, 'inside'), 122), ((True, 'line_of_fire'), 18)]
+any BB partner 44 BB ships [('Bungo', 13), ('Willem de Eerste', 6), ('Thor', 5), ('R. Lauria', 5), ('C.\xa0Colombo', 4), ('Vermont', 4)]
+all           n 165 | partner behind smoke centre % 86.1 | median ahead m -954 | median dist m 1,248 | partner inside cap % 3.6 | median partner to cap edge m 3,740
+top           n  63 | partner behind smoke centre % 84.1 | median ahead m -558 | median dist m 1,003 | partner inside cap % 1.6 | median partner to cap edge m 3,827
+rest          n 102 | partner behind smoke centre % 87.3 | median ahead m -1,047 | median dist m 1,388 | partner inside cap % 4.9 | median partner to cap edge m 3,722
+inside        n 129 | partner behind smoke centre % 82.2 | median ahead m -607 | median dist m 1,030 | partner inside cap % 4.7 | median partner to cap edge m 3,627
+behind        n  21 | partner behind smoke centre % 100.0 | median ahead m -2,064 | median dist m 2,311 | partner inside cap % 0.0 | median partner to cap edge m 4,386
+line_of_fire  n  15 | partner behind smoke centre % 100.0 | median ahead m -2,589 | median dist m 2,902 | partner inside cap % 0.0 | median partner to cap edge m 4,869
+radar CA      n 138 | partner behind smoke centre % 85.5 | median ahead m -805 | median dist m 1,205 | partner inside cap % 2.9 | median partner to cap edge m 3,714
+non-radar CA  n  26 | partner behind smoke centre % 88.5 | median ahead m -1,054 | median dist m 1,466 | partner inside cap % 7.7 | median partner to cap edge m 3,878
+partner inside cap % excluding MR A 3.1 n 162
+main partner inside %: top 88.1 rest 67.3 diff CI (8.82352941176471, 33.730158730158735)
+
+== D. outcomes by partner type
+radar cruiser          n 146 clans 25 | mean conc 16,715 [13,233, 20,198] | median conc 9,905 [6,846, 14,778] | kills/smoke 0.05 [0.01, 0.09] | deaths/smoke 0.09 [0.05, 0.14] | cap won % 49.3 [40.7, 58.0] | cap def % 22.6 [14.0, 31.1] | mean swing 0.1 [-5.8, 5.5]
+non-radar cruiser      n  27 clans 12 | mean conc 12,478 [5,784, 19,890] | median conc 5,738 [0, 12,251] | kills/smoke 0.04 [0.00, 0.12] | deaths/smoke 0.11 [0.00, 0.25] | cap won % 48.1 [32.1, 60.0] | cap def % 33.3 [14.8, 56.0] | mean swing -2.0 [-8.0, 3.9]
+battleship             n   1 clans  1 | mean conc 0 [0, 0] | median conc 0 [0, 0] | kills/smoke 0.00 [0.00, 0.00] | deaths/smoke 1.00 [1.00, 1.00] | cap won % 0.0 [0.0, 0.0] | cap def % 0.0 [0.0, 0.0] | mean swing -9.0 [-9.0, -9.0]
+none                   n  13 clans 10 | mean conc 2,922 [0, 7,939] | median conc 0 [0, 0] | kills/smoke 0.00 [0.00, 0.00] | deaths/smoke 0.23 [0.07, 0.44] | cap won % 7.7 [0.0, 25.0] | cap def % 15.4 [0.0, 31.2] | mean swing -9.8 [-29.4, 2.1]
+  radar CA minus non-radar CA, mean conc: 4,237 CI -3,195 to 11,098
+  radar CA minus non-radar CA, median conc: 4,166 CI -4,149 to 11,501
+  radar CA minus non-radar CA, kills/smoke: 0.01 CI -0.07 to 0.09
+  radar CA minus non-radar CA, deaths/smoke: -0.02 CI -0.17 to 0.10
+  radar CA minus non-radar CA, cap won %: 1.2 CI -15.2 to 18.5
+  radar CA minus non-radar CA, cap def %: -10.7 CI -33.2 to 11.0
+  radar CA minus non-radar CA, mean swing: 2.1 CI -3.6 to 7.2
+  radar CA minus everything else, mean conc: 7,571 CI 1,164 to 13,505 *
+  radar CA minus everything else, median conc: 9,905 CI 3,248 to 13,740 *
+  radar CA minus everything else, kills/smoke: 0.02 CI -0.04 to 0.08
+  radar CA minus everything else, deaths/smoke: -0.08 CI -0.25 to 0.07
+  radar CA minus everything else, cap won %: 15.2 CI 2.8 to 29.7 *
+  radar CA minus everything else, cap def %: -4.2 CI -22.8 to 15.5
+  radar CA minus everything else, mean swing: 4.8 CI -2.7 to 12.2
+-- with / without a battleship among partners
+has battleship         n  44 clans 18 | mean conc 18,116 [13,153, 24,070] | median conc 12,423 [8,749, 23,643] | kills/smoke 0.05 [0.00, 0.12] | deaths/smoke 0.18 [0.09, 0.29] | cap won % 56.8 [38.8, 73.3] | cap def % 18.2 [6.8, 31.7] | mean swing 0.4 [-11.9, 9.9]
+no battleship          n 132 clans 25 | mean conc 15,002 [11,618, 18,212] | median conc 7,517 [4,634, 11,962] | kills/smoke 0.05 [0.01, 0.09] | deaths/smoke 0.07 [0.03, 0.11] | cap won % 46.2 [37.8, 54.7] | cap def % 25.8 [19.2, 33.3] | mean swing -0.5 [-5.8, 4.2]
+-- by coverage
+stacked                n 110 clans 22 | mean conc 17,525 [13,981, 20,660] | median conc 10,366 [6,017, 14,894] | kills/smoke 0.04 [0.00, 0.08] | deaths/smoke 0.10 [0.05, 0.16] | cap won % 46.4 [38.5, 55.9] | cap def % 20.9 [14.0, 27.6] | mean swing -3.5 [-10.5, 2.5]
+screen                 n  67 clans 24 | mean conc 12,679 [8,158, 17,821] | median conc 7,242 [2,128, 11,459] | kills/smoke 0.06 [0.01, 0.12] | deaths/smoke 0.09 [0.02, 0.17] | cap won % 52.2 [41.3, 61.9] | cap def % 28.4 [17.2, 41.4] | mean swing 5.1 [-0.9, 11.0]
+selfish                n  10 clans  8 | mean conc 3,799 [356, 10,030] | median conc 0 [0, 3,564] | kills/smoke 0.00 [0.00, 0.00] | deaths/smoke 0.30 [0.09, 0.60] | cap won % 0.0 [0.0, 0.0] | cap def % 20.0 [0.0, 33.3] | mean swing -12.2 [-35.2, 2.7]
+  stacked minus screen, mean conc: 4,846 CI -400 to 9,761
+  stacked minus screen, median conc: 3,123 CI -2,134 to 8,061
+  stacked minus screen, kills/smoke: -0.02 CI -0.07 to 0.02
+  stacked minus screen, deaths/smoke: 0.01 CI -0.08 to 0.11
+  stacked minus screen, cap won %: -5.9 CI -16.8 to 6.5
+  stacked minus screen, cap def %: -7.4 CI -20.2 to 4.5
+  stacked minus screen, mean swing: -8.6 CI -16.6 to -1.5 *
+-- by window
+0-2 min                n  42 clans 14 | mean conc 9,279 [4,877, 14,210] | median conc 5,960 [1,451, 12,320] | kills/smoke 0.00 [0.00, 0.00] | deaths/smoke 0.05 [0.00, 0.13] | cap won % 61.9 [42.9, 75.9] | cap def % 16.7 [0.0, 25.5] | mean swing -1.0 [-2.7, -0.0]
+2-4 min                n 112 clans 25 | mean conc 17,853 [13,650, 22,084] | median conc 9,799 [5,738, 16,887] | kills/smoke 0.06 [0.01, 0.13] | deaths/smoke 0.12 [0.06, 0.18] | cap won % 42.9 [31.6, 53.6] | cap def % 21.4 [13.6, 32.2] | mean swing -0.2 [-7.0, 6.3]
+4-5 min                n  33 clans 19 | mean conc 12,909 [8,098, 18,433] | median conc 7,392 [0, 12,251] | kills/smoke 0.03 [0.00, 0.08] | deaths/smoke 0.15 [0.03, 0.32] | cap won % 36.4 [17.2, 53.3] | cap def % 39.4 [22.9, 57.1] | mean swing -3.4 [-16.5, 10.6]
+-- by main partner ship (n >= 8)
+Des Moines             n  51 clans 18 | mean conc 21,365 [13,976, 28,477] | median conc 11,362 [6,215, 21,936] | kills/smoke 0.08 [0.02, 0.15] | deaths/smoke 0.06 [0.00, 0.14] | cap won % 56.9 [42.9, 70.9] | cap def % 27.5 [12.5, 45.5] | mean swing 4.6 [-2.3, 12.1]
+Brisbane               n  42 clans 12 | mean conc 12,955 [8,491, 17,294] | median conc 7,928 [3,053, 14,487] | kills/smoke 0.05 [0.00, 0.09] | deaths/smoke 0.02 [0.00, 0.09] | cap won % 47.6 [31.6, 60.8] | cap def % 11.9 [4.8, 20.0] | mean swing 0.4 [-9.9, 7.0]
+Minotaur               n  21 clans 13 | mean conc 13,061 [7,869, 20,764] | median conc 9,769 [3,856, 23,099] | kills/smoke 0.00 [0.00, 0.00] | deaths/smoke 0.10 [0.00, 0.21] | cap won % 38.1 [20.0, 56.5] | cap def % 23.8 [5.9, 40.0] | mean swing -4.3 [-12.9, 4.6]
+Utrecht (small n)      n  14 clans  6 | mean conc 18,483 [9,405, 35,055] | median conc 12,590 [1,316, 34,944] | kills/smoke 0.00 [0.00, 0.00] | deaths/smoke 0.00 [0.00, 0.00] | cap won % 42.9 [11.1, 58.8] | cap def % 28.6 [11.8, 55.6] | mean swing -5.2 [-13.8, 4.5]
+Worcester (small n)    n  13 clans  7 | mean conc 15,505 [11,237, 20,421] | median conc 14,778 [7,986, 24,464] | kills/smoke 0.08 [0.00, 0.25] | deaths/smoke 0.15 [0.00, 0.67] | cap won % 30.8 [6.7, 63.6] | cap def % 30.8 [4.8, 70.0] | mean swing 1.9 [-25.5, 13.0]
+-- by DD ship
+Harugumo               n  30 clans 14 | mean conc 17,522 [8,818, 23,811] | median conc 15,039 [5,808, 23,204] | kills/smoke 0.13 [0.00, 0.27] | deaths/smoke 0.17 [0.00, 0.34] | cap won % 43.3 [26.7, 56.8] | cap def % 10.0 [0.0, 22.2] | mean swing -3.0 [-25.1, 14.2]
+Somers                 n  89 clans 16 | mean conc 15,468 [11,179, 19,988] | median conc 7,392 [3,259, 14,487] | kills/smoke 0.01 [0.00, 0.05] | deaths/smoke 0.04 [0.01, 0.08] | cap won % 46.1 [34.2, 57.1] | cap def % 25.8 [15.2, 34.8] | mean swing -1.3 [-7.4, 3.5]
+Gearing                n  68 clans 16 | mean conc 13,426 [10,148, 17,352] | median conc 6,120 [4,158, 8,749] | kills/smoke 0.04 [0.00, 0.08] | deaths/smoke 0.16 [0.08, 0.29] | cap won % 47.1 [34.1, 58.5] | cap def % 26.5 [16.2, 41.7] | mean swing 0.5 [-3.5, 5.4]
+-- inside cap vs outside
+inside cap             n  26 clans 14 | mean conc 17,201 [8,867, 27,574] | median conc 8,477 [0, 20,035] | kills/smoke 0.15 [0.00, 0.29] | deaths/smoke 0.27 [0.10, 0.42] | cap won % 57.7 [40.0, 78.9] | cap def % 38.5 [15.8, 61.5] | mean swing 9.0 [-2.9, 22.8]
+outside cap            n 161 clans 27 | mean conc 14,708 [11,373, 17,561] | median conc 7,986 [5,648, 11,962] | kills/smoke 0.02 [0.01, 0.05] | deaths/smoke 0.08 [0.04, 0.14] | cap won % 44.1 [35.9, 51.5] | cap def % 21.1 [14.1, 28.6] | mean swing -2.5 [-8.3, 2.4]
+who does the concealed damage: smoker share % 6.3
+
+== E. per map cells (three ships, early)
+Hotspot 46 top 18 | ncap [('D', 28), ('C', 14), ('A', 4)] | cells [('G10', 14), ('G9', 7), ('G5', 5), ('F10', 5), ('G6', 4)] | ships {'Gearing': 15, 'Somers': 26, 'Harugumo': 5} | conc 16,030
+    top 18 ncap [('D', 10), ('C', 6), ('A', 2)] cells [('G10', 6), ('F10', 3), ('G2', 2)] main partner [('Des Moines', 6), ('Brisbane', 6), ('Moskva', 2)] stacked% 50.0 inside% 5.6 conc 14,205 el 165
+    rest 28 ncap [('D', 18), ('C', 8), ('A', 2)] cells [('G10', 8), ('G9', 6), ('G5', 4)] main partner [('Brisbane', 8), ('Des Moines', 8), ('Minotaur', 3)] stacked% 67.9 inside% 17.9 conc 17,203 el 154
+Land of Fire 21 top 5 | ncap [('A', 17), ('B', 4)] | cells [('F3', 3), ('F6', 3), ('G1', 3), ('F2', 3), ('F1', 2)] | ships {'Gearing': 11, 'Somers': 9, 'Harugumo': 1} | conc 4,899
+    top 5 ncap [('A', 5)] cells [('F3', 2), ('F2', 1), ('H4', 1)] main partner [('Des Moines', 3), ('Brisbane', 1), ('Minotaur', 1)] stacked% 100.0 inside% 0.0 conc 8,610 el 152
+    rest 16 ncap [('A', 12), ('B', 4)] cells [('F6', 3), ('G1', 3), ('F1', 2)] main partner [('Utrecht', 3), ('Smolensk', 2), ('Napoli', 2)] stacked% 43.8 inside% 25.0 conc 3,740 el 183
+Loop 13 top 3 | ncap [('A', 6), ('B', 5), ('C', 2)] | cells [('F8', 4), ('F3', 2), ('G4', 2), ('F7', 1), ('G7', 1)] | ships {'Gearing': 4, 'Somers': 8, 'Harugumo': 1} | conc 11,924
+    top 3 ncap [('A', 2), ('C', 1)] cells [('G4', 1), ('F8', 1), ('F3', 1)] main partner [('Des Moines', 3)] stacked% 100.0 inside% 33.3 conc 22,887 el 158
+    rest 10 ncap [('B', 5), ('A', 4), ('C', 1)] cells [('F8', 3), ('F7', 1), ('G7', 1)] main partner [('Minotaur', 3), ('Des Moines', 2), ('Napoli', 1)] stacked% 40.0 inside% 50.0 conc 8,635 el 218
+Mountain Range 25 top 10 | ncap [('C', 11), ('B', 11), ('A', 3)] | cells [('G4', 6), ('G7', 5), ('F8', 3), ('G5', 3), ('F4', 2)] | ships {'Gearing': 11, 'Somers': 11, 'Harugumo': 3} | conc 7,371
+    top 10 ncap [('B', 5), ('C', 4), ('A', 1)] cells [('G5', 3), ('G7', 3), ('G4', 1)] main partner [('Minotaur', 3), ('Des Moines', 2), ('Brisbane', 1)] stacked% 60.0 inside% 10.0 conc 9,269 el 106
+    rest 15 ncap [('C', 7), ('B', 6), ('A', 2)] cells [('G4', 5), ('F8', 3), ('G7', 2)] main partner [('Brisbane', 5), ('Des Moines', 3), ('Minotaur', 2)] stacked% 60.0 inside% 6.7 conc 6,106 el 154
+Okinawa 15 top 3 | ncap [('B', 8), ('D', 4), ('C', 3)] | cells [('D2', 3), ('H7', 2), ('D1', 2), ('C2', 2), ('E3', 1)] | ships {'Gearing': 7, 'Harugumo': 4, 'Somers': 4} | conc 9,286
+    top 3 ncap [('D', 2), ('B', 1)] cells [('I7', 1), ('D1', 1), ('H7', 1)] main partner [('Brisbane', 1), ('Worcester', 1)] stacked% 66.7 inside% 0.0 conc 7,722 el 188
+    rest 12 ncap [('B', 7), ('C', 3), ('D', 2)] cells [('D2', 3), ('C2', 2), ('H7', 1)] main partner [('Des Moines', 2), ('Minotaur', 2), ('Brisbane', 1)] stacked% 25.0 inside% 16.7 conc 9,677 el 211
+Sea of Fortune 19 top 7 | ncap [('A', 9), ('D', 6), ('C', 4)] | cells [('F2', 6), ('F9', 4), ('G3', 2), ('H2', 2), ('F4', 1)] | ships {'Gearing': 7, 'Somers': 8, 'Harugumo': 4} | conc 24,340
+    top 7 ncap [('D', 3), ('A', 2), ('C', 2)] cells [('F2', 2), ('F9', 2), ('G3', 1)] main partner [('Brisbane', 5), ('Worcester', 2)] stacked% 71.4 inside% 0.0 conc 12,718 el 192
+    rest 12 ncap [('A', 7), ('D', 3), ('C', 2)] cells [('F2', 4), ('F9', 2), ('F4', 1)] main partner [('Des Moines', 3), ('Minotaur', 2), ('Puerto Rico', 1)] stacked% 50.0 inside% 0.0 conc 31,119 el 206
+Sleeping Giant 48 top 22 | ncap [('A', 31), ('C', 15), ('B', 2)] | cells [('G1', 13), ('E1', 6), ('G9', 6), ('G2', 5), ('F1', 4)] | ships {'Somers': 23, 'Gearing': 13, 'Harugumo': 12} | conc 21,541
+    top 22 ncap [('A', 16), ('C', 6)] cells [('G1', 8), ('G9', 4), ('G2', 2)] main partner [('Brisbane', 8), ('Des Moines', 4), ('Utrecht', 3)] stacked% 63.6 inside% 13.6 conc 21,081 el 180
+    rest 26 ncap [('A', 15), ('C', 9), ('B', 2)] cells [('G1', 5), ('E1', 4), ('G2', 3)] main partner [('Des Moines', 13), ('Minotaur', 4), ('Utrecht', 2)] stacked% 69.2 inside% 11.5 conc 21,931 el 178
+
+== F. opening playbook (all ships; one record per team-game)
+team-games 342 with a smoke 323 with two 294
+first cap: games with a single owner at first sighting 87 | both teams already hold one 83 | none 1
+first cap sighting elapsed: median 214 IQR 172 272
+lead at 5:00: games within 60 s 152 within 30 s 120 median gap s 12
+first smoke: median elapsed 194 in first 5 min % 78.6 | second: median 329 in first 5 min % 39.5
+first smoke by one of the three ships % 50.5 ships [('Somers', 71), ('Gearing', 61), ('Harugumo', 31), ('Napoli', 26), ('Svea', 25), ('Gdańsk', 24), ('Daring', 22), ('Shimakaze', 13)]
+all team-games                               n 342 | first cap % 50.0 [42.2, 57.3] (n 174) | lead@5 0.0 [-15.7, 12.8] (n 304) | win % 50.0 [41.0, 57.4]
+-- timing of first smoke
+first smoke 0-2 min                          n  52 | first cap % 51.6 [21.1, 66.7] (n 31) | lead@5 -0.3 [-33.9, 24.0] (n 50) | win % 63.5 [46.5, 76.4]
+first smoke 2-4 min                          n 162 | first cap % 48.4 [38.9, 57.6] (n 93) | lead@5 3.1 [-14.3, 19.6] (n 147) | win % 50.0 [39.6, 59.1]
+first smoke 4-5 min                          n  40 | first cap % 55.0 [29.4, 76.5] (n 20) | lead@5 -7.7 [-33.6, 19.3] (n 40) | win % 40.0 [26.2, 53.5]
+first smoke after 5 min                      n  69 | first cap % 53.8 [28.6, 77.4] (n 26) | lead@5 3.4 [-31.2, 35.9] (n 55) | win % 49.3 [34.8, 63.6]
+no smoke at all                              n  19 | first cap % 25.0 [0.0, 100.0] (n 4) | lead@5 -26.8 [-77.2, 29.5] (n 12) | win % 36.8 [15.4, 50.0]
+  DIFF first smoke before 4:00 vs later: first cap pts -5.2 CI -24.9 to 14.2 | lead@5 3.5 CI -22.0 to 31.1 | win pts 7.4 CI -5.5 to 21.6
+-- who lays the first smoke
+first smoke by Harugumo                      n  31 | first cap % 41.7 [0.0, 75.0] (n 12) | lead@5 -5.2 [-54.4, 33.7] (n 29) | win % 45.2 [13.0, 64.7]
+first smoke by Somers                        n  71 | first cap % 50.0 [35.5, 61.0] (n 36) | lead@5 -5.6 [-22.4, 14.8] (n 64) | win % 45.1 [32.0, 57.8]
+first smoke by Gearing                       n  61 | first cap % 40.6 [28.6, 54.3] (n 32) | lead@5 -2.0 [-31.5, 28.4] (n 57) | win % 50.8 [29.3, 68.7]
+first smoke by other destroyer               n  92 | first cap % 63.5 [46.7, 77.4] (n 52) | lead@5 12.0 [-11.8, 36.4] (n 81) | win % 54.3 [37.7, 68.1]
+first smoke by cruiser/battleship            n  68 | first cap % 44.7 [26.3, 59.4] (n 38) | lead@5 -0.4 [-29.7, 24.4] (n 61) | win % 54.4 [40.4, 67.4]
+  DIFF three ships vs any other first smoker: first cap pts -10.6 CI -24.7 to 6.5 | lead@5 -10.8 CI -31.7 to 10.8 | win pts -7.1 CI -20.1 to 4.7
+-- first smoke partner type (first smoke by the three ships, in first 5 min)
+first smoke partner: radar cruiser           n 111 | first cap % 43.6 [28.6, 55.6] (n 55) | lead@5 0.2 [-16.8, 18.7] (n 106) | win % 49.5 [34.9, 60.0]
+first smoke partner: non-radar cruiser       n  21 | first cap % 50.0 [25.0, 75.0] (n 12) | lead@5 -23.8 [-56.7, 21.3] (n 17) | win % 42.9 [20.0, 63.6]
+first smoke partner: none                    n  11 | first cap % 28.6 [0.0, 66.7] (n 7) | lead@5 -11.3 [-77.2, 44.0] (n 11) | win % 45.5 [18.2, 80.0]
+  DIFF radar cruiser partner vs not: first cap pts 1.5 CI -28.4 to 27.4 | lead@5 19.1 CI -19.0 to 53.6 | win pts 5.8 CI -11.6 to 25.7
+first smoke stacked                          n  82 | first cap % 51.2 [34.6, 63.4] (n 41) | lead@5 1.4 [-15.2, 17.2] (n 74) | win % 58.5 [45.1, 68.2]
+first smoke screen                           n  53 | first cap % 37.9 [23.8, 53.6] (n 29) | lead@5 -7.4 [-32.9, 19.5] (n 52) | win % 34.0 [19.6, 47.2]
+  DIFF stacked vs screen: first cap pts 13.3 CI -12.1 to 30.9 | lead@5 8.8 CI -16.6 to 35.7 | win pts 24.6 CI 10.8 to 37.7 *
+first smoke inside cap                       n  17 | first cap % 50.0 [0.0, 91.7] (n 8) | lead@5 22.1 [-26.4, 68.0] (n 15) | win % 70.6 [50.0, 89.5]
+first smoke outside cap                      n 126 | first cap % 42.4 [31.7, 52.5] (n 66) | lead@5 -7.1 [-24.0, 7.6] (n 119) | win % 45.2 [33.9, 54.4]
+  DIFF inside vs outside cap: first cap pts 7.6 CI -41.2 to 59.0 | lead@5 29.2 CI -20.7 to 77.5 | win pts 25.4 CI -2.6 to 47.8
+-- first two smokes: same cap or split
+both at the same cap                         n 122 | first cap % 57.1 [41.5, 69.0] (n 63) | lead@5 3.3 [-23.2, 27.3] (n 111) | win % 54.9 [42.7, 64.9]
+two different caps                           n 172 | first cap % 43.0 [32.9, 53.6] (n 93) | lead@5 -1.8 [-17.7, 11.5] (n 157) | win % 48.3 [37.6, 57.6]
+  DIFF same cap vs split: first cap pts 14.1 CI -4.8 to 28.6 | lead@5 5.1 CI -18.3 to 26.6 | win pts 6.7 CI -4.0 to 17.1
+both first two in first 5 min                n 116 | first cap % 47.9 [34.4, 59.7] (n 73) | lead@5 10.7 [-11.2, 27.6] (n 113) | win % 56.9 [44.6, 68.1]
+second smoke after 5 min                     n 178 | first cap % 49.4 [36.2, 61.2] (n 83) | lead@5 -7.2 [-27.9, 12.9] (n 155) | win % 47.2 [36.3, 55.3]
+-- top vs rest
+top                                          n 110 | first cap % 63.3 [48.7, 77.1] (n 49) | lead@5 28.2 [10.8, 48.1] (n 97) | win % 70.9 [63.7, 80.7]
+    top first smoke median el 175 before 4:00 % 71.4 by three ships % 53.3 radar CA partner % 62.9 same cap first two % 43.4
+rest                                         n 232 | first cap % 44.8 [36.5, 51.6] (n 125) | lead@5 -13.2 [-30.6, 2.2] (n 207) | win % 40.1 [31.2, 47.1]
+    rest first smoke median el 198 before 4:00 % 63.8 by three ships % 49.1 radar CA partner % 43.1 same cap first two % 40.5
+-- per map: first-smoke cap, then common cap pairs for the first two smokes
+Hotspot team-games 62
+   first smoke at D                          n  37 | first cap % 47.8 [23.5, 70.6] (n 23) | lead@5 -0.2 [-34.1, 28.9] (n 33) | win % 51.4 [34.4, 66.7]
+   first smoke at C                          n  20 | first cap % 58.3 [15.4, 85.7] (n 12) | lead@5 9.5 [-22.3, 49.2] (n 19) | win % 50.0 [21.4, 71.4]
+   first smoke at A (small n)                n   5 | first cap % 0.0 [0.0, 0.0] (n 1) | lead@5 -87.5 [-87.5, -87.5] (n 2) | win % 40.0 [0.0, 75.0]
+   first two at C+D                          n  19 | first cap % 50.0 [22.2, 75.0] (n 12) | lead@5 23.6 [-14.7, 57.0] (n 18) | win % 57.9 [35.0, 77.8]
+   first two at D+D                          n  16 | first cap % 66.7 [14.3, 100.0] (n 9) | lead@5 6.3 [-30.7, 45.0] (n 13) | win % 56.2 [35.7, 78.6]
+   first two at C+C (small n)                n  10 | first cap % 57.1 [0.0, 90.0] (n 7) | lead@5 8.4 [-30.0, 59.3] (n 10) | win % 60.0 [14.3, 90.0]
+    first smoker [('Somers', 22), ('Gearing', 11), ('Harugumo', 6), ('Daring', 6)] | first cap taken (norm letter) [('C', 11), ('D', 7), ('B', 2)]
+    top 18 first-smoke cap [('D', 9), ('C', 6), ('A', 3)] pairs [('C+D', 5), ('D+D', 5), ('A+A', 2)]
+    rest 44 first-smoke cap [('D', 28), ('C', 14), ('A', 2)] pairs [('C+D', 14), ('D+D', 11), ('C+C', 8)]
+Land of Fire team-games 45
+   first smoke at A                          n  24 | first cap % 50.0 [22.2, 77.8] (n 10) | lead@5 8.0 [-28.1, 35.8] (n 20) | win % 45.8 [25.0, 65.2]
+   first smoke at B                          n  16 | first cap % 55.6 [25.0, 85.7] (n 9) | lead@5 41.2 [-24.0, 101.8] (n 11) | win % 62.5 [35.7, 85.7]
+   first smoke at C (small n)                n   4 | first cap % 0.0 [0.0, 0.0] (n 1) | lead@5 -36.8 [-247.0, 96.5] (n 4) | win % 50.0 [0.0, 100.0]
+   first two at A+B (small n)                n  13 | first cap % 33.3 [0.0, 75.0] (n 6) | lead@5 -25.8 [-73.7, 12.8] (n 9) | win % 46.2 [16.7, 76.9]
+   first two at A+A (small n)                n   8 | first cap % 100.0 [100.0, 100.0] (n 3) | lead@5 -1.6 [-52.6, 43.5] (n 8) | win % 37.5 [12.5, 75.0]
+   first two at B+B (small n)                n   6 | first cap % 100.0 [100.0, 100.0] (n 3) | lead@5 84.2 [27.0, 132.5] (n 4) | win % 83.3 [40.0, 100.0]
+    first smoker [('Somers', 10), ('Gearing', 9), ('Svea', 5), ('Gdańsk', 3)] | first cap taken (norm letter) [('D', 6), ('B', 3), ('A', 3)]
+    top 15 first-smoke cap [('B', 6), ('A', 6), ('C', 2)] pairs [('A+B', 6), ('B+B', 4), ('C+D', 2)]
+    rest 30 first-smoke cap [('A', 18), ('B', 10), ('C', 2)] pairs [('A+A', 8), ('A+B', 7), ('A+C', 4)]
+Loop team-games 41
+   first smoke at A                          n  18 | first cap % 66.7 [38.5, 100.0] (n 12) | lead@5 1.2 [-33.8, 38.5] (n 17) | win % 50.0 [27.8, 72.2]
+   first smoke at B                          n  18 | first cap % 38.5 [10.0, 66.7] (n 13) | lead@5 -21.2 [-62.3, 17.8] (n 16) | win % 44.4 [18.8, 68.4]
+   first smoke at C (small n)                n   5 | first cap % 25.0 [0.0, 100.0] (n 4) | lead@5 18.0 [-96.0, 56.0] (n 4) | win % 60.0 [0.0, 100.0]
+   first two at A+A (small n)                n   9 | first cap % 50.0 [14.3, 85.7] (n 6) | lead@5 -15.6 [-83.4, 31.6] (n 9) | win % 66.7 [37.5, 90.9]
+   first two at A+C (small n)                n   8 | first cap % 60.0 [11.1, 100.0] (n 5) | lead@5 40.6 [3.3, 89.3] (n 7) | win % 62.5 [28.6, 88.9]
+   first two at B+B (small n)                n   8 | first cap % 50.0 [0.0, 87.5] (n 6) | lead@5 -19.5 [-88.6, 39.6] (n 8) | win % 50.0 [14.3, 85.7]
+    first smoker [('Daring', 7), ('Gearing', 5), ('Somers', 5), ('Gdańsk', 4)] | first cap taken (norm letter) [('A', 12), ('B', 7), ('C', 2)]
+    top 12 first-smoke cap [('A', 6), ('B', 5), ('C', 1)] pairs [('A+C', 4), ('B+C', 2), ('B+B', 2)]
+    rest 29 first-smoke cap [('B', 13), ('A', 12), ('C', 4)] pairs [('A+A', 7), ('B+B', 6), ('A+B', 6)]
+Mountain Range team-games 41
+   first smoke at C                          n  18 | first cap % 69.2 [33.3, 100.0] (n 13) | lead@5 -12.9 [-69.1, 19.2] (n 17) | win % 50.0 [21.4, 73.7]
+   first smoke at B (small n)                n  14 | first cap % 27.3 [5.9, 58.3] (n 11) | lead@5 -2.5 [-26.1, 31.2] (n 13) | win % 50.0 [23.1, 75.0]
+   first smoke at A (small n)                n   9 | first cap % 57.1 [20.0, 88.9] (n 7) | lead@5 31.5 [-29.0, 105.0] (n 8) | win % 55.6 [22.2, 88.9]
+   first two at A+C (small n)                n  10 | first cap % 57.1 [0.0, 100.0] (n 7) | lead@5 -20.4 [-58.7, 10.4] (n 10) | win % 30.0 [0.0, 60.0]
+   first two at B+C (small n)                n   9 | first cap % 42.9 [0.0, 77.8] (n 7) | lead@5 -29.5 [-97.3, 21.1] (n 8) | win % 33.3 [11.1, 66.7]
+   first two at A+B (small n)                n   6 | first cap % 60.0 [16.7, 100.0] (n 5) | lead@5 18.7 [-14.0, 62.7] (n 6) | win % 66.7 [33.3, 100.0]
+    first smoker [('Gearing', 12), ('Somers', 9), ('Svea', 6), ('Gdańsk', 5)] | first cap taken (norm letter) [('C', 8), ('B', 8), ('A', 4)]
+    top 16 first-smoke cap [('C', 8), ('B', 6), ('A', 2)] pairs [('B+B', 5), ('C+C', 4), ('B+C', 2)]
+    rest 25 first-smoke cap [('C', 10), ('B', 8), ('A', 7)] pairs [('A+C', 8), ('B+C', 7), ('A+B', 4)]
+Okinawa team-games 35
+   first smoke at C (small n)                n  12 | first cap % 50.0 [0.0, 85.7] (n 8) | lead@5 32.1 [-109.4, 108.4] (n 11) | win % 75.0 [44.4, 94.4]
+   first smoke at D (small n)                n  12 | first cap % 83.3 [50.0, 100.0] (n 6) | lead@5 8.0 [-67.2, 75.0] (n 12) | win % 58.3 [33.3, 83.3]
+   first smoke at B (small n)                n  11 | first cap % 28.6 [0.0, 75.0] (n 7) | lead@5 -40.8 [-102.2, 15.9] (n 11) | win % 18.2 [0.0, 38.5]
+   first two at B+C (small n)                n   8 | first cap % 16.7 [0.0, 50.0] (n 6) | lead@5 -69.2 [-142.0, -3.4] (n 8) | win % 37.5 [0.0, 75.0]
+   first two at B+D (small n)                n   8 | first cap % 80.0 [33.3, 100.0] (n 5) | lead@5 29.4 [-32.6, 96.0] (n 8) | win % 50.0 [12.5, 87.5]
+   first two at C+D (small n)                n   5 | first cap % 50.0 [0.0, 100.0] (n 2) | lead@5 -89.2 [-164.2, -9.4] (n 5) | win % 20.0 [0.0, 60.0]
+    first smoker [('Gearing', 6), ('Daring', 5), ('Napoli', 4), ('Svea', 4)] | first cap taken (norm letter) [('C', 6), ('A', 5), ('D', 4)]
+    top 6 first-smoke cap [('D', 3), ('B', 2), ('C', 1)] pairs [('D+D', 2), ('B+D', 1), ('B+B', 1)]
+    rest 29 first-smoke cap [('C', 11), ('B', 9), ('D', 9)] pairs [('B+C', 8), ('B+D', 7), ('C+D', 5)]
+Sea of Fortune team-games 39
+   first smoke at D                          n  18 | first cap % 40.0 [10.0, 70.0] (n 10) | lead@5 -1.2 [-48.5, 40.7] (n 18) | win % 61.1 [41.2, 80.0]
+   first smoke at A                          n  15 | first cap % - [-, -] (n 0) | lead@5 1.3 [-52.3, 54.6] (n 14) | win % 46.7 [25.0, 68.8]
+   first smoke at C (small n)                n   6 | first cap % 100.0 [100.0, 100.0] (n 2) | lead@5 16.8 [-97.5, 112.0] (n 5) | win % 33.3 [0.0, 66.7]
+   first two at D+D (small n)                n   8 | first cap % 50.0 [14.3, 85.7] (n 6) | lead@5 -6.6 [-90.3, 82.6] (n 8) | win % 37.5 [0.0, 66.7]
+   first two at A+A (small n)                n   8 | first cap % - [-, -] (n 0) | lead@5 -37.4 [-110.1, 43.5] (n 8) | win % 37.5 [12.5, 75.0]
+   first two at A+D (small n)                n   6 | first cap % 0.0 [0.0, 0.0] (n 1) | lead@5 -17.5 [-82.8, 37.2] (n 6) | win % 50.0 [16.7, 83.3]
+    first smoker [('Napoli', 7), ('Somers', 7), ('Gearing', 5), ('Svea', 4)] | first cap taken (norm letter) [('B', 3), ('D', 2), ('C', 2)]
+    top 11 first-smoke cap [('D', 6), ('A', 4), ('C', 1)] pairs [('D+D', 3), ('A+D', 3), ('C+D', 2)]
+    rest 28 first-smoke cap [('D', 12), ('A', 11), ('C', 5)] pairs [('A+A', 7), ('D+D', 5), ('A+D', 3)]
+Sleeping Giant team-games 60
+   first smoke at A                          n  39 | first cap % 42.9 [13.3, 71.4] (n 14) | lead@5 1.9 [-27.2, 25.9] (n 36) | win % 51.3 [33.3, 65.1]
+   first smoke at B (small n)                n  11 | first cap % 50.0 [0.0, 100.0] (n 4) | lead@5 -16.2 [-48.2, 12.0] (n 11) | win % 45.5 [10.0, 80.0]
+   first smoke at C (small n)                n  10 | first cap % 100.0 [100.0, 100.0] (n 3) | lead@5 13.3 [-44.1, 48.4] (n 10) | win % 50.0 [12.5, 81.8]
+   first two at A+C                          n  19 | first cap % 57.1 [20.0, 100.0] (n 7) | lead@5 -4.8 [-48.3, 35.3] (n 19) | win % 47.4 [22.2, 73.7]
+   first two at A+A (small n)                n  14 | first cap % 25.0 [0.0, 75.0] (n 4) | lead@5 -5.0 [-55.5, 29.8] (n 12) | win % 57.1 [23.1, 85.7]
+   first two at A+B (small n)                n  11 | first cap % 33.3 [0.0, 100.0] (n 3) | lead@5 16.0 [-22.9, 54.3] (n 10) | win % 54.5 [30.0, 80.0]
+    first smoker [('Somers', 15), ('Gearing', 13), ('Harugumo', 11), ('Z-42', 4)] | first cap taken (norm letter) [('D', 7), ('A', 3), ('B', 1)]
+    top 27 first-smoke cap [('A', 19), ('C', 5), ('B', 3)] pairs [('A+C', 10), ('A+A', 7), ('A+B', 5)]
+    rest 33 first-smoke cap [('A', 20), ('B', 8), ('C', 5)] pairs [('A+C', 9), ('A+A', 7), ('A+B', 6)]
+-- did the team take the cap its first smoke was at? (single-owner games, first smoke in first 5 min)
+team took first cap n 72 first cap is the first-smoke cap % 34.7

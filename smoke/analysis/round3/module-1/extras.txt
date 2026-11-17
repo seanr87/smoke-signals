@@ -1,0 +1,34 @@
+## West-half share (% of smokes with centre west of the map centre line), Top 6 minus Rest
+Somers on Sleeping Giant: west %: top 17 (n=30, 4 clans) rest 51 (n=45, 9 clans) diff -34 [-65 to -6 *]
+Harugumo on Sleeping Giant: west %: top 88 (n=24, 3 clans) rest 44 (n=9, 3 clans) diff +43 [-12 to +94]
+Daring on Sleeping Giant: west %: top 94 (n=16, 2 clans) rest 32 (n=22, 6 clans) diff +62 [+38 to +73 *]
+Gearing on Mountain Range: west %: top 87 (n=15, 3 clans) rest 47 (n=19, 5 clans) diff +39 [-52 to +86]
+Gearing on Hotspot: west %: top 37 (n=19, 2 clans) rest 42 (n=24, 7 clans) diff -5 [-31 to +26]
+Svea on Sea of Fortune: west %: top 0 (n=18, 3 clans) rest 57 (n=14, 4 clans) diff -57 [-100 to +0]
+Svea on Land of Fire: % in cell F5: top 74 (n=19, 3 clans) rest 19 (n=21, 6 clans) diff +55 [+10 to +83 *]
+Gearing on Hotspot: % in G9/G10/F10: top 16 (n=19, 2 clans) rest 33 (n=24, 7 clans) diff -18 [-50 to +2]
+Somers on Hotspot: % in G9/G10/F10: top 28 (n=25, 3 clans) rest 44 (n=48, 8 clans) diff -16 [-46 to +15]
+
+## Cluster contrasts (difference of cluster A minus cluster B, resampling clans within each cluster)
+flank lines (n=562) vs cap sitters (n=462): conc per smoke: 15,777.0 vs 5,287.4, diff +10,490 [+8,117 to +12,309 *]
+flank lines (n=562) vs cap sitters (n=462): deaths per 100: 14.2 vs 7.4, diff +6.9 [+2.2 to +11.9 *]
+flank lines (n=562) vs cap sitters (n=462): median edge m: 2,078.5 vs 1,027.8, diff +1,051 [+346 to +1,740 *]
+flank lines (n=562) vs cap sitters (n=462): % inside: 19.4 vs 36.6, diff -17 [-25 to -10 *]
+flank lines (n=562) vs cap sitters (n=462): % stationary: 2.8 vs 49.8, diff -47 [-52 to -41 *]
+flank lines (n=562) vs cap sitters (n=462): % stacked: 55.0 vs 17.5, diff +37 [+30 to +43 *]
+flank lines (n=562) vs cap sitters (n=462): % selfish: 11.0 vs 48.7, diff -38 [-44 to -30 *]
+Gdańsk vs Harugumo (same 20 s smoke): % stationary: 40.7 vs 4.0, diff [+28 to +44 *]
+Gdańsk vs Harugumo (same 20 s smoke): conc per smoke: 8,204.9 vs 18,387.7, diff [-14,449 to -4,260 *]
+Gdańsk vs Harugumo (same 20 s smoke): % stacked: 16.1 vs 55.0, diff [-52 to -26 *]
+
+## Deaths and game result (all destroyer smokes of the 9 ships)
+  top won: n=278 deaths per 100 = 4.7
+  top lost: n=94 deaths per 100 = 14.9
+  rest won: n=306 deaths per 100 = 4.6
+  rest lost: n=346 deaths per 100 = 21.1
+  game won: top minus rest deaths per 100 [-3.1 to +2.9]
+  game lost: top minus rest deaths per 100 [-15.4 to +0.9]
+  Harugumo game won: top 10.256410256410257 (n=39) rest 0.0 (n=13)
+  Harugumo game lost: top 6.25 (n=16) rest 50.0 (n=32)
+  Gearing game won: top 8.333333333333334 (n=60) rest 16.216216216216218 (n=37)
+  Gearing game lost: top 14.285714285714286 (n=14) rest 27.536231884057973 (n=69)

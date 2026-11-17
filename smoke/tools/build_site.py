@@ -252,12 +252,17 @@ class Data:
         for (_, key), sp in self.spikes.items():
             if key not in self.game_quality:
                 self.game_quality[key] = game_quality([s for (_, k), s in self.spikes.items() if k == key])
-        # Games listed by hand (smoke/data-quality.csv next to the inventory) are flagged too.
+        # Games listed by hand (smoke/data-quality.csv next to the inventory) carry a
+        # note on their page; a row with exclude=yes is flagged like the ratio rule.
+        self.game_notes = {}
         listed = os.path.join(os.path.dirname(os.path.abspath(inventory)), "data-quality.csv") if inventory else ""
         if listed and os.path.exists(listed):
             for r in csv.DictReader(open(listed, encoding="utf-8")):
                 key = (r["match_id"], int(r["game_no"]))
-                if key in self.games and not self.game_quality.get(key):
+                if key not in self.games:
+                    continue
+                self.game_notes[key] = r["reason"]
+                if (r.get("exclude") or "").strip().lower() in ("yes", "true", "1") and not self.game_quality.get(key):
                     self.game_quality[key] = r["reason"]
         self.inventory = {}
         self.inventory_rows = []
@@ -1059,12 +1064,13 @@ class Site:
 <li><b>Concealed vs detected:</b> by the shooter's visibility flags at the firing moment; the detected part is split by reason (radar, hydro, smoke fire penalty, aircraft, proximity, surface lit).</li>
 <li><b>Lenses:</b> most boards default to destroyer smokes; "all" includes cruiser and battleship smokes. Tags (purpose, movement, coverage) are rule-based from the replay, with a confidence where the rule is fuzzy.</li>
 <li><b>Minimum samples:</b> clan boards and clan awards need {CLAN_MIN_GAMES} games; Best in Haze needs {AVG_MIN_SMOKES} smokes; Most Selfish Smoker {SELFISH_MIN_SMOKES}; the leaderboard hides players under {PLAYER_MIN_SMOKES} smokes by default.</li>
+<li><b>Awards:</b> award names are tongue-in-cheek; they describe a single smoke, not a player.</li>
 </ul>
 <h2>Data limits</h2>
 <ul class="terms">
 <li><b>Torpedo damage:</b> the replay ledger classifies about 77% of the torpedo damage the game's own results report. A replay only carries hits near its recorder, and hits that fall under the classifier's floor are counted as unknown, not as shells, so they never inflate smoke damage. Torpedo totals on this site are what the two replays saw.</li>
 <li><b>Airstrikes:</b> about 44% of the Dutch ships' air-support bomb damage is classified as airstrike. The rest is counted as main-battery shells (when it lands with a salvo) or unknown; the share credited to smokes is small either way, since most strikes are called from outside smoke while spotted.</li>
-<li><b>Ledger drift:</b> {len(self.flagged_games)} games whose two replays' clocks drift within the game, so the merged ledger carries duplicate hits (10 to 16% over the game's own totals), are flagged on their pages and left out of awards and leaderboards: {esc(drift)}. The same rule flags any game more than 25% over.</li>
+<li><b>Ledger drift:</b> a game whose merged ledger exceeds the game's own totals by more than 25% is flagged on its page and left out of awards and leaderboards ({len(self.flagged_games)} games in this build{(": " + esc(drift)) if self.flagged_games else ""}). Three games whose two replays' clocks drift within the game (PN vs HTDOG, BTLST vs MZY, MANBA vs KM) sit at 1.10 to 1.16, inside the normal tail, and carry a note on their pages.</li>
 <li><b>One-sided games:</b> {esc(one_sided)}.</li>
 <li><b>Coverage:</b> smokes come from the primary replay only; a smoke neither recorder saw is not in the table. Charges, rosters and consumables come from a team's own replay.</li>
 <li><b>Owner attribution:</b> {sum(1 for s in d.smokes if s.get("owner_flag"))} of {len(d.smokes)} smokes carry an owner flag (no activation within 5 s of the smoke's creation); their owner is the nearest ship with a smoke consumable.</li>
@@ -1779,6 +1785,8 @@ if(tail){location.replace(root.join('/')+'/smoke/'+tail+location.search+location
             sections += f'<h2>{self.team_tag(t)} {esc(t)}: {len(own)} smoke{"s" if len(own) != 1 else ""}{note}</h2><section class="cards">{"".join(self.smoke_card(s, depth=1) for s in own) or "<p class=\"muted\">No smoke analysed.</p>"}</section>'
         quality = d.game_quality.get(key, "")
         quality_note = f'<p class="warn">Data quality: {esc(quality)}. This game is left out of the awards and the Players leaderboard.</p>' if quality else ""
+        if d.game_notes.get(key) and not quality:
+            quality_note += f'<p class="muted"><b>Note:</b> {esc(d.game_notes[key])}</p>'
         if key in d.one_sided_games:
             missing = ", ".join(sorted(d.one_sided_games[key]))
             present = ", ".join(t for t in team_names if t not in d.one_sided_games[key])

@@ -286,6 +286,7 @@ fn consumable_ranges(
     let gun_m = artillery.and_then(|a| a.max_dist.map(|m| m.value()));
     let mut main_ammo: Vec<String> =
         artillery.map(|a| a.guns.iter().flat_map(|g| g.ammo.iter().cloned()).collect()).unwrap_or_default();
+    let main_barrels = artillery.and_then(|a| a.guns.iter().map(|g| g.num_barrels).sum::<Option<f32>>());
     main_ammo.sort();
     main_ammo.dedup();
     let hull = ttx.and_then(|t| {
@@ -301,6 +302,7 @@ fn consumable_ranges(
         detection_m,
         main_ammo,
         torpedo_protection,
+        main_barrels,
     })
 }
 
@@ -1559,6 +1561,9 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             .filter_map(|name| GameParamProvider::game_param_by_name(gp, name)?.projectile()?.alpha_damage())
             .reduce(f32::max)
     };
+    // A whole main-battery salvo: every barrel landing the largest shell.
+    let main_salvo_damage_max =
+        |e: EntityId| -> Option<f32> { Some(main_shell_damage_max(e)? * tracker.ranges().get(&e)?.main_barrels?) };
     let mut spike = damage::run(&damage::SpikeInput {
         ledger: &ledger,
         hits: &hits,
@@ -1577,6 +1582,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         torpedo_damage: &torpedo_damage,
         torpedo_protection: &torpedo_protection,
         main_shell_damage_max: &main_shell_damage_max,
+        main_salvo_damage_max: &main_salvo_damage_max,
     });
     spike.stats.airstrikes_without_owner = airstrikes_without_owner;
     // With no damage events at all the credit is unknown, not zero.

@@ -105,6 +105,8 @@ pub struct ConsumableRanges {
     /// Stock torpedo protection of the equipped hull as a fraction of torpedo
     /// damage taken away (the hull's flood probability).
     pub torpedo_protection: Option<f32>,
+    /// Barrels of the equipped main battery, for the size of a whole salvo.
+    pub main_barrels: Option<f32>,
 }
 
 pub struct Tier2Tracker {

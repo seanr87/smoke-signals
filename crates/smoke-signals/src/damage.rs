@@ -731,6 +731,9 @@ pub struct SpikeInput<'a> {
     pub torpedo_protection: &'a dyn Fn(EntityId) -> Option<f32>,
     /// Largest listed damage of a shell the ship's main battery fires.
     pub main_shell_damage_max: &'a dyn Fn(EntityId) -> Option<f32>,
+    /// Largest damage one whole main-battery salvo can list: barrels times
+    /// the largest shell.
+    pub main_salvo_damage_max: &'a dyn Fn(EntityId) -> Option<f32>,
 }
 
 pub struct SpikeOutput {
@@ -877,9 +880,10 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                     Some((fired.seconds(), origin, FireSource::ShotHit, Some(salvo.params_id)))
                 });
             let tick = in_tick_train(ledger, index);
-            // A resolved shell hit settles the kind: the event is a shell even
-            // when a torpedo of the attacker's passed the victim on the same
-            // tick. Such cases are counted so the damage given up is known.
+            // A resolved shell hit settles the kind unless the tick is larger
+            // than a whole main-battery salvo could list: then a torpedo of
+            // the attacker's that passed the victim explains it. Ticks the
+            // hit keeps as shells are counted so the damage given up is known.
             let finishing = input.deaths.get(&event.victim).is_some_and(|d| (d - t).abs() <= FINISHING_HIT_SECONDS);
             // Unknown torpedo protection takes nothing away, the stricter floor.
             let protection = (input.torpedo_protection)(event.victim).unwrap_or(0.0);
@@ -895,7 +899,8 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                     finishing,
                     &floor_of,
                 );
-            if torpedo_track && from_hit.is_some() {
+            let beyond_salvo = (input.main_salvo_damage_max)(*attacker).is_some_and(|m| event.amount > m);
+            if torpedo_track && from_hit.is_some() && !beyond_salvo {
                 stats.shell_hits_fitting_torpedo.push(ShellHitFittingTorpedo {
                     attacker: attacker.raw() as u32,
                     victim: event.victim.raw() as u32,
@@ -903,7 +908,10 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                     amount: event.amount,
                 });
             }
-            let torpedo = torpedo_track && from_hit.is_none();
+            let torpedo = torpedo_track && (from_hit.is_none() || beyond_salvo);
+            // A torpedo on a resolved hit's tick is placed by the torpedo, not
+            // the hit.
+            let from_hit = if torpedo { None } else { from_hit };
             // Bombs: an air-support squadron of the attacker's over the victim.
             let airstrike = !tick
                 && from_hit.is_none()

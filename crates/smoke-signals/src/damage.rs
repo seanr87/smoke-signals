@@ -79,10 +79,15 @@ const TORPEDO_PASS_STEP_SECONDS: f32 = 0.25;
 const TORPEDO_FLOOR_SHARE: f32 = 0.5;
 /// A hit this close to the victim's death clock is a finishing hit.
 const FINISHING_HIT_SECONDS: f32 = 1.0;
-/// Farthest an air-support squadron's minimap position may be from the
-/// victim at the damage clock for the damage to be its bombs, in meters. The
-/// squadron is sampled about once a second at some 370 m/s.
-const AIRSTRIKE_HIT_TOLERANCE_M: f32 = 1500.0;
+/// Farthest an air-support squadron's interpolated track may pass from the
+/// victim for the damage to be its bombs, in meters. The squadron is sampled
+/// about once a second at some 370 m/s.
+const AIRSTRIKE_HIT_TOLERANCE_M: f32 = 1000.0;
+/// The bombs land this long, at most, after the squadron passes the victim;
+/// the squadron flies on meanwhile.
+const AIRSTRIKE_PASS_WINDOW_SECONDS: f32 = 10.0;
+/// Step of the pass search along the track.
+const AIRSTRIKE_PASS_STEP_SECONDS: f32 = 0.25;
 /// The squadron flies in from off the map; nothing lands sooner than this.
 const AIRSTRIKE_MIN_FLIGHT_SECONDS: f32 = 5.0;
 /// Bombs reported this long after the squadron left the minimap still count.
@@ -789,18 +794,27 @@ fn torpedo_fits(
 }
 
 /// An air-support squadron of the attacker's in flight at the damage clock
-/// (or removed shortly before it) and over the victim, for an amount above
-/// one main-battery shell's listed damage: a smaller tick with the squadron
-/// overhead cannot be told from a salvo and stays a shell.
+/// (or removed shortly before it) whose track passed the victim within the
+/// pass window before it, for an amount above one main-battery shell's
+/// listed damage: a smaller tick with the squadron overhead cannot be told
+/// from a salvo and stays a shell.
 fn airstrike_fits(strikes: &[&AirstrikeTrack], t: f32, victim_pos: Option<WorldPos>, amount: f32, shell_max: Option<f32>) -> bool {
     let Some(victim) = victim_pos else { return false };
     if shell_max.is_some_and(|m| amount <= m) {
         return false;
     }
     strikes.iter().any(|s| {
-        t >= s.launched_at + AIRSTRIKE_MIN_FLIGHT_SECONDS
-            && s.removed_at.is_none_or(|r| t <= r + AIRSTRIKE_AFTER_REMOVAL_SECONDS)
-            && s.position_at(t).is_some_and(|p| timeline::meters(timeline::ground_distance(p, victim)) <= AIRSTRIKE_HIT_TOLERANCE_M)
+        if t < s.launched_at + AIRSTRIKE_MIN_FLIGHT_SECONDS || s.removed_at.is_some_and(|r| t > r + AIRSTRIKE_AFTER_REMOVAL_SECONDS) {
+            return false;
+        }
+        let mut c = (t - AIRSTRIKE_PASS_WINDOW_SECONDS).max(s.launched_at);
+        while c <= t {
+            if s.position_at(c).is_some_and(|p| timeline::meters(timeline::ground_distance(p, victim)) <= AIRSTRIKE_HIT_TOLERANCE_M) {
+                return true;
+            }
+            c += AIRSTRIKE_PASS_STEP_SECONDS;
+        }
+        false
     })
 }
 

@@ -752,15 +752,28 @@ struct PlaneTrack {
     removed_at: Option<GameClock>,
 }
 
-/// The ship name an air-support squadron's game param carries after `_AS_`,
-/// and the same part of a ship's game param name (after the index), both
-/// in upper case, e.g. `PHAD020_AS_UTRECHT` and `PHSC520_Utrecht`.
+/// The ship name an air-support squadron's game param carries, in upper
+/// case without the index and the `AS` token: `PHAD020_AS_UTRECHT` gives
+/// `UTRECHT`, `PHAD015_PRINS_V_O_AS` gives `PRINS_V_O`.
 fn air_support_ship_key(plane_param: &str) -> Option<String> {
-    plane_param.split_once("_AS_").map(|(_, ship)| ship.to_ascii_uppercase())
+    let (_, rest) = plane_param.split_once('_')?;
+    let tokens: Vec<&str> = rest.split('_').filter(|t| !t.eq_ignore_ascii_case("AS")).collect();
+    (!tokens.is_empty()).then(|| tokens.join("_").to_ascii_uppercase())
 }
 
+/// The same part of a ship's game param name: `PHSC520_Utrecht` gives
+/// `UTRECHT`, `PHSB5xx_Prins_van_Oranje` gives `PRINS_VAN_ORANJE`.
 fn ship_param_key(ship_param: &str) -> Option<String> {
     ship_param.split_once('_').map(|(_, ship)| ship.to_ascii_uppercase())
+}
+
+/// A squadron key names a ship key when the tokens match one for one, each
+/// squadron token a prefix of the ship token (`PRINS_V_O` and
+/// `PRINS_VAN_ORANJE`).
+fn air_support_key_names_ship(plane_key: &str, ship_key: &str) -> bool {
+    let p: Vec<&str> = plane_key.split('_').collect();
+    let s: Vec<&str> = ship_key.split('_').collect();
+    p.len() == s.len() && p.iter().zip(&s).all(|(a, b)| !a.is_empty() && b.starts_with(a))
 }
 
 pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Result<Analysis, Report> {
@@ -1523,7 +1536,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         if !air_support {
             continue;
         }
-        let key = air_support_ship_key(param.name());
+        let Some(key) = air_support_ship_key(param.name()) else { continue };
         let candidates: Vec<EntityId> = roster
             .iter()
             .filter(|(e, r)| {
@@ -1532,7 +1545,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
                         .get(e)
                         .and_then(|f| GameParamProvider::game_param_by_id(gp, f.vehicle_id))
                         .and_then(|q| ship_param_key(q.name()))
-                        == key
+                        .is_some_and(|ship_key| air_support_key_names_ship(&key, &ship_key))
             })
             .map(|(e, _)| *e)
             .collect();

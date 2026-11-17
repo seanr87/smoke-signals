@@ -73,8 +73,10 @@ const TORPEDO_PASS_WINDOW_SECONDS: f32 = 12.0;
 /// Step of the pass search along the track.
 const TORPEDO_PASS_STEP_SECONDS: f32 = 0.25;
 /// A torpedo tick carries at least this share of the torpedo's listed damage
-/// after the victim's torpedo protection, unless it sinks the victim.
-const TORPEDO_FLOOR_SHARE: f32 = 0.8;
+/// after the victim's torpedo protection, unless it sinks the victim. Real
+/// hits land well under the listed damage; at 0.8 the floor rejected most of
+/// them.
+const TORPEDO_FLOOR_SHARE: f32 = 0.5;
 /// A hit this close to the victim's death clock is a finishing hit.
 const FINISHING_HIT_SECONDS: f32 = 1.0;
 /// Farthest an air-support squadron's minimap position may be from the

@@ -102,6 +102,9 @@ pub struct ConsumableRanges {
     /// Projectile names the equipped main battery fires; a salvo of any
     /// other projectile is the secondary battery.
     pub main_ammo: Vec<String>,
+    /// Stock torpedo protection of the equipped hull as a fraction of torpedo
+    /// damage taken away (the hull's flood probability).
+    pub torpedo_protection: Option<f32>,
 }
 
 pub struct Tier2Tracker {

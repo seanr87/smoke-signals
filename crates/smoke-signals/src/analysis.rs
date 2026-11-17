@@ -288,16 +288,19 @@ fn consumable_ranges(
         artillery.map(|a| a.guns.iter().flat_map(|g| g.ammo.iter().cloned()).collect()).unwrap_or_default();
     main_ammo.sort();
     main_ammo.dedup();
-    let detection_m = ttx.and_then(|t| {
+    let hull = ttx.and_then(|t| {
         let key = equipped("_Hull", t.hulls.keys().collect())?;
-        t.hulls.get(&key)?.visibility_factor.map(|km| km.value() * 1000.0)
+        t.hulls.get(&key)
     });
+    let detection_m = hull.and_then(|h| h.visibility_factor.map(|km| km.value() * 1000.0));
+    let torpedo_protection = hull.and_then(|h| h.flood_prob);
     Some(tier2::ConsumableRanges {
         radar_m: range(Consumable::Radar),
         hydro_m: range(Consumable::HydroacousticSearch),
         gun_m,
         detection_m,
         main_ammo,
+        torpedo_protection,
     })
 }
 
@@ -1455,6 +1458,14 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         let name = GameParamProvider::game_param_by_id(gp, projectile)?;
         Some(ammo.iter().any(|a| a == name.name()))
     };
+    // The game's getTorpedoDamage: alpha over the torpedo constant plus the
+    // flooding part, before build modifiers.
+    let torpedo_damage = |projectile: wows_replays::types::GameParamId| -> Option<f32> {
+        let p = GameParamProvider::game_param_by_id(gp, projectile)?;
+        let torpedo = p.projectile()?;
+        Some(torpedo.alpha_damage()? / wowsunpack::game_params::ttx::constants::TORPEDO_DAMAGE_CONSTANT + torpedo.damage()?)
+    };
+    let torpedo_protection = |e: EntityId| tracker.ranges().get(&e)?.torpedo_protection;
     let mut spike = damage::run(&damage::SpikeInput {
         ledger: &ledger,
         hits: &hits,
@@ -1469,6 +1480,8 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         deaths: &deaths_s,
         smoke_owner: &smoke_owner,
         is_main_battery: &is_main_battery,
+        torpedo_damage: &torpedo_damage,
+        torpedo_protection: &torpedo_protection,
     });
     // With no damage events at all the credit is unknown, not zero.
     if spike.stats.damage_events > 0 {

@@ -72,9 +72,9 @@ const TORPEDO_HIT_TOLERANCE_M: f32 = 400.0;
 const TORPEDO_PASS_WINDOW_SECONDS: f32 = 12.0;
 /// Step of the pass search along the track.
 const TORPEDO_PASS_STEP_SECONDS: f32 = 0.25;
-/// A torpedo tick carries at least this much damage, unless it sinks the
-/// victim: no torpedo in the field has an alpha under 10,000.
-const TORPEDO_MIN_DAMAGE: f32 = 3000.0;
+/// A torpedo tick carries at least this share of the torpedo's listed damage
+/// after the victim's torpedo protection, unless it sinks the victim.
+const TORPEDO_FLOOR_SHARE: f32 = 0.8;
 /// A hit this close to the victim's death clock is a finishing hit.
 const FINISHING_HIT_SECONDS: f32 = 1.0;
 /// Detection range used for the line-of-sight test when a ship's build gives none.
@@ -673,6 +673,11 @@ pub struct SpikeInput<'a> {
     /// Whether a salvo's projectile is one the ship's main battery fires;
     /// `None` when the ship's main battery ammunition is unknown.
     pub is_main_battery: &'a dyn Fn(EntityId, GameParamId) -> Option<bool>,
+    /// Listed damage of a torpedo projectile, from game params.
+    pub torpedo_damage: &'a dyn Fn(GameParamId) -> Option<f32>,
+    /// A ship's torpedo protection as a fraction of damage taken away, from
+    /// its hull's game params.
+    pub torpedo_protection: &'a dyn Fn(EntityId) -> Option<f32>,
 }
 
 pub struct SpikeOutput {
@@ -693,13 +698,25 @@ fn in_tick_train(events: &[DamageEvent], index: usize) -> bool {
 }
 
 /// A torpedo the attacker launched whose dead-reckoned track passes the
-/// victim within the pass window around the damage clock. The direction
-/// vector is in world units per second, like the origin.
-fn torpedo_fits(torpedoes: &[&ActiveTorpedo], t: f32, victim_pos: Option<WorldPos>) -> bool {
+/// victim within the pass window around the damage clock, and whose damage
+/// floor the event reaches (a finishing hit reaches any floor). The direction
+/// vector is in world units per second, like the origin. A torpedo whose
+/// listed damage is unknown fits only a finishing hit.
+fn torpedo_fits(
+    torpedoes: &[&ActiveTorpedo],
+    t: f32,
+    victim_pos: Option<WorldPos>,
+    amount: f32,
+    finishing: bool,
+    floor_of: &dyn Fn(&ActiveTorpedo) -> Option<f32>,
+) -> bool {
     let Some(victim) = victim_pos else { return false };
     torpedoes.iter().any(|torp| {
         let run = t - torp.launched_at.seconds();
         if !(1.0..=TORPEDO_MAX_RUN_SECONDS).contains(&run) {
+            return false;
+        }
+        if !finishing && !floor_of(torp).is_some_and(|floor| amount >= floor) {
             return false;
         }
         let mut s = (t - TORPEDO_PASS_WINDOW_SECONDS).max(torp.launched_at.seconds());
@@ -790,9 +807,20 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
             // when a torpedo of the attacker's passed the victim on the same
             // tick. Such cases are counted so the damage given up is known.
             let finishing = input.deaths.get(&event.victim).is_some_and(|d| (d - t).abs() <= FINISHING_HIT_SECONDS);
+            // Unknown torpedo protection takes nothing away, the stricter floor.
+            let protection = (input.torpedo_protection)(event.victim).unwrap_or(0.0);
+            let floor_of = |torp: &ActiveTorpedo| -> Option<f32> {
+                (input.torpedo_damage)(torp.torpedo.params_id).map(|d| TORPEDO_FLOOR_SHARE * d * (1.0 - protection))
+            };
             let torpedo_track = !tick
-                && (event.amount >= TORPEDO_MIN_DAMAGE || finishing)
-                && torpedo_fits(torpedoes_by_owner.get(attacker).map(Vec::as_slice).unwrap_or(&[]), t, victim_pos);
+                && torpedo_fits(
+                    torpedoes_by_owner.get(attacker).map(Vec::as_slice).unwrap_or(&[]),
+                    t,
+                    victim_pos,
+                    event.amount,
+                    finishing,
+                    &floor_of,
+                );
             if torpedo_track && from_hit.is_some() {
                 stats.shell_hits_fitting_torpedo.push(ShellHitFittingTorpedo {
                     attacker: attacker.raw() as u32,

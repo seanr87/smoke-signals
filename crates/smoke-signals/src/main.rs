@@ -94,6 +94,22 @@ enum Command {
         #[arg(long)]
         clip_bitrate_kbps: Option<u32>,
     },
+    /// Write the capture frames of a batch at a smaller size as JPEG for the
+    /// site: `<batch>/frames-small/<run>/<frame>.jpg`, skipping frames already
+    /// written. The image crate's WebP encoder is lossless only.
+    ShrinkFrames {
+        #[arg(long)]
+        batch: PathBuf,
+        /// Width of the full-map frame.
+        #[arg(long, default_value_t = 840)]
+        width: u32,
+        /// Width of the zoomed frame.
+        #[arg(long, default_value_t = 540)]
+        zoom_width: u32,
+        /// JPEG quality, 1 to 100.
+        #[arg(long, default_value_t = 82)]
+        quality: u8,
+    },
 }
 
 static WARNINGS: batch::WarningSink = batch::WarningSink::new();
@@ -197,6 +213,46 @@ fn main() -> Result<(), Report> {
         Command::Variants => {
             let (_, game) = load_inputs(&config)?;
             print_smoke_variants(&game);
+        }
+        Command::ShrinkFrames { batch, width, zoom_width, quality } => {
+            let games = batch.join("games");
+            let out_root = batch.join("frames-small");
+            let mut written = 0usize;
+            let mut kept = 0usize;
+            for run in std::fs::read_dir(&games).attach_with(|| format!("reading {}", games.display()))? {
+                let run = run.attach("reading a run folder")?.path();
+                let frames = run.join("frames");
+                if !frames.is_dir() {
+                    continue;
+                }
+                let out = out_root.join(run.file_name().unwrap_or_default());
+                for entry in std::fs::read_dir(&frames).attach_with(|| format!("reading {}", frames.display()))? {
+                    let src = entry.attach("reading a frame entry")?.path();
+                    let name = src.file_name().and_then(|n| n.to_str()).unwrap_or("");
+                    if !name.ends_with(".webp") || !name.contains("_cap_") {
+                        continue;
+                    }
+                    let dst = out.join(format!("{}.jpg", name.trim_end_matches(".webp")));
+                    let fresh = match (std::fs::metadata(&src), std::fs::metadata(&dst)) {
+                        (Ok(a), Ok(b)) => b.modified().ok() >= a.modified().ok(),
+                        _ => false,
+                    };
+                    if fresh {
+                        kept += 1;
+                        continue;
+                    }
+                    let image = image::open(&src).attach_with(|| format!("reading {}", src.display()))?.to_rgb8();
+                    let target = if name.ends_with("_zoom.webp") { zoom_width } else { width };
+                    let height = (image.height() as f32 * target as f32 / image.width() as f32).round().max(1.0) as u32;
+                    let small = image::imageops::resize(&image, target, height, image::imageops::FilterType::Lanczos3);
+                    std::fs::create_dir_all(&out).attach_with(|| format!("creating {}", out.display()))?;
+                    let file = std::fs::File::create(&dst).attach_with(|| format!("creating {}", dst.display()))?;
+                    let encoder = image::codecs::jpeg::JpegEncoder::new_with_quality(std::io::BufWriter::new(file), quality);
+                    small.write_with_encoder(encoder).attach_with(|| format!("writing {}", dst.display()))?;
+                    written += 1;
+                }
+            }
+            println!("{}: {written} frames written, {kept} already current", out_root.display());
         }
         Command::Maps { names } => {
             let (_, game) = load_inputs(&config)?;

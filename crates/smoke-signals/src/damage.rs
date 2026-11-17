@@ -864,8 +864,11 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
             let t = event.clock.seconds();
             let victim_pos = input.timeline.get(&event.victim).and_then(|tr| timeline::world_pos_at(tr, event.clock));
 
-            // Fire moment and position, best source first.
-            let from_hit = input
+            // Fire moment and position, best source first. Among the resolved
+            // hits within the match window the main battery's comes first: a
+            // battleship's secondaries land within a second of almost every
+            // main-battery hit and would claim its damage.
+            let mut matched_hits: Vec<(f32, WorldPos, FireSource, Option<GameParamId>)> = input
                 .hits
                 .iter()
                 .filter(|h| {
@@ -873,12 +876,18 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
                         && h.victim_entity_id == event.victim
                         && (h.clock.seconds() - t).abs() <= HIT_MATCH_SECONDS
                 })
-                .find_map(|h| {
+                .filter_map(|h| {
                     let fired = h.fired_at?;
                     let salvo = h.salvo.as_ref()?;
                     let origin = salvo.shots.first()?.origin;
                     Some((fired.seconds(), origin, FireSource::ShotHit, Some(salvo.params_id)))
-                });
+                })
+                .collect();
+            let from_hit = matched_hits
+                .iter()
+                .position(|(_, _, _, p)| p.is_some_and(|p| (input.is_main_battery)(*attacker, p) != Some(false)))
+                .or((!matched_hits.is_empty()).then_some(0))
+                .map(|i| matched_hits.swap_remove(i));
             let tick = in_tick_train(ledger, index);
             // A resolved shell hit settles the kind unless the tick is larger
             // than a whole main-battery salvo could list: then a torpedo of

@@ -2,7 +2,7 @@
 
 Everything a designer needs to lay out the Smoke Atlas: the copy, the spots as data, the maps, and working figures to redraw from. The analysis behind it is in `smoke/analysis/round3/` and `smoke/analysis/round4/`; this folder only assembles it and adds the per-map pages.
 
-Commit: (filled in by the parent session)
+Commit: analysis and atlas content committed on full-field as 0cb17cd1 (the zip and this line follow in the next commit)
 
 - Batch: `output/20261117-122135` (1,547 smokes, 171 games, 7 maps; 1,074 destroyer smokes). King of the Sea XIX NA.
 - Concealed damage = damage dealt while hidden by the smoke; it includes torpedoes launched from smoke.

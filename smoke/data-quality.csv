@@ -1,0 +1,4 @@
+match_id,game_no,reason
+7981,1,"clock drift between the two replays: merged ledger 10 to 16% over the game result (STEP 2d)"
+7941,1,"clock drift between the two replays: merged ledger 10 to 16% over the game result (STEP 2d)"
+7894,1,"clock drift between the two replays: merged ledger 10 to 16% over the game result (STEP 2d)"

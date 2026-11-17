@@ -55,3 +55,4 @@ profile.json.gz
 
 # Smoke Signals demo site build (published separately)
 /smoke-site/
+/smoke-site-r6/

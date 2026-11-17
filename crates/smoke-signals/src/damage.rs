@@ -145,8 +145,15 @@ impl DamageKind {
         }
     }
 
-    /// Main-battery shells, airstrikes and the fires they start earn smoke credit.
+    /// Main-battery shells, airstrikes, torpedoes and the fires shells and
+    /// airstrikes start earn smoke credit.
     pub fn credited(self) -> bool {
+        matches!(self, Self::Shell | Self::Fire | Self::Airstrike | Self::Torpedo)
+    }
+
+    /// The kinds the per-ship reconciliation compares with the game's
+    /// main-battery, fire and bomb totals.
+    pub fn gun_or_bomb(self) -> bool {
         matches!(self, Self::Shell | Self::Fire | Self::Airstrike)
     }
 }
@@ -335,10 +342,11 @@ pub struct SmokeDamage {
     pub damage_behind_smoke_smoker: f32,
     pub damage_behind_smoke_ally: f32,
     pub damage_behind_smoke_enemy: f32,
-    /// Credited shell, fire and airstrike damage of the smoker's team.
+    /// Credited shell, fire, airstrike and torpedo damage of the smoker's team.
     pub damage_shell: f32,
     pub damage_fire: f32,
     pub damage_airstrike: f32,
+    pub damage_torpedo: f32,
     /// The smoker's team's credit by the shooter's detection when firing.
     pub split: Split,
     pub events_in_smoke: u32,
@@ -403,6 +411,7 @@ impl SmokeDamage {
             match event.kind {
                 DamageKind::Fire => self.damage_fire += amount,
                 DamageKind::Airstrike => self.damage_airstrike += amount,
+                DamageKind::Torpedo => self.damage_torpedo += amount,
                 _ => self.damage_shell += amount,
             }
             self.split.add(event, amount);
@@ -1067,7 +1076,7 @@ pub fn run(input: &SpikeInput<'_>) -> SpikeOutput {
             };
             *stats.events_by_kind.entry(kind.as_str().to_string()).or_default() += 1;
             *stats.damage_by_kind.entry(kind.as_str().to_string()).or_default() += event.amount;
-            if kind.credited() {
+            if kind.gun_or_bomb() {
                 *stats.damage_by_attacker_shell_fire.entry(attacker.raw() as u32).or_default() += event.amount;
             }
             *stats

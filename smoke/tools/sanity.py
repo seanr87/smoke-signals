@@ -260,12 +260,12 @@ for f in fails:
     print("  ", f)
 
 print()
-print("# 7. Enemies table vs credited events, per smoke")
+print("# 7. Enemies table vs credited events (shell, fire, airstrike, torpedo), per smoke")
 # Per run: the distinct victims of credited events (shell, fire, airstrike)
 # fired by the smoker's team with a positive share must equal the rows of the
 # smoke's targets_hit, and the rows' total must equal the smoke's total.
 # A victim whose only credited row is a sinking with no damage is allowed.
-CREDITED_KINDS = {"shell", "fire", "airstrike"}
+CREDITED_KINDS = {"shell", "fire", "airstrike", "torpedo"}
 victim_mismatch, total_mismatch, checked, with_uncounted = [], [], 0, 0
 for name, (g, _) in runs.items():
     d = os.path.join(GAMES, name)

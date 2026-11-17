@@ -2291,7 +2291,7 @@ JS = r"""(function(){
     var lo = sec.querySelector('.t-lo'), hi = sec.querySelector('.t-hi');
     var clan = sec.querySelector('.f-clan'), fplayer = sec.querySelector('.f-player'), spawn = sec.querySelector('.f-spawn'), ship = sec.querySelector('.f-ship'), fcls = sec.querySelector('.f-cls'), ftype = sec.querySelector('.f-type');
     var chart = sec.querySelector('.chart'), count = sec.querySelector('.count'), ships = sec.querySelector('.ships');
-    var slugId = function(t){ return String(t).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); };
+    var slugId = function(t){ return String(t).replace(/[^A-Za-z0-9_-]+/g, '_').replace(/^_+|_+$/g, '') || 'x'; };
     function esc(t){ return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
     function wantLines(){ return !!(clan.value || (fplayer && fplayer.value) || ship.value); }
     function load(then){

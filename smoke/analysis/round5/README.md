@@ -3,7 +3,7 @@
 Analysis only. Nothing outside `smoke/analysis/round5/` was changed, the batch was not rerun, and gh-pages was not touched.
 
 - **Batch:** `output/20261117-122135`, the published batch (site build 17 Nov 2026): 1,547 smokes, 171 games, 30 clans.
-- **Commit:** on branch `full-field`, without switching the checkout. Analysis content: see the hand-over message (the zip and this line follow in the next commit).
+- **Commit:** on branch `full-field`, without switching the checkout. Analysis content committed as c36783fe; the zip and this line follow in the next commit.
 - **Groups:** Top 6 = H-SR, RESIN, BONKZ, HTDOG, KITE, VRTUS. Rest = the other 24 clans.
 - **Rules used:** team-normalized positions; minimum n 8 (8 to 14 marked small n); 95% intervals by resampling whole clans;
   association only.

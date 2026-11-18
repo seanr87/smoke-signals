@@ -6,7 +6,7 @@ read a batch from another folder) was changed by the analysis step. `output/2026
 - **Batch:** `output/20261117-230933` (smoke-signals 0.4.0, revision `a7129ffa`): 1,547 smokes, 171 games, 30 clans, plus
   the timeline files. Batch report: `smoke/STEP9-R5B-RERUN.md`. Data zip:
   https://github.com/seanr87/smoke-signals/releases/tag/data-r5b
-- **Commit:** on branch `r5b`. Analysis content: see the next line once committed.
+- **Commit:** on branch `r5b`. Analysis content committed as 1ab27d1e; the zip and this line follow in the next commit.
 - **Groups and rules:** as Round 5. Top 6 = H-SR, RESIN, BONKZ, HTDOG, KITE, VRTUS; Rest = the other 24 clans;
   team-normalized positions; minimum n 8 (8 to 14 small n); 95% intervals by resampling whole clans; association only.
 

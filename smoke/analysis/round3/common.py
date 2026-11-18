@@ -6,9 +6,11 @@
 import csv, json, os, sys, math, random, statistics, collections, subprocess, shutil, tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.abspath(os.path.join(HERE, '..', '..', '..'))
-BATCH = os.path.join(ROOT, 'output', '20261117-122135')
-BATCH_NAME = 'output/20261117-122135'
+# SMOKE_DATA_ROOT names the folder that holds output/ when it is not this checkout (a second working folder);
+# SMOKE_BATCH names another batch folder under output/.
+ROOT = os.environ.get('SMOKE_DATA_ROOT') or os.path.abspath(os.path.join(HERE, '..', '..', '..'))
+BATCH_NAME = 'output/' + (os.environ.get('SMOKE_BATCH') or '20261117-122135')
+BATCH = os.path.join(ROOT, *BATCH_NAME.split('/'))
 MAP_SRC = os.path.join(ROOT, 'output', '20261103-143026', 'maps')
 MAP_DST = os.path.join(HERE, 'maps')
 TOP = {'H-SR', 'RESIN', 'HTDOG', 'KITE', 'VRTUS', 'BONKZ'}

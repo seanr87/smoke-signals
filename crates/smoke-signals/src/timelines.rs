@@ -2,6 +2,11 @@
 //! changes, radar and hydro activations with the enemies they lit, ship
 //! tracks with health, the score, and the recording player's cap ribbons.
 //!
+//! A replay knows the health and the detection flags of the other team's
+//! ships only while its own team sees them. The tracks of a run therefore
+//! hold the recording team's ships; the two runs of a game together hold
+//! every ship once.
+//!
 //! Every row carries three times. `t_s` is the replay clock of the run's
 //! primary replay, the clock of the `t_*` columns in `smokes.csv`.
 //! `elapsed_s` is `t_s` minus that replay's battle start, so it is the same
@@ -473,10 +478,16 @@ impl Collector {
         let radar_csv = self.sensor_csv(ctx, &stamp, &ship_cols, &alive_at, &pos_at, &source_name);
 
         let mut tracks_csv = String::from(
-            "match_id,game_no,t_s,elapsed_s,clock,entity_id,player,ship,team,x,z,pos_source,alive,detected,health,max_health\n",
+            "match_id,game_no,t_s,elapsed_s,clock,entity_id,player,ship,team,own_replay,x,z,pos_source,alive,detected,health,max_health\n",
         );
+        let own_team: Option<i64> = ctx.recorder.and_then(|e| ships.get(&e)).map(|s| s.team_id);
+        // Whether the ship's team recorded the primary replay. Unknown without a recorder.
+        let own_replay = |e: EntityId| own_team.and_then(|team| ships.get(&e).map(|s| s.team_id == team));
+        // The only run of a game keeps the other team too, marked not own.
+        let sole_run = ctx.merged_replays.is_empty();
         let mut score_csv = String::from("match_id,game_no,t_s,elapsed_s,clock,team_id,team,score\n");
-        let mut order: Vec<EntityId> = ctx.ships.iter().map(|s| s.entity).collect();
+        let mut order: Vec<EntityId> =
+            ctx.ships.iter().map(|s| s.entity).filter(|e| sole_run || own_replay(*e) != Some(false)).collect();
         order.sort_by_key(|e| e.raw());
         for sample in &self.samples {
             let t = sample.clock.seconds();
@@ -485,6 +496,7 @@ impl Collector {
                 let pos = pos_at(*e, t);
                 let mut row = stamp(t);
                 row.extend(ship_cols(*e));
+                row.push(opt(own_replay(*e)));
                 row.push(pos.map(|(p, _)| f1(p.0.x)).unwrap_or_default());
                 row.push(pos.map(|(p, _)| f1(p.0.z)).unwrap_or_default());
                 row.push(pos.map(|(_, s)| source_name(s).to_string()).unwrap_or_default());
@@ -545,7 +557,7 @@ impl Collector {
                 })
                 .collect(),
             recorder_entity_id: ctx.recorder.map(|e| e.raw() as u32),
-            files: vec!["caps_timeline.csv", "radar.csv", "tracks.csv", "score.csv"],
+            files: vec!["caps_timeline.csv", "radar.csv", "score.csv"],
         };
         Timelines { meta, caps_csv, radar_csv, tracks_csv, score_csv, ribbons_csv }
     }
@@ -723,14 +735,13 @@ impl Collector {
 }
 
 impl Timelines {
-    /// The files written once per game: caps, radar and hydro, tracks, score.
+    /// The files written once per game: caps, radar and hydro, score.
     pub fn write_game_files(&self, dir: &Path) -> Result<(), Report> {
         std::fs::create_dir_all(dir).attach_with(|| format!("creating {}", dir.display()))?;
         crate::output::write_json(&dir.join("meta.json"), &self.meta)?;
         for (name, text) in [
             ("caps_timeline.csv", &self.caps_csv),
             ("radar.csv", &self.radar_csv),
-            ("tracks.csv", &self.tracks_csv),
             ("score.csv", &self.score_csv),
         ] {
             let path = dir.join(name);
@@ -739,10 +750,13 @@ impl Timelines {
         Ok(())
     }
 
-    /// The file written once per run: the recording player's cap ribbons.
+    /// The files written once per run: the recording team's ship tracks and
+    /// the recording player's cap ribbons.
     pub fn write_run_files(&self, dir: &Path) -> Result<(), Report> {
-        let path = dir.join("ribbons.csv");
-        std::fs::write(&path, &self.ribbons_csv).attach_with(|| format!("writing {}", path.display()))?;
+        for (name, text) in [("tracks.csv", &self.tracks_csv), ("ribbons.csv", &self.ribbons_csv)] {
+            let path = dir.join(name);
+            std::fs::write(&path, text).attach_with(|| format!("writing {}", path.display()))?;
+        }
         Ok(())
     }
 }

@@ -42,6 +42,11 @@ pub struct Job {
 }
 
 impl Job {
+    /// Folder name for the outputs shared by both runs of the game.
+    pub fn game_name(&self) -> Option<String> {
+        self.folder.file_name().map(|f| f.to_string_lossy().to_string())
+    }
+
     /// Folder name for this run's outputs.
     pub fn name(&self) -> String {
         let folder = self.folder.file_name().map(|f| f.to_string_lossy().to_string()).unwrap_or_default();
@@ -191,6 +196,7 @@ pub fn run_job(
     game_data: &GameData,
     job: &Job,
     out_dir: &Path,
+    game_timelines_dir: Option<&Path>,
     render_frames: bool,
     clip_ids: &[u32],
 ) -> Result<(Vec<SmokeRecord>, JobReport), Report> {
@@ -248,6 +254,9 @@ pub fn run_job(
     let name_of = |e: u32| analysis.game.player(e).map(|p| p.player.clone());
     output::write_damage_events_csv(&out_dir.join("damage_events.csv"), &analysis.damage_events, &name_of)?;
     output::write_json(&out_dir.join("damage_spike.json"), &analysis.damage_stats)?;
+    if let Some(dir) = game_timelines_dir {
+        analysis.timelines.write_game_files(dir)?;
+    }
     let log = output::run_log(&analysis.game, &kept, &analysis.damage_stats, frames_written, 0);
     std::fs::write(out_dir.join("run_log.md"), &log).attach_with(|| "writing run_log.md")?;
     let flagged: Vec<&SmokeRecord> = kept.iter().filter(|s| s.owner_flag).collect();
@@ -335,6 +344,13 @@ pub fn run_batch(
     let started = std::time::Instant::now();
     let next = std::sync::atomic::AtomicUsize::new(0);
     let results: Mutex<Vec<(usize, Vec<SmokeRecord>, JobReport)>> = Mutex::new(Vec::new());
+    // The first run of a game writes the files that are the same for both
+    // runs. Keyed on the folder written to, so no two runs share one.
+    let mut seen_games: std::collections::HashSet<String> = std::collections::HashSet::new();
+    let timelines_dirs: Vec<Option<PathBuf>> = jobs
+        .iter()
+        .map(|j| j.game_name().filter(|name| seen_games.insert(name.clone())).map(|name| out_dir.join("timelines").join(name)))
+        .collect();
     std::thread::scope(|scope| {
         for _ in 0..workers.max(1) {
             scope.spawn(|| {
@@ -343,7 +359,8 @@ pub fn run_batch(
                     let Some(job) = jobs.get(i) else { break };
                     let game_dir = out_dir.join("games").join(job.name());
                     info!(job = %job.name(), index = i + 1, total = jobs.len(), "Batch job");
-                    let outcome = run_job(config, game_data, job, &game_dir, render_frames, clip_ids);
+                    let outcome =
+                        run_job(config, game_data, job, &game_dir, timelines_dirs[i].as_deref(), render_frames, clip_ids);
                     let warnings = sink.take(std::thread::current().id());
                     let (smokes, mut report) = match outcome {
                         Ok(v) => v,
@@ -374,6 +391,9 @@ pub fn run_batch(
             });
         }
     });
+    for dir in timelines_dirs.iter().flatten().filter(|d| !d.join("meta.json").exists()) {
+        tracing::error!(dir = %dir.display(), "No timelines written: the run that writes them failed");
+    }
     let mut results = results.into_inner().expect("results");
     results.sort_by_key(|(i, _, _)| *i);
     let mut smokes = Vec::new();

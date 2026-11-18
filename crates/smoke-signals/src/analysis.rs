@@ -94,6 +94,7 @@ pub struct Analysis {
     pub flag_history: HashMap<EntityId, Vec<(GameClock, wowsunpack::game_types::VisibilityFlags)>>,
     /// The end-of-battle results blob, as the replay carries it.
     pub battle_results: Option<String>,
+    pub timelines: crate::timelines::Timelines,
 }
 
 /// One smoke object, observed from creation to removal.
@@ -806,10 +807,12 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
     let mut score_history: Vec<(f32, Vec<(i64, i64)>)> = Vec::new();
     let mut hp_history: HashMap<EntityId, Vec<(f32, f32)>> = HashMap::new();
     let mut planes: HashMap<wowsunpack::game_types::PlaneId, PlaneTrack> = HashMap::new();
+    let mut timelines = crate::timelines::Collector::default();
 
     while session.step()?.is_some() {
         let view = session.view();
         let clock = view.clock();
+        timelines.observe(clock, &view);
         let smokes = view.smoke_screens();
         for (id, state) in &smokes {
             tracks.entry(*id).or_insert_with(|| SmokeTrack::new(clock, state)).observe(clock, state);
@@ -939,6 +942,9 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
     let roster: HashMap<EntityId, Roster> =
         view.player_entities().iter().map(|(id, p)| (*id, roster_entry(config, game, p, facts.get(id)))).collect();
     let deaths: HashMap<EntityId, GameClock> = view.dead_ships().iter().map(|(id, d)| (*id, d.clock)).collect();
+    let recorder: Option<EntityId> =
+        view.player_entities().iter().find(|(_, p)| p.relation().is_self()).map(|(id, _)| *id);
+    let cap_positions = timelines.cap_positions();
     let scores: HashMap<usize, i64> = view.team_scores().iter().map(|s| (s.team_index, s.score)).collect();
     let winner_id = view.winning_team();
     let finish_type = view.finish_type().map(|f| match f {
@@ -1047,6 +1053,50 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         })
         .collect();
     let team_by_id = |id: i64| teams.iter().find(|t| t.team_id == id);
+
+    let timelines = {
+        let mut ships: Vec<crate::timelines::ShipInfo> = roster
+            .iter()
+            .map(|(e, r)| crate::timelines::ShipInfo {
+                entity: *e,
+                team_id: r.team_id,
+                team: team_name(r.team_id).unwrap_or_else(|| r.team.clone()),
+                player: r.player.clone(),
+                ship: r.ship.clone(),
+            })
+            .collect();
+        ships.sort_by_key(|s| s.entity.raw());
+        let team_info: Vec<crate::timelines::TeamInfo> = teams
+            .iter()
+            .map(|t| crate::timelines::TeamInfo {
+                team_id: t.team_id,
+                name: t.name.clone().unwrap_or_else(|| t.team_id.to_string()),
+                spawn: t.spawn_xy.as_ref().map(|p| WorldPos::new(p.x, 0.0, p.z)),
+                spawn_side: t.spawn_side.clone(),
+            })
+            .collect();
+        let sensor = |a: &RadarActivation| crate::timelines::SensorUse { entity: a.entity, clock: a.clock, duration: a.duration };
+        let radar: Vec<crate::timelines::SensorUse> = radar_activations.iter().map(sensor).collect();
+        let hydro: Vec<crate::timelines::SensorUse> = hydro_activations.iter().map(sensor).collect();
+        timelines.finish(&crate::timelines::Context {
+            match_id: &match_id,
+            game_no: config.game.game_no,
+            primary_replay: &primary_replay,
+            clock_map: &map,
+            timeline: &tl,
+            flag_history: tracker.flag_history(),
+            ranges: tracker.ranges(),
+            deaths: &deaths,
+            per_smoke: &per_smoke,
+            radar: &radar,
+            hydro: &hydro,
+            caps: &cap_positions,
+            ships: &ships,
+            teams: &team_info,
+            recorder,
+            end: session.total_duration(),
+        })
+    };
 
     let ids: Vec<EntityId> = tracks.keys().copied().collect();
     let mut smokes: Vec<SmokeRecord> = Vec::with_capacity(ids.len());
@@ -1926,5 +1976,6 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
         damage_stats: spike.stats,
         flag_history: tracker.flag_history().clone(),
         battle_results,
+        timelines,
     })
 }

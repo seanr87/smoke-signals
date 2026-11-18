@@ -1,0 +1,23 @@
+smokes 1547 sum over clans 1547 | games 171 team-games 342 | DD smokes top/rest 387 687
+clans 30 7+ games 24 small ['BTLST', 'INCA', 'MANBA', 'OGF', 'RMN', 'KM']
+ships with smoke_variant not in any list: [('Napoli', 115), ('Somers', 113), ('Gearing', 88), ('Daring', 78), ('Gdańsk', 66), ('Svea', 65), ('Shimakaze', 48), ('Harugumo', 42), ('C. Colombo', 33), ('Z-42', 23), ('Jinan', 17), ('Grozovoi', 16), ('Conte Verde', 11), ('Venezia', 10), ('Z-52', 9), ('Cerberus', 8), ('Smolensk', 7), ('Delny', 7), ('Fuyutsuki', 7), ('G. Hoffmann', 5), ('La Pampa', 4), ('Yueyang', 3), ('Sicilia', 2), ('Vampire II', 2), ('F. Sherman', 2), ('Almte. Irízar', 1), ('Elbing', 1), ('A. da Barbiano', 1), ('Irresistible', 1), ('Plymouth', 1)]
+long/sitter ships WITHOUT smoke_variant: Counter({'Delny': 30})
+clock used for first smoke / after 12:00 / before 5:00: e0
+min n (7+ game clans): dd smokes (10, 'PN') | nearest taken applicable (8, 'PN') | contested taken applicable (12, 'PN')
+movement labels Counter({'stationary': 432, 'horizontal': 397, 'pushing': 317, 'kiting': 300, 'unclassified': 101})
+applicable smokes, all clans: {'took_n': 853, 'took_c': 1049, 'notlost_n': 541, 'notlost_c': 548, 'died_base': 1538, 'not_ok': 9, 'not_ok_clans': ['-BN-', 'KSC'], 'smokes': 1547, 'died': 259, 'caught': 177, 'died_smoker': 195, 'caught_smoker': 116}
+   too few (under 8 cases) we_took_n_pct [('MANBA', 4), ('OGF', 7), ('RMN', 6), ('KM', 6)]
+   too few (under 8 cases) we_took_c_pct [('MANBA', 6)]
+   too few (under 8 cases) not_lost_n_pct [('KSE', 7), ('NGA', 7), ('PN', 5), ('MANBA', 4), ('OGF', 4), ('RMN', 4), ('KM', 5)]
+   too few (under 8 cases) not_lost_c_pct [('KSE', 6), ('NGA', 7), ('PN', 4), ('MANBA', 3), ('OGF', 5), ('RMN', 2), ('KM', 0)]
+anchor destroyer smokes: {'n': 1074, 'n_died_base': 1067, 'died': 194, 'died_per100': 18.181818181818183, 'died_smoker_per100': 12.74601686972821, 'died_cr_per100_cov': 8.732876712328768, 'caught': 124, 'caught_per100': 11.54562383612663, 'caught_smoker_per100': 6.424581005586592, 'caught_cr_per100_cov': 8.17717206132879}
+group n: top smokes 538 games 110 | rest smokes 1009 games 232
+   boot_diff cross-check died_per100: top 12.27 rest 19.30 gap 95% -13.13 to -1.88 | grp_feats interval -13.31 to -2.59
+   boot_diff cross-check caught_per100: top 7.81 rest 13.38 gap 95% -9.15 to -2.35 | grp_feats interval -9.52 to -2.88
+   boot_diff cross-check died_smoker_per100: top 8.18 rest 15.10 gap 95% -12.22 to -2.90 | grp_feats interval -12.28 to -3.15
+   boot_diff cross-check caught_smoker_per100: top 4.28 rest 9.22 gap 95% -8.36 to -2.15 | grp_feats interval -8.60 to -2.55
+   boot_diff cross-check we_took_n_pct: top 38.99 rest 28.47 gap 95% +0.01 to +22.52 | grp_feats interval +0.48 to +21.45
+   boot_diff cross-check we_took_c_pct: top 32.16 rest 22.77 gap 95% +1.52 to +18.39 | grp_feats interval +1.10 to +17.60
+   boot_diff cross-check not_lost_n_pct: top 85.71 rest 82.95 gap 95% -3.36 to +9.28 | grp_feats interval -3.29 to +8.62
+   boot_diff cross-check not_lost_c_pct: top 83.57 rest 75.82 gap 95% +1.21 to +13.73 | grp_feats interval +1.89 to +15.27
+wrote d1_tables.md, d1_scores.json

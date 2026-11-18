@@ -1,0 +1,2047 @@
+{
+ "focus_clans": {
+  "H-SR": {
+   "died_per100": {
+    "old_key": "deaths_per100",
+    "old": 4.0,
+    "new": 6.0,
+    "old_pct": 0.0,
+    "new_pct": 0.0
+   },
+   "caught_per100": {
+    "old_key": "deaths_per100",
+    "old": 4.0,
+    "new": 4.0,
+    "old_pct": 0.0,
+    "new_pct": 0.0
+   },
+   "died_smoker_per100": {
+    "old_key": null,
+    "old": null,
+    "new": 4.0,
+    "old_pct": null,
+    "new_pct": 4.3478260869565215
+   },
+   "caught_smoker_per100": {
+    "old_key": null,
+    "old": null,
+    "new": 2.0,
+    "old_pct": null,
+    "new_pct": 8.695652173913043
+   },
+   "we_took_n_pct": {
+    "old_key": "took_pct",
+    "old": 38.0,
+    "new": 56.0,
+    "old_pct": 95.65217391304348,
+    "new_pct": 100.0
+   },
+   "we_took_c_pct": {
+    "old_key": null,
+    "old": null,
+    "new": 41.53846153846154,
+    "old_pct": null,
+    "new_pct": 95.65217391304348
+   },
+   "not_lost_n_pct": {
+    "old_key": "held_pct",
+    "old": 89.1891891891892,
+    "new": 86.48648648648648,
+    "old_pct": 55.0,
+    "new_pct": 50.0
+   },
+   "not_lost_c_pct": {
+    "old_key": null,
+    "old": null,
+    "new": 86.36363636363636,
+    "old_pct": null,
+    "new_pct": 70.0
+   },
+   "caps_taken_pg": {
+    "old_key": "caps_taken_pg",
+    "old": 0.7727272727272727,
+    "new": 1.1363636363636365,
+    "old_pct": 86.95652173913044,
+    "new_pct": 95.65217391304348
+   },
+   "caps_taken_c_pg": {
+    "old_key": null,
+    "old": null,
+    "new": 1.0909090909090908,
+    "old_pct": null,
+    "new_pct": 91.30434782608695
+   },
+   "died_pg": {
+    "old_key": "deaths_pg",
+    "old": 0.18181818181818182,
+    "new": 0.2727272727272727,
+    "old_pct": 0.0,
+    "new_pct": 0.0
+   },
+   "caught_pg": {
+    "old_key": "deaths_pg",
+    "old": 0.18181818181818182,
+    "new": 0.18181818181818182,
+    "old_pct": 0.0,
+    "new_pct": 0.0
+   },
+   "first_smoke_s": {
+    "old_key": "first_smoke_s",
+    "old": 120.5,
+    "new": 120.091866,
+    "old_pct": 0.0,
+    "new_pct": 0.0
+   },
+   "late_pct": {
+    "old_key": "late_pct",
+    "old": 8.0,
+    "new": 7.0,
+    "old_pct": 30.434782608695652,
+    "new_pct": 26.08695652173913
+   },
+   "early_pct": {
+    "old_key": "early_pct",
+    "old": 31.0,
+    "new": 32.0,
+    "old_pct": 82.6086956521739,
+    "new_pct": 82.6086956521739
+   }
+  },
+  "RESIN": {
+   "died_per100": {
+    "old_key": "deaths_per100",
+    "old": 7.766990291262136,
+    "new": 17.475728155339805,
+    "old_pct": 21.73913043478261,
+    "new_pct": 56.52173913043478
+   },
+   "caught_per100": {
+    "old_key": "deaths_per100",
+    "old": 7.766990291262136,
+    "new": 7.766990291262136,
+    "old_pct": 21.73913043478261,
+    "new_pct": 21.73913043478261
+   },
+   "died_smoker_per100": {
+    "old_key": null,
+    "old": null,
+    "new": 9.70873786407767,
+    "old_pct": null,
+    "new_pct": 39.130434782608695
+   },
+   "caught_smoker_per100": {
+    "old_key": null,
+    "old": null,
+    "new": 1.941747572815534,
+    "old_pct": null,
+    "new_pct": 4.3478260869565215
+   },
+   "we_took_n_pct": {
+    "old_key": "took_pct",
+    "old": 17.54385964912281,
+    "new": 32.142857142857146,
+    "old_pct": 34.78260869565217,
+    "new_pct": 56.52173913043478
+   },
+   "we_took_c_pct": {
+    "old_key": null,
+    "old": null,
+    "new": 27.142857142857142,
+    "old_pct": null,
+    "new_pct": 56.52173913043478
+   },
+   "not_lost_n_pct": {
+    "old_key": "held_pct",
+    "old": 87.5,
+    "new": 75.0,
+    "old_pct": 30.0,
+    "new_pct": 10.0
+   },
+   "not_lost_c_pct": {
+    "old_key": null,
+    "old": null,
+    "new": 73.6842105263158,
+    "old_pct": null,
+    "new_pct": 20.0
+   },
+   "caps_taken_pg": {
+    "old_key": "caps_taken_pg",
+    "old": 0.3333333333333333,
+    "new": 0.6666666666666666,
+    "old_pct": 26.08695652173913,
+    "new_pct": 52.17391304347826
+   },
+   "caps_taken_c_pg": {
+    "old_key": null,
+    "old": null,
+    "new": 0.7083333333333334,
+    "old_pct": null,
+    "new_pct": 52.17391304347826
+   },
+   "died_pg": {
+    "old_key": "deaths_pg",
+    "old": 0.3333333333333333,
+    "new": 0.75,
+    "old_pct": 21.73913043478261,
+    "new_pct": 47.82608695652174
+   },
+   "caught_pg": {
+    "old_key": "deaths_pg",
+    "old": 0.3333333333333333,
+    "new": 0.3333333333333333,
+    "old_pct": 21.73913043478261,
+    "new_pct": 21.73913043478261
+   },
+   "first_smoke_s": {
+    "old_key": "first_smoke_s",
+    "old": 174.0,
+    "new": 173.3618345,
+    "old_pct": 34.78260869565217,
+    "new_pct": 34.78260869565217
+   },
+   "late_pct": {
+    "old_key": "late_pct",
+    "old": 19.41747572815534,
+    "new": 19.41747572815534,
+    "old_pct": 91.30434782608695,
+    "new_pct": 91.30434782608695
+   },
+   "early_pct": {
+    "old_key": "early_pct",
+    "old": 28.155339805825243,
+    "new": 28.155339805825243,
+    "old_pct": 65.21739130434783,
+    "new_pct": 65.21739130434783
+   }
+  },
+  "BONKZ": {
+   "died_per100": {
+    "old_key": "deaths_per100",
+    "old": 11.764705882352942,
+    "new": 17.647058823529413,
+    "old_pct": 56.52173913043478,
+    "new_pct": 60.869565217391305
+   },
+   "caught_per100": {
+    "old_key": "deaths_per100",
+    "old": 11.764705882352942,
+    "new": 11.764705882352942,
+    "old_pct": 56.52173913043478,
+    "new_pct": 56.52173913043478
+   },
+   "died_smoker_per100": {
+    "old_key": null,
+    "old": null,
+    "new": 12.745098039215685,
+    "old_pct": null,
+    "new_pct": 56.52173913043478
+   },
+   "caught_smoker_per100": {
+    "old_key": null,
+    "old": null,
+    "new": 6.862745098039215,
+    "old_pct": null,
+    "new_pct": 52.17391304347826
+   },
+   "we_took_n_pct": {
+    "old_key": "took_pct",
+    "old": 42.22222222222222,
+    "new": 53.333333333333336,
+    "old_pct": 100.0,
+    "new_pct": 95.65217391304348
+   },
+   "we_took_c_pct": {
+    "old_key": null,
+    "old": null,
+    "new": 44.26229508196721,
+    "old_pct": null,
+    "new_pct": 100.0
+   },
+   "not_lost_n_pct": {
+    "old_key": "held_pct",
+    "old": 93.02325581395348,
+    "new": 88.37209302325581,
+    "old_pct": 70.0,
+    "new_pct": 65.0
+   },
+   "not_lost_c_pct": {
+    "old_key": null,
+    "old": null,
+    "new": 83.33333333333333,
+    "old_pct": null,
+    "new_pct": 55.0
+   },
+   "caps_taken_pg": {
+    "old_key": "caps_taken_pg",
+    "old": 0.8095238095238095,
+    "new": 1.0,
+    "old_pct": 91.30434782608695,
+    "new_pct": 86.95652173913044
+   },
+   "caps_taken_c_pg": {
+    "old_key": null,
+    "old": null,
+    "new": 1.1428571428571428,
+    "old_pct": null,
+    "new_pct": 97.82608695652173
+   },
+   "died_pg": {
+    "old_key": "deaths_pg",
+    "old": 0.5714285714285714,
+    "new": 0.8571428571428571,
+    "old_pct": 52.17391304347826,
+    "new_pct": 60.869565217391305
+   },
+   "caught_pg": {
+    "old_key": "deaths_pg",
+    "old": 0.5714285714285714,
+    "new": 0.5714285714285714,
+    "old_pct": 52.17391304347826,
+    "new_pct": 52.17391304347826
+   },
+   "first_smoke_s": {
+    "old_key": "first_smoke_s",
+    "old": 198.0,
+    "new": 197.437105,
+    "old_pct": 65.21739130434783,
+    "new_pct": 65.21739130434783
+   },
+   "late_pct": {
+    "old_key": "late_pct",
+    "old": 13.72549019607843,
+    "new": 13.72549019607843,
+    "old_pct": 65.21739130434783,
+    "new_pct": 65.21739130434783
+   },
+   "early_pct": {
+    "old_key": "early_pct",
+    "old": 22.54901960784314,
+    "new": 22.54901960784314,
+    "old_pct": 26.08695652173913,
+    "new_pct": 21.73913043478261
+   }
+  },
+  "HTDOG": {
+   "died_per100": {
+    "old_key": "deaths_per100",
+    "old": 6.60377358490566,
+    "new": 10.377358490566039,
+    "old_pct": 8.695652173913043,
+    "new_pct": 17.391304347826086
+   },
+   "caught_per100": {
+    "old_key": "deaths_per100",
+    "old": 6.60377358490566,
+    "new": 6.60377358490566,
+    "old_pct": 8.695652173913043,
+    "new_pct": 8.695652173913043
+   },
+   "died_smoker_per100": {
+    "old_key": null,
+    "old": null,
+    "new": 8.49056603773585,
+    "old_pct": null,
+    "new_pct": 30.434782608695652
+   },
+   "caught_smoker_per100": {
+    "old_key": null,
+    "old": null,
+    "new": 5.660377358490566,
+    "old_pct": null,
+    "new_pct": 30.434782608695652
+   },
+   "we_took_n_pct": {
+    "old_key": "took_pct",
+    "old": 24.528301886792452,
+    "new": 30.18867924528302,
+    "old_pct": 52.17391304347826,
+    "new_pct": 47.82608695652174
+   },
+   "we_took_c_pct": {
+    "old_key": null,
+    "old": null,
+    "new": 26.666666666666668,
+    "old_pct": null,
+    "new_pct": 52.17391304347826
+   },
+   "not_lost_n_pct": {
+    "old_key": "held_pct",
+    "old": 96.96969696969697,
+    "new": 84.84848484848484,
+    "old_pct": 95.0,
+    "new_pct": 40.0
+   },
+   "not_lost_c_pct": {
+    "old_key": null,
+    "old": null,
+    "new": 87.8048780487805,
+    "old_pct": null,
+    "new_pct": 80.0
+   },
+   "caps_taken_pg": {
+    "old_key": "caps_taken_pg",
+    "old": 0.6666666666666666,
+    "new": 0.7222222222222222,
+    "old_pct": 69.56521739130434,
+    "new_pct": 65.21739130434783
+   },
+   "caps_taken_c_pg": {
+    "old_key": null,
+    "old": null,
+    "new": 0.7222222222222222,
+    "old_pct": null,
+    "new_pct": 69.56521739130434
+   },
+   "died_pg": {
+    "old_key": "deaths_pg",
+    "old": 0.3888888888888889,
+    "new": 0.6111111111111112,
+    "old_pct": 34.78260869565217,
+    "new_pct": 26.08695652173913
+   },
+   "caught_pg": {
+    "old_key": "deaths_pg",
+    "old": 0.3888888888888889,
+    "new": 0.3888888888888889,
+    "old_pct": 34.78260869565217,
+    "new_pct": 34.78260869565217
+   },
+   "first_smoke_s": {
+    "old_key": "first_smoke_s",
+    "old": 233,
+    "new": 232.441085,
+    "old_pct": 91.30434782608695,
+    "new_pct": 91.30434782608695
+   },
+   "late_pct": {
+    "old_key": "late_pct",
+    "old": 17.92452830188679,
+    "new": 16.037735849056602,
+    "old_pct": 82.6086956521739,
+    "new_pct": 78.26086956521739
+   },
+   "early_pct": {
+    "old_key": "early_pct",
+    "old": 23.58490566037736,
+    "new": 23.58490566037736,
+    "old_pct": 30.434782608695652,
+    "new_pct": 26.08695652173913
+   }
+  },
+  "KITE": {
+   "died_per100": {
+    "old_key": "deaths_per100",
+    "old": 8.88888888888889,
+    "new": 11.11111111111111,
+    "old_pct": 30.434782608695652,
+    "new_pct": 26.08695652173913
+   },
+   "caught_per100": {
+    "old_key": "deaths_per100",
+    "old": 8.88888888888889,
+    "new": 8.88888888888889,
+    "old_pct": 30.434782608695652,
+    "new_pct": 30.434782608695652
+   },
+   "died_smoker_per100": {
+    "old_key": null,
+    "old": null,
+    "new": 6.666666666666667,
+    "old_pct": null,
+    "new_pct": 17.391304347826086
+   },
+   "caught_smoker_per100": {
+    "old_key": null,
+    "old": null,
+    "new": 4.444444444444445,
+    "old_pct": null,
+    "new_pct": 17.391304347826086
+   },
+   "we_took_n_pct": {
+    "old_key": "took_pct",
+    "old": 31.818181818181817,
+    "new": 45.45454545454545,
+    "old_pct": 78.26086956521739,
+    "new_pct": 91.30434782608695
+   },
+   "we_took_c_pct": {
+    "old_key": null,
+    "old": null,
+    "new": 38.46153846153846,
+    "old_pct": null,
+    "new_pct": 91.30434782608695
+   },
+   "not_lost_n_pct": {
+    "old_key": "held_pct",
+    "old": 93.75,
+    "new": 87.5,
+    "old_pct": 75.0,
+    "new_pct": 57.5
+   },
+   "not_lost_c_pct": {
+    "old_key": null,
+    "old": null,
+    "new": 87.5,
+    "old_pct": null,
+    "new_pct": 75.0
+   },
+   "caps_taken_pg": {
+    "old_key": "caps_taken_pg",
+    "old": 0.5,
+    "new": 0.6428571428571429,
+    "old_pct": 43.47826086956522,
+    "new_pct": 43.47826086956522
+   },
+   "caps_taken_c_pg": {
+    "old_key": null,
+    "old": null,
+    "new": 0.6428571428571429,
+    "old_pct": null,
+    "new_pct": 43.47826086956522
+   },
+   "died_pg": {
+    "old_key": "deaths_pg",
+    "old": 0.2857142857142857,
+    "new": 0.35714285714285715,
+    "old_pct": 10.869565217391305,
+    "new_pct": 13.043478260869565
+   },
+   "caught_pg": {
+    "old_key": "deaths_pg",
+    "old": 0.2857142857142857,
+    "new": 0.2857142857142857,
+    "old_pct": 10.869565217391305,
+    "new_pct": 10.869565217391305
+   },
+   "first_smoke_s": {
+    "old_key": "first_smoke_s",
+    "old": 150,
+    "new": 149.15269,
+    "old_pct": 21.73913043478261,
+    "new_pct": 21.73913043478261
+   },
+   "late_pct": {
+    "old_key": "late_pct",
+    "old": 8.88888888888889,
+    "new": 8.88888888888889,
+    "old_pct": 47.82608695652174,
+    "new_pct": 47.82608695652174
+   },
+   "early_pct": {
+    "old_key": "early_pct",
+    "old": 24.444444444444443,
+    "new": 24.444444444444443,
+    "old_pct": 39.130434782608695,
+    "new_pct": 39.130434782608695
+   }
+  },
+  "VRTUS": {
+   "died_per100": {
+    "old_key": "deaths_per100",
+    "old": 8.536585365853659,
+    "new": 9.75609756097561,
+    "old_pct": 26.08695652173913,
+    "new_pct": 10.869565217391305
+   },
+   "caught_per100": {
+    "old_key": "deaths_per100",
+    "old": 8.536585365853659,
+    "new": 8.536585365853659,
+    "old_pct": 26.08695652173913,
+    "new_pct": 26.08695652173913
+   },
+   "died_smoker_per100": {
+    "old_key": null,
+    "old": null,
+    "new": 6.097560975609756,
+    "old_pct": null,
+    "new_pct": 8.695652173913043
+   },
+   "caught_smoker_per100": {
+    "old_key": null,
+    "old": null,
+    "new": 4.878048780487805,
+    "old_pct": null,
+    "new_pct": 21.73913043478261
+   },
+   "we_took_n_pct": {
+    "old_key": "took_pct",
+    "old": 21.568627450980394,
+    "new": 23.529411764705884,
+    "old_pct": 43.47826086956522,
+    "new_pct": 28.26086956521739
+   },
+   "we_took_c_pct": {
+    "old_key": null,
+    "old": null,
+    "new": 18.333333333333332,
+    "old_pct": null,
+    "new_pct": 26.08695652173913
+   },
+   "not_lost_n_pct": {
+    "old_key": "held_pct",
+    "old": 92.85714285714286,
+    "new": 92.85714285714286,
+    "old_pct": 65.0,
+    "new_pct": 85.0
+   },
+   "not_lost_c_pct": {
+    "old_key": null,
+    "old": null,
+    "new": 84.61538461538461,
+    "old_pct": null,
+    "new_pct": 65.0
+   },
+   "caps_taken_pg": {
+    "old_key": "caps_taken_pg",
+    "old": 0.7272727272727273,
+    "new": 0.8181818181818182,
+    "old_pct": 82.6086956521739,
+    "new_pct": 71.73913043478261
+   },
+   "caps_taken_c_pg": {
+    "old_key": null,
+    "old": null,
+    "new": 0.7272727272727273,
+    "old_pct": null,
+    "new_pct": 73.91304347826087
+   },
+   "died_pg": {
+    "old_key": "deaths_pg",
+    "old": 0.6363636363636364,
+    "new": 0.7272727272727273,
+    "old_pct": 71.73913043478261,
+    "new_pct": 43.47826086956522
+   },
+   "caught_pg": {
+    "old_key": "deaths_pg",
+    "old": 0.6363636363636364,
+    "new": 0.6363636363636364,
+    "old_pct": 71.73913043478261,
+    "new_pct": 71.73913043478261
+   },
+   "first_smoke_s": {
+    "old_key": "first_smoke_s",
+    "old": 224,
+    "new": 222.838666,
+    "old_pct": 86.95652173913044,
+    "new_pct": 86.95652173913044
+   },
+   "late_pct": {
+    "old_key": "late_pct",
+    "old": 14.634146341463415,
+    "new": 14.634146341463415,
+    "old_pct": 69.56521739130434,
+    "new_pct": 69.56521739130434
+   },
+   "early_pct": {
+    "old_key": "early_pct",
+    "old": 18.29268292682927,
+    "new": 18.29268292682927,
+    "old_pct": 0.0,
+    "new_pct": 0.0
+   }
+  },
+  "PN": {
+   "died_per100": {
+    "old_key": "deaths_per100",
+    "old": 28.571428571428573,
+    "new": 50.0,
+    "old_pct": 95.65217391304348,
+    "new_pct": 100.0
+   },
+   "caught_per100": {
+    "old_key": "deaths_per100",
+    "old": 28.571428571428573,
+    "new": 28.571428571428573,
+    "old_pct": 95.65217391304348,
+    "new_pct": 95.65217391304348
+   },
+   "died_smoker_per100": {
+    "old_key": null,
+    "old": null,
+    "new": 28.571428571428573,
+    "old_pct": null,
+    "new_pct": 82.6086956521739
+   },
+   "caught_smoker_per100": {
+    "old_key": null,
+    "old": null,
+    "new": 7.142857142857143,
+    "old_pct": null,
+    "new_pct": 60.869565217391305
+   },
+   "we_took_n_pct": {
+    "old_key": "took_pct",
+    "old": 12.5,
+    "new": 12.5,
+    "old_pct": 17.391304347826086,
+    "new_pct": 8.695652173913043
+   },
+   "we_took_c_pct": {
+    "old_key": null,
+    "old": null,
+    "new": 8.333333333333334,
+    "old_pct": null,
+    "new_pct": 4.3478260869565215
+   },
+   "not_lost_n_pct": {
+    "old_key": "held_pct",
+    "old": null,
+    "new": null,
+    "old_pct": null,
+    "new_pct": null
+   },
+   "not_lost_c_pct": {
+    "old_key": null,
+    "old": null,
+    "new": null,
+    "old_pct": null,
+    "new_pct": null
+   },
+   "caps_taken_pg": {
+    "old_key": "caps_taken_pg",
+    "old": 0.14285714285714285,
+    "new": 0.14285714285714285,
+    "old_pct": 2.1739130434782608,
+    "new_pct": 0.0
+   },
+   "caps_taken_c_pg": {
+    "old_key": null,
+    "old": null,
+    "new": 0.14285714285714285,
+    "old_pct": null,
+    "new_pct": 2.1739130434782608
+   },
+   "died_pg": {
+    "old_key": "deaths_pg",
+    "old": 0.5714285714285714,
+    "new": 1.0,
+    "old_pct": 52.17391304347826,
+    "new_pct": 71.73913043478261
+   },
+   "caught_pg": {
+    "old_key": "deaths_pg",
+    "old": 0.5714285714285714,
+    "new": 0.5714285714285714,
+    "old_pct": 52.17391304347826,
+    "new_pct": 52.17391304347826
+   },
+   "first_smoke_s": {
+    "old_key": "first_smoke_s",
+    "old": 221.5,
+    "new": 221.0138675,
+    "old_pct": 78.26086956521739,
+    "new_pct": 78.26086956521739
+   },
+   "late_pct": {
+    "old_key": "late_pct",
+    "old": 7.142857142857143,
+    "new": 7.142857142857143,
+    "old_pct": 26.08695652173913,
+    "new_pct": 30.434782608695652
+   },
+   "early_pct": {
+    "old_key": "early_pct",
+    "old": 50.0,
+    "new": 50.0,
+    "old_pct": 100.0,
+    "new_pct": 100.0
+   }
+  }
+ },
+ "time_moves": [
+  {
+   "key": "first_smoke_s",
+   "clan": "RESIN",
+   "old": 174.0,
+   "new": 173.3618345
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "H-SR",
+   "old": 120.5,
+   "new": 120.091866
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "BONKZ",
+   "old": 198.0,
+   "new": 197.437105
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "MZY",
+   "old": 271,
+   "new": 270.482526
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "HTDOG",
+   "old": 233,
+   "new": 232.441085
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "EPOXY",
+   "old": 192,
+   "new": 190.73865
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "HFANS",
+   "old": 143.0,
+   "new": 141.987985
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "-BN-",
+   "old": 192.0,
+   "new": 191.1194375
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "KITE",
+   "old": 150,
+   "new": 149.15269
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "KITED",
+   "old": 223.0,
+   "new": 222.5301245
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "MACHX",
+   "old": 146,
+   "new": 144.58808199999999
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "REEEE",
+   "old": 185,
+   "new": 184.72972199999998
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "PFANS",
+   "old": 185.5,
+   "new": 184.4490295
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "KSC",
+   "old": 157,
+   "new": 156.587892
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "VRTUS",
+   "old": 224,
+   "new": 222.838666
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "5D",
+   "old": 218.0,
+   "new": 217.1565265
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "BONKY",
+   "old": 139,
+   "new": 138.97394000000003
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "KSE",
+   "old": 251,
+   "new": 249.98193400000002
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "MACH",
+   "old": 193,
+   "new": 192.96299199999999
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "NGA",
+   "old": 141,
+   "new": 140.553484
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "PN",
+   "old": 221.5,
+   "new": 221.0138675
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "RSR",
+   "old": 184.0,
+   "new": 183.4572265
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "SCCC2",
+   "old": 201,
+   "new": 200.50848000000002
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "UYSC",
+   "old": 163,
+   "new": 162.434007
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "BTLST",
+   "old": 175.0,
+   "new": 174.5094385
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "INCA",
+   "old": 230.5,
+   "new": 229.64473500000003
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "MANBA",
+   "old": 315,
+   "new": 313.877477
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "OGF",
+   "old": 259.0,
+   "new": 258.6173925
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "RMN",
+   "old": 276.5,
+   "new": 276.144915
+  },
+  {
+   "key": "first_smoke_s",
+   "clan": "KM",
+   "old": 261.0,
+   "new": 260.76443700000004
+  },
+  {
+   "key": "late_pct",
+   "clan": "H-SR",
+   "old": 8.0,
+   "new": 7.0
+  },
+  {
+   "key": "late_pct",
+   "clan": "HTDOG",
+   "old": 17.92452830188679,
+   "new": 16.037735849056602
+  },
+  {
+   "key": "early_pct",
+   "clan": "H-SR",
+   "old": 31.0,
+   "new": 32.0
+  },
+  {
+   "key": "early_pct",
+   "clan": "KSC",
+   "old": 22.22222222222222,
+   "new": 23.80952380952381
+  }
+ ],
+ "gaps": {
+  "long_ships_pg": {
+   "old": {
+    "top6": 0.8909090909090909,
+    "rest": 0.6551724137931034,
+    "lo": -0.1369822359774452,
+    "hi": 0.5191482337405086,
+    "clear": false
+   },
+   "new": {
+    "top6": 0.8909090909090909,
+    "rest": 0.6551724137931034,
+    "lo": -0.1369822359774452,
+    "hi": 0.5191482337405086,
+    "clear": false
+   }
+  },
+  "sitter_ships_pg": {
+   "old": {
+    "top6": 0.7,
+    "rest": 0.7025862068965517,
+    "lo": -0.25952957454168113,
+    "hi": 0.2857883817427386,
+    "clear": false
+   },
+   "new": {
+    "top6": 0.7,
+    "rest": 0.7025862068965517,
+    "lo": -0.25952957454168113,
+    "hi": 0.2857883817427386,
+    "clear": false
+   }
+  },
+  "smoke_dd_pg": {
+   "old": {
+    "top6": 1.6272727272727272,
+    "rest": 1.4482758620689655,
+    "lo": -0.08365115687770164,
+    "hi": 0.43786468630949527,
+    "clear": false
+   },
+   "new": {
+    "top6": 1.6272727272727272,
+    "rest": 1.4482758620689655,
+    "lo": -0.08365115687770164,
+    "hi": 0.43786468630949527,
+    "clear": false
+   }
+  },
+  "smoke_cruisers_pg": {
+   "old": {
+    "top6": 0.5181818181818182,
+    "rest": 0.7198275862068966,
+    "lo": -0.5379663255199736,
+    "hi": 0.22234392113910184,
+    "clear": false
+   },
+   "new": {
+    "top6": 0.5181818181818182,
+    "rest": 0.7198275862068966,
+    "lo": -0.5379663255199736,
+    "hi": 0.22234392113910184,
+    "clear": false
+   }
+  },
+  "exhaust_ships_pg": {
+   "old": {
+    "top6": 0.22727272727272727,
+    "rest": 0.6206896551724138,
+    "lo": -0.6178632478632479,
+    "hi": -0.2093902981753449,
+    "clear": true
+   },
+   "new": {
+    "top6": 0.22727272727272727,
+    "rest": 0.6206896551724138,
+    "lo": -0.6178632478632479,
+    "hi": -0.2093902981753449,
+    "clear": true
+   }
+  },
+  "smokes_pg": {
+   "old": {
+    "top6": 4.890909090909091,
+    "rest": 4.349137931034483,
+    "lo": -0.4293550531914896,
+    "hi": 1.5782251082251082,
+    "clear": false
+   },
+   "new": {
+    "top6": 4.890909090909091,
+    "rest": 4.349137931034483,
+    "lo": -0.4293550531914896,
+    "hi": 1.5782251082251082,
+    "clear": false
+   }
+  },
+  "first_smoke_s": {
+   "old": {
+    "top6": 175,
+    "rest": 196.5,
+    "lo": -54,
+    "hi": 29.5,
+    "clear": false
+   },
+   "new": {
+    "top6": 173.86015400000002,
+    "rest": 196.070655,
+    "lo": -53.8725455,
+    "hi": 29.06275899999997,
+    "clear": false
+   }
+  },
+  "late_pct": {
+   "old": {
+    "top6": 14.312267657992566,
+    "rest": 11.10009910802775,
+    "lo": -1.5875333528016338,
+    "hi": 7.846252790073013,
+    "clear": false
+   },
+   "new": {
+    "top6": 13.754646840148698,
+    "rest": 11.10009910802775,
+    "lo": -2.255331450554827,
+    "hi": 7.322191045504452,
+    "clear": false
+   }
+  },
+  "teammate_pct": {
+   "old": {
+    "top6": 63.7546468401487,
+    "rest": 54.80673934588702,
+    "lo": -2.5392291688705484,
+    "hi": 20.234978311190645,
+    "clear": false
+   },
+   "new": {
+    "top6": 63.7546468401487,
+    "rest": 54.80673934588702,
+    "lo": -2.5392291688705484,
+    "hi": 20.234978311190645,
+    "clear": false
+   }
+  },
+  "stacked_pct": {
+   "old": {
+    "top6": 31.598513011152416,
+    "rest": 23.48860257680872,
+    "lo": -3.002930332911035,
+    "hi": 18.350338901391904,
+    "clear": false
+   },
+   "new": {
+    "top6": 31.598513011152416,
+    "rest": 23.48860257680872,
+    "lo": -3.002930332911035,
+    "hi": 18.350338901391904,
+    "clear": false
+   }
+  },
+  "radar_ca_inside_pct": {
+   "old": {
+    "top6": 47.286821705426355,
+    "rest": 28.966521106259098,
+    "lo": 7.834275359192304,
+    "hi": 26.998341625207296,
+    "clear": true
+   },
+   "new": {
+    "top6": 47.286821705426355,
+    "rest": 28.966521106259098,
+    "lo": 7.834275359192304,
+    "hi": 26.998341625207296,
+    "clear": true
+   }
+  },
+  "edge_m": {
+   "old": {
+    "top6": 2059.785,
+    "rest": 2088.86,
+    "lo": -502.0150000000003,
+    "hi": 499.6749999999997,
+    "clear": false
+   },
+   "new": {
+    "top6": 2059.785,
+    "rest": 2088.86,
+    "lo": -502.0150000000003,
+    "hi": 499.6749999999997,
+    "clear": false
+   }
+  },
+  "inside_cap_pct": {
+   "old": {
+    "top6": 22.86245353159851,
+    "rest": 24.182358771060457,
+    "lo": -7.663832111093775,
+    "hi": 4.2467614820183,
+    "clear": false
+   },
+   "new": {
+    "top6": 22.86245353159851,
+    "rest": 24.182358771060457,
+    "lo": -7.663832111093775,
+    "hi": 4.2467614820183,
+    "clear": false
+   }
+  },
+  "centre_pct": {
+   "old": {
+    "top6": 24.349442379182157,
+    "rest": 21.010901883052526,
+    "lo": -4.861899126952693,
+    "hi": 11.941553082358233,
+    "clear": false
+   },
+   "new": {
+    "top6": 24.349442379182157,
+    "rest": 21.010901883052526,
+    "lo": -4.861899126952693,
+    "hi": 11.941553082358233,
+    "clear": false
+   }
+  },
+  "pushing_pct": {
+   "old": {
+    "top6": 20.817843866171003,
+    "rest": 20.317145688800792,
+    "lo": -4.1242639021122045,
+    "hi": 4.620006970164667,
+    "clear": false
+   },
+   "new": {
+    "top6": 20.817843866171003,
+    "rest": 20.317145688800792,
+    "lo": -4.1242639021122045,
+    "hi": 4.620006970164667,
+    "clear": false
+   }
+  },
+  "kiting_pct": {
+   "old": {
+    "top6": 17.65799256505576,
+    "rest": 20.317145688800792,
+    "lo": -7.749775031857903,
+    "hi": 2.043892339544513,
+    "clear": false
+   },
+   "new": {
+    "top6": 17.65799256505576,
+    "rest": 20.317145688800792,
+    "lo": -7.749775031857903,
+    "hi": 2.043892339544513,
+    "clear": false
+   }
+  },
+  "parked_pct": {
+   "old": {
+    "top6": 28.810408921933085,
+    "rest": 27.452923686818632,
+    "lo": -11.375521030693443,
+    "hi": 13.462414131501468,
+    "clear": false
+   },
+   "new": {
+    "top6": 28.810408921933085,
+    "rest": 27.452923686818632,
+    "lo": -11.375521030693443,
+    "hi": 13.462414131501468,
+    "clear": false
+   }
+  },
+  "conc_per_smoke": {
+   "old": {
+    "top6": 11685.391691449813,
+    "rest": 8515.28432111001,
+    "lo": 570.1418312917467,
+    "hi": 5690.452226916221,
+    "clear": true
+   },
+   "new": {
+    "top6": 11685.391691449813,
+    "rest": 8515.28432111001,
+    "lo": 570.1418312917467,
+    "hi": 5690.452226916221,
+    "clear": true
+   }
+  },
+  "conc_pg": {
+   "old": {
+    "top6": 57152.18845454545,
+    "rest": 37034.146034482765,
+    "lo": 5334.471001138576,
+    "hi": 33896.8754720524,
+    "clear": true
+   },
+   "new": {
+    "top6": 57152.18845454545,
+    "rest": 37034.146034482765,
+    "lo": 5334.471001138576,
+    "hi": 33896.8754720524,
+    "clear": true
+   }
+  },
+  "took_pct": {
+   "old": {
+    "top6": 28.41726618705036,
+    "rest": 22.608695652173914,
+    "lo": -2.1951786683202847,
+    "hi": 14.604887455037641,
+    "clear": false
+   },
+   "new": null
+  },
+  "held_pct": {
+   "old": {
+    "top6": 92.06349206349206,
+    "rest": 87.2159090909091,
+    "lo": 0.6366214938543919,
+    "hi": 9.5135765450608,
+    "clear": true
+   },
+   "new": null
+  },
+  "deaths_per100": {
+   "old": {
+    "top6": 7.806691449814126,
+    "rest": 13.37958374628345,
+    "lo": -9.519399331855919,
+    "hi": -2.8752621819618813,
+    "clear": true
+   },
+   "new": null
+  },
+  "parked_cruisers_pg": {
+   "old": {
+    "top6": 0.35454545454545455,
+    "rest": 0.1853448275862069,
+    "lo": -0.1101190476190476,
+    "hi": 0.5665839536807279,
+    "clear": false
+   },
+   "new": {
+    "top6": 0.35454545454545455,
+    "rest": 0.1853448275862069,
+    "lo": -0.1101190476190476,
+    "hi": 0.5665839536807279,
+    "clear": false
+   }
+  },
+  "smoke_ships_pg": {
+   "old": {
+    "top6": 2.272727272727273,
+    "rest": 2.310344827586207,
+    "lo": -0.388019732205779,
+    "hi": 0.35666764792463956,
+    "clear": false
+   },
+   "new": {
+    "top6": 2.272727272727273,
+    "rest": 2.310344827586207,
+    "lo": -0.388019732205779,
+    "hi": 0.35666764792463956,
+    "clear": false
+   }
+  },
+  "dd_pg": {
+   "old": {
+    "top6": 3.2454545454545456,
+    "rest": 2.9956896551724137,
+    "lo": 0.04839084016710471,
+    "hi": 0.46259898190045234,
+    "clear": true
+   },
+   "new": {
+    "top6": 3.2454545454545456,
+    "rest": 2.9956896551724137,
+    "lo": 0.04839084016710471,
+    "hi": 0.46259898190045234,
+    "clear": true
+   }
+  },
+  "radar_ships_pg": {
+   "old": {
+    "top6": 3.5727272727272728,
+    "rest": 3.0086206896551726,
+    "lo": 0.19567162964770946,
+    "hi": 0.8381572878228782,
+    "clear": true
+   },
+   "new": {
+    "top6": 3.5727272727272728,
+    "rest": 3.0086206896551726,
+    "lo": 0.19567162964770946,
+    "hi": 0.8381572878228782,
+    "clear": true
+   }
+  },
+  "early_pct": {
+   "old": {
+    "top6": 24.907063197026023,
+    "rest": 27.651139742319128,
+    "lo": -7.2777459239330184,
+    "hi": 1.2718986359816427,
+    "clear": false
+   },
+   "new": {
+    "top6": 25.092936802973977,
+    "rest": 27.750247770069375,
+    "lo": -7.439402729084168,
+    "hi": 1.6066294605107387,
+    "clear": false
+   }
+  },
+  "selfish_pct": {
+   "old": {
+    "top6": 36.2453531598513,
+    "rest": 45.19326065411298,
+    "lo": -20.377443561784066,
+    "hi": 2.1003482602397696,
+    "clear": false
+   },
+   "new": {
+    "top6": 36.2453531598513,
+    "rest": 45.19326065411298,
+    "lo": -20.377443561784066,
+    "hi": 2.1003482602397696,
+    "clear": false
+   }
+  },
+  "cruiser_inside_pct": {
+   "old": {
+    "top6": 52.713178294573645,
+    "rest": 34.93449781659389,
+    "lo": 4.957203037376907,
+    "hi": 27.92730252687043,
+    "clear": true
+   },
+   "new": {
+    "top6": 52.713178294573645,
+    "rest": 34.93449781659389,
+    "lo": 4.957203037376907,
+    "hi": 27.92730252687043,
+    "clear": true
+   }
+  },
+  "own_half_pct": {
+   "old": {
+    "top6": 83.82899628252788,
+    "rest": 78.29534192269574,
+    "lo": 1.4294570251249041,
+    "hi": 9.810426212740069,
+    "clear": true
+   },
+   "new": {
+    "top6": 83.82899628252788,
+    "rest": 78.29534192269574,
+    "lo": 1.4294570251249041,
+    "hi": 9.810426212740069,
+    "clear": true
+   }
+  },
+  "sideways_pct": {
+   "old": {
+    "top6": 26.022304832713754,
+    "rest": 25.470763131813676,
+    "lo": -9.371606948968513,
+    "hi": 8.686706029701199,
+    "clear": false
+   },
+   "new": {
+    "top6": 26.022304832713754,
+    "rest": 25.470763131813676,
+    "lo": -9.371606948968513,
+    "hi": 8.686706029701199,
+    "clear": false
+   }
+  },
+  "caps_taken_pg": {
+   "old": {
+    "top6": 0.6272727272727273,
+    "rest": 0.4870689655172414,
+    "lo": -0.059566492829204676,
+    "hi": 0.32310114128295947,
+    "clear": false
+   },
+   "new": {
+    "top6": 0.8454545454545455,
+    "rest": 0.6120689655172413,
+    "lo": 0.042839607201309304,
+    "hi": 0.43753200204813103,
+    "clear": true
+   }
+  },
+  "cap_won_pg": {
+   "old": {
+    "top6": 1.2,
+    "rest": 0.8103448275862069,
+    "lo": 0.15194509636583442,
+    "hi": 0.6112443778110944,
+    "clear": true
+   },
+   "new": null
+  },
+  "cap_def_pg": {
+   "old": {
+    "top6": 1.481818181818182,
+    "rest": 1.3922413793103448,
+    "lo": -0.32479338842975203,
+    "hi": 0.47878787878787876,
+    "clear": false
+   },
+   "new": null
+  },
+  "deaths_pg": {
+   "old": {
+    "top6": 0.38181818181818183,
+    "rest": 0.5818965517241379,
+    "lo": -0.3719402985074627,
+    "hi": -0.05728571428571433,
+    "clear": true
+   },
+   "new": null
+  },
+  "we_took_n_pct": {
+   "old": null,
+   "new": {
+    "top6": 38.98916967509025,
+    "rest": 28.47222222222222,
+    "lo": 0.48120019087458843,
+    "hi": 21.454173067076297,
+    "clear": true
+   }
+  },
+  "we_took_c_pct": {
+   "old": null,
+   "new": {
+    "top6": 32.16374269005848,
+    "rest": 22.77227722772277,
+    "lo": 1.0980392156862742,
+    "hi": 17.601013866110037,
+    "clear": true
+   }
+  },
+  "not_lost_n_pct": {
+   "old": null,
+   "new": {
+    "top6": 85.71428571428571,
+    "rest": 82.95454545454545,
+    "lo": -3.294117647058812,
+    "hi": 8.623848079316474,
+    "clear": false
+   }
+  },
+  "not_lost_c_pct": {
+   "old": null,
+   "new": {
+    "top6": 83.5680751173709,
+    "rest": 75.82089552238806,
+    "lo": 1.8851783790634329,
+    "hi": 15.269399951743722,
+    "clear": true
+   }
+  },
+  "died_per100": {
+   "old": null,
+   "new": {
+    "top6": 12.267657992565056,
+    "rest": 19.3,
+    "lo": -13.308423913043478,
+    "hi": -2.594381204246673,
+    "clear": true
+   }
+  },
+  "caught_per100": {
+   "old": null,
+   "new": {
+    "top6": 7.806691449814126,
+    "rest": 13.37958374628345,
+    "lo": -9.519399331855919,
+    "hi": -2.8752621819618813,
+    "clear": true
+   }
+  },
+  "died_smoker_per100": {
+   "old": null,
+   "new": {
+    "top6": 8.178438661710038,
+    "rest": 15.1,
+    "lo": -12.284108493593935,
+    "hi": -3.153958825564363,
+    "clear": true
+   }
+  },
+  "caught_smoker_per100": {
+   "old": null,
+   "new": {
+    "top6": 4.275092936802974,
+    "rest": 9.217046580773042,
+    "lo": -8.597141602848641,
+    "hi": -2.5456325617176025,
+    "clear": true
+   }
+  },
+  "caps_taken_c_pg": {
+   "old": null,
+   "new": {
+    "top6": 0.8636363636363636,
+    "rest": 0.603448275862069,
+    "lo": 0.04637577491654743,
+    "hi": 0.4619565217391304,
+    "clear": true
+   }
+  },
+  "died_pg": {
+   "old": null,
+   "new": {
+    "top6": 0.6,
+    "rest": 0.8318965517241379,
+    "lo": -0.48655063291139244,
+    "hi": -0.029823651452282163,
+    "clear": true
+   }
+  },
+  "caught_pg": {
+   "old": null,
+   "new": {
+    "top6": 0.38181818181818183,
+    "rest": 0.5818965517241379,
+    "lo": -0.3719402985074627,
+    "hi": -0.05728571428571433,
+    "clear": true
+   }
+  }
+ },
+ "styles": {
+  "RESIN": {
+   "old": "Team smoke, plenty of it",
+   "new": "Team smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    -2.3827095299286754,
+    1.1484917942268287
+   ],
+   "new_axes": [
+    -2.3862047892085765,
+    1.1535158169377442
+   ],
+   "old_kept": 1.0,
+   "new_kept": 1.0
+  },
+  "H-SR": {
+   "old": "Team smoke, plenty of it",
+   "new": "Team smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    -4.581386995407328,
+    0.3175117877110024
+   ],
+   "new_axes": [
+    -4.568406555355721,
+    0.2802993175330817
+   ],
+   "old_kept": 0.955,
+   "new_kept": 0.95
+  },
+  "BONKZ": {
+   "old": "Team smoke, plenty of it",
+   "new": "Team smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    -2.2243444934356047,
+    0.9047797871053934
+   ],
+   "new_axes": [
+    -2.2261961597004953,
+    0.9075672946036557
+   ],
+   "old_kept": 0.95,
+   "new_kept": 0.95
+  },
+  "MZY": {
+   "old": "Team smoke, little of it",
+   "new": "Team smoke, little of it",
+   "moved": false,
+   "old_axes": [
+    -1.8473007924821347,
+    -3.25365927869952
+   ],
+   "new_axes": [
+    -1.847014486257697,
+    -3.2625507353397865
+   ],
+   "old_kept": 0.97,
+   "new_kept": 0.97
+  },
+  "HTDOG": {
+   "old": "Own smoke, plenty of it",
+   "new": "Own smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    2.4897597901587205,
+    0.7387262750767881
+   ],
+   "new_axes": [
+    2.5110309663039225,
+    0.6535681897804292
+   ],
+   "old_kept": 0.965,
+   "new_kept": 0.975
+  },
+  "EPOXY": {
+   "old": "Team smoke, plenty of it",
+   "new": "Team smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    -1.660352253267716,
+    1.2655815670379915
+   ],
+   "new_axes": [
+    -1.6658252322554739,
+    1.2756387745214786
+   ],
+   "old_kept": 0.995,
+   "new_kept": 0.995
+  },
+  "HFANS": {
+   "old": "Team smoke, plenty of it",
+   "new": "Team smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    0.3224021643145815,
+    1.2189972911829485
+   ],
+   "new_axes": [
+    0.3203730917901639,
+    1.232767533611183
+   ],
+   "old_kept": 0.575,
+   "new_kept": 0.575
+  },
+  "-BN-": {
+   "old": "Team smoke, plenty of it",
+   "new": "Team smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    -1.0001275362391462,
+    0.8243979547767667
+   ],
+   "new_axes": [
+    -1.0039469909333922,
+    0.8298455862093754
+   ],
+   "old_kept": 0.955,
+   "new_kept": 0.955
+  },
+  "KITE": {
+   "old": "Team smoke, plenty of it",
+   "new": "Team smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    -1.157890757522752,
+    0.25353630308235237
+   ],
+   "new_axes": [
+    -1.1596476544413301,
+    0.2611776863004344
+   ],
+   "old_kept": 0.715,
+   "new_kept": 0.715
+  },
+  "KITED": {
+   "old": "Own smoke, little of it",
+   "new": "Own smoke, little of it",
+   "moved": false,
+   "old_axes": [
+    2.7717869359843132,
+    -2.4895035481351653
+   ],
+   "new_axes": [
+    2.7710278483685045,
+    -2.481838788268118
+   ],
+   "old_kept": 1.0,
+   "new_kept": 1.0
+  },
+  "MACHX": {
+   "old": "Own smoke, plenty of it",
+   "new": "Own smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    1.1890824863352327,
+    0.5326710556089064
+   ],
+   "new_axes": [
+    1.1842065187041009,
+    0.5470214893733893
+   ],
+   "old_kept": 0.63,
+   "new_kept": 0.625
+  },
+  "REEEE": {
+   "old": "Team smoke, plenty of it",
+   "new": "Team smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    -0.07631319139003662,
+    0.7573934534991766
+   ],
+   "new_axes": [
+    -0.0798770866676726,
+    0.7602886500113708
+   ],
+   "old_kept": 0.53,
+   "new_kept": 0.535
+  },
+  "PFANS": {
+   "old": "Team smoke, little of it",
+   "new": "Team smoke, little of it",
+   "moved": false,
+   "old_axes": [
+    -0.9256799748451936,
+    -1.6126103139359838
+   ],
+   "new_axes": [
+    -0.927491233202538,
+    -1.6066530249580582
+   ],
+   "old_kept": 0.76,
+   "new_kept": 0.76
+  },
+  "KSC": {
+   "old": "Team smoke, plenty of it",
+   "new": "Team smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    -1.7338732621470985,
+    2.5384640166107095
+   ],
+   "new_axes": [
+    -1.737964473801041,
+    2.5463858458370376
+   ],
+   "old_kept": 1.0,
+   "new_kept": 1.0
+  },
+  "VRTUS": {
+   "old": "Own smoke, plenty of it",
+   "new": "Own smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    0.6826301232793152,
+    1.9672966367252895
+   ],
+   "new_axes": [
+    0.677912381010063,
+    1.9704732636285491
+   ],
+   "old_kept": 0.64,
+   "new_kept": 0.635
+  },
+  "5D": {
+   "old": "Own smoke, little of it",
+   "new": "Own smoke, little of it",
+   "moved": false,
+   "old_axes": [
+    1.6109617761368817,
+    -2.7738480534559207
+   ],
+   "new_axes": [
+    1.6119054275422013,
+    -2.764842584978394
+   ],
+   "old_kept": 0.975,
+   "new_kept": 0.975
+  },
+  "BONKY": {
+   "old": "Team smoke, plenty of it",
+   "new": "Team smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    -1.7374922539490134,
+    1.2679868933200327
+   ],
+   "new_axes": [
+    -1.7365803589398205,
+    1.270814158742619
+   ],
+   "old_kept": 0.85,
+   "new_kept": 0.85
+  },
+  "KSE": {
+   "old": "Own smoke, little of it",
+   "new": "Own smoke, little of it",
+   "moved": false,
+   "old_axes": [
+    3.0206616080829636,
+    -2.108630374120887
+   ],
+   "new_axes": [
+    3.0197054076080203,
+    -2.105477604245228
+   ],
+   "old_kept": 0.905,
+   "new_kept": 0.905
+  },
+  "MACH": {
+   "old": "Own smoke, plenty of it",
+   "new": "Own smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    3.679628406061789,
+    0.6268474239052461
+   ],
+   "new_axes": [
+    3.683429988498307,
+    0.6228512413004403
+   ],
+   "old_kept": 0.975,
+   "new_kept": 0.975
+  },
+  "NGA": {
+   "old": "Team smoke, little of it",
+   "new": "Team smoke, little of it",
+   "moved": false,
+   "old_axes": [
+    0.20553961294827205,
+    -2.1485809329528256
+   ],
+   "new_axes": [
+    0.20734608554958608,
+    -2.139002717981315
+   ],
+   "old_kept": 0.72,
+   "new_kept": 0.72
+  },
+  "PN": {
+   "old": "Team smoke, little of it",
+   "new": "Team smoke, little of it",
+   "moved": false,
+   "old_axes": [
+    -2.894134014554332,
+    -3.291112168285291
+   ],
+   "new_axes": [
+    -2.8932477222271187,
+    -3.2923141772660522
+   ],
+   "old_kept": 0.975,
+   "new_kept": 0.975
+  },
+  "RSR": {
+   "old": "Team smoke, plenty of it",
+   "new": "Team smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    -0.5619408358388137,
+    0.0020205194902003665
+   ],
+   "new_axes": [
+    -0.560207098271905,
+    0.008091312764456253
+   ],
+   "old_kept": 0.73,
+   "new_kept": 0.73
+  },
+  "SCCC2": {
+   "old": "Own smoke, plenty of it",
+   "new": "Own smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    2.8027322453717667,
+    2.1212633858124463
+   ],
+   "new_axes": [
+    2.7996123502796184,
+    2.1200592267126246
+   ],
+   "old_kept": 0.95,
+   "new_kept": 0.95
+  },
+  "UYSC": {
+   "old": "Own smoke, plenty of it",
+   "new": "Own smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    4.008360742334009,
+    1.191978524413513
+   ],
+   "new_axes": [
+    4.006059775608294,
+    1.2123142451690847
+   ],
+   "old_kept": 0.925,
+   "new_kept": 0.925
+  },
+  "BTLST": {
+   "old": "Own smoke, little of it",
+   "new": "Own smoke, little of it",
+   "moved": false,
+   "old_axes": [
+    0.7308474239977678,
+    -1.459608934491695
+   ],
+   "new_axes": [
+    0.7311320979475499,
+    -1.4435396251274852
+   ],
+   "old_kept": null,
+   "new_kept": null
+  },
+  "INCA": {
+   "old": "Team smoke, plenty of it",
+   "new": "Team smoke, plenty of it",
+   "moved": false,
+   "old_axes": [
+    0.14423966845985625,
+    2.1116814549172487
+   ],
+   "new_axes": [
+    0.13926567627037167,
+    2.113663027260962
+   ],
+   "old_kept": null,
+   "new_kept": null
+  },
+  "MANBA": {
+   "old": "Team smoke, little of it",
+   "new": "Team smoke, little of it",
+   "moved": false,
+   "old_axes": [
+    -0.9963203589681953,
+    -5.257927505715068
+   ],
+   "new_axes": [
+    -0.9979385341774529,
+    -5.2591427240456055
+   ],
+   "old_kept": null,
+   "new_kept": null
+  },
+  "OGF": {
+   "old": "Own smoke, little of it",
+   "new": "Own smoke, little of it",
+   "moved": false,
+   "old_axes": [
+    0.9114279974308879,
+    -2.063813346744426
+   ],
+   "new_axes": [
+    0.9145061586115499,
+    -2.062623600801412
+   ],
+   "old_kept": null,
+   "new_kept": null
+  },
+  "RMN": {
+   "old": "Team smoke, little of it",
+   "new": "Team smoke, little of it",
+   "moved": false,
+   "old_axes": [
+    -0.39688727553320213,
+    -2.2697814878137827
+   ],
+   "new_axes": [
+    -0.39440255128101503,
+    -2.2652886787998825
+   ],
+   "old_kept": null,
+   "new_kept": null
+  },
+  "KM": {
+   "old": "Team smoke, little of it",
+   "new": "Team smoke, little of it",
+   "moved": false,
+   "old_axes": [
+    -0.7332435074901641,
+    -3.5677542772073165
+   ],
+   "new_axes": [
+    -0.7336035516039612,
+    -3.565255871335538
+   ],
+   "old_kept": null,
+   "new_kept": null
+  }
+ }
+}

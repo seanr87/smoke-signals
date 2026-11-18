@@ -1,0 +1,58 @@
+#### Styles: pooled numbers (95% interval, games resampled within the style)
+
+| Score | Team smoke, plenty (11 clans, 167 games, 810 smokes) | Own smoke, plenty (6 clans, 64 games, 383 smokes) | Team smoke, little (4 clans, 45 games, 116 smokes) | Own smoke, little (3 clans, 31 games, 120 smokes) |
+|---|---|---|---|---|
+| Long-smoke destroyers per game | 1.0 (0.9 to 1.1) | 0.4 (0.3 to 0.5) | 0.6 (0.4 to 0.8) | 0.4 (0.2 to 0.5) |
+| Cap-sitter destroyers per game | 0.7 (0.6 to 0.8) | 1.1 (1.0 to 1.3) | 0.3 (0.1 to 0.4) | 0.8 (0.6 to 1.0) |
+| Destroyers carrying smoke per game | 1.7 (1.6 to 1.8) | 1.6 (1.4 to 1.8) | 0.9 (0.7 to 1.2) | 1.2 (1.0 to 1.3) |
+| Cruisers carrying smoke per game | 0.4 (0.3 to 0.5) | 1.1 (0.8 to 1.3) | 0.5 (0.4 to 0.7) | 1.2 (0.9 to 1.4) |
+| Exhaust-smoke ships per game | 0.3 (0.2 to 0.4) | 0.5 (0.3 to 0.6) | 0.6 (0.4 to 0.7) | 1.2 (1.0 to 1.5) |
+| Smokes per game | 4.9 (4.5 to 5.3) | 6.0 (5.1 to 6.8) | 2.6 (2.0 to 3.2) | 3.9 (3.4 to 4.5) |
+| First smoke of the game (median, s) | 2:42 (2:32 to 3:03) | 3:26 (3:00 to 4:04) | 3:04 (2:20 to 4:31) | 3:39 (3:00 to 4:15) |
+| Smokes after 12:00 (%) | 13 (10 to 16) | 13 (9 to 18) | 8 (3 to 13) | 6 (2 to 11) |
+| For a teammate (%) | 66 (61 to 70) | 45 (39 to 51) | 61 (50 to 70) | 44 (32 to 56) |
+| Stacked on a teammate (%) | 33 (29 to 37) | 19 (15 to 23) | 24 (17 to 31) | 10 (6 to 16) |
+| Radar cruiser inside (% of destroyer smokes) | 42 (36 to 48) | 28 (20 to 37) | 41 (29 to 52) | 7 (0 to 15) |
+| Median distance to cap edge (m) | 2,029 (1,675 to 2,617) | 1,980 (1,414 to 2,574) | 2,955 (2,046 to 4,123) | 2,240 (1,766 to 3,054) |
+| Inside a cap (%) | 24 (20 to 29) | 24 (19 to 29) | 17 (10 to 24) | 26 (19 to 32) |
+| Centre lane (%) | 19 (16 to 22) | 29 (23 to 36) | 23 (16 to 31) | 20 (13 to 27) |
+| Pushing (%) | 21 (18 to 24) | 17 (12 to 22) | 24 (17 to 32) | 25 (19 to 32) |
+| Kiting (%) | 17 (15 to 20) | 23 (18 to 28) | 16 (10 to 22) | 25 (18 to 32) |
+| Parked (%) | 25 (21 to 29) | 40 (34 to 48) | 17 (10 to 25) | 23 (17 to 29) |
+| Concealed damage per smoke | 11,692 (10,402 to 12,964) | 7,725 (6,524 to 9,044) | 9,204 (6,899 to 12,502) | 4,120 (2,772 to 5,724) |
+| Concealed damage per game | 56,712 (50,377 to 64,535) | 46,230 (35,518 to 56,839) | 23,726 (16,399 to 32,408) | 15,948 (10,177 to 22,684) |
+| Nearest cap taken (% of smokes where it was not ours) | 36 (30 to 41), n 425 | 29 (22 to 35), n 224 | 25 (15 to 37), n 76 | 30 (22 to 40), n 70 |
+| Contested cap taken (% of smokes where it was not ours) | 30 (25 to 34), n 538 | 23 (17 to 30), n 253 | 19 (11 to 29), n 89 | 23 (16 to 31), n 88 |
+| Nearest cap not lost (% of smokes within 2 km of it, cap not the enemy's) | 84 (80 to 88), n 277 | 88 (81 to 95), n 136 | 76 (63 to 88), n 34 | 89 (78 to 98), n 47 |
+| Contested cap not lost (% of smokes within 2 km of it, cap not the enemy's) | 79 (74 to 83), n 290 | 86 (78 to 93), n 144 | 70 (50 to 86), n 33 | 85 (70 to 95), n 41 |
+| Died per 100 smokes | 14.5 (11.8 to 17.3), n 801 | 13.6 (9.6 to 18.1), n 383 | 25.0 (16.2 to 33.3), n 116 | 27.5 (19.4 to 35.6), n 120 |
+| Caught per 100 smokes | 9.6 (7.5 to 12.1), n 810 | 9.4 (6.0 to 13.1), n 383 | 15.5 (8.8 to 22.8), n 116 | 19.2 (12.0 to 26.5), n 120 |
+| Smoker died per 100 smokes | 10.0 (7.8 to 12.4), n 801 | 11.2 (7.6 to 15.3), n 383 | 16.4 (9.8 to 23.2), n 116 | 24.2 (17.1 to 31.7), n 120 |
+| Smoker caught per 100 smokes | 5.1 (3.6 to 6.9), n 810 | 7.8 (4.7 to 11.1), n 383 | 8.6 (3.5 to 13.5), n 116 | 15.8 (10.2 to 21.7), n 120 |
+| Nearest caps taken with a smoke per game | 0.8 (0.7 to 0.9) | 0.8 (0.6 to 1.0) | 0.4 (0.2 to 0.6) | 0.6 (0.5 to 0.8) |
+| Contested caps taken with a smoke per game | 0.8 (0.7 to 1.0) | 0.7 (0.6 to 0.9) | 0.3 (0.2 to 0.5) | 0.6 (0.4 to 0.7) |
+
+#### Style members
+
+- **Team smoke, plenty of it** (W-L 101-66): Top 6: RESIN, H-SR, BONKZ, KITE | Rest: EPOXY, HFANS, -BN-, REEEE, KSC, BONKY, RSR | borderline (kept the style in under 75% of resamples): HFANS 57%, KITE 72%, REEEE 54%, RSR 73% | flagged small clans that would fall here: INCA
+- **Own smoke, plenty of it** (W-L 32-32): Top 6: HTDOG, VRTUS | Rest: MACHX, MACH, SCCC2, UYSC | borderline (kept the style in under 75% of resamples): MACHX 62%, VRTUS 64% | flagged small clans that would fall here: none
+- **Team smoke, little of it** (W-L 20-25): Top 6: none | Rest: MZY, PFANS, NGA, PN | borderline (kept the style in under 75% of resamples): NGA 72% | flagged small clans that would fall here: MANBA, RMN, KM
+- **Own smoke, little of it** (W-L 12-19): Top 6: none | Rest: KITED, 5D, KSE | borderline (kept the style in under 75% of resamples): none | flagged small clans that would fall here: BTLST, OGF
+
+#### Second check against round 4 (Top 6 only)
+
+| Score | H-SR, RESIN, BONKZ | HTDOG, VRTUS |
+|---|---|---|
+| Cruisers carrying smoke per game | 0.3 (0.2 to 0.4) | 1.2 (0.9 to 1.5) |
+| Long-smoke destroyers per game | 1.1 (1.0 to 1.3) | 0.4 (0.2 to 0.7) |
+| Smokes per game | 4.6 (4.0 to 5.1) | 6.5 (5.1 to 7.8) |
+| For a teammate (%) | 73 (66 to 80) | 49 (40 to 59) |
+| Stacked on a teammate (%) | 40 (32 to 48) | 20 (13 to 27) |
+| Parked (%) | 20 (13 to 27) | 45 (35 to 54) |
+| First smoke of the game (median, s) | 2:42 (2:24 to 3:13) | 3:49 (2:53 to 4:20) |
+
+- Axis 1: Top 6 mean -1.19, Rest mean +0.40, gap -1.59 (95% -3.58 to +0.47); Top 6 range -4.6 to +2.5, Rest range -2.9 to +4.0
+
+- Axis 2: Top 6 mean +0.87, Rest mean -0.29, gap +1.16 (95% +0.16 to +2.21 *); Top 6 range +0.3 to +2.0, Rest range -3.3 to +2.5
+- Clans in a "plenty" style: 17 of 24; Top 6 in them: 6 of 6. Chance that 6 clans drawn at random from the 24 all land there: 0.092
+- Top 6 in "Team smoke, plenty of it": 4 of 6 (11 of 24 clans are in it). Chance of 4 or more of 6 at random: 0.24

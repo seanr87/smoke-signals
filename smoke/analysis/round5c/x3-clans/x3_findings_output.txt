@@ -1,0 +1,1 @@
+wrote FINDINGS-X3.md 113 blocks; CHECK-X3.md; x3_changes.json | moved: none | borderline old ['HFANS', 'KITE', 'MACHX', 'NGA', 'REEEE', 'RSR', 'VRTUS'] new ['HFANS', 'KITE', 'MACHX', 'NGA', 'REEEE', 'RSR', 'VRTUS']

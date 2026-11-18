@@ -1,0 +1,4728 @@
+{
+ "note": "B3 per shot. A shot = one distinct firing moment and target among the smoker's shell, torpedo and airstrike events credited to its own smoke. Damage = every credited event (shells, fires, torpedoes) times its credited share. Per smoke = mean over smokes of each smoke's own-gun damage share. Positions from tracks at the firing moment (2 s samples, interpolated). Detection = the target's own track flag. Radar = the radar log lit spans.",
+ "check_damage": {
+  "Harugumo": {
+   "events_damage": 461873,
+   "smoke_records_smoker_damage": 461960,
+   "smoke_records_smoker_concealed": 397827,
+   "events_damage_attacker_not_detected": 397766
+  },
+  "Somers": {
+   "events_damage": 253013,
+   "smoke_records_smoker_damage": 253009,
+   "smoke_records_smoker_concealed": 221289,
+   "events_damage_attacker_not_detected": 221287
+  },
+  "Gearing": {
+   "events_damage": 94724,
+   "smoke_records_smoker_damage": 94736,
+   "smoke_records_smoker_concealed": 90198,
+   "events_damage_attacker_not_detected": 90186
+  },
+  "Delny": {
+   "events_damage": 3872,
+   "smoke_records_smoker_damage": 3872,
+   "smoke_records_smoker_concealed": 3558,
+   "events_damage_attacker_not_detected": 3558
+  }
+ },
+ "events_in_smoke_not_credited_dropped": 2,
+ "base": {
+  "Harugumo": {
+   "smokes": 100,
+   "smokes_with_own_damage": 44,
+   "clans": 15,
+   "clans_with_own_damage": 10,
+   "events": 898,
+   "shots": 410,
+   "damage": 461873,
+   "targets": 68,
+   "clans_txt": "Top 6: RESIN 12, H-SR 10, HTDOG 2, BONKZ 1 | Rest: EPOXY 9, KM 3, PFANS 2, PN 2, -BN- 2, MZY 1",
+   "top6_smokes_with_own_damage": 25,
+   "rest_smokes_with_own_damage": 19,
+   "top_smoke_share_of_damage_pct": 13.0,
+   "one_sided_shots": 0
+  },
+  "Somers": {
+   "smokes": 260,
+   "smokes_with_own_damage": 26,
+   "clans": 18,
+   "clans_with_own_damage": 12,
+   "events": 152,
+   "shots": 83,
+   "damage": 253013,
+   "targets": 35,
+   "clans_txt": "Top 6: RESIN 3, BONKZ 2, H-SR 1 | Rest: REEEE 6, HFANS 4, UYSC 2, BONKY 2, MZY 2, PFANS 1, INCA 1, -BN- 1, KITED 1",
+   "top6_smokes_with_own_damage": 6,
+   "rest_smokes_with_own_damage": 20,
+   "top_smoke_share_of_damage_pct": 20.8,
+   "one_sided_shots": 0
+  },
+  "Gearing": {
+   "smokes": 180,
+   "smokes_with_own_damage": 18,
+   "clans": 16,
+   "clans_with_own_damage": 8,
+   "events": 177,
+   "shots": 64,
+   "damage": 94724,
+   "targets": 21,
+   "clans_txt": "Top 6: KITE 4, BONKZ 1 | Rest: 5D 6, OGF 3, -BN- 1, UYSC 1, RSR 1, KSC 1",
+   "top6_smokes_with_own_damage": 5,
+   "rest_smokes_with_own_damage": 13,
+   "top_smoke_share_of_damage_pct": 30.6,
+   "one_sided_shots": 0
+  },
+  "Delny": {
+   "smokes": 22,
+   "smokes_with_own_damage": 2,
+   "clans": 2,
+   "clans_with_own_damage": 2,
+   "events": 2,
+   "shots": 2,
+   "damage": 3872,
+   "targets": 2,
+   "clans_txt": "Top 6: H-SR 1 | Rest: MZY 1",
+   "top6_smokes_with_own_damage": 1,
+   "rest_smokes_with_own_damage": 1,
+   "top_smoke_share_of_damage_pct": 91.9,
+   "one_sided_shots": 0
+  }
+ },
+ "cats": {
+  "nearest": [
+   "a ship outside the smoke",
+   "a second destroyer",
+   "the smoker itself",
+   "another ship in or behind the smoke",
+   "the radar cruiser inside the smoke"
+  ],
+  "spotter": [
+   "radar-lit from inside this smoke",
+   "radar-lit from elsewhere",
+   "detected, no radar: nearest ally a ship outside the smoke",
+   "detected, no radar: nearest ally a second destroyer",
+   "detected, no radar: nearest ally the smoker itself",
+   "detected, no radar: nearest ally another ship in or behind the smoke",
+   "detected, no radar: nearest ally the radar cruiser inside the smoke",
+   "not detected at the shot",
+   "detection unknown"
+  ],
+  "detected": [
+   "radar-lit",
+   "detected, not radar-lit",
+   "not detected",
+   "unknown"
+  ],
+  "radar": [
+   "radar ship inside this smoke",
+   "radar ship elsewhere",
+   "radar, source not attributed",
+   "no radar on the target"
+  ],
+  "candidates": [
+   "a second destroyer",
+   "another ship",
+   "the smoker (outside its smoke)",
+   "no ally outside the smoke within the target's detection range"
+  ]
+ },
+ "nearest": {
+  "Harugumo": {
+   "a ship outside the smoke": {
+    "shots_n": 183,
+    "shots_pct": 44.6,
+    "damage_pct": 55.1,
+    "per_smoke_pct": 41.9,
+    "shots_ci": [
+     27.3,
+     58.9
+    ],
+    "damage_ci": [
+     35.1,
+     66.1
+    ],
+    "per_smoke_ci": [
+     27.5,
+     51.0
+    ]
+   },
+   "a second destroyer": {
+    "shots_n": 99,
+    "shots_pct": 24.1,
+    "damage_pct": 20.5,
+    "per_smoke_pct": 24.6,
+    "shots_ci": [
+     13.6,
+     32.4
+    ],
+    "damage_ci": [
+     8.6,
+     29.9
+    ],
+    "per_smoke_ci": [
+     15.5,
+     34.0
+    ]
+   },
+   "the smoker itself": {
+    "shots_n": 126,
+    "shots_pct": 30.7,
+    "damage_pct": 24.3,
+    "per_smoke_pct": 31.3,
+    "shots_ci": [
+     15.4,
+     55.4
+    ],
+    "damage_ci": [
+     10.9,
+     50.7
+    ],
+    "per_smoke_ci": [
+     21.4,
+     44.6
+    ]
+   },
+   "another ship in or behind the smoke": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0,
+    "shots_ci": [
+     0.0,
+     0.0
+    ],
+    "damage_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "the radar cruiser inside the smoke": {
+    "shots_n": 2,
+    "shots_pct": 0.5,
+    "damage_pct": 0.1,
+    "per_smoke_pct": 2.3,
+    "shots_ci": [
+     0.0,
+     1.8
+    ],
+    "damage_ci": [
+     0.0,
+     0.6
+    ],
+    "per_smoke_ci": [
+     0.0,
+     6.5
+    ]
+   }
+  },
+  "Somers": {
+   "a ship outside the smoke": {
+    "shots_n": 31,
+    "shots_pct": 37.3,
+    "damage_pct": 27.7,
+    "per_smoke_pct": 27.7,
+    "shots_ci": [
+     15.7,
+     61.3
+    ],
+    "damage_ci": [
+     7.6,
+     54.6
+    ],
+    "per_smoke_ci": [
+     12.8,
+     45.3
+    ]
+   },
+   "a second destroyer": {
+    "shots_n": 9,
+    "shots_pct": 10.8,
+    "damage_pct": 12.8,
+    "per_smoke_pct": 10.4,
+    "shots_ci": [
+     0.0,
+     24.4
+    ],
+    "damage_ci": [
+     0.0,
+     38.2
+    ],
+    "per_smoke_ci": [
+     0.0,
+     22.7
+    ]
+   },
+   "the smoker itself": {
+    "shots_n": 40,
+    "shots_pct": 48.2,
+    "damage_pct": 51.0,
+    "per_smoke_pct": 54.2,
+    "shots_ci": [
+     28.7,
+     66.7
+    ],
+    "damage_ci": [
+     17.9,
+     85.4
+    ],
+    "per_smoke_ci": [
+     32.8,
+     71.6
+    ]
+   },
+   "another ship in or behind the smoke": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0,
+    "shots_ci": [
+     0.0,
+     0.0
+    ],
+    "damage_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "the radar cruiser inside the smoke": {
+    "shots_n": 3,
+    "shots_pct": 3.6,
+    "damage_pct": 8.5,
+    "per_smoke_pct": 7.7,
+    "shots_ci": [
+     0.0,
+     8.2
+    ],
+    "damage_ci": [
+     0.0,
+     19.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     14.8
+    ]
+   }
+  },
+  "Gearing": {
+   "a ship outside the smoke": {
+    "shots_n": 5,
+    "shots_pct": 7.8,
+    "damage_pct": 11.2,
+    "per_smoke_pct": 15.2,
+    "shots_ci": [
+     2.1,
+     15.2
+    ],
+    "damage_ci": [
+     1.8,
+     26.7
+    ],
+    "per_smoke_ci": [
+     6.8,
+     21.9
+    ]
+   },
+   "a second destroyer": {
+    "shots_n": 1,
+    "shots_pct": 1.6,
+    "damage_pct": 0.5,
+    "per_smoke_pct": 5.6,
+    "shots_ci": [
+     0.0,
+     3.7
+    ],
+    "damage_ci": [
+     0.0,
+     1.5
+    ],
+    "per_smoke_ci": [
+     0.0,
+     13.0
+    ]
+   },
+   "the smoker itself": {
+    "shots_n": 58,
+    "shots_pct": 90.6,
+    "damage_pct": 88.3,
+    "per_smoke_pct": 79.2,
+    "shots_ci": [
+     84.4,
+     97.6
+    ],
+    "damage_ci": [
+     72.2,
+     98.3
+    ],
+    "per_smoke_ci": [
+     71.4,
+     93.2
+    ]
+   },
+   "another ship in or behind the smoke": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0,
+    "shots_ci": [
+     0.0,
+     0.0
+    ],
+    "damage_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "the radar cruiser inside the smoke": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0,
+    "shots_ci": [
+     0.0,
+     0.0
+    ],
+    "damage_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "Delny": {
+   "a ship outside the smoke": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0
+   },
+   "a second destroyer": {
+    "shots_n": 1,
+    "shots_pct": 50.0,
+    "damage_pct": 8.1,
+    "per_smoke_pct": 50.0
+   },
+   "the smoker itself": {
+    "shots_n": 1,
+    "shots_pct": 50.0,
+    "damage_pct": 91.9,
+    "per_smoke_pct": 50.0
+   },
+   "another ship in or behind the smoke": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0
+   },
+   "the radar cruiser inside the smoke": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0
+   }
+  }
+ },
+ "nearest_contrasts": [
+  {
+   "what": "a ship outside the smoke",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": 7.3,
+   "ci": [
+    -20.2,
+    34.9
+   ],
+   "clear": false
+  },
+  {
+   "what": "a ship outside the smoke",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": 27.4,
+   "ci": [
+    0.8,
+    51.9
+   ],
+   "clear": true
+  },
+  {
+   "what": "a ship outside the smoke",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": 14.2,
+   "ci": [
+    -5.2,
+    31.6
+   ],
+   "clear": false
+  },
+  {
+   "what": "a ship outside the smoke",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": 36.8,
+   "ci": [
+    17.3,
+    52.5
+   ],
+   "clear": true
+  },
+  {
+   "what": "a ship outside the smoke",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": 43.9,
+   "ci": [
+    14.1,
+    60.5
+   ],
+   "clear": true
+  },
+  {
+   "what": "a ship outside the smoke",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": 26.6,
+   "ci": [
+    11.0,
+    43.4
+   ],
+   "clear": true
+  },
+  {
+   "what": "a second destroyer",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": 13.3,
+   "ci": [
+    -4.7,
+    26.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "a second destroyer",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": 7.7,
+   "ci": [
+    -21.4,
+    24.7
+   ],
+   "clear": false
+  },
+  {
+   "what": "a second destroyer",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": 14.2,
+   "ci": [
+    0.0,
+    25.3
+   ],
+   "clear": true
+  },
+  {
+   "what": "a second destroyer",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": 22.6,
+   "ci": [
+    11.6,
+    30.2
+   ],
+   "clear": true
+  },
+  {
+   "what": "a second destroyer",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": 19.9,
+   "ci": [
+    8.5,
+    29.5
+   ],
+   "clear": true
+  },
+  {
+   "what": "a second destroyer",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": 19.0,
+   "ci": [
+    6.8,
+    31.1
+   ],
+   "clear": true
+  },
+  {
+   "what": "the smoker itself",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": -17.5,
+   "ci": [
+    -41.5,
+    10.4
+   ],
+   "clear": false
+  },
+  {
+   "what": "the smoker itself",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": -26.7,
+   "ci": [
+    -55.1,
+    7.4
+   ],
+   "clear": false
+  },
+  {
+   "what": "the smoker itself",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": -23.0,
+   "ci": [
+    -42.2,
+    -3.8
+   ],
+   "clear": true
+  },
+  {
+   "what": "the smoker itself",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": -59.9,
+   "ci": [
+    -79.5,
+    -32.8
+   ],
+   "clear": true
+  },
+  {
+   "what": "the smoker itself",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": -64.0,
+   "ci": [
+    -83.2,
+    -35.4
+   ],
+   "clear": true
+  },
+  {
+   "what": "the smoker itself",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": -47.9,
+   "ci": [
+    -68.3,
+    -32.4
+   ],
+   "clear": true
+  },
+  {
+   "what": "another ship in or behind the smoke",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "another ship in or behind the smoke",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "another ship in or behind the smoke",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "another ship in or behind the smoke",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "another ship in or behind the smoke",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "another ship in or behind the smoke",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "the radar cruiser inside the smoke",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": -3.1,
+   "ci": [
+    -7.7,
+    1.3
+   ],
+   "clear": false
+  },
+  {
+   "what": "the radar cruiser inside the smoke",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": -8.3,
+   "ci": [
+    -20.2,
+    0.4
+   ],
+   "clear": false
+  },
+  {
+   "what": "the radar cruiser inside the smoke",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": -5.4,
+   "ci": [
+    -14.3,
+    5.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "the radar cruiser inside the smoke",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": 0.5,
+   "ci": [
+    0.0,
+    2.2
+   ],
+   "clear": false
+  },
+  {
+   "what": "the radar cruiser inside the smoke",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": 0.1,
+   "ci": [
+    0.0,
+    0.5
+   ],
+   "clear": false
+  },
+  {
+   "what": "the radar cruiser inside the smoke",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": 2.3,
+   "ci": [
+    0.0,
+    6.5
+   ],
+   "clear": false
+  }
+ ],
+ "spotter": {
+  "Harugumo": {
+   "radar-lit from inside this smoke": {
+    "shots_n": 13,
+    "shots_pct": 3.2,
+    "damage_pct": 2.4,
+    "per_smoke_pct": 3.2,
+    "shots_ci": [
+     0.0,
+     13.4
+    ],
+    "damage_ci": [
+     0.0,
+     11.1
+    ],
+    "per_smoke_ci": [
+     0.0,
+     12.6
+    ]
+   },
+   "radar-lit from elsewhere": {
+    "shots_n": 76,
+    "shots_pct": 18.5,
+    "damage_pct": 16.8,
+    "per_smoke_pct": 27.3,
+    "shots_ci": [
+     4.4,
+     28.1
+    ],
+    "damage_ci": [
+     2.3,
+     24.0
+    ],
+    "per_smoke_ci": [
+     10.8,
+     38.7
+    ]
+   },
+   "detected, no radar: nearest ally a ship outside the smoke": {
+    "shots_n": 125,
+    "shots_pct": 30.5,
+    "damage_pct": 33.6,
+    "per_smoke_pct": 26.8,
+    "shots_ci": [
+     19.4,
+     37.2
+    ],
+    "damage_ci": [
+     25.5,
+     41.4
+    ],
+    "per_smoke_ci": [
+     19.6,
+     37.8
+    ]
+   },
+   "detected, no radar: nearest ally a second destroyer": {
+    "shots_n": 71,
+    "shots_pct": 17.3,
+    "damage_pct": 12.9,
+    "per_smoke_pct": 16.1,
+    "shots_ci": [
+     11.3,
+     25.1
+    ],
+    "damage_ci": [
+     7.3,
+     25.1
+    ],
+    "per_smoke_ci": [
+     8.2,
+     27.0
+    ]
+   },
+   "detected, no radar: nearest ally the smoker itself": {
+    "shots_n": 99,
+    "shots_pct": 24.1,
+    "damage_pct": 19.8,
+    "per_smoke_pct": 14.8,
+    "shots_ci": [
+     10.6,
+     46.0
+    ],
+    "damage_ci": [
+     8.5,
+     43.1
+    ],
+    "per_smoke_ci": [
+     8.2,
+     21.0
+    ]
+   },
+   "detected, no radar: nearest ally another ship in or behind the smoke": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0,
+    "shots_ci": [
+     0.0,
+     0.0
+    ],
+    "damage_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "detected, no radar: nearest ally the radar cruiser inside the smoke": {
+    "shots_n": 1,
+    "shots_pct": 0.2,
+    "damage_pct": 0.1,
+    "per_smoke_pct": 2.3,
+    "shots_ci": [
+     0.0,
+     0.9
+    ],
+    "damage_ci": [
+     0.0,
+     0.6
+    ],
+    "per_smoke_ci": [
+     0.0,
+     6.5
+    ]
+   },
+   "not detected at the shot": {
+    "shots_n": 25,
+    "shots_pct": 6.1,
+    "damage_pct": 14.3,
+    "per_smoke_pct": 9.5,
+    "shots_ci": [
+     2.6,
+     8.8
+    ],
+    "damage_ci": [
+     3.3,
+     20.9
+    ],
+    "per_smoke_ci": [
+     3.2,
+     15.2
+    ]
+   },
+   "detection unknown": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0,
+    "shots_ci": [
+     0.0,
+     0.0
+    ],
+    "damage_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "Somers": {
+   "radar-lit from inside this smoke": {
+    "shots_n": 6,
+    "shots_pct": 7.2,
+    "damage_pct": 2.6,
+    "per_smoke_pct": 11.5,
+    "shots_ci": [
+     0.0,
+     16.0
+    ],
+    "damage_ci": [
+     0.0,
+     5.8
+    ],
+    "per_smoke_ci": [
+     0.0,
+     22.2
+    ]
+   },
+   "radar-lit from elsewhere": {
+    "shots_n": 16,
+    "shots_pct": 19.3,
+    "damage_pct": 6.7,
+    "per_smoke_pct": 14.0,
+    "shots_ci": [
+     6.6,
+     34.2
+    ],
+    "damage_ci": [
+     2.0,
+     12.6
+    ],
+    "per_smoke_ci": [
+     4.8,
+     23.2
+    ]
+   },
+   "detected, no radar: nearest ally a ship outside the smoke": {
+    "shots_n": 26,
+    "shots_pct": 31.3,
+    "damage_pct": 26.2,
+    "per_smoke_pct": 19.7,
+    "shots_ci": [
+     10.6,
+     54.3
+    ],
+    "damage_ci": [
+     5.6,
+     52.5
+    ],
+    "per_smoke_ci": [
+     4.9,
+     38.2
+    ]
+   },
+   "detected, no radar: nearest ally a second destroyer": {
+    "shots_n": 8,
+    "shots_pct": 9.6,
+    "damage_pct": 7.3,
+    "per_smoke_pct": 8.3,
+    "shots_ci": [
+     0.0,
+     23.9
+    ],
+    "damage_ci": [
+     0.0,
+     20.4
+    ],
+    "per_smoke_ci": [
+     0.0,
+     19.7
+    ]
+   },
+   "detected, no radar: nearest ally the smoker itself": {
+    "shots_n": 19,
+    "shots_pct": 22.9,
+    "damage_pct": 26.6,
+    "per_smoke_pct": 25.6,
+    "shots_ci": [
+     9.0,
+     40.4
+    ],
+    "damage_ci": [
+     4.5,
+     62.1
+    ],
+    "per_smoke_ci": [
+     11.3,
+     43.8
+    ]
+   },
+   "detected, no radar: nearest ally another ship in or behind the smoke": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0,
+    "shots_ci": [
+     0.0,
+     0.0
+    ],
+    "damage_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "detected, no radar: nearest ally the radar cruiser inside the smoke": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0,
+    "shots_ci": [
+     0.0,
+     0.0
+    ],
+    "damage_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "not detected at the shot": {
+    "shots_n": 8,
+    "shots_pct": 9.6,
+    "damage_pct": 30.5,
+    "per_smoke_pct": 20.8,
+    "shots_ci": [
+     6.2,
+     13.0
+    ],
+    "damage_ci": [
+     5.4,
+     53.4
+    ],
+    "per_smoke_ci": [
+     11.4,
+     31.7
+    ]
+   },
+   "detection unknown": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0,
+    "shots_ci": [
+     0.0,
+     0.0
+    ],
+    "damage_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "Gearing": {
+   "radar-lit from inside this smoke": {
+    "shots_n": 2,
+    "shots_pct": 3.1,
+    "damage_pct": 3.1,
+    "per_smoke_pct": 5.6,
+    "shots_ci": [
+     0.0,
+     14.0
+    ],
+    "damage_ci": [
+     0.0,
+     15.3
+    ],
+    "per_smoke_ci": [
+     0.0,
+     23.1
+    ]
+   },
+   "radar-lit from elsewhere": {
+    "shots_n": 25,
+    "shots_pct": 39.1,
+    "damage_pct": 25.3,
+    "per_smoke_pct": 29.4,
+    "shots_ci": [
+     17.9,
+     57.6
+    ],
+    "damage_ci": [
+     11.1,
+     40.8
+    ],
+    "per_smoke_ci": [
+     17.6,
+     50.0
+    ]
+   },
+   "detected, no radar: nearest ally a ship outside the smoke": {
+    "shots_n": 5,
+    "shots_pct": 7.8,
+    "damage_pct": 11.2,
+    "per_smoke_pct": 15.2,
+    "shots_ci": [
+     2.1,
+     16.1
+    ],
+    "damage_ci": [
+     0.0,
+     27.7
+    ],
+    "per_smoke_ci": [
+     6.8,
+     21.6
+    ]
+   },
+   "detected, no radar: nearest ally a second destroyer": {
+    "shots_n": 1,
+    "shots_pct": 1.6,
+    "damage_pct": 0.5,
+    "per_smoke_pct": 5.6,
+    "shots_ci": [
+     0.0,
+     3.8
+    ],
+    "damage_ci": [
+     0.0,
+     1.6
+    ],
+    "per_smoke_ci": [
+     0.0,
+     12.0
+    ]
+   },
+   "detected, no radar: nearest ally the smoker itself": {
+    "shots_n": 21,
+    "shots_pct": 32.8,
+    "damage_pct": 41.3,
+    "per_smoke_pct": 18.7,
+    "shots_ci": [
+     16.0,
+     42.5
+    ],
+    "damage_ci": [
+     14.2,
+     54.6
+    ],
+    "per_smoke_ci": [
+     10.4,
+     31.7
+    ]
+   },
+   "detected, no radar: nearest ally another ship in or behind the smoke": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0,
+    "shots_ci": [
+     0.0,
+     0.0
+    ],
+    "damage_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "detected, no radar: nearest ally the radar cruiser inside the smoke": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0,
+    "shots_ci": [
+     0.0,
+     0.0
+    ],
+    "damage_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "not detected at the shot": {
+    "shots_n": 10,
+    "shots_pct": 15.6,
+    "damage_pct": 18.6,
+    "per_smoke_pct": 25.6,
+    "shots_ci": [
+     2.9,
+     30.4
+    ],
+    "damage_ci": [
+     11.4,
+     34.8
+    ],
+    "per_smoke_ci": [
+     7.2,
+     41.3
+    ]
+   },
+   "detection unknown": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0,
+    "shots_ci": [
+     0.0,
+     0.0
+    ],
+    "damage_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "Delny": {
+   "radar-lit from inside this smoke": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0
+   },
+   "radar-lit from elsewhere": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0
+   },
+   "detected, no radar: nearest ally a ship outside the smoke": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0
+   },
+   "detected, no radar: nearest ally a second destroyer": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0
+   },
+   "detected, no radar: nearest ally the smoker itself": {
+    "shots_n": 1,
+    "shots_pct": 50.0,
+    "damage_pct": 91.9,
+    "per_smoke_pct": 50.0
+   },
+   "detected, no radar: nearest ally another ship in or behind the smoke": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0
+   },
+   "detected, no radar: nearest ally the radar cruiser inside the smoke": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0
+   },
+   "not detected at the shot": {
+    "shots_n": 1,
+    "shots_pct": 50.0,
+    "damage_pct": 8.1,
+    "per_smoke_pct": 50.0
+   },
+   "detection unknown": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0
+   }
+  }
+ },
+ "spotter_contrasts": [
+  {
+   "what": "radar-lit from inside this smoke",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": -4.1,
+   "ci": [
+    -13.0,
+    9.7
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar-lit from inside this smoke",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": -0.2,
+   "ci": [
+    -4.9,
+    8.5
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar-lit from inside this smoke",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": -8.4,
+   "ci": [
+    -19.3,
+    6.2
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar-lit from inside this smoke",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": 0.0,
+   "ci": [
+    -15.4,
+    14.1
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar-lit from inside this smoke",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": -0.7,
+   "ci": [
+    -18.8,
+    10.8
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar-lit from inside this smoke",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": -2.4,
+   "ci": [
+    -23.8,
+    11.1
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar-lit from elsewhere",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": -0.7,
+   "ci": [
+    -22.9,
+    17.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar-lit from elsewhere",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": 10.0,
+   "ci": [
+    -8.3,
+    19.8
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar-lit from elsewhere",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": 13.3,
+   "ci": [
+    -9.0,
+    29.5
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar-lit from elsewhere",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": -20.5,
+   "ci": [
+    -46.4,
+    4.3
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar-lit from elsewhere",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": -8.5,
+   "ci": [
+    -32.2,
+    9.4
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar-lit from elsewhere",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": -2.0,
+   "ci": [
+    -26.2,
+    14.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally a ship outside the smoke",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": -0.8,
+   "ci": [
+    -24.6,
+    22.9
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally a ship outside the smoke",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": 7.4,
+   "ci": [
+    -21.4,
+    34.7
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally a ship outside the smoke",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": 7.1,
+   "ci": [
+    -12.9,
+    26.9
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally a ship outside the smoke",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": 22.7,
+   "ci": [
+    11.1,
+    33.3
+   ],
+   "clear": true
+  },
+  {
+   "what": "detected, no radar: nearest ally a ship outside the smoke",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": 22.4,
+   "ci": [
+    5.2,
+    35.0
+   ],
+   "clear": true
+  },
+  {
+   "what": "detected, no radar: nearest ally a ship outside the smoke",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": 11.6,
+   "ci": [
+    0.9,
+    27.4
+   ],
+   "clear": true
+  },
+  {
+   "what": "detected, no radar: nearest ally a second destroyer",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": 7.7,
+   "ci": [
+    -6.7,
+    19.9
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally a second destroyer",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": 5.6,
+   "ci": [
+    -8.3,
+    20.5
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally a second destroyer",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": 7.8,
+   "ci": [
+    -6.1,
+    21.1
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally a second destroyer",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": 15.8,
+   "ci": [
+    9.3,
+    24.6
+   ],
+   "clear": true
+  },
+  {
+   "what": "detected, no radar: nearest ally a second destroyer",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": 12.4,
+   "ci": [
+    6.1,
+    25.9
+   ],
+   "clear": true
+  },
+  {
+   "what": "detected, no radar: nearest ally a second destroyer",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": 10.5,
+   "ci": [
+    -0.4,
+    24.7
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally the smoker itself",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": 1.3,
+   "ci": [
+    -22.2,
+    28.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally the smoker itself",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": -6.8,
+   "ci": [
+    -37.2,
+    21.3
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally the smoker itself",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": -10.8,
+   "ci": [
+    -32.9,
+    7.7
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally the smoker itself",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": -8.7,
+   "ci": [
+    -28.0,
+    21.2
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally the smoker itself",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": -21.5,
+   "ci": [
+    -41.7,
+    16.9
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally the smoker itself",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": -3.9,
+   "ci": [
+    -20.8,
+    9.6
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally another ship in or behind the smoke",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally another ship in or behind the smoke",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally another ship in or behind the smoke",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally another ship in or behind the smoke",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally another ship in or behind the smoke",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally another ship in or behind the smoke",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally the radar cruiser inside the smoke",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": 0.2,
+   "ci": [
+    0.0,
+    1.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally the radar cruiser inside the smoke",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": 0.1,
+   "ci": [
+    0.0,
+    0.5
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally the radar cruiser inside the smoke",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": 2.3,
+   "ci": [
+    0.0,
+    6.7
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally the radar cruiser inside the smoke",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": 0.2,
+   "ci": [
+    0.0,
+    0.9
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally the radar cruiser inside the smoke",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": 0.1,
+   "ci": [
+    0.0,
+    0.5
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, no radar: nearest ally the radar cruiser inside the smoke",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": 2.3,
+   "ci": [
+    0.0,
+    6.7
+   ],
+   "clear": false
+  },
+  {
+   "what": "not detected at the shot",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": -3.5,
+   "ci": [
+    -8.2,
+    1.4
+   ],
+   "clear": false
+  },
+  {
+   "what": "not detected at the shot",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": -16.2,
+   "ci": [
+    -47.4,
+    4.3
+   ],
+   "clear": false
+  },
+  {
+   "what": "not detected at the shot",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": -11.3,
+   "ci": [
+    -23.0,
+    -0.1
+   ],
+   "clear": true
+  },
+  {
+   "what": "not detected at the shot",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": -9.5,
+   "ci": [
+    -26.8,
+    3.2
+   ],
+   "clear": false
+  },
+  {
+   "what": "not detected at the shot",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": -4.3,
+   "ci": [
+    -24.8,
+    5.6
+   ],
+   "clear": false
+  },
+  {
+   "what": "not detected at the shot",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": -16.1,
+   "ci": [
+    -33.3,
+    4.3
+   ],
+   "clear": false
+  },
+  {
+   "what": "detection unknown",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "detection unknown",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "detection unknown",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "detection unknown",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "detection unknown",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "detection unknown",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  }
+ ],
+ "detected": {
+  "Harugumo": {
+   "radar-lit": {
+    "shots_n": 89,
+    "shots_pct": 21.7,
+    "damage_pct": 19.2,
+    "per_smoke_pct": 30.5,
+    "shots_ci": [
+     7.4,
+     32.1
+    ],
+    "damage_ci": [
+     5.4,
+     26.1
+    ],
+    "per_smoke_ci": [
+     17.3,
+     42.6
+    ]
+   },
+   "detected, not radar-lit": {
+    "shots_n": 296,
+    "shots_pct": 72.2,
+    "damage_pct": 66.5,
+    "per_smoke_pct": 60.0,
+    "shots_ci": [
+     61.3,
+     86.9
+    ],
+    "damage_ci": [
+     54.6,
+     87.0
+    ],
+    "per_smoke_ci": [
+     47.2,
+     75.3
+    ]
+   },
+   "not detected": {
+    "shots_n": 25,
+    "shots_pct": 6.1,
+    "damage_pct": 14.3,
+    "per_smoke_pct": 9.5,
+    "shots_ci": [
+     3.1,
+     9.0
+    ],
+    "damage_ci": [
+     3.5,
+     20.7
+    ],
+    "per_smoke_ci": [
+     4.6,
+     15.3
+    ]
+   },
+   "unknown": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0,
+    "shots_ci": [
+     0.0,
+     0.0
+    ],
+    "damage_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "Somers": {
+   "radar-lit": {
+    "shots_n": 22,
+    "shots_pct": 26.5,
+    "damage_pct": 9.4,
+    "per_smoke_pct": 25.6,
+    "shots_ci": [
+     10.9,
+     40.8
+    ],
+    "damage_ci": [
+     3.3,
+     14.7
+    ],
+    "per_smoke_ci": [
+     8.9,
+     40.0
+    ]
+   },
+   "detected, not radar-lit": {
+    "shots_n": 53,
+    "shots_pct": 63.9,
+    "damage_pct": 60.1,
+    "per_smoke_pct": 53.7,
+    "shots_ci": [
+     48.5,
+     80.0
+    ],
+    "damage_ci": [
+     34.3,
+     82.6
+    ],
+    "per_smoke_ci": [
+     41.8,
+     69.7
+    ]
+   },
+   "not detected": {
+    "shots_n": 8,
+    "shots_pct": 9.6,
+    "damage_pct": 30.5,
+    "per_smoke_pct": 20.8,
+    "shots_ci": [
+     5.7,
+     13.3
+    ],
+    "damage_ci": [
+     6.6,
+     52.1
+    ],
+    "per_smoke_ci": [
+     11.5,
+     32.0
+    ]
+   },
+   "unknown": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0,
+    "shots_ci": [
+     0.0,
+     0.0
+    ],
+    "damage_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "Gearing": {
+   "radar-lit": {
+    "shots_n": 27,
+    "shots_pct": 42.2,
+    "damage_pct": 28.4,
+    "per_smoke_pct": 34.9,
+    "shots_ci": [
+     22.6,
+     65.8
+    ],
+    "damage_ci": [
+     14.4,
+     52.2
+    ],
+    "per_smoke_ci": [
+     22.8,
+     63.6
+    ]
+   },
+   "detected, not radar-lit": {
+    "shots_n": 27,
+    "shots_pct": 42.2,
+    "damage_pct": 53.0,
+    "per_smoke_pct": 39.5,
+    "shots_ci": [
+     23.7,
+     51.7
+    ],
+    "damage_ci": [
+     26.4,
+     61.9
+    ],
+    "per_smoke_ci": [
+     19.2,
+     51.8
+    ]
+   },
+   "not detected": {
+    "shots_n": 10,
+    "shots_pct": 15.6,
+    "damage_pct": 18.6,
+    "per_smoke_pct": 25.6,
+    "shots_ci": [
+     4.0,
+     31.9
+    ],
+    "damage_ci": [
+     11.4,
+     34.4
+    ],
+    "per_smoke_ci": [
+     6.1,
+     39.9
+    ]
+   },
+   "unknown": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0,
+    "shots_ci": [
+     0.0,
+     0.0
+    ],
+    "damage_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "Delny": {
+   "radar-lit": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0
+   },
+   "detected, not radar-lit": {
+    "shots_n": 1,
+    "shots_pct": 50.0,
+    "damage_pct": 91.9,
+    "per_smoke_pct": 50.0
+   },
+   "not detected": {
+    "shots_n": 1,
+    "shots_pct": 50.0,
+    "damage_pct": 8.1,
+    "per_smoke_pct": 50.0
+   },
+   "unknown": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0
+   }
+  }
+ },
+ "detected_contrasts": [
+  {
+   "what": "radar-lit",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": -4.8,
+   "ci": [
+    -29.2,
+    14.5
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar-lit",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": 9.8,
+   "ci": [
+    -7.5,
+    19.5
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar-lit",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": 4.9,
+   "ci": [
+    -16.9,
+    27.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar-lit",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": -20.5,
+   "ci": [
+    -51.9,
+    5.1
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar-lit",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": -9.2,
+   "ci": [
+    -35.6,
+    6.1
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar-lit",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": -4.4,
+   "ci": [
+    -37.5,
+    13.3
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, not radar-lit",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": 8.3,
+   "ci": [
+    -12.0,
+    29.1
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, not radar-lit",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": 6.3,
+   "ci": [
+    -17.5,
+    45.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, not radar-lit",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": 6.3,
+   "ci": [
+    -13.3,
+    26.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, not radar-lit",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": 30.0,
+   "ci": [
+    13.5,
+    57.9
+   ],
+   "clear": true
+  },
+  {
+   "what": "detected, not radar-lit",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": 13.5,
+   "ci": [
+    -1.8,
+    50.4
+   ],
+   "clear": false
+  },
+  {
+   "what": "detected, not radar-lit",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": 20.5,
+   "ci": [
+    2.0,
+    47.6
+   ],
+   "clear": true
+  },
+  {
+   "what": "not detected",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": -3.5,
+   "ci": [
+    -8.6,
+    0.8
+   ],
+   "clear": false
+  },
+  {
+   "what": "not detected",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": -16.2,
+   "ci": [
+    -45.0,
+    4.6
+   ],
+   "clear": false
+  },
+  {
+   "what": "not detected",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": -11.3,
+   "ci": [
+    -22.5,
+    0.7
+   ],
+   "clear": false
+  },
+  {
+   "what": "not detected",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": -9.5,
+   "ci": [
+    -28.9,
+    2.8
+   ],
+   "clear": false
+  },
+  {
+   "what": "not detected",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": -4.3,
+   "ci": [
+    -24.5,
+    5.7
+   ],
+   "clear": false
+  },
+  {
+   "what": "not detected",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": -16.1,
+   "ci": [
+    -34.4,
+    3.8
+   ],
+   "clear": false
+  },
+  {
+   "what": "unknown",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "unknown",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "unknown",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "unknown",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "unknown",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "unknown",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ],
+   "clear": false
+  }
+ ],
+ "radar": {
+  "Harugumo": {
+   "radar ship inside this smoke": {
+    "shots_n": 13,
+    "shots_pct": 3.2,
+    "damage_pct": 2.4,
+    "per_smoke_pct": 3.2,
+    "shots_ci": [
+     0.0,
+     13.3
+    ],
+    "damage_ci": [
+     0.0,
+     11.6
+    ],
+    "per_smoke_ci": [
+     0.0,
+     10.9
+    ]
+   },
+   "radar ship elsewhere": {
+    "shots_n": 75,
+    "shots_pct": 18.3,
+    "damage_pct": 16.6,
+    "per_smoke_pct": 25.0,
+    "shots_ci": [
+     4.3,
+     27.9
+    ],
+    "damage_ci": [
+     1.8,
+     23.5
+    ],
+    "per_smoke_ci": [
+     9.7,
+     37.9
+    ]
+   },
+   "radar, source not attributed": {
+    "shots_n": 1,
+    "shots_pct": 0.2,
+    "damage_pct": 0.2,
+    "per_smoke_pct": 2.3,
+    "shots_ci": [
+     0.0,
+     0.8
+    ],
+    "damage_ci": [
+     0.0,
+     0.7
+    ],
+    "per_smoke_ci": [
+     0.0,
+     6.0
+    ]
+   },
+   "no radar on the target": {
+    "shots_n": 321,
+    "shots_pct": 78.3,
+    "damage_pct": 80.8,
+    "per_smoke_pct": 69.5,
+    "shots_ci": [
+     68.4,
+     92.8
+    ],
+    "damage_ci": [
+     73.6,
+     93.7
+    ],
+    "per_smoke_ci": [
+     57.8,
+     82.5
+    ]
+   }
+  },
+  "Somers": {
+   "radar ship inside this smoke": {
+    "shots_n": 6,
+    "shots_pct": 7.2,
+    "damage_pct": 2.6,
+    "per_smoke_pct": 11.5,
+    "shots_ci": [
+     0.0,
+     15.6
+    ],
+    "damage_ci": [
+     0.0,
+     5.6
+    ],
+    "per_smoke_ci": [
+     0.0,
+     23.1
+    ]
+   },
+   "radar ship elsewhere": {
+    "shots_n": 15,
+    "shots_pct": 18.1,
+    "damage_pct": 6.7,
+    "per_smoke_pct": 14.0,
+    "shots_ci": [
+     5.3,
+     33.0
+    ],
+    "damage_ci": [
+     2.1,
+     12.5
+    ],
+    "per_smoke_ci": [
+     4.8,
+     24.4
+    ]
+   },
+   "radar, source not attributed": {
+    "shots_n": 1,
+    "shots_pct": 1.2,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0,
+    "shots_ci": [
+     0.0,
+     3.7
+    ],
+    "damage_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "no radar on the target": {
+    "shots_n": 61,
+    "shots_pct": 73.5,
+    "damage_pct": 90.6,
+    "per_smoke_pct": 74.4,
+    "shots_ci": [
+     57.9,
+     87.9
+    ],
+    "damage_ci": [
+     84.7,
+     96.8
+    ],
+    "per_smoke_ci": [
+     58.3,
+     91.3
+    ]
+   }
+  },
+  "Gearing": {
+   "radar ship inside this smoke": {
+    "shots_n": 2,
+    "shots_pct": 3.1,
+    "damage_pct": 3.1,
+    "per_smoke_pct": 5.6,
+    "shots_ci": [
+     0.0,
+     16.2
+    ],
+    "damage_ci": [
+     0.0,
+     18.4
+    ],
+    "per_smoke_ci": [
+     0.0,
+     25.0
+    ]
+   },
+   "radar ship elsewhere": {
+    "shots_n": 25,
+    "shots_pct": 39.1,
+    "damage_pct": 25.3,
+    "per_smoke_pct": 29.4,
+    "shots_ci": [
+     16.9,
+     58.5
+    ],
+    "damage_ci": [
+     10.8,
+     40.2
+    ],
+    "per_smoke_ci": [
+     17.6,
+     50.0
+    ]
+   },
+   "radar, source not attributed": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0,
+    "shots_ci": [
+     0.0,
+     0.0
+    ],
+    "damage_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "no radar on the target": {
+    "shots_n": 37,
+    "shots_pct": 57.8,
+    "damage_pct": 71.6,
+    "per_smoke_pct": 65.1,
+    "shots_ci": [
+     34.9,
+     75.6
+    ],
+    "damage_ci": [
+     51.9,
+     81.6
+    ],
+    "per_smoke_ci": [
+     40.0,
+     77.5
+    ]
+   }
+  },
+  "Delny": {
+   "radar ship inside this smoke": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0
+   },
+   "radar ship elsewhere": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0
+   },
+   "radar, source not attributed": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0
+   },
+   "no radar on the target": {
+    "shots_n": 2,
+    "shots_pct": 100.0,
+    "damage_pct": 100.0,
+    "per_smoke_pct": 100.0
+   }
+  }
+ },
+ "radar_contrasts": [
+  {
+   "what": "radar ship inside this smoke",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": -4.1,
+   "ci": [
+    -13.1,
+    8.6
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar ship inside this smoke",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": -0.2,
+   "ci": [
+    -4.7,
+    9.4
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar ship inside this smoke",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": -8.4,
+   "ci": [
+    -19.1,
+    5.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar ship inside this smoke",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": 0.0,
+   "ci": [
+    -13.8,
+    13.2
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar ship inside this smoke",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": -0.7,
+   "ci": [
+    -15.1,
+    10.5
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar ship inside this smoke",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": -2.4,
+   "ci": [
+    -23.1,
+    10.7
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar ship elsewhere",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": 0.2,
+   "ci": [
+    -21.1,
+    17.1
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar ship elsewhere",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": 9.9,
+   "ci": [
+    -7.0,
+    20.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar ship elsewhere",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": 11.0,
+   "ci": [
+    -11.5,
+    26.8
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar ship elsewhere",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": -20.8,
+   "ci": [
+    -47.0,
+    4.2
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar ship elsewhere",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": -8.7,
+   "ci": [
+    -31.0,
+    7.2
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar ship elsewhere",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": -4.3,
+   "ci": [
+    -27.5,
+    10.6
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar, source not attributed",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": -1.0,
+   "ci": [
+    -3.6,
+    0.6
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar, source not attributed",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": 0.2,
+   "ci": [
+    0.0,
+    0.7
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar, source not attributed",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": 2.3,
+   "ci": [
+    0.0,
+    6.2
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar, source not attributed",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": 0.2,
+   "ci": [
+    0.0,
+    0.8
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar, source not attributed",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": 0.2,
+   "ci": [
+    0.0,
+    0.7
+   ],
+   "clear": false
+  },
+  {
+   "what": "radar, source not attributed",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": 2.3,
+   "ci": [
+    0.0,
+    6.2
+   ],
+   "clear": false
+  },
+  {
+   "what": "no radar on the target",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": 4.8,
+   "ci": [
+    -15.1,
+    27.6
+   ],
+   "clear": false
+  },
+  {
+   "what": "no radar on the target",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": -9.8,
+   "ci": [
+    -20.2,
+    6.9
+   ],
+   "clear": false
+  },
+  {
+   "what": "no radar on the target",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": -4.9,
+   "ci": [
+    -25.3,
+    15.1
+   ],
+   "clear": false
+  },
+  {
+   "what": "no radar on the target",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": 20.5,
+   "ci": [
+    -6.2,
+    49.8
+   ],
+   "clear": false
+  },
+  {
+   "what": "no radar on the target",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": 9.2,
+   "ci": [
+    -7.9,
+    37.9
+   ],
+   "clear": false
+  },
+  {
+   "what": "no radar on the target",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": 4.4,
+   "ci": [
+    -14.4,
+    33.7
+   ],
+   "clear": false
+  }
+ ],
+ "candidates": {
+  "Harugumo": {
+   "a second destroyer": {
+    "shots_n": 133,
+    "shots_pct": 32.4,
+    "damage_pct": 26.3,
+    "per_smoke_pct": 23.6,
+    "shots_ci": [
+     18.7,
+     51.0
+    ],
+    "damage_ci": [
+     15.3,
+     43.0
+    ],
+    "per_smoke_ci": [
+     14.1,
+     34.0
+    ]
+   },
+   "another ship": {
+    "shots_n": 216,
+    "shots_pct": 52.7,
+    "damage_pct": 62.9,
+    "per_smoke_pct": 50.4,
+    "shots_ci": [
+     36.1,
+     66.2
+    ],
+    "damage_ci": [
+     47.5,
+     73.9
+    ],
+    "per_smoke_ci": [
+     41.8,
+     57.0
+    ]
+   },
+   "the smoker (outside its smoke)": {
+    "shots_n": 16,
+    "shots_pct": 3.9,
+    "damage_pct": 3.4,
+    "per_smoke_pct": 2.3,
+    "shots_ci": [
+     0.5,
+     8.4
+    ],
+    "damage_ci": [
+     0.7,
+     7.7
+    ],
+    "per_smoke_ci": [
+     0.3,
+     4.4
+    ]
+   },
+   "no ally outside the smoke within the target's detection range": {
+    "shots_n": 45,
+    "shots_pct": 11.0,
+    "damage_pct": 7.4,
+    "per_smoke_pct": 23.7,
+    "shots_ci": [
+     5.3,
+     15.9
+    ],
+    "damage_ci": [
+     2.5,
+     11.1
+    ],
+    "per_smoke_ci": [
+     14.8,
+     34.1
+    ]
+   }
+  },
+  "Somers": {
+   "a second destroyer": {
+    "shots_n": 17,
+    "shots_pct": 20.5,
+    "damage_pct": 18.3,
+    "per_smoke_pct": 14.4,
+    "shots_ci": [
+     4.1,
+     37.1
+    ],
+    "damage_ci": [
+     2.9,
+     46.3
+    ],
+    "per_smoke_ci": [
+     3.8,
+     28.7
+    ]
+   },
+   "another ship": {
+    "shots_n": 47,
+    "shots_pct": 56.6,
+    "damage_pct": 57.5,
+    "per_smoke_pct": 53.4,
+    "shots_ci": [
+     38.7,
+     75.3
+    ],
+    "damage_ci": [
+     35.0,
+     75.2
+    ],
+    "per_smoke_ci": [
+     44.4,
+     64.0
+    ]
+   },
+   "the smoker (outside its smoke)": {
+    "shots_n": 6,
+    "shots_pct": 7.2,
+    "damage_pct": 9.2,
+    "per_smoke_pct": 10.7,
+    "shots_ci": [
+     1.3,
+     16.1
+    ],
+    "damage_ci": [
+     0.7,
+     21.1
+    ],
+    "per_smoke_ci": [
+     1.8,
+     24.3
+    ]
+   },
+   "no ally outside the smoke within the target's detection range": {
+    "shots_n": 13,
+    "shots_pct": 15.7,
+    "damage_pct": 15.0,
+    "per_smoke_pct": 21.6,
+    "shots_ci": [
+     2.0,
+     33.3
+    ],
+    "damage_ci": [
+     0.6,
+     40.9
+    ],
+    "per_smoke_ci": [
+     5.6,
+     36.0
+    ]
+   }
+  },
+  "Gearing": {
+   "a second destroyer": {
+    "shots_n": 9,
+    "shots_pct": 14.1,
+    "damage_pct": 6.4,
+    "per_smoke_pct": 12.0,
+    "shots_ci": [
+     0.0,
+     29.8
+    ],
+    "damage_ci": [
+     0.0,
+     17.4
+    ],
+    "per_smoke_ci": [
+     0.0,
+     24.0
+    ]
+   },
+   "another ship": {
+    "shots_n": 25,
+    "shots_pct": 39.1,
+    "damage_pct": 58.1,
+    "per_smoke_pct": 26.4,
+    "shots_ci": [
+     8.2,
+     69.0
+    ],
+    "damage_ci": [
+     0.0,
+     81.4
+    ],
+    "per_smoke_ci": [
+     9.1,
+     40.2
+    ]
+   },
+   "the smoker (outside its smoke)": {
+    "shots_n": 7,
+    "shots_pct": 10.9,
+    "damage_pct": 8.0,
+    "per_smoke_pct": 7.0,
+    "shots_ci": [
+     0.0,
+     37.8
+    ],
+    "damage_ci": [
+     1.6,
+     30.5
+    ],
+    "per_smoke_ci": [
+     0.2,
+     25.0
+    ]
+   },
+   "no ally outside the smoke within the target's detection range": {
+    "shots_n": 23,
+    "shots_pct": 35.9,
+    "damage_pct": 27.5,
+    "per_smoke_pct": 54.6,
+    "shots_ci": [
+     18.5,
+     75.0
+    ],
+    "damage_ci": [
+     10.9,
+     64.6
+    ],
+    "per_smoke_ci": [
+     37.4,
+     87.5
+    ]
+   }
+  },
+  "Delny": {
+   "a second destroyer": {
+    "shots_n": 1,
+    "shots_pct": 50.0,
+    "damage_pct": 8.1,
+    "per_smoke_pct": 50.0
+   },
+   "another ship": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0
+   },
+   "the smoker (outside its smoke)": {
+    "shots_n": 0,
+    "shots_pct": 0.0,
+    "damage_pct": 0.0,
+    "per_smoke_pct": 0.0
+   },
+   "no ally outside the smoke within the target's detection range": {
+    "shots_n": 1,
+    "shots_pct": 50.0,
+    "damage_pct": 91.9,
+    "per_smoke_pct": 50.0
+   }
+  }
+ },
+ "candidates_contrasts": [
+  {
+   "what": "a second destroyer",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": 12.0,
+   "ci": [
+    -11.3,
+    37.4
+   ],
+   "clear": false
+  },
+  {
+   "what": "a second destroyer",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": 8.0,
+   "ci": [
+    -22.6,
+    30.3
+   ],
+   "clear": false
+  },
+  {
+   "what": "a second destroyer",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": 9.3,
+   "ci": [
+    -9.7,
+    25.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "a second destroyer",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": 18.4,
+   "ci": [
+    -3.4,
+    42.3
+   ],
+   "clear": false
+  },
+  {
+   "what": "a second destroyer",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": 19.9,
+   "ci": [
+    3.6,
+    40.2
+   ],
+   "clear": true
+  },
+  {
+   "what": "a second destroyer",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": 11.6,
+   "ci": [
+    -4.6,
+    30.8
+   ],
+   "clear": false
+  },
+  {
+   "what": "another ship",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": -3.9,
+   "ci": [
+    -31.3,
+    19.8
+   ],
+   "clear": false
+  },
+  {
+   "what": "another ship",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": 5.4,
+   "ci": [
+    -19.9,
+    29.3
+   ],
+   "clear": false
+  },
+  {
+   "what": "another ship",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": -3.0,
+   "ci": [
+    -17.1,
+    8.4
+   ],
+   "clear": false
+  },
+  {
+   "what": "another ship",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": 13.6,
+   "ci": [
+    -23.5,
+    53.9
+   ],
+   "clear": false
+  },
+  {
+   "what": "another ship",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": 4.8,
+   "ci": [
+    -20.9,
+    58.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "another ship",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": 24.0,
+   "ci": [
+    7.7,
+    48.8
+   ],
+   "clear": true
+  },
+  {
+   "what": "the smoker (outside its smoke)",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": -3.3,
+   "ci": [
+    -12.4,
+    4.7
+   ],
+   "clear": false
+  },
+  {
+   "what": "the smoker (outside its smoke)",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": -5.8,
+   "ci": [
+    -19.4,
+    6.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "the smoker (outside its smoke)",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": -8.4,
+   "ci": [
+    -22.8,
+    1.0
+   ],
+   "clear": false
+  },
+  {
+   "what": "the smoker (outside its smoke)",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": -7.0,
+   "ci": [
+    -35.6,
+    5.3
+   ],
+   "clear": false
+  },
+  {
+   "what": "the smoker (outside its smoke)",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": -4.6,
+   "ci": [
+    -22.3,
+    4.6
+   ],
+   "clear": false
+  },
+  {
+   "what": "the smoker (outside its smoke)",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": -4.7,
+   "ci": [
+    -27.0,
+    2.9
+   ],
+   "clear": false
+  },
+  {
+   "what": "no ally outside the smoke within the target's detection range",
+   "vs": "Somers",
+   "weight": "shots",
+   "diff": -4.7,
+   "ci": [
+    -23.7,
+    9.7
+   ],
+   "clear": false
+  },
+  {
+   "what": "no ally outside the smoke within the target's detection range",
+   "vs": "Somers",
+   "weight": "damage",
+   "diff": -7.6,
+   "ci": [
+    -36.6,
+    7.6
+   ],
+   "clear": false
+  },
+  {
+   "what": "no ally outside the smoke within the target's detection range",
+   "vs": "Somers",
+   "weight": "per smoke",
+   "diff": 2.1,
+   "ci": [
+    -15.6,
+    22.3
+   ],
+   "clear": false
+  },
+  {
+   "what": "no ally outside the smoke within the target's detection range",
+   "vs": "Gearing",
+   "weight": "shots",
+   "diff": -25.0,
+   "ci": [
+    -61.5,
+    -6.6
+   ],
+   "clear": true
+  },
+  {
+   "what": "no ally outside the smoke within the target's detection range",
+   "vs": "Gearing",
+   "weight": "damage",
+   "diff": -20.1,
+   "ci": [
+    -60.3,
+    -2.9
+   ],
+   "clear": true
+  },
+  {
+   "what": "no ally outside the smoke within the target's detection range",
+   "vs": "Gearing",
+   "weight": "per smoke",
+   "diff": -30.9,
+   "ci": [
+    -62.1,
+    -10.1
+   ],
+   "clear": true
+  }
+ ],
+ "radar_detail": {
+  "Harugumo": {
+   "radar_lit_shots": 89,
+   "from_inside": 13,
+   "inside_cruiser": 13,
+   "elsewhere": 75,
+   "elsewhere_is_smoker": 0,
+   "unattributed": 1,
+   "ambiguous": 8,
+   "inside_batch_flag_agrees": 13,
+   "source_ships": {
+    "Salem": 29,
+    "Moskva": 27,
+    "Stalingrad": 9,
+    "Worcester": 9,
+    "Petropavlovsk": 7,
+    "Des Moines": 4
+   },
+   "hydro_lit_shots": 16,
+   "smoker_inside_at_shot_pct": 91.2,
+   "target_class": {
+    "battleship": 152,
+    "cruiser": 172,
+    "destroyer": 86
+   },
+   "median_range_to_target_m": 9880.0,
+   "median_nearest_ally_m": 7255.0,
+   "nearest_within_8km_pct": 62.7
+  },
+  "Somers": {
+   "radar_lit_shots": 22,
+   "from_inside": 6,
+   "inside_cruiser": 6,
+   "elsewhere": 15,
+   "elsewhere_is_smoker": 0,
+   "unattributed": 1,
+   "ambiguous": 7,
+   "inside_batch_flag_agrees": 6,
+   "source_ships": {
+    "Worcester": 7,
+    "Minotaur": 5,
+    "Des Moines": 4,
+    "Petropavlovsk": 2,
+    "Moskva": 2,
+    "Brisbane": 1
+   },
+   "hydro_lit_shots": 11,
+   "smoker_inside_at_shot_pct": 86.7,
+   "target_class": {
+    "cruiser": 33,
+    "battleship": 19,
+    "destroyer": 31
+   },
+   "median_range_to_target_m": 7128.0,
+   "median_nearest_ally_m": 5579.0,
+   "nearest_within_8km_pct": 90.4
+  },
+  "Gearing": {
+   "radar_lit_shots": 27,
+   "from_inside": 2,
+   "inside_cruiser": 2,
+   "elsewhere": 25,
+   "elsewhere_is_smoker": 0,
+   "unattributed": 0,
+   "ambiguous": 0,
+   "inside_batch_flag_agrees": 0,
+   "source_ships": {
+    "Des Moines": 10,
+    "Moskva": 10,
+    "Småland": 4,
+    "Brisbane": 2,
+    "Minotaur": 1
+   },
+   "hydro_lit_shots": 6,
+   "smoker_inside_at_shot_pct": 87.5,
+   "target_class": {
+    "battleship": 10,
+    "destroyer": 39,
+    "cruiser": 15
+   },
+   "median_range_to_target_m": 5764.0,
+   "median_nearest_ally_m": 5866.0,
+   "nearest_within_8km_pct": 84.4
+  },
+  "Delny": {
+   "radar_lit_shots": 0,
+   "from_inside": 0,
+   "inside_cruiser": 0,
+   "elsewhere": 0,
+   "elsewhere_is_smoker": 0,
+   "unattributed": 0,
+   "ambiguous": 0,
+   "inside_batch_flag_agrees": 0,
+   "source_ships": {},
+   "hydro_lit_shots": 0,
+   "smoker_inside_at_shot_pct": 100.0,
+   "target_class": {
+    "destroyer": 2
+   },
+   "median_range_to_target_m": 5714.0,
+   "median_nearest_ally_m": 4885.0,
+   "nearest_within_8km_pct": 100.0
+  }
+ },
+ "not_detected_detail": {
+  "Harugumo": {
+   "events": 101,
+   "damage": 66224,
+   "by_kind_pct": {
+    "fire": 30.7,
+    "shell": 22.2,
+    "torpedo": 47.1
+   },
+   "shots_by_kind": {
+    "shell": 23,
+    "torpedo": 2
+   }
+  },
+  "Somers": {
+   "events": 13,
+   "damage": 77197,
+   "by_kind_pct": {
+    "fire": 0.4,
+    "shell": 4.3,
+    "torpedo": 95.2
+   },
+   "shots_by_kind": {
+    "torpedo": 3,
+    "shell": 5
+   }
+  },
+  "Gearing": {
+   "events": 60,
+   "damage": 17611,
+   "by_kind_pct": {
+    "fire": 38.6,
+    "shell": 61.4
+   },
+   "shots_by_kind": {
+    "shell": 10
+   }
+  },
+  "Delny": {
+   "events": 1,
+   "damage": 314,
+   "by_kind_pct": {
+    "shell": 100.0
+   },
+   "shots_by_kind": {
+    "shell": 1
+   }
+  }
+ },
+ "radar_cruiser_inside_split": {
+  "Harugumo": {
+   "shots_with_radar_cruiser_inside": 187,
+   "smokes_with": 25,
+   "of_those_radar_lit_from_inside_n": 13,
+   "of_those_radar_lit_from_inside_pct": 7.0,
+   "of_those_radar_lit_any_pct": 26.7,
+   "of_those_nearest_is_radar_cruiser_pct": 1.1,
+   "shots_without": 223,
+   "smokes_without": 19,
+   "without_radar_lit_any_pct": 17.5,
+   "own_damage_share_from_smokes_with_radar_cruiser_pct": 38.9
+  },
+  "Somers": {
+   "shots_with_radar_cruiser_inside": 34,
+   "smokes_with": 13,
+   "of_those_radar_lit_from_inside_n": 6,
+   "of_those_radar_lit_from_inside_pct": 17.6,
+   "of_those_radar_lit_any_pct": 29.4,
+   "of_those_nearest_is_radar_cruiser_pct": 8.8,
+   "shots_without": 49,
+   "smokes_without": 13,
+   "without_radar_lit_any_pct": 24.5,
+   "own_damage_share_from_smokes_with_radar_cruiser_pct": 48.8
+  },
+  "Gearing": {
+   "shots_with_radar_cruiser_inside": 9,
+   "smokes_with": 4,
+   "of_those_radar_lit_from_inside_n": 2,
+   "of_those_radar_lit_from_inside_pct": 22.2,
+   "of_those_radar_lit_any_pct": 33.3,
+   "of_those_nearest_is_radar_cruiser_pct": 0.0,
+   "shots_without": 55,
+   "smokes_without": 14,
+   "without_radar_lit_any_pct": 43.6,
+   "own_damage_share_from_smokes_with_radar_cruiser_pct": 13.9
+  },
+  "Delny": {
+   "shots_with_radar_cruiser_inside": 0,
+   "smokes_with": 0,
+   "of_those_radar_lit_from_inside_n": 0,
+   "of_those_radar_lit_from_inside_pct": null,
+   "of_those_radar_lit_any_pct": null,
+   "of_those_nearest_is_radar_cruiser_pct": null,
+   "shots_without": 2,
+   "smokes_without": 2,
+   "without_radar_lit_any_pct": null,
+   "own_damage_share_from_smokes_with_radar_cruiser_pct": 0.0
+  }
+ },
+ "harugumo_top6_vs_rest": {
+  "n": {
+   "top6_shots": 223,
+   "rest_shots": 187,
+   "top6_smokes": 25,
+   "rest_smokes": 19,
+   "top6_clans": 4,
+   "rest_clans": 6
+  },
+  "rows": [
+   {
+    "what": "a ship outside the smoke",
+    "top6_pct": 54.7,
+    "rest_pct": 32.6,
+    "diff": 22.1,
+    "ci": [
+     -12.9,
+     37.8
+    ],
+    "clear": false,
+    "top6_damage_pct": 66.3,
+    "rest_damage_pct": 40.4,
+    "top6_per_smoke_pct": 47.7,
+    "rest_per_smoke_pct": 34.3,
+    "per_smoke_diff": 13.4,
+    "per_smoke_ci": [
+     -15.9,
+     33.0
+    ],
+    "per_smoke_clear": false
+   },
+   {
+    "what": "a second destroyer",
+    "top6_pct": 27.8,
+    "rest_pct": 19.8,
+    "diff": 8.0,
+    "ci": [
+     -12.1,
+     25.2
+    ],
+    "clear": false,
+    "top6_damage_pct": 22.8,
+    "rest_damage_pct": 17.4,
+    "top6_per_smoke_pct": 22.6,
+    "rest_per_smoke_pct": 27.2,
+    "per_smoke_diff": -4.6,
+    "per_smoke_ci": [
+     -21.3,
+     23.2
+    ],
+    "per_smoke_clear": false
+   },
+   {
+    "what": "the smoker itself",
+    "top6_pct": 17.5,
+    "rest_pct": 46.5,
+    "diff": -29.0,
+    "ci": [
+     -50.1,
+     7.6
+    ],
+    "clear": false,
+    "top6_damage_pct": 10.9,
+    "rest_damage_pct": 41.9,
+    "top6_per_smoke_pct": 29.8,
+    "rest_per_smoke_pct": 33.3,
+    "per_smoke_diff": -3.5,
+    "per_smoke_ci": [
+     -33.5,
+     18.4
+    ],
+    "per_smoke_clear": false
+   },
+   {
+    "what": "another ship in or behind the smoke",
+    "top6_pct": 0.0,
+    "rest_pct": 0.0,
+    "diff": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "clear": false,
+    "top6_damage_pct": 0.0,
+    "rest_damage_pct": 0.0,
+    "top6_per_smoke_pct": 0.0,
+    "rest_per_smoke_pct": 0.0,
+    "per_smoke_diff": 0.0,
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_clear": false
+   },
+   {
+    "what": "the radar cruiser inside the smoke",
+    "top6_pct": 0.0,
+    "rest_pct": 1.1,
+    "diff": -1.1,
+    "ci": [
+     -2.7,
+     0.0
+    ],
+    "clear": false,
+    "top6_damage_pct": 0.0,
+    "rest_damage_pct": 0.3,
+    "top6_per_smoke_pct": 0.0,
+    "rest_per_smoke_pct": 5.3,
+    "per_smoke_diff": -5.3,
+    "per_smoke_ci": [
+     -9.1,
+     0.0
+    ],
+    "per_smoke_clear": false
+   },
+   {
+    "what": "radar-lit",
+    "top6_pct": 29.6,
+    "rest_pct": 12.3,
+    "diff": 17.3,
+    "ci": [
+     -8.1,
+     54.4
+    ],
+    "clear": false,
+    "top6_damage_pct": 26.9,
+    "rest_damage_pct": 9.1,
+    "top6_per_smoke_pct": 42.7,
+    "rest_per_smoke_pct": 14.5,
+    "per_smoke_diff": 28.2,
+    "per_smoke_ci": [
+     11.1,
+     53.7
+    ],
+    "per_smoke_clear": true
+   },
+   {
+    "what": "detected, not radar-lit",
+    "top6_pct": 64.1,
+    "rest_pct": 81.8,
+    "diff": -17.7,
+    "ci": [
+     -53.6,
+     5.9
+    ],
+    "clear": false,
+    "top6_damage_pct": 54.3,
+    "rest_damage_pct": 82.6,
+    "top6_per_smoke_pct": 46.6,
+    "rest_per_smoke_pct": 77.6,
+    "per_smoke_diff": -30.9,
+    "per_smoke_ci": [
+     -48.3,
+     -11.0
+    ],
+    "per_smoke_clear": true
+   },
+   {
+    "what": "not detected",
+    "top6_pct": 6.3,
+    "rest_pct": 5.9,
+    "diff": 0.4,
+    "ci": [
+     -7.8,
+     5.2
+    ],
+    "clear": false,
+    "top6_damage_pct": 18.9,
+    "rest_damage_pct": 8.4,
+    "top6_per_smoke_pct": 10.7,
+    "rest_per_smoke_pct": 8.0,
+    "per_smoke_diff": 2.7,
+    "per_smoke_ci": [
+     -12.6,
+     10.1
+    ],
+    "per_smoke_clear": false
+   },
+   {
+    "what": "unknown",
+    "top6_pct": 0.0,
+    "rest_pct": 0.0,
+    "diff": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "clear": false,
+    "top6_damage_pct": 0.0,
+    "rest_damage_pct": 0.0,
+    "top6_per_smoke_pct": 0.0,
+    "rest_per_smoke_pct": 0.0,
+    "per_smoke_diff": 0.0,
+    "per_smoke_ci": [
+     0.0,
+     0.0
+    ],
+    "per_smoke_clear": false
+   },
+   {
+    "what": "radar ship inside this smoke",
+    "top6_pct": 0.4,
+    "rest_pct": 6.4,
+    "diff": -6.0,
+    "ci": [
+     -25.4,
+     26.6
+    ],
+    "clear": false,
+    "top6_damage_pct": 0.2,
+    "rest_damage_pct": 5.4,
+    "top6_per_smoke_pct": 4.0,
+    "rest_per_smoke_pct": 2.1,
+    "per_smoke_diff": 1.9,
+    "per_smoke_ci": [
+     -6.7,
+     27.2
+    ],
+    "per_smoke_clear": false
+   },
+   {
+    "what": "radar ship elsewhere",
+    "top6_pct": 28.7,
+    "rest_pct": 5.9,
+    "diff": 22.8,
+    "ci": [
+     6.3,
+     33.1
+    ],
+    "clear": true,
+    "top6_damage_pct": 26.4,
+    "rest_damage_pct": 3.6,
+    "top6_per_smoke_pct": 34.7,
+    "rest_per_smoke_pct": 12.4,
+    "per_smoke_diff": 22.3,
+    "per_smoke_ci": [
+     0.6,
+     43.8
+    ],
+    "per_smoke_clear": true
+   },
+   {
+    "what": "radar, source not attributed",
+    "top6_pct": 0.4,
+    "rest_pct": 0.0,
+    "diff": 0.4,
+    "ci": [
+     0.0,
+     1.4
+    ],
+    "clear": false,
+    "top6_damage_pct": 0.3,
+    "rest_damage_pct": 0.0,
+    "top6_per_smoke_pct": 4.0,
+    "rest_per_smoke_pct": 0.0,
+    "per_smoke_diff": 4.0,
+    "per_smoke_ci": [
+     0.0,
+     9.4
+    ],
+    "per_smoke_clear": false
+   },
+   {
+    "what": "no radar on the target",
+    "top6_pct": 70.4,
+    "rest_pct": 87.7,
+    "diff": -17.3,
+    "ci": [
+     -60.3,
+     6.2
+    ],
+    "clear": false,
+    "top6_damage_pct": 73.1,
+    "rest_damage_pct": 90.9,
+    "top6_per_smoke_pct": 57.3,
+    "rest_per_smoke_pct": 85.5,
+    "per_smoke_diff": -28.2,
+    "per_smoke_ci": [
+     -58.0,
+     -7.8
+    ],
+    "per_smoke_clear": true
+   }
+  ]
+ },
+ "second_destroyer": {
+  "by_ship": {
+   "Harugumo": {
+    "shots": 410,
+    "with_second_dd_alive": 405,
+    "with_second_dd_pct": 98.8,
+    "median_dist_to_smoke_m": 5241.0,
+    "median_forward_m": 253.0,
+    "where_pct": {
+     "in or behind the smoke": 7.7,
+     "forward of the smoke (1 km+)": 42.7,
+     "level or behind": 49.6
+    },
+    "within_3km_pct": 27.6,
+    "within_5km_pct": 47.1,
+    "forward_1km_pct_of_shots": 42.2,
+    "at_a_cap_pct_of_shots": 25.1,
+    "in_or_behind_pct_of_shots": 7.6,
+    "ships": {
+     "Marceau": 106,
+     "Somers": 66,
+     "Châteaurenault": 66,
+     "Lüshun": 32,
+     "Ragnar": 28,
+     "Småland": 23
+    },
+    "life_alive_pct": 93.5,
+    "life_alive_ci": [
+     84.6,
+     98.7
+    ],
+    "life_alive_pct_smokes_with_own_damage": 95.5,
+    "life_3km_pct": 19.5,
+    "life_3km_ci": [
+     12.2,
+     23.6
+    ],
+    "life_3km_pct_smokes_with_own_damage": 29.5,
+    "life_5km_pct": 31.7,
+    "life_5km_ci": [
+     22.7,
+     38.4
+    ],
+    "life_5km_pct_smokes_with_own_damage": 41.7,
+    "life_fwd_pct": 58.5,
+    "life_fwd_ci": [
+     49.1,
+     68.6
+    ],
+    "life_fwd_pct_smokes_with_own_damage": 62.5,
+    "life_fwd5_pct": 17.4,
+    "life_fwd5_ci": [
+     10.4,
+     23.9
+    ],
+    "life_fwd5_pct_smokes_with_own_damage": 22.2,
+    "life_in_pct": 2.7,
+    "life_in_ci": [
+     1.4,
+     3.6
+    ],
+    "life_in_pct_smokes_with_own_damage": 3.9,
+    "at_capture_tracks_dd2_pct": 94.0,
+    "at_capture_round5_dd2_pct": 59.0,
+    "at_capture_tracks_dd2_fwd_pct": 61.0,
+    "at_capture_round5_dd2_fwd_pct": 33.0,
+    "at_capture_agree": 65,
+    "at_capture_fwd_agree": 72,
+    "smokes": 100
+   },
+   "Somers": {
+    "shots": 83,
+    "with_second_dd_alive": 83,
+    "with_second_dd_pct": 100.0,
+    "median_dist_to_smoke_m": 9678.0,
+    "median_forward_m": -1318.0,
+    "where_pct": {
+     "in or behind the smoke": 2.4,
+     "forward of the smoke (1 km+)": 21.7,
+     "level or behind": 75.9
+    },
+    "within_3km_pct": 15.7,
+    "within_5km_pct": 24.1,
+    "forward_1km_pct_of_shots": 21.7,
+    "at_a_cap_pct_of_shots": 25.3,
+    "in_or_behind_pct_of_shots": 2.4,
+    "ships": {
+     "Châteaurenault": 20,
+     "Gdańsk": 14,
+     "20 de Julio": 10,
+     "Kléber": 7,
+     "Shimakaze": 6,
+     "Tromp": 6
+    },
+    "life_alive_pct": 98.3,
+    "life_alive_ci": [
+     96.5,
+     99.5
+    ],
+    "life_alive_pct_smokes_with_own_damage": 100.0,
+    "life_3km_pct": 8.2,
+    "life_3km_ci": [
+     4.6,
+     11.2
+    ],
+    "life_3km_pct_smokes_with_own_damage": 6.9,
+    "life_5km_pct": 14.3,
+    "life_5km_ci": [
+     8.4,
+     18.9
+    ],
+    "life_5km_pct_smokes_with_own_damage": 15.9,
+    "life_fwd_pct": 66.5,
+    "life_fwd_ci": [
+     61.5,
+     70.8
+    ],
+    "life_fwd_pct_smokes_with_own_damage": 49.2,
+    "life_fwd5_pct": 5.8,
+    "life_fwd5_ci": [
+     3.1,
+     7.9
+    ],
+    "life_fwd5_pct_smokes_with_own_damage": 2.5,
+    "life_in_pct": 1.8,
+    "life_in_ci": [
+     0.5,
+     3.3
+    ],
+    "life_in_pct_smokes_with_own_damage": 1.3,
+    "at_capture_tracks_dd2_pct": 99.6,
+    "at_capture_round5_dd2_pct": 45.8,
+    "at_capture_tracks_dd2_fwd_pct": 66.9,
+    "at_capture_round5_dd2_fwd_pct": 22.7,
+    "at_capture_agree": 120,
+    "at_capture_fwd_agree": 145,
+    "smokes": 260
+   },
+   "Gearing": {
+    "shots": 64,
+    "with_second_dd_alive": 59,
+    "with_second_dd_pct": 92.2,
+    "median_dist_to_smoke_m": 17275.0,
+    "median_forward_m": 537.0,
+    "where_pct": {
+     "in or behind the smoke": 0.0,
+     "forward of the smoke (1 km+)": 44.1,
+     "level or behind": 55.9
+    },
+    "within_3km_pct": 10.9,
+    "within_5km_pct": 10.9,
+    "forward_1km_pct_of_shots": 40.6,
+    "at_a_cap_pct_of_shots": 29.7,
+    "in_or_behind_pct_of_shots": 0.0,
+    "ships": {
+     "Châteaurenault": 16,
+     "Cassard": 12,
+     "Småland": 8,
+     "Daring": 6,
+     "Kléber": 5,
+     "Gdańsk": 5
+    },
+    "life_alive_pct": 92.8,
+    "life_alive_ci": [
+     89.0,
+     95.7
+    ],
+    "life_alive_pct_smokes_with_own_damage": 85.0,
+    "life_3km_pct": 6.2,
+    "life_3km_ci": [
+     3.0,
+     10.6
+    ],
+    "life_3km_pct_smokes_with_own_damage": 3.3,
+    "life_5km_pct": 12.9,
+    "life_5km_ci": [
+     7.4,
+     18.2
+    ],
+    "life_5km_pct_smokes_with_own_damage": 6.7,
+    "life_fwd_pct": 54.8,
+    "life_fwd_ci": [
+     48.1,
+     59.8
+    ],
+    "life_fwd_pct_smokes_with_own_damage": 47.2,
+    "life_fwd5_pct": 7.4,
+    "life_fwd5_ci": [
+     3.8,
+     11.0
+    ],
+    "life_fwd5_pct_smokes_with_own_damage": 1.1,
+    "life_in_pct": 0.7,
+    "life_in_ci": [
+     0.3,
+     1.2
+    ],
+    "life_in_pct_smokes_with_own_damage": 0.3,
+    "at_capture_tracks_dd2_pct": 95.6,
+    "at_capture_round5_dd2_pct": 37.2,
+    "at_capture_tracks_dd2_fwd_pct": 51.7,
+    "at_capture_round5_dd2_fwd_pct": 17.2,
+    "at_capture_agree": 75,
+    "at_capture_fwd_agree": 118,
+    "smokes": 180
+   },
+   "Delny": {
+    "shots": 2,
+    "with_second_dd_alive": 2,
+    "with_second_dd_pct": 100.0,
+    "median_dist_to_smoke_m": 9750.0,
+    "median_forward_m": -7458.0,
+    "where_pct": {
+     "in or behind the smoke": 0.0,
+     "forward of the smoke (1 km+)": 50.0,
+     "level or behind": 50.0
+    },
+    "within_3km_pct": 50.0,
+    "within_5km_pct": 50.0,
+    "forward_1km_pct_of_shots": 50.0,
+    "at_a_cap_pct_of_shots": 100.0,
+    "in_or_behind_pct_of_shots": 0.0,
+    "ships": {
+     "Châteaurenault": 1,
+     "Somers": 1
+    },
+    "life_alive_pct": 100.0,
+    "life_alive_ci": null,
+    "life_alive_pct_smokes_with_own_damage": null,
+    "life_3km_pct": 37.3,
+    "life_3km_ci": null,
+    "life_3km_pct_smokes_with_own_damage": null,
+    "life_5km_pct": 54.4,
+    "life_5km_ci": null,
+    "life_5km_pct_smokes_with_own_damage": null,
+    "life_fwd_pct": 77.3,
+    "life_fwd_ci": null,
+    "life_fwd_pct_smokes_with_own_damage": null,
+    "life_fwd5_pct": 33.0,
+    "life_fwd5_ci": null,
+    "life_fwd5_pct_smokes_with_own_damage": null,
+    "life_in_pct": 5.7,
+    "life_in_ci": null,
+    "life_in_pct_smokes_with_own_damage": null,
+    "at_capture_tracks_dd2_pct": 100.0,
+    "at_capture_round5_dd2_pct": 72.7,
+    "at_capture_tracks_dd2_fwd_pct": 77.3,
+    "at_capture_round5_dd2_fwd_pct": 40.9,
+    "at_capture_agree": 16,
+    "at_capture_fwd_agree": 14,
+    "smokes": 22
+   }
+  },
+  "contrasts": [
+   {
+    "what": "life_alive",
+    "vs": "Somers",
+    "diff": -4.8,
+    "ci": [
+     -14.3,
+     1.1
+    ],
+    "clear": false
+   },
+   {
+    "what": "life_3km",
+    "vs": "Somers",
+    "diff": 11.4,
+    "ci": [
+     5.2,
+     16.2
+    ],
+    "clear": true
+   },
+   {
+    "what": "life_5km",
+    "vs": "Somers",
+    "diff": 17.4,
+    "ci": [
+     8.4,
+     26.1
+    ],
+    "clear": true
+   },
+   {
+    "what": "life_fwd",
+    "vs": "Somers",
+    "diff": -7.9,
+    "ci": [
+     -19.6,
+     5.2
+    ],
+    "clear": false
+   },
+   {
+    "what": "life_fwd5",
+    "vs": "Somers",
+    "diff": 11.6,
+    "ci": [
+     4.8,
+     18.0
+    ],
+    "clear": true
+   },
+   {
+    "what": "life_in",
+    "vs": "Somers",
+    "diff": 0.9,
+    "ci": [
+     -1.0,
+     2.2
+    ],
+    "clear": false
+   },
+   {
+    "what": "shot: second destroyer within 3 km of the smoke",
+    "vs": "Somers",
+    "harugumo": 27.6,
+    "other": 15.7,
+    "diff": 11.9,
+    "ci": [
+     -15.2,
+     34.0
+    ],
+    "clear": false
+   },
+   {
+    "what": "shot: second destroyer within 5 km of the smoke",
+    "vs": "Somers",
+    "harugumo": 47.1,
+    "other": 24.1,
+    "diff": 23.0,
+    "ci": [
+     -6.5,
+     50.4
+    ],
+    "clear": false
+   },
+   {
+    "what": "shot: second destroyer 1 km+ forward",
+    "vs": "Somers",
+    "harugumo": 42.2,
+    "other": 21.7,
+    "diff": 20.5,
+    "ci": [
+     -10.4,
+     41.6
+    ],
+    "clear": false
+   },
+   {
+    "what": "shot: second destroyer at a cap",
+    "vs": "Somers",
+    "harugumo": 25.1,
+    "other": 25.3,
+    "diff": -0.2,
+    "ci": [
+     -19.5,
+     20.3
+    ],
+    "clear": false
+   },
+   {
+    "what": "shot: second destroyer in or behind the smoke",
+    "vs": "Somers",
+    "harugumo": 7.6,
+    "other": 2.4,
+    "diff": 5.2,
+    "ci": [
+     -3.2,
+     14.1
+    ],
+    "clear": false
+   },
+   {
+    "what": "life_alive",
+    "vs": "Gearing",
+    "diff": 0.7,
+    "ci": [
+     -9.4,
+     7.8
+    ],
+    "clear": false
+   },
+   {
+    "what": "life_3km",
+    "vs": "Gearing",
+    "diff": 13.4,
+    "ci": [
+     4.6,
+     18.5
+    ],
+    "clear": true
+   },
+   {
+    "what": "life_5km",
+    "vs": "Gearing",
+    "diff": 18.8,
+    "ci": [
+     9.3,
+     26.2
+    ],
+    "clear": true
+   },
+   {
+    "what": "life_fwd",
+    "vs": "Gearing",
+    "diff": 3.7,
+    "ci": [
+     -7.4,
+     16.7
+    ],
+    "clear": false
+   },
+   {
+    "what": "life_fwd5",
+    "vs": "Gearing",
+    "diff": 10.0,
+    "ci": [
+     3.1,
+     17.0
+    ],
+    "clear": true
+   },
+   {
+    "what": "life_in",
+    "vs": "Gearing",
+    "diff": 2.0,
+    "ci": [
+     0.7,
+     3.1
+    ],
+    "clear": true
+   },
+   {
+    "what": "shot: second destroyer within 3 km of the smoke",
+    "vs": "Gearing",
+    "harugumo": 27.6,
+    "other": 10.9,
+    "diff": 16.6,
+    "ci": [
+     -3.9,
+     36.4
+    ],
+    "clear": false
+   },
+   {
+    "what": "shot: second destroyer within 5 km of the smoke",
+    "vs": "Gearing",
+    "harugumo": 47.1,
+    "other": 10.9,
+    "diff": 36.1,
+    "ci": [
+     12.3,
+     61.6
+    ],
+    "clear": true
+   },
+   {
+    "what": "shot: second destroyer 1 km+ forward",
+    "vs": "Gearing",
+    "harugumo": 42.2,
+    "other": 40.6,
+    "diff": 1.6,
+    "ci": [
+     -45.4,
+     36.6
+    ],
+    "clear": false
+   },
+   {
+    "what": "shot: second destroyer at a cap",
+    "vs": "Gearing",
+    "harugumo": 25.1,
+    "other": 29.7,
+    "diff": -4.6,
+    "ci": [
+     -27.6,
+     26.4
+    ],
+    "clear": false
+   },
+   {
+    "what": "shot: second destroyer in or behind the smoke",
+    "vs": "Gearing",
+    "harugumo": 7.6,
+    "other": 0.0,
+    "diff": 7.6,
+    "ci": [
+     1.7,
+     14.9
+    ],
+    "clear": true
+   }
+  ],
+  "harugumo_top6_vs_rest": [
+   {
+    "what": "life_alive",
+    "top6": 95.5,
+    "rest": 91.1,
+    "n_top6": 55,
+    "n_rest": 45,
+    "diff": 4.4,
+    "ci": [
+     -6.9,
+     24.8
+    ],
+    "clear": false
+   },
+   {
+    "what": "life_3km",
+    "top6": 22.4,
+    "rest": 16.0,
+    "n_top6": 55,
+    "n_rest": 45,
+    "diff": 6.5,
+    "ci": [
+     -3.4,
+     17.5
+    ],
+    "clear": false
+   },
+   {
+    "what": "life_5km",
+    "top6": 34.9,
+    "rest": 27.8,
+    "n_top6": 55,
+    "n_rest": 45,
+    "diff": 7.0,
+    "ci": [
+     -6.4,
+     26.4
+    ],
+    "clear": false
+   },
+   {
+    "what": "life_fwd",
+    "top6": 53.8,
+    "rest": 64.4,
+    "n_top6": 55,
+    "n_rest": 45,
+    "diff": -10.6,
+    "ci": [
+     -25.2,
+     13.1
+    ],
+    "clear": false
+   }
+  ]
+ },
+ "check_snapshot": {
+  "Harugumo": {
+   "targets": 68,
+   "round5_targets_with_position": 53,
+   "round5": {
+    "a ship outside the smoke": 22,
+    "a second destroyer": 13,
+    "the smoker itself": 11,
+    "another ship in or behind the smoke": 4,
+    "the radar cruiser inside the smoke": 3
+   },
+   "tracks_targets_with_position": 68,
+   "tracks_same_rule": {
+    "a ship outside the smoke": 27,
+    "a second destroyer": 18,
+    "the smoker itself": 20,
+    "another ship in or behind the smoke": 2,
+    "the radar cruiser inside the smoke": 1
+   },
+   "tracks_geometric_rule": {
+    "a ship outside the smoke": 29,
+    "a second destroyer": 18,
+    "the smoker itself": 20,
+    "another ship in or behind the smoke": 0,
+    "the radar cruiser inside the smoke": 1
+   },
+   "same_role_same_rule": 46,
+   "same_role_geometric_rule": 44
+  },
+  "Somers": {
+   "targets": 35,
+   "round5_targets_with_position": 30,
+   "round5": {
+    "a ship outside the smoke": 5,
+    "a second destroyer": 5,
+    "the smoker itself": 16,
+    "another ship in or behind the smoke": 1,
+    "the radar cruiser inside the smoke": 3
+   },
+   "tracks_targets_with_position": 35,
+   "tracks_same_rule": {
+    "a ship outside the smoke": 7,
+    "a second destroyer": 8,
+    "the smoker itself": 17,
+    "another ship in or behind the smoke": 0,
+    "the radar cruiser inside the smoke": 3
+   },
+   "tracks_geometric_rule": {
+    "a ship outside the smoke": 8,
+    "a second destroyer": 8,
+    "the smoker itself": 17,
+    "another ship in or behind the smoke": 0,
+    "the radar cruiser inside the smoke": 2
+   },
+   "same_role_same_rule": 29,
+   "same_role_geometric_rule": 28
+  },
+  "Gearing": {
+   "targets": 21,
+   "round5_targets_with_position": 18,
+   "round5": {
+    "a ship outside the smoke": 3,
+    "a second destroyer": 0,
+    "the smoker itself": 15,
+    "another ship in or behind the smoke": 0,
+    "the radar cruiser inside the smoke": 0
+   },
+   "tracks_targets_with_position": 21,
+   "tracks_same_rule": {
+    "a ship outside the smoke": 3,
+    "a second destroyer": 1,
+    "the smoker itself": 17,
+    "another ship in or behind the smoke": 0,
+    "the radar cruiser inside the smoke": 0
+   },
+   "tracks_geometric_rule": {
+    "a ship outside the smoke": 3,
+    "a second destroyer": 1,
+    "the smoker itself": 17,
+    "another ship in or behind the smoke": 0,
+    "the radar cruiser inside the smoke": 0
+   },
+   "same_role_same_rule": 17,
+   "same_role_geometric_rule": 17
+  }
+ },
+ "check_radar_inside": {
+  "Harugumo": {
+   "shots": 410,
+   "radar_lit_from_inside_geometry": 13,
+   "radar_lit_source_in_smoke_flag": 14
+  },
+  "Somers": {
+   "shots": 83,
+   "radar_lit_from_inside_geometry": 6,
+   "radar_lit_source_in_smoke_flag": 8
+  },
+  "Gearing": {
+   "shots": 64,
+   "radar_lit_from_inside_geometry": 2,
+   "radar_lit_source_in_smoke_flag": 1
+  },
+  "Delny": {
+   "shots": 2,
+   "radar_lit_from_inside_geometry": 0,
+   "radar_lit_source_in_smoke_flag": 0
+  }
+ },
+ "examples": [
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g3_159292.html",
+   "team": "RESIN",
+   "map": "Land of Fire",
+   "time": "7:43",
+   "own_damage": 60190,
+   "shots": 29,
+   "radar_cruiser_inside": false,
+   "by_spotter": {
+    "not detected at the shot": 42,
+    "detected, no radar: nearest ally a second destroyer": 24,
+    "detected, no radar: nearest ally a ship outside the smoke": 22,
+    "radar-lit from elsewhere": 11
+   }
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120803.html",
+   "team": "RESIN",
+   "map": "Sleeping Giant",
+   "time": "7:00",
+   "own_damage": 60042,
+   "shots": 42,
+   "radar_cruiser_inside": false,
+   "by_spotter": {
+    "detected, no radar: nearest ally a ship outside the smoke": 79,
+    "not detected at the shot": 13,
+    "radar-lit from elsewhere": 9
+   }
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7971_g1_82507.html",
+   "team": "PFANS",
+   "map": "Hotspot",
+   "time": "7:47",
+   "own_damage": 32696,
+   "shots": 29,
+   "radar_cruiser_inside": true,
+   "by_spotter": {
+    "detected, no radar: nearest ally a second destroyer": 57,
+    "detected, no radar: nearest ally a ship outside the smoke": 41,
+    "radar-lit from elsewhere": 1
+   }
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8152_g1_207837.html",
+   "team": "-BN-",
+   "map": "Okinawa",
+   "time": "3:22",
+   "own_damage": 31913,
+   "shots": 37,
+   "radar_cruiser_inside": false,
+   "by_spotter": {
+    "detected, no radar: nearest ally the smoker itself": 81,
+    "detected, no radar: nearest ally a ship outside the smoke": 14,
+    "not detected at the shot": 4
+   }
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7981_g1_174224.html",
+   "team": "PN",
+   "map": "Land of Fire",
+   "time": "5:20",
+   "own_damage": 27008,
+   "shots": 19,
+   "radar_cruiser_inside": true,
+   "by_spotter": {
+    "detected, no radar: nearest ally a ship outside the smoke": 59,
+    "radar-lit from inside this smoke": 40,
+    "radar-lit from elsewhere": 1
+   }
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g1_39283.html",
+   "team": "H-SR",
+   "map": "Sleeping Giant",
+   "time": "1:54",
+   "own_damage": 24259,
+   "shots": 21,
+   "radar_cruiser_inside": true,
+   "by_spotter": {
+    "detected, no radar: nearest ally a ship outside the smoke": 60,
+    "radar-lit from elsewhere": 34,
+    "not detected at the shot": 5
+   }
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8177_g1_176208.html",
+   "team": "EPOXY",
+   "map": "Sleeping Giant",
+   "time": "9:46",
+   "own_damage": 23814,
+   "shots": 13,
+   "radar_cruiser_inside": false,
+   "by_spotter": {
+    "detected, no radar: nearest ally a ship outside the smoke": 65,
+    "not detected at the shot": 18,
+    "radar-lit from elsewhere": 16
+   }
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7937_g1_44432.html",
+   "team": "-BN-",
+   "map": "Sea of Fortune",
+   "time": "9:11",
+   "own_damage": 22242,
+   "shots": 20,
+   "radar_cruiser_inside": false,
+   "by_spotter": {
+    "detected, no radar: nearest ally a ship outside the smoke": 34,
+    "detected, no radar: nearest ally a second destroyer": 31,
+    "detected, no radar: nearest ally the smoker itself": 29,
+    "not detected at the shot": 5
+   }
+  }
+ ]
+}

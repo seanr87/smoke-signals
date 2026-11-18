@@ -1,0 +1,60 @@
+identical: 26 files; different: 19; only in round5b: 0
+- DIFF part-a/out-a1.txt: 3 of 112 lines
+    new: radar cruiser inside early % 34.6 inside cap % 53.8 median el 409.5 radar_cap set % 98.1 own {'ours': 53, 'neutral': 30, 'theirs': 21} cruisers inside {'Des Moi
+    old: radar cruiser inside early % 33.7 inside cap % 53.8 median el 416.0 radar_cap set % 98.1 own {'ours': 53, 'neutral': 30, 'theirs': 21} cruisers inside {'Des Moi
+- DIFF part-a/out-a2.json: 660 of 5611 lines
+    new:    "n": 306,
+    old:    "n": 302,
+- DIFF part-a/out-a2.txt: 107 of 295 lines
+    new: | 0-5 min | 306 (103/203) | 23 | 7.5 [4.5 to 11.1 *] | 2.9 | 9.9 | -12.8 to -1.8 * | 3.6 | 5.1 (215) |  |
+    old: | 0-5 min | 302 (102/200) | 23 | 7.6 [4.6 to 11.4 *] | 2.9 | 10.0 | -12.7 to -1.7 * | 3.6 | 5.2 (213) |  |
+- DIFF part-a/topics.json: 660 of 13184 lines
+    new:     "n": 306,
+    old:     "n": 302,
+- DIFF part-c1/caps.json: 411 of 3269 lines
+    new:     "no": 969,
+    old:     "no": 970,
+- DIFF part-c1/out-caps.md: 63 of 333 lines
+    new: Independent re-computation from the raw json (own code, json clocks instead of csv clocks): 1545 of 1547 smokes agree on enemy_took, we_took and the snapshot co
+    old: Independent re-computation from the raw json (own code, json clocks instead of csv clocks): 1547 of 1547 smokes agree on enemy_took, we_took and the snapshot co
+- DIFF part-c4/generated.md: 5 of 92 lines
+    new: | hs-sit-1 | selfish: cap sitter | on the rim of cap C, own side (F6/F5/G5) | Shared: 6% vs 23% (gap -17, -30 to -5); Rest use it more | 1 / 17 | Top 6: H-SR 1 
+    old: | hs-sit-1 | selfish: cap sitter | on the rim of cap C, own side (F6/F5/G5) | Shared: 6% vs 23% (gap -17, -30 to -5); Rest use it more | 1 / 17 | Top 6: H-SR 1 
+- DIFF part-c4/out.txt: 6 of 81 lines
+    new:       Top 6: H-SR 1 | Rest: KSC 5, EPOXY 5, PFANS 2, BTLST 1, UYSC 1, HFANS 1, INCA 1, MACHX 1 | dmg 2104 deaths/100 0.0 time 4:56
+    old:       Top 6: H-SR 1 | Rest: KSC 5, EPOXY 5, PFANS 2, BTLST 1, UYSC 1, HFANS 1, INCA 1, MACHX 1 | dmg 2104 deaths/100 0.0 time 5:16
+- DIFF part-c4/spots.json: 14 of 2271 lines
+    new:   "median_time_s": 296,
+    old:   "median_time_s": 316,
+- DIFF part-c4/wide.txt: 3 of 29 lines
+    new: Hotspot | early_cruiser | 1.8 km outside cap D, own side, east edge of the map ['G10', 'F10'] r 2.8 km | n 25 (Top 6 12, Rest 13) | share 55% vs 41% | interval 
+    old: Hotspot | early_cruiser | 1.8 km outside cap D, own side, east edge of the map ['G10', 'F10'] r 2.8 km | n 25 (Top 6 12, Rest 13) | share 55% vs 42% | interval 
+- DIFF part-c5/map-questions.json: 117 of 5119 lines
+    new:     "lo": -4.9,
+    old:     "lo": -5.1,
+- DIFF part-c5/part-hs.json: 85 of 1018 lines
+    new:     "lo": -4.9,
+    old:     "lo": -5.1,
+- DIFF part-c5/part-lp.json: 58 of 1478 lines
+    new:      "all": 1.15,
+    old:      "all": 1.1,
+- DIFF part-c5/spots.json: 26 of 1294 lines
+    new:   "n": 37,
+    old:   "n": 36,
+- DIFF part-d/clan_styles.json: 763 of 11826 lines
+    new:     "late_pct": 91.0,
+    old:     "late_pct": 83.0,
+- DIFF part-d/d1_scores.json: 124 of 8102 lines
+    new:    "first_smoke_s": 185.5,
+    old:    "first_smoke_s": 231.5,
+- DIFF part-d/d1_tables.md: 22 of 390 lines
+    new: | PFANS | 5-7 | 24 | 2.0 | 3:05 | 8 |
+    old: | PFANS | 5-7 | 24 | 2.0 | 3:51 | 17 |
+- DIFF part-d/d2_structure.json: 1295 of 2586 lines
+    new:   0.2960622275297168,
+    old:   0.2949879371512191,
+- DIFF part-d/d3_tables.md: 6 of 54 lines
+    new: | First smoke of the game (median, s) | 2:43 (2:33 to 3:04) | 3:27 (3:01 to 4:06) | 3:05 (2:21 to 4:31) | 3:41 (3:01 to 4:16) |
+    old: | First smoke of the game (median, s) | 2:43 (2:33 to 3:04) | 3:27 (3:01 to 4:06) | 3:07 (2:21 to 4:53) | 3:45 (3:11 to 4:52) |
+only in round5b: []
+in round 5 but not regenerated: ['part-b/err.txt', 'part-b/show.txt', 'part-c4/FINDINGS-C4.md', 'part-c5/out-hs.txt', 'part-c5/out-lp-daring.txt', 'part-c5/out-lp.txt', 'part-c5/out-rest.txt', 'part-c5/out-sg.txt', 'part-c5/out-tables.txt', 'part-d/d2_output.txt']

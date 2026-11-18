@@ -1,0 +1,166 @@
+features 17 clans 24
+PC shares [29.6, 17.8, 11.6, 10.7, 9.1, 5.7] cumulative 2: 47.4 3: 59.0
+PC1 loadings (correlation of the score with each feature):
+   -0.85  Stacked on a teammate (%)
+   -0.83  For a teammate (%)
+   -0.82  Radar cruiser inside (% of destroyer smokes)
+   -0.78  Long-smoke destroyers per game
+   +0.72  Cruisers carrying smoke per game
+   +0.67  Cap-sitter destroyers per game
+   +0.58  Kiting (%)
+   +0.56  Parked (%)
+   +0.41  Exhaust-smoke ships per game
+   +0.34  Inside a cap (%)
+   +0.32  Centre lane (%)
+   -0.31  Pushing (%)
+   +0.30  First smoke of the game (median, s)
+   -0.25  Median distance to cap edge (m)
+   +0.23  Smokes per game
+   -0.19  Smokes after 12:00 (%)
+   -0.05  Destroyers carrying smoke per game
+PC2 loadings (correlation of the score with each feature):
+   +0.76  Smokes per game
+   +0.71  Destroyers carrying smoke per game
+   +0.58  Parked (%)
+   +0.51  Smokes after 12:00 (%)
+   -0.51  Pushing (%)
+   +0.51  Cap-sitter destroyers per game
+   -0.48  Exhaust-smoke ships per game
+   -0.46  First smoke of the game (median, s)
+   -0.37  Median distance to cap edge (m)
+   +0.29  Stacked on a teammate (%)
+   +0.24  Long-smoke destroyers per game
+   +0.24  Inside a cap (%)
+   +0.15  Radar cruiser inside (% of destroyer smokes)
+   -0.11  Cruisers carrying smoke per game
+   +0.07  For a teammate (%)
+   -0.02  Kiting (%)
+   -0.00  Centre lane (%)
+PC3 loadings (correlation of the score with each feature):
+   +0.64  Median distance to cap edge (m)
+   +0.58  First smoke of the game (median, s)
+   +0.56  Centre lane (%)
+   -0.56  Inside a cap (%)
+   +0.34  Parked (%)
+   +0.33  Smokes after 12:00 (%)
+   +0.28  Pushing (%)
+   -0.27  Exhaust-smoke ships per game
+   +0.26  Smokes per game
+   +0.26  Radar cruiser inside (% of destroyer smokes)
+   -0.15  Kiting (%)
+   +0.13  Cruisers carrying smoke per game
+   +0.12  Cap-sitter destroyers per game
+   -0.12  Long-smoke destroyers per game
+   -0.08  For a teammate (%)
+   +0.04  Stacked on a teammate (%)
+   +0.03  Destroyers carrying smoke per game
+PC1 order: *H-SR -4.6, PN -2.9, *RESIN -2.4, *BONKZ -2.2, MZY -1.8, BONKY -1.7, KSC -1.7, EPOXY -1.7, *KITE -1.2, -BN- -1.0, PFANS -0.9, RSR -0.6, REEEE -0.1, NGA +0.2, HFANS +0.3, *VRTUS +0.7, MACHX +1.2, 5D +1.6, *HTDOG +2.5, KITED +2.8, SCCC2 +2.8, KSE +3.0, MACH +3.7, UYSC +4.0
+PC2 order: PN -3.3, MZY -3.3, 5D -2.8, KITED -2.5, NGA -2.1, KSE -2.1, PFANS -1.6, RSR +0.0, *KITE +0.3, *H-SR +0.3, MACHX +0.5, MACH +0.6, *HTDOG +0.7, REEEE +0.8, -BN- +0.8, *BONKZ +0.9, *RESIN +1.1, UYSC +1.2, HFANS +1.2, EPOXY +1.3, BONKY +1.3, *VRTUS +2.0, SCCC2 +2.1, KSC +2.5
+with outcomes included (22 scores): PC shares [28.2, 17.4, 9.9] | |r| of its PC1 with behaviour PC1 0.94 | PC2 0.91
+   outcome vs axes: Concealed damage per smoke: r with PC1 -0.77, with PC2 +0.30
+   outcome vs axes: Concealed damage per game: r with PC1 -0.44, with PC2 +0.68
+   outcome vs axes: Nearest cap taken (% of smokes where it was not ours): r with PC1 -0.19, with PC2 +0.04
+   outcome vs axes: Nearest cap not lost (% of smokes within 2 km of it, cap not the enemy's): r with PC1 +0.16, with PC2 +0.04
+   outcome vs axes: Deaths per 100 smokes: r with PC1 +0.16, with PC2 -0.51
+   outcome vs axes: Caps taken next to a smoke per game: r with PC1 +0.08, with PC2 +0.37
+   outcome vs axes: Batch cap-defended flag per game (secondary: fires for any owned cap with an enemy inside): r with PC1 +0.06, with PC2 +0.57
+   single score vs axes: Cruisers carrying smoke per game: r with PC1 +0.72, with PC2 -0.11
+   single score vs axes: Long-smoke destroyers per game: r with PC1 -0.78, with PC2 +0.24
+   single score vs axes: For a teammate (%): r with PC1 -0.83, with PC2 +0.07
+   single score vs axes: Smokes per game: r with PC1 +0.23, with PC2 +0.76
+   single score vs axes: Parked (%): r with PC1 +0.56, with PC2 +0.58
+null PC1 share: median 16.7 95th 19.0 | share of shuffles with PC1 >= observed 0.0
+null PC2 share: median 13.9 95th 15.7 | share of shuffles with PC2 >= observed 0.0
+k=2: k-means silhouette 0.18 (shuffled-data median 0.08, 95th pct 0.11; share of shuffles >= observed 0.00), sizes [14, 10], hier sizes [22, 2], silhouette hier 0.18, ARI k-means vs hier 0.08
+     *RESIN, *H-SR, *BONKZ, MZY, EPOXY, -BN-, *KITE, REEEE, PFANS, KSC, BONKY, NGA, PN, RSR
+     *HTDOG, HFANS, KITED, MACHX, *VRTUS, 5D, KSE, MACH, SCCC2, UYSC
+   hier: *RESIN, *H-SR, *BONKZ, MZY, *HTDOG, EPOXY, HFANS, -BN-, *KITE, KITED, MACHX, REEEE, PFANS, KSC, *VRTUS, 5D, BONKY, KSE, NGA, PN, RSR, SCCC2 | MACH, UYSC
+k=3: k-means silhouette 0.16 (shuffled-data median 0.07, 95th pct 0.10; share of shuffles >= observed 0.00), sizes [11, 7, 6], hier sizes [22, 1, 1], silhouette hier 0.14, ARI k-means vs hier 0.05
+     *RESIN, *H-SR, *BONKZ, EPOXY, HFANS, -BN-, *KITE, REEEE, KSC, BONKY, RSR
+     MZY, KITED, PFANS, 5D, NGA, PN
+     *HTDOG, MACHX, *VRTUS, KSE, MACH, SCCC2, UYSC
+   hier: *RESIN, *H-SR, *BONKZ, MZY, *HTDOG, EPOXY, HFANS, -BN-, *KITE, KITED, MACHX, REEEE, PFANS, KSC, *VRTUS, 5D, BONKY, KSE, NGA, PN, RSR, SCCC2 | MACH | UYSC
+k=4: k-means silhouette 0.18 (shuffled-data median 0.07, 95th pct 0.09; share of shuffles >= observed 0.00), sizes [11, 7, 4, 2], hier sizes [20, 2, 1, 1], silhouette hier 0.09, ARI k-means vs hier 0.18
+     MZY, PN
+     *RESIN, *H-SR, *BONKZ, EPOXY, HFANS, -BN-, *KITE, REEEE, KSC, BONKY, RSR
+     KITED, PFANS, 5D, NGA
+     *HTDOG, MACHX, *VRTUS, KSE, MACH, SCCC2, UYSC
+   hier: *RESIN, *H-SR, *BONKZ, *HTDOG, EPOXY, HFANS, -BN-, *KITE, KITED, MACHX, REEEE, PFANS, KSC, *VRTUS, 5D, BONKY, KSE, NGA, RSR, SCCC2 | MZY, PN | MACH | UYSC
+k=5: k-means silhouette 0.18 (shuffled-data median 0.00, 95th pct 0.00; share of shuffles >= observed 0.00), sizes [10, 5, 4, 3, 2], hier sizes [17, 3, 2, 1, 1], silhouette hier 0.13, ARI k-means vs hier 0.36
+     MZY, PN
+     *RESIN, *H-SR, *BONKZ, EPOXY, -BN-, *KITE, REEEE, PFANS, KSC, BONKY
+     HFANS, MACHX, RSR, UYSC
+     KITED, 5D, NGA
+     *HTDOG, *VRTUS, KSE, MACH, SCCC2
+   hier: *RESIN, *H-SR, *BONKZ, *HTDOG, EPOXY, HFANS, -BN-, *KITE, MACHX, REEEE, PFANS, KSC, *VRTUS, BONKY, KSE, RSR, SCCC2 | MZY, PN | KITED, 5D, NGA | MACH | UYSC
+PC1 sorted [-4.6, -2.9, -2.4, -2.2, -1.8, -1.7, -1.7, -1.7, -1.2, -1.0, -0.9, -0.6, -0.1, 0.2, 0.3, 0.7, 1.2, 1.6, 2.5, 2.8, 2.8, 3.0, 3.7, 4.0] | largest gap 1.69 of range 8.59
+PC2 sorted [-3.3, -3.3, -2.8, -2.5, -2.1, -2.1, -1.6, 0.0, 0.3, 0.3, 0.5, 0.6, 0.7, 0.8, 0.8, 0.9, 1.1, 1.2, 1.2, 1.3, 1.3, 2.0, 2.1, 2.5] | largest gap 1.61 of range 5.83
+-- drop one group, k=2 (ARI against the full-feature k-means; 1 = same groups)
+   without Lineup             ARI 0.31  clans that switch group  5  PC1 29% PC2 20%
+   without Volume and tempo   ARI 0.54  clans that switch group  3  PC1 35% PC2 16%
+   without Who it is for      ARI 0.83  clans that switch group  1  PC1 24% PC2 19%
+   without Where              ARI 0.83  clans that switch group  1  PC1 34% PC2 21%
+   without Movement           ARI 0.83  clans that switch group  1  PC1 32% PC2 18%
+-- drop one group, k=3 (ARI against the full-feature k-means; 1 = same groups)
+   without Lineup             ARI 0.29  clans that switch group  7  PC1 29% PC2 20%
+   without Volume and tempo   ARI 0.54  clans that switch group  4  PC1 35% PC2 16%
+   without Who it is for      ARI 1.00  clans that switch group  0  PC1 24% PC2 19%
+   without Where              ARI 0.77  clans that switch group  2  PC1 34% PC2 21%
+   without Movement           ARI 0.65  clans that switch group  4  PC1 32% PC2 18%
+2-axis map k=2: silhouette 0.40, ARI vs 17-score k-means 0.68
+     centre (-1.3, +0.1): *RESIN, *H-SR, *BONKZ, MZY, EPOXY, HFANS, -BN-, *KITE, REEEE, PFANS, KSC, *VRTUS, BONKY, NGA, PN, RSR
+     centre (+2.7, -0.3): *HTDOG, KITED, MACHX, 5D, KSE, MACH, SCCC2, UYSC
+2-axis map k=3: silhouette 0.42, ARI vs 17-score k-means 0.77
+     centre (-1.3, +1.0): *RESIN, *H-SR, *BONKZ, EPOXY, HFANS, -BN-, *KITE, REEEE, KSC, *VRTUS, BONKY, RSR
+     centre (-0.8, -2.6): MZY, PFANS, 5D, NGA, PN
+     centre (+2.9, +0.1): *HTDOG, KITED, MACHX, KSE, MACH, SCCC2, UYSC
+2-axis map k=4: silhouette 0.46, ARI vs 17-score k-means 0.86
+     centre (-1.5, +1.0): *RESIN, *H-SR, *BONKZ, EPOXY, HFANS, -BN-, *KITE, REEEE, KSC, BONKY, RSR
+     centre (-1.4, -2.6): MZY, PFANS, NGA, PN
+     centre (+2.5, -2.5): KITED, 5D, KSE
+     centre (+2.5, +1.2): *HTDOG, MACHX, *VRTUS, MACH, SCCC2, UYSC
+2-axis map k=5: silhouette 0.44, ARI vs 17-score k-means 0.30
+     centre (-2.4, +1.2): *RESIN, *H-SR, *BONKZ, EPOXY, KSC, BONKY
+     centre (-1.4, -2.6): MZY, PFANS, NGA, PN
+     centre (-0.1, +0.8): HFANS, -BN-, *KITE, MACHX, REEEE, *VRTUS, RSR
+     centre (+2.5, -2.5): KITED, 5D, KSE
+     centre (+3.2, +1.2): *HTDOG, MACH, SCCC2, UYSC
+-- games resampled within clan (200 runs): PC1 share median 28% (95% 24 to 32); PC1 scores vs base |r| median 0.90 (5th pct 0.79); PC2 |r| median 0.79 (5th pct 0.31)
+   k=2: ARI vs base median 0.54 (95% 0.07 to 1.00), share of runs with ARI >= 0.8: 0.14
+     stays with its group (share of runs, averaged over group mates): RESIN 0.83, H-SR 0.83, BONKZ 0.82, MZY 0.81, HTDOG 0.87, EPOXY 0.82, HFANS 0.56, -BN- 0.73, KITE 0.72, KITED 0.87, MACHX 0.79, REEEE 0.62, PFANS 0.73, KSC 0.78, VRTUS 0.65, 5D 0.83, BONKY 0.73, KSE 0.87, MACH 0.88, NGA 0.46, PN 0.82, RSR 0.75, SCCC2 0.86, UYSC 0.88
+   k=3: ARI vs base median 0.34 (95% 0.07 to 0.73), share of runs with ARI >= 0.8: 0.01
+     stays with its group (share of runs, averaged over group mates): RESIN 0.71, H-SR 0.69, BONKZ 0.71, MZY 0.47, HTDOG 0.70, EPOXY 0.70, HFANS 0.40, -BN- 0.60, KITE 0.55, KITED 0.47, MACHX 0.58, REEEE 0.45, PFANS 0.53, KSC 0.67, VRTUS 0.48, 5D 0.52, BONKY 0.61, KSE 0.55, MACH 0.61, NGA 0.58, PN 0.50, RSR 0.59, SCCC2 0.67, UYSC 0.66
+   2-axis style kept under game resampling, k=2: mean 0.91; RESIN 1.00, H-SR 1.00, BONKZ 0.99, MZY 0.98, HTDOG 0.98, EPOXY 1.00, HFANS 0.77, -BN- 0.99, KITE 0.88, KITED 1.00, MACHX 0.70, REEEE 0.72, PFANS 0.92, KSC 1.00, VRTUS 0.56, 5D 0.98, BONKY 0.87, KSE 1.00, MACH 1.00, NGA 0.69, PN 0.98, RSR 0.95, SCCC2 0.94, UYSC 1.00
+   2-axis style kept under game resampling, k=3: mean 0.88; RESIN 1.00, H-SR 0.97, BONKZ 0.96, MZY 0.97, HTDOG 0.98, EPOXY 1.00, HFANS 0.80, -BN- 0.96, KITE 0.71, KITED 0.80, MACHX 0.67, REEEE 0.62, PFANS 0.79, KSC 1.00, VRTUS 0.66, 5D 0.88, BONKY 0.87, KSE 0.86, MACH 1.00, NGA 0.96, PN 0.99, RSR 0.73, SCCC2 0.94, UYSC 1.00
+   2-axis style kept under game resampling, k=4: mean 0.86; RESIN 1.00, H-SR 0.95, BONKZ 0.95, MZY 0.97, HTDOG 0.96, EPOXY 0.99, HFANS 0.57, -BN- 0.95, KITE 0.71, KITED 1.00, MACHX 0.63, REEEE 0.53, PFANS 0.76, KSC 1.00, VRTUS 0.64, 5D 0.97, BONKY 0.85, KSE 0.91, MACH 0.97, NGA 0.72, PN 0.97, RSR 0.73, SCCC2 0.95, UYSC 0.93
+   2-axis style kept under game resampling, k=5: mean 0.80; RESIN 0.94, H-SR 0.97, BONKZ 0.84, MZY 0.97, HTDOG 0.85, EPOXY 0.72, HFANS 0.94, -BN- 0.62, KITE 0.37, KITED 1.00, MACHX 0.57, REEEE 0.57, PFANS 0.79, KSC 0.80, VRTUS 0.70, 5D 0.97, BONKY 0.61, KSE 0.90, MACH 0.98, NGA 0.72, PN 0.97, RSR 0.66, SCCC2 0.85, UYSC 0.96
+   axis-1 95% half-width, median over clans: 1.66 | axis-2: 1.65
+flagged clans with every score available: ['BTLST', 'INCA', 'MANBA', 'OGF', 'RMN', 'KM'] | missing some: []
+   BTLST [0.7, -1.5, -2.0] {2: 1, 3: 1} {2: 1, 3: 1, 4: 2, 5: 3}
+   INCA [0.1, 2.1, 2.3] {2: 1, 3: 2} {2: 0, 3: 0, 4: 0, 5: 2}
+   MANBA [-1.0, -5.3, 1.2] {2: 0, 3: 1} {2: 0, 3: 1, 4: 1, 5: 1}
+   OGF [0.9, -2.1, -2.0] {2: 0, 3: 1} {2: 1, 3: 1, 4: 2, 5: 3}
+   RMN [-0.4, -2.3, -1.7] {2: 0, 3: 1} {2: 0, 3: 1, 4: 1, 5: 1}
+   KM [-0.7, -3.6, 0.6] {2: 0, 3: 1} {2: 0, 3: 1, 4: 1, 5: 1}
+-- group profiles k=2 (mean of clan values; z in brackets)
+  group 0 ['*RESIN', '*H-SR', '*BONKZ', 'MZY', 'EPOXY', '-BN-', '*KITE', 'REEEE', 'PFANS', 'KSC', 'BONKY', 'NGA', 'PN', 'RSR']
+      Cruisers carrying smoke per game 0.5 (-0.6); Cap-sitter destroyers per game 0.5 (-0.6); For a teammate (%) 62.5 (+0.6); Long-smoke destroyers per game 0.9 (+0.6); Stacked on a teammate (%) 30.9 (+0.5); Radar cruiser inside (% of destroyer smokes) 41.7 (+0.5); Parked (%) 23.3 (-0.4); Centre lane (%) 19.8 (-0.4); Smokes per game 4.1 (-0.3); Kiting (%) 17.9 (-0.3); Exhaust-smoke ships per game 0.4 (-0.3); First smoke of the game (median, s) 179.3 (-0.2); Inside a cap (%) 22.1 (-0.2); Smokes after 12:00 (%) 11.7 (+0.2); Median distance to cap edge (m) 2,311.0 (+0.2); Destroyers carrying smoke per game 1.5 (-0.1); Pushing (%) 20.3 (+0.0)
+      W-L 111-84 (57%)
+  group 1 ['*HTDOG', 'HFANS', 'KITED', 'MACHX', '*VRTUS', '5D', 'KSE', 'MACH', 'SCCC2', 'UYSC']
+      Cruisers carrying smoke per game 1.0 (+0.9); Cap-sitter destroyers per game 1.1 (+0.8); For a teammate (%) 45.8 (-0.8); Long-smoke destroyers per game 0.4 (-0.8); Stacked on a teammate (%) 16.7 (-0.8); Radar cruiser inside (% of destroyer smokes) 18.5 (-0.7); Parked (%) 34.1 (+0.6); Centre lane (%) 26.8 (+0.5); Smokes per game 5.3 (+0.5); Kiting (%) 24.1 (+0.5); Exhaust-smoke ships per game 0.7 (+0.5); First smoke of the game (median, s) 199.5 (+0.3); Inside a cap (%) 26.0 (+0.2); Smokes after 12:00 (%) 9.1 (-0.2); Median distance to cap edge (m) 1,997.8 (-0.2); Destroyers carrying smoke per game 1.5 (+0.1); Pushing (%) 19.8 (-0.0)
+      W-L 54-58 (48%)
+-- group profiles k=3 (mean of clan values; z in brackets)
+  group 0 ['*RESIN', '*H-SR', '*BONKZ', 'EPOXY', 'HFANS', '-BN-', '*KITE', 'REEEE', 'KSC', 'BONKY', 'RSR']
+      Long-smoke destroyers per game 1.0 (+0.8); Stacked on a teammate (%) 32.5 (+0.7); For a teammate (%) 63.6 (+0.7); Cruisers carrying smoke per game 0.5 (-0.7); First smoke of the game (median, s) 166.8 (-0.6); Destroyers carrying smoke per game 1.7 (+0.5); Exhaust-smoke ships per game 0.3 (-0.5); Radar cruiser inside (% of destroyer smokes) 41.2 (+0.5); Centre lane (%) 19.9 (-0.3); Smokes after 12:00 (%) 12.8 (+0.3); Kiting (%) 18.8 (-0.2); Parked (%) 25.6 (-0.2); Cap-sitter destroyers per game 0.7 (-0.2); Smokes per game 4.8 (+0.2); Median distance to cap edge (m) 2,068.8 (-0.1); Inside a cap (%) 24.4 (+0.1); Pushing (%) 19.6 (-0.1)
+      W-L 101-66 (60%)
+  group 1 ['MZY', 'KITED', 'PFANS', '5D', 'NGA', 'PN']
+      Destroyers carrying smoke per game 1.0 (-1.2); Smokes per game 3.1 (-1.0); Cap-sitter destroyers per game 0.4 (-1.0); Exhaust-smoke ships per game 0.9 (+0.9); Parked (%) 18.3 (-0.9); Median distance to cap edge (m) 2,729.6 (+0.7); Smokes after 12:00 (%) 6.2 (-0.6); First smoke of the game (median, s) 210.0 (+0.6); Pushing (%) 24.2 (+0.5); Stacked on a teammate (%) 19.8 (-0.5); Centre lane (%) 19.5 (-0.4); Kiting (%) 18.0 (-0.3); Cruisers carrying smoke per game 0.8 (+0.3); Inside a cap (%) 20.8 (-0.3); Long-smoke destroyers per game 0.6 (-0.2); Radar cruiser inside (% of destroyer smokes) 29.8 (-0.1); For a teammate (%) 54.2 (-0.1)
+      W-L 30-39 (43%)
+  group 2 ['*HTDOG', 'MACHX', '*VRTUS', 'KSE', 'MACH', 'SCCC2', 'UYSC']
+      Cap-sitter destroyers per game 1.2 (+1.1); Parked (%) 39.4 (+1.1); Long-smoke destroyers per game 0.3 (-1.0); For a teammate (%) 44.0 (-0.9); Centre lane (%) 29.8 (+0.9); Cruisers carrying smoke per game 1.0 (+0.8); Stacked on a teammate (%) 17.6 (-0.7); Radar cruiser inside (% of destroyer smokes) 19.7 (-0.7); Kiting (%) 25.2 (+0.6); Smokes per game 5.5 (+0.6); First smoke of the game (median, s) 201.6 (+0.4); Pushing (%) 17.3 (-0.4); Median distance to cap edge (m) 1,885.4 (-0.4); Destroyers carrying smoke per game 1.6 (+0.2); Inside a cap (%) 25.1 (+0.1); Smokes after 12:00 (%) 11.0 (+0.1); Exhaust-smoke ships per game 0.6 (+0.1)
+      W-L 34-37 (48%)
+-- correlation with Cruisers carrying smoke per game: Stacked on a teammate (%) -0.70; Exhaust-smoke ships per game +0.66; For a teammate (%) -0.58; Radar cruiser inside (% of destroyer smokes) -0.46; Long-smoke destroyers per game -0.43; Cap-sitter destroyers per game +0.38; Smokes per game +0.37; Parked (%) +0.31
+-- correlation with Long-smoke destroyers per game: Stacked on a teammate (%) +0.64; For a teammate (%) +0.64; Radar cruiser inside (% of destroyer smokes) +0.59; Parked (%) -0.49; Destroyers carrying smoke per game +0.49; First smoke of the game (median, s) -0.45; Cap-sitter destroyers per game -0.44; Cruisers carrying smoke per game -0.43
+-- correlation with Smokes per game: Destroyers carrying smoke per game +0.59; Parked (%) +0.58; Cap-sitter destroyers per game +0.50; Smokes after 12:00 (%) +0.39; Cruisers carrying smoke per game +0.37; Pushing (%) -0.31; First smoke of the game (median, s) -0.23; Exhaust-smoke ships per game -0.13
+-- correlation with For a teammate (%): Stacked on a teammate (%) +0.68; Long-smoke destroyers per game +0.64; Cruisers carrying smoke per game -0.58; Radar cruiser inside (% of destroyer smokes) +0.58; Kiting (%) -0.50; Cap-sitter destroyers per game -0.49; Parked (%) -0.46; Centre lane (%) -0.28
+-- win share vs PC1 r -0.49 vs PC2 r 0.26 vs PC3 0.32

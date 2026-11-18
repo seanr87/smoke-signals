@@ -1,0 +1,2161 @@
+{
+ "R": {
+  "MR-1": {
+   "spot": {
+    "top_k": 12,
+    "top_n": 33,
+    "rest_k": 0,
+    "rest_n": 13,
+    "top_pct": 36.4,
+    "rest_pct": 0.0,
+    "gap": 36.4,
+    "lo": 30.8,
+    "hi": 40.0,
+    "clear": true,
+    "mark": "Top 6"
+   },
+   "clans": {
+    "top6": {
+     "HTDOG": 8,
+     "BONKZ": 4
+    },
+    "rest": {}
+   },
+   "by_ship": {
+    "Jinan": {
+     "top6": {
+      "HTDOG": 8
+     },
+     "rest": {}
+    },
+    "Svea": {
+     "top6": {
+      "BONKZ": 4
+     },
+     "rest": {}
+    }
+   },
+   "svea_only": {
+    "top_k": 4,
+    "top_n": 24,
+    "rest_k": 0,
+    "rest_n": 13,
+    "top_pct": 16.7,
+    "rest_pct": 0.0,
+    "gap": 16.7,
+    "lo": 0.0,
+    "hi": 30.8,
+    "clear": false,
+    "mark": "Shared"
+   },
+   "all_ships_in_ellipse": {
+    "top_k": 17,
+    "top_n": 88,
+    "rest_k": 9,
+    "rest_n": 119,
+    "top_pct": 19.3,
+    "rest_pct": 7.6,
+    "gap": 11.8,
+    "lo": -4.9,
+    "hi": 25.7,
+    "clear": false,
+    "mark": "Shared"
+   }
+  },
+  "MR-2": {
+   "cap_table": {
+    "A": {
+     "n": 62,
+     "top6": 28,
+     "ours": 10,
+     "neutral": 31,
+     "theirs": 21,
+     "enemy_took_k": 6,
+     "enemy_took_n": 41,
+     "enemy_took_ours_k": 3,
+     "enemy_took_ours_n": 10,
+     "we_took_k": 6,
+     "we_took_n": 52,
+     "cap_defended_this_cap": 7,
+     "conc": 13949,
+     "deaths_per_100": 11.3
+    },
+    "B": {
+     "n": 68,
+     "top6": 35,
+     "ours": 23,
+     "neutral": 22,
+     "theirs": 23,
+     "enemy_took_k": 16,
+     "enemy_took_n": 45,
+     "enemy_took_ours_k": 9,
+     "enemy_took_ours_n": 23,
+     "we_took_k": 20,
+     "we_took_n": 45,
+     "cap_defended_this_cap": 8,
+     "conc": 10386,
+     "deaths_per_100": 7.4
+    },
+    "C": {
+     "n": 77,
+     "top6": 25,
+     "ours": 37,
+     "neutral": 19,
+     "theirs": 21,
+     "enemy_took_k": 10,
+     "enemy_took_n": 56,
+     "enemy_took_ours_k": 5,
+     "enemy_took_ours_n": 37,
+     "we_took_k": 8,
+     "we_took_n": 40,
+     "cap_defended_this_cap": 10,
+     "conc": 7803,
+     "deaths_per_100": 7.8
+    }
+   },
+   "sets": {
+    "radar play (primary purpose cap_control or radar_trap), nearest cap B": {
+     "n": 15,
+     "top6": 12,
+     "ours": 8,
+     "neutral": 5,
+     "theirs": 2,
+     "enemy_took": [
+      5,
+      13
+     ],
+     "enemy_took_when_ours": [
+      4,
+      8
+     ],
+     "we_took": [
+      3,
+      7
+     ],
+     "cap_defended_this_cap": 4,
+     "conc": 12843,
+     "deaths": 1,
+     "ships": {
+      "Gearing": 4,
+      "Svea": 4,
+      "Somers": 3,
+      "Gdańsk": 3,
+      "Harugumo": 1
+     },
+     "clans": {
+      "top6": {
+       "KITE": 4,
+       "BONKZ": 4,
+       "H-SR": 2,
+       "RESIN": 2
+      },
+      "rest": {
+       "HFANS": 2,
+       "SCCC2": 1
+      }
+     },
+     "spotted": 11
+    },
+    "radar activated from inside (off_radar), nearest cap B": {
+     "n": 15,
+     "top6": 12,
+     "ours": 8,
+     "neutral": 5,
+     "theirs": 2,
+     "enemy_took": [
+      5,
+      13
+     ],
+     "enemy_took_when_ours": [
+      4,
+      8
+     ],
+     "we_took": [
+      3,
+      7
+     ],
+     "cap_defended_this_cap": 4,
+     "conc": 12843,
+     "deaths": 1,
+     "ships": {
+      "Gearing": 4,
+      "Svea": 4,
+      "Somers": 3,
+      "Gdańsk": 3,
+      "Harugumo": 1
+     },
+     "clans": {
+      "top6": {
+       "KITE": 4,
+       "BONKZ": 4,
+       "H-SR": 2,
+       "RESIN": 2
+      },
+      "rest": {
+       "HFANS": 2,
+       "SCCC2": 1
+      }
+     },
+     "spotted": 11
+    },
+    "either, nearest cap B": {
+     "n": 15,
+     "top6": 12,
+     "ours": 8,
+     "neutral": 5,
+     "theirs": 2,
+     "enemy_took": [
+      5,
+      13
+     ],
+     "enemy_took_when_ours": [
+      4,
+      8
+     ],
+     "we_took": [
+      3,
+      7
+     ],
+     "cap_defended_this_cap": 4,
+     "conc": 12843,
+     "deaths": 1,
+     "ships": {
+      "Gearing": 4,
+      "Svea": 4,
+      "Somers": 3,
+      "Gdańsk": 3,
+      "Harugumo": 1
+     },
+     "clans": {
+      "top6": {
+       "KITE": 4,
+       "BONKZ": 4,
+       "H-SR": 2,
+       "RESIN": 2
+      },
+      "rest": {
+       "HFANS": 2,
+       "SCCC2": 1
+      }
+     },
+     "spotted": 11
+    },
+    "other smokes nearest cap B (no radar)": {
+     "n": 53,
+     "top6": 23,
+     "ours": 15,
+     "neutral": 17,
+     "theirs": 21,
+     "enemy_took": [
+      11,
+      32
+     ],
+     "enemy_took_when_ours": [
+      5,
+      15
+     ],
+     "we_took": [
+      17,
+      38
+     ],
+     "cap_defended_this_cap": 4,
+     "conc": 9690,
+     "deaths": 4,
+     "ships": {
+      "Gearing": 12,
+      "Svea": 11,
+      "Somers": 10,
+      "Gdańsk": 5,
+      "Fuyutsuki": 3,
+      "Z-42": 2,
+      "Napoli": 2,
+      "Daring": 2
+     },
+     "clans": {
+      "top6": {
+       "BONKZ": 7,
+       "KITE": 5,
+       "HTDOG": 5,
+       "H-SR": 3,
+       "RESIN": 3
+      },
+      "rest": {
+       "-BN-": 5,
+       "MACHX": 4,
+       "UYSC": 3,
+       "INCA": 3,
+       "RSR": 2,
+       "BTLST": 2,
+       "HFANS": 2,
+       "SCCC2": 2,
+       "BONKY": 2,
+       "MACH": 2,
+       "OGF": 1,
+       "RMN": 1,
+       "PN": 1
+      }
+     },
+     "spotted": 0
+    },
+    "radar smokes at other caps on the map": {
+     "n": 11,
+     "top6": 6,
+     "ours": 1,
+     "neutral": 5,
+     "theirs": 5,
+     "enemy_took": [
+      1,
+      6
+     ],
+     "enemy_took_when_ours": [
+      0,
+      1
+     ],
+     "we_took": [
+      1,
+      10
+     ],
+     "cap_defended_this_cap": 0,
+     "conc": 16063,
+     "deaths": 0,
+     "ships": {
+      "Harugumo": 4,
+      "Svea": 4,
+      "Gearing": 1,
+      "Gdańsk": 1,
+      "Somers": 1
+     },
+     "clans": {
+      "top6": {
+       "RESIN": 4,
+       "BONKZ": 1,
+       "H-SR": 1
+      },
+      "rest": {
+       "INCA": 3,
+       "PN": 1,
+       "RSR": 1
+      }
+     },
+     "spotted": 9
+    },
+    "radar smokes at any cap, other maps": {
+     "n": 112,
+     "top6": 61,
+     "ours": 52,
+     "neutral": 35,
+     "theirs": 25,
+     "enemy_took": [
+      16,
+      87
+     ],
+     "enemy_took_when_ours": [
+      7,
+      52
+     ],
+     "we_took": [
+      23,
+      60
+     ],
+     "cap_defended_this_cap": 14,
+     "conc": 18328,
+     "deaths": 12,
+     "ships": {
+      "Somers": 46,
+      "Gearing": 16,
+      "Svea": 16,
+      "Gdańsk": 15,
+      "Harugumo": 13,
+      "Shimakaze": 2,
+      "Z-42": 2,
+      "Grozovoi": 1
+     },
+     "clans": {
+      "top6": {
+       "RESIN": 15,
+       "HTDOG": 13,
+       "H-SR": 13,
+       "BONKZ": 12,
+       "VRTUS": 7,
+       "KITE": 1
+      },
+      "rest": {
+       "HFANS": 8,
+       "BONKY": 7,
+       "MACHX": 6,
+       "SCCC2": 4,
+       "REEEE": 4,
+       "KSC": 4,
+       "MZY": 3,
+       "-BN-": 3,
+       "EPOXY": 2,
+       "PFANS": 2,
+       "BTLST": 1,
+       "UYSC": 1,
+       "MANBA": 1,
+       "RSR": 1,
+       "KSE": 1,
+       "PN": 1,
+       "INCA": 1,
+       "KITED": 1
+      }
+     },
+     "spotted": 76
+    },
+    "radar smokes inside or within 2 km of B": {
+     "n": 7,
+     "top6": 5,
+     "ours": 4,
+     "neutral": 2,
+     "theirs": 1,
+     "enemy_took": [
+      2,
+      6
+     ],
+     "enemy_took_when_ours": [
+      1,
+      4
+     ],
+     "we_took": [
+      1,
+      3
+     ],
+     "cap_defended_this_cap": 1,
+     "conc": 15864,
+     "deaths": 0,
+     "ships": {
+      "Svea": 3,
+      "Gdańsk": 2,
+      "Somers": 1,
+      "Gearing": 1
+     },
+     "clans": {
+      "top6": {
+       "BONKZ": 3,
+       "KITE": 1,
+       "RESIN": 1
+      },
+      "rest": {
+       "HFANS": 1,
+       "SCCC2": 1
+      }
+     },
+     "spotted": 5
+    },
+    "other smokes inside or within 2 km of B (no radar)": {
+     "n": 24,
+     "top6": 11,
+     "ours": 7,
+     "neutral": 8,
+     "theirs": 9,
+     "enemy_took": [
+      4,
+      15
+     ],
+     "enemy_took_when_ours": [
+      2,
+      7
+     ],
+     "we_took": [
+      11,
+      17
+     ],
+     "cap_defended_this_cap": 2,
+     "conc": 10071,
+     "deaths": 2,
+     "ships": {
+      "Gearing": 7,
+      "Gdańsk": 4,
+      "Svea": 4,
+      "Somers": 3,
+      "Z-42": 2,
+      "Napoli": 2,
+      "Grozovoi": 1,
+      "Daring": 1
+     },
+     "clans": {
+      "top6": {
+       "KITE": 4,
+       "BONKZ": 4,
+       "RESIN": 2,
+       "HTDOG": 1
+      },
+      "rest": {
+       "RSR": 2,
+       "UYSC": 2,
+       "BTLST": 2,
+       "INCA": 2,
+       "MACHX": 2,
+       "HFANS": 1,
+       "SCCC2": 1,
+       "-BN-": 1
+      }
+     },
+     "spotted": 0
+    },
+    "radar smokes within 2 km of a cap, other maps": {
+     "n": 50,
+     "top6": 26,
+     "ours": 26,
+     "neutral": 16,
+     "theirs": 8,
+     "enemy_took": [
+      3,
+      42
+     ],
+     "enemy_took_when_ours": [
+      0,
+      26
+     ],
+     "we_took": [
+      11,
+      24
+     ],
+     "cap_defended_this_cap": 8,
+     "conc": 16795,
+     "deaths": 6,
+     "ships": {
+      "Somers": 18,
+      "Gdańsk": 9,
+      "Harugumo": 7,
+      "Svea": 7,
+      "Gearing": 6,
+      "Shimakaze": 1,
+      "Grozovoi": 1,
+      "Z-42": 1
+     },
+     "clans": {
+      "top6": {
+       "H-SR": 8,
+       "HTDOG": 6,
+       "RESIN": 6,
+       "BONKZ": 3,
+       "VRTUS": 3
+      },
+      "rest": {
+       "HFANS": 5,
+       "BONKY": 2,
+       "MACHX": 2,
+       "MZY": 2,
+       "KSC": 2,
+       "-BN-": 2,
+       "UYSC": 1,
+       "MANBA": 1,
+       "RSR": 1,
+       "KSE": 1,
+       "PN": 1,
+       "REEEE": 1,
+       "SCCC2": 1,
+       "PFANS": 1,
+       "EPOXY": 1
+      }
+     },
+     "spotted": 37
+    }
+   },
+   "share_of_map_radar_at_B": {
+    "top_k": 12,
+    "top_n": 18,
+    "rest_k": 3,
+    "rest_n": 8,
+    "top_pct": 66.7,
+    "rest_pct": 37.5,
+    "gap": 29.2,
+    "lo": -27.0,
+    "hi": 80.0,
+    "clear": false,
+    "mark": "Shared"
+   },
+   "share_of_all_smokes": {
+    "top_k": 12,
+    "top_n": 88,
+    "rest_k": 3,
+    "rest_n": 119,
+    "top_pct": 13.6,
+    "rest_pct": 2.5,
+    "gap": 11.1,
+    "lo": 1.7,
+    "hi": 21.9,
+    "clear": true,
+    "mark": "Top 6"
+   },
+   "share_of_B_smokes_that_are_radar": {
+    "top_k": 12,
+    "top_n": 35,
+    "rest_k": 3,
+    "rest_n": 33,
+    "top_pct": 34.3,
+    "rest_pct": 9.1,
+    "gap": 25.2,
+    "lo": 6.1,
+    "hi": 40.0,
+    "clear": true,
+    "mark": "Top 6"
+   },
+   "smokes": [
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7948_g1_55897.html",
+     "team": "KITE",
+     "ship": "Gearing",
+     "time": "1:23",
+     "own": "neutral",
+     "enemy_took": false,
+     "we_took": true
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159427.html",
+     "team": "HFANS",
+     "ship": "Somers",
+     "time": "5:10",
+     "own": "ours",
+     "enemy_took": false,
+     "we_took": null
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159439.html",
+     "team": "HFANS",
+     "ship": "Somers",
+     "time": "10:09",
+     "own": "ours",
+     "enemy_took": false,
+     "we_took": null
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7929_g1_195744.html",
+     "team": "SCCC2",
+     "ship": "Gdańsk",
+     "time": "3:10",
+     "own": "neutral",
+     "enemy_took": false,
+     "we_took": false
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7930_g1_51294.html",
+     "team": "H-SR",
+     "ship": "Somers",
+     "time": "5:07",
+     "own": "neutral",
+     "enemy_took": false,
+     "we_took": true
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g2_121106.html",
+     "team": "H-SR",
+     "ship": "Harugumo",
+     "time": "13:58",
+     "own": "ours",
+     "enemy_took": true,
+     "we_took": null
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8149_g1_68154.html",
+     "team": "KITE",
+     "ship": "Gearing",
+     "time": "1:37",
+     "own": "neutral",
+     "enemy_took": false,
+     "we_took": false
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8149_g1_68162.html",
+     "team": "KITE",
+     "ship": "Gearing",
+     "time": "5:45",
+     "own": "ours",
+     "enemy_took": false,
+     "we_took": null
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8149_g1_68172.html",
+     "team": "KITE",
+     "ship": "Gearing",
+     "time": "10:42",
+     "own": "ours",
+     "enemy_took": true,
+     "we_took": null
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176005.html",
+     "team": "BONKZ",
+     "ship": "Svea",
+     "time": "13:21",
+     "own": "theirs",
+     "enemy_took": null,
+     "we_took": true
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176007.html",
+     "team": "BONKZ",
+     "ship": "Svea",
+     "time": "14:49",
+     "own": "ours",
+     "enemy_took": false,
+     "we_took": null
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176009.html",
+     "team": "BONKZ",
+     "ship": "Svea",
+     "time": "16:02",
+     "own": "ours",
+     "enemy_took": true,
+     "we_took": null
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176011.html",
+     "team": "BONKZ",
+     "ship": "Svea",
+     "time": "17:14",
+     "own": "ours",
+     "enemy_took": true,
+     "we_took": null
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_175996.html",
+     "team": "RESIN",
+     "ship": "Gdańsk",
+     "time": "3:34",
+     "own": "neutral",
+     "enemy_took": true,
+     "we_took": false
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176006.html",
+     "team": "RESIN",
+     "ship": "Gdańsk",
+     "time": "13:29",
+     "own": "theirs",
+     "enemy_took": null,
+     "we_took": false
+    }
+   ]
+  },
+  "LF-1": {
+   "cluster": {
+    "top_k": 5,
+    "top_n": 12,
+    "rest_k": 8,
+    "rest_n": 25,
+    "top_pct": 41.7,
+    "rest_pct": 32.0,
+    "gap": 9.7,
+    "lo": -19.4,
+    "hi": 36.4,
+    "clear": false,
+    "mark": "Shared"
+   },
+   "n": 13,
+   "clans": {
+    "top6": {
+     "HTDOG": 2,
+     "VRTUS": 1,
+     "H-SR": 1,
+     "RESIN": 1
+    },
+    "rest": {
+     "HFANS": 3,
+     "BTLST": 2,
+     "NGA": 1,
+     "SCCC2": 1,
+     "MACHX": 1
+    }
+   },
+   "smoker_ships": {
+    "top6": {
+     "Gearing": 2,
+     "Somers": 1,
+     "Gdańsk": 1,
+     "Harugumo": 1
+    },
+    "rest": {
+     "Gearing": 4,
+     "Somers": 3,
+     "Daring": 1
+    }
+   },
+   "cruisers_inside": {
+    "top6": {
+     "Des Moines": 3,
+     "Brisbane": 1
+    },
+    "rest": {
+     "Napoli": 1,
+     "Des Moines": 2,
+     "Brisbane": 1,
+     "Svea": 1
+    }
+   },
+   "cruisers_screened": {
+    "top6": {},
+    "rest": {
+     "Napoli": 3,
+     "Smolensk": 1,
+     "San Martín": 1
+    }
+   },
+   "zone_A_early": {
+    "n": 19,
+    "ships": {
+     "Gearing": 8,
+     "Somers": 8,
+     "Daring": 1,
+     "Gdańsk": 1,
+     "Harugumo": 1
+    },
+    "clans": {
+     "top6": {
+      "HTDOG": 2,
+      "VRTUS": 1,
+      "KITE": 1,
+      "H-SR": 1,
+      "RESIN": 1
+     },
+     "rest": {
+      "HFANS": 3,
+      "BTLST": 2,
+      "EPOXY": 2,
+      "PN": 1,
+      "NGA": 1,
+      "SCCC2": 1,
+      "-BN-": 1,
+      "KSC": 1,
+      "MACHX": 1
+     }
+    }
+   }
+  },
+  "LF-2": {
+   "spot": {
+    "top_k": 14,
+    "top_n": 19,
+    "rest_k": 4,
+    "rest_n": 21,
+    "top_pct": 73.7,
+    "rest_pct": 19.0,
+    "gap": 54.6,
+    "lo": 6.7,
+    "hi": 87.0,
+    "clear": true,
+    "mark": "Top 6"
+   },
+   "clans": {
+    "top6": {
+     "VRTUS": 8,
+     "HTDOG": 4,
+     "RESIN": 2
+    },
+    "rest": {
+     "BONKY": 4
+    }
+   }
+  },
+  "SF-1": {
+   "caps_uv": {
+    "A": {
+     "u": 0.2,
+     "v": 0.35,
+     "r": 0.0833
+    },
+    "B": {
+     "u": 0.2,
+     "v": 0.65,
+     "r": 0.0833
+    },
+    "C": {
+     "u": 0.44,
+     "v": 0.5,
+     "r": 0.0625
+    },
+    "D": {
+     "u": 0.76,
+     "v": 0.5,
+     "r": 0.0625
+    }
+   },
+   "by_cap": {
+    "west own-side cap (drawn B)": {
+     "n": 15,
+     "early_dd_smokes_here": 17,
+     "share": {
+      "top_k": 5,
+      "top_n": 8,
+      "rest_k": 10,
+      "rest_n": 16,
+      "top_pct": 62.5,
+      "rest_pct": 62.5,
+      "gap": 0.0,
+      "lo": -30.2,
+      "hi": 26.2,
+      "clear": false,
+      "mark": "Shared"
+     },
+     "inside": 10,
+     "screened": 5,
+     "clans": {
+      "top6": {
+       "H-SR": 2,
+       "VRTUS": 1,
+       "BONKZ": 1,
+       "RESIN": 1
+      },
+      "rest": {
+       "RMN": 1,
+       "REEEE": 1,
+       "PN": 1,
+       "RSR": 1,
+       "KSC": 1,
+       "INCA": 1,
+       "KM": 1,
+       "HFANS": 1,
+       "SCCC2": 1,
+       "MZY": 1
+      }
+     },
+     "smoker_ships": {
+      "Gearing": 5,
+      "Somers": 6,
+      "Harugumo": 1,
+      "Shimakaze": 1,
+      "Daring": 1,
+      "Delny": 1
+     },
+     "cruisers_inside": {
+      "top6": {
+       "Brisbane": 2,
+       "Utrecht": 1,
+       "Worcester": 1
+      },
+      "rest": {
+       "Salem": 1,
+       "Minotaur": 1,
+       "Svea": 1,
+       "Utrecht": 1,
+       "Worcester": 1,
+       "Cerberus": 1
+      }
+     },
+     "cruisers_screened": {
+      "top6": {
+       "Brisbane": 1,
+       "Stalingrad": 1
+      },
+      "rest": {
+       "Puerto Rico": 2,
+       "Napoli": 2,
+       "Des Moines": 1,
+       "Utrecht": 1,
+       "Petropavlovsk": 1,
+       "Prins van Oranje": 1,
+       "Minotaur": 1
+      }
+     },
+     "radar_cruiser_inside": {
+      "top_k": 3,
+      "top_n": 5,
+      "rest_k": 4,
+      "rest_n": 10,
+      "top_pct": 60.0,
+      "rest_pct": 40.0,
+      "gap": 20.0,
+      "lo": -26.7,
+      "hi": 70.0,
+      "clear": false,
+      "mark": "Shared"
+     },
+     "conc": 18452,
+     "deaths": 2
+    },
+    "west far cap (drawn A)": {
+     "n": 0,
+     "early_dd_smokes_here": 0,
+     "share": {
+      "top_k": 0,
+      "top_n": 8,
+      "rest_k": 0,
+      "rest_n": 16,
+      "top_pct": 0.0,
+      "rest_pct": 0.0,
+      "gap": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "clear": false,
+      "mark": "Shared"
+     },
+     "inside": 0,
+     "screened": 0,
+     "clans": {
+      "top6": {},
+      "rest": {}
+     },
+     "smoker_ships": {},
+     "cruisers_inside": {
+      "top6": {},
+      "rest": {}
+     },
+     "cruisers_screened": {
+      "top6": {},
+      "rest": {}
+     },
+     "radar_cruiser_inside": {
+      "top_k": 0,
+      "top_n": 0,
+      "rest_k": 0,
+      "rest_n": 0,
+      "top_pct": null,
+      "rest_pct": null,
+      "gap": null,
+      "lo": null,
+      "hi": null,
+      "clear": false,
+      "mark": "Shared"
+     },
+     "conc": null,
+     "deaths": 0
+    },
+    "centre cap C": {
+     "n": 2,
+     "early_dd_smokes_here": 2,
+     "share": {
+      "top_k": 0,
+      "top_n": 8,
+      "rest_k": 2,
+      "rest_n": 16,
+      "top_pct": 0.0,
+      "rest_pct": 12.5,
+      "gap": -12.5,
+      "lo": -35.7,
+      "hi": 0.0,
+      "clear": false,
+      "mark": "Shared"
+     },
+     "inside": 0,
+     "screened": 2,
+     "clans": {
+      "top6": {},
+      "rest": {
+       "OGF": 1,
+       "MACHX": 1
+      }
+     },
+     "smoker_ships": {
+      "Gearing": 1,
+      "Z-42": 1
+     },
+     "cruisers_inside": {
+      "top6": {},
+      "rest": {}
+     },
+     "cruisers_screened": {
+      "top6": {},
+      "rest": {
+       "Bremen": 1,
+       "Moskva": 1,
+       "Napoli": 1
+      }
+     },
+     "radar_cruiser_inside": {
+      "top_k": 0,
+      "top_n": 0,
+      "rest_k": 0,
+      "rest_n": 2,
+      "top_pct": null,
+      "rest_pct": 0.0,
+      "gap": null,
+      "lo": null,
+      "hi": null,
+      "clear": false,
+      "mark": "Shared"
+     },
+     "conc": 14385,
+     "deaths": 0
+    },
+    "east cap D": {
+     "n": 7,
+     "early_dd_smokes_here": 12,
+     "share": {
+      "top_k": 3,
+      "top_n": 8,
+      "rest_k": 4,
+      "rest_n": 16,
+      "top_pct": 37.5,
+      "rest_pct": 25.0,
+      "gap": 12.5,
+      "lo": -13.9,
+      "hi": 37.5,
+      "clear": false,
+      "mark": "Shared"
+     },
+     "inside": 5,
+     "screened": 2,
+     "clans": {
+      "top6": {
+       "H-SR": 1,
+       "BONKZ": 1,
+       "RESIN": 1
+      },
+      "rest": {
+       "MZY": 2,
+       "-BN-": 1,
+       "BONKY": 1
+      }
+     },
+     "smoker_ships": {
+      "Harugumo": 3,
+      "Somers": 2,
+      "Gearing": 1,
+      "Delny": 1
+     },
+     "cruisers_inside": {
+      "top6": {
+       "Utrecht": 1,
+       "Brisbane": 2,
+       "Worcester": 1
+      },
+      "rest": {
+       "Des Moines": 1,
+       "Utrecht": 1,
+       "Brisbane": 1
+      }
+     },
+     "cruisers_screened": {
+      "top6": {},
+      "rest": {
+       "Des Moines": 1,
+       "Moskva": 1
+      }
+     },
+     "radar_cruiser_inside": {
+      "top_k": 3,
+      "top_n": 3,
+      "rest_k": 2,
+      "rest_n": 4,
+      "top_pct": 100.0,
+      "rest_pct": 50.0,
+      "gap": 50.0,
+      "lo": 0.0,
+      "hi": 100.0,
+      "clear": false,
+      "mark": "Shared"
+     },
+     "conc": 28734,
+     "deaths": 0
+    }
+   },
+   "west_cluster": {
+    "n": 14,
+    "drawn_cap": {
+     "B": 14
+    },
+    "real_letter": {
+     "A": 8,
+     "B": 6
+    }
+   }
+  },
+  "SF-2": {
+   "A": {
+    "top_k": 3,
+    "top_n": 22,
+    "rest_k": 5,
+    "rest_n": 37,
+    "top_pct": 13.6,
+    "rest_pct": 13.5,
+    "gap": 0.1,
+    "lo": -14.3,
+    "hi": 18.2,
+    "clear": false,
+    "mark": "Shared",
+    "clans": {
+     "top6": {
+      "BONKZ": 2,
+      "VRTUS": 1
+     },
+     "rest": {
+      "MZY": 2,
+      "RSR": 1,
+      "-BN-": 1,
+      "HFANS": 1
+     }
+    },
+    "conc": 26124
+   },
+   "B": {
+    "top_k": 8,
+    "top_n": 22,
+    "rest_k": 17,
+    "rest_n": 37,
+    "top_pct": 36.4,
+    "rest_pct": 45.9,
+    "gap": -9.6,
+    "lo": -43.1,
+    "hi": 15.5,
+    "clear": false,
+    "mark": "Shared",
+    "clans": {
+     "top6": {
+      "H-SR": 3,
+      "VRTUS": 2,
+      "RESIN": 2,
+      "BONKZ": 1
+     },
+     "rest": {
+      "RMN": 2,
+      "REEEE": 2,
+      "PN": 2,
+      "KSC": 2,
+      "KM": 2,
+      "MZY": 2,
+      "RSR": 1,
+      "INCA": 1,
+      "-BN-": 1,
+      "EPOXY": 1,
+      "HFANS": 1
+     }
+    },
+    "conc": 14976
+   },
+   "C": {
+    "top_k": 3,
+    "top_n": 22,
+    "rest_k": 3,
+    "rest_n": 37,
+    "top_pct": 13.6,
+    "rest_pct": 8.1,
+    "gap": 5.5,
+    "lo": -10.4,
+    "hi": 21.1,
+    "clear": false,
+    "mark": "Shared",
+    "clans": {
+     "top6": {
+      "RESIN": 2,
+      "H-SR": 1
+     },
+     "rest": {
+      "OGF": 1,
+      "5D": 1,
+      "MZY": 1
+     }
+    },
+    "conc": 13917
+   },
+   "D": {
+    "top_k": 8,
+    "top_n": 22,
+    "rest_k": 12,
+    "rest_n": 37,
+    "top_pct": 36.4,
+    "rest_pct": 32.4,
+    "gap": 3.9,
+    "lo": -23.2,
+    "hi": 36.4,
+    "clear": false,
+    "mark": "Shared",
+    "clans": {
+     "top6": {
+      "BONKZ": 4,
+      "H-SR": 2,
+      "RESIN": 2
+     },
+     "rest": {
+      "MZY": 6,
+      "-BN-": 3,
+      "BONKY": 3
+     }
+    },
+    "conc": 17704
+   }
+  },
+  "SF-3": {
+   "spot": {
+    "top_k": 15,
+    "top_n": 18,
+    "rest_k": 1,
+    "rest_n": 14,
+    "top_pct": 83.3,
+    "rest_pct": 7.1,
+    "gap": 76.2,
+    "lo": 45.0,
+    "hi": 100.0,
+    "clear": true,
+    "mark": "Top 6"
+   },
+   "clans": {
+    "top6": {
+     "HTDOG": 7,
+     "VRTUS": 6,
+     "H-SR": 2
+    },
+    "rest": {
+     "EPOXY": 1
+    }
+   }
+  },
+  "OK-1": {
+   "team_games": 36,
+   "ships": [
+    {
+     "ship": "Napoli",
+     "cls": "cruiser",
+     "smokes": 32,
+     "top6_smokes": 1,
+     "team_games_in_lineup": 21,
+     "top6_team_games": 1,
+     "ship_slots": 24,
+     "smokes_per_team_game": 1.52,
+     "smokes_per_ship_slot": 1.33,
+     "team_games_with_a_smoke": 20,
+     "conc": 4194,
+     "deaths_per_100": 12.5,
+     "clans": {
+      "top6": {
+       "H-SR": 1
+      },
+      "rest": {
+       "BTLST": 4,
+       "HFANS": 4,
+       "KM": 3,
+       "KITED": 3,
+       "BONKY": 3,
+       "5D": 2,
+       "MACHX": 2,
+       "MZY": 2,
+       "PN": 1,
+       "PFANS": 1,
+       "UYSC": 1,
+       "KSE": 1,
+       "MANBA": 1,
+       "MACH": 1,
+       "REEEE": 1,
+       "-BN-": 1
+      }
+     },
+     "roster_smoke_activations": 40
+    },
+    {
+     "ship": "Svea",
+     "cls": "cruiser",
+     "smokes": 25,
+     "top6_smokes": 3,
+     "team_games_in_lineup": 6,
+     "top6_team_games": 1,
+     "ship_slots": 7,
+     "smokes_per_team_game": 4.17,
+     "smokes_per_ship_slot": 3.57,
+     "team_games_with_a_smoke": 6,
+     "conc": 9616,
+     "deaths_per_100": 4.0,
+     "clans": {
+      "top6": {
+       "VRTUS": 3
+      },
+      "rest": {
+       "SCCC2": 9,
+       "MACH": 6,
+       "UYSC": 3,
+       "MACHX": 2,
+       "BONKY": 2
+      }
+     },
+     "roster_smoke_activations": 25
+    },
+    {
+     "ship": "Daring",
+     "cls": "destroyer",
+     "smokes": 22,
+     "top6_smokes": 4,
+     "team_games_in_lineup": 11,
+     "top6_team_games": 2,
+     "ship_slots": 11,
+     "smokes_per_team_game": 2.0,
+     "smokes_per_ship_slot": 2.0,
+     "team_games_with_a_smoke": 10,
+     "conc": 5993,
+     "deaths_per_100": 9.1,
+     "clans": {
+      "top6": {
+       "KITE": 3,
+       "VRTUS": 1
+      },
+      "rest": {
+       "MZY": 9,
+       "MACHX": 3,
+       "-BN-": 3,
+       "UYSC": 2,
+       "MACH": 1
+      }
+     },
+     "roster_smoke_activations": 24
+    },
+    {
+     "ship": "Gearing",
+     "cls": "destroyer",
+     "smokes": 17,
+     "top6_smokes": 6,
+     "team_games_in_lineup": 7,
+     "top6_team_games": 2,
+     "ship_slots": 8,
+     "smokes_per_team_game": 2.43,
+     "smokes_per_ship_slot": 2.12,
+     "team_games_with_a_smoke": 7,
+     "conc": 10471,
+     "deaths_per_100": 23.5,
+     "clans": {
+      "top6": {
+       "BONKZ": 4,
+       "KITE": 2
+      },
+      "rest": {
+       "BTLST": 3,
+       "5D": 2,
+       "OGF": 2,
+       "RSR": 2,
+       "-BN-": 2
+      }
+     },
+     "roster_smoke_activations": 16
+    },
+    {
+     "ship": "Somers",
+     "cls": "destroyer",
+     "smokes": 12,
+     "top6_smokes": 4,
+     "team_games_in_lineup": 4,
+     "top6_team_games": 1,
+     "ship_slots": 5,
+     "smokes_per_team_game": 3.0,
+     "smokes_per_ship_slot": 2.4,
+     "team_games_with_a_smoke": 4,
+     "conc": 18057,
+     "deaths_per_100": 16.7,
+     "clans": {
+      "top6": {
+       "H-SR": 4
+      },
+      "rest": {
+       "MACHX": 3,
+       "REEEE": 3,
+       "NGA": 2
+      }
+     },
+     "roster_smoke_activations": 11
+    },
+    {
+     "ship": "Shimakaze",
+     "cls": "destroyer",
+     "smokes": 11,
+     "top6_smokes": 1,
+     "team_games_in_lineup": 10,
+     "top6_team_games": 2,
+     "ship_slots": 11,
+     "smokes_per_team_game": 1.1,
+     "smokes_per_ship_slot": 1.0,
+     "team_games_with_a_smoke": 6,
+     "conc": 11729,
+     "deaths_per_100": 18.2,
+     "clans": {
+      "top6": {
+       "HTDOG": 1
+      },
+      "rest": {
+       "HFANS": 5,
+       "EPOXY": 3,
+       "MANBA": 2
+      }
+     },
+     "roster_smoke_activations": 11
+    },
+    {
+     "ship": "Harugumo",
+     "cls": "destroyer",
+     "smokes": 9,
+     "top6_smokes": 0,
+     "team_games_in_lineup": 4,
+     "top6_team_games": 0,
+     "ship_slots": 4,
+     "smokes_per_team_game": 2.25,
+     "smokes_per_ship_slot": 2.25,
+     "team_games_with_a_smoke": 4,
+     "conc": 18705,
+     "deaths_per_100": 66.7,
+     "clans": {
+      "top6": {},
+      "rest": {
+       "EPOXY": 6,
+       "REEEE": 2,
+       "-BN-": 1
+      }
+     },
+     "roster_smoke_activations": 6
+    },
+    {
+     "ship": "Smolensk",
+     "cls": "cruiser",
+     "smokes": 8,
+     "top6_smokes": 2,
+     "team_games_in_lineup": 3,
+     "top6_team_games": 1,
+     "ship_slots": 3,
+     "smokes_per_team_game": 2.67,
+     "smokes_per_ship_slot": 2.67,
+     "team_games_with_a_smoke": 3,
+     "conc": 11340,
+     "deaths_per_100": 25.0,
+     "clans": {
+      "top6": {
+       "RESIN": 2
+      },
+      "rest": {
+       "HFANS": 6
+      }
+     },
+     "roster_smoke_activations": 7
+    },
+    {
+     "ship": "Gdańsk",
+     "cls": "destroyer",
+     "smokes": 7,
+     "top6_smokes": 0,
+     "team_games_in_lineup": 4,
+     "top6_team_games": 0,
+     "ship_slots": 4,
+     "smokes_per_team_game": 1.75,
+     "smokes_per_ship_slot": 1.75,
+     "team_games_with_a_smoke": 4,
+     "conc": 14386,
+     "deaths_per_100": 28.6,
+     "clans": {
+      "top6": {},
+      "rest": {
+       "RSR": 2,
+       "KSE": 2,
+       "HFANS": 2,
+       "PN": 1
+      }
+     },
+     "roster_smoke_activations": 11
+    },
+    {
+     "ship": "C. Colombo",
+     "cls": "battleship",
+     "smokes": 5,
+     "top6_smokes": 0,
+     "team_games_in_lineup": 7,
+     "top6_team_games": 0,
+     "ship_slots": 7,
+     "smokes_per_team_game": 0.71,
+     "smokes_per_ship_slot": 0.71,
+     "team_games_with_a_smoke": 5,
+     "conc": 6972,
+     "deaths_per_100": 20.0,
+     "clans": {
+      "top6": {},
+      "rest": {
+       "-BN-": 2,
+       "BTLST": 1,
+       "KITED": 1,
+       "BONKY": 1
+      }
+     },
+     "roster_smoke_activations": 5
+    }
+   ]
+  },
+  "OK-2": {
+   "zone_n": 39,
+   "death_smokes": 10,
+   "deaths": 12,
+   "deaths_per_100": 30.8,
+   "map_deaths_per_100": 17.7,
+   "behind_share_zone": 48.7,
+   "behind_share_map": 34.8,
+   "behind_share_rest_of_map": 30.3,
+   "death_smokes_behind": 7,
+   "clans": {
+    "top6": {
+     "KITE": 3,
+     "RESIN": 2,
+     "BONKZ": 1,
+     "H-SR": 1
+    },
+    "rest": {
+     "HFANS": 7,
+     "EPOXY": 5,
+     "MACH": 5,
+     "BTLST": 2,
+     "MACHX": 2,
+     "-BN-": 2,
+     "REEEE": 2,
+     "OGF": 1,
+     "PN": 1,
+     "PFANS": 1,
+     "UYSC": 1,
+     "MANBA": 1,
+     "KITED": 1,
+     "MZY": 1
+    }
+   },
+   "use": {
+    "top_k": 7,
+    "top_n": 23,
+    "rest_k": 32,
+    "rest_n": 135,
+    "top_pct": 30.4,
+    "rest_pct": 23.7,
+    "gap": 6.7,
+    "lo": -17.0,
+    "hi": 35.0,
+    "clear": false,
+    "mark": "Shared"
+   }
+  }
+ },
+ "SPOTS": [
+  {
+   "id": "c5-mr-parked-west",
+   "map": "Mountain Range",
+   "kind": "top6_spot",
+   "mode": "top6",
+   "name": "Parked cruiser smoke (Jinan, Svea), far west edge on the rim of cap A",
+   "shape": {
+    "type": "ellipse",
+    "u": 0.0621,
+    "v": 0.695,
+    "ru": 0.1262,
+    "rv": 0.0712,
+    "angle_deg": -73.9
+   },
+   "n": 12,
+   "n_top6": 12,
+   "n_rest": 0,
+   "small_n": true,
+   "clans": {
+    "top6": {
+     "HTDOG": 8,
+     "BONKZ": 4
+    },
+    "rest": {}
+   },
+   "concealed_damage_per_smoke": 19028,
+   "deaths_per_100": 8.3,
+   "cruisers": {
+    "top6": {},
+    "rest": {}
+   },
+   "examples": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g3_159282.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159434.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g3_159286.html"
+   ],
+   "subject": "parked cruiser smoke (Svea, Jinan)",
+   "share_top6_pct": 36.4,
+   "share_rest_pct": 0.0,
+   "gap_pts": 36.4,
+   "ci_pts": [
+    30.8,
+    40.0
+   ],
+   "by_ship": {
+    "Jinan": {
+     "top6": {
+      "HTDOG": 8
+     },
+     "rest": {}
+    },
+    "Svea": {
+     "top6": {
+      "BONKZ": 4
+     },
+     "rest": {}
+    }
+   },
+   "note": "Two clans only (HTDOG, BONKZ); 8 of 12 are Jinan, which no Rest clan smoked with on this map."
+  },
+  {
+   "id": "c5-mr-radar-b",
+   "map": "Mountain Range",
+   "kind": "top6_spot",
+   "mode": "top6",
+   "name": "Radar from smoke at centre cap B",
+   "shape": {
+    "type": "circle",
+    "u": 0.4,
+    "v": 0.5,
+    "r": 0.1232
+   },
+   "n": 15,
+   "n_top6": 12,
+   "n_rest": 3,
+   "small_n": false,
+   "clans": {
+    "top6": {
+     "KITE": 4,
+     "BONKZ": 4,
+     "H-SR": 2,
+     "RESIN": 2
+    },
+    "rest": {
+     "HFANS": 2,
+     "SCCC2": 1
+    }
+   },
+   "concealed_damage_per_smoke": 12843,
+   "deaths_per_100": 6.7,
+   "cruisers": {
+    "top6": {
+     "Minotaur": 4,
+     "Des Moines": 1,
+     "Moskva": 1,
+     "Brisbane": 1,
+     "Stalingrad": 1
+    },
+    "rest": {
+     "Brisbane": 2
+    }
+   },
+   "examples": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176007.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g2_121106.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176005.html"
+   ],
+   "subject": "smokes with radar run from inside or a radar purpose, nearest cap B",
+   "share_top6_pct": 13.6,
+   "share_rest_pct": 2.5,
+   "gap_pts": 11.1,
+   "ci_pts": [
+    1.7,
+    21.9
+   ],
+   "note": "Share = share of all of each group smokes on the map that are radar smokes with B as nearest cap. 7 of the 15 are inside or within 2 km of B."
+  },
+  {
+   "id": "c5-lf-early-a",
+   "map": "Land of Fire",
+   "kind": "early_cruiser_spot",
+   "mode": "shared",
+   "name": "Opening smoke short of cap A (F3)",
+   "shape": {
+    "type": "ellipse",
+    "u": 0.2188,
+    "v": 0.5904,
+    "ru": 0.0974,
+    "rv": 0.0683,
+    "angle_deg": -27.9
+   },
+   "n": 13,
+   "n_top6": 5,
+   "n_rest": 8,
+   "small_n": true,
+   "clans": {
+    "top6": {
+     "HTDOG": 2,
+     "VRTUS": 1,
+     "H-SR": 1,
+     "RESIN": 1
+    },
+    "rest": {
+     "HFANS": 3,
+     "BTLST": 2,
+     "NGA": 1,
+     "SCCC2": 1,
+     "MACHX": 1
+    }
+   },
+   "concealed_damage_per_smoke": 8563,
+   "deaths_per_100": 15.4,
+   "cruisers": {
+    "top6": {
+     "Des Moines": 3,
+     "Brisbane": 1
+    },
+    "rest": {
+     "Napoli": 4,
+     "Des Moines": 2,
+     "Smolensk": 1,
+     "Brisbane": 1,
+     "San Martín": 1,
+     "Svea": 1
+    }
+   },
+   "examples": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8145_g2_157256.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8143_g2_214591.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7981_g1_174221.html"
+   ],
+   "subject": "destroyer smokes in the first 5 minutes",
+   "share_top6_pct": 41.7,
+   "share_rest_pct": 32.0,
+   "gap_pts": 9.7,
+   "ci_pts": [
+    -19.4,
+    36.4
+   ],
+   "inside_n": 9,
+   "screened_n": 2
+  },
+  {
+   "id": "c5-lf-svea-f5",
+   "map": "Land of Fire",
+   "kind": "top6_spot",
+   "mode": "top6",
+   "name": "Svea parked on the own-side rim of cap B (F5)",
+   "shape": {
+    "type": "ellipse",
+    "u": 0.4627,
+    "v": 0.5715,
+    "ru": 0.0617,
+    "rv": 0.0461,
+    "angle_deg": 7.4
+   },
+   "n": 18,
+   "n_top6": 14,
+   "n_rest": 4,
+   "small_n": false,
+   "clans": {
+    "top6": {
+     "VRTUS": 8,
+     "HTDOG": 4,
+     "RESIN": 2
+    },
+    "rest": {
+     "BONKY": 4
+    }
+   },
+   "concealed_damage_per_smoke": 12621,
+   "deaths_per_100": 5.6,
+   "cruisers": {
+    "top6": {},
+    "rest": {}
+   },
+   "examples": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7982_g1_197657.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8074_g2_70763.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7982_g1_197660.html"
+   ],
+   "subject": "Svea",
+   "share_top6_pct": 73.7,
+   "share_rest_pct": 19.0,
+   "gap_pts": 54.6,
+   "ci_pts": [
+    6.7,
+    87.0
+   ]
+  },
+  {
+   "id": "c5-sf-early-west-b",
+   "map": "Sea of Fortune",
+   "kind": "early_cruiser_spot",
+   "mode": "shared",
+   "name": "Early cruiser smoke at the own-side west cap (drawn B)",
+   "shape": {
+    "type": "circle",
+    "u": 0.2,
+    "v": 0.65,
+    "r": 0.1292
+   },
+   "n": 15,
+   "n_top6": 5,
+   "n_rest": 10,
+   "small_n": false,
+   "clans": {
+    "top6": {
+     "H-SR": 2,
+     "VRTUS": 1,
+     "BONKZ": 1,
+     "RESIN": 1
+    },
+    "rest": {
+     "RMN": 1,
+     "REEEE": 1,
+     "PN": 1,
+     "RSR": 1,
+     "KSC": 1,
+     "INCA": 1,
+     "KM": 1,
+     "HFANS": 1,
+     "SCCC2": 1,
+     "MZY": 1
+    }
+   },
+   "concealed_damage_per_smoke": 18452,
+   "deaths_per_100": 13.3,
+   "cruisers": {
+    "top6": {
+     "Brisbane": 3,
+     "Utrecht": 1,
+     "Stalingrad": 1,
+     "Worcester": 1
+    },
+    "rest": {
+     "Puerto Rico": 2,
+     "Napoli": 2,
+     "Minotaur": 2,
+     "Utrecht": 2,
+     "Salem": 1,
+     "Svea": 1,
+     "Des Moines": 1,
+     "Worcester": 1,
+     "Petropavlovsk": 1,
+     "Prins van Oranje": 1,
+     "Cerberus": 1
+    }
+   },
+   "examples": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7911_g1_226690.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g2_3188.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7995_g1_25169.html"
+   ],
+   "subject": "destroyer smokes in the first 5 minutes covering a cruiser",
+   "share_top6_pct": 62.5,
+   "share_rest_pct": 62.5,
+   "gap_pts": 0.0,
+   "ci_pts": [
+    -30.2,
+    26.2
+   ],
+   "inside_n": 10,
+   "screened_n": 5
+  },
+  {
+   "id": "c5-sf-early-d",
+   "map": "Sea of Fortune",
+   "kind": "early_cruiser_spot",
+   "mode": "shared",
+   "name": "Early cruiser smoke short of east cap D",
+   "shape": {
+    "type": "circle",
+    "u": 0.76,
+    "v": 0.5,
+    "r": 0.1506
+   },
+   "n": 7,
+   "n_top6": 3,
+   "n_rest": 4,
+   "small_n": true,
+   "clans": {
+    "top6": {
+     "H-SR": 1,
+     "BONKZ": 1,
+     "RESIN": 1
+    },
+    "rest": {
+     "MZY": 2,
+     "-BN-": 1,
+     "BONKY": 1
+    }
+   },
+   "concealed_damage_per_smoke": 28734,
+   "deaths_per_100": 0.0,
+   "cruisers": {
+    "top6": {
+     "Brisbane": 2,
+     "Utrecht": 1,
+     "Worcester": 1
+    },
+    "rest": {
+     "Des Moines": 2,
+     "Utrecht": 1,
+     "Brisbane": 1,
+     "Moskva": 1
+    }
+   },
+   "examples": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7940_g1_183534.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7937_g1_44423.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8144_g2_39530.html"
+   ],
+   "subject": "destroyer smokes in the first 5 minutes covering a cruiser",
+   "share_top6_pct": 37.5,
+   "share_rest_pct": 25.0,
+   "gap_pts": 12.5,
+   "ci_pts": [
+    -13.9,
+    37.5
+   ],
+   "inside_n": 5,
+   "screened_n": 2
+  },
+  {
+   "id": "c5-sf-long-d",
+   "map": "Sea of Fortune",
+   "kind": "shared_spot",
+   "mode": "shared",
+   "name": "Long smokes at east cap D",
+   "shape": {
+    "type": "circle",
+    "u": 0.76,
+    "v": 0.5,
+    "r": 0.1851
+   },
+   "n": 20,
+   "n_top6": 8,
+   "n_rest": 12,
+   "small_n": false,
+   "clans": {
+    "top6": {
+     "BONKZ": 4,
+     "H-SR": 2,
+     "RESIN": 2
+    },
+    "rest": {
+     "MZY": 6,
+     "-BN-": 3,
+     "BONKY": 3
+    }
+   },
+   "concealed_damage_per_smoke": 17704,
+   "deaths_per_100": 0.0,
+   "cruisers": {
+    "top6": {
+     "Brisbane": 6,
+     "Utrecht": 2,
+     "Worcester": 1
+    },
+    "rest": {
+     "Des Moines": 4,
+     "Brisbane": 4,
+     "Utrecht": 2,
+     "Moskva": 1
+    }
+   },
+   "examples": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7940_g1_183534.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7937_g1_44423.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7938_g1_214885.html"
+   ],
+   "subject": "long smokes (Somers, Gearing, Harugumo, Delny) nearest cap D",
+   "share_top6_pct": 36.4,
+   "share_rest_pct": 32.4,
+   "gap_pts": 3.9,
+   "ci_pts": [
+    -23.2,
+    36.4
+   ]
+  },
+  {
+   "id": "c5-sf-svea-h7",
+   "map": "Sea of Fortune",
+   "kind": "top6_spot",
+   "mode": "top6",
+   "name": "Svea parked in open water on the own side of cap D (H7/G7)",
+   "shape": {
+    "type": "ellipse",
+    "u": 0.6694,
+    "v": 0.7063,
+    "ru": 0.2053,
+    "rv": 0.1326,
+    "angle_deg": -15.6
+   },
+   "n": 16,
+   "n_top6": 15,
+   "n_rest": 1,
+   "small_n": false,
+   "clans": {
+    "top6": {
+     "HTDOG": 7,
+     "VRTUS": 6,
+     "H-SR": 2
+    },
+    "rest": {
+     "EPOXY": 1
+    }
+   },
+   "concealed_damage_per_smoke": 9583,
+   "deaths_per_100": 0.0,
+   "cruisers": {
+    "top6": {},
+    "rest": {}
+   },
+   "examples": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g1_185483.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7996_g1_128346.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g1_185484.html"
+   ],
+   "subject": "Svea",
+   "share_top6_pct": 83.3,
+   "share_rest_pct": 7.1,
+   "gap_pts": 76.2,
+   "ci_pts": [
+    45.0,
+    100.0
+   ]
+  },
+  {
+   "id": "c5-ok-death-zone",
+   "map": "Okinawa",
+   "kind": "danger_zone",
+   "mode": "shared",
+   "name": "Death zone: south-west water on the own side of cap C",
+   "shape": {
+    "type": "ellipse",
+    "u": 0.2457,
+    "v": 0.6435,
+    "ru": 0.2397,
+    "rv": 0.1501,
+    "angle_deg": 34.5
+   },
+   "n": 39,
+   "n_top6": 7,
+   "n_rest": 32,
+   "small_n": false,
+   "clans": {
+    "top6": {
+     "KITE": 3,
+     "RESIN": 2,
+     "BONKZ": 1,
+     "H-SR": 1
+    },
+    "rest": {
+     "HFANS": 7,
+     "EPOXY": 5,
+     "MACH": 5,
+     "BTLST": 2,
+     "MACHX": 2,
+     "-BN-": 2,
+     "REEEE": 2,
+     "OGF": 1,
+     "PN": 1,
+     "PFANS": 1,
+     "UYSC": 1,
+     "MANBA": 1,
+     "KITED": 1,
+     "MZY": 1
+    }
+   },
+   "concealed_damage_per_smoke": 12778,
+   "deaths_per_100": 30.8,
+   "cruisers": {
+    "top6": {
+     "Worcester": 1
+    },
+    "rest": {
+     "Utrecht": 4,
+     "Des Moines": 4,
+     "Minotaur": 2,
+     "Brisbane": 1,
+     "Stalingrad": 1,
+     "Prins van Oranje": 1,
+     "Worcester": 1
+    }
+   },
+   "examples": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7896_g1_51115.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7977_g1_43943.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8074_g1_211814.html"
+   ],
+   "subject": "all smokes in the zone, all classes",
+   "share_top6_pct": 30.4,
+   "share_rest_pct": 23.7,
+   "gap_pts": 6.7,
+   "ci_pts": [
+    -17.0,
+    35.0
+   ],
+   "smokes_with_a_death": 10,
+   "deaths": 12,
+   "laid_50_behind_pct": 48.7,
+   "map_laid_50_behind_pct": 34.8,
+   "map_deaths_per_100": 17.7
+  }
+ ]
+}

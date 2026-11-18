@@ -26,6 +26,14 @@ LONG_SHIPS = ('Somers', 'Gearing', 'Harugumo', 'Delny')
 SITTERS = ('Daring', 'Gdańsk', 'Z-42', 'Z-52', 'Grozovoi', 'Shimakaze')
 GETAWAY = ('Napoli', 'Venezia', 'C. Colombo', 'Conte Verde')
 
+# Seconds by which common.py overstates elapsed time in a game that did not run on a 20-minute clock (filled by load5).
+CLOCK_OFFSET = {}
+_common_snapshots = snapshots
+def snapshots(S, gkey):
+    """common.snapshots with the elapsed times corrected for games on a shorter clock."""
+    off = CLOCK_OFFSET.get(gkey, 0)
+    return [(t - off, a, b) for t, a, b in _common_snapshots(S, gkey)]
+
 def el_of(clock):
     return 1200 - secs(clock) if clock else None
 
@@ -82,6 +90,21 @@ def load5():
     global _cache5
     if _cache5: return _cache5
     S, G = load()
+    # Round 5b fix: common.py reads elapsed time as 1200 - HUD clock, which assumes a 20-minute game. Two games ran on a
+    # 15-minute clock, so their elapsed times were 300 s too high. The offset per game comes from the exact elapsed time
+    # of its smokes (replay clock minus battle start).
+    import statistics as _st
+    import tl as _tl
+    _d = collections.defaultdict(list)
+    for s in S:
+        j = s['j']; t = j.get('t_activate') or j.get('t_created')
+        _d[s['game']].append(s['el'] - (t['seconds'] - _tl.run_start(j['match_id'], j['game_no'], j['primary_replay'])))
+    CLOCK_OFFSET.clear()
+    CLOCK_OFFSET.update({k: int(round(_st.median(v) / 60.0)) * 60 for k, v in _d.items() if abs(_st.median(v)) >= 30})
+    for s in S:
+        s['el'] -= CLOCK_OFFSET.get(s['game'], 0)
+    for k, off in CLOCK_OFFSET.items():
+        if G[k]['len'] is not None: G[k]['len'] -= off
     # damage events, one run per game
     gd = os.path.join(BATCH, 'games'); ev = {}
     for d in sorted(os.listdir(gd)):
@@ -116,7 +139,8 @@ def load5():
     for s in S:
         r, j, g = s['r'], s['j'], G[s['game']]
         ro = g['roster']
-        s['t0'] = s['el']; s['t1'] = el_of(r['t_dispersed_clock']) or (s['el'] + (s['emission_s'] or 0) + (s['life_s'] or 0))
+        _off = CLOCK_OFFSET.get(s['game'], 0)
+        s['t0'] = s['el']; s['t1'] = (el_of(r['t_dispersed_clock']) - _off) if r['t_dispersed_clock'] else (s['el'] + (s['emission_s'] or 0) + (s['life_s'] or 0))
         s['state'] = score_state(s['score_diff'])
         s['land_m'] = F(r['land_distance_m']); s['lane'] = r['lane']; s['lane_offset_m'] = F(r['lane_offset_m']); s['frontline_m'] = F(r['frontline_distance_m'])
         s['cruisers'] = [dict(ship=p['ship'].replace('\xa0', ' '), how='inside' if p['how'] == 'inside' else 'screened', radar=p['radar']) for p in s['partners'] if p['cls'] == 'cruiser']
@@ -155,7 +179,7 @@ def load5():
                 ap = ro.get(x['att'], {}); kinds[x['kind']] += x['amt']; bycls[(ap.get('ship_class') or 'unknown').lower()] += x['amt']
                 kl[((ap.get('ship') or '?').replace('\xa0', ' '), (ap.get('ship_class') or 'unknown').lower(), x['kind'])] += x['amt']
             dead.append(dict(eid=e, ship=(pl.get('ship') or d['ship']).replace('\xa0', ' '), cls=(pl.get('ship_class') or '').lower(), is_smoker=e == s['smoker_eid'],
-                             where=d['concealed'], t=1200 - secs(d['death']['clock']), after_cleared=d['after_cleared'], radar_lit=bool(rd), radar_src=src,
+                             where=d['concealed'], t=1200 - secs(d['death']['clock']) - _off, after_cleared=d['after_cleared'], radar_lit=bool(rd), radar_src=src,
                              killers=[dict(ship=a, cls=b, kind=c_, dmg=v) for (a, b, c_), v in kl.most_common(5)], kinds=dict(kinds), torp=kinds.get('torpedo', 0) > 0,
                              top_kind=kinds.most_common(1)[0][0] if kinds else None, by_cls=dict(bycls)))
         s['dead'] = dead

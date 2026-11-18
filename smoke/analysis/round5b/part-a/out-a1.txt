@@ -1,0 +1,112 @@
+cap_contest tag n 391 | primary purpose n 391 | same smokes True
+top/rest 130 261 | contested cap == nearest cap 390 of 391
+snapshots in window: median 5 zero 0 | own at activation {'theirs': 99, 'ours': 180, 'neutral': 112}
+| group | n (T6/Rest) | stat | all (n) [95%] | Top 6 (n) | Rest (n) | T6-Rest interval |
+|---|---|---|---|---|---|---|
+| radar cruiser inside | 104 (55/49) | cap_taken_snapshot_pct | 62.7 (51) [52.8 to 75.0 *] | 53.3 (30) | 76.2 (21) | -42.1 to -5.8 * |
+| radar cruiser inside | 104 (55/49) | cap_won_batch_pct | 73.1 (52) [60.4 to 87.2 *] | 63.3 (30) | 86.4 (22) | -42.8 to +1.4 |
+| radar cruiser inside | 104 (55/49) | enemy_prevented_pct | 90.4 (83) [86.1 to 95.3 *] | 90.9 (44) | 89.7 (39) | -7.5 to +10.7 |
+| radar cruiser inside | 104 (55/49) | concealed_damage | 16,882 (104) [12,675 to 20,512 *] | 19,099 (55) | 14,394 (49) | -3,637 to +11,740 |
+| radar cruiser inside | 104 (55/49) | deaths_per_100 | 10.6 (104) [4.6 to 16.2 *] | 10.9 (55) | 10.2 (49) | -12.3 to +10.8 |
+| non-radar cruiser inside | 17 (8/9) | cap_taken_snapshot_pct | 37.5 (8) [18.2 to 60.0 *] | too few (3) | too few (5) | - |
+| non-radar cruiser inside | 17 (8/9) | cap_won_batch_pct | 62.5 (8) [33.3 to 90.0 *] | too few (3) | too few (5) | - |
+| non-radar cruiser inside | 17 (8/9) | enemy_prevented_pct | 76.9 (13) [53.8 to 93.3 *] | too few (5) | 62.5 (8) | - |
+| non-radar cruiser inside | 17 (8/9) | concealed_damage | 15,049 (17) [4,873 to 26,077 *] | 20,045 (8) | 10,609 (9) | -8,495 to +23,488 |
+| non-radar cruiser inside | 17 (8/9) | deaths_per_100 | 23.5 (17) [0.0 to 57.1] | 12.5 (8) | 33.3 (9) | -65.0 to +12.5 |
+| no cruiser | 191 (46/145) | cap_taken_snapshot_pct | 20.4 (108) [12.6 to 28.9 *] | 47.8 (23) | 12.9 (85) | +16.5 to +60.3 * |
+| no cruiser | 191 (46/145) | cap_won_batch_pct | 27.8 (108) [18.9 to 37.2 *] | 65.2 (23) | 17.6 (85) | +36.2 to +67.1 * |
+| no cruiser | 191 (46/145) | enemy_prevented_pct | 84.1 (132) [77.6 to 90.1 *] | 94.6 (37) | 80.0 (95) | +4.1 to +25.2 * |
+| no cruiser | 191 (46/145) | concealed_damage | 3,515 (191) [2,506 to 4,578 *] | 4,121 (46) | 3,322 (145) | -1,520 to +2,782 |
+| no cruiser | 191 (46/145) | deaths_per_100 | 7.3 (191) [4.8 to 10.6 *] | 4.3 (46) | 8.3 (145) | -9.7 to +1.1 |
+| other | 79 (21/58) | cap_taken_snapshot_pct | 47.7 (44) [30.8 to 63.6 *] | 11.1 (9) | 57.1 (35) | -67.9 to -21.0 * |
+| other | 79 (21/58) | cap_won_batch_pct | 38.6 (44) [24.4 to 52.9 *] | 22.2 (9) | 42.9 (35) | -48.8 to +6.8 |
+| other | 79 (21/58) | enemy_prevented_pct | 81.2 (64) [74.2 to 87.8 *] | 93.8 (16) | 77.1 (48) | +3.7 to +28.9 * |
+| other | 79 (21/58) | concealed_damage | 7,768 (79) [5,204 to 10,424 *] | 7,222 (21) | 7,966 (58) | -6,601 to +6,042 |
+| other | 79 (21/58) | deaths_per_100 | 13.9 (79) [6.8 to 22.2 *] | 14.3 (21) | 13.8 (58) | -17.4 to +19.0 |
+radar cruiser inside | Top 6: BONKZ 15, H-SR 14, RESIN 10, KITE 7, VRTUS 5, HTDOG 4 | Rest: -BN- 6, HFANS 6, EPOXY 5, INCA 5, MACHX 5, KSC 4, MZY 3, PFANS 3, PN 2, KITED 2, RSR 2, MACH 1, BTLST 1, UYSC 1, BONKY 1, SCCC2 1, REEEE 1
+non-radar cruiser inside | Top 6: H-SR 4, RESIN 2, VRTUS 1, HTDOG 1 | Rest: BTLST 2, HFANS 2, OGF 1, REEEE 1, -BN- 1, SCCC2 1, KITED 1
+no cruiser | Top 6: RESIN 15, BONKZ 10, H-SR 7, HTDOG 6, VRTUS 5, KITE 3 | Rest: EPOXY 16, REEEE 15, HFANS 14, SCCC2 14, KITED 10, KSC 9, MACH 9, MACHX 9, -BN- 8, RSR 6, RMN 5, PFANS 4, UYSC 4, INCA 3, KSE 3, 5D 3, MZY 3, BTLST 2, OGF 2, KM 2, NGA 2, BONKY 1, MANBA 1
+other | Top 6: VRTUS 4, BONKZ 4, RESIN 4, HTDOG 4, H-SR 3, KITE 2 | Rest: 5D 8, HFANS 5, MACHX 5, MZY 4, MACH 4, -BN- 4, NGA 4, EPOXY 4, BTLST 3, UYSC 3, REEEE 2, KSC 2, BONKY 2, RSR 2, OGF 1, KM 1, KITED 1, KSE 1, INCA 1, PFANS 1
+
+Differences between cover groups (a - b), interval by resampling clans
+| scope | a | b | stat | a (n) | b (n) | diff | interval |
+|---|---|---|---|---|---|---|---|
+| all | radar cruiser inside | non-radar cruiser inside | cap_taken_snapshot_pct | 62.7 (51) | 37.5 (8) | +25.2 | -2.5 to +51.1 |
+| all | radar cruiser inside | non-radar cruiser inside | cap_won_batch_pct | 73.1 (52) | 62.5 (8) | +10.6 | -24.6 to +44.2 |
+| all | radar cruiser inside | non-radar cruiser inside | enemy_prevented_pct | 90.4 (83) | 76.9 (13) | +13.4 | -6.6 to +37.1 |
+| all | radar cruiser inside | non-radar cruiser inside | concealed_damage | 16882.0 (104) | 15049.0 (17) | +1833.0 | -7630.0 to +9247.0 |
+| all | radar cruiser inside | non-radar cruiser inside | deaths_per_100 | 10.6 (104) | 23.5 (17) | -13.0 | -43.1 to +8.8 |
+| all | radar cruiser inside | no cruiser | cap_taken_snapshot_pct | 62.7 (51) | 20.4 (108) | +42.4 | +30.3 to +58.9 * |
+| all | radar cruiser inside | no cruiser | cap_won_batch_pct | 73.1 (52) | 27.8 (108) | +45.3 | +28.8 to +64.8 * |
+| all | radar cruiser inside | no cruiser | enemy_prevented_pct | 90.4 (83) | 84.1 (132) | +6.3 | +0.2 to +14.5 * |
+| all | radar cruiser inside | no cruiser | concealed_damage | 16882.0 (104) | 3515.0 (191) | +13368.0 | +9359.0 to +17048.0 * |
+| all | radar cruiser inside | no cruiser | deaths_per_100 | 10.6 (104) | 7.3 (191) | +3.2 | -4.3 to +9.7 |
+| all | non-radar cruiser inside | no cruiser | cap_taken_snapshot_pct | 37.5 (8) | 20.4 (108) | +17.1 | -4.0 to +38.0 |
+| all | non-radar cruiser inside | no cruiser | cap_won_batch_pct | 62.5 (8) | 27.8 (108) | +34.7 | +6.4 to +60.2 * |
+| all | non-radar cruiser inside | no cruiser | enemy_prevented_pct | 76.9 (13) | 84.1 (132) | -7.2 | -29.5 to +13.0 |
+| all | non-radar cruiser inside | no cruiser | concealed_damage | 15049.0 (17) | 3515.0 (191) | +11535.0 | +1016.0 to +22386.0 * |
+| all | non-radar cruiser inside | no cruiser | deaths_per_100 | 23.5 (17) | 7.3 (191) | +16.2 | -5.5 to +46.5 |
+| top6 | radar cruiser inside | non-radar cruiser inside | cap_taken_snapshot_pct | 53.3 (30) | too few (3) | too few | - |
+| top6 | radar cruiser inside | non-radar cruiser inside | cap_won_batch_pct | 63.3 (30) | too few (3) | too few | - |
+| top6 | radar cruiser inside | non-radar cruiser inside | enemy_prevented_pct | 90.9 (44) | too few (5) | too few | - |
+| top6 | radar cruiser inside | non-radar cruiser inside | concealed_damage | 19099.0 (55) | 20045.0 (8) | -946.0 | -5449.0 to +2119.0 |
+| top6 | radar cruiser inside | non-radar cruiser inside | deaths_per_100 | 10.9 (55) | 12.5 (8) | -1.6 | -26.8 to +14.8 |
+| top6 | radar cruiser inside | no cruiser | cap_taken_snapshot_pct | 53.3 (30) | 47.8 (23) | +5.5 | -11.3 to +15.2 |
+| top6 | radar cruiser inside | no cruiser | cap_won_batch_pct | 63.3 (30) | 65.2 (23) | -1.9 | -22.6 to +7.6 |
+| top6 | radar cruiser inside | no cruiser | enemy_prevented_pct | 90.9 (44) | 94.6 (37) | -3.7 | -9.1 to +3.4 |
+| top6 | radar cruiser inside | no cruiser | concealed_damage | 19099.0 (55) | 4121.0 (46) | +14977.0 | +9579.0 to +18687.0 * |
+| top6 | radar cruiser inside | no cruiser | deaths_per_100 | 10.9 (55) | 4.3 (46) | +6.6 | -1.7 to +12.1 |
+| top6 | non-radar cruiser inside | no cruiser | cap_taken_snapshot_pct | too few (3) | 47.8 (23) | too few | - |
+| top6 | non-radar cruiser inside | no cruiser | cap_won_batch_pct | too few (3) | 65.2 (23) | too few | - |
+| top6 | non-radar cruiser inside | no cruiser | enemy_prevented_pct | too few (5) | 94.6 (37) | too few | - |
+| top6 | non-radar cruiser inside | no cruiser | concealed_damage | 20045.0 (8) | 4121.0 (46) | +15924.0 | +9599.0 to +24835.0 * |
+| top6 | non-radar cruiser inside | no cruiser | deaths_per_100 | 12.5 (8) | 4.3 (46) | +8.2 | -6.7 to +33.6 |
+| rest | radar cruiser inside | non-radar cruiser inside | cap_taken_snapshot_pct | 76.2 (21) | too few (5) | too few | - |
+| rest | radar cruiser inside | non-radar cruiser inside | cap_won_batch_pct | 86.4 (22) | too few (5) | too few | - |
+| rest | radar cruiser inside | non-radar cruiser inside | enemy_prevented_pct | 89.7 (39) | 62.5 (8) | +27.2 | +2.7 to +54.5 * |
+| rest | radar cruiser inside | non-radar cruiser inside | concealed_damage | 14394.0 (49) | 10609.0 (9) | +3785.0 | -9155.0 to +13071.0 |
+| rest | radar cruiser inside | non-radar cruiser inside | deaths_per_100 | 10.2 (49) | 33.3 (9) | -23.1 | -61.8 to +12.5 |
+| rest | radar cruiser inside | no cruiser | cap_taken_snapshot_pct | 76.2 (21) | 12.9 (85) | +63.2 | +47.0 to +80.3 * |
+| rest | radar cruiser inside | no cruiser | cap_won_batch_pct | 86.4 (22) | 17.6 (85) | +68.7 | +51.9 to +84.3 * |
+| rest | radar cruiser inside | no cruiser | enemy_prevented_pct | 89.7 (39) | 80.0 (95) | +9.7 | -0.8 to +21.3 |
+| rest | radar cruiser inside | no cruiser | concealed_damage | 14394.0 (49) | 3322.0 (145) | +11072.0 | +6504.0 to +16293.0 * |
+| rest | radar cruiser inside | no cruiser | deaths_per_100 | 10.2 (49) | 8.3 (145) | +1.9 | -8.5 to +14.4 |
+| rest | non-radar cruiser inside | no cruiser | cap_taken_snapshot_pct | too few (5) | 12.9 (85) | too few | - |
+| rest | non-radar cruiser inside | no cruiser | cap_won_batch_pct | too few (5) | 17.6 (85) | too few | - |
+| rest | non-radar cruiser inside | no cruiser | enemy_prevented_pct | 62.5 (8) | 80.0 (95) | -17.5 | -38.9 to +4.9 |
+| rest | non-radar cruiser inside | no cruiser | concealed_damage | 10609.0 (9) | 3322.0 (145) | +7287.0 | -3496.0 to +22074.0 |
+| rest | non-radar cruiser inside | no cruiser | deaths_per_100 | 33.3 (9) | 8.3 (145) | +25.1 | -8.0 to +63.4 |
+
+By who held the cap at activation
+| cap at activation | group | n (T6/Rest) | cap taken % (n) [95%] | cap_won % (n) | enemy prevented % (n) [95%] |
+|---|---|---|---|---|---|
+| neutral | radar cruiser inside | 30 (19/11) | 60.0 (30) [45.8 to 71.4 *] | 73.3 (30) | 83.3 (30) [71.4 to 96.2 *] |
+| neutral | non-radar cruiser inside | 4 (0/4) | too few (4) [-] | too few (4) | too few (4) [-] |
+| neutral | no cruiser | 49 (14/35) | 24.5 (49) [10.0 to 39.3 *] | 36.7 (49) | 87.8 (49) [78.8 to 97.3 *] |
+| theirs | radar cruiser inside | 21 (11/10) | 66.7 (21) [44.8 to 93.8 *] | 76.2 (21) | too few (0) [-] |
+| theirs | non-radar cruiser inside | 4 (3/1) | too few (4) [-] | too few (4) | too few (0) [-] |
+| theirs | no cruiser | 59 (9/50) | 16.9 (59) [8.2 to 24.6 *] | 20.3 (59) | too few (0) [-] |
+| ours | radar cruiser inside | 53 (25/28) | too few (0) [-] | too few (1) | 94.3 (53) [89.3 to 100.0 *] |
+| ours | non-radar cruiser inside | 9 (5/4) | too few (0) [-] | too few (0) | 88.9 (9) [62.5 to 100.0 *] |
+| ours | no cruiser | 83 (23/60) | too few (0) [-] | too few (0) | 81.9 (83) [73.0 to 89.1 *] |
+
+Neutral caps only, differences
+| a | b | stat | a (n) | b (n) | diff | interval |
+|---|---|---|---|---|---|---|
+| radar cruiser inside | non-radar cruiser inside | cap_taken_snapshot_pct | 60.0 (30) | too few (4) | too few | - |
+| radar cruiser inside | non-radar cruiser inside | cap_won_batch_pct | 73.3 (30) | too few (4) | too few | - |
+| radar cruiser inside | non-radar cruiser inside | enemy_prevented_pct | 83.3 (30) | too few (4) | too few | - |
+| radar cruiser inside | no cruiser | cap_taken_snapshot_pct | 60.0 (30) | 24.5 (49) | +35.5 | +19.0 to +51.2 * |
+| radar cruiser inside | no cruiser | cap_won_batch_pct | 73.3 (30) | 36.7 (49) | +36.6 | +16.2 to +57.9 * |
+| radar cruiser inside | no cruiser | enemy_prevented_pct | 83.3 (30) | 87.8 (49) | -4.4 | -19.6 to +10.7 |
+| non-radar cruiser inside | no cruiser | cap_taken_snapshot_pct | too few (4) | 24.5 (49) | too few | - |
+| non-radar cruiser inside | no cruiser | cap_won_batch_pct | too few (4) | 36.7 (49) | too few | - |
+| non-radar cruiser inside | no cruiser | enemy_prevented_pct | too few (4) | 87.8 (49) | too few | - |
+
+Context: share activated in first 5 min, share inside the cap, median elapsed
+radar cruiser inside early % 34.6 inside cap % 53.8 median el 409.5 radar_cap set % 98.1 own {'ours': 53, 'neutral': 30, 'theirs': 21} cruisers inside {'Des Moines': 48, 'Brisbane': 19, 'Minotaur': 13, 'Salem': 8, 'Worcester': 7, 'Svea': 6} smoker ships {'Somers': 34, 'Gearing': 33, 'Harugumo': 19, 'Grozovoi': 5, 'Gdańsk': 4}
+non-radar cruiser inside early % 23.5 inside cap % 76.5 median el 469 radar_cap set % 0.0 own {'ours': 9, 'theirs': 4, 'neutral': 4} cruisers inside {'Utrecht': 7, 'Napoli': 3, 'Cerberus': 3, 'Prinz Adalbert': 2, 'Smolensk': 1, 'Jinan': 1} smoker ships {'Somers': 6, 'Delny': 3, 'Gearing': 3, 'Daring': 2, 'Shimakaze': 1}
+no cruiser early % 24.6 inside cap % 73.3 median el 463 radar_cap set % 14.1 own {'theirs': 59, 'neutral': 49, 'ours': 83} cruisers inside {} smoker ships {'Daring': 84, 'Gdańsk': 32, 'Z-42': 23, 'Shimakaze': 11, 'Somers': 11}
+other early % 43.0 inside cap % 69.6 median el 333 radar_cap set % 8.9 own {'ours': 35, 'neutral': 29, 'theirs': 15} cruisers inside {'Napoli': 1, 'Colbert': 1} smoker ships {'Daring': 21, 'Somers': 17, 'Gearing': 12, 'Shimakaze': 8, 'Gdańsk': 7}
+
+agreement we_took vs cap_won (n 211 ): (we_took, cap_won) {(False, False): 106, (False, True): 27, (True, False): 15, (True, True): 63}

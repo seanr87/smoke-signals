@@ -1,0 +1,3269 @@
+{
+ "cap_defended": {
+  "rates": [
+   {
+    "what": "all smokes",
+    "n": 1547,
+    "pct": 31.4,
+    "ci": [
+     28.1,
+     34.9
+    ],
+    "top6_n": 538,
+    "top6_pct": 30.3,
+    "rest_n": 1009,
+    "rest_pct": 32.0,
+    "gap": -1.7,
+    "gap_ci": [
+     -9.5,
+     5.2
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "destroyer smokes",
+    "n": 1074,
+    "pct": 33.5,
+    "ci": [
+     30.1,
+     36.7
+    ],
+    "top6_n": 387,
+    "top6_pct": 32.0,
+    "rest_n": 687,
+    "rest_pct": 34.4,
+    "gap": -2.3,
+    "gap_ci": [
+     -11.8,
+     4.3
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "cruiser smokes",
+    "n": 439,
+    "pct": 26.9,
+    "ci": [
+     21.6,
+     33.3
+    ],
+    "top6_n": 141,
+    "top6_pct": 25.5,
+    "rest_n": 298,
+    "rest_pct": 27.5,
+    "gap": -2.0,
+    "gap_ci": [
+     -13.5,
+     8.7
+    ],
+    "gap_clear": false
+   }
+  ],
+  "kept": [
+   {
+    "what": "all smokes with cap_defended",
+    "n": 486,
+    "pct": 60.5,
+    "ci": [
+     54.9,
+     65.7
+    ],
+    "top6_n": 163,
+    "top6_pct": 62.6,
+    "rest_n": 323,
+    "rest_pct": 59.4,
+    "gap": 3.1,
+    "gap_ci": [
+     -10.7,
+     15.3
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "destroyer smokes",
+    "n": 360,
+    "pct": 58.9,
+    "ci": [
+     52.5,
+     64.9
+    ],
+    "top6_n": 124,
+    "top6_pct": 59.7,
+    "rest_n": 236,
+    "rest_pct": 58.5,
+    "gap": 1.2,
+    "gap_ci": [
+     -15.0,
+     13.3
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "defended cap = nearest cap",
+    "n": 175,
+    "pct": 61.1,
+    "ci": [
+     54.9,
+     67.0
+    ],
+    "top6_n": 63,
+    "top6_pct": 66.7,
+    "rest_n": 112,
+    "rest_pct": 58.0,
+    "gap": 8.6,
+    "gap_ci": [
+     -6.2,
+     21.9
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "defended cap not the nearest",
+    "n": 311,
+    "pct": 60.1,
+    "ci": [
+     52.1,
+     65.7
+    ],
+    "top6_n": 100,
+    "top6_pct": 60.0,
+    "rest_n": 211,
+    "rest_pct": 60.2,
+    "gap": -0.2,
+    "gap_ci": [
+     -16.7,
+     14.0
+    ],
+    "gap_clear": false
+   }
+  ],
+  "n": 486,
+  "role": {
+   "middle": 459,
+   "enemy side": 27
+  },
+  "is_nearest": 175,
+  "median_edge_m": 8949,
+  "by_map_cap": {
+   "Hotspot A": 16,
+   "Hotspot C": 51,
+   "Hotspot D": 51,
+   "Land of Fire A": 12,
+   "Land of Fire B": 28,
+   "Land of Fire C": 1,
+   "Loop A": 28,
+   "Loop B": 35,
+   "Loop C": 18,
+   "Mountain Range A": 39,
+   "Mountain Range B": 24,
+   "Mountain Range C": 20,
+   "Okinawa C": 37,
+   "Okinawa D": 4,
+   "Sea of Fortune A": 2,
+   "Sea of Fortune C": 42,
+   "Sea of Fortune D": 19,
+   "Sleeping Giant A": 31,
+   "Sleeping Giant B": 20,
+   "Sleeping Giant C": 8
+  }
+ },
+ "enemy_took": {
+  "grace": [
+   {
+    "grace_s": 0,
+    "yes": 103,
+    "no": 969,
+    "na": 475,
+    "pct": 9.6
+   },
+   {
+    "grace_s": 60,
+    "yes": 184,
+    "no": 888,
+    "na": 475,
+    "pct": 17.2
+   },
+   {
+    "grace_s": 120,
+    "yes": 233,
+    "no": 839,
+    "na": 475,
+    "pct": 21.7
+   }
+  ],
+  "overall": [
+   {
+    "what": "all applicable smokes",
+    "n": 1073,
+    "pct": 17.1,
+    "ci": [
+     14.8,
+     19.4
+    ],
+    "top6_n": 402,
+    "top6_pct": 14.4,
+    "rest_n": 671,
+    "rest_pct": 18.8,
+    "gap": -4.4,
+    "gap_ci": [
+     -8.9,
+     0.1
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "destroyer smokes",
+    "n": 762,
+    "pct": 18.8,
+    "ci": [
+     15.7,
+     22.1
+    ],
+    "top6_n": 291,
+    "top6_pct": 15.1,
+    "rest_n": 471,
+    "rest_pct": 21.0,
+    "gap": -5.9,
+    "gap_ci": [
+     -12.1,
+     -0.9
+    ],
+    "gap_clear": true
+   },
+   {
+    "what": "smoke centre inside or within 2 km of the cap",
+    "n": 541,
+    "pct": 11.1,
+    "ci": [
+     8.8,
+     13.8
+    ],
+    "top6_n": 189,
+    "top6_pct": 7.9,
+    "rest_n": 352,
+    "rest_pct": 12.8,
+    "gap": -4.8,
+    "gap_ci": [
+     -9.2,
+     -0.7
+    ],
+    "gap_clear": true
+   },
+   {
+    "what": "destroyer smokes inside or within 2 km",
+    "n": 405,
+    "pct": 12.8,
+    "ci": [
+     9.5,
+     16.2
+    ],
+    "top6_n": 142,
+    "top6_pct": 8.5,
+    "rest_n": 263,
+    "rest_pct": 15.2,
+    "gap": -6.8,
+    "gap_ci": [
+     -12.6,
+     -1.7
+    ],
+    "gap_clear": true
+   },
+   {
+    "what": "cap ours at activation",
+    "n": 694,
+    "pct": 13.7,
+    "ci": [
+     10.6,
+     16.7
+    ],
+    "top6_n": 260,
+    "top6_pct": 12.7,
+    "rest_n": 434,
+    "rest_pct": 14.3,
+    "gap": -1.6,
+    "gap_ci": [
+     -8.2,
+     5.0
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "cap neutral at activation",
+    "n": 379,
+    "pct": 23.5,
+    "ci": [
+     18.5,
+     29.3
+    ],
+    "top6_n": 142,
+    "top6_pct": 17.6,
+    "rest_n": 237,
+    "rest_pct": 27.0,
+    "gap": -9.4,
+    "gap_ci": [
+     -18.4,
+     -0.5
+    ],
+    "gap_clear": true
+   },
+   {
+    "what": "cap ours, smoke within 2 km",
+    "n": 350,
+    "pct": 8.0,
+    "ci": [
+     5.3,
+     10.9
+    ],
+    "top6_n": 116,
+    "top6_pct": 5.2,
+    "rest_n": 234,
+    "rest_pct": 9.4,
+    "gap": -4.2,
+    "gap_ci": [
+     -9.7,
+     1.5
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "cap ours, cap_defended set for that cap",
+    "n": 153,
+    "pct": 35.9,
+    "ci": [
+     28.1,
+     44.0
+    ],
+    "top6_n": 52,
+    "top6_pct": 30.8,
+    "rest_n": 101,
+    "rest_pct": 38.6,
+    "gap": -7.8,
+    "gap_ci": [
+     -24.7,
+     10.5
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "cap ours, cap_defended not set for it",
+    "n": 541,
+    "pct": 7.4,
+    "ci": [
+     5.5,
+     9.4
+    ],
+    "top6_n": 208,
+    "top6_pct": 8.2,
+    "rest_n": 333,
+    "rest_pct": 6.9,
+    "gap": 1.3,
+    "gap_ci": [
+     -3.4,
+     5.2
+    ],
+    "gap_clear": false
+   }
+  ],
+  "by_map_cap": [
+   {
+    "what": "Hotspot A",
+    "n": 11,
+    "pct": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "top6_n": 7,
+    "top6_pct": 0.0,
+    "rest_n": 4,
+    "rest_pct": 0.0,
+    "gap": 0.0,
+    "gap_ci": [
+     0.0,
+     0.0
+    ],
+    "gap_clear": false,
+    "map": "Hotspot",
+    "cap": "A"
+   },
+   {
+    "what": "Hotspot B",
+    "n": 44,
+    "pct": 9.1,
+    "ci": [
+     2.0,
+     18.4
+    ],
+    "top6_n": 14,
+    "top6_pct": 21.4,
+    "rest_n": 30,
+    "rest_pct": 3.3,
+    "gap": 18.1,
+    "gap_ci": [
+     0.0,
+     55.6
+    ],
+    "gap_clear": false,
+    "map": "Hotspot",
+    "cap": "B"
+   },
+   {
+    "what": "Hotspot C",
+    "n": 65,
+    "pct": 26.2,
+    "ci": [
+     16.4,
+     37.8
+    ],
+    "top6_n": 21,
+    "top6_pct": 23.8,
+    "rest_n": 44,
+    "rest_pct": 27.3,
+    "gap": -3.5,
+    "gap_ci": [
+     -25.2,
+     19.6
+    ],
+    "gap_clear": false,
+    "map": "Hotspot",
+    "cap": "C"
+   },
+   {
+    "what": "Hotspot D",
+    "n": 84,
+    "pct": 23.8,
+    "ci": [
+     13.0,
+     35.2
+    ],
+    "top6_n": 24,
+    "top6_pct": 12.5,
+    "rest_n": 60,
+    "rest_pct": 28.3,
+    "gap": -15.8,
+    "gap_ci": [
+     -35.1,
+     12.0
+    ],
+    "gap_clear": false,
+    "map": "Hotspot",
+    "cap": "D"
+   },
+   {
+    "what": "Land of Fire A",
+    "n": 53,
+    "pct": 20.8,
+    "ci": [
+     6.8,
+     36.4
+    ],
+    "top6_n": 11,
+    "top6_pct": 9.1,
+    "rest_n": 42,
+    "rest_pct": 23.8,
+    "gap": -14.7,
+    "gap_ci": [
+     -38.9,
+     12.6
+    ],
+    "gap_clear": false,
+    "map": "Land of Fire",
+    "cap": "A"
+   },
+   {
+    "what": "Land of Fire B",
+    "n": 68,
+    "pct": 11.8,
+    "ci": [
+     6.0,
+     23.3
+    ],
+    "top6_n": 36,
+    "top6_pct": 5.6,
+    "rest_n": 32,
+    "rest_pct": 18.8,
+    "gap": -13.2,
+    "gap_ci": [
+     -30.6,
+     0.2
+    ],
+    "gap_clear": false,
+    "map": "Land of Fire",
+    "cap": "B"
+   },
+   {
+    "what": "Land of Fire D",
+    "n": 26,
+    "pct": 7.7,
+    "ci": [
+     0.0,
+     23.1
+    ],
+    "top6_n": 14,
+    "top6_pct": 14.3,
+    "rest_n": 12,
+    "rest_pct": 0.0,
+    "gap": 14.3,
+    "gap_ci": [
+     0.0,
+     42.9
+    ],
+    "gap_clear": false,
+    "map": "Land of Fire",
+    "cap": "D"
+   },
+   {
+    "what": "Loop A",
+    "n": 47,
+    "pct": 17.0,
+    "ci": [
+     5.6,
+     29.2
+    ],
+    "top6_n": 11,
+    "top6_pct": 0.0,
+    "rest_n": 36,
+    "rest_pct": 22.2,
+    "gap": -22.2,
+    "gap_ci": [
+     -37.1,
+     -7.5
+    ],
+    "gap_clear": true,
+    "map": "Loop",
+    "cap": "A"
+   },
+   {
+    "what": "Loop B",
+    "n": 30,
+    "pct": 20.0,
+    "ci": [
+     5.9,
+     39.1
+    ],
+    "top6_n": 10,
+    "top6_pct": 0.0,
+    "rest_n": 20,
+    "rest_pct": 30.0,
+    "gap": -30.0,
+    "gap_ci": [
+     -57.1,
+     -8.7
+    ],
+    "gap_clear": true,
+    "map": "Loop",
+    "cap": "B"
+   },
+   {
+    "what": "Loop C",
+    "n": 33,
+    "pct": 12.1,
+    "ci": [
+     2.8,
+     28.6
+    ],
+    "top6_n": 18,
+    "top6_pct": 5.6,
+    "rest_n": 15,
+    "rest_pct": 20.0,
+    "gap": -14.4,
+    "gap_ci": [
+     -45.0,
+     6.1
+    ],
+    "gap_clear": false,
+    "map": "Loop",
+    "cap": "C"
+   },
+   {
+    "what": "Mountain Range A",
+    "n": 41,
+    "pct": 14.6,
+    "ci": [
+     6.0,
+     28.0
+    ],
+    "top6_n": 19,
+    "top6_pct": 5.3,
+    "rest_n": 22,
+    "rest_pct": 22.7,
+    "gap": -17.5,
+    "gap_ci": [
+     -41.7,
+     -2.3
+    ],
+    "gap_clear": true,
+    "map": "Mountain Range",
+    "cap": "A"
+   },
+   {
+    "what": "Mountain Range B",
+    "n": 45,
+    "pct": 35.6,
+    "ci": [
+     25.5,
+     51.5
+    ],
+    "top6_n": 24,
+    "top6_pct": 33.3,
+    "rest_n": 21,
+    "rest_pct": 38.1,
+    "gap": -4.8,
+    "gap_ci": [
+     -33.9,
+     20.0
+    ],
+    "gap_clear": false,
+    "map": "Mountain Range",
+    "cap": "B"
+   },
+   {
+    "what": "Mountain Range C",
+    "n": 56,
+    "pct": 17.9,
+    "ci": [
+     6.8,
+     30.2
+    ],
+    "top6_n": 25,
+    "top6_pct": 8.0,
+    "rest_n": 31,
+    "rest_pct": 25.8,
+    "gap": -17.8,
+    "gap_ci": [
+     -36.4,
+     4.2
+    ],
+    "gap_clear": false,
+    "map": "Mountain Range",
+    "cap": "C"
+   },
+   {
+    "what": "Okinawa A",
+    "n": 39,
+    "pct": 15.4,
+    "ci": [
+     5.3,
+     26.0
+    ],
+    "top6_n": 4,
+    "top6_pct": 0.0,
+    "rest_n": 35,
+    "rest_pct": 17.1,
+    "gap": -17.1,
+    "gap_ci": [
+     -29.0,
+     -5.3
+    ],
+    "gap_clear": true,
+    "map": "Okinawa",
+    "cap": "A"
+   },
+   {
+    "what": "Okinawa B",
+    "n": 8,
+    "pct": 12.5,
+    "ci": [
+     0.0,
+     60.0
+    ],
+    "top6_n": 2,
+    "top6_pct": 0.0,
+    "rest_n": 6,
+    "rest_pct": 16.7,
+    "gap": -16.7,
+    "gap_ci": [
+     -100.0,
+     0.0
+    ],
+    "gap_clear": false,
+    "map": "Okinawa",
+    "cap": "B"
+   },
+   {
+    "what": "Okinawa C",
+    "n": 37,
+    "pct": 13.5,
+    "ci": [
+     2.9,
+     26.7
+    ],
+    "top6_n": 7,
+    "top6_pct": 14.3,
+    "rest_n": 30,
+    "rest_pct": 13.3,
+    "gap": 1.0,
+    "gap_ci": [
+     -25.0,
+     45.8
+    ],
+    "gap_clear": false,
+    "map": "Okinawa",
+    "cap": "C"
+   },
+   {
+    "what": "Okinawa D",
+    "n": 26,
+    "pct": 19.2,
+    "ci": [
+     4.3,
+     36.4
+    ],
+    "top6_n": 3,
+    "top6_pct": 33.3,
+    "rest_n": 23,
+    "rest_pct": 17.4,
+    "gap": 15.9,
+    "gap_ci": [
+     -27.3,
+     94.4
+    ],
+    "gap_clear": false,
+    "map": "Okinawa",
+    "cap": "D"
+   },
+   {
+    "what": "Sea of Fortune A",
+    "n": 12,
+    "pct": 8.3,
+    "ci": [
+     0.0,
+     27.3
+    ],
+    "top6_n": 4,
+    "top6_pct": 0.0,
+    "rest_n": 8,
+    "rest_pct": 12.5,
+    "gap": -12.5,
+    "gap_ci": [
+     -42.9,
+     0.0
+    ],
+    "gap_clear": false,
+    "map": "Sea of Fortune",
+    "cap": "A"
+   },
+   {
+    "what": "Sea of Fortune B",
+    "n": 60,
+    "pct": 10.0,
+    "ci": [
+     1.9,
+     19.2
+    ],
+    "top6_n": 12,
+    "top6_pct": 25.0,
+    "rest_n": 48,
+    "rest_pct": 6.2,
+    "gap": 18.8,
+    "gap_ci": [
+     -7.1,
+     50.0
+    ],
+    "gap_clear": false,
+    "map": "Sea of Fortune",
+    "cap": "B"
+   },
+   {
+    "what": "Sea of Fortune C",
+    "n": 15,
+    "pct": 6.7,
+    "ci": [
+     0.0,
+     23.1
+    ],
+    "top6_n": 7,
+    "top6_pct": 0.0,
+    "rest_n": 8,
+    "rest_pct": 12.5,
+    "gap": -12.5,
+    "gap_ci": [
+     -37.5,
+     0.0
+    ],
+    "gap_clear": false,
+    "map": "Sea of Fortune",
+    "cap": "C"
+   },
+   {
+    "what": "Sea of Fortune D",
+    "n": 41,
+    "pct": 17.1,
+    "ci": [
+     5.1,
+     30.0
+    ],
+    "top6_n": 18,
+    "top6_pct": 16.7,
+    "rest_n": 23,
+    "rest_pct": 17.4,
+    "gap": -0.7,
+    "gap_ci": [
+     -24.2,
+     23.8
+    ],
+    "gap_clear": false,
+    "map": "Sea of Fortune",
+    "cap": "D"
+   },
+   {
+    "what": "Sleeping Giant A",
+    "n": 90,
+    "pct": 21.1,
+    "ci": [
+     12.0,
+     35.0
+    ],
+    "top6_n": 49,
+    "top6_pct": 20.4,
+    "rest_n": 41,
+    "rest_pct": 22.0,
+    "gap": -1.5,
+    "gap_ci": [
+     -21.4,
+     32.2
+    ],
+    "gap_clear": false,
+    "map": "Sleeping Giant",
+    "cap": "A"
+   },
+   {
+    "what": "Sleeping Giant B",
+    "n": 46,
+    "pct": 8.7,
+    "ci": [
+     0.0,
+     21.6
+    ],
+    "top6_n": 20,
+    "top6_pct": 5.0,
+    "rest_n": 26,
+    "rest_pct": 11.5,
+    "gap": -6.5,
+    "gap_ci": [
+     -26.1,
+     18.2
+    ],
+    "gap_clear": false,
+    "map": "Sleeping Giant",
+    "cap": "B"
+   },
+   {
+    "what": "Sleeping Giant C",
+    "n": 16,
+    "pct": 18.8,
+    "ci": [
+     0.0,
+     35.0
+    ],
+    "top6_n": 7,
+    "top6_pct": 42.9,
+    "rest_n": 9,
+    "rest_pct": 0.0,
+    "gap": 42.9,
+    "gap_ci": [
+     0.0,
+     50.0
+    ],
+    "gap_clear": false,
+    "map": "Sleeping Giant",
+    "cap": "C"
+   },
+   {
+    "what": "Sleeping Giant D",
+    "n": 75,
+    "pct": 17.3,
+    "ci": [
+     6.8,
+     26.9
+    ],
+    "top6_n": 35,
+    "top6_pct": 22.9,
+    "rest_n": 40,
+    "rest_pct": 12.5,
+    "gap": 10.4,
+    "gap_ci": [
+     -13.0,
+     29.6
+    ],
+    "gap_clear": false,
+    "map": "Sleeping Giant",
+    "cap": "D"
+   }
+  ],
+  "coverage": {
+   "yes": 184,
+   "n/a: cap already the enemy's": 474,
+   "no": 889
+  },
+  "median_snapshots": 5,
+  "median_tail_s": 21,
+  "hand_check": "10 of 10",
+  "recompute_mismatches": 2,
+  "cap_won_crosscheck": {
+   "n": 171,
+   "yes": 144,
+   "no": 26,
+   "na": 1
+  }
+ },
+ "we_took": [
+  {
+   "what": "all smokes where the nearest cap was not ours",
+   "n": 853,
+   "pct": 24.5,
+   "ci": [
+    21.0,
+    27.9
+   ],
+   "top6_n": 278,
+   "top6_pct": 28.4,
+   "rest_n": 575,
+   "rest_pct": 22.6,
+   "gap": 5.8,
+   "gap_ci": [
+    -1.7,
+    14.4
+   ],
+   "gap_clear": false
+  },
+  {
+   "what": "destroyer smokes",
+   "n": 582,
+   "pct": 27.0,
+   "ci": [
+    22.4,
+    31.8
+   ],
+   "top6_n": 198,
+   "top6_pct": 32.8,
+   "rest_n": 384,
+   "rest_pct": 24.0,
+   "gap": 8.9,
+   "gap_ci": [
+    -1.6,
+    20.2
+   ],
+   "gap_clear": false
+  },
+  {
+   "what": "within 2 km",
+   "n": 349,
+   "pct": 35.0,
+   "ci": [
+    29.1,
+    40.5
+   ],
+   "top6_n": 115,
+   "top6_pct": 39.1,
+   "rest_n": 234,
+   "rest_pct": 32.9,
+   "gap": 6.2,
+   "gap_ci": [
+    -3.5,
+    18.5
+   ],
+   "gap_clear": false
+  }
+ ],
+ "ribbons": {
+  "in_replay": "self player only (onRibbon ids 9 Defended, 10 Captured, 11 AssistedInCapture; modern replays: privateVehicleState.ribbons)",
+  "in_batch": false,
+  "replays_per_game": {
+   "2": 170,
+   "1": 1
+  },
+  "needs": "code change in smoke-signals plus a batch rerun; even then at most the recording players (2 of ~18 ships per game)"
+ },
+ "c2": {
+  "coverage": {
+   "Hotspot": {
+    "covered": 30,
+    "no snapshot within 60 s": 1
+   },
+   "Loop": {
+    "covered": 19,
+    "ended before 8:00": 2,
+    "no snapshot within 60 s": 2
+   },
+   "Okinawa": {
+    "covered": 16,
+    "ended before 8:00": 1,
+    "no snapshot within 60 s": 1
+   },
+   "Land of Fire": {
+    "no snapshot within 60 s": 1,
+    "covered": 23,
+    "ended before 8:00": 1
+   },
+   "Mountain Range": {
+    "covered": 19,
+    "no snapshot within 60 s": 1,
+    "ended before 8:00": 1
+   },
+   "Sleeping Giant": {
+    "covered": 29,
+    "no snapshot within 60 s": 3
+   },
+   "Sea of Fortune": {
+    "covered": 19,
+    "no snapshot within 60 s": 2
+   }
+  },
+  "maps": {
+   "Hotspot": {
+    "games": 30,
+    "rest_vs_rest_games": 17,
+    "caps": {
+     "A": "enemy side",
+     "B": "own side",
+     "C": "middle",
+     "D": "middle"
+    },
+    "all": [
+     {
+      "what": "A (enemy side)",
+      "n_holders": 9,
+      "small_n": true,
+      "holder_wins": 6,
+      "holder_win_pct": 66.7,
+      "holder_ci": [
+       30.0,
+       100.0
+      ],
+      "n_not": 51,
+      "not_win_pct": 47.1,
+      "gap": 19.6,
+      "gap_ci": [
+       -19.6,
+       55.6
+      ],
+      "expected_wins": 4.9,
+      "actual_minus_expected_pts": 12.4,
+      "ame_ci": [
+       -20.9,
+       41.8
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 4.8,
+      "ame_bt_pts": 12.9,
+      "ame_bt_ci": [
+       -9.9,
+       35.4
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "B (own side)",
+      "n_holders": 51,
+      "small_n": false,
+      "holder_wins": 27,
+      "holder_win_pct": 52.9,
+      "holder_ci": [
+       47.3,
+       59.2
+      ],
+      "n_not": 9,
+      "not_win_pct": 33.3,
+      "gap": 19.6,
+      "gap_ci": [
+       -24.0,
+       55.6
+      ],
+      "expected_wins": 25.9,
+      "actual_minus_expected_pts": 2.2,
+      "ame_ci": [
+       -3.2,
+       8.1
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 25.8,
+      "ame_bt_pts": 2.3,
+      "ame_bt_ci": [
+       -1.3,
+       6.8
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "C (middle)",
+      "n_holders": 28,
+      "small_n": false,
+      "holder_wins": 20,
+      "holder_win_pct": 71.4,
+      "holder_ci": [
+       53.6,
+       88.5
+      ],
+      "n_not": 32,
+      "not_win_pct": 31.2,
+      "gap": 40.2,
+      "gap_ci": [
+       10.0,
+       70.1
+      ],
+      "expected_wins": 15.4,
+      "actual_minus_expected_pts": 16.4,
+      "ame_ci": [
+       0.9,
+       30.3
+      ],
+      "ame_clear": true,
+      "expected_wins_bt": 17.3,
+      "ame_bt_pts": 9.6,
+      "ame_bt_ci": [
+       -6.0,
+       23.3
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "D (middle)",
+      "n_holders": 29,
+      "small_n": false,
+      "holder_wins": 16,
+      "holder_win_pct": 55.2,
+      "holder_ci": [
+       37.0,
+       72.4
+      ],
+      "n_not": 31,
+      "not_win_pct": 45.2,
+      "gap": 10.0,
+      "gap_ci": [
+       -26.7,
+       43.4
+      ],
+      "expected_wins": 15.0,
+      "actual_minus_expected_pts": 3.5,
+      "ame_ci": [
+       -13.4,
+       19.6
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 14.9,
+      "ame_bt_pts": 3.7,
+      "ame_bt_ci": [
+       -10.9,
+       17.4
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "holds more caps than the enemy",
+      "n_holders": 12,
+      "small_n": true,
+      "holder_wins": 10,
+      "holder_win_pct": 83.3,
+      "holder_ci": [
+       60.0,
+       100.0
+      ],
+      "n_not": 12,
+      "not_win_pct": 16.7,
+      "gap": 66.7,
+      "gap_ci": [
+       20.0,
+       100.0
+      ],
+      "expected_wins": 6.8,
+      "actual_minus_expected_pts": 26.9,
+      "ame_ci": [
+       6.2,
+       44.8
+      ],
+      "ame_clear": true,
+      "expected_wins_bt": 7.6,
+      "ame_bt_pts": 20.4,
+      "ame_bt_ci": [
+       0.0,
+       37.1
+      ],
+      "ame_bt_clear": true
+     }
+    ],
+    "rest_vs_rest": [
+     {
+      "what": "A (enemy side)",
+      "n_holders": 5,
+      "too_few": true
+     },
+     {
+      "what": "B (own side)",
+      "n_holders": 29,
+      "small_n": false,
+      "holder_wins": 17,
+      "holder_win_pct": 58.6,
+      "holder_ci": [
+       53.1,
+       68.0
+      ],
+      "n_not": 5,
+      "not_win_pct": 0.0,
+      "gap": 58.6,
+      "gap_ci": [
+       53.1,
+       68.0
+      ],
+      "expected_wins": 14.7,
+      "actual_minus_expected_pts": 7.8,
+      "ame_ci": [
+       2.0,
+       16.1
+      ],
+      "ame_clear": true,
+      "expected_wins_bt": 15.3,
+      "ame_bt_pts": 6.0,
+      "ame_bt_ci": [
+       1.2,
+       13.0
+      ],
+      "ame_bt_clear": true
+     },
+     {
+      "what": "C (middle)",
+      "n_holders": 15,
+      "small_n": false,
+      "holder_wins": 10,
+      "holder_win_pct": 66.7,
+      "holder_ci": [
+       42.9,
+       87.5
+      ],
+      "n_not": 19,
+      "not_win_pct": 36.8,
+      "gap": 29.8,
+      "gap_ci": [
+       -12.1,
+       70.8
+      ],
+      "expected_wins": 8.5,
+      "actual_minus_expected_pts": 9.7,
+      "ame_ci": [
+       -15.0,
+       31.8
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 9.1,
+      "ame_bt_pts": 6.3,
+      "ame_bt_ci": [
+       -15.0,
+       26.8
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "D (middle)",
+      "n_holders": 16,
+      "small_n": false,
+      "holder_wins": 9,
+      "holder_win_pct": 56.2,
+      "holder_ci": [
+       31.2,
+       80.0
+      ],
+      "n_not": 18,
+      "not_win_pct": 44.4,
+      "gap": 11.8,
+      "gap_ci": [
+       -35.4,
+       59.0
+      ],
+      "expected_wins": 8.6,
+      "actual_minus_expected_pts": 2.3,
+      "ame_ci": [
+       -20.7,
+       23.4
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 8.9,
+      "ame_bt_pts": 0.9,
+      "ame_bt_ci": [
+       -17.4,
+       19.5
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "holds more caps than the enemy",
+      "n_holders": 10,
+      "small_n": true,
+      "holder_wins": 8,
+      "holder_win_pct": 80.0,
+      "holder_ci": [
+       54.5,
+       100.0
+      ],
+      "n_not": 10,
+      "not_win_pct": 20.0,
+      "gap": 60.0,
+      "gap_ci": [
+       0.0,
+       100.0
+      ],
+      "expected_wins": 5.5,
+      "actual_minus_expected_pts": 24.9,
+      "ame_ci": [
+       -2.8,
+       47.1
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 6.3,
+      "ame_bt_pts": 16.9,
+      "ame_bt_ci": [
+       -7.2,
+       37.5
+      ],
+      "ame_bt_clear": false
+     }
+    ]
+   },
+   "Land of Fire": {
+    "games": 23,
+    "rest_vs_rest_games": 11,
+    "caps": {
+     "A": "middle",
+     "B": "middle",
+     "C": "enemy side",
+     "D": "own side"
+    },
+    "all": [
+     {
+      "what": "A (middle)",
+      "n_holders": 18,
+      "small_n": false,
+      "holder_wins": 14,
+      "holder_win_pct": 77.8,
+      "holder_ci": [
+       58.3,
+       94.7
+      ],
+      "n_not": 28,
+      "not_win_pct": 32.1,
+      "gap": 45.6,
+      "gap_ci": [
+       14.0,
+       74.5
+      ],
+      "expected_wins": 10.4,
+      "actual_minus_expected_pts": 19.8,
+      "ame_ci": [
+       2.0,
+       37.6
+      ],
+      "ame_clear": true,
+      "expected_wins_bt": 11.4,
+      "ame_bt_pts": 14.4,
+      "ame_bt_ci": [
+       -2.4,
+       30.6
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "B (middle)",
+      "n_holders": 20,
+      "small_n": false,
+      "holder_wins": 16,
+      "holder_win_pct": 80.0,
+      "holder_ci": [
+       60.0,
+       95.2
+      ],
+      "n_not": 26,
+      "not_win_pct": 26.9,
+      "gap": 53.1,
+      "gap_ci": [
+       17.7,
+       83.2
+      ],
+      "expected_wins": 12.2,
+      "actual_minus_expected_pts": 18.9,
+      "ame_ci": [
+       2.9,
+       33.2
+      ],
+      "ame_clear": true,
+      "expected_wins_bt": 13.3,
+      "ame_bt_pts": 13.5,
+      "ame_bt_ci": [
+       1.4,
+       24.5
+      ],
+      "ame_bt_clear": true
+     },
+     {
+      "what": "C (enemy side)",
+      "n_holders": 12,
+      "small_n": true,
+      "holder_wins": 5,
+      "holder_win_pct": 41.7,
+      "holder_ci": [
+       12.5,
+       71.4
+      ],
+      "n_not": 34,
+      "not_win_pct": 52.9,
+      "gap": -11.3,
+      "gap_ci": [
+       -51.1,
+       26.8
+      ],
+      "expected_wins": 5.6,
+      "actual_minus_expected_pts": -4.7,
+      "ame_ci": [
+       -31.3,
+       21.9
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 5.6,
+      "ame_bt_pts": -4.6,
+      "ame_bt_ci": [
+       -27.9,
+       17.1
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "D (own side)",
+      "n_holders": 34,
+      "small_n": false,
+      "holder_wins": 16,
+      "holder_win_pct": 47.1,
+      "holder_ci": [
+       37.5,
+       57.1
+      ],
+      "n_not": 12,
+      "not_win_pct": 58.3,
+      "gap": -11.3,
+      "gap_ci": [
+       -48.3,
+       26.8
+      ],
+      "expected_wins": 16.6,
+      "actual_minus_expected_pts": -1.7,
+      "ame_ci": [
+       -11.4,
+       7.8
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 16.6,
+      "ame_bt_pts": -1.6,
+      "ame_bt_ci": [
+       -9.5,
+       6.0
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "holds more caps than the enemy",
+      "n_holders": 14,
+      "small_n": true,
+      "holder_wins": 12,
+      "holder_win_pct": 85.7,
+      "holder_ci": [
+       64.3,
+       100.0
+      ],
+      "n_not": 14,
+      "not_win_pct": 14.3,
+      "gap": 71.4,
+      "gap_ci": [
+       33.3,
+       100.0
+      ],
+      "expected_wins": 8.7,
+      "actual_minus_expected_pts": 23.8,
+      "ame_ci": [
+       1.3,
+       42.2
+      ],
+      "ame_clear": true,
+      "expected_wins_bt": 9.8,
+      "ame_bt_pts": 16.0,
+      "ame_bt_ci": [
+       -4.6,
+       31.8
+      ],
+      "ame_bt_clear": false
+     }
+    ],
+    "rest_vs_rest": [
+     {
+      "what": "A (middle)",
+      "n_holders": 10,
+      "small_n": true,
+      "holder_wins": 7,
+      "holder_win_pct": 70.0,
+      "holder_ci": [
+       40.0,
+       100.0
+      ],
+      "n_not": 12,
+      "not_win_pct": 33.3,
+      "gap": 36.7,
+      "gap_ci": [
+       -18.3,
+       81.8
+      ],
+      "expected_wins": 5.9,
+      "actual_minus_expected_pts": 11.2,
+      "ame_ci": [
+       -17.6,
+       34.7
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 6.7,
+      "ame_bt_pts": 2.8,
+      "ame_bt_ci": [
+       -16.8,
+       20.7
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "B (middle)",
+      "n_holders": 10,
+      "small_n": true,
+      "holder_wins": 7,
+      "holder_win_pct": 70.0,
+      "holder_ci": [
+       40.0,
+       100.0
+      ],
+      "n_not": 12,
+      "not_win_pct": 33.3,
+      "gap": 36.7,
+      "gap_ci": [
+       -18.3,
+       81.8
+      ],
+      "expected_wins": 5.5,
+      "actual_minus_expected_pts": 15.0,
+      "ame_ci": [
+       -13.0,
+       38.8
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 6.2,
+      "ame_bt_pts": 8.5,
+      "ame_bt_ci": [
+       -10.2,
+       25.8
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "C (enemy side)",
+      "n_holders": 8,
+      "small_n": true,
+      "holder_wins": 4,
+      "holder_win_pct": 50.0,
+      "holder_ci": [
+       12.5,
+       85.7
+      ],
+      "n_not": 14,
+      "not_win_pct": 50.0,
+      "gap": 0.0,
+      "gap_ci": [
+       -55.0,
+       58.9
+      ],
+      "expected_wins": 3.6,
+      "actual_minus_expected_pts": 5.0,
+      "ame_ci": [
+       -26.4,
+       32.9
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 3.6,
+      "ame_bt_pts": 5.2,
+      "ame_bt_ci": [
+       -18.7,
+       28.8
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "D (own side)",
+      "n_holders": 14,
+      "small_n": true,
+      "holder_wins": 7,
+      "holder_win_pct": 50.0,
+      "holder_ci": [
+       28.6,
+       69.2
+      ],
+      "n_not": 8,
+      "not_win_pct": 50.0,
+      "gap": 0.0,
+      "gap_ci": [
+       -55.0,
+       52.4
+      ],
+      "expected_wins": 6.6,
+      "actual_minus_expected_pts": 2.8,
+      "ame_ci": [
+       -12.6,
+       23.0
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 6.6,
+      "ame_bt_pts": 3.0,
+      "ame_bt_ci": [
+       -9.8,
+       18.2
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "holds more caps than the enemy",
+      "n_holders": 5,
+      "too_few": true
+     }
+    ]
+   },
+   "Loop": {
+    "games": 19,
+    "rest_vs_rest_games": 10,
+    "caps": {
+     "A": "middle",
+     "B": "middle",
+     "C": "middle"
+    },
+    "all": [
+     {
+      "what": "A (middle)",
+      "n_holders": 17,
+      "small_n": false,
+      "holder_wins": 7,
+      "holder_win_pct": 41.2,
+      "holder_ci": [
+       18.8,
+       66.7
+      ],
+      "n_not": 21,
+      "not_win_pct": 57.1,
+      "gap": -16.0,
+      "gap_ci": [
+       -54.0,
+       26.6
+      ],
+      "expected_wins": 8.2,
+      "actual_minus_expected_pts": -7.3,
+      "ame_ci": [
+       -28.1,
+       14.2
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 7.9,
+      "ame_bt_pts": -5.3,
+      "ame_bt_ci": [
+       -26.4,
+       16.3
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "B (middle)",
+      "n_holders": 19,
+      "small_n": false,
+      "holder_wins": 12,
+      "holder_win_pct": 63.2,
+      "holder_ci": [
+       42.1,
+       84.2
+      ],
+      "n_not": 19,
+      "not_win_pct": 36.8,
+      "gap": 26.3,
+      "gap_ci": [
+       -15.8,
+       68.4
+      ],
+      "expected_wins": 10.2,
+      "actual_minus_expected_pts": 9.5,
+      "ame_ci": [
+       -9.0,
+       27.7
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 10.2,
+      "ame_bt_pts": 9.3,
+      "ame_bt_ci": [
+       -11.6,
+       28.3
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "C (middle)",
+      "n_holders": 14,
+      "small_n": true,
+      "holder_wins": 6,
+      "holder_win_pct": 42.9,
+      "holder_ci": [
+       16.7,
+       69.2
+      ],
+      "n_not": 24,
+      "not_win_pct": 54.2,
+      "gap": -11.3,
+      "gap_ci": [
+       -52.6,
+       31.7
+      ],
+      "expected_wins": 8.3,
+      "actual_minus_expected_pts": -16.5,
+      "ame_ci": [
+       -39.1,
+       6.2
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 8.6,
+      "ame_bt_pts": -18.7,
+      "ame_bt_ci": [
+       -40.9,
+       5.0
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "holds more caps than the enemy",
+      "n_holders": 14,
+      "small_n": true,
+      "holder_wins": 7,
+      "holder_win_pct": 50.0,
+      "holder_ci": [
+       23.5,
+       75.0
+      ],
+      "n_not": 14,
+      "not_win_pct": 50.0,
+      "gap": 0.0,
+      "gap_ci": [
+       -52.9,
+       53.8
+      ],
+      "expected_wins": 8.3,
+      "actual_minus_expected_pts": -9.4,
+      "ame_ci": [
+       -33.5,
+       14.5
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 8.5,
+      "ame_bt_pts": -10.7,
+      "ame_bt_ci": [
+       -36.0,
+       13.4
+      ],
+      "ame_bt_clear": false
+     }
+    ],
+    "rest_vs_rest": [
+     {
+      "what": "A (middle)",
+      "n_holders": 9,
+      "small_n": true,
+      "holder_wins": 4,
+      "holder_win_pct": 44.4,
+      "holder_ci": [
+       11.1,
+       77.8
+      ],
+      "n_not": 11,
+      "not_win_pct": 54.5,
+      "gap": -10.1,
+      "gap_ci": [
+       -70.7,
+       50.5
+      ],
+      "expected_wins": 4.2,
+      "actual_minus_expected_pts": -2.7,
+      "ame_ci": [
+       -38.2,
+       31.1
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 4.2,
+      "ame_bt_pts": -2.2,
+      "ame_bt_ci": [
+       -39.6,
+       35.7
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "B (middle)",
+      "n_holders": 10,
+      "small_n": true,
+      "holder_wins": 6,
+      "holder_win_pct": 60.0,
+      "holder_ci": [
+       30.0,
+       90.0
+      ],
+      "n_not": 10,
+      "not_win_pct": 40.0,
+      "gap": 20.0,
+      "gap_ci": [
+       -40.0,
+       80.0
+      ],
+      "expected_wins": 5.1,
+      "actual_minus_expected_pts": 8.9,
+      "ame_ci": [
+       -24.9,
+       39.6
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 4.8,
+      "ame_bt_pts": 12.0,
+      "ame_bt_ci": [
+       -22.0,
+       43.3
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "C (middle)",
+      "n_holders": 9,
+      "small_n": true,
+      "holder_wins": 1,
+      "holder_win_pct": 11.1,
+      "holder_ci": [
+       0.0,
+       33.3
+      ],
+      "n_not": 11,
+      "not_win_pct": 81.8,
+      "gap": -70.7,
+      "gap_ci": [
+       -100.0,
+       -30.3
+      ],
+      "expected_wins": 4.6,
+      "actual_minus_expected_pts": -39.7,
+      "ame_ci": [
+       -56.9,
+       -12.7
+      ],
+      "ame_clear": true,
+      "expected_wins_bt": 4.4,
+      "ame_bt_pts": -38.3,
+      "ame_bt_ci": [
+       -62.1,
+       -5.9
+      ],
+      "ame_bt_clear": true
+     },
+     {
+      "what": "holds more caps than the enemy",
+      "n_holders": 8,
+      "small_n": true,
+      "holder_wins": 2,
+      "holder_win_pct": 25.0,
+      "holder_ci": [
+       0.0,
+       60.0
+      ],
+      "n_not": 8,
+      "not_win_pct": 75.0,
+      "gap": -50.0,
+      "gap_ci": [
+       -100.0,
+       14.3
+      ],
+      "expected_wins": 4.1,
+      "actual_minus_expected_pts": -25.9,
+      "ame_ci": [
+       -56.0,
+       15.3
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 4.0,
+      "ame_bt_pts": -25.1,
+      "ame_bt_ci": [
+       -59.2,
+       15.4
+      ],
+      "ame_bt_clear": false
+     }
+    ]
+   },
+   "Mountain Range": {
+    "games": 19,
+    "rest_vs_rest_games": 8,
+    "caps": {
+     "A": "middle",
+     "B": "middle",
+     "C": "middle"
+    },
+    "all": [
+     {
+      "what": "A (middle)",
+      "n_holders": 12,
+      "small_n": true,
+      "holder_wins": 6,
+      "holder_win_pct": 50.0,
+      "holder_ci": [
+       22.2,
+       80.0
+      ],
+      "n_not": 26,
+      "not_win_pct": 50.0,
+      "gap": 0.0,
+      "gap_ci": [
+       -40.9,
+       40.9
+      ],
+      "expected_wins": 6.2,
+      "actual_minus_expected_pts": -1.7,
+      "ame_ci": [
+       -25.5,
+       22.1
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 5.8,
+      "ame_bt_pts": 1.8,
+      "ame_bt_ci": [
+       -20.3,
+       25.0
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "B (middle)",
+      "n_holders": 17,
+      "small_n": false,
+      "holder_wins": 11,
+      "holder_win_pct": 64.7,
+      "holder_ci": [
+       41.2,
+       88.2
+      ],
+      "n_not": 21,
+      "not_win_pct": 38.1,
+      "gap": 26.6,
+      "gap_ci": [
+       -15.8,
+       64.8
+      ],
+      "expected_wins": 9.2,
+      "actual_minus_expected_pts": 10.6,
+      "ame_ci": [
+       -10.1,
+       30.9
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 9.4,
+      "ame_bt_pts": 9.6,
+      "ame_bt_ci": [
+       -8.5,
+       28.3
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "C (middle)",
+      "n_holders": 19,
+      "small_n": false,
+      "holder_wins": 10,
+      "holder_win_pct": 52.6,
+      "holder_ci": [
+       31.6,
+       73.7
+      ],
+      "n_not": 19,
+      "not_win_pct": 47.4,
+      "gap": 5.3,
+      "gap_ci": [
+       -47.4,
+       47.4
+      ],
+      "expected_wins": 9.8,
+      "actual_minus_expected_pts": 0.9,
+      "ame_ci": [
+       -18.0,
+       20.6
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 10.7,
+      "ame_bt_pts": -3.9,
+      "ame_bt_ci": [
+       -21.2,
+       13.8
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "holds more caps than the enemy",
+      "n_holders": 12,
+      "small_n": true,
+      "holder_wins": 9,
+      "holder_win_pct": 75.0,
+      "holder_ci": [
+       46.2,
+       100.0
+      ],
+      "n_not": 12,
+      "not_win_pct": 25.0,
+      "gap": 50.0,
+      "gap_ci": [
+       0.0,
+       100.0
+      ],
+      "expected_wins": 7.2,
+      "actual_minus_expected_pts": 15.4,
+      "ame_ci": [
+       -6.5,
+       36.3
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 7.7,
+      "ame_bt_pts": 10.5,
+      "ame_bt_ci": [
+       -8.5,
+       28.8
+      ],
+      "ame_bt_clear": false
+     }
+    ],
+    "rest_vs_rest": [
+     {
+      "what": "A (middle)",
+      "n_holders": 5,
+      "too_few": true
+     },
+     {
+      "what": "B (middle)",
+      "n_holders": 7,
+      "too_few": true
+     },
+     {
+      "what": "C (middle)",
+      "n_holders": 8,
+      "small_n": true,
+      "holder_wins": 4,
+      "holder_win_pct": 50.0,
+      "holder_ci": [
+       12.5,
+       87.5
+      ],
+      "n_not": 8,
+      "not_win_pct": 50.0,
+      "gap": 0.0,
+      "gap_ci": [
+       -75.0,
+       75.0
+      ],
+      "expected_wins": 3.3,
+      "actual_minus_expected_pts": 8.9,
+      "ame_ci": [
+       -18.4,
+       38.6
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 3.2,
+      "ame_bt_pts": 10.1,
+      "ame_bt_ci": [
+       -15.4,
+       34.8
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "holds more caps than the enemy",
+      "n_holders": 4,
+      "too_few": true
+     }
+    ]
+   },
+   "Okinawa": {
+    "games": 16,
+    "rest_vs_rest_games": 11,
+    "caps": {
+     "A": "own side",
+     "B": "enemy side",
+     "C": "middle",
+     "D": "middle"
+    },
+    "all": [
+     {
+      "what": "A (own side)",
+      "n_holders": 22,
+      "small_n": false,
+      "holder_wins": 12,
+      "holder_win_pct": 54.5,
+      "holder_ci": [
+       40.0,
+       68.4
+      ],
+      "n_not": 10,
+      "not_win_pct": 40.0,
+      "gap": 14.5,
+      "gap_ci": [
+       -29.1,
+       58.2
+      ],
+      "expected_wins": 11.5,
+      "actual_minus_expected_pts": 2.4,
+      "ame_ci": [
+       -10.7,
+       17.0
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 11.6,
+      "ame_bt_pts": 1.6,
+      "ame_bt_ci": [
+       -10.8,
+       14.2
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "B (enemy side)",
+      "n_holders": 9,
+      "small_n": true,
+      "holder_wins": 5,
+      "holder_win_pct": 55.6,
+      "holder_ci": [
+       16.7,
+       87.5
+      ],
+      "n_not": 23,
+      "not_win_pct": 47.8,
+      "gap": 7.7,
+      "gap_ci": [
+       -38.6,
+       54.1
+      ],
+      "expected_wins": 4.6,
+      "actual_minus_expected_pts": 4.6,
+      "ame_ci": [
+       -26.5,
+       38.9
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 4.7,
+      "ame_bt_pts": 3.8,
+      "ame_bt_ci": [
+       -27.3,
+       35.3
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "C (middle)",
+      "n_holders": 15,
+      "small_n": false,
+      "holder_wins": 6,
+      "holder_win_pct": 40.0,
+      "holder_ci": [
+       15.4,
+       66.7
+      ],
+      "n_not": 17,
+      "not_win_pct": 58.8,
+      "gap": -18.8,
+      "gap_ci": [
+       -62.5,
+       25.4
+      ],
+      "expected_wins": 6.5,
+      "actual_minus_expected_pts": -3.0,
+      "ame_ci": [
+       -26.6,
+       19.6
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 6.0,
+      "ame_bt_pts": 0.2,
+      "ame_bt_ci": [
+       -21.7,
+       23.7
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "D (middle)",
+      "n_holders": 15,
+      "small_n": false,
+      "holder_wins": 6,
+      "holder_win_pct": 40.0,
+      "holder_ci": [
+       14.3,
+       66.7
+      ],
+      "n_not": 17,
+      "not_win_pct": 58.8,
+      "gap": -18.8,
+      "gap_ci": [
+       -63.5,
+       31.4
+      ],
+      "expected_wins": 8.1,
+      "actual_minus_expected_pts": -14.0,
+      "ame_ci": [
+       -35.3,
+       8.1
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 8.0,
+      "ame_bt_pts": -13.5,
+      "ame_bt_ci": [
+       -33.8,
+       8.2
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "holds more caps than the enemy",
+      "n_holders": 8,
+      "small_n": true,
+      "holder_wins": 3,
+      "holder_win_pct": 37.5,
+      "holder_ci": [
+       0.0,
+       71.4
+      ],
+      "n_not": 8,
+      "not_win_pct": 62.5,
+      "gap": -25.0,
+      "gap_ci": [
+       -100.0,
+       50.0
+      ],
+      "expected_wins": 3.9,
+      "actual_minus_expected_pts": -10.9,
+      "ame_ci": [
+       -38.0,
+       17.4
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 3.6,
+      "ame_bt_pts": -7.8,
+      "ame_bt_ci": [
+       -35.2,
+       19.5
+      ],
+      "ame_bt_clear": false
+     }
+    ],
+    "rest_vs_rest": [
+     {
+      "what": "A (own side)",
+      "n_holders": 16,
+      "small_n": false,
+      "holder_wins": 8,
+      "holder_win_pct": 50.0,
+      "holder_ci": [
+       33.3,
+       66.7
+      ],
+      "n_not": 6,
+      "not_win_pct": 50.0,
+      "gap": 0.0,
+      "gap_ci": [
+       -52.4,
+       55.0
+      ],
+      "expected_wins": 7.6,
+      "actual_minus_expected_pts": 2.7,
+      "ame_ci": [
+       -14.2,
+       19.3
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 7.6,
+      "ame_bt_pts": 2.6,
+      "ame_bt_ci": [
+       -12.2,
+       19.1
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "B (enemy side)",
+      "n_holders": 6,
+      "too_few": true
+     },
+     {
+      "what": "C (middle)",
+      "n_holders": 10,
+      "small_n": true,
+      "holder_wins": 6,
+      "holder_win_pct": 60.0,
+      "holder_ci": [
+       30.0,
+       90.0
+      ],
+      "n_not": 12,
+      "not_win_pct": 41.7,
+      "gap": 18.3,
+      "gap_ci": [
+       -36.7,
+       73.3
+      ],
+      "expected_wins": 4.6,
+      "actual_minus_expected_pts": 14.3,
+      "ame_ci": [
+       -14.4,
+       41.5
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 4.3,
+      "ame_bt_pts": 16.9,
+      "ame_bt_ci": [
+       -8.3,
+       43.4
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "D (middle)",
+      "n_holders": 10,
+      "small_n": true,
+      "holder_wins": 4,
+      "holder_win_pct": 40.0,
+      "holder_ci": [
+       10.0,
+       70.0
+      ],
+      "n_not": 12,
+      "not_win_pct": 58.3,
+      "gap": -18.3,
+      "gap_ci": [
+       -73.3,
+       45.5
+      ],
+      "expected_wins": 5.5,
+      "actual_minus_expected_pts": -15.5,
+      "ame_ci": [
+       -45.8,
+       15.3
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 5.5,
+      "ame_bt_pts": -14.9,
+      "ame_bt_ci": [
+       -41.8,
+       11.9
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "holds more caps than the enemy",
+      "n_holders": 4,
+      "too_few": true
+     }
+    ]
+   },
+   "Sea of Fortune": {
+    "games": 19,
+    "rest_vs_rest_games": 9,
+    "caps": {
+     "A": "enemy side",
+     "B": "own side",
+     "C": "middle",
+     "D": "middle"
+    },
+    "all": [
+     {
+      "what": "A (enemy side)",
+      "n_holders": 6,
+      "too_few": true
+     },
+     {
+      "what": "B (own side)",
+      "n_holders": 32,
+      "small_n": false,
+      "holder_wins": 16,
+      "holder_win_pct": 50.0,
+      "holder_ci": [
+       43.3,
+       58.1
+      ],
+      "n_not": 6,
+      "not_win_pct": 50.0,
+      "gap": 0.0,
+      "gap_ci": [
+       -51.4,
+       54.3
+      ],
+      "expected_wins": 16.3,
+      "actual_minus_expected_pts": -0.8,
+      "ame_ci": [
+       -8.3,
+       6.1
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 16.5,
+      "ame_bt_pts": -1.5,
+      "ame_bt_ci": [
+       -7.8,
+       3.2
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "C (middle)",
+      "n_holders": 16,
+      "small_n": false,
+      "holder_wins": 6,
+      "holder_win_pct": 37.5,
+      "holder_ci": [
+       16.7,
+       60.0
+      ],
+      "n_not": 22,
+      "not_win_pct": 59.1,
+      "gap": -21.6,
+      "gap_ci": [
+       -58.5,
+       21.1
+      ],
+      "expected_wins": 7.9,
+      "actual_minus_expected_pts": -11.6,
+      "ame_ci": [
+       -30.3,
+       7.7
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 7.7,
+      "ame_bt_pts": -10.7,
+      "ame_bt_ci": [
+       -27.1,
+       6.7
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "D (middle)",
+      "n_holders": 17,
+      "small_n": false,
+      "holder_wins": 12,
+      "holder_win_pct": 70.6,
+      "holder_ci": [
+       47.1,
+       89.5
+      ],
+      "n_not": 21,
+      "not_win_pct": 33.3,
+      "gap": 37.3,
+      "gap_ci": [
+       -5.3,
+       75.6
+      ],
+      "expected_wins": 9.5,
+      "actual_minus_expected_pts": 14.6,
+      "ame_ci": [
+       -3.0,
+       31.7
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 10.2,
+      "ame_bt_pts": 10.3,
+      "ame_bt_ci": [
+       -4.7,
+       24.4
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "holds more caps than the enemy",
+      "n_holders": 15,
+      "small_n": false,
+      "holder_wins": 8,
+      "holder_win_pct": 53.3,
+      "holder_ci": [
+       26.7,
+       77.8
+      ],
+      "n_not": 15,
+      "not_win_pct": 46.7,
+      "gap": 6.7,
+      "gap_ci": [
+       -46.7,
+       55.6
+      ],
+      "expected_wins": 8.1,
+      "actual_minus_expected_pts": -0.4,
+      "ame_ci": [
+       -22.2,
+       18.6
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 8.6,
+      "ame_bt_pts": -4.0,
+      "ame_bt_ci": [
+       -20.7,
+       12.0
+      ],
+      "ame_bt_clear": false
+     }
+    ],
+    "rest_vs_rest": [
+     {
+      "what": "A (enemy side)",
+      "n_holders": 3,
+      "too_few": true
+     },
+     {
+      "what": "B (own side)",
+      "n_holders": 15,
+      "small_n": false,
+      "holder_wins": 7,
+      "holder_win_pct": 46.7,
+      "holder_ci": [
+       35.7,
+       57.1
+      ],
+      "n_not": 3,
+      "not_win_pct": 66.7,
+      "gap": -20.0,
+      "gap_ci": [
+       -64.3,
+       56.2
+      ],
+      "expected_wins": 7.7,
+      "actual_minus_expected_pts": -4.7,
+      "ame_ci": [
+       -18.3,
+       3.4
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 7.7,
+      "ame_bt_pts": -4.5,
+      "ame_bt_ci": [
+       -16.1,
+       2.6
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "C (middle)",
+      "n_holders": 8,
+      "small_n": true,
+      "holder_wins": 3,
+      "holder_win_pct": 37.5,
+      "holder_ci": [
+       0.0,
+       75.0
+      ],
+      "n_not": 10,
+      "not_win_pct": 60.0,
+      "gap": -22.5,
+      "gap_ci": [
+       -77.8,
+       45.0
+      ],
+      "expected_wins": 4.0,
+      "actual_minus_expected_pts": -12.2,
+      "ame_ci": [
+       -37.3,
+       13.4
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 3.8,
+      "ame_bt_pts": -10.1,
+      "ame_bt_ci": [
+       -31.2,
+       16.4
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "D (middle)",
+      "n_holders": 9,
+      "small_n": true,
+      "holder_wins": 7,
+      "holder_win_pct": 77.8,
+      "holder_ci": [
+       44.4,
+       100.0
+      ],
+      "n_not": 9,
+      "not_win_pct": 22.2,
+      "gap": 55.6,
+      "gap_ci": [
+       -11.1,
+       100.0
+      ],
+      "expected_wins": 5.6,
+      "actual_minus_expected_pts": 16.1,
+      "ame_ci": [
+       -5.6,
+       34.5
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 5.8,
+      "ame_bt_pts": 12.8,
+      "ame_bt_ci": [
+       -10.7,
+       31.4
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "holds more caps than the enemy",
+      "n_holders": 6,
+      "too_few": true
+     }
+    ]
+   },
+   "Sleeping Giant": {
+    "games": 29,
+    "rest_vs_rest_games": 10,
+    "caps": {
+     "A": "middle",
+     "B": "middle",
+     "C": "enemy side",
+     "D": "own side"
+    },
+    "all": [
+     {
+      "what": "A (middle)",
+      "n_holders": 29,
+      "small_n": false,
+      "holder_wins": 17,
+      "holder_win_pct": 58.6,
+      "holder_ci": [
+       41.4,
+       75.9
+      ],
+      "n_not": 29,
+      "not_win_pct": 41.4,
+      "gap": 17.2,
+      "gap_ci": [
+       -17.2,
+       51.7
+      ],
+      "expected_wins": 15.4,
+      "actual_minus_expected_pts": 5.5,
+      "ame_ci": [
+       -10.6,
+       20.6
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 15.7,
+      "ame_bt_pts": 4.3,
+      "ame_bt_ci": [
+       -9.2,
+       16.9
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "B (middle)",
+      "n_holders": 16,
+      "small_n": false,
+      "holder_wins": 10,
+      "holder_win_pct": 62.5,
+      "holder_ci": [
+       36.4,
+       84.6
+      ],
+      "n_not": 42,
+      "not_win_pct": 45.2,
+      "gap": 17.3,
+      "gap_ci": [
+       -15.3,
+       48.5
+      ],
+      "expected_wins": 8.3,
+      "actual_minus_expected_pts": 10.4,
+      "ame_ci": [
+       -9.8,
+       30.5
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 9.1,
+      "ame_bt_pts": 5.5,
+      "ame_bt_ci": [
+       -13.3,
+       24.5
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "C (enemy side)",
+      "n_holders": 11,
+      "small_n": true,
+      "holder_wins": 6,
+      "holder_win_pct": 54.5,
+      "holder_ci": [
+       23.1,
+       84.6
+      ],
+      "n_not": 47,
+      "not_win_pct": 48.9,
+      "gap": 5.6,
+      "gap_ci": [
+       -31.5,
+       42.0
+      ],
+      "expected_wins": 5.8,
+      "actual_minus_expected_pts": 2.2,
+      "ame_ci": [
+       -23.6,
+       27.4
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 6.7,
+      "ame_bt_pts": -6.5,
+      "ame_bt_ci": [
+       -30.4,
+       16.0
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "D (own side)",
+      "n_holders": 47,
+      "small_n": false,
+      "holder_wins": 24,
+      "holder_win_pct": 51.1,
+      "holder_ci": [
+       44.4,
+       57.8
+      ],
+      "n_not": 11,
+      "not_win_pct": 45.5,
+      "gap": 5.6,
+      "gap_ci": [
+       -29.0,
+       42.0
+      ],
+      "expected_wins": 23.8,
+      "actual_minus_expected_pts": 0.5,
+      "ame_ci": [
+       -5.5,
+       6.0
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 24.7,
+      "ame_bt_pts": -1.5,
+      "ame_bt_ci": [
+       -7.7,
+       3.8
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "holds more caps than the enemy",
+      "n_holders": 17,
+      "small_n": false,
+      "holder_wins": 12,
+      "holder_win_pct": 70.6,
+      "holder_ci": [
+       46.7,
+       92.9
+      ],
+      "n_not": 17,
+      "not_win_pct": 29.4,
+      "gap": 41.2,
+      "gap_ci": [
+       -7.7,
+       83.3
+      ],
+      "expected_wins": 10.1,
+      "actual_minus_expected_pts": 11.0,
+      "ame_ci": [
+       -9.7,
+       30.3
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 11.9,
+      "ame_bt_pts": 0.9,
+      "ame_bt_ci": [
+       -16.2,
+       17.3
+      ],
+      "ame_bt_clear": false
+     }
+    ],
+    "rest_vs_rest": [
+     {
+      "what": "A (middle)",
+      "n_holders": 10,
+      "small_n": true,
+      "holder_wins": 5,
+      "holder_win_pct": 50.0,
+      "holder_ci": [
+       20.0,
+       80.0
+      ],
+      "n_not": 10,
+      "not_win_pct": 50.0,
+      "gap": 0.0,
+      "gap_ci": [
+       -60.0,
+       60.0
+      ],
+      "expected_wins": 4.8,
+      "actual_minus_expected_pts": 2.0,
+      "ame_ci": [
+       -27.1,
+       30.9
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 4.5,
+      "ame_bt_pts": 4.5,
+      "ame_bt_ci": [
+       -20.2,
+       31.8
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "B (middle)",
+      "n_holders": 7,
+      "too_few": true
+     },
+     {
+      "what": "C (enemy side)",
+      "n_holders": 4,
+      "too_few": true
+     },
+     {
+      "what": "D (own side)",
+      "n_holders": 16,
+      "small_n": false,
+      "holder_wins": 8,
+      "holder_win_pct": 50.0,
+      "holder_ci": [
+       37.5,
+       64.3
+      ],
+      "n_not": 4,
+      "not_win_pct": 50.0,
+      "gap": 0.0,
+      "gap_ci": [
+       -62.5,
+       58.8
+      ],
+      "expected_wins": 8.4,
+      "actual_minus_expected_pts": -2.3,
+      "ame_ci": [
+       -16.1,
+       10.9
+      ],
+      "ame_clear": false,
+      "expected_wins_bt": 8.5,
+      "ame_bt_pts": -3.3,
+      "ame_bt_ci": [
+       -18.5,
+       8.0
+      ],
+      "ame_bt_clear": false
+     },
+     {
+      "what": "holds more caps than the enemy",
+      "n_holders": 4,
+      "too_few": true
+     }
+    ]
+   }
+  },
+  "model": "simple: leave-this-game-out record, odds a = (wins+1)/(losses+1), p = a/(a+b). Check: Bradley-Terry strengths fitted without the game, one virtual win and loss vs an average team.",
+  "pooled": {
+   "all": [
+    {
+     "what": "holds its own-side cap (maps that have one)",
+     "n_holders": 186,
+     "small_n": false,
+     "holder_wins": 95,
+     "holder_win_pct": 51.1,
+     "holder_ci": [
+      47.3,
+      54.4
+     ],
+     "n_not": 124,
+     "not_win_pct": 48.4,
+     "gap": 2.7,
+     "gap_ci": [
+      -5.5,
+      11.8
+     ],
+     "expected_wins": 93.9,
+     "actual_minus_expected_pts": 0.6,
+     "ame_ci": [
+      -2.7,
+      4.0
+     ],
+     "ame_clear": false,
+     "expected_wins_bt": 95.2,
+     "ame_bt_pts": -0.1,
+     "ame_bt_ci": [
+      -3.0,
+      2.6
+     ],
+     "ame_bt_clear": false
+    },
+    {
+     "what": "holds the enemy-side cap (maps that have one)",
+     "n_holders": 47,
+     "small_n": false,
+     "holder_wins": 25,
+     "holder_win_pct": 53.2,
+     "holder_ci": [
+      37.5,
+      66.0
+     ],
+     "n_not": 263,
+     "not_win_pct": 49.4,
+     "gap": 3.8,
+     "gap_ci": [
+      -13.3,
+      22.1
+     ],
+     "expected_wins": 24.0,
+     "actual_minus_expected_pts": 2.0,
+     "ame_ci": [
+      -11.9,
+      15.6
+     ],
+     "ame_clear": false,
+     "expected_wins_bt": 25.3,
+     "ame_bt_pts": -0.5,
+     "ame_bt_ci": [
+      -12.5,
+      10.3
+     ],
+     "ame_bt_clear": false
+    },
+    {
+     "what": "holds at least one middle cap",
+     "n_holders": 232,
+     "small_n": false,
+     "holder_wins": 132,
+     "holder_win_pct": 56.9,
+     "holder_ci": [
+      53.2,
+      60.7
+     ],
+     "n_not": 78,
+     "not_win_pct": 29.5,
+     "gap": 27.4,
+     "gap_ci": [
+      13.9,
+      40.3
+     ],
+     "expected_wins": 121.0,
+     "actual_minus_expected_pts": 4.7,
+     "ame_ci": [
+      1.6,
+      8.1
+     ],
+     "ame_clear": true,
+     "expected_wins_bt": 125.1,
+     "ame_bt_pts": 3.0,
+     "ame_bt_ci": [
+      0.6,
+      5.8
+     ],
+     "ame_bt_clear": true
+    },
+    {
+     "what": "holds every middle cap",
+     "n_holders": 43,
+     "small_n": false,
+     "holder_wins": 27,
+     "holder_win_pct": 62.8,
+     "holder_ci": [
+      47.4,
+      76.7
+     ],
+     "n_not": 267,
+     "not_win_pct": 47.9,
+     "gap": 14.9,
+     "gap_ci": [
+      -1.5,
+      31.4
+     ],
+     "expected_wins": 24.3,
+     "actual_minus_expected_pts": 6.4,
+     "ame_ci": [
+      -5.1,
+      18.8
+     ],
+     "ame_clear": false,
+     "expected_wins_bt": 25.1,
+     "ame_bt_pts": 4.5,
+     "ame_bt_ci": [
+      -5.3,
+      14.2
+     ],
+     "ame_bt_clear": false
+    },
+    {
+     "what": "holds more caps than the enemy",
+     "n_holders": 92,
+     "small_n": false,
+     "holder_wins": 61,
+     "holder_win_pct": 66.3,
+     "holder_ci": [
+      57.0,
+      75.9
+     ],
+     "n_not": 92,
+     "not_win_pct": 33.7,
+     "gap": 32.6,
+     "gap_ci": [
+      12.1,
+      51.6
+     ],
+     "expected_wins": 53.0,
+     "actual_minus_expected_pts": 8.7,
+     "ame_ci": [
+      0.8,
+      18.3
+     ],
+     "ame_clear": true,
+     "expected_wins_bt": 57.6,
+     "ame_bt_pts": 3.7,
+     "ame_bt_ci": [
+      -4.1,
+      11.7
+     ],
+     "ame_bt_clear": false
+    },
+    {
+     "what": "holds 2+ more caps than the enemy",
+     "n_holders": 43,
+     "small_n": false,
+     "holder_wins": 32,
+     "holder_win_pct": 74.4,
+     "holder_ci": [
+      60.9,
+      86.7
+     ],
+     "n_not": 267,
+     "not_win_pct": 46.1,
+     "gap": 28.4,
+     "gap_ci": [
+      13.2,
+      42.6
+     ],
+     "expected_wins": 25.4,
+     "actual_minus_expected_pts": 15.3,
+     "ame_ci": [
+      4.2,
+      25.9
+     ],
+     "ame_clear": true,
+     "expected_wins_bt": 28.2,
+     "ame_bt_pts": 8.9,
+     "ame_bt_ci": [
+      -0.3,
+      18.1
+     ],
+     "ame_bt_clear": false
+    }
+   ],
+   "rest_vs_rest": [
+    {
+     "what": "holds its own-side cap (maps that have one)",
+     "n_holders": 90,
+     "small_n": false,
+     "holder_wins": 47,
+     "holder_win_pct": 52.2,
+     "holder_ci": [
+      46.2,
+      58.0
+     ],
+     "n_not": 62,
+     "not_win_pct": 46.8,
+     "gap": 5.4,
+     "gap_ci": [
+      -8.4,
+      18.0
+     ],
+     "expected_wins": 45.0,
+     "actual_minus_expected_pts": 2.2,
+     "ame_ci": [
+      -3.2,
+      7.3
+     ],
+     "ame_clear": false,
+     "expected_wins_bt": 45.6,
+     "ame_bt_pts": 1.5,
+     "ame_bt_ci": [
+      -2.9,
+      5.8
+     ],
+     "ame_bt_clear": false
+    },
+    {
+     "what": "holds the enemy-side cap (maps that have one)",
+     "n_holders": 26,
+     "small_n": false,
+     "holder_wins": 15,
+     "holder_win_pct": 57.7,
+     "holder_ci": [
+      40.0,
+      76.5
+     ],
+     "n_not": 126,
+     "not_win_pct": 48.4,
+     "gap": 9.3,
+     "gap_ci": [
+      -14.2,
+      29.7
+     ],
+     "expected_wins": 13.0,
+     "actual_minus_expected_pts": 7.7,
+     "ame_ci": [
+      -9.5,
+      26.4
+     ],
+     "ame_clear": false,
+     "expected_wins_bt": 13.6,
+     "ame_bt_pts": 5.3,
+     "ame_bt_ci": [
+      -10.0,
+      21.8
+     ],
+     "ame_bt_clear": false
+    },
+    {
+     "what": "holds at least one middle cap",
+     "n_holders": 119,
+     "small_n": false,
+     "holder_wins": 64,
+     "holder_win_pct": 53.8,
+     "holder_ci": [
+      48.8,
+      58.6
+     ],
+     "n_not": 33,
+     "not_win_pct": 36.4,
+     "gap": 17.4,
+     "gap_ci": [
+      -4.4,
+      37.5
+     ],
+     "expected_wins": 61.6,
+     "actual_minus_expected_pts": 2.0,
+     "ame_ci": [
+      -2.1,
+      6.1
+     ],
+     "ame_clear": false,
+     "expected_wins_bt": 62.6,
+     "ame_bt_pts": 1.2,
+     "ame_bt_ci": [
+      -2.4,
+      4.9
+     ],
+     "ame_bt_clear": false
+    },
+    {
+     "what": "holds every middle cap",
+     "n_holders": 22,
+     "small_n": false,
+     "holder_wins": 14,
+     "holder_win_pct": 63.6,
+     "holder_ci": [
+      44.4,
+      84.6
+     ],
+     "n_not": 130,
+     "not_win_pct": 47.7,
+     "gap": 15.9,
+     "gap_ci": [
+      -7.9,
+      38.4
+     ],
+     "expected_wins": 13.0,
+     "actual_minus_expected_pts": 4.6,
+     "ame_ci": [
+      -12.9,
+      22.1
+     ],
+     "ame_clear": false,
+     "expected_wins_bt": 13.4,
+     "ame_bt_pts": 2.6,
+     "ame_bt_ci": [
+      -12.7,
+      17.5
+     ],
+     "ame_bt_clear": false
+    },
+    {
+     "what": "holds more caps than the enemy",
+     "n_holders": 41,
+     "small_n": false,
+     "holder_wins": 23,
+     "holder_win_pct": 56.1,
+     "holder_ci": [
+      40.0,
+      70.8
+     ],
+     "n_not": 41,
+     "not_win_pct": 43.9,
+     "gap": 12.2,
+     "gap_ci": [
+      -18.9,
+      41.5
+     ],
+     "expected_wins": 22.5,
+     "actual_minus_expected_pts": 1.3,
+     "ame_ci": [
+      -12.4,
+      15.6
+     ],
+     "ame_clear": false,
+     "expected_wins_bt": 23.8,
+     "ame_bt_pts": -2.1,
+     "ame_bt_ci": [
+      -14.5,
+      10.7
+     ],
+     "ame_bt_clear": false
+    },
+    {
+     "what": "holds 2+ more caps than the enemy",
+     "n_holders": 20,
+     "small_n": false,
+     "holder_wins": 16,
+     "holder_win_pct": 80.0,
+     "holder_ci": [
+      60.0,
+      95.5
+     ],
+     "n_not": 132,
+     "not_win_pct": 45.5,
+     "gap": 34.5,
+     "gap_ci": [
+      12.6,
+      53.8
+     ],
+     "expected_wins": 11.6,
+     "actual_minus_expected_pts": 21.9,
+     "ame_ci": [
+      6.0,
+      36.4
+     ],
+     "ame_clear": true,
+     "expected_wins_bt": 12.7,
+     "ame_bt_pts": 16.6,
+     "ame_bt_ci": [
+      3.4,
+      29.1
+     ],
+     "ame_bt_clear": true
+    }
+   ]
+  },
+  "notes": {
+   "level_on_caps_games": 63,
+   "more_caps_already_ahead_pct": 73,
+   "score_leader_win_pct": 79
+  }
+ }
+}

@@ -1,0 +1,805 @@
+{
+ "table": {
+  "Daring on Loop": {
+   "n": 48,
+   "clans": {
+    "top6": {
+     "KITE": 3
+    },
+    "rest": {
+     "REEEE": 11,
+     "KITED": 9,
+     "EPOXY": 6,
+     "MACHX": 3,
+     "-BN-": 3,
+     "BONKY": 3,
+     "SCCC2": 3,
+     "HFANS": 3,
+     "KSC": 2,
+     "NGA": 2
+    }
+   },
+   "lit_dd_before": {
+    "k": 1,
+    "n": 48,
+    "pct": 2.1,
+    "ci": [
+     0.0,
+     7.5
+    ]
+   },
+   "lit_dd_earlier": {
+    "k": 1,
+    "n": 48,
+    "pct": 2.1,
+    "ci": [
+     0.0,
+     5.7
+    ]
+   },
+   "lit_dd_after": {
+    "k": 0,
+    "n": 48,
+    "pct": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "lit_any_before": {
+    "k": 1,
+    "n": 48,
+    "pct": 2.1,
+    "ci": [
+     0.0,
+     7.8
+    ]
+   },
+   "lit_any_earlier": {
+    "k": 2,
+    "n": 48,
+    "pct": 4.2,
+    "ci": [
+     0.0,
+     8.7
+    ]
+   },
+   "lit_any_after": {
+    "k": 1,
+    "n": 48,
+    "pct": 2.1,
+    "ci": [
+     0.0,
+     6.5
+    ]
+   },
+   "radar_smoke_before": {
+    "k": 0,
+    "n": 48,
+    "pct": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "radar_smoke_spotted_before": {
+    "k": 0,
+    "n": 48,
+    "pct": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "radar_smoke_earlier": {
+    "k": 0,
+    "n": 48,
+    "pct": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "radar_in_range_of_cap": {
+    "k": 18,
+    "n": 48,
+    "pct": 37.5,
+    "ci": [
+     17.0,
+     55.6
+    ]
+   },
+   "radar_covers_cap": {
+    "k": 6,
+    "n": 48,
+    "pct": 12.5,
+    "ci": [
+     2.7,
+     22.2
+    ]
+   },
+   "own_radar": {
+    "k": 0,
+    "n": 48,
+    "pct": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "radar_in_range_of_enemy_dd": {
+    "k": 8,
+    "n": 38
+   }
+  },
+  "Daring on other maps": {
+   "n": 152,
+   "clans": {
+    "top6": {
+     "HTDOG": 21,
+     "VRTUS": 5,
+     "KITE": 3,
+     "BONKZ": 2
+    },
+    "rest": {
+     "SCCC2": 23,
+     "-BN-": 19,
+     "KSC": 11,
+     "HFANS": 10,
+     "EPOXY": 10,
+     "MZY": 9,
+     "KITED": 7,
+     "MACHX": 7,
+     "KSE": 5,
+     "BTLST": 4,
+     "INCA": 4,
+     "MACH": 4,
+     "UYSC": 3,
+     "BONKY": 3,
+     "NGA": 2
+    }
+   },
+   "lit_dd_before": {
+    "k": 7,
+    "n": 152,
+    "pct": 4.6,
+    "ci": [
+     1.7,
+     8.0
+    ]
+   },
+   "lit_dd_earlier": {
+    "k": 4,
+    "n": 152,
+    "pct": 2.6,
+    "ci": [
+     0.6,
+     6.1
+    ]
+   },
+   "lit_dd_after": {
+    "k": 6,
+    "n": 152,
+    "pct": 3.9,
+    "ci": [
+     1.7,
+     6.6
+    ]
+   },
+   "lit_any_before": {
+    "k": 10,
+    "n": 152,
+    "pct": 6.6,
+    "ci": [
+     2.4,
+     11.0
+    ]
+   },
+   "lit_any_earlier": {
+    "k": 9,
+    "n": 152,
+    "pct": 5.9,
+    "ci": [
+     2.8,
+     10.1
+    ]
+   },
+   "lit_any_after": {
+    "k": 14,
+    "n": 152,
+    "pct": 9.2,
+    "ci": [
+     3.9,
+     13.3
+    ]
+   },
+   "radar_smoke_before": {
+    "k": 15,
+    "n": 152,
+    "pct": 9.9,
+    "ci": [
+     2.2,
+     18.8
+    ]
+   },
+   "radar_smoke_spotted_before": {
+    "k": 11,
+    "n": 152,
+    "pct": 7.2,
+    "ci": [
+     1.6,
+     14.8
+    ]
+   },
+   "radar_smoke_earlier": {
+    "k": 15,
+    "n": 152,
+    "pct": 9.9,
+    "ci": [
+     0.7,
+     20.6
+    ]
+   },
+   "radar_in_range_of_cap": {
+    "k": 110,
+    "n": 152,
+    "pct": 72.4,
+    "ci": [
+     63.3,
+     79.0
+    ]
+   },
+   "radar_covers_cap": {
+    "k": 75,
+    "n": 152,
+    "pct": 49.3,
+    "ci": [
+     40.3,
+     57.9
+    ]
+   },
+   "own_radar": {
+    "k": 0,
+    "n": 152,
+    "pct": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "radar_in_range_of_enemy_dd": {
+    "k": 57,
+    "n": 123
+   }
+  },
+  "Other cap sitters on Loop": {
+   "n": 40,
+   "clans": {
+    "top6": {
+     "H-SR": 5,
+     "RESIN": 4,
+     "VRTUS": 3,
+     "HTDOG": 3,
+     "BONKZ": 3,
+     "KITE": 2
+    },
+    "rest": {
+     "REEEE": 6,
+     "MACHX": 4,
+     "MACH": 4,
+     "UYSC": 2,
+     "EPOXY": 2,
+     "RMN": 1,
+     "KSE": 1
+    }
+   },
+   "lit_dd_before": {
+    "k": 0,
+    "n": 40,
+    "pct": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "lit_dd_earlier": {
+    "k": 0,
+    "n": 40,
+    "pct": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "lit_dd_after": {
+    "k": 0,
+    "n": 40,
+    "pct": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "lit_any_before": {
+    "k": 1,
+    "n": 40,
+    "pct": 2.5,
+    "ci": [
+     0.0,
+     7.5
+    ]
+   },
+   "lit_any_earlier": {
+    "k": 0,
+    "n": 40,
+    "pct": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "lit_any_after": {
+    "k": 0,
+    "n": 40,
+    "pct": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "radar_smoke_before": {
+    "k": 2,
+    "n": 40,
+    "pct": 5.0,
+    "ci": [
+     0.0,
+     11.9
+    ]
+   },
+   "radar_smoke_spotted_before": {
+    "k": 1,
+    "n": 40,
+    "pct": 2.5,
+    "ci": [
+     0.0,
+     8.8
+    ]
+   },
+   "radar_smoke_earlier": {
+    "k": 2,
+    "n": 40,
+    "pct": 5.0,
+    "ci": [
+     0.0,
+     11.6
+    ]
+   },
+   "radar_in_range_of_cap": {
+    "k": 28,
+    "n": 40,
+    "pct": 70.0,
+    "ci": [
+     55.8,
+     84.2
+    ]
+   },
+   "radar_covers_cap": {
+    "k": 21,
+    "n": 40,
+    "pct": 52.5,
+    "ci": [
+     33.3,
+     70.0
+    ]
+   },
+   "own_radar": {
+    "k": 1,
+    "n": 40,
+    "pct": 2.5,
+    "ci": [
+     0.0,
+     8.1
+    ]
+   },
+   "radar_in_range_of_enemy_dd": {
+    "k": 16,
+    "n": 37
+   }
+  },
+  "Other destroyer smokes on Loop": {
+   "n": 54,
+   "clans": {
+    "top6": {
+     "RESIN": 8,
+     "H-SR": 7,
+     "BONKZ": 3
+    },
+    "rest": {
+     "EPOXY": 6,
+     "-BN-": 5,
+     "KSC": 4,
+     "KM": 3,
+     "MZY": 3,
+     "MACHX": 3,
+     "5D": 2,
+     "INCA": 2,
+     "NGA": 2,
+     "HFANS": 2,
+     "BTLST": 1,
+     "OGF": 1,
+     "PN": 1,
+     "UYSC": 1
+    }
+   },
+   "lit_dd_before": {
+    "k": 0,
+    "n": 54,
+    "pct": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "lit_dd_earlier": {
+    "k": 0,
+    "n": 54,
+    "pct": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "lit_dd_after": {
+    "k": 1,
+    "n": 54,
+    "pct": 1.9,
+    "ci": [
+     0.0,
+     6.1
+    ]
+   },
+   "lit_any_before": {
+    "k": 2,
+    "n": 54,
+    "pct": 3.7,
+    "ci": [
+     0.0,
+     11.3
+    ]
+   },
+   "lit_any_earlier": {
+    "k": 0,
+    "n": 54,
+    "pct": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "lit_any_after": {
+    "k": 2,
+    "n": 54,
+    "pct": 3.7,
+    "ci": [
+     0.0,
+     8.6
+    ]
+   },
+   "radar_smoke_before": {
+    "k": 4,
+    "n": 54,
+    "pct": 7.4,
+    "ci": [
+     0.0,
+     17.2
+    ]
+   },
+   "radar_smoke_spotted_before": {
+    "k": 3,
+    "n": 54,
+    "pct": 5.6,
+    "ci": [
+     0.0,
+     12.0
+    ]
+   },
+   "radar_smoke_earlier": {
+    "k": 5,
+    "n": 54,
+    "pct": 9.3,
+    "ci": [
+     0.0,
+     18.3
+    ]
+   },
+   "radar_in_range_of_cap": {
+    "k": 34,
+    "n": 54,
+    "pct": 63.0,
+    "ci": [
+     50.0,
+     76.9
+    ]
+   },
+   "radar_covers_cap": {
+    "k": 14,
+    "n": 54,
+    "pct": 25.9,
+    "ci": [
+     15.2,
+     38.1
+    ]
+   },
+   "own_radar": {
+    "k": 7,
+    "n": 54,
+    "pct": 13.0,
+    "ci": [
+     3.9,
+     22.9
+    ]
+   },
+   "radar_in_range_of_enemy_dd": {
+    "k": 14,
+    "n": 43
+   }
+  },
+  "All destroyer smokes, all maps": {
+   "n": 1074,
+   "clans": {
+    "top6": {
+     "H-SR": 89,
+     "RESIN": 87,
+     "BONKZ": 76,
+     "VRTUS": 46,
+     "HTDOG": 46,
+     "KITE": 43
+    },
+    "rest": {
+     "HFANS": 79,
+     "EPOXY": 68,
+     "-BN-": 64,
+     "KSC": 51,
+     "MACHX": 49,
+     "REEEE": 44,
+     "MZY": 43,
+     "SCCC2": 32,
+     "KITED": 25,
+     "BONKY": 25,
+     "UYSC": 22,
+     "INCA": 20,
+     "RSR": 18,
+     "PFANS": 18,
+     "MACH": 18,
+     "BTLST": 17,
+     "5D": 17,
+     "NGA": 17,
+     "KSE": 15,
+     "RMN": 11,
+     "PN": 10,
+     "KM": 10,
+     "OGF": 9,
+     "MANBA": 5
+    }
+   },
+   "lit_dd_before": {
+    "k": 24,
+    "n": 1074,
+    "pct": 2.2,
+    "ci": [
+     1.3,
+     3.3
+    ]
+   },
+   "lit_dd_earlier": {
+    "k": 17,
+    "n": 1074,
+    "pct": 1.6,
+    "ci": [
+     0.7,
+     2.7
+    ]
+   },
+   "lit_dd_after": {
+    "k": 23,
+    "n": 1074,
+    "pct": 2.1,
+    "ci": [
+     1.3,
+     3.1
+    ]
+   },
+   "lit_any_before": {
+    "k": 52,
+    "n": 1074,
+    "pct": 4.8,
+    "ci": [
+     3.4,
+     6.3
+    ]
+   },
+   "lit_any_earlier": {
+    "k": 41,
+    "n": 1074,
+    "pct": 3.8,
+    "ci": [
+     2.7,
+     4.9
+    ]
+   },
+   "lit_any_after": {
+    "k": 65,
+    "n": 1074,
+    "pct": 6.1,
+    "ci": [
+     4.2,
+     8.0
+    ]
+   },
+   "radar_smoke_before": {
+    "k": 119,
+    "n": 1074,
+    "pct": 11.1,
+    "ci": [
+     7.0,
+     14.6
+    ]
+   },
+   "radar_smoke_spotted_before": {
+    "k": 77,
+    "n": 1074,
+    "pct": 7.2,
+    "ci": [
+     4.7,
+     9.6
+    ]
+   },
+   "radar_smoke_earlier": {
+    "k": 121,
+    "n": 1074,
+    "pct": 11.3,
+    "ci": [
+     7.4,
+     14.8
+    ]
+   },
+   "radar_in_range_of_cap": {
+    "k": 728,
+    "n": 1074,
+    "pct": 67.8,
+    "ci": [
+     62.6,
+     72.2
+    ]
+   },
+   "radar_covers_cap": {
+    "k": 497,
+    "n": 1074,
+    "pct": 46.3,
+    "ci": [
+     40.7,
+     51.3
+    ]
+   },
+   "own_radar": {
+    "k": 113,
+    "n": 1074,
+    "pct": 10.5,
+    "ci": [
+     7.4,
+     13.5
+    ]
+   },
+   "radar_in_range_of_enemy_dd": {
+    "k": 353,
+    "n": 873
+   }
+  }
+ },
+ "tests": {
+  "lit_dd_before | Daring on Loop minus Daring other maps": [
+   -2.5,
+   -7.2,
+   5.0
+  ],
+  "lit_dd_before | Daring on Loop minus other sitters on Loop": [
+   2.1,
+   0.0,
+   7.7
+  ],
+  "lit_dd_before | Daring on Loop minus other DD smokes on Loop": [
+   2.1,
+   0.0,
+   7.7
+  ],
+  "lit_any_before | Daring on Loop minus Daring other maps": [
+   -4.5,
+   -9.7,
+   2.1
+  ],
+  "lit_any_before | Daring on Loop minus other sitters on Loop": [
+   -0.4,
+   -7.3,
+   7.1
+  ],
+  "lit_any_before | Daring on Loop minus other DD smokes on Loop": [
+   -1.6,
+   -10.2,
+   6.8
+  ],
+  "radar_smoke_before | Daring on Loop minus Daring other maps": [
+   -9.9,
+   -19.9,
+   -1.8
+  ],
+  "radar_smoke_before | Daring on Loop minus other sitters on Loop": [
+   -5.0,
+   -12.8,
+   0.0
+  ],
+  "radar_smoke_before | Daring on Loop minus other DD smokes on Loop": [
+   -7.4,
+   -17.1,
+   0.0
+  ],
+  "radar_in_range_of_cap | Daring on Loop minus Daring other maps": [
+   -34.9,
+   -55.0,
+   -14.8
+  ],
+  "radar_in_range_of_cap | Daring on Loop minus other sitters on Loop": [
+   -32.5,
+   -55.7,
+   -10.9
+  ],
+  "radar_in_range_of_cap | Daring on Loop minus other DD smokes on Loop": [
+   -25.5,
+   -51.7,
+   0.9
+  ],
+  "Daring on Loop: lit_dd_before minus lit_dd_earlier": [
+   0.0,
+   -5.0,
+   6.7
+  ],
+  "Daring on Loop: lit_dd_before minus lit_dd_after": [
+   2.1,
+   0.0,
+   8.3
+  ],
+  "Daring on Loop: lit_any_before minus lit_any_earlier": [
+   -2.1,
+   -7.7,
+   5.6
+  ],
+  "Daring on Loop: radar_smoke_before minus radar_smoke_earlier": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "examples": [
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7919_g1_94407.html",
+   "team": "BONKY",
+   "time": "17:51",
+   "cell": "F3",
+   "lit": [
+    [
+     "A. da Barbiano",
+     49,
+     "Moskva"
+    ]
+   ],
+   "radar_smoke_before": false
+  }
+ ],
+ "reverse": {
+  "episodes": 9,
+  "with_daring": 2,
+  "followed": 1,
+  "base_daring_smokes_per_60s": 0.176
+ },
+ "window_s": 60,
+ "note": "Proxy only. The batch does not export radar activations made outside smoke, and has no timeline of which enemy ships were detected."
+}

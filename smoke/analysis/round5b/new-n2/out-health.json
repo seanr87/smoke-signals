@@ -1,0 +1,498 @@
+{
+ "excluded": {
+  "pairs": 5,
+  "smokes_in_single_replay_game": 9,
+  "note": "ships of the team without a replay in the single-replay game: health blank or stale",
+  "bad_smokes": 4,
+  "uncovered_smokers": 41
+ },
+ "no_dispersal_time": 171,
+ "smokes": 1547,
+ "agreement": {
+  "dd": {
+   "label": "destroyer smoker (destroyer smokes)",
+   "n": 1070,
+   "both": 150,
+   "neither": 828,
+   "new_flag": 75,
+   "lost_flag": 17,
+   "agree_pct": 91.4,
+   "old_flags": 167,
+   "real_flags": 225
+  },
+  "cr_dd": {
+   "label": "sheltering cruisers in destroyer smokes",
+   "n": 586,
+   "both": 85,
+   "neither": 431,
+   "new_flag": 24,
+   "lost_flag": 46,
+   "agree_pct": 88.1,
+   "old_flags": 131,
+   "real_flags": 109
+  },
+  "cr": {
+   "label": "sheltering cruisers, any smoke",
+   "n": 612,
+   "both": 88,
+   "neither": 453,
+   "new_flag": 25,
+   "lost_flag": 46,
+   "agree_pct": 88.4,
+   "old_flags": 134,
+   "real_flags": 113
+  },
+  "all": {
+   "label": "every covered ship",
+   "n": 2359,
+   "both": 326,
+   "neither": 1824,
+   "new_flag": 125,
+   "lost_flag": 84,
+   "agree_pct": 91.1,
+   "old_flags": 410,
+   "real_flags": 451
+  }
+ },
+ "flip_reasons": {
+  "new": 125,
+  "new_biggest_hit_outside_outline": 101,
+  "lost": 84,
+  "lost_healed_back": 38,
+  "lost_estimate_too_low": 20,
+  "lost_other": 26
+ },
+ "hp_est": {
+  "destroyer": {
+   "n": 1124,
+   "median": 0.906,
+   "q25": 0.853,
+   "q75": 1.024,
+   "min": 0.65,
+   "max": 1.27,
+   "within_10pct": 37.6
+  },
+  "cruiser": {
+   "n": 1046,
+   "median": 1.018,
+   "q25": 0.961,
+   "q75": 1.111,
+   "min": 0.44,
+   "max": 1.78,
+   "within_10pct": 52.8
+  },
+  "battleship": {
+   "n": 152,
+   "median": 1.258,
+   "q25": 1.179,
+   "q75": 1.495,
+   "min": 1.13,
+   "max": 1.63,
+   "within_10pct": 0.0
+  }
+ },
+ "hp_est_worst_ships": [
+  {
+   "ship": "Smolensk",
+   "cls": "cruiser",
+   "n": 18,
+   "median_ratio": 1.78
+  },
+  {
+   "ship": "Conte Verde",
+   "cls": "battleship",
+   "n": 18,
+   "median_ratio": 1.63
+  },
+  {
+   "ship": "Brisbane",
+   "cls": "cruiser",
+   "n": 117,
+   "median_ratio": 0.44
+  },
+  {
+   "ship": "Harugumo",
+   "cls": "destroyer",
+   "n": 97,
+   "median_ratio": 0.68
+  },
+  {
+   "ship": "Worcester",
+   "cls": "cruiser",
+   "n": 36,
+   "median_ratio": 1.32
+  },
+  {
+   "ship": "Minotaur",
+   "cls": "cruiser",
+   "n": 56,
+   "median_ratio": 1.27
+  },
+  {
+   "ship": "Cerberus",
+   "cls": "cruiser",
+   "n": 20,
+   "median_ratio": 1.27
+  },
+  {
+   "ship": "Bungo",
+   "cls": "battleship",
+   "n": 22,
+   "median_ratio": 1.26
+  }
+ ],
+ "deaths_check": {
+  "batch": 176,
+  "batch_confirmed_by_track": 174,
+  "track_window": 270,
+  "track_only": 96,
+  "track_only_by_how": {
+   "smoker": 84,
+   "inside": 8,
+   "behind": 4
+  },
+  "track_only_inside_outline": 50,
+  "track_only_detected_at_death": 33
+ },
+ "baselines": {
+  "dd": {
+   "label": "destroyer smoker (destroyer smokes)",
+   "n": 1070,
+   "n_top6": 387,
+   "n_rest": 683,
+   "measures": [
+    {
+     "measure": "died, batch list (round 5 measure)",
+     "count": 69,
+     "per_100": 6.4,
+     "ci": [
+      4.5,
+      9.4
+     ],
+     "top6": 2.8,
+     "rest": 8.5,
+     "gap_ci": [
+      -9.7,
+      -2.3
+     ],
+     "clear": true
+    },
+    {
+     "measure": "died, track (activation to 20 s after dispersal)",
+     "count": 137,
+     "per_100": 12.8,
+     "ci": [
+      9.9,
+      16.8
+     ],
+     "top6": 8.5,
+     "rest": 15.2,
+     "gap_ci": [
+      -13.9,
+      -1.6
+     ],
+     "clear": true
+    },
+    {
+     "measure": "died or hurt, old estimate (round 5 measure)",
+     "count": 167,
+     "per_100": 15.6,
+     "ci": [
+      12.9,
+      19.6
+     ],
+     "top6": 10.6,
+     "rest": 18.4,
+     "gap_ci": [
+      -14.3,
+      -3.4
+     ],
+     "clear": true
+    },
+    {
+     "measure": "died or hurt, real health, batch deaths",
+     "count": 225,
+     "per_100": 21.0,
+     "ci": [
+      17.7,
+      25.3
+     ],
+     "top6": 15.2,
+     "rest": 24.3,
+     "gap_ci": [
+      -16.6,
+      -2.9
+     ],
+     "clear": true
+    },
+    {
+     "measure": "died or hurt, real health, track deaths (round 5b definition)",
+     "count": 247,
+     "per_100": 23.1,
+     "ci": [
+      19.5,
+      27.6
+     ],
+     "top6": 17.3,
+     "rest": 26.4,
+     "gap_ci": [
+      -17.0,
+      -2.4
+     ],
+     "clear": true
+    },
+    {
+     "measure": "same, peak-to-trough health loss",
+     "count": 254,
+     "per_100": 23.7,
+     "ci": [
+      20.2,
+      28.6
+     ],
+     "top6": 17.6,
+     "rest": 27.2,
+     "gap_ci": [
+      -17.9,
+      -3.1
+     ],
+     "clear": true
+    }
+   ]
+  },
+  "cr_dd": {
+   "label": "sheltering cruisers in destroyer smokes",
+   "n": 586,
+   "n_top6": 262,
+   "n_rest": 324,
+   "measures": [
+    {
+     "measure": "died, batch list (round 5 measure)",
+     "count": 46,
+     "per_100": 7.8,
+     "ci": [
+      6.0,
+      10.2
+     ],
+     "top6": 5.7,
+     "rest": 9.6,
+     "gap_ci": [
+      -8.3,
+      -0.0
+     ],
+     "clear": true
+    },
+    {
+     "measure": "died, track (activation to 20 s after dispersal)",
+     "count": 57,
+     "per_100": 9.7,
+     "ci": [
+      7.3,
+      12.6
+     ],
+     "top6": 7.3,
+     "rest": 11.7,
+     "gap_ci": [
+      -8.9,
+      -0.4
+     ],
+     "clear": true
+    },
+    {
+     "measure": "died or hurt, old estimate (round 5 measure)",
+     "count": 131,
+     "per_100": 22.4,
+     "ci": [
+      17.2,
+      27.2
+     ],
+     "top6": 18.3,
+     "rest": 25.6,
+     "gap_ci": [
+      -17.3,
+      2.0
+     ],
+     "clear": false
+    },
+    {
+     "measure": "died or hurt, real health, batch deaths",
+     "count": 109,
+     "per_100": 18.6,
+     "ci": [
+      14.6,
+      23.0
+     ],
+     "top6": 14.1,
+     "rest": 22.2,
+     "gap_ci": [
+      -16.0,
+      -0.8
+     ],
+     "clear": true
+    },
+    {
+     "measure": "died or hurt, real health, track deaths (round 5b definition)",
+     "count": 115,
+     "per_100": 19.6,
+     "ci": [
+      15.3,
+      24.2
+     ],
+     "top6": 15.3,
+     "rest": 23.1,
+     "gap_ci": [
+      -16.3,
+      0.4
+     ],
+     "clear": false
+    },
+    {
+     "measure": "same, peak-to-trough health loss",
+     "count": 148,
+     "per_100": 25.3,
+     "ci": [
+      19.4,
+      30.9
+     ],
+     "top6": 19.5,
+     "rest": 29.9,
+     "gap_ci": [
+      -20.6,
+      0.0
+     ],
+     "clear": false
+    }
+   ]
+  },
+  "cr": {
+   "label": "sheltering cruisers, any smoke",
+   "n": 612,
+   "n_top6": 274,
+   "n_rest": 338,
+   "measures": [
+    {
+     "measure": "died, batch list (round 5 measure)",
+     "count": 48,
+     "per_100": 7.8,
+     "ci": [
+      5.7,
+      10.5
+     ],
+     "top6": 5.5,
+     "rest": 9.8,
+     "gap_ci": [
+      -8.3,
+      -0.5
+     ],
+     "clear": true
+    },
+    {
+     "measure": "died, track (activation to 20 s after dispersal)",
+     "count": 59,
+     "per_100": 9.6,
+     "ci": [
+      7.2,
+      12.2
+     ],
+     "top6": 6.9,
+     "rest": 11.8,
+     "gap_ci": [
+      -9.2,
+      -0.5
+     ],
+     "clear": true
+    },
+    {
+     "measure": "died or hurt, old estimate (round 5 measure)",
+     "count": 134,
+     "per_100": 21.9,
+     "ci": [
+      17.0,
+      27.0
+     ],
+     "top6": 17.5,
+     "rest": 25.4,
+     "gap_ci": [
+      -17.9,
+      2.7
+     ],
+     "clear": false
+    },
+    {
+     "measure": "died or hurt, real health, batch deaths",
+     "count": 113,
+     "per_100": 18.5,
+     "ci": [
+      14.5,
+      22.8
+     ],
+     "top6": 13.5,
+     "rest": 22.5,
+     "gap_ci": [
+      -16.3,
+      -1.7
+     ],
+     "clear": true
+    },
+    {
+     "measure": "died or hurt, real health, track deaths (round 5b definition)",
+     "count": 119,
+     "per_100": 19.4,
+     "ci": [
+      15.2,
+      24.2
+     ],
+     "top6": 14.6,
+     "rest": 23.4,
+     "gap_ci": [
+      -16.6,
+      -1.3
+     ],
+     "clear": true
+    },
+    {
+     "measure": "same, peak-to-trough health loss",
+     "count": 152,
+     "per_100": 24.8,
+     "ci": [
+      19.1,
+      30.4
+     ],
+     "top6": 18.6,
+     "rest": 29.9,
+     "gap_ci": [
+      -21.6,
+      -0.7
+     ],
+     "clear": true
+    }
+   ]
+  }
+ },
+ "check_r5": {
+  "dd_smokes": 1074,
+  "dd_smoker_pairs_all": 1074,
+  "d_smoker_per_100_smokes": 6.4,
+  "hurt_smoker_per_100_smokes": 15.5,
+  "cr_pool": 613,
+  "cr_died": 8.0,
+  "cr_hurt": 22.0
+ },
+ "loss": {
+  "dd": {
+   "mean_net": 17.3,
+   "median_net": 4.6,
+   "mean_trough": 17.7,
+   "none_pct": 44.1,
+   "third_net": 19.1,
+   "third_trough": 19.7
+  },
+  "cr": {
+   "mean_net": 16.2,
+   "median_net": 3.7,
+   "mean_trough": 19.7,
+   "none_pct": 44.8,
+   "third_net": 17.3,
+   "third_trough": 23.4
+  }
+ }
+}

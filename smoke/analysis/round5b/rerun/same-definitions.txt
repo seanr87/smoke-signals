@@ -1,0 +1,15 @@
+# Round 5 scripts rerun on batch 20261117-230933 with the round 5 definitions unchanged (before the 15-minute clock fix)
+identical: 30 files; different: 3; only in round5b: 0
+- DIFF part-d/clan_styles.json: 18 of 11826 lines
+    new:      "San Martín": 3
+    old:      "Des Moines": 3
+- DIFF part-d/d1_scores.json: 18 of 8102 lines
+    new:     "San Martín": 3
+    old:     "Des Moines": 3
+- DIFF part-d/d1_tables.md: 5 of 390 lines
+    new: | KITED | 14 | Napoli 64%, Daring 50%, Venezia 36%, C. Colombo 29%, Jinan 14%, Z-52 14% | 25 | Des Moines 16%, Schlieffen 8%, Prinz Adalbert 4%, Marseille 4% | 
+    old: | KITED | 14 | Napoli 64%, Daring 50%, Venezia 36%, C. Colombo 29%, Somers 14%, Z-52 14% | 25 | Des Moines 16%, Schlieffen 8%, Prinz Adalbert 4%, Marseille 4% |
+only in round5b: []
+in round 5 but not regenerated: ['part-a/CHECK-A.md', 'part-a/FINDINGS-A.md', 'part-b/CHECK-B.md', 'part-b/FINDINGS-B.md', 'part-b/err.txt', 'part-b/show.txt', 'part-c1/CHECK-C1.md', 'part-c1/FINDINGS-C1.md', 'part-c4/CHECK-C4.md', 'part-c4/FINDINGS-C4.md', 'part-c4/head.md', 'part-c5/CHECK-C5.md', 'part-c5/FINDINGS-C5.md', 'part-c5/out-hs.txt', 'part-c5/out-lp-daring.txt', 'part-c5/out-lp.txt', 'part-c5/out-rest.txt', 'part-c5/out-sg.txt', 'part-c5/out-tables.txt', 'part-d/CHECK-D.md', 'part-d/FINDINGS-D.md', 'part-d/d2_output.txt']
+
+Script outputs written to stdout (round 5 saved them as out-*.txt): out-sg, out-hs, out-lp, out-rest, out-tables, d2_output, show identical; out-lp-daring differs in 2 lines (see RERUN notes).

@@ -1,0 +1,537 @@
+[
+ {
+  "map": "Sleeping Giant",
+  "kind": "danger_zone",
+  "mode": "shared",
+  "name": "F5 (destroyer smoker)",
+  "shape": {
+   "type": "cells",
+   "cells": [
+    "F5"
+   ],
+   "u": 0.4538,
+   "v": 0.566
+  },
+  "n": 12,
+  "n_top6": 6,
+  "n_rest": 6,
+  "small_n": true,
+  "clans": {
+   "top6": {
+    "VRTUS": 3,
+    "RESIN": 2,
+    "HTDOG": 1
+   },
+   "rest": {
+    "KITED": 2,
+    "HFANS": 2,
+    "KSE": 1,
+    "5D": 1
+   }
+  },
+  "concealed_damage_per_smoke": 6700,
+  "deaths_per_100": 8.3,
+  "cruisers": {
+   "top6": {
+    "Stalingrad": 2
+   },
+   "rest": {
+    "Napoli": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8153_g1_92180.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8074_g3_176175.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7990_g1_188225.html"
+  ],
+  "id": "dz5b-v1-sleeping-giant-dd-f5",
+  "keyed_on": "smoke centre",
+  "unit": "smokes",
+  "who": "destroyer smoker",
+  "n_units": 12,
+  "ships_at_risk": 12,
+  "died_or_hurt_per_100": 41.7,
+  "died_per_100": 16.7,
+  "n_died_or_hurt": 5,
+  "n_died": 2,
+  "baseline_all_maps": {
+   "died": 12.8,
+   "died_or_hurt": 23.1
+  },
+  "baseline_same_map": {
+   "died": 10.9,
+   "died_or_hurt": 21.4
+  },
+  "gap_vs_all_maps": 18.6,
+  "gap_vs_all_maps_ci": [
+   1.6,
+   35.7
+  ],
+  "gap_vs_same_map": 20.2,
+  "gap_vs_same_map_ci": [
+   5.9,
+   35.4
+  ],
+  "death_gap_vs_all_maps": 3.9,
+  "death_gap_vs_all_maps_ci": [
+   -15.4,
+   26.4
+  ],
+  "death_only_clear": false,
+  "behind_50_pct": 16.7,
+  "radar_lit_pct": 66.7,
+  "share_top6_pct": 5.5,
+  "share_rest_pct": 4.7,
+  "share_gap_ci": [
+   -6.1,
+   8.9
+  ],
+  "rest_habit": false,
+  "n_clans": 7,
+  "n_games": 9,
+  "without_top_clan": {
+   "clan": "VRTUS",
+   "n": 9,
+   "hurt_per_100": 44.4
+  },
+  "health_is_estimate": false,
+  "hurt_definition": "died between activation and 20 s after dispersal (track), or net health loss over the smoke of 1/3+ of full health",
+  "placebo": {
+   "flags_by_luck_per_run": 1.57,
+   "areas_tested": 108,
+   "real_flags": 2
+  }
+ },
+ {
+  "map": "Sleeping Giant",
+  "kind": "danger_zone",
+  "mode": "shared",
+  "name": "E7+F7+F8 (destroyer smoker)",
+  "shape": {
+   "type": "cells",
+   "cells": [
+    "E7",
+    "F7",
+    "F8"
+   ],
+   "u": 0.7147,
+   "v": 0.5302
+  },
+  "n": 8,
+  "n_top6": 2,
+  "n_rest": 6,
+  "small_n": true,
+  "clans": {
+   "top6": {
+    "BONKZ": 2
+   },
+   "rest": {
+    "RMN": 1,
+    "SCCC2": 1,
+    "PFANS": 1,
+    "-BN-": 1,
+    "RSR": 1,
+    "KITED": 1
+   }
+  },
+  "concealed_damage_per_smoke": 10754,
+  "deaths_per_100": 37.5,
+  "cruisers": {
+   "top6": {
+    "Petropavlovsk": 1
+   },
+   "rest": {
+    "Des Moines": 2,
+    "Worcester": 1,
+    "Colbert": 1,
+    "Stalingrad": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7991_g1_78223.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7933_g1_178675.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7934_g1_80502.html"
+  ],
+  "id": "dz5b-v1-sleeping-giant-dd-e7-f7-f8",
+  "keyed_on": "smoke centre",
+  "unit": "smokes",
+  "who": "destroyer smoker",
+  "n_units": 8,
+  "ships_at_risk": 8,
+  "died_or_hurt_per_100": 62.5,
+  "died_per_100": 25.0,
+  "n_died_or_hurt": 5,
+  "n_died": 2,
+  "baseline_all_maps": {
+   "died": 12.8,
+   "died_or_hurt": 23.1
+  },
+  "baseline_same_map": {
+   "died": 10.9,
+   "died_or_hurt": 21.4
+  },
+  "gap_vs_all_maps": 39.4,
+  "gap_vs_all_maps_ci": [
+   8.0,
+   76.4
+  ],
+  "gap_vs_same_map": 41.1,
+  "gap_vs_same_map_ci": [
+   9.6,
+   77.0
+  ],
+  "death_gap_vs_all_maps": 12.2,
+  "death_gap_vs_all_maps_ci": [
+   -13.6,
+   50.2
+  ],
+  "death_only_clear": false,
+  "behind_50_pct": 25.0,
+  "radar_lit_pct": 62.5,
+  "share_top6_pct": 1.8,
+  "share_rest_pct": 4.7,
+  "share_gap_ci": [
+   -8.3,
+   1.4
+  ],
+  "rest_habit": false,
+  "n_clans": 7,
+  "n_games": 8,
+  "without_top_clan": {
+   "clan": "SCCC2",
+   "n": 7,
+   "hurt_per_100": 57.1
+  },
+  "health_is_estimate": false,
+  "hurt_definition": "died between activation and 20 s after dispersal (track), or net health loss over the smoke of 1/3+ of full health",
+  "placebo": {
+   "flags_by_luck_per_run": 1.57,
+   "areas_tested": 108,
+   "real_flags": 2
+  }
+ },
+ {
+  "map": "Sleeping Giant",
+  "kind": "danger_zone",
+  "mode": "shared",
+  "name": "E8 (destroyer smoker)",
+  "shape": {
+   "type": "cells",
+   "cells": [
+    "E8"
+   ],
+   "u": 0.7546,
+   "v": 0.4575
+  },
+  "n": 8,
+  "n_top6": 4,
+  "n_rest": 4,
+  "small_n": true,
+  "clans": {
+   "top6": {
+    "RESIN": 3,
+    "BONKZ": 1
+   },
+   "rest": {
+    "MACHX": 2,
+    "HFANS": 1,
+    "EPOXY": 1
+   }
+  },
+  "concealed_damage_per_smoke": 15910,
+  "deaths_per_100": 25.0,
+  "cruisers": {
+   "top6": {
+    "Utrecht": 1,
+    "Petropavlovsk": 1
+   },
+   "rest": {
+    "Des Moines": 2,
+    "Minotaur": 1,
+    "Stalingrad": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g1_63098.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7908_g1_29765.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7936_g1_104472.html"
+  ],
+  "id": "dz5b-v2-sleeping-giant-dd-e8",
+  "keyed_on": "where the ship was hit (death position, or position at its largest health fall)",
+  "unit": "ships at risk",
+  "who": "destroyer smoker",
+  "n_units": 8,
+  "ships_at_risk": 8,
+  "died_or_hurt_per_100": 75.0,
+  "died_per_100": 37.5,
+  "n_died_or_hurt": 6,
+  "n_died": 3,
+  "baseline_all_maps": {
+   "died": 12.8,
+   "died_or_hurt": 23.1
+  },
+  "baseline_same_map": {
+   "died": 10.9,
+   "died_or_hurt": 21.4
+  },
+  "gap_vs_all_maps": 51.9,
+  "gap_vs_all_maps_ci": [
+   34.8,
+   78.6
+  ],
+  "gap_vs_same_map": 53.6,
+  "gap_vs_same_map_ci": [
+   35.2,
+   82.5
+  ],
+  "death_gap_vs_all_maps": 24.7,
+  "death_gap_vs_all_maps_ci": [
+   -14.5,
+   60.4
+  ],
+  "death_only_clear": false,
+  "behind_50_pct": 12.5,
+  "radar_lit_pct": 62.5,
+  "share_top6_pct": 3.6,
+  "share_rest_pct": 3.1,
+  "share_gap_ci": [
+   -4.0,
+   5.8
+  ],
+  "rest_habit": false,
+  "n_clans": 5,
+  "n_games": 6,
+  "without_top_clan": {
+   "clan": "RESIN",
+   "n": 5,
+   "hurt_per_100": 80.0
+  },
+  "health_is_estimate": false,
+  "hurt_definition": "died between activation and 20 s after dispersal (track), or net health loss over the smoke of 1/3+ of full health",
+  "placebo": {
+   "flags_by_luck_per_run": 1.75,
+   "areas_tested": 111,
+   "real_flags": 3
+  }
+ },
+ {
+  "map": "Sleeping Giant",
+  "kind": "danger_zone",
+  "mode": "shared",
+  "name": "E7+F7+F8 (destroyer smoker)",
+  "shape": {
+   "type": "cells",
+   "cells": [
+    "E7",
+    "F7",
+    "F8"
+   ],
+   "u": 0.7197,
+   "v": 0.5286
+  },
+  "n": 10,
+  "n_top6": 2,
+  "n_rest": 8,
+  "small_n": true,
+  "clans": {
+   "top6": {
+    "BONKZ": 2
+   },
+   "rest": {
+    "KITED": 3,
+    "RMN": 1,
+    "UYSC": 1,
+    "PFANS": 1,
+    "-BN-": 1,
+    "RSR": 1
+   }
+  },
+  "concealed_damage_per_smoke": 9704,
+  "deaths_per_100": 40.0,
+  "cruisers": {
+   "top6": {
+    "Petropavlovsk": 1
+   },
+   "rest": {
+    "Des Moines": 3,
+    "Jinan": 1,
+    "Colbert": 1,
+    "Stalingrad": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7991_g1_78223.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8139_g3_51637.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7933_g1_178675.html"
+  ],
+  "id": "dz5b-v2-sleeping-giant-dd-e7-f7-f8",
+  "keyed_on": "where the ship was hit (death position, or position at its largest health fall)",
+  "unit": "ships at risk",
+  "who": "destroyer smoker",
+  "n_units": 10,
+  "ships_at_risk": 10,
+  "died_or_hurt_per_100": 50.0,
+  "died_per_100": 30.0,
+  "n_died_or_hurt": 5,
+  "n_died": 3,
+  "baseline_all_maps": {
+   "died": 12.8,
+   "died_or_hurt": 23.1
+  },
+  "baseline_same_map": {
+   "died": 10.9,
+   "died_or_hurt": 21.4
+  },
+  "gap_vs_all_maps": 26.9,
+  "gap_vs_all_maps_ci": [
+   2.6,
+   59.8
+  ],
+  "gap_vs_same_map": 28.6,
+  "gap_vs_same_map_ci": [
+   5.5,
+   61.2
+  ],
+  "death_gap_vs_all_maps": 17.2,
+  "death_gap_vs_all_maps_ci": [
+   -11.1,
+   52.6
+  ],
+  "death_only_clear": false,
+  "behind_50_pct": 30.0,
+  "radar_lit_pct": 70.0,
+  "share_top6_pct": 1.8,
+  "share_rest_pct": 6.2,
+  "share_gap_ci": [
+   -12.0,
+   1.2
+  ],
+  "rest_habit": false,
+  "n_clans": 7,
+  "n_games": 8,
+  "without_top_clan": {
+   "clan": "UYSC",
+   "n": 9,
+   "hurt_per_100": 44.4
+  },
+  "health_is_estimate": false,
+  "hurt_definition": "died between activation and 20 s after dispersal (track), or net health loss over the smoke of 1/3+ of full health",
+  "placebo": {
+   "flags_by_luck_per_run": 1.75,
+   "areas_tested": 111,
+   "real_flags": 3
+  }
+ },
+ {
+  "map": "Mountain Range",
+  "kind": "danger_zone",
+  "mode": "shared",
+  "name": "G5+H5+G6+H6 (destroyer smoker)",
+  "shape": {
+   "type": "cells",
+   "cells": [
+    "G5",
+    "H5",
+    "G6",
+    "H6"
+   ],
+   "u": 0.5129,
+   "v": 0.6539
+  },
+  "n": 14,
+  "n_top6": 4,
+  "n_rest": 10,
+  "small_n": true,
+  "clans": {
+   "top6": {
+    "RESIN": 2,
+    "H-SR": 1,
+    "HTDOG": 1
+   },
+   "rest": {
+    "OGF": 2,
+    "SCCC2": 2,
+    "RMN": 1,
+    "REEEE": 1,
+    "KSE": 1,
+    "UYSC": 1,
+    "KSC": 1,
+    "MACH": 1
+   }
+  },
+  "concealed_damage_per_smoke": 1688,
+  "deaths_per_100": 14.3,
+  "cruisers": {
+   "top6": {
+    "Brisbane": 1
+   },
+   "rest": {
+    "Bremen": 1,
+    "Moskva": 1,
+    "Brisbane": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7930_g1_51294.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176010.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7988_g1_161833.html"
+  ],
+  "id": "dz5b-v2-mountain-range-dd-g5-h5-g6-h6",
+  "keyed_on": "where the ship was hit (death position, or position at its largest health fall)",
+  "unit": "ships at risk",
+  "who": "destroyer smoker",
+  "n_units": 14,
+  "ships_at_risk": 14,
+  "died_or_hurt_per_100": 50.0,
+  "died_per_100": 28.6,
+  "n_died_or_hurt": 7,
+  "n_died": 4,
+  "baseline_all_maps": {
+   "died": 12.8,
+   "died_or_hurt": 23.1
+  },
+  "baseline_same_map": {
+   "died": 14.8,
+   "died_or_hurt": 26.6
+  },
+  "gap_vs_all_maps": 26.9,
+  "gap_vs_all_maps_ci": [
+   4.3,
+   52.6
+  ],
+  "gap_vs_same_map": 23.4,
+  "gap_vs_same_map_ci": [
+   2.3,
+   47.8
+  ],
+  "death_gap_vs_all_maps": 15.8,
+  "death_gap_vs_all_maps_ci": [
+   -4.0,
+   40.5
+  ],
+  "death_only_clear": false,
+  "behind_50_pct": 57.1,
+  "radar_lit_pct": 35.7,
+  "share_top6_pct": 7.3,
+  "share_rest_pct": 13.7,
+  "share_gap_ci": [
+   -19.9,
+   2.9
+  ],
+  "rest_habit": false,
+  "n_clans": 11,
+  "n_games": 11,
+  "without_top_clan": {
+   "clan": "OGF",
+   "n": 12,
+   "hurt_per_100": 50.0
+  },
+  "health_is_estimate": false,
+  "hurt_definition": "died between activation and 20 s after dispersal (track), or net health loss over the smoke of 1/3+ of full health",
+  "placebo": {
+   "flags_by_luck_per_run": 1.75,
+   "areas_tested": 111,
+   "real_flags": 3
+  }
+ }
+]

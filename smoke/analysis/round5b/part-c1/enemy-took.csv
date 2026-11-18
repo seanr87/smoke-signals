@@ -1,0 +1,1548 @@
+match_id,game_no,smoke_id,team,group,smoker_class,map,nearest_cap,nearest_cap_team_frame,edge_distance_m,owner_at_activation,enemy_took,we_took,snapshots_in_window,cap_defended,cap_won
+kots19na_7957,1,156946,BTLST,Rest,destroyer,Hotspot,D,D,2994,neutral,yes,no,7,,
+kots19na_7957,1,156947,BTLST,Rest,destroyer,Hotspot,C,C,-713,theirs,,no,5,,
+kots19na_7957,1,156948,BTLST,Rest,destroyer,Hotspot,D,D,3538,neutral,yes,yes,10,,D
+kots19na_7957,1,156949,BTLST,Rest,cruiser,Hotspot,A,B,-393,ours,no,,6,,
+kots19na_7957,1,156951,BTLST,Rest,destroyer,Hotspot,D,D,4653,theirs,,yes,3,,
+kots19na_7957,1,156952,BTLST,Rest,destroyer,Hotspot,D,D,2681,ours,no,,7,D,
+kots19na_7957,1,156953,BTLST,Rest,destroyer,Hotspot,C,C,3914,theirs,,no,6,,
+kots19na_7957,1,156954,BTLST,Rest,cruiser,Hotspot,A,B,3933,ours,no,,3,D,
+kots19na_7957,1,156955,BTLST,Rest,destroyer,Hotspot,C,C,7233,theirs,,no,2,D,
+kots19na_7957,1,156945,REEEE,Rest,destroyer,Hotspot,D,D,2756,neutral,no,no,5,C,C
+kots19na_7957,1,156950,REEEE,Rest,destroyer,Hotspot,D,D,691,ours,yes,,9,D,
+kots19na_7959,1,86998,RMN,Rest,destroyer,Hotspot,D,D,-749,theirs,,no,9,,
+kots19na_7959,1,87002,RMN,Rest,destroyer,Hotspot,C,C,-2673,neutral,yes,no,5,,
+kots19na_7959,1,87004,RMN,Rest,destroyer,Hotspot,D,D,-925,theirs,,no,1,,
+kots19na_7959,1,86999,5D,Rest,destroyer,Hotspot,D,D,-391,ours,no,,8,D,
+kots19na_7959,1,87000,5D,Rest,destroyer,Hotspot,C,C,-142,neutral,no,no,9,D,B
+kots19na_7959,1,87001,5D,Rest,cruiser,Hotspot,C,C,2238,neutral,no,no,5,D,
+kots19na_7959,1,87003,5D,Rest,destroyer,Hotspot,D,D,749,ours,no,,3,D,
+kots19na_7960,1,147080,OGF,Rest,destroyer,Hotspot,C,C,1063,neutral,yes,no,5,,
+kots19na_7960,1,147082,OGF,Rest,destroyer,Hotspot,D,D,-2578,ours,yes,,3,D,
+kots19na_7960,1,147079,MZY,Rest,destroyer,Hotspot,D,D,574,neutral,yes,yes,4,D,
+kots19na_7960,1,147081,MZY,Rest,destroyer,Hotspot,D,D,3257,theirs,,yes,5,A,D
+kots19na_7960,1,147083,MZY,Rest,destroyer,Hotspot,D,D,-1585,ours,no,,1,,
+kots19na_7969,1,190392,PN,Rest,destroyer,Hotspot,D,D,1324,neutral,no,yes,3,,D
+kots19na_7969,1,190394,PN,Rest,battleship,Hotspot,C,C,4951,ours,no,,1,C,
+kots19na_7969,1,190393,RSR,Rest,destroyer,Hotspot,D,D,7126,theirs,,no,1,,
+kots19na_7970,1,159228,UYSC,Rest,destroyer,Hotspot,C,C,-133,neutral,no,no,5,,
+kots19na_7970,1,159229,KSC,Rest,destroyer,Hotspot,D,D,-577,neutral,no,no,4,,D
+kots19na_7970,1,159230,KSC,Rest,destroyer,Hotspot,C,C,-354,neutral,no,no,1,,
+kots19na_7970,1,159231,KSC,Rest,destroyer,Hotspot,D,D,3880,ours,no,,5,C,
+kots19na_7970,1,159232,KSC,Rest,destroyer,Hotspot,B,B,3077,ours,no,,5,C,
+kots19na_7970,1,159233,KSC,Rest,destroyer,Hotspot,C,C,-732,ours,no,,3,C,
+kots19na_7970,1,159234,KSC,Rest,destroyer,Hotspot,C,C,-787,ours,no,,1,,
+kots19na_7971,1,82493,KSE,Rest,destroyer,Hotspot,C,C,7688,neutral,no,yes,3,,
+kots19na_7971,1,82502,KSE,Rest,destroyer,Hotspot,C,C,12792,ours,no,,6,,
+kots19na_7971,1,82510,KSE,Rest,destroyer,Hotspot,A,B,4474,ours,no,,1,,
+kots19na_7971,1,82498,PFANS,Rest,destroyer,Hotspot,D,D,-1432,ours,no,,7,,
+kots19na_7971,1,82499,PFANS,Rest,destroyer,Hotspot,C,C,1499,theirs,,no,4,,
+kots19na_7971,1,82503,PFANS,Rest,cruiser,Hotspot,B,B,3929,ours,no,,4,,
+kots19na_7971,1,82504,PFANS,Rest,destroyer,Hotspot,C,C,528,theirs,,no,4,D,
+kots19na_7971,1,82507,PFANS,Rest,destroyer,Hotspot,C,C,10553,theirs,,yes,3,D,C
+kots19na_7972,1,5613,VRTUS,Top 6,destroyer,Hotspot,A,B,-575,neutral,no,yes,8,,A
+kots19na_7972,1,5617,VRTUS,Top 6,destroyer,Hotspot,A,B,571,ours,no,,5,,
+kots19na_7972,1,5618,VRTUS,Top 6,destroyer,Hotspot,D,D,4956,theirs,,no,3,,
+kots19na_7972,1,5623,VRTUS,Top 6,destroyer,Hotspot,B,A,1815,theirs,,yes,8,C,B
+kots19na_7972,1,5624,VRTUS,Top 6,destroyer,Hotspot,D,D,17893,theirs,,no,6,C,
+kots19na_7972,1,5611,HTDOG,Top 6,destroyer,Hotspot,D,D,3391,neutral,no,yes,4,,
+kots19na_7972,1,5615,HTDOG,Top 6,destroyer,Hotspot,B,B,3160,ours,no,,7,,
+kots19na_7972,1,5616,HTDOG,Top 6,destroyer,Hotspot,D,D,-1285,ours,no,,6,,
+kots19na_7972,1,5625,HTDOG,Top 6,destroyer,Hotspot,C,C,8776,theirs,,yes,6,,C
+kots19na_7972,1,5626,HTDOG,Top 6,destroyer,Hotspot,B,B,2443,ours,yes,,7,,
+kots19na_7972,1,5627,HTDOG,Top 6,destroyer,Hotspot,C,C,1334,ours,no,,1,,
+kots19na_7886,1,168741,BONKZ,Top 6,destroyer,Hotspot,B,A,2731,theirs,,yes,6,C,B
+kots19na_7886,1,168742,BONKZ,Top 6,destroyer,Hotspot,B,A,5773,ours,no,,5,,
+kots19na_7886,1,168743,BONKZ,Top 6,destroyer,Hotspot,B,A,4294,ours,no,,4,,
+kots19na_7886,1,168740,MANBA,Rest,destroyer,Hotspot,B,B,1879,ours,no,,3,,
+kots19na_7886,1,168744,MANBA,Rest,destroyer,Hotspot,B,B,6330,theirs,,no,1,D,
+kots19na_7887,1,111082,EPOXY,Rest,destroyer,Hotspot,C,C,-461,neutral,no,yes,4,,C
+kots19na_7887,1,111102,EPOXY,Rest,battleship,Hotspot,C,C,2569,ours,no,,4,D,
+kots19na_7887,1,111112,EPOXY,Rest,destroyer,Hotspot,A,B,2915,ours,no,,1,D,
+kots19na_7887,1,111080,HFANS,Rest,destroyer,Hotspot,D,D,2067,neutral,no,yes,9,,D
+kots19na_7887,1,111081,HFANS,Rest,destroyer,Hotspot,C,C,1493,neutral,yes,no,5,,
+kots19na_7887,1,111083,HFANS,Rest,destroyer,Hotspot,D,D,1870,ours,no,,7,,
+kots19na_7887,1,111084,HFANS,Rest,destroyer,Hotspot,B,B,54,ours,no,,7,D,
+kots19na_7887,1,111085,HFANS,Rest,destroyer,Hotspot,B,B,-935,ours,no,,4,,
+kots19na_7887,1,111101,HFANS,Rest,destroyer,Hotspot,D,D,845,ours,yes,,5,D,
+kots19na_7887,1,111104,HFANS,Rest,destroyer,Hotspot,B,B,2357,ours,no,,4,D,
+kots19na_7888,1,38984,INCA,Rest,destroyer,Hotspot,C,C,3584,neutral,no,yes,5,,A
+kots19na_7888,1,38985,INCA,Rest,cruiser,Hotspot,D,D,270,ours,no,,2,,
+kots19na_7888,1,38986,INCA,Rest,destroyer,Hotspot,A,B,-142,ours,no,,14,D,
+kots19na_7888,1,38987,INCA,Rest,cruiser,Hotspot,D,D,2584,ours,no,,5,D,
+kots19na_7888,1,38988,INCA,Rest,cruiser,Hotspot,D,D,3408,ours,no,,9,D,
+kots19na_7888,1,38990,INCA,Rest,destroyer,Hotspot,C,C,1310,ours,no,,8,D,
+kots19na_7888,1,38991,INCA,Rest,cruiser,Hotspot,D,D,1226,ours,no,,8,D,
+kots19na_7888,1,38992,INCA,Rest,destroyer,Hotspot,D,D,35,ours,yes,,9,D,
+kots19na_7888,1,38993,INCA,Rest,destroyer,Hotspot,A,B,-768,ours,no,,7,D,
+kots19na_7888,1,38994,INCA,Rest,cruiser,Hotspot,D,D,2283,ours,yes,,5,D,
+kots19na_7888,1,38996,INCA,Rest,destroyer,Hotspot,C,C,4445,ours,no,,1,,
+kots19na_7888,1,38989,KM,Rest,destroyer,Hotspot,D,D,-677,theirs,,no,13,,
+kots19na_7888,1,38995,KM,Rest,cruiser,Hotspot,B,B,-1829,ours,no,,4,,
+kots19na_7913,1,111107,KITED,Rest,destroyer,Hotspot,D,D,-762,ours,no,,4,,
+kots19na_7913,1,111110,KITED,Rest,cruiser,Hotspot,A,B,-3269,ours,no,,5,D,
+kots19na_7913,1,111113,KITED,Rest,destroyer,Hotspot,D,D,8608,theirs,,no,6,,
+kots19na_7913,1,111115,KITED,Rest,cruiser,Hotspot,A,B,8068,ours,yes,,3,,
+kots19na_7913,1,111117,KITED,Rest,cruiser,Hotspot,A,B,10559,theirs,,no,1,,
+kots19na_7913,1,111105,MACH,Rest,cruiser,Hotspot,D,D,3244,neutral,yes,no,5,,
+kots19na_7913,1,111108,MACH,Rest,destroyer,Hotspot,D,D,1490,theirs,,no,3,,
+kots19na_7913,1,111111,MACH,Rest,cruiser,Hotspot,D,D,-2084,ours,no,,5,,
+kots19na_7913,1,111112,MACH,Rest,destroyer,Hotspot,D,D,-1464,ours,no,,5,,
+kots19na_7913,1,111114,MACH,Rest,destroyer,Hotspot,D,D,6599,ours,no,,5,,
+kots19na_7913,1,111116,MACH,Rest,destroyer,Hotspot,A,A,-2254,theirs,,yes,2,D,A
+kots19na_7914,1,53653,-BN-,Rest,destroyer,Hotspot,C,C,807,neutral,yes,no,4,,
+kots19na_7914,1,53654,-BN-,Rest,destroyer,Hotspot,D,D,2663,neutral,no,yes,4,,
+kots19na_7914,1,53655,-BN-,Rest,destroyer,Hotspot,C,C,899,theirs,,no,7,D,
+kots19na_7914,1,53657,-BN-,Rest,destroyer,Hotspot,D,D,1545,ours,no,,10,D,
+kots19na_7914,1,53658,-BN-,Rest,cruiser,Hotspot,A,B,-494,ours,no,,5,D,
+kots19na_7914,1,53659,-BN-,Rest,cruiser,Hotspot,A,B,1204,ours,no,,5,D,
+kots19na_7914,1,53660,-BN-,Rest,destroyer,Hotspot,C,C,2677,theirs,,yes,9,D,C
+kots19na_7914,1,53663,-BN-,Rest,cruiser,Hotspot,A,B,1150,ours,no,,3,,
+kots19na_7914,1,53664,-BN-,Rest,destroyer,Hotspot,D,D,6158,theirs,,no,1,,
+kots19na_7914,1,53656,MACHX,Rest,destroyer,Hotspot,C,C,1540,ours,no,,8,C,
+kots19na_7914,1,53661,MACHX,Rest,destroyer,Hotspot,C,C,3042,ours,yes,,7,C,
+kots19na_7914,1,53662,MACHX,Rest,destroyer,Hotspot,D,D,-234,theirs,,yes,6,C,D
+kots19na_7915,1,5497,H-SR,Top 6,destroyer,Hotspot,C,C,2891,neutral,no,yes,6,C,C
+kots19na_7915,1,5498,H-SR,Top 6,destroyer,Hotspot,D,D,1569,neutral,no,yes,9,C,C
+kots19na_7915,1,5500,H-SR,Top 6,destroyer,Hotspot,A,B,-1584,ours,no,,10,C,
+kots19na_7915,1,5501,H-SR,Top 6,destroyer,Hotspot,D,D,1021,ours,no,,11,C,
+kots19na_7915,1,5502,H-SR,Top 6,destroyer,Hotspot,C,C,2025,ours,yes,,9,C,
+kots19na_7915,1,5505,H-SR,Top 6,destroyer,Hotspot,A,B,2758,ours,no,,6,D,
+kots19na_7915,1,5506,H-SR,Top 6,destroyer,Hotspot,D,D,536,ours,no,,5,D,
+kots19na_7915,1,5514,H-SR,Top 6,destroyer,Hotspot,C,C,3188,theirs,,no,3,B,
+kots19na_7915,1,5516,H-SR,Top 6,destroyer,Hotspot,B,A,-1047,ours,no,,1,B,
+kots19na_7915,1,5499,NGA,Rest,destroyer,Hotspot,D,D,3418,neutral,yes,no,9,,
+kots19na_7915,1,5503,NGA,Rest,cruiser,Hotspot,B,B,-1820,ours,no,,4,,
+kots19na_7915,1,5504,NGA,Rest,destroyer,Hotspot,D,D,1978,theirs,,no,7,,
+kots19na_7916,1,26979,SCCC2,Rest,destroyer,Hotspot,D,D,-637,neutral,no,no,3,,
+kots19na_7916,1,26983,SCCC2,Rest,destroyer,Hotspot,D,D,1724,neutral,no,no,1,,
+kots19na_7916,1,26972,BONKY,Rest,destroyer,Hotspot,D,D,3427,neutral,no,no,4,,
+kots19na_7916,1,26975,BONKY,Rest,destroyer,Hotspot,B,B,-113,ours,no,,3,,
+kots19na_7916,1,26977,BONKY,Rest,destroyer,Hotspot,D,D,3145,neutral,no,no,4,,
+kots19na_7916,1,26980,BONKY,Rest,destroyer,Hotspot,D,D,3784,neutral,no,no,4,C,
+kots19na_7916,1,26981,BONKY,Rest,destroyer,Hotspot,B,B,1827,ours,no,,5,,A
+kots19na_7916,1,26982,BONKY,Rest,destroyer,Hotspot,D,D,3212,neutral,no,no,4,,
+kots19na_7961,1,17464,BTLST,Rest,destroyer,Loop,B,B,2098,ours,yes,,11,B,A
+kots19na_7961,1,17468,BTLST,Rest,battleship,Loop,B,B,1428,theirs,,no,3,,
+kots19na_7961,1,17463,KITE,Top 6,destroyer,Loop,A,A,-335,neutral,no,yes,1,,A
+kots19na_7961,1,17465,KITE,Top 6,destroyer,Loop,C,C,-675,neutral,no,yes,3,A,C
+kots19na_7961,1,17466,KITE,Top 6,destroyer,Loop,B,B,-205,ours,no,,7,,
+kots19na_7961,1,17467,KITE,Top 6,destroyer,Loop,B,B,-1505,ours,no,,6,,
+kots19na_7961,1,17469,KITE,Top 6,destroyer,Loop,A,A,2670,theirs,,no,1,,
+kots19na_7962,1,144947,REEEE,Rest,cruiser,Loop,C,C,2462,theirs,,no,2,B,
+kots19na_7962,1,144948,REEEE,Rest,destroyer,Loop,A,A,-1432,ours,no,,1,A,
+kots19na_7962,1,144939,5D,Rest,destroyer,Loop,B,B,-611,neutral,yes,yes,3,A,
+kots19na_7962,1,144943,5D,Rest,cruiser,Loop,B,B,3455,ours,yes,,1,A,
+kots19na_7962,1,144946,5D,Rest,destroyer,Loop,C,C,-243,ours,no,,5,A,
+kots19na_7964,1,171314,RMN,Rest,destroyer,Loop,B,B,-871,neutral,no,no,3,A,C
+kots19na_7964,1,171315,OGF,Rest,destroyer,Loop,B,B,415,neutral,no,no,2,,
+kots19na_7973,1,195445,PN,Rest,destroyer,Loop,A,A,5621,theirs,,no,6,C,
+kots19na_7973,1,195436,KSC,Rest,destroyer,Loop,B,B,532,neutral,yes,yes,2,,B
+kots19na_7973,1,195439,KSC,Rest,destroyer,Loop,B,B,879,ours,no,,2,,
+kots19na_7973,1,195442,KSC,Rest,destroyer,Loop,C,C,8505,theirs,,no,6,B,
+kots19na_7973,1,195444,KSC,Rest,destroyer,Loop,A,A,-1491,ours,no,,5,,
+kots19na_7973,1,195446,KSC,Rest,destroyer,Loop,C,C,8109,theirs,,no,3,A,
+kots19na_7973,1,195447,KSC,Rest,destroyer,Loop,A,A,4046,ours,no,,1,,
+kots19na_7975,1,221691,UYSC,Rest,destroyer,Loop,A,A,3907,neutral,no,no,3,,
+kots19na_7975,1,221692,UYSC,Rest,destroyer,Loop,A,A,1409,neutral,no,no,5,,
+kots19na_7975,1,221693,UYSC,Rest,battleship,Loop,A,A,8880,neutral,no,no,3,,A
+kots19na_7975,1,221694,UYSC,Rest,destroyer,Loop,C,C,3932,theirs,,no,2,,
+kots19na_7976,1,219220,KSE,Rest,destroyer,Loop,A,A,1384,theirs,,no,7,,
+kots19na_7976,1,219224,KSE,Rest,cruiser,Loop,C,C,4008,neutral,no,no,1,,
+kots19na_7976,1,219218,VRTUS,Top 6,destroyer,Loop,B,B,-1349,theirs,,yes,3,B,B
+kots19na_7976,1,219219,VRTUS,Top 6,cruiser,Loop,C,C,2360,neutral,no,no,5,B,
+kots19na_7976,1,219221,VRTUS,Top 6,cruiser,Loop,C,C,5782,neutral,no,no,3,B,
+kots19na_7976,1,219222,VRTUS,Top 6,cruiser,Loop,C,C,7956,neutral,no,no,3,B,
+kots19na_7976,1,219223,VRTUS,Top 6,destroyer,Loop,C,C,8133,neutral,yes,no,4,B,
+kots19na_7976,1,219225,VRTUS,Top 6,destroyer,Loop,C,C,6144,theirs,,no,3,,
+kots19na_7976,1,219228,VRTUS,Top 6,cruiser,Loop,A,A,10528,ours,no,,1,,
+kots19na_7889,1,178494,RESIN,Top 6,destroyer,Loop,A,A,2470,neutral,no,yes,3,,B
+kots19na_7889,1,178499,RESIN,Top 6,destroyer,Loop,C,C,2425,neutral,no,no,5,B,
+kots19na_7889,1,178501,RESIN,Top 6,destroyer,Loop,A,A,3449,ours,no,,5,,
+kots19na_7889,1,178502,RESIN,Top 6,cruiser,Loop,C,C,7645,theirs,,no,2,,
+kots19na_7889,1,178500,MANBA,Rest,cruiser,Loop,C,C,2144,neutral,no,no,2,,
+kots19na_7889,1,178503,MANBA,Rest,cruiser,Loop,C,C,-2189,ours,no,,1,B,
+kots19na_7891,1,46430,BONKZ,Top 6,destroyer,Loop,B,B,1615,ours,no,,2,B,C
+kots19na_7891,1,46432,BONKZ,Top 6,destroyer,Loop,B,B,176,theirs,,yes,3,,B
+kots19na_7891,1,46434,BONKZ,Top 6,destroyer,Loop,B,B,2068,ours,no,,2,C,C
+kots19na_7891,1,46429,KM,Rest,destroyer,Loop,B,B,2799,theirs,,no,3,C,
+kots19na_7891,1,46431,KM,Rest,destroyer,Loop,C,C,3769,theirs,,no,3,B,B
+kots19na_7891,1,46433,KM,Rest,destroyer,Loop,C,C,-1192,theirs,,yes,3,C,C
+kots19na_7892,1,80006,EPOXY,Rest,destroyer,Loop,A,A,-371,neutral,no,no,1,,
+kots19na_7892,1,80008,EPOXY,Rest,destroyer,Loop,A,A,548,ours,yes,,5,A,
+kots19na_7892,1,80010,EPOXY,Rest,destroyer,Loop,C,C,2436,ours,yes,,9,A,
+kots19na_7892,1,80012,EPOXY,Rest,destroyer,Loop,A,A,1393,theirs,,yes,6,,
+kots19na_7892,1,80014,EPOXY,Rest,destroyer,Loop,C,C,1913,theirs,,yes,9,C,C
+kots19na_7892,1,80017,EPOXY,Rest,destroyer,Loop,A,A,-2640,ours,no,,5,C,
+kots19na_7892,1,80018,EPOXY,Rest,destroyer,Loop,C,C,4108,theirs,,no,8,B,
+kots19na_7892,1,80019,EPOXY,Rest,destroyer,Loop,A,A,-1474,ours,no,,3,,
+kots19na_7892,1,80021,EPOXY,Rest,destroyer,Loop,A,A,-555,ours,no,,4,B,
+kots19na_7892,1,80022,EPOXY,Rest,destroyer,Loop,C,C,-1818,theirs,,yes,1,B,C
+kots19na_7892,1,80007,INCA,Rest,destroyer,Loop,B,B,1458,theirs,,yes,9,,A
+kots19na_7892,1,80009,INCA,Rest,cruiser,Loop,A,A,481,theirs,,yes,6,,A
+kots19na_7892,1,80011,INCA,Rest,cruiser,Loop,A,A,278,ours,no,,4,C,B
+kots19na_7892,1,80013,INCA,Rest,destroyer,Loop,A,A,1264,ours,yes,,6,C,
+kots19na_7892,1,80015,INCA,Rest,cruiser,Loop,A,A,3415,theirs,,no,4,C,
+kots19na_7892,1,80016,INCA,Rest,cruiser,Loop,C,C,2170,ours,yes,,3,C,
+kots19na_7892,1,80020,INCA,Rest,cruiser,Loop,B,B,-82,theirs,,no,5,C,
+kots19na_7917,1,116005,KITED,Rest,cruiser,Loop,B,B,6064,neutral,no,yes,4,,B
+kots19na_7917,1,116008,KITED,Rest,cruiser,Loop,B,B,2665,theirs,,no,4,,
+kots19na_7917,1,116010,KITED,Rest,destroyer,Loop,A,A,-2461,ours,no,,7,,
+kots19na_7917,1,116013,KITED,Rest,destroyer,Loop,A,A,-703,ours,no,,7,,
+kots19na_7917,1,116014,KITED,Rest,cruiser,Loop,B,B,2203,theirs,,no,6,,
+kots19na_7917,1,116016,KITED,Rest,destroyer,Loop,A,A,-2134,ours,no,,2,,
+kots19na_7917,1,116006,MACHX,Rest,cruiser,Loop,A,A,14914,theirs,,no,3,,
+kots19na_7917,1,116007,MACHX,Rest,destroyer,Loop,B,B,644,theirs,,yes,3,,B
+kots19na_7917,1,116009,MACHX,Rest,destroyer,Loop,A,A,1993,theirs,,no,8,B,
+kots19na_7917,1,116011,MACHX,Rest,destroyer,Loop,B,B,974,ours,no,,11,B,
+kots19na_7917,1,116012,MACHX,Rest,destroyer,Loop,A,A,3033,theirs,,no,7,,
+kots19na_7917,1,116015,MACHX,Rest,destroyer,Loop,A,A,1825,theirs,,no,3,C,
+kots19na_7918,1,55738,MACH,Rest,destroyer,Loop,A,A,-3256,ours,no,,3,,
+kots19na_7918,1,55740,MACH,Rest,destroyer,Loop,A,A,-2446,ours,no,,5,B,
+kots19na_7918,1,55742,MACH,Rest,destroyer,Loop,A,A,-541,ours,no,,5,B,
+kots19na_7918,1,55745,MACH,Rest,destroyer,Loop,B,B,-2438,ours,no,,3,,
+kots19na_7918,1,55739,NGA,Rest,destroyer,Loop,B,B,6504,theirs,,no,6,,
+kots19na_7918,1,55741,NGA,Rest,cruiser,Loop,A,A,7889,theirs,,no,4,,
+kots19na_7918,1,55743,NGA,Rest,destroyer,Loop,C,C,-2021,ours,no,,3,,
+kots19na_7918,1,55744,NGA,Rest,destroyer,Loop,C,C,434,ours,no,,6,,
+kots19na_7918,1,55746,NGA,Rest,destroyer,Loop,B,B,3161,theirs,,no,1,,
+kots19na_7919,1,94398,-BN-,Rest,destroyer,Loop,B,B,568,neutral,no,yes,2,,A
+kots19na_7919,1,94399,-BN-,Rest,destroyer,Loop,A,A,-2028,ours,no,,3,A,
+kots19na_7919,1,94401,-BN-,Rest,destroyer,Loop,C,C,4223,theirs,,no,3,,
+kots19na_7919,1,94403,-BN-,Rest,destroyer,Loop,A,A,7019,ours,yes,,2,A,
+kots19na_7919,1,94404,-BN-,Rest,destroyer,Loop,C,C,3384,theirs,,no,1,,
+kots19na_7919,1,94405,-BN-,Rest,destroyer,Loop,C,C,2594,theirs,,no,1,,
+kots19na_7919,1,94406,-BN-,Rest,destroyer,Loop,B,B,1719,theirs,,no,4,,
+kots19na_7919,1,94408,-BN-,Rest,destroyer,Loop,A,A,3646,ours,no,,1,C,
+kots19na_7919,1,94400,BONKY,Rest,destroyer,Loop,A,A,717,theirs,,no,5,C,
+kots19na_7919,1,94402,BONKY,Rest,destroyer,Loop,A,A,564,theirs,,no,2,C,
+kots19na_7919,1,94407,BONKY,Rest,destroyer,Loop,A,A,2137,theirs,,no,3,,
+kots19na_7920,1,144958,H-SR,Top 6,destroyer,Loop,A,A,1585,neutral,no,no,1,,A
+kots19na_7920,1,144962,H-SR,Top 6,destroyer,Loop,C,C,-1931,ours,no,,5,A,
+kots19na_7920,1,144963,H-SR,Top 6,destroyer,Loop,C,C,-2639,ours,no,,4,,
+kots19na_7920,1,144964,H-SR,Top 6,destroyer,Loop,C,C,1739,ours,no,,7,B,
+kots19na_7920,1,144965,H-SR,Top 6,destroyer,Loop,C,C,8656,ours,no,,7,B,
+kots19na_7920,1,144966,H-SR,Top 6,destroyer,Loop,B,B,870,theirs,,no,6,,
+kots19na_7920,1,144968,H-SR,Top 6,destroyer,Loop,B,B,12730,theirs,,no,5,,
+kots19na_7920,1,144969,H-SR,Top 6,destroyer,Loop,C,C,2004,ours,no,,3,,
+kots19na_7920,1,144967,SCCC2,Rest,destroyer,Loop,B,B,-591,ours,no,,3,,
+kots19na_7920,1,144970,SCCC2,Rest,destroyer,Loop,B,B,-1875,ours,no,,1,,
+kots19na_7920,1,144971,SCCC2,Rest,destroyer,Loop,B,B,1390,ours,no,,1,,
+kots19na_7965,1,53675,BTLST,Rest,destroyer,Okinawa,D,D,1794,neutral,no,yes,14,,D
+kots19na_7965,1,53677,BTLST,Rest,cruiser,Okinawa,B,A,2911,ours,no,,11,,
+kots19na_7965,1,53678,BTLST,Rest,cruiser,Okinawa,B,A,3790,ours,no,,9,,
+kots19na_7965,1,53679,BTLST,Rest,destroyer,Okinawa,C,C,2711,theirs,,no,11,,
+kots19na_7965,1,53682,BTLST,Rest,destroyer,Okinawa,D,D,1429,ours,no,,6,,
+kots19na_7965,1,53684,BTLST,Rest,cruiser,Okinawa,C,C,10636,theirs,,no,3,,
+kots19na_7965,1,53685,BTLST,Rest,battleship,Okinawa,D,D,1859,ours,no,,2,,
+kots19na_7965,1,53686,BTLST,Rest,cruiser,Okinawa,C,C,2760,theirs,,no,1,,
+kots19na_7965,1,53676,5D,Rest,destroyer,Okinawa,C,C,-3470,ours,no,,13,C,
+kots19na_7965,1,53680,5D,Rest,cruiser,Okinawa,A,A,-197,ours,no,,8,,
+kots19na_7965,1,53681,5D,Rest,cruiser,Okinawa,B,B,3171,theirs,,no,6,,
+kots19na_7965,1,53683,5D,Rest,destroyer,Okinawa,C,C,2137,ours,no,,5,,
+kots19na_7966,1,149442,KITE,Top 6,destroyer,Okinawa,D,D,2243,theirs,,no,2,,
+kots19na_7966,1,149459,KITE,Top 6,destroyer,Okinawa,D,D,11645,theirs,,no,5,C,
+kots19na_7966,1,149473,KITE,Top 6,destroyer,Okinawa,C,C,7199,ours,no,,5,C,
+kots19na_7966,1,149482,KITE,Top 6,destroyer,Okinawa,C,C,10363,ours,no,,5,C,
+kots19na_7966,1,149486,KITE,Top 6,destroyer,Okinawa,C,C,7299,ours,no,,3,C,
+kots19na_7966,1,149477,MZY,Rest,destroyer,Okinawa,C,C,5165,theirs,,no,3,,
+kots19na_7966,1,149487,MZY,Rest,destroyer,Okinawa,C,C,2933,theirs,,no,2,,
+kots19na_7967,1,212258,REEEE,Rest,destroyer,Okinawa,B,A,3424,ours,no,,3,,
+kots19na_7967,1,212260,REEEE,Rest,destroyer,Okinawa,B,A,588,ours,no,,3,,
+kots19na_7967,1,212259,OGF,Rest,destroyer,Okinawa,D,D,5611,theirs,,no,5,C,
+kots19na_7967,1,212261,OGF,Rest,destroyer,Okinawa,C,C,6546,theirs,,no,1,,
+kots19na_7977,1,43941,PN,Rest,cruiser,Okinawa,B,A,5452,ours,no,,1,C,
+kots19na_7977,1,43943,PN,Rest,destroyer,Okinawa,C,C,5673,ours,no,,2,C,
+kots19na_7977,1,43942,PFANS,Rest,cruiser,Okinawa,C,C,11695,theirs,,no,3,,
+kots19na_7979,1,3282,RSR,Rest,destroyer,Okinawa,D,D,2166,neutral,no,no,3,,
+kots19na_7979,1,3285,RSR,Rest,destroyer,Okinawa,C,C,-526,theirs,,yes,11,D,D
+kots19na_7979,1,3288,RSR,Rest,destroyer,Okinawa,D,D,269,theirs,,yes,5,D,
+kots19na_7979,1,3290,RSR,Rest,destroyer,Okinawa,C,C,-575,ours,no,,1,C,
+kots19na_7979,1,3284,VRTUS,Top 6,cruiser,Okinawa,D,D,3230,neutral,no,yes,7,C,D
+kots19na_7979,1,3286,VRTUS,Top 6,cruiser,Okinawa,D,D,4109,ours,no,,6,C,
+kots19na_7979,1,3287,VRTUS,Top 6,destroyer,Okinawa,C,C,-860,ours,no,,5,C,
+kots19na_7979,1,3289,VRTUS,Top 6,cruiser,Okinawa,D,D,6932,theirs,,yes,3,C,D
+kots19na_7980,1,78007,UYSC,Rest,cruiser,Okinawa,C,C,2841,neutral,yes,no,3,,
+kots19na_7980,1,78009,UYSC,Rest,destroyer,Okinawa,B,A,823,neutral,no,no,7,,
+kots19na_7980,1,78010,UYSC,Rest,cruiser,Okinawa,C,C,1000,theirs,,no,11,,
+kots19na_7980,1,78011,UYSC,Rest,cruiser,Okinawa,B,A,3652,neutral,no,yes,9,,B
+kots19na_7980,1,78012,UYSC,Rest,destroyer,Okinawa,B,A,-197,neutral,no,yes,8,,B
+kots19na_7980,1,78014,UYSC,Rest,cruiser,Okinawa,C,C,-787,theirs,,no,5,,B
+kots19na_7980,1,78008,KSE,Rest,destroyer,Okinawa,D,D,939,neutral,no,no,7,C,C
+kots19na_7980,1,78013,KSE,Rest,cruiser,Okinawa,B,B,1421,neutral,yes,no,7,C,
+kots19na_7980,1,78015,KSE,Rest,destroyer,Okinawa,D,D,2495,neutral,no,no,3,C,
+kots19na_7893,1,3305,RESIN,Top 6,cruiser,Okinawa,C,C,2544,neutral,no,no,1,,
+kots19na_7893,1,3307,RESIN,Top 6,cruiser,Okinawa,C,C,11536,ours,no,,1,C,
+kots19na_7894,1,43956,MANBA,Rest,destroyer,Okinawa,D,D,1432,ours,yes,,8,C,
+kots19na_7894,1,43959,MANBA,Rest,cruiser,Okinawa,A,B,3405,theirs,,no,3,C,
+kots19na_7894,1,43961,MANBA,Rest,destroyer,Okinawa,C,C,9403,ours,no,,3,C,
+kots19na_7894,1,43953,KM,Rest,destroyer,Okinawa,A,A,256,neutral,no,yes,7,,
+kots19na_7894,1,43954,KM,Rest,cruiser,Okinawa,A,A,-183,ours,no,,6,,
+kots19na_7894,1,43955,KM,Rest,destroyer,Okinawa,A,A,-318,ours,no,,5,,
+kots19na_7894,1,43957,KM,Rest,cruiser,Okinawa,A,A,4762,ours,no,,7,,
+kots19na_7894,1,43958,KM,Rest,destroyer,Okinawa,A,A,3645,ours,no,,6,,
+kots19na_7894,1,43960,KM,Rest,cruiser,Okinawa,A,A,4851,ours,no,,2,,
+kots19na_7894,1,43962,KM,Rest,destroyer,Okinawa,C,C,-323,theirs,,no,1,,
+kots19na_7896,1,51110,BONKZ,Top 6,destroyer,Okinawa,B,A,4789,neutral,no,yes,6,C,B
+kots19na_7896,1,51113,BONKZ,Top 6,cruiser,Okinawa,B,A,1348,ours,no,,7,,
+kots19na_7896,1,51114,BONKZ,Top 6,destroyer,Okinawa,A,B,-555,ours,no,,9,,
+kots19na_7896,1,51117,BONKZ,Top 6,destroyer,Okinawa,C,C,7066,theirs,,no,6,,
+kots19na_7896,1,51118,BONKZ,Top 6,cruiser,Okinawa,C,C,3863,theirs,,no,5,,
+kots19na_7896,1,51119,BONKZ,Top 6,destroyer,Okinawa,A,B,5258,ours,no,,3,,
+kots19na_7896,1,51109,EPOXY,Rest,destroyer,Okinawa,A,A,0,neutral,no,yes,6,,
+kots19na_7896,1,51111,EPOXY,Rest,destroyer,Okinawa,A,A,6762,ours,yes,,8,,
+kots19na_7896,1,51112,EPOXY,Rest,destroyer,Okinawa,A,A,9517,ours,yes,,9,,
+kots19na_7896,1,51115,EPOXY,Rest,destroyer,Okinawa,C,C,11398,ours,no,,6,C,
+kots19na_7896,1,51116,EPOXY,Rest,destroyer,Okinawa,C,C,10843,ours,no,,5,C,
+kots19na_7896,1,51120,EPOXY,Rest,destroyer,Okinawa,C,C,5426,ours,no,,2,C,
+kots19na_7921,1,8408,KITED,Rest,cruiser,Okinawa,D,D,4299,neutral,no,no,4,,
+kots19na_7921,1,8411,KITED,Rest,battleship,Okinawa,C,C,2419,theirs,,yes,5,,C
+kots19na_7921,1,8414,KITED,Rest,cruiser,Okinawa,D,D,6927,theirs,,no,4,C,
+kots19na_7921,1,8417,KITED,Rest,cruiser,Okinawa,D,D,4430,theirs,,no,1,,
+kots19na_7921,1,8406,NGA,Rest,destroyer,Okinawa,A,A,2552,neutral,no,yes,9,C,C
+kots19na_7921,1,8407,NGA,Rest,cruiser,Okinawa,D,D,2539,neutral,no,no,5,,
+kots19na_7921,1,8412,NGA,Rest,cruiser,Okinawa,D,D,-217,neutral,no,yes,6,,D
+kots19na_7921,1,8413,NGA,Rest,destroyer,Okinawa,A,A,2897,ours,yes,,7,,
+kots19na_7921,1,8416,NGA,Rest,cruiser,Okinawa,D,D,-242,ours,no,,1,,
+kots19na_7922,1,106444,MACHX,Rest,destroyer,Okinawa,C,C,-259,neutral,no,no,3,,
+kots19na_7922,1,106445,MACHX,Rest,destroyer,Okinawa,B,A,-175,neutral,no,yes,15,,B
+kots19na_7922,1,106448,MACHX,Rest,destroyer,Okinawa,C,C,-442,neutral,no,yes,11,,
+kots19na_7922,1,106449,MACHX,Rest,cruiser,Okinawa,D,D,1858,neutral,no,yes,8,,D
+kots19na_7922,1,106450,MACHX,Rest,cruiser,Okinawa,C,C,-371,neutral,no,yes,6,,D
+kots19na_7922,1,106451,MACHX,Rest,destroyer,Okinawa,B,A,4130,ours,yes,,8,,
+kots19na_7922,1,106457,MACHX,Rest,cruiser,Okinawa,B,A,9749,theirs,,no,6,,
+kots19na_7922,1,106459,MACHX,Rest,destroyer,Okinawa,B,A,5157,theirs,,yes,6,D,B
+kots19na_7922,1,106460,MACHX,Rest,cruiser,Okinawa,D,D,1995,ours,no,,3,,
+kots19na_7922,1,106461,MACHX,Rest,destroyer,Okinawa,C,C,3479,theirs,,no,2,,
+kots19na_7922,1,106446,BONKY,Rest,cruiser,Okinawa,A,A,2039,ours,no,,11,,
+kots19na_7922,1,106447,BONKY,Rest,cruiser,Okinawa,D,D,3061,neutral,yes,no,12,,
+kots19na_7922,1,106452,BONKY,Rest,cruiser,Okinawa,D,D,7352,theirs,,no,2,,
+kots19na_7922,1,106455,BONKY,Rest,battleship,Okinawa,B,B,598,ours,no,,6,,
+kots19na_7922,1,106456,BONKY,Rest,cruiser,Okinawa,B,B,1951,ours,no,,7,,
+kots19na_7922,1,106458,BONKY,Rest,cruiser,Okinawa,B,B,-1120,ours,no,,4,,
+kots19na_7923,1,130511,MACH,Rest,cruiser,Okinawa,C,C,-145,theirs,,no,11,,
+kots19na_7923,1,130512,MACH,Rest,destroyer,Okinawa,D,D,1351,neutral,no,no,10,,
+kots19na_7923,1,130513,MACH,Rest,cruiser,Okinawa,B,A,2741,neutral,no,yes,10,,B
+kots19na_7923,1,130515,MACH,Rest,cruiser,Okinawa,C,C,1684,theirs,,no,9,,
+kots19na_7923,1,130518,MACH,Rest,cruiser,Okinawa,C,C,2955,theirs,,no,7,,
+kots19na_7923,1,130520,MACH,Rest,cruiser,Okinawa,C,C,5496,theirs,,no,7,,
+kots19na_7923,1,130523,MACH,Rest,cruiser,Okinawa,C,C,7235,theirs,,no,9,,
+kots19na_7923,1,130526,MACH,Rest,cruiser,Okinawa,C,C,9011,theirs,,no,4,,
+kots19na_7923,1,130514,SCCC2,Rest,cruiser,Okinawa,D,D,2265,neutral,no,no,9,C,
+kots19na_7923,1,130516,SCCC2,Rest,cruiser,Okinawa,D,D,2600,neutral,no,no,8,,
+kots19na_7923,1,130517,SCCC2,Rest,cruiser,Okinawa,D,D,3396,neutral,no,no,7,,
+kots19na_7923,1,130519,SCCC2,Rest,cruiser,Okinawa,D,D,2392,neutral,no,no,6,,
+kots19na_7923,1,130521,SCCC2,Rest,cruiser,Okinawa,D,D,3438,neutral,no,no,7,,
+kots19na_7923,1,130522,SCCC2,Rest,cruiser,Okinawa,D,D,5406,neutral,yes,no,8,,
+kots19na_7923,1,130524,SCCC2,Rest,cruiser,Okinawa,D,D,4541,neutral,yes,no,8,,
+kots19na_7923,1,130525,SCCC2,Rest,cruiser,Okinawa,D,D,8263,theirs,,no,5,,
+kots19na_7923,1,130527,SCCC2,Rest,cruiser,Okinawa,D,D,8181,theirs,,no,1,,
+kots19na_7924,1,46506,-BN-,Rest,destroyer,Okinawa,B,A,3082,neutral,no,no,8,,
+kots19na_7924,1,46510,-BN-,Rest,destroyer,Okinawa,C,C,-2087,neutral,no,yes,8,,
+kots19na_7924,1,46511,-BN-,Rest,destroyer,Okinawa,B,A,1930,neutral,no,no,12,C,C
+kots19na_7924,1,46512,-BN-,Rest,battleship,Okinawa,B,A,1677,neutral,no,no,7,C,C
+kots19na_7924,1,46515,-BN-,Rest,destroyer,Okinawa,C,C,-664,ours,no,,4,C,
+kots19na_7924,1,46517,-BN-,Rest,destroyer,Okinawa,C,C,2435,ours,no,,4,C,
+kots19na_7924,1,46507,H-SR,Top 6,destroyer,Okinawa,D,D,1847,neutral,yes,no,9,,
+kots19na_7924,1,46509,H-SR,Top 6,cruiser,Okinawa,A,A,2420,ours,no,,9,,
+kots19na_7924,1,46513,H-SR,Top 6,destroyer,Okinawa,C,C,7065,neutral,yes,no,11,,
+kots19na_7924,1,46516,H-SR,Top 6,destroyer,Okinawa,C,C,-708,theirs,,no,5,,C
+kots19na_7924,1,46518,H-SR,Top 6,destroyer,Okinawa,C,C,8301,theirs,,no,2,,C
+kots19na_7941,1,214651,BTLST,Rest,destroyer,Land of Fire,A,A,-378,neutral,no,yes,9,,A
+kots19na_7941,1,214654,BTLST,Rest,cruiser,Land of Fire,A,A,2876,ours,no,,5,,
+kots19na_7941,1,214655,BTLST,Rest,destroyer,Land of Fire,A,A,-749,ours,yes,,6,A,B
+kots19na_7941,1,214657,BTLST,Rest,cruiser,Land of Fire,A,A,62,ours,no,,1,A,
+kots19na_7941,1,214665,BTLST,Rest,destroyer,Land of Fire,B,B,4047,ours,yes,,3,B,
+kots19na_7941,1,214648,MZY,Rest,destroyer,Land of Fire,B,B,2979,neutral,no,no,6,,D
+kots19na_7941,1,214652,MZY,Rest,cruiser,Land of Fire,D,D,-2191,neutral,no,yes,6,,D
+kots19na_7941,1,214666,MZY,Rest,cruiser,Land of Fire,C,C,2086,theirs,,no,2,,
+kots19na_7942,1,200102,5D,Rest,cruiser,Land of Fire,B,B,3754,neutral,no,yes,5,B,B
+kots19na_7942,1,200103,5D,Rest,destroyer,Land of Fire,B,B,77,neutral,no,yes,5,B,B
+kots19na_7942,1,200105,5D,Rest,cruiser,Land of Fire,B,B,3613,ours,no,,1,,
+kots19na_7942,1,200104,OGF,Rest,destroyer,Land of Fire,B,B,1492,neutral,yes,no,4,,D
+kots19na_7943,1,70297,KITE,Top 6,destroyer,Land of Fire,C,D,-1352,ours,no,,1,B,
+kots19na_7943,1,70296,RMN,Rest,cruiser,Land of Fire,D,D,-228,ours,no,,3,,
+kots19na_7981,1,174222,PN,Rest,destroyer,Land of Fire,A,A,9667,neutral,no,no,7,,
+kots19na_7981,1,174224,PN,Rest,destroyer,Land of Fire,C,D,1634,ours,no,,10,,
+kots19na_7981,1,174227,PN,Rest,cruiser,Land of Fire,D,C,3688,theirs,,no,6,,
+kots19na_7981,1,174229,PN,Rest,destroyer,Land of Fire,D,C,4267,theirs,,no,3,,
+kots19na_7981,1,174221,HTDOG,Top 6,destroyer,Land of Fire,A,A,1505,neutral,no,no,7,,B
+kots19na_7981,1,174223,HTDOG,Top 6,cruiser,Land of Fire,B,B,806,neutral,no,yes,3,,B
+kots19na_7981,1,174225,HTDOG,Top 6,cruiser,Land of Fire,D,D,4409,ours,no,,6,,
+kots19na_7981,1,174226,HTDOG,Top 6,destroyer,Land of Fire,A,A,3894,neutral,no,yes,9,,A
+kots19na_7981,1,174228,HTDOG,Top 6,cruiser,Land of Fire,D,D,2370,ours,no,,5,,
+kots19na_7981,1,174230,HTDOG,Top 6,destroyer,Land of Fire,B,B,2817,ours,no,,1,,
+kots19na_7982,1,197655,VRTUS,Top 6,destroyer,Land of Fire,B,B,-14,neutral,no,yes,3,,B
+kots19na_7982,1,197656,VRTUS,Top 6,cruiser,Land of Fire,D,D,3131,ours,no,,2,,
+kots19na_7982,1,197657,VRTUS,Top 6,cruiser,Land of Fire,B,B,1017,ours,no,,6,,
+kots19na_7982,1,197658,VRTUS,Top 6,destroyer,Land of Fire,B,B,8715,ours,no,,6,,
+kots19na_7982,1,197659,VRTUS,Top 6,destroyer,Land of Fire,B,B,-685,ours,no,,10,,
+kots19na_7982,1,197660,VRTUS,Top 6,cruiser,Land of Fire,B,B,1613,ours,no,,5,,
+kots19na_7982,1,197661,VRTUS,Top 6,cruiser,Land of Fire,D,D,18116,ours,yes,,3,,
+kots19na_7982,1,197662,VRTUS,Top 6,destroyer,Land of Fire,B,B,12814,ours,no,,2,,
+kots19na_7982,1,197663,VRTUS,Top 6,destroyer,Land of Fire,A,A,7990,ours,no,,3,,
+kots19na_7982,1,197664,VRTUS,Top 6,cruiser,Land of Fire,B,B,-1061,ours,no,,2,,
+kots19na_7983,1,27069,KSC,Rest,destroyer,Land of Fire,A,A,5766,ours,no,,4,,
+kots19na_7983,1,27068,KSE,Rest,destroyer,Land of Fire,A,A,9033,theirs,,no,5,,
+kots19na_7983,1,27072,KSE,Rest,destroyer,Land of Fire,B,B,2884,theirs,,no,1,,
+kots19na_7984,1,15356,RSR,Rest,destroyer,Mountain Range,C,C,4941,theirs,,no,10,,B
+kots19na_7984,1,15360,RSR,Rest,destroyer,Mountain Range,B,B,-1493,ours,yes,,8,,
+kots19na_7984,1,15361,RSR,Rest,destroyer,Mountain Range,C,C,5638,theirs,,no,10,B,
+kots19na_7984,1,15363,RSR,Rest,destroyer,Mountain Range,B,B,-98,theirs,,yes,5,,B
+kots19na_7984,1,15357,UYSC,Rest,destroyer,Mountain Range,A,A,-2899,neutral,no,no,9,,
+kots19na_7984,1,15358,UYSC,Rest,cruiser,Mountain Range,C,C,6776,ours,no,,7,,
+kots19na_7984,1,15359,UYSC,Rest,destroyer,Mountain Range,B,B,1426,theirs,,yes,12,B,B
+kots19na_7984,1,15362,UYSC,Rest,destroyer,Mountain Range,A,A,-4050,neutral,no,yes,8,B,B
+kots19na_7984,1,15364,UYSC,Rest,cruiser,Mountain Range,A,A,-5997,neutral,no,yes,4,C,A
+kots19na_7984,1,15365,UYSC,Rest,destroyer,Mountain Range,C,C,-601,ours,no,,4,C,B
+kots19na_7984,1,15366,UYSC,Rest,destroyer,Mountain Range,B,B,2298,ours,no,,1,C,
+kots19na_7897,1,87568,RESIN,Top 6,cruiser,Land of Fire,B,B,388,ours,no,,3,,
+kots19na_7897,1,87591,RESIN,Top 6,cruiser,Land of Fire,B,B,2011,ours,no,,1,,A
+kots19na_7897,1,87611,RESIN,Top 6,cruiser,Land of Fire,D,C,3437,theirs,,no,1,,
+kots19na_7898,1,197674,HFANS,Rest,destroyer,Land of Fire,B,B,3719,neutral,no,yes,3,,
+kots19na_7898,1,197675,HFANS,Rest,cruiser,Land of Fire,C,D,-435,neutral,no,yes,3,,B
+kots19na_7898,1,197678,HFANS,Rest,cruiser,Land of Fire,C,D,4942,theirs,,no,7,,
+kots19na_7898,1,197680,HFANS,Rest,destroyer,Land of Fire,C,D,3279,theirs,,no,6,,
+kots19na_7898,1,197681,HFANS,Rest,destroyer,Land of Fire,A,A,7848,ours,no,,7,,
+kots19na_7898,1,197684,HFANS,Rest,destroyer,Land of Fire,B,B,6197,ours,no,,1,B,
+kots19na_7898,1,197676,INCA,Rest,destroyer,Land of Fire,D,D,-228,ours,no,,8,,C
+kots19na_7898,1,197677,INCA,Rest,destroyer,Land of Fire,A,A,4821,theirs,,no,5,,
+kots19na_7898,1,197679,INCA,Rest,battleship,Land of Fire,D,D,1969,ours,no,,8,,
+kots19na_7898,1,197682,INCA,Rest,destroyer,Land of Fire,C,C,1124,ours,no,,6,,
+kots19na_7898,1,197683,INCA,Rest,destroyer,Land of Fire,C,C,4519,ours,no,,3,,
+kots19na_7899,1,27093,MANBA,Rest,destroyer,Land of Fire,B,B,2745,theirs,,no,3,,
+kots19na_7899,1,27088,EPOXY,Rest,destroyer,Land of Fire,A,A,6123,theirs,,no,1,,A
+kots19na_7899,1,27092,EPOXY,Rest,destroyer,Land of Fire,B,B,2621,ours,no,,5,,
+kots19na_7899,1,27096,EPOXY,Rest,destroyer,Land of Fire,A,A,2146,ours,no,,1,,
+kots19na_7925,1,53739,KITED,Rest,cruiser,Land of Fire,B,B,3681,neutral,no,yes,5,,B
+kots19na_7925,1,53741,KITED,Rest,cruiser,Land of Fire,C,D,4193,neutral,no,yes,3,,C
+kots19na_7925,1,53744,KITED,Rest,cruiser,Land of Fire,D,C,8013,ours,no,,5,B,
+kots19na_7925,1,53746,KITED,Rest,cruiser,Land of Fire,A,A,4118,theirs,,no,3,,
+kots19na_7925,1,53740,BONKY,Rest,cruiser,Land of Fire,B,B,1226,neutral,yes,no,6,,
+kots19na_7925,1,53742,BONKY,Rest,cruiser,Land of Fire,B,B,1303,theirs,,no,4,,
+kots19na_7925,1,53743,BONKY,Rest,cruiser,Land of Fire,B,B,880,theirs,,no,4,,
+kots19na_7925,1,53745,BONKY,Rest,cruiser,Land of Fire,B,B,368,theirs,,no,4,,
+kots19na_7925,1,53747,BONKY,Rest,destroyer,Land of Fire,D,D,3259,theirs,,no,2,,
+kots19na_7926,1,149566,NGA,Rest,destroyer,Land of Fire,A,A,4902,neutral,yes,no,10,B,
+kots19na_7926,1,149570,NGA,Rest,battleship,Land of Fire,A,A,5984,theirs,,no,5,,
+kots19na_7926,1,149572,NGA,Rest,destroyer,Land of Fire,A,A,9228,theirs,,no,8,,
+kots19na_7926,1,149576,NGA,Rest,destroyer,Land of Fire,A,A,8333,theirs,,no,7,,
+kots19na_7926,1,149569,SCCC2,Rest,destroyer,Land of Fire,B,B,1466,theirs,,no,5,,
+kots19na_7926,1,149571,SCCC2,Rest,destroyer,Land of Fire,A,A,-924,ours,no,,3,,
+kots19na_7926,1,149573,SCCC2,Rest,destroyer,Land of Fire,B,B,-737,ours,no,,4,B,
+kots19na_7926,1,149574,SCCC2,Rest,destroyer,Land of Fire,A,A,558,ours,no,,2,B,
+kots19na_7926,1,149575,SCCC2,Rest,cruiser,Land of Fire,D,D,6784,theirs,,no,3,,
+kots19na_7926,1,149577,SCCC2,Rest,destroyer,Land of Fire,A,A,4824,ours,no,,4,,
+kots19na_7926,1,149578,SCCC2,Rest,destroyer,Land of Fire,B,B,-1602,ours,no,,3,,
+kots19na_7926,1,149579,SCCC2,Rest,destroyer,Land of Fire,A,A,4408,ours,no,,3,,
+kots19na_7926,1,149580,SCCC2,Rest,destroyer,Land of Fire,B,B,-989,ours,no,,3,B,
+kots19na_7926,1,149581,SCCC2,Rest,destroyer,Land of Fire,A,A,2190,ours,no,,1,B,
+kots19na_7927,1,32337,MACHX,Rest,destroyer,Land of Fire,B,B,2043,neutral,no,yes,3,,C
+kots19na_7927,1,32336,H-SR,Top 6,destroyer,Land of Fire,D,D,4516,neutral,no,no,3,,D
+kots19na_7927,1,32338,H-SR,Top 6,destroyer,Land of Fire,B,B,3896,theirs,,yes,2,,B
+kots19na_7927,1,32339,H-SR,Top 6,destroyer,Land of Fire,B,B,-1045,ours,no,,1,,
+kots19na_7928,1,68242,MACH,Rest,destroyer,Land of Fire,A,A,-991,theirs,,no,7,,
+kots19na_7928,1,68249,MACH,Rest,destroyer,Land of Fire,A,A,5,theirs,,no,1,,
+kots19na_7928,1,68240,-BN-,Rest,cruiser,Land of Fire,A,A,6658,neutral,no,yes,4,,
+kots19na_7928,1,68241,-BN-,Rest,cruiser,Land of Fire,A,A,8711,neutral,no,yes,7,A,
+kots19na_7928,1,68243,-BN-,Rest,destroyer,Land of Fire,B,B,539,neutral,no,no,7,A,
+kots19na_7928,1,68244,-BN-,Rest,cruiser,Land of Fire,A,A,8490,ours,no,,5,A,
+kots19na_7928,1,68248,-BN-,Rest,destroyer,Land of Fire,B,B,198,neutral,no,no,3,A,
+kots19na_7928,1,68253,-BN-,Rest,destroyer,Land of Fire,B,B,-222,neutral,no,no,1,,B
+kots19na_7945,1,145148,BTLST,Rest,cruiser,Mountain Range,B,B,1343,theirs,,no,4,,A
+kots19na_7945,1,145149,BTLST,Rest,cruiser,Mountain Range,A,A,-6254,neutral,no,yes,3,,A
+kots19na_7945,1,145151,BTLST,Rest,cruiser,Mountain Range,B,B,-728,theirs,,yes,4,,B
+kots19na_7945,1,145153,BTLST,Rest,cruiser,Mountain Range,C,C,1648,ours,no,,4,,
+kots19na_7945,1,145154,BTLST,Rest,battleship,Mountain Range,A,A,5113,ours,no,,3,,
+kots19na_7945,1,145150,OGF,Rest,destroyer,Mountain Range,B,B,7664,ours,yes,,6,B,
+kots19na_7945,1,145152,OGF,Rest,destroyer,Mountain Range,C,C,3662,theirs,,no,5,,
+kots19na_7946,1,207148,MZY,Rest,cruiser,Mountain Range,C,C,19284,theirs,,no,3,,
+kots19na_7946,1,207145,RMN,Rest,destroyer,Mountain Range,A,A,-689,theirs,,no,3,,
+kots19na_7946,1,207146,RMN,Rest,destroyer,Mountain Range,C,C,7282,ours,no,,1,,
+kots19na_7946,1,207147,RMN,Rest,destroyer,Mountain Range,B,B,6115,theirs,,no,5,C,
+kots19na_7946,1,207149,RMN,Rest,destroyer,Mountain Range,C,C,5848,ours,no,,2,C,
+kots19na_7948,1,55897,KITE,Top 6,destroyer,Mountain Range,B,B,3685,neutral,no,yes,4,A,A
+kots19na_7948,1,55899,KITE,Top 6,destroyer,Mountain Range,B,B,1251,ours,no,,5,A,
+kots19na_7948,1,55901,KITE,Top 6,destroyer,Mountain Range,B,B,-848,ours,no,,5,,
+kots19na_7948,1,55898,REEEE,Rest,destroyer,Mountain Range,A,A,1730,neutral,yes,no,4,,
+kots19na_7948,1,55900,REEEE,Rest,destroyer,Mountain Range,A,A,1873,theirs,,no,6,,
+kots19na_7948,1,55902,REEEE,Rest,destroyer,Mountain Range,C,C,10,ours,no,,4,,
+kots19na_7948,1,55903,REEEE,Rest,destroyer,Mountain Range,A,A,9145,theirs,,no,2,C,
+kots19na_7948,1,55904,REEEE,Rest,destroyer,Mountain Range,A,A,4665,theirs,,no,1,,
+kots19na_7985,1,19943,PN,Rest,cruiser,Mountain Range,C,C,868,neutral,no,no,3,,
+kots19na_7985,1,19944,PN,Rest,destroyer,Mountain Range,B,B,2622,neutral,yes,no,3,,
+kots19na_7985,1,19946,PN,Rest,destroyer,Mountain Range,A,A,-4469,neutral,no,no,3,,
+kots19na_7985,1,19947,VRTUS,Top 6,destroyer,Mountain Range,A,A,433,neutral,no,no,1,B,
+kots19na_7986,1,113716,HTDOG,Top 6,cruiser,Mountain Range,C,C,9593,ours,no,,5,,
+kots19na_7986,1,113718,HTDOG,Top 6,cruiser,Mountain Range,C,C,8398,ours,no,,2,,
+kots19na_7986,1,113715,KSE,Rest,destroyer,Mountain Range,C,C,4505,theirs,,no,7,B,
+kots19na_7986,1,113717,KSE,Rest,cruiser,Mountain Range,A,A,-2687,neutral,no,no,3,,A
+kots19na_7987,1,174260,PFANS,Rest,cruiser,Mountain Range,A,A,1257,neutral,yes,no,3,,
+kots19na_7987,1,174244,UYSC,Rest,destroyer,Mountain Range,C,C,2562,neutral,no,no,5,,
+kots19na_7987,1,174245,UYSC,Rest,destroyer,Mountain Range,A,A,-5725,neutral,no,no,3,,
+kots19na_7987,1,174249,UYSC,Rest,cruiser,Mountain Range,C,C,11479,neutral,no,no,1,,
+kots19na_7987,1,174256,UYSC,Rest,cruiser,Mountain Range,A,A,-3470,neutral,no,yes,7,,
+kots19na_7987,1,174257,UYSC,Rest,destroyer,Mountain Range,C,C,-501,ours,yes,,8,C,
+kots19na_7987,1,174258,UYSC,Rest,destroyer,Mountain Range,C,C,2796,ours,yes,,5,C,
+kots19na_7987,1,174261,UYSC,Rest,cruiser,Mountain Range,C,C,9805,ours,yes,,2,C,
+kots19na_7987,1,174264,UYSC,Rest,destroyer,Mountain Range,B,B,565,ours,yes,,4,A,
+kots19na_7987,1,174265,UYSC,Rest,destroyer,Mountain Range,A,A,2822,ours,yes,,3,A,
+kots19na_7987,1,174266,UYSC,Rest,cruiser,Mountain Range,A,A,3866,theirs,,no,1,,
+kots19na_7988,1,161833,KSC,Rest,destroyer,Mountain Range,C,C,3919,ours,yes,,5,A,
+kots19na_7988,1,161832,RSR,Rest,destroyer,Mountain Range,C,C,2686,neutral,yes,yes,6,,B
+kots19na_7988,1,161834,RSR,Rest,destroyer,Mountain Range,A,A,1412,theirs,,no,3,B,
+kots19na_7988,1,161835,RSR,Rest,destroyer,Mountain Range,C,C,-2786,ours,no,,2,B,
+kots19na_7901,1,27134,RESIN,Top 6,destroyer,Mountain Range,C,C,1015,ours,no,,1,C,
+kots19na_7901,1,27138,RESIN,Top 6,destroyer,Mountain Range,A,A,-3377,theirs,,no,9,B,B
+kots19na_7901,1,27140,RESIN,Top 6,destroyer,Mountain Range,C,C,-1128,ours,no,,7,B,
+kots19na_7901,1,27145,RESIN,Top 6,destroyer,Mountain Range,A,A,-238,theirs,,no,13,,B
+kots19na_7901,1,27148,RESIN,Top 6,destroyer,Mountain Range,C,C,11793,ours,no,,8,,
+kots19na_7901,1,27151,RESIN,Top 6,destroyer,Mountain Range,A,A,1176,theirs,,no,6,B,
+kots19na_7901,1,27129,INCA,Rest,destroyer,Mountain Range,B,B,1757,neutral,no,yes,5,A,A
+kots19na_7901,1,27130,INCA,Rest,cruiser,Mountain Range,C,C,1837,theirs,,no,4,,B
+kots19na_7901,1,27141,INCA,Rest,destroyer,Mountain Range,B,B,1461,theirs,,yes,8,A,B
+kots19na_7901,1,27142,INCA,Rest,cruiser,Mountain Range,C,C,2606,theirs,,no,3,A,
+kots19na_7901,1,27144,INCA,Rest,cruiser,Mountain Range,C,C,3097,theirs,,no,8,A,
+kots19na_7901,1,27146,INCA,Rest,destroyer,Mountain Range,C,C,15106,theirs,,no,11,A,
+kots19na_7901,1,27147,INCA,Rest,cruiser,Mountain Range,C,C,1126,theirs,,no,7,A,
+kots19na_7901,1,27149,INCA,Rest,destroyer,Mountain Range,B,B,3179,ours,yes,,8,A,
+kots19na_7901,1,27150,INCA,Rest,cruiser,Mountain Range,C,C,2390,theirs,,no,4,,
+kots19na_7901,1,27152,INCA,Rest,cruiser,Mountain Range,A,A,-1430,ours,no,,2,A,
+kots19na_7901,1,27153,INCA,Rest,destroyer,Mountain Range,C,C,-3341,ours,no,,5,A,
+kots19na_7901,1,27154,INCA,Rest,cruiser,Mountain Range,A,A,-1543,ours,yes,,4,A,
+kots19na_7901,1,27155,INCA,Rest,cruiser,Mountain Range,C,C,-278,ours,no,,1,A,
+kots19na_7903,1,159422,HFANS,Rest,destroyer,Mountain Range,B,B,3213,neutral,no,yes,12,,
+kots19na_7903,1,159424,HFANS,Rest,destroyer,Mountain Range,A,A,-2283,neutral,no,no,9,,
+kots19na_7903,1,159425,HFANS,Rest,destroyer,Mountain Range,C,C,1519,neutral,yes,no,14,,B
+kots19na_7903,1,159427,HFANS,Rest,destroyer,Mountain Range,B,B,2118,ours,no,,17,,
+kots19na_7903,1,159430,HFANS,Rest,destroyer,Mountain Range,A,A,-3525,neutral,no,no,14,,
+kots19na_7903,1,159433,HFANS,Rest,battleship,Mountain Range,C,C,4797,theirs,,no,7,,
+kots19na_7903,1,159435,HFANS,Rest,destroyer,Mountain Range,C,C,1008,theirs,,no,14,,
+kots19na_7903,1,159437,HFANS,Rest,destroyer,Mountain Range,C,C,-276,theirs,,no,10,,
+kots19na_7903,1,159439,HFANS,Rest,destroyer,Mountain Range,B,B,-660,ours,no,,11,,C
+kots19na_7903,1,159440,HFANS,Rest,destroyer,Mountain Range,A,A,-337,neutral,no,no,9,,
+kots19na_7903,1,159441,HFANS,Rest,battleship,Mountain Range,C,C,4673,theirs,,yes,5,,
+kots19na_7903,1,159442,HFANS,Rest,destroyer,Mountain Range,C,C,623,theirs,,yes,5,,C
+kots19na_7903,1,159444,HFANS,Rest,destroyer,Mountain Range,C,C,4585,ours,no,,3,,
+kots19na_7903,1,159445,HFANS,Rest,destroyer,Mountain Range,B,B,-650,ours,no,,2,,
+kots19na_7903,1,159423,BONKZ,Top 6,cruiser,Mountain Range,B,B,1976,neutral,no,no,4,,
+kots19na_7903,1,159426,BONKZ,Top 6,cruiser,Mountain Range,B,B,2522,neutral,yes,no,6,,C
+kots19na_7903,1,159428,BONKZ,Top 6,cruiser,Mountain Range,A,A,-1683,neutral,no,no,9,,
+kots19na_7903,1,159429,BONKZ,Top 6,destroyer,Mountain Range,C,C,1343,ours,no,,19,C,
+kots19na_7903,1,159431,BONKZ,Top 6,cruiser,Mountain Range,B,B,4192,theirs,,no,10,,
+kots19na_7903,1,159432,BONKZ,Top 6,cruiser,Mountain Range,A,A,-2511,neutral,no,no,9,,
+kots19na_7903,1,159434,BONKZ,Top 6,cruiser,Mountain Range,A,A,-500,neutral,no,no,9,C,
+kots19na_7903,1,159436,BONKZ,Top 6,cruiser,Mountain Range,A,A,149,neutral,no,no,10,C,
+kots19na_7903,1,159438,BONKZ,Top 6,destroyer,Mountain Range,C,C,415,ours,yes,,12,C,
+kots19na_7903,1,159443,BONKZ,Top 6,cruiser,Mountain Range,A,A,-5515,neutral,no,no,2,C,
+kots19na_7929,1,195747,KITED,Rest,cruiser,Mountain Range,A,A,3991,ours,no,,5,,
+kots19na_7929,1,195744,SCCC2,Rest,destroyer,Mountain Range,B,B,991,neutral,no,no,3,A,
+kots19na_7929,1,195745,SCCC2,Rest,destroyer,Mountain Range,C,C,-748,neutral,no,no,2,A,
+kots19na_7929,1,195746,SCCC2,Rest,destroyer,Mountain Range,B,B,1670,neutral,yes,no,2,A,C
+kots19na_7929,1,195748,SCCC2,Rest,destroyer,Mountain Range,C,C,2761,ours,no,,5,,
+kots19na_7929,1,195749,SCCC2,Rest,destroyer,Mountain Range,C,C,-287,ours,no,,4,,
+kots19na_7929,1,195750,SCCC2,Rest,destroyer,Mountain Range,C,C,1703,ours,no,,3,,
+kots19na_7929,1,195751,SCCC2,Rest,destroyer,Mountain Range,B,B,4397,theirs,,no,1,,
+kots19na_7930,1,51293,BONKY,Rest,destroyer,Mountain Range,B,B,2797,neutral,no,no,6,,
+kots19na_7930,1,51296,BONKY,Rest,cruiser,Mountain Range,A,A,-3583,theirs,,no,7,,
+kots19na_7930,1,51298,BONKY,Rest,destroyer,Mountain Range,B,B,2712,theirs,,no,5,,
+kots19na_7930,1,51291,H-SR,Top 6,destroyer,Mountain Range,C,C,2170,neutral,no,yes,7,A,A
+kots19na_7930,1,51292,H-SR,Top 6,destroyer,Mountain Range,B,B,2602,neutral,no,no,6,A,A
+kots19na_7930,1,51294,H-SR,Top 6,destroyer,Mountain Range,B,B,2264,neutral,no,yes,10,A,
+kots19na_7930,1,51295,H-SR,Top 6,destroyer,Mountain Range,C,C,2232,ours,no,,9,A,
+kots19na_7930,1,51297,H-SR,Top 6,destroyer,Mountain Range,B,B,4322,neutral,no,yes,6,A,B
+kots19na_7930,1,51299,H-SR,Top 6,destroyer,Mountain Range,C,C,2054,ours,no,,4,A,
+kots19na_7931,1,214646,NGA,Rest,destroyer,Mountain Range,C,C,4357,neutral,yes,no,9,A,
+kots19na_7931,1,214647,NGA,Rest,cruiser,Mountain Range,A,A,3385,ours,no,,8,A,
+kots19na_7931,1,214650,NGA,Rest,destroyer,Mountain Range,C,C,3649,theirs,,no,5,A,
+kots19na_7931,1,214644,-BN-,Rest,destroyer,Mountain Range,B,B,3048,neutral,no,yes,11,,B
+kots19na_7931,1,214645,-BN-,Rest,destroyer,Mountain Range,C,C,849,neutral,no,yes,10,,B
+kots19na_7931,1,214648,-BN-,Rest,cruiser,Mountain Range,B,B,2314,ours,no,,8,,
+kots19na_7931,1,214649,-BN-,Rest,destroyer,Mountain Range,C,C,3478,ours,no,,6,C,
+kots19na_7931,1,214651,-BN-,Rest,destroyer,Mountain Range,B,B,1398,ours,no,,2,C,A
+kots19na_7932,1,95019,MACHX,Rest,cruiser,Mountain Range,A,A,-8433,neutral,no,no,3,B,
+kots19na_7932,1,95023,MACHX,Rest,cruiser,Mountain Range,C,C,10530,theirs,,no,2,A,
+kots19na_7932,1,95015,MACH,Rest,destroyer,Mountain Range,C,C,-96,neutral,no,yes,4,,
+kots19na_7932,1,95016,MACH,Rest,destroyer,Mountain Range,B,B,3232,neutral,yes,no,3,,
+kots19na_7932,1,95017,MACH,Rest,cruiser,Mountain Range,A,A,-1521,neutral,no,no,5,,
+kots19na_7932,1,95018,MACH,Rest,destroyer,Mountain Range,B,B,3108,theirs,,no,4,,
+kots19na_7932,1,95020,MACH,Rest,destroyer,Mountain Range,C,C,2646,ours,no,,2,,
+kots19na_7932,1,95021,MACH,Rest,cruiser,Mountain Range,A,A,26,theirs,,no,5,C,
+kots19na_7932,1,95022,MACH,Rest,destroyer,Mountain Range,C,C,1350,ours,no,,4,,
+kots19na_7949,1,46620,BTLST,Rest,cruiser,Sleeping Giant,A,A,3296,neutral,no,no,1,,
+kots19na_7949,1,46625,BTLST,Rest,destroyer,Sleeping Giant,A,A,-354,neutral,no,no,7,,
+kots19na_7949,1,46627,BTLST,Rest,cruiser,Sleeping Giant,A,A,-446,neutral,no,no,3,,
+kots19na_7949,1,46628,BTLST,Rest,destroyer,Sleeping Giant,C,D,572,ours,no,,4,,
+kots19na_7949,1,46636,BTLST,Rest,destroyer,Sleeping Giant,A,A,1140,ours,no,,1,,
+kots19na_7949,1,46626,RMN,Rest,destroyer,Sleeping Giant,D,D,-1326,ours,no,,5,,
+kots19na_7951,1,149896,REEEE,Rest,destroyer,Sleeping Giant,A,A,2897,neutral,no,no,1,,D
+kots19na_7951,1,149902,REEEE,Rest,destroyer,Sleeping Giant,A,A,2538,ours,no,,3,,
+kots19na_7951,1,149904,REEEE,Rest,destroyer,Sleeping Giant,A,A,1193,ours,no,,1,A,
+kots19na_7952,1,22655,5D,Rest,destroyer,Sleeping Giant,B,B,3143,neutral,no,no,4,,
+kots19na_7952,1,22656,5D,Rest,cruiser,Sleeping Giant,B,B,7857,neutral,no,no,1,,
+kots19na_7952,1,22657,5D,Rest,cruiser,Sleeping Giant,B,B,3785,neutral,yes,no,3,,
+kots19na_7952,1,22659,5D,Rest,cruiser,Sleeping Giant,B,B,-1022,theirs,,yes,1,A,B
+kots19na_7952,1,22654,KITE,Top 6,destroyer,Sleeping Giant,A,A,2395,neutral,yes,no,2,C,
+kots19na_7952,1,22658,KITE,Top 6,destroyer,Sleeping Giant,C,C,-362,ours,no,,3,B,
+kots19na_7989,1,71036,KSE,Rest,destroyer,Sleeping Giant,B,B,511,neutral,no,no,1,,
+kots19na_7989,1,71037,KSE,Rest,destroyer,Sleeping Giant,A,A,6030,theirs,,no,3,,
+kots19na_7989,1,71038,KSE,Rest,destroyer,Sleeping Giant,B,B,1780,neutral,no,no,2,,
+kots19na_7989,1,71039,KSE,Rest,destroyer,Sleeping Giant,B,B,914,ours,no,,1,,
+kots19na_7989,1,71040,KSE,Rest,destroyer,Sleeping Giant,C,C,4276,ours,no,,1,,
+kots19na_7990,1,188224,VRTUS,Top 6,destroyer,Sleeping Giant,A,A,2103,neutral,yes,no,4,B,
+kots19na_7990,1,188225,VRTUS,Top 6,destroyer,Sleeping Giant,B,B,-129,ours,no,,1,B,A
+kots19na_7990,1,188226,VRTUS,Top 6,cruiser,Sleeping Giant,C,D,1643,ours,no,,7,,
+kots19na_7990,1,188227,VRTUS,Top 6,destroyer,Sleeping Giant,A,A,5706,theirs,,no,11,,
+kots19na_7990,1,188228,VRTUS,Top 6,destroyer,Sleeping Giant,B,B,1363,ours,no,,8,,
+kots19na_7990,1,188231,VRTUS,Top 6,destroyer,Sleeping Giant,B,B,1549,ours,no,,4,,
+kots19na_7990,1,188232,VRTUS,Top 6,destroyer,Sleeping Giant,B,B,-708,ours,no,,5,,A
+kots19na_7990,1,188234,VRTUS,Top 6,cruiser,Sleeping Giant,C,D,4214,ours,no,,2,,
+kots19na_7990,1,188229,UYSC,Rest,destroyer,Sleeping Giant,A,A,2048,ours,no,,8,A,
+kots19na_7990,1,188230,UYSC,Rest,destroyer,Sleeping Giant,C,C,5261,theirs,,no,9,A,
+kots19na_7990,1,188233,UYSC,Rest,destroyer,Sleeping Giant,B,B,2901,theirs,,no,3,A,
+kots19na_7991,1,78225,HTDOG,Top 6,destroyer,Sleeping Giant,B,B,2927,ours,no,,7,,
+kots19na_7991,1,78226,HTDOG,Top 6,cruiser,Sleeping Giant,A,A,1030,neutral,no,yes,6,,A
+kots19na_7991,1,78227,HTDOG,Top 6,destroyer,Sleeping Giant,A,A,5941,ours,no,,11,B,
+kots19na_7991,1,78230,HTDOG,Top 6,destroyer,Sleeping Giant,B,B,8438,ours,no,,5,,
+kots19na_7991,1,78232,HTDOG,Top 6,destroyer,Sleeping Giant,B,B,11017,ours,no,,3,,
+kots19na_7991,1,78222,RSR,Rest,destroyer,Sleeping Giant,A,A,-532,neutral,no,no,6,,
+kots19na_7991,1,78223,RSR,Rest,destroyer,Sleeping Giant,C,C,1592,neutral,no,yes,11,,C
+kots19na_7991,1,78224,RSR,Rest,cruiser,Sleeping Giant,A,A,5956,neutral,yes,no,6,,
+kots19na_7991,1,78228,RSR,Rest,cruiser,Sleeping Giant,B,B,9428,theirs,,no,10,,
+kots19na_7991,1,78229,RSR,Rest,destroyer,Sleeping Giant,C,C,7382,ours,no,,7,,
+kots19na_7991,1,78231,RSR,Rest,cruiser,Sleeping Giant,D,D,10931,ours,no,,3,,
+kots19na_7992,1,29781,PFANS,Rest,destroyer,Sleeping Giant,A,A,1712,neutral,no,no,3,,
+kots19na_7992,1,29827,PFANS,Rest,destroyer,Sleeping Giant,A,A,1909,ours,no,,3,,
+kots19na_7992,1,29862,PFANS,Rest,destroyer,Sleeping Giant,A,A,8599,theirs,,no,7,,
+kots19na_7992,1,29863,PFANS,Rest,destroyer,Sleeping Giant,D,C,497,theirs,,no,4,,
+kots19na_7992,1,29881,PFANS,Rest,destroyer,Sleeping Giant,D,C,4707,theirs,,no,5,B,
+kots19na_7992,1,29892,PFANS,Rest,destroyer,Sleeping Giant,A,A,1429,theirs,,no,3,,
+kots19na_7992,1,29782,KSC,Rest,destroyer,Sleeping Giant,A,A,3012,neutral,no,no,2,,
+kots19na_7992,1,29828,KSC,Rest,destroyer,Sleeping Giant,D,D,2195,ours,no,,2,,
+kots19na_7992,1,29868,KSC,Rest,destroyer,Sleeping Giant,D,D,2398,ours,no,,4,,
+kots19na_7992,1,29894,KSC,Rest,destroyer,Sleeping Giant,D,D,711,ours,no,,2,,
+kots19na_7905,1,111508,RESIN,Top 6,destroyer,Sleeping Giant,C,D,4640,ours,no,,7,,D
+kots19na_7905,1,111506,EPOXY,Rest,destroyer,Sleeping Giant,A,A,-243,neutral,no,yes,8,,A
+kots19na_7905,1,111507,EPOXY,Rest,destroyer,Sleeping Giant,D,D,3278,ours,no,,6,,
+kots19na_7905,1,111509,EPOXY,Rest,destroyer,Sleeping Giant,A,A,3957,ours,no,,4,,
+kots19na_7905,1,111510,EPOXY,Rest,destroyer,Sleeping Giant,D,D,5092,ours,yes,,5,,
+kots19na_7905,1,111511,EPOXY,Rest,destroyer,Sleeping Giant,B,B,1523,theirs,,no,1,,
+kots19na_7906,1,188245,INCA,Rest,destroyer,Sleeping Giant,B,B,-298,neutral,no,no,4,,
+kots19na_7906,1,188247,INCA,Rest,destroyer,Sleeping Giant,D,C,6867,theirs,,no,5,,D
+kots19na_7906,1,188243,BONKZ,Top 6,destroyer,Sleeping Giant,A,A,3084,neutral,no,yes,7,,A
+kots19na_7906,1,188244,BONKZ,Top 6,destroyer,Sleeping Giant,D,D,4127,ours,no,,8,,
+kots19na_7906,1,188246,BONKZ,Top 6,destroyer,Sleeping Giant,A,A,7370,ours,no,,4,,
+kots19na_7906,1,188248,BONKZ,Top 6,destroyer,Sleeping Giant,D,D,8664,ours,yes,,2,,
+kots19na_7906,1,188249,BONKZ,Top 6,destroyer,Sleeping Giant,C,C,2635,theirs,,no,1,,C
+kots19na_7908,1,29759,HFANS,Rest,cruiser,Sleeping Giant,A,A,6357,ours,yes,,3,A,B
+kots19na_7908,1,29765,HFANS,Rest,destroyer,Sleeping Giant,C,D,2921,ours,no,,3,,
+kots19na_7908,1,29768,HFANS,Rest,cruiser,Sleeping Giant,A,A,8680,theirs,,no,2,,
+kots19na_7908,1,29772,HFANS,Rest,destroyer,Sleeping Giant,C,D,5506,ours,no,,1,,
+kots19na_7933,1,178669,KITED,Rest,destroyer,Sleeping Giant,B,B,1708,neutral,no,no,12,,C
+kots19na_7933,1,178672,KITED,Rest,cruiser,Sleeping Giant,C,D,6178,ours,no,,11,,
+kots19na_7933,1,178674,KITED,Rest,cruiser,Sleeping Giant,C,D,5497,ours,no,,8,,
+kots19na_7933,1,178675,KITED,Rest,destroyer,Sleeping Giant,C,D,1068,ours,no,,14,,
+kots19na_7933,1,178676,KITED,Rest,destroyer,Sleeping Giant,B,B,-352,neutral,no,no,7,,
+kots19na_7933,1,178677,KITED,Rest,cruiser,Sleeping Giant,A,A,11908,theirs,,no,4,,
+kots19na_7933,1,178681,KITED,Rest,cruiser,Sleeping Giant,D,C,4749,theirs,,no,3,,
+kots19na_7933,1,178682,KITED,Rest,cruiser,Sleeping Giant,A,A,14268,theirs,,no,1,,
+kots19na_7933,1,178668,H-SR,Top 6,destroyer,Sleeping Giant,A,A,919,neutral,no,yes,9,,A
+kots19na_7933,1,178671,H-SR,Top 6,destroyer,Sleeping Giant,D,D,3218,ours,no,,15,,
+kots19na_7933,1,178673,H-SR,Top 6,destroyer,Sleeping Giant,A,A,263,ours,no,,14,,
+kots19na_7933,1,178679,H-SR,Top 6,destroyer,Sleeping Giant,D,D,7778,ours,no,,7,,
+kots19na_7933,1,178680,H-SR,Top 6,destroyer,Sleeping Giant,A,A,4940,ours,no,,6,,B
+kots19na_7934,1,80502,SCCC2,Rest,destroyer,Sleeping Giant,C,D,1950,ours,no,,10,,
+kots19na_7934,1,80510,SCCC2,Rest,destroyer,Sleeping Giant,D,C,2489,theirs,,yes,8,,D
+kots19na_7934,1,80522,SCCC2,Rest,destroyer,Sleeping Giant,D,C,1763,ours,no,,5,D,
+kots19na_7934,1,80503,-BN-,Rest,destroyer,Sleeping Giant,A,A,584,ours,no,,10,,
+kots19na_7934,1,80504,-BN-,Rest,cruiser,Sleeping Giant,D,D,4335,ours,no,,1,,
+kots19na_7934,1,80508,-BN-,Rest,cruiser,Sleeping Giant,D,D,8342,ours,yes,,7,,
+kots19na_7934,1,80509,-BN-,Rest,destroyer,Sleeping Giant,D,D,4225,ours,yes,,6,,
+kots19na_7934,1,80512,-BN-,Rest,destroyer,Sleeping Giant,D,D,8274,theirs,,no,3,,
+kots19na_7934,1,80515,-BN-,Rest,cruiser,Sleeping Giant,D,D,14499,theirs,,no,3,,
+kots19na_7934,1,80519,-BN-,Rest,destroyer,Sleeping Giant,D,D,9123,theirs,,no,3,,
+kots19na_7934,1,80526,-BN-,Rest,cruiser,Sleeping Giant,D,D,902,theirs,,no,3,,
+kots19na_7934,1,80527,-BN-,Rest,destroyer,Sleeping Giant,B,B,5158,theirs,,no,2,,
+kots19na_7935,1,71110,BONKY,Rest,destroyer,Sleeping Giant,A,A,3768,neutral,yes,no,7,,
+kots19na_7935,1,71129,BONKY,Rest,destroyer,Sleeping Giant,C,D,4412,ours,no,,8,,B
+kots19na_7935,1,71140,BONKY,Rest,destroyer,Sleeping Giant,A,A,2724,theirs,,no,8,,B
+kots19na_7935,1,71148,BONKY,Rest,destroyer,Sleeping Giant,B,B,940,ours,no,,5,,
+kots19na_7935,1,71163,BONKY,Rest,destroyer,Sleeping Giant,B,B,3014,ours,no,,4,,
+kots19na_7935,1,71167,BONKY,Rest,destroyer,Sleeping Giant,C,D,4190,ours,no,,5,B,
+kots19na_7935,1,71178,BONKY,Rest,destroyer,Sleeping Giant,A,A,3564,theirs,,no,8,B,
+kots19na_7935,1,71189,BONKY,Rest,destroyer,Sleeping Giant,B,B,2998,theirs,,no,5,,
+kots19na_7935,1,71190,BONKY,Rest,destroyer,Sleeping Giant,A,A,5551,theirs,,no,4,,
+kots19na_7935,1,71191,BONKY,Rest,destroyer,Sleeping Giant,D,C,-1395,ours,no,,2,,
+kots19na_7935,1,71187,MACH,Rest,destroyer,Sleeping Giant,A,A,791,ours,no,,5,,
+kots19na_7936,1,104460,NGA,Rest,destroyer,Sleeping Giant,A,A,1882,neutral,yes,no,9,,B
+kots19na_7936,1,104464,NGA,Rest,cruiser,Sleeping Giant,C,D,2269,ours,no,,5,,
+kots19na_7936,1,104465,NGA,Rest,destroyer,Sleeping Giant,A,A,2167,theirs,,no,8,,
+kots19na_7936,1,104461,MACHX,Rest,cruiser,Sleeping Giant,D,D,4143,neutral,no,yes,4,,D
+kots19na_7936,1,104462,MACHX,Rest,battleship,Sleeping Giant,A,A,5392,neutral,no,yes,7,,A
+kots19na_7936,1,104463,MACHX,Rest,destroyer,Sleeping Giant,D,D,2232,ours,no,,8,,
+kots19na_7936,1,104466,MACHX,Rest,destroyer,Sleeping Giant,C,C,4285,theirs,,no,11,A,
+kots19na_7936,1,104467,MACHX,Rest,destroyer,Sleeping Giant,A,A,-999,ours,no,,3,A,
+kots19na_7936,1,104468,MACHX,Rest,battleship,Sleeping Giant,A,A,5918,ours,no,,8,A,
+kots19na_7936,1,104469,MACHX,Rest,cruiser,Sleeping Giant,D,D,1189,ours,no,,6,A,
+kots19na_7936,1,104470,MACHX,Rest,destroyer,Sleeping Giant,A,A,-231,ours,no,,7,A,
+kots19na_7936,1,104471,MACHX,Rest,destroyer,Sleeping Giant,C,C,4272,theirs,,no,4,A,
+kots19na_7936,1,104472,MACHX,Rest,destroyer,Sleeping Giant,C,C,1051,theirs,,no,1,,
+kots19na_7954,1,166727,RMN,Rest,destroyer,Sea of Fortune,A,B,3278,ours,no,,5,C,
+kots19na_7954,1,166731,RMN,Rest,destroyer,Sea of Fortune,A,B,2599,ours,no,,2,,
+kots19na_7954,1,166725,REEEE,Rest,destroyer,Sea of Fortune,B,B,318,ours,no,,5,,C
+kots19na_7954,1,166728,REEEE,Rest,cruiser,Sea of Fortune,B,B,-2256,ours,no,,2,,C
+kots19na_7954,1,166732,REEEE,Rest,destroyer,Sea of Fortune,B,B,-145,ours,no,,3,,
+kots19na_7955,1,90262,OGF,Rest,destroyer,Sea of Fortune,C,C,3166,neutral,yes,no,3,D,
+kots19na_7955,1,90263,KITE,Top 6,cruiser,Sea of Fortune,D,D,2771,theirs,,no,2,,C
+kots19na_7955,1,90272,KITE,Top 6,cruiser,Sea of Fortune,D,D,4912,ours,no,,3,,
+kots19na_7955,1,90282,KITE,Top 6,destroyer,Sea of Fortune,D,D,10759,ours,no,,2,,
+kots19na_7956,1,59176,MZY,Rest,cruiser,Sea of Fortune,D,D,3038,ours,no,,2,,C
+kots19na_7956,1,59140,5D,Rest,cruiser,Sea of Fortune,B,B,-459,ours,no,,3,C,
+kots19na_7956,1,59152,5D,Rest,destroyer,Sea of Fortune,C,C,-1303,ours,no,,4,C,
+kots19na_7956,1,59173,5D,Rest,cruiser,Sea of Fortune,B,B,2909,theirs,,no,3,C,
+kots19na_7993,1,97307,PN,Rest,destroyer,Sea of Fortune,A,B,-2503,ours,no,,6,,
+kots19na_7993,1,97311,PN,Rest,destroyer,Sea of Fortune,A,B,4646,ours,no,,6,,
+kots19na_7993,1,97309,UYSC,Rest,cruiser,Sea of Fortune,B,B,-2401,ours,no,,3,D,C
+kots19na_7993,1,97310,UYSC,Rest,cruiser,Sea of Fortune,B,B,-2711,ours,no,,4,D,
+kots19na_7993,1,97312,UYSC,Rest,destroyer,Sea of Fortune,D,D,6374,theirs,,no,5,,
+kots19na_7993,1,97313,UYSC,Rest,destroyer,Sea of Fortune,C,C,4081,ours,no,,3,C,
+kots19na_7993,1,97314,UYSC,Rest,cruiser,Sea of Fortune,B,B,3448,ours,no,,1,C,
+kots19na_7994,1,37566,KSE,Rest,cruiser,Sea of Fortune,A,B,663,ours,no,,3,,
+kots19na_7994,1,37569,KSE,Rest,destroyer,Sea of Fortune,C,C,2863,theirs,,yes,8,,
+kots19na_7994,1,37572,KSE,Rest,cruiser,Sea of Fortune,B,A,2531,theirs,,no,3,,C
+kots19na_7994,1,37565,RSR,Rest,destroyer,Sea of Fortune,B,B,805,ours,no,,10,,
+kots19na_7994,1,37567,RSR,Rest,cruiser,Sea of Fortune,B,B,-2882,ours,no,,6,,
+kots19na_7994,1,37568,RSR,Rest,destroyer,Sea of Fortune,C,C,-1533,ours,no,,8,,
+kots19na_7994,1,37570,RSR,Rest,cruiser,Sea of Fortune,B,B,141,ours,no,,5,,
+kots19na_7994,1,37571,RSR,Rest,cruiser,Sea of Fortune,B,B,1363,ours,no,,5,C,
+kots19na_7994,1,37573,RSR,Rest,cruiser,Sea of Fortune,B,B,-626,ours,no,,5,,
+kots19na_7994,1,37574,RSR,Rest,destroyer,Sea of Fortune,A,A,-308,theirs,,no,3,,
+kots19na_7994,1,37575,RSR,Rest,cruiser,Sea of Fortune,B,B,2851,ours,no,,2,,
+kots19na_7995,1,25167,VRTUS,Top 6,destroyer,Sea of Fortune,A,B,238,ours,no,,11,D,
+kots19na_7995,1,25170,VRTUS,Top 6,cruiser,Sea of Fortune,D,D,5690,ours,yes,,7,D,
+kots19na_7995,1,25172,VRTUS,Top 6,destroyer,Sea of Fortune,A,B,2683,ours,no,,15,,C
+kots19na_7995,1,25174,VRTUS,Top 6,destroyer,Sea of Fortune,D,D,4957,theirs,,no,10,,
+kots19na_7995,1,25175,VRTUS,Top 6,cruiser,Sea of Fortune,D,D,8980,theirs,,no,8,,
+kots19na_7995,1,25178,VRTUS,Top 6,destroyer,Sea of Fortune,D,D,7904,theirs,,no,3,,C
+kots19na_7995,1,25179,VRTUS,Top 6,cruiser,Sea of Fortune,D,D,8895,theirs,,no,2,,
+kots19na_7995,1,25180,VRTUS,Top 6,destroyer,Sea of Fortune,B,A,4609,theirs,,no,13,C,
+kots19na_7995,1,25181,VRTUS,Top 6,cruiser,Sea of Fortune,C,C,12792,ours,no,,12,C,
+kots19na_7995,1,25184,VRTUS,Top 6,destroyer,Sea of Fortune,D,D,18019,theirs,,no,4,C,
+kots19na_7995,1,25185,VRTUS,Top 6,cruiser,Sea of Fortune,A,B,15185,ours,no,,4,C,
+kots19na_7995,1,25168,KSC,Rest,cruiser,Sea of Fortune,D,D,2666,theirs,,no,7,,
+kots19na_7995,1,25169,KSC,Rest,destroyer,Sea of Fortune,B,B,1412,ours,no,,15,C,C
+kots19na_7995,1,25171,KSC,Rest,cruiser,Sea of Fortune,D,D,3183,theirs,,yes,10,,D
+kots19na_7995,1,25173,KSC,Rest,cruiser,Sea of Fortune,D,D,3644,ours,no,,10,C,
+kots19na_7995,1,25176,KSC,Rest,destroyer,Sea of Fortune,B,B,-410,ours,no,,8,C,
+kots19na_7995,1,25177,KSC,Rest,cruiser,Sea of Fortune,D,D,-759,ours,no,,5,C,
+kots19na_7995,1,25182,KSC,Rest,cruiser,Sea of Fortune,D,D,7719,ours,no,,9,,
+kots19na_7995,1,25183,KSC,Rest,destroyer,Sea of Fortune,D,D,8625,ours,no,,7,,
+kots19na_7995,1,25186,KSC,Rest,cruiser,Sea of Fortune,D,D,11637,ours,no,,1,,
+kots19na_7996,1,128346,HTDOG,Top 6,cruiser,Sea of Fortune,D,D,8965,theirs,,no,5,,
+kots19na_7996,1,128348,HTDOG,Top 6,cruiser,Sea of Fortune,D,D,9788,theirs,,no,5,,
+kots19na_7996,1,128349,HTDOG,Top 6,cruiser,Sea of Fortune,D,D,10053,theirs,,no,3,,
+kots19na_7996,1,128347,PFANS,Rest,cruiser,Sea of Fortune,B,B,1070,ours,no,,3,,
+kots19na_7996,1,128350,PFANS,Rest,cruiser,Sea of Fortune,B,B,11828,theirs,,no,1,,
+kots19na_7996,1,128351,PFANS,Rest,cruiser,Sea of Fortune,B,B,11016,theirs,,no,1,,
+kots19na_7909,1,53990,RESIN,Top 6,destroyer,Sea of Fortune,A,B,2903,ours,no,,6,,D
+kots19na_7909,1,53994,RESIN,Top 6,destroyer,Sea of Fortune,C,C,399,theirs,,no,3,,C
+kots19na_7909,1,54001,RESIN,Top 6,destroyer,Sea of Fortune,C,C,-1679,ours,no,,1,,
+kots19na_7909,1,53991,BONKZ,Top 6,cruiser,Sea of Fortune,B,B,205,ours,no,,4,,
+kots19na_7909,1,53992,BONKZ,Top 6,cruiser,Sea of Fortune,B,B,4487,ours,no,,2,D,
+kots19na_7909,1,53993,BONKZ,Top 6,destroyer,Sea of Fortune,C,C,16,neutral,no,yes,5,C,C
+kots19na_7909,1,53995,BONKZ,Top 6,cruiser,Sea of Fortune,A,A,1152,theirs,,no,1,C,
+kots19na_7911,1,226690,INCA,Rest,destroyer,Sea of Fortune,A,B,3877,ours,no,,3,D,
+kots19na_7911,1,226691,MANBA,Rest,cruiser,Sea of Fortune,B,B,-2882,ours,no,,2,,C
+kots19na_7912,1,85163,KM,Rest,destroyer,Sea of Fortune,A,B,-1602,ours,no,,7,D,
+kots19na_7912,1,85166,KM,Rest,cruiser,Sea of Fortune,D,D,4125,ours,no,,4,D,
+kots19na_7912,1,85167,KM,Rest,destroyer,Sea of Fortune,A,B,5000,ours,no,,5,D,
+kots19na_7912,1,85162,HFANS,Rest,destroyer,Sea of Fortune,D,D,3597,neutral,yes,no,5,,
+kots19na_7912,1,85164,HFANS,Rest,destroyer,Sea of Fortune,B,B,3130,ours,no,,6,,
+kots19na_7912,1,85165,HFANS,Rest,destroyer,Sea of Fortune,D,D,4674,theirs,,no,5,,
+kots19na_7912,1,85168,HFANS,Rest,destroyer,Sea of Fortune,D,D,4831,theirs,,no,4,,
+kots19na_7912,1,85169,HFANS,Rest,destroyer,Sea of Fortune,B,B,2315,ours,no,,1,,
+kots19na_7912,1,85173,HFANS,Rest,destroyer,Sea of Fortune,B,B,-1301,ours,no,,1,,
+kots19na_7937,1,44425,KITED,Rest,battleship,Sea of Fortune,D,D,3540,neutral,no,yes,3,,
+kots19na_7937,1,44433,KITED,Rest,destroyer,Sea of Fortune,D,D,1752,ours,no,,8,,
+kots19na_7937,1,44423,-BN-,Rest,destroyer,Sea of Fortune,D,D,3640,neutral,yes,no,8,,
+kots19na_7937,1,44427,-BN-,Rest,destroyer,Sea of Fortune,B,B,2239,ours,no,,4,,C
+kots19na_7937,1,44428,-BN-,Rest,destroyer,Sea of Fortune,B,B,1543,ours,no,,6,D,
+kots19na_7937,1,44429,-BN-,Rest,destroyer,Sea of Fortune,D,D,6919,theirs,,yes,7,D,
+kots19na_7937,1,44430,-BN-,Rest,destroyer,Sea of Fortune,C,C,3965,ours,no,,2,D,
+kots19na_7937,1,44431,-BN-,Rest,battleship,Sea of Fortune,D,D,5981,theirs,,no,7,,
+kots19na_7937,1,44432,-BN-,Rest,destroyer,Sea of Fortune,D,D,9056,theirs,,no,11,,
+kots19na_7937,1,44434,-BN-,Rest,destroyer,Sea of Fortune,D,D,7514,theirs,,no,7,,
+kots19na_7937,1,44435,-BN-,Rest,destroyer,Sea of Fortune,A,A,-2775,theirs,,yes,5,,A
+kots19na_7937,1,44436,-BN-,Rest,destroyer,Sea of Fortune,A,A,3214,theirs,,yes,2,,A
+kots19na_7937,1,44437,-BN-,Rest,destroyer,Sea of Fortune,A,A,5938,ours,no,,1,,
+kots19na_7938,1,214879,H-SR,Top 6,destroyer,Sea of Fortune,D,D,1852,neutral,no,no,7,,
+kots19na_7938,1,214880,H-SR,Top 6,destroyer,Sea of Fortune,A,B,-3200,neutral,yes,yes,7,,A
+kots19na_7938,1,214885,H-SR,Top 6,destroyer,Sea of Fortune,D,D,3482,neutral,no,no,3,,
+kots19na_7938,1,214886,H-SR,Top 6,destroyer,Sea of Fortune,A,B,5381,theirs,,no,2,,
+kots19na_7938,1,214888,H-SR,Top 6,destroyer,Sea of Fortune,C,C,5685,theirs,,no,1,,C
+kots19na_7938,1,214881,MACH,Rest,destroyer,Sea of Fortune,D,D,-822,neutral,no,no,2,,
+kots19na_7939,1,90304,SCCC2,Rest,cruiser,Sea of Fortune,D,D,8344,theirs,,no,12,,
+kots19na_7939,1,90306,SCCC2,Rest,destroyer,Sea of Fortune,D,D,1385,theirs,,no,10,,
+kots19na_7939,1,90308,SCCC2,Rest,destroyer,Sea of Fortune,A,B,529,ours,no,,9,,C
+kots19na_7939,1,90309,SCCC2,Rest,destroyer,Sea of Fortune,D,D,5880,theirs,,no,6,,
+kots19na_7939,1,90310,SCCC2,Rest,cruiser,Sea of Fortune,B,A,1097,theirs,,yes,10,,B
+kots19na_7939,1,90311,SCCC2,Rest,cruiser,Sea of Fortune,D,D,13906,theirs,,no,6,,
+kots19na_7939,1,90313,SCCC2,Rest,destroyer,Sea of Fortune,B,A,-931,ours,no,,11,,
+kots19na_7939,1,90314,SCCC2,Rest,cruiser,Sea of Fortune,D,D,12103,theirs,,no,13,C,
+kots19na_7939,1,90316,SCCC2,Rest,destroyer,Sea of Fortune,C,C,9088,ours,no,,8,,
+kots19na_7939,1,90317,SCCC2,Rest,cruiser,Sea of Fortune,B,A,1947,ours,no,,6,C,
+kots19na_7939,1,90318,SCCC2,Rest,destroyer,Sea of Fortune,B,A,-143,ours,no,,7,C,
+kots19na_7939,1,90320,SCCC2,Rest,destroyer,Sea of Fortune,B,A,2518,ours,no,,3,B,
+kots19na_7939,1,90321,SCCC2,Rest,cruiser,Sea of Fortune,D,D,3127,theirs,,yes,4,B,D
+kots19na_7939,1,90322,SCCC2,Rest,destroyer,Sea of Fortune,A,B,-120,ours,no,,3,,
+kots19na_7939,1,90307,MACHX,Rest,cruiser,Sea of Fortune,B,B,-2418,ours,no,,10,,
+kots19na_7939,1,90312,MACHX,Rest,destroyer,Sea of Fortune,B,B,3178,ours,yes,,8,,
+kots19na_7939,1,90315,MACHX,Rest,cruiser,Sea of Fortune,B,B,3686,theirs,,no,10,,
+kots19na_7939,1,90319,MACHX,Rest,destroyer,Sea of Fortune,B,B,-178,theirs,,yes,7,,
+kots19na_7939,1,90323,MACHX,Rest,cruiser,Sea of Fortune,A,A,616,theirs,,no,1,,A
+kots19na_7940,1,183534,BONKY,Rest,destroyer,Sea of Fortune,D,D,3740,neutral,no,yes,6,C,D
+kots19na_7940,1,183535,BONKY,Rest,destroyer,Sea of Fortune,D,D,4234,ours,no,,6,,
+kots19na_7940,1,183538,BONKY,Rest,destroyer,Sea of Fortune,D,D,2583,ours,no,,5,C,
+kots19na_7940,1,183533,NGA,Rest,cruiser,Sea of Fortune,D,D,5465,neutral,no,no,2,,
+kots19na_7940,1,183536,NGA,Rest,cruiser,Sea of Fortune,D,D,9913,theirs,,no,4,,
+kots19na_7940,1,183537,NGA,Rest,destroyer,Sea of Fortune,C,C,313,theirs,,no,3,,
+kots19na_7940,1,183539,NGA,Rest,destroyer,Sea of Fortune,C,C,49,ours,no,,3,,
+kots19na_7940,1,183540,NGA,Rest,cruiser,Sea of Fortune,D,D,10426,theirs,,no,1,,
+kots19na_8067,1,60863,VRTUS,Top 6,destroyer,Hotspot,A,B,-1154,neutral,no,yes,9,,A
+kots19na_8067,1,60868,VRTUS,Top 6,destroyer,Hotspot,D,D,4259,theirs,,no,7,,
+kots19na_8067,1,60870,VRTUS,Top 6,destroyer,Hotspot,B,A,-2745,ours,no,,6,,
+kots19na_8067,1,60862,BONKZ,Top 6,destroyer,Hotspot,D,D,1725,neutral,no,yes,8,,D
+kots19na_8067,1,60864,BONKZ,Top 6,destroyer,Hotspot,C,C,1588,ours,no,,9,,D
+kots19na_8067,1,60869,BONKZ,Top 6,destroyer,Hotspot,D,D,2474,ours,no,,7,C,
+kots19na_8067,1,60871,BONKZ,Top 6,destroyer,Hotspot,C,C,4676,ours,yes,,7,C,
+kots19na_8067,1,60872,BONKZ,Top 6,destroyer,Hotspot,C,C,9966,ours,yes,,3,C,
+kots19na_8067,1,60876,BONKZ,Top 6,destroyer,Hotspot,C,C,4645,theirs,,no,2,,
+kots19na_8067,2,84814,VRTUS,Top 6,destroyer,Sleeping Giant,A,A,3645,neutral,no,no,8,,
+kots19na_8067,2,84815,VRTUS,Top 6,destroyer,Sleeping Giant,C,D,4745,ours,no,,12,,
+kots19na_8067,2,84819,VRTUS,Top 6,destroyer,Sleeping Giant,A,A,5890,neutral,yes,no,8,,
+kots19na_8067,2,84820,VRTUS,Top 6,battleship,Sleeping Giant,D,C,-113,theirs,,no,4,,
+kots19na_8067,2,84824,VRTUS,Top 6,destroyer,Sleeping Giant,A,A,1775,theirs,,no,2,,
+kots19na_8067,2,84816,BONKZ,Top 6,destroyer,Sleeping Giant,A,A,2406,neutral,no,yes,11,,A
+kots19na_8067,2,84817,BONKZ,Top 6,destroyer,Sleeping Giant,B,B,-34,neutral,no,yes,9,,
+kots19na_8067,2,84818,BONKZ,Top 6,destroyer,Sleeping Giant,D,D,8051,ours,no,,9,,
+kots19na_8067,2,84821,BONKZ,Top 6,destroyer,Sleeping Giant,A,A,1214,ours,no,,7,,
+kots19na_8067,2,84822,BONKZ,Top 6,destroyer,Sleeping Giant,B,B,785,ours,no,,5,,
+kots19na_8067,2,84823,BONKZ,Top 6,destroyer,Sleeping Giant,D,D,7101,ours,no,,3,B,
+kots19na_8068,1,178430,MZY,Rest,destroyer,Loop,C,C,2165,neutral,no,yes,7,B,
+kots19na_8068,1,178433,MZY,Rest,destroyer,Loop,C,C,-862,ours,no,,5,A,B
+kots19na_8068,1,178436,MZY,Rest,destroyer,Loop,C,C,-3695,ours,no,,5,C,
+kots19na_8068,1,178428,MACHX,Rest,destroyer,Loop,A,A,1726,neutral,yes,yes,4,,A
+kots19na_8068,1,178429,MACHX,Rest,cruiser,Loop,A,A,10006,theirs,,no,1,,
+kots19na_8068,1,178431,MACHX,Rest,destroyer,Loop,B,B,-299,theirs,,yes,7,A,B
+kots19na_8068,1,178432,MACHX,Rest,cruiser,Loop,A,A,13682,ours,yes,,3,A,
+kots19na_8068,1,178434,MACHX,Rest,destroyer,Loop,C,C,2975,theirs,,no,3,B,
+kots19na_8068,1,178435,MACHX,Rest,destroyer,Loop,B,B,2201,theirs,,no,5,,A
+kots19na_8068,1,178437,MACHX,Rest,cruiser,Loop,A,A,4757,ours,no,,2,,
+kots19na_8068,1,178438,MACHX,Rest,destroyer,Loop,C,C,110,theirs,,no,1,,
+kots19na_8068,2,166403,MACHX,Rest,destroyer,Sleeping Giant,B,B,2286,neutral,no,yes,4,,D
+kots19na_8068,2,166404,MACHX,Rest,destroyer,Sleeping Giant,A,A,965,ours,no,,4,,B
+kots19na_8068,2,166408,MACHX,Rest,destroyer,Sleeping Giant,D,D,5279,ours,yes,,4,,
+kots19na_8068,2,166410,MACHX,Rest,destroyer,Sleeping Giant,A,A,7266,ours,no,,4,B,
+kots19na_8068,2,166411,MACHX,Rest,destroyer,Sleeping Giant,D,D,5913,theirs,,no,3,B,
+kots19na_8068,2,166412,MACHX,Rest,destroyer,Sleeping Giant,B,B,7250,theirs,,no,1,A,B
+kots19na_8068,3,48781,MZY,Rest,destroyer,Hotspot,D,D,1478,neutral,no,yes,4,,
+kots19na_8068,3,48785,MZY,Rest,battleship,Hotspot,A,A,4329,theirs,,yes,4,D,A
+kots19na_8068,3,48786,MZY,Rest,destroyer,Hotspot,D,D,9304,theirs,,no,5,,
+kots19na_8068,3,48824,MZY,Rest,destroyer,Hotspot,D,D,9234,theirs,,no,5,,C
+kots19na_8068,3,48854,MZY,Rest,destroyer,Hotspot,C,C,1153,ours,no,,1,C,
+kots19na_8068,3,48782,MACHX,Rest,destroyer,Hotspot,D,D,2626,theirs,,yes,9,,D
+kots19na_8068,3,48783,MACHX,Rest,destroyer,Hotspot,C,C,-56,ours,no,,9,,
+kots19na_8068,3,48784,MACHX,Rest,cruiser,Hotspot,C,C,3034,ours,no,,6,,
+kots19na_8068,3,48815,MACHX,Rest,destroyer,Hotspot,A,B,6919,theirs,,no,4,,
+kots19na_8068,3,48832,MACHX,Rest,cruiser,Hotspot,C,C,-590,ours,no,,2,,
+kots19na_8069,1,190203,RESIN,Top 6,destroyer,Sleeping Giant,D,D,4285,ours,no,,3,A,
+kots19na_8069,1,190202,PFANS,Rest,destroyer,Sleeping Giant,A,A,2580,neutral,yes,no,3,,
+kots19na_8069,1,190204,PFANS,Rest,destroyer,Sleeping Giant,A,A,988,theirs,,no,1,,A
+kots19na_8069,2,143189,RESIN,Top 6,destroyer,Mountain Range,C,C,2826,neutral,no,no,1,,B
+kots19na_8069,2,143195,RESIN,Top 6,destroyer,Mountain Range,C,C,1499,ours,no,,1,C,
+kots19na_8070,1,79851,KITED,Rest,destroyer,Hotspot,D,D,1184,theirs,,no,4,C,
+kots19na_8070,1,79853,KITED,Rest,destroyer,Hotspot,D,D,2576,theirs,,yes,2,,
+kots19na_8070,1,79850,REEEE,Rest,destroyer,Hotspot,D,D,3541,neutral,no,no,1,C,
+kots19na_8070,1,79852,REEEE,Rest,destroyer,Hotspot,D,D,2316,ours,yes,,5,D,
+kots19na_8070,1,79854,REEEE,Rest,destroyer,Hotspot,D,D,9236,theirs,,no,1,,
+kots19na_8070,2,163981,KITED,Rest,cruiser,Loop,B,B,2406,neutral,no,yes,4,A,A
+kots19na_8070,2,163988,KITED,Rest,cruiser,Loop,B,B,4196,ours,no,,5,A,
+kots19na_8070,2,163991,KITED,Rest,destroyer,Loop,A,A,-3086,ours,no,,4,A,
+kots19na_8070,2,163997,KITED,Rest,destroyer,Loop,A,A,2257,theirs,,no,4,,
+kots19na_8070,2,164003,KITED,Rest,destroyer,Loop,A,A,3685,theirs,,no,1,B,
+kots19na_8070,2,163980,REEEE,Rest,destroyer,Loop,B,B,-228,neutral,yes,no,5,,
+kots19na_8070,2,163984,REEEE,Rest,destroyer,Loop,A,A,-775,theirs,,yes,3,,A
+kots19na_8070,2,163985,REEEE,Rest,destroyer,Loop,A,A,-649,ours,yes,,4,A,
+kots19na_8070,2,163987,REEEE,Rest,destroyer,Loop,B,B,-201,theirs,,no,3,A,
+kots19na_8070,2,163989,REEEE,Rest,destroyer,Loop,B,B,-84,theirs,,no,4,,
+kots19na_8070,2,163990,REEEE,Rest,destroyer,Loop,A,A,-95,theirs,,no,2,,
+kots19na_8070,2,163992,REEEE,Rest,destroyer,Loop,A,A,-2981,theirs,,no,4,,
+kots19na_8070,2,163993,REEEE,Rest,destroyer,Loop,B,B,-216,theirs,,no,7,,
+kots19na_8070,2,163994,REEEE,Rest,destroyer,Loop,A,A,-1311,theirs,,yes,5,,A
+kots19na_8070,2,163996,REEEE,Rest,destroyer,Loop,B,B,2441,theirs,,no,5,,
+kots19na_8070,2,163998,REEEE,Rest,destroyer,Loop,B,B,85,theirs,,no,1,,B
+kots19na_8070,2,164001,REEEE,Rest,destroyer,Loop,A,A,2322,ours,no,,3,,
+kots19na_8071,1,99133,KITE,Top 6,destroyer,Land of Fire,C,D,852,ours,no,,1,,
+kots19na_8071,1,99134,KITE,Top 6,destroyer,Land of Fire,C,D,3472,theirs,,no,1,A,
+kots19na_8071,1,99128,-BN-,Rest,destroyer,Land of Fire,A,A,10196,neutral,no,no,4,B,
+kots19na_8071,1,99130,-BN-,Rest,cruiser,Land of Fire,B,B,2823,ours,yes,,3,B,
+kots19na_8071,1,99131,-BN-,Rest,destroyer,Land of Fire,A,A,9858,neutral,yes,no,5,,
+kots19na_8071,1,99132,-BN-,Rest,cruiser,Land of Fire,B,B,3253,theirs,,no,3,,
+kots19na_8071,2,132914,KITE,Top 6,destroyer,Sleeping Giant,B,B,12064,ours,no,,4,,
+kots19na_8071,2,132887,-BN-,Rest,destroyer,Sleeping Giant,A,A,1269,ours,no,,4,,B
+kots19na_8071,2,132889,-BN-,Rest,cruiser,Sleeping Giant,D,D,6720,ours,no,,2,,
+kots19na_8071,2,132902,-BN-,Rest,destroyer,Sleeping Giant,A,A,7343,ours,no,,12,B,
+kots19na_8071,2,132903,-BN-,Rest,destroyer,Sleeping Giant,D,D,815,theirs,,no,6,,
+kots19na_8071,2,132906,-BN-,Rest,cruiser,Sleeping Giant,D,D,2834,theirs,,no,7,B,
+kots19na_8071,2,132909,-BN-,Rest,destroyer,Sleeping Giant,D,D,1105,theirs,,no,6,B,
+kots19na_8071,2,132911,-BN-,Rest,cruiser,Sleeping Giant,D,D,3942,theirs,,no,8,,
+kots19na_8071,2,132912,-BN-,Rest,destroyer,Sleeping Giant,D,D,1316,theirs,,no,8,,
+kots19na_8071,2,132913,-BN-,Rest,destroyer,Sleeping Giant,A,A,8781,ours,no,,5,,
+kots19na_8071,2,132915,-BN-,Rest,cruiser,Sleeping Giant,D,D,4382,theirs,,no,1,,
+kots19na_8072,1,103838,EPOXY,Rest,destroyer,Hotspot,C,C,322,neutral,no,no,1,D,
+kots19na_8072,1,103839,EPOXY,Rest,destroyer,Hotspot,C,C,-2161,neutral,no,no,5,,
+kots19na_8072,1,103849,EPOXY,Rest,destroyer,Hotspot,C,C,-1024,ours,no,,5,,
+kots19na_8072,1,103837,KSC,Rest,destroyer,Hotspot,C,C,1592,neutral,no,no,7,,
+kots19na_8072,1,103840,KSC,Rest,destroyer,Hotspot,C,C,-194,neutral,no,no,4,,A
+kots19na_8072,1,103841,KSC,Rest,destroyer,Hotspot,A,B,1319,ours,no,,12,D,
+kots19na_8072,1,103842,KSC,Rest,destroyer,Hotspot,C,C,-448,neutral,yes,no,7,,
+kots19na_8072,1,103843,KSC,Rest,destroyer,Hotspot,D,D,1498,theirs,,no,5,,
+kots19na_8072,1,103844,KSC,Rest,cruiser,Hotspot,D,D,1728,theirs,,no,4,,
+kots19na_8072,1,103845,KSC,Rest,destroyer,Hotspot,C,C,393,theirs,,no,4,,
+kots19na_8072,1,103846,KSC,Rest,destroyer,Hotspot,D,D,6485,theirs,,no,5,,
+kots19na_8072,1,103847,KSC,Rest,destroyer,Hotspot,B,A,898,theirs,,yes,9,B,B
+kots19na_8072,1,103848,KSC,Rest,destroyer,Hotspot,D,D,7554,theirs,,no,7,B,
+kots19na_8072,1,103850,KSC,Rest,destroyer,Hotspot,D,D,7270,theirs,,no,3,B,
+kots19na_8072,1,103851,KSC,Rest,cruiser,Hotspot,D,D,7375,theirs,,no,1,B,
+kots19na_8072,2,89423,EPOXY,Rest,destroyer,Land of Fire,A,A,6793,neutral,no,yes,8,,A
+kots19na_8072,2,89424,EPOXY,Rest,destroyer,Land of Fire,A,A,5347,ours,no,,13,,
+kots19na_8072,2,89427,EPOXY,Rest,cruiser,Land of Fire,B,B,6297,ours,no,,7,,
+kots19na_8072,2,89430,EPOXY,Rest,destroyer,Land of Fire,A,A,7478,ours,no,,13,A,
+kots19na_8072,2,89433,EPOXY,Rest,cruiser,Land of Fire,B,B,3747,ours,no,,6,A,
+kots19na_8072,2,89434,EPOXY,Rest,cruiser,Land of Fire,B,B,7177,ours,no,,5,B,
+kots19na_8072,2,89436,EPOXY,Rest,destroyer,Land of Fire,A,A,4481,ours,no,,1,B,
+kots19na_8072,2,89422,KSC,Rest,destroyer,Land of Fire,A,A,6237,neutral,yes,no,6,,
+kots19na_8072,2,89425,KSC,Rest,cruiser,Land of Fire,C,D,4274,ours,no,,4,,
+kots19na_8072,2,89426,KSC,Rest,destroyer,Land of Fire,C,D,5760,ours,no,,4,,
+kots19na_8072,2,89428,KSC,Rest,cruiser,Land of Fire,D,C,4283,theirs,,no,7,,
+kots19na_8072,2,89429,KSC,Rest,destroyer,Land of Fire,A,A,7227,theirs,,no,13,,
+kots19na_8072,2,89431,KSC,Rest,destroyer,Land of Fire,D,C,3949,theirs,,yes,6,,
+kots19na_8072,2,89432,KSC,Rest,cruiser,Land of Fire,D,C,4874,theirs,,yes,7,,D
+kots19na_8072,2,89435,KSC,Rest,cruiser,Land of Fire,D,C,2210,ours,no,,3,,
+kots19na_8073,1,34486,H-SR,Top 6,destroyer,Hotspot,D,D,1743,neutral,yes,no,5,C,C
+kots19na_8073,1,34488,H-SR,Top 6,destroyer,Hotspot,D,D,1356,theirs,,no,3,C,
+kots19na_8073,1,34489,H-SR,Top 6,destroyer,Hotspot,B,B,-1532,ours,no,,2,C,
+kots19na_8073,1,34490,H-SR,Top 6,destroyer,Hotspot,C,C,4038,ours,yes,,7,,
+kots19na_8073,1,34491,H-SR,Top 6,destroyer,Hotspot,A,A,-1402,theirs,,yes,6,,A
+kots19na_8073,1,34492,H-SR,Top 6,destroyer,Hotspot,D,D,1295,theirs,,no,3,,D
+kots19na_8073,1,34487,5D,Rest,destroyer,Hotspot,D,D,-355,neutral,no,yes,5,,D
+kots19na_8073,1,34493,5D,Rest,destroyer,Hotspot,C,C,1299,ours,no,,1,D,
+kots19na_8073,2,166402,H-SR,Top 6,destroyer,Land of Fire,B,B,1215,neutral,no,no,1,,
+kots19na_8073,2,166405,H-SR,Top 6,destroyer,Land of Fire,B,B,3528,ours,no,,7,B,
+kots19na_8073,2,166409,H-SR,Top 6,destroyer,Land of Fire,B,B,4179,ours,no,,1,B,
+kots19na_8073,2,166406,5D,Rest,battleship,Land of Fire,B,B,-77,theirs,,no,5,,
+kots19na_8073,2,166407,5D,Rest,destroyer,Land of Fire,C,C,2252,ours,yes,,4,C,
+kots19na_8074,1,211815,HTDOG,Top 6,destroyer,Okinawa,B,A,4245,ours,no,,5,,
+kots19na_8074,1,211811,HFANS,Rest,cruiser,Okinawa,D,D,2862,theirs,,no,5,,
+kots19na_8074,1,211812,HFANS,Rest,cruiser,Okinawa,A,A,1954,ours,no,,2,,
+kots19na_8074,1,211813,HFANS,Rest,destroyer,Okinawa,A,A,3315,ours,no,,4,,
+kots19na_8074,1,211814,HFANS,Rest,cruiser,Okinawa,C,C,4526,theirs,,no,6,,
+kots19na_8074,1,211816,HFANS,Rest,cruiser,Okinawa,B,B,2208,theirs,,no,3,,
+kots19na_8074,1,211817,HFANS,Rest,cruiser,Okinawa,C,C,12904,theirs,,no,2,,
+kots19na_8074,2,70750,HTDOG,Top 6,destroyer,Land of Fire,A,A,1244,neutral,no,no,10,,
+kots19na_8074,2,70753,HTDOG,Top 6,destroyer,Land of Fire,B,B,2746,neutral,no,no,4,,D
+kots19na_8074,2,70754,HTDOG,Top 6,cruiser,Land of Fire,B,B,2128,neutral,no,no,4,,D
+kots19na_8074,2,70755,HTDOG,Top 6,destroyer,Land of Fire,B,B,2420,neutral,no,no,8,,
+kots19na_8074,2,70757,HTDOG,Top 6,cruiser,Land of Fire,D,D,4911,ours,no,,13,,
+kots19na_8074,2,70759,HTDOG,Top 6,destroyer,Land of Fire,B,B,1933,neutral,no,yes,11,,B
+kots19na_8074,2,70763,HTDOG,Top 6,cruiser,Land of Fire,B,B,-524,ours,no,,7,,A
+kots19na_8074,2,70764,HTDOG,Top 6,destroyer,Land of Fire,A,A,-1222,ours,no,,13,,
+kots19na_8074,2,70765,HTDOG,Top 6,cruiser,Land of Fire,B,B,432,ours,no,,7,,
+kots19na_8074,2,70767,HTDOG,Top 6,destroyer,Land of Fire,B,B,3658,ours,no,,5,,
+kots19na_8074,2,70770,HTDOG,Top 6,destroyer,Land of Fire,B,B,3945,ours,no,,1,B,
+kots19na_8074,2,70749,HFANS,Rest,destroyer,Land of Fire,A,A,3142,neutral,no,no,10,,
+kots19na_8074,2,70752,HFANS,Rest,cruiser,Land of Fire,B,B,4095,neutral,no,no,5,,C
+kots19na_8074,2,70756,HFANS,Rest,cruiser,Land of Fire,C,D,7617,ours,no,,10,,
+kots19na_8074,2,70758,HFANS,Rest,cruiser,Land of Fire,A,A,6858,neutral,yes,no,15,,
+kots19na_8074,2,70760,HFANS,Rest,cruiser,Land of Fire,B,B,4173,neutral,yes,no,10,,
+kots19na_8074,2,70761,HFANS,Rest,cruiser,Land of Fire,D,C,5188,theirs,,no,6,,
+kots19na_8074,2,70762,HFANS,Rest,destroyer,Land of Fire,A,A,4983,neutral,yes,no,13,,
+kots19na_8074,2,70766,HFANS,Rest,cruiser,Land of Fire,A,A,5572,theirs,,no,9,,
+kots19na_8074,2,70768,HFANS,Rest,cruiser,Land of Fire,D,C,-962,theirs,,yes,3,,D
+kots19na_8074,2,70769,HFANS,Rest,cruiser,Land of Fire,B,B,2257,theirs,,no,3,,
+kots19na_8074,3,176171,HTDOG,Top 6,destroyer,Sleeping Giant,B,B,3159,neutral,no,no,6,,
+kots19na_8074,3,176172,HTDOG,Top 6,cruiser,Sleeping Giant,A,A,3795,neutral,no,yes,6,,A
+kots19na_8074,3,176180,HTDOG,Top 6,cruiser,Sleeping Giant,A,A,963,ours,no,,9,,
+kots19na_8074,3,176185,HTDOG,Top 6,destroyer,Sleeping Giant,A,A,-296,ours,no,,4,,
+kots19na_8074,3,176186,HTDOG,Top 6,destroyer,Sleeping Giant,D,D,4849,ours,no,,3,,
+kots19na_8074,3,176192,HTDOG,Top 6,cruiser,Sleeping Giant,A,A,4129,ours,no,,3,,
+kots19na_8074,3,176195,HTDOG,Top 6,destroyer,Sleeping Giant,B,B,7300,neutral,no,no,1,,
+kots19na_8074,3,176173,HFANS,Rest,destroyer,Sleeping Giant,C,D,3855,ours,no,,10,,
+kots19na_8074,3,176175,HFANS,Rest,destroyer,Sleeping Giant,B,B,657,neutral,no,no,5,,
+kots19na_8074,3,176181,HFANS,Rest,destroyer,Sleeping Giant,D,C,4311,theirs,,no,9,,
+kots19na_8074,3,176183,HFANS,Rest,destroyer,Sleeping Giant,B,B,530,neutral,no,no,6,,
+kots19na_8074,3,176187,HFANS,Rest,destroyer,Sleeping Giant,D,C,1365,theirs,,yes,3,,D
+kots19na_8139,1,133061,KITED,Rest,destroyer,Loop,A,A,3106,ours,no,,1,A,
+kots19na_8139,1,133062,KITED,Rest,cruiser,Loop,A,A,12430,theirs,,no,3,,
+kots19na_8139,1,133063,KITED,Rest,destroyer,Loop,A,A,6351,theirs,,no,1,,
+kots19na_8139,2,200261,KITED,Rest,destroyer,Hotspot,D,D,530,neutral,no,no,3,,
+kots19na_8139,2,200292,KITED,Rest,destroyer,Hotspot,D,D,385,theirs,,no,2,,
+kots19na_8139,2,200295,KITED,Rest,battleship,Hotspot,C,C,315,ours,no,,4,,
+kots19na_8139,2,200300,KITED,Rest,cruiser,Hotspot,A,B,-3292,ours,no,,1,,
+kots19na_8139,2,200305,KITED,Rest,destroyer,Hotspot,D,D,5880,theirs,,no,2,,
+kots19na_8139,2,200307,KITED,Rest,cruiser,Hotspot,A,B,2364,ours,no,,1,C,C
+kots19na_8139,2,200262,PFANS,Rest,destroyer,Hotspot,D,D,1965,neutral,no,yes,4,,D
+kots19na_8139,2,200296,PFANS,Rest,destroyer,Hotspot,D,D,-2705,ours,no,,4,,
+kots19na_8139,3,51636,KITED,Rest,cruiser,Sleeping Giant,C,D,4072,ours,no,,8,A,
+kots19na_8139,3,51637,KITED,Rest,destroyer,Sleeping Giant,C,D,471,ours,no,,11,A,
+kots19na_8139,3,51640,KITED,Rest,cruiser,Sleeping Giant,C,D,2422,ours,no,,4,A,
+kots19na_8139,3,51641,KITED,Rest,destroyer,Sleeping Giant,A,A,-380,ours,no,,3,A,
+kots19na_8139,3,51642,KITED,Rest,cruiser,Sleeping Giant,C,D,4471,ours,no,,5,,
+kots19na_8139,3,51646,KITED,Rest,destroyer,Sleeping Giant,B,B,-582,ours,no,,4,,
+kots19na_8139,3,51635,PFANS,Rest,destroyer,Sleeping Giant,A,A,2913,neutral,yes,no,6,,
+kots19na_8139,3,51638,PFANS,Rest,destroyer,Sleeping Giant,A,A,5191,theirs,,no,9,,
+kots19na_8139,3,51639,PFANS,Rest,destroyer,Sleeping Giant,D,D,-680,ours,no,,6,,
+kots19na_8139,3,51647,PFANS,Rest,destroyer,Sleeping Giant,D,D,2120,ours,no,,2,,
+kots19na_8140,1,190357,RESIN,Top 6,destroyer,Hotspot,C,C,4980,neutral,no,yes,7,C,A
+kots19na_8140,1,190358,RESIN,Top 6,cruiser,Hotspot,D,D,2806,neutral,no,no,1,,
+kots19na_8140,1,190359,RESIN,Top 6,cruiser,Hotspot,D,D,2543,neutral,yes,no,7,,
+kots19na_8140,1,190360,RESIN,Top 6,destroyer,Hotspot,C,C,1376,ours,no,,11,C,
+kots19na_8140,1,190361,RESIN,Top 6,destroyer,Hotspot,A,B,1032,ours,no,,10,C,
+kots19na_8140,1,190362,RESIN,Top 6,cruiser,Hotspot,D,D,1745,theirs,,no,5,C,
+kots19na_8140,1,190363,RESIN,Top 6,cruiser,Hotspot,D,D,1751,theirs,,no,6,,
+kots19na_8140,1,190365,RESIN,Top 6,destroyer,Hotspot,C,C,2083,ours,no,,4,C,
+kots19na_8140,1,190366,RESIN,Top 6,destroyer,Hotspot,A,B,1977,ours,no,,1,C,
+kots19na_8140,1,190356,REEEE,Rest,destroyer,Hotspot,D,D,2561,neutral,no,no,7,,
+kots19na_8140,1,190364,REEEE,Rest,destroyer,Hotspot,D,D,731,ours,no,,5,,
+kots19na_8140,2,125926,RESIN,Top 6,cruiser,Sleeping Giant,C,D,3216,ours,no,,1,,
+kots19na_8140,2,125929,RESIN,Top 6,destroyer,Sleeping Giant,B,B,1947,neutral,no,no,5,A,B
+kots19na_8140,2,125930,RESIN,Top 6,cruiser,Sleeping Giant,D,C,9111,ours,no,,4,A,
+kots19na_8140,2,125925,REEEE,Rest,destroyer,Sleeping Giant,A,A,1197,neutral,no,yes,3,,A
+kots19na_8140,2,125932,REEEE,Rest,destroyer,Sleeping Giant,A,A,-1948,theirs,,no,1,,
+kots19na_8141,1,101716,KSC,Rest,destroyer,Sleeping Giant,A,A,2844,neutral,no,no,5,,
+kots19na_8141,1,101718,KSC,Rest,destroyer,Sleeping Giant,B,B,2722,neutral,no,no,3,,
+kots19na_8141,1,101719,KSC,Rest,destroyer,Sleeping Giant,A,A,419,ours,no,,8,,
+kots19na_8141,1,101721,KSC,Rest,destroyer,Sleeping Giant,C,D,2162,ours,no,,7,A,
+kots19na_8141,1,101723,KSC,Rest,destroyer,Sleeping Giant,A,A,2765,ours,yes,,5,A,
+kots19na_8141,1,101717,-BN-,Rest,destroyer,Sleeping Giant,A,A,6050,neutral,yes,no,6,,
+kots19na_8141,1,101720,-BN-,Rest,destroyer,Sleeping Giant,A,A,8305,theirs,,yes,8,,
+kots19na_8141,1,101722,-BN-,Rest,destroyer,Sleeping Giant,B,B,1830,ours,no,,4,,
+kots19na_8141,1,101724,-BN-,Rest,destroyer,Sleeping Giant,A,A,-1898,ours,no,,3,B,
+kots19na_8141,1,101725,-BN-,Rest,destroyer,Sleeping Giant,B,B,3674,ours,no,,1,B,
+kots19na_8141,1,101726,-BN-,Rest,destroyer,Sleeping Giant,D,D,670,ours,no,,1,,
+kots19na_8141,2,161890,KSC,Rest,destroyer,Hotspot,C,C,3052,neutral,no,no,5,,A
+kots19na_8141,2,161894,KSC,Rest,destroyer,Hotspot,D,D,3236,neutral,no,yes,5,,D
+kots19na_8141,2,161896,KSC,Rest,destroyer,Hotspot,D,D,3045,ours,yes,,7,D,
+kots19na_8141,2,161898,KSC,Rest,destroyer,Hotspot,A,B,1046,ours,no,,6,D,
+kots19na_8141,2,161900,KSC,Rest,destroyer,Hotspot,C,C,-849,theirs,,no,6,,
+kots19na_8141,2,161901,KSC,Rest,destroyer,Hotspot,D,D,839,theirs,,no,7,,C
+kots19na_8141,2,161911,KSC,Rest,destroyer,Hotspot,C,C,-3482,ours,no,,1,B,
+kots19na_8141,2,161891,-BN-,Rest,destroyer,Hotspot,C,C,3313,neutral,yes,no,5,,
+kots19na_8141,2,161895,-BN-,Rest,destroyer,Hotspot,C,C,2067,theirs,,no,9,D,D
+kots19na_8141,2,161897,-BN-,Rest,cruiser,Hotspot,D,D,1464,theirs,,no,4,,
+kots19na_8141,2,161899,-BN-,Rest,cruiser,Hotspot,D,D,1420,ours,no,,2,D,
+kots19na_8141,2,161902,-BN-,Rest,cruiser,Hotspot,D,D,1484,ours,no,,5,D,
+kots19na_8141,2,161903,-BN-,Rest,destroyer,Hotspot,C,C,7590,ours,yes,,4,C,
+kots19na_8141,2,161904,-BN-,Rest,cruiser,Hotspot,D,D,1200,ours,no,,2,C,
+kots19na_8141,3,178892,KSC,Rest,destroyer,Mountain Range,C,C,2585,neutral,yes,no,4,,
+kots19na_8141,3,178893,-BN-,Rest,destroyer,Mountain Range,B,B,2166,neutral,yes,no,5,,
+kots19na_8141,3,178894,-BN-,Rest,cruiser,Mountain Range,A,A,4850,neutral,yes,no,5,,
+kots19na_8141,3,178895,KSC,Rest,destroyer,Mountain Range,C,C,13772,theirs,,no,8,A,
+kots19na_8141,3,178896,-BN-,Rest,destroyer,Mountain Range,A,A,3030,theirs,,no,6,,B
+kots19na_8141,3,178897,-BN-,Rest,cruiser,Mountain Range,B,B,5001,ours,no,,5,,
+kots19na_8141,3,178898,KSC,Rest,destroyer,Mountain Range,C,C,16885,theirs,,no,4,,
+kots19na_8141,3,178899,-BN-,Rest,destroyer,Mountain Range,A,A,6324,theirs,,no,2,C,
+kots19na_8141,3,178900,KSC,Rest,destroyer,Mountain Range,C,C,-1207,theirs,,yes,1,A,C
+kots19na_8142,1,104584,EPOXY,Rest,destroyer,Sea of Fortune,A,B,5168,ours,no,,3,,
+kots19na_8142,1,104585,EPOXY,Rest,destroyer,Sea of Fortune,A,B,2776,ours,no,,2,D,
+kots19na_8142,1,104586,EPOXY,Rest,destroyer,Sea of Fortune,A,B,4216,ours,no,,3,,
+kots19na_8142,1,104587,EPOXY,Rest,cruiser,Sea of Fortune,D,D,7829,theirs,,no,2,,
+kots19na_8142,1,104590,EPOXY,Rest,destroyer,Sea of Fortune,B,A,-1121,ours,no,,1,,C
+kots19na_8142,2,84987,KITE,Top 6,destroyer,Hotspot,D,D,3955,neutral,no,yes,5,,D
+kots19na_8142,2,84995,KITE,Top 6,destroyer,Hotspot,D,D,-2165,ours,no,,8,,
+kots19na_8142,2,84998,KITE,Top 6,destroyer,Hotspot,A,B,7529,theirs,,no,8,,
+kots19na_8142,2,85000,KITE,Top 6,destroyer,Hotspot,D,D,5811,ours,no,,5,,
+kots19na_8142,2,85004,KITE,Top 6,destroyer,Hotspot,A,B,7622,theirs,,no,1,,
+kots19na_8142,2,84985,EPOXY,Rest,destroyer,Hotspot,D,D,682,neutral,yes,no,7,C,C
+kots19na_8142,2,84986,EPOXY,Rest,destroyer,Hotspot,C,C,-230,neutral,no,yes,5,,C
+kots19na_8142,2,84992,EPOXY,Rest,destroyer,Hotspot,D,D,5385,theirs,,no,7,C,
+kots19na_8142,2,84996,EPOXY,Rest,destroyer,Hotspot,C,C,-1678,ours,no,,6,,A
+kots19na_8142,2,84997,EPOXY,Rest,destroyer,Hotspot,D,D,11025,theirs,,no,8,C,
+kots19na_8142,2,85003,EPOXY,Rest,destroyer,Hotspot,D,D,19332,theirs,,no,3,,
+kots19na_8143,1,54007,MACHX,Rest,cruiser,Sea of Fortune,D,D,4068,neutral,no,no,5,,C
+kots19na_8143,1,54008,MACHX,Rest,destroyer,Sea of Fortune,C,C,-750,ours,no,,4,C,
+kots19na_8143,1,54009,MACHX,Rest,cruiser,Sea of Fortune,A,B,2230,ours,no,,7,C,
+kots19na_8143,1,54013,MACHX,Rest,cruiser,Sea of Fortune,A,B,2539,ours,no,,19,C,
+kots19na_8143,1,54014,MACHX,Rest,cruiser,Sea of Fortune,D,D,2739,neutral,no,no,18,C,
+kots19na_8143,1,54018,MACHX,Rest,destroyer,Sea of Fortune,A,B,-624,ours,no,,12,,
+kots19na_8143,1,54019,MACHX,Rest,destroyer,Sea of Fortune,A,B,333,ours,no,,12,,
+kots19na_8143,1,54021,MACHX,Rest,cruiser,Sea of Fortune,C,C,2564,theirs,,no,6,,
+kots19na_8143,1,54023,MACHX,Rest,destroyer,Sea of Fortune,A,B,-1073,ours,no,,16,,
+kots19na_8143,1,54024,MACHX,Rest,cruiser,Sea of Fortune,C,C,4321,theirs,,no,15,,
+kots19na_8143,1,54026,MACHX,Rest,cruiser,Sea of Fortune,A,B,2239,ours,yes,,13,,
+kots19na_8143,1,54031,MACHX,Rest,destroyer,Sea of Fortune,C,C,987,theirs,,no,6,,
+kots19na_8143,1,54033,MACHX,Rest,destroyer,Sea of Fortune,A,B,5419,theirs,,no,4,,
+kots19na_8143,1,54010,VRTUS,Top 6,destroyer,Sea of Fortune,A,A,3418,theirs,,no,17,,
+kots19na_8143,1,54011,VRTUS,Top 6,cruiser,Sea of Fortune,D,D,5164,neutral,no,no,15,,
+kots19na_8143,1,54015,VRTUS,Top 6,cruiser,Sea of Fortune,A,A,2616,theirs,,no,16,,C
+kots19na_8143,1,54016,VRTUS,Top 6,cruiser,Sea of Fortune,D,D,5932,neutral,no,no,15,,C
+kots19na_8143,1,54017,VRTUS,Top 6,destroyer,Sea of Fortune,A,A,50,theirs,,no,13,,
+kots19na_8143,1,54020,VRTUS,Top 6,cruiser,Sea of Fortune,D,D,7098,neutral,no,no,7,,
+kots19na_8143,1,54022,VRTUS,Top 6,cruiser,Sea of Fortune,D,D,6319,neutral,yes,no,4,,
+kots19na_8143,1,54025,VRTUS,Top 6,destroyer,Sea of Fortune,D,D,7757,theirs,,no,10,,
+kots19na_8143,1,54027,VRTUS,Top 6,destroyer,Sea of Fortune,A,A,3100,theirs,,yes,13,,
+kots19na_8143,1,54028,VRTUS,Top 6,cruiser,Sea of Fortune,D,D,11140,theirs,,no,10,,
+kots19na_8143,1,54029,VRTUS,Top 6,destroyer,Sea of Fortune,C,C,4887,ours,no,,9,,
+kots19na_8143,1,54030,VRTUS,Top 6,cruiser,Sea of Fortune,A,A,402,theirs,,yes,9,C,A
+kots19na_8143,1,54032,VRTUS,Top 6,cruiser,Sea of Fortune,C,C,2670,ours,no,,4,C,A
+kots19na_8143,1,54049,VRTUS,Top 6,cruiser,Sea of Fortune,A,A,-827,ours,no,,3,,
+kots19na_8143,1,54050,VRTUS,Top 6,destroyer,Sea of Fortune,A,A,-1638,ours,no,,2,,
+kots19na_8143,2,214590,MACHX,Rest,destroyer,Land of Fire,A,A,3308,neutral,no,yes,13,,A
+kots19na_8143,2,214592,MACHX,Rest,destroyer,Land of Fire,B,B,992,neutral,no,no,7,,C
+kots19na_8143,2,214595,MACHX,Rest,destroyer,Land of Fire,B,B,595,neutral,no,no,6,,A
+kots19na_8143,2,214596,MACHX,Rest,destroyer,Land of Fire,A,A,1322,ours,yes,,7,A,
+kots19na_8143,2,214606,MACHX,Rest,destroyer,Land of Fire,B,B,1559,ours,yes,,5,B,
+kots19na_8143,2,214608,MACHX,Rest,destroyer,Land of Fire,B,B,2134,theirs,,no,1,,
+kots19na_8143,2,214591,VRTUS,Top 6,destroyer,Land of Fire,A,A,1933,neutral,yes,no,14,,
+kots19na_8143,2,214593,VRTUS,Top 6,destroyer,Land of Fire,B,B,-281,neutral,no,no,7,,
+kots19na_8143,2,214594,VRTUS,Top 6,cruiser,Land of Fire,B,B,837,neutral,no,no,7,,
+kots19na_8143,2,214597,VRTUS,Top 6,cruiser,Land of Fire,B,B,925,neutral,no,no,4,,
+kots19na_8143,2,214598,VRTUS,Top 6,destroyer,Land of Fire,B,B,886,neutral,no,no,3,,
+kots19na_8143,2,214599,VRTUS,Top 6,cruiser,Land of Fire,B,B,1094,neutral,no,no,3,,A
+kots19na_8143,2,214600,VRTUS,Top 6,destroyer,Land of Fire,B,B,1312,neutral,no,no,4,,
+kots19na_8143,2,214601,VRTUS,Top 6,cruiser,Land of Fire,B,B,1097,neutral,no,no,7,A,
+kots19na_8143,2,214602,VRTUS,Top 6,cruiser,Land of Fire,D,D,4758,ours,yes,,5,A,
+kots19na_8143,2,214603,VRTUS,Top 6,destroyer,Land of Fire,B,B,2396,neutral,no,no,3,,
+kots19na_8143,2,214604,VRTUS,Top 6,cruiser,Land of Fire,B,B,1260,neutral,yes,no,5,,
+kots19na_8143,2,214605,VRTUS,Top 6,destroyer,Land of Fire,B,B,1053,theirs,,yes,7,,
+kots19na_8143,2,214607,VRTUS,Top 6,cruiser,Land of Fire,B,B,1304,theirs,,yes,3,,B
+kots19na_8144,1,27545,BONKZ,Top 6,destroyer,Hotspot,D,D,2523,neutral,no,no,6,,C
+kots19na_8144,1,27547,BONKZ,Top 6,destroyer,Hotspot,C,C,1329,neutral,no,yes,5,,B
+kots19na_8144,1,27549,BONKZ,Top 6,destroyer,Hotspot,B,B,7236,ours,yes,,5,C,
+kots19na_8144,1,27551,BONKZ,Top 6,destroyer,Hotspot,D,D,13473,ours,no,,5,C,
+kots19na_8144,1,27552,BONKZ,Top 6,destroyer,Hotspot,B,B,6721,theirs,,yes,3,,B
+kots19na_8144,1,27553,BONKZ,Top 6,destroyer,Hotspot,C,C,4988,theirs,,no,1,,
+kots19na_8144,1,27546,MZY,Rest,destroyer,Hotspot,D,D,2743,neutral,yes,no,6,,
+kots19na_8144,1,27548,MZY,Rest,destroyer,Hotspot,D,D,8398,neutral,yes,no,5,,
+kots19na_8144,1,27550,MZY,Rest,destroyer,Hotspot,D,D,19120,theirs,,no,5,,
+kots19na_8144,2,39530,BONKZ,Top 6,destroyer,Sea of Fortune,D,D,4593,neutral,no,no,8,,
+kots19na_8144,2,39532,BONKZ,Top 6,destroyer,Sea of Fortune,A,B,1971,ours,no,,7,,
+kots19na_8144,2,39534,BONKZ,Top 6,destroyer,Sea of Fortune,D,D,4867,neutral,no,yes,8,,
+kots19na_8144,2,39535,BONKZ,Top 6,destroyer,Sea of Fortune,B,A,-1922,ours,no,,8,C,C
+kots19na_8144,2,39538,BONKZ,Top 6,destroyer,Sea of Fortune,D,D,4536,ours,no,,9,C,
+kots19na_8144,2,39539,BONKZ,Top 6,destroyer,Sea of Fortune,D,D,-855,ours,no,,7,D,
+kots19na_8144,2,39540,BONKZ,Top 6,destroyer,Sea of Fortune,B,A,-3142,ours,no,,6,D,
+kots19na_8144,2,39542,BONKZ,Top 6,destroyer,Sea of Fortune,D,D,5061,ours,no,,2,D,
+kots19na_8144,2,39529,MZY,Rest,destroyer,Sea of Fortune,D,D,4352,neutral,no,no,7,,C
+kots19na_8144,2,39533,MZY,Rest,destroyer,Sea of Fortune,D,D,8110,neutral,yes,no,9,C,
+kots19na_8144,2,39536,MZY,Rest,destroyer,Sea of Fortune,D,D,3776,neutral,yes,no,8,,C
+kots19na_8144,2,39537,MZY,Rest,destroyer,Sea of Fortune,D,D,4924,theirs,,no,10,,
+kots19na_8144,2,39541,MZY,Rest,destroyer,Sea of Fortune,D,D,5624,theirs,,no,3,,
+kots19na_8145,1,161910,HFANS,Rest,destroyer,Sleeping Giant,B,B,1624,neutral,no,no,3,A,A
+kots19na_8145,1,161924,HFANS,Rest,destroyer,Sleeping Giant,C,C,954,neutral,no,yes,15,,B
+kots19na_8145,1,161925,HFANS,Rest,cruiser,Sleeping Giant,A,A,11156,theirs,,no,13,,
+kots19na_8145,1,161927,HFANS,Rest,destroyer,Sleeping Giant,B,B,3059,theirs,,yes,8,,B
+kots19na_8145,1,161930,HFANS,Rest,destroyer,Sleeping Giant,B,B,228,theirs,,yes,7,,B
+kots19na_8145,1,161937,HFANS,Rest,battleship,Sleeping Giant,C,C,-622,ours,no,,7,,
+kots19na_8145,1,161938,HFANS,Rest,destroyer,Sleeping Giant,B,B,3052,ours,no,,7,,
+kots19na_8145,1,161939,HFANS,Rest,destroyer,Sleeping Giant,B,B,1622,ours,no,,6,,
+kots19na_8145,1,161945,HFANS,Rest,destroyer,Sleeping Giant,B,B,-59,ours,no,,9,,
+kots19na_8145,1,161946,HFANS,Rest,destroyer,Sleeping Giant,C,C,962,ours,no,,8,,
+kots19na_8145,1,161952,HFANS,Rest,destroyer,Sleeping Giant,B,B,1744,ours,no,,2,,
+kots19na_8145,1,161912,5D,Rest,cruiser,Sleeping Giant,A,A,-114,theirs,,yes,7,,A
+kots19na_8145,1,161928,5D,Rest,destroyer,Sleeping Giant,B,B,126,ours,yes,,10,B,
+kots19na_8145,1,161948,5D,Rest,cruiser,Sleeping Giant,B,B,1994,theirs,,no,6,,
+kots19na_8145,1,161951,5D,Rest,destroyer,Sleeping Giant,C,D,7712,theirs,,no,4,A,
+kots19na_8145,2,157256,HFANS,Rest,destroyer,Land of Fire,A,A,1694,neutral,no,no,16,,B
+kots19na_8145,2,157261,HFANS,Rest,destroyer,Land of Fire,C,D,1085,ours,no,,9,,
+kots19na_8145,2,157263,HFANS,Rest,destroyer,Land of Fire,D,C,2953,theirs,,no,4,,
+kots19na_8145,2,157264,HFANS,Rest,destroyer,Land of Fire,A,A,6416,neutral,yes,no,11,,
+kots19na_8145,2,157270,HFANS,Rest,destroyer,Land of Fire,B,B,3883,ours,no,,7,B,
+kots19na_8145,2,157271,HFANS,Rest,destroyer,Land of Fire,B,B,8002,ours,no,,6,B,
+kots19na_8145,2,157273,HFANS,Rest,destroyer,Land of Fire,B,B,6007,ours,no,,2,B,
+kots19na_8145,2,157257,5D,Rest,cruiser,Land of Fire,A,A,7738,neutral,no,no,6,,
+kots19na_8145,2,157258,5D,Rest,cruiser,Land of Fire,A,A,1889,neutral,no,no,9,,
+kots19na_8145,2,157259,5D,Rest,destroyer,Land of Fire,D,D,1092,ours,no,,13,,
+kots19na_8145,2,157260,5D,Rest,cruiser,Land of Fire,A,A,5693,neutral,no,no,8,,
+kots19na_8145,2,157262,5D,Rest,destroyer,Land of Fire,B,B,4204,theirs,,no,11,,
+kots19na_8145,2,157265,5D,Rest,cruiser,Land of Fire,A,A,1748,neutral,no,yes,4,,A
+kots19na_8145,2,157266,5D,Rest,cruiser,Land of Fire,A,A,-669,neutral,no,yes,5,,A
+kots19na_8145,2,157272,5D,Rest,cruiser,Land of Fire,B,B,1704,theirs,,no,4,,
+kots19na_8146,1,185483,HTDOG,Top 6,cruiser,Sea of Fortune,D,D,3011,neutral,yes,no,3,,C
+kots19na_8146,1,185484,HTDOG,Top 6,cruiser,Sea of Fortune,D,D,2085,theirs,,no,3,,
+kots19na_8146,1,185485,HTDOG,Top 6,cruiser,Sea of Fortune,D,D,6367,theirs,,no,1,C,D
+kots19na_8146,1,185486,HTDOG,Top 6,cruiser,Sea of Fortune,C,C,-1422,ours,no,,3,C,
+kots19na_8146,1,185487,HTDOG,Top 6,cruiser,Sea of Fortune,C,C,5718,ours,no,,1,C,
+kots19na_8146,1,185490,HTDOG,Top 6,cruiser,Sea of Fortune,C,C,-51,theirs,,no,3,,A
+kots19na_8146,1,185491,HTDOG,Top 6,cruiser,Sea of Fortune,D,D,9319,ours,no,,1,,
+kots19na_8146,2,121098,H-SR,Top 6,destroyer,Mountain Range,C,C,1696,neutral,no,no,6,,B
+kots19na_8146,2,121100,H-SR,Top 6,destroyer,Mountain Range,C,C,1790,neutral,yes,no,4,B,
+kots19na_8146,2,121102,H-SR,Top 6,destroyer,Mountain Range,B,B,2282,theirs,,yes,5,,B
+kots19na_8146,2,121106,H-SR,Top 6,destroyer,Mountain Range,B,B,2042,ours,yes,,9,B,
+kots19na_8146,2,121099,HTDOG,Top 6,cruiser,Mountain Range,C,C,9020,neutral,no,no,4,A,
+kots19na_8146,2,121101,HTDOG,Top 6,cruiser,Mountain Range,A,A,-2744,ours,no,,2,A,B
+kots19na_8146,2,121103,HTDOG,Top 6,cruiser,Mountain Range,A,A,800,ours,yes,,5,A,
+kots19na_8146,2,121104,HTDOG,Top 6,cruiser,Mountain Range,C,C,2540,ours,no,,3,A,
+kots19na_8146,2,121105,HTDOG,Top 6,cruiser,Mountain Range,B,B,4680,theirs,,no,5,,
+kots19na_8146,2,121107,HTDOG,Top 6,cruiser,Mountain Range,A,A,2222,theirs,,no,7,,
+kots19na_8146,2,121108,HTDOG,Top 6,cruiser,Mountain Range,B,B,3755,theirs,,yes,5,,
+kots19na_8146,2,121109,HTDOG,Top 6,cruiser,Mountain Range,B,B,5531,theirs,,yes,3,,B
+kots19na_8146,2,121110,HTDOG,Top 6,cruiser,Mountain Range,A,A,2954,theirs,,no,2,,B
+kots19na_8148,1,20508,REEEE,Rest,cruiser,Loop,C,C,730,theirs,,yes,3,,
+kots19na_8148,1,20511,REEEE,Rest,destroyer,Loop,A,A,1092,theirs,,no,1,,
+kots19na_8148,1,20515,REEEE,Rest,destroyer,Loop,A,A,-2721,ours,no,,2,,
+kots19na_8148,1,20517,REEEE,Rest,cruiser,Loop,C,C,-79,ours,no,,2,B,
+kots19na_8148,1,20519,REEEE,Rest,destroyer,Loop,A,A,4292,ours,yes,,3,A,B
+kots19na_8148,1,20520,REEEE,Rest,cruiser,Loop,C,C,-2665,ours,no,,5,A,
+kots19na_8148,1,20521,REEEE,Rest,destroyer,Loop,A,A,7789,theirs,,no,3,,
+kots19na_8148,1,20502,HFANS,Rest,destroyer,Loop,A,A,-1181,neutral,no,yes,3,,A
+kots19na_8148,1,20503,HFANS,Rest,destroyer,Loop,B,B,535,ours,yes,,6,B,C
+kots19na_8148,1,20507,HFANS,Rest,destroyer,Loop,A,A,-397,ours,no,,4,A,
+kots19na_8148,1,20509,HFANS,Rest,destroyer,Loop,C,C,1353,ours,yes,,7,C,
+kots19na_8148,1,20514,HFANS,Rest,destroyer,Loop,C,C,3168,theirs,,no,4,B,
+kots19na_8148,1,20518,HFANS,Rest,cruiser,Loop,A,A,8228,theirs,,no,3,B,
+kots19na_8148,1,20522,HFANS,Rest,cruiser,Loop,A,A,10089,ours,no,,1,,
+kots19na_8148,2,125975,REEEE,Rest,destroyer,Hotspot,D,D,2088,neutral,yes,no,7,,C
+kots19na_8148,2,125977,REEEE,Rest,destroyer,Hotspot,D,D,1824,neutral,yes,no,8,,
+kots19na_8148,2,125980,REEEE,Rest,cruiser,Hotspot,B,B,583,theirs,,no,5,,
+kots19na_8148,2,125984,REEEE,Rest,cruiser,Hotspot,B,B,4209,theirs,,no,3,,
+kots19na_8148,2,125985,REEEE,Rest,destroyer,Hotspot,D,D,5690,theirs,,no,2,,
+kots19na_8148,2,125976,HFANS,Rest,destroyer,Hotspot,D,D,1649,neutral,no,yes,8,,D
+kots19na_8148,2,125978,HFANS,Rest,destroyer,Hotspot,A,B,484,ours,no,,8,B,B
+kots19na_8148,2,125979,HFANS,Rest,destroyer,Hotspot,D,D,416,ours,no,,9,B,
+kots19na_8148,2,125981,HFANS,Rest,destroyer,Hotspot,D,D,-1154,ours,no,,6,B,
+kots19na_8148,2,125982,HFANS,Rest,destroyer,Hotspot,B,A,-180,ours,no,,5,B,B
+kots19na_8148,2,125983,HFANS,Rest,destroyer,Hotspot,D,D,-2651,ours,no,,5,B,
+kots19na_8148,3,97195,REEEE,Rest,destroyer,Okinawa,B,A,2438,ours,yes,,8,,
+kots19na_8148,3,97197,REEEE,Rest,cruiser,Okinawa,D,D,4691,ours,no,,4,,C
+kots19na_8148,3,97198,REEEE,Rest,destroyer,Okinawa,C,C,5765,ours,no,,9,,
+kots19na_8148,3,97202,REEEE,Rest,destroyer,Okinawa,C,C,7386,ours,no,,3,,
+kots19na_8148,3,97194,HFANS,Rest,cruiser,Okinawa,C,C,3726,neutral,no,yes,3,,C
+kots19na_8148,3,97196,HFANS,Rest,cruiser,Okinawa,C,C,7856,ours,yes,,9,C,
+kots19na_8148,3,97199,HFANS,Rest,cruiser,Okinawa,B,B,6292,ours,no,,6,,
+kots19na_8148,3,97200,HFANS,Rest,destroyer,Okinawa,B,B,9297,ours,no,,6,,
+kots19na_8148,3,97201,HFANS,Rest,cruiser,Okinawa,C,C,10800,theirs,,no,5,,
+kots19na_8148,3,97203,HFANS,Rest,destroyer,Okinawa,C,C,9308,theirs,,no,1,,
+kots19na_8149,1,68154,KITE,Top 6,destroyer,Mountain Range,B,B,2262,neutral,no,no,7,,
+kots19na_8149,1,68156,KITE,Top 6,destroyer,Mountain Range,A,A,-1675,neutral,no,no,9,,B
+kots19na_8149,1,68162,KITE,Top 6,destroyer,Mountain Range,B,B,1963,ours,no,,7,,A
+kots19na_8149,1,68163,KITE,Top 6,destroyer,Mountain Range,A,A,-6627,neutral,no,yes,5,,A
+kots19na_8149,1,68172,KITE,Top 6,destroyer,Mountain Range,B,B,3008,ours,yes,,5,B,
+kots19na_8149,1,68173,KITE,Top 6,destroyer,Mountain Range,A,A,5265,ours,no,,4,B,
+kots19na_8149,1,68177,KITE,Top 6,destroyer,Mountain Range,B,B,1210,theirs,,yes,3,B,B
+kots19na_8149,1,68155,MACHX,Rest,cruiser,Mountain Range,B,B,1968,neutral,no,no,5,,
+kots19na_8149,1,68157,MACHX,Rest,cruiser,Mountain Range,C,C,1408,neutral,no,yes,4,,
+kots19na_8149,1,68158,MACHX,Rest,cruiser,Mountain Range,B,B,2006,theirs,,no,5,,C
+kots19na_8149,1,68164,MACHX,Rest,cruiser,Mountain Range,B,B,2964,theirs,,no,3,,
+kots19na_8149,1,68165,MACHX,Rest,cruiser,Mountain Range,A,A,1931,theirs,,no,6,,
+kots19na_8149,1,68171,MACHX,Rest,cruiser,Mountain Range,B,B,758,theirs,,no,5,,
+kots19na_8149,1,68179,MACHX,Rest,cruiser,Mountain Range,A,A,11427,theirs,,no,1,,
+kots19na_8149,2,171336,KITE,Top 6,destroyer,Land of Fire,A,A,8772,neutral,no,no,1,,
+kots19na_8149,2,171337,KITE,Top 6,destroyer,Land of Fire,C,D,-63,ours,no,,1,,B
+kots19na_8149,2,171338,KITE,Top 6,destroyer,Land of Fire,C,D,6435,theirs,,no,5,,
+kots19na_8149,2,171339,KITE,Top 6,destroyer,Land of Fire,A,A,8444,ours,no,,4,B,
+kots19na_8149,2,171340,KITE,Top 6,destroyer,Land of Fire,C,D,5951,theirs,,no,1,B,
+kots19na_8149,2,171341,KITE,Top 6,destroyer,Land of Fire,A,A,12385,ours,no,,1,,
+kots19na_8150,1,34870,HTDOG,Top 6,cruiser,Loop,A,A,11104,theirs,,no,2,B,
+kots19na_8150,1,34875,HTDOG,Top 6,cruiser,Loop,A,A,7736,theirs,,no,5,B,
+kots19na_8150,1,34879,HTDOG,Top 6,cruiser,Loop,A,A,4037,theirs,,yes,5,,A
+kots19na_8150,1,34881,HTDOG,Top 6,destroyer,Loop,B,B,-851,theirs,,no,2,B,A
+kots19na_8150,1,34886,HTDOG,Top 6,destroyer,Loop,B,B,-520,theirs,,yes,5,C,B
+kots19na_8150,1,34873,KITED,Rest,destroyer,Loop,A,A,2226,ours,no,,3,,
+kots19na_8150,1,34878,KITED,Rest,cruiser,Loop,C,C,6710,theirs,,no,4,B,
+kots19na_8150,1,34887,KITED,Rest,cruiser,Loop,C,C,-1109,theirs,,yes,4,B,C
+kots19na_8150,1,34888,KITED,Rest,cruiser,Loop,C,C,-3510,ours,no,,1,,
+kots19na_8150,2,188185,HTDOG,Top 6,cruiser,Sleeping Giant,A,A,3067,neutral,yes,no,6,,
+kots19na_8150,2,188186,HTDOG,Top 6,cruiser,Sleeping Giant,A,A,4285,neutral,yes,no,5,,
+kots19na_8150,2,188187,HTDOG,Top 6,destroyer,Sleeping Giant,A,A,4826,theirs,,no,3,,
+kots19na_8150,2,188191,HTDOG,Top 6,destroyer,Sleeping Giant,B,B,2077,neutral,no,no,13,,
+kots19na_8150,2,188193,HTDOG,Top 6,destroyer,Sleeping Giant,A,A,3528,theirs,,no,6,,
+kots19na_8150,2,188194,HTDOG,Top 6,cruiser,Sleeping Giant,A,A,3424,theirs,,no,9,,
+kots19na_8150,2,188195,HTDOG,Top 6,cruiser,Sleeping Giant,A,A,6160,theirs,,no,7,,
+kots19na_8150,2,188198,HTDOG,Top 6,destroyer,Sleeping Giant,A,A,1679,theirs,,yes,4,,
+kots19na_8150,2,188199,HTDOG,Top 6,cruiser,Sleeping Giant,A,A,-1266,ours,no,,9,,
+kots19na_8150,2,188201,HTDOG,Top 6,destroyer,Sleeping Giant,A,A,-1974,ours,no,,7,,
+kots19na_8150,2,188202,HTDOG,Top 6,destroyer,Sleeping Giant,D,D,3253,ours,no,,3,,
+kots19na_8150,2,188206,HTDOG,Top 6,destroyer,Sleeping Giant,A,A,656,ours,no,,1,,
+kots19na_8150,2,188188,KITED,Rest,cruiser,Sleeping Giant,C,D,218,ours,no,,9,,
+kots19na_8150,2,188189,KITED,Rest,destroyer,Sleeping Giant,B,B,1807,neutral,no,no,19,,
+kots19na_8150,2,188190,KITED,Rest,cruiser,Sleeping Giant,A,A,-191,ours,no,,8,,
+kots19na_8150,2,188192,KITED,Rest,cruiser,Sleeping Giant,C,D,374,ours,no,,11,,
+kots19na_8150,2,188196,KITED,Rest,cruiser,Sleeping Giant,C,D,1354,ours,no,,11,A,
+kots19na_8150,2,188197,KITED,Rest,destroyer,Sleeping Giant,A,A,690,ours,yes,,10,A,
+kots19na_8150,2,188200,KITED,Rest,cruiser,Sleeping Giant,A,A,3604,theirs,,no,8,,
+kots19na_8152,1,207838,MZY,Rest,destroyer,Okinawa,C,C,6831,neutral,no,no,2,,
+kots19na_8152,1,207840,MZY,Rest,cruiser,Okinawa,C,C,15287,neutral,no,no,3,,
+kots19na_8152,1,207842,MZY,Rest,destroyer,Okinawa,C,C,5013,neutral,no,no,1,,
+kots19na_8152,1,207837,-BN-,Rest,destroyer,Okinawa,D,D,8625,theirs,,no,4,,
+kots19na_8152,1,207839,-BN-,Rest,battleship,Okinawa,C,C,674,neutral,no,no,3,,
+kots19na_8152,1,207841,-BN-,Rest,cruiser,Okinawa,C,C,10984,neutral,no,no,3,,
+kots19na_8152,2,49175,-BN-,Rest,destroyer,Land of Fire,A,A,6765,ours,no,,2,B,
+kots19na_8152,2,49176,-BN-,Rest,destroyer,Land of Fire,A,A,7625,ours,no,,1,,B
+kots19na_8147,1,120799,BONKZ,Top 6,destroyer,Sleeping Giant,A,A,7179,neutral,yes,no,9,,
+kots19na_8147,1,120800,BONKZ,Top 6,cruiser,Sleeping Giant,C,D,5258,ours,no,,7,,
+kots19na_8147,1,120801,BONKZ,Top 6,destroyer,Sleeping Giant,C,D,-132,ours,no,,6,,
+kots19na_8147,1,120802,BONKZ,Top 6,destroyer,Sleeping Giant,C,D,7815,ours,no,,5,,
+kots19na_8147,1,120804,BONKZ,Top 6,destroyer,Sleeping Giant,C,D,7455,ours,yes,,5,,
+kots19na_8147,1,120805,BONKZ,Top 6,destroyer,Sleeping Giant,C,D,3252,ours,yes,,4,,
+kots19na_8147,1,120807,BONKZ,Top 6,destroyer,Sleeping Giant,C,D,7880,theirs,,no,6,,
+kots19na_8147,1,120810,BONKZ,Top 6,cruiser,Sleeping Giant,A,A,9074,ours,no,,3,,
+kots19na_8147,1,120797,RESIN,Top 6,destroyer,Sleeping Giant,A,A,2435,neutral,no,yes,11,,A
+kots19na_8147,1,120798,RESIN,Top 6,destroyer,Sleeping Giant,D,D,4703,ours,no,,11,,
+kots19na_8147,1,120803,RESIN,Top 6,destroyer,Sleeping Giant,A,A,1042,ours,no,,5,A,
+kots19na_8147,1,120806,RESIN,Top 6,destroyer,Sleeping Giant,C,C,908,ours,no,,8,,
+kots19na_8147,1,120808,RESIN,Top 6,destroyer,Sleeping Giant,B,B,-95,neutral,no,no,6,,
+kots19na_8147,1,120809,RESIN,Top 6,destroyer,Sleeping Giant,C,C,-685,ours,yes,,5,C,
+kots19na_8147,1,120811,RESIN,Top 6,destroyer,Sleeping Giant,D,D,3505,ours,no,,2,C,
+kots19na_8147,2,175995,BONKZ,Top 6,destroyer,Mountain Range,B,B,1400,neutral,no,yes,8,,
+kots19na_8147,2,175997,BONKZ,Top 6,cruiser,Mountain Range,B,B,1530,neutral,no,yes,7,,B
+kots19na_8147,2,175998,BONKZ,Top 6,destroyer,Mountain Range,C,C,822,neutral,no,no,6,,B
+kots19na_8147,2,175999,BONKZ,Top 6,destroyer,Mountain Range,A,A,-2342,theirs,,no,6,,
+kots19na_8147,2,176000,BONKZ,Top 6,destroyer,Mountain Range,C,C,364,neutral,no,no,2,,
+kots19na_8147,2,176002,BONKZ,Top 6,destroyer,Mountain Range,A,A,-7032,theirs,,yes,3,B,A
+kots19na_8147,2,176005,BONKZ,Top 6,cruiser,Mountain Range,B,B,-1251,theirs,,yes,7,,B
+kots19na_8147,2,176007,BONKZ,Top 6,cruiser,Mountain Range,B,B,-62,ours,no,,5,,
+kots19na_8147,2,176009,BONKZ,Top 6,cruiser,Mountain Range,B,B,-121,ours,yes,,5,B,
+kots19na_8147,2,176011,BONKZ,Top 6,cruiser,Mountain Range,B,B,2064,ours,yes,,4,B,
+kots19na_8147,2,175994,RESIN,Top 6,destroyer,Mountain Range,C,C,4476,neutral,no,no,9,A,
+kots19na_8147,2,175996,RESIN,Top 6,destroyer,Mountain Range,B,B,1726,neutral,yes,no,9,A,
+kots19na_8147,2,176001,RESIN,Top 6,destroyer,Mountain Range,A,A,-1516,ours,no,,3,A,
+kots19na_8147,2,176003,RESIN,Top 6,destroyer,Mountain Range,C,C,-816,ours,no,,10,B,
+kots19na_8147,2,176004,RESIN,Top 6,destroyer,Mountain Range,B,B,12890,ours,yes,,10,B,
+kots19na_8147,2,176006,RESIN,Top 6,destroyer,Mountain Range,B,B,6229,theirs,,no,8,,
+kots19na_8147,2,176008,RESIN,Top 6,destroyer,Mountain Range,B,B,1269,theirs,,yes,10,,B
+kots19na_8147,2,176010,RESIN,Top 6,destroyer,Mountain Range,C,C,11752,ours,no,,5,,
+kots19na_8147,2,176012,RESIN,Top 6,destroyer,Mountain Range,B,B,-2295,ours,no,,1,,
+kots19na_8147,3,12944,BONKZ,Top 6,destroyer,Land of Fire,B,B,723,neutral,no,no,4,,A
+kots19na_8147,3,12947,BONKZ,Top 6,destroyer,Land of Fire,A,A,738,ours,no,,3,B,
+kots19na_8147,3,12948,BONKZ,Top 6,destroyer,Land of Fire,B,B,3865,ours,yes,,1,B,
+kots19na_8147,3,12943,RESIN,Top 6,cruiser,Land of Fire,B,B,680,neutral,no,no,5,,C
+kots19na_8147,3,12945,RESIN,Top 6,cruiser,Land of Fire,B,B,450,neutral,no,no,2,,
+kots19na_8147,3,12946,RESIN,Top 6,destroyer,Land of Fire,A,A,638,theirs,,no,3,,
+kots19na_8151,1,29457,EPOXY,Rest,destroyer,Sleeping Giant,D,D,814,ours,no,,9,,
+kots19na_8151,1,29459,EPOXY,Rest,destroyer,Sleeping Giant,C,C,281,theirs,,no,7,,
+kots19na_8151,1,29461,EPOXY,Rest,destroyer,Sleeping Giant,D,D,4916,ours,no,,5,,C
+kots19na_8151,1,29464,EPOXY,Rest,destroyer,Sleeping Giant,C,C,4104,ours,no,,1,,
+kots19na_8151,1,29455,H-SR,Top 6,destroyer,Sleeping Giant,A,A,1435,neutral,no,yes,6,,A
+kots19na_8151,1,29456,H-SR,Top 6,destroyer,Sleeping Giant,C,D,4737,ours,no,,10,,
+kots19na_8151,1,29458,H-SR,Top 6,destroyer,Sleeping Giant,A,A,3174,ours,no,,8,,
+kots19na_8151,1,29460,H-SR,Top 6,destroyer,Sleeping Giant,C,D,6398,ours,yes,,7,,
+kots19na_8151,1,29462,H-SR,Top 6,destroyer,Sleeping Giant,A,A,8353,ours,no,,5,,
+kots19na_8151,1,29463,H-SR,Top 6,destroyer,Sleeping Giant,C,D,7920,theirs,,no,3,,
+kots19na_8151,2,3189,EPOXY,Rest,destroyer,Sea of Fortune,A,B,4730,ours,no,,5,C,
+kots19na_8151,2,3188,H-SR,Top 6,destroyer,Sea of Fortune,B,B,1480,neutral,no,yes,1,,B
+kots19na_8151,2,3190,H-SR,Top 6,battleship,Sea of Fortune,B,B,-249,ours,no,,1,,
+kots19na_8151,2,3191,H-SR,Top 6,cruiser,Sea of Fortune,D,D,11929,theirs,,no,1,,
+kots19na_8151,2,3192,H-SR,Top 6,cruiser,Sea of Fortune,C,C,8130,theirs,,no,1,,
+kots19na_8151,3,85024,EPOXY,Rest,destroyer,Hotspot,C,C,1413,neutral,yes,no,4,,B
+kots19na_8151,3,85027,EPOXY,Rest,destroyer,Hotspot,B,B,-1176,ours,no,,5,D,
+kots19na_8151,3,85030,EPOXY,Rest,battleship,Hotspot,A,A,720,theirs,,no,4,,
+kots19na_8151,3,85022,H-SR,Top 6,destroyer,Hotspot,C,C,1977,neutral,no,yes,6,,C
+kots19na_8151,3,85023,H-SR,Top 6,battleship,Hotspot,C,C,3499,neutral,no,yes,3,,C
+kots19na_8151,3,85025,H-SR,Top 6,destroyer,Hotspot,A,B,575,ours,no,,6,,
+kots19na_8151,3,85026,H-SR,Top 6,destroyer,Hotspot,D,D,2745,theirs,,yes,5,,D
+kots19na_8151,3,85028,H-SR,Top 6,destroyer,Hotspot,D,D,1483,ours,no,,7,,
+kots19na_8151,3,85029,H-SR,Top 6,destroyer,Hotspot,A,B,2815,ours,no,,5,,
+kots19na_8151,3,85031,H-SR,Top 6,destroyer,Hotspot,C,C,1205,ours,no,,3,,
+kots19na_8153,1,92169,HTDOG,Top 6,cruiser,Sleeping Giant,A,A,2031,ours,no,,1,,
+kots19na_8153,1,92173,HTDOG,Top 6,destroyer,Sleeping Giant,A,A,-679,ours,no,,3,,
+kots19na_8153,1,92175,HTDOG,Top 6,cruiser,Sleeping Giant,A,A,3862,ours,no,,5,,
+kots19na_8153,1,92179,HTDOG,Top 6,cruiser,Sleeping Giant,A,A,7292,ours,no,,8,,B
+kots19na_8153,1,92180,HTDOG,Top 6,destroyer,Sleeping Giant,B,B,645,ours,no,,7,,
+kots19na_8153,1,92182,HTDOG,Top 6,cruiser,Sleeping Giant,B,B,4686,ours,no,,3,,
+kots19na_8153,1,92183,HTDOG,Top 6,cruiser,Sleeping Giant,B,B,358,ours,no,,3,,
+kots19na_8153,1,92174,KITE,Top 6,destroyer,Sleeping Giant,A,A,5973,theirs,,no,3,,
+kots19na_8153,1,92178,KITE,Top 6,destroyer,Sleeping Giant,B,B,13190,neutral,yes,no,11,,
+kots19na_8153,1,92181,KITE,Top 6,destroyer,Sleeping Giant,C,D,126,ours,no,,6,,
+kots19na_8153,2,108630,HTDOG,Top 6,cruiser,Mountain Range,C,C,2539,ours,no,,4,B,
+kots19na_8153,2,108631,HTDOG,Top 6,cruiser,Mountain Range,C,C,1540,ours,no,,5,,
+kots19na_8153,2,108632,HTDOG,Top 6,cruiser,Mountain Range,A,A,1922,theirs,,no,7,,
+kots19na_8153,2,108634,HTDOG,Top 6,cruiser,Mountain Range,C,C,2030,ours,no,,3,,
+kots19na_8153,2,108635,HTDOG,Top 6,cruiser,Mountain Range,A,A,2728,theirs,,no,4,,
+kots19na_8153,2,108636,HTDOG,Top 6,cruiser,Mountain Range,C,C,4224,ours,no,,1,,
+kots19na_8153,2,108629,KITE,Top 6,destroyer,Mountain Range,B,B,1749,neutral,yes,yes,8,,A
+kots19na_8153,2,108633,KITE,Top 6,destroyer,Mountain Range,B,B,2102,ours,no,,7,A,
+kots19na_8154,1,175936,HFANS,Rest,destroyer,Land of Fire,A,A,2425,neutral,yes,no,11,,B
+kots19na_8154,1,175937,HFANS,Rest,cruiser,Land of Fire,A,A,3201,neutral,yes,no,3,,
+kots19na_8154,1,175939,HFANS,Rest,destroyer,Land of Fire,B,B,-702,ours,no,,6,,D
+kots19na_8154,1,175941,HFANS,Rest,destroyer,Land of Fire,A,A,14102,theirs,,no,5,B,
+kots19na_8154,1,175943,HFANS,Rest,destroyer,Land of Fire,B,B,11935,theirs,,no,1,,
+kots19na_8154,1,175938,MZY,Rest,destroyer,Land of Fire,A,A,1862,ours,no,,9,,B
+kots19na_8154,1,175940,MZY,Rest,destroyer,Land of Fire,A,A,8111,ours,no,,4,,
+kots19na_8154,1,175942,MZY,Rest,destroyer,Land of Fire,B,B,14803,ours,no,,3,,
+kots19na_8154,2,80069,HFANS,Rest,destroyer,Okinawa,C,C,3547,neutral,yes,no,4,,
+kots19na_8154,2,80071,HFANS,Rest,destroyer,Okinawa,A,A,2447,neutral,no,yes,5,,A
+kots19na_8154,2,80076,HFANS,Rest,destroyer,Okinawa,A,A,2087,ours,yes,,3,C,
+kots19na_8154,2,80077,HFANS,Rest,cruiser,Okinawa,C,C,4529,theirs,,no,3,,
+kots19na_8154,2,80078,HFANS,Rest,destroyer,Okinawa,A,A,11284,theirs,,no,3,D,
+kots19na_8154,2,80072,MZY,Rest,destroyer,Okinawa,C,C,2360,ours,yes,,5,C,
+kots19na_8154,2,80073,MZY,Rest,cruiser,Okinawa,B,A,493,ours,no,,4,C,
+kots19na_8154,2,80079,MZY,Rest,destroyer,Okinawa,C,C,2036,ours,no,,2,,
+kots19na_8154,3,72715,HFANS,Rest,destroyer,Sea of Fortune,B,A,811,theirs,,yes,4,C,B
+kots19na_8154,3,72716,HFANS,Rest,cruiser,Sea of Fortune,B,A,-1748,ours,no,,9,C,
+kots19na_8154,3,72717,HFANS,Rest,destroyer,Sea of Fortune,A,B,-1648,ours,no,,9,C,
+kots19na_8154,3,72720,HFANS,Rest,destroyer,Sea of Fortune,A,B,-5,ours,no,,3,C,
+kots19na_8154,3,72721,HFANS,Rest,cruiser,Sea of Fortune,B,A,1601,ours,yes,,5,C,
+kots19na_8154,3,72706,MZY,Rest,destroyer,Sea of Fortune,D,D,1541,neutral,no,yes,2,,
+kots19na_8154,3,72711,MZY,Rest,destroyer,Sea of Fortune,B,B,-1341,ours,yes,,6,C,
+kots19na_8154,3,72713,MZY,Rest,destroyer,Sea of Fortune,D,D,5364,ours,no,,5,C,
+kots19na_8154,3,72718,MZY,Rest,destroyer,Sea of Fortune,C,C,11248,theirs,,no,8,,C
+kots19na_8154,3,72719,MZY,Rest,destroyer,Sea of Fortune,A,A,5532,theirs,,no,6,,C
+kots19na_8154,3,72722,MZY,Rest,destroyer,Sea of Fortune,A,A,1178,theirs,,no,4,,
+kots19na_8154,3,72723,MZY,Rest,destroyer,Sea of Fortune,B,B,-200,ours,no,,2,,
+kots19na_8174,1,94346,EPOXY,Rest,destroyer,Hotspot,C,C,561,theirs,,no,1,,
+kots19na_8174,1,94349,EPOXY,Rest,destroyer,Hotspot,C,C,-1613,theirs,,yes,5,C,C
+kots19na_8174,1,94350,EPOXY,Rest,cruiser,Hotspot,B,A,853,ours,no,,3,C,
+kots19na_8174,1,94351,EPOXY,Rest,destroyer,Hotspot,C,C,1293,ours,no,,1,C,
+kots19na_8174,1,94354,EPOXY,Rest,cruiser,Hotspot,B,A,158,ours,no,,5,,
+kots19na_8174,1,94356,EPOXY,Rest,destroyer,Hotspot,C,C,-1497,theirs,,no,7,,
+kots19na_8174,1,94358,EPOXY,Rest,cruiser,Hotspot,B,A,-575,ours,no,,5,,
+kots19na_8174,1,94360,EPOXY,Rest,destroyer,Hotspot,C,C,-1573,theirs,,no,1,,
+kots19na_8174,1,94344,MZY,Rest,destroyer,Hotspot,C,C,1540,neutral,yes,yes,5,,D
+kots19na_8174,1,94345,MZY,Rest,destroyer,Hotspot,C,C,2658,theirs,,yes,4,,C
+kots19na_8174,1,94347,MZY,Rest,destroyer,Hotspot,B,B,8861,theirs,,no,9,C,C
+kots19na_8174,1,94348,MZY,Rest,destroyer,Hotspot,C,C,3541,ours,yes,,8,C,
+kots19na_8174,1,94359,MZY,Rest,destroyer,Hotspot,C,C,-1816,ours,no,,3,C,
+kots19na_8174,2,58465,EPOXY,Rest,destroyer,Okinawa,A,A,-564,neutral,no,yes,4,,
+kots19na_8174,2,58474,EPOXY,Rest,destroyer,Okinawa,A,A,7077,ours,no,,8,,
+kots19na_8174,2,58492,EPOXY,Rest,cruiser,Okinawa,C,C,283,theirs,,no,5,,
+kots19na_8174,2,58493,EPOXY,Rest,destroyer,Okinawa,C,C,9235,theirs,,no,4,,
+kots19na_8174,2,58466,MZY,Rest,destroyer,Okinawa,C,C,7163,ours,no,,2,,
+kots19na_8174,2,58491,MZY,Rest,destroyer,Okinawa,C,C,3291,ours,no,,1,C,
+kots19na_8174,2,58494,MZY,Rest,destroyer,Okinawa,C,C,6856,ours,no,,3,C,
+kots19na_8174,3,207566,EPOXY,Rest,destroyer,Loop,A,A,-76,neutral,yes,no,3,,
+kots19na_8174,3,207567,EPOXY,Rest,destroyer,Loop,A,A,11060,theirs,,no,3,,B
+kots19na_8174,3,207568,EPOXY,Rest,destroyer,Loop,B,B,2289,ours,no,,2,,
+kots19na_8174,3,207569,EPOXY,Rest,destroyer,Loop,B,B,54,ours,no,,1,,
+kots19na_8175,1,63094,BONKZ,Top 6,destroyer,Sleeping Giant,D,D,5122,ours,no,,8,,C
+kots19na_8175,1,63095,BONKZ,Top 6,cruiser,Sleeping Giant,A,A,5625,theirs,,no,5,,
+kots19na_8175,1,63098,BONKZ,Top 6,destroyer,Sleeping Giant,C,C,520,ours,yes,,5,C,
+kots19na_8175,1,63090,HTDOG,Top 6,destroyer,Sleeping Giant,A,A,316,neutral,no,no,2,,B
+kots19na_8175,1,63091,HTDOG,Top 6,cruiser,Sleeping Giant,A,A,3882,neutral,no,yes,6,,B
+kots19na_8175,1,63093,HTDOG,Top 6,destroyer,Sleeping Giant,A,A,-456,ours,no,,5,,
+kots19na_8175,1,63096,HTDOG,Top 6,destroyer,Sleeping Giant,C,D,4308,ours,yes,,4,,
+kots19na_8175,1,63097,HTDOG,Top 6,cruiser,Sleeping Giant,A,A,856,ours,no,,5,A,
+kots19na_8175,1,63099,HTDOG,Top 6,destroyer,Sleeping Giant,B,B,1491,ours,no,,2,A,
+kots19na_8175,1,63100,HTDOG,Top 6,cruiser,Sleeping Giant,A,A,-845,ours,no,,1,A,
+kots19na_8175,2,111324,BONKZ,Top 6,destroyer,Loop,B,B,141,theirs,,no,1,,B
+kots19na_8175,2,111329,BONKZ,Top 6,destroyer,Loop,C,C,1047,neutral,no,yes,3,,
+kots19na_8175,2,111337,BONKZ,Top 6,cruiser,Loop,C,C,3733,ours,no,,3,,
+kots19na_8175,2,111344,BONKZ,Top 6,destroyer,Loop,B,B,-202,ours,no,,9,,
+kots19na_8175,2,111345,BONKZ,Top 6,cruiser,Loop,C,C,5596,ours,no,,8,,
+kots19na_8175,2,111352,BONKZ,Top 6,cruiser,Loop,C,C,5998,ours,no,,1,,
+kots19na_8175,2,111339,HTDOG,Top 6,cruiser,Loop,A,A,-3289,ours,no,,3,,
+kots19na_8175,2,111341,HTDOG,Top 6,cruiser,Loop,A,A,-693,ours,no,,7,,
+kots19na_8175,2,111348,HTDOG,Top 6,cruiser,Loop,A,A,3723,ours,no,,5,,
+kots19na_8175,2,111349,HTDOG,Top 6,destroyer,Loop,B,B,10387,theirs,,no,3,,
+kots19na_8175,3,159279,BONKZ,Top 6,destroyer,Mountain Range,B,B,1328,neutral,no,yes,7,,B
+kots19na_8175,3,159284,BONKZ,Top 6,destroyer,Mountain Range,B,B,2403,ours,no,,10,,
+kots19na_8175,3,159288,BONKZ,Top 6,destroyer,Mountain Range,A,A,-7849,neutral,no,no,8,B,
+kots19na_8175,3,159282,HTDOG,Top 6,cruiser,Mountain Range,A,A,-1003,neutral,no,no,8,,
+kots19na_8175,3,159283,HTDOG,Top 6,destroyer,Mountain Range,B,B,3034,theirs,,no,5,,
+kots19na_8175,3,159285,HTDOG,Top 6,destroyer,Mountain Range,B,B,843,theirs,,no,3,,
+kots19na_8175,3,159286,HTDOG,Top 6,cruiser,Mountain Range,A,A,2939,neutral,no,no,10,,
+kots19na_8175,3,159287,HTDOG,Top 6,destroyer,Mountain Range,A,A,5049,neutral,no,no,6,,
+kots19na_8175,3,159289,HTDOG,Top 6,destroyer,Mountain Range,A,A,-124,neutral,no,no,5,,
+kots19na_8175,3,159290,HTDOG,Top 6,cruiser,Mountain Range,A,A,1354,neutral,no,no,4,,
+kots19na_8175,3,159291,HTDOG,Top 6,destroyer,Mountain Range,A,A,-902,neutral,no,no,2,,
+kots19na_8176,1,125601,RESIN,Top 6,destroyer,Sleeping Giant,A,A,1867,neutral,yes,no,4,,
+kots19na_8176,1,125603,RESIN,Top 6,destroyer,Sleeping Giant,A,A,9593,theirs,,no,7,B,
+kots19na_8176,1,125609,RESIN,Top 6,destroyer,Sleeping Giant,B,B,12344,theirs,,no,4,,
+kots19na_8176,1,125602,H-SR,Top 6,destroyer,Sleeping Giant,A,A,495,ours,no,,8,,
+kots19na_8176,1,125604,H-SR,Top 6,destroyer,Sleeping Giant,C,D,6091,ours,yes,,7,,
+kots19na_8176,1,125605,H-SR,Top 6,battleship,Sleeping Giant,C,D,5105,ours,yes,,4,,
+kots19na_8176,1,125606,H-SR,Top 6,destroyer,Sleeping Giant,A,A,8151,ours,no,,4,,
+kots19na_8176,1,125607,H-SR,Top 6,destroyer,Sleeping Giant,C,D,13073,theirs,,no,7,,
+kots19na_8176,1,125608,H-SR,Top 6,destroyer,Sleeping Giant,C,D,12241,theirs,,no,5,,
+kots19na_8176,1,125610,H-SR,Top 6,destroyer,Sleeping Giant,A,A,7510,ours,no,,3,,
+kots19na_8176,2,139975,RESIN,Top 6,destroyer,Hotspot,C,C,3135,neutral,no,no,3,C,C
+kots19na_8176,2,139983,RESIN,Top 6,destroyer,Hotspot,B,A,878,theirs,,yes,2,,B
+kots19na_8176,2,139985,RESIN,Top 6,destroyer,Hotspot,B,A,409,ours,no,,5,,
+kots19na_8176,2,139979,H-SR,Top 6,destroyer,Hotspot,C,C,1712,neutral,no,no,1,,
+kots19na_8176,2,139986,H-SR,Top 6,destroyer,Hotspot,C,C,799,ours,no,,3,C,
+kots19na_8176,2,139987,H-SR,Top 6,battleship,Hotspot,C,C,8067,ours,no,,2,C,
+kots19na_8176,3,159292,RESIN,Top 6,destroyer,Land of Fire,C,D,8874,theirs,,no,1,,
+kots19na_8176,3,159293,RESIN,Top 6,destroyer,Land of Fire,C,D,7276,ours,no,,3,,
+kots19na_8176,3,159294,RESIN,Top 6,destroyer,Land of Fire,C,D,-63,ours,no,,1,,
+kots19na_8176,4,180809,RESIN,Top 6,destroyer,Loop,B,B,1122,neutral,no,no,1,,B
+kots19na_8176,4,180812,RESIN,Top 6,destroyer,Loop,A,A,-1549,ours,no,,3,B,
+kots19na_8176,4,180813,RESIN,Top 6,destroyer,Loop,B,B,-886,ours,no,,3,A,
+kots19na_8176,4,180815,RESIN,Top 6,destroyer,Loop,B,B,216,ours,no,,2,B,A
+kots19na_8176,4,180816,RESIN,Top 6,destroyer,Loop,B,B,382,theirs,,no,1,,
+kots19na_8176,4,180810,H-SR,Top 6,battleship,Loop,C,C,-2029,neutral,no,no,3,A,
+kots19na_8176,4,180811,H-SR,Top 6,destroyer,Loop,C,C,-765,neutral,no,no,5,A,
+kots19na_8176,4,180814,H-SR,Top 6,destroyer,Loop,C,C,2228,neutral,no,no,3,A,C
+kots19na_8177,1,176201,EPOXY,Rest,destroyer,Sleeping Giant,A,A,2147,neutral,no,yes,6,,A
+kots19na_8177,1,176202,EPOXY,Rest,destroyer,Sleeping Giant,C,D,3314,neutral,yes,no,4,,
+kots19na_8177,1,176203,EPOXY,Rest,destroyer,Sleeping Giant,C,D,7690,theirs,,no,2,,B
+kots19na_8177,1,176208,EPOXY,Rest,destroyer,Sleeping Giant,B,B,2602,ours,yes,,3,B,
+kots19na_8177,1,176200,BONKZ,Top 6,destroyer,Sleeping Giant,D,D,1064,ours,no,,5,,C
+kots19na_8177,1,176211,BONKZ,Top 6,destroyer,Sleeping Giant,C,C,4492,ours,no,,1,C,
+kots19na_8177,2,68182,EPOXY,Rest,cruiser,Hotspot,A,B,-133,ours,no,,5,C,
+kots19na_8177,2,68185,EPOXY,Rest,destroyer,Hotspot,C,C,-764,ours,yes,,3,C,
+kots19na_8177,2,68196,EPOXY,Rest,cruiser,Hotspot,A,B,463,ours,no,,3,,
+kots19na_8177,2,68197,EPOXY,Rest,cruiser,Hotspot,A,B,468,ours,no,,5,,B
+kots19na_8177,2,68198,EPOXY,Rest,destroyer,Hotspot,D,D,2214,theirs,,no,3,,
+kots19na_8177,2,68199,EPOXY,Rest,battleship,Hotspot,C,C,756,theirs,,no,2,,
+kots19na_8177,2,68181,BONKZ,Top 6,cruiser,Hotspot,D,D,563,ours,no,,5,,
+kots19na_8177,2,68189,BONKZ,Top 6,cruiser,Hotspot,D,D,573,ours,no,,3,,
+kots19na_8178,1,166102,RESIN,Top 6,destroyer,Sleeping Giant,A,A,4044,neutral,yes,no,5,,B
+kots19na_8178,1,166104,RESIN,Top 6,destroyer,Sleeping Giant,A,A,6597,theirs,,no,5,,
+kots19na_8178,1,166114,RESIN,Top 6,destroyer,Sleeping Giant,B,B,1233,theirs,,yes,3,B,B
+kots19na_8178,1,166115,RESIN,Top 6,destroyer,Sleeping Giant,B,B,-359,theirs,,yes,2,B,B
+kots19na_8178,1,166103,BONKZ,Top 6,destroyer,Sleeping Giant,A,A,2004,neutral,no,yes,6,,A
+kots19na_8178,1,166105,BONKZ,Top 6,destroyer,Sleeping Giant,C,D,6520,ours,no,,4,,
+kots19na_8178,1,166106,BONKZ,Top 6,destroyer,Sleeping Giant,A,A,2567,ours,yes,,4,A,
+kots19na_8178,1,166110,BONKZ,Top 6,destroyer,Sleeping Giant,C,D,9186,ours,no,,3,,
+kots19na_8178,1,166111,BONKZ,Top 6,destroyer,Sleeping Giant,A,A,7213,theirs,,no,4,,
+kots19na_8178,2,224000,RESIN,Top 6,destroyer,Hotspot,C,C,4814,neutral,no,no,5,,C
+kots19na_8178,2,224001,RESIN,Top 6,destroyer,Hotspot,D,D,3175,neutral,yes,no,8,,
+kots19na_8178,2,224003,RESIN,Top 6,destroyer,Hotspot,C,C,615,ours,no,,6,,
+kots19na_8178,2,224004,RESIN,Top 6,destroyer,Hotspot,D,D,2774,theirs,,no,6,,
+kots19na_8178,2,224006,RESIN,Top 6,destroyer,Hotspot,C,C,3462,ours,yes,,7,B,B
+kots19na_8178,2,224007,RESIN,Top 6,cruiser,Hotspot,B,A,335,ours,no,,5,B,
+kots19na_8178,2,224008,RESIN,Top 6,destroyer,Hotspot,D,D,8096,theirs,,no,4,B,
+kots19na_8178,2,224002,BONKZ,Top 6,destroyer,Hotspot,D,D,1685,neutral,no,yes,7,D,D
+kots19na_8178,2,224005,BONKZ,Top 6,destroyer,Hotspot,D,D,630,ours,no,,4,,
+kots19na_8178,2,224009,BONKZ,Top 6,destroyer,Hotspot,D,D,1224,ours,no,,2,,
+kots19na_8178,3,106311,RESIN,Top 6,destroyer,Sea of Fortune,D,D,3295,ours,no,,6,,
+kots19na_8178,3,106312,RESIN,Top 6,destroyer,Sea of Fortune,B,B,396,ours,yes,,5,,
+kots19na_8178,3,106313,RESIN,Top 6,destroyer,Sea of Fortune,B,B,3649,ours,yes,,4,,
+kots19na_8178,3,106314,RESIN,Top 6,destroyer,Sea of Fortune,B,B,6368,theirs,,no,3,,
+kots19na_8178,3,106315,RESIN,Top 6,destroyer,Sea of Fortune,C,C,7252,theirs,,no,1,,
+kots19na_8178,3,106316,RESIN,Top 6,destroyer,Sea of Fortune,D,D,8871,ours,no,,3,D,
+kots19na_8178,3,106317,RESIN,Top 6,destroyer,Sea of Fortune,C,C,-2079,theirs,,no,2,D,
+kots19na_8183,1,39283,H-SR,Top 6,destroyer,Sleeping Giant,A,A,2661,neutral,no,yes,5,,A
+kots19na_8183,1,39285,H-SR,Top 6,destroyer,Sleeping Giant,A,A,3117,ours,no,,10,,
+kots19na_8183,1,39288,H-SR,Top 6,destroyer,Sleeping Giant,D,D,9449,ours,yes,,8,,
+kots19na_8183,1,39290,H-SR,Top 6,destroyer,Sleeping Giant,A,A,1449,ours,no,,9,,
+kots19na_8183,1,39292,H-SR,Top 6,destroyer,Sleeping Giant,D,D,8184,ours,no,,9,,
+kots19na_8183,1,39293,H-SR,Top 6,battleship,Sleeping Giant,C,C,931,theirs,,no,6,,
+kots19na_8183,1,39284,RESIN,Top 6,destroyer,Sleeping Giant,A,A,3477,neutral,yes,no,4,,B
+kots19na_8183,1,39286,RESIN,Top 6,destroyer,Sleeping Giant,A,A,5515,theirs,,no,9,,
+kots19na_8183,1,39287,RESIN,Top 6,destroyer,Sleeping Giant,D,C,8651,theirs,,yes,8,,D
+kots19na_8183,1,39289,RESIN,Top 6,destroyer,Sleeping Giant,D,C,-352,theirs,,yes,5,D,D
+kots19na_8183,1,39291,RESIN,Top 6,destroyer,Sleeping Giant,D,C,8271,ours,yes,,9,D,
+kots19na_8183,1,39294,RESIN,Top 6,destroyer,Sleeping Giant,C,D,735,ours,no,,6,,
+kots19na_8183,1,39295,RESIN,Top 6,destroyer,Sleeping Giant,C,D,10099,ours,no,,3,,
+kots19na_8183,1,39296,RESIN,Top 6,destroyer,Sleeping Giant,A,A,13366,theirs,,no,1,,
+kots19na_8183,2,90086,H-SR,Top 6,destroyer,Hotspot,D,D,-1,ours,no,,5,D,
+kots19na_8183,2,90088,H-SR,Top 6,battleship,Hotspot,D,D,-303,ours,no,,1,D,
+kots19na_8183,2,90100,H-SR,Top 6,destroyer,Hotspot,A,A,2293,theirs,,yes,5,D,A
+kots19na_8183,2,90111,H-SR,Top 6,destroyer,Hotspot,A,A,4078,ours,no,,1,D,
+kots19na_8183,2,90084,RESIN,Top 6,destroyer,Hotspot,D,D,2826,theirs,,no,5,,
+kots19na_8183,2,90103,RESIN,Top 6,destroyer,Hotspot,A,B,2919,ours,yes,,4,,
+kots19na_8183,2,90107,RESIN,Top 6,destroyer,Hotspot,A,B,4734,theirs,,no,1,,
+kots19na_8183,3,178570,H-SR,Top 6,destroyer,Loop,B,B,97,neutral,no,yes,3,,B
+kots19na_8183,3,178581,H-SR,Top 6,battleship,Loop,B,B,2096,ours,no,,3,,
+kots19na_8183,3,178583,H-SR,Top 6,destroyer,Loop,A,A,2067,theirs,,no,2,,
+kots19na_8183,3,178569,RESIN,Top 6,destroyer,Loop,A,A,1176,neutral,no,yes,4,,A
+kots19na_8183,3,178574,RESIN,Top 6,destroyer,Loop,C,C,8516,theirs,,no,5,,
+kots19na_8183,3,178576,RESIN,Top 6,destroyer,Loop,A,A,-890,ours,no,,6,,
+kots19na_8183,3,178577,RESIN,Top 6,destroyer,Loop,C,C,7735,theirs,,no,5,,
+kots19na_8183,4,108987,H-SR,Top 6,destroyer,Land of Fire,A,A,1539,neutral,no,yes,3,,A
+kots19na_8183,4,108989,H-SR,Top 6,destroyer,Land of Fire,D,D,3742,ours,no,,5,,
+kots19na_8183,4,108992,H-SR,Top 6,destroyer,Land of Fire,D,D,5672,ours,no,,1,,
+kots19na_8183,4,108988,RESIN,Top 6,destroyer,Land of Fire,A,A,6124,theirs,,no,4,,
+kots19na_8183,4,108990,RESIN,Top 6,battleship,Land of Fire,B,B,7370,theirs,,no,2,,
+kots19na_8183,4,108991,RESIN,Top 6,destroyer,Land of Fire,D,C,965,theirs,,no,3,,

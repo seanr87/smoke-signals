@@ -1,0 +1,12 @@
+SG Somers top 30 west 16.7 | after 5:00 west 1 of 22
+HS dd top 80 contested cap A or B (normalized) 35.0 early radar ca inside 87.0 23
+SG Somers rest 45 west 51.1 | after 5:00 west 15 of 30
+HS dd rest 155 contested cap A or B (normalized) 12.3 early radar ca inside 37.5 48
+early dd smokes per team-game Hotspot 11.5 /10 62
+early dd smokes per team-game Land of Fire 7.4 /10 50
+early dd smokes per team-game Loop 7.2 /10 46
+early dd smokes per team-game Mountain Range 9.3 /10 42
+early dd smokes per team-game Okinawa 7.2 /10 36
+early dd smokes per team-game Sea of Fortune 7.4 /10 42
+early dd smokes per team-game Sleeping Giant 10.8 /10 64
+Okinawa [('Napoli', 32), ('Svea', 25), ('Daring', 22), ('Gearing', 17), ('Somers', 12)]

@@ -1,0 +1,1294 @@
+[
+ {
+  "id": "c5-sg-somers-east",
+  "map": "Sleeping Giant",
+  "kind": "top6_spot",
+  "mode": "top6",
+  "name": "Somers: east half of Sleeping Giant",
+  "shape": {
+   "type": "polygon",
+   "points": [
+    [
+     0.5,
+     0.0
+    ],
+    [
+     1.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0
+    ],
+    [
+     0.5,
+     1.0
+    ]
+   ]
+  },
+  "n": 47,
+  "n_top6": 25,
+  "n_rest": 22,
+  "small_n": false,
+  "clans": {
+   "top6": {
+    "RESIN": 8,
+    "BONKZ": 8,
+    "H-SR": 8,
+    "VRTUS": 1
+   },
+   "rest": {
+    "HFANS": 7,
+    "MACHX": 5,
+    "EPOXY": 4,
+    "BONKY": 3,
+    "KITED": 2,
+    "UYSC": 1
+   }
+  },
+  "concealed_damage_per_smoke": 14016,
+  "deaths_per_100": 10.6,
+  "cruisers": {
+   "top6": {
+    "Des Moines": 6,
+    "Utrecht": 5,
+    "Brisbane": 3,
+    "Petropavlovsk": 3,
+    "Minotaur": 1,
+    "Worcester": 1,
+    "San Martín": 1
+   },
+   "rest": {
+    "Des Moines": 11,
+    "Minotaur": 4,
+    "Brisbane": 3,
+    "Petropavlovsk": 2,
+    "San Martín": 1,
+    "Jinan": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g1_29456.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g1_63098.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8068_g2_166411.html"
+  ],
+  "subject": "Somers",
+  "share_top6_pct": 83.3,
+  "share_rest_pct": 48.9,
+  "gap_pts": 34.4,
+  "ci_pts": [
+   6.2,
+   63.9
+  ],
+  "note": "East half = normalized x > 0 (u 0.5 to 1.0). Early (first 5 min) Somers smokes alone do not split: see C5-SG-1."
+ },
+ {
+  "id": "c5-sg-harugumo-g1",
+  "map": "Sleeping Giant",
+  "kind": "top6_spot",
+  "mode": "top6",
+  "name": "Harugumo: west edge below cap A (G1/F1)",
+  "shape": {
+   "type": "ellipse",
+   "u": 0.0655,
+   "v": 0.621,
+   "ru": 0.1229,
+   "rv": 0.0758,
+   "angle_deg": 69.6
+  },
+  "n": 12,
+  "n_top6": 11,
+  "n_rest": 1,
+  "small_n": true,
+  "clans": {
+   "top6": {
+    "RESIN": 5,
+    "H-SR": 4,
+    "BONKZ": 2
+   },
+   "rest": {
+    "EPOXY": 1
+   }
+  },
+  "concealed_damage_per_smoke": 16406,
+  "deaths_per_100": 8.3,
+  "cruisers": {
+   "top6": {
+    "Des Moines": 6,
+    "Worcester": 3,
+    "Petropavlovsk": 1
+   },
+   "rest": {
+    "Petropavlovsk": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g1_29455.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166106.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120803.html"
+  ],
+  "subject": "Harugumo",
+  "share_top6_pct": 45.8,
+  "share_rest_pct": 11.1,
+  "gap_pts": 34.7,
+  "ci_pts": [
+   20.0,
+   56.2
+  ],
+  "second_dd_recorded": "7 of 11 Top 6 smokes",
+  "second_dd_positions_uv": [
+   [
+    0.05,
+    0.5013,
+    "Marceau"
+   ],
+   [
+    0.0143,
+    0.6122,
+    "Châteaurenault"
+   ],
+   [
+    0.0771,
+    0.5194,
+    "Ragnar"
+   ],
+   [
+    0.0856,
+    0.5522,
+    "Marceau"
+   ],
+   [
+    0.0424,
+    0.6681,
+    "Marceau"
+   ],
+   [
+    0.2941,
+    0.6394,
+    "Marceau"
+   ],
+   [
+    0.3394,
+    0.6109,
+    "Marceau"
+   ]
+  ]
+ },
+ {
+  "id": "c5-sg-cap-b",
+  "map": "Sleeping Giant",
+  "kind": "shared_spot",
+  "mode": "shared",
+  "name": "Smoke at cap B (mostly cap sitters)",
+  "shape": {
+   "type": "circle",
+   "u": 0.4721,
+   "v": 0.5,
+   "r": 0.1183
+  },
+  "n": 34,
+  "n_top6": 13,
+  "n_rest": 21,
+  "small_n": false,
+  "clans": {
+   "top6": {
+    "VRTUS": 4,
+    "RESIN": 4,
+    "HTDOG": 3,
+    "BONKZ": 2
+   },
+   "rest": {
+    "HFANS": 7,
+    "KITED": 4,
+    "5D": 3,
+    "KSE": 3,
+    "EPOXY": 1,
+    "INCA": 1,
+    "BONKY": 1,
+    "-BN-": 1
+   }
+  },
+  "concealed_damage_per_smoke": 5747,
+  "deaths_per_100": 11.8,
+  "cruisers": {
+   "top6": {
+    "Stalingrad": 2,
+    "Worcester": 1
+   },
+   "rest": {
+    "Des Moines": 2,
+    "Stalingrad": 2,
+    "Napoli": 1,
+    "Moskva": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8153_g1_92180.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166114.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8140_g2_125929.html"
+  ],
+  "subject": "all smokes inside or within 2 km of cap B",
+  "share_top6_pct": 9.5,
+  "share_rest_pct": 12.5,
+  "gap_pts": -3.0,
+  "ci_pts": [
+   -12.3,
+   6.7
+  ],
+  "note": "Circle = cap B plus 2 km."
+ },
+ {
+  "id": "c5-hs-cap-a",
+  "map": "Hotspot",
+  "kind": "top6_spot",
+  "mode": "top6",
+  "name": "Destroyer smoke at west cap A",
+  "shape": {
+   "type": "circle",
+   "u": 0.1658,
+   "v": 0.4026,
+   "r": 0.1514
+  },
+  "n": 14,
+  "n_top6": 11,
+  "n_rest": 3,
+  "small_n": true,
+  "clans": {
+   "top6": {
+    "H-SR": 4,
+    "BONKZ": 3,
+    "VRTUS": 2,
+    "RESIN": 2
+   },
+   "rest": {
+    "MACH": 1,
+    "KSC": 1,
+    "HFANS": 1
+   }
+  },
+  "concealed_damage_per_smoke": 19657,
+  "deaths_per_100": 7.1,
+  "cruisers": {
+   "top6": {
+    "Des Moines": 3,
+    "San Martín": 3,
+    "Brisbane": 2,
+    "Utrecht": 2,
+    "Worcester": 2,
+    "Minotaur": 2,
+    "Petropavlovsk": 1
+   },
+   "rest": {
+    "Des Moines": 2,
+    "Bremen": 1,
+    "Minotaur": 1,
+    "Prins van Oranje": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7886_g1_168741.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8072_g1_103847.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g2_139985.html"
+  ],
+  "subject": "destroyer smokes whose nearest cap is A",
+  "share_top6_pct": 13.8,
+  "share_rest_pct": 1.9,
+  "gap_pts": 11.8,
+  "ci_pts": [
+   6.2,
+   16.3
+  ],
+  "note": "Circle = the cap plus the distance that holds 80% of the member smokes. A and B together: Top 6 36% vs Rest 14%."
+ },
+ {
+  "id": "c5-hs-cap-b",
+  "map": "Hotspot",
+  "kind": "top6_spot",
+  "mode": "top6",
+  "name": "Destroyer smoke at west cap B",
+  "shape": {
+   "type": "circle",
+   "u": 0.1658,
+   "v": 0.5974,
+   "r": 0.1819
+  },
+  "n": 36,
+  "n_top6": 18,
+  "n_rest": 18,
+  "small_n": false,
+  "clans": {
+   "top6": {
+    "H-SR": 5,
+    "RESIN": 4,
+    "VRTUS": 3,
+    "HTDOG": 2,
+    "KITE": 2,
+    "BONKZ": 2
+   },
+   "rest": {
+    "HFANS": 4,
+    "KSC": 3,
+    "MANBA": 2,
+    "EPOXY": 2,
+    "INCA": 2,
+    "BONKY": 2,
+    "KSE": 1,
+    "MACHX": 1,
+    "MZY": 1
+   }
+  },
+  "concealed_damage_per_smoke": 15626,
+  "deaths_per_100": 8.3,
+  "cruisers": {
+   "top6": {
+    "Des Moines": 9,
+    "Brisbane": 6,
+    "Utrecht": 3,
+    "Minotaur": 1
+   },
+   "rest": {
+    "Des Moines": 4,
+    "Salem": 3,
+    "San Martín": 2,
+    "Stalingrad": 2,
+    "Utrecht": 2,
+    "Brisbane": 2,
+    "Minotaur": 2,
+    "Prins van Oranje": 2
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7887_g1_111084.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7888_g1_38986.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7888_g1_38993.html"
+  ],
+  "subject": "destroyer smokes whose nearest cap is B",
+  "share_top6_pct": 22.5,
+  "share_rest_pct": 11.6,
+  "gap_pts": 10.9,
+  "ci_pts": [
+   2.2,
+   22.3
+  ],
+  "note": "Circle = the cap plus the distance that holds 80% of the member smokes. A and B together: Top 6 36% vs Rest 14%."
+ },
+ {
+  "id": "c5-hs-opener-g10",
+  "map": "Hotspot",
+  "kind": "early_cruiser_spot",
+  "mode": "shared",
+  "name": "Opening smoke short of cap D on the east edge (G10)",
+  "shape": {
+   "type": "ellipse",
+   "u": 0.9305,
+   "v": 0.6094,
+   "ru": 0.079,
+   "rv": 0.0516,
+   "angle_deg": -1.5
+  },
+  "n": 37,
+  "n_top6": 12,
+  "n_rest": 25,
+  "small_n": false,
+  "clans": {
+   "top6": {
+    "H-SR": 5,
+    "BONKZ": 3,
+    "RESIN": 2,
+    "HTDOG": 1,
+    "KITE": 1
+   },
+   "rest": {
+    "REEEE": 4,
+    "MZY": 3,
+    "5D": 2,
+    "KSC": 2,
+    "PFANS": 2,
+    "HFANS": 2,
+    "KITED": 2,
+    "BTLST": 1,
+    "RMN": 1,
+    "PN": 1,
+    "MACH": 1,
+    "-BN-": 1,
+    "NGA": 1,
+    "BONKY": 1,
+    "EPOXY": 1
+   }
+  },
+  "concealed_damage_per_smoke": 16609,
+  "deaths_per_100": 5.4,
+  "cruisers": {
+   "top6": {
+    "Brisbane": 5,
+    "Des Moines": 5,
+    "Worcester": 2,
+    "Prins van Oranje": 1
+   },
+   "rest": {
+    "Brisbane": 7,
+    "Des Moines": 5,
+    "Utrecht": 3,
+    "San Martín": 2,
+    "Bremen": 2,
+    "Minotaur": 1,
+    "Stalingrad": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g2_90084.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7960_g1_147079.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8148_g2_125975.html"
+  ],
+  "subject": "destroyer smokes in the first 5 minutes",
+  "share_top6_pct": 52.2,
+  "share_rest_pct": 52.1,
+  "gap_pts": 0.1,
+  "ci_pts": [
+   -22.2,
+   20.3
+  ],
+  "radar_cruiser_inside": {
+   "top6": [
+    10,
+    12
+   ],
+   "rest": [
+    12,
+    25
+   ],
+   "gap_pts": 35.3,
+   "ci_pts": [
+    5.7,
+    61.3
+   ]
+  },
+  "note": "Shared place; what differs is the radar cruiser inside the smoke."
+ },
+ {
+  "id": "c5-hs-rim-c",
+  "map": "Hotspot",
+  "kind": "shared_spot",
+  "mode": "shared",
+  "name": "Long smokes on the own-side rim of cap C (G6/F6)",
+  "shape": {
+   "type": "ellipse",
+   "u": 0.5661,
+   "v": 0.6193,
+   "ru": 0.0878,
+   "rv": 0.0622,
+   "angle_deg": -21.8
+  },
+  "n": 20,
+  "n_top6": 13,
+  "n_rest": 7,
+  "small_n": false,
+  "clans": {
+   "top6": {
+    "RESIN": 7,
+    "BONKZ": 4,
+    "H-SR": 2
+   },
+   "rest": {
+    "-BN-": 4,
+    "INCA": 1,
+    "KSC": 1,
+    "MZY": 1
+   }
+  },
+  "concealed_damage_per_smoke": 16065,
+  "deaths_per_100": 5.0,
+  "cruisers": {
+   "top6": {
+    "Moskva": 6,
+    "Brisbane": 4,
+    "Petropavlovsk": 2,
+    "Utrecht": 1,
+    "Minotaur": 1,
+    "Worcester": 1
+   },
+   "rest": {
+    "Brisbane": 3,
+    "Des Moines": 2,
+    "Minotaur": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8141_g2_161895.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g1_60871.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g3_85022.html"
+  ],
+  "subject": "flank smoke lines (Somers, Gearing, Harugumo, Delny)",
+  "share_top6_pct": 20.3,
+  "share_rest_pct": 8.8,
+  "gap_pts": 11.6,
+  "ci_pts": [
+   -5.8,
+   26.8
+  ]
+ },
+ {
+  "id": "c5-lp-f8",
+  "map": "Loop",
+  "kind": "high_cell",
+  "mode": "shared",
+  "name": "High-paying cell F8",
+  "shape": {
+   "type": "polygon",
+   "points": [
+    [
+     0.7,
+     0.5
+    ],
+    [
+     0.8,
+     0.5
+    ],
+    [
+     0.8,
+     0.6
+    ],
+    [
+     0.7,
+     0.6
+    ]
+   ]
+  },
+  "n": 15,
+  "n_top6": 7,
+  "n_rest": 8,
+  "small_n": false,
+  "clans": {
+   "top6": {
+    "BONKZ": 5,
+    "RESIN": 1,
+    "H-SR": 1
+   },
+   "rest": {
+    "MACHX": 2,
+    "HFANS": 2,
+    "OGF": 1,
+    "INCA": 1,
+    "-BN-": 1,
+    "MZY": 1
+   }
+  },
+  "concealed_damage_per_smoke": 18318,
+  "deaths_per_100": 13.3,
+  "cruisers": {
+   "top6": {
+    "Brisbane": 3,
+    "Des Moines": 1,
+    "Utrecht": 1
+   },
+   "rest": {
+    "Minotaur": 3,
+    "Des Moines": 2,
+    "Moskva": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7889_g1_178499.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7891_g1_46432.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7891_g1_46430.html"
+  ],
+  "subject": "destroyer smokes in the cell",
+  "share_top6_pct": 17.1,
+  "share_rest_pct": 7.9,
+  "gap_pts": 9.2,
+  "ci_pts": [
+   -9.0,
+   39.5
+  ],
+  "long_smokes": {
+   "top6": 4,
+   "rest": 4
+  }
+ },
+ {
+  "id": "c5-lp-f10",
+  "map": "Loop",
+  "kind": "high_cell",
+  "mode": "shared",
+  "name": "High-paying cell F10",
+  "shape": {
+   "type": "polygon",
+   "points": [
+    [
+     0.9,
+     0.5
+    ],
+    [
+     1.0,
+     0.5
+    ],
+    [
+     1.0,
+     0.6
+    ],
+    [
+     0.9,
+     0.6
+    ]
+   ]
+  },
+  "n": 9,
+  "n_top6": 2,
+  "n_rest": 7,
+  "small_n": true,
+  "clans": {
+   "top6": {
+    "H-SR": 2
+   },
+   "rest": {
+    "EPOXY": 2,
+    "MZY": 2,
+    "5D": 1,
+    "KM": 1,
+    "MACHX": 1
+   }
+  },
+  "concealed_damage_per_smoke": 20728,
+  "deaths_per_100": 33.3,
+  "cruisers": {
+   "top6": {
+    "Petropavlovsk": 1,
+    "Prins van Oranje": 1
+   },
+   "rest": {
+    "Des Moines": 2,
+    "Minotaur": 2,
+    "Napoli": 1,
+    "Worcester": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7892_g1_80014.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8068_g1_178436.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7892_g1_80022.html"
+  ],
+  "subject": "destroyer smokes in the cell",
+  "share_top6_pct": 4.9,
+  "share_rest_pct": 6.9,
+  "gap_pts": -2.1,
+  "ci_pts": [
+   -11.4,
+   6.5
+  ],
+  "long_smokes": {
+   "top6": 1,
+   "rest": 6
+  }
+ },
+ {
+  "id": "c5-lp-sitters-b",
+  "map": "Loop",
+  "kind": "top6_spot",
+  "mode": "top6",
+  "name": "Cap sitters: own side and east half of cap B (F7/F8)",
+  "shape": {
+   "type": "ellipse",
+   "u": 0.666,
+   "v": 0.5323,
+   "ru": 0.1768,
+   "rv": 0.111,
+   "angle_deg": -17.4
+  },
+  "n": 28,
+  "n_top6": 15,
+  "n_rest": 13,
+  "small_n": false,
+  "clans": {
+   "top6": {
+    "RESIN": 4,
+    "KITE": 3,
+    "BONKZ": 3,
+    "H-SR": 2,
+    "HTDOG": 2,
+    "VRTUS": 1
+   },
+   "rest": {
+    "REEEE": 6,
+    "MACHX": 2,
+    "SCCC2": 2,
+    "RMN": 1,
+    "MACH": 1,
+    "EPOXY": 1
+   }
+  },
+  "concealed_damage_per_smoke": 3668,
+  "deaths_per_100": 3.6,
+  "cruisers": {
+   "top6": {
+    "Moskva": 2,
+    "Petropavlovsk": 2,
+    "Stalingrad": 1,
+    "Minotaur": 1,
+    "Prins van Oranje": 1
+   },
+   "rest": {
+    "Minotaur": 2,
+    "Salem": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g2_111329.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7976_g1_219218.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g2_111344.html"
+  ],
+  "subject": "cap sitters (Daring, Z-42, Gdansk, Grozovoi, Shimakaze)",
+  "share_top6_pct": 65.2,
+  "share_rest_pct": 20.0,
+  "gap_pts": 45.2,
+  "ci_pts": [
+   24.8,
+   72.0
+  ]
+ },
+ {
+  "id": "c5-mr-parked-west",
+  "map": "Mountain Range",
+  "kind": "top6_spot",
+  "mode": "top6",
+  "name": "Parked cruiser smoke (Jinan, Svea), far west edge on the rim of cap A",
+  "shape": {
+   "type": "ellipse",
+   "u": 0.0621,
+   "v": 0.695,
+   "ru": 0.1262,
+   "rv": 0.0712,
+   "angle_deg": -73.9
+  },
+  "n": 12,
+  "n_top6": 12,
+  "n_rest": 0,
+  "small_n": true,
+  "clans": {
+   "top6": {
+    "HTDOG": 8,
+    "BONKZ": 4
+   },
+   "rest": {}
+  },
+  "concealed_damage_per_smoke": 19028,
+  "deaths_per_100": 8.3,
+  "cruisers": {
+   "top6": {},
+   "rest": {}
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g3_159282.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159434.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g3_159286.html"
+  ],
+  "subject": "parked cruiser smoke (Svea, Jinan)",
+  "share_top6_pct": 36.4,
+  "share_rest_pct": 0.0,
+  "gap_pts": 36.4,
+  "ci_pts": [
+   30.8,
+   40.0
+  ],
+  "by_ship": {
+   "Jinan": {
+    "top6": {
+     "HTDOG": 8
+    },
+    "rest": {}
+   },
+   "Svea": {
+    "top6": {
+     "BONKZ": 4
+    },
+    "rest": {}
+   }
+  },
+  "note": "Two clans only (HTDOG, BONKZ); 8 of 12 are Jinan, which no Rest clan smoked with on this map."
+ },
+ {
+  "id": "c5-mr-radar-b",
+  "map": "Mountain Range",
+  "kind": "top6_spot",
+  "mode": "top6",
+  "name": "Radar from smoke at centre cap B",
+  "shape": {
+   "type": "circle",
+   "u": 0.4,
+   "v": 0.5,
+   "r": 0.1232
+  },
+  "n": 15,
+  "n_top6": 12,
+  "n_rest": 3,
+  "small_n": false,
+  "clans": {
+   "top6": {
+    "KITE": 4,
+    "BONKZ": 4,
+    "H-SR": 2,
+    "RESIN": 2
+   },
+   "rest": {
+    "HFANS": 2,
+    "SCCC2": 1
+   }
+  },
+  "concealed_damage_per_smoke": 12843,
+  "deaths_per_100": 6.7,
+  "cruisers": {
+   "top6": {
+    "Minotaur": 4,
+    "Des Moines": 1,
+    "Moskva": 1,
+    "Brisbane": 1,
+    "Stalingrad": 1
+   },
+   "rest": {
+    "Brisbane": 2
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176007.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g2_121106.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176005.html"
+  ],
+  "subject": "smokes with radar run from inside or a radar purpose, nearest cap B",
+  "share_top6_pct": 13.6,
+  "share_rest_pct": 2.5,
+  "gap_pts": 11.1,
+  "ci_pts": [
+   1.7,
+   21.9
+  ],
+  "note": "Share = share of all of each group smokes on the map that are radar smokes with B as nearest cap. 7 of the 15 are inside or within 2 km of B."
+ },
+ {
+  "id": "c5-lf-early-a",
+  "map": "Land of Fire",
+  "kind": "early_cruiser_spot",
+  "mode": "shared",
+  "name": "Opening smoke short of cap A (F3)",
+  "shape": {
+   "type": "ellipse",
+   "u": 0.2188,
+   "v": 0.5904,
+   "ru": 0.0974,
+   "rv": 0.0683,
+   "angle_deg": -27.9
+  },
+  "n": 13,
+  "n_top6": 5,
+  "n_rest": 8,
+  "small_n": true,
+  "clans": {
+   "top6": {
+    "HTDOG": 2,
+    "VRTUS": 1,
+    "H-SR": 1,
+    "RESIN": 1
+   },
+   "rest": {
+    "HFANS": 3,
+    "BTLST": 2,
+    "NGA": 1,
+    "SCCC2": 1,
+    "MACHX": 1
+   }
+  },
+  "concealed_damage_per_smoke": 8563,
+  "deaths_per_100": 15.4,
+  "cruisers": {
+   "top6": {
+    "Des Moines": 3,
+    "Brisbane": 1
+   },
+   "rest": {
+    "Napoli": 4,
+    "Des Moines": 2,
+    "Smolensk": 1,
+    "Brisbane": 1,
+    "San Martín": 1,
+    "Svea": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8145_g2_157256.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8143_g2_214591.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7981_g1_174221.html"
+  ],
+  "subject": "destroyer smokes in the first 5 minutes",
+  "share_top6_pct": 41.7,
+  "share_rest_pct": 32.0,
+  "gap_pts": 9.7,
+  "ci_pts": [
+   -19.4,
+   36.4
+  ],
+  "inside_n": 9,
+  "screened_n": 2
+ },
+ {
+  "id": "c5-lf-svea-f5",
+  "map": "Land of Fire",
+  "kind": "top6_spot",
+  "mode": "top6",
+  "name": "Svea parked on the own-side rim of cap B (F5)",
+  "shape": {
+   "type": "ellipse",
+   "u": 0.4627,
+   "v": 0.5715,
+   "ru": 0.0617,
+   "rv": 0.0461,
+   "angle_deg": 7.4
+  },
+  "n": 18,
+  "n_top6": 14,
+  "n_rest": 4,
+  "small_n": false,
+  "clans": {
+   "top6": {
+    "VRTUS": 8,
+    "HTDOG": 4,
+    "RESIN": 2
+   },
+   "rest": {
+    "BONKY": 4
+   }
+  },
+  "concealed_damage_per_smoke": 12621,
+  "deaths_per_100": 5.6,
+  "cruisers": {
+   "top6": {},
+   "rest": {}
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7982_g1_197657.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8074_g2_70763.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7982_g1_197660.html"
+  ],
+  "subject": "Svea",
+  "share_top6_pct": 73.7,
+  "share_rest_pct": 19.0,
+  "gap_pts": 54.6,
+  "ci_pts": [
+   6.7,
+   87.0
+  ]
+ },
+ {
+  "id": "c5-sf-early-west-b",
+  "map": "Sea of Fortune",
+  "kind": "early_cruiser_spot",
+  "mode": "shared",
+  "name": "Early cruiser smoke at the own-side west cap (drawn B)",
+  "shape": {
+   "type": "circle",
+   "u": 0.2,
+   "v": 0.65,
+   "r": 0.1292
+  },
+  "n": 15,
+  "n_top6": 5,
+  "n_rest": 10,
+  "small_n": false,
+  "clans": {
+   "top6": {
+    "H-SR": 2,
+    "VRTUS": 1,
+    "BONKZ": 1,
+    "RESIN": 1
+   },
+   "rest": {
+    "RMN": 1,
+    "REEEE": 1,
+    "PN": 1,
+    "RSR": 1,
+    "KSC": 1,
+    "INCA": 1,
+    "KM": 1,
+    "HFANS": 1,
+    "SCCC2": 1,
+    "MZY": 1
+   }
+  },
+  "concealed_damage_per_smoke": 18452,
+  "deaths_per_100": 13.3,
+  "cruisers": {
+   "top6": {
+    "Brisbane": 3,
+    "Utrecht": 1,
+    "Stalingrad": 1,
+    "Worcester": 1
+   },
+   "rest": {
+    "Puerto Rico": 2,
+    "Napoli": 2,
+    "Minotaur": 2,
+    "Utrecht": 2,
+    "Salem": 1,
+    "Svea": 1,
+    "Des Moines": 1,
+    "Worcester": 1,
+    "Petropavlovsk": 1,
+    "Prins van Oranje": 1,
+    "Cerberus": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7911_g1_226690.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g2_3188.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7995_g1_25169.html"
+  ],
+  "subject": "destroyer smokes in the first 5 minutes covering a cruiser",
+  "share_top6_pct": 62.5,
+  "share_rest_pct": 62.5,
+  "gap_pts": 0.0,
+  "ci_pts": [
+   -30.2,
+   26.2
+  ],
+  "inside_n": 10,
+  "screened_n": 5
+ },
+ {
+  "id": "c5-sf-early-d",
+  "map": "Sea of Fortune",
+  "kind": "early_cruiser_spot",
+  "mode": "shared",
+  "name": "Early cruiser smoke short of east cap D",
+  "shape": {
+   "type": "circle",
+   "u": 0.76,
+   "v": 0.5,
+   "r": 0.1506
+  },
+  "n": 7,
+  "n_top6": 3,
+  "n_rest": 4,
+  "small_n": true,
+  "clans": {
+   "top6": {
+    "H-SR": 1,
+    "BONKZ": 1,
+    "RESIN": 1
+   },
+   "rest": {
+    "MZY": 2,
+    "-BN-": 1,
+    "BONKY": 1
+   }
+  },
+  "concealed_damage_per_smoke": 28734,
+  "deaths_per_100": 0.0,
+  "cruisers": {
+   "top6": {
+    "Brisbane": 2,
+    "Utrecht": 1,
+    "Worcester": 1
+   },
+   "rest": {
+    "Des Moines": 2,
+    "Utrecht": 1,
+    "Brisbane": 1,
+    "Moskva": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7940_g1_183534.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7937_g1_44423.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8144_g2_39530.html"
+  ],
+  "subject": "destroyer smokes in the first 5 minutes covering a cruiser",
+  "share_top6_pct": 37.5,
+  "share_rest_pct": 25.0,
+  "gap_pts": 12.5,
+  "ci_pts": [
+   -13.9,
+   37.5
+  ],
+  "inside_n": 5,
+  "screened_n": 2
+ },
+ {
+  "id": "c5-sf-long-d",
+  "map": "Sea of Fortune",
+  "kind": "shared_spot",
+  "mode": "shared",
+  "name": "Long smokes at east cap D",
+  "shape": {
+   "type": "circle",
+   "u": 0.76,
+   "v": 0.5,
+   "r": 0.1851
+  },
+  "n": 20,
+  "n_top6": 8,
+  "n_rest": 12,
+  "small_n": false,
+  "clans": {
+   "top6": {
+    "BONKZ": 4,
+    "H-SR": 2,
+    "RESIN": 2
+   },
+   "rest": {
+    "MZY": 6,
+    "-BN-": 3,
+    "BONKY": 3
+   }
+  },
+  "concealed_damage_per_smoke": 17704,
+  "deaths_per_100": 0.0,
+  "cruisers": {
+   "top6": {
+    "Brisbane": 6,
+    "Utrecht": 2,
+    "Worcester": 1
+   },
+   "rest": {
+    "Des Moines": 4,
+    "Brisbane": 4,
+    "Utrecht": 2,
+    "Moskva": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7940_g1_183534.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7937_g1_44423.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7938_g1_214885.html"
+  ],
+  "subject": "long smokes (Somers, Gearing, Harugumo, Delny) nearest cap D",
+  "share_top6_pct": 36.4,
+  "share_rest_pct": 32.4,
+  "gap_pts": 3.9,
+  "ci_pts": [
+   -23.2,
+   36.4
+  ]
+ },
+ {
+  "id": "c5-sf-svea-h7",
+  "map": "Sea of Fortune",
+  "kind": "top6_spot",
+  "mode": "top6",
+  "name": "Svea parked in open water on the own side of cap D (H7/G7)",
+  "shape": {
+   "type": "ellipse",
+   "u": 0.6694,
+   "v": 0.7063,
+   "ru": 0.2053,
+   "rv": 0.1326,
+   "angle_deg": -15.6
+  },
+  "n": 16,
+  "n_top6": 15,
+  "n_rest": 1,
+  "small_n": false,
+  "clans": {
+   "top6": {
+    "HTDOG": 7,
+    "VRTUS": 6,
+    "H-SR": 2
+   },
+   "rest": {
+    "EPOXY": 1
+   }
+  },
+  "concealed_damage_per_smoke": 9583,
+  "deaths_per_100": 0.0,
+  "cruisers": {
+   "top6": {},
+   "rest": {}
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g1_185483.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7996_g1_128346.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g1_185484.html"
+  ],
+  "subject": "Svea",
+  "share_top6_pct": 83.3,
+  "share_rest_pct": 7.1,
+  "gap_pts": 76.2,
+  "ci_pts": [
+   45.0,
+   100.0
+  ]
+ },
+ {
+  "id": "c5-ok-death-zone",
+  "map": "Okinawa",
+  "kind": "danger_zone",
+  "mode": "shared",
+  "name": "Death zone: south-west water on the own side of cap C",
+  "shape": {
+   "type": "ellipse",
+   "u": 0.2457,
+   "v": 0.6435,
+   "ru": 0.2397,
+   "rv": 0.1501,
+   "angle_deg": 34.5
+  },
+  "n": 39,
+  "n_top6": 7,
+  "n_rest": 32,
+  "small_n": false,
+  "clans": {
+   "top6": {
+    "KITE": 3,
+    "RESIN": 2,
+    "BONKZ": 1,
+    "H-SR": 1
+   },
+   "rest": {
+    "HFANS": 7,
+    "EPOXY": 5,
+    "MACH": 5,
+    "BTLST": 2,
+    "MACHX": 2,
+    "-BN-": 2,
+    "REEEE": 2,
+    "OGF": 1,
+    "PN": 1,
+    "PFANS": 1,
+    "UYSC": 1,
+    "MANBA": 1,
+    "KITED": 1,
+    "MZY": 1
+   }
+  },
+  "concealed_damage_per_smoke": 12778,
+  "deaths_per_100": 30.8,
+  "cruisers": {
+   "top6": {
+    "Worcester": 1
+   },
+   "rest": {
+    "Utrecht": 4,
+    "Des Moines": 4,
+    "Minotaur": 2,
+    "Brisbane": 1,
+    "Stalingrad": 1,
+    "Prins van Oranje": 1,
+    "Worcester": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7896_g1_51115.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7977_g1_43943.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8074_g1_211814.html"
+  ],
+  "subject": "all smokes in the zone, all classes",
+  "share_top6_pct": 30.4,
+  "share_rest_pct": 23.7,
+  "gap_pts": 6.7,
+  "ci_pts": [
+   -17.0,
+   35.0
+  ],
+  "smokes_with_a_death": 10,
+  "deaths": 12,
+  "laid_50_behind_pct": 48.7,
+  "map_laid_50_behind_pct": 34.8,
+  "map_deaths_per_100": 17.7
+ }
+]

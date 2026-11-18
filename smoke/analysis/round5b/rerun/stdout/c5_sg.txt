@@ -1,0 +1,87 @@
+=== SG-1 Somers east / west
+all west Top 6 5 of 30 (17%) vs Rest 23 of 45 (51%); gap -34 pts (-65 to -6 *)
+all east Top 6 25 of 30 (83%) vs Rest 22 of 45 (49%); gap +34 pts (+6 to +64 *)
+early west Top 6 4 of 8 (50%) vs Rest 8 of 15 (53%); gap -3 pts (-56 to +33)
+early east Top 6 4 of 8 (50%) vs Rest 7 of 15 (47%); gap +3 pts (-32 to +53)
+after 5:00 west Top 6 1 of 22 (4%) vs Rest 15 of 30 (50%); gap -46 pts (-73 to -18 *)
+east clans Top 6: RESIN 8, BONKZ 8, H-SR 8, VRTUS 1 | Rest: HFANS 7, MACHX 5, EPOXY 4, BONKY 3, KITED 2, UYSC 1
+west clans Top 6: H-SR 3, RESIN 2 | Rest: PFANS 8, REEEE 5, BONKY 4, MACHX 3, NGA 2, KITED 1
+somers clans all Top 6: H-SR 11, RESIN 10, BONKZ 8, VRTUS 1 | Rest: PFANS 8, MACHX 8, HFANS 7, BONKY 7, REEEE 5, EPOXY 4, KITED 3, NGA 2, UYSC 1
+early clans east Top 6: RESIN 2, VRTUS 1, H-SR 1 | Rest: HFANS 3, EPOXY 2, BONKY 1, MACHX 1 | early west Top 6: H-SR 2, RESIN 2 | Rest: PFANS 3, REEEE 2, BONKY 1, NGA 1, MACHX 1
+ east top: n 25 conc 14.1k deaths/100 12.0 cells F9 4, G10 3, E8 3, F10 2, G9 2, I8 2 zone D 20, C 5 cr inside 15 early 4
+ east rest: n 22 conc 13.9k deaths/100 9.090909090909092 cells E9 3, H8 3, G9 3, F9 2, D7 2, E8 2 zone D 12, C 8, B 2 cr inside 19 early 7
+ west top: n 5 conc 15.4k deaths/100 0.0 cells F2 1, E1 1, D2 1, G2 1, H1 1 zone A 5 cr inside 3 early 4
+ west rest: n 23 conc 16.2k deaths/100 17.391304347826086 cells G1 6, G2 4, F1 3, F2 2, E1 2, E3 1 zone A 21, B 2 cr inside 16 early 8
+ east conc all 14.0k (10940.092448979593, 16527.092) west 16.0k (11546.61619047619, 19371.734814814816) deaths east 10.638297872340425 west 14.285714285714286
+ top6 east uv box 0.744958705612245 0.988752357142857 0.4038700359183674 0.9514472097402599 rows F 6, G 5, E 5, I 4, H 3, J 2 cols 10 10, 9 9, 8 6
+   BONKY rest 7 west 4
+   BONKZ top 8 west 0
+   EPOXY rest 4 west 0
+   H-SR top 11 west 3
+   HFANS rest 7 west 0
+   KITED rest 3 west 1
+   MACHX rest 8 west 3
+   NGA rest 2 west 2
+   PFANS rest 8 west 8
+   REEEE rest 5 west 5
+   RESIN top 10 west 2
+   UYSC rest 1 west 0
+   VRTUS top 1 west 0
+   top without BONKZ 5 of 22
+   top without H-SR 2 of 19
+   top without RESIN 3 of 20
+   top without VRTUS 5 of 29
+ context Gearing Top 6 10 of 13 (77%) vs Rest 13 of 20 (65%); gap +12 pts (-25 to +77)
+ context Harugumo Top 6 21 of 24 (88%) vs Rest 4 of 9 (44%); gap +43 pts (-12 to +94)
+
+=== SG-2 Harugumo G1/F1 second destroyer
+spot Top 6 11 of 24 (46%) vs Rest 1 of 9 (11%); gap +35 pts (+20 to +56 *) Top 6: RESIN 5, H-SR 4, BONKZ 2 | Rest: EPOXY 1
+ 8147_g1_120797 RESIN 2:23 G1 allies pos 4 | cruisers [('Petropavlovsk', 'inside')] | other DDs alive: Yueyang, Somers | recorded: NONE
+ 8147_g1_120803 RESIN 7:00 F2 allies pos 4 | cruisers [] | other DDs alive: Yueyang, Somers | recorded: NONE
+ 8151_g1_29455 H-SR 1:44 F1 allies pos 4 | cruisers [('Des Moines', 'inside')] | other DDs alive: Marceau, Somers, Marceau | recorded: Marceau F1 (outside), 2.0 km from smoke, +4.0 km fwd, cap A edge +0.2 km
+ 8178_g1_166102 RESIN 2:03 G1 allies pos 4 | cruisers [('Worcester', 'inside')] | other DDs alive: Ragnar, Gdańsk, Châteaurenault | recorded: Châteaurenault G1 (inside), 1.1 km from smoke, +1.4 km fwd, cap A edge +3.7 km
+ 8178_g1_166103 BONKZ 2:47 G1 allies pos 5 | cruisers [('Worcester', 'inside')] | other DDs alive: Ragnar, Somers | recorded: Ragnar F1 (outside), 3.4 km from smoke, +3.4 km fwd, cap A edge -0.8 km
+ 8178_g1_166106 BONKZ 6:16 F1 allies pos 4 | cruisers [('Worcester', 'inside')] | other DDs alive: Somers | recorded: NONE
+ 8183_g1_39283 H-SR 1:56 G1 allies pos 6 | cruisers [('Des Moines', 'inside')] | other DDs alive: Marceau, Somers | recorded: Marceau F1 (outside), 3.2 km from smoke, +3.2 km fwd, cap A edge -0.2 km
+ 8183_g1_39284 RESIN 2:02 G1 allies pos 4 | cruisers [('Des Moines', 'inside')] | other DDs alive: Marceau, Somers, Gdańsk | recorded: Marceau G1 (inside), 1.4 km from smoke, -1.0 km fwd, cap A edge +4.9 km
+ 8183_g1_39285 H-SR 5:21 F1 allies pos 5 | cruisers [('Des Moines', 'inside')] | other DDs alive: Marceau, Somers | recorded: Marceau G3 (outside), 11.7 km from smoke, -2.1 km fwd, cap A edge +6.2 km
+ 8183_g1_39286 RESIN 5:29 G1 allies pos 2 | cruisers [('Des Moines', 'inside')] | other DDs alive: Marceau, Somers, Gdańsk | recorded: Marceau G4 (outside), 11.0 km from smoke, +3.3 km fwd, cap B edge +4.3 km
+ 8183_g1_39290 H-SR 8:46 F1 allies pos 3 | cruisers [('Des Moines', 'inside')] | other DDs alive: Marceau, Somers | recorded: NONE
+ 8177_g1_176201 EPOXY 2:42 F1 allies pos 5 | cruisers [('Petropavlovsk', 'inside')] | other DDs alive: Somers, 20 de Julio | recorded: 20 de Julio F5 (outside), 13.9 km from smoke, +1.1 km fwd, cap B edge +0.2 km
+ present 7 of 11 | ships Marceau 5, Châteaurenault 1, Ragnar 1 | cells F1 3, G1 2, G3 1, G4 1 | caps A 6, B 1 | fwd>0 5 | med dist 3183 | inside smoke 2 | within 1.5km of cap A edge 3 | median allies with position 4.0
+ absent ones: other DD alive? [('8147_g1_120797', ['Yueyang', 'Somers']), ('8147_g1_120803', ['Yueyang', 'Somers']), ('8178_g1_166106', ['Somers']), ('8183_g1_39290', ['Marceau', 'Somers'])]
+ all smokes median allied positions 4 alive allies median 9
+ in this spot: alive_ours at capture [9, 9, 9, 9, 9, 8, 9, 9, 9, 9, 9, 9]
+
+=== SG-3 smoke at cap B (inside or within 2 km of the cap edge)
+| Cap | Smokes | Top 6 | Ours at start | Neutral | Theirs | Enemy took it (of smokes where it was not theirs and a later snapshot exists) | Enemy took it when ours | We took it (of not ours) | Batch "cap defended" on this cap | Concealed dmg | Deaths per 100 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 46 | 21 | 28 | 12 | 6 | 3 of 40 (8%) | 1 of 28 (4%) | 7 of 18 (39%) | 8 | 12.0k | 6.5 |
+| B | 34 | 13 | 16 | 12 | 6 | 1 of 28 (4%) | 1 of 16 (6%) | 5 of 18 (28%) | 4 | 5.7k | 11.8 |
+| C | 17 | 7 | 8 | 2 | 7 | 2 of 10 (20%) | 2 of 8 (25%) | 4 of 9 (44%) | 4 | 12.9k | 29.4 |
+| D | 22 | 5 | 18 | 0 | 4 | 0 of 18 (0%) | 0 of 18 (0%) | 0 of 4 (too few) | 0 | 7.0k | 13.6 |
+ smokes within 2 km of any cap 119 of 305 | nearest cap B at any distance 59 | within 2 km of B 34
+ within 2 km of B: n 34 | class destroyer 31, cruiser 3 | ships Daring 15, Gdańsk 6, Harugumo 3, G. Hoffmann 2, Somers 2, Napoli 1, Z-52 1, Z-42 1 | habits cap sitters 23, flank smoke lines 5, other 3, moving exhaust 2, parked cruiser smoke 1
+   primary purpose cap_contest 26, none 2, cap_control 2, counter_smoke 2, island_dive 1, damage 1 | all tags cap_contest 26, escape 5, counter_smoke 4, reposition 3, island_dive 3, damage 3, cap_control 2
+   own at start: ours 16, neutral 12, theirs 6 | by group ('rest', 'neutral') 9, ('rest', 'ours') 8, ('top', 'ours') 8, ('rest', 'theirs') 4, ('top', 'neutral') 3, ('top', 'theirs') 2
+   inside the cap 10 | no cruiser covered 25 | radar play 2 | median time 8:12 | early 8 | state ahead 50+ 14, level 12, behind 50+ 8
+   batch cap_defended on B 4 | enemies near the cap during the smoke (cap_denial) 16 | conc 5.7k | deaths 4
+    Top 6: VRTUS 4, RESIN 4, HTDOG 3, BONKZ 2 | Rest: HFANS 7, KITED 4, 5D 3, KSE 3, EPOXY 1, INCA 1, BONKY 1, -BN- 1
+   B ours at start: n 16 | ships Daring 11, G. Hoffmann 1, Somers 1, Shimakaze 1, Gdańsk 1, Jinan 1 | pp cap_contest 13, none 1, counter_smoke 1, cap_control 1 | enemy took 1 of 16 | cap_defended(B) 2 | enemy already contesting at start 2 | Top 6: VRTUS 4, HTDOG 3, BONKZ 1 | Rest: HFANS 3, KSE 1, BONKY 1, KITED 1, -BN- 1, 5D 1
+   B not ours at start: n 18 | we took 5 of 18 | pp cap_contest 13, none 1, island_dive 1, cap_control 1, damage 1, counter_smoke 1
+ nearest cap B, any distance: n 59 | class destroyer 52, cruiser 7 | ships Daring 20, Gdańsk 13, Harugumo 4, Somers 4, Z-42 4, Napoli 3, Gearing 2, Svea 2 | habits cap sitters 38, flank smoke lines 10, moving exhaust 4, other 4, parked cruiser smoke 3
+   primary purpose cap_contest 26, none 14, counter_smoke 7, escape 4, damage 3, island_dive 2, cap_control 2, radar_trap 1 | all tags cap_contest 26, escape 12, counter_smoke 9, island_dive 5, damage 5, reposition 4, cap_control 2, radar_trap 1
+   own at start: ours 25, neutral 21, theirs 13 | by group ('rest', 'neutral') 14, ('top', 'ours') 13, ('rest', 'ours') 12, ('rest', 'theirs') 10, ('top', 'neutral') 7, ('top', 'theirs') 3
+   inside the cap 10 | no cruiser covered 43 | radar play 3 | median time 7:57 | early 13 | state ahead 50+ 22, level 19, behind 50+ 18
+   batch cap_defended on B 6 | enemies near the cap during the smoke (cap_denial) 31 | conc 5.3k | deaths 9
+    Top 6: HTDOG 10, RESIN 5, VRTUS 4, BONKZ 2, KITE 2 | Rest: HFANS 9, 5D 6, KITED 4, KSE 3, -BN- 3, BONKY 3, EPOXY 2, MACHX 2, UYSC 1, RSR 1, INCA 1, KSC 1
+   B ours at start: n 25 | ships Daring 14, Gdańsk 3, Z-42 2, G. Hoffmann 1, Somers 1, Shimakaze 1, Svea 1, Jinan 1 | pp cap_contest 13, none 4, counter_smoke 3, escape 2, damage 2, cap_control 1 | enemy took 2 of 25 | cap_defended(B) 4 | enemy already contesting at start 3 | Top 6: HTDOG 7, VRTUS 4, BONKZ 1, KITE 1 | Rest: HFANS 4, BONKY 2, -BN- 2, KSE 1, KITED 1, 5D 1, EPOXY 1
+   B not ours at start: n 34 | we took 7 of 34 | pp cap_contest 13, none 10, counter_smoke 4, island_dive 2, escape 2, radar_trap 1, cap_control 1, damage 1
+ enemy took B during: [('8145_g1_161928', '5D', 'Shimakaze', 'ours')]
+ B ours share Top 6 8 of 13 (62%) vs Rest 8 of 21 (38%); gap +23 pts (-25 to +65)
+ share of near-cap smokes that are at B Top 6 13 of 46 (28%) vs Rest 21 of 73 (29%); gap -0 pts (-23 to +21)
+ share of all map smokes Top 6 13 of 137 (10%) vs Rest 21 of 168 (12%); gap -3 pts (-12 to +7)
+ enemy took: B 3.5714285714285716 (0.0, 13.043478260869565) | other caps 7.352941176470588 (1.6129032258064515, 15.151515151515152) | diff -3.7815126050420163 (-13.235294117647058, 8.695652173913043)
+ cap_defended(this cap): B 11.764705882352942 (0.0, 24.242424242424242) other 14.117647058823529 (5.970149253731344, 22.535211267605632)
+ ours at start: B 47.05882352941177 (27.027027027027028, 71.7948717948718) | other caps 63.529411764705884 (52.11267605633803, 75.22935779816514)
+ sitters at B (of sitter smokes within 2 km of a cap) Top 6 8 of 21 (38%) vs Rest 15 of 27 (56%); gap -18 pts (-58 to +31)

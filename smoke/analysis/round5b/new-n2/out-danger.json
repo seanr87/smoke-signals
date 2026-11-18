@@ -1,0 +1,1154 @@
+{
+ "v1": {
+  "title": "Version 1: areas keyed on the smoke centre (round 5 areas), real health",
+  "unit": "smokes",
+  "baselines": {
+   "dd": {
+    "units": 1070,
+    "at_risk": 1070,
+    "died": 12.8,
+    "hurt": 23.1,
+    "by_map": {
+     "Sleeping Giant": {
+      "units": 238,
+      "at_risk": 238,
+      "died": 10.9,
+      "hurt": 21.4
+     },
+     "Hotspot": {
+      "units": 235,
+      "at_risk": 235,
+      "died": 9.4,
+      "hurt": 18.7
+     },
+     "Mountain Range": {
+      "units": 128,
+      "at_risk": 128,
+      "died": 14.8,
+      "hurt": 26.6
+     },
+     "Land of Fire": {
+      "units": 128,
+      "at_risk": 128,
+      "died": 15.6,
+      "hurt": 26.6
+     },
+     "Sea of Fortune": {
+      "units": 117,
+      "at_risk": 117,
+      "died": 12.8,
+      "hurt": 25.6
+     },
+     "Loop": {
+      "units": 142,
+      "at_risk": 142,
+      "died": 14.1,
+      "hurt": 20.4
+     },
+     "Okinawa": {
+      "units": 82,
+      "at_risk": 82,
+      "died": 18.3,
+      "hurt": 30.5
+     }
+    }
+   },
+   "cr": {
+    "units": 560,
+    "at_risk": 612,
+    "died": 9.6,
+    "hurt": 19.4,
+    "by_map": {
+     "Sleeping Giant": {
+      "units": 141,
+      "at_risk": 146,
+      "died": 8.2,
+      "hurt": 19.2
+     },
+     "Hotspot": {
+      "units": 144,
+      "at_risk": 159,
+      "died": 9.4,
+      "hurt": 15.1
+     },
+     "Mountain Range": {
+      "units": 63,
+      "at_risk": 71,
+      "died": 8.5,
+      "hurt": 16.9
+     },
+     "Land of Fire": {
+      "units": 54,
+      "at_risk": 57,
+      "died": 15.8,
+      "hurt": 24.6
+     },
+     "Sea of Fortune": {
+      "units": 66,
+      "at_risk": 79,
+      "died": 6.3,
+      "hurt": 20.3
+     },
+     "Loop": {
+      "units": 53,
+      "at_risk": 55,
+      "died": 9.1,
+      "hurt": 18.2
+     },
+     "Okinawa": {
+      "units": 39,
+      "at_risk": 45,
+      "died": 15.6,
+      "hurt": 33.3
+     }
+    }
+   }
+  },
+  "areas_built": 312,
+  "tested": 108,
+  "tested_dd": 77,
+  "tested_cr": 31,
+  "n_flag": 2,
+  "n_above_all_only": 1,
+  "n_flag_died": 0,
+  "placebo": {
+   "runs": 120,
+   "reps": 300,
+   "mean": 1.57,
+   "median": 1.0,
+   "p95": 4.0,
+   "max": 5,
+   "none": 24,
+   "at_least_real": 58,
+   "real_same_reps": 3,
+   "died_mean": 0.78,
+   "by_map": {
+    "Sleeping Giant": 0.36,
+    "Hotspot": 0.13,
+    "Mountain Range": 0.4,
+    "Land of Fire": 0.22,
+    "Sea of Fortune": 0.19,
+    "Loop": 0.09,
+    "Okinawa": 0.17
+   }
+  },
+  "per_map": {
+   "Sleeping Giant": {
+    "tested": 25,
+    "tested_dd": 19,
+    "tested_cr": 6,
+    "flagged": [
+     "F5 (destroyer smoker)",
+     "E7+F7+F8 (destroyer smoker)"
+    ]
+   },
+   "Hotspot": {
+    "tested": 24,
+    "tested_dd": 15,
+    "tested_cr": 9,
+    "flagged": []
+   },
+   "Mountain Range": {
+    "tested": 17,
+    "tested_dd": 11,
+    "tested_cr": 6,
+    "flagged": []
+   },
+   "Land of Fire": {
+    "tested": 9,
+    "tested_dd": 7,
+    "tested_cr": 2,
+    "flagged": []
+   },
+   "Sea of Fortune": {
+    "tested": 13,
+    "tested_dd": 8,
+    "tested_cr": 5,
+    "flagged": []
+   },
+   "Loop": {
+    "tested": 14,
+    "tested_dd": 12,
+    "tested_cr": 2,
+    "flagged": []
+   },
+   "Okinawa": {
+    "tested": 6,
+    "tested_dd": 5,
+    "tested_cr": 1,
+    "flagged": []
+   }
+  },
+  "shown": [
+   {
+    "kind": "dd",
+    "map": "Sleeping Giant",
+    "name": "F5",
+    "type": "cell",
+    "n": 12,
+    "den": 12,
+    "n_died": 2,
+    "n_hurt": 5,
+    "flag": true,
+    "flag_died": false,
+    "above_all_only": false,
+    "cells": [
+     "F5"
+    ],
+    "cap": null,
+    "died": 16.7,
+    "hurt": 41.7,
+    "base_all": [
+     12.8,
+     23.1
+    ],
+    "base_map": [
+     10.9,
+     21.4
+    ],
+    "ci_hurt_all": [
+     1.6,
+     35.7
+    ],
+    "ci_hurt_map": [
+     5.9,
+     35.4
+    ],
+    "ci_died_all": [
+     -15.4,
+     26.4
+    ],
+    "ci_died_map": [
+     -13.9,
+     28.4
+    ],
+    "mode": "shared",
+    "rest_habit": false,
+    "share_top": 5.5,
+    "share_rest": 4.7,
+    "share_gap_ci": [
+     -6.1,
+     8.9
+    ],
+    "behind_pct": 16.7,
+    "behind_map_pct": 23.9,
+    "radar_pct": 66.7,
+    "radar_map_pct": 41.2,
+    "radar_old_pct": 8.3,
+    "n_clans": 7,
+    "n_games": 9,
+    "clans": {
+     "top6": {
+      "VRTUS": 3,
+      "RESIN": 2,
+      "HTDOG": 1
+     },
+     "rest": {
+      "KITED": 2,
+      "HFANS": 2,
+      "KSE": 1,
+      "5D": 1
+     }
+    },
+    "clans_text": "Top 6: VRTUS 3, RESIN 2, HTDOG 1 | Rest: KITED 2, HFANS 2, KSE 1, 5D 1",
+    "without_top_clan": {
+     "clan": "VRTUS",
+     "n": 9,
+     "hurt_per_100": 44.4
+    }
+   },
+   {
+    "kind": "dd",
+    "map": "Sleeping Giant",
+    "name": "E7+F7+F8",
+    "type": "cells",
+    "n": 8,
+    "den": 8,
+    "n_died": 2,
+    "n_hurt": 5,
+    "flag": true,
+    "flag_died": false,
+    "above_all_only": false,
+    "cells": [
+     "E7",
+     "F7",
+     "F8"
+    ],
+    "cap": null,
+    "died": 25.0,
+    "hurt": 62.5,
+    "base_all": [
+     12.8,
+     23.1
+    ],
+    "base_map": [
+     10.9,
+     21.4
+    ],
+    "ci_hurt_all": [
+     8.0,
+     76.4
+    ],
+    "ci_hurt_map": [
+     9.6,
+     77.0
+    ],
+    "ci_died_all": [
+     -13.6,
+     50.2
+    ],
+    "ci_died_map": [
+     -11.8,
+     51.9
+    ],
+    "mode": "shared",
+    "rest_habit": false,
+    "share_top": 1.8,
+    "share_rest": 4.7,
+    "share_gap_ci": [
+     -8.3,
+     1.4
+    ],
+    "behind_pct": 25.0,
+    "behind_map_pct": 23.9,
+    "radar_pct": 62.5,
+    "radar_map_pct": 41.2,
+    "radar_old_pct": 50.0,
+    "n_clans": 7,
+    "n_games": 8,
+    "clans": {
+     "top6": {
+      "BONKZ": 2
+     },
+     "rest": {
+      "RMN": 1,
+      "SCCC2": 1,
+      "PFANS": 1,
+      "-BN-": 1,
+      "RSR": 1,
+      "KITED": 1
+     }
+    },
+    "clans_text": "Top 6: BONKZ 2 | Rest: RMN 1, SCCC2 1, PFANS 1, -BN- 1, RSR 1, KITED 1",
+    "without_top_clan": {
+     "clan": "SCCC2",
+     "n": 7,
+     "hurt_per_100": 57.1
+    }
+   },
+   {
+    "kind": "dd",
+    "map": "Sea of Fortune",
+    "name": "E5+F5+E6",
+    "type": "cells",
+    "n": 8,
+    "den": 8,
+    "n_died": 4,
+    "n_hurt": 5,
+    "flag": false,
+    "flag_died": false,
+    "above_all_only": true,
+    "cells": [
+     "E5",
+     "F5",
+     "E6"
+    ],
+    "cap": null,
+    "died": 50.0,
+    "hurt": 62.5,
+    "base_all": [
+     12.8,
+     23.1
+    ],
+    "base_map": [
+     12.8,
+     25.6
+    ],
+    "ci_hurt_all": [
+     1.1,
+     78.7
+    ],
+    "ci_hurt_map": [
+     -0.4,
+     76.5
+    ],
+    "ci_died_all": [
+     -0.6,
+     87.3
+    ],
+    "ci_died_map": [
+     0.0,
+     86.6
+    ],
+    "mode": "shared",
+    "rest_habit": false,
+    "share_top": 7.9,
+    "share_rest": 6.3,
+    "share_gap_ci": [
+     -9.4,
+     11.4
+    ],
+    "behind_pct": 50.0,
+    "behind_map_pct": 28.2,
+    "radar_pct": 50.0,
+    "radar_map_pct": 39.3,
+    "radar_old_pct": 37.5,
+    "n_clans": 7,
+    "n_games": 6,
+    "clans": {
+     "top6": {
+      "RESIN": 2,
+      "BONKZ": 1
+     },
+     "rest": {
+      "5D": 1,
+      "NGA": 1,
+      "MACHX": 1,
+      "KSE": 1,
+      "RSR": 1
+     }
+    },
+    "clans_text": "Top 6: RESIN 2, BONKZ 1 | Rest: 5D 1, NGA 1, MACHX 1, KSE 1, RSR 1",
+    "without_top_clan": {
+     "clan": "5D",
+     "n": 7,
+     "hurt_per_100": 57.1
+    }
+   }
+  ]
+ },
+ "v2": {
+  "title": "Version 2: areas keyed on where the damage happened",
+  "unit": "ships",
+  "baselines": {
+   "dd": {
+    "units": 1070,
+    "at_risk": 1070,
+    "died": 12.8,
+    "hurt": 23.1,
+    "by_map": {
+     "Sleeping Giant": {
+      "units": 238,
+      "at_risk": 238,
+      "died": 10.9,
+      "hurt": 21.4
+     },
+     "Hotspot": {
+      "units": 235,
+      "at_risk": 235,
+      "died": 9.4,
+      "hurt": 18.7
+     },
+     "Mountain Range": {
+      "units": 128,
+      "at_risk": 128,
+      "died": 14.8,
+      "hurt": 26.6
+     },
+     "Land of Fire": {
+      "units": 128,
+      "at_risk": 128,
+      "died": 15.6,
+      "hurt": 26.6
+     },
+     "Sea of Fortune": {
+      "units": 117,
+      "at_risk": 117,
+      "died": 12.8,
+      "hurt": 25.6
+     },
+     "Loop": {
+      "units": 142,
+      "at_risk": 142,
+      "died": 14.1,
+      "hurt": 20.4
+     },
+     "Okinawa": {
+      "units": 82,
+      "at_risk": 82,
+      "died": 18.3,
+      "hurt": 30.5
+     }
+    }
+   },
+   "cr": {
+    "units": 612,
+    "at_risk": 612,
+    "died": 9.6,
+    "hurt": 19.4,
+    "by_map": {
+     "Sleeping Giant": {
+      "units": 146,
+      "at_risk": 146,
+      "died": 8.2,
+      "hurt": 19.2
+     },
+     "Hotspot": {
+      "units": 159,
+      "at_risk": 159,
+      "died": 9.4,
+      "hurt": 15.1
+     },
+     "Mountain Range": {
+      "units": 71,
+      "at_risk": 71,
+      "died": 8.5,
+      "hurt": 16.9
+     },
+     "Land of Fire": {
+      "units": 57,
+      "at_risk": 57,
+      "died": 15.8,
+      "hurt": 24.6
+     },
+     "Sea of Fortune": {
+      "units": 79,
+      "at_risk": 79,
+      "died": 6.3,
+      "hurt": 20.3
+     },
+     "Loop": {
+      "units": 55,
+      "at_risk": 55,
+      "died": 9.1,
+      "hurt": 18.2
+     },
+     "Okinawa": {
+      "units": 45,
+      "at_risk": 45,
+      "died": 15.6,
+      "hurt": 33.3
+     }
+    }
+   }
+  },
+  "areas_built": 315,
+  "tested": 111,
+  "tested_dd": 73,
+  "tested_cr": 38,
+  "n_flag": 3,
+  "n_above_all_only": 1,
+  "n_flag_died": 0,
+  "placebo": {
+   "runs": 120,
+   "reps": 300,
+   "mean": 1.75,
+   "median": 2.0,
+   "p95": 4.0,
+   "max": 5,
+   "none": 19,
+   "at_least_real": 29,
+   "real_same_reps": 3,
+   "died_mean": 0.74,
+   "by_map": {
+    "Sleeping Giant": 0.36,
+    "Hotspot": 0.16,
+    "Mountain Range": 0.43,
+    "Land of Fire": 0.23,
+    "Sea of Fortune": 0.25,
+    "Loop": 0.11,
+    "Okinawa": 0.22
+   }
+  },
+  "per_map": {
+   "Sleeping Giant": {
+    "tested": 26,
+    "tested_dd": 17,
+    "tested_cr": 9,
+    "flagged": [
+     "E8 (destroyer smoker)",
+     "E7+F7+F8 (destroyer smoker)"
+    ]
+   },
+   "Hotspot": {
+    "tested": 25,
+    "tested_dd": 15,
+    "tested_cr": 10,
+    "flagged": []
+   },
+   "Mountain Range": {
+    "tested": 18,
+    "tested_dd": 12,
+    "tested_cr": 6,
+    "flagged": [
+     "G5+H5+G6+H6 (destroyer smoker)"
+    ]
+   },
+   "Land of Fire": {
+    "tested": 10,
+    "tested_dd": 7,
+    "tested_cr": 3,
+    "flagged": []
+   },
+   "Sea of Fortune": {
+    "tested": 13,
+    "tested_dd": 7,
+    "tested_cr": 6,
+    "flagged": []
+   },
+   "Loop": {
+    "tested": 13,
+    "tested_dd": 11,
+    "tested_cr": 2,
+    "flagged": []
+   },
+   "Okinawa": {
+    "tested": 6,
+    "tested_dd": 4,
+    "tested_cr": 2,
+    "flagged": []
+   }
+  },
+  "shown": [
+   {
+    "kind": "dd",
+    "map": "Sleeping Giant",
+    "name": "E8",
+    "type": "cell",
+    "n": 8,
+    "den": 8,
+    "n_died": 3,
+    "n_hurt": 6,
+    "flag": true,
+    "flag_died": false,
+    "above_all_only": false,
+    "cells": [
+     "E8"
+    ],
+    "cap": null,
+    "died": 37.5,
+    "hurt": 75.0,
+    "base_all": [
+     12.8,
+     23.1
+    ],
+    "base_map": [
+     10.9,
+     21.4
+    ],
+    "ci_hurt_all": [
+     34.8,
+     78.6
+    ],
+    "ci_hurt_map": [
+     35.2,
+     82.5
+    ],
+    "ci_died_all": [
+     -14.5,
+     60.4
+    ],
+    "ci_died_map": [
+     -12.9,
+     61.9
+    ],
+    "mode": "shared",
+    "rest_habit": false,
+    "share_top": 3.6,
+    "share_rest": 3.1,
+    "share_gap_ci": [
+     -4.0,
+     5.8
+    ],
+    "behind_pct": 12.5,
+    "behind_map_pct": 23.9,
+    "radar_pct": 62.5,
+    "radar_map_pct": 41.2,
+    "radar_old_pct": 12.5,
+    "n_clans": 5,
+    "n_games": 6,
+    "clans": {
+     "top6": {
+      "RESIN": 3,
+      "BONKZ": 1
+     },
+     "rest": {
+      "MACHX": 2,
+      "HFANS": 1,
+      "EPOXY": 1
+     }
+    },
+    "clans_text": "Top 6: RESIN 3, BONKZ 1 | Rest: MACHX 2, HFANS 1, EPOXY 1",
+    "without_top_clan": {
+     "clan": "RESIN",
+     "n": 5,
+     "hurt_per_100": 80.0
+    }
+   },
+   {
+    "kind": "dd",
+    "map": "Sleeping Giant",
+    "name": "E7+F7+F8",
+    "type": "cells",
+    "n": 10,
+    "den": 10,
+    "n_died": 3,
+    "n_hurt": 5,
+    "flag": true,
+    "flag_died": false,
+    "above_all_only": false,
+    "cells": [
+     "E7",
+     "F7",
+     "F8"
+    ],
+    "cap": null,
+    "died": 30.0,
+    "hurt": 50.0,
+    "base_all": [
+     12.8,
+     23.1
+    ],
+    "base_map": [
+     10.9,
+     21.4
+    ],
+    "ci_hurt_all": [
+     2.6,
+     59.8
+    ],
+    "ci_hurt_map": [
+     5.5,
+     61.2
+    ],
+    "ci_died_all": [
+     -11.1,
+     52.6
+    ],
+    "ci_died_map": [
+     -8.3,
+     54.3
+    ],
+    "mode": "shared",
+    "rest_habit": false,
+    "share_top": 1.8,
+    "share_rest": 6.2,
+    "share_gap_ci": [
+     -12.0,
+     1.2
+    ],
+    "behind_pct": 30.0,
+    "behind_map_pct": 23.9,
+    "radar_pct": 70.0,
+    "radar_map_pct": 41.2,
+    "radar_old_pct": 50.0,
+    "n_clans": 7,
+    "n_games": 8,
+    "clans": {
+     "top6": {
+      "BONKZ": 2
+     },
+     "rest": {
+      "KITED": 3,
+      "RMN": 1,
+      "UYSC": 1,
+      "PFANS": 1,
+      "-BN-": 1,
+      "RSR": 1
+     }
+    },
+    "clans_text": "Top 6: BONKZ 2 | Rest: KITED 3, RMN 1, UYSC 1, PFANS 1, -BN- 1, RSR 1",
+    "without_top_clan": {
+     "clan": "UYSC",
+     "n": 9,
+     "hurt_per_100": 44.4
+    }
+   },
+   {
+    "kind": "dd",
+    "map": "Mountain Range",
+    "name": "G5+H5+G6+H6",
+    "type": "cells",
+    "n": 14,
+    "den": 14,
+    "n_died": 4,
+    "n_hurt": 7,
+    "flag": true,
+    "flag_died": false,
+    "above_all_only": false,
+    "cells": [
+     "G5",
+     "H5",
+     "G6",
+     "H6"
+    ],
+    "cap": null,
+    "died": 28.6,
+    "hurt": 50.0,
+    "base_all": [
+     12.8,
+     23.1
+    ],
+    "base_map": [
+     14.8,
+     26.6
+    ],
+    "ci_hurt_all": [
+     4.3,
+     52.6
+    ],
+    "ci_hurt_map": [
+     2.3,
+     47.8
+    ],
+    "ci_died_all": [
+     -4.0,
+     40.5
+    ],
+    "ci_died_map": [
+     -6.0,
+     37.5
+    ],
+    "mode": "shared",
+    "rest_habit": false,
+    "share_top": 7.3,
+    "share_rest": 13.7,
+    "share_gap_ci": [
+     -19.9,
+     2.9
+    ],
+    "behind_pct": 57.1,
+    "behind_map_pct": 24.2,
+    "radar_pct": 35.7,
+    "radar_map_pct": 36.7,
+    "radar_old_pct": 7.1,
+    "n_clans": 11,
+    "n_games": 11,
+    "clans": {
+     "top6": {
+      "RESIN": 2,
+      "H-SR": 1,
+      "HTDOG": 1
+     },
+     "rest": {
+      "OGF": 2,
+      "SCCC2": 2,
+      "RMN": 1,
+      "REEEE": 1,
+      "KSE": 1,
+      "UYSC": 1,
+      "KSC": 1,
+      "MACH": 1
+     }
+    },
+    "clans_text": "Top 6: RESIN 2, H-SR 1, HTDOG 1 | Rest: OGF 2, SCCC2 2, RMN 1, REEEE 1, KSE 1, UYSC 1, KSC 1, MACH 1",
+    "without_top_clan": {
+     "clan": "OGF",
+     "n": 12,
+     "hurt_per_100": 50.0
+    }
+   },
+   {
+    "kind": "dd",
+    "map": "Okinawa",
+    "name": "E3+F3+E4+F4",
+    "type": "cells",
+    "n": 12,
+    "den": 12,
+    "n_died": 2,
+    "n_hurt": 5,
+    "flag": false,
+    "flag_died": false,
+    "above_all_only": true,
+    "cells": [
+     "E3",
+     "F3",
+     "E4",
+     "F4"
+    ],
+    "cap": null,
+    "died": 16.7,
+    "hurt": 41.7,
+    "base_all": [
+     12.8,
+     23.1
+    ],
+    "base_map": [
+     18.3,
+     30.5
+    ],
+    "ci_hurt_all": [
+     0.6,
+     37.2
+    ],
+    "ci_hurt_map": [
+     -5.5,
+     30.6
+    ],
+    "ci_died_all": [
+     -14.6,
+     31.8
+    ],
+    "ci_died_map": [
+     -20.4,
+     25.9
+    ],
+    "mode": "shared",
+    "rest_habit": true,
+    "share_top": 0.0,
+    "share_rest": 17.9,
+    "share_gap_ci": [
+     -27.9,
+     -8.2
+    ],
+    "behind_pct": 25.0,
+    "behind_map_pct": 31.7,
+    "radar_pct": 41.7,
+    "radar_map_pct": 41.5,
+    "radar_old_pct": 8.3,
+    "n_clans": 7,
+    "n_games": 7,
+    "clans": {
+     "top6": {},
+     "rest": {
+      "-BN-": 3,
+      "RSR": 2,
+      "EPOXY": 2,
+      "MACHX": 2,
+      "BTLST": 1,
+      "MANBA": 1,
+      "MZY": 1
+     }
+    },
+    "clans_text": "Top 6: none | Rest: -BN- 3, RSR 2, EPOXY 2, MACHX 2, BTLST 1, MANBA 1, MZY 1",
+    "without_top_clan": {
+     "clan": "BTLST",
+     "n": 11,
+     "hurt_per_100": 36.4
+    }
+   }
+  ]
+ },
+ "r5_flags": [
+  {
+   "map": "Hotspot",
+   "who": "destroyer smoker",
+   "area": "inside cap C",
+   "n": 22,
+   "old_hurt": 31.8,
+   "old_n_hurt": 7,
+   "old_flag": true,
+   "new_hurt": 27.3,
+   "new_n_hurt": 6,
+   "new_den": 22,
+   "new_died": 13.6,
+   "new_n_died": 3,
+   "new_gap_all": 4.2,
+   "new_ci_all": [
+    -9.2,
+    44.3
+   ],
+   "new_gap_map": 8.5,
+   "new_ci_map": [
+    -4.0,
+    51.5
+   ],
+   "survives": false,
+   "new_base_all": 23.1,
+   "new_base_map": 18.7
+  },
+  {
+   "map": "Sea of Fortune",
+   "who": "destroyer smoker",
+   "area": "E5+F5+E6",
+   "n": 8,
+   "old_hurt": 62.5,
+   "old_n_hurt": 5,
+   "old_flag": true,
+   "new_hurt": 62.5,
+   "new_n_hurt": 5,
+   "new_den": 8,
+   "new_died": 50.0,
+   "new_n_died": 4,
+   "new_gap_all": 39.4,
+   "new_ci_all": [
+    1.1,
+    78.7
+   ],
+   "new_gap_map": 36.9,
+   "new_ci_map": [
+    -0.4,
+    76.5
+   ],
+   "survives": false,
+   "new_base_all": 23.1,
+   "new_base_map": 25.6
+  },
+  {
+   "map": "Sleeping Giant",
+   "who": "destroyer smoker",
+   "area": "E7+F7+F8",
+   "n": 8,
+   "old_hurt": 50.0,
+   "old_n_hurt": 4,
+   "old_flag": true,
+   "new_hurt": 62.5,
+   "new_n_hurt": 5,
+   "new_den": 8,
+   "new_died": 25.0,
+   "new_n_died": 2,
+   "new_gap_all": 39.4,
+   "new_ci_all": [
+    8.0,
+    76.4
+   ],
+   "new_gap_map": 41.1,
+   "new_ci_map": [
+    9.6,
+    77.0
+   ],
+   "survives": true,
+   "new_base_all": 23.1,
+   "new_base_map": 21.4
+  },
+  {
+   "map": "Mountain Range",
+   "who": "sheltering cruisers",
+   "area": "E7+F7+F8",
+   "n": 7,
+   "survives": false,
+   "too_few": true
+  }
+ ],
+ "r5_recomputed": {
+  "tested": 108,
+  "flagged": [
+   "Sleeping Giant E7+F7+F8 (destroyer smoker)",
+   "Hotspot inside cap C (destroyer smoker)",
+   "Sea of Fortune E5+F5+E6 (destroyer smoker)"
+  ]
+ },
+ "v2_check_p0": [
+  {
+   "map": "Sleeping Giant",
+   "who": "destroyer smoker",
+   "area": "E8",
+   "n": 7,
+   "hurt": null,
+   "n_hurt": 4
+  },
+  {
+   "map": "Sleeping Giant",
+   "who": "destroyer smoker",
+   "area": "E7+F7+F8",
+   "n": 8,
+   "hurt": 62.5,
+   "n_hurt": 5
+  },
+  {
+   "map": "Mountain Range",
+   "who": "destroyer smoker",
+   "area": "G5+H5+G6+H6",
+   "n": 16,
+   "hurt": 37.5,
+   "n_hurt": 6
+  }
+ ],
+ "death_pos": {
+  "pairs": 268,
+  "distinct_ships": 262,
+  "who": {
+   "smoking destroyer": {
+    "n": 137,
+    "bands": {
+     "inside the outline": 57,
+     "within 1 km of the edge": 23,
+     "1-3 km": 28,
+     "over 3 km": 29
+    },
+    "inside_pct": 41.6,
+    "median_outside_m": 1923.0,
+    "in_batch_list": 68,
+    "top6": 33,
+    "rest": 104,
+    "inside_top6": 11,
+    "inside_rest": 46
+   },
+   "sheltering cruiser": {
+    "n": 59,
+    "bands": {
+     "inside the outline": 13,
+     "within 1 km of the edge": 9,
+     "1-3 km": 25,
+     "over 3 km": 12
+    },
+    "inside_pct": 22.0,
+    "median_outside_m": 1960.0,
+    "in_batch_list": 48,
+    "top6": 19,
+    "rest": 40,
+    "inside_top6": 5,
+    "inside_rest": 8
+   },
+   "smoker (other class)": {
+    "n": 61,
+    "bands": {
+     "inside the outline": 36,
+     "within 1 km of the edge": 18,
+     "1-3 km": 6,
+     "over 3 km": 1
+    },
+    "inside_pct": 59.0,
+    "median_outside_m": 739.0,
+    "in_batch_list": 47,
+    "top6": 14,
+    "rest": 47,
+    "inside_top6": 9,
+    "inside_rest": 27
+   },
+   "other sheltering ship": {
+    "n": 11,
+    "bands": {
+     "inside the outline": 4,
+     "within 1 km of the edge": 1,
+     "1-3 km": 2,
+     "over 3 km": 4
+    },
+    "inside_pct": 36.4,
+    "median_outside_m": 3971.0,
+    "in_batch_list": 10,
+    "top6": 4,
+    "rest": 7,
+    "inside_top6": 1,
+    "inside_rest": 3
+   }
+  },
+  "by_map": {
+   "Sleeping Giant": {
+    "n": 49,
+    "inside": 22,
+    "outside": 27
+   },
+   "Hotspot": {
+    "n": 40,
+    "inside": 18,
+    "outside": 22
+   },
+   "Mountain Range": {
+    "n": 32,
+    "inside": 11,
+    "outside": 21
+   },
+   "Land of Fire": {
+    "n": 43,
+    "inside": 16,
+    "outside": 27
+   },
+   "Sea of Fortune": {
+    "n": 33,
+    "inside": 16,
+    "outside": 17
+   },
+   "Loop": {
+    "n": 34,
+    "inside": 18,
+    "outside": 16
+   },
+   "Okinawa": {
+    "n": 37,
+    "inside": 9,
+    "outside": 28
+   }
+  }
+ }
+}

@@ -1,0 +1,80 @@
+Sleeping Giant | long_smoke: pool 141 (Top 6 67, Rest 74), spots 1
+  sg-long-1 2.5 km outside cap A, own side, west edge of the map ['G1', 'F1'] r 1.87 km n 21 top/rest 12/9 share 17.91044776119403 vs 12.162162162162161 ci -6.640017765933823 21.944444444444443 -> shared 
+      Top 6: BONKZ 4, VRTUS 3, H-SR 3, RESIN 2 | Rest: BONKY 3, PFANS 2, KSC 2, NGA 1, EPOXY 1 | dmg 20675 deaths/100 9.5 time 2:40
+Sleeping Giant | cap_sitter: pool 93 (Top 6 41, Rest 52), spots 1
+  sg-sit-1 1.7 km outside cap B, own side ['G6', 'F6'] r 1.77 km n 14 top/rest 5/9 share 12.195121951219512 vs 17.307692307692307 ci -22.732919254658384 8.273553323768532 -> shared 
+      Top 6: HTDOG 4, VRTUS 1 | Rest: HFANS 3, KSE 2, BONKY 2, EPOXY 1, KSC 1 | dmg 8039 deaths/100 14.3 time 6:36
+Sleeping Giant | parked_cruiser: pool 42 (Top 6 20, Rest 22), spots 0
+Sleeping Giant | early_cruiser: pool 58 (Top 6 28, Rest 30), spots 1
+  sg-early-1 2.6 km outside cap A, own side, west edge of the map ['G1', 'F1'] r 1.8 km n 16 top/rest 10/6 share 35.714285714285715 vs 20.0 ci -7.994389901823283 37.93103448275862 -> shared 
+      Top 6: BONKZ 3, RESIN 3, VRTUS 2, H-SR 2 | Rest: PFANS 2, KSC 2, BONKY 1, EPOXY 1 | dmg 22561 deaths/100 6.2 time 2:20
+Hotspot | long_smoke: pool 144 (Top 6 64, Rest 80), spots 1
+  hs-long-1 2.6 km outside cap D, own side, east edge of the map ['G10'] r 1.81 km n 27 top/rest 9/18 share 14.0625 vs 22.5 ci -22.446689113355777 1.3867822318526528 -> shared 
+      Top 6: RESIN 3, H-SR 2, BONKZ 2, HTDOG 1, KITE 1 | Rest: BONKY 4, BTLST 3, HFANS 2, -BN- 2, REEEE 2, KSC 2, MZY 1, PN 1, PFANS 1 | dmg 16115 deaths/100 3.7 time 3:16
+Hotspot | cap_sitter: pool 90 (Top 6 16, Rest 74), spots 2
+  hs-sit-1 on the rim of cap C, own side ['F6', 'F5', 'G5'] r 1.89 km n 18 top/rest 1/17 share 6.25 vs 22.972972972972972 ci -30.379746835443036 -5.097451274362818 -> shared Rest use it more
+      Top 6: H-SR 1 | Rest: KSC 5, EPOXY 5, PFANS 2, BTLST 1, UYSC 1, HFANS 1, INCA 1, MACHX 1 | dmg 2104 deaths/100 0.0 time 4:56
+  hs-sit-2 0.5 km outside cap D, own side, east edge of the map ['F10', 'G10'] r 1.9 km n 11 top/rest 2/9 share 12.5 vs 12.162162162162161 ci -21.518987341772153 12.034161490683228 -> shared 
+      Top 6: H-SR 2 | Rest: 5D 3, KITED 2, INCA 1, MACH 1, MACHX 1, SCCC2 1 | dmg 11316 deaths/100 0.0 time 5:33
+Hotspot | parked_cruiser: pool 27 (Top 6 7, Rest 20), spots 0
+Hotspot | early_cruiser: pool 54 (Top 6 22, Rest 32), spots 2
+  hs-early-1 2.4 km outside cap D, own side, east edge of the map ['G10', 'F10'] r 1.95 km n 17 top/rest 8/9 share 36.36363636363637 vs 28.125 ci -12.807881773399014 33.957219251336895 -> shared 
+      Top 6: H-SR 2, BONKZ 2, RESIN 2, HTDOG 1, KITE 1 | Rest: HFANS 2, BTLST 1, PN 1, -BN- 1, BONKY 1, REEEE 1, PFANS 1, KSC 1 | dmg 18959 deaths/100 0.0 time 2:44
+  hs-early-2 1.8 km outside cap C, own side ['G6', 'G5'] r 2.05 km n 9 top/rest 4/5 share 18.181818181818183 vs 15.625 ci -15.15151515151515 19.743589743589745 -> shared 
+      Top 6: BONKZ 2, H-SR 1, RESIN 1 | Rest: KSC 2, OGF 1, -BN- 1, MZY 1 | dmg 6803 deaths/100 0.0 time 2:08
+Loop | long_smoke: pool 45 (Top 6 18, Rest 27), spots 1
+  loop-long-1 1.6 km outside cap B, own side ['F8', 'G8'] r 2.19 km n 8 top/rest 4/4 share 22.22222222222222 vs 14.814814814814815 ci -20.689655172413794 84.61538461538461 -> shared 
+      Top 6: BONKZ 3, RESIN 1 | Rest: OGF 1, KM 1, MACHX 1, HFANS 1 | dmg 35993 deaths/100 12.5 time 5:12
+Loop | cap_sitter: pool 88 (Top 6 23, Rest 65), spots 2
+  loop-sit-1 inside cap A, own side ['F4'] r 2.16 km n 14 top/rest 1/13 share 4.3478260869565215 vs 20.0 ci -26.31578947368421 -2.2727272727272716 -> shared Rest use it more
+      Top 6: KITE 1 | Rest: REEEE 5, EPOXY 3, MACH 2, KITED 1, -BN- 1, HFANS 1 | dmg 6703 deaths/100 0.0 time 8:02
+  loop-sit-2 inside cap B, own side ['F7'] r 1.88 km n 13 top/rest 7/6 share 30.434782608695652 vs 9.23076923076923 ci -3.3827618164967563 50.26881720430108 -> shared 
+      Top 6: RESIN 3, HTDOG 2, VRTUS 1, H-SR 1 | Rest: REEEE 5, SCCC2 1 | dmg 2286 deaths/100 0.0 time 9:26
+Loop | parked_cruiser: pool 15 (Top 6 12, Rest 3), spots 0
+Loop | early_cruiser: pool 21 (Top 6 7, Rest 14), spots 0
+Mountain Range | long_smoke: pool 78 (Top 6 37, Rest 41), spots 3
+  mr-long-1 2.1 km outside cap B, own side ['F4', 'G4'] r 1.99 km n 12 top/rest 4/8 share 10.81081081081081 vs 19.51219512195122 ci -26.682986536107713 7.327327327327328 -> shared 
+      Top 6: KITE 2, H-SR 1, BONKZ 1 | Rest: -BN- 3, HFANS 2, BONKY 2, INCA 1 | dmg 14331 deaths/100 0.0 time 3:48
+  mr-long-2 2.1 km outside cap C, own side ['G7'] r 2.0 km n 10 top/rest 7/3 share 18.91891891891892 vs 7.317073170731708 ci -5.128205128205129 26.272577996715928 -> shared 
+      Top 6: H-SR 3, BONKZ 2, RESIN 2 | Rest: UYSC 1, NGA 1, KSC 1 | dmg 17814 deaths/100 30.0 time 5:25
+  mr-long-3 2.3 km outside cap B, own side ['G5', 'G4'] r 1.84 km n 9 top/rest 5/4 share 13.513513513513514 vs 9.75609756097561 ci -14.634146341463415 16.816816816816818 -> shared 
+      Top 6: KITE 3, H-SR 2 | Rest: INCA 2, UYSC 1, PN 1 | dmg 10033 deaths/100 11.1 time 2:37
+Mountain Range | cap_sitter: pool 48 (Top 6 16, Rest 32), spots 1
+  mr-sit-1 on the rim of cap C, own side ['F7'] r 1.99 km n 9 top/rest 4/5 share 25.0 vs 15.625 ci -13.88888888888889 35.294117647058826 -> shared 
+      Top 6: RESIN 2, BONKZ 2 | Rest: HFANS 3, SCCC2 1, MACH 1 | dmg 4296 deaths/100 0.0 time 4:27
+Mountain Range | parked_cruiser: pool 46 (Top 6 33, Rest 13), spots 0
+Mountain Range | early_cruiser: pool 28 (Top 6 10, Rest 18), spots 0
+Land of Fire | long_smoke: pool 57 (Top 6 19, Rest 38), spots 0
+Land of Fire | cap_sitter: pool 66 (Top 6 29, Rest 37), spots 1
+  lof-sit-1 on the rim of cap B, own side ['F5'] r 1.67 km n 9 top/rest 3/6 share 10.344827586206897 vs 16.216216216216218 ci -31.57894736842105 13.095238095238093 -> shared 
+      Top 6: VRTUS 3 | Rest: -BN- 3, SCCC2 1, MACHX 1, HFANS 1 | dmg 2629 deaths/100 0.0 time 7:08
+Land of Fire | parked_cruiser: pool 40 (Top 6 19, Rest 21), spots 1
+  lof-park-1 1.0 km outside cap B, own side ['F5'] r 1.5 km n 15 top/rest 11/4 share 57.89473684210526 vs 19.047619047619047 ci -6.153846153846153 69.56521739130434 -> shared 
+      Top 6: VRTUS 7, HTDOG 2, RESIN 2 | Rest: BONKY 4 | dmg 11039 deaths/100 6.7 time 6:13
+Land of Fire | early_cruiser: pool 25 (Top 6 8, Rest 17), spots 0
+Sea of Fortune | long_smoke: pool 59 (Top 6 22, Rest 37), spots 1
+  sof-long-1 4.5 km outside cap D, east side, east edge of the map ['F9', 'F10'] r 1.86 km n 8 top/rest 3/5 share 13.636363636363637 vs 13.513513513513514 ci -21.311475409836067 23.986486486486484 -> shared 
+      Top 6: BONKZ 3 | Rest: BONKY 2, MZY 2, -BN- 1 | dmg 28550 deaths/100 0.0 time 5:40
+Sea of Fortune | cap_sitter: pool 47 (Top 6 11, Rest 36), spots 0
+Sea of Fortune | parked_cruiser: pool 45 (Top 6 21, Rest 24), spots 0
+Sea of Fortune | early_cruiser: pool 24 (Top 6 8, Rest 16), spots 0
+Okinawa | long_smoke: pool 38 (Top 6 10, Rest 28), spots 0
+Okinawa | cap_sitter: pool 40 (Top 6 5, Rest 35), spots 0
+Okinawa | parked_cruiser: pool 26 (Top 6 3, Rest 23), spots 0
+Okinawa | early_cruiser: pool 16 (Top 6 2, Rest 14), spots 0
+Sleeping Giant | high cells: destroyer smokes 238, map mean 11,890, cells or pairs tested 38, passed 1
+  sg-cell-1 ['G1'] n 21 mean 24,101 vs rest 10,709 gap 13,393 (8,219 to 20,199) median 21,944 win 26487 (n 14) loss 19330 (n 7) cap taken 19 of 21 | share 10.9 vs 7.0 ci -4.4 13.3 -> shared 
+      Top 6: RESIN 5, VRTUS 3, BONKZ 2, HTDOG 1, H-SR 1 | Rest: BONKY 3, KSC 2, PFANS 2, NGA 1, -BN- 1
+Hotspot | high cells: destroyer smokes 235, map mean 12,331, cells or pairs tested 30, passed 1
+  hs-cell-1 ['G10', 'H10'] n 40 mean 16,970 vs rest 11,379 gap 5,592 (801 to 10,738) median 11,026 win 21330 (n 16) loss 14064 (n 24) cap taken 34 of 35 | share 16.2 vs 17.4 ci -11.8 7.8 -> shared 
+      Top 6: H-SR 5, RESIN 4, HTDOG 1, VRTUS 1, KITE 1, BONKZ 1 | Rest: REEEE 5, BONKY 4, BTLST 3, -BN- 3, MZY 2, HFANS 2, KITED 2, KSC 2, NGA 1, SCCC2 1, PFANS 1, EPOXY 1
+Loop | high cells: destroyer smokes 142, map mean 8,039, cells or pairs tested 21, passed 0
+Mountain Range | high cells: destroyer smokes 132, map mean 10,865, cells or pairs tested 20, passed 0
+Land of Fire | high cells: destroyer smokes 128, map mean 7,560, cells or pairs tested 10, passed 0
+Sea of Fortune | high cells: destroyer smokes 117, map mean 11,566, cells or pairs tested 14, passed 1
+  sof-cell-1 ['F9', 'G9'] n 10 mean 24,597 vs rest 10,348 gap 14,249 (1,000 to 32,542) median 14,124 win 28019 (n 8) loss 10908 (n 2) cap taken 25 of 8 | share 10.5 vs 7.6 ci -9.8 19.9 -> shared 
+      Top 6: BONKZ 3, H-SR 1 | Rest: BONKY 2, MZY 2, -BN- 1, HFANS 1
+Okinawa | high cells: destroyer smokes 82, map mean 11,864, cells or pairs tested 4, passed 0
+PLACEBO top label: {'draws': 200, 'spots': 12, 'mean': 0.33, 'lo': 0, 'hi': 3, 'p50': 0.0, 'share_ge_real': 100.0, 'rate': 2.75} | real: top 0 of 21 (0%)
+SHUFFLE high cells: {'runs': 20, 'mean': 1.85, 'lo': 0, 'hi': 4, 'tested': 137, 'real': 3}
+CHECK smokes 1547 destroyer top/rest 387 687 | records 21 | ids unique True

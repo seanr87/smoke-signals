@@ -1,0 +1,23 @@
+A1 cap-contest destroyer smokes 391
+  top radar cruiser inside n 55 cap taken 53.3 of 30 conc 19099
+  top no cruiser n 46 cap taken 47.8 of 23 conc 4121
+  rest radar cruiser inside n 49 cap taken 76.2 of 21 conc 14394
+  rest no cruiser n 145 cap taken 12.9 of 85 conc 3322
+A2 deaths per 100 destroyer smokes: top 7.5 rest 13.8
+   smoker died per 100: all 6.4 cruiser per 100 sheltering 8.2 587
+   calm smokes 585 deaths 17 2.9 | total deaths 124
+   ahead 50+ 372 6.5 top 5.4 rest 7.3
+   level 425 8.5 top 3.7 rest 11.4
+   behind 50+ 277 23.1 top 23.7 rest 22.9
+A3 Somers top 90 7.8
+A3 Somers rest 170 11.8
+A3 Gearing top 74 9.5
+A3 Gearing rest 106 23.6
+A4 counter smokes with id 133 radar cruiser inside 32 18316 all 8003
+C1 cap_defended share 31.4 486
+   enemy_took yes 184 no 889 n/a 474
+   dd within 2 km top 142 8.5
+   dd within 2 km rest 263 15.2
+C3 Hotspot inside C 22 hurt 7 Top 6: none | Rest: EPOXY 9, KSC 7, BTLST 1, RMN 1, 5D 1, UYSC 1, MACHX 1, MZY 1
+C4 SG G1 21 24101 elsewhere 10709
+C2 more caps at 8:00 won 62 of 93

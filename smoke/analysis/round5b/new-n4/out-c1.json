@@ -1,0 +1,1345 @@
+{
+ "hist_bins": [
+  "inside the cap",
+  "0-1 km",
+  "1-2 km",
+  "2-3 km",
+  "3-4 km",
+  "4-6 km",
+  "6 km+"
+ ],
+ "pops": {
+  "three ships early (round 3 population)": {
+   "n": 188,
+   "n_top": 68,
+   "n_rest": 120,
+   "clans": 27,
+   "clan_counts": {
+    "top6": {
+     "RESIN": 20,
+     "H-SR": 17,
+     "BONKZ": 13,
+     "KITE": 8,
+     "VRTUS": 7,
+     "HTDOG": 3
+    },
+    "rest": {
+     "-BN-": 13,
+     "EPOXY": 12,
+     "KSC": 11,
+     "REEEE": 10,
+     "HFANS": 10,
+     "MZY": 7,
+     "BONKY": 6,
+     "MACHX": 6,
+     "BTLST": 5,
+     "5D": 5,
+     "PN": 5,
+     "PFANS": 5,
+     "NGA": 5,
+     "RSR": 5,
+     "OGF": 4,
+     "INCA": 4,
+     "UYSC": 2,
+     "KM": 2,
+     "KITED": 1,
+     "SCCC2": 1,
+     "RMN": 1
+    }
+   },
+   "clan_counts_smoker_in_cap": {
+    "top6": {
+     "H-SR": 2,
+     "VRTUS": 1
+    },
+    "rest": {
+     "5D": 3,
+     "RSR": 2,
+     "BTLST": 2,
+     "PN": 2,
+     "PFANS": 1,
+     "INCA": 1,
+     "BONKY": 1,
+     "EPOXY": 1,
+     "SCCC2": 1,
+     "-BN-": 1,
+     "REEEE": 1,
+     "KM": 1,
+     "MZY": 1
+    }
+   },
+   "A_inside_cap_pct": [
+    14.4,
+    [
+     9.0,
+     20.9
+    ]
+   ],
+   "A_median_edge_m": [
+    1739.8,
+    [
+     1385.8,
+     2308.3
+    ]
+   ],
+   "A_inside_cap_count": 27,
+   "A_top_rest_inside": {
+    "top": 8.8,
+    "rest": 17.5,
+    "n_top": 68,
+    "n_rest": 120,
+    "clans_top": 6,
+    "clans_rest": 21,
+    "diff": -8.7,
+    "ci": [
+     -20.5,
+     2.3
+    ],
+    "clear": false
+   },
+   "A_top_rest_edge": {
+    "top": 1854.0,
+    "rest": 1696.0,
+    "n_top": 68,
+    "n_rest": 120,
+    "clans_top": 6,
+    "clans_rest": 21,
+    "diff": 158.0,
+    "ci": [
+     -853.0,
+     835.0
+    ],
+    "clear": false
+   },
+   "n_track": 187,
+   "n_cruiser_track": 173,
+   "n_cruiser_in_smoke": 141,
+   "B_smoker_in_cap_act_pct": [
+    11.2,
+    [
+     6.5,
+     17.9
+    ]
+   ],
+   "B_smoker_in_cap_act_count": 21,
+   "B_smoker_in_cap_end_pct": [
+    10.2,
+    [
+     4.8,
+     17.6
+    ]
+   ],
+   "B_smoker_in_cap_end_count": 19,
+   "B_smoker_in_cap_either_pct": 17.6,
+   "B_smoker_near_edge_act_m": [
+    2558.2,
+    [
+     2084.1,
+     2884.5
+    ]
+   ],
+   "B_smoker_near_edge_end_m": [
+    2373.2,
+    [
+     2040.2,
+     2656.8
+    ]
+   ],
+   "B_smoker_cont_edge_act_m": 3343.8,
+   "B_smoker_cont_edge_end_m": 2878.1,
+   "B_smoker_own_side_act_pct": 91.4,
+   "B_smoker_own_side_end_pct": 86.1,
+   "B_smoker_moved_m": 3832.7,
+   "B_smoker_closer_at_end_pct": 49.2,
+   "B_cruiser_near_edge_m": [
+    3180.1,
+    [
+     2809.1,
+     3492.1
+    ]
+   ],
+   "B_cruiser_cont_edge_m": 3902.4,
+   "B_cruiser_ever_in_cap_pct": [
+    25.4,
+    [
+     18.7,
+     33.6
+    ]
+   ],
+   "B_cruiser_ever_in_cap_count": 44,
+   "B_cruiser_mostly_in_cap_pct": 8.7,
+   "B_cruiser_in_smoke_near_edge_m": 2359.9,
+   "B_cruiser_in_smoke_ever_in_cap_pct": 17.7,
+   "B_cap_state_contested": {
+    "neutral": 71.1,
+    "ours": 8.0,
+    "theirs": 20.9
+   },
+   "B_cap_state_nearest": {
+    "neutral": 71.7,
+    "ours": 21.9,
+    "theirs": 6.4
+   },
+   "B_invaded_cont": {
+    "us": 54.0,
+    "enemy": 46.0,
+    "anyone": 76.5,
+    "nobody": 23.5
+   },
+   "B_invaded_near": {
+    "us": 54.0,
+    "enemy": 45.5,
+    "anyone": 76.5
+   },
+   "B_top_rest": {
+    "smoker_in_cap_act": {
+     "top": 4.4,
+     "rest": 15.1,
+     "n_top": 68,
+     "n_rest": 119,
+     "clans_top": 6,
+     "clans_rest": 21,
+     "diff": -10.7,
+     "ci": [
+      -20.2,
+      -2.6
+     ],
+     "clear": true
+    },
+    "smoker_near_edge_act": {
+     "top": 2818.0,
+     "rest": 2267.0,
+     "n_top": 68,
+     "n_rest": 119,
+     "clans_top": 6,
+     "clans_rest": 21,
+     "diff": 551.0,
+     "ci": [
+      -485.0,
+      1510.0
+     ],
+     "clear": false
+    },
+    "smoker_near_edge_end": {
+     "top": 2521.0,
+     "rest": 2121.0,
+     "n_top": 68,
+     "n_rest": 119,
+     "clans_top": 6,
+     "clans_rest": 21,
+     "diff": 400.0,
+     "ci": [
+      -423.0,
+      763.0
+     ],
+     "clear": false
+    },
+    "smoker_in_cap_end": {
+     "top": 7.4,
+     "rest": 11.8,
+     "n_top": 68,
+     "n_rest": 119,
+     "clans_top": 6,
+     "clans_rest": 21,
+     "diff": -4.4,
+     "ci": [
+      -16.5,
+      7.7
+     ],
+     "clear": false
+    },
+    "cruiser_near_edge": {
+     "top": 3072.0,
+     "rest": 3230.0,
+     "n_top": 67,
+     "n_rest": 106,
+     "clans_top": 6,
+     "clans_rest": 20,
+     "diff": -158.0,
+     "ci": [
+      -810.0,
+      855.0
+     ],
+     "clear": false
+    },
+    "cruiser_ever_in_cap": {
+     "top": 22.4,
+     "rest": 27.4,
+     "n_top": 67,
+     "n_rest": 106,
+     "clans_top": 6,
+     "clans_rest": 20,
+     "diff": -5.0,
+     "ci": [
+      -20.7,
+      11.1
+     ],
+     "clear": false
+    },
+    "invaded_us": {
+     "top": 57.4,
+     "rest": 52.1,
+     "n_top": 68,
+     "n_rest": 119,
+     "clans_top": 6,
+     "clans_rest": 21,
+     "diff": 5.3,
+     "ci": [
+      -6.8,
+      17.9
+     ],
+     "clear": false
+    }
+   },
+   "check_outline_vs_batch_median_abs_m": 551.6,
+   "check_outline_min_vs_batch_median_abs_m": 173.0,
+   "check_outline_min_median_m": 1593.2,
+   "check_outline_inside_agree_pct": 97.3,
+   "check_outline_min_inside_pct": 17.1,
+   "check_outline_median_m": 2400.0,
+   "check_own_tl_vs_batch_agree_pct": 100.0,
+   "hist_smoker_act": [
+    21,
+    21,
+    27,
+    47,
+    37,
+    24,
+    10
+   ],
+   "hist_smoke_edge": [
+    27,
+    31,
+    46,
+    27,
+    10,
+    15,
+    32
+   ],
+   "hist_cruiser": [
+    10,
+    13,
+    23,
+    33,
+    41,
+    39,
+    14
+   ],
+   "cross": {
+    "outline_out_smoker_out": 145,
+    "outline_out_smoker_in": 15,
+    "outline_in_smoker_out": 9,
+    "outline_in_smoker_in": 18
+   }
+  },
+  "early cruiser smoke, cruiser inside": {
+   "n": 153,
+   "n_top": 67,
+   "n_rest": 86,
+   "clans": 25,
+   "clan_counts": {
+    "top6": {
+     "H-SR": 23,
+     "RESIN": 17,
+     "BONKZ": 11,
+     "KITE": 7,
+     "VRTUS": 5,
+     "HTDOG": 4
+    },
+    "rest": {
+     "HFANS": 11,
+     "EPOXY": 9,
+     "KSC": 8,
+     "MACHX": 7,
+     "REEEE": 6,
+     "-BN-": 6,
+     "BONKY": 5,
+     "RSR": 5,
+     "MZY": 5,
+     "BTLST": 4,
+     "PN": 4,
+     "INCA": 4,
+     "PFANS": 3,
+     "NGA": 3,
+     "SCCC2": 2,
+     "UYSC": 1,
+     "OGF": 1,
+     "KITED": 1,
+     "KM": 1
+    }
+   },
+   "clan_counts_smoker_in_cap": {
+    "top6": {
+     "H-SR": 3,
+     "VRTUS": 1
+    },
+    "rest": {
+     "INCA": 2,
+     "RSR": 2,
+     "BTLST": 2,
+     "PN": 2,
+     "PFANS": 1,
+     "BONKY": 1,
+     "EPOXY": 1,
+     "SCCC2": 1,
+     "-BN-": 1,
+     "REEEE": 1,
+     "KM": 1
+    }
+   },
+   "A_inside_cap_pct": [
+    12.4,
+    [
+     7.4,
+     17.6
+    ]
+   ],
+   "A_median_edge_m": [
+    1725.7,
+    [
+     1348.5,
+     2413.7
+    ]
+   ],
+   "A_inside_cap_count": 19,
+   "A_top_rest_inside": {
+    "top": 10.4,
+    "rest": 14.0,
+    "n_top": 67,
+    "n_rest": 86,
+    "clans_top": 6,
+    "clans_rest": 19,
+    "diff": -3.5,
+    "ci": [
+     -14.6,
+     5.1
+    ],
+    "clear": false
+   },
+   "A_top_rest_edge": {
+    "top": 1924.0,
+    "rest": 1682.0,
+    "n_top": 67,
+    "n_rest": 86,
+    "clans_top": 6,
+    "clans_rest": 19,
+    "diff": 242.0,
+    "ci": [
+     -1030.0,
+     1341.0
+    ],
+    "clear": false
+   },
+   "n_track": 153,
+   "n_cruiser_track": 153,
+   "n_cruiser_in_smoke": 153,
+   "B_smoker_in_cap_act_pct": [
+    12.4,
+    [
+     7.0,
+     19.3
+    ]
+   ],
+   "B_smoker_in_cap_act_count": 19,
+   "B_smoker_in_cap_end_pct": [
+    7.8,
+    [
+     2.7,
+     13.4
+    ]
+   ],
+   "B_smoker_in_cap_end_count": 12,
+   "B_smoker_in_cap_either_pct": 17.0,
+   "B_smoker_near_edge_act_m": [
+    2622.1,
+    [
+     2128.0,
+     2977.6
+    ]
+   ],
+   "B_smoker_near_edge_end_m": [
+    2241.3,
+    [
+     1866.2,
+     2629.9
+    ]
+   ],
+   "B_smoker_cont_edge_act_m": 3493.1,
+   "B_smoker_cont_edge_end_m": 2739.9,
+   "B_smoker_own_side_act_pct": 90.8,
+   "B_smoker_own_side_end_pct": 83.7,
+   "B_smoker_moved_m": 3879.1,
+   "B_smoker_closer_at_end_pct": 51.6,
+   "B_cruiser_near_edge_m": [
+    2809.1,
+    [
+     2378.5,
+     3190.7
+    ]
+   ],
+   "B_cruiser_cont_edge_m": 3566.2,
+   "B_cruiser_ever_in_cap_pct": [
+    26.8,
+    [
+     19.3,
+     35.3
+    ]
+   ],
+   "B_cruiser_ever_in_cap_count": 41,
+   "B_cruiser_mostly_in_cap_pct": 10.5,
+   "B_cruiser_in_smoke_near_edge_m": 2326.0,
+   "B_cruiser_in_smoke_ever_in_cap_pct": 18.3,
+   "B_cap_state_contested": {
+    "neutral": 69.3,
+    "ours": 8.5,
+    "theirs": 22.2
+   },
+   "B_cap_state_nearest": {
+    "neutral": 70.6,
+    "ours": 23.5,
+    "theirs": 5.9
+   },
+   "B_invaded_cont": {
+    "us": 55.6,
+    "enemy": 39.9,
+    "anyone": 75.2,
+    "nobody": 24.8
+   },
+   "B_invaded_near": {
+    "us": 55.6,
+    "enemy": 40.5,
+    "anyone": 75.8
+   },
+   "B_top_rest": {
+    "smoker_in_cap_act": {
+     "top": 6.0,
+     "rest": 17.4,
+     "n_top": 67,
+     "n_rest": 86,
+     "clans_top": 6,
+     "clans_rest": 19,
+     "diff": -11.5,
+     "ci": [
+      -24.6,
+      -2.0
+     ],
+     "clear": true
+    },
+    "smoker_near_edge_act": {
+     "top": 2847.0,
+     "rest": 2272.0,
+     "n_top": 67,
+     "n_rest": 86,
+     "clans_top": 6,
+     "clans_rest": 19,
+     "diff": 576.0,
+     "ci": [
+      -297.0,
+      1756.0
+     ],
+     "clear": false
+    },
+    "smoker_near_edge_end": {
+     "top": 2453.0,
+     "rest": 2077.0,
+     "n_top": 67,
+     "n_rest": 86,
+     "clans_top": 6,
+     "clans_rest": 19,
+     "diff": 376.0,
+     "ci": [
+      -613.0,
+      812.0
+     ],
+     "clear": false
+    },
+    "smoker_in_cap_end": {
+     "top": 10.4,
+     "rest": 5.8,
+     "n_top": 67,
+     "n_rest": 86,
+     "clans_top": 6,
+     "clans_rest": 19,
+     "diff": 4.6,
+     "ci": [
+      -6.2,
+      15.3
+     ],
+     "clear": false
+    },
+    "cruiser_near_edge": {
+     "top": 2809.0,
+     "rest": 2834.0,
+     "n_top": 67,
+     "n_rest": 86,
+     "clans_top": 6,
+     "clans_rest": 19,
+     "diff": -25.0,
+     "ci": [
+      -652.0,
+      1049.0
+     ],
+     "clear": false
+    },
+    "cruiser_ever_in_cap": {
+     "top": 25.4,
+     "rest": 27.9,
+     "n_top": 67,
+     "n_rest": 86,
+     "clans_top": 6,
+     "clans_rest": 19,
+     "diff": -2.5,
+     "ci": [
+      -21.5,
+      13.9
+     ],
+     "clear": false
+    },
+    "invaded_us": {
+     "top": 58.2,
+     "rest": 53.5,
+     "n_top": 67,
+     "n_rest": 86,
+     "clans_top": 6,
+     "clans_rest": 19,
+     "diff": 4.7,
+     "ci": [
+      -7.0,
+      17.2
+     ],
+     "clear": false
+    }
+   },
+   "check_outline_vs_batch_median_abs_m": 527.3,
+   "check_outline_min_vs_batch_median_abs_m": 156.4,
+   "check_outline_min_median_m": 1472.4,
+   "check_outline_inside_agree_pct": 99.3,
+   "check_outline_min_inside_pct": 13.1,
+   "check_outline_median_m": 2400.0,
+   "check_own_tl_vs_batch_agree_pct": 100.0,
+   "hist_smoker_act": [
+    19,
+    18,
+    20,
+    36,
+    33,
+    20,
+    7
+   ],
+   "hist_smoke_edge": [
+    19,
+    29,
+    35,
+    20,
+    11,
+    9,
+    30
+   ],
+   "hist_cruiser": [
+    10,
+    14,
+    26,
+    33,
+    35,
+    26,
+    9
+   ],
+   "cross": {
+    "outline_out_smoker_out": 120,
+    "outline_out_smoker_in": 14,
+    "outline_in_smoker_out": 7,
+    "outline_in_smoker_in": 12
+   }
+  },
+  "early cruiser smoke, cruiser screened": {
+   "n": 73,
+   "n_top": 18,
+   "n_rest": 55,
+   "clans": 25,
+   "clan_counts": {
+    "top6": {
+     "BONKZ": 5,
+     "VRTUS": 4,
+     "H-SR": 3,
+     "HTDOG": 3,
+     "RESIN": 3
+    },
+    "rest": {
+     "-BN-": 7,
+     "5D": 5,
+     "HFANS": 5,
+     "MZY": 4,
+     "MACHX": 4,
+     "UYSC": 3,
+     "NGA": 3,
+     "KSC": 3,
+     "EPOXY": 3,
+     "MACH": 3,
+     "REEEE": 3,
+     "OGF": 2,
+     "PFANS": 2,
+     "INCA": 2,
+     "KM": 1,
+     "RSR": 1,
+     "KSE": 1,
+     "BTLST": 1,
+     "BONKY": 1,
+     "RMN": 1
+    }
+   },
+   "clan_counts_smoker_in_cap": {
+    "top6": {
+     "VRTUS": 2,
+     "HTDOG": 2
+    },
+    "rest": {
+     "5D": 4,
+     "UYSC": 2,
+     "MACHX": 2,
+     "-BN-": 1,
+     "BTLST": 1,
+     "HFANS": 1,
+     "INCA": 1,
+     "EPOXY": 1,
+     "MZY": 1
+    }
+   },
+   "A_inside_cap_pct": [
+    32.9,
+    [
+     20.3,
+     48.3
+    ]
+   ],
+   "A_median_edge_m": [
+    1080.7,
+    [
+     145.3,
+     1854.3
+    ]
+   ],
+   "A_inside_cap_count": 24,
+   "A_top_rest_inside": {
+    "top": 27.8,
+    "rest": 34.5,
+    "n_top": 18,
+    "n_rest": 55,
+    "clans_top": 5,
+    "clans_rest": 20,
+    "diff": -6.8,
+    "ci": [
+     -34.1,
+     21.1
+    ],
+    "clear": false
+   },
+   "A_top_rest_edge": {
+    "top": 1318.0,
+    "rest": 982.0,
+    "n_top": 18,
+    "n_rest": 55,
+    "clans_top": 5,
+    "clans_rest": 20,
+    "diff": 336.0,
+    "ci": [
+     -1141.0,
+     1696.0
+    ],
+    "clear": false
+   },
+   "n_track": 72,
+   "n_cruiser_track": 72,
+   "n_cruiser_in_smoke": 7,
+   "B_smoker_in_cap_act_pct": [
+    25.0,
+    [
+     13.2,
+     36.9
+    ]
+   ],
+   "B_smoker_in_cap_act_count": 18,
+   "B_smoker_in_cap_end_pct": [
+    29.2,
+    [
+     15.1,
+     44.4
+    ]
+   ],
+   "B_smoker_in_cap_end_count": 21,
+   "B_smoker_in_cap_either_pct": 33.3,
+   "B_smoker_near_edge_act_m": [
+    1799.7,
+    [
+     896.3,
+     2345.8
+    ]
+   ],
+   "B_smoker_near_edge_end_m": [
+    1437.7,
+    [
+     485.2,
+     2354.9
+    ]
+   ],
+   "B_smoker_cont_edge_act_m": 2146.9,
+   "B_smoker_cont_edge_end_m": 1934.4,
+   "B_smoker_own_side_act_pct": 90.3,
+   "B_smoker_own_side_end_pct": 88.9,
+   "B_smoker_moved_m": 2600.1,
+   "B_smoker_closer_at_end_pct": 41.7,
+   "B_cruiser_near_edge_m": [
+    4008.3,
+    [
+     2973.4,
+     4726.1
+    ]
+   ],
+   "B_cruiser_cont_edge_m": 4903.6,
+   "B_cruiser_ever_in_cap_pct": [
+    20.8,
+    [
+     10.7,
+     33.3
+    ]
+   ],
+   "B_cruiser_ever_in_cap_count": 15,
+   "B_cruiser_mostly_in_cap_pct": 5.6,
+   "B_cruiser_in_smoke_near_edge_m": 2956.3,
+   "B_cruiser_in_smoke_ever_in_cap_pct": 14.3,
+   "B_cap_state_contested": {
+    "neutral": 69.4,
+    "ours": 9.7,
+    "theirs": 20.8
+   },
+   "B_cap_state_nearest": {
+    "neutral": 69.4,
+    "ours": 19.4,
+    "theirs": 11.1
+   },
+   "B_invaded_cont": {
+    "us": 50.0,
+    "enemy": 56.9,
+    "anyone": 80.6,
+    "nobody": 19.4
+   },
+   "B_invaded_near": {
+    "us": 50.0,
+    "enemy": 54.2,
+    "anyone": 79.2
+   },
+   "B_top_rest": {
+    "smoker_in_cap_act": {
+     "top": 22.2,
+     "rest": 25.9,
+     "n_top": 18,
+     "n_rest": 54,
+     "clans_top": 5,
+     "clans_rest": 20,
+     "diff": -3.7,
+     "ci": [
+      -29.6,
+      25.5
+     ],
+     "clear": false
+    },
+    "smoker_near_edge_act": {
+     "top": 1816.0,
+     "rest": 1800.0,
+     "n_top": 18,
+     "n_rest": 54,
+     "clans_top": 5,
+     "clans_rest": 20,
+     "diff": 16.0,
+     "ci": [
+      -1235.0,
+      1840.0
+     ],
+     "clear": false
+    },
+    "smoker_near_edge_end": {
+     "top": 2018.0,
+     "rest": 1236.0,
+     "n_top": 18,
+     "n_rest": 54,
+     "clans_top": 5,
+     "clans_rest": 20,
+     "diff": 781.0,
+     "ci": [
+      -862.0,
+      2158.0
+     ],
+     "clear": false
+    },
+    "smoker_in_cap_end": {
+     "top": 22.2,
+     "rest": 31.5,
+     "n_top": 18,
+     "n_rest": 54,
+     "clans_top": 5,
+     "clans_rest": 20,
+     "diff": -9.3,
+     "ci": [
+      -36.6,
+      24.5
+     ],
+     "clear": false
+    },
+    "cruiser_near_edge": {
+     "top": 3366.0,
+     "rest": 4008.0,
+     "n_top": 18,
+     "n_rest": 54,
+     "clans_top": 5,
+     "clans_rest": 20,
+     "diff": -642.0,
+     "ci": [
+      -2312.0,
+      1442.0
+     ],
+     "clear": false
+    },
+    "cruiser_ever_in_cap": {
+     "top": 16.7,
+     "rest": 22.2,
+     "n_top": 18,
+     "n_rest": 54,
+     "clans_top": 5,
+     "clans_rest": 20,
+     "diff": -5.6,
+     "ci": [
+      -27.8,
+      13.3
+     ],
+     "clear": false
+    },
+    "invaded_us": {
+     "top": 50.0,
+     "rest": 50.0,
+     "n_top": 18,
+     "n_rest": 54,
+     "clans_top": 5,
+     "clans_rest": 20,
+     "diff": 0.0,
+     "ci": [
+      -32.3,
+      24.3
+     ],
+     "clear": false
+    }
+   },
+   "check_outline_vs_batch_median_abs_m": 385.1,
+   "check_outline_min_vs_batch_median_abs_m": 110.9,
+   "check_outline_min_median_m": 900.2,
+   "check_outline_inside_agree_pct": 93.1,
+   "check_outline_min_inside_pct": 40.3,
+   "check_outline_median_m": 1639.4,
+   "check_own_tl_vs_batch_agree_pct": 100.0,
+   "hist_smoker_act": [
+    18,
+    10,
+    12,
+    16,
+    7,
+    6,
+    3
+   ],
+   "hist_smoke_edge": [
+    24,
+    11,
+    14,
+    9,
+    1,
+    11,
+    3
+   ],
+   "hist_cruiser": [
+    4,
+    3,
+    10,
+    10,
+    9,
+    26,
+    10
+   ],
+   "cross": {
+    "outline_out_smoker_out": 45,
+    "outline_out_smoker_in": 3,
+    "outline_in_smoker_out": 3,
+    "outline_in_smoker_in": 21
+   }
+  },
+  "all early destroyer smokes": {
+   "n": 306,
+   "n_top": 103,
+   "n_rest": 203,
+   "clans": 29,
+   "clan_counts": {
+    "top6": {
+     "H-SR": 29,
+     "RESIN": 24,
+     "BONKZ": 19,
+     "VRTUS": 11,
+     "HTDOG": 10,
+     "KITE": 10
+    },
+    "rest": {
+     "HFANS": 24,
+     "EPOXY": 20,
+     "-BN-": 16,
+     "KSC": 13,
+     "MACHX": 13,
+     "MZY": 12,
+     "REEEE": 11,
+     "5D": 9,
+     "SCCC2": 8,
+     "BTLST": 7,
+     "UYSC": 7,
+     "INCA": 7,
+     "RSR": 7,
+     "PFANS": 6,
+     "MACH": 6,
+     "NGA": 6,
+     "BONKY": 6,
+     "RMN": 5,
+     "PN": 5,
+     "OGF": 4,
+     "KITED": 4,
+     "KM": 4,
+     "KSE": 3
+    }
+   },
+   "clan_counts_smoker_in_cap": {
+    "top6": {
+     "H-SR": 4,
+     "VRTUS": 4,
+     "HTDOG": 2,
+     "KITE": 1
+    },
+    "rest": {
+     "5D": 6,
+     "EPOXY": 5,
+     "BTLST": 4,
+     "RMN": 3,
+     "UYSC": 3,
+     "INCA": 3,
+     "RSR": 3,
+     "KM": 3,
+     "MACHX": 3,
+     "SCCC2": 3,
+     "MACH": 2,
+     "-BN-": 2,
+     "PN": 2,
+     "HFANS": 2,
+     "REEEE": 2,
+     "KSC": 1,
+     "PFANS": 1,
+     "KITED": 1,
+     "BONKY": 1,
+     "MZY": 1
+    }
+   },
+   "A_inside_cap_pct": [
+    25.8,
+    [
+     19.6,
+     33.4
+    ]
+   ],
+   "A_median_edge_m": [
+    1367.2,
+    [
+     1013.9,
+     1753.9
+    ]
+   ],
+   "A_inside_cap_count": 79,
+   "A_top_rest_inside": {
+    "top": 17.5,
+    "rest": 30.0,
+    "n_top": 103,
+    "n_rest": 203,
+    "clans_top": 6,
+    "clans_rest": 23,
+    "diff": -12.6,
+    "ci": [
+     -24.5,
+     -0.3
+    ],
+    "clear": true
+   },
+   "A_top_rest_edge": {
+    "top": 1462.0,
+    "rest": 1344.0,
+    "n_top": 103,
+    "n_rest": 203,
+    "clans_top": 6,
+    "clans_rest": 23,
+    "diff": 118.0,
+    "ci": [
+     -446.0,
+     1025.0
+    ],
+    "clear": false
+   },
+   "n_track": 305,
+   "n_cruiser_track": 225,
+   "n_cruiser_in_smoke": 160,
+   "B_smoker_in_cap_act_pct": [
+    20.3,
+    [
+     14.4,
+     27.7
+    ]
+   ],
+   "B_smoker_in_cap_act_count": 62,
+   "B_smoker_in_cap_end_pct": [
+    17.4,
+    [
+     11.7,
+     24.2
+    ]
+   ],
+   "B_smoker_in_cap_end_count": 53,
+   "B_smoker_in_cap_either_pct": 25.2,
+   "B_smoker_near_edge_act_m": [
+    1951.3,
+    [
+     1396.1,
+     2527.4
+    ]
+   ],
+   "B_smoker_near_edge_end_m": [
+    1866.3,
+    [
+     1383.7,
+     2241.3
+    ]
+   ],
+   "B_smoker_cont_edge_act_m": 2622.1,
+   "B_smoker_cont_edge_end_m": 2435.7,
+   "B_smoker_own_side_act_pct": 90.5,
+   "B_smoker_own_side_end_pct": 86.6,
+   "B_smoker_moved_m": 3104.4,
+   "B_smoker_closer_at_end_pct": 45.2,
+   "B_cruiser_near_edge_m": [
+    3072.4,
+    [
+     2632.5,
+     3427.2
+    ]
+   ],
+   "B_cruiser_cont_edge_m": 3915.5,
+   "B_cruiser_ever_in_cap_pct": [
+    24.9,
+    [
+     19.4,
+     31.1
+    ]
+   ],
+   "B_cruiser_ever_in_cap_count": 56,
+   "B_cruiser_mostly_in_cap_pct": 8.9,
+   "B_cruiser_in_smoke_near_edge_m": 2352.4,
+   "B_cruiser_in_smoke_ever_in_cap_pct": 18.1,
+   "B_cap_state_contested": {
+    "neutral": 66.6,
+    "ours": 10.8,
+    "theirs": 22.6
+   },
+   "B_cap_state_nearest": {
+    "neutral": 66.9,
+    "ours": 22.6,
+    "theirs": 10.5
+   },
+   "B_invaded_cont": {
+    "us": 49.8,
+    "enemy": 44.6,
+    "anyone": 74.4,
+    "nobody": 25.6
+   },
+   "B_invaded_near": {
+    "us": 50.2,
+    "enemy": 43.6,
+    "anyone": 74.4
+   },
+   "B_top_rest": {
+    "smoker_in_cap_act": {
+     "top": 10.7,
+     "rest": 25.2,
+     "n_top": 103,
+     "n_rest": 202,
+     "clans_top": 6,
+     "clans_rest": 23,
+     "diff": -14.6,
+     "ci": [
+      -26.2,
+      -1.7
+     ],
+     "clear": true
+    },
+    "smoker_near_edge_act": {
+     "top": 2459.0,
+     "rest": 1717.0,
+     "n_top": 103,
+     "n_rest": 202,
+     "clans_top": 6,
+     "clans_rest": 23,
+     "diff": 743.0,
+     "ci": [
+      -262.0,
+      1747.0
+     ],
+     "clear": false
+    },
+    "smoker_near_edge_end": {
+     "top": 2078.0,
+     "rest": 1682.0,
+     "n_top": 103,
+     "n_rest": 202,
+     "clans_top": 6,
+     "clans_rest": 23,
+     "diff": 396.0,
+     "ci": [
+      -321.0,
+      1159.0
+     ],
+     "clear": false
+    },
+    "smoker_in_cap_end": {
+     "top": 13.6,
+     "rest": 19.3,
+     "n_top": 103,
+     "n_rest": 202,
+     "clans_top": 6,
+     "clans_rest": 23,
+     "diff": -5.7,
+     "ci": [
+      -18.4,
+      8.4
+     ],
+     "clear": false
+    },
+    "cruiser_near_edge": {
+     "top": 2809.0,
+     "rest": 3180.0,
+     "n_top": 85,
+     "n_rest": 140,
+     "clans_top": 6,
+     "clans_rest": 23,
+     "diff": -371.0,
+     "ci": [
+      -927.0,
+      843.0
+     ],
+     "clear": false
+    },
+    "cruiser_ever_in_cap": {
+     "top": 23.5,
+     "rest": 25.7,
+     "n_top": 85,
+     "n_rest": 140,
+     "clans_top": 6,
+     "clans_rest": 23,
+     "diff": -2.2,
+     "ci": [
+      -16.9,
+      8.5
+     ],
+     "clear": false
+    },
+    "invaded_us": {
+     "top": 54.4,
+     "rest": 47.5,
+     "n_top": 103,
+     "n_rest": 202,
+     "clans_top": 6,
+     "clans_rest": 23,
+     "diff": 6.8,
+     "ci": [
+      -6.3,
+      19.3
+     ],
+     "clear": false
+    }
+   },
+   "check_outline_vs_batch_median_abs_m": 389.6,
+   "check_outline_min_vs_batch_median_abs_m": 120.9,
+   "check_outline_min_median_m": 1235.6,
+   "check_outline_inside_agree_pct": 98.0,
+   "check_outline_min_inside_pct": 27.9,
+   "check_outline_median_m": 1867.3,
+   "check_own_tl_vs_batch_agree_pct": 100.0,
+   "hist_smoker_act": [
+    62,
+    41,
+    50,
+    60,
+    46,
+    32,
+    14
+   ],
+   "hist_smoke_edge": [
+    79,
+    55,
+    55,
+    37,
+    16,
+    25,
+    39
+   ],
+   "hist_cruiser": [
+    14,
+    17,
+    36,
+    43,
+    44,
+    52,
+    19
+   ],
+   "cross": {
+    "outline_out_smoker_out": 207,
+    "outline_out_smoker_in": 19,
+    "outline_in_smoker_out": 21,
+    "outline_in_smoker_in": 58
+   }
+  }
+ },
+ "check_track_vs_snapshot": {
+  "n": 175,
+  "median_m": 2.5,
+  "p90_m": 7.0,
+  "within_300m_pct": 100.0
+ },
+ "check_snapshot_smoker_in_cap": {
+  "n": 175,
+  "pct": 10.3
+ },
+ "excluded_no_track": {
+  "three ships early (round 3 population)": 1,
+  "early cruiser smoke, cruiser inside": 0,
+  "early cruiser smoke, cruiser screened": 1,
+  "all early destroyer smokes": 1
+ },
+ "A_bug": {
+  "n": 187,
+  "inside_count": 26,
+  "inside_pct": 13.9,
+  "median_edge_m": 1753.9
+ },
+ "clock": {
+  "games": [
+   [
+    "kots19na_7971",
+    1
+   ],
+   [
+    "kots19na_7976",
+    1
+   ]
+  ],
+  "smokes": 17,
+  "now_early": 4,
+  "now_early_dd": 4,
+  "now_early_three": 1,
+  "left_early_dd": 0
+ }
+}

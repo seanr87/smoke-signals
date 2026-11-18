@@ -1,0 +1,402 @@
+[
+ {
+  "map": "Sleeping Giant",
+  "kind": "danger_zone",
+  "mode": "shared",
+  "name": "E7+F7+F8 (destroyer smoker)",
+  "shape": {
+   "type": "cells",
+   "cells": [
+    "E7",
+    "F7",
+    "F8"
+   ],
+   "u": 0.7147,
+   "v": 0.5302
+  },
+  "n": 8,
+  "n_top6": 2,
+  "n_rest": 6,
+  "small_n": true,
+  "clans": {
+   "top6": {
+    "BONKZ": 2
+   },
+   "rest": {
+    "RMN": 1,
+    "SCCC2": 1,
+    "PFANS": 1,
+    "-BN-": 1,
+    "RSR": 1,
+    "KITED": 1
+   }
+  },
+  "concealed_damage_per_smoke": 10754,
+  "deaths_per_100": 37.5,
+  "cruisers": {
+   "top6": {
+    "Petropavlovsk": 1
+   },
+   "rest": {
+    "Des Moines": 2,
+    "Worcester": 1,
+    "Colbert": 1,
+    "Stalingrad": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7991_g1_78223.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7933_g1_178675.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7934_g1_80502.html"
+  ],
+  "who": "destroyer smoker",
+  "ships_at_risk": 8,
+  "died_or_hurt_per_100": 50.0,
+  "died_per_100": 25.0,
+  "n_died_or_hurt": 4,
+  "n_died": 2,
+  "baseline_all_maps": {
+   "died": 6.4,
+   "died_or_hurt": 15.5
+  },
+  "baseline_same_map": {
+   "died": 7.1,
+   "died_or_hurt": 16.0
+  },
+  "gap_vs_all_maps": 34.5,
+  "gap_vs_all_maps_ci": [
+   0.6,
+   66.9
+  ],
+  "gap_vs_same_map": 34.0,
+  "gap_vs_same_map_ci": [
+   0.9,
+   65.5
+  ],
+  "death_gap_vs_all_maps": 18.6,
+  "death_gap_vs_all_maps_ci": [
+   -7.1,
+   56.0
+  ],
+  "death_only_clear": false,
+  "behind_50_pct": 25.0,
+  "radar_detected_pct": 50.0,
+  "share_top6_pct": 1.8,
+  "share_rest_pct": 4.7,
+  "share_gap_ci": [
+   -7.8,
+   1.1
+  ],
+  "n_clans": 7,
+  "n_games": 8,
+  "without_top_clan": {
+   "clan": "PFANS",
+   "n": 7,
+   "hurt_per_100": 42.9
+  },
+  "health_is_estimate": true,
+  "placebo": {
+   "flags_by_luck_per_run": 1.23,
+   "areas_tested": 109,
+   "real_flags": 4
+  }
+ },
+ {
+  "map": "Hotspot",
+  "kind": "danger_zone",
+  "mode": "shared",
+  "name": "inside cap C (destroyer smoker)",
+  "shape": {
+   "type": "circle",
+   "u": 0.5,
+   "v": 0.5,
+   "r": 0.0832
+  },
+  "n": 22,
+  "n_top6": 0,
+  "n_rest": 22,
+  "small_n": false,
+  "clans": {
+   "top6": {},
+   "rest": {
+    "EPOXY": 9,
+    "KSC": 7,
+    "BTLST": 1,
+    "RMN": 1,
+    "5D": 1,
+    "UYSC": 1,
+    "MACHX": 1,
+    "MZY": 1
+   }
+  },
+  "concealed_damage_per_smoke": 3613,
+  "deaths_per_100": 9.1,
+  "cruisers": {
+   "top6": {},
+   "rest": {
+    "Petropavlovsk": 4,
+    "Napoli": 1,
+    "Prins van Oranje": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8072_g1_103849.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8068_g3_48783.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7959_g1_87000.html"
+  ],
+  "who": "destroyer smoker",
+  "ships_at_risk": 22,
+  "died_or_hurt_per_100": 31.8,
+  "died_per_100": 9.1,
+  "n_died_or_hurt": 7,
+  "n_died": 2,
+  "baseline_all_maps": {
+   "died": 6.4,
+   "died_or_hurt": 15.5
+  },
+  "baseline_same_map": {
+   "died": 3.4,
+   "died_or_hurt": 11.9
+  },
+  "gap_vs_all_maps": 16.3,
+  "gap_vs_all_maps_ci": [
+   2.9,
+   52.4
+  ],
+  "gap_vs_same_map": 19.9,
+  "gap_vs_same_map_ci": [
+   6.9,
+   57.8
+  ],
+  "death_gap_vs_all_maps": 2.7,
+  "death_gap_vs_all_maps_ci": [
+   -7.6,
+   25.9
+  ],
+  "death_only_clear": false,
+  "behind_50_pct": 18.2,
+  "radar_detected_pct": 22.7,
+  "share_top6_pct": 0.0,
+  "share_rest_pct": 14.2,
+  "share_gap_ci": [
+   -23.5,
+   -4.0
+  ],
+  "n_clans": 8,
+  "n_games": 10,
+  "without_top_clan": {
+   "clan": "KSC",
+   "n": 15,
+   "hurt_per_100": 33.3
+  },
+  "health_is_estimate": true,
+  "placebo": {
+   "flags_by_luck_per_run": 1.23,
+   "areas_tested": 109,
+   "real_flags": 4
+  }
+ },
+ {
+  "map": "Mountain Range",
+  "kind": "danger_zone",
+  "mode": "shared",
+  "name": "E7+F7+F8 (sheltering cruisers)",
+  "shape": {
+   "type": "cells",
+   "cells": [
+    "E7",
+    "F7",
+    "F8"
+   ],
+   "u": 0.6734,
+   "v": 0.5499
+  },
+  "n": 8,
+  "n_top6": 2,
+  "n_rest": 6,
+  "small_n": true,
+  "clans": {
+   "top6": {
+    "BONKZ": 1,
+    "H-SR": 1
+   },
+   "rest": {
+    "RSR": 3,
+    "INCA": 1,
+    "-BN-": 1,
+    "KSC": 1
+   }
+  },
+  "concealed_damage_per_smoke": 16916,
+  "deaths_per_100": 25.0,
+  "cruisers": {
+   "top6": {
+    "Svea": 1,
+    "Minotaur": 1
+   },
+   "rest": {
+    "Des Moines": 2,
+    "Minotaur": 2,
+    "Utrecht": 1,
+    "Salem": 1,
+    "Svea": 1,
+    "Brisbane": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8141_g3_178900.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159438.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g2_121098.html"
+  ],
+  "who": "sheltering cruisers",
+  "ships_at_risk": 9,
+  "died_or_hurt_per_100": 55.6,
+  "died_per_100": 22.2,
+  "n_died_or_hurt": 5,
+  "n_died": 2,
+  "baseline_all_maps": {
+   "died": 8.0,
+   "died_or_hurt": 22.0
+  },
+  "baseline_same_map": {
+   "died": 8.3,
+   "died_or_hurt": 20.8
+  },
+  "gap_vs_all_maps": 33.5,
+  "gap_vs_all_maps_ci": [
+   3.5,
+   74.3
+  ],
+  "gap_vs_same_map": 34.7,
+  "gap_vs_same_map_ci": [
+   6.9,
+   75.5
+  ],
+  "death_gap_vs_all_maps": 14.2,
+  "death_gap_vs_all_maps_ci": [
+   -9.0,
+   64.4
+  ],
+  "death_only_clear": false,
+  "behind_50_pct": 50.0,
+  "radar_detected_pct": 37.5,
+  "share_top6_pct": 5.4,
+  "share_rest_pct": 22.2,
+  "share_gap_ci": [
+   -40.0,
+   1.1
+  ],
+  "n_clans": 6,
+  "n_games": 7,
+  "without_top_clan": {
+   "clan": "RSR",
+   "n": 5,
+   "hurt_per_100": 60.0
+  },
+  "health_is_estimate": true,
+  "placebo": {
+   "flags_by_luck_per_run": 1.23,
+   "areas_tested": 109,
+   "real_flags": 4
+  }
+ },
+ {
+  "map": "Sea of Fortune",
+  "kind": "danger_zone",
+  "mode": "shared",
+  "name": "E5+F5+E6 (destroyer smoker)",
+  "shape": {
+   "type": "cells",
+   "cells": [
+    "E5",
+    "F5",
+    "E6"
+   ],
+   "u": 0.444,
+   "v": 0.5217
+  },
+  "n": 8,
+  "n_top6": 3,
+  "n_rest": 5,
+  "small_n": true,
+  "clans": {
+   "top6": {
+    "RESIN": 2,
+    "BONKZ": 1
+   },
+   "rest": {
+    "5D": 1,
+    "NGA": 1,
+    "MACHX": 1,
+    "KSE": 1,
+    "RSR": 1
+   }
+  },
+  "concealed_damage_per_smoke": 1921,
+  "deaths_per_100": 37.5,
+  "cruisers": {
+   "top6": {
+    "Worcester": 1
+   },
+   "rest": {
+    "Bremen": 1
+   }
+  },
+  "examples": [
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7994_g1_37568.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7909_g1_54001.html",
+   "https://seanr87.github.io/smoke-signals/smoke/smokes/7994_g1_37569.html"
+  ],
+  "who": "destroyer smoker",
+  "ships_at_risk": 8,
+  "died_or_hurt_per_100": 62.5,
+  "died_per_100": 37.5,
+  "n_died_or_hurt": 5,
+  "n_died": 3,
+  "baseline_all_maps": {
+   "died": 6.4,
+   "died_or_hurt": 15.5
+  },
+  "baseline_same_map": {
+   "died": 8.5,
+   "died_or_hurt": 14.5
+  },
+  "gap_vs_all_maps": 47.0,
+  "gap_vs_all_maps_ci": [
+   9.0,
+   85.7
+  ],
+  "gap_vs_same_map": 48.0,
+  "gap_vs_same_map_ci": [
+   11.7,
+   87.7
+  ],
+  "death_gap_vs_all_maps": 31.1,
+  "death_gap_vs_all_maps_ci": [
+   -5.5,
+   74.7
+  ],
+  "death_only_clear": false,
+  "behind_50_pct": 50.0,
+  "radar_detected_pct": 37.5,
+  "share_top6_pct": 7.9,
+  "share_rest_pct": 6.3,
+  "share_gap_ci": [
+   -9.7,
+   11.1
+  ],
+  "n_clans": 7,
+  "n_games": 6,
+  "without_top_clan": {
+   "clan": "5D",
+   "n": 7,
+   "hurt_per_100": 57.1
+  },
+  "health_is_estimate": true,
+  "placebo": {
+   "flags_by_luck_per_run": 1.23,
+   "areas_tested": 109,
+   "real_flags": 4
+  }
+ }
+]

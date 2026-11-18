@@ -1,0 +1,954 @@
+{
+ "R": {
+  "SG-1": {
+   "all_west": {
+    "top_k": 5,
+    "top_n": 30,
+    "rest_k": 23,
+    "rest_n": 45,
+    "top_pct": 16.7,
+    "rest_pct": 51.1,
+    "gap": -34.4,
+    "lo": -64.8,
+    "hi": -5.6,
+    "clear": true,
+    "mark": "Shared"
+   },
+   "all_east": {
+    "top_k": 25,
+    "top_n": 30,
+    "rest_k": 22,
+    "rest_n": 45,
+    "top_pct": 83.3,
+    "rest_pct": 48.9,
+    "gap": 34.4,
+    "lo": 6.2,
+    "hi": 63.9,
+    "clear": true,
+    "mark": "Top 6"
+   },
+   "early_west": {
+    "top_k": 4,
+    "top_n": 8,
+    "rest_k": 8,
+    "rest_n": 15,
+    "top_pct": 50.0,
+    "rest_pct": 53.3,
+    "gap": -3.3,
+    "lo": -56.2,
+    "hi": 33.3,
+    "clear": false,
+    "mark": "Shared"
+   },
+   "early_east": {
+    "top_k": 4,
+    "top_n": 8,
+    "rest_k": 7,
+    "rest_n": 15,
+    "top_pct": 50.0,
+    "rest_pct": 46.7,
+    "gap": 3.3,
+    "lo": -31.9,
+    "hi": 53.3,
+    "clear": false,
+    "mark": "Shared"
+   },
+   "after5_west": {
+    "top_k": 1,
+    "top_n": 22,
+    "rest_k": 15,
+    "rest_n": 30,
+    "top_pct": 4.5,
+    "rest_pct": 50.0,
+    "gap": -45.5,
+    "lo": -72.7,
+    "hi": -18.5,
+    "clear": true,
+    "mark": "Shared"
+   },
+   "east_clans": {
+    "top6": {
+     "RESIN": 8,
+     "BONKZ": 8,
+     "H-SR": 8,
+     "VRTUS": 1
+    },
+    "rest": {
+     "HFANS": 7,
+     "MACHX": 5,
+     "EPOXY": 4,
+     "BONKY": 3,
+     "KITED": 2,
+     "UYSC": 1
+    }
+   },
+   "west_clans": {
+    "top6": {
+     "H-SR": 3,
+     "RESIN": 2
+    },
+    "rest": {
+     "PFANS": 8,
+     "REEEE": 5,
+     "BONKY": 4,
+     "MACHX": 3,
+     "NGA": 2,
+     "KITED": 1
+    }
+   },
+   "east_rect_uv": {
+    "type": "polygon",
+    "points": [
+     [
+      0.5,
+      0.0
+     ],
+     [
+      1.0,
+      0.0
+     ],
+     [
+      1.0,
+      1.0
+     ],
+     [
+      0.5,
+      1.0
+     ]
+    ]
+   },
+   "east_conc": 14016,
+   "west_conc": 16027,
+   "east_deaths_per_100": 10.6,
+   "west_deaths_per_100": 14.3
+  },
+  "SG-2": {
+   "spot": {
+    "top_k": 11,
+    "top_n": 24,
+    "rest_k": 1,
+    "rest_n": 9,
+    "top_pct": 45.8,
+    "rest_pct": 11.1,
+    "gap": 34.7,
+    "lo": 20.0,
+    "hi": 56.2,
+    "clear": true,
+    "mark": "Top 6"
+   },
+   "clans": {
+    "top6": {
+     "RESIN": 5,
+     "H-SR": 4,
+     "BONKZ": 2
+    },
+    "rest": {
+     "EPOXY": 1
+    }
+   },
+   "smokes": [
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120797.html",
+     "slug": "8147_g1_120797",
+     "team": "RESIN",
+     "grp": "top",
+     "time": "2:23",
+     "cell": "G1",
+     "allies_with_position": 4,
+     "other_dds_alive": [
+      "Yueyang",
+      "Somers"
+     ],
+     "second_dds": [],
+     "cruisers": [
+      [
+       "Petropavlovsk",
+       "inside"
+      ]
+     ]
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120803.html",
+     "slug": "8147_g1_120803",
+     "team": "RESIN",
+     "grp": "top",
+     "time": "7:00",
+     "cell": "F2",
+     "allies_with_position": 4,
+     "other_dds_alive": [
+      "Yueyang",
+      "Somers"
+     ],
+     "second_dds": [],
+     "cruisers": []
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g1_29455.html",
+     "slug": "8151_g1_29455",
+     "team": "H-SR",
+     "grp": "top",
+     "time": "1:44",
+     "cell": "F1",
+     "allies_with_position": 4,
+     "other_dds_alive": [
+      "Marceau",
+      "Somers",
+      "Marceau"
+     ],
+     "second_dds": [
+      {
+       "ship": "Marceau",
+       "cell": "F1",
+       "cap": "A",
+       "cap_edge_m": 192,
+       "dist_m": 1992,
+       "fwd_m": 3970,
+       "how": "outside"
+      }
+     ],
+     "cruisers": [
+      [
+       "Des Moines",
+       "inside"
+      ]
+     ]
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166102.html",
+     "slug": "8178_g1_166102",
+     "team": "RESIN",
+     "grp": "top",
+     "time": "2:03",
+     "cell": "G1",
+     "allies_with_position": 4,
+     "other_dds_alive": [
+      "Ragnar",
+      "Gdańsk",
+      "Châteaurenault"
+     ],
+     "second_dds": [
+      {
+       "ship": "Châteaurenault",
+       "cell": "G1",
+       "cap": "A",
+       "cap_edge_m": 3660,
+       "dist_m": 1132,
+       "fwd_m": 1380,
+       "how": "inside"
+      }
+     ],
+     "cruisers": [
+      [
+       "Worcester",
+       "inside"
+      ]
+     ]
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166103.html",
+     "slug": "8178_g1_166103",
+     "team": "BONKZ",
+     "grp": "top",
+     "time": "2:47",
+     "cell": "G1",
+     "allies_with_position": 5,
+     "other_dds_alive": [
+      "Ragnar",
+      "Somers"
+     ],
+     "second_dds": [
+      {
+       "ship": "Ragnar",
+       "cell": "F1",
+       "cap": "A",
+       "cap_edge_m": -786,
+       "dist_m": 3404,
+       "fwd_m": 3428,
+       "how": "outside"
+      }
+     ],
+     "cruisers": [
+      [
+       "Worcester",
+       "inside"
+      ]
+     ]
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166106.html",
+     "slug": "8178_g1_166106",
+     "team": "BONKZ",
+     "grp": "top",
+     "time": "6:16",
+     "cell": "F1",
+     "allies_with_position": 4,
+     "other_dds_alive": [
+      "Somers"
+     ],
+     "second_dds": [],
+     "cruisers": [
+      [
+       "Worcester",
+       "inside"
+      ]
+     ]
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g1_39283.html",
+     "slug": "8183_g1_39283",
+     "team": "H-SR",
+     "grp": "top",
+     "time": "1:56",
+     "cell": "G1",
+     "allies_with_position": 6,
+     "other_dds_alive": [
+      "Marceau",
+      "Somers"
+     ],
+     "second_dds": [
+      {
+       "ship": "Marceau",
+       "cell": "F1",
+       "cap": "A",
+       "cap_edge_m": -216,
+       "dist_m": 3183,
+       "fwd_m": 3195,
+       "how": "outside"
+      }
+     ],
+     "cruisers": [
+      [
+       "Des Moines",
+       "inside"
+      ]
+     ]
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g1_39284.html",
+     "slug": "8183_g1_39284",
+     "team": "RESIN",
+     "grp": "top",
+     "time": "2:02",
+     "cell": "G1",
+     "allies_with_position": 4,
+     "other_dds_alive": [
+      "Marceau",
+      "Somers",
+      "Gdańsk"
+     ],
+     "second_dds": [
+      {
+       "ship": "Marceau",
+       "cell": "G1",
+       "cap": "A",
+       "cap_edge_m": 4902,
+       "dist_m": 1377,
+       "fwd_m": -984,
+       "how": "inside"
+      }
+     ],
+     "cruisers": [
+      [
+       "Des Moines",
+       "inside"
+      ]
+     ]
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g1_39285.html",
+     "slug": "8183_g1_39285",
+     "team": "H-SR",
+     "grp": "top",
+     "time": "5:21",
+     "cell": "F1",
+     "allies_with_position": 5,
+     "other_dds_alive": [
+      "Marceau",
+      "Somers"
+     ],
+     "second_dds": [
+      {
+       "ship": "Marceau",
+       "cell": "G3",
+       "cap": "A",
+       "cap_edge_m": 6225,
+       "dist_m": 11714,
+       "fwd_m": -2074,
+       "how": "outside"
+      }
+     ],
+     "cruisers": [
+      [
+       "Des Moines",
+       "inside"
+      ]
+     ]
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g1_39286.html",
+     "slug": "8183_g1_39286",
+     "team": "RESIN",
+     "grp": "top",
+     "time": "5:29",
+     "cell": "G1",
+     "allies_with_position": 2,
+     "other_dds_alive": [
+      "Marceau",
+      "Somers",
+      "Gdańsk"
+     ],
+     "second_dds": [
+      {
+       "ship": "Marceau",
+       "cell": "G4",
+       "cap": "B",
+       "cap_edge_m": 4283,
+       "dist_m": 10979,
+       "fwd_m": 3260,
+       "how": "outside"
+      }
+     ],
+     "cruisers": [
+      [
+       "Des Moines",
+       "inside"
+      ]
+     ]
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g1_39290.html",
+     "slug": "8183_g1_39290",
+     "team": "H-SR",
+     "grp": "top",
+     "time": "8:46",
+     "cell": "F1",
+     "allies_with_position": 3,
+     "other_dds_alive": [
+      "Marceau",
+      "Somers"
+     ],
+     "second_dds": [],
+     "cruisers": [
+      [
+       "Des Moines",
+       "inside"
+      ]
+     ]
+    },
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8177_g1_176201.html",
+     "slug": "8177_g1_176201",
+     "team": "EPOXY",
+     "grp": "rest",
+     "time": "2:42",
+     "cell": "F1",
+     "allies_with_position": 5,
+     "other_dds_alive": [
+      "Somers",
+      "20 de Julio"
+     ],
+     "second_dds": [
+      {
+       "ship": "20 de Julio",
+       "cell": "F5",
+       "cap": "B",
+       "cap_edge_m": 190,
+       "dist_m": 13911,
+       "fwd_m": 1146,
+       "how": "outside"
+      }
+     ],
+     "cruisers": [
+      [
+       "Petropavlovsk",
+       "inside"
+      ]
+     ]
+    }
+   ],
+   "top6_with_second_dd": 7,
+   "top6_n": 11,
+   "second_dd_ships": {
+    "Marceau": 5,
+    "Châteaurenault": 1,
+    "Ragnar": 1
+   },
+   "second_dd_cells": {
+    "F1": 3,
+    "G1": 2,
+    "G3": 1,
+    "G4": 1
+   },
+   "forward_n": 5,
+   "median_dist_m": 3183
+  },
+  "SG-3": {
+   "rule": "inside or within 2 km of the cap edge",
+   "cap_table": {
+    "A": {
+     "n": 46,
+     "top6": 21,
+     "ours": 28,
+     "neutral": 12,
+     "theirs": 6,
+     "enemy_took_k": 3,
+     "enemy_took_n": 40,
+     "enemy_took_ours_k": 1,
+     "enemy_took_ours_n": 28,
+     "we_took_k": 7,
+     "we_took_n": 18,
+     "cap_defended_this_cap": 8,
+     "conc": 11952,
+     "deaths_per_100": 6.5
+    },
+    "B": {
+     "n": 34,
+     "top6": 13,
+     "ours": 16,
+     "neutral": 12,
+     "theirs": 6,
+     "enemy_took_k": 1,
+     "enemy_took_n": 28,
+     "enemy_took_ours_k": 1,
+     "enemy_took_ours_n": 16,
+     "we_took_k": 5,
+     "we_took_n": 18,
+     "cap_defended_this_cap": 4,
+     "conc": 5747,
+     "deaths_per_100": 11.8
+    },
+    "C": {
+     "n": 17,
+     "top6": 7,
+     "ours": 8,
+     "neutral": 2,
+     "theirs": 7,
+     "enemy_took_k": 2,
+     "enemy_took_n": 10,
+     "enemy_took_ours_k": 2,
+     "enemy_took_ours_n": 8,
+     "we_took_k": 4,
+     "we_took_n": 9,
+     "cap_defended_this_cap": 4,
+     "conc": 12877,
+     "deaths_per_100": 29.4
+    },
+    "D": {
+     "n": 22,
+     "top6": 5,
+     "ours": 18,
+     "neutral": 0,
+     "theirs": 4,
+     "enemy_took_k": 0,
+     "enemy_took_n": 18,
+     "enemy_took_ours_k": 0,
+     "enemy_took_ours_n": 18,
+     "we_took_k": 0,
+     "we_took_n": 4,
+     "cap_defended_this_cap": 0,
+     "conc": 7035,
+     "deaths_per_100": 13.6
+    }
+   },
+   "cap_table_nearest_cap_any_distance": {
+    "A": {
+     "n": 121,
+     "top6": 63,
+     "ours": 51,
+     "neutral": 39,
+     "theirs": 31,
+     "enemy_took_k": 19,
+     "enemy_took_n": 90,
+     "enemy_took_ours_k": 4,
+     "enemy_took_ours_n": 51,
+     "we_took_k": 17,
+     "we_took_n": 70,
+     "cap_defended_this_cap": 13,
+     "conc": 13691,
+     "deaths_per_100": 9.9
+    },
+    "B": {
+     "n": 59,
+     "top6": 23,
+     "ours": 25,
+     "neutral": 21,
+     "theirs": 13,
+     "enemy_took_k": 4,
+     "enemy_took_n": 46,
+     "enemy_took_ours_k": 2,
+     "enemy_took_ours_n": 25,
+     "we_took_k": 7,
+     "we_took_n": 34,
+     "cap_defended_this_cap": 6,
+     "conc": 5263,
+     "deaths_per_100": 15.3
+    },
+    "C": {
+     "n": 33,
+     "top6": 12,
+     "ours": 14,
+     "neutral": 2,
+     "theirs": 17,
+     "enemy_took_k": 3,
+     "enemy_took_n": 16,
+     "enemy_took_ours_k": 3,
+     "enemy_took_ours_n": 14,
+     "we_took_k": 6,
+     "we_took_n": 19,
+     "cap_defended_this_cap": 6,
+     "conc": 12101,
+     "deaths_per_100": 27.3
+    },
+    "D": {
+     "n": 92,
+     "top6": 39,
+     "ours": 73,
+     "neutral": 2,
+     "theirs": 17,
+     "enemy_took_k": 13,
+     "enemy_took_n": 75,
+     "enemy_took_ours_k": 12,
+     "enemy_took_ours_n": 73,
+     "we_took_k": 1,
+     "we_took_n": 19,
+     "cap_defended_this_cap": 0,
+     "conc": 10741,
+     "deaths_per_100": 5.4
+    }
+   },
+   "at_B": {
+    "n": 34,
+    "ships": {
+     "Napoli": 1,
+     "Daring": 15,
+     "Z-52": 1,
+     "Harugumo": 3,
+     "Gdańsk": 6,
+     "G. Hoffmann": 2,
+     "Somers": 2,
+     "Z-42": 1,
+     "Shimakaze": 1,
+     "Venezia": 1,
+     "Jinan": 1
+    },
+    "habits": {
+     "moving exhaust": 2,
+     "cap sitters": 23,
+     "other": 3,
+     "flank smoke lines": 5,
+     "parked cruiser smoke": 1
+    },
+    "primary_purpose": {
+     "cap_contest": 26,
+     "none": 2,
+     "island_dive": 1,
+     "cap_control": 2,
+     "damage": 1,
+     "counter_smoke": 2
+    },
+    "own": {
+     "theirs": 6,
+     "neutral": 12,
+     "ours": 16
+    },
+    "clans": {
+     "top6": {
+      "VRTUS": 4,
+      "RESIN": 4,
+      "HTDOG": 3,
+      "BONKZ": 2
+     },
+     "rest": {
+      "HFANS": 7,
+      "KITED": 4,
+      "5D": 3,
+      "KSE": 3,
+      "EPOXY": 1,
+      "INCA": 1,
+      "BONKY": 1,
+      "-BN-": 1
+     }
+    },
+    "share_of_near_cap_smokes": {
+     "top_k": 13,
+     "top_n": 46,
+     "rest_k": 21,
+     "rest_n": 73,
+     "top_pct": 28.3,
+     "rest_pct": 28.8,
+     "gap": -0.5,
+     "lo": -22.6,
+     "hi": 20.9,
+     "clear": false,
+     "mark": "Shared"
+    },
+    "share_of_map_smokes": {
+     "top_k": 13,
+     "top_n": 137,
+     "rest_k": 21,
+     "rest_n": 168,
+     "top_pct": 9.5,
+     "rest_pct": 12.5,
+     "gap": -3.0,
+     "lo": -12.3,
+     "hi": 6.7,
+     "clear": false,
+     "mark": "Shared"
+    },
+    "ours_share": {
+     "top_k": 8,
+     "top_n": 13,
+     "rest_k": 8,
+     "rest_n": 21,
+     "top_pct": 61.5,
+     "rest_pct": 38.1,
+     "gap": 23.4,
+     "lo": -24.7,
+     "hi": 65.0,
+     "clear": false,
+     "mark": "Shared"
+    }
+   }
+  }
+ },
+ "SPOTS": [
+  {
+   "id": "c5-sg-somers-east",
+   "map": "Sleeping Giant",
+   "kind": "top6_spot",
+   "mode": "top6",
+   "name": "Somers: east half of Sleeping Giant",
+   "shape": {
+    "type": "polygon",
+    "points": [
+     [
+      0.5,
+      0.0
+     ],
+     [
+      1.0,
+      0.0
+     ],
+     [
+      1.0,
+      1.0
+     ],
+     [
+      0.5,
+      1.0
+     ]
+    ]
+   },
+   "n": 47,
+   "n_top6": 25,
+   "n_rest": 22,
+   "small_n": false,
+   "clans": {
+    "top6": {
+     "RESIN": 8,
+     "BONKZ": 8,
+     "H-SR": 8,
+     "VRTUS": 1
+    },
+    "rest": {
+     "HFANS": 7,
+     "MACHX": 5,
+     "EPOXY": 4,
+     "BONKY": 3,
+     "KITED": 2,
+     "UYSC": 1
+    }
+   },
+   "concealed_damage_per_smoke": 14016,
+   "deaths_per_100": 10.6,
+   "cruisers": {
+    "top6": {
+     "Des Moines": 6,
+     "Utrecht": 5,
+     "Brisbane": 3,
+     "Petropavlovsk": 3,
+     "Minotaur": 1,
+     "Worcester": 1,
+     "San Martín": 1
+    },
+    "rest": {
+     "Des Moines": 11,
+     "Minotaur": 4,
+     "Brisbane": 3,
+     "Petropavlovsk": 2,
+     "San Martín": 1,
+     "Jinan": 1
+    }
+   },
+   "examples": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g1_29456.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g1_63098.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8068_g2_166411.html"
+   ],
+   "subject": "Somers",
+   "share_top6_pct": 83.3,
+   "share_rest_pct": 48.9,
+   "gap_pts": 34.4,
+   "ci_pts": [
+    6.2,
+    63.9
+   ],
+   "note": "East half = normalized x > 0 (u 0.5 to 1.0). Early (first 5 min) Somers smokes alone do not split: see C5-SG-1."
+  },
+  {
+   "id": "c5-sg-harugumo-g1",
+   "map": "Sleeping Giant",
+   "kind": "top6_spot",
+   "mode": "top6",
+   "name": "Harugumo: west edge below cap A (G1/F1)",
+   "shape": {
+    "type": "ellipse",
+    "u": 0.0655,
+    "v": 0.621,
+    "ru": 0.1229,
+    "rv": 0.0758,
+    "angle_deg": 69.6
+   },
+   "n": 12,
+   "n_top6": 11,
+   "n_rest": 1,
+   "small_n": true,
+   "clans": {
+    "top6": {
+     "RESIN": 5,
+     "H-SR": 4,
+     "BONKZ": 2
+    },
+    "rest": {
+     "EPOXY": 1
+    }
+   },
+   "concealed_damage_per_smoke": 16406,
+   "deaths_per_100": 8.3,
+   "cruisers": {
+    "top6": {
+     "Des Moines": 6,
+     "Worcester": 3,
+     "Petropavlovsk": 1
+    },
+    "rest": {
+     "Petropavlovsk": 1
+    }
+   },
+   "examples": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g1_29455.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166106.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120803.html"
+   ],
+   "subject": "Harugumo",
+   "share_top6_pct": 45.8,
+   "share_rest_pct": 11.1,
+   "gap_pts": 34.7,
+   "ci_pts": [
+    20.0,
+    56.2
+   ],
+   "second_dd_recorded": "7 of 11 Top 6 smokes",
+   "second_dd_positions_uv": [
+    [
+     0.05,
+     0.5013,
+     "Marceau"
+    ],
+    [
+     0.0143,
+     0.6122,
+     "Châteaurenault"
+    ],
+    [
+     0.0771,
+     0.5194,
+     "Ragnar"
+    ],
+    [
+     0.0856,
+     0.5522,
+     "Marceau"
+    ],
+    [
+     0.0424,
+     0.6681,
+     "Marceau"
+    ],
+    [
+     0.2941,
+     0.6394,
+     "Marceau"
+    ],
+    [
+     0.3394,
+     0.6109,
+     "Marceau"
+    ]
+   ]
+  },
+  {
+   "id": "c5-sg-cap-b",
+   "map": "Sleeping Giant",
+   "kind": "shared_spot",
+   "mode": "shared",
+   "name": "Smoke at cap B (mostly cap sitters)",
+   "shape": {
+    "type": "circle",
+    "u": 0.4721,
+    "v": 0.5,
+    "r": 0.1183
+   },
+   "n": 34,
+   "n_top6": 13,
+   "n_rest": 21,
+   "small_n": false,
+   "clans": {
+    "top6": {
+     "VRTUS": 4,
+     "RESIN": 4,
+     "HTDOG": 3,
+     "BONKZ": 2
+    },
+    "rest": {
+     "HFANS": 7,
+     "KITED": 4,
+     "5D": 3,
+     "KSE": 3,
+     "EPOXY": 1,
+     "INCA": 1,
+     "BONKY": 1,
+     "-BN-": 1
+    }
+   },
+   "concealed_damage_per_smoke": 5747,
+   "deaths_per_100": 11.8,
+   "cruisers": {
+    "top6": {
+     "Stalingrad": 2,
+     "Worcester": 1
+    },
+    "rest": {
+     "Des Moines": 2,
+     "Stalingrad": 2,
+     "Napoli": 1,
+     "Moskva": 1
+    }
+   },
+   "examples": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8153_g1_92180.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166114.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8140_g2_125929.html"
+   ],
+   "subject": "all smokes inside or within 2 km of cap B",
+   "share_top6_pct": 9.5,
+   "share_rest_pct": 12.5,
+   "gap_pts": -3.0,
+   "ci_pts": [
+    -12.3,
+    6.7
+   ],
+   "note": "Circle = cap B plus 2 km."
+  }
+ ]
+}

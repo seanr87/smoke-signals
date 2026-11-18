@@ -1,0 +1,190 @@
+team_games {'top': 110, 'rest': 232}
+A
+  dd_plays {'n': 96, 'n_top': 52, 'n_rest': 44, 'top': 0.47, 'rest': 0.19, 'diff': 0.28, 'ratio': 2.5, 'ci': [0.14, 0.4], 'clear': True}
+  radar_run_smokes 95
+  all_class_plays {'n': 117, 'n_top': 64, 'n_rest': 53, 'top': 0.58, 'rest': 0.23, 'diff': 0.35, 'ratio': 2.5, 'ci': [0.2, 0.46], 'clear': True}
+  cap_control {'n': 73, 'traps': 23}
+  cap_control_cap_taken {'top': 58.3, 'rest': 57.7, 'n_top': 24, 'n_rest': 26, 'clans_top': 6, 'clans_rest': 13, 'diff': 0.6, 'ci': [-32.8, 28.7], 'clear': False, 'x_top': 14, 'x_rest': 15}
+  by_map
+    Sleeping Giant {'plays': 29, 'top': 14, 'rest': 15, 'per_team_game': 0.45}
+    Hotspot {'plays': 25, 'top': 14, 'rest': 11, 'per_team_game': 0.4}
+    Mountain Range {'plays': 15, 'top': 11, 'rest': 4, 'per_team_game': 0.36}
+    Land of Fire {'plays': 9, 'top': 4, 'rest': 5, 'per_team_game': 0.18}
+    Loop {'plays': 6, 'top': 4, 'rest': 2, 'per_team_game': 0.13}
+    Okinawa {'plays': 7, 'top': 1, 'rest': 6, 'per_team_game': 0.19}
+    Sea of Fortune {'plays': 5, 'top': 4, 'rest': 1, 'per_team_game': 0.12}
+  conc_cap_control {'top': 17751.0, 'rest': 20783.0, 'n_top': 40, 'n_rest': 33, 'clans_top': 6, 'clans_rest': 14, 'diff': -3032.0, 'ci': [-13293.0, 4568.0], 'clear': False}
+  spots_per_radar_smoke {'top': 1.11, 'rest': 1.1, 'n_top': 54, 'n_rest': 41, 'clans_top': 6, 'clans_rest': 14, 'diff': 0.01, 'ci': [-0.5, 0.36], 'clear': False}
+  team_games_with_play {'top': [42, 110], 'rest': [39, 232]}
+  three_maps 69
+B
+  all_activations {'n': 2426, 'n_top': 904, 'n_rest': 1522, 'top': 8.22, 'rest': 6.56, 'diff': 1.66, 'ratio': 1.3, 'ci': [0.04, 2.98], 'clear': True}
+  from_smoke {'n': 155, 'n_top': 85, 'n_rest': 70, 'top': 0.77, 'rest': 0.3, 'diff': 0.47, 'ratio': 2.6, 'ci': [0.26, 0.65], 'clear': True}
+  from_dd_smoke {'n': 129, 'n_top': 70, 'n_rest': 59, 'top': 0.64, 'rest': 0.25, 'diff': 0.38, 'ratio': 2.5, 'ci': [0.16, 0.58], 'clear': True}
+  not_from_smoke {'n': 2271, 'n_top': 819, 'n_rest': 1452, 'top': 7.45, 'rest': 6.26, 'diff': 1.19, 'ratio': 1.2, 'ci': [-0.36, 2.37], 'clear': False}
+  by_kind
+    destroyer smoke, radar by another ship {'n': 107, 'n_top': 60, 'n_rest': 47, 'top': 0.55, 'rest': 0.2, 'diff': 0.34, 'ratio': 2.7, 'ci': [0.15, 0.51], 'clear': True}
+    destroyer smoke, radar by the smoker itself {'n': 22, 'n_top': 10, 'n_rest': 12, 'top': 0.09, 'rest': 0.05, 'diff': 0.04, 'ratio': 1.8, 'ci': [-0.05, 0.13], 'clear': False}
+    cruiser's own smoke {'n': 24, 'n_top': 14, 'n_rest': 10, 'top': 0.13, 'rest': 0.04, 'diff': 0.08, 'ratio': 3.0, 'ci': [-0.02, 0.2], 'clear': False}
+    another cruiser's smoke {'n': 2, 'n_top': 1, 'n_rest': 1, 'top': 0.01, 'rest': 0.0, 'diff': 0.0, 'ratio': 2.1, 'ci': [-0.01, 0.03], 'clear': False}
+  smokes_with_activation {'n': 149, 'n_top': 83, 'n_rest': 66, 'top': 0.75, 'rest': 0.28, 'diff': 0.47, 'ratio': 2.7, 'ci': [0.27, 0.64], 'clear': True}
+  dd_smokes_with_activation {'n': 123, 'n_top': 68, 'n_rest': 55, 'top': 0.62, 'rest': 0.24, 'diff': 0.38, 'ratio': 2.6, 'ci': [0.18, 0.56], 'clear': True}
+  cruiser_smokes_with_activation {'n': 26, 'n_top': 15, 'n_rest': 11, 'top': 0.14, 'rest': 0.05, 'diff': 0.09, 'ratio': 2.9, 'ci': [-0.02, 0.21], 'clear': False}
+  share_from_smoke {'top': 9.4, 'rest': 4.6, 'n_top': 904, 'n_rest': 1522, 'clans_top': 6, 'clans_rest': 24, 'diff': 4.8, 'ci': [2.5, 7.0], 'clear': True}
+  by_class
+    cruiser {'n': 131, 'n_top': 74, 'n_rest': 57, 'top': 0.67, 'rest': 0.25, 'diff': 0.43, 'ratio': 2.7, 'ci': [0.27, 0.56], 'clear': True}
+    destroyer {'n': 24, 'n_top': 11, 'n_rest': 13, 'top': 0.1, 'rest': 0.06, 'diff': 0.04, 'ratio': 1.8, 'ci': [-0.04, 0.13], 'clear': False}
+    battleship {'n': 0, 'n_top': 0, 'n_rest': 0, 'top': 0.0, 'rest': 0.0, 'diff': 0.0, 'ratio': None, 'ci': [0.0, 0.0], 'clear': False}
+  radar_ships {'Brisbane': 33, 'Des Moines': 32, 'Svea': 29, 'Gdańsk': 23, 'Minotaur': 16, 'Petropavlovsk': 5, 'Salem': 4, 'Worcester': 4}
+  clans
+    top6 {'RESIN': 25, 'BONKZ': 18, 'H-SR': 16, 'HTDOG': 13, 'VRTUS': 8, 'KITE': 5}
+    rest {'HFANS': 11, 'BONKY': 8, 'SCCC2': 7, 'MACHX': 6, 'KSC': 5, 'REEEE': 4, 'INCA': 4, 'MZY': 4, 'PFANS': 3, 'EPOXY': 3, '-BN-': 3, 'UYSC': 2, 'RSR': 2, 'KSE': 2, 'PN': 2, 'BTLST': 1, 'KITED': 1, 'MANBA': 1, 'KM': 1}
+  early_share {'top': 25.9, 'rest': 40.0, 'n_top': 85, 'n_rest': 70, 'clans_top': 6, 'clans_rest': 19, 'diff': -14.1, 'ci': [-29.5, 0.7], 'clear': False}
+  by_map
+    Sleeping Giant {'n': 40, 'n_top': 21, 'n_rest': 19, 'top': 0.78, 'rest': 0.51, 'diff': 0.26, 'ratio': 1.5, 'ci': [-0.17, 0.7], 'clear': False, 'per_team_game_all': 0.62, 'clans_top': 4, 'clans_rest': 10, 'all_radar_per_team_game': 8.59}
+    Hotspot {'n': 36, 'n_top': 18, 'n_rest': 18, 'top': 1.0, 'rest': 0.41, 'diff': 0.59, 'ratio': 2.4, 'ci': [0.14, 1.19], 'clear': True, 'per_team_game_all': 0.58, 'clans_top': 6, 'clans_rest': 10, 'all_radar_per_team_game': 7.76}
+    Mountain Range {'n': 27, 'n_top': 20, 'n_rest': 7, 'top': 1.25, 'rest': 0.27, 'diff': 0.98, 'ratio': 4.6, 'ci': [0.19, 1.82], 'clear': True, 'per_team_game_all': 0.64, 'clans_top': 4, 'clans_rest': 5, 'all_radar_per_team_game': 7.43}
+    Land of Fire {'n': 14, 'n_top': 6, 'n_rest': 8, 'top': 0.38, 'rest': 0.24, 'diff': 0.14, 'ratio': 1.6, 'ci': [-0.28, 0.83], 'clear': False, 'per_team_game_all': 0.28, 'clans_top': 3, 'clans_rest': 5, 'all_radar_per_team_game': 6.06}
+    Loop {'n': 14, 'n_top': 11, 'n_rest': 3, 'top': 0.85, 'rest': 0.09, 'diff': 0.76, 'ratio': 9.3, 'ci': [0.21, 1.4], 'clear': True, 'per_team_game_all': 0.3, 'clans_top': 5, 'clans_rest': 3, 'all_radar_per_team_game': 5.85}
+    Okinawa {'n': 10, 'n_top': 1, 'n_rest': 9, 'top': 0.17, 'rest': 0.3, 'diff': -0.13, 'ratio': 0.6, 'ci': [-0.52, 0.26], 'clear': False, 'per_team_game_all': 0.28, 'clans_top': 1, 'clans_rest': 6, 'all_radar_per_team_game': 5.94}
+    Sea of Fortune {'n': 14, 'n_top': 8, 'n_rest': 6, 'top': 0.57, 'rest': 0.21, 'diff': 0.36, 'ratio': 2.7, 'ci': [-0.1, 0.96], 'clear': False, 'per_team_game_all': 0.33, 'clans_top': 4, 'clans_rest': 5, 'all_radar_per_team_game': 7.07}
+  three_maps {'names': ['Sleeping Giant', 'Hotspot', 'Mountain Range'], 'plays': 103, 'by_rate': ['Mountain Range', 'Sleeping Giant', 'Hotspot']}
+  tag_vs_log
+    tagged_dd 96
+    tagged_dd_with_log_activation 96
+    log_dd_smokes 123
+    log_dd_smokes_tagged 96
+    log_dd_smokes_other_tags {'cap_contest': 9, 'reposition': 6, 'damage': 6, 'none': 5, 'escape': 1}
+    batch_radar_run_dd 113
+    batch_radar_run_dd_in_log 112
+    log_dd_not_batch_run 11
+    tagged_cruiser 21
+    log_cruiser_smokes 26
+    tagged_without_log_examples []
+  return_from_smoke
+    n 155
+    n_used 155
+    lit {'top': 1.41, 'rest': 1.33, 'n_top': 85, 'n_rest': 70, 'clans_top': 6, 'clans_rest': 19, 'diff': 0.08, 'ci': [-0.32, 0.4], 'clear': False}
+    lit_any {'top': 87.1, 'rest': 78.6, 'n_top': 85, 'n_rest': 70, 'clans_top': 6, 'clans_rest': 19, 'diff': 8.5, 'ci': [-4.8, 18.6], 'clear': False}
+    lit_dd {'top': 0.81, 'rest': 0.74, 'n_top': 85, 'n_rest': 70, 'clans_top': 6, 'clans_rest': 19, 'diff': 0.07, 'ci': [-0.17, 0.27], 'clear': False}
+    lit_dd_any {'top': 69.4, 'rest': 65.7, 'n_top': 85, 'n_rest': 70, 'clans_top': 6, 'clans_rest': 19, 'diff': 3.7, 'ci': [-14.1, 18.9], 'clear': False}
+    dmg {'top': 7488.0, 'rest': 5814.0, 'n_top': 85, 'n_rest': 70, 'clans_top': 6, 'clans_rest': 19, 'diff': 1674.0, 'ci': [-2321.0, 4748.0], 'clear': False}
+    dmg_direct {'top': 6624.0, 'rest': 4871.0, 'n_top': 85, 'n_rest': 70, 'clans_top': 6, 'clans_rest': 19, 'diff': 1753.0, 'ci': [-2118.0, 4503.0], 'clear': False}
+    dmg_any {'top': 67.1, 'rest': 60.0, 'n_top': 85, 'n_rest': 70, 'clans_top': 6, 'clans_rest': 19, 'diff': 7.1, 'ci': [-11.7, 24.8], 'clear': False}
+    dmg_per_lit_play {'top': 8601.0, 'rest': 7400.0, 'n_top': 74, 'n_rest': 55, 'clans_top': 6, 'clans_rest': 19, 'diff': 1201.0, 'ci': [-3085.0, 4893.0], 'clear': False}
+    hp_loss {'top': 5971.0, 'rest': 4594.0, 'n_top': 85, 'n_rest': 70, 'clans_top': 6, 'clans_rest': 19, 'diff': 1377.0, 'ci': [-2236.0, 3763.0], 'clear': False}
+    dmg_run2 {'top': 7433.0, 'rest': 5796.0, 'n_top': 85, 'n_rest': 70, 'clans_top': 6, 'clans_rest': 19, 'diff': 1637.0, 'ci': [-2603.0, 4742.0], 'clear': False}
+    cap60 {'top': 16.7, 'rest': 19.0, 'n_top': 36, 'n_rest': 42, 'clans_top': 6, 'clans_rest': 17, 'diff': -2.4, 'ci': [-18.5, 19.2], 'clear': False}
+    cap120 {'top': 36.1, 'rest': 21.4, 'n_top': 36, 'n_rest': 42, 'clans_top': 6, 'clans_rest': 17, 'diff': 14.7, 'ci': [-4.4, 36.4], 'clear': False}
+    cap60_x [6, 8]
+    cap120_x [13, 9]
+    cap_edge_km {'top': 2.5, 'rest': 1.9, 'n_top': 85, 'n_rest': 70, 'clans_top': 6, 'clans_rest': 19, 'diff': 0.6, 'ci': [-0.2, 1.2], 'clear': False}
+    lit_rows 230
+    amb_rows 10
+    dmg_total 1043504
+    dmg_direct_total 904035
+    ribbons 0
+    recorder_plays 7
+  return_from_dd_smoke
+    n 129
+    n_used 129
+    lit {'top': 1.49, 'rest': 1.49, 'n_top': 70, 'n_rest': 59, 'clans_top': 6, 'clans_rest': 18, 'diff': -0.01, 'ci': [-0.48, 0.32], 'clear': False}
+    lit_any {'top': 88.6, 'rest': 86.4, 'n_top': 70, 'n_rest': 59, 'clans_top': 6, 'clans_rest': 18, 'diff': 2.1, 'ci': [-11.4, 13.0], 'clear': False}
+    lit_dd {'top': 0.84, 'rest': 0.83, 'n_top': 70, 'n_rest': 59, 'clans_top': 6, 'clans_rest': 18, 'diff': 0.01, 'ci': [-0.24, 0.23], 'clear': False}
+    lit_dd_any {'top': 72.9, 'rest': 72.9, 'n_top': 70, 'n_rest': 59, 'clans_top': 6, 'clans_rest': 18, 'diff': -0.0, 'ci': [-20.1, 15.7], 'clear': False}
+    dmg {'top': 8429.0, 'rest': 6795.0, 'n_top': 70, 'n_rest': 59, 'clans_top': 6, 'clans_rest': 18, 'diff': 1634.0, 'ci': [-2558.0, 4761.0], 'clear': False}
+    dmg_direct {'top': 7392.0, 'rest': 5747.0, 'n_top': 70, 'n_rest': 59, 'clans_top': 6, 'clans_rest': 18, 'diff': 1645.0, 'ci': [-1957.0, 4440.0], 'clear': False}
+    dmg_any {'top': 70.0, 'rest': 67.8, 'n_top': 70, 'n_rest': 59, 'clans_top': 6, 'clans_rest': 18, 'diff': 2.2, 'ci': [-14.5, 17.8], 'clear': False}
+    dmg_per_lit_play {'top': 9516.0, 'rest': 7860.0, 'n_top': 62, 'n_rest': 51, 'clans_top': 6, 'clans_rest': 18, 'diff': 1656.0, 'ci': [-2771.0, 5408.0], 'clear': False}
+    hp_loss {'top': 6558.0, 'rest': 5370.0, 'n_top': 70, 'n_rest': 59, 'clans_top': 6, 'clans_rest': 18, 'diff': 1188.0, 'ci': [-2146.0, 3735.0], 'clear': False}
+    dmg_run2 {'top': 8354.0, 'rest': 6768.0, 'n_top': 70, 'n_rest': 59, 'clans_top': 6, 'clans_rest': 18, 'diff': 1586.0, 'ci': [-3369.0, 4922.0], 'clear': False}
+    cap60 {'top': 13.3, 'rest': 21.9, 'n_top': 30, 'n_rest': 32, 'clans_top': 6, 'clans_rest': 16, 'diff': -8.5, 'ci': [-22.9, 10.1], 'clear': False}
+    cap120 {'top': 33.3, 'rest': 25.0, 'n_top': 30, 'n_rest': 32, 'clans_top': 6, 'clans_rest': 16, 'diff': 8.3, 'ci': [-8.9, 33.6], 'clear': False}
+    cap60_x [4, 7]
+    cap120_x [10, 8]
+    cap_edge_km {'top': 2.7, 'rest': 1.9, 'n_top': 70, 'n_rest': 59, 'clans_top': 6, 'clans_rest': 18, 'diff': 0.8, 'ci': [-0.3, 1.9], 'clear': False}
+    lit_rows 208
+    amb_rows 10
+    dmg_total 990878
+    dmg_direct_total 856537
+    ribbons 0
+    recorder_plays 5
+  return_not_from_smoke
+    n 2271
+    n_used 2263
+    lit {'top': 1.75, 'rest': 1.62, 'n_top': 819, 'n_rest': 1444, 'clans_top': 6, 'clans_rest': 24, 'diff': 0.13, 'ci': [0.01, 0.31], 'clear': True}
+    lit_any {'top': 87.2, 'rest': 84.3, 'n_top': 819, 'n_rest': 1444, 'clans_top': 6, 'clans_rest': 24, 'diff': 2.8, 'ci': [0.0, 6.8], 'clear': True}
+    lit_dd {'top': 0.85, 'rest': 0.84, 'n_top': 819, 'n_rest': 1444, 'clans_top': 6, 'clans_rest': 24, 'diff': 0.0, 'ci': [-0.11, 0.11], 'clear': False}
+    lit_dd_any {'top': 69.6, 'rest': 71.0, 'n_top': 819, 'n_rest': 1444, 'clans_top': 6, 'clans_rest': 24, 'diff': -1.4, 'ci': [-8.6, 5.5], 'clear': False}
+    dmg {'top': 7221.0, 'rest': 6666.0, 'n_top': 819, 'n_rest': 1444, 'clans_top': 6, 'clans_rest': 24, 'diff': 555.0, 'ci': [-877.0, 2124.0], 'clear': False}
+    dmg_direct {'top': 6342.0, 'rest': 5867.0, 'n_top': 819, 'n_rest': 1444, 'clans_top': 6, 'clans_rest': 24, 'diff': 475.0, 'ci': [-1031.0, 1808.0], 'clear': False}
+    dmg_any {'top': 62.6, 'rest': 61.6, 'n_top': 819, 'n_rest': 1444, 'clans_top': 6, 'clans_rest': 24, 'diff': 1.1, 'ci': [-3.9, 7.0], 'clear': False}
+    dmg_per_lit_play {'top': 8282.0, 'rest': 7903.0, 'n_top': 714, 'n_rest': 1218, 'clans_top': 6, 'clans_rest': 24, 'diff': 379.0, 'ci': [-1388.0, 2120.0], 'clear': False}
+    hp_loss {'top': 7387.0, 'rest': 6258.0, 'n_top': 819, 'n_rest': 1444, 'clans_top': 6, 'clans_rest': 24, 'diff': 1128.0, 'ci': [-434.0, 2732.0], 'clear': False}
+    dmg_run2 {'top': 7062.0, 'rest': 6757.0, 'n_top': 819, 'n_rest': 1444, 'clans_top': 6, 'clans_rest': 24, 'diff': 305.0, 'ci': [-1170.0, 1720.0], 'clear': False}
+    cap60 {'top': 14.6, 'rest': 12.3, 'n_top': 370, 'n_rest': 749, 'clans_top': 6, 'clans_rest': 24, 'diff': 2.3, 'ci': [-1.8, 6.0], 'clear': False}
+    cap120 {'top': 27.0, 'rest': 22.6, 'n_top': 370, 'n_rest': 749, 'clans_top': 6, 'clans_rest': 24, 'diff': 4.5, 'ci': [-1.7, 10.8], 'clear': False}
+    cap60_x [54, 92]
+    cap120_x [100, 169]
+    cap_edge_km {'top': 2.4, 'rest': 2.5, 'n_top': 819, 'n_rest': 1444, 'clans_top': 6, 'clans_rest': 24, 'diff': -0.0, 'ci': [-0.4, 0.2], 'clear': False}
+    lit_rows 4064
+    amb_rows 198
+    dmg_total 15539371
+    dmg_direct_total 13666733
+    ribbons 54
+    recorder_plays 102
+  return_tagged
+    n 119
+    n_used 119
+    lit {'top': 1.34, 'rest': 1.36, 'n_top': 64, 'n_rest': 55, 'clans_top': 6, 'clans_rest': 17, 'diff': -0.02, 'ci': [-0.32, 0.21], 'clear': False}
+    lit_any {'top': 90.6, 'rest': 83.6, 'n_top': 64, 'n_rest': 55, 'clans_top': 6, 'clans_rest': 17, 'diff': 7.0, 'ci': [-3.3, 17.2], 'clear': False}
+    lit_dd {'top': 0.83, 'rest': 0.75, 'n_top': 64, 'n_rest': 55, 'clans_top': 6, 'clans_rest': 17, 'diff': 0.08, 'ci': [-0.15, 0.34], 'clear': False}
+    lit_dd_any {'top': 71.9, 'rest': 67.3, 'n_top': 64, 'n_rest': 55, 'clans_top': 6, 'clans_rest': 17, 'diff': 4.6, 'ci': [-13.4, 23.6], 'clear': False}
+    dmg {'top': 6769.0, 'rest': 6586.0, 'n_top': 64, 'n_rest': 55, 'clans_top': 6, 'clans_rest': 17, 'diff': 182.0, 'ci': [-4186.0, 3900.0], 'clear': False}
+    dmg_direct {'top': 6318.0, 'rest': 5544.0, 'n_top': 64, 'n_rest': 55, 'clans_top': 6, 'clans_rest': 17, 'diff': 774.0, 'ci': [-3099.0, 4003.0], 'clear': False}
+    dmg_any {'top': 68.8, 'rest': 63.6, 'n_top': 64, 'n_rest': 55, 'clans_top': 6, 'clans_rest': 17, 'diff': 5.1, 'ci': [-11.1, 21.2], 'clear': False}
+    dmg_per_lit_play {'top': 7469.0, 'rest': 7875.0, 'n_top': 58, 'n_rest': 46, 'clans_top': 6, 'clans_rest': 17, 'diff': -406.0, 'ci': [-5268.0, 3716.0], 'clear': False}
+    hp_loss {'top': 5504.0, 'rest': 5065.0, 'n_top': 64, 'n_rest': 55, 'clans_top': 6, 'clans_rest': 17, 'diff': 439.0, 'ci': [-2798.0, 2905.0], 'clear': False}
+    dmg_run2 {'top': 6772.0, 'rest': 6691.0, 'n_top': 64, 'n_rest': 55, 'clans_top': 6, 'clans_rest': 17, 'diff': 81.0, 'ci': [-4375.0, 4117.0], 'clear': False}
+    cap60 {'top': 16.0, 'rest': 25.0, 'n_top': 25, 'n_rest': 32, 'clans_top': 6, 'clans_rest': 15, 'diff': -9.0, 'ci': [-28.0, 11.4], 'clear': False}
+    cap120 {'top': 36.0, 'rest': 25.0, 'n_top': 25, 'n_rest': 32, 'clans_top': 6, 'clans_rest': 15, 'diff': 11.0, 'ci': [-11.4, 35.7], 'clear': False}
+    cap60_x [4, 8]
+    cap120_x [9, 8]
+    cap_edge_km {'top': 2.4, 'rest': 2.1, 'n_top': 64, 'n_rest': 55, 'clans_top': 6, 'clans_rest': 17, 'diff': 0.4, 'ci': [-0.5, 1.2], 'clear': False}
+    lit_rows 171
+    amb_rows 7
+    dmg_total 795460
+    dmg_direct_total 709313
+    ribbons 0
+    recorder_plays 6
+  return_untagged
+    n 36
+    n_used 36
+    lit {'top': 1.62, 'rest': 1.2, 'n_top': 21, 'n_rest': 15, 'clans_top': 6, 'clans_rest': 11, 'diff': 0.42, 'ci': [-1.06, 1.3], 'clear': False}
+    lit_any {'top': 76.2, 'rest': 60.0, 'n_top': 21, 'n_rest': 15, 'clans_top': 6, 'clans_rest': 11, 'diff': 16.2, 'ci': [-38.5, 49.3], 'clear': False}
+    lit_dd {'top': 0.76, 'rest': 0.73, 'n_top': 21, 'n_rest': 15, 'clans_top': 6, 'clans_rest': 11, 'diff': 0.03, 'ci': [-0.56, 0.43], 'clear': False}
+    lit_dd_any {'top': 61.9, 'rest': 60.0, 'n_top': 21, 'n_rest': 15, 'clans_top': 6, 'clans_rest': 11, 'diff': 1.9, 'ci': [-42.9, 32.9], 'clear': False}
+    dmg {'top': 9680.0, 'rest': 2984.0, 'n_top': 21, 'n_rest': 15, 'clans_top': 6, 'clans_rest': 11, 'diff': 6697.0, 'ci': [-2459.0, 11359.0], 'clear': False}
+    dmg_direct {'top': 7556.0, 'rest': 2403.0, 'n_top': 21, 'n_rest': 15, 'clans_top': 6, 'clans_rest': 11, 'diff': 5153.0, 'ci': [-2199.0, 8964.0], 'clear': False}
+    dmg_any {'top': 61.9, 'rest': 46.7, 'n_top': 21, 'n_rest': 15, 'clans_top': 6, 'clans_rest': 11, 'diff': 15.2, 'ci': [-49.5, 51.9], 'clear': False}
+    dmg_per_lit_play {'top': 12706.0, 'rest': 4973.0, 'n_top': 16, 'n_rest': 9, 'clans_top': 4, 'clans_rest': 8, 'diff': 7733.0, 'ci': [-873.0, 11964.0], 'clear': False}
+    hp_loss {'top': 7395.0, 'rest': 2867.0, 'n_top': 21, 'n_rest': 15, 'clans_top': 6, 'clans_rest': 11, 'diff': 4528.0, 'ci': [-2585.0, 8207.0], 'clear': False}
+    dmg_run2 {'top': 9448.0, 'rest': 2514.0, 'n_top': 21, 'n_rest': 15, 'clans_top': 6, 'clans_rest': 11, 'diff': 6934.0, 'ci': [-2384.0, 11190.0], 'clear': False}
+    cap60 {'top': 18.2, 'rest': 0.0, 'n_top': 11, 'n_rest': 10, 'clans_top': 4, 'clans_rest': 8, 'diff': 18.2, 'ci': [0.0, 60.0], 'clear': False}
+    cap120 {'top': 36.4, 'rest': 10.0, 'n_top': 11, 'n_rest': 10, 'clans_top': 4, 'clans_rest': 8, 'diff': 26.4, 'ci': [-8.1, 91.7], 'clear': False}
+    cap60_x [2, 0]
+    cap120_x [4, 1]
+    cap_edge_km {'top': 2.9, 'rest': 1.4, 'n_top': 21, 'n_rest': 15, 'clans_top': 6, 'clans_rest': 11, 'diff': 1.5, 'ci': [-1.0, 5.3], 'clear': False}
+    lit_rows 59
+    amb_rows 3
+    dmg_total 248044
+    dmg_direct_total 194722
+    ribbons 0
+    recorder_plays 1
+  enemies_lit_per_team_game {'top': 1.09, 'rest': 0.4, 'ci': [0.23, 1.13]}
+  enemy_dd_lit_per_team_game {'top': 0.63, 'rest': 0.22, 'ci': [0.16, 0.69]}
+  damage_on_lit_per_team_game {'top': 5786.3, 'rest': 1754.36, 'ci': [1214.61, 6374.19]}
+  cap_control_timeline {'top': 62.5, 'rest': 38.5, 'n_top': 24, 'n_rest': 26, 'clans_top': 6, 'clans_rest': 13, 'diff': 24.0, 'ci': [-5.8, 55.4], 'clear': False, 'x_top': 15, 'x_rest': 10}
+  per_clan [{'clan': 'BONKY', 'top6': False, 'games': 7, 'log_plays': 8, 'per_game': 1.14, 'tag_plays': 5}, {'clan': 'RESIN', 'top6': True, 'games': 24, 'log_plays': 25, 'per_game': 1.04, 'tag_plays': 14}, {'clan': 'SCCC2', 'top6': False, 'games': 7, 'log_plays': 7, 'per_game': 1.0, 'tag_plays': 3}, {'clan': 'BONKZ', 'top6': True, 'games': 21, 'log_plays': 18, 'per_game': 0.86, 'tag_plays': 10}, {'clan': 'VRTUS', 'top6': True, 'games': 11, 'log_plays': 8, 'per_game': 0.73, 'tag_plays': 4}, {'clan': 'H-SR', 'top6': True, 'games': 22, 'log_plays': 16, 'per_game': 0.73, 'tag_plays': 14}, {'clan': 'HTDOG', 'top6': True, 'games': 18, 'log_plays': 13, 'per_game': 0.72, 'tag_plays': 6}, {'clan': 'INCA', 'top6': False, 'games': 6, 'log_plays': 4, 'per_game': 0.67, 'tag_plays': 1}, {'clan': 'HFANS', 'top6': False, 'games': 17, 'log_plays': 11, 'per_game': 0.65, 'tag_plays': 9}, {'clan': 'KSC', 'top6': False, 'games': 11, 'log_plays': 5, 'per_game': 0.45, 'tag_plays': 4}, {'clan': 'MACHX', 'top6': False, 'games': 14, 'log_plays': 6, 'per_game': 0.43, 'tag_plays': 5}, {'clan': 'KITE', 'top6': True, 'games': 14, 'log_plays': 5, 'per_game': 0.36, 'tag_plays': 4}, {'clan': 'REEEE', 'top6': False, 'games': 13, 'log_plays': 4, 'per_game': 0.31, 'tag_plays': 4}, {'clan': 'MZY', 'top6': False, 'games': 19, 'log_plays': 4, 'per_game': 0.21, 'tag_plays': 3}]
+  team_games_with_log_play {'top': [49, 110], 'rest': [50, 232]}
+  ribbons_total {'AssistedInCapture': 67, 'Defended': 284, 'Captured': 91}

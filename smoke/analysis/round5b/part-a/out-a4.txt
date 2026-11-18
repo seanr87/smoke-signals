@@ -1,0 +1,219 @@
+destroyer counter-smokes 133 | matched to an enemy smoke 133 | Top 6 / Rest 44 89 | answered smoke class {'destroyer': 102, 'cruiser': 27, 'battleship': 4}
+pairs with a usable line of fire 132 of 133 | from targets hit 94 | fallback to our ships 38 | none 1
+distance between centres (m): q25 7164 median 8965 q75 10228 | gap between nearest puffs median 7757 | delay median s 17 | same cap % 77.4
+angle off the line of fire: q25 3.8 median 12.4 q75 28.2 | bands {'head-on (under 30)': 100, 'flanking (over 60)': 12, 'oblique (30-60)': 20}
+bearing of the answered smoke from ours (0 = straight ahead): median 30.5 | bands {'ahead (under 30 off our forward line)': 65, 'off the bow (30-60)': 46, 'abeam or behind (60+)': 22}
+target distance from the enemy smoke median m 9219 | our smoker was itself a target of the enemy smoke 54
+
+All matched counter-smokes
+| group | n (T6/Rest) | concealed damage [95%] | deaths per 100 [95%] | smoker died per 100 | out-damaged answered % [95%] | answered smoke damage | margin [95%] | T6 / Rest damage (interval) | T6 / Rest deaths (interval) | note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| all | 133 (44/89) | 8,003 [5,499 to 10,381 *] | 15.0 [10.0 to 21.9 *] | 7.5 | 37.6 [31.1 to 43.5 *] | 8,832 | -830 [-3,662 to +1,612] | 11,140 / 6,452 (-340 to +8,928) | 11.4 / 16.9 (-17.1 to +7.7) |  |
+| Top 6 | 44 (44/0) | 11,140 [7,222 to 14,586 *] | 11.4 [4.4 to 23.3 *] | 4.5 | 43.2 [36.7 to 49.0 *] | 12,184 | -1,044 [-6,366 to +1,820] | 11,140 / too few (-) | 11.4 / too few (-) |  |
+| Rest | 89 (0/89) | 6,452 [4,009 to 9,307 *] | 16.9 [10.2 to 25.3 *] | 9.0 | 34.8 [26.0 to 43.2 *] | 7,175 | -724 [-4,263 to +2,420] | too few / 6,452 (-) | too few / 16.9 (-) |  |
+  clans: all | Top 6: BONKZ 13, HTDOG 9, KITE 8, VRTUS 5, RESIN 5, H-SR 4 | Rest: HFANS 13, EPOXY 10, MACHX 8, SCCC2 7, REEEE 6, -BN- 5, MZY 5, KSC 5, KITED 4, 5D 3, MACH 3, NGA 3, BONKY 2, OGF 2, PN 2, INCA 2, RSR 2, PFANS 2, KM 1, MANBA 1, BTLST 1, UYSC 1, KSE 1
+  clans: Top 6 | Top 6: BONKZ 13, HTDOG 9, KITE 8, VRTUS 5, RESIN 5, H-SR 4 | Rest: none
+  clans: Rest | Top 6: none | Rest: HFANS 13, EPOXY 10, MACHX 8, SCCC2 7, REEEE 6, -BN- 5, MZY 5, KSC 5, KITED 4, 5D 3, MACH 3, NGA 3, BONKY 2, OGF 2, PN 2, INCA 2, RSR 2, PFANS 2, KM 1, MANBA 1, BTLST 1, UYSC 1, KSE 1
+
+By angle off the enemy smoke's line of fire (usable pairs)
+| group | n (T6/Rest) | concealed damage [95%] | deaths per 100 [95%] | smoker died per 100 | out-damaged answered % [95%] | answered smoke damage | margin [95%] | T6 / Rest damage (interval) | T6 / Rest deaths (interval) | note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| head-on (under 30) | 100 (35/65) | 8,947 [5,784 to 12,171 *] | 15.0 [8.8 to 23.5 *] | 7.0 | 42.0 [34.3 to 50.0 *] | 8,495 | +452 [-2,822 to +3,844] | 12,697 / 6,928 (-489 to +10,690) | 14.3 / 15.4 (-16.4 to +16.4) |  |
+| oblique (30-60) | 20 (6/14) | 6,762 [3,076 to 10,161 *] | 10.0 [0.0 to 25.0] | 5.0 | 30.0 [10.5 to 47.6 *] | 12,781 | -6,019 [-13,529 to +415] | too few / 6,983 (-) | too few / 14.3 (-) |  |
+| flanking (over 60) | 12 (3/9) | 2,868 [816 to 6,823 *] | 25.0 [0.0 to 50.0] | 16.7 | 16.7 [0.0 to 40.0] | 5,796 | -2,928 [-7,299 to +1,588] | too few / 2,902 (-) | too few / 33.3 (-) | small n |
+  clans: head-on (under 30) | Top 6: BONKZ 13, HTDOG 7, VRTUS 5, KITE 4, RESIN 3, H-SR 3 | Rest: EPOXY 10, HFANS 9, REEEE 6, MACHX 5, KITED 4, SCCC2 4, MZY 4, KSC 4, OGF 2, PN 2, INCA 2, NGA 2, RSR 2, -BN- 2, PFANS 2, 5D 1, MACH 1, BONKY 1, MANBA 1, UYSC 1
+  clans: oblique (30-60) | Top 6: KITE 2, HTDOG 2, RESIN 1, H-SR 1 | Rest: MACHX 2, -BN- 2, SCCC2 2, MACH 2, HFANS 2, NGA 1, BTLST 1, KSC 1, MZY 1
+  clans: flanking (over 60) | Top 6: KITE 2, RESIN 1 | Rest: HFANS 2, 5D 2, -BN- 1, BONKY 1, SCCC2 1, KSE 1, MACHX 1
+
+Same, only pairs where the line of fire comes from ships the enemy smoke actually hit
+| group | n (T6/Rest) | concealed damage [95%] | deaths per 100 [95%] | smoker died per 100 | out-damaged answered % [95%] | answered smoke damage | margin [95%] | T6 / Rest damage (interval) | T6 / Rest deaths (interval) | note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| head-on (under 30) | 71 (24/47) | 9,843 [5,872 to 13,674 *] | 14.1 [5.6 to 25.0 *] | 5.6 | 33.8 [24.0 to 43.5 *] | 11,524 | -1,681 [-6,449 to +2,950] | 15,789 / 6,807 (+1,416 to +16,214 *) | 12.5 / 14.9 (-18.3 to +32.0) |  |
+| oblique (30-60) | 14 (6/8) | 7,234 [3,445 to 11,116 *] | 7.1 [0.0 to 25.0] | 7.1 | 28.6 [8.3 to 47.1 *] | 17,519 | -10,285 [-18,037 to -2,641 *] | too few / 7,975 (-) | too few / 12.5 (-) | small n |
+| flanking (over 60) | 9 (3/6) | 3,457 [823 to 7,998 *] | 33.3 [0.0 to 62.5] | 22.2 | 22.2 [0.0 to 50.0] | 7,200 | -3,743 [-10,026 to +2,294] | too few / too few (-) | too few / too few (-) | small n |
+  clans: head-on (under 30) | Top 6: BONKZ 10, VRTUS 4, HTDOG 4, KITE 3, H-SR 2, RESIN 1 | Rest: EPOXY 5, HFANS 5, MACHX 5, KITED 4, MZY 4, KSC 4, REEEE 4, SCCC2 3, PN 2, RSR 2, -BN- 2, BONKY 1, INCA 1, NGA 1, OGF 1, MANBA 1, UYSC 1, PFANS 1
+  clans: oblique (30-60) | Top 6: KITE 2, HTDOG 2, RESIN 1, H-SR 1 | Rest: SCCC2 2, MACH 2, MACHX 1, HFANS 1, KSC 1, MZY 1
+  clans: flanking (over 60) | Top 6: KITE 2, RESIN 1 | Rest: HFANS 2, BONKY 1, SCCC2 1, MACHX 1, 5D 1
+
+Check: line of fire from ships hit, leaving out our own counter-smoking destroyer
+| group | n (T6/Rest) | concealed damage [95%] | deaths per 100 [95%] | smoker died per 100 | out-damaged answered % [95%] | answered smoke damage | margin [95%] | T6 / Rest damage (interval) | T6 / Rest deaths (interval) | note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| head-on (under 30) | 44 (16/28) | 13,489 [7,675 to 19,525 *] | 18.2 [5.6 to 35.3 *] | 4.5 | 38.6 [25.0 to 51.4 *] | 16,255 | -2,766 [-10,486 to +5,329] | 20,745 / 9,343 (-299 to +25,334) | 18.8 / 17.9 (-27.3 to +52.8) |  |
+| oblique (30-60) | 17 (6/11) | 6,048 [2,629 to 10,238 *] | 5.9 [0.0 to 23.1] | 5.9 | 23.5 [7.1 to 35.3 *] | 14,837 | -8,788 [-15,754 to -2,634 *] | too few / 5,941 (-) | too few / 9.1 (-) |  |
+| flanking (over 60) | 10 (4/6) | 3,648 [1,061 to 7,705 *] | 30.0 [7.1 to 66.7 *] | 20.0 | 30.0 [8.3 to 55.6 *] | 6,480 | -2,832 [-8,923 to +2,796] | too few / too few (-) | too few / too few (-) | small n |
+  clans: head-on (under 30) | Top 6: BONKZ 8, HTDOG 3, H-SR 2, VRTUS 1, KITE 1, RESIN 1 | Rest: MZY 4, KSC 3, REEEE 3, HFANS 3, EPOXY 3, RSR 2, SCCC2 2, INCA 1, NGA 1, -BN- 1, OGF 1, MANBA 1, KITED 1, PFANS 1, MACHX 1
+  clans: oblique (30-60) | Top 6: KITE 2, HTDOG 2, RESIN 1, H-SR 1 | Rest: MACHX 3, SCCC2 2, MACH 2, HFANS 1, KSC 1, EPOXY 1, MZY 1
+  clans: flanking (over 60) | Top 6: KITE 2, VRTUS 1, RESIN 1 | Rest: HFANS 2, BONKY 1, SCCC2 1, MACHX 1, 5D 1
+
+Two-way split at 45 degrees
+| group | n (T6/Rest) | concealed damage [95%] | deaths per 100 [95%] | smoker died per 100 | out-damaged answered % [95%] | answered smoke damage | margin [95%] | T6 / Rest damage (interval) | T6 / Rest deaths (interval) | note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| under 45 | 114 (40/74) | 8,736 [6,099 to 11,523 *] | 14.9 [9.3 to 23.4 *] | 7.0 | 40.4 [32.5 to 48.1 *] | 9,176 | -439 [-3,264 to +2,217] | 11,762 / 7,101 (-866 to +9,544) | 12.5 / 16.2 (-17.7 to +10.8) |  |
+| 45 and over | 18 (4/14) | 3,801 [1,233 to 6,412 *] | 16.7 [0.0 to 37.5] | 11.1 | 22.2 [0.0 to 44.4] | 7,148 | -3,347 [-9,159 to +949] | too few / 3,481 (-) | too few / 21.4 (-) |  |
+  clans: under 45 | Top 6: BONKZ 13, HTDOG 9, VRTUS 5, KITE 5, RESIN 4, H-SR 4 | Rest: EPOXY 10, HFANS 9, REEEE 6, SCCC2 6, MACHX 6, MZY 5, KSC 5, KITED 4, NGA 3, -BN- 3, MACH 2, OGF 2, PN 2, INCA 2, RSR 2, PFANS 2, 5D 1, BONKY 1, MANBA 1, BTLST 1, UYSC 1
+  clans: 45 and over | Top 6: KITE 3, RESIN 1 | Rest: HFANS 4, -BN- 2, MACHX 2, 5D 2, MACH 1, BONKY 1, SCCC2 1, KSE 1
+
+Differences (a - b)
+| a | b | stat | a (n) | b (n) | diff | interval |
+|---|---|---|---|---|---|---|
+| flanking | head-on | concealed damage per counter-smoke | 2,868.0 (12) | 8,947.0 (100) | -6,079.0 | -10,197.0 to -1,583.0 * |
+| flanking | head-on | deaths per 100 | 25.0 (12) | 15.0 (100) | +10.0 | -13.1 to +35.0 |
+| flanking | head-on | smoker died per 100 | 16.7 (12) | 7.0 (100) | +9.7 | -8.0 to +30.7 |
+| flanking | head-on | out-damaged the answered smoke % | 16.7 (12) | 42.0 (100) | -25.3 | -47.6 to +1.5 |
+| flanking | head-on | answered smoke concealed damage | 5,796.0 (12) | 8,495.0 (100) | -2,699.0 | -7,022.0 to +1,641.0 |
+| flanking | head-on | margin (ours - theirs) | -2,928.0 (12) | 452.0 (100) | -3,380.0 | -8,917.0 to +2,445.0 |
+| flanking, Top 6 | head-on, Top 6 | concealed damage per counter-smoke | too few (3) | 12,697.0 (35) | too few | - |
+| flanking, Top 6 | head-on, Top 6 | deaths per 100 | too few (3) | 14.3 (35) | too few | - |
+| flanking, Rest | head-on, Rest | concealed damage per counter-smoke | 2,902.0 (9) | 6,928.0 (65) | -4,026.0 | -8,727.0 to +1,115.0 |
+| flanking, Rest | head-on, Rest | deaths per 100 | 33.3 (9) | 15.4 (65) | +17.9 | -13.4 to +50.7 |
+| flanking | not flanking | concealed damage per counter-smoke | 2,868.0 (12) | 8,583.0 (120) | -5,715.0 | -9,255.0 to -1,658.0 * |
+| flanking | not flanking | deaths per 100 | 25.0 (12) | 14.2 (120) | +10.8 | -13.8 to +39.6 |
+| flanking | not flanking | smoker died per 100 | 16.7 (12) | 6.7 (120) | +10.0 | -8.2 to +33.5 |
+| flanking | not flanking | out-damaged the answered smoke % | 16.7 (12) | 40.0 (120) | -23.3 | -44.3 to +5.0 |
+| flanking | not flanking | answered smoke concealed damage | 5,796.0 (12) | 9,210.0 (120) | -3,413.0 | -7,499.0 to +765.0 |
+| flanking | not flanking | margin (ours - theirs) | -2,928.0 (12) | -627.0 (120) | -2,302.0 | -7,514.0 to +2,776.0 |
+| flanking, Top 6 | not flanking, Top 6 | concealed damage per counter-smoke | too few (3) | 11,753.0 (41) | too few | - |
+| flanking, Top 6 | not flanking, Top 6 | deaths per 100 | too few (3) | 12.2 (41) | too few | - |
+| flanking, Rest | not flanking, Rest | concealed damage per counter-smoke | 2,902.0 (9) | 6,938.0 (79) | -4,036.0 | -8,027.0 to +649.0 |
+| flanking, Rest | not flanking, Rest | deaths per 100 | 33.3 (9) | 15.2 (79) | +18.1 | -10.9 to +50.7 |
+| 45 and over | under 45 | concealed damage per counter-smoke | 3,801.0 (18) | 8,736.0 (114) | -4,935.0 | -8,889.0 to -1,179.0 * |
+| 45 and over | under 45 | deaths per 100 | 16.7 (18) | 14.9 (114) | +1.8 | -16.1 to +25.1 |
+| 45 and over | under 45 | smoker died per 100 | 11.1 (18) | 7.0 (114) | +4.1 | -9.8 to +21.5 |
+| 45 and over | under 45 | out-damaged the answered smoke % | 22.2 (18) | 40.4 (114) | -18.1 | -42.1 to +8.8 |
+| 45 and over | under 45 | answered smoke concealed damage | 7,148.0 (18) | 9,176.0 (114) | -2,028.0 | -6,608.0 to +2,677.0 |
+| 45 and over | under 45 | margin (ours - theirs) | -3,347.0 (18) | -439.0 (114) | -2,907.0 | -8,975.0 to +1,917.0 |
+| 45 and over, Top 6 | under 45, Top 6 | concealed damage per counter-smoke | too few (4) | 11,762.0 (40) | too few | - |
+| 45 and over, Top 6 | under 45, Top 6 | deaths per 100 | too few (4) | 12.5 (40) | too few | - |
+| 45 and over, Rest | under 45, Rest | concealed damage per counter-smoke | 3,481.0 (14) | 7,101.0 (74) | -3,620.0 | -8,260.0 to +191.0 |
+| 45 and over, Rest | under 45, Rest | deaths per 100 | 21.4 (14) | 16.2 (74) | +5.2 | -20.4 to +36.1 |
+
+By distance between the two smokes (centre to centre)
+| group | n (T6/Rest) | concealed damage [95%] | deaths per 100 [95%] | smoker died per 100 | out-damaged answered % [95%] | answered smoke damage | margin [95%] | T6 / Rest damage (interval) | T6 / Rest deaths (interval) | note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| under 6 km | 18 (3/15) | 3,129 [1,304 to 4,994 *] | 16.7 [0.0 to 29.4] | 16.7 | 33.3 [10.5 to 58.8 *] | 10,377 | -7,248 [-18,698 to +1,853] | too few / 3,397 (-) | too few / 20.0 (-) |  |
+| 6-9 km | 51 (17/34) | 9,740 [4,893 to 15,347 *] | 19.6 [8.9 to 35.6 *] | 9.8 | 39.2 [28.6 to 50.0 *] | 9,357 | +383 [-4,507 to +4,733] | 15,123 / 7,049 (-3,921 to +17,583) | 23.5 / 17.6 (-20.1 to +44.8) |  |
+| 9-12 km | 55 (20/35) | 8,189 [5,096 to 11,238 *] | 10.9 [3.9 to 19.5 *] | 3.6 | 38.2 [25.9 to 51.0 *] | 7,414 | +775 [-3,447 to +5,002] | 10,280 / 6,993 (-3,138 to +10,879) | 5.0 / 14.3 (-23.1 to +5.3) |  |
+| 12 km+ | 9 (4/5) | 6,771 [2,510 to 12,063 *] | 11.1 [0.0 to 33.3] | 0.0 | 33.3 [0.0 to 66.7] | 11,438 | -4,667 [-17,546 to +8,922] | too few / too few (-) | too few / too few (-) | small n |
+  clans: under 6 km | Top 6: VRTUS 1, KITE 1, HTDOG 1 | Rest: -BN- 3, MZY 3, KITED 2, MANBA 1, KSE 1, REEEE 1, KSC 1, MACHX 1, HFANS 1, EPOXY 1
+  clans: 6-9 km | Top 6: BONKZ 7, HTDOG 5, RESIN 2, VRTUS 1, KITE 1, H-SR 1 | Rest: MACHX 5, HFANS 5, SCCC2 4, EPOXY 3, 5D 2, OGF 2, KSC 2, REEEE 2, MACH 1, PN 1, INCA 1, NGA 1, MZY 1, RSR 1, UYSC 1, KITED 1, PFANS 1
+  clans: 9-12 km | Top 6: BONKZ 5, KITE 4, VRTUS 3, HTDOG 3, RESIN 3, H-SR 2 | Rest: HFANS 7, EPOXY 5, -BN- 2, SCCC2 2, MACH 2, REEEE 2, KSC 2, MACHX 2, KM 1, BONKY 1, KITED 1, RSR 1, PN 1, INCA 1, NGA 1, BTLST 1, PFANS 1, 5D 1, MZY 1
+  clans: 12 km+ | Top 6: KITE 2, BONKZ 1, H-SR 1 | Rest: REEEE 1, BONKY 1, NGA 1, SCCC2 1, EPOXY 1
+
+By where the answered smoke lies from our counter-smoke (own frame)
+| group | n (T6/Rest) | concealed damage [95%] | deaths per 100 [95%] | smoker died per 100 | out-damaged answered % [95%] | answered smoke damage | margin [95%] | T6 / Rest damage (interval) | T6 / Rest deaths (interval) | note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| ahead (under 30 off our forward line) | 65 (22/43) | 9,023 [5,885 to 12,458 *] | 16.9 [7.5 to 29.6 *] | 4.6 | 43.1 [30.8 to 55.0 *] | 7,432 | +1,592 [-2,318 to +5,543] | 11,298 / 7,860 (-2,580 to +8,761) | 18.2 / 16.3 (-20.1 to +36.3) |  |
+| off the bow (30-60) | 46 (16/30) | 6,394 [2,856 to 10,888 *] | 13.0 [5.4 to 23.5 *] | 8.7 | 32.6 [21.4 to 44.9 *] | 9,756 | -3,362 [-8,204 to +1,070] | 9,643 / 4,661 (-3,391 to +14,830) | 0.0 / 20.0 (-35.3 to -9.1 *) |  |
+| abeam or behind (60+) | 22 (6/16) | 8,351 [2,534 to 14,816 *] | 13.6 [0.0 to 26.1] | 13.6 | 31.8 [6.7 to 56.0 *] | 11,041 | -2,690 [-15,281 to +8,622] | too few / 6,025 (-) | too few / 12.5 (-) |  |
+  clans: ahead (under 30 off our forward line) | Top 6: BONKZ 8, HTDOG 4, RESIN 4, VRTUS 2, KITE 2, H-SR 2 | Rest: EPOXY 6, REEEE 4, -BN- 4, KSC 4, HFANS 4, SCCC2 4, KITED 3, MACHX 3, BONKY 2, NGA 2, 5D 1, KM 1, RSR 1, OGF 1, BTLST 1, UYSC 1, PFANS 1
+  clans: off the bow (30-60) | Top 6: HTDOG 4, BONKZ 4, VRTUS 3, KITE 2, H-SR 2, RESIN 1 | Rest: HFANS 6, MACHX 5, MACH 3, PN 2, REEEE 2, 5D 2, OGF 1, NGA 1, -BN- 1, RSR 1, INCA 1, SCCC2 1, KITED 1, KSC 1, PFANS 1, EPOXY 1
+  clans: abeam or behind (60+) | Top 6: KITE 4, BONKZ 1, HTDOG 1 | Rest: MZY 5, EPOXY 3, HFANS 3, SCCC2 2, INCA 1, MANBA 1, KSE 1
+
+By delay after the enemy smoke
+| group | n (T6/Rest) | concealed damage [95%] | deaths per 100 [95%] | smoker died per 100 | out-damaged answered % [95%] | answered smoke damage | margin [95%] | T6 / Rest damage (interval) | T6 / Rest deaths (interval) | note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 0-10 s | 48 (17/31) | 7,036 [3,798 to 9,846 *] | 14.6 [7.0 to 23.8 *] | 8.3 | 37.5 [25.5 to 48.6 *] | 7,502 | -466 [-2,872 to +2,202] | 8,833 / 6,050 (-4,980 to +8,003) | 5.9 / 19.4 (-29.2 to -0.9 *) |  |
+| 11-25 s | 43 (15/28) | 12,296 [7,566 to 17,655 *] | 18.6 [6.5 to 35.3 *] | 7.0 | 46.5 [32.4 to 61.0 *] | 11,321 | +975 [-5,964 to +7,335] | 19,064 / 8,670 (+2,070 to +21,922 *) | 13.3 / 21.4 (-31.8 to +32.6) |  |
+| 26-45 s | 42 (12/30) | 4,713 [2,490 to 7,396 *] | 11.9 [2.7 to 22.9 *] | 7.1 | 28.6 [15.4 to 43.2 *] | 7,805 | -3,092 [-7,143 to +1,164] | 4,504 / 4,796 (-4,914 to +3,275) | 16.7 / 10.0 (-13.4 to +26.8) |  |
+  clans: 0-10 s | Top 6: BONKZ 7, HTDOG 3, VRTUS 2, RESIN 2, H-SR 2, KITE 1 | Rest: HFANS 4, 5D 3, EPOXY 3, SCCC2 3, MACHX 3, KITED 2, MZY 2, KSC 2, NGA 2, MACH 1, OGF 1, PN 1, REEEE 1, KSE 1, -BN- 1, PFANS 1
+  clans: 11-25 s | Top 6: KITE 6, HTDOG 3, BONKZ 3, RESIN 1, VRTUS 1, H-SR 1 | Rest: HFANS 4, SCCC2 3, MACHX 3, REEEE 3, EPOXY 3, -BN- 2, KSC 2, KM 1, KITED 1, OGF 1, MANBA 1, MACH 1, BONKY 1, UYSC 1, PFANS 1
+  clans: 26-45 s | Top 6: HTDOG 3, BONKZ 3, VRTUS 2, RESIN 2, KITE 1, H-SR 1 | Rest: HFANS 5, EPOXY 4, MZY 3, REEEE 2, INCA 2, -BN- 2, RSR 2, MACHX 2, BONKY 1, NGA 1, PN 1, MACH 1, BTLST 1, KSC 1, KITED 1, SCCC2 1
+
+Same cap or not
+| group | n (T6/Rest) | concealed damage [95%] | deaths per 100 [95%] | smoker died per 100 | out-damaged answered % [95%] | answered smoke damage | margin [95%] | T6 / Rest damage (interval) | T6 / Rest deaths (interval) | note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| same cap as the answered smoke | 103 (33/70) | 8,060 [4,841 to 11,282 *] | 15.5 [10.1 to 22.0 *] | 7.8 | 40.8 [32.3 to 47.8 *] | 8,344 | -284 [-4,449 to +3,137] | 11,287 / 6,539 (-2,156 to +10,141) | 12.1 / 17.1 (-17.7 to +11.6) |  |
+| different cap | 30 (11/19) | 7,806 [4,127 to 11,088 *] | 13.3 [2.9 to 28.6 *] | 6.7 | 26.7 [13.8 to 42.9 *] | 10,510 | -2,704 [-6,599 to +2,034] | 10,698 / 6,132 (-1,215 to +9,929) | 9.1 / 15.8 (-35.7 to +15.7) |  |
+  clans: same cap as the answered smoke | Top 6: BONKZ 11, HTDOG 6, VRTUS 5, RESIN 5, KITE 3, H-SR 3 | Rest: EPOXY 8, MACHX 8, HFANS 7, SCCC2 5, MZY 5, REEEE 4, KITED 4, -BN- 4, NGA 3, KSC 3, 5D 2, MACH 2, BONKY 2, OGF 2, PN 2, INCA 2, RSR 2, KM 1, MANBA 1, UYSC 1, KSE 1, PFANS 1
+  clans: different cap | Top 6: KITE 5, HTDOG 3, BONKZ 2, H-SR 1 | Rest: HFANS 6, SCCC2 2, EPOXY 2, REEEE 2, KSC 2, -BN- 1, MACH 1, BTLST 1, PFANS 1, 5D 1
+
+By habit of the counter-smoking ship
+| group | n (T6/Rest) | concealed damage [95%] | deaths per 100 [95%] | smoker died per 100 | out-damaged answered % [95%] | answered smoke damage | margin [95%] | T6 / Rest damage (interval) | T6 / Rest deaths (interval) | note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| flank smoke lines | 52 (19/33) | 13,696 [8,536 to 18,481 *] | 23.1 [11.5 to 39.5 *] | 5.8 | 46.2 [32.8 to 59.3 *] | 9,285 | +4,411 [-180 to +9,465] | 18,925 / 10,686 (+182 to +16,869 *) | 15.8 / 27.3 (-37.1 to +19.5) |  |
+| cap sitters | 74 (23/51) | 4,001 [2,899 to 5,127 *] | 8.1 [3.0 to 13.2 *] | 6.8 | 31.1 [21.4 to 40.6 *] | 8,928 | -4,927 [-8,832 to -2,198 *] | 5,678 / 3,244 (+263 to +4,536 *) | 8.7 / 7.8 (-10.2 to +9.4) |  |
+| other | 7 (2/5) | too few [-] | too few [-] | too few | too few [-] | too few | too few [-] | too few / too few (-) | too few / too few (-) | too few |
+  clans: flank smoke lines | Top 6: BONKZ 10, KITE 3, H-SR 3, HTDOG 2, RESIN 1 | Rest: REEEE 5, HFANS 5, KSC 3, EPOXY 3, BONKY 2, OGF 2, PN 2, -BN- 2, NGA 2, SCCC2 2, MACHX 1, BTLST 1, PFANS 1, 5D 1, MZY 1
+  clans: cap sitters | Top 6: HTDOG 7, VRTUS 5, RESIN 4, KITE 3, BONKZ 3, H-SR 1 | Rest: HFANS 8, EPOXY 7, MACHX 7, SCCC2 5, MZY 4, MACH 3, KITED 3, 5D 2, -BN- 2, RSR 2, KSC 2, NGA 1, MANBA 1, UYSC 1, KSE 1, REEEE 1, PFANS 1
+  clans: other | Top 6: KITE 2 | Rest: INCA 2, KM 1, KITED 1, -BN- 1
+
+By what the counter-smoke covers
+| group | n (T6/Rest) | concealed damage [95%] | deaths per 100 [95%] | smoker died per 100 | out-damaged answered % [95%] | answered smoke damage | margin [95%] | T6 / Rest damage (interval) | T6 / Rest deaths (interval) | note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| radar cruiser inside | 32 (15/17) | 18,316 [13,065 to 23,380 *] | 18.8 [6.9 to 38.1 *] | 3.1 | 59.4 [47.6 to 75.0 *] | 9,814 | +8,502 [+2,611 to +15,424 *] | 20,846 / 16,084 (-5,329 to +14,557) | 20.0 / 17.6 (-24.1 to +43.3) |  |
+| any cruiser covered | 63 (23/40) | 12,586 [8,453 to 16,157 *] | 17.5 [9.3 to 28.6 *] | 1.6 | 46.0 [37.7 to 54.9 *] | 8,966 | +3,620 [-83 to +7,250] | 16,562 / 10,300 (-1,759 to +13,790) | 17.4 / 17.5 (-20.1 to +25.0) |  |
+| no cruiser | 70 (21/49) | 3,878 [2,454 to 5,653 *] | 12.9 [6.8 to 20.0 *] | 12.9 | 30.0 [20.0 to 39.4 *] | 8,712 | -4,834 [-8,327 to -1,462 *] | 5,202 / 3,310 (-1,392 to +5,257) | 4.8 / 16.3 (-23.4 to +0.2) |  |
+  clans: radar cruiser inside | Top 6: BONKZ 9, KITE 3, H-SR 2, HTDOG 1 | Rest: HFANS 5, BONKY 2, EPOXY 2, SCCC2 2, KITED 1, INCA 1, KSC 1, PFANS 1, REEEE 1, -BN- 1
+  clans: any cruiser covered | Top 6: BONKZ 10, HTDOG 4, KITE 3, H-SR 3, VRTUS 2, RESIN 1 | Rest: HFANS 7, EPOXY 5, REEEE 4, KSC 4, MACHX 3, SCCC2 3, BONKY 2, KITED 2, -BN- 2, NGA 2, 5D 1, RSR 1, OGF 1, INCA 1, PFANS 1, MZY 1
+  clans: no cruiser | Top 6: HTDOG 5, KITE 5, RESIN 4, VRTUS 3, BONKZ 3, H-SR 1 | Rest: HFANS 6, EPOXY 5, MACHX 5, SCCC2 4, MZY 4, MACH 3, -BN- 3, PN 2, KITED 2, REEEE 2, 5D 2, KM 1, OGF 1, INCA 1, NGA 1, RSR 1, MANBA 1, BTLST 1, UYSC 1, KSE 1, KSC 1, PFANS 1
+
+By the class of the answered smoke
+| group | n (T6/Rest) | concealed damage [95%] | deaths per 100 [95%] | smoker died per 100 | out-damaged answered % [95%] | answered smoke damage | margin [95%] | T6 / Rest damage (interval) | T6 / Rest deaths (interval) | note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| answers a destroyer smoke | 102 (30/72) | 7,828 [4,916 to 10,884 *] | 17.6 [11.8 to 25.6 *] | 8.8 | 39.2 [31.3 to 46.2 *] | 9,507 | -1,679 [-5,318 to +1,415] | 10,985 / 6,512 (-3,283 to +9,593) | 13.3 / 19.4 (-19.8 to +12.1) |  |
+| answers a cruiser smoke | 27 (13/14) | 8,975 [4,427 to 14,083 *] | 7.4 [0.0 to 20.0] | 3.7 | 33.3 [18.2 to 44.4 *] | 6,379 | +2,596 [-4,704 to +8,768] | 11,683 / 6,460 (-4,065 to +14,012) | 7.7 / 7.1 (-25.0 to +20.0) |  |
+  clans: answers a destroyer smoke | Top 6: BONKZ 12, HTDOG 6, KITE 4, H-SR 4, VRTUS 3, RESIN 1 | Rest: EPOXY 9, HFANS 7, MACHX 6, REEEE 5, MZY 5, KSC 5, KITED 4, -BN- 4, SCCC2 4, 5D 3, NGA 3, MACH 2, BONKY 2, OGF 2, PN 2, INCA 2, PFANS 2, RSR 1, MANBA 1, BTLST 1, UYSC 1, KSE 1
+  clans: answers a cruiser smoke | Top 6: KITE 4, RESIN 3, HTDOG 3, VRTUS 2, BONKZ 1 | Rest: HFANS 5, MACHX 2, SCCC2 2, KM 1, RSR 1, -BN- 1, MACH 1, REEEE 1
+
+By ship (8+)
+| group | n (T6/Rest) | concealed damage [95%] | deaths per 100 [95%] | smoker died per 100 | out-damaged answered % [95%] | answered smoke damage | margin [95%] | T6 / Rest damage (interval) | T6 / Rest deaths (interval) | note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Daring | 33 (5/28) | 3,711 [1,951 to 5,308 *] | 9.1 [0.0 to 21.1] | 9.1 | 33.3 [18.8 to 47.2 *] | 5,752 | -2,040 [-5,123 to +1,151] | too few / 3,840 (-) | too few / 10.7 (-) |  |
+| Somers | 20 (2/18) | 7,141 [2,178 to 12,083 *] | 10.0 [0.0 to 22.2] | 0.0 | 30.0 [7.1 to 50.0 *] | 8,355 | -1,214 [-7,065 to +3,267] | too few / 6,283 (-) | too few / 11.1 (-) |  |
+| Gearing | 20 (11/9) | 21,202 [13,145 to 27,187 *] | 35.0 [14.8 to 72.7 *] | 10.0 | 60.0 [41.7 to 72.7 *] | 8,329 | +12,873 [+6,225 to +18,249 *] | 23,725 / 18,119 (-6,825 to +12,499) | 9.1 / 66.7 (-80.9 to -31.9 *) |  |
+| Gdańsk | 16 (11/5) | 6,267 [2,436 to 9,642 *] | 0.0 [0.0 to 0.0] | 0.0 | 37.5 [18.2 to 50.0 *] | 14,169 | -7,902 [-17,647 to -2,913 *] | 7,870 / too few (-) | 0.0 / too few (-) |  |
+| Z-42 | 13 (5/8) | 2,293 [370 to 4,307 *] | 7.7 [0.0 to 25.0] | 7.7 | 15.4 [0.0 to 31.2] | 7,214 | -4,922 [-12,096 to +345] | too few / 555 (-) | too few / 12.5 (-) | small n |
+| Harugumo | 11 (6/5) | 13,212 [5,431 to 21,180 *] | 27.3 [0.0 to 58.3] | 9.1 | 54.5 [18.2 to 83.3 *] | 13,229 | -16 [-12,004 to +14,406] | too few / too few (-) | too few / too few (-) | small n |
+| Shimakaze | 8 (2/6) | 4,161 [823 to 8,618 *] | 25.0 [0.0 to 50.0] | 12.5 | 37.5 [0.0 to 62.5] | 16,246 | -12,085 [-32,565 to +4,071] | too few / too few (-) | too few / too few (-) | small n |
+  clans: Daring | Top 6: HTDOG 4, VRTUS 1 | Rest: SCCC2 5, EPOXY 4, HFANS 4, KITED 3, MZY 3, -BN- 2, MACHX 2, MACH 1, NGA 1, UYSC 1, REEEE 1, KSC 1
+  clans: Somers | Top 6: RESIN 1, H-SR 1 | Rest: REEEE 5, HFANS 5, EPOXY 3, NGA 2, MACHX 1, PN 1, BONKY 1
+  clans: Gearing | Top 6: BONKZ 8, KITE 3 | Rest: KSC 3, OGF 2, -BN- 2, BTLST 1, 5D 1
+  clans: Gdańsk | Top 6: RESIN 4, BONKZ 3, HTDOG 2, KITE 1, H-SR 1 | Rest: EPOXY 2, RSR 1, KSE 1, PFANS 1
+  clans: Z-42 | Top 6: VRTUS 3, KITE 2 | Rest: HFANS 2, MACH 2, MACHX 2, RSR 1, KSC 1
+  clans: Harugumo | Top 6: HTDOG 2, H-SR 2, BONKZ 2 | Rest: SCCC2 2, BONKY 1, PN 1, PFANS 1
+  clans: Shimakaze | Top 6: VRTUS 1, HTDOG 1 | Rest: 5D 2, HFANS 2, EPOXY 1, MANBA 1
+
+By map (8+)
+| group | n (T6/Rest) | concealed damage [95%] | deaths per 100 [95%] | smoker died per 100 | out-damaged answered % [95%] | answered smoke damage | margin [95%] | T6 / Rest damage (interval) | T6 / Rest deaths (interval) | note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Hotspot | 26 (7/19) | 8,599 [3,437 to 16,321 *] | 15.4 [0.0 to 39.4] | 7.7 | 42.3 [25.0 to 58.1 *] | 10,189 | -1,590 [-6,686 to +4,470] | too few / 4,790 (-) | too few / 5.3 (-) |  |
+| Land of Fire | 23 (5/18) | 5,068 [1,927 to 9,118 *] | 13.0 [0.0 to 26.1] | 4.3 | 21.7 [5.0 to 36.8 *] | 10,711 | -5,643 [-17,019 to +1,466] | too few / 5,798 (-) | too few / 16.7 (-) |  |
+| Sleeping Giant | 22 (11/11) | 7,866 [3,171 to 13,912 *] | 13.6 [0.0 to 31.2] | 4.5 | 50.0 [31.8 to 66.7 *] | 7,898 | -32 [-7,126 to +7,972] | 6,163 / 9,569 (-14,365 to +6,326) | 0.0 / 27.3 (-54.5 to -7.1 *) |  |
+| Sea of Fortune | 20 (6/14) | 6,569 [2,519 to 11,348 *] | 20.0 [5.0 to 42.9 *] | 15.0 | 30.0 [8.3 to 51.9 *] | 7,224 | -655 [-7,994 to +4,733] | too few / 3,039 (-) | too few / 28.6 (-) |  |
+| Mountain Range | 18 (10/8) | 12,090 [4,914 to 19,188 *] | 11.1 [0.0 to 29.4] | 0.0 | 38.9 [20.0 to 60.0 *] | 11,653 | +437 [-9,235 to +9,863] | 16,918 / 6,056 (+491 to +20,993 *) | 10.0 / 12.5 (-29.2 to +25.0) |  |
+| Loop | 13 (2/11) | 8,106 [2,423 to 16,025 *] | 15.4 [0.0 to 40.0] | 15.4 | 30.8 [8.3 to 60.0 *] | 2,101 | +6,004 [+946 to +12,875 *] | too few / 9,125 (-) | too few / 9.1 (-) | small n |
+| Okinawa | 11 (3/8) | 8,800 [3,175 to 16,197 *] | 18.2 [0.0 to 33.3] | 9.1 | 54.5 [23.5 to 90.0 *] | 9,832 | -1,032 [-9,423 to +11,387] | too few / 10,275 (-) | too few / 25.0 (-) | small n |
+  clans: Hotspot | Top 6: BONKZ 3, HTDOG 2, VRTUS 1, H-SR 1 | Rest: EPOXY 6, REEEE 3, KSC 2, HFANS 2, 5D 1, KM 1, MACH 1, BONKY 1, PFANS 1, MZY 1
+  clans: Land of Fire | Top 6: KITE 1, HTDOG 1, VRTUS 1, BONKZ 1, H-SR 1 | Rest: HFANS 5, MACH 2, EPOXY 2, MACHX 2, OGF 1, PN 1, KSC 1, INCA 1, MANBA 1, SCCC2 1, 5D 1
+  clans: Sleeping Giant | Top 6: HTDOG 4, KITE 3, H-SR 2, BONKZ 1, RESIN 1 | Rest: SCCC2 2, HFANS 2, BTLST 1, UYSC 1, KSC 1, PFANS 1, -BN- 1, 5D 1, EPOXY 1
+  clans: Sea of Fortune | Top 6: BONKZ 4, VRTUS 2 | Rest: MACHX 5, SCCC2 2, REEEE 1, KSE 1, KSC 1, HFANS 1, KITED 1, -BN- 1, MZY 1
+  clans: Mountain Range | Top 6: RESIN 4, KITE 3, BONKZ 2, HTDOG 1 | Rest: HFANS 3, NGA 2, RSR 1, REEEE 1, BONKY 1
+  clans: Loop | Top 6: KITE 1, HTDOG 1 | Rest: KITED 3, SCCC2 2, OGF 1, PN 1, INCA 1, NGA 1, -BN- 1, REEEE 1
+  clans: Okinawa | Top 6: BONKZ 2, VRTUS 1 | Rest: MZY 3, -BN- 2, RSR 1, EPOXY 1, MACHX 1
+
+Angle bands within flank smoke lines
+| group | n (T6/Rest) | concealed damage [95%] | deaths per 100 [95%] | smoker died per 100 | out-damaged answered % [95%] | answered smoke damage | margin [95%] | T6 / Rest damage (interval) | T6 / Rest deaths (interval) | note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| head-on (under 30) | 41 (18/23) | 14,769 [9,031 to 20,598 *] | 22.0 [7.9 to 40.6 *] | 4.9 | 43.9 [27.8 to 57.9 *] | 10,198 | +4,572 [-1,312 to +11,502] | 19,343 / 11,190 (-2,412 to +20,223) | 16.7 / 26.1 (-42.1 to +25.0) |  |
+| oblique (30-60) | 8 (1/7) | 10,984 [6,669 to 16,507 *] | 12.5 [12.5 to 30.0 *] | 0.0 | 62.5 [37.5 to 100.0 *] | 5,426 | +5,558 [+1,439 to +12,404 *] | too few / too few (-) | too few / too few (-) | small n |
+| flanking (over 60) | 3 (0/3) | too few [-] | too few [-] | too few | too few [-] | too few | too few [-] | too few / too few (-) | too few / too few (-) | too few |
+  clans: head-on (under 30) | Top 6: BONKZ 10, H-SR 3, HTDOG 2, KITE 2, RESIN 1 | Rest: REEEE 5, HFANS 4, KSC 3, EPOXY 3, OGF 2, PN 2, BONKY 1, NGA 1, PFANS 1, MZY 1
+  clans: oblique (30-60) | Top 6: KITE 1 | Rest: -BN- 2, MACHX 1, HFANS 1, NGA 1, BTLST 1, SCCC2 1
+  clans: flanking (over 60) | Top 6: none | Rest: BONKY 1, SCCC2 1, 5D 1
+
+Angle bands within cap sitters
+| group | n (T6/Rest) | concealed damage [95%] | deaths per 100 [95%] | smoker died per 100 | out-damaged answered % [95%] | answered smoke damage | margin [95%] | T6 / Rest damage (interval) | T6 / Rest deaths (interval) | note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| head-on (under 30) | 53 (15/38) | 4,397 [3,184 to 5,882 *] | 7.5 [1.9 to 13.5 *] | 5.7 | 39.6 [26.8 to 51.2 *] | 7,551 | -3,153 [-7,588 to +274] | 6,414 / 3,601 (+566 to +6,241 *) | 13.3 / 5.3 (-6.2 to +17.6) |  |
+| oblique (30-60) | 12 (5/7) | 3,947 [1,131 to 7,007 *] | 8.3 [0.0 to 27.3] | 8.3 | 8.3 [0.0 to 23.1] | 17,684 | -13,737 [-23,547 to -5,174 *] | too few / too few (-) | too few / too few (-) | small n |
+| flanking (over 60) | 9 (3/6) | 1,737 [886 to 2,661 *] | 11.1 [0.0 to 37.5] | 11.1 | 11.1 [0.0 to 30.0] | 5,360 | -3,624 [-8,141 to -538 *] | too few / too few (-) | too few / too few (-) | small n |
+  clans: head-on (under 30) | Top 6: VRTUS 5, HTDOG 5, BONKZ 3, RESIN 2 | Rest: EPOXY 7, HFANS 5, MACHX 5, SCCC2 4, KITED 3, MZY 3, RSR 2, 5D 1, MACH 1, NGA 1, -BN- 1, MANBA 1, UYSC 1, REEEE 1, KSC 1, PFANS 1
+  clans: oblique (30-60) | Top 6: HTDOG 2, RESIN 1, KITE 1, H-SR 1 | Rest: MACH 2, SCCC2 1, KSC 1, MACHX 1, HFANS 1, MZY 1
+  clans: flanking (over 60) | Top 6: KITE 2, RESIN 1 | Rest: HFANS 2, -BN- 1, KSE 1, MACHX 1, 5D 1
+
+habit mix by band: {'head-on (under 30)': {'flank smoke lines': 41, 'cap sitters': 53, 'other': 6}, 'oblique (30-60)': {'flank smoke lines': 8, 'cap sitters': 12}, 'flanking (over 60)': {'cap sitters': 9, 'flank smoke lines': 3}}
+angle band by group: {'top': {'head-on (under 30)': 35, 'flanking (over 60)': 3, 'oblique (30-60)': 6}, 'rest': {'head-on (under 30)': 65, 'flanking (over 60)': 9, 'oblique (30-60)': 14}}
+share flanking, T6 vs Rest: {'top6': 6.8, 'n_top6': 44, 'rest': 10.2, 'n_rest': 88, 'diff': -3.4, 'lo': -13.6, 'hi': 9.2, 'clear': False}
+median angle T6 10.2 Rest 12.6 | median distance T6 9105 Rest 8706
+Rest Gearing counter-smokes: Top 6: none | Rest: KSC 3, OGF 2, -BN- 2, BTLST 1, 5D 1 | with a death: Top 6: none | Rest: OGF 2, KSC 2, -BN- 1, 5D 1 | who died {'smoker': 2, 'cruiser': 4}
+rank correlation check: mean conc by angle tercile [(0, 5, 10480, 27.3), (6, 23, 7692, 2.3), (24, 170, 6018, 15.9)]

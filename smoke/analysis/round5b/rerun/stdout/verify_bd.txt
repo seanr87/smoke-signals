@@ -1,0 +1,14 @@
+B1 Daring 200 med edge 671 inside 42.5 teammate 43.5 conc 3623
+B1 Gdańsk 118 med edge 1544 inside 26.3 teammate 56.8 conc 8205
+B2 italian cruisers 168 smoker died /100 16.1 | ordinary cruiser smoke 271 6.3 | all 7.5
+B3 Harugumo 100 own-gun share 21.6 conc 18388
+B3 Somers 260 own-gun share 5.9 conc 14524
+B3 Gearing 180 own-gun share 3.1 conc 16296
+B4 Shimakaze 56 bands <500/500-1k/1k+ 15 2 39
+B4 Grozovoi 27 bands <500/500-1k/1k+ 6 11 10
+D1 radar cruiser inside dd smokes: top 47.3 rest 29.0
+D2 smoke cruisers per game H-SR/RESIN/BONKZ (0.31343283582089554, 67) HTDOG/VRTUS (1.206896551724138, 29)
+D3 H-SR games 22 smokes/game 4.5 teammate 82.0 parked 8.0 conc/game 68194
+D3 HTDOG games 18 smokes/game 5.9 teammate 47.2 parked 46.2 conc/game 50375
+D3 VRTUS games 11 smokes/game 7.5 teammate 52.4 parked 43.9 conc/game 68848
+D3 PN games 7 smokes/game 2.0 teammate 50.0 parked 14.3 conc/game 19989

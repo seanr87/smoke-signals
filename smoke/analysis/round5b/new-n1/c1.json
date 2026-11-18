@@ -1,0 +1,2267 @@
+{
+ "checks": {
+  "owner_at_activation_mismatch": 2,
+  "frame_letter_mismatch": 0,
+  "second_way_mismatch": 0
+ },
+ "three_ways": {
+  "enemy": {
+   "applicable": 1074,
+   "not_applicable": 473,
+   "during": 155,
+   "during_pct": 14.4,
+   "after_only": 78,
+   "after_only_pct": 7.3,
+   "within_60": 233,
+   "within_60_pct": 21.7
+  },
+  "we": {
+   "applicable": 853,
+   "not_applicable": 694,
+   "during": 196,
+   "during_pct": 23.0,
+   "after_only": 76,
+   "after_only_pct": 8.9,
+   "within_60": 272,
+   "within_60_pct": 31.9
+  }
+ },
+ "grace": [
+  {
+   "grace_s": 0,
+   "yes": 155,
+   "no": 919,
+   "pct": 14.4,
+   "we_yes": 196,
+   "we_pct": 23.0,
+   "round5_yes": 103,
+   "round5_pct": 9.6
+  },
+  {
+   "grace_s": 10,
+   "yes": 173,
+   "no": 901,
+   "pct": 16.1,
+   "we_yes": 214,
+   "we_pct": 25.1,
+   "round5_yes": null,
+   "round5_pct": null
+  },
+  {
+   "grace_s": 30,
+   "yes": 199,
+   "no": 875,
+   "pct": 18.5,
+   "we_yes": 242,
+   "we_pct": 28.4,
+   "round5_yes": null,
+   "round5_pct": null
+  },
+  {
+   "grace_s": 60,
+   "yes": 233,
+   "no": 841,
+   "pct": 21.7,
+   "we_yes": 272,
+   "we_pct": 31.9,
+   "round5_yes": 184,
+   "round5_pct": 17.1
+  },
+  {
+   "grace_s": 120,
+   "yes": 293,
+   "no": 781,
+   "pct": 27.3,
+   "we_yes": 323,
+   "we_pct": 37.9,
+   "round5_yes": 233,
+   "round5_pct": 21.7
+  }
+ ],
+ "crosstab": {
+  "enemy": {
+   "table": {
+    "yes|yes": 184,
+    "yes|no": 0,
+    "yes|n/a": 0,
+    "no|yes": 48,
+    "no|no": 841,
+    "no|n/a": 0,
+    "n/a|yes": 1,
+    "n/a|no": 0,
+    "n/a|n/a": 473
+   },
+   "both_applicable": 1073,
+   "agree": 1025,
+   "agree_pct": 95.5,
+   "snapshot_missed": 48,
+   "snapshot_wrong_other_way": 0,
+   "timeline_yes": 232,
+   "missed_pct": 20.7,
+   "round5_yes": 184,
+   "timeline_yes_all": 233,
+   "missed_flipped_back": 2,
+   "by_group": {
+    "top": {
+     "flips": 79,
+     "missed": 21,
+     "missed_pct": 27,
+     "mean_snapshots": 5.3
+    },
+    "rest": {
+     "flips": 153,
+     "missed": 27,
+     "missed_pct": 18,
+     "mean_snapshots": 5.2
+    }
+   }
+  },
+  "we": {
+   "table": {
+    "yes|yes": 209,
+    "yes|no": 0,
+    "yes|n/a": 0,
+    "no|yes": 62,
+    "no|no": 581,
+    "no|n/a": 1,
+    "n/a|yes": 1,
+    "n/a|no": 0,
+    "n/a|n/a": 693
+   },
+   "both_applicable": 852,
+   "agree": 790,
+   "agree_pct": 92.7,
+   "snapshot_missed": 62,
+   "snapshot_wrong_other_way": 0,
+   "timeline_yes": 271,
+   "missed_pct": 22.9,
+   "round5_yes": 209,
+   "timeline_yes_all": 272
+  }
+ },
+ "cap_won_crosscheck": {
+  "n": 171,
+  "snapshot_yes": 144,
+  "timeline60_yes": 170,
+  "timeline60_no": 0,
+  "timeline60_na": 1,
+  "timeline10_yes": 170
+ },
+ "overall": {
+  "enemy_60": [
+   {
+    "what": "all applicable smokes",
+    "n": 1074,
+    "pct": 21.7,
+    "ci": [
+     19.5,
+     23.9
+    ],
+    "top6_n": 403,
+    "top6_pct": 19.9,
+    "rest_n": 671,
+    "rest_pct": 22.8,
+    "gap": -3.0,
+    "gap_ci": [
+     -7.1,
+     1.2
+    ],
+    "gap_clear": false,
+    "round5": {
+     "what": "all applicable smokes",
+     "n": 1073,
+     "pct": 17.1,
+     "ci": [
+      14.8,
+      19.4
+     ],
+     "top6_n": 402,
+     "top6_pct": 14.4,
+     "rest_n": 671,
+     "rest_pct": 18.8,
+     "gap": -4.4,
+     "gap_ci": [
+      -8.9,
+      0.1
+     ],
+     "gap_clear": false
+    }
+   },
+   {
+    "what": "destroyer smokes",
+    "n": 763,
+    "pct": 23.1,
+    "ci": [
+     20.1,
+     26.5
+    ],
+    "top6_n": 292,
+    "top6_pct": 20.9,
+    "rest_n": 471,
+    "rest_pct": 24.4,
+    "gap": -3.5,
+    "gap_ci": [
+     -9.5,
+     2.8
+    ],
+    "gap_clear": false,
+    "round5": {
+     "what": "destroyer smokes",
+     "n": 762,
+     "pct": 18.8,
+     "ci": [
+      15.7,
+      22.1
+     ],
+     "top6_n": 291,
+     "top6_pct": 15.1,
+     "rest_n": 471,
+     "rest_pct": 21.0,
+     "gap": -5.9,
+     "gap_ci": [
+      -12.1,
+      -0.9
+     ],
+     "gap_clear": true
+    }
+   },
+   {
+    "what": "smoke centre inside or within 2 km of the cap",
+    "n": 541,
+    "pct": 16.1,
+    "ci": [
+     13.2,
+     19.6
+    ],
+    "top6_n": 189,
+    "top6_pct": 14.3,
+    "rest_n": 352,
+    "rest_pct": 17.0,
+    "gap": -2.8,
+    "gap_ci": [
+     -8.9,
+     3.9
+    ],
+    "gap_clear": false,
+    "round5": {
+     "what": "smoke centre inside or within 2 km of the cap",
+     "n": 541,
+     "pct": 11.1,
+     "ci": [
+      8.8,
+      13.8
+     ],
+     "top6_n": 189,
+     "top6_pct": 7.9,
+     "rest_n": 352,
+     "rest_pct": 12.8,
+     "gap": -4.8,
+     "gap_ci": [
+      -9.2,
+      -0.7
+     ],
+     "gap_clear": true
+    }
+   },
+   {
+    "what": "destroyer smokes inside or within 2 km",
+    "n": 405,
+    "pct": 17.5,
+    "ci": [
+     14.0,
+     21.8
+    ],
+    "top6_n": 142,
+    "top6_pct": 15.5,
+    "rest_n": 263,
+    "rest_pct": 18.6,
+    "gap": -3.1,
+    "gap_ci": [
+     -11.0,
+     4.5
+    ],
+    "gap_clear": false,
+    "round5": {
+     "what": "destroyer smokes inside or within 2 km",
+     "n": 405,
+     "pct": 12.8,
+     "ci": [
+      9.5,
+      16.2
+     ],
+     "top6_n": 142,
+     "top6_pct": 8.5,
+     "rest_n": 263,
+     "rest_pct": 15.2,
+     "gap": -6.8,
+     "gap_ci": [
+      -12.6,
+      -1.7
+     ],
+     "gap_clear": true
+    }
+   },
+   {
+    "what": "cap ours at activation",
+    "n": 694,
+    "pct": 18.2,
+    "ci": [
+     15.1,
+     21.6
+    ],
+    "top6_n": 261,
+    "top6_pct": 18.4,
+    "rest_n": 433,
+    "rest_pct": 18.0,
+    "gap": 0.4,
+    "gap_ci": [
+     -5.8,
+     5.8
+    ],
+    "gap_clear": false,
+    "round5": {
+     "what": "cap ours at activation",
+     "n": 694,
+     "pct": 13.7,
+     "ci": [
+      10.6,
+      16.7
+     ],
+     "top6_n": 260,
+     "top6_pct": 12.7,
+     "rest_n": 434,
+     "rest_pct": 14.3,
+     "gap": -1.6,
+     "gap_ci": [
+      -8.2,
+      5.0
+     ],
+     "gap_clear": false
+    }
+   },
+   {
+    "what": "cap neutral at activation",
+    "n": 380,
+    "pct": 28.2,
+    "ci": [
+     23.3,
+     33.9
+    ],
+    "top6_n": 142,
+    "top6_pct": 22.5,
+    "rest_n": 238,
+    "rest_pct": 31.5,
+    "gap": -9.0,
+    "gap_ci": [
+     -18.3,
+     -0.2
+    ],
+    "gap_clear": true,
+    "round5": {
+     "what": "cap neutral at activation",
+     "n": 379,
+     "pct": 23.5,
+     "ci": [
+      18.5,
+      29.3
+     ],
+     "top6_n": 142,
+     "top6_pct": 17.6,
+     "rest_n": 237,
+     "rest_pct": 27.0,
+     "gap": -9.4,
+     "gap_ci": [
+      -18.4,
+      -0.5
+     ],
+     "gap_clear": true
+    }
+   },
+   {
+    "what": "cap ours, smoke within 2 km",
+    "n": 349,
+    "pct": 12.3,
+    "ci": [
+     8.5,
+     16.1
+    ],
+    "top6_n": 116,
+    "top6_pct": 11.2,
+    "rest_n": 233,
+    "rest_pct": 12.9,
+    "gap": -1.7,
+    "gap_ci": [
+     -11.1,
+     6.8
+    ],
+    "gap_clear": false,
+    "round5": {
+     "what": "cap ours, smoke within 2 km",
+     "n": 350,
+     "pct": 8.0,
+     "ci": [
+      5.3,
+      10.9
+     ],
+     "top6_n": 116,
+     "top6_pct": 5.2,
+     "rest_n": 234,
+     "rest_pct": 9.4,
+     "gap": -4.2,
+     "gap_ci": [
+      -9.7,
+      1.5
+     ],
+     "gap_clear": false
+    }
+   },
+   {
+    "what": "cap ours, cap_defended set for that cap",
+    "n": 153,
+    "pct": 45.8,
+    "ci": [
+     37.9,
+     53.3
+    ],
+    "top6_n": 52,
+    "top6_pct": 48.1,
+    "rest_n": 101,
+    "rest_pct": 44.6,
+    "gap": 3.5,
+    "gap_ci": [
+     -13.1,
+     20.0
+    ],
+    "gap_clear": false,
+    "round5": {
+     "what": "cap ours, cap_defended set for that cap",
+     "n": 153,
+     "pct": 35.9,
+     "ci": [
+      28.1,
+      44.0
+     ],
+     "top6_n": 52,
+     "top6_pct": 30.8,
+     "rest_n": 101,
+     "rest_pct": 38.6,
+     "gap": -7.8,
+     "gap_ci": [
+      -24.7,
+      10.5
+     ],
+     "gap_clear": false
+    }
+   },
+   {
+    "what": "cap ours, cap_defended not set for it",
+    "n": 541,
+    "pct": 10.4,
+    "ci": [
+     8.1,
+     13.0
+    ],
+    "top6_n": 209,
+    "top6_pct": 11.0,
+    "rest_n": 332,
+    "rest_pct": 9.9,
+    "gap": 1.1,
+    "gap_ci": [
+     -3.7,
+     5.3
+    ],
+    "gap_clear": false,
+    "round5": {
+     "what": "cap ours, cap_defended not set for it",
+     "n": 541,
+     "pct": 7.4,
+     "ci": [
+      5.5,
+      9.4
+     ],
+     "top6_n": 208,
+     "top6_pct": 8.2,
+     "rest_n": 333,
+     "rest_pct": 6.9,
+     "gap": 1.3,
+     "gap_ci": [
+      -3.4,
+      5.2
+     ],
+     "gap_clear": false
+    }
+   }
+  ],
+  "enemy_during": [
+   {
+    "what": "all applicable smokes",
+    "n": 1074,
+    "pct": 14.4,
+    "ci": [
+     12.0,
+     17.0
+    ],
+    "top6_n": 403,
+    "top6_pct": 11.9,
+    "rest_n": 671,
+    "rest_pct": 15.9,
+    "gap": -4.0,
+    "gap_ci": [
+     -8.0,
+     0.3
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "destroyer smokes",
+    "n": 763,
+    "pct": 16.1,
+    "ci": [
+     13.4,
+     19.4
+    ],
+    "top6_n": 292,
+    "top6_pct": 12.7,
+    "rest_n": 471,
+    "rest_pct": 18.3,
+    "gap": -5.6,
+    "gap_ci": [
+     -11.0,
+     0.3
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "smoke centre inside or within 2 km of the cap",
+    "n": 541,
+    "pct": 9.6,
+    "ci": [
+     6.7,
+     12.7
+    ],
+    "top6_n": 189,
+    "top6_pct": 6.9,
+    "rest_n": 352,
+    "rest_pct": 11.1,
+    "gap": -4.2,
+    "gap_ci": [
+     -10.1,
+     1.2
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "destroyer smokes inside or within 2 km",
+    "n": 405,
+    "pct": 11.1,
+    "ci": [
+     7.4,
+     15.3
+    ],
+    "top6_n": 142,
+    "top6_pct": 7.0,
+    "rest_n": 263,
+    "rest_pct": 13.3,
+    "gap": -6.3,
+    "gap_ci": [
+     -14.8,
+     1.1
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "cap ours at activation",
+    "n": 694,
+    "pct": 11.0,
+    "ci": [
+     8.7,
+     13.6
+    ],
+    "top6_n": 261,
+    "top6_pct": 10.3,
+    "rest_n": 433,
+    "rest_pct": 11.3,
+    "gap": -1.0,
+    "gap_ci": [
+     -5.9,
+     3.3
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "cap neutral at activation",
+    "n": 380,
+    "pct": 20.8,
+    "ci": [
+     15.9,
+     26.6
+    ],
+    "top6_n": 142,
+    "top6_pct": 14.8,
+    "rest_n": 238,
+    "rest_pct": 24.4,
+    "gap": -9.6,
+    "gap_ci": [
+     -17.4,
+     -0.4
+    ],
+    "gap_clear": true
+   },
+   {
+    "what": "cap ours, smoke within 2 km",
+    "n": 349,
+    "pct": 5.7,
+    "ci": [
+     2.9,
+     9.2
+    ],
+    "top6_n": 116,
+    "top6_pct": 3.4,
+    "rest_n": 233,
+    "rest_pct": 6.9,
+    "gap": -3.4,
+    "gap_ci": [
+     -9.4,
+     2.3
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "cap ours, cap_defended set for that cap",
+    "n": 153,
+    "pct": 28.1,
+    "ci": [
+     20.8,
+     36.4
+    ],
+    "top6_n": 52,
+    "top6_pct": 23.1,
+    "rest_n": 101,
+    "rest_pct": 30.7,
+    "gap": -7.6,
+    "gap_ci": [
+     -22.0,
+     4.7
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "cap ours, cap_defended not set for it",
+    "n": 541,
+    "pct": 6.1,
+    "ci": [
+     4.1,
+     7.9
+    ],
+    "top6_n": 209,
+    "top6_pct": 7.2,
+    "rest_n": 332,
+    "rest_pct": 5.4,
+    "gap": 1.8,
+    "gap_ci": [
+     -1.9,
+     5.1
+    ],
+    "gap_clear": false
+   }
+  ]
+ },
+ "by_map_cap": [
+  {
+   "what": "Hotspot A",
+   "n": 11,
+   "pct": 9.1,
+   "ci": [
+    0.0,
+    37.5
+   ],
+   "top6_n": 7,
+   "top6_pct": 0.0,
+   "rest_n": 4,
+   "rest_pct": 25.0,
+   "gap": -25.0,
+   "gap_ci": [
+    -100.0,
+    0.0
+   ],
+   "gap_clear": false,
+   "map": "Hotspot",
+   "cap": "A",
+   "during_pct": 9.1,
+   "round5_pct": 0.0,
+   "round5_gap": 0.0,
+   "round5_gap_clear": false,
+   "top6_small": true,
+   "rest_small": true
+  },
+  {
+   "what": "Hotspot B",
+   "n": 44,
+   "pct": 11.4,
+   "ci": [
+    3.8,
+    21.6
+   ],
+   "top6_n": 14,
+   "top6_pct": 21.4,
+   "rest_n": 30,
+   "rest_pct": 6.7,
+   "gap": 14.8,
+   "gap_ci": [
+    -5.7,
+    47.1
+   ],
+   "gap_clear": false,
+   "map": "Hotspot",
+   "cap": "B",
+   "during_pct": 11.4,
+   "round5_pct": 9.1,
+   "round5_gap": 18.1,
+   "round5_gap_clear": false,
+   "top6_small": true,
+   "rest_small": false
+  },
+  {
+   "what": "Hotspot C",
+   "n": 65,
+   "pct": 32.3,
+   "ci": [
+    22.5,
+    44.2
+   ],
+   "top6_n": 21,
+   "top6_pct": 33.3,
+   "rest_n": 44,
+   "rest_pct": 31.8,
+   "gap": 1.5,
+   "gap_ci": [
+    -17.9,
+    16.4
+   ],
+   "gap_clear": false,
+   "map": "Hotspot",
+   "cap": "C",
+   "during_pct": 23.1,
+   "round5_pct": 26.2,
+   "round5_gap": -3.5,
+   "round5_gap_clear": false,
+   "top6_small": false,
+   "rest_small": false
+  },
+  {
+   "what": "Hotspot D",
+   "n": 84,
+   "pct": 25.0,
+   "ci": [
+    14.9,
+    36.5
+   ],
+   "top6_n": 24,
+   "top6_pct": 12.5,
+   "rest_n": 60,
+   "rest_pct": 30.0,
+   "gap": -17.5,
+   "gap_ci": [
+    -35.8,
+    10.6
+   ],
+   "gap_clear": false,
+   "map": "Hotspot",
+   "cap": "D",
+   "during_pct": 17.9,
+   "round5_pct": 23.8,
+   "round5_gap": -15.8,
+   "round5_gap_clear": false,
+   "top6_small": false,
+   "rest_small": false
+  },
+  {
+   "what": "Land of Fire A",
+   "n": 53,
+   "pct": 22.6,
+   "ci": [
+    7.8,
+    39.0
+   ],
+   "top6_n": 11,
+   "top6_pct": 9.1,
+   "rest_n": 42,
+   "rest_pct": 26.2,
+   "gap": -17.1,
+   "gap_ci": [
+    -41.5,
+    10.2
+   ],
+   "gap_clear": false,
+   "map": "Land of Fire",
+   "cap": "A",
+   "during_pct": 18.9,
+   "round5_pct": 20.8,
+   "round5_gap": -14.7,
+   "round5_gap_clear": false,
+   "top6_small": true,
+   "rest_small": false
+  },
+  {
+   "what": "Land of Fire B",
+   "n": 68,
+   "pct": 14.7,
+   "ci": [
+    9.2,
+    23.6
+   ],
+   "top6_n": 36,
+   "top6_pct": 11.1,
+   "rest_n": 32,
+   "rest_pct": 18.8,
+   "gap": -7.6,
+   "gap_ci": [
+    -25.7,
+    4.2
+   ],
+   "gap_clear": false,
+   "map": "Land of Fire",
+   "cap": "B",
+   "during_pct": 10.3,
+   "round5_pct": 11.8,
+   "round5_gap": -13.2,
+   "round5_gap_clear": false,
+   "top6_small": false,
+   "rest_small": false
+  },
+  {
+   "map": "Land of Fire",
+   "cap": "C",
+   "n": 5,
+   "too_few": true
+  },
+  {
+   "what": "Land of Fire D",
+   "n": 26,
+   "pct": 11.5,
+   "ci": [
+    0.0,
+    26.9
+   ],
+   "top6_n": 14,
+   "top6_pct": 21.4,
+   "rest_n": 12,
+   "rest_pct": 0.0,
+   "gap": 21.4,
+   "gap_ci": [
+    0.0,
+    46.7
+   ],
+   "gap_clear": false,
+   "map": "Land of Fire",
+   "cap": "D",
+   "during_pct": 7.7,
+   "round5_pct": 7.7,
+   "round5_gap": 14.3,
+   "round5_gap_clear": false,
+   "top6_small": true,
+   "rest_small": true
+  },
+  {
+   "what": "Loop A",
+   "n": 47,
+   "pct": 21.3,
+   "ci": [
+    7.1,
+    34.0
+   ],
+   "top6_n": 11,
+   "top6_pct": 9.1,
+   "rest_n": 36,
+   "rest_pct": 25.0,
+   "gap": -15.9,
+   "gap_ci": [
+    -37.0,
+    2.9
+   ],
+   "gap_clear": false,
+   "map": "Loop",
+   "cap": "A",
+   "during_pct": 10.6,
+   "round5_pct": 17.0,
+   "round5_gap": -22.2,
+   "round5_gap_clear": true,
+   "top6_small": true,
+   "rest_small": false
+  },
+  {
+   "what": "Loop B",
+   "n": 30,
+   "pct": 30.0,
+   "ci": [
+    13.5,
+    48.5
+   ],
+   "top6_n": 10,
+   "top6_pct": 20.0,
+   "rest_n": 20,
+   "rest_pct": 35.0,
+   "gap": -15.0,
+   "gap_ci": [
+    -47.1,
+    9.1
+   ],
+   "gap_clear": false,
+   "map": "Loop",
+   "cap": "B",
+   "during_pct": 20.0,
+   "round5_pct": 20.0,
+   "round5_gap": -30.0,
+   "round5_gap_clear": true,
+   "top6_small": true,
+   "rest_small": false
+  },
+  {
+   "what": "Loop C",
+   "n": 33,
+   "pct": 15.2,
+   "ci": [
+    4.5,
+    34.6
+   ],
+   "top6_n": 18,
+   "top6_pct": 5.6,
+   "rest_n": 15,
+   "rest_pct": 26.7,
+   "gap": -21.1,
+   "gap_ci": [
+    -54.5,
+    1.9
+   ],
+   "gap_clear": false,
+   "map": "Loop",
+   "cap": "C",
+   "during_pct": 9.1,
+   "round5_pct": 12.1,
+   "round5_gap": -14.4,
+   "round5_gap_clear": false,
+   "top6_small": false,
+   "rest_small": false
+  },
+  {
+   "what": "Mountain Range A",
+   "n": 41,
+   "pct": 24.4,
+   "ci": [
+    8.3,
+    40.6
+   ],
+   "top6_n": 19,
+   "top6_pct": 26.3,
+   "rest_n": 22,
+   "rest_pct": 22.7,
+   "gap": 3.6,
+   "gap_ci": [
+    -29.2,
+    32.9
+   ],
+   "gap_clear": false,
+   "map": "Mountain Range",
+   "cap": "A",
+   "during_pct": 14.6,
+   "round5_pct": 14.6,
+   "round5_gap": -17.5,
+   "round5_gap_clear": true,
+   "top6_small": false,
+   "rest_small": false
+  },
+  {
+   "what": "Mountain Range B",
+   "n": 46,
+   "pct": 39.1,
+   "ci": [
+    28.4,
+    55.6
+   ],
+   "top6_n": 25,
+   "top6_pct": 36.0,
+   "rest_n": 21,
+   "rest_pct": 42.9,
+   "gap": -6.9,
+   "gap_ci": [
+    -41.7,
+    19.0
+   ],
+   "gap_clear": false,
+   "map": "Mountain Range",
+   "cap": "B",
+   "during_pct": 26.1,
+   "round5_pct": 35.6,
+   "round5_gap": -4.8,
+   "round5_gap_clear": false,
+   "top6_small": false,
+   "rest_small": false
+  },
+  {
+   "what": "Mountain Range C",
+   "n": 56,
+   "pct": 21.4,
+   "ci": [
+    9.6,
+    37.9
+   ],
+   "top6_n": 25,
+   "top6_pct": 8.0,
+   "rest_n": 31,
+   "rest_pct": 32.3,
+   "gap": -24.3,
+   "gap_ci": [
+    -42.6,
+    -3.5
+   ],
+   "gap_clear": true,
+   "map": "Mountain Range",
+   "cap": "C",
+   "during_pct": 17.9,
+   "round5_pct": 17.9,
+   "round5_gap": -17.8,
+   "round5_gap_clear": false,
+   "top6_small": false,
+   "rest_small": false
+  },
+  {
+   "what": "Okinawa A",
+   "n": 39,
+   "pct": 23.1,
+   "ci": [
+    12.8,
+    33.3
+   ],
+   "top6_n": 4,
+   "top6_pct": 25.0,
+   "rest_n": 35,
+   "rest_pct": 22.9,
+   "gap": 2.1,
+   "gap_ci": [
+    -31.0,
+    76.5
+   ],
+   "gap_clear": false,
+   "map": "Okinawa",
+   "cap": "A",
+   "during_pct": 12.8,
+   "round5_pct": 15.4,
+   "round5_gap": -17.1,
+   "round5_gap_clear": true,
+   "top6_small": true,
+   "rest_small": false
+  },
+  {
+   "what": "Okinawa B",
+   "n": 8,
+   "pct": 12.5,
+   "ci": [
+    0.0,
+    50.0
+   ],
+   "top6_n": 2,
+   "top6_pct": 0.0,
+   "rest_n": 6,
+   "rest_pct": 16.7,
+   "gap": -16.7,
+   "gap_ci": [
+    -100.0,
+    0.0
+   ],
+   "gap_clear": false,
+   "map": "Okinawa",
+   "cap": "B",
+   "during_pct": 12.5,
+   "round5_pct": 12.5,
+   "round5_gap": -16.7,
+   "round5_gap_clear": false,
+   "top6_small": true,
+   "rest_small": true
+  },
+  {
+   "what": "Okinawa C",
+   "n": 37,
+   "pct": 18.9,
+   "ci": [
+    8.3,
+    33.3
+   ],
+   "top6_n": 7,
+   "top6_pct": 28.6,
+   "rest_n": 30,
+   "rest_pct": 16.7,
+   "gap": 11.9,
+   "gap_ci": [
+    -18.5,
+    57.4
+   ],
+   "gap_clear": false,
+   "map": "Okinawa",
+   "cap": "C",
+   "during_pct": 13.5,
+   "round5_pct": 13.5,
+   "round5_gap": 1.0,
+   "round5_gap_clear": false,
+   "top6_small": true,
+   "rest_small": false
+  },
+  {
+   "what": "Okinawa D",
+   "n": 26,
+   "pct": 30.8,
+   "ci": [
+    12.5,
+    50.0
+   ],
+   "top6_n": 3,
+   "top6_pct": 66.7,
+   "rest_n": 23,
+   "rest_pct": 26.1,
+   "gap": 40.6,
+   "gap_ci": [
+    12.5,
+    88.2
+   ],
+   "gap_clear": true,
+   "map": "Okinawa",
+   "cap": "D",
+   "during_pct": 15.4,
+   "round5_pct": 19.2,
+   "round5_gap": 15.9,
+   "round5_gap_clear": false,
+   "top6_small": true,
+   "rest_small": false
+  },
+  {
+   "what": "Sea of Fortune A",
+   "n": 12,
+   "pct": 16.7,
+   "ci": [
+    0.0,
+    30.8
+   ],
+   "top6_n": 4,
+   "top6_pct": 0.0,
+   "rest_n": 8,
+   "rest_pct": 25.0,
+   "gap": -25.0,
+   "gap_ci": [
+    -42.9,
+    0.0
+   ],
+   "gap_clear": false,
+   "map": "Sea of Fortune",
+   "cap": "A",
+   "during_pct": 8.3,
+   "round5_pct": 8.3,
+   "round5_gap": -12.5,
+   "round5_gap_clear": false,
+   "top6_small": true,
+   "rest_small": true
+  },
+  {
+   "what": "Sea of Fortune B",
+   "n": 60,
+   "pct": 13.3,
+   "ci": [
+    4.4,
+    22.9
+   ],
+   "top6_n": 12,
+   "top6_pct": 25.0,
+   "rest_n": 48,
+   "rest_pct": 10.4,
+   "gap": 14.6,
+   "gap_ci": [
+    -12.2,
+    43.8
+   ],
+   "gap_clear": false,
+   "map": "Sea of Fortune",
+   "cap": "B",
+   "during_pct": 6.7,
+   "round5_pct": 10.0,
+   "round5_gap": 18.8,
+   "round5_gap_clear": false,
+   "top6_small": true,
+   "rest_small": false
+  },
+  {
+   "what": "Sea of Fortune C",
+   "n": 15,
+   "pct": 40.0,
+   "ci": [
+    14.3,
+    64.7
+   ],
+   "top6_n": 7,
+   "top6_pct": 57.1,
+   "rest_n": 8,
+   "rest_pct": 25.0,
+   "gap": 32.1,
+   "gap_ci": [
+    -12.5,
+    80.0
+   ],
+   "gap_clear": false,
+   "map": "Sea of Fortune",
+   "cap": "C",
+   "during_pct": 13.3,
+   "round5_pct": 6.7,
+   "round5_gap": -12.5,
+   "round5_gap_clear": false,
+   "top6_small": true,
+   "rest_small": true
+  },
+  {
+   "what": "Sea of Fortune D",
+   "n": 41,
+   "pct": 17.1,
+   "ci": [
+    5.1,
+    28.9
+   ],
+   "top6_n": 18,
+   "top6_pct": 16.7,
+   "rest_n": 23,
+   "rest_pct": 17.4,
+   "gap": -0.7,
+   "gap_ci": [
+    -25.2,
+    23.5
+   ],
+   "gap_clear": false,
+   "map": "Sea of Fortune",
+   "cap": "D",
+   "during_pct": 12.2,
+   "round5_pct": 17.1,
+   "round5_gap": -0.7,
+   "round5_gap_clear": false,
+   "top6_small": false,
+   "rest_small": false
+  },
+  {
+   "what": "Sleeping Giant A",
+   "n": 90,
+   "pct": 26.7,
+   "ci": [
+    15.2,
+    46.0
+   ],
+   "top6_n": 49,
+   "top6_pct": 22.4,
+   "rest_n": 41,
+   "rest_pct": 31.7,
+   "gap": -9.3,
+   "gap_ci": [
+    -32.5,
+    31.9
+   ],
+   "gap_clear": false,
+   "map": "Sleeping Giant",
+   "cap": "A",
+   "during_pct": 16.7,
+   "round5_pct": 21.1,
+   "round5_gap": -1.5,
+   "round5_gap_clear": false,
+   "top6_small": false,
+   "rest_small": false
+  },
+  {
+   "what": "Sleeping Giant B",
+   "n": 46,
+   "pct": 10.9,
+   "ci": [
+    1.8,
+    27.7
+   ],
+   "top6_n": 20,
+   "top6_pct": 5.0,
+   "rest_n": 26,
+   "rest_pct": 15.4,
+   "gap": -10.4,
+   "gap_ci": [
+    -33.3,
+    12.7
+   ],
+   "gap_clear": false,
+   "map": "Sleeping Giant",
+   "cap": "B",
+   "during_pct": 8.7,
+   "round5_pct": 8.7,
+   "round5_gap": -6.5,
+   "round5_gap_clear": false,
+   "top6_small": false,
+   "rest_small": false
+  },
+  {
+   "what": "Sleeping Giant C",
+   "n": 16,
+   "pct": 18.8,
+   "ci": [
+    0.0,
+    36.4
+   ],
+   "top6_n": 7,
+   "top6_pct": 42.9,
+   "rest_n": 9,
+   "rest_pct": 0.0,
+   "gap": 42.9,
+   "gap_ci": [
+    0.0,
+    50.0
+   ],
+   "gap_clear": false,
+   "map": "Sleeping Giant",
+   "cap": "C",
+   "during_pct": 12.5,
+   "round5_pct": 18.8,
+   "round5_gap": 42.9,
+   "round5_gap_clear": false,
+   "top6_small": true,
+   "rest_small": true
+  },
+  {
+   "what": "Sleeping Giant D",
+   "n": 75,
+   "pct": 20.0,
+   "ci": [
+    8.4,
+    32.1
+   ],
+   "top6_n": 35,
+   "top6_pct": 25.7,
+   "rest_n": 40,
+   "rest_pct": 15.0,
+   "gap": 10.7,
+   "gap_ci": [
+    -14.1,
+    35.7
+   ],
+   "gap_clear": false,
+   "map": "Sleeping Giant",
+   "cap": "D",
+   "during_pct": 12.0,
+   "round5_pct": 17.3,
+   "round5_gap": 10.4,
+   "round5_gap_clear": false,
+   "top6_small": false,
+   "rest_small": false
+  }
+ ],
+ "we_took": [
+  {
+   "what": "all smokes where the nearest cap was not ours",
+   "n": 853,
+   "pct": 31.9,
+   "ci": [
+    27.4,
+    36.9
+   ],
+   "top6_n": 277,
+   "top6_pct": 39.0,
+   "rest_n": 576,
+   "rest_pct": 28.5,
+   "gap": 10.5,
+   "gap_ci": [
+    -0.2,
+    22.1
+   ],
+   "gap_clear": false,
+   "round5": {
+    "what": "all smokes where the nearest cap was not ours",
+    "n": 853,
+    "pct": 24.5,
+    "ci": [
+     21.0,
+     27.9
+    ],
+    "top6_n": 278,
+    "top6_pct": 28.4,
+    "rest_n": 575,
+    "rest_pct": 22.6,
+    "gap": 5.8,
+    "gap_ci": [
+     -1.7,
+     14.4
+    ],
+    "gap_clear": false
+   },
+   "during_pct": 23.0
+  },
+  {
+   "what": "destroyer smokes",
+   "n": 582,
+   "pct": 35.6,
+   "ci": [
+    29.5,
+    41.8
+   ],
+   "top6_n": 197,
+   "top6_pct": 45.7,
+   "rest_n": 385,
+   "rest_pct": 30.4,
+   "gap": 15.3,
+   "gap_ci": [
+    2.1,
+    28.1
+   ],
+   "gap_clear": true,
+   "round5": {
+    "what": "destroyer smokes",
+    "n": 582,
+    "pct": 27.0,
+    "ci": [
+     22.4,
+     31.8
+    ],
+    "top6_n": 198,
+    "top6_pct": 32.8,
+    "rest_n": 384,
+    "rest_pct": 24.0,
+    "gap": 8.9,
+    "gap_ci": [
+     -1.6,
+     20.2
+    ],
+    "gap_clear": false
+   },
+   "during_pct": 25.9
+  },
+  {
+   "what": "within 2 km",
+   "n": 350,
+   "pct": 42.3,
+   "ci": [
+    36.8,
+    47.2
+   ],
+   "top6_n": 115,
+   "top6_pct": 50.4,
+   "rest_n": 235,
+   "rest_pct": 38.3,
+   "gap": 12.1,
+   "gap_ci": [
+    1.3,
+    23.5
+   ],
+   "gap_clear": true,
+   "round5": {
+    "what": "within 2 km",
+    "n": 349,
+    "pct": 35.0,
+    "ci": [
+     29.1,
+     40.5
+    ],
+    "top6_n": 115,
+    "top6_pct": 39.1,
+    "rest_n": 234,
+    "rest_pct": 32.9,
+    "gap": 6.2,
+    "gap_ci": [
+     -3.5,
+     18.5
+    ],
+    "gap_clear": false
+   },
+   "during_pct": 33.7
+  }
+ ],
+ "cap_defended": {
+  "n": 486,
+  "found": 485,
+  "own_at_activation": 423,
+  "kept": [
+   {
+    "what": "all smokes with cap_defended",
+    "n": 486,
+    "pct": 52.5,
+    "ci": [
+     46.1,
+     58.3
+    ],
+    "top6_n": 163,
+    "top6_pct": 53.4,
+    "rest_n": 323,
+    "rest_pct": 52.0,
+    "gap": 1.4,
+    "gap_ci": [
+     -13.2,
+     13.7
+    ],
+    "gap_clear": false,
+    "round5": {
+     "what": "all smokes with cap_defended",
+     "n": 486,
+     "pct": 60.5,
+     "ci": [
+      54.9,
+      65.7
+     ],
+     "top6_n": 163,
+     "top6_pct": 62.6,
+     "rest_n": 323,
+     "rest_pct": 59.4,
+     "gap": 3.1,
+     "gap_ci": [
+      -10.7,
+      15.3
+     ],
+     "gap_clear": false
+    }
+   },
+   {
+    "what": "destroyer smokes",
+    "n": 360,
+    "pct": 50.6,
+    "ci": [
+     43.9,
+     56.4
+    ],
+    "top6_n": 124,
+    "top6_pct": 51.6,
+    "rest_n": 236,
+    "rest_pct": 50.0,
+    "gap": 1.6,
+    "gap_ci": [
+     -14.2,
+     14.5
+    ],
+    "gap_clear": false,
+    "round5": {
+     "what": "destroyer smokes",
+     "n": 360,
+     "pct": 58.9,
+     "ci": [
+      52.5,
+      64.9
+     ],
+     "top6_n": 124,
+     "top6_pct": 59.7,
+     "rest_n": 236,
+     "rest_pct": 58.5,
+     "gap": 1.2,
+     "gap_ci": [
+      -15.0,
+      13.3
+     ],
+     "gap_clear": false
+    }
+   },
+   {
+    "what": "defended cap = nearest cap",
+    "n": 175,
+    "pct": 53.7,
+    "ci": [
+     46.6,
+     60.4
+    ],
+    "top6_n": 63,
+    "top6_pct": 52.4,
+    "rest_n": 112,
+    "rest_pct": 54.5,
+    "gap": -2.1,
+    "gap_ci": [
+     -19.1,
+     15.6
+    ],
+    "gap_clear": false,
+    "round5": {
+     "what": "defended cap = nearest cap",
+     "n": 175,
+     "pct": 61.1,
+     "ci": [
+      54.9,
+      67.0
+     ],
+     "top6_n": 63,
+     "top6_pct": 66.7,
+     "rest_n": 112,
+     "rest_pct": 58.0,
+     "gap": 8.6,
+     "gap_ci": [
+      -6.2,
+      21.9
+     ],
+     "gap_clear": false
+    }
+   },
+   {
+    "what": "defended cap not the nearest",
+    "n": 311,
+    "pct": 51.8,
+    "ci": [
+     44.7,
+     58.4
+    ],
+    "top6_n": 100,
+    "top6_pct": 54.0,
+    "rest_n": 211,
+    "rest_pct": 50.7,
+    "gap": 3.3,
+    "gap_ci": [
+     -13.2,
+     17.9
+    ],
+    "gap_clear": false,
+    "round5": {
+     "what": "defended cap not the nearest",
+     "n": 311,
+     "pct": 60.1,
+     "ci": [
+      52.1,
+      65.7
+     ],
+     "top6_n": 100,
+     "top6_pct": 60.0,
+     "rest_n": 211,
+     "rest_pct": 60.2,
+     "gap": -0.2,
+     "gap_ci": [
+      -16.7,
+      14.0
+     ],
+     "gap_clear": false
+    }
+   }
+  ],
+  "kept_strict": [
+   {
+    "what": "all smokes with cap_defended",
+    "n": 486,
+    "pct": 68.7,
+    "ci": [
+     63.9,
+     73.1
+    ],
+    "top6_n": 163,
+    "top6_pct": 72.4,
+    "rest_n": 323,
+    "rest_pct": 66.9,
+    "gap": 5.5,
+    "gap_ci": [
+     -4.0,
+     14.3
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "destroyer smokes",
+    "n": 360,
+    "pct": 66.9,
+    "ci": [
+     61.7,
+     71.5
+    ],
+    "top6_n": 124,
+    "top6_pct": 70.2,
+    "rest_n": 236,
+    "rest_pct": 65.3,
+    "gap": 4.9,
+    "gap_ci": [
+     -4.1,
+     13.7
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "defended cap = nearest cap",
+    "n": 175,
+    "pct": 74.3,
+    "ci": [
+     66.9,
+     80.5
+    ],
+    "top6_n": 63,
+    "top6_pct": 81.0,
+    "rest_n": 112,
+    "rest_pct": 70.5,
+    "gap": 10.4,
+    "gap_ci": [
+     -1.3,
+     22.1
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "defended cap not the nearest",
+    "n": 311,
+    "pct": 65.6,
+    "ci": [
+     60.1,
+     70.5
+    ],
+    "top6_n": 100,
+    "top6_pct": 67.0,
+    "rest_n": 211,
+    "rest_pct": 64.9,
+    "gap": 2.1,
+    "gap_ci": [
+     -9.4,
+     12.8
+    ],
+    "gap_clear": false
+   }
+  ],
+  "grace": {
+   "0": {
+    "kept": 334,
+    "pct": 68.7
+   },
+   "60": {
+    "kept": 255,
+    "pct": 52.5
+   },
+   "120": {
+    "kept": 227,
+    "pct": 46.7
+   }
+  },
+  "kept_r5style": 255,
+  "last_owner": {
+   "ours": 264,
+   "theirs": 222
+  },
+  "round5_grace": {
+   "0": "374 of 486 (77.0%)",
+   "60": "294 of 486 (60.5%)",
+   "120": "252 of 486 (51.9%)"
+  },
+  "baseline_ours_kept": {
+   "n": 694,
+   "pct": 81.8,
+   "round5_pct": 86.3,
+   "round5_n": 694
+  }
+ },
+ "invaded": {
+  "groups": [
+   {
+    "what": "within 2 km of a cap we own",
+    "n": 349,
+    "pct": 27.2,
+    "ci": [
+     19.9,
+     33.8
+    ],
+    "top6_n": 116,
+    "top6_pct": 29.3,
+    "rest_n": 233,
+    "rest_pct": 26.2,
+    "gap": 3.1,
+    "gap_ci": [
+     -10.9,
+     16.5
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "destroyer smokes within 2 km of a cap we own",
+    "n": 255,
+    "pct": 31.0,
+    "ci": [
+     22.8,
+     39.7
+    ],
+    "top6_n": 88,
+    "top6_pct": 29.5,
+    "rest_n": 167,
+    "rest_pct": 31.7,
+    "gap": -2.2,
+    "gap_ci": [
+     -22.6,
+     13.6
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "any smoke whose nearest cap is ours (reference)",
+    "n": 694,
+    "pct": 33.7,
+    "ci": [
+     28.5,
+     38.9
+    ],
+    "top6_n": 261,
+    "top6_pct": 34.1,
+    "rest_n": 433,
+    "rest_pct": 33.5,
+    "gap": 0.6,
+    "gap_ci": [
+     -10.8,
+     11.4
+    ],
+    "gap_clear": false
+   }
+  ],
+  "kept": [
+   {
+    "what": "invaded, within 2 km",
+    "n": 95,
+    "pct": 78.9,
+    "ci": [
+     66.2,
+     88.6
+    ],
+    "top6_n": 34,
+    "top6_pct": 88.2,
+    "rest_n": 61,
+    "rest_pct": 73.8,
+    "gap": 14.5,
+    "gap_ci": [
+     -1.9,
+     37.3
+    ],
+    "gap_clear": false,
+    "kept_60": {
+     "what": "invaded, within 2 km",
+     "n": 95,
+     "pct": 58.9,
+     "ci": [
+      44.4,
+      70.5
+     ],
+     "top6_n": 34,
+     "top6_pct": 61.8,
+     "rest_n": 61,
+     "rest_pct": 57.4,
+     "gap": 4.4,
+     "gap_ci": [
+      -18.2,
+      33.3
+     ],
+     "gap_clear": false
+    }
+   },
+   {
+    "what": "invaded, destroyer smokes within 2 km",
+    "n": 79,
+    "pct": 77.2,
+    "ci": [
+     65.0,
+     87.5
+    ],
+    "top6_n": 26,
+    "top6_pct": 88.5,
+    "rest_n": 53,
+    "rest_pct": 71.7,
+    "gap": 16.8,
+    "gap_ci": [
+     -1.3,
+     42.6
+    ],
+    "gap_clear": false,
+    "kept_60": {
+     "what": "invaded, destroyer smokes within 2 km",
+     "n": 79,
+     "pct": 58.2,
+     "ci": [
+      44.1,
+      70.3
+     ],
+     "top6_n": 26,
+     "top6_pct": 61.5,
+     "rest_n": 53,
+     "rest_pct": 56.6,
+     "gap": 4.9,
+     "gap_ci": [
+      -19.7,
+      39.6
+     ],
+     "gap_clear": false
+    }
+   },
+   {
+    "what": "not invaded, within 2 km",
+    "n": 254,
+    "pct": 100.0,
+    "ci": [
+     100.0,
+     100.0
+    ],
+    "top6_n": 82,
+    "top6_pct": 100.0,
+    "rest_n": 172,
+    "rest_pct": 100.0,
+    "gap": 0.0,
+    "gap_ci": [
+     0.0,
+     0.0
+    ],
+    "gap_clear": false,
+    "kept_60": {
+     "what": "not invaded, within 2 km",
+     "n": 254,
+     "pct": 98.4,
+     "ci": [
+      96.2,
+      100.0
+     ],
+     "top6_n": 82,
+     "top6_pct": 100.0,
+     "rest_n": 172,
+     "rest_pct": 97.7,
+     "gap": 2.3,
+     "gap_ci": [
+      0.0,
+      6.0
+     ],
+     "gap_clear": false
+    }
+   }
+  ],
+  "median_invaded_s": 40
+ },
+ "ribbons": {
+  "recorders": 341,
+  "rows": 442,
+  "by_kind": {
+   "Defended": 284,
+   "Captured": 91,
+   "AssistedInCapture": 67
+  },
+  "covered": 268,
+  "covered_how": {
+   "line_of_fire": 49,
+   "behind": 31,
+   "smoker": 129,
+   "inside": 59
+  },
+  "inside_or_smoker": 188,
+  "near_2km": 254,
+  "strict": [
+   {
+    "what": "recording player covered by the smoke",
+    "smokes": 268,
+    "smokes_with_any": 47,
+    "events": {
+     "Defended": 68,
+     "Captured": 13,
+     "AssistedInCapture": 11
+    },
+    "distinct_smokes": {
+     "Defended": 24,
+     "Captured": 13,
+     "AssistedInCapture": 11
+    },
+    "events_per_100": {
+     "Defended": 25.4,
+     "Captured": 4.9,
+     "AssistedInCapture": 4.1
+    }
+   },
+   {
+    "what": "  Top 6",
+    "smokes": 110,
+    "smokes_with_any": 23,
+    "events": {
+     "Defended": 19,
+     "Captured": 11,
+     "AssistedInCapture": 7
+    },
+    "distinct_smokes": {
+     "Defended": 6,
+     "Captured": 11,
+     "AssistedInCapture": 7
+    },
+    "events_per_100": {
+     "Defended": 17.3,
+     "Captured": 10.0,
+     "AssistedInCapture": 6.4
+    }
+   },
+   {
+    "what": "  Rest",
+    "smokes": 158,
+    "smokes_with_any": 24,
+    "events": {
+     "Defended": 49,
+     "Captured": 2,
+     "AssistedInCapture": 4
+    },
+    "distinct_smokes": {
+     "Defended": 18,
+     "Captured": 2,
+     "AssistedInCapture": 4
+    },
+    "events_per_100": {
+     "Defended": 31.0,
+     "Captured": 1.3,
+     "AssistedInCapture": 2.5
+    }
+   },
+   {
+    "what": "recording player the smoker or inside",
+    "smokes": 188,
+    "smokes_with_any": 36,
+    "events": {
+     "Defended": 44,
+     "Captured": 13,
+     "AssistedInCapture": 9
+    },
+    "distinct_smokes": {
+     "Defended": 15,
+     "Captured": 13,
+     "AssistedInCapture": 9
+    },
+    "events_per_100": {
+     "Defended": 23.4,
+     "Captured": 6.9,
+     "AssistedInCapture": 4.8
+    }
+   },
+   {
+    "what": "  destroyer smokes, recording player covered",
+    "smokes": 208,
+    "smokes_with_any": 35,
+    "events": {
+     "Defended": 54,
+     "Captured": 12,
+     "AssistedInCapture": 8
+    },
+    "distinct_smokes": {
+     "Defended": 16,
+     "Captured": 12,
+     "AssistedInCapture": 8
+    },
+    "events_per_100": {
+     "Defended": 26.0,
+     "Captured": 5.8,
+     "AssistedInCapture": 3.8
+    }
+   }
+  ],
+  "loose": [
+   {
+    "what": "recording player within 2 km while the smoke stood",
+    "smokes": 254,
+    "smokes_with_any": 26,
+    "events": {
+     "Defended": 38,
+     "Captured": 5,
+     "AssistedInCapture": 6
+    },
+    "distinct_smokes": {
+     "Defended": 15,
+     "Captured": 5,
+     "AssistedInCapture": 6
+    },
+    "events_per_100": {
+     "Defended": 15.0,
+     "Captured": 2.0,
+     "AssistedInCapture": 2.4
+    }
+   },
+   {
+    "what": "  Top 6",
+    "smokes": 115,
+    "smokes_with_any": 10,
+    "events": {
+     "Defended": 9,
+     "Captured": 4,
+     "AssistedInCapture": 3
+    },
+    "distinct_smokes": {
+     "Defended": 3,
+     "Captured": 4,
+     "AssistedInCapture": 3
+    },
+    "events_per_100": {
+     "Defended": 7.8,
+     "Captured": 3.5,
+     "AssistedInCapture": 2.6
+    }
+   },
+   {
+    "what": "  Rest",
+    "smokes": 139,
+    "smokes_with_any": 16,
+    "events": {
+     "Defended": 29,
+     "Captured": 1,
+     "AssistedInCapture": 3
+    },
+    "distinct_smokes": {
+     "Defended": 12,
+     "Captured": 1,
+     "AssistedInCapture": 3
+    },
+    "events_per_100": {
+     "Defended": 20.9,
+     "Captured": 0.7,
+     "AssistedInCapture": 2.2
+    }
+   }
+  ],
+  "top_vs_rest": [
+   {
+    "what": "strict: any cap ribbon",
+    "n": 268,
+    "pct": 17.5,
+    "ci": [
+     12.4,
+     23.0
+    ],
+    "top6_n": 110,
+    "top6_pct": 20.9,
+    "rest_n": 158,
+    "rest_pct": 15.2,
+    "gap": 5.7,
+    "gap_ci": [
+     -6.0,
+     16.7
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "strict: a Defended ribbon",
+    "n": 268,
+    "pct": 9.0,
+    "ci": [
+     6.0,
+     12.0
+    ],
+    "top6_n": 110,
+    "top6_pct": 5.5,
+    "rest_n": 158,
+    "rest_pct": 11.4,
+    "gap": -5.9,
+    "gap_ci": [
+     -11.6,
+     -0.7
+    ],
+    "gap_clear": true
+   },
+   {
+    "what": "strict: a Captured or Assisted ribbon",
+    "n": 268,
+    "pct": 9.0,
+    "ci": [
+     3.7,
+     14.7
+    ],
+    "top6_n": 110,
+    "top6_pct": 16.4,
+    "rest_n": 158,
+    "rest_pct": 3.8,
+    "gap": 12.6,
+    "gap_ci": [
+     3.1,
+     23.6
+    ],
+    "gap_clear": true
+   },
+   {
+    "what": "loose: any cap ribbon",
+    "n": 254,
+    "pct": 10.2,
+    "ci": [
+     6.5,
+     14.5
+    ],
+    "top6_n": 115,
+    "top6_pct": 8.7,
+    "rest_n": 139,
+    "rest_pct": 11.5,
+    "gap": -2.8,
+    "gap_ci": [
+     -10.7,
+     5.5
+    ],
+    "gap_clear": false
+   },
+   {
+    "what": "loose: a Defended ribbon",
+    "n": 254,
+    "pct": 5.9,
+    "ci": [
+     2.9,
+     9.4
+    ],
+    "top6_n": 115,
+    "top6_pct": 2.6,
+    "rest_n": 139,
+    "rest_pct": 8.6,
+    "gap": -6.0,
+    "gap_ci": [
+     -11.1,
+     -1.2
+    ],
+    "gap_clear": true
+   }
+  ],
+  "defended_vs_kept": [
+   {
+    "what": "strict, recording player covered",
+    "with_ribbon_n": 11,
+    "with_ribbon_kept_during": 11,
+    "with_ribbon_kept_60": 7,
+    "without_n": 96,
+    "without_kept_during": 78,
+    "without_kept_60": 74,
+    "gap_60": -13.4,
+    "gap_ci": [
+     -50.4,
+     13.9
+    ]
+   },
+   {
+    "what": "strict, and smoke within 2 km of the cap",
+    "with_ribbon_n": 4,
+    "with_ribbon_kept_during": 4,
+    "with_ribbon_kept_60": 2,
+    "without_n": 46,
+    "without_kept_during": 43,
+    "without_kept_60": 39,
+    "gap_60": null,
+    "gap_ci": null
+   },
+   {
+    "what": "loose, recording player within 2 km of the smoke",
+    "with_ribbon_n": 6,
+    "with_ribbon_kept_during": 6,
+    "with_ribbon_kept_60": 5,
+    "without_n": 99,
+    "without_kept_during": 84,
+    "without_kept_60": 79,
+    "gap_60": null,
+    "gap_ci": null
+   },
+   {
+    "what": "loose, and smoke within 2 km of the cap",
+    "with_ribbon_n": 3,
+    "with_ribbon_kept_during": 3,
+    "with_ribbon_kept_60": 2,
+    "without_n": 46,
+    "without_kept_during": 44,
+    "without_kept_60": 40,
+    "gap_60": null,
+    "gap_ci": null
+   },
+   {
+    "what": "loose, smoke within 2 km, enemy was invading the cap",
+    "with_ribbon_n": 2,
+    "with_ribbon_kept_during": 2,
+    "with_ribbon_kept_60": 1,
+    "without_n": 10,
+    "without_kept_during": 8,
+    "without_kept_60": 6,
+    "gap_60": null,
+    "gap_ci": null
+   }
+  ],
+  "timeline_check": {
+   "captured": 91,
+   "captured_on_flip": 91,
+   "defended": 284,
+   "defended_while_invaded": 203,
+   "defended_while_any_cap_invaded": 284
+  },
+  "captured_vs_we_took": {
+   "n": 13,
+   "we_took_during": 12,
+   "already_ours": 1
+  }
+ }
+}

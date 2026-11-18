@@ -1,0 +1,679 @@
+n 306
+n_top 103
+n_rest 203
+one_sided_smokes 2
+rungs
+  inside
+    label Radar cruiser inside (batch field)
+    table
+      All maps
+        top 59.2
+        rest 35.0
+        n_top 103
+        n_rest 203
+        clans_top 6
+        clans_rest 23
+        diff 24.2
+        ci [12.3, 34.9]
+        clear True
+        x_top 61
+        x_rest 71
+        flag_top 
+        flag_rest 
+        clan_counts
+          top6 {'H-SR': 20, 'RESIN': 15, 'BONKZ': 10, 'KITE': 7, 'VRTUS': 5, 'HTDOG': 4}
+          rest {'HFANS': 11, 'KSC': 7, 'MACHX': 7, 'EPOXY': 7, 'BONKY': 5, 'MZY': 5, '-BN-': 5, 'PN': 4, 'RSR': 4, 'PFANS': 3, 'INCA': 3, 'BTLST': 2, 'NGA': 2, 'REEEE': 2, 'UYSC': 1, 'KITED': 1, 'SCCC2': 1, 'KM': 1}
+      Sleeping Giant
+        top 46.9
+        rest 59.5
+        n_top 32
+        n_rest 37
+        clans_top 6
+        clans_rest 16
+        diff -12.6
+        ci [-40.5, 18.0]
+        clear False
+        x_top 15
+        x_rest 22
+        flag_top 
+        flag_rest 
+        clan_counts
+          top6 {'H-SR': 6, 'RESIN': 4, 'BONKZ': 2, 'KITE': 1, 'VRTUS': 1, 'HTDOG': 1}
+          rest {'EPOXY': 5, 'HFANS': 4, '-BN-': 3, 'MACHX': 3, 'KSC': 2, 'BONKY': 2, 'KITED': 1, 'SCCC2': 1, 'PFANS': 1}
+      Hotspot
+        top 87.0
+        rest 37.5
+        n_top 23
+        n_rest 48
+        clans_top 6
+        clans_rest 19
+        diff 49.5
+        ci [31.0, 69.1]
+        clear True
+        x_top 20
+        x_rest 18
+        flag_top 
+        flag_rest 
+        clan_counts
+          top6 {'H-SR': 7, 'BONKZ': 5, 'RESIN': 4, 'VRTUS': 2, 'HTDOG': 1, 'KITE': 1}
+          rest {'KSC': 4, 'MZY': 3, 'PFANS': 2, 'HFANS': 2, 'BONKY': 2, 'BTLST': 1, 'PN': 1, '-BN-': 1, 'EPOXY': 1, 'REEEE': 1}
+      Mountain Range
+        top 64.3
+        rest 32.0
+        n_top 14
+        n_rest 25
+        clans_top 4
+        clans_rest 13
+        diff 32.3
+        ci [-5.1, 72.7]
+        clear False
+        x_top 9
+        x_rest 8
+        flag_top small n
+        flag_rest 
+        clan_counts
+          top6 {'KITE': 4, 'H-SR': 3, 'RESIN': 1, 'BONKZ': 1}
+          rest {'RSR': 2, 'PN': 2, 'KSC': 1, 'INCA': 1, 'HFANS': 1, '-BN-': 1}
+      Land of Fire
+        top 41.7
+        rest 32.0
+        n_top 12
+        n_rest 25
+        clans_top 6
+        clans_rest 13
+        diff 9.7
+        ci [-22.8, 48.1]
+        clear False
+        x_top 5
+        x_rest 8
+        flag_top small n
+        flag_rest 
+        clan_counts
+          top6 {'HTDOG': 2, 'VRTUS': 1, 'KITE': 1, 'RESIN': 1}
+          rest {'HFANS': 3, 'MACHX': 2, 'MZY': 1, 'INCA': 1, 'NGA': 1}
+      Loop
+        top 40.0
+        rest 21.7
+        n_top 10
+        n_rest 23
+        clans_top 5
+        clans_rest 16
+        diff 18.3
+        ci [-25.0, 44.3]
+        clear False
+        x_top 4
+        x_rest 5
+        flag_top small n
+        flag_rest 
+        clan_counts
+          top6 {'RESIN': 3, 'H-SR': 1}
+          rest {'UYSC': 1, 'INCA': 1, 'MACHX': 1, 'HFANS': 1, 'EPOXY': 1}
+      Okinawa
+        top 66.7
+        rest 17.4
+        n_top 3
+        n_rest 23
+        clans_top 3
+        clans_rest 14
+        diff 49.3
+        ci [-14.3, 90.0]
+        clear False
+        x_top 2
+        x_rest 4
+        flag_top too few
+        flag_rest 
+        clan_counts
+          top6 {'BONKZ': 1, 'H-SR': 1}
+          rest {'BTLST': 1, 'RSR': 1, 'NGA': 1, 'MACHX': 1}
+      Sea of Fortune
+        top 66.7
+        rest 27.3
+        n_top 9
+        n_rest 22
+        clans_top 4
+        clans_rest 15
+        diff 39.4
+        ci [15.1, 59.5]
+        clear True
+        x_top 6
+        x_rest 6
+        flag_top small n
+        flag_rest 
+        clan_counts
+          top6 {'H-SR': 2, 'RESIN': 2, 'VRTUS': 1, 'BONKZ': 1}
+          rest {'REEEE': 1, 'PN': 1, 'RSR': 1, 'KM': 1, 'BONKY': 1, 'MZY': 1}
+  used
+    label Inside and ran radar from it
+    table
+      All maps
+        top 19.4
+        rest 10.3
+        n_top 103
+        n_rest 203
+        clans_top 6
+        clans_rest 23
+        diff 9.1
+        ci [-0.3, 16.7]
+        clear False
+        x_top 20
+        x_rest 21
+        flag_top 
+        flag_rest 
+        clan_counts
+          top6 {'H-SR': 8, 'RESIN': 6, 'HTDOG': 2, 'KITE': 2, 'VRTUS': 1, 'BONKZ': 1}
+          rest {'BONKY': 4, 'MACHX': 3, 'BTLST': 2, 'RSR': 2, 'HFANS': 2, 'INCA': 1, 'PN': 1, 'EPOXY': 1, 'SCCC2': 1, 'KM': 1, '-BN-': 1, 'MZY': 1, 'REEEE': 1}
+      Sleeping Giant
+        top 15.6
+        rest 10.8
+        n_top 32
+        n_rest 37
+        clans_top 6
+        clans_rest 16
+        diff 4.8
+        ci [-11.8, 19.4]
+        clear False
+        x_top 5
+        x_rest 4
+        flag_top 
+        flag_rest 
+        clan_counts
+          top6 {'H-SR': 3, 'RESIN': 1, 'BONKZ': 1}
+          rest {'EPOXY': 1, 'HFANS': 1, 'SCCC2': 1, 'BONKY': 1}
+      Hotspot
+        top 21.7
+        rest 12.5
+        n_top 23
+        n_rest 48
+        clans_top 6
+        clans_rest 19
+        diff 9.2
+        ci [-9.8, 37.0]
+        clear False
+        x_top 5
+        x_rest 6
+        flag_top 
+        flag_rest 
+        clan_counts
+          top6 {'RESIN': 2, 'HTDOG': 1, 'VRTUS': 1, 'H-SR': 1}
+          rest {'BONKY': 2, 'BTLST': 1, '-BN-': 1, 'REEEE': 1, 'HFANS': 1}
+      Mountain Range
+        top 35.7
+        rest 8.0
+        n_top 14
+        n_rest 25
+        clans_top 4
+        clans_rest 13
+        diff 27.7
+        ci [1.9, 50.8]
+        clear True
+        x_top 5
+        x_rest 2
+        flag_top small n
+        flag_rest 
+        clan_counts
+          top6 {'KITE': 2, 'H-SR': 2, 'RESIN': 1}
+          rest {'PN': 1, 'RSR': 1}
+      Land of Fire
+        top 8.3
+        rest 8.0
+        n_top 12
+        n_rest 25
+        clans_top 6
+        clans_rest 13
+        diff 0.3
+        ci [-19.4, 18.8]
+        clear False
+        x_top 1
+        x_rest 2
+        flag_top small n
+        flag_rest 
+        clan_counts
+          top6 {'HTDOG': 1}
+          rest {'MACHX': 2}
+      Loop
+        top 20.0
+        rest 4.3
+        n_top 10
+        n_rest 23
+        clans_top 5
+        clans_rest 16
+        diff 15.7
+        ci [-11.1, 38.7]
+        clear False
+        x_top 2
+        x_rest 1
+        flag_top small n
+        flag_rest 
+        clan_counts
+          top6 {'RESIN': 2}
+          rest {'INCA': 1}
+      Okinawa
+        top 0.0
+        rest 13.0
+        n_top 3
+        n_rest 23
+        clans_top 3
+        clans_rest 14
+        diff -13.0
+        ci [-25.0, 0.0]
+        clear False
+        x_top 0
+        x_rest 3
+        flag_top too few
+        flag_rest 
+        clan_counts
+          top6 {}
+          rest {'BTLST': 1, 'RSR': 1, 'MACHX': 1}
+      Sea of Fortune
+        top 22.2
+        rest 13.6
+        n_top 9
+        n_rest 22
+        clans_top 4
+        clans_rest 15
+        diff 8.6
+        ci [-22.7, 43.3]
+        clear False
+        x_top 2
+        x_rest 3
+        flag_top small n
+        flag_rest 
+        clan_counts
+          top6 {'H-SR': 2}
+          rest {'KM': 1, 'BONKY': 1, 'MZY': 1}
+  lit
+    label Ran radar from it and lit an enemy
+    table
+      All maps
+        top 18.4
+        rest 8.4
+        n_top 103
+        n_rest 203
+        clans_top 6
+        clans_rest 23
+        diff 10.1
+        ci [-1.4, 18.0]
+        clear False
+        x_top 19
+        x_rest 17
+        flag_top 
+        flag_rest 
+        clan_counts
+          top6 {'H-SR': 8, 'RESIN': 6, 'HTDOG': 2, 'KITE': 2, 'VRTUS': 1}
+          rest {'MACHX': 3, 'BTLST': 2, 'HFANS': 2, 'INCA': 1, 'PN': 1, 'RSR': 1, 'EPOXY': 1, 'SCCC2': 1, 'BONKY': 1, 'KM': 1, '-BN-': 1, 'MZY': 1, 'REEEE': 1}
+      Sleeping Giant
+        top 12.5
+        rest 10.8
+        n_top 32
+        n_rest 37
+        clans_top 6
+        clans_rest 16
+        diff 1.7
+        ci [-13.4, 18.8]
+        clear False
+        x_top 4
+        x_rest 4
+        flag_top 
+        flag_rest 
+        clan_counts
+          top6 {'H-SR': 3, 'RESIN': 1}
+          rest {'EPOXY': 1, 'HFANS': 1, 'SCCC2': 1, 'BONKY': 1}
+      Hotspot
+        top 21.7
+        rest 8.3
+        n_top 23
+        n_rest 48
+        clans_top 6
+        clans_rest 19
+        diff 13.4
+        ci [-2.5, 42.6]
+        clear False
+        x_top 5
+        x_rest 4
+        flag_top 
+        flag_rest 
+        clan_counts
+          top6 {'RESIN': 2, 'HTDOG': 1, 'VRTUS': 1, 'H-SR': 1}
+          rest {'BTLST': 1, '-BN-': 1, 'REEEE': 1, 'HFANS': 1}
+      Mountain Range
+        top 35.7
+        rest 8.0
+        n_top 14
+        n_rest 25
+        clans_top 4
+        clans_rest 13
+        diff 27.7
+        ci [2.9, 53.0]
+        clear True
+        x_top 5
+        x_rest 2
+        flag_top small n
+        flag_rest 
+        clan_counts
+          top6 {'KITE': 2, 'H-SR': 2, 'RESIN': 1}
+          rest {'PN': 1, 'RSR': 1}
+      Land of Fire
+        top 8.3
+        rest 8.0
+        n_top 12
+        n_rest 25
+        clans_top 6
+        clans_rest 13
+        diff 0.3
+        ci [-19.0, 18.8]
+        clear False
+        x_top 1
+        x_rest 2
+        flag_top small n
+        flag_rest 
+        clan_counts
+          top6 {'HTDOG': 1}
+          rest {'MACHX': 2}
+      Loop
+        top 20.0
+        rest 4.3
+        n_top 10
+        n_rest 23
+        clans_top 5
+        clans_rest 16
+        diff 15.7
+        ci [-10.5, 38.9]
+        clear False
+        x_top 2
+        x_rest 1
+        flag_top small n
+        flag_rest 
+        clan_counts
+          top6 {'RESIN': 2}
+          rest {'INCA': 1}
+      Okinawa
+        top 0.0
+        rest 8.7
+        n_top 3
+        n_rest 23
+        clans_top 3
+        clans_rest 14
+        diff -8.7
+        ci [-19.2, 0.0]
+        clear False
+        x_top 0
+        x_rest 2
+        flag_top too few
+        flag_rest 
+        clan_counts
+          top6 {}
+          rest {'BTLST': 1, 'MACHX': 1}
+      Sea of Fortune
+        top 22.2
+        rest 9.1
+        n_top 9
+        n_rest 22
+        clans_top 4
+        clans_rest 15
+        diff 13.1
+        ci [-17.4, 46.2]
+        clear False
+        x_top 2
+        x_rest 2
+        flag_top small n
+        flag_rest 
+        clan_counts
+          top6 {'H-SR': 2}
+          rest {'KM': 1, 'MZY': 1}
+  lit_dd
+    label Ran radar from it and lit an enemy destroyer
+    table
+      All maps
+        top 15.5
+        rest 7.4
+        n_top 103
+        n_rest 203
+        clans_top 6
+        clans_rest 23
+        diff 8.1
+        ci [-0.3, 15.4]
+        clear False
+        x_top 16
+        x_rest 15
+        flag_top 
+        flag_rest 
+        clan_counts
+          top6 {'RESIN': 6, 'H-SR': 5, 'HTDOG': 2, 'KITE': 2, 'VRTUS': 1}
+          rest {'BTLST': 2, 'HFANS': 2, 'INCA': 1, 'PN': 1, 'RSR': 1, 'EPOXY': 1, 'SCCC2': 1, 'BONKY': 1, 'KM': 1, '-BN-': 1, 'MACHX': 1, 'MZY': 1, 'REEEE': 1}
+      Sleeping Giant
+        top 3.1
+        rest 10.8
+        n_top 32
+        n_rest 37
+        clans_top 6
+        clans_rest 16
+        diff -7.7
+        ci [-17.5, 1.6]
+        clear False
+        x_top 1
+        x_rest 4
+        flag_top 
+        flag_rest 
+        clan_counts
+          top6 {'RESIN': 1}
+          rest {'EPOXY': 1, 'HFANS': 1, 'SCCC2': 1, 'BONKY': 1}
+      Hotspot
+        top 21.7
+        rest 8.3
+        n_top 23
+        n_rest 48
+        clans_top 6
+        clans_rest 19
+        diff 13.4
+        ci [-3.3, 42.4]
+        clear False
+        x_top 5
+        x_rest 4
+        flag_top 
+        flag_rest 
+        clan_counts
+          top6 {'RESIN': 2, 'HTDOG': 1, 'VRTUS': 1, 'H-SR': 1}
+          rest {'BTLST': 1, '-BN-': 1, 'REEEE': 1, 'HFANS': 1}
+      Mountain Range
+        top 35.7
+        rest 8.0
+        n_top 14
+        n_rest 25
+        clans_top 4
+        clans_rest 13
+        diff 27.7
+        ci [3.2, 52.8]
+        clear True
+        x_top 5
+        x_rest 2
+        flag_top small n
+        flag_rest 
+        clan_counts
+          top6 {'KITE': 2, 'H-SR': 2, 'RESIN': 1}
+          rest {'PN': 1, 'RSR': 1}
+      Land of Fire
+        top 8.3
+        rest 4.0
+        n_top 12
+        n_rest 25
+        clans_top 6
+        clans_rest 13
+        diff 4.3
+        ci [-9.5, 20.0]
+        clear False
+        x_top 1
+        x_rest 1
+        flag_top small n
+        flag_rest 
+        clan_counts
+          top6 {'HTDOG': 1}
+          rest {'MACHX': 1}
+      Loop
+        top 20.0
+        rest 4.3
+        n_top 10
+        n_rest 23
+        clans_top 5
+        clans_rest 16
+        diff 15.7
+        ci [-10.5, 37.3]
+        clear False
+        x_top 2
+        x_rest 1
+        flag_top small n
+        flag_rest 
+        clan_counts
+          top6 {'RESIN': 2}
+          rest {'INCA': 1}
+      Okinawa
+        top 0.0
+        rest 4.3
+        n_top 3
+        n_rest 23
+        clans_top 3
+        clans_rest 14
+        diff -4.3
+        ci [-14.3, 0.0]
+        clear False
+        x_top 0
+        x_rest 1
+        flag_top too few
+        flag_rest 
+        clan_counts
+          top6 {}
+          rest {'BTLST': 1}
+      Sea of Fortune
+        top 22.2
+        rest 9.1
+        n_top 9
+        n_rest 22
+        clans_top 4
+        clans_rest 15
+        diff 13.1
+        ci [-16.7, 49.7]
+        clear False
+        x_top 2
+        x_rest 2
+        flag_top small n
+        flag_rest 
+        clan_counts
+          top6 {'H-SR': 2}
+          rest {'KM': 1, 'MZY': 1}
+three_ships
+  inside {'top': 82.4, 'rest': 51.7, 'n_top': 68, 'n_rest': 120, 'clans_top': 6, 'clans_rest': 21, 'diff': 30.7, 'ci': [16.2, 46.3], 'clear': True, 'x_top': 56, 'x_rest': 62}
+  used {'top': 27.9, 'rest': 16.7, 'n_top': 68, 'n_rest': 120, 'clans_top': 6, 'clans_rest': 21, 'diff': 11.3, 'ci': [-3.1, 24.6], 'clear': False, 'x_top': 19, 'x_rest': 20}
+  lit {'top': 26.5, 'rest': 13.3, 'n_top': 68, 'n_rest': 120, 'clans_top': 6, 'clans_rest': 21, 'diff': 13.1, 'ci': [-2.7, 26.1], 'clear': False, 'x_top': 18, 'x_rest': 16}
+  lit_dd {'top': 22.1, 'rest': 11.7, 'n_top': 68, 'n_rest': 120, 'clans_top': 6, 'clans_rest': 21, 'diff': 10.4, 'ci': [-1.7, 22.1], 'clear': False, 'x_top': 15, 'x_rest': 14}
+of_inside
+  n 132
+  used {'top': 32.8, 'rest': 29.6, 'n_top': 61, 'n_rest': 71, 'clans_top': 6, 'clans_rest': 18, 'diff': 3.2, 'ci': [-17.8, 17.8], 'clear': False}
+  used_strict {'top': 31.1, 'rest': 25.4, 'n_top': 61, 'n_rest': 71, 'clans_top': 6, 'clans_rest': 18, 'diff': 5.8, 'ci': [-11.7, 19.7], 'clear': False}
+  lit {'top': 31.1, 'rest': 23.9, 'n_top': 61, 'n_rest': 71, 'clans_top': 6, 'clans_rest': 18, 'diff': 7.2, 'ci': [-11.4, 19.5], 'clear': False}
+  lit_dd {'top': 26.2, 'rest': 21.1, 'n_top': 61, 'n_rest': 71, 'clans_top': 6, 'clans_rest': 18, 'diff': 5.1, 'ci': [-10.2, 18.1], 'clear': False}
+  batch_run {'top': 31.1, 'rest': 21.1, 'n_top': 61, 'n_rest': 71, 'clans_top': 6, 'clans_rest': 18, 'diff': 10.0, 'ci': [-7.0, 23.8], 'clear': False}
+  counts {'used': 41, 'strict': 37, 'lit': 36, 'lit_dd': 31, 'batch_run': 34, 'log_and_batch': 34, 'log_not_batch': 7, 'batch_not_log': 0}
+  enemies_lit_per_using_smoke {'top': 1.5, 'rest': 1.33, 'n_top': 20, 'n_rest': 21, 'clans_top': 6, 'clans_rest': 13, 'diff': 0.17, 'ci': [-0.56, 0.65], 'clear': False}
+  dd_lit_per_using_smoke {'top': 1.05, 'rest': 0.95, 'n_top': 20, 'n_rest': 21, 'clans_top': 6, 'clans_rest': 13, 'diff': 0.1, 'ci': [-0.49, 0.56], 'clear': False}
+  lit_rows 61
+  lit_rows_ambiguous 3
+not_inside_anyship_radar {'n': 174, 'any_radar_from_smoke': 6}
+per_team_game
+  inside {'top': 0.55, 'rest': 0.31, 'ci': [0.04, 0.44]}
+  used {'top': 0.18, 'rest': 0.09, 'ci': [-0.01, 0.2]}
+  lit {'top': 0.17, 'rest': 0.07, 'ci': [-0.01, 0.2]}
+  lit_dd {'top': 0.15, 'rest': 0.06, 'ci': [-0.01, 0.15]}
+cap_three_ships
+  a radar cruiser inside
+  b radar cruiser covered, not inside
+  n_a 118
+  n_b 29
+  clans_a 23
+  clans_b 17
+  rows
+    batch_all {'name': 'Batch cap_won, all smokes (round 4, Module 2 number)', 'a': 57.6, 'n_a': 118, 'x_a': 68, 'b': 13.8, 'n_b': 29, 'x_b': 4, 'diff': 43.8, 'ci': [30.4, 53.5], 'clear': True}
+    batch_takeable {'name': 'Batch cap_won, contested cap not ours at activation (round 4, Module 3 number)', 'a': 60.4, 'n_a': 106, 'x_a': 64, 'b': 14.3, 'n_b': 28, 'x_b': 4, 'diff': 46.1, 'ci': [31.3, 56.8], 'clear': True}
+    tl_cont {'name': 'Cap timeline: contested cap not ours at activation, ours within 60 s after the smoke cleared', 'a': 46.2, 'n_a': 106, 'x_a': 49, 'b': 32.1, 'n_b': 28, 'x_b': 9, 'diff': 14.1, 'ci': [-3.5, 29.3], 'clear': False}
+    tl_near {'name': 'Cap timeline: nearest cap, same test', 'a': 58.9, 'n_a': 90, 'x_a': 53, 'b': 36.4, 'n_b': 22, 'x_b': 8, 'diff': 22.5, 'ci': [-0.3, 41.4], 'clear': False}
+    tl_cont10 {'name': 'Cap timeline: contested cap, the batch window (10 s after)', 'a': 36.8, 'n_a': 106, 'x_a': 39, 'b': 28.6, 'n_b': 28, 'x_b': 8, 'diff': 8.2, 'ci': [-10.8, 25.3], 'clear': False}
+    tl_any10 {'name': 'Cap timeline: any cap flipped to us by 10 s after, all smokes', 'a': 77.1, 'n_a': 118, 'x_a': 91, 'b': 75.9, 'n_b': 29, 'x_b': 22, 'diff': 1.3, 'ci': [-13.7, 19.9], 'clear': False}
+cap_three_ships_vs_rest
+  a radar cruiser inside
+  b everything else
+  n_a 118
+  n_b 70
+  clans_a 23
+  clans_b 24
+  rows
+    batch_all {'name': 'Batch cap_won, all smokes (round 4, Module 2 number)', 'a': 57.6, 'n_a': 118, 'x_a': 68, 'b': 25.7, 'n_b': 70, 'x_b': 18, 'diff': 31.9, 'ci': [21.8, 41.2], 'clear': True}
+    batch_takeable {'name': 'Batch cap_won, contested cap not ours at activation (round 4, Module 3 number)', 'a': 60.4, 'n_a': 106, 'x_a': 64, 'b': 25.4, 'n_b': 67, 'x_b': 17, 'diff': 35.0, 'ci': [24.0, 44.4], 'clear': True}
+    tl_cont {'name': 'Cap timeline: contested cap not ours at activation, ours within 60 s after the smoke cleared', 'a': 46.2, 'n_a': 106, 'x_a': 49, 'b': 34.3, 'n_b': 67, 'x_b': 23, 'diff': 11.9, 'ci': [-4.2, 25.3], 'clear': False}
+    tl_near {'name': 'Cap timeline: nearest cap, same test', 'a': 58.9, 'n_a': 90, 'x_a': 53, 'b': 40.4, 'n_b': 57, 'x_b': 23, 'diff': 18.5, 'ci': [-0.2, 33.8], 'clear': False}
+    tl_cont10 {'name': 'Cap timeline: contested cap, the batch window (10 s after)', 'a': 36.8, 'n_a': 106, 'x_a': 39, 'b': 28.4, 'n_b': 67, 'x_b': 19, 'diff': 8.4, 'ci': [-6.5, 22.1], 'clear': False}
+    tl_any10 {'name': 'Cap timeline: any cap flipped to us by 10 s after, all smokes', 'a': 77.1, 'n_a': 118, 'x_a': 91, 'b': 77.1, 'n_b': 70, 'x_b': 54, 'diff': -0.0, 'ci': [-10.1, 12.3], 'clear': False}
+cap_all_early
+  a radar cruiser inside
+  b no radar cruiser inside
+  n_a 132
+  n_b 174
+  clans_a 24
+  clans_b 29
+  rows
+    batch_all {'name': 'Batch cap_won, all smokes (round 4, Module 2 number)', 'a': 58.3, 'n_a': 132, 'x_a': 77, 'b': 28.7, 'n_b': 174, 'x_b': 50, 'diff': 29.6, 'ci': [21.7, 38.4], 'clear': True}
+    batch_takeable {'name': 'Batch cap_won, contested cap not ours at activation (round 4, Module 3 number)', 'a': 60.8, 'n_a': 120, 'x_a': 73, 'b': 31.4, 'n_b': 153, 'x_b': 48, 'diff': 29.5, 'ci': [20.0, 38.4], 'clear': True}
+    tl_cont {'name': 'Cap timeline: contested cap not ours at activation, ours within 60 s after the smoke cleared', 'a': 46.7, 'n_a': 120, 'x_a': 56, 'b': 32.0, 'n_b': 153, 'x_b': 49, 'diff': 14.6, 'ci': [3.3, 24.7], 'clear': True}
+    tl_near {'name': 'Cap timeline: nearest cap, same test', 'a': 58.8, 'n_a': 102, 'x_a': 60, 'b': 37.0, 'n_b': 135, 'x_b': 50, 'diff': 21.8, 'ci': [9.6, 32.5], 'clear': True}
+    tl_cont10 {'name': 'Cap timeline: contested cap, the batch window (10 s after)', 'a': 36.7, 'n_a': 120, 'x_a': 44, 'b': 26.8, 'n_b': 153, 'x_b': 41, 'diff': 9.9, 'ci': [-1.1, 21.2], 'clear': False}
+    tl_any10 {'name': 'Cap timeline: any cap flipped to us by 10 s after, all smokes', 'a': 75.8, 'n_a': 132, 'x_a': 100, 'b': 64.9, 'n_b': 174, 'x_b': 113, 'diff': 10.8, 'ci': [3.9, 18.6], 'clear': True}
+cap_used_vs_not
+  a radar cruiser inside, ran radar from it
+  b radar cruiser inside, did not
+  n_a 41
+  n_b 91
+  clans_a 19
+  clans_b 21
+  rows
+    batch_all {'name': 'Batch cap_won, all smokes (round 4, Module 2 number)', 'a': 56.1, 'n_a': 41, 'x_a': 23, 'b': 59.3, 'n_b': 91, 'x_b': 54, 'diff': -3.2, 'ci': [-19.9, 11.3], 'clear': False}
+    batch_takeable {'name': 'Batch cap_won, contested cap not ours at activation (round 4, Module 3 number)', 'a': 59.0, 'n_a': 39, 'x_a': 23, 'b': 61.7, 'n_b': 81, 'x_b': 50, 'diff': -2.8, 'ci': [-20.4, 12.6], 'clear': False}
+    tl_cont {'name': 'Cap timeline: contested cap not ours at activation, ours within 60 s after the smoke cleared', 'a': 46.2, 'n_a': 39, 'x_a': 18, 'b': 46.9, 'n_b': 81, 'x_b': 38, 'diff': -0.8, 'ci': [-21.7, 21.5], 'clear': False}
+    tl_near {'name': 'Cap timeline: nearest cap, same test', 'a': 60.6, 'n_a': 33, 'x_a': 20, 'b': 58.0, 'n_b': 69, 'x_b': 40, 'diff': 2.6, 'ci': [-18.9, 26.8], 'clear': False}
+    tl_cont10 {'name': 'Cap timeline: contested cap, the batch window (10 s after)', 'a': 33.3, 'n_a': 39, 'x_a': 13, 'b': 38.3, 'n_b': 81, 'x_b': 31, 'diff': -4.9, 'ci': [-22.7, 11.2], 'clear': False}
+    tl_any10 {'name': 'Cap timeline: any cap flipped to us by 10 s after, all smokes', 'a': 73.2, 'n_a': 41, 'x_a': 30, 'b': 76.9, 'n_b': 91, 'x_b': 70, 'diff': -3.8, 'ci': [-17.3, 7.2], 'clear': False}
+cap_all_early_top
+  a radar cruiser inside (Top 6)
+  b no radar cruiser inside
+  n_a 61
+  n_b 42
+  clans_a 6
+  clans_b 6
+  rows
+    batch_all {'name': 'Batch cap_won, all smokes (round 4, Module 2 number)', 'a': 59.0, 'n_a': 61, 'x_a': 36, 'b': 40.5, 'n_b': 42, 'x_b': 17, 'diff': 18.5, 'ci': [4.2, 32.6], 'clear': True}
+    batch_takeable {'name': 'Batch cap_won, contested cap not ours at activation (round 4, Module 3 number)', 'a': 63.6, 'n_a': 55, 'x_a': 35, 'b': 44.4, 'n_b': 36, 'x_b': 16, 'diff': 19.2, 'ci': [-1.1, 36.0], 'clear': False}
+    tl_cont {'name': 'Cap timeline: contested cap not ours at activation, ours within 60 s after the smoke cleared', 'a': 52.7, 'n_a': 55, 'x_a': 29, 'b': 44.4, 'n_b': 36, 'x_b': 16, 'diff': 8.3, 'ci': [-11.8, 29.2], 'clear': False}
+    tl_near {'name': 'Cap timeline: nearest cap, same test', 'a': 63.3, 'n_a': 49, 'x_a': 31, 'b': 50.0, 'n_b': 30, 'x_b': 15, 'diff': 13.3, 'ci': [-7.6, 33.6], 'clear': False}
+    tl_cont10 {'name': 'Cap timeline: contested cap, the batch window (10 s after)', 'a': 40.0, 'n_a': 55, 'x_a': 22, 'b': 38.9, 'n_b': 36, 'x_b': 14, 'diff': 1.1, 'ci': [-24.5, 21.4], 'clear': False}
+    tl_any10 {'name': 'Cap timeline: any cap flipped to us by 10 s after, all smokes', 'a': 75.4, 'n_a': 61, 'x_a': 46, 'b': 71.4, 'n_b': 42, 'x_b': 30, 'diff': 4.0, 'ci': [-0.4, 10.8], 'clear': False}
+cap_all_early_rest
+  a radar cruiser inside (Rest)
+  b no radar cruiser inside
+  n_a 71
+  n_b 132
+  clans_a 18
+  clans_b 23
+  rows
+    batch_all {'name': 'Batch cap_won, all smokes (round 4, Module 2 number)', 'a': 57.7, 'n_a': 71, 'x_a': 41, 'b': 25.0, 'n_b': 132, 'x_b': 33, 'diff': 32.7, 'ci': [22.4, 44.7], 'clear': True}
+    batch_takeable {'name': 'Batch cap_won, contested cap not ours at activation (round 4, Module 3 number)', 'a': 58.5, 'n_a': 65, 'x_a': 38, 'b': 27.4, 'n_b': 117, 'x_b': 32, 'diff': 31.1, 'ci': [21.1, 42.3], 'clear': True}
+    tl_cont {'name': 'Cap timeline: contested cap not ours at activation, ours within 60 s after the smoke cleared', 'a': 41.5, 'n_a': 65, 'x_a': 27, 'b': 28.2, 'n_b': 117, 'x_b': 33, 'diff': 13.3, 'ci': [-0.3, 27.1], 'clear': False}
+    tl_near {'name': 'Cap timeline: nearest cap, same test', 'a': 54.7, 'n_a': 53, 'x_a': 29, 'b': 33.3, 'n_b': 105, 'x_b': 35, 'diff': 21.4, 'ci': [5.1, 38.4], 'clear': True}
+    tl_cont10 {'name': 'Cap timeline: contested cap, the batch window (10 s after)', 'a': 33.8, 'n_a': 65, 'x_a': 22, 'b': 23.1, 'n_b': 117, 'x_b': 27, 'diff': 10.8, 'ci': [-1.2, 25.5], 'clear': False}
+    tl_any10 {'name': 'Cap timeline: any cap flipped to us by 10 s after, all smokes', 'a': 76.1, 'n_a': 71, 'x_a': 54, 'b': 62.9, 'n_b': 132, 'x_b': 83, 'diff': 13.2, 'ci': [3.8, 23.8], 'clear': True}
+check_cap_won {'batch_cap_won': 127, 'timeline_confirms_same_cap': 127, 'batch_cap_is_contested': 55, 'batch_cap_is_nearest': 60, 'timeline_any10': 213, 'timeline_any10_not_batch': 86, 'contested_is_nearest': 253, 'n': 306, 'tk_cont_agree_with_batch_pct': 76.6}
+check_headline_second_way {'top': 61, 'rest': 71}
+A_bug
+  n 302
+  all {'top': 59.8, 'rest': 35.0, 'n_top': 102, 'n_rest': 200, 'clans_top': 6, 'clans_rest': 23, 'diff': 24.8, 'ci': [12.7, 35.6], 'clear': True, 'x_top': 61, 'x_rest': 70}
+  sg {'top': 46.9, 'rest': 59.5, 'n_top': 32, 'n_rest': 37, 'clans_top': 6, 'clans_rest': 16, 'diff': -12.6, 'ci': [-39.9, 18.9], 'clear': False, 'x_top': 15, 'x_rest': 22}
+  hs {'top': 87.0, 'rest': 37.8, 'n_top': 23, 'n_rest': 45, 'clans_top': 6, 'clans_rest': 18, 'diff': 49.2, 'ci': [30.5, 69.3], 'clear': True, 'x_top': 20, 'x_rest': 17}
+  three {'top': 82.4, 'rest': 51.3, 'n_top': 68, 'n_rest': 119, 'clans_top': 6, 'clans_rest': 21, 'diff': 31.1, 'ci': [17.3, 46.9], 'clear': True, 'x_top': 56, 'x_rest': 61}
+  cap_three {'name': 'Batch cap_won, all smokes (round 4, Module 2 number)', 'a': 58.1, 'n_a': 117, 'x_a': 68, 'b': 13.8, 'n_b': 29, 'x_b': 4, 'diff': 44.3, 'ci': [31.7, 53.7], 'clear': True}
+  cap_all {'name': 'Batch cap_won, contested cap not ours at activation (round 4, Module 3 number)', 'a': 60.8, 'n_a': 120, 'x_a': 73, 'b': 31.3, 'n_b': 150, 'x_b': 47, 'diff': 29.5, 'ci': [20.7, 38.2], 'clear': True}
+clock {'games': [['kots19na_7971', 1], ['kots19na_7976', 1]], 'smokes': 17, 'now_early': 4, 'now_early_dd': 4, 'now_early_three': 1, 'left_early_dd': 0}

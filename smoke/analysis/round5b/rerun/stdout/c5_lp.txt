@@ -1,0 +1,95 @@
+=== LP-1 early smoke rate per team-game, by map
+| Map | Team-games (Top 6 / Rest) | Early destroyer smokes per team-game: all | Top 6 | Rest | Gap (interval) | Early cruiser smokes per team-game (destroyer smoke covering a cruiser): all | Top 6 | Rest | Gap (interval) | of which cruiser inside | cruiser screened | Early smokes laid by cruisers per team-game |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Sleeping Giant | 64 (27 / 37) | 1.08 (0.83 to 1.28) | 1.19 | 1.0 | +0.19 (-0.23 to +0.64) | 0.91 (0.70 to 1.10) | 1.04 | 0.81 | +0.23 (-0.14 to +0.65) | 0.69 | 0.22 | 0.31 |
+| Hotspot | 62 (18 / 44) | 1.15 (0.95 to 1.32) | 1.28 | 1.09 | +0.19 (-0.18 to +0.56) | 0.87 (0.66 to 1.09) | 1.22 | 0.73 | +0.49 (+0.17 to +0.82 *) | 0.66 | 0.21 | 0.06 |
+| Mountain Range | 42 (16 / 26) | 0.93 (0.63 to 1.24) | 0.88 | 0.96 | -0.09 (-0.70 to +0.52) | 0.67 (0.41 to 0.93) | 0.62 | 0.69 | -0.07 (-0.60 to +0.55) | 0.48 | 0.19 | 0.38 |
+| Land of Fire | 50 (16 / 34) | 0.74 (0.53 to 0.95) | 0.75 | 0.74 | +0.01 (-0.38 to +0.62) | 0.50 (0.32 to 0.67) | 0.5 | 0.5 | +0.00 (-0.30 to +0.37) | 0.34 | 0.16 | 0.42 |
+| Sea of Fortune | 42 (14 / 28) | 0.74 (0.51 to 0.96) | 0.64 | 0.79 | -0.14 (-0.66 to +0.35) | 0.57 (0.40 to 0.72) | 0.57 | 0.57 | +0.00 (-0.40 to +0.37) | 0.36 | 0.21 | 0.33 |
+| Loop | 46 (13 / 33) | 0.72 (0.50 to 0.96) | 0.77 | 0.7 | +0.07 (-0.46 to +0.56) | 0.46 (0.27 to 0.65) | 0.54 | 0.42 | +0.11 (-0.29 to +0.51) | 0.22 | 0.24 | 0.11 |
+| Okinawa | 36 (6 / 30) | 0.72 (0.50 to 1.00) | 0.5 | 0.77 | -0.27 (-0.76 to +0.19) | 0.44 (0.26 to 0.65) | 0.33 | 0.47 | -0.13 (-0.54 to +0.33) | 0.17 | 0.28 | 0.61 |
+ Loop minus other maps, dd: -0.20 ci (-0.3970121381886087, -0.007363132363132352) | other maps rate 0.92
+ Loop minus other maps, ecr: -0.24 ci (-0.39808006535947715, -0.06108863072705906) | other maps rate 0.69
+ Loop minus other maps, ins: -0.27 ci (-0.386842515998127, -0.13913777431502405) | other maps rate 0.48
+ Loop minus other maps, scr: +0.03 ci (-0.08922558922558924, 0.18713781809019903) | other maps rate 0.21
+ Loop team-games with zero early destroyer smokes: 20 of 46 | other maps 97 of 296
+ Loop team-games with zero early cruiser smokes: 28 | other maps 132
+ Loop early destroyer smoke ships Somers 8, Daring 6, Gearing 4, Shimakaze 3, Gdańsk 3, Z-42 2, Delny 2, Harugumo 1 | early cruiser smokes: ships Somers 8, Gearing 2, Shimakaze 2, Gdańsk 2, Harugumo 1, Vampire II 1, Grozovoi 1, La Pampa 1 | clans Top 6: RESIN 3, H-SR 2, VRTUS 1, BONKZ 1 | Rest: MACHX 2, -BN- 2, EPOXY 2, 5D 1, KSC 1, UYSC 1, KM 1, INCA 1, NGA 1, MZY 1, HFANS 1
+ Loop destroyers fielded (team-games) Châteaurenault 21, Marceau 16, Daring 16, Kléber 10, Delny 9, Somers 9, Gearing 7, Shimakaze 6, Yueyang 6, 20 de Julio 6, Cassard 6, Gdańsk 5
+ long-smoke ships share of destroyer slots: Loop 19.333333333333332 | other maps 27.827050997782706
+
+=== LP-2 spread of opening positions (first smoke of each team-game, any class)
+| Map | Team-games with a smoke | Mean distance of the first smoke from the map average first-smoke position (interval) | as share of map width | Same, measured within the west and east halves | Grid cells holding 80% of first smokes (of cells used) | Most used cell (share) | Median time of first smoke | First smoke before 5:00 | Top 6 / Rest spread, km (interval of difference) |
+|---|---|---|---|---|---|---|---|---|---|
+| Sleeping Giant | 60 | 11.1 km (8.2 to 12.8) | 26% | 4.6 km | 10 of 19 | G1 (22%) | 2:41 | 87% | 11.16 / 10.82 (-5.5 to +5.0) |
+| Hotspot | 62 | 10.7 km (8.2 to 12.3) | 22% | 7.1 km | 7 of 15 | G10 (18%) | 2:37 | 84% | 12.07 / 9.97 (-2.0 to +7.6) |
+| Mountain Range | 41 | 10.7 km (8.0 to 13.2) | 22% | 5.9 km | 11 of 19 | G7 (15%) | 3:05 | 78% | 9.78 / 11.08 (-7.7 to +4.0) |
+| Land of Fire | 45 | 9.7 km (7.6 to 11.2) | 20% | 7.1 km | 13 of 22 | F5 (18%) | 3:14 | 73% | 9.31 / 9.38 (-4.6 to +3.1) |
+| Sea of Fortune | 39 | 15.7 km (13.5 to 16.5) | 33% | 4.4 km | 10 of 17 | F2 (15%) | 3:49 | 82% | 15.52 / 15.48 (-5.6 to +3.6) |
+| Loop | 41 | 10.0 km (8.1 to 11.3) | 21% | 5.2 km | 11 of 18 | F4 (15%) | 4:14 | 71% | 9.93 / 9.9 (-4.4 to +2.1) |
+| Okinawa | 35 | 12.5 km (10.5 to 13.9) | 30% | 7.8 km | 12 of 19 | D1 (11%) | 3:24 | 77% | 13.35 / 12.23 (-7.7 to +4.5) |
+ Loop first smokes: cells F4 6, F7 5, F8 4, F3 3, G7 3, G4 3, G5 2, G6 2, F6 2, G8 2, G3 2, G10 1 | zone A 18, B 18, C 5 | top zone A 6, B 5, C 1 | rest zone B 13, A 12, C 4
+ Loop first-smoke at zone A Top 6 6 of 12 (50%) vs Rest 12 of 29 (41%); gap +9 pts (-30 to +41) | B Top 6 5 of 12 (42%) vs Rest 13 of 29 (45%); gap -3 pts (-34 to +31) | C Top 6 1 of 12 (8%) vs Rest 4 of 29 (14%); gap -6 pts (-27 to +12)
+
+=== LP-3 first smoker by ship
+| Map | First smokes | First smoker, all | Top 6 | Rest | Long-smoke ships (Somers, Gearing, Harugumo, Delny) | Cap sitters | Cruisers |
+|---|---|---|---|---|---|---|---|
+| Sleeping Giant | 60 | Somers 15, Gearing 13, Harugumo 11, Z-42 4, Napoli 4, Gdańsk 3 | Harugumo 7, Gearing 5, Somers 5, Gdańsk 3 | Somers 10, Gearing 8, Harugumo 4, Z-42 3 | 65% | 20% | 13% |
+| Hotspot | 62 | Somers 22, Gearing 11, Harugumo 6, Daring 6, Gdańsk 5, Shimakaze 4 | Somers 7, Gearing 4, Harugumo 3, Delny 1 | Somers 15, Gearing 7, Daring 6, Gdańsk 4 | 65% | 29% | 5% |
+| Mountain Range | 41 | Gearing 12, Somers 9, Svea 6, Gdańsk 5, Napoli 5, F. Sherman 1 | Svea 4, Gearing 4, Somers 4, Gdańsk 2 | Gearing 8, Napoli 5, Somers 5, Gdańsk 3 | 54% | 15% | 29% |
+| Land of Fire | 45 | Somers 10, Gearing 9, Svea 5, Gdańsk 3, Z-42 3, Harugumo 3 | Gearing 3, Z-52 2, Delny 2, Svea 2 | Somers 9, Gearing 6, Svea 3, Venezia 2 | 53% | 18% | 18% |
+| Sea of Fortune | 39 | Napoli 7, Somers 7, Gearing 5, Svea 4, Harugumo 4, Jinan 2 | Svea 2, Gearing 2, Harugumo 2, Cerberus 1 | Somers 7, Napoli 6, Gearing 3, Svea 2 | 46% | 8% | 38% |
+| Loop | 41 | Daring 7, Gearing 5, Somers 5, Gdańsk 4, Napoli 4, Shimakaze 3 | Gdańsk 3, Somers 2, Svea 2, Shimakaze 1 | Daring 6, Gearing 4, Napoli 4, Somers 3 | 32% | 39% | 20% |
+| Okinawa | 35 | Gearing 6, Daring 5, Napoli 4, Svea 4, Harugumo 4, Somers 3 | Gearing 2, Svea 1, Somers 1, Smolensk 1 | Daring 5, Napoli 4, Gearing 4, Harugumo 4 | 37% | 29% | 31% |
+ long-ship share of first smokes, Loop minus other maps -23.611831862999484 (-38.47685415629667, -6.889204545454547) | other maps 55.319148936170215
+ Loop first smoker clans by ship:
+   Daring 7: Top 6: KITE 1 | Rest: KITED 2, BONKY 1, SCCC2 1, EPOXY 1, HFANS 1 | cells F4 3, G3 2, F3 1, E6 1 | median 3:48
+   Gearing 5: Top 6: BONKZ 1 | Rest: KSC 1, BTLST 1, 5D 1, OGF 1 | cells F8 2, G7 1, G6 1, F7 1 | median 4:23
+   Somers 5: Top 6: RESIN 2 | Rest: EPOXY 1, MACHX 1, MZY 1 | cells G4 2, F3 1, F4 1, F8 1 | median 1:30
+   Gdańsk 4: Top 6: H-SR 1, BONKZ 1, RESIN 1 | Rest: KSE 1 | cells F3 1, F7 1, F6 1, G7 1 | median 3:29
+   Napoli 4: Top 6: none | Rest: REEEE 2, MACHX 1, MANBA 1 | cells G10 1, H1 1, G9 1, F10 1 | median 6:03
+   Shimakaze 3: Top 6: VRTUS 1 | Rest: UYSC 1, RMN 1 | cells F7 1, G5 1, F6 1 | median 4:14
+   Harugumo 2: Top 6: none | Rest: PN 1, KM 1 | cells G5 1, G8 1 | median 8:45
+   Venezia 2: Top 6: none | Rest: KITED 2 | cells G6 1, G7 1 | median 3:32
+   Z-42 2: Top 6: none | Rest: MACH 1, REEEE 1 | cells F4 1, F7 1 | median 4:10
+   Svea 2: Top 6: HTDOG 2 | Rest: none | cells F1 1, F4 1 | median 7:39
+   A. da Barbiano 1: Top 6: none | Rest: -BN- 1 | cells F7 1 | median 3:00
+   Delny 1: Top 6: H-SR 1 | Rest: none | cells G4 1 | median 0:47
+   La Pampa 1: Top 6: none | Rest: NGA 1 | cells G8 1 | median 4:54
+   Vampire II 1: Top 6: none | Rest: INCA 1 | cells F8 1 | median 4:32
+   Conte Verde 1: Top 6: H-SR 1 | Rest: none | cells F9 1 | median 7:05
+
+=== LP-5 long smokes at F8 and F10
+ long smokes on Loop 45 Top 6: RESIN 8, H-SR 7, BONKZ 3 | Rest: EPOXY 6, KSC 4, KM 3, MZY 3, MACHX 3, 5D 2, HFANS 2, BTLST 1, OGF 1, PN 1, UYSC 1 | ships Somers 19, Gearing 12, Harugumo 9, Delny 5
+ F8 long smokes: Top 6 4 of 18 (22%) vs Rest 4 of 27 (15%); gap +7 pts (-28 to +82) | n 8 | conc 27.5k median 17.9k | deaths 1 | ships Gearing 4, Somers 4 | Top 6: BONKZ 3, RESIN 1 | Rest: HFANS 2, OGF 1, MZY 1 | cruisers inside Brisbane 3, Des Moines 2 | early 4 | zone B 5, C 3
+ F8 all destroyer smokes: Top 6 7 of 41 (17%) vs Rest 8 of 101 (8%); gap +9 pts (-9 to +39) | n 15 | conc 18.3k median 8.0k | deaths 2 | ships Gearing 4, Somers 4, Gdańsk 3, Grozovoi 2, Vampire II 1, A. da Barbiano 1 | Top 6: BONKZ 5, RESIN 1, H-SR 1 | Rest: MACHX 2, HFANS 2, OGF 1, INCA 1, -BN- 1, MZY 1 | cruisers inside Des Moines 3, Brisbane 3, Minotaur 2, Moskva 1 | early 6 | zone B 11, C 4
+ F10 long smokes: Top 6 1 of 18 (6%) vs Rest 6 of 27 (22%); gap -17 pts (-34 to +2) | n 7 | conc 26.2k median 30.8k | deaths 3 | ships Harugumo 3, Somers 3, Gearing 1 | Top 6: H-SR 1 | Rest: EPOXY 2, MZY 2, 5D 1, KM 1 | cruisers inside Minotaur 2, Des Moines 1, Petropavlovsk 1, Prins van Oranje 1 | early 0 | zone C 7
+ F10 all destroyer smokes: Top 6 2 of 41 (5%) vs Rest 7 of 101 (7%); gap -2 pts (-12 to +7) | n 9 | conc 20.7k median 9.9k | deaths 3 | ships Harugumo 3, Somers 3, Gearing 1, Gdańsk 1, Grozovoi 1 | Top 6: H-SR 2 | Rest: EPOXY 2, MZY 2, 5D 1, KM 1, MACHX 1 | cruisers inside Minotaur 2, Des Moines 1, Petropavlovsk 1, Prins van Oranje 1 | early 0 | zone C 9
+ F8+F10 long smokes: Top 6 5 of 18 (28%) vs Rest 10 of 27 (37%); gap -9 pts (-41 to +50) | n 15 | conc 26.9k median 27.9k | deaths 4 | ships Somers 7, Gearing 5, Harugumo 3 | Top 6: BONKZ 3, RESIN 1, H-SR 1 | Rest: MZY 3, EPOXY 2, HFANS 2, 5D 1, OGF 1, KM 1 | cruisers inside Des Moines 3, Brisbane 3, Minotaur 2, Petropavlovsk 1, Prins van Oranje 1 | early 4 | zone C 10, B 5
+ F8+F10 all destroyer smokes: Top 6 9 of 41 (22%) vs Rest 15 of 101 (15%); gap +7 pts (-15 to +34) | n 24 | conc 19.2k median 9.2k | deaths 5 | ships Somers 7, Gearing 5, Gdańsk 4, Harugumo 3, Grozovoi 3, Vampire II 1, A. da Barbiano 1 | Top 6: BONKZ 5, H-SR 3, RESIN 1 | Rest: MACHX 3, MZY 3, EPOXY 2, HFANS 2, 5D 1, OGF 1, KM 1, INCA 1, -BN- 1 | cruisers inside Des Moines 4, Minotaur 4, Brisbane 3, Moskva 1, Petropavlovsk 1, Prins van Oranje 1 | early 6 | zone C 13, B 11
+    F10 7962_g1_144946 5D Gearing 8:10 conc 8580 cr [('Napoli', 'screened')]
+    F10 7891_g1_46433 KM Harugumo 12:48 conc 30797 cr [('Worcester', 'screened')]
+    F10 7892_g1_80014 EPOXY Harugumo 9:08 conc 56758 cr [('Des Moines', 'screened')]
+    F10 7892_g1_80022 EPOXY Harugumo 15:55 conc 36502 cr [('Des Moines', 'inside')]
+    F10 8068_g1_178433 MZY Somers 7:57 conc 0 cr [('Minotaur', 'inside')]
+    F10 8068_g1_178436 MZY Somers 12:25 conc 40534 cr [('Minotaur', 'inside')]
+    F10 8176_g4_180811 H-SR Somers 8:08 conc 9903 cr [('Petropavlovsk', 'inside'), ('Prins van Oranje', 'inside')]
+    F8 7964_g1_171315 OGF Gearing 4:23 conc 27922 cr []
+    F8 8068_g1_178430 MZY Somers 4:53 conc 0 cr [('Minotaur', 'screened')]
+    F8 8148_g1_20503 HFANS Somers 4:19 conc 7970 cr [('Des Moines', 'inside')]
+    F8 8148_g1_20509 HFANS Somers 8:02 conc 0 cr []
+    F8 7889_g1_178499 RESIN Somers 4:59 conc 67211 cr [('Des Moines', 'inside')]
+    F8 7891_g1_46430 BONKZ Gearing 5:25 conc 52415 cr [('Brisbane', 'inside'), ('Utrecht', 'screened')]
+    F8 7891_g1_46432 BONKZ Gearing 9:35 conc 64343 cr [('Brisbane', 'inside')]
+    F8 7891_g1_46434 BONKZ Gearing 13:13 conc 0 cr [('Brisbane', 'inside')]
+ cell averages (all DD): F8 18.3k n 15 | F10 20.7k n 9 | map avg 8.0k
+
+=== LP-6 cap sitters on B
+ spot Top 6 15 of 23 (65%) vs Rest 13 of 65 (20%); gap +45 pts (+25 to +72 *)
+  Top 6: RESIN 4, KITE 3, BONKZ 3, H-SR 2, HTDOG 2, VRTUS 1 | Rest: REEEE 6, MACHX 2, SCCC2 2, RMN 1, MACH 1, EPOXY 1
+ ships top Gdańsk 9, Shimakaze 3, Z-42 2, Daring 1 | rest Z-42 7, Grozovoi 3, Daring 2, Shimakaze 1
+ sitters on Loop all Top 6: KITE 5, H-SR 5, RESIN 4, VRTUS 3, HTDOG 3, BONKZ 3 | Rest: REEEE 17, KITED 9, EPOXY 8, MACHX 7, MACH 4, -BN- 3, BONKY 3, SCCC2 3, HFANS 3, KSC 2, UYSC 2, NGA 2, RMN 1, KSE 1 | ships ('rest', 'Daring') 45, ('top', 'Gdańsk') 12, ('rest', 'Z-42') 10, ('top', 'Shimakaze') 6, ('rest', 'Grozovoi') 6, ('top', 'Daring') 3, ('rest', 'Shimakaze') 3, ('top', 'Z-42') 2, ('rest', 'Gdańsk') 1
+  top: n 15 conc 5.8k deaths 1 own theirs 6, ours 5, neutral 4 we_took 5/10 enemy_took 0/9 zone B 13, C 2 med 8:04
+  rest: n 13 conc 1.2k deaths 0 own theirs 6, ours 5, neutral 2 we_took 1/8 enemy_took 1/7 zone B 13 med 9:32
+ Rest sitters elsewhere: zone A 44, C 5, B 3 | top elsewhere C 4, A 3, B 1
+ Daring only in the spot Top 6 1 of 3 (too few) vs Rest 2 of 45 (4%); gap +29 pts (+17 to +33 *) | non-Daring sitters Top 6 14 of 20 (70%) vs Rest 11 of 20 (55%); gap +15 pts (-21 to +57)

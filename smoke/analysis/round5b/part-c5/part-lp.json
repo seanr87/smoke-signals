@@ -1,0 +1,1478 @@
+{
+ "R": {
+  "LP-1": {
+   "Sleeping Giant": {
+    "team_games": 64,
+    "top_tg": 27,
+    "rest_tg": 37,
+    "dd": {
+     "all": 1.08,
+     "all_ci": [
+      0.83,
+      1.28
+     ],
+     "top": 1.19,
+     "rest": 1.0,
+     "gap": 0.19,
+     "lo": -0.23,
+     "hi": 0.64,
+     "clear": false
+    },
+    "ecr": {
+     "all": 0.91,
+     "all_ci": [
+      0.7,
+      1.1
+     ],
+     "top": 1.04,
+     "rest": 0.81,
+     "gap": 0.23,
+     "lo": -0.14,
+     "hi": 0.65,
+     "clear": false
+    },
+    "ins": {
+     "all": 0.69,
+     "all_ci": [
+      0.46,
+      0.92
+     ],
+     "top": 0.67,
+     "rest": 0.7,
+     "gap": -0.04,
+     "lo": -0.47,
+     "hi": 0.47,
+     "clear": false
+    },
+    "scr": {
+     "all": 0.22,
+     "all_ci": [
+      0.09,
+      0.34
+     ],
+     "top": 0.37,
+     "rest": 0.11,
+     "gap": 0.26,
+     "lo": 0.02,
+     "hi": 0.51,
+     "clear": true
+    },
+    "ca": {
+     "all": 0.31,
+     "all_ci": [
+      0.14,
+      0.51
+     ],
+     "top": 0.3,
+     "rest": 0.32,
+     "gap": -0.03,
+     "lo": -0.38,
+     "hi": 0.41,
+     "clear": false
+    },
+    "allc": {
+     "all": 1.41,
+     "all_ci": [
+      1.11,
+      1.72
+     ],
+     "top": 1.48,
+     "rest": 1.35,
+     "gap": 0.13,
+     "lo": -0.42,
+     "hi": 0.75,
+     "clear": false
+    }
+   },
+   "Hotspot": {
+    "team_games": 62,
+    "top_tg": 18,
+    "rest_tg": 44,
+    "dd": {
+     "all": 1.15,
+     "all_ci": [
+      0.95,
+      1.32
+     ],
+     "top": 1.28,
+     "rest": 1.09,
+     "gap": 0.19,
+     "lo": -0.18,
+     "hi": 0.56,
+     "clear": false
+    },
+    "ecr": {
+     "all": 0.87,
+     "all_ci": [
+      0.66,
+      1.09
+     ],
+     "top": 1.22,
+     "rest": 0.73,
+     "gap": 0.49,
+     "lo": 0.17,
+     "hi": 0.82,
+     "clear": true
+    },
+    "ins": {
+     "all": 0.66,
+     "all_ci": [
+      0.44,
+      0.85
+     ],
+     "top": 1.11,
+     "rest": 0.48,
+     "gap": 0.63,
+     "lo": 0.36,
+     "hi": 0.91,
+     "clear": true
+    },
+    "scr": {
+     "all": 0.21,
+     "all_ci": [
+      0.1,
+      0.35
+     ],
+     "top": 0.11,
+     "rest": 0.25,
+     "gap": -0.14,
+     "lo": -0.35,
+     "hi": 0.04,
+     "clear": false
+    },
+    "ca": {
+     "all": 0.06,
+     "all_ci": [
+      0.01,
+      0.13
+     ],
+     "top": 0.06,
+     "rest": 0.07,
+     "gap": -0.01,
+     "lo": -0.14,
+     "hi": 0.11,
+     "clear": false
+    },
+    "allc": {
+     "all": 1.24,
+     "all_ci": [
+      1.02,
+      1.5
+     ],
+     "top": 1.44,
+     "rest": 1.16,
+     "gap": 0.29,
+     "lo": -0.24,
+     "hi": 0.78,
+     "clear": false
+    }
+   },
+   "Mountain Range": {
+    "team_games": 42,
+    "top_tg": 16,
+    "rest_tg": 26,
+    "dd": {
+     "all": 0.93,
+     "all_ci": [
+      0.63,
+      1.24
+     ],
+     "top": 0.88,
+     "rest": 0.96,
+     "gap": -0.09,
+     "lo": -0.7,
+     "hi": 0.52,
+     "clear": false
+    },
+    "ecr": {
+     "all": 0.67,
+     "all_ci": [
+      0.41,
+      0.93
+     ],
+     "top": 0.62,
+     "rest": 0.69,
+     "gap": -0.07,
+     "lo": -0.6,
+     "hi": 0.55,
+     "clear": false
+    },
+    "ins": {
+     "all": 0.48,
+     "all_ci": [
+      0.25,
+      0.73
+     ],
+     "top": 0.62,
+     "rest": 0.38,
+     "gap": 0.24,
+     "lo": -0.22,
+     "hi": 0.78,
+     "clear": false
+    },
+    "scr": {
+     "all": 0.19,
+     "all_ci": [
+      0.07,
+      0.36
+     ],
+     "top": 0.0,
+     "rest": 0.31,
+     "gap": -0.31,
+     "lo": -0.52,
+     "hi": -0.12,
+     "clear": true
+    },
+    "ca": {
+     "all": 0.38,
+     "all_ci": [
+      0.17,
+      0.6
+     ],
+     "top": 0.44,
+     "rest": 0.35,
+     "gap": 0.09,
+     "lo": -0.44,
+     "hi": 0.55,
+     "clear": false
+    },
+    "allc": {
+     "all": 1.31,
+     "all_ci": [
+      1.05,
+      1.59
+     ],
+     "top": 1.31,
+     "rest": 1.31,
+     "gap": 0.0,
+     "lo": -0.54,
+     "hi": 0.54,
+     "clear": false
+    }
+   },
+   "Land of Fire": {
+    "team_games": 50,
+    "top_tg": 16,
+    "rest_tg": 34,
+    "dd": {
+     "all": 0.74,
+     "all_ci": [
+      0.53,
+      0.95
+     ],
+     "top": 0.75,
+     "rest": 0.74,
+     "gap": 0.01,
+     "lo": -0.38,
+     "hi": 0.62,
+     "clear": false
+    },
+    "ecr": {
+     "all": 0.5,
+     "all_ci": [
+      0.32,
+      0.67
+     ],
+     "top": 0.5,
+     "rest": 0.5,
+     "gap": 0.0,
+     "lo": -0.3,
+     "hi": 0.37,
+     "clear": false
+    },
+    "ins": {
+     "all": 0.34,
+     "all_ci": [
+      0.19,
+      0.49
+     ],
+     "top": 0.31,
+     "rest": 0.35,
+     "gap": -0.04,
+     "lo": -0.3,
+     "hi": 0.3,
+     "clear": false
+    },
+    "scr": {
+     "all": 0.16,
+     "all_ci": [
+      0.07,
+      0.25
+     ],
+     "top": 0.19,
+     "rest": 0.15,
+     "gap": 0.04,
+     "lo": -0.19,
+     "hi": 0.28,
+     "clear": false
+    },
+    "ca": {
+     "all": 0.42,
+     "all_ci": [
+      0.23,
+      0.63
+     ],
+     "top": 0.38,
+     "rest": 0.44,
+     "gap": -0.07,
+     "lo": -0.43,
+     "hi": 0.37,
+     "clear": false
+    },
+    "allc": {
+     "all": 1.18,
+     "all_ci": [
+      0.86,
+      1.52
+     ],
+     "top": 1.12,
+     "rest": 1.21,
+     "gap": -0.08,
+     "lo": -0.71,
+     "hi": 0.84,
+     "clear": false
+    }
+   },
+   "Sea of Fortune": {
+    "team_games": 42,
+    "top_tg": 14,
+    "rest_tg": 28,
+    "dd": {
+     "all": 0.74,
+     "all_ci": [
+      0.51,
+      0.96
+     ],
+     "top": 0.64,
+     "rest": 0.79,
+     "gap": -0.14,
+     "lo": -0.66,
+     "hi": 0.35,
+     "clear": false
+    },
+    "ecr": {
+     "all": 0.57,
+     "all_ci": [
+      0.4,
+      0.72
+     ],
+     "top": 0.57,
+     "rest": 0.57,
+     "gap": 0.0,
+     "lo": -0.4,
+     "hi": 0.37,
+     "clear": false
+    },
+    "ins": {
+     "all": 0.36,
+     "all_ci": [
+      0.2,
+      0.52
+     ],
+     "top": 0.5,
+     "rest": 0.29,
+     "gap": 0.21,
+     "lo": -0.17,
+     "hi": 0.58,
+     "clear": false
+    },
+    "scr": {
+     "all": 0.21,
+     "all_ci": [
+      0.1,
+      0.35
+     ],
+     "top": 0.07,
+     "rest": 0.29,
+     "gap": -0.21,
+     "lo": -0.41,
+     "hi": -0.01,
+     "clear": true
+    },
+    "ca": {
+     "all": 0.33,
+     "all_ci": [
+      0.17,
+      0.53
+     ],
+     "top": 0.21,
+     "rest": 0.39,
+     "gap": -0.18,
+     "lo": -0.54,
+     "hi": 0.21,
+     "clear": false
+    },
+    "allc": {
+     "all": 1.1,
+     "all_ci": [
+      0.88,
+      1.35
+     ],
+     "top": 0.86,
+     "rest": 1.21,
+     "gap": -0.36,
+     "lo": -0.73,
+     "hi": 0.07,
+     "clear": false
+    }
+   },
+   "Loop": {
+    "team_games": 46,
+    "top_tg": 13,
+    "rest_tg": 33,
+    "dd": {
+     "all": 0.72,
+     "all_ci": [
+      0.5,
+      0.96
+     ],
+     "top": 0.77,
+     "rest": 0.7,
+     "gap": 0.07,
+     "lo": -0.46,
+     "hi": 0.56,
+     "clear": false
+    },
+    "ecr": {
+     "all": 0.46,
+     "all_ci": [
+      0.27,
+      0.65
+     ],
+     "top": 0.54,
+     "rest": 0.42,
+     "gap": 0.11,
+     "lo": -0.29,
+     "hi": 0.51,
+     "clear": false
+    },
+    "ins": {
+     "all": 0.22,
+     "all_ci": [
+      0.07,
+      0.38
+     ],
+     "top": 0.38,
+     "rest": 0.15,
+     "gap": 0.23,
+     "lo": -0.19,
+     "hi": 0.6,
+     "clear": false
+    },
+    "scr": {
+     "all": 0.24,
+     "all_ci": [
+      0.11,
+      0.41
+     ],
+     "top": 0.15,
+     "rest": 0.27,
+     "gap": -0.12,
+     "lo": -0.38,
+     "hi": 0.22,
+     "clear": false
+    },
+    "ca": {
+     "all": 0.11,
+     "all_ci": [
+      0.0,
+      0.23
+     ],
+     "top": 0.08,
+     "rest": 0.12,
+     "gap": -0.04,
+     "lo": -0.22,
+     "hi": 0.14,
+     "clear": false
+    },
+    "allc": {
+     "all": 0.83,
+     "all_ci": [
+      0.6,
+      1.09
+     ],
+     "top": 0.85,
+     "rest": 0.82,
+     "gap": 0.03,
+     "lo": -0.43,
+     "hi": 0.49,
+     "clear": false
+    }
+   },
+   "Okinawa": {
+    "team_games": 36,
+    "top_tg": 6,
+    "rest_tg": 30,
+    "dd": {
+     "all": 0.72,
+     "all_ci": [
+      0.5,
+      1.0
+     ],
+     "top": 0.5,
+     "rest": 0.77,
+     "gap": -0.27,
+     "lo": -0.76,
+     "hi": 0.19,
+     "clear": false
+    },
+    "ecr": {
+     "all": 0.44,
+     "all_ci": [
+      0.26,
+      0.65
+     ],
+     "top": 0.33,
+     "rest": 0.47,
+     "gap": -0.13,
+     "lo": -0.54,
+     "hi": 0.33,
+     "clear": false
+    },
+    "ins": {
+     "all": 0.17,
+     "all_ci": [
+      0.05,
+      0.32
+     ],
+     "top": 0.33,
+     "rest": 0.13,
+     "gap": 0.2,
+     "lo": -0.16,
+     "hi": 0.58,
+     "clear": false
+    },
+    "scr": {
+     "all": 0.28,
+     "all_ci": [
+      0.14,
+      0.41
+     ],
+     "top": 0.0,
+     "rest": 0.33,
+     "gap": -0.33,
+     "lo": -0.5,
+     "hi": -0.18,
+     "clear": true
+    },
+    "ca": {
+     "all": 0.61,
+     "all_ci": [
+      0.36,
+      0.97
+     ],
+     "top": 0.5,
+     "rest": 0.63,
+     "gap": -0.13,
+     "lo": -0.79,
+     "hi": 0.58,
+     "clear": false
+    },
+    "allc": {
+     "all": 1.33,
+     "all_ci": [
+      0.98,
+      1.79
+     ],
+     "top": 1.0,
+     "rest": 1.4,
+     "gap": -0.4,
+     "lo": -1.13,
+     "hi": 0.23,
+     "clear": false
+    }
+   }
+  },
+  "LP-2": {
+   "Sleeping Giant": {
+    "n": 60,
+    "mean_km_from_centre": 11.05,
+    "ci": [
+     8.19,
+     12.78
+    ],
+    "share_of_map_width_pct": 26.3,
+    "mean_km_from_own_side_centre": 4.63,
+    "cells_for_80pct": 10,
+    "cells_used": 19,
+    "top_cell": "G1",
+    "top_cell_share_pct": 22,
+    "median_time": "2:41",
+    "first_before_5min_pct": 87,
+    "top6_km": 11.16,
+    "rest_km": 10.82,
+    "top_minus_rest_ci": [
+     -5.45,
+     4.98
+    ]
+   },
+   "Hotspot": {
+    "n": 62,
+    "mean_km_from_centre": 10.67,
+    "ci": [
+     8.15,
+     12.34
+    ],
+    "share_of_map_width_pct": 22.2,
+    "mean_km_from_own_side_centre": 7.09,
+    "cells_for_80pct": 7,
+    "cells_used": 15,
+    "top_cell": "G10",
+    "top_cell_share_pct": 18,
+    "median_time": "2:37",
+    "first_before_5min_pct": 84,
+    "top6_km": 12.07,
+    "rest_km": 9.97,
+    "top_minus_rest_ci": [
+     -2.01,
+     7.63
+    ]
+   },
+   "Mountain Range": {
+    "n": 41,
+    "mean_km_from_centre": 10.72,
+    "ci": [
+     7.96,
+     13.18
+    ],
+    "share_of_map_width_pct": 22.3,
+    "mean_km_from_own_side_centre": 5.89,
+    "cells_for_80pct": 11,
+    "cells_used": 19,
+    "top_cell": "G7",
+    "top_cell_share_pct": 15,
+    "median_time": "3:05",
+    "first_before_5min_pct": 78,
+    "top6_km": 9.78,
+    "rest_km": 11.08,
+    "top_minus_rest_ci": [
+     -7.71,
+     4.04
+    ]
+   },
+   "Land of Fire": {
+    "n": 45,
+    "mean_km_from_centre": 9.67,
+    "ci": [
+     7.6,
+     11.25
+    ],
+    "share_of_map_width_pct": 20.1,
+    "mean_km_from_own_side_centre": 7.13,
+    "cells_for_80pct": 13,
+    "cells_used": 22,
+    "top_cell": "F5",
+    "top_cell_share_pct": 18,
+    "median_time": "3:14",
+    "first_before_5min_pct": 73,
+    "top6_km": 9.31,
+    "rest_km": 9.38,
+    "top_minus_rest_ci": [
+     -4.61,
+     3.13
+    ]
+   },
+   "Sea of Fortune": {
+    "n": 39,
+    "mean_km_from_centre": 15.68,
+    "ci": [
+     13.46,
+     16.51
+    ],
+    "share_of_map_width_pct": 32.7,
+    "mean_km_from_own_side_centre": 4.37,
+    "cells_for_80pct": 10,
+    "cells_used": 17,
+    "top_cell": "F2",
+    "top_cell_share_pct": 15,
+    "median_time": "3:49",
+    "first_before_5min_pct": 82,
+    "top6_km": 15.52,
+    "rest_km": 15.48,
+    "top_minus_rest_ci": [
+     -5.65,
+     3.6
+    ]
+   },
+   "Loop": {
+    "n": 41,
+    "mean_km_from_centre": 9.98,
+    "ci": [
+     8.08,
+     11.32
+    ],
+    "share_of_map_width_pct": 20.8,
+    "mean_km_from_own_side_centre": 5.16,
+    "cells_for_80pct": 11,
+    "cells_used": 18,
+    "top_cell": "F4",
+    "top_cell_share_pct": 15,
+    "median_time": "4:14",
+    "first_before_5min_pct": 71,
+    "top6_km": 9.93,
+    "rest_km": 9.9,
+    "top_minus_rest_ci": [
+     -4.35,
+     2.05
+    ]
+   },
+   "Okinawa": {
+    "n": 35,
+    "mean_km_from_centre": 12.47,
+    "ci": [
+     10.51,
+     13.92
+    ],
+    "share_of_map_width_pct": 29.7,
+    "mean_km_from_own_side_centre": 7.8,
+    "cells_for_80pct": 12,
+    "cells_used": 19,
+    "top_cell": "D1",
+    "top_cell_share_pct": 11,
+    "median_time": "3:24",
+    "first_before_5min_pct": 77,
+    "top6_km": 13.35,
+    "rest_km": 12.23,
+    "top_minus_rest_ci": [
+     -7.7,
+     4.53
+    ]
+   }
+  },
+  "LP-3": {
+   "Sleeping Giant": {
+    "n": 60,
+    "all": {
+     "Somers": 15,
+     "Gearing": 13,
+     "Harugumo": 11,
+     "Z-42": 4,
+     "Napoli": 4,
+     "Gdańsk": 3,
+     "Daring": 3,
+     "Shimakaze": 2,
+     "Jinan": 2,
+     "Svea": 2,
+     "Z-52": 1
+    },
+    "top6": {
+     "Harugumo": 7,
+     "Gearing": 5,
+     "Somers": 5,
+     "Gdańsk": 3,
+     "Svea": 2,
+     "Z-52": 1,
+     "Daring": 1,
+     "Z-42": 1,
+     "Napoli": 1,
+     "Shimakaze": 1
+    },
+    "rest": {
+     "Somers": 10,
+     "Gearing": 8,
+     "Harugumo": 4,
+     "Z-42": 3,
+     "Napoli": 3,
+     "Daring": 2,
+     "Jinan": 2,
+     "Shimakaze": 1
+    },
+    "long_ship_share_pct": 65,
+    "sitter_share_pct": 20,
+    "cruiser_class_share_pct": 13
+   },
+   "Hotspot": {
+    "n": 62,
+    "all": {
+     "Somers": 22,
+     "Gearing": 11,
+     "Harugumo": 6,
+     "Daring": 6,
+     "Gdańsk": 5,
+     "Shimakaze": 4,
+     "Grozovoi": 3,
+     "Svea": 2,
+     "Delny": 1,
+     "Napoli": 1,
+     "La Pampa": 1
+    },
+    "top6": {
+     "Somers": 7,
+     "Gearing": 4,
+     "Harugumo": 3,
+     "Delny": 1,
+     "Svea": 1,
+     "Grozovoi": 1,
+     "Gdańsk": 1
+    },
+    "rest": {
+     "Somers": 15,
+     "Gearing": 7,
+     "Daring": 6,
+     "Gdańsk": 4,
+     "Shimakaze": 4,
+     "Harugumo": 3,
+     "Grozovoi": 2,
+     "Napoli": 1,
+     "La Pampa": 1,
+     "Svea": 1
+    },
+    "long_ship_share_pct": 65,
+    "sitter_share_pct": 29,
+    "cruiser_class_share_pct": 5
+   },
+   "Mountain Range": {
+    "n": 41,
+    "all": {
+     "Gearing": 12,
+     "Somers": 9,
+     "Svea": 6,
+     "Gdańsk": 5,
+     "Napoli": 5,
+     "F. Sherman": 1,
+     "Z-42": 1,
+     "Jinan": 1,
+     "Harugumo": 1
+    },
+    "top6": {
+     "Svea": 4,
+     "Gearing": 4,
+     "Somers": 4,
+     "Gdańsk": 2,
+     "Jinan": 1,
+     "Harugumo": 1
+    },
+    "rest": {
+     "Gearing": 8,
+     "Napoli": 5,
+     "Somers": 5,
+     "Gdańsk": 3,
+     "Svea": 2,
+     "F. Sherman": 1,
+     "Z-42": 1
+    },
+    "long_ship_share_pct": 54,
+    "sitter_share_pct": 15,
+    "cruiser_class_share_pct": 29
+   },
+   "Land of Fire": {
+    "n": 45,
+    "all": {
+     "Somers": 10,
+     "Gearing": 9,
+     "Svea": 5,
+     "Gdańsk": 3,
+     "Z-42": 3,
+     "Harugumo": 3,
+     "Z-52": 2,
+     "Venezia": 2,
+     "Delny": 2,
+     "Napoli": 1,
+     "Yueyang": 1,
+     "Daring": 1,
+     "F. Sherman": 1,
+     "Shimakaze": 1,
+     "Sicilia": 1
+    },
+    "top6": {
+     "Gearing": 3,
+     "Z-52": 2,
+     "Delny": 2,
+     "Svea": 2,
+     "Harugumo": 2,
+     "Gdańsk": 2,
+     "Z-42": 1,
+     "Somers": 1
+    },
+    "rest": {
+     "Somers": 9,
+     "Gearing": 6,
+     "Svea": 3,
+     "Venezia": 2,
+     "Z-42": 2,
+     "Gdańsk": 1,
+     "Napoli": 1,
+     "Yueyang": 1,
+     "Daring": 1,
+     "F. Sherman": 1,
+     "Shimakaze": 1,
+     "Harugumo": 1,
+     "Sicilia": 1
+    },
+    "long_ship_share_pct": 53,
+    "sitter_share_pct": 18,
+    "cruiser_class_share_pct": 18
+   },
+   "Sea of Fortune": {
+    "n": 39,
+    "all": {
+     "Napoli": 7,
+     "Somers": 7,
+     "Gearing": 5,
+     "Svea": 4,
+     "Harugumo": 4,
+     "Jinan": 2,
+     "Gdańsk": 2,
+     "Yueyang": 2,
+     "Delny": 2,
+     "Cerberus": 1,
+     "Venezia": 1,
+     "Z-42": 1,
+     "C. Colombo": 1
+    },
+    "top6": {
+     "Svea": 2,
+     "Gearing": 2,
+     "Harugumo": 2,
+     "Cerberus": 1,
+     "Gdańsk": 1,
+     "Napoli": 1,
+     "Yueyang": 1,
+     "Delny": 1
+    },
+    "rest": {
+     "Somers": 7,
+     "Napoli": 6,
+     "Gearing": 3,
+     "Svea": 2,
+     "Harugumo": 2,
+     "Jinan": 2,
+     "Venezia": 1,
+     "Z-42": 1,
+     "C. Colombo": 1,
+     "Gdańsk": 1,
+     "Delny": 1,
+     "Yueyang": 1
+    },
+    "long_ship_share_pct": 46,
+    "sitter_share_pct": 8,
+    "cruiser_class_share_pct": 38
+   },
+   "Loop": {
+    "n": 41,
+    "all": {
+     "Daring": 7,
+     "Gearing": 5,
+     "Somers": 5,
+     "Gdańsk": 4,
+     "Napoli": 4,
+     "Shimakaze": 3,
+     "Harugumo": 2,
+     "Venezia": 2,
+     "Z-42": 2,
+     "Svea": 2,
+     "A. da Barbiano": 1,
+     "Delny": 1,
+     "La Pampa": 1,
+     "Vampire II": 1,
+     "Conte Verde": 1
+    },
+    "top6": {
+     "Gdańsk": 3,
+     "Somers": 2,
+     "Svea": 2,
+     "Shimakaze": 1,
+     "Daring": 1,
+     "Delny": 1,
+     "Gearing": 1,
+     "Conte Verde": 1
+    },
+    "rest": {
+     "Daring": 6,
+     "Gearing": 4,
+     "Napoli": 4,
+     "Somers": 3,
+     "Harugumo": 2,
+     "Shimakaze": 2,
+     "Venezia": 2,
+     "Z-42": 2,
+     "Gdańsk": 1,
+     "A. da Barbiano": 1,
+     "La Pampa": 1,
+     "Vampire II": 1
+    },
+    "long_ship_share_pct": 32,
+    "sitter_share_pct": 39,
+    "cruiser_class_share_pct": 20
+   },
+   "Okinawa": {
+    "n": 35,
+    "all": {
+     "Gearing": 6,
+     "Daring": 5,
+     "Napoli": 4,
+     "Svea": 4,
+     "Harugumo": 4,
+     "Somers": 3,
+     "Shimakaze": 3,
+     "Smolensk": 3,
+     "Gdańsk": 2,
+     "Fuyutsuki": 1
+    },
+    "top6": {
+     "Gearing": 2,
+     "Svea": 1,
+     "Somers": 1,
+     "Smolensk": 1,
+     "Shimakaze": 1
+    },
+    "rest": {
+     "Daring": 5,
+     "Napoli": 4,
+     "Gearing": 4,
+     "Harugumo": 4,
+     "Svea": 3,
+     "Gdańsk": 2,
+     "Somers": 2,
+     "Shimakaze": 2,
+     "Smolensk": 2,
+     "Fuyutsuki": 1
+    },
+    "long_ship_share_pct": 37,
+    "sitter_share_pct": 29,
+    "cruiser_class_share_pct": 31
+   }
+  },
+  "LP-5": {
+   "F8 long smokes": {
+    "top_k": 4,
+    "top_n": 18,
+    "rest_k": 4,
+    "rest_n": 27,
+    "top_pct": 22.2,
+    "rest_pct": 14.8,
+    "gap": 7.4,
+    "lo": -27.6,
+    "hi": 81.5,
+    "clear": false,
+    "mark": "Shared",
+    "clans": {
+     "top6": {
+      "BONKZ": 3,
+      "RESIN": 1
+     },
+     "rest": {
+      "HFANS": 2,
+      "OGF": 1,
+      "MZY": 1
+     }
+    },
+    "conc": 27483,
+    "n": 8
+   },
+   "F8 all destroyer smokes": {
+    "top_k": 7,
+    "top_n": 41,
+    "rest_k": 8,
+    "rest_n": 101,
+    "top_pct": 17.1,
+    "rest_pct": 7.9,
+    "gap": 9.2,
+    "lo": -9.3,
+    "hi": 38.9,
+    "clear": false,
+    "mark": "Shared",
+    "clans": {
+     "top6": {
+      "BONKZ": 5,
+      "RESIN": 1,
+      "H-SR": 1
+     },
+     "rest": {
+      "MACHX": 2,
+      "HFANS": 2,
+      "OGF": 1,
+      "INCA": 1,
+      "-BN-": 1,
+      "MZY": 1
+     }
+    },
+    "conc": 18318,
+    "n": 15
+   },
+   "F10 long smokes": {
+    "top_k": 1,
+    "top_n": 18,
+    "rest_k": 6,
+    "rest_n": 27,
+    "top_pct": 5.6,
+    "rest_pct": 22.2,
+    "gap": -16.7,
+    "lo": -34.4,
+    "hi": 1.7,
+    "clear": false,
+    "mark": "Shared",
+    "clans": {
+     "top6": {
+      "H-SR": 1
+     },
+     "rest": {
+      "EPOXY": 2,
+      "MZY": 2,
+      "5D": 1,
+      "KM": 1
+     }
+    },
+    "conc": 26153,
+    "n": 7
+   },
+   "F10 all destroyer smokes": {
+    "top_k": 2,
+    "top_n": 41,
+    "rest_k": 7,
+    "rest_n": 101,
+    "top_pct": 4.9,
+    "rest_pct": 6.9,
+    "gap": -2.1,
+    "lo": -12.0,
+    "hi": 6.7,
+    "clear": false,
+    "mark": "Shared",
+    "clans": {
+     "top6": {
+      "H-SR": 2
+     },
+     "rest": {
+      "EPOXY": 2,
+      "MZY": 2,
+      "5D": 1,
+      "KM": 1,
+      "MACHX": 1
+     }
+    },
+    "conc": 20728,
+    "n": 9
+   },
+   "F8+F10 long smokes": {
+    "top_k": 5,
+    "top_n": 18,
+    "rest_k": 10,
+    "rest_n": 27,
+    "top_pct": 27.8,
+    "rest_pct": 37.0,
+    "gap": -9.3,
+    "lo": -40.9,
+    "hi": 50.0,
+    "clear": false,
+    "mark": "Shared",
+    "clans": {
+     "top6": {
+      "BONKZ": 3,
+      "RESIN": 1,
+      "H-SR": 1
+     },
+     "rest": {
+      "MZY": 3,
+      "EPOXY": 2,
+      "HFANS": 2,
+      "5D": 1,
+      "OGF": 1,
+      "KM": 1
+     }
+    },
+    "conc": 26862,
+    "n": 15
+   },
+   "F8+F10 all destroyer smokes": {
+    "top_k": 9,
+    "top_n": 41,
+    "rest_k": 15,
+    "rest_n": 101,
+    "top_pct": 22.0,
+    "rest_pct": 14.9,
+    "gap": 7.1,
+    "lo": -14.9,
+    "hi": 34.0,
+    "clear": false,
+    "mark": "Shared",
+    "clans": {
+     "top6": {
+      "BONKZ": 5,
+      "H-SR": 3,
+      "RESIN": 1
+     },
+     "rest": {
+      "MACHX": 3,
+      "MZY": 3,
+      "EPOXY": 2,
+      "HFANS": 2,
+      "5D": 1,
+      "OGF": 1,
+      "KM": 1,
+      "INCA": 1,
+      "-BN-": 1
+     }
+    },
+    "conc": 19222,
+    "n": 24
+   }
+  },
+  "LP-6": {
+   "spot": {
+    "top_k": 15,
+    "top_n": 23,
+    "rest_k": 13,
+    "rest_n": 65,
+    "top_pct": 65.2,
+    "rest_pct": 20.0,
+    "gap": 45.2,
+    "lo": 24.8,
+    "hi": 72.0,
+    "clear": true,
+    "mark": "Top 6"
+   },
+   "clans": {
+    "top6": {
+     "RESIN": 4,
+     "KITE": 3,
+     "BONKZ": 3,
+     "H-SR": 2,
+     "HTDOG": 2,
+     "VRTUS": 1
+    },
+    "rest": {
+     "REEEE": 6,
+     "MACHX": 2,
+     "SCCC2": 2,
+     "RMN": 1,
+     "MACH": 1,
+     "EPOXY": 1
+    }
+   },
+   "ships": {
+    "top6": {
+     "Z-42": 2,
+     "Daring": 1,
+     "Shimakaze": 3,
+     "Gdańsk": 9
+    },
+    "rest": {
+     "Shimakaze": 1,
+     "Grozovoi": 3,
+     "Z-42": 7,
+     "Daring": 2
+    }
+   }
+  }
+ },
+ "SPOTS": [
+  {
+   "id": "c5-lp-f8",
+   "map": "Loop",
+   "kind": "high_cell",
+   "mode": "shared",
+   "name": "High-paying cell F8",
+   "shape": {
+    "type": "polygon",
+    "points": [
+     [
+      0.7,
+      0.5
+     ],
+     [
+      0.8,
+      0.5
+     ],
+     [
+      0.8,
+      0.6
+     ],
+     [
+      0.7,
+      0.6
+     ]
+    ]
+   },
+   "n": 15,
+   "n_top6": 7,
+   "n_rest": 8,
+   "small_n": false,
+   "clans": {
+    "top6": {
+     "BONKZ": 5,
+     "RESIN": 1,
+     "H-SR": 1
+    },
+    "rest": {
+     "MACHX": 2,
+     "HFANS": 2,
+     "OGF": 1,
+     "INCA": 1,
+     "-BN-": 1,
+     "MZY": 1
+    }
+   },
+   "concealed_damage_per_smoke": 18318,
+   "deaths_per_100": 13.3,
+   "cruisers": {
+    "top6": {
+     "Brisbane": 3,
+     "Des Moines": 1,
+     "Utrecht": 1
+    },
+    "rest": {
+     "Minotaur": 3,
+     "Des Moines": 2,
+     "Moskva": 1
+    }
+   },
+   "examples": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7889_g1_178499.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7891_g1_46432.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7891_g1_46430.html"
+   ],
+   "subject": "destroyer smokes in the cell",
+   "share_top6_pct": 17.1,
+   "share_rest_pct": 7.9,
+   "gap_pts": 9.2,
+   "ci_pts": [
+    -9.0,
+    39.5
+   ],
+   "long_smokes": {
+    "top6": 4,
+    "rest": 4
+   }
+  },
+  {
+   "id": "c5-lp-f10",
+   "map": "Loop",
+   "kind": "high_cell",
+   "mode": "shared",
+   "name": "High-paying cell F10",
+   "shape": {
+    "type": "polygon",
+    "points": [
+     [
+      0.9,
+      0.5
+     ],
+     [
+      1.0,
+      0.5
+     ],
+     [
+      1.0,
+      0.6
+     ],
+     [
+      0.9,
+      0.6
+     ]
+    ]
+   },
+   "n": 9,
+   "n_top6": 2,
+   "n_rest": 7,
+   "small_n": true,
+   "clans": {
+    "top6": {
+     "H-SR": 2
+    },
+    "rest": {
+     "EPOXY": 2,
+     "MZY": 2,
+     "5D": 1,
+     "KM": 1,
+     "MACHX": 1
+    }
+   },
+   "concealed_damage_per_smoke": 20728,
+   "deaths_per_100": 33.3,
+   "cruisers": {
+    "top6": {
+     "Petropavlovsk": 1,
+     "Prins van Oranje": 1
+    },
+    "rest": {
+     "Des Moines": 2,
+     "Minotaur": 2,
+     "Napoli": 1,
+     "Worcester": 1
+    }
+   },
+   "examples": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7892_g1_80014.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8068_g1_178436.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7892_g1_80022.html"
+   ],
+   "subject": "destroyer smokes in the cell",
+   "share_top6_pct": 4.9,
+   "share_rest_pct": 6.9,
+   "gap_pts": -2.1,
+   "ci_pts": [
+    -11.4,
+    6.5
+   ],
+   "long_smokes": {
+    "top6": 1,
+    "rest": 6
+   }
+  },
+  {
+   "id": "c5-lp-sitters-b",
+   "map": "Loop",
+   "kind": "top6_spot",
+   "mode": "top6",
+   "name": "Cap sitters: own side and east half of cap B (F7/F8)",
+   "shape": {
+    "type": "ellipse",
+    "u": 0.666,
+    "v": 0.5323,
+    "ru": 0.1768,
+    "rv": 0.111,
+    "angle_deg": -17.4
+   },
+   "n": 28,
+   "n_top6": 15,
+   "n_rest": 13,
+   "small_n": false,
+   "clans": {
+    "top6": {
+     "RESIN": 4,
+     "KITE": 3,
+     "BONKZ": 3,
+     "H-SR": 2,
+     "HTDOG": 2,
+     "VRTUS": 1
+    },
+    "rest": {
+     "REEEE": 6,
+     "MACHX": 2,
+     "SCCC2": 2,
+     "RMN": 1,
+     "MACH": 1,
+     "EPOXY": 1
+    }
+   },
+   "concealed_damage_per_smoke": 3668,
+   "deaths_per_100": 3.6,
+   "cruisers": {
+    "top6": {
+     "Moskva": 2,
+     "Petropavlovsk": 2,
+     "Stalingrad": 1,
+     "Minotaur": 1,
+     "Prins van Oranje": 1
+    },
+    "rest": {
+     "Minotaur": 2,
+     "Salem": 1
+    }
+   },
+   "examples": [
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g2_111329.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/7976_g1_219218.html",
+    "https://seanr87.github.io/smoke-signals/smoke/smokes/8175_g2_111344.html"
+   ],
+   "subject": "cap sitters (Daring, Z-42, Gdansk, Grozovoi, Shimakaze)",
+   "share_top6_pct": 65.2,
+   "share_rest_pct": 20.0,
+   "gap_pts": 45.2,
+   "ci_pts": [
+    24.8,
+    72.0
+   ]
+  }
+ ]
+}

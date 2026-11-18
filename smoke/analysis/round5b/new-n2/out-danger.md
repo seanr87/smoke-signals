@@ -1,0 +1,157 @@
+C3 danger zones, round 5b. Health is real (ship tracks, every 2 s). Died = the track shows the ship dead between activation and 20 s after dispersal. Hurt = died, or its health at dispersal was lower than at activation by a third of full health or more (net loss; heals inside the window count back).
+
+# Version 1: areas keyed on the smoke centre (round 5 areas), real health
+
+| who | map | smokes | ships at risk | died per 100 | died or hurt per 100 |
+|---|---|---|---|---|---|
+| destroyer smoker | all maps | 1070 | 1070 | 12.8 | 23.1 |
+| destroyer smoker | Sleeping Giant | 238 | 238 | 10.9 | 21.4 |
+| destroyer smoker | Hotspot | 235 | 235 | 9.4 | 18.7 |
+| destroyer smoker | Mountain Range | 128 | 128 | 14.8 | 26.6 |
+| destroyer smoker | Land of Fire | 128 | 128 | 15.6 | 26.6 |
+| destroyer smoker | Sea of Fortune | 117 | 117 | 12.8 | 25.6 |
+| destroyer smoker | Loop | 142 | 142 | 14.1 | 20.4 |
+| destroyer smoker | Okinawa | 82 | 82 | 18.3 | 30.5 |
+| sheltering cruisers | all maps | 560 | 612 | 9.6 | 19.4 |
+| sheltering cruisers | Sleeping Giant | 141 | 146 | 8.2 | 19.2 |
+| sheltering cruisers | Hotspot | 144 | 159 | 9.4 | 15.1 |
+| sheltering cruisers | Mountain Range | 63 | 71 | 8.5 | 16.9 |
+| sheltering cruisers | Land of Fire | 54 | 57 | 15.8 | 24.6 |
+| sheltering cruisers | Sea of Fortune | 66 | 79 | 6.3 | 20.3 |
+| sheltering cruisers | Loop | 53 | 55 | 9.1 | 18.2 |
+| sheltering cruisers | Okinawa | 39 | 45 | 15.6 | 33.3 |
+
+Areas built: 312; with 8+ smokes and tested: 108 (77 destroyer, 31 cruiser); under 8, not rated: 204.
+Flagged: 2. Clearly above the all-map baseline only: 1. Would be flagged on deaths alone: 0.
+Placebo (120 runs, outcomes shuffled among the smokes of the same map, same areas, same rule, 300 resamples each): flags by luck per run: mean 1.57, median 1.0, 95th percentile 4, max 5; runs with no flag 24 of 120; runs with at least as many flags as the real data (2): 58 of 120. Real data with the same 300 resamples: 3 flags. Death-only rule by luck: 0.78 per run (real 0).
+Luck flags per map per run: Sleeping Giant 0.36, Hotspot 0.13, Mountain Range 0.4, Land of Fire 0.22, Sea of Fortune 0.19, Loop 0.09, Okinawa 0.17
+
+## Sleeping Giant (v1)
+Areas tested: 19 destroyer, 6 cruiser. Flagged: 2.
+| map | who | area | n | ships at risk | died or hurt per 100 | baseline all / same map | gap vs all maps (interval) | gap vs same map (interval) | died per 100 (n; baseline all / map) | death gap vs all maps | mark |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Sleeping Giant | destroyer smoker | E7+F7+F8 | 8 (small n) | 8 | 62 (5 of 8) | 23.1 / 21.4 | +39 (+8 to +76 *) | +41 (+10 to +77 *) | 25 (2; 12.8 / 10.9) | +12 (-14 to +50) | FLAG |
+| Sleeping Giant | destroyer smoker | F5 | 12 (small n) | 12 | 42 (5 of 12) | 23.1 / 21.4 | +19 (+2 to +36 *) | +20 (+6 to +35 *) | 17 (2; 12.8 / 10.9) | +4 (-15 to +26) | FLAG |
+- E7+F7+F8 (destroyer smoker) FLAGGED: Shared spot (share of the map's smokes here: Top 6 2%, Rest 5%, gap interval -8 to +1). Laid while 50+ behind: 25% (map 24%). A covered ship radar-lit while the smoke stood (radar log): 62% (map 41%). 7 clans, 8 games. Top 6: BONKZ 2 | Rest: RMN 1, SCCC2 1, PFANS 1, -BN- 1, RSR 1, KITED 1. Without the clan with most bad outcomes (SCCC2): 57.1 per 100 (n 7).
+- F5 (destroyer smoker) FLAGGED: Shared spot (share of the map's smokes here: Top 6 5%, Rest 5%, gap interval -6 to +9). Laid while 50+ behind: 17% (map 24%). A covered ship radar-lit while the smoke stood (radar log): 67% (map 41%). 7 clans, 9 games. Top 6: VRTUS 3, RESIN 2, HTDOG 1 | Rest: KITED 2, HFANS 2, KSE 1, 5D 1. Without the clan with most bad outcomes (VRTUS): 44.4 per 100 (n 9).
+
+## Hotspot (v1)
+Areas tested: 15 destroyer, 9 cruiser. Flagged: 0. No area qualifies on this map.
+
+## Mountain Range (v1)
+Areas tested: 11 destroyer, 6 cruiser. Flagged: 0. No area qualifies on this map.
+
+## Land of Fire (v1)
+Areas tested: 7 destroyer, 2 cruiser. Flagged: 0. No area qualifies on this map.
+
+## Sea of Fortune (v1)
+Areas tested: 8 destroyer, 5 cruiser. Flagged: 0. No area qualifies on this map.
+| map | who | area | n | ships at risk | died or hurt per 100 | baseline all / same map | gap vs all maps (interval) | gap vs same map (interval) | died per 100 (n; baseline all / map) | death gap vs all maps | mark |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Sea of Fortune | destroyer smoker | E5+F5+E6 | 8 (small n) | 8 | 62 (5 of 8) | 23.1 / 25.6 | +39 (+1 to +79 *) | +37 (-0 to +76) | 50 (4; 12.8 / 12.8) | +37 (-1 to +87) | above all-map only |
+- E5+F5+E6 (destroyer smoker) (not flagged): Shared spot (share of the map's smokes here: Top 6 8%, Rest 6%, gap interval -9 to +11). Laid while 50+ behind: 50% (map 28%). A covered ship radar-lit while the smoke stood (radar log): 50% (map 39%). 7 clans, 6 games. Top 6: RESIN 2, BONKZ 1 | Rest: 5D 1, NGA 1, MACHX 1, KSE 1, RSR 1. Without the clan with most bad outcomes (5D): 57.1 per 100 (n 7).
+
+## Loop (v1)
+Areas tested: 12 destroyer, 2 cruiser. Flagged: 0. No area qualifies on this map.
+
+## Okinawa (v1)
+Areas tested: 5 destroyer, 1 cruiser. Flagged: 0. No area qualifies on this map.
+
+# Version 2: areas keyed on where the damage happened
+
+| who | map | ships | ships at risk | died per 100 | died or hurt per 100 |
+|---|---|---|---|---|---|
+| destroyer smoker | all maps | 1070 | 1070 | 12.8 | 23.1 |
+| destroyer smoker | Sleeping Giant | 238 | 238 | 10.9 | 21.4 |
+| destroyer smoker | Hotspot | 235 | 235 | 9.4 | 18.7 |
+| destroyer smoker | Mountain Range | 128 | 128 | 14.8 | 26.6 |
+| destroyer smoker | Land of Fire | 128 | 128 | 15.6 | 26.6 |
+| destroyer smoker | Sea of Fortune | 117 | 117 | 12.8 | 25.6 |
+| destroyer smoker | Loop | 142 | 142 | 14.1 | 20.4 |
+| destroyer smoker | Okinawa | 82 | 82 | 18.3 | 30.5 |
+| sheltering cruisers | all maps | 612 | 612 | 9.6 | 19.4 |
+| sheltering cruisers | Sleeping Giant | 146 | 146 | 8.2 | 19.2 |
+| sheltering cruisers | Hotspot | 159 | 159 | 9.4 | 15.1 |
+| sheltering cruisers | Mountain Range | 71 | 71 | 8.5 | 16.9 |
+| sheltering cruisers | Land of Fire | 57 | 57 | 15.8 | 24.6 |
+| sheltering cruisers | Sea of Fortune | 79 | 79 | 6.3 | 20.3 |
+| sheltering cruisers | Loop | 55 | 55 | 9.1 | 18.2 |
+| sheltering cruisers | Okinawa | 45 | 45 | 15.6 | 33.3 |
+
+Areas built: 315; with 8+ ships and tested: 111 (73 destroyer, 38 cruiser); under 8, not rated: 204.
+Flagged: 3. Clearly above the all-map baseline only: 1. Would be flagged on deaths alone: 0.
+Placebo (120 runs, outcomes shuffled among the ships of the same map, same areas, same rule, 300 resamples each): flags by luck per run: mean 1.75, median 2.0, 95th percentile 4, max 5; runs with no flag 19 of 120; runs with at least as many flags as the real data (3): 29 of 120. Real data with the same 300 resamples: 3 flags. Death-only rule by luck: 0.74 per run (real 0).
+Luck flags per map per run: Sleeping Giant 0.36, Hotspot 0.16, Mountain Range 0.43, Land of Fire 0.23, Sea of Fortune 0.25, Loop 0.11, Okinawa 0.22
+
+## Sleeping Giant (v2)
+Areas tested: 17 destroyer, 9 cruiser. Flagged: 2.
+| map | who | area | n | ships at risk | died or hurt per 100 | baseline all / same map | gap vs all maps (interval) | gap vs same map (interval) | died per 100 (n; baseline all / map) | death gap vs all maps | mark |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Sleeping Giant | destroyer smoker | E8 | 8 (small n) | 8 | 75 (6 of 8) | 23.1 / 21.4 | +52 (+35 to +79 *) | +54 (+35 to +83 *) | 38 (3; 12.8 / 10.9) | +25 (-14 to +60) | FLAG |
+| Sleeping Giant | destroyer smoker | E7+F7+F8 | 10 (small n) | 10 | 50 (5 of 10) | 23.1 / 21.4 | +27 (+3 to +60 *) | +29 (+5 to +61 *) | 30 (3; 12.8 / 10.9) | +17 (-11 to +53) | FLAG |
+- E8 (destroyer smoker) FLAGGED: Shared spot (share of the map's ships here: Top 6 4%, Rest 3%, gap interval -4 to +6). Laid while 50+ behind: 12% (map 24%). A covered ship radar-lit while the smoke stood (radar log): 62% (map 41%). 5 clans, 6 games. Top 6: RESIN 3, BONKZ 1 | Rest: MACHX 2, HFANS 1, EPOXY 1. Without the clan with most bad outcomes (RESIN): 80.0 per 100 (n 5).
+- E7+F7+F8 (destroyer smoker) FLAGGED: Shared spot (share of the map's ships here: Top 6 2%, Rest 6%, gap interval -12 to +1). Laid while 50+ behind: 30% (map 24%). A covered ship radar-lit while the smoke stood (radar log): 70% (map 41%). 7 clans, 8 games. Top 6: BONKZ 2 | Rest: KITED 3, RMN 1, UYSC 1, PFANS 1, -BN- 1, RSR 1. Without the clan with most bad outcomes (UYSC): 44.4 per 100 (n 9).
+
+## Hotspot (v2)
+Areas tested: 15 destroyer, 10 cruiser. Flagged: 0. No area qualifies on this map.
+
+## Mountain Range (v2)
+Areas tested: 12 destroyer, 6 cruiser. Flagged: 1.
+| map | who | area | n | ships at risk | died or hurt per 100 | baseline all / same map | gap vs all maps (interval) | gap vs same map (interval) | died per 100 (n; baseline all / map) | death gap vs all maps | mark |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Mountain Range | destroyer smoker | G5+H5+G6+H6 | 14 (small n) | 14 | 50 (7 of 14) | 23.1 / 26.6 | +27 (+4 to +53 *) | +23 (+2 to +48 *) | 29 (4; 12.8 / 14.8) | +16 (-4 to +40) | FLAG |
+- G5+H5+G6+H6 (destroyer smoker) FLAGGED: Shared spot (share of the map's ships here: Top 6 7%, Rest 14%, gap interval -20 to +3). Laid while 50+ behind: 57% (map 24%). A covered ship radar-lit while the smoke stood (radar log): 36% (map 37%). 11 clans, 11 games. Top 6: RESIN 2, H-SR 1, HTDOG 1 | Rest: OGF 2, SCCC2 2, RMN 1, REEEE 1, KSE 1, UYSC 1, KSC 1, MACH 1. Without the clan with most bad outcomes (OGF): 50.0 per 100 (n 12).
+
+## Land of Fire (v2)
+Areas tested: 7 destroyer, 3 cruiser. Flagged: 0. No area qualifies on this map.
+
+## Sea of Fortune (v2)
+Areas tested: 7 destroyer, 6 cruiser. Flagged: 0. No area qualifies on this map.
+
+## Loop (v2)
+Areas tested: 11 destroyer, 2 cruiser. Flagged: 0. No area qualifies on this map.
+
+## Okinawa (v2)
+Areas tested: 4 destroyer, 2 cruiser. Flagged: 0. No area qualifies on this map.
+| map | who | area | n | ships at risk | died or hurt per 100 | baseline all / same map | gap vs all maps (interval) | gap vs same map (interval) | died per 100 (n; baseline all / map) | death gap vs all maps | mark |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Okinawa | destroyer smoker | E3+F3+E4+F4 | 12 (small n) | 12 | 42 (5 of 12) | 23.1 / 30.5 | +19 (+1 to +37 *) | +11 (-6 to +31) | 17 (2; 12.8 / 18.3) | +4 (-15 to +32) | above all-map only |
+- E3+F3+E4+F4 (destroyer smoker) (not flagged): Shared spot (a Rest habit) (share of the map's ships here: Top 6 0%, Rest 18%, gap interval -28 to -8 *). Laid while 50+ behind: 25% (map 32%). A covered ship radar-lit while the smoke stood (radar log): 42% (map 41%). 7 clans, 7 games. Top 6: none | Rest: -BN- 3, RSR 2, EPOXY 2, MACHX 2, BTLST 1, MANBA 1, MZY 1. Without the clan with most bad outcomes (BTLST): 36.4 per 100 (n 11).
+
+Version 2 unit and denominator: one entry per ship at risk (the smoking destroyer; each cruiser inside or behind a smoke). Each ship is placed once: at its death position if it died, at its position at its largest 2 s health fall if it was hurt and lived, otherwise at its position half way through the smoke. An area's rate = ships placed there that died or were hurt / all ships placed there. All positions are in the smoking team's frame.
+
+# Round 5 flags, old outcomes and new outcomes on the same areas (version 1)
+Round 5 outcomes (batch deaths, estimated health) recomputed here on the round 5b units: 108 areas tested, 3 flagged: Sleeping Giant E7+F7+F8 (destroyer smoker); Hotspot inside cap C (destroyer smoker); Sea of Fortune E5+F5+E6 (destroyer smoker). Round 5 printed 109 tested and 4 flagged.
+| map | who | area | smokes | round 5 outcomes: died or hurt per 100 | real health: died or hurt per 100 | gap vs all maps / same map (intervals) | result |
+|---|---|---|---|---|---|---|---|
+| Hotspot | destroyer smoker | inside cap C | 22 | 32 (7 of 22) FLAG | 27 (6 of 22) | +4 (-9 to +44) / +9 (-4 to +52) | does not survive |
+| Sea of Fortune | destroyer smoker | E5+F5+E6 | 8 (small n) | 62 (5 of 8) FLAG | 62 (5 of 8) | +39 (+1 to +79 *) / +37 (-0 to +76) | does not survive |
+| Sleeping Giant | destroyer smoker | E7+F7+F8 | 8 (small n) | 50 (4 of 8) FLAG | 62 (5 of 8) | +39 (+8 to +76 *) / +41 (+10 to +77 *) | survives |
+| Mountain Range | sheltering cruisers | E7+F7+F8 | 7 (too few) | - | - | - | not rated: under 8 smokes once the ship with incomplete health (single-replay game) is left out |
+
+Version 2 flags checked a second way (ships placed where they were at activation instead of where they were hit):
+| map | who | area | keyed on where hit: per 100 | keyed on position at activation: per 100 | same-map baseline |
+|---|---|---|---|---|---|
+| Sleeping Giant | destroyer smoker | E8 | 75 (6 of 8) | too few (7) | 21.4 |
+| Sleeping Giant | destroyer smoker | E7+F7+F8 | 50 (5 of 10) | 62 (5 of 8) | 21.4 |
+| Mountain Range | destroyer smoker | G5+H5+G6+H6 | 50 (7 of 14) | 38 (6 of 16) | 26.6 |
+
+# Death positions (ships at risk that died between activation and 20 s after dispersal)
+| who died | deaths (ship-smoke pairs) | of which in the batch list | inside the outline | within 1 km of the edge | 1-3 km | over 3 km | share inside | median distance past the edge when outside |
+|---|---|---|---|---|---|---|---|---|
+| smoking destroyer | 137 | 68 | 57 | 23 | 28 | 29 | 42% | 1,923 m |
+| sheltering cruiser | 59 | 48 | 13 | 9 | 25 | 12 | 22% | 1,960 m |
+| smoker (other class) | 61 | 47 | 36 | 18 | 6 | 1 | 59% | 739 m |
+| other sheltering ship | 11 | 10 | 4 | 1 | 2 | 4 | 36% | 3,971 m |
+268 ship-smoke pairs, 262 distinct ships (a ship covered by two standing smokes is listed under both). Distance is from the death position (last position alive, within 2 s) to the edge of the nearest puff of the smoke.
+| map | deaths | inside the outline | outside | share inside |
+|---|---|---|---|---|
+| Sleeping Giant | 49 | 22 | 27 | 45% |
+| Hotspot | 40 | 18 | 22 | 45% |
+| Mountain Range | 32 | 11 | 21 | 34% |
+| Land of Fire | 43 | 16 | 27 | 37% |
+| Sea of Fortune | 33 | 16 | 17 | 48% |
+| Loop | 34 | 18 | 16 | 53% |
+| Okinawa | 37 | 9 | 28 | 24% |
+
+Wrote danger-zones.json (5 records: 2 keyed on the smoke centre, 3 keyed on where the ship was hit).

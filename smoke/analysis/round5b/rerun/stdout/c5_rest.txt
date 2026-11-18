@@ -1,0 +1,230 @@
+=== MR-1 far-west parked cruiser smoke (Svea / Jinan)
+ spot: Top 6 12 of 33 (36%) vs Rest 0 of 13 (0%); gap +36 pts (+31 to +40 *) -> Top 6
+    Top 6: HTDOG 8, BONKZ 4 | Rest: none
+     Jinan 8: Top 6: HTDOG 8 | Rest: none
+     Svea 4: Top 6: BONKZ 4 | Rest: none
+       HTDOG (top): 8 of 20 of the clan's smokes with this ship group on the map
+       BONKZ (top): 4 of 13 of the clan's smokes with this ship group on the map
+       INCA (rest): 0 of 6 of the clan's smokes with this ship group on the map
+       MACHX (rest): 0 of 6 of the clan's smokes with this ship group on the map
+       PN (rest): 0 of 1 of the clan's smokes with this ship group on the map
+   Svea on the map: Top 6: BONKZ 13, HTDOG 11 | Rest: INCA 6, MACHX 6, PN 1 | in spot Top 6 4 of 24 (17%) vs Rest 0 of 13 (0%); gap +17 pts (+0 to +31)
+   Jinan on the map: Top 6: HTDOG 9 | Rest: none | in spot Top 6 8 of 9 (89%) vs Rest 0 of 0 (too few); gap -
+   fielded (team-games with the ship): Svea: Top 6 5, Rest 3, Jinan: Top 6 3, Rest 0
+   Jinan lineups by clan HTDOG 3 | Svea lineups HTDOG 3, BONKZ 3, MACHX 2, PN 1, INCA 1
+   members: conc 19.0k median 14.3k deaths 1 | cells H1 6, G1 4, H2 2 | median time 8:10 | games 4 | selfish 12 | pp cap_contest 7, escape 2, damage 2, none 1 | radar from inside 0
+   any ship, any class in the ellipse: Top 6 17 of 88 (19%) vs Rest 9 of 119 (8%); gap +12 pts (-4 to +26) | Jinan 8, Napoli 4, Svea 4, Somers 2, Cerberus 2, Harugumo 1, Gearing 1, Plymouth 1 | Top 6: HTDOG 10, BONKZ 5, VRTUS 1, RESIN 1 | Rest: INCA 2, MACH 2, REEEE 1, PN 1, PFANS 1, UYSC 1, MACHX 1
+
+=== MR-2 radar from smoke at cap B: defence?
+| Cap | Smokes | Top 6 | Ours at start | Neutral | Theirs | Enemy took it (of smokes where it was not theirs and a later snapshot exists) | Enemy took it when ours | We took it (of not ours) | Batch "cap defended" on this cap | Concealed dmg | Deaths per 100 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 62 | 28 | 10 | 31 | 21 | 6 of 41 (15%) | 3 of 10 (30%) | 6 of 52 (12%) | 7 | 13.9k | 11.3 |
+| B | 68 | 35 | 23 | 22 | 23 | 16 of 45 (36%) | 9 of 23 (39%) | 20 of 45 (44%) | 8 | 10.4k | 7.4 |
+| C | 77 | 25 | 37 | 19 | 21 | 10 of 56 (18%) | 5 of 37 (14%) | 8 of 40 (20%) | 10 | 7.8k | 7.8 |
+ reproduce atlas: destroyer radar plays with contested cap B: 10 Top 6 7 | cap_won 1 of 6
+ distance of the 15 radar smokes from the B edge (m): median 2042.0573143541321 max 6228.832199021881
+| Cap | Smokes | Top 6 | Ours at start | Neutral | Theirs | Enemy took it (of smokes where it was not theirs and a later snapshot exists) | Enemy took it when ours | We took it (of not ours) | Batch "cap defended" on this cap | Concealed dmg | Deaths per 100 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 45 | 22 | 5 | 28 | 12 | 4 of 33 (12%) | 2 of 5 (too few) | 6 of 40 (15%) | 5 | 12.9k | 8.9 |
+| B | 31 | 16 | 11 | 10 | 10 | 6 of 21 (29%) | 3 of 11 (27%) | 12 of 20 (60%) | 3 | 11.4k | 6.5 |
+| C | 33 | 11 | 17 | 10 | 6 | 4 of 27 (15%) | 2 of 17 (12%) | 5 of 16 (31%) | 6 | 9.7k | 12.1 |
+   radar play (primary purpose cap_control or radar_trap), nearest cap B: ships Gearing 4, Svea 4, Somers 3, Gdańsk 3, Harugumo 1 | Top 6: KITE 4, BONKZ 4, H-SR 2, RESIN 2 | Rest: HFANS 2, SCCC2 1 | pp cap_control 13, radar_trap 2 | cells F4 6, G5 3, F5 2, F3 2, G4 1 | cruisers inside Minotaur 4, Brisbane 3, Des Moines 1, Moskva 1 | radar spotted an enemy 11 | median time 10:09
+   radar activated from inside (off_radar), nearest cap B: ships Gearing 4, Svea 4, Somers 3, Gdańsk 3, Harugumo 1 | Top 6: KITE 4, BONKZ 4, H-SR 2, RESIN 2 | Rest: HFANS 2, SCCC2 1 | pp cap_control 13, radar_trap 2 | cells F4 6, G5 3, F5 2, F3 2, G4 1 | cruisers inside Minotaur 4, Brisbane 3, Des Moines 1, Moskva 1 | radar spotted an enemy 11 | median time 10:09
+   either, nearest cap B: ships Gearing 4, Svea 4, Somers 3, Gdańsk 3, Harugumo 1 | Top 6: KITE 4, BONKZ 4, H-SR 2, RESIN 2 | Rest: HFANS 2, SCCC2 1 | pp cap_control 13, radar_trap 2 | cells F4 6, G5 3, F5 2, F3 2, G4 1 | cruisers inside Minotaur 4, Brisbane 3, Des Moines 1, Moskva 1 | radar spotted an enemy 11 | median time 10:09
+   other smokes nearest cap B (no radar): ships Gearing 12, Svea 11, Somers 10, Gdańsk 5, Fuyutsuki 3, Z-42 2, Napoli 2, Daring 2 | Top 6: BONKZ 7, KITE 5, HTDOG 5, H-SR 3, RESIN 3 | Rest: -BN- 5, MACHX 4, UYSC 3, INCA 3, RSR 2, BTLST 2, HFANS 2, SCCC2 2, BONKY 2, MACH 2, OGF 1, RMN 1, PN 1 | pp cap_contest 21, none 18, island_dive 4, reposition 3, escape 3, counter_smoke 2, damage 2 | cells G4 20, F4 12, F5 6, G5 6, E4 3 | cruisers inside Brisbane 5, Minotaur 4, Des Moines 3, Smolensk 2, Worcester 2 | radar spotted an enemy 0 | median time 6:22
+   radar smokes at other caps on the map: ships Harugumo 4, Svea 4, Gearing 1, Gdańsk 1, Somers 1 | Top 6: RESIN 4, BONKZ 1, H-SR 1 | Rest: INCA 3, PN 1, RSR 1 | pp cap_control 6, cap_contest 4, radar_trap 1 | cells F1 2, E3 2, G7 2, F6 2, F8 1 | cruisers inside Des Moines 3, Minotaur 3, Prinz Adalbert 1 | radar spotted an enemy 9 | median time 8:36
+   radar smokes at any cap, other maps: ships Somers 46, Gearing 16, Svea 16, Gdańsk 15, Harugumo 13, Shimakaze 2, Z-42 2, Grozovoi 1 | Top 6: RESIN 15, HTDOG 13, H-SR 13, BONKZ 12, VRTUS 7, KITE 1 | Rest: HFANS 8, BONKY 7, MACHX 6, SCCC2 4, REEEE 4, KSC 4, MZY 3, -BN- 3, EPOXY 2, PFANS 2, BTLST 1, UYSC 1, MANBA 1, RSR 1, KSE 1, PN 1, INCA 1, KITED 1 | pp cap_control 71, radar_trap 24, reposition 5, none 5, damage 4, cap_contest 2, escape 1 | cells F5 8, G10 7, F9 6, G7 5, F10 5 | cruisers inside Brisbane 30, Des Moines 24, Minotaur 9, Worcester 6, San Martín 4 | radar spotted an enemy 76 | median time 6:44
+   radar smokes inside or within 2 km of B: ships Svea 3, Gdańsk 2, Somers 1, Gearing 1 | Top 6: BONKZ 3, KITE 1, RESIN 1 | Rest: HFANS 1, SCCC2 1 | pp cap_control 7 | cells F4 4, F5 2, G4 1 | cruisers inside Brisbane 1, Minotaur 1 | radar spotted an enemy 5 | median time 10:09
+   other smokes inside or within 2 km of B (no radar): ships Gearing 7, Gdańsk 4, Svea 4, Somers 3, Z-42 2, Napoli 2, Grozovoi 1, Daring 1 | Top 6: KITE 4, BONKZ 4, RESIN 2, HTDOG 1 | Rest: RSR 2, UYSC 2, BTLST 2, INCA 2, MACHX 2, HFANS 1, SCCC2 1, -BN- 1 | pp cap_contest 21, none 3 | cells F4 11, F5 6, E4 2, G5 2, G4 2 | cruisers inside Des Moines 3, Minotaur 2, Smolensk 1, Salem 1, Svea 1 | radar spotted an enemy 0 | median time 6:26
+   radar smokes within 2 km of a cap, other maps: ships Somers 18, Gdańsk 9, Harugumo 7, Svea 7, Gearing 6, Shimakaze 1, Grozovoi 1, Z-42 1 | Top 6: H-SR 8, HTDOG 6, RESIN 6, BONKZ 3, VRTUS 3 | Rest: HFANS 5, BONKY 2, MACHX 2, MZY 2, KSC 2, -BN- 2, UYSC 1, MANBA 1, RSR 1, KSE 1, PN 1, REEEE 1, SCCC2 1, PFANS 1, EPOXY 1 | pp cap_control 45, reposition 3, escape 1, radar_trap 1 | cells F5 8, F2 4, F10 4, F8 3, F9 3 | cruisers inside Des Moines 12, Brisbane 11, Minotaur 4, Worcester 3, San Martín 2 | radar spotted an enemy 37 | median time 6:27
+| Smokes | n | Top 6 | Cap ours / neutral / theirs at start | Enemy took the cap during the smoke (of not theirs, with a later snapshot) | Enemy took it when ours | We took it (of not ours) | Batch "cap defended" on this cap | Concealed dmg | Deaths |
+|---|---|---|---|---|---|---|---|---|---|
+| radar play (primary purpose cap_control or radar_trap), nearest cap B | 15 | 12 | 8 / 5 / 2 | 5 of 13 (38%) | 4 of 8 (50%) | 3 of 7 (too few) | 4 | 12.8k | 1 |
+| radar activated from inside (off_radar), nearest cap B | 15 | 12 | 8 / 5 / 2 | 5 of 13 (38%) | 4 of 8 (50%) | 3 of 7 (too few) | 4 | 12.8k | 1 |
+| either, nearest cap B | 15 | 12 | 8 / 5 / 2 | 5 of 13 (38%) | 4 of 8 (50%) | 3 of 7 (too few) | 4 | 12.8k | 1 |
+| other smokes nearest cap B (no radar) | 53 | 23 | 15 / 17 / 21 | 11 of 32 (34%) | 5 of 15 (33%) | 17 of 38 (45%) | 4 | 9.7k | 4 |
+| radar smokes at other caps on the map | 11 | 6 | 1 / 5 / 5 | 1 of 6 (too few) | 0 of 1 (too few) | 1 of 10 (10%) | 0 | 16.1k | 0 |
+| radar smokes at any cap, other maps | 112 | 61 | 52 / 35 / 25 | 16 of 87 (18%) | 7 of 52 (13%) | 23 of 60 (38%) | 14 | 18.3k | 12 |
+| radar smokes inside or within 2 km of B | 7 | 5 | 4 / 2 / 1 | 2 of 6 (too few) | 1 of 4 (too few) | 1 of 3 (too few) | 1 | 15.9k | 0 |
+| other smokes inside or within 2 km of B (no radar) | 24 | 11 | 7 / 8 / 9 | 4 of 15 (27%) | 2 of 7 (too few) | 11 of 17 (65%) | 2 | 10.1k | 2 |
+| radar smokes within 2 km of a cap, other maps | 50 | 26 | 26 / 16 / 8 | 3 of 42 (7%) | 0 of 26 (0%) | 11 of 24 (46%) | 8 | 16.8k | 6 |
+ radar at B list:
+    7930_g1_51294 H-SR Somers 5:07 G5 own neutral enemy_took False we_took True cap_def A pp cap_control off_radar True spotted 2 edge 2264 conc 11721
+    7948_g1_55897 KITE Gearing 1:23 G5 own neutral enemy_took False we_took True cap_def A pp cap_control off_radar True spotted 0 edge 3685 conc 924
+    8146_g2_121106 H-SR Harugumo 13:58 F3 own ours enemy_took True we_took None cap_def B pp cap_control off_radar True spotted 1 edge 2042 conc 25150
+    8147_g2_175996 RESIN Gdańsk 3:34 G4 own neutral enemy_took True we_took False cap_def A pp cap_control off_radar True spotted 0 edge 1726 conc 10598
+    8147_g2_176005 BONKZ Svea 13:21 F5 own theirs enemy_took None we_took True cap_def - pp cap_control off_radar True spotted 0 edge -1251 conc 21542
+    8147_g2_176006 RESIN Gdańsk 13:29 H5 own theirs enemy_took None we_took False cap_def - pp radar_trap off_radar True spotted 1 edge 6229 conc 1874
+    8147_g2_176007 BONKZ Svea 14:49 F4 own ours enemy_took False we_took None cap_def - pp cap_control off_radar True spotted 1 edge -62 conc 28069
+    8147_g2_176009 BONKZ Svea 16:02 F4 own ours enemy_took True we_took None cap_def B pp cap_control off_radar True spotted 3 edge -121 conc 10257
+    8147_g2_176011 BONKZ Svea 17:14 F4 own ours enemy_took True we_took None cap_def B pp cap_control off_radar True spotted 1 edge 2064 conc 9944
+    8149_g1_68154 KITE Gearing 1:37 G5 own neutral enemy_took False we_took False cap_def - pp cap_control off_radar True spotted 1 edge 2262 conc 9769
+    8149_g1_68162 KITE Gearing 5:45 F4 own ours enemy_took False we_took None cap_def - pp cap_control off_radar True spotted 2 edge 1963 conc 9788
+    8149_g1_68172 KITE Gearing 10:42 F3 own ours enemy_took True we_took None cap_def B pp radar_trap off_radar True spotted 1 edge 3008 conc 11390
+    7903_g1_159427 HFANS Somers 5:10 F4 own ours enemy_took False we_took None cap_def - pp cap_control off_radar True spotted 0 edge 2118 conc 10826
+    7903_g1_159439 HFANS Somers 10:09 F5 own ours enemy_took False we_took None cap_def - pp cap_control off_radar True spotted 2 edge -660 conc 20414
+    7929_g1_195744 SCCC2 Gdańsk 3:10 F4 own neutral enemy_took False we_took False cap_def A pp cap_control off_radar True spotted 1 edge 991 conc 10382
+ share of the map's radar smokes that sit at B: Top 6 12 of 18 (67%) vs Rest 3 of 8 (38%); gap +29 pts (-27 to +80)
+ share of all the group smokes on the map that are radar smokes at B: Top 6 12 of 88 (14%) vs Rest 3 of 119 (2%); gap +11 pts (+2 to +22 *) -> Top 6
+ share of smokes at B that are radar smokes: Top 6 12 of 35 (34%) vs Rest 3 of 33 (9%); gap +25 pts (+6 to +40 *)
+ B ours at start: radar smokes 53.333333333333336 (25.0, 73.33333333333333) | other smokes at B 28.30188679245283 (14.0, 42.592592592592595)
+
+=== LF-1 early cluster at cap A: ship breakdown
+ ellipse membership instead: 11
+ cluster (atlas mean-shift membership) 13 of 37 Top 6 5 of 12 (42%) vs Rest 8 of 25 (32%); gap +10 pts (-19 to +36) -> Shared
+   Top 6: HTDOG 2, VRTUS 1, H-SR 1, RESIN 1 | Rest: HFANS 3, BTLST 2, NGA 1, SCCC2 1, MACHX 1
+  top: n 5 | smoker Gearing 2, Somers 1, Gdańsk 1, Harugumo 1 | cruisers inside Des Moines 3, Brisbane 1 | screened none | early_mode inside 4, None 1 | radar cruiser inside 4 | other partners R. Lauria 1, Ragnar 1 | conc 9.7k | deaths 0
+  rest: n 8 | smoker Gearing 4, Somers 3, Daring 1 | cruisers inside Des Moines 2, Napoli 1, Brisbane 1, Svea 1 | screened Napoli 3, Smolensk 1, San Martín 1 | early_mode inside 5, screened 2, None 1 | radar cruiser inside 4 | other partners Gearing 1, Thor 1 | conc 7.9k | deaths 2
+      7981_g1_174221 HTDOG Gearing 3:18 F2 zone A cr [('Des Moines', 'inside')] 2nd DD [('Daring', 'F5'), ('Ragnar', 'F5')] conc 13464
+      8074_g2_70750 HTDOG Gearing 2:28 F3 zone A cr [('Des Moines', 'inside')] 2nd DD [('Ragnar', 'F5')] conc 4158
+      8143_g2_214591 VRTUS Somers 2:34 F3 zone A cr [('Brisbane', 'inside')] 2nd DD [('Z-42', 'F5')] conc 24503
+      8183_g4_108987 H-SR Gdańsk 2:22 F3 zone A cr [] 2nd DD [('Marceau', 'F2'), ('Marceau', 'F2')] conc 5280
+      8183_g4_108988 RESIN Harugumo 3:14 G2 zone A cr [('Des Moines', 'inside')] 2nd DD [('Ragnar', 'G3'), ('Ragnar', 'G1')] conc 924
+      7926_g1_149566 NGA Somers 2:31 G2 zone A cr [('Des Moines', 'inside')] 2nd DD [('Châteaurenault', 'F5')] conc 0
+      7926_g1_149571 SCCC2 Daring 4:08 F3 zone A cr [] 2nd DD [('Daring', 'F4')] conc 12238
+      7941_g1_214651 BTLST Gearing 3:06 F3 zone A cr [('Napoli', 'screened'), ('Napoli', 'screened')] 2nd DD [('Gearing', 'E3')] conc 0
+      7941_g1_214655 BTLST Gearing 4:35 F3 zone A cr [('Napoli', 'inside'), ('Napoli', 'screened')] 2nd DD [] conc 0
+      8074_g2_70749 HFANS Gearing 1:44 G3 zone A cr [('Smolensk', 'screened')] 2nd DD [('Z-42', 'F4')] conc 8743
+      8143_g2_214590 MACHX Somers 1:57 G3 zone A cr [('Brisbane', 'inside')] 2nd DD [('Daring', 'F6')] conc 12046
+      8145_g2_157256 HFANS Gearing 2:23 F2 zone A cr [('Des Moines', 'inside')] 2nd DD [('Z-42', 'F5')] conc 27163
+      8154_g1_175936 HFANS Somers 2:33 F2 zone A cr [('San Martín', 'screened'), ('Svea', 'inside')] 2nd DD [('Daring', 'F5')] conc 2798
+ all early destroyer smokes nearest cap A: 19 Top 6 6 of 12 (50%) vs Rest 13 of 25 (52%); gap -2 pts (-34 to +32) | ships Gearing 8, Somers 8, Daring 1, Gdańsk 1, Harugumo 1 | cruisers inside Des Moines 5, Utrecht 2, Brisbane 2, Napoli 1, Minotaur 1, Svea 1 | screened Napoli 3, Utrecht 1, Smolensk 1, San Martín 1 | Top 6: HTDOG 2, VRTUS 1, KITE 1, H-SR 1, RESIN 1 | Rest: HFANS 3, BTLST 2, EPOXY 2, PN 1, NGA 1, SCCC2 1, -BN- 1, KSC 1, MACHX 1
+ standing definition, early cruiser smokes nearest A: inside 12 screened 3 no cruiser 4
+
+=== LF-2 Svea F5
+ spot: Top 6 14 of 19 (74%) vs Rest 4 of 21 (19%); gap +55 pts (+7 to +87 *) -> Top 6
+    Top 6: VRTUS 8, HTDOG 4, RESIN 2 | Rest: BONKY 4
+     Svea 18: Top 6: VRTUS 8, HTDOG 4, RESIN 2 | Rest: BONKY 4
+       VRTUS (top): 8 of 9 of the clan's smokes with this ship group on the map
+       HTDOG (top): 4 of 5 of the clan's smokes with this ship group on the map
+       RESIN (top): 2 of 5 of the clan's smokes with this ship group on the map
+       -BN- (rest): 0 of 5 of the clan's smokes with this ship group on the map
+       BONKY (rest): 4 of 4 of the clan's smokes with this ship group on the map
+       KSC (rest): 0 of 4 of the clan's smokes with this ship group on the map
+       HFANS (rest): 0 of 4 of the clan's smokes with this ship group on the map
+       EPOXY (rest): 0 of 3 of the clan's smokes with this ship group on the map
+       RMN (rest): 0 of 1 of the clan's smokes with this ship group on the map
+   members conc top 14.2k rest (n 4) | deaths 1 | median time 6:16 | games 6 | own neutral 10, ours 4, theirs 4 | radar inside 3
+     Top 6 without HTDOG: 10 of 14
+     Top 6 without RESIN: 12 of 14
+     Top 6 without VRTUS: 6 of 10
+   Svea lineups on the map by clan VRTUS 2, HTDOG 2, RMN 2, -BN- 2, RESIN 2, HFANS 2, BONKY 1, KSC 1, EPOXY 1
+
+=== SF-1 early cruiser smoke at the west cap and at D
+ caps (real map coordinates, world units; +z is north): [('A', -480.0, 240.0, 133.333), ('B', -480.0, -239.9998, 133.333), ('C', -96.0, 0.0, 100.0), ('D', 416.0, 0.0, 100.0)]
+ caps in the 0-1 frame: [('A', [0.2, 0.35], 0.083), ('B', [0.2, 0.65], 0.083), ('C', [0.44, 0.5], 0.062), ('D', [0.76, 0.5], 0.062)]
+ early destroyer smokes 31 | early cruiser smokes (standing definition) 24 | atlas west cluster 14 | atlas east cluster 10
+ west cluster centre uv [0.1501, 0.6017] cells F2 8, G3 2, H2 2, G2 1, G1 1
+ west cluster: nearest cap as drawn (normalized) B 14 | real letter in the game A 8, B 6 | spawn side north 8, south 6 | inside the cap circle 4 | median distance to B edge m 462.51368612336563
+ west cluster distance to drawn cap A edge (m): median 7716.927537072897 | to drawn cap B edge 462.51140016243556
+ west own-side cap (drawn B): early cruiser smokes 15 (of 17 early destroyer smokes there) | share of group's early cruiser smokes: Top 6 5 of 8 (62%) vs Rest 10 of 16 (62%); gap +0 pts (-30 to +26) | inside 10 screened 5 | inside by group Top 6 4 of 5 (too few) vs Rest 6 of 10 (60%); gap +20 pts (-35 to +60)
+     smoker Somers 6, Gearing 5, Harugumo 1, Shimakaze 1, Daring 1, Delny 1 | cruisers inside: top Brisbane 2, Utrecht 1, Worcester 1; rest Salem 1, Minotaur 1, Svea 1, Utrecht 1, Worcester 1, Cerberus 1 | screened: top Brisbane 1, Stalingrad 1; rest Puerto Rico 2, Napoli 2, Des Moines 1, Utrecht 1, Petropavlovsk 1, Prins van Oranje 1, Minotaur 1 | radar cruiser inside Top 6 3 of 5 (too few) vs Rest 4 of 10 (40%); gap +20 pts (-27 to +70)
+     Top 6: H-SR 2, VRTUS 1, BONKZ 1, RESIN 1 | Rest: RMN 1, REEEE 1, PN 1, RSR 1, KSC 1, INCA 1, KM 1, HFANS 1, SCCC2 1, MZY 1 | cells F2 8, G3 2, H2 2, G2 1, G1 1, F3 1 | conc 18.5k | deaths 2 | real letters A 8, B 7
+ west far cap (drawn A): early cruiser smokes 0 (of 0 early destroyer smokes there) | share of group's early cruiser smokes: Top 6 0 of 8 (0%) vs Rest 0 of 16 (0%); gap +0 pts (+0 to +0) | inside 0 screened 0 | inside by group Top 6 0 of 0 (too few) vs Rest 0 of 0 (too few); gap -
+     smoker none | cruisers inside: top none; rest none | screened: top none; rest none | radar cruiser inside Top 6 0 of 0 (too few) vs Rest 0 of 0 (too few); gap -
+     Top 6: none | Rest: none | cells none | conc - | deaths 0 | real letters none
+ centre cap C: early cruiser smokes 2 (of 2 early destroyer smokes there) | share of group's early cruiser smokes: Top 6 0 of 8 (0%) vs Rest 2 of 16 (12%); gap -12 pts (-36 to +0) | inside 0 screened 2 | inside by group Top 6 0 of 0 (too few) vs Rest 0 of 2 (too few); gap -
+     smoker Gearing 1, Z-42 1 | cruisers inside: top none; rest none | screened: top none; rest Bremen 1, Moskva 1, Napoli 1 | radar cruiser inside Top 6 0 of 0 (too few) vs Rest 0 of 2 (too few); gap -
+     Top 6: none | Rest: OGF 1, MACHX 1 | cells F4 2 | conc 14.4k | deaths 0 | real letters C 2
+ east cap D: early cruiser smokes 7 (of 12 early destroyer smokes there) | share of group's early cruiser smokes: Top 6 3 of 8 (38%) vs Rest 4 of 16 (25%); gap +12 pts (-14 to +38) | inside 5 screened 2 | inside by group Top 6 3 of 3 (too few) vs Rest 2 of 4 (too few); gap +50 pts (+0 to +100)
+     smoker Harugumo 3, Somers 2, Gearing 1, Delny 1 | cruisers inside: top Brisbane 2, Utrecht 1, Worcester 1; rest Des Moines 1, Utrecht 1, Brisbane 1 | screened: top none; rest Des Moines 1, Moskva 1 | radar cruiser inside Top 6 3 of 3 (too few) vs Rest 2 of 4 (too few); gap +50 pts (+0 to +100)
+     Top 6: H-SR 1, BONKZ 1, RESIN 1 | Rest: MZY 2, -BN- 1, BONKY 1 | cells F9 4, G9 1, F8 1, D9 1 | conc 28.7k | deaths 0 | real letters D 7
+      B 7995_g1_25167 VRTUS Gearing 3:29 F2 inside [('Brisbane', 'inside')] conc 7095 edge 238
+      B 7938_g1_214880 H-SR Somers 2:19 G3 inside [('Brisbane', 'inside')] conc 5891 edge -3200
+      B 8144_g2_39532 BONKZ Gearing 4:11 F2 screened [('Brisbane', 'screened')] conc 10370 edge 1971
+      B 8151_g2_3188 H-SR Delny 2:44 F3 inside [('Utrecht', 'inside'), ('Stalingrad', 'screened')] conc 41043 edge 1480
+      B 8178_g3_106312 RESIN Somers 3:56 H2 inside [('Worcester', 'inside')] conc 8426 edge 396
+      B 7954_g1_166727 RMN Gearing 4:59 F2 screened [('Puerto Rico', 'screened'), ('Puerto Rico', 'screened')] conc 6911 edge 3278
+      B 7954_g1_166725 REEEE Somers 3:09 F2 inside [('Salem', 'inside'), ('Napoli', 'screened')] conc 26176 edge 318
+      B 7993_g1_97307 PN Somers 3:26 G2 inside [('Minotaur', 'inside'), ('Napoli', 'screened')] conc 17216 edge -2503
+      B 7994_g1_37565 RSR Harugumo 3:26 F2 inside [('Svea', 'inside')] conc 10484 edge 805
+      B 7995_g1_25169 KSC Gearing 4:34 G1 inside [('Utrecht', 'inside')] conc 34866 edge 1412
+      B 7911_g1_226690 INCA Somers 3:53 F2 screened [('Des Moines', 'screened'), ('Utrecht', 'screened')] conc 65763 edge 3877
+      B 7912_g1_85163 KM Gearing 3:31 G3 inside [('Worcester', 'inside'), ('Petropavlovsk', 'screened')] conc 31959 edge -1602
+      B 7912_g1_85164 HFANS Shimakaze 3:54 F2 screened [('Prins van Oranje', 'screened')] conc 3193 edge 3130
+      B 7939_g1_90308 SCCC2 Daring 4:07 F2 inside [('Cerberus', 'inside')] conc 0 edge 529
+      B 8154_g3_72711 MZY Somers 4:03 H2 screened [('Minotaur', 'screened')] conc 7392 edge -1341
+      D 7938_g1_214879 H-SR Harugumo 1:56 F9 inside [('Utrecht', 'inside'), ('Brisbane', 'inside')] conc 15301 edge 1852
+      D 8144_g2_39530 BONKZ Gearing 2:41 F9 inside [('Brisbane', 'inside')] conc 23993 edge 4593
+      D 8178_g3_106311 RESIN Harugumo 3:49 D9 inside [('Worcester', 'inside')] conc 17949 edge 3295
+      D 7937_g1_44423 -BN- Harugumo 2:08 F9 screened [('Des Moines', 'screened')] conc 58876 edge 3640
+      D 7940_g1_183534 BONKY Somers 2:19 F9 inside [('Des Moines', 'inside')] conc 74771 edge 3740
+      D 8144_g2_39529 MZY Somers 2:21 G9 inside [('Utrecht', 'inside'), ('Brisbane', 'inside')] conc 10247 edge 4352
+      D 8154_g3_72706 MZY Delny 0:54 F8 screened [('Moskva', 'screened')] conc 0 edge 1541
+
+=== SF-2 long smokes at D, whole game
+ long smokes at A: Top 6 3 of 22 (14%) vs Rest 5 of 37 (14%); gap +0 pts (-14 to +18) -> Shared | n 8 | conc 26.1k (top 63.1k, rest 3.9k) | deaths/100 25.0 | ships Gearing 4, Somers 2, Delny 2 | Top 6: BONKZ 2, VRTUS 1 | Rest: MZY 2, RSR 1, -BN- 1, HFANS 1
+ long smokes at B: Top 6 8 of 22 (36%) vs Rest 17 of 37 (46%); gap -10 pts (-43 to +16) -> Shared | n 25 | conc 15.0k (top 15.5k, rest 14.7k) | deaths/100 16.0 | ships Somers 14, Gearing 9, Harugumo 1, Delny 1 | Top 6: H-SR 3, VRTUS 2, RESIN 2, BONKZ 1 | Rest: RMN 2, REEEE 2, PN 2, KSC 2, KM 2, MZY 2, RSR 1, INCA 1, -BN- 1, EPOXY 1, HFANS 1
+ long smokes at C: Top 6 3 of 22 (14%) vs Rest 3 of 37 (8%); gap +6 pts (-10 to +21) -> Shared | n 6 | conc 13.9k (top 6.4k, rest 21.4k) | deaths/100 16.666666666666668 | ships Somers 3, Gearing 2, Harugumo 1 | Top 6: RESIN 2, H-SR 1 | Rest: OGF 1, 5D 1, MZY 1
+ long smokes at D: Top 6 8 of 22 (36%) vs Rest 12 of 37 (32%); gap +4 pts (-23 to +36) -> Shared | n 20 | conc 17.7k (top 18.8k, rest 17.0k) | deaths/100 0.0 | ships Harugumo 7, Somers 7, Gearing 4, Delny 2 | Top 6: BONKZ 4, H-SR 2, RESIN 2 | Rest: MZY 6, -BN- 3, BONKY 3
+ at D by time: early Top 6 3 of 8 (38%) vs Rest 5 of 14 (36%); gap +2 pts (-27 to +38) | later Top 6 5 of 14 (36%) vs Rest 7 of 23 (30%); gap +5 pts (-26 to +35)
+ at D: cruisers inside top Brisbane 5, Utrecht 1, Worcester 1 | rest Brisbane 4, Des Moines 3, Utrecht 2 | cells F9 6, G9 3, G10 2, F10 2, D9 2, H9 1, D8 1, E9 1 | own neutral 9, ours 7, theirs 4 | median edge m 4564.524740635767
+ long smokes on the map Top 6: BONKZ 7, H-SR 6, RESIN 6, VRTUS 3 | Rest: MZY 11, -BN- 5, BONKY 3, RMN 2, REEEE 2, PN 2, RSR 2, KSC 2, KM 2, HFANS 2, OGF 1, 5D 1, INCA 1, EPOXY 1
+ all destroyer smokes at D Top 6 14 of 38 (37%) vs Rest 23 of 79 (29%); gap +8 pts (-9 to +30)
+     BONKZ (top): 4 of 7 at D
+     H-SR (top): 2 of 6 at D
+     RESIN (top): 2 of 6 at D
+     VRTUS (top): 0 of 3 at D
+     MZY (rest): 6 of 11 at D
+     -BN- (rest): 3 of 5 at D
+     BONKY (rest): 3 of 3 at D
+     RMN (rest): 0 of 2 at D
+     REEEE (rest): 0 of 2 at D
+     PN (rest): 0 of 2 at D
+     RSR (rest): 0 of 2 at D
+     KSC (rest): 0 of 2 at D
+     KM (rest): 0 of 2 at D
+     HFANS (rest): 0 of 2 at D
+     OGF (rest): 0 of 1 at D
+     5D (rest): 0 of 1 at D
+     INCA (rest): 0 of 1 at D
+     EPOXY (rest): 0 of 1 at D
+
+=== SF-3 Svea spot
+ spot: Top 6 15 of 18 (83%) vs Rest 1 of 14 (7%); gap +76 pts (+45 to +100 *) -> Top 6
+    Top 6: HTDOG 7, VRTUS 6, H-SR 2 | Rest: EPOXY 1
+     Svea 16: Top 6: HTDOG 7, VRTUS 6, H-SR 2 | Rest: EPOXY 1
+       VRTUS (top): 6 of 9 of the clan's smokes with this ship group on the map
+       HTDOG (top): 7 of 7 of the clan's smokes with this ship group on the map
+       H-SR (top): 2 of 2 of the clan's smokes with this ship group on the map
+       RSR (rest): 0 of 5 of the clan's smokes with this ship group on the map
+       KSC (rest): 0 of 5 of the clan's smokes with this ship group on the map
+       PFANS (rest): 0 of 3 of the clan's smokes with this ship group on the map
+       EPOXY (rest): 1 of 1 of the clan's smokes with this ship group on the map
+     Top 6 without H-SR: 13 of 16
+     Top 6 without HTDOG: 8 of 11
+     Top 6 without VRTUS: 9 of 9
+   members conc 9.6k | deaths 0 | median time 8:04 | games 6 | zone D 13, C 3 | rest svea zones B 8, D 6 cells F9 3, G2 2, H3 2, H2 1, F2 1, E9 1, C8 1, I5 1
+   Svea lineups on the map by clan HTDOG 2, VRTUS 2, PFANS 1, RSR 1, KSC 1, EPOXY 1, H-SR 1
+
+=== OK-1 top smoke ships
+ Napoli (cruiser): 32 smokes (Top 6 1) | in lineup in 21 team-games (Top 6 1), 24 ship slots | 1.52 per team-game, 1.33 per ship | team-games with at least one smoke 20 | conc 4.2k | deaths/100 12.5 | Top 6: H-SR 1 | Rest: BTLST 4, HFANS 4, KM 3, KITED 3, BONKY 3, 5D 2, MACHX 2, MZY 2, PN 1, PFANS 1, UYSC 1, KSE 1, MANBA 1, MACH 1, REEEE 1, -BN- 1
+ Svea (cruiser): 25 smokes (Top 6 3) | in lineup in 6 team-games (Top 6 1), 7 ship slots | 4.17 per team-game, 3.57 per ship | team-games with at least one smoke 6 | conc 9.6k | deaths/100 4.0 | Top 6: VRTUS 3 | Rest: SCCC2 9, MACH 6, UYSC 3, MACHX 2, BONKY 2
+ Daring (destroyer): 22 smokes (Top 6 4) | in lineup in 11 team-games (Top 6 2), 11 ship slots | 2.0 per team-game, 2.0 per ship | team-games with at least one smoke 10 | conc 6.0k | deaths/100 9.1 | Top 6: KITE 3, VRTUS 1 | Rest: MZY 9, MACHX 3, -BN- 3, UYSC 2, MACH 1
+ Gearing (destroyer): 17 smokes (Top 6 6) | in lineup in 7 team-games (Top 6 2), 8 ship slots | 2.43 per team-game, 2.12 per ship | team-games with at least one smoke 7 | conc 10.5k | deaths/100 23.5 | Top 6: BONKZ 4, KITE 2 | Rest: BTLST 3, 5D 2, OGF 2, RSR 2, -BN- 2
+ Somers (destroyer): 12 smokes (Top 6 4) | in lineup in 4 team-games (Top 6 1), 5 ship slots | 3.0 per team-game, 2.4 per ship | team-games with at least one smoke 4 | conc 18.1k | deaths/100 16.7 | Top 6: H-SR 4 | Rest: MACHX 3, REEEE 3, NGA 2
+ Shimakaze (destroyer): 11 smokes (Top 6 1) | in lineup in 10 team-games (Top 6 2), 11 ship slots | 1.1 per team-game, 1.0 per ship | team-games with at least one smoke 6 | conc 11.7k | deaths/100 18.2 | Top 6: HTDOG 1 | Rest: HFANS 5, EPOXY 3, MANBA 2
+ Harugumo (destroyer): 9 smokes (Top 6 0) | in lineup in 4 team-games (Top 6 0), 4 ship slots | 2.25 per team-game, 2.25 per ship | team-games with at least one smoke 4 | conc 18.7k | deaths/100 66.7 | Top 6: none | Rest: EPOXY 6, REEEE 2, -BN- 1
+ Smolensk (cruiser): 8 smokes (Top 6 2) | in lineup in 3 team-games (Top 6 1), 3 ship slots | 2.67 per team-game, 2.67 per ship | team-games with at least one smoke 3 | conc 11.3k | deaths/100 25.0 | Top 6: RESIN 2 | Rest: HFANS 6
+ Gdańsk (destroyer): 7 smokes (Top 6 0) | in lineup in 4 team-games (Top 6 0), 4 ship slots | 1.75 per team-game, 1.75 per ship | team-games with at least one smoke 4 | conc 14.4k | deaths/100 28.6 | Top 6: none | Rest: RSR 2, KSE 2, HFANS 2, PN 1
+ C. Colombo (battleship): 5 smokes (Top 6 0) | in lineup in 7 team-games (Top 6 0), 7 ship slots | 0.71 per team-game, 0.71 per ship | team-games with at least one smoke 5 | conc 7.0k | deaths/100 20.0 | Top 6: none | Rest: -BN- 2, BTLST 1, KITED 1, BONKY 1
+ team-games on Okinawa 36 games 18 | smokes 158 | destroyer smokes 82
+
+=== OK-2 death zone
+ atlas death cluster (mean-shift 2.5 km on smokes with a death): 12 smokes, 15 deaths, laid 50+ behind 7 | of them inside the drawn ellipse 10 | Top 6: KITE 1, BONKZ 1 | Rest: HFANS 3, EPOXY 2, BTLST 1, PN 1, MACH 1, REEEE 1, -BN- 1
+ atlas numbers {'n': 12, 'deaths': 15, 'top6_n': 2, 'rest_n': 10, 'clans': 9, 'games': 10, 'share_of_map_death_smokes_pct': 48.0, 'all_smokes_in_ellipse_n': 39, 'deaths_per_100_in_ellipse': 30.8, 'map_deaths_per_100_all_classes': 17.7, 'behind_by_50_n': 7, 'enemy_radar_reached_n': 3, 'game_lost_n': 9, 'destroyer_smoke_n': 8, 'cells': 'H4/G2/E3', 'median_time_s': 596, 'ships': 'Harugumo 3, Smolensk 2, Gearing 1, Daring 1', 'radius_km_long': 10.1, 'radius_km_short': 6.3}
+ ellipse centre [0.2457, 0.6435] {'ru': 0.2397, 'rv': 0.1501, 'angle_deg': 34.5} | smokes inside 39 | with a death 10 | deaths 12 | per 100 30.8 (13.333333333333334, 45.65217391304348)
+ map: smokes 158 deaths 28 per 100 17.7 (11.188811188811188, 23.841059602649008) | destroyer smokes per 100 22.0 n 82
+ zone minus rest of map, deaths per 100: 17.323852617970267 (-2.8379772961816325, 34.60573976037893) | rest of map per 100 13.445378151260504
+ laid 50+ behind: zone 19 of 39 (49%, 29 to 70) | map 55 of 158 (35%, 23 to 46) | rest of map 36 of 119 (30%, 17 to 44) | death smokes in zone 7 of 10
+ zone minus rest of map, share 50+ behind: 18.465847877612582 (-6.015037593984957, 43.15789473684211)
+   behind 50+: zone n 19 deaths 8 per 100 42.10526315789474 | rest of map n 36 deaths 6 per 100 17
+   level: zone n 8 deaths 2 per 100 25.0 | rest of map n 45 deaths 6 per 100 13
+   ahead 50+: zone n 12 deaths 2 per 100 16.666666666666668 | rest of map n 38 deaths 4 per 100 11
+ zone: class cruiser 20, destroyer 18, battleship 1 | ships Smolensk 7, Napoli 6, Daring 6, Svea 6, Shimakaze 4, Harugumo 3, Somers 3, Gearing 1 | who died destroyer (smoker) 4, cruiser 4, cruiser (smoker) 3, battleship 1 | radar lit 2 | games 17 | lost game 24
+ zone Top 6: KITE 3, RESIN 2, BONKZ 1, H-SR 1 | Rest: HFANS 7, EPOXY 5, MACH 5, BTLST 2, MACHX 2, -BN- 2, REEEE 2, OGF 1, PN 1, PFANS 1, UYSC 1, MANBA 1, KITED 1, MZY 1
+ death smokes Top 6: KITE 1, BONKZ 1 | Rest: HFANS 3, EPOXY 2, PN 1, MACH 1, REEEE 1
+ zone share of group smokes Top 6 7 of 23 (30%) vs Rest 32 of 135 (24%); gap +7 pts (-15 to +36) | zone cells F2 6, F3 6, H4 5, F4 4, G3 4, H2 3, G2 3, G4 3 | zone C 36, A 3
+ destroyer smokes only in zone 18 deaths 8 | smoker died 7 | cruisers died 4
+ map by state: {'behind 50+': (55, 25.5), 'level': (53, 15.1), 'ahead 50+': (50, 12.0)}
+ per-map deaths per 100 destroyer smokes: {'Hotspot': (7.7, 235), 'Loop': (10.6, 142), 'Okinawa': (22.0, 82), 'Land of Fire': (14.1, 128), 'Mountain Range': (8.3, 132), 'Sleeping Giant': (11.8, 238), 'Sea of Fortune': (13.7, 117)} | all classes {'Hotspot': 6.2, 'Loop': 10.1, 'Okinawa': 17.7, 'Land of Fire': 15.3, 'Mountain Range': 8.7, 'Sleeping Giant': 11.5, 'Sea of Fortune': 14.1}

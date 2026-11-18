@@ -1,0 +1,3341 @@
+{
+ "batch": "output/20261117-230933",
+ "worker": "n4",
+ "note": "Page 1 carry-over claims re-tested. layer_a = same definition on the new batch; layer_b = re-tested with tracks, cap timeline and radar log. Association, not cause.",
+ "claims": [
+  {
+   "id": "N4-1",
+   "atlas_rule": 1,
+   "title": "Early smoke distance short of the cap",
+   "verdict": "Keep",
+   "mode": "shared",
+   "layer_a": [
+    {
+     "number": "Early smokes by the three ships (n)",
+     "atlas": "187",
+     "new_batch_clock_bug_in": "187",
+     "new_batch_corrected": "188",
+     "status": "clock fix"
+    },
+    {
+     "number": "Laid inside a cap",
+     "atlas": "14%",
+     "new_batch_clock_bug_in": "14%",
+     "new_batch_corrected": "14%",
+     "status": "unchanged"
+    },
+    {
+     "number": "Median distance outside the cap edge",
+     "atlas": "1.8 km",
+     "new_batch_clock_bug_in": "1.8 km",
+     "new_batch_corrected": "1.7 km",
+     "status": "clock fix"
+    }
+   ],
+   "layer_b": {
+    "population": "early Harugumo, Somers, Gearing smokes",
+    "n": 188,
+    "n_with_track": 187,
+    "smoker_in_cap_at_activation_pct": [
+     11.2,
+     [
+      6.5,
+      17.9
+     ]
+    ],
+    "smoker_in_cap_at_end_of_laying_pct": [
+     10.2,
+     [
+      4.8,
+      17.6
+     ]
+    ],
+    "smoker_km_outside_nearest_cap_at_activation": [
+     2.6,
+     [
+      2.1,
+      2.9
+     ]
+    ],
+    "smoker_km_outside_nearest_cap_at_end_of_laying": 2.4,
+    "smoker_on_own_side_of_cap_pct": 91.4,
+    "cruiser_km_outside_nearest_cap": [
+     3.2,
+     [
+      2.8,
+      3.5
+     ]
+    ],
+    "cruiser_ever_in_cap_pct": [
+     25.4,
+     [
+      18.7,
+      33.6
+     ]
+    ],
+    "cruiser_mostly_in_cap_pct": 8.7,
+    "contested_cap_at_activation_pct": {
+     "neutral": 71.1,
+     "ours": 8.0,
+     "theirs": 20.9
+    },
+    "contested_cap_being_captured_pct": {
+     "us": 54.0,
+     "enemy": 46.0,
+     "anyone": 76.5,
+     "nobody": 23.5
+    },
+    "top6_vs_rest": {
+     "smoker_in_cap_at_activation": {
+      "top": 4.4,
+      "rest": 15.1,
+      "n_top": 68,
+      "n_rest": 119,
+      "clans_top": 6,
+      "clans_rest": 21,
+      "diff": -10.7,
+      "ci": [
+       -20.2,
+       -2.6
+      ],
+      "clear": true
+     },
+     "smoker_m_outside_at_activation": {
+      "top": 2818.0,
+      "rest": 2267.0,
+      "n_top": 68,
+      "n_rest": 119,
+      "clans_top": 6,
+      "clans_rest": 21,
+      "diff": 551.0,
+      "ci": [
+       -485.0,
+       1510.0
+      ],
+      "clear": false
+     },
+     "cruiser_m_outside": {
+      "top": 3072.0,
+      "rest": 3230.0,
+      "n_top": 67,
+      "n_rest": 106,
+      "clans_top": 6,
+      "clans_rest": 20,
+      "diff": -158.0,
+      "ci": [
+       -810.0,
+       855.0
+      ],
+      "clear": false
+     }
+    },
+    "early_cruiser_smoke": {
+     "inside": {
+      "n": 153,
+      "n_top": 67,
+      "n_rest": 86,
+      "A_inside_cap_pct": [
+       12.4,
+       [
+        7.4,
+        17.6
+       ]
+      ],
+      "A_median_edge_m": [
+       1725.7,
+       [
+        1348.5,
+        2413.7
+       ]
+      ],
+      "B_smoker_in_cap_act_pct": [
+       12.4,
+       [
+        7.0,
+        19.3
+       ]
+      ],
+      "B_smoker_near_edge_act_m": [
+       2622.1,
+       [
+        2128.0,
+        2977.6
+       ]
+      ],
+      "B_cruiser_near_edge_m": [
+       2809.1,
+       [
+        2378.5,
+        3190.7
+       ]
+      ],
+      "B_cruiser_ever_in_cap_pct": [
+       26.8,
+       [
+        19.3,
+        35.3
+       ]
+      ],
+      "B_cap_state_contested": {
+       "neutral": 69.3,
+       "ours": 8.5,
+       "theirs": 22.2
+      },
+      "B_invaded_cont": {
+       "us": 55.6,
+       "enemy": 39.9,
+       "anyone": 75.2,
+       "nobody": 24.8
+      }
+     },
+     "screened": {
+      "n": 73,
+      "n_top": 18,
+      "n_rest": 55,
+      "A_inside_cap_pct": [
+       32.9,
+       [
+        20.3,
+        48.3
+       ]
+      ],
+      "A_median_edge_m": [
+       1080.7,
+       [
+        145.3,
+        1854.3
+       ]
+      ],
+      "B_smoker_in_cap_act_pct": [
+       25.0,
+       [
+        13.2,
+        36.9
+       ]
+      ],
+      "B_smoker_near_edge_act_m": [
+       1799.7,
+       [
+        896.3,
+        2345.8
+       ]
+      ],
+      "B_cruiser_near_edge_m": [
+       4008.3,
+       [
+        2973.4,
+        4726.1
+       ]
+      ],
+      "B_cruiser_ever_in_cap_pct": [
+       20.8,
+       [
+        10.7,
+        33.3
+       ]
+      ],
+      "B_cap_state_contested": {
+       "neutral": 69.4,
+       "ours": 9.7,
+       "theirs": 20.8
+      },
+      "B_invaded_cont": {
+       "us": 50.0,
+       "enemy": 56.9,
+       "anyone": 80.6,
+       "nobody": 19.4
+      }
+     }
+    },
+    "clans": {
+     "top6": {
+      "RESIN": 20,
+      "H-SR": 17,
+      "BONKZ": 13,
+      "KITE": 8,
+      "VRTUS": 7,
+      "HTDOG": 3
+     },
+     "rest": {
+      "-BN-": 13,
+      "EPOXY": 12,
+      "KSC": 11,
+      "REEEE": 10,
+      "HFANS": 10,
+      "MZY": 7,
+      "BONKY": 6,
+      "MACHX": 6,
+      "BTLST": 5,
+      "5D": 5,
+      "PN": 5,
+      "PFANS": 5,
+      "NGA": 5,
+      "RSR": 5,
+      "OGF": 4,
+      "INCA": 4,
+      "UYSC": 2,
+      "KM": 2,
+      "KITED": 1,
+      "SCCC2": 1,
+      "RMN": 1
+     }
+    }
+   },
+   "suggested_wording": "The opening smoke is cruiser cover laid short of the cap: 14% inside a cap, typically 1.7 km outside (n 188). The destroyer itself is in a cap when it presses smoke in 11%; the cruiser stays 3.2 km out.",
+   "figure": "figures/n4-claim1-short-of-cap"
+  },
+  {
+   "id": "N4-2",
+   "atlas_rule": 2,
+   "title": "Radar cruiser inside early destroyer smokes",
+   "verdict": "Keep",
+   "mode": "top6",
+   "layer_a": [
+    {
+     "number": "All early destroyer smokes, radar cruiser inside",
+     "atlas": "60% (61 of 102) vs 35% (70 of 200)",
+     "new_batch_clock_bug_in": "60% (61 of 102) vs 35% (70 of 200)",
+     "new_batch_corrected": "59% (61 of 103) vs 35% (71 of 203)",
+     "status": "clock fix"
+    },
+    {
+     "number": "Gap",
+     "atlas": "+25",
+     "new_batch_clock_bug_in": "+25",
+     "new_batch_corrected": "+24",
+     "status": "clock fix"
+    },
+    {
+     "number": "Gap interval",
+     "atlas": "+13 to +36",
+     "new_batch_clock_bug_in": "+13 to +36",
+     "new_batch_corrected": "+12 to +35",
+     "status": "clock fix"
+    },
+    {
+     "number": "Sleeping Giant",
+     "atlas": "47% vs 59%",
+     "new_batch_clock_bug_in": "47% vs 59%",
+     "new_batch_corrected": "47% vs 59%",
+     "status": "unchanged"
+    },
+    {
+     "number": "Hotspot",
+     "atlas": "87% vs 38%",
+     "new_batch_clock_bug_in": "87% vs 38%",
+     "new_batch_corrected": "87% vs 38%",
+     "status": "unchanged"
+    },
+    {
+     "number": "Harugumo, Somers, Gearing only",
+     "atlas": "82% vs 51%",
+     "new_batch_clock_bug_in": "82% vs 51%",
+     "new_batch_corrected": "82% vs 52%",
+     "status": "clock fix"
+    },
+    {
+     "number": "Three ships, gap interval",
+     "atlas": "+15 to +46",
+     "new_batch_clock_bug_in": "+17 to +47",
+     "new_batch_corrected": "+16 to +46",
+     "status": "same data, interval end moved (resampling redrawn); then clock fix"
+    },
+    {
+     "number": "Cap won after: radar cruiser inside vs covered, not inside (three ships)",
+     "atlas": "58% (n 117) vs 14% (n 29)",
+     "new_batch_clock_bug_in": "58% (n 117) vs 14% (n 29)",
+     "new_batch_corrected": "58% (n 118) vs 14% (n 29)",
+     "status": "clock fix"
+    },
+    {
+     "number": "Cap taken, all early destroyer smokes: radar cruiser inside vs not",
+     "atlas": "61% (of 120) vs 31% (of 150)",
+     "new_batch_clock_bug_in": "61% (of 120) vs 31% (of 150)",
+     "new_batch_corrected": "61% (of 120) vs 31% (of 153)",
+     "status": "clock fix"
+    }
+   ],
+   "layer_b": {
+    "population": "all early destroyer smokes",
+    "n_top": 103,
+    "n_rest": 203,
+    "ladder": {
+     "inside": {
+      "label": "Radar cruiser inside (batch field)",
+      "all_maps": {
+       "top": 59.2,
+       "rest": 35.0,
+       "n_top": 103,
+       "n_rest": 203,
+       "clans_top": 6,
+       "clans_rest": 23,
+       "diff": 24.2,
+       "ci": [
+        12.3,
+        34.9
+       ],
+       "clear": true,
+       "x_top": 61,
+       "x_rest": 71,
+       "flag_top": "",
+       "flag_rest": "",
+       "clan_counts": {
+        "top6": {
+         "H-SR": 20,
+         "RESIN": 15,
+         "BONKZ": 10,
+         "KITE": 7,
+         "VRTUS": 5,
+         "HTDOG": 4
+        },
+        "rest": {
+         "HFANS": 11,
+         "KSC": 7,
+         "MACHX": 7,
+         "EPOXY": 7,
+         "BONKY": 5,
+         "MZY": 5,
+         "-BN-": 5,
+         "PN": 4,
+         "RSR": 4,
+         "PFANS": 3,
+         "INCA": 3,
+         "BTLST": 2,
+         "NGA": 2,
+         "REEEE": 2,
+         "UYSC": 1,
+         "KITED": 1,
+         "SCCC2": 1,
+         "KM": 1
+        }
+       }
+      },
+      "per_team_game": {
+       "top": 0.55,
+       "rest": 0.31,
+       "ci": [
+        0.04,
+        0.44
+       ]
+      },
+      "per_map": {
+       "Sleeping Giant": {
+        "top": 46.9,
+        "rest": 59.5,
+        "n_top": 32,
+        "n_rest": 37,
+        "clans_top": 6,
+        "clans_rest": 16,
+        "diff": -12.6,
+        "ci": [
+         -40.5,
+         18.0
+        ],
+        "clear": false,
+        "x_top": 15,
+        "x_rest": 22,
+        "flag_top": "",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "H-SR": 6,
+          "RESIN": 4,
+          "BONKZ": 2,
+          "KITE": 1,
+          "VRTUS": 1,
+          "HTDOG": 1
+         },
+         "rest": {
+          "EPOXY": 5,
+          "HFANS": 4,
+          "-BN-": 3,
+          "MACHX": 3,
+          "KSC": 2,
+          "BONKY": 2,
+          "KITED": 1,
+          "SCCC2": 1,
+          "PFANS": 1
+         }
+        }
+       },
+       "Hotspot": {
+        "top": 87.0,
+        "rest": 37.5,
+        "n_top": 23,
+        "n_rest": 48,
+        "clans_top": 6,
+        "clans_rest": 19,
+        "diff": 49.5,
+        "ci": [
+         31.0,
+         69.1
+        ],
+        "clear": true,
+        "x_top": 20,
+        "x_rest": 18,
+        "flag_top": "",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "H-SR": 7,
+          "BONKZ": 5,
+          "RESIN": 4,
+          "VRTUS": 2,
+          "HTDOG": 1,
+          "KITE": 1
+         },
+         "rest": {
+          "KSC": 4,
+          "MZY": 3,
+          "PFANS": 2,
+          "HFANS": 2,
+          "BONKY": 2,
+          "BTLST": 1,
+          "PN": 1,
+          "-BN-": 1,
+          "EPOXY": 1,
+          "REEEE": 1
+         }
+        }
+       },
+       "Mountain Range": {
+        "top": 64.3,
+        "rest": 32.0,
+        "n_top": 14,
+        "n_rest": 25,
+        "clans_top": 4,
+        "clans_rest": 13,
+        "diff": 32.3,
+        "ci": [
+         -5.1,
+         72.7
+        ],
+        "clear": false,
+        "x_top": 9,
+        "x_rest": 8,
+        "flag_top": "small n",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "KITE": 4,
+          "H-SR": 3,
+          "RESIN": 1,
+          "BONKZ": 1
+         },
+         "rest": {
+          "RSR": 2,
+          "PN": 2,
+          "KSC": 1,
+          "INCA": 1,
+          "HFANS": 1,
+          "-BN-": 1
+         }
+        }
+       },
+       "Land of Fire": {
+        "top": 41.7,
+        "rest": 32.0,
+        "n_top": 12,
+        "n_rest": 25,
+        "clans_top": 6,
+        "clans_rest": 13,
+        "diff": 9.7,
+        "ci": [
+         -22.8,
+         48.1
+        ],
+        "clear": false,
+        "x_top": 5,
+        "x_rest": 8,
+        "flag_top": "small n",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "HTDOG": 2,
+          "VRTUS": 1,
+          "KITE": 1,
+          "RESIN": 1
+         },
+         "rest": {
+          "HFANS": 3,
+          "MACHX": 2,
+          "MZY": 1,
+          "INCA": 1,
+          "NGA": 1
+         }
+        }
+       },
+       "Loop": {
+        "top": 40.0,
+        "rest": 21.7,
+        "n_top": 10,
+        "n_rest": 23,
+        "clans_top": 5,
+        "clans_rest": 16,
+        "diff": 18.3,
+        "ci": [
+         -25.0,
+         44.3
+        ],
+        "clear": false,
+        "x_top": 4,
+        "x_rest": 5,
+        "flag_top": "small n",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "RESIN": 3,
+          "H-SR": 1
+         },
+         "rest": {
+          "UYSC": 1,
+          "INCA": 1,
+          "MACHX": 1,
+          "HFANS": 1,
+          "EPOXY": 1
+         }
+        }
+       },
+       "Okinawa": {
+        "top": 66.7,
+        "rest": 17.4,
+        "n_top": 3,
+        "n_rest": 23,
+        "clans_top": 3,
+        "clans_rest": 14,
+        "diff": 49.3,
+        "ci": [
+         -14.3,
+         90.0
+        ],
+        "clear": false,
+        "x_top": 2,
+        "x_rest": 4,
+        "flag_top": "too few",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "BONKZ": 1,
+          "H-SR": 1
+         },
+         "rest": {
+          "BTLST": 1,
+          "RSR": 1,
+          "NGA": 1,
+          "MACHX": 1
+         }
+        }
+       },
+       "Sea of Fortune": {
+        "top": 66.7,
+        "rest": 27.3,
+        "n_top": 9,
+        "n_rest": 22,
+        "clans_top": 4,
+        "clans_rest": 15,
+        "diff": 39.4,
+        "ci": [
+         15.1,
+         59.5
+        ],
+        "clear": true,
+        "x_top": 6,
+        "x_rest": 6,
+        "flag_top": "small n",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "H-SR": 2,
+          "RESIN": 2,
+          "VRTUS": 1,
+          "BONKZ": 1
+         },
+         "rest": {
+          "REEEE": 1,
+          "PN": 1,
+          "RSR": 1,
+          "KM": 1,
+          "BONKY": 1,
+          "MZY": 1
+         }
+        }
+       }
+      }
+     },
+     "used": {
+      "label": "Inside and ran radar from it",
+      "all_maps": {
+       "top": 19.4,
+       "rest": 10.3,
+       "n_top": 103,
+       "n_rest": 203,
+       "clans_top": 6,
+       "clans_rest": 23,
+       "diff": 9.1,
+       "ci": [
+        -0.3,
+        16.7
+       ],
+       "clear": false,
+       "x_top": 20,
+       "x_rest": 21,
+       "flag_top": "",
+       "flag_rest": "",
+       "clan_counts": {
+        "top6": {
+         "H-SR": 8,
+         "RESIN": 6,
+         "HTDOG": 2,
+         "KITE": 2,
+         "VRTUS": 1,
+         "BONKZ": 1
+        },
+        "rest": {
+         "BONKY": 4,
+         "MACHX": 3,
+         "BTLST": 2,
+         "RSR": 2,
+         "HFANS": 2,
+         "INCA": 1,
+         "PN": 1,
+         "EPOXY": 1,
+         "SCCC2": 1,
+         "KM": 1,
+         "-BN-": 1,
+         "MZY": 1,
+         "REEEE": 1
+        }
+       }
+      },
+      "per_team_game": {
+       "top": 0.18,
+       "rest": 0.09,
+       "ci": [
+        -0.01,
+        0.2
+       ]
+      },
+      "per_map": {
+       "Sleeping Giant": {
+        "top": 15.6,
+        "rest": 10.8,
+        "n_top": 32,
+        "n_rest": 37,
+        "clans_top": 6,
+        "clans_rest": 16,
+        "diff": 4.8,
+        "ci": [
+         -11.8,
+         19.4
+        ],
+        "clear": false,
+        "x_top": 5,
+        "x_rest": 4,
+        "flag_top": "",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "H-SR": 3,
+          "RESIN": 1,
+          "BONKZ": 1
+         },
+         "rest": {
+          "EPOXY": 1,
+          "HFANS": 1,
+          "SCCC2": 1,
+          "BONKY": 1
+         }
+        }
+       },
+       "Hotspot": {
+        "top": 21.7,
+        "rest": 12.5,
+        "n_top": 23,
+        "n_rest": 48,
+        "clans_top": 6,
+        "clans_rest": 19,
+        "diff": 9.2,
+        "ci": [
+         -9.8,
+         37.0
+        ],
+        "clear": false,
+        "x_top": 5,
+        "x_rest": 6,
+        "flag_top": "",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "RESIN": 2,
+          "HTDOG": 1,
+          "VRTUS": 1,
+          "H-SR": 1
+         },
+         "rest": {
+          "BONKY": 2,
+          "BTLST": 1,
+          "-BN-": 1,
+          "REEEE": 1,
+          "HFANS": 1
+         }
+        }
+       },
+       "Mountain Range": {
+        "top": 35.7,
+        "rest": 8.0,
+        "n_top": 14,
+        "n_rest": 25,
+        "clans_top": 4,
+        "clans_rest": 13,
+        "diff": 27.7,
+        "ci": [
+         1.9,
+         50.8
+        ],
+        "clear": true,
+        "x_top": 5,
+        "x_rest": 2,
+        "flag_top": "small n",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "KITE": 2,
+          "H-SR": 2,
+          "RESIN": 1
+         },
+         "rest": {
+          "PN": 1,
+          "RSR": 1
+         }
+        }
+       },
+       "Land of Fire": {
+        "top": 8.3,
+        "rest": 8.0,
+        "n_top": 12,
+        "n_rest": 25,
+        "clans_top": 6,
+        "clans_rest": 13,
+        "diff": 0.3,
+        "ci": [
+         -19.4,
+         18.8
+        ],
+        "clear": false,
+        "x_top": 1,
+        "x_rest": 2,
+        "flag_top": "small n",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "HTDOG": 1
+         },
+         "rest": {
+          "MACHX": 2
+         }
+        }
+       },
+       "Loop": {
+        "top": 20.0,
+        "rest": 4.3,
+        "n_top": 10,
+        "n_rest": 23,
+        "clans_top": 5,
+        "clans_rest": 16,
+        "diff": 15.7,
+        "ci": [
+         -11.1,
+         38.7
+        ],
+        "clear": false,
+        "x_top": 2,
+        "x_rest": 1,
+        "flag_top": "small n",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "RESIN": 2
+         },
+         "rest": {
+          "INCA": 1
+         }
+        }
+       },
+       "Okinawa": {
+        "top": 0.0,
+        "rest": 13.0,
+        "n_top": 3,
+        "n_rest": 23,
+        "clans_top": 3,
+        "clans_rest": 14,
+        "diff": -13.0,
+        "ci": [
+         -25.0,
+         0.0
+        ],
+        "clear": false,
+        "x_top": 0,
+        "x_rest": 3,
+        "flag_top": "too few",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {},
+         "rest": {
+          "BTLST": 1,
+          "RSR": 1,
+          "MACHX": 1
+         }
+        }
+       },
+       "Sea of Fortune": {
+        "top": 22.2,
+        "rest": 13.6,
+        "n_top": 9,
+        "n_rest": 22,
+        "clans_top": 4,
+        "clans_rest": 15,
+        "diff": 8.6,
+        "ci": [
+         -22.7,
+         43.3
+        ],
+        "clear": false,
+        "x_top": 2,
+        "x_rest": 3,
+        "flag_top": "small n",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "H-SR": 2
+         },
+         "rest": {
+          "KM": 1,
+          "BONKY": 1,
+          "MZY": 1
+         }
+        }
+       }
+      }
+     },
+     "lit": {
+      "label": "Ran radar from it and lit an enemy",
+      "all_maps": {
+       "top": 18.4,
+       "rest": 8.4,
+       "n_top": 103,
+       "n_rest": 203,
+       "clans_top": 6,
+       "clans_rest": 23,
+       "diff": 10.1,
+       "ci": [
+        -1.4,
+        18.0
+       ],
+       "clear": false,
+       "x_top": 19,
+       "x_rest": 17,
+       "flag_top": "",
+       "flag_rest": "",
+       "clan_counts": {
+        "top6": {
+         "H-SR": 8,
+         "RESIN": 6,
+         "HTDOG": 2,
+         "KITE": 2,
+         "VRTUS": 1
+        },
+        "rest": {
+         "MACHX": 3,
+         "BTLST": 2,
+         "HFANS": 2,
+         "INCA": 1,
+         "PN": 1,
+         "RSR": 1,
+         "EPOXY": 1,
+         "SCCC2": 1,
+         "BONKY": 1,
+         "KM": 1,
+         "-BN-": 1,
+         "MZY": 1,
+         "REEEE": 1
+        }
+       }
+      },
+      "per_team_game": {
+       "top": 0.17,
+       "rest": 0.07,
+       "ci": [
+        -0.01,
+        0.2
+       ]
+      },
+      "per_map": {
+       "Sleeping Giant": {
+        "top": 12.5,
+        "rest": 10.8,
+        "n_top": 32,
+        "n_rest": 37,
+        "clans_top": 6,
+        "clans_rest": 16,
+        "diff": 1.7,
+        "ci": [
+         -13.4,
+         18.8
+        ],
+        "clear": false,
+        "x_top": 4,
+        "x_rest": 4,
+        "flag_top": "",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "H-SR": 3,
+          "RESIN": 1
+         },
+         "rest": {
+          "EPOXY": 1,
+          "HFANS": 1,
+          "SCCC2": 1,
+          "BONKY": 1
+         }
+        }
+       },
+       "Hotspot": {
+        "top": 21.7,
+        "rest": 8.3,
+        "n_top": 23,
+        "n_rest": 48,
+        "clans_top": 6,
+        "clans_rest": 19,
+        "diff": 13.4,
+        "ci": [
+         -2.5,
+         42.6
+        ],
+        "clear": false,
+        "x_top": 5,
+        "x_rest": 4,
+        "flag_top": "",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "RESIN": 2,
+          "HTDOG": 1,
+          "VRTUS": 1,
+          "H-SR": 1
+         },
+         "rest": {
+          "BTLST": 1,
+          "-BN-": 1,
+          "REEEE": 1,
+          "HFANS": 1
+         }
+        }
+       },
+       "Mountain Range": {
+        "top": 35.7,
+        "rest": 8.0,
+        "n_top": 14,
+        "n_rest": 25,
+        "clans_top": 4,
+        "clans_rest": 13,
+        "diff": 27.7,
+        "ci": [
+         2.9,
+         53.0
+        ],
+        "clear": true,
+        "x_top": 5,
+        "x_rest": 2,
+        "flag_top": "small n",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "KITE": 2,
+          "H-SR": 2,
+          "RESIN": 1
+         },
+         "rest": {
+          "PN": 1,
+          "RSR": 1
+         }
+        }
+       },
+       "Land of Fire": {
+        "top": 8.3,
+        "rest": 8.0,
+        "n_top": 12,
+        "n_rest": 25,
+        "clans_top": 6,
+        "clans_rest": 13,
+        "diff": 0.3,
+        "ci": [
+         -19.0,
+         18.8
+        ],
+        "clear": false,
+        "x_top": 1,
+        "x_rest": 2,
+        "flag_top": "small n",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "HTDOG": 1
+         },
+         "rest": {
+          "MACHX": 2
+         }
+        }
+       },
+       "Loop": {
+        "top": 20.0,
+        "rest": 4.3,
+        "n_top": 10,
+        "n_rest": 23,
+        "clans_top": 5,
+        "clans_rest": 16,
+        "diff": 15.7,
+        "ci": [
+         -10.5,
+         38.9
+        ],
+        "clear": false,
+        "x_top": 2,
+        "x_rest": 1,
+        "flag_top": "small n",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "RESIN": 2
+         },
+         "rest": {
+          "INCA": 1
+         }
+        }
+       },
+       "Okinawa": {
+        "top": 0.0,
+        "rest": 8.7,
+        "n_top": 3,
+        "n_rest": 23,
+        "clans_top": 3,
+        "clans_rest": 14,
+        "diff": -8.7,
+        "ci": [
+         -19.2,
+         0.0
+        ],
+        "clear": false,
+        "x_top": 0,
+        "x_rest": 2,
+        "flag_top": "too few",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {},
+         "rest": {
+          "BTLST": 1,
+          "MACHX": 1
+         }
+        }
+       },
+       "Sea of Fortune": {
+        "top": 22.2,
+        "rest": 9.1,
+        "n_top": 9,
+        "n_rest": 22,
+        "clans_top": 4,
+        "clans_rest": 15,
+        "diff": 13.1,
+        "ci": [
+         -17.4,
+         46.2
+        ],
+        "clear": false,
+        "x_top": 2,
+        "x_rest": 2,
+        "flag_top": "small n",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "H-SR": 2
+         },
+         "rest": {
+          "KM": 1,
+          "MZY": 1
+         }
+        }
+       }
+      }
+     },
+     "lit_dd": {
+      "label": "Ran radar from it and lit an enemy destroyer",
+      "all_maps": {
+       "top": 15.5,
+       "rest": 7.4,
+       "n_top": 103,
+       "n_rest": 203,
+       "clans_top": 6,
+       "clans_rest": 23,
+       "diff": 8.1,
+       "ci": [
+        -0.3,
+        15.4
+       ],
+       "clear": false,
+       "x_top": 16,
+       "x_rest": 15,
+       "flag_top": "",
+       "flag_rest": "",
+       "clan_counts": {
+        "top6": {
+         "RESIN": 6,
+         "H-SR": 5,
+         "HTDOG": 2,
+         "KITE": 2,
+         "VRTUS": 1
+        },
+        "rest": {
+         "BTLST": 2,
+         "HFANS": 2,
+         "INCA": 1,
+         "PN": 1,
+         "RSR": 1,
+         "EPOXY": 1,
+         "SCCC2": 1,
+         "BONKY": 1,
+         "KM": 1,
+         "-BN-": 1,
+         "MACHX": 1,
+         "MZY": 1,
+         "REEEE": 1
+        }
+       }
+      },
+      "per_team_game": {
+       "top": 0.15,
+       "rest": 0.06,
+       "ci": [
+        -0.01,
+        0.15
+       ]
+      },
+      "per_map": {
+       "Sleeping Giant": {
+        "top": 3.1,
+        "rest": 10.8,
+        "n_top": 32,
+        "n_rest": 37,
+        "clans_top": 6,
+        "clans_rest": 16,
+        "diff": -7.7,
+        "ci": [
+         -17.5,
+         1.6
+        ],
+        "clear": false,
+        "x_top": 1,
+        "x_rest": 4,
+        "flag_top": "",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "RESIN": 1
+         },
+         "rest": {
+          "EPOXY": 1,
+          "HFANS": 1,
+          "SCCC2": 1,
+          "BONKY": 1
+         }
+        }
+       },
+       "Hotspot": {
+        "top": 21.7,
+        "rest": 8.3,
+        "n_top": 23,
+        "n_rest": 48,
+        "clans_top": 6,
+        "clans_rest": 19,
+        "diff": 13.4,
+        "ci": [
+         -3.3,
+         42.4
+        ],
+        "clear": false,
+        "x_top": 5,
+        "x_rest": 4,
+        "flag_top": "",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "RESIN": 2,
+          "HTDOG": 1,
+          "VRTUS": 1,
+          "H-SR": 1
+         },
+         "rest": {
+          "BTLST": 1,
+          "-BN-": 1,
+          "REEEE": 1,
+          "HFANS": 1
+         }
+        }
+       },
+       "Mountain Range": {
+        "top": 35.7,
+        "rest": 8.0,
+        "n_top": 14,
+        "n_rest": 25,
+        "clans_top": 4,
+        "clans_rest": 13,
+        "diff": 27.7,
+        "ci": [
+         3.2,
+         52.8
+        ],
+        "clear": true,
+        "x_top": 5,
+        "x_rest": 2,
+        "flag_top": "small n",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "KITE": 2,
+          "H-SR": 2,
+          "RESIN": 1
+         },
+         "rest": {
+          "PN": 1,
+          "RSR": 1
+         }
+        }
+       },
+       "Land of Fire": {
+        "top": 8.3,
+        "rest": 4.0,
+        "n_top": 12,
+        "n_rest": 25,
+        "clans_top": 6,
+        "clans_rest": 13,
+        "diff": 4.3,
+        "ci": [
+         -9.5,
+         20.0
+        ],
+        "clear": false,
+        "x_top": 1,
+        "x_rest": 1,
+        "flag_top": "small n",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "HTDOG": 1
+         },
+         "rest": {
+          "MACHX": 1
+         }
+        }
+       },
+       "Loop": {
+        "top": 20.0,
+        "rest": 4.3,
+        "n_top": 10,
+        "n_rest": 23,
+        "clans_top": 5,
+        "clans_rest": 16,
+        "diff": 15.7,
+        "ci": [
+         -10.5,
+         37.3
+        ],
+        "clear": false,
+        "x_top": 2,
+        "x_rest": 1,
+        "flag_top": "small n",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "RESIN": 2
+         },
+         "rest": {
+          "INCA": 1
+         }
+        }
+       },
+       "Okinawa": {
+        "top": 0.0,
+        "rest": 4.3,
+        "n_top": 3,
+        "n_rest": 23,
+        "clans_top": 3,
+        "clans_rest": 14,
+        "diff": -4.3,
+        "ci": [
+         -14.3,
+         0.0
+        ],
+        "clear": false,
+        "x_top": 0,
+        "x_rest": 1,
+        "flag_top": "too few",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {},
+         "rest": {
+          "BTLST": 1
+         }
+        }
+       },
+       "Sea of Fortune": {
+        "top": 22.2,
+        "rest": 9.1,
+        "n_top": 9,
+        "n_rest": 22,
+        "clans_top": 4,
+        "clans_rest": 15,
+        "diff": 13.1,
+        "ci": [
+         -16.7,
+         49.7
+        ],
+        "clear": false,
+        "x_top": 2,
+        "x_rest": 2,
+        "flag_top": "small n",
+        "flag_rest": "",
+        "clan_counts": {
+         "top6": {
+          "H-SR": 2
+         },
+         "rest": {
+          "KM": 1,
+          "MZY": 1
+         }
+        }
+       }
+      }
+     }
+    },
+    "of_smokes_with_radar_cruiser_inside": {
+     "n": 132,
+     "used": {
+      "top": 32.8,
+      "rest": 29.6,
+      "n_top": 61,
+      "n_rest": 71,
+      "clans_top": 6,
+      "clans_rest": 18,
+      "diff": 3.2,
+      "ci": [
+       -17.8,
+       17.8
+      ],
+      "clear": false
+     },
+     "used_strict": {
+      "top": 31.1,
+      "rest": 25.4,
+      "n_top": 61,
+      "n_rest": 71,
+      "clans_top": 6,
+      "clans_rest": 18,
+      "diff": 5.8,
+      "ci": [
+       -11.7,
+       19.7
+      ],
+      "clear": false
+     },
+     "lit": {
+      "top": 31.1,
+      "rest": 23.9,
+      "n_top": 61,
+      "n_rest": 71,
+      "clans_top": 6,
+      "clans_rest": 18,
+      "diff": 7.2,
+      "ci": [
+       -11.4,
+       19.5
+      ],
+      "clear": false
+     },
+     "lit_dd": {
+      "top": 26.2,
+      "rest": 21.1,
+      "n_top": 61,
+      "n_rest": 71,
+      "clans_top": 6,
+      "clans_rest": 18,
+      "diff": 5.1,
+      "ci": [
+       -10.2,
+       18.1
+      ],
+      "clear": false
+     },
+     "batch_run": {
+      "top": 31.1,
+      "rest": 21.1,
+      "n_top": 61,
+      "n_rest": 71,
+      "clans_top": 6,
+      "clans_rest": 18,
+      "diff": 10.0,
+      "ci": [
+       -7.0,
+       23.8
+      ],
+      "clear": false
+     },
+     "counts": {
+      "used": 41,
+      "strict": 37,
+      "lit": 36,
+      "lit_dd": 31,
+      "batch_run": 34,
+      "log_and_batch": 34,
+      "log_not_batch": 7,
+      "batch_not_log": 0
+     },
+     "enemies_lit_per_using_smoke": {
+      "top": 1.5,
+      "rest": 1.33,
+      "n_top": 20,
+      "n_rest": 21,
+      "clans_top": 6,
+      "clans_rest": 13,
+      "diff": 0.17,
+      "ci": [
+       -0.56,
+       0.65
+      ],
+      "clear": false
+     },
+     "dd_lit_per_using_smoke": {
+      "top": 1.05,
+      "rest": 0.95,
+      "n_top": 20,
+      "n_rest": 21,
+      "clans_top": 6,
+      "clans_rest": 13,
+      "diff": 0.1,
+      "ci": [
+       -0.49,
+       0.56
+      ],
+      "clear": false
+     },
+     "lit_rows": 61,
+     "lit_rows_ambiguous": 3
+    },
+    "three_ships": {
+     "inside": {
+      "top": 82.4,
+      "rest": 51.7,
+      "n_top": 68,
+      "n_rest": 120,
+      "clans_top": 6,
+      "clans_rest": 21,
+      "diff": 30.7,
+      "ci": [
+       16.2,
+       46.3
+      ],
+      "clear": true,
+      "x_top": 56,
+      "x_rest": 62
+     },
+     "used": {
+      "top": 27.9,
+      "rest": 16.7,
+      "n_top": 68,
+      "n_rest": 120,
+      "clans_top": 6,
+      "clans_rest": 21,
+      "diff": 11.3,
+      "ci": [
+       -3.1,
+       24.6
+      ],
+      "clear": false,
+      "x_top": 19,
+      "x_rest": 20
+     },
+     "lit": {
+      "top": 26.5,
+      "rest": 13.3,
+      "n_top": 68,
+      "n_rest": 120,
+      "clans_top": 6,
+      "clans_rest": 21,
+      "diff": 13.1,
+      "ci": [
+       -2.7,
+       26.1
+      ],
+      "clear": false,
+      "x_top": 18,
+      "x_rest": 16
+     },
+     "lit_dd": {
+      "top": 22.1,
+      "rest": 11.7,
+      "n_top": 68,
+      "n_rest": 120,
+      "clans_top": 6,
+      "clans_rest": 21,
+      "diff": 10.4,
+      "ci": [
+       -1.7,
+       22.1
+      ],
+      "clear": false,
+      "x_top": 15,
+      "x_rest": 14
+     }
+    },
+    "cap_taken": {
+     "three_ships_inside_vs_covered_not_inside": {
+      "a": "radar cruiser inside",
+      "b": "radar cruiser covered, not inside",
+      "n_a": 118,
+      "n_b": 29,
+      "clans_a": 23,
+      "clans_b": 17,
+      "rows": {
+       "batch_all": {
+        "name": "Batch cap_won, all smokes (round 4, Module 2 number)",
+        "a": 57.6,
+        "n_a": 118,
+        "x_a": 68,
+        "b": 13.8,
+        "n_b": 29,
+        "x_b": 4,
+        "diff": 43.8,
+        "ci": [
+         30.4,
+         53.5
+        ],
+        "clear": true
+       },
+       "batch_takeable": {
+        "name": "Batch cap_won, contested cap not ours at activation (round 4, Module 3 number)",
+        "a": 60.4,
+        "n_a": 106,
+        "x_a": 64,
+        "b": 14.3,
+        "n_b": 28,
+        "x_b": 4,
+        "diff": 46.1,
+        "ci": [
+         31.3,
+         56.8
+        ],
+        "clear": true
+       },
+       "tl_cont": {
+        "name": "Cap timeline: contested cap not ours at activation, ours within 60 s after the smoke cleared",
+        "a": 46.2,
+        "n_a": 106,
+        "x_a": 49,
+        "b": 32.1,
+        "n_b": 28,
+        "x_b": 9,
+        "diff": 14.1,
+        "ci": [
+         -3.5,
+         29.3
+        ],
+        "clear": false
+       },
+       "tl_near": {
+        "name": "Cap timeline: nearest cap, same test",
+        "a": 58.9,
+        "n_a": 90,
+        "x_a": 53,
+        "b": 36.4,
+        "n_b": 22,
+        "x_b": 8,
+        "diff": 22.5,
+        "ci": [
+         -0.3,
+         41.4
+        ],
+        "clear": false
+       },
+       "tl_cont10": {
+        "name": "Cap timeline: contested cap, the batch window (10 s after)",
+        "a": 36.8,
+        "n_a": 106,
+        "x_a": 39,
+        "b": 28.6,
+        "n_b": 28,
+        "x_b": 8,
+        "diff": 8.2,
+        "ci": [
+         -10.8,
+         25.3
+        ],
+        "clear": false
+       },
+       "tl_any10": {
+        "name": "Cap timeline: any cap flipped to us by 10 s after, all smokes",
+        "a": 77.1,
+        "n_a": 118,
+        "x_a": 91,
+        "b": 75.9,
+        "n_b": 29,
+        "x_b": 22,
+        "diff": 1.3,
+        "ci": [
+         -13.7,
+         19.9
+        ],
+        "clear": false
+       }
+      }
+     },
+     "all_early_inside_vs_none": {
+      "a": "radar cruiser inside",
+      "b": "no radar cruiser inside",
+      "n_a": 132,
+      "n_b": 174,
+      "clans_a": 24,
+      "clans_b": 29,
+      "rows": {
+       "batch_all": {
+        "name": "Batch cap_won, all smokes (round 4, Module 2 number)",
+        "a": 58.3,
+        "n_a": 132,
+        "x_a": 77,
+        "b": 28.7,
+        "n_b": 174,
+        "x_b": 50,
+        "diff": 29.6,
+        "ci": [
+         21.7,
+         38.4
+        ],
+        "clear": true
+       },
+       "batch_takeable": {
+        "name": "Batch cap_won, contested cap not ours at activation (round 4, Module 3 number)",
+        "a": 60.8,
+        "n_a": 120,
+        "x_a": 73,
+        "b": 31.4,
+        "n_b": 153,
+        "x_b": 48,
+        "diff": 29.5,
+        "ci": [
+         20.0,
+         38.4
+        ],
+        "clear": true
+       },
+       "tl_cont": {
+        "name": "Cap timeline: contested cap not ours at activation, ours within 60 s after the smoke cleared",
+        "a": 46.7,
+        "n_a": 120,
+        "x_a": 56,
+        "b": 32.0,
+        "n_b": 153,
+        "x_b": 49,
+        "diff": 14.6,
+        "ci": [
+         3.3,
+         24.7
+        ],
+        "clear": true
+       },
+       "tl_near": {
+        "name": "Cap timeline: nearest cap, same test",
+        "a": 58.8,
+        "n_a": 102,
+        "x_a": 60,
+        "b": 37.0,
+        "n_b": 135,
+        "x_b": 50,
+        "diff": 21.8,
+        "ci": [
+         9.6,
+         32.5
+        ],
+        "clear": true
+       },
+       "tl_cont10": {
+        "name": "Cap timeline: contested cap, the batch window (10 s after)",
+        "a": 36.7,
+        "n_a": 120,
+        "x_a": 44,
+        "b": 26.8,
+        "n_b": 153,
+        "x_b": 41,
+        "diff": 9.9,
+        "ci": [
+         -1.1,
+         21.2
+        ],
+        "clear": false
+       },
+       "tl_any10": {
+        "name": "Cap timeline: any cap flipped to us by 10 s after, all smokes",
+        "a": 75.8,
+        "n_a": 132,
+        "x_a": 100,
+        "b": 64.9,
+        "n_b": 174,
+        "x_b": 113,
+        "diff": 10.8,
+        "ci": [
+         3.9,
+         18.6
+        ],
+        "clear": true
+       }
+      }
+     },
+     "all_early_top6": {
+      "a": "radar cruiser inside (Top 6)",
+      "b": "no radar cruiser inside",
+      "n_a": 61,
+      "n_b": 42,
+      "clans_a": 6,
+      "clans_b": 6,
+      "rows": {
+       "batch_all": {
+        "name": "Batch cap_won, all smokes (round 4, Module 2 number)",
+        "a": 59.0,
+        "n_a": 61,
+        "x_a": 36,
+        "b": 40.5,
+        "n_b": 42,
+        "x_b": 17,
+        "diff": 18.5,
+        "ci": [
+         4.2,
+         32.6
+        ],
+        "clear": true
+       },
+       "batch_takeable": {
+        "name": "Batch cap_won, contested cap not ours at activation (round 4, Module 3 number)",
+        "a": 63.6,
+        "n_a": 55,
+        "x_a": 35,
+        "b": 44.4,
+        "n_b": 36,
+        "x_b": 16,
+        "diff": 19.2,
+        "ci": [
+         -1.1,
+         36.0
+        ],
+        "clear": false
+       },
+       "tl_cont": {
+        "name": "Cap timeline: contested cap not ours at activation, ours within 60 s after the smoke cleared",
+        "a": 52.7,
+        "n_a": 55,
+        "x_a": 29,
+        "b": 44.4,
+        "n_b": 36,
+        "x_b": 16,
+        "diff": 8.3,
+        "ci": [
+         -11.8,
+         29.2
+        ],
+        "clear": false
+       },
+       "tl_near": {
+        "name": "Cap timeline: nearest cap, same test",
+        "a": 63.3,
+        "n_a": 49,
+        "x_a": 31,
+        "b": 50.0,
+        "n_b": 30,
+        "x_b": 15,
+        "diff": 13.3,
+        "ci": [
+         -7.6,
+         33.6
+        ],
+        "clear": false
+       },
+       "tl_cont10": {
+        "name": "Cap timeline: contested cap, the batch window (10 s after)",
+        "a": 40.0,
+        "n_a": 55,
+        "x_a": 22,
+        "b": 38.9,
+        "n_b": 36,
+        "x_b": 14,
+        "diff": 1.1,
+        "ci": [
+         -24.5,
+         21.4
+        ],
+        "clear": false
+       },
+       "tl_any10": {
+        "name": "Cap timeline: any cap flipped to us by 10 s after, all smokes",
+        "a": 75.4,
+        "n_a": 61,
+        "x_a": 46,
+        "b": 71.4,
+        "n_b": 42,
+        "x_b": 30,
+        "diff": 4.0,
+        "ci": [
+         -0.4,
+         10.8
+        ],
+        "clear": false
+       }
+      }
+     },
+     "all_early_rest": {
+      "a": "radar cruiser inside (Rest)",
+      "b": "no radar cruiser inside",
+      "n_a": 71,
+      "n_b": 132,
+      "clans_a": 18,
+      "clans_b": 23,
+      "rows": {
+       "batch_all": {
+        "name": "Batch cap_won, all smokes (round 4, Module 2 number)",
+        "a": 57.7,
+        "n_a": 71,
+        "x_a": 41,
+        "b": 25.0,
+        "n_b": 132,
+        "x_b": 33,
+        "diff": 32.7,
+        "ci": [
+         22.4,
+         44.7
+        ],
+        "clear": true
+       },
+       "batch_takeable": {
+        "name": "Batch cap_won, contested cap not ours at activation (round 4, Module 3 number)",
+        "a": 58.5,
+        "n_a": 65,
+        "x_a": 38,
+        "b": 27.4,
+        "n_b": 117,
+        "x_b": 32,
+        "diff": 31.1,
+        "ci": [
+         21.1,
+         42.3
+        ],
+        "clear": true
+       },
+       "tl_cont": {
+        "name": "Cap timeline: contested cap not ours at activation, ours within 60 s after the smoke cleared",
+        "a": 41.5,
+        "n_a": 65,
+        "x_a": 27,
+        "b": 28.2,
+        "n_b": 117,
+        "x_b": 33,
+        "diff": 13.3,
+        "ci": [
+         -0.3,
+         27.1
+        ],
+        "clear": false
+       },
+       "tl_near": {
+        "name": "Cap timeline: nearest cap, same test",
+        "a": 54.7,
+        "n_a": 53,
+        "x_a": 29,
+        "b": 33.3,
+        "n_b": 105,
+        "x_b": 35,
+        "diff": 21.4,
+        "ci": [
+         5.1,
+         38.4
+        ],
+        "clear": true
+       },
+       "tl_cont10": {
+        "name": "Cap timeline: contested cap, the batch window (10 s after)",
+        "a": 33.8,
+        "n_a": 65,
+        "x_a": 22,
+        "b": 23.1,
+        "n_b": 117,
+        "x_b": 27,
+        "diff": 10.8,
+        "ci": [
+         -1.2,
+         25.5
+        ],
+        "clear": false
+       },
+       "tl_any10": {
+        "name": "Cap timeline: any cap flipped to us by 10 s after, all smokes",
+        "a": 76.1,
+        "n_a": 71,
+        "x_a": 54,
+        "b": 62.9,
+        "n_b": 132,
+        "x_b": 83,
+        "diff": 13.2,
+        "ci": [
+         3.8,
+         23.8
+        ],
+        "clear": true
+       }
+      }
+     },
+     "inside_ran_radar_vs_did_not": {
+      "a": "radar cruiser inside, ran radar from it",
+      "b": "radar cruiser inside, did not",
+      "n_a": 41,
+      "n_b": 91,
+      "clans_a": 19,
+      "clans_b": 21,
+      "rows": {
+       "batch_all": {
+        "name": "Batch cap_won, all smokes (round 4, Module 2 number)",
+        "a": 56.1,
+        "n_a": 41,
+        "x_a": 23,
+        "b": 59.3,
+        "n_b": 91,
+        "x_b": 54,
+        "diff": -3.2,
+        "ci": [
+         -19.9,
+         11.3
+        ],
+        "clear": false
+       },
+       "batch_takeable": {
+        "name": "Batch cap_won, contested cap not ours at activation (round 4, Module 3 number)",
+        "a": 59.0,
+        "n_a": 39,
+        "x_a": 23,
+        "b": 61.7,
+        "n_b": 81,
+        "x_b": 50,
+        "diff": -2.8,
+        "ci": [
+         -20.4,
+         12.6
+        ],
+        "clear": false
+       },
+       "tl_cont": {
+        "name": "Cap timeline: contested cap not ours at activation, ours within 60 s after the smoke cleared",
+        "a": 46.2,
+        "n_a": 39,
+        "x_a": 18,
+        "b": 46.9,
+        "n_b": 81,
+        "x_b": 38,
+        "diff": -0.8,
+        "ci": [
+         -21.7,
+         21.5
+        ],
+        "clear": false
+       },
+       "tl_near": {
+        "name": "Cap timeline: nearest cap, same test",
+        "a": 60.6,
+        "n_a": 33,
+        "x_a": 20,
+        "b": 58.0,
+        "n_b": 69,
+        "x_b": 40,
+        "diff": 2.6,
+        "ci": [
+         -18.9,
+         26.8
+        ],
+        "clear": false
+       },
+       "tl_cont10": {
+        "name": "Cap timeline: contested cap, the batch window (10 s after)",
+        "a": 33.3,
+        "n_a": 39,
+        "x_a": 13,
+        "b": 38.3,
+        "n_b": 81,
+        "x_b": 31,
+        "diff": -4.9,
+        "ci": [
+         -22.7,
+         11.2
+        ],
+        "clear": false
+       },
+       "tl_any10": {
+        "name": "Cap timeline: any cap flipped to us by 10 s after, all smokes",
+        "a": 73.2,
+        "n_a": 41,
+        "x_a": 30,
+        "b": 76.9,
+        "n_b": 91,
+        "x_b": 70,
+        "diff": -3.8,
+        "ci": [
+         -17.3,
+         7.2
+        ],
+        "clear": false
+       }
+      }
+     },
+     "batch_field_check": {
+      "batch_cap_won": 127,
+      "timeline_confirms_same_cap": 127,
+      "batch_cap_is_contested": 55,
+      "batch_cap_is_nearest": 60,
+      "timeline_any10": 213,
+      "timeline_any10_not_batch": 86,
+      "contested_is_nearest": 253,
+      "n": 306,
+      "tk_cont_agree_with_batch_pct": 76.6
+     }
+    }
+   },
+   "suggested_wording": "Top 6 put a radar cruiser inside the early smoke: 59% (61 of 103) vs 35% (71 of 203). It ran radar from the smoke in about a third of those, the same for both groups (33% vs 30%). The nearest cap was taken after 59% of these smokes against 37% with no radar cruiser inside.",
+   "figure": "figures/n4-claim2-radar-cruiser-inside"
+  },
+  {
+   "id": "N4-3",
+   "atlas_rule": 4,
+   "title": "Radar from smoke per team-game and return per play",
+   "verdict": "Keep",
+   "mode": "top6 for frequency, shared for return",
+   "layer_a": [
+    {
+     "number": "Destroyer smokes tagged as a radar play",
+     "atlas": "96 (52 Top 6, 44 Rest)",
+     "new_batch_clock_bug_in": "96 (52 Top 6, 44 Rest)",
+     "new_batch_corrected": "96 (52 Top 6, 44 Rest)",
+     "status": "unchanged"
+    },
+    {
+     "number": "Per team-game",
+     "atlas": "0.47 vs 0.19",
+     "new_batch_clock_bug_in": "0.47 vs 0.19",
+     "new_batch_corrected": "0.47 vs 0.19",
+     "status": "unchanged"
+    },
+    {
+     "number": "Gap interval",
+     "atlas": "+0.14 to +0.40",
+     "new_batch_clock_bug_in": "+0.14 to +0.40",
+     "new_batch_corrected": "+0.14 to +0.40",
+     "status": "unchanged"
+    },
+    {
+     "number": "Cap taken after cap-control smokes (caps not ours)",
+     "atlas": "58% (of 24) vs 58% (of 26)",
+     "new_batch_clock_bug_in": "58% (of 24) vs 58% (of 26)",
+     "new_batch_corrected": "58% (of 24) vs 58% (of 26)",
+     "status": "unchanged"
+    },
+    {
+     "number": "Three busiest maps",
+     "atlas": "69 of 96 (0.45, 0.40, 0.36 per team-game)",
+     "new_batch_clock_bug_in": "69 of 96 (0.45, 0.40, 0.36 per team-game)",
+     "new_batch_corrected": "69 of 96 (0.45, 0.40, 0.36 per team-game)",
+     "status": "unchanged"
+    },
+    {
+     "number": "Enemy ships lit per smoke with radar run (batch field)",
+     "atlas": "1.1 vs 1.1",
+     "new_batch_clock_bug_in": "1.1 vs 1.1",
+     "new_batch_corrected": "1.1 vs 1.1",
+     "status": "unchanged"
+    }
+   ],
+   "layer_b": {
+    "team_games": {
+     "top": 110,
+     "rest": 232
+    },
+    "counts": {
+     "tag_dd_smokes": {
+      "n": 96,
+      "n_top": 52,
+      "n_rest": 44,
+      "top": 0.47,
+      "rest": 0.19,
+      "diff": 0.28,
+      "ratio": 2.5,
+      "ci": [
+       0.14,
+       0.4
+      ],
+      "clear": true
+     },
+     "tag_all_classes": {
+      "n": 117,
+      "n_top": 64,
+      "n_rest": 53,
+      "top": 0.58,
+      "rest": 0.23,
+      "diff": 0.35,
+      "ratio": 2.5,
+      "ci": [
+       0.2,
+       0.46
+      ],
+      "clear": true
+     },
+     "log_presses_from_smoke": {
+      "n": 155,
+      "n_top": 85,
+      "n_rest": 70,
+      "top": 0.77,
+      "rest": 0.3,
+      "diff": 0.47,
+      "ratio": 2.6,
+      "ci": [
+       0.26,
+       0.65
+      ],
+      "clear": true
+     },
+     "log_presses_from_destroyer_smoke": {
+      "n": 129,
+      "n_top": 70,
+      "n_rest": 59,
+      "top": 0.64,
+      "rest": 0.25,
+      "diff": 0.38,
+      "ratio": 2.5,
+      "ci": [
+       0.16,
+       0.58
+      ],
+      "clear": true
+     },
+     "by_smoke_kind": {
+      "destroyer smoke, radar by another ship": {
+       "n": 107,
+       "n_top": 60,
+       "n_rest": 47,
+       "top": 0.55,
+       "rest": 0.2,
+       "diff": 0.34,
+       "ratio": 2.7,
+       "ci": [
+        0.15,
+        0.51
+       ],
+       "clear": true
+      },
+      "destroyer smoke, radar by the smoker itself": {
+       "n": 22,
+       "n_top": 10,
+       "n_rest": 12,
+       "top": 0.09,
+       "rest": 0.05,
+       "diff": 0.04,
+       "ratio": 1.8,
+       "ci": [
+        -0.05,
+        0.13
+       ],
+       "clear": false
+      },
+      "cruiser's own smoke": {
+       "n": 24,
+       "n_top": 14,
+       "n_rest": 10,
+       "top": 0.13,
+       "rest": 0.04,
+       "diff": 0.08,
+       "ratio": 3.0,
+       "ci": [
+        -0.02,
+        0.2
+       ],
+       "clear": false
+      },
+      "another cruiser's smoke": {
+       "n": 2,
+       "n_top": 1,
+       "n_rest": 1,
+       "top": 0.01,
+       "rest": 0.0,
+       "diff": 0.0,
+       "ratio": 2.1,
+       "ci": [
+        -0.01,
+        0.03
+       ],
+       "clear": false
+      }
+     },
+     "log_smokes_with_press": {
+      "n": 149,
+      "n_top": 83,
+      "n_rest": 66,
+      "top": 0.75,
+      "rest": 0.28,
+      "diff": 0.47,
+      "ratio": 2.7,
+      "ci": [
+       0.27,
+       0.64
+      ],
+      "clear": true
+     },
+     "log_destroyer_smokes_with_press": {
+      "n": 123,
+      "n_top": 68,
+      "n_rest": 55,
+      "top": 0.62,
+      "rest": 0.24,
+      "diff": 0.38,
+      "ratio": 2.6,
+      "ci": [
+       0.18,
+       0.56
+      ],
+      "clear": true
+     },
+     "log_cruiser_smokes_with_press": {
+      "n": 26,
+      "n_top": 15,
+      "n_rest": 11,
+      "top": 0.14,
+      "rest": 0.05,
+      "diff": 0.09,
+      "ratio": 2.9,
+      "ci": [
+       -0.02,
+       0.21
+      ],
+      "clear": false
+     },
+     "all_radar_presses": {
+      "n": 2426,
+      "n_top": 904,
+      "n_rest": 1522,
+      "top": 8.22,
+      "rest": 6.56,
+      "diff": 1.66,
+      "ratio": 1.3,
+      "ci": [
+       0.04,
+       2.98
+      ],
+      "clear": true
+     },
+     "not_from_smoke": {
+      "n": 2271,
+      "n_top": 819,
+      "n_rest": 1452,
+      "top": 7.45,
+      "rest": 6.26,
+      "diff": 1.19,
+      "ratio": 1.2,
+      "ci": [
+       -0.36,
+       2.37
+      ],
+      "clear": false
+     },
+     "share_of_presses_from_smoke_pct": {
+      "top": 9.4,
+      "rest": 4.6,
+      "n_top": 904,
+      "n_rest": 1522,
+      "clans_top": 6,
+      "clans_rest": 24,
+      "diff": 4.8,
+      "ci": [
+       2.5,
+       7.0
+      ],
+      "clear": true
+     },
+     "team_games_with_a_press": {
+      "top": [
+       49,
+       110
+      ],
+      "rest": [
+       50,
+       232
+      ]
+     }
+    },
+    "tag_vs_log": {
+     "tagged_dd": 96,
+     "tagged_dd_with_log_activation": 96,
+     "log_dd_smokes": 123,
+     "log_dd_smokes_tagged": 96,
+     "log_dd_smokes_other_tags": {
+      "cap_contest": 9,
+      "reposition": 6,
+      "damage": 6,
+      "none": 5,
+      "escape": 1
+     },
+     "batch_radar_run_dd": 113,
+     "batch_radar_run_dd_in_log": 112,
+     "log_dd_not_batch_run": 11,
+     "tagged_cruiser": 21,
+     "log_cruiser_smokes": 26,
+     "tagged_without_log_examples": []
+    },
+    "by_map": {
+     "Sleeping Giant": {
+      "n": 40,
+      "n_top": 21,
+      "n_rest": 19,
+      "top": 0.78,
+      "rest": 0.51,
+      "diff": 0.26,
+      "ratio": 1.5,
+      "ci": [
+       -0.17,
+       0.7
+      ],
+      "clear": false,
+      "per_team_game_all": 0.62,
+      "clans_top": 4,
+      "clans_rest": 10,
+      "all_radar_per_team_game": 8.59
+     },
+     "Hotspot": {
+      "n": 36,
+      "n_top": 18,
+      "n_rest": 18,
+      "top": 1.0,
+      "rest": 0.41,
+      "diff": 0.59,
+      "ratio": 2.4,
+      "ci": [
+       0.14,
+       1.19
+      ],
+      "clear": true,
+      "per_team_game_all": 0.58,
+      "clans_top": 6,
+      "clans_rest": 10,
+      "all_radar_per_team_game": 7.76
+     },
+     "Mountain Range": {
+      "n": 27,
+      "n_top": 20,
+      "n_rest": 7,
+      "top": 1.25,
+      "rest": 0.27,
+      "diff": 0.98,
+      "ratio": 4.6,
+      "ci": [
+       0.19,
+       1.82
+      ],
+      "clear": true,
+      "per_team_game_all": 0.64,
+      "clans_top": 4,
+      "clans_rest": 5,
+      "all_radar_per_team_game": 7.43
+     },
+     "Land of Fire": {
+      "n": 14,
+      "n_top": 6,
+      "n_rest": 8,
+      "top": 0.38,
+      "rest": 0.24,
+      "diff": 0.14,
+      "ratio": 1.6,
+      "ci": [
+       -0.28,
+       0.83
+      ],
+      "clear": false,
+      "per_team_game_all": 0.28,
+      "clans_top": 3,
+      "clans_rest": 5,
+      "all_radar_per_team_game": 6.06
+     },
+     "Loop": {
+      "n": 14,
+      "n_top": 11,
+      "n_rest": 3,
+      "top": 0.85,
+      "rest": 0.09,
+      "diff": 0.76,
+      "ratio": 9.3,
+      "ci": [
+       0.21,
+       1.4
+      ],
+      "clear": true,
+      "per_team_game_all": 0.3,
+      "clans_top": 5,
+      "clans_rest": 3,
+      "all_radar_per_team_game": 5.85
+     },
+     "Okinawa": {
+      "n": 10,
+      "n_top": 1,
+      "n_rest": 9,
+      "top": 0.17,
+      "rest": 0.3,
+      "diff": -0.13,
+      "ratio": 0.6,
+      "ci": [
+       -0.52,
+       0.26
+      ],
+      "clear": false,
+      "per_team_game_all": 0.28,
+      "clans_top": 1,
+      "clans_rest": 6,
+      "all_radar_per_team_game": 5.94
+     },
+     "Sea of Fortune": {
+      "n": 14,
+      "n_top": 8,
+      "n_rest": 6,
+      "top": 0.57,
+      "rest": 0.21,
+      "diff": 0.36,
+      "ratio": 2.7,
+      "ci": [
+       -0.1,
+       0.96
+      ],
+      "clear": false,
+      "per_team_game_all": 0.33,
+      "clans_top": 4,
+      "clans_rest": 5,
+      "all_radar_per_team_game": 7.07
+     }
+    },
+    "three_maps": {
+     "names": [
+      "Sleeping Giant",
+      "Hotspot",
+      "Mountain Range"
+     ],
+     "plays": 103,
+     "by_rate": [
+      "Mountain Range",
+      "Sleeping Giant",
+      "Hotspot"
+     ]
+    },
+    "return_per_press": {
+     "n": 155,
+     "n_used": 155,
+     "lit": {
+      "top": 1.41,
+      "rest": 1.33,
+      "n_top": 85,
+      "n_rest": 70,
+      "clans_top": 6,
+      "clans_rest": 19,
+      "diff": 0.08,
+      "ci": [
+       -0.32,
+       0.4
+      ],
+      "clear": false
+     },
+     "lit_any": {
+      "top": 87.1,
+      "rest": 78.6,
+      "n_top": 85,
+      "n_rest": 70,
+      "clans_top": 6,
+      "clans_rest": 19,
+      "diff": 8.5,
+      "ci": [
+       -4.8,
+       18.6
+      ],
+      "clear": false
+     },
+     "lit_dd": {
+      "top": 0.81,
+      "rest": 0.74,
+      "n_top": 85,
+      "n_rest": 70,
+      "clans_top": 6,
+      "clans_rest": 19,
+      "diff": 0.07,
+      "ci": [
+       -0.17,
+       0.27
+      ],
+      "clear": false
+     },
+     "lit_dd_any": {
+      "top": 69.4,
+      "rest": 65.7,
+      "n_top": 85,
+      "n_rest": 70,
+      "clans_top": 6,
+      "clans_rest": 19,
+      "diff": 3.7,
+      "ci": [
+       -14.1,
+       18.9
+      ],
+      "clear": false
+     },
+     "dmg": {
+      "top": 7488.0,
+      "rest": 5814.0,
+      "n_top": 85,
+      "n_rest": 70,
+      "clans_top": 6,
+      "clans_rest": 19,
+      "diff": 1674.0,
+      "ci": [
+       -2321.0,
+       4748.0
+      ],
+      "clear": false
+     },
+     "dmg_direct": {
+      "top": 6624.0,
+      "rest": 4871.0,
+      "n_top": 85,
+      "n_rest": 70,
+      "clans_top": 6,
+      "clans_rest": 19,
+      "diff": 1753.0,
+      "ci": [
+       -2118.0,
+       4503.0
+      ],
+      "clear": false
+     },
+     "dmg_any": {
+      "top": 67.1,
+      "rest": 60.0,
+      "n_top": 85,
+      "n_rest": 70,
+      "clans_top": 6,
+      "clans_rest": 19,
+      "diff": 7.1,
+      "ci": [
+       -11.7,
+       24.8
+      ],
+      "clear": false
+     },
+     "dmg_per_lit_play": {
+      "top": 8601.0,
+      "rest": 7400.0,
+      "n_top": 74,
+      "n_rest": 55,
+      "clans_top": 6,
+      "clans_rest": 19,
+      "diff": 1201.0,
+      "ci": [
+       -3085.0,
+       4893.0
+      ],
+      "clear": false
+     },
+     "hp_loss": {
+      "top": 5971.0,
+      "rest": 4594.0,
+      "n_top": 85,
+      "n_rest": 70,
+      "clans_top": 6,
+      "clans_rest": 19,
+      "diff": 1377.0,
+      "ci": [
+       -2236.0,
+       3763.0
+      ],
+      "clear": false
+     },
+     "dmg_run2": {
+      "top": 7433.0,
+      "rest": 5796.0,
+      "n_top": 85,
+      "n_rest": 70,
+      "clans_top": 6,
+      "clans_rest": 19,
+      "diff": 1637.0,
+      "ci": [
+       -2603.0,
+       4742.0
+      ],
+      "clear": false
+     },
+     "cap60": {
+      "top": 16.7,
+      "rest": 19.0,
+      "n_top": 36,
+      "n_rest": 42,
+      "clans_top": 6,
+      "clans_rest": 17,
+      "diff": -2.4,
+      "ci": [
+       -18.5,
+       19.2
+      ],
+      "clear": false
+     },
+     "cap120": {
+      "top": 36.1,
+      "rest": 21.4,
+      "n_top": 36,
+      "n_rest": 42,
+      "clans_top": 6,
+      "clans_rest": 17,
+      "diff": 14.7,
+      "ci": [
+       -4.4,
+       36.4
+      ],
+      "clear": false
+     },
+     "cap60_x": [
+      6,
+      8
+     ],
+     "cap120_x": [
+      13,
+      9
+     ],
+     "cap_edge_km": {
+      "top": 2.5,
+      "rest": 1.9,
+      "n_top": 85,
+      "n_rest": 70,
+      "clans_top": 6,
+      "clans_rest": 19,
+      "diff": 0.6,
+      "ci": [
+       -0.2,
+       1.2
+      ],
+      "clear": false
+     },
+     "lit_rows": 230,
+     "amb_rows": 10,
+     "dmg_total": 1043504,
+     "dmg_direct_total": 904035,
+     "ribbons": 0,
+     "recorder_plays": 7
+    },
+    "return_per_press_destroyer_smoke": {
+     "n": 129,
+     "n_used": 129,
+     "lit": {
+      "top": 1.49,
+      "rest": 1.49,
+      "n_top": 70,
+      "n_rest": 59,
+      "clans_top": 6,
+      "clans_rest": 18,
+      "diff": -0.01,
+      "ci": [
+       -0.48,
+       0.32
+      ],
+      "clear": false
+     },
+     "lit_any": {
+      "top": 88.6,
+      "rest": 86.4,
+      "n_top": 70,
+      "n_rest": 59,
+      "clans_top": 6,
+      "clans_rest": 18,
+      "diff": 2.1,
+      "ci": [
+       -11.4,
+       13.0
+      ],
+      "clear": false
+     },
+     "lit_dd": {
+      "top": 0.84,
+      "rest": 0.83,
+      "n_top": 70,
+      "n_rest": 59,
+      "clans_top": 6,
+      "clans_rest": 18,
+      "diff": 0.01,
+      "ci": [
+       -0.24,
+       0.23
+      ],
+      "clear": false
+     },
+     "lit_dd_any": {
+      "top": 72.9,
+      "rest": 72.9,
+      "n_top": 70,
+      "n_rest": 59,
+      "clans_top": 6,
+      "clans_rest": 18,
+      "diff": -0.0,
+      "ci": [
+       -20.1,
+       15.7
+      ],
+      "clear": false
+     },
+     "dmg": {
+      "top": 8429.0,
+      "rest": 6795.0,
+      "n_top": 70,
+      "n_rest": 59,
+      "clans_top": 6,
+      "clans_rest": 18,
+      "diff": 1634.0,
+      "ci": [
+       -2558.0,
+       4761.0
+      ],
+      "clear": false
+     },
+     "dmg_direct": {
+      "top": 7392.0,
+      "rest": 5747.0,
+      "n_top": 70,
+      "n_rest": 59,
+      "clans_top": 6,
+      "clans_rest": 18,
+      "diff": 1645.0,
+      "ci": [
+       -1957.0,
+       4440.0
+      ],
+      "clear": false
+     },
+     "dmg_any": {
+      "top": 70.0,
+      "rest": 67.8,
+      "n_top": 70,
+      "n_rest": 59,
+      "clans_top": 6,
+      "clans_rest": 18,
+      "diff": 2.2,
+      "ci": [
+       -14.5,
+       17.8
+      ],
+      "clear": false
+     },
+     "dmg_per_lit_play": {
+      "top": 9516.0,
+      "rest": 7860.0,
+      "n_top": 62,
+      "n_rest": 51,
+      "clans_top": 6,
+      "clans_rest": 18,
+      "diff": 1656.0,
+      "ci": [
+       -2771.0,
+       5408.0
+      ],
+      "clear": false
+     },
+     "hp_loss": {
+      "top": 6558.0,
+      "rest": 5370.0,
+      "n_top": 70,
+      "n_rest": 59,
+      "clans_top": 6,
+      "clans_rest": 18,
+      "diff": 1188.0,
+      "ci": [
+       -2146.0,
+       3735.0
+      ],
+      "clear": false
+     },
+     "dmg_run2": {
+      "top": 8354.0,
+      "rest": 6768.0,
+      "n_top": 70,
+      "n_rest": 59,
+      "clans_top": 6,
+      "clans_rest": 18,
+      "diff": 1586.0,
+      "ci": [
+       -3369.0,
+       4922.0
+      ],
+      "clear": false
+     },
+     "cap60": {
+      "top": 13.3,
+      "rest": 21.9,
+      "n_top": 30,
+      "n_rest": 32,
+      "clans_top": 6,
+      "clans_rest": 16,
+      "diff": -8.5,
+      "ci": [
+       -22.9,
+       10.1
+      ],
+      "clear": false
+     },
+     "cap120": {
+      "top": 33.3,
+      "rest": 25.0,
+      "n_top": 30,
+      "n_rest": 32,
+      "clans_top": 6,
+      "clans_rest": 16,
+      "diff": 8.3,
+      "ci": [
+       -8.9,
+       33.6
+      ],
+      "clear": false
+     },
+     "cap60_x": [
+      4,
+      7
+     ],
+     "cap120_x": [
+      10,
+      8
+     ],
+     "cap_edge_km": {
+      "top": 2.7,
+      "rest": 1.9,
+      "n_top": 70,
+      "n_rest": 59,
+      "clans_top": 6,
+      "clans_rest": 18,
+      "diff": 0.8,
+      "ci": [
+       -0.3,
+       1.9
+      ],
+      "clear": false
+     },
+     "lit_rows": 208,
+     "amb_rows": 10,
+     "dmg_total": 990878,
+     "dmg_direct_total": 856537,
+     "ribbons": 0,
+     "recorder_plays": 5
+    },
+    "return_per_press_not_from_smoke": {
+     "n": 2271,
+     "n_used": 2263,
+     "lit": {
+      "top": 1.75,
+      "rest": 1.62,
+      "n_top": 819,
+      "n_rest": 1444,
+      "clans_top": 6,
+      "clans_rest": 24,
+      "diff": 0.13,
+      "ci": [
+       0.01,
+       0.31
+      ],
+      "clear": true
+     },
+     "lit_any": {
+      "top": 87.2,
+      "rest": 84.3,
+      "n_top": 819,
+      "n_rest": 1444,
+      "clans_top": 6,
+      "clans_rest": 24,
+      "diff": 2.8,
+      "ci": [
+       0.0,
+       6.8
+      ],
+      "clear": true
+     },
+     "lit_dd": {
+      "top": 0.85,
+      "rest": 0.84,
+      "n_top": 819,
+      "n_rest": 1444,
+      "clans_top": 6,
+      "clans_rest": 24,
+      "diff": 0.0,
+      "ci": [
+       -0.11,
+       0.11
+      ],
+      "clear": false
+     },
+     "lit_dd_any": {
+      "top": 69.6,
+      "rest": 71.0,
+      "n_top": 819,
+      "n_rest": 1444,
+      "clans_top": 6,
+      "clans_rest": 24,
+      "diff": -1.4,
+      "ci": [
+       -8.6,
+       5.5
+      ],
+      "clear": false
+     },
+     "dmg": {
+      "top": 7221.0,
+      "rest": 6666.0,
+      "n_top": 819,
+      "n_rest": 1444,
+      "clans_top": 6,
+      "clans_rest": 24,
+      "diff": 555.0,
+      "ci": [
+       -877.0,
+       2124.0
+      ],
+      "clear": false
+     },
+     "dmg_direct": {
+      "top": 6342.0,
+      "rest": 5867.0,
+      "n_top": 819,
+      "n_rest": 1444,
+      "clans_top": 6,
+      "clans_rest": 24,
+      "diff": 475.0,
+      "ci": [
+       -1031.0,
+       1808.0
+      ],
+      "clear": false
+     },
+     "dmg_any": {
+      "top": 62.6,
+      "rest": 61.6,
+      "n_top": 819,
+      "n_rest": 1444,
+      "clans_top": 6,
+      "clans_rest": 24,
+      "diff": 1.1,
+      "ci": [
+       -3.9,
+       7.0
+      ],
+      "clear": false
+     },
+     "dmg_per_lit_play": {
+      "top": 8282.0,
+      "rest": 7903.0,
+      "n_top": 714,
+      "n_rest": 1218,
+      "clans_top": 6,
+      "clans_rest": 24,
+      "diff": 379.0,
+      "ci": [
+       -1388.0,
+       2120.0
+      ],
+      "clear": false
+     },
+     "hp_loss": {
+      "top": 7387.0,
+      "rest": 6258.0,
+      "n_top": 819,
+      "n_rest": 1444,
+      "clans_top": 6,
+      "clans_rest": 24,
+      "diff": 1128.0,
+      "ci": [
+       -434.0,
+       2732.0
+      ],
+      "clear": false
+     },
+     "dmg_run2": {
+      "top": 7062.0,
+      "rest": 6757.0,
+      "n_top": 819,
+      "n_rest": 1444,
+      "clans_top": 6,
+      "clans_rest": 24,
+      "diff": 305.0,
+      "ci": [
+       -1170.0,
+       1720.0
+      ],
+      "clear": false
+     },
+     "cap60": {
+      "top": 14.6,
+      "rest": 12.3,
+      "n_top": 370,
+      "n_rest": 749,
+      "clans_top": 6,
+      "clans_rest": 24,
+      "diff": 2.3,
+      "ci": [
+       -1.8,
+       6.0
+      ],
+      "clear": false
+     },
+     "cap120": {
+      "top": 27.0,
+      "rest": 22.6,
+      "n_top": 370,
+      "n_rest": 749,
+      "clans_top": 6,
+      "clans_rest": 24,
+      "diff": 4.5,
+      "ci": [
+       -1.7,
+       10.8
+      ],
+      "clear": false
+     },
+     "cap60_x": [
+      54,
+      92
+     ],
+     "cap120_x": [
+      100,
+      169
+     ],
+     "cap_edge_km": {
+      "top": 2.4,
+      "rest": 2.5,
+      "n_top": 819,
+      "n_rest": 1444,
+      "clans_top": 6,
+      "clans_rest": 24,
+      "diff": -0.0,
+      "ci": [
+       -0.4,
+       0.2
+      ],
+      "clear": false
+     },
+     "lit_rows": 4064,
+     "amb_rows": 198,
+     "dmg_total": 15539371,
+     "dmg_direct_total": 13666733,
+     "ribbons": 54,
+     "recorder_plays": 102
+    },
+    "per_team_game": {
+     "enemies_lit": {
+      "top": 1.09,
+      "rest": 0.4,
+      "ci": [
+       0.23,
+       1.13
+      ]
+     },
+     "enemy_destroyers_lit": {
+      "top": 0.63,
+      "rest": 0.22,
+      "ci": [
+       0.16,
+       0.69
+      ]
+     },
+     "damage_on_lit": {
+      "top": 5786.3,
+      "rest": 1754.36,
+      "ci": [
+       1214.61,
+       6374.19
+      ]
+     }
+    },
+    "cap_control_cap_taken_timeline": {
+     "top": 62.5,
+     "rest": 38.5,
+     "n_top": 24,
+     "n_rest": 26,
+     "clans_top": 6,
+     "clans_rest": 13,
+     "diff": 24.0,
+     "ci": [
+      -5.8,
+      55.4
+     ],
+     "clear": false,
+     "x_top": 15,
+     "x_rest": 10
+    },
+    "per_clan": [
+     {
+      "clan": "BONKY",
+      "top6": false,
+      "games": 7,
+      "log_plays": 8,
+      "per_game": 1.14,
+      "tag_plays": 5
+     },
+     {
+      "clan": "RESIN",
+      "top6": true,
+      "games": 24,
+      "log_plays": 25,
+      "per_game": 1.04,
+      "tag_plays": 14
+     },
+     {
+      "clan": "SCCC2",
+      "top6": false,
+      "games": 7,
+      "log_plays": 7,
+      "per_game": 1.0,
+      "tag_plays": 3
+     },
+     {
+      "clan": "BONKZ",
+      "top6": true,
+      "games": 21,
+      "log_plays": 18,
+      "per_game": 0.86,
+      "tag_plays": 10
+     },
+     {
+      "clan": "VRTUS",
+      "top6": true,
+      "games": 11,
+      "log_plays": 8,
+      "per_game": 0.73,
+      "tag_plays": 4
+     },
+     {
+      "clan": "H-SR",
+      "top6": true,
+      "games": 22,
+      "log_plays": 16,
+      "per_game": 0.73,
+      "tag_plays": 14
+     },
+     {
+      "clan": "HTDOG",
+      "top6": true,
+      "games": 18,
+      "log_plays": 13,
+      "per_game": 0.72,
+      "tag_plays": 6
+     },
+     {
+      "clan": "INCA",
+      "top6": false,
+      "games": 6,
+      "log_plays": 4,
+      "per_game": 0.67,
+      "tag_plays": 1
+     },
+     {
+      "clan": "HFANS",
+      "top6": false,
+      "games": 17,
+      "log_plays": 11,
+      "per_game": 0.65,
+      "tag_plays": 9
+     },
+     {
+      "clan": "KSC",
+      "top6": false,
+      "games": 11,
+      "log_plays": 5,
+      "per_game": 0.45,
+      "tag_plays": 4
+     },
+     {
+      "clan": "MACHX",
+      "top6": false,
+      "games": 14,
+      "log_plays": 6,
+      "per_game": 0.43,
+      "tag_plays": 5
+     },
+     {
+      "clan": "KITE",
+      "top6": true,
+      "games": 14,
+      "log_plays": 5,
+      "per_game": 0.36,
+      "tag_plays": 4
+     },
+     {
+      "clan": "REEEE",
+      "top6": false,
+      "games": 13,
+      "log_plays": 4,
+      "per_game": 0.31,
+      "tag_plays": 4
+     },
+     {
+      "clan": "MZY",
+      "top6": false,
+      "games": 19,
+      "log_plays": 4,
+      "per_game": 0.21,
+      "tag_plays": 3
+     }
+    ],
+    "clans": {
+     "top6": {
+      "RESIN": 25,
+      "BONKZ": 18,
+      "H-SR": 16,
+      "HTDOG": 13,
+      "VRTUS": 8,
+      "KITE": 5
+     },
+     "rest": {
+      "HFANS": 11,
+      "BONKY": 8,
+      "SCCC2": 7,
+      "MACHX": 6,
+      "KSC": 5,
+      "REEEE": 4,
+      "INCA": 4,
+      "MZY": 4,
+      "PFANS": 3,
+      "EPOXY": 3,
+      "-BN-": 3,
+      "UYSC": 2,
+      "RSR": 2,
+      "KSE": 2,
+      "PN": 2,
+      "BTLST": 1,
+      "KITED": 1,
+      "MANBA": 1,
+      "KM": 1
+     }
+    },
+    "ribbons": {
+     "batch_total": {
+      "AssistedInCapture": 67,
+      "Defended": 284,
+      "Captured": 91
+     },
+     "plays_by_recording_player": 7,
+     "ribbons_after_plays": 0
+    }
+   },
+   "suggested_wording": "Top 6 run radar from smoke 2.6 times as often: 0.77 vs 0.30 radar presses from inside a smoke per team-game (85, 70). Same return per press: 1.4 vs 1.3 enemy ships lit.",
+   "figure": "figures/n4-claim3-radar-from-smoke"
+  }
+ ]
+}

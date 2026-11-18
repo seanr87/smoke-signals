@@ -1,0 +1,3821 @@
+{
+ "batch": "output/20261117-230933",
+ "frame": "destroyer smokes (1,074), as in round 5 A2",
+ "definitions": {
+  "died": "track death between activation and 20 s after dispersal",
+  "hurt": "died, or net health loss over the smoke of 1/3+ of full health (real health)",
+  "classes": "inside = last position within a standing puff; left = moved outside every puff while they stood; dispersed = puffs ended around the ship; never inside",
+  "radar": "radar log lit spans overlapping the last 40 s (or 20 s) before death; smoke-level: a covered ship lit between activation and dispersal"
+ },
+ "health": {
+  "excluded": {
+   "pairs": 5,
+   "smokes_in_single_replay_game": 9,
+   "note": "ships of the team without a replay in the single-replay game: health blank or stale",
+   "bad_smokes": 4,
+   "uncovered_smokers": 41
+  },
+  "no_dispersal_time": 171,
+  "smokes": 1547,
+  "agreement": {
+   "dd": {
+    "label": "destroyer smoker (destroyer smokes)",
+    "n": 1070,
+    "both": 150,
+    "neither": 828,
+    "new_flag": 75,
+    "lost_flag": 17,
+    "agree_pct": 91.4,
+    "old_flags": 167,
+    "real_flags": 225
+   },
+   "cr_dd": {
+    "label": "sheltering cruisers in destroyer smokes",
+    "n": 586,
+    "both": 85,
+    "neither": 431,
+    "new_flag": 24,
+    "lost_flag": 46,
+    "agree_pct": 88.1,
+    "old_flags": 131,
+    "real_flags": 109
+   },
+   "cr": {
+    "label": "sheltering cruisers, any smoke",
+    "n": 612,
+    "both": 88,
+    "neither": 453,
+    "new_flag": 25,
+    "lost_flag": 46,
+    "agree_pct": 88.4,
+    "old_flags": 134,
+    "real_flags": 113
+   },
+   "all": {
+    "label": "every covered ship",
+    "n": 2359,
+    "both": 326,
+    "neither": 1824,
+    "new_flag": 125,
+    "lost_flag": 84,
+    "agree_pct": 91.1,
+    "old_flags": 410,
+    "real_flags": 451
+   }
+  },
+  "flip_reasons": {
+   "new": 125,
+   "new_biggest_hit_outside_outline": 101,
+   "lost": 84,
+   "lost_healed_back": 38,
+   "lost_estimate_too_low": 20,
+   "lost_other": 26
+  },
+  "hp_est": {
+   "destroyer": {
+    "n": 1124,
+    "median": 0.906,
+    "q25": 0.853,
+    "q75": 1.024,
+    "min": 0.65,
+    "max": 1.27,
+    "within_10pct": 37.6
+   },
+   "cruiser": {
+    "n": 1046,
+    "median": 1.018,
+    "q25": 0.961,
+    "q75": 1.111,
+    "min": 0.44,
+    "max": 1.78,
+    "within_10pct": 52.8
+   },
+   "battleship": {
+    "n": 152,
+    "median": 1.258,
+    "q25": 1.179,
+    "q75": 1.495,
+    "min": 1.13,
+    "max": 1.63,
+    "within_10pct": 0.0
+   }
+  },
+  "hp_est_worst_ships": [
+   {
+    "ship": "Smolensk",
+    "cls": "cruiser",
+    "n": 18,
+    "median_ratio": 1.78
+   },
+   {
+    "ship": "Conte Verde",
+    "cls": "battleship",
+    "n": 18,
+    "median_ratio": 1.63
+   },
+   {
+    "ship": "Brisbane",
+    "cls": "cruiser",
+    "n": 117,
+    "median_ratio": 0.44
+   },
+   {
+    "ship": "Harugumo",
+    "cls": "destroyer",
+    "n": 97,
+    "median_ratio": 0.68
+   },
+   {
+    "ship": "Worcester",
+    "cls": "cruiser",
+    "n": 36,
+    "median_ratio": 1.32
+   },
+   {
+    "ship": "Minotaur",
+    "cls": "cruiser",
+    "n": 56,
+    "median_ratio": 1.27
+   },
+   {
+    "ship": "Cerberus",
+    "cls": "cruiser",
+    "n": 20,
+    "median_ratio": 1.27
+   },
+   {
+    "ship": "Bungo",
+    "cls": "battleship",
+    "n": 22,
+    "median_ratio": 1.26
+   }
+  ],
+  "deaths_check": {
+   "batch": 176,
+   "batch_confirmed_by_track": 174,
+   "track_window": 270,
+   "track_only": 96,
+   "track_only_by_how": {
+    "smoker": 84,
+    "inside": 8,
+    "behind": 4
+   },
+   "track_only_inside_outline": 50,
+   "track_only_detected_at_death": 33
+  },
+  "baselines": {
+   "dd": {
+    "label": "destroyer smoker (destroyer smokes)",
+    "n": 1070,
+    "n_top6": 387,
+    "n_rest": 683,
+    "measures": [
+     {
+      "measure": "died, batch list (round 5 measure)",
+      "count": 69,
+      "per_100": 6.4,
+      "ci": [
+       4.5,
+       9.4
+      ],
+      "top6": 2.8,
+      "rest": 8.5,
+      "gap_ci": [
+       -9.7,
+       -2.3
+      ],
+      "clear": true
+     },
+     {
+      "measure": "died, track (activation to 20 s after dispersal)",
+      "count": 137,
+      "per_100": 12.8,
+      "ci": [
+       9.9,
+       16.8
+      ],
+      "top6": 8.5,
+      "rest": 15.2,
+      "gap_ci": [
+       -13.9,
+       -1.6
+      ],
+      "clear": true
+     },
+     {
+      "measure": "died or hurt, old estimate (round 5 measure)",
+      "count": 167,
+      "per_100": 15.6,
+      "ci": [
+       12.9,
+       19.6
+      ],
+      "top6": 10.6,
+      "rest": 18.4,
+      "gap_ci": [
+       -14.3,
+       -3.4
+      ],
+      "clear": true
+     },
+     {
+      "measure": "died or hurt, real health, batch deaths",
+      "count": 225,
+      "per_100": 21.0,
+      "ci": [
+       17.7,
+       25.3
+      ],
+      "top6": 15.2,
+      "rest": 24.3,
+      "gap_ci": [
+       -16.6,
+       -2.9
+      ],
+      "clear": true
+     },
+     {
+      "measure": "died or hurt, real health, track deaths (round 5b definition)",
+      "count": 247,
+      "per_100": 23.1,
+      "ci": [
+       19.5,
+       27.6
+      ],
+      "top6": 17.3,
+      "rest": 26.4,
+      "gap_ci": [
+       -17.0,
+       -2.4
+      ],
+      "clear": true
+     },
+     {
+      "measure": "same, peak-to-trough health loss",
+      "count": 254,
+      "per_100": 23.7,
+      "ci": [
+       20.2,
+       28.6
+      ],
+      "top6": 17.6,
+      "rest": 27.2,
+      "gap_ci": [
+       -17.9,
+       -3.1
+      ],
+      "clear": true
+     }
+    ]
+   },
+   "cr_dd": {
+    "label": "sheltering cruisers in destroyer smokes",
+    "n": 586,
+    "n_top6": 262,
+    "n_rest": 324,
+    "measures": [
+     {
+      "measure": "died, batch list (round 5 measure)",
+      "count": 46,
+      "per_100": 7.8,
+      "ci": [
+       6.0,
+       10.2
+      ],
+      "top6": 5.7,
+      "rest": 9.6,
+      "gap_ci": [
+       -8.3,
+       -0.0
+      ],
+      "clear": true
+     },
+     {
+      "measure": "died, track (activation to 20 s after dispersal)",
+      "count": 57,
+      "per_100": 9.7,
+      "ci": [
+       7.3,
+       12.6
+      ],
+      "top6": 7.3,
+      "rest": 11.7,
+      "gap_ci": [
+       -8.9,
+       -0.4
+      ],
+      "clear": true
+     },
+     {
+      "measure": "died or hurt, old estimate (round 5 measure)",
+      "count": 131,
+      "per_100": 22.4,
+      "ci": [
+       17.2,
+       27.2
+      ],
+      "top6": 18.3,
+      "rest": 25.6,
+      "gap_ci": [
+       -17.3,
+       2.0
+      ],
+      "clear": false
+     },
+     {
+      "measure": "died or hurt, real health, batch deaths",
+      "count": 109,
+      "per_100": 18.6,
+      "ci": [
+       14.6,
+       23.0
+      ],
+      "top6": 14.1,
+      "rest": 22.2,
+      "gap_ci": [
+       -16.0,
+       -0.8
+      ],
+      "clear": true
+     },
+     {
+      "measure": "died or hurt, real health, track deaths (round 5b definition)",
+      "count": 115,
+      "per_100": 19.6,
+      "ci": [
+       15.3,
+       24.2
+      ],
+      "top6": 15.3,
+      "rest": 23.1,
+      "gap_ci": [
+       -16.3,
+       0.4
+      ],
+      "clear": false
+     },
+     {
+      "measure": "same, peak-to-trough health loss",
+      "count": 148,
+      "per_100": 25.3,
+      "ci": [
+       19.4,
+       30.9
+      ],
+      "top6": 19.5,
+      "rest": 29.9,
+      "gap_ci": [
+       -20.6,
+       0.0
+      ],
+      "clear": false
+     }
+    ]
+   },
+   "cr": {
+    "label": "sheltering cruisers, any smoke",
+    "n": 612,
+    "n_top6": 274,
+    "n_rest": 338,
+    "measures": [
+     {
+      "measure": "died, batch list (round 5 measure)",
+      "count": 48,
+      "per_100": 7.8,
+      "ci": [
+       5.7,
+       10.5
+      ],
+      "top6": 5.5,
+      "rest": 9.8,
+      "gap_ci": [
+       -8.3,
+       -0.5
+      ],
+      "clear": true
+     },
+     {
+      "measure": "died, track (activation to 20 s after dispersal)",
+      "count": 59,
+      "per_100": 9.6,
+      "ci": [
+       7.2,
+       12.2
+      ],
+      "top6": 6.9,
+      "rest": 11.8,
+      "gap_ci": [
+       -9.2,
+       -0.5
+      ],
+      "clear": true
+     },
+     {
+      "measure": "died or hurt, old estimate (round 5 measure)",
+      "count": 134,
+      "per_100": 21.9,
+      "ci": [
+       17.0,
+       27.0
+      ],
+      "top6": 17.5,
+      "rest": 25.4,
+      "gap_ci": [
+       -17.9,
+       2.7
+      ],
+      "clear": false
+     },
+     {
+      "measure": "died or hurt, real health, batch deaths",
+      "count": 113,
+      "per_100": 18.5,
+      "ci": [
+       14.5,
+       22.8
+      ],
+      "top6": 13.5,
+      "rest": 22.5,
+      "gap_ci": [
+       -16.3,
+       -1.7
+      ],
+      "clear": true
+     },
+     {
+      "measure": "died or hurt, real health, track deaths (round 5b definition)",
+      "count": 119,
+      "per_100": 19.4,
+      "ci": [
+       15.2,
+       24.2
+      ],
+      "top6": 14.6,
+      "rest": 23.4,
+      "gap_ci": [
+       -16.6,
+       -1.3
+      ],
+      "clear": true
+     },
+     {
+      "measure": "same, peak-to-trough health loss",
+      "count": 152,
+      "per_100": 24.8,
+      "ci": [
+       19.1,
+       30.4
+      ],
+      "top6": 18.6,
+      "rest": 29.9,
+      "gap_ci": [
+       -21.6,
+       -0.7
+      ],
+      "clear": true
+     }
+    ]
+   }
+  },
+  "check_r5": {
+   "dd_smokes": 1074,
+   "dd_smoker_pairs_all": 1074,
+   "d_smoker_per_100_smokes": 6.4,
+   "hurt_smoker_per_100_smokes": 15.5,
+   "cr_pool": 613,
+   "cr_died": 8.0,
+   "cr_hurt": 22.0
+  },
+  "loss": {
+   "dd": {
+    "mean_net": 17.3,
+    "median_net": 4.6,
+    "mean_trough": 17.7,
+    "none_pct": 44.1,
+    "third_net": 19.1,
+    "third_trough": 19.7
+   },
+   "cr": {
+    "mean_net": 16.2,
+    "median_net": 3.7,
+    "mean_trough": 19.7,
+    "none_pct": 44.8,
+    "third_net": 17.3,
+    "third_trough": 23.4
+   }
+  }
+ },
+ "death_positions": {
+  "pairs": 268,
+  "distinct_ships": 262,
+  "who": {
+   "smoking destroyer": {
+    "n": 137,
+    "bands": {
+     "inside the outline": 57,
+     "within 1 km of the edge": 23,
+     "1-3 km": 28,
+     "over 3 km": 29
+    },
+    "inside_pct": 41.6,
+    "median_outside_m": 1923.0,
+    "in_batch_list": 68,
+    "top6": 33,
+    "rest": 104,
+    "inside_top6": 11,
+    "inside_rest": 46
+   },
+   "sheltering cruiser": {
+    "n": 59,
+    "bands": {
+     "inside the outline": 13,
+     "within 1 km of the edge": 9,
+     "1-3 km": 25,
+     "over 3 km": 12
+    },
+    "inside_pct": 22.0,
+    "median_outside_m": 1960.0,
+    "in_batch_list": 48,
+    "top6": 19,
+    "rest": 40,
+    "inside_top6": 5,
+    "inside_rest": 8
+   },
+   "smoker (other class)": {
+    "n": 61,
+    "bands": {
+     "inside the outline": 36,
+     "within 1 km of the edge": 18,
+     "1-3 km": 6,
+     "over 3 km": 1
+    },
+    "inside_pct": 59.0,
+    "median_outside_m": 739.0,
+    "in_batch_list": 47,
+    "top6": 14,
+    "rest": 47,
+    "inside_top6": 9,
+    "inside_rest": 27
+   },
+   "other sheltering ship": {
+    "n": 11,
+    "bands": {
+     "inside the outline": 4,
+     "within 1 km of the edge": 1,
+     "1-3 km": 2,
+     "over 3 km": 4
+    },
+    "inside_pct": 36.4,
+    "median_outside_m": 3971.0,
+    "in_batch_list": 10,
+    "top6": 4,
+    "rest": 7,
+    "inside_top6": 1,
+    "inside_rest": 3
+   }
+  },
+  "by_map": {
+   "Sleeping Giant": {
+    "n": 49,
+    "inside": 22,
+    "outside": 27
+   },
+   "Hotspot": {
+    "n": 40,
+    "inside": 18,
+    "outside": 22
+   },
+   "Mountain Range": {
+    "n": 32,
+    "inside": 11,
+    "outside": 21
+   },
+   "Land of Fire": {
+    "n": 43,
+    "inside": 16,
+    "outside": 27
+   },
+   "Sea of Fortune": {
+    "n": 33,
+    "inside": 16,
+    "outside": 17
+   },
+   "Loop": {
+    "n": 34,
+    "inside": 18,
+    "outside": 16
+   },
+   "Okinawa": {
+    "n": 37,
+    "inside": 9,
+    "outside": 28
+   }
+  }
+ },
+ "leaving": {
+  "batch_deaths": {
+   "smoking destroyer": {
+    "n": 69,
+    "n_top6": 11,
+    "n_rest": 58,
+    "classes": {
+     "inside a standing smoke": {
+      "n": 21,
+      "top6": 1,
+      "rest": 20,
+      "pct": 30.4
+     },
+     "within 30 s of leaving a standing smoke": {
+      "n": 14,
+      "top6": 2,
+      "rest": 12,
+      "pct": 20.3
+     },
+     "more than 30 s after leaving": {
+      "n": 32,
+      "top6": 7,
+      "rest": 25,
+      "pct": 46.4
+     },
+     "after the smoke dispersed around it": {
+      "n": 2,
+      "top6": 1,
+      "rest": 1,
+      "pct": 2.9
+     },
+     "never inside the outline": {
+      "n": 0,
+      "top6": 0,
+      "rest": 0,
+      "pct": 0.0
+     }
+    }
+   },
+   "sheltering cruiser": {
+    "n": 48,
+    "n_top6": 15,
+    "n_rest": 33,
+    "classes": {
+     "inside a standing smoke": {
+      "n": 7,
+      "top6": 2,
+      "rest": 5,
+      "pct": 14.6
+     },
+     "within 30 s of leaving a standing smoke": {
+      "n": 10,
+      "top6": 1,
+      "rest": 9,
+      "pct": 20.8
+     },
+     "more than 30 s after leaving": {
+      "n": 20,
+      "top6": 9,
+      "rest": 11,
+      "pct": 41.7
+     },
+     "after the smoke dispersed around it": {
+      "n": 3,
+      "top6": 1,
+      "rest": 2,
+      "pct": 6.2
+     },
+     "never inside the outline": {
+      "n": 8,
+      "top6": 2,
+      "rest": 6,
+      "pct": 16.7
+     }
+    }
+   },
+   "other ship": {
+    "n": 7,
+    "n_top6": 3,
+    "n_rest": 4,
+    "classes": {
+     "inside a standing smoke": {
+      "n": 1,
+      "top6": 0,
+      "rest": 1,
+      "pct": 14.3
+     },
+     "within 30 s of leaving a standing smoke": {
+      "n": 1,
+      "top6": 1,
+      "rest": 0,
+      "pct": 14.3
+     },
+     "more than 30 s after leaving": {
+      "n": 5,
+      "top6": 2,
+      "rest": 3,
+      "pct": 71.4
+     },
+     "after the smoke dispersed around it": {
+      "n": 0,
+      "top6": 0,
+      "rest": 0,
+      "pct": 0.0
+     },
+     "never inside the outline": {
+      "n": 0,
+      "top6": 0,
+      "rest": 0,
+      "pct": 0.0
+     }
+    }
+   },
+   "all": {
+    "n": 124,
+    "n_top6": 29,
+    "n_rest": 95,
+    "classes": {
+     "inside a standing smoke": {
+      "n": 29,
+      "top6": 3,
+      "rest": 26,
+      "pct": 23.4
+     },
+     "within 30 s of leaving a standing smoke": {
+      "n": 25,
+      "top6": 4,
+      "rest": 21,
+      "pct": 20.2
+     },
+     "more than 30 s after leaving": {
+      "n": 57,
+      "top6": 18,
+      "rest": 39,
+      "pct": 46.0
+     },
+     "after the smoke dispersed around it": {
+      "n": 5,
+      "top6": 2,
+      "rest": 3,
+      "pct": 4.0
+     },
+     "never inside the outline": {
+      "n": 8,
+      "top6": 2,
+      "rest": 6,
+      "pct": 6.5
+     }
+    }
+   }
+  },
+  "proxies": {
+   "after_cleared": {
+    "n": 27,
+    "classes": {
+     "smoke dispersed": 4,
+     "left, over 30 s": 19,
+     "never inside": 3,
+     "left, 30 s or less": 1
+    }
+   },
+   "behind": {
+    "n": 25,
+    "classes": {
+     "inside": 3,
+     "left, over 30 s": 9,
+     "never inside": 8,
+     "left, 30 s or less": 4,
+     "smoke dispersed": 1
+    }
+   },
+   "inside_list": {
+    "n": 99,
+    "classes": {
+     "left, over 30 s": 48,
+     "left, 30 s or less": 21,
+     "smoke dispersed": 4,
+     "inside": 26
+    }
+   }
+  },
+  "batch_left": {
+   "n": 82,
+   "within_30": 25,
+   "median_gap_s": 53.0,
+   "median_dist_m": 1996.0,
+   "detected_at_death": 71
+  },
+  "track_deaths": {
+   "smoking destroyer": {
+    "n": 137,
+    "n_top6": 33,
+    "n_rest": 104,
+    "classes": {
+     "inside a standing smoke": {
+      "n": 53,
+      "top6": 10,
+      "rest": 43,
+      "pct": 38.7
+     },
+     "within 30 s of leaving a standing smoke": {
+      "n": 28,
+      "top6": 7,
+      "rest": 21,
+      "pct": 20.4
+     },
+     "more than 30 s after leaving": {
+      "n": 53,
+      "top6": 15,
+      "rest": 38,
+      "pct": 38.7
+     },
+     "after the smoke dispersed around it": {
+      "n": 2,
+      "top6": 1,
+      "rest": 1,
+      "pct": 1.5
+     },
+     "never inside the outline": {
+      "n": 1,
+      "top6": 0,
+      "rest": 1,
+      "pct": 0.7
+     }
+    }
+   },
+   "sheltering cruiser": {
+    "n": 57,
+    "n_top6": 19,
+    "n_rest": 38,
+    "classes": {
+     "inside a standing smoke": {
+      "n": 11,
+      "top6": 3,
+      "rest": 8,
+      "pct": 19.3
+     },
+     "within 30 s of leaving a standing smoke": {
+      "n": 9,
+      "top6": 1,
+      "rest": 8,
+      "pct": 15.8
+     },
+     "more than 30 s after leaving": {
+      "n": 21,
+      "top6": 10,
+      "rest": 11,
+      "pct": 36.8
+     },
+     "after the smoke dispersed around it": {
+      "n": 6,
+      "top6": 3,
+      "rest": 3,
+      "pct": 10.5
+     },
+     "never inside the outline": {
+      "n": 10,
+      "top6": 2,
+      "rest": 8,
+      "pct": 17.5
+     }
+    }
+   },
+   "other ship": {
+    "n": 7,
+    "n_top6": 3,
+    "n_rest": 4,
+    "classes": {
+     "inside a standing smoke": {
+      "n": 1,
+      "top6": 0,
+      "rest": 1,
+      "pct": 14.3
+     },
+     "within 30 s of leaving a standing smoke": {
+      "n": 1,
+      "top6": 1,
+      "rest": 0,
+      "pct": 14.3
+     },
+     "more than 30 s after leaving": {
+      "n": 4,
+      "top6": 2,
+      "rest": 2,
+      "pct": 57.1
+     },
+     "after the smoke dispersed around it": {
+      "n": 0,
+      "top6": 0,
+      "rest": 0,
+      "pct": 0.0
+     },
+     "never inside the outline": {
+      "n": 1,
+      "top6": 0,
+      "rest": 1,
+      "pct": 14.3
+     }
+    }
+   },
+   "all": {
+    "n": 201,
+    "n_top6": 55,
+    "n_rest": 146,
+    "classes": {
+     "inside a standing smoke": {
+      "n": 65,
+      "top6": 13,
+      "rest": 52,
+      "pct": 32.3
+     },
+     "within 30 s of leaving a standing smoke": {
+      "n": 38,
+      "top6": 9,
+      "rest": 29,
+      "pct": 18.9
+     },
+     "more than 30 s after leaving": {
+      "n": 78,
+      "top6": 27,
+      "rest": 51,
+      "pct": 38.8
+     },
+     "after the smoke dispersed around it": {
+      "n": 8,
+      "top6": 4,
+      "rest": 4,
+      "pct": 4.0
+     },
+     "never inside the outline": {
+      "n": 12,
+      "top6": 2,
+      "rest": 10,
+      "pct": 6.0
+     }
+    }
+   }
+  },
+  "track_only_deaths": {
+   "smoking destroyer": {
+    "n": 69,
+    "n_top6": 22,
+    "n_rest": 47,
+    "classes": {
+     "inside a standing smoke": {
+      "n": 32,
+      "top6": 9,
+      "rest": 23,
+      "pct": 46.4
+     },
+     "within 30 s of leaving a standing smoke": {
+      "n": 14,
+      "top6": 5,
+      "rest": 9,
+      "pct": 20.3
+     },
+     "more than 30 s after leaving": {
+      "n": 22,
+      "top6": 8,
+      "rest": 14,
+      "pct": 31.9
+     },
+     "after the smoke dispersed around it": {
+      "n": 0,
+      "top6": 0,
+      "rest": 0,
+      "pct": 0.0
+     },
+     "never inside the outline": {
+      "n": 1,
+      "top6": 0,
+      "rest": 1,
+      "pct": 1.4
+     }
+    }
+   },
+   "sheltering cruiser": {
+    "n": 11,
+    "n_top6": 4,
+    "n_rest": 7,
+    "classes": {
+     "inside a standing smoke": {
+      "n": 5,
+      "top6": 1,
+      "rest": 4,
+      "pct": 45.5
+     },
+     "within 30 s of leaving a standing smoke": {
+      "n": 0,
+      "top6": 0,
+      "rest": 0,
+      "pct": 0.0
+     },
+     "more than 30 s after leaving": {
+      "n": 1,
+      "top6": 1,
+      "rest": 0,
+      "pct": 9.1
+     },
+     "after the smoke dispersed around it": {
+      "n": 3,
+      "top6": 2,
+      "rest": 1,
+      "pct": 27.3
+     },
+     "never inside the outline": {
+      "n": 2,
+      "top6": 0,
+      "rest": 2,
+      "pct": 18.2
+     }
+    }
+   },
+   "other ship": {
+    "n": 1,
+    "n_top6": 0,
+    "n_rest": 1,
+    "classes": {
+     "inside a standing smoke": {
+      "n": 0,
+      "top6": 0,
+      "rest": 0,
+      "pct": 0.0
+     },
+     "within 30 s of leaving a standing smoke": {
+      "n": 0,
+      "top6": 0,
+      "rest": 0,
+      "pct": 0.0
+     },
+     "more than 30 s after leaving": {
+      "n": 0,
+      "top6": 0,
+      "rest": 0,
+      "pct": 0.0
+     },
+     "after the smoke dispersed around it": {
+      "n": 0,
+      "top6": 0,
+      "rest": 0,
+      "pct": 0.0
+     },
+     "never inside the outline": {
+      "n": 1,
+      "top6": 0,
+      "rest": 1,
+      "pct": 100.0
+     }
+    }
+   },
+   "all": {
+    "n": 81,
+    "n_top6": 26,
+    "n_rest": 55,
+    "classes": {
+     "inside a standing smoke": {
+      "n": 37,
+      "top6": 10,
+      "rest": 27,
+      "pct": 45.7
+     },
+     "within 30 s of leaving a standing smoke": {
+      "n": 14,
+      "top6": 5,
+      "rest": 9,
+      "pct": 17.3
+     },
+     "more than 30 s after leaving": {
+      "n": 23,
+      "top6": 9,
+      "rest": 14,
+      "pct": 28.4
+     },
+     "after the smoke dispersed around it": {
+      "n": 3,
+      "top6": 2,
+      "rest": 1,
+      "pct": 3.7
+     },
+     "never inside the outline": {
+      "n": 4,
+      "top6": 0,
+      "rest": 4,
+      "pct": 4.9
+     }
+    }
+   }
+  },
+  "leavers": {
+   "n": 1172,
+   "median_smoke_left_s": 79.5,
+   "median_time_in_s": 41.3,
+   "left_with_20s_or_more": 1005
+  },
+  "rates": [
+   {
+    "label": "smoking destroyer, all",
+    "n_left": 862,
+    "n_stayed": 83,
+    "died": {
+     "left": 3.1,
+     "stayed": 3.6,
+     "n_left": 27,
+     "n_stayed": 3,
+     "diff": -0.5,
+     "ci": [
+      -6.0,
+      4.3
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 5.9,
+     "stayed": 6.0,
+     "n_left": 51,
+     "n_stayed": 5,
+     "diff": -0.1,
+     "ci": [
+      -6.6,
+      6.4
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 12.4,
+     "stayed": 24.1,
+     "n_left": 107,
+     "n_stayed": 20,
+     "diff": -11.7,
+     "ci": [
+      -23.1,
+      -1.7
+     ],
+     "clear": true
+    },
+    "det": {
+     "left_inside": 10.8,
+     "left_at_exit": 10.7,
+     "left_10s": 16.0,
+     "stayed_inside": 13.3,
+     "stayed_at_end": 24.1,
+     "stayed_10s": 39.8
+    },
+    "gross": {
+     "left": 4.1,
+     "stayed": 7.8
+    }
+   },
+   {
+    "label": "smoking destroyer, 50+ behind",
+    "n_left": 234,
+    "n_stayed": 23,
+    "died": {
+     "left": 5.6,
+     "stayed": 4.3,
+     "n_left": 13,
+     "n_stayed": 1,
+     "diff": 1.2,
+     "ci": [
+      -11.1,
+      8.8
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 10.3,
+     "stayed": 4.3,
+     "n_left": 24,
+     "n_stayed": 1,
+     "diff": 5.9,
+     "ci": [
+      -6.8,
+      14.6
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 17.1,
+     "stayed": 26.1,
+     "n_left": 40,
+     "n_stayed": 6,
+     "diff": -9.0,
+     "ci": [
+      -28.3,
+      8.1
+     ],
+     "clear": false
+    },
+    "det": {
+     "left_inside": 13.7,
+     "left_at_exit": 14.1,
+     "left_10s": 18.8,
+     "stayed_inside": 8.7,
+     "stayed_at_end": 30.4,
+     "stayed_10s": 39.1
+    },
+    "gross": {
+     "left": 6.3,
+     "stayed": 5.3
+    }
+   },
+   {
+    "label": "smoking destroyer, not behind",
+    "n_left": 628,
+    "n_stayed": 60,
+    "died": {
+     "left": 2.2,
+     "stayed": 3.3,
+     "n_left": 14,
+     "n_stayed": 2,
+     "diff": -1.1,
+     "ci": [
+      -5.5,
+      2.9
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 4.3,
+     "stayed": 6.7,
+     "n_left": 27,
+     "n_stayed": 4,
+     "diff": -2.4,
+     "ci": [
+      -9.0,
+      3.6
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 10.7,
+     "stayed": 23.3,
+     "n_left": 67,
+     "n_stayed": 14,
+     "diff": -12.7,
+     "ci": [
+      -25.9,
+      -0.5
+     ],
+     "clear": true
+    },
+    "det": {
+     "left_inside": 9.7,
+     "left_at_exit": 9.4,
+     "left_10s": 15.0,
+     "stayed_inside": 15.0,
+     "stayed_at_end": 21.7,
+     "stayed_10s": 40.0
+    },
+    "gross": {
+     "left": 3.3,
+     "stayed": 8.8
+    }
+   },
+   {
+    "label": "smoking destroyer, Top 6",
+    "n_left": 319,
+    "n_stayed": 26,
+    "died": {
+     "left": 1.9,
+     "stayed": 7.7,
+     "n_left": 6,
+     "n_stayed": 2,
+     "diff": -5.8,
+     "ci": [
+      -21.5,
+      2.8
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 3.4,
+     "stayed": 7.7,
+     "n_left": 11,
+     "n_stayed": 2,
+     "diff": -4.2,
+     "ci": [
+      -21.1,
+      5.6
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 9.1,
+     "stayed": 19.2,
+     "n_left": 29,
+     "n_stayed": 5,
+     "diff": -10.1,
+     "ci": [
+      -28.2,
+      7.7
+     ],
+     "clear": false
+    },
+    "det": {
+     "left_inside": 10.7,
+     "left_at_exit": 9.7,
+     "left_10s": 13.8,
+     "stayed_inside": 15.4,
+     "stayed_at_end": 15.4,
+     "stayed_10s": 34.6
+    },
+    "gross": {
+     "left": 3.0,
+     "stayed": 6.0
+    }
+   },
+   {
+    "label": "smoking destroyer, Rest",
+    "n_left": 543,
+    "n_stayed": 57,
+    "died": {
+     "left": 3.9,
+     "stayed": 1.8,
+     "n_left": 21,
+     "n_stayed": 1,
+     "diff": 2.1,
+     "ci": [
+      -2.0,
+      6.7
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 7.4,
+     "stayed": 5.3,
+     "n_left": 40,
+     "n_stayed": 3,
+     "diff": 2.1,
+     "ci": [
+      -4.5,
+      9.1
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 14.4,
+     "stayed": 26.3,
+     "n_left": 78,
+     "n_stayed": 15,
+     "diff": -12.0,
+     "ci": [
+      -26.0,
+      0.1
+     ],
+     "clear": false
+    },
+    "det": {
+     "left_inside": 10.9,
+     "left_at_exit": 11.2,
+     "left_10s": 17.3,
+     "stayed_inside": 12.3,
+     "stayed_at_end": 28.1,
+     "stayed_10s": 42.1
+    },
+    "gross": {
+     "left": 4.8,
+     "stayed": 8.7
+    }
+   },
+   {
+    "label": "smoking destroyer, Top 6, 50+ behind",
+    "n_left": 48,
+    "n_stayed": 3,
+    "died": {
+     "left": 2.1,
+     "stayed": null,
+     "n_left": 1,
+     "n_stayed": 1,
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 6.2,
+     "stayed": null,
+     "n_left": 3,
+     "n_stayed": 1,
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 14.6,
+     "stayed": null,
+     "n_left": 7,
+     "n_stayed": 2,
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "clear": false
+    },
+    "det": {
+     "left_inside": 12.5,
+     "left_at_exit": 12.5,
+     "left_10s": 20.8,
+     "stayed_inside": null,
+     "stayed_at_end": null,
+     "stayed_10s": null
+    },
+    "gross": {
+     "left": 4.3,
+     "stayed": 12.0
+    }
+   },
+   {
+    "label": "smoking destroyer, Rest, 50+ behind",
+    "n_left": 186,
+    "n_stayed": 20,
+    "died": {
+     "left": 6.5,
+     "stayed": 0.0,
+     "n_left": 12,
+     "n_stayed": 0,
+     "diff": 6.5,
+     "ci": [
+      3.2,
+      11.0
+     ],
+     "clear": true
+    },
+    "hurt": {
+     "left": 11.3,
+     "stayed": 0.0,
+     "n_left": 21,
+     "n_stayed": 0,
+     "diff": 11.3,
+     "ci": [
+      6.6,
+      17.4
+     ],
+     "clear": true
+    },
+    "hit": {
+     "left": 17.7,
+     "stayed": 20.0,
+     "n_left": 33,
+     "n_stayed": 4,
+     "diff": -2.3,
+     "ci": [
+      -23.0,
+      13.8
+     ],
+     "clear": false
+    },
+    "det": {
+     "left_inside": 14.0,
+     "left_at_exit": 14.5,
+     "left_10s": 18.3,
+     "stayed_inside": 10.0,
+     "stayed_at_end": 35.0,
+     "stayed_10s": 35.0
+    },
+    "gross": {
+     "left": 6.8,
+     "stayed": 4.3
+    }
+   },
+   {
+    "label": "smoking destroyer, Top 6, not behind",
+    "n_left": 271,
+    "n_stayed": 23,
+    "died": {
+     "left": 1.8,
+     "stayed": 4.3,
+     "n_left": 5,
+     "n_stayed": 1,
+     "diff": -2.5,
+     "ci": [
+      -10.9,
+      2.7
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 3.0,
+     "stayed": 4.3,
+     "n_left": 8,
+     "n_stayed": 1,
+     "diff": -1.4,
+     "ci": [
+      -9.8,
+      4.8
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 8.1,
+     "stayed": 13.0,
+     "n_left": 22,
+     "n_stayed": 3,
+     "diff": -4.9,
+     "ci": [
+      -21.1,
+      9.6
+     ],
+     "clear": false
+    },
+    "det": {
+     "left_inside": 10.3,
+     "left_at_exit": 9.2,
+     "left_10s": 12.5,
+     "stayed_inside": 17.4,
+     "stayed_at_end": 17.4,
+     "stayed_10s": 30.4
+    },
+    "gross": {
+     "left": 2.8,
+     "stayed": 5.2
+    }
+   },
+   {
+    "label": "smoking destroyer, Rest, not behind",
+    "n_left": 357,
+    "n_stayed": 37,
+    "died": {
+     "left": 2.5,
+     "stayed": 2.7,
+     "n_left": 9,
+     "n_stayed": 1,
+     "diff": -0.2,
+     "ci": [
+      -5.0,
+      4.5
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 5.3,
+     "stayed": 8.1,
+     "n_left": 19,
+     "n_stayed": 3,
+     "diff": -2.8,
+     "ci": [
+      -13.7,
+      5.8
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 12.6,
+     "stayed": 29.7,
+     "n_left": 45,
+     "n_stayed": 11,
+     "diff": -17.1,
+     "ci": [
+      -36.5,
+      -0.4
+     ],
+     "clear": true
+    },
+    "det": {
+     "left_inside": 9.2,
+     "left_at_exit": 9.5,
+     "left_10s": 16.8,
+     "stayed_inside": 13.5,
+     "stayed_at_end": 24.3,
+     "stayed_10s": 45.9
+    },
+    "gross": {
+     "left": 3.8,
+     "stayed": 11.0
+    }
+   },
+   {
+    "label": "smoking destroyer, left with 20 s+ of smoke remaining (stayers unchanged)",
+    "n_left": 764,
+    "n_stayed": 83,
+    "died": {
+     "left": 3.4,
+     "stayed": 3.6,
+     "n_left": 26,
+     "n_stayed": 3,
+     "diff": -0.2,
+     "ci": [
+      -5.6,
+      4.6
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 6.3,
+     "stayed": 6.0,
+     "n_left": 48,
+     "n_stayed": 5,
+     "diff": 0.3,
+     "ci": [
+      -6.5,
+      6.8
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 13.1,
+     "stayed": 24.1,
+     "n_left": 100,
+     "n_stayed": 20,
+     "diff": -11.0,
+     "ci": [
+      -21.3,
+      0.2
+     ],
+     "clear": false
+    },
+    "det": {
+     "left_inside": 11.1,
+     "left_at_exit": 10.9,
+     "left_10s": 15.7,
+     "stayed_inside": 13.3,
+     "stayed_at_end": 24.1,
+     "stayed_10s": 39.8
+    },
+    "gross": {
+     "left": 4.3,
+     "stayed": 7.8
+    }
+   },
+   {
+    "label": "sheltering cruiser, all",
+    "n_left": 310,
+    "n_stayed": 117,
+    "died": {
+     "left": 2.9,
+     "stayed": 2.6,
+     "n_left": 9,
+     "n_stayed": 3,
+     "diff": 0.3,
+     "ci": [
+      -3.5,
+      3.6
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 6.1,
+     "stayed": 8.5,
+     "n_left": 19,
+     "n_stayed": 10,
+     "diff": -2.4,
+     "ci": [
+      -8.2,
+      2.6
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 20.6,
+     "stayed": 23.1,
+     "n_left": 64,
+     "n_stayed": 27,
+     "diff": -2.4,
+     "ci": [
+      -10.1,
+      4.4
+     ],
+     "clear": false
+    },
+    "det": {
+     "left_inside": 12.9,
+     "left_at_exit": 17.1,
+     "left_10s": 32.6,
+     "stayed_inside": 15.4,
+     "stayed_at_end": 24.8,
+     "stayed_10s": 36.8
+    },
+    "gross": {
+     "left": 6.7,
+     "stayed": 8.1
+    }
+   },
+   {
+    "label": "sheltering cruiser, 50+ behind",
+    "n_left": 71,
+    "n_stayed": 36,
+    "died": {
+     "left": 4.2,
+     "stayed": 2.8,
+     "n_left": 3,
+     "n_stayed": 1,
+     "diff": 1.4,
+     "ci": [
+      -7.4,
+      8.3
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 9.9,
+     "stayed": 13.9,
+     "n_left": 7,
+     "n_stayed": 5,
+     "diff": -4.0,
+     "ci": [
+      -17.3,
+      8.9
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 28.2,
+     "stayed": 33.3,
+     "n_left": 20,
+     "n_stayed": 12,
+     "diff": -5.2,
+     "ci": [
+      -25.6,
+      16.9
+     ],
+     "clear": false
+    },
+    "det": {
+     "left_inside": 14.1,
+     "left_at_exit": 22.5,
+     "left_10s": 45.1,
+     "stayed_inside": 22.2,
+     "stayed_at_end": 41.7,
+     "stayed_10s": 55.6
+    },
+    "gross": {
+     "left": 9.1,
+     "stayed": 12.7
+    }
+   },
+   {
+    "label": "sheltering cruiser, not behind",
+    "n_left": 239,
+    "n_stayed": 81,
+    "died": {
+     "left": 2.5,
+     "stayed": 2.5,
+     "n_left": 6,
+     "n_stayed": 2,
+     "diff": 0.0,
+     "ci": [
+      -4.5,
+      3.8
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 5.0,
+     "stayed": 6.2,
+     "n_left": 12,
+     "n_stayed": 5,
+     "diff": -1.2,
+     "ci": [
+      -8.6,
+      5.3
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 18.4,
+     "stayed": 18.5,
+     "n_left": 44,
+     "n_stayed": 15,
+     "diff": -0.1,
+     "ci": [
+      -8.7,
+      5.9
+     ],
+     "clear": false
+    },
+    "det": {
+     "left_inside": 12.6,
+     "left_at_exit": 15.5,
+     "left_10s": 28.9,
+     "stayed_inside": 12.3,
+     "stayed_at_end": 17.3,
+     "stayed_10s": 28.4
+    },
+    "gross": {
+     "left": 6.0,
+     "stayed": 6.1
+    }
+   },
+   {
+    "label": "sheltering cruiser, Top 6",
+    "n_left": 143,
+    "n_stayed": 59,
+    "died": {
+     "left": 0.7,
+     "stayed": 1.7,
+     "n_left": 1,
+     "n_stayed": 1,
+     "diff": -1.0,
+     "ci": [
+      -6.8,
+      1.7
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 4.2,
+     "stayed": 6.8,
+     "n_left": 6,
+     "n_stayed": 4,
+     "diff": -2.6,
+     "ci": [
+      -9.8,
+      1.9
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 18.9,
+     "stayed": 20.3,
+     "n_left": 27,
+     "n_stayed": 12,
+     "diff": -1.5,
+     "ci": [
+      -15.5,
+      6.0
+     ],
+     "clear": false
+    },
+    "det": {
+     "left_inside": 8.4,
+     "left_at_exit": 13.3,
+     "left_10s": 26.6,
+     "stayed_inside": 13.6,
+     "stayed_at_end": 20.3,
+     "stayed_10s": 27.1
+    },
+    "gross": {
+     "left": 5.5,
+     "stayed": 7.6
+    }
+   },
+   {
+    "label": "sheltering cruiser, Rest",
+    "n_left": 167,
+    "n_stayed": 58,
+    "died": {
+     "left": 4.8,
+     "stayed": 3.4,
+     "n_left": 8,
+     "n_stayed": 2,
+     "diff": 1.3,
+     "ci": [
+      -5.8,
+      6.7
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 7.8,
+     "stayed": 10.3,
+     "n_left": 13,
+     "n_stayed": 6,
+     "diff": -2.6,
+     "ci": [
+      -13.0,
+      6.5
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 22.2,
+     "stayed": 25.9,
+     "n_left": 37,
+     "n_stayed": 15,
+     "diff": -3.7,
+     "ci": [
+      -13.4,
+      7.8
+     ],
+     "clear": false
+    },
+    "det": {
+     "left_inside": 16.8,
+     "left_at_exit": 20.4,
+     "left_10s": 37.7,
+     "stayed_inside": 17.2,
+     "stayed_at_end": 29.3,
+     "stayed_10s": 46.6
+    },
+    "gross": {
+     "left": 7.8,
+     "stayed": 8.6
+    }
+   },
+   {
+    "label": "sheltering cruiser, Top 6, 50+ behind",
+    "n_left": 24,
+    "n_stayed": 14,
+    "died": {
+     "left": 0.0,
+     "stayed": 0.0,
+     "n_left": 0,
+     "n_stayed": 0,
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 4.2,
+     "stayed": 7.1,
+     "n_left": 1,
+     "n_stayed": 1,
+     "diff": -3.0,
+     "ci": [
+      -15.8,
+      9.4
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 33.3,
+     "stayed": 28.6,
+     "n_left": 8,
+     "n_stayed": 4,
+     "diff": 4.8,
+     "ci": [
+      -23.6,
+      36.3
+     ],
+     "clear": false
+    },
+    "det": {
+     "left_inside": 12.5,
+     "left_at_exit": 20.8,
+     "left_10s": 37.5,
+     "stayed_inside": 21.4,
+     "stayed_at_end": 35.7,
+     "stayed_10s": 42.9
+    },
+    "gross": {
+     "left": 8.5,
+     "stayed": 9.6
+    }
+   },
+   {
+    "label": "sheltering cruiser, Rest, 50+ behind",
+    "n_left": 47,
+    "n_stayed": 22,
+    "died": {
+     "left": 6.4,
+     "stayed": 4.5,
+     "n_left": 3,
+     "n_stayed": 1,
+     "diff": 1.8,
+     "ci": [
+      -14.3,
+      12.9
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 12.8,
+     "stayed": 18.2,
+     "n_left": 6,
+     "n_stayed": 4,
+     "diff": -5.4,
+     "ci": [
+      -27.0,
+      14.5
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 25.5,
+     "stayed": 36.4,
+     "n_left": 12,
+     "n_stayed": 8,
+     "diff": -10.8,
+     "ci": [
+      -35.6,
+      17.9
+     ],
+     "clear": false
+    },
+    "det": {
+     "left_inside": 14.9,
+     "left_at_exit": 23.4,
+     "left_10s": 48.9,
+     "stayed_inside": 22.7,
+     "stayed_at_end": 45.5,
+     "stayed_10s": 63.6
+    },
+    "gross": {
+     "left": 9.4,
+     "stayed": 14.6
+    }
+   },
+   {
+    "label": "sheltering cruiser, Top 6, not behind",
+    "n_left": 119,
+    "n_stayed": 45,
+    "died": {
+     "left": 0.8,
+     "stayed": 2.2,
+     "n_left": 1,
+     "n_stayed": 1,
+     "diff": -1.4,
+     "ci": [
+      -10.5,
+      2.2
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 4.2,
+     "stayed": 6.7,
+     "n_left": 5,
+     "n_stayed": 3,
+     "diff": -2.5,
+     "ci": [
+      -17.7,
+      5.5
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 16.0,
+     "stayed": 17.8,
+     "n_left": 19,
+     "n_stayed": 8,
+     "diff": -1.8,
+     "ci": [
+      -14.7,
+      3.4
+     ],
+     "clear": false
+    },
+    "det": {
+     "left_inside": 7.6,
+     "left_at_exit": 11.8,
+     "left_10s": 24.4,
+     "stayed_inside": 11.1,
+     "stayed_at_end": 15.6,
+     "stayed_10s": 22.2
+    },
+    "gross": {
+     "left": 4.9,
+     "stayed": 6.9
+    }
+   },
+   {
+    "label": "sheltering cruiser, Rest, not behind",
+    "n_left": 120,
+    "n_stayed": 36,
+    "died": {
+     "left": 4.2,
+     "stayed": 2.8,
+     "n_left": 5,
+     "n_stayed": 1,
+     "diff": 1.4,
+     "ci": [
+      -5.6,
+      7.6
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 5.8,
+     "stayed": 5.6,
+     "n_left": 7,
+     "n_stayed": 2,
+     "diff": 0.3,
+     "ci": [
+      -7.5,
+      8.6
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 20.8,
+     "stayed": 19.4,
+     "n_left": 25,
+     "n_stayed": 7,
+     "diff": 1.4,
+     "ci": [
+      -11.8,
+      13.5
+     ],
+     "clear": false
+    },
+    "det": {
+     "left_inside": 17.5,
+     "left_at_exit": 19.2,
+     "left_10s": 33.3,
+     "stayed_inside": 13.9,
+     "stayed_at_end": 19.4,
+     "stayed_10s": 36.1
+    },
+    "gross": {
+     "left": 7.2,
+     "stayed": 5.0
+    }
+   },
+   {
+    "label": "sheltering cruiser, left with 20 s+ of smoke remaining (stayers unchanged)",
+    "n_left": 241,
+    "n_stayed": 117,
+    "died": {
+     "left": 2.5,
+     "stayed": 2.6,
+     "n_left": 6,
+     "n_stayed": 3,
+     "diff": -0.1,
+     "ci": [
+      -4.2,
+      3.5
+     ],
+     "clear": false
+    },
+    "hurt": {
+     "left": 5.8,
+     "stayed": 8.5,
+     "n_left": 14,
+     "n_stayed": 10,
+     "diff": -2.7,
+     "ci": [
+      -9.2,
+      2.5
+     ],
+     "clear": false
+    },
+    "hit": {
+     "left": 19.5,
+     "stayed": 23.1,
+     "n_left": 47,
+     "n_stayed": 27,
+     "diff": -3.6,
+     "ci": [
+      -10.8,
+      3.3
+     ],
+     "clear": false
+    },
+    "det": {
+     "left_inside": 14.1,
+     "left_at_exit": 17.4,
+     "left_10s": 31.1,
+     "stayed_inside": 15.4,
+     "stayed_at_end": 24.8,
+     "stayed_10s": 36.8
+    },
+    "gross": {
+     "left": 6.7,
+     "stayed": 8.1
+    }
+   }
+  ],
+  "hazard": [
+   {
+    "who": "smoking destroyer",
+    "state": "all",
+    "inside_half_minutes": 1405,
+    "inside_deaths": 53,
+    "inside_deaths_per_100": 3.8,
+    "inside_loss_pct": 6.4,
+    "inside_detected_pct": 12.0,
+    "left_n": 862,
+    "left_deaths_per_100": 3.1,
+    "left_loss_pct": 4.1,
+    "stayed_n": 83,
+    "stayed_deaths_per_100": 3.6,
+    "stayed_loss_pct": 7.8
+   },
+   {
+    "who": "smoking destroyer",
+    "state": "behind 50+",
+    "inside_half_minutes": 347,
+    "inside_deaths": 30,
+    "inside_deaths_per_100": 8.6,
+    "inside_loss_pct": 9.1,
+    "inside_detected_pct": 13.6,
+    "left_n": 234,
+    "left_deaths_per_100": 5.6,
+    "left_loss_pct": 6.3,
+    "stayed_n": 23,
+    "stayed_deaths_per_100": 4.3,
+    "stayed_loss_pct": 5.3
+   },
+   {
+    "who": "smoking destroyer",
+    "state": "not behind",
+    "inside_half_minutes": 1057,
+    "inside_deaths": 23,
+    "inside_deaths_per_100": 2.2,
+    "inside_loss_pct": 5.5,
+    "inside_detected_pct": 11.5,
+    "left_n": 628,
+    "left_deaths_per_100": 2.2,
+    "left_loss_pct": 3.3,
+    "stayed_n": 60,
+    "stayed_deaths_per_100": 3.3,
+    "stayed_loss_pct": 8.8
+   },
+   {
+    "who": "sheltering cruiser",
+    "state": "all",
+    "inside_half_minutes": 1042,
+    "inside_deaths": 11,
+    "inside_deaths_per_100": 1.1,
+    "inside_loss_pct": 3.4,
+    "inside_detected_pct": 6.9,
+    "left_n": 310,
+    "left_deaths_per_100": 2.9,
+    "left_loss_pct": 6.7,
+    "stayed_n": 117,
+    "stayed_deaths_per_100": 2.6,
+    "stayed_loss_pct": 8.1
+   },
+   {
+    "who": "sheltering cruiser",
+    "state": "behind 50+",
+    "inside_half_minutes": 240,
+    "inside_deaths": 5,
+    "inside_deaths_per_100": 2.1,
+    "inside_loss_pct": 4.8,
+    "inside_detected_pct": 9.9,
+    "left_n": 71,
+    "left_deaths_per_100": 4.2,
+    "left_loss_pct": 9.1,
+    "stayed_n": 36,
+    "stayed_deaths_per_100": 2.8,
+    "stayed_loss_pct": 12.7
+   },
+   {
+    "who": "sheltering cruiser",
+    "state": "not behind",
+    "inside_half_minutes": 802,
+    "inside_deaths": 6,
+    "inside_deaths_per_100": 0.7,
+    "inside_loss_pct": 3.0,
+    "inside_detected_pct": 6.1,
+    "left_n": 239,
+    "left_deaths_per_100": 2.5,
+    "left_loss_pct": 6.0,
+    "stayed_n": 81,
+    "stayed_deaths_per_100": 2.5,
+    "stayed_loss_pct": 6.1
+   }
+  ],
+  "leaver_deaths_clans": {
+   "top6": {
+    "BONKZ": 3,
+    "HTDOG": 2,
+    "KITE": 1,
+    "RESIN": 1
+   },
+   "rest": {
+    "MACH": 4,
+    "HFANS": 3,
+    "UYSC": 3,
+    "KITED": 3,
+    "BONKY": 2,
+    "OGF": 2,
+    "BTLST": 2,
+    "MANBA": 1,
+    "SCCC2": 1,
+    "NGA": 1,
+    "INCA": 1,
+    "RMN": 1,
+    "EPOXY": 1,
+    "RSR": 1,
+    "-BN-": 1,
+    "PFANS": 1,
+    "MZY": 1
+   }
+  },
+  "leaver_deaths_clans_text": "Top 6: BONKZ 3, HTDOG 2, KITE 1, RESIN 1 | Rest: MACH 4, HFANS 3, UYSC 3, KITED 3, BONKY 2, OGF 2, BTLST 2, MANBA 1, SCCC2 1, NGA 1, INCA 1, RMN 1, EPOXY 1, RSR 1, -BN- 1, PFANS 1, MZY 1",
+  "events": {
+   "total": 1432,
+   "followed": 1372,
+   "left": 1172,
+   "stayed": 200,
+   "died_inside": 64
+  }
+ },
+ "radar": {
+  "batch": {
+   "label": "Batch death list in destroyer smokes (the 124 deaths round 5 used)",
+   "deaths": 124,
+   "lit40": 65,
+   "lit40_pct": 52.4,
+   "lit20": 56,
+   "lit20_pct": 45.2,
+   "distinct_ships": 65,
+   "top6": 10,
+   "rest": 55,
+   "deaths_top6": 29,
+   "deaths_rest": 95,
+   "top6_20": 7,
+   "rest_20": 49,
+   "who": {
+    "smoking destroyer": 41,
+    "sheltering cruiser": 22,
+    "other ship": 2
+   },
+   "who_20": {
+    "smoking destroyer": 35,
+    "sheltering cruiser": 19,
+    "other ship": 2
+   },
+   "who_all": {
+    "smoking destroyer": 69,
+    "sheltering cruiser": 48,
+    "other ship": 7
+   },
+   "by_map": {
+    "Sleeping Giant": 20,
+    "Okinawa": 12,
+    "Sea of Fortune": 9,
+    "Loop": 8,
+    "Hotspot": 7,
+    "Land of Fire": 7,
+    "Mountain Range": 2
+   },
+   "deaths_by_map": {
+    "Sleeping Giant": 28,
+    "Hotspot": 18,
+    "Okinawa": 18,
+    "Land of Fire": 18,
+    "Sea of Fortune": 16,
+    "Loop": 15,
+    "Mountain Range": 11
+   },
+   "by_map_cap": {
+    "Okinawa C": 7,
+    "Sleeping Giant A": 7,
+    "Sleeping Giant B": 5,
+    "Sleeping Giant C": 5,
+    "Sea of Fortune C": 4,
+    "Hotspot D": 4,
+    "Okinawa A": 4,
+    "Loop C": 3,
+    "Loop B": 3,
+    "Land of Fire A": 3
+   },
+   "by_time": {
+    "10-15 min": 21,
+    "5-10 min": 29,
+    "0-5 min": 12,
+    "15-20 min": 3
+   },
+   "by_state": {
+    "behind 50+": 37,
+    "level": 17,
+    "ahead 50+": 11
+   },
+   "deaths_by_state": {
+    "behind 50+": 64,
+    "level": 36,
+    "ahead 50+": 24
+   },
+   "clans": {
+    "top6": {
+     "RESIN": 4,
+     "BONKZ": 3,
+     "KITE": 1,
+     "VRTUS": 1,
+     "HTDOG": 1
+    },
+    "rest": {
+     "EPOXY": 7,
+     "UYSC": 6,
+     "HFANS": 6,
+     "BTLST": 5,
+     "5D": 5,
+     "REEEE": 4,
+     "-BN-": 3,
+     "RSR": 3,
+     "KITED": 3,
+     "MZY": 3,
+     "SCCC2": 2,
+     "PFANS": 2,
+     "MANBA": 1,
+     "KM": 1,
+     "KSE": 1,
+     "INCA": 1,
+     "MACH": 1,
+     "MACHX": 1
+    }
+   },
+   "clans_text": "Top 6: RESIN 4, BONKZ 3, KITE 1, VRTUS 1, HTDOG 1 | Rest: EPOXY 7, UYSC 6, HFANS 6, BTLST 5, 5D 5, REEEE 4, -BN- 3, RSR 3, KITED 3, MZY 3, SCCC2 2, PFANS 2, MANBA 1, KM 1, KSE 1, INCA 1, MACH 1, MACHX 1",
+   "attributed": 64,
+   "unattributed": 1,
+   "src_class": {
+    "cruiser": 56,
+    "destroyer": 8
+   },
+   "src_ship": {
+    "Moskva": 24,
+    "Des Moines": 7,
+    "Brisbane": 6,
+    "Gdańsk": 5,
+    "Petropavlovsk": 5,
+    "Minotaur": 4,
+    "San Martín": 3,
+    "Salem": 3,
+    "Småland": 2,
+    "Worcester": 2,
+    "Svea": 1,
+    "Stalingrad": 1,
+    "Yueyang": 1
+   },
+   "dist_km": {
+    "n": 64,
+    "min": 2.5,
+    "q25": 7.9,
+    "median": 9.3,
+    "q75": 10.6,
+    "max": 11.8
+   },
+   "dist_bands": {
+    "under 6 km": 6,
+    "6-8 km": 11,
+    "8-10 km": 24,
+    "10 km+": 23
+   },
+   "share_of_range": {
+    "n": 64,
+    "median": 88.8,
+    "q25": 77.2,
+    "q75": 95.1,
+    "beyond_80": 45,
+    "under_60": 5
+   },
+   "by_src_class": {
+    "cruiser": {
+     "n": 56,
+     "median_km": 9.5,
+     "median_share": 89.3
+    },
+    "destroyer": {
+     "n": 8,
+     "median_km": 7.2,
+     "median_share": 85.4
+    }
+   },
+   "ambiguous": 2,
+   "ambiguous_pct": 3.1,
+   "src_in_smoke": 2,
+   "src_in_smoke_pct": 3.1,
+   "target_in_this_smoke": 21,
+   "target_in_any_smoke": 22,
+   "lit_for_s": {
+    "median": 14.0,
+    "q25": 7.2,
+    "q75": 25.2,
+    "max": 41.4,
+    "under_10": 25,
+    "over_20": 24
+   },
+   "lit_at_death": 34,
+   "median_gap_to_death_s": 11.0
+  },
+  "track": {
+   "label": "All track deaths of ships at risk in destroyer smokes (smoker, inside, behind; activation to 20 s after dispersal)",
+   "deaths": 201,
+   "lit40": 92,
+   "lit40_pct": 45.8,
+   "lit20": 79,
+   "lit20_pct": 39.3,
+   "distinct_ships": 91,
+   "top6": 25,
+   "rest": 67,
+   "deaths_top6": 55,
+   "deaths_rest": 146,
+   "top6_20": 18,
+   "rest_20": 61,
+   "who": {
+    "smoking destroyer": 68,
+    "sheltering cruiser": 22,
+    "other ship": 2
+   },
+   "who_20": {
+    "smoking destroyer": 59,
+    "sheltering cruiser": 18,
+    "other ship": 2
+   },
+   "who_all": {
+    "smoking destroyer": 137,
+    "sheltering cruiser": 57,
+    "other ship": 7
+   },
+   "by_map": {
+    "Sleeping Giant": 26,
+    "Hotspot": 14,
+    "Okinawa": 12,
+    "Sea of Fortune": 12,
+    "Land of Fire": 11,
+    "Loop": 10,
+    "Mountain Range": 7
+   },
+   "deaths_by_map": {
+    "Sleeping Giant": 39,
+    "Hotspot": 37,
+    "Land of Fire": 29,
+    "Loop": 27,
+    "Mountain Range": 25,
+    "Okinawa": 23,
+    "Sea of Fortune": 21
+   },
+   "by_map_cap": {
+    "Sleeping Giant A": 9,
+    "Hotspot D": 7,
+    "Okinawa C": 7,
+    "Land of Fire A": 6,
+    "Mountain Range C": 6,
+    "Sleeping Giant C": 6,
+    "Sleeping Giant D": 6,
+    "Okinawa A": 5,
+    "Sleeping Giant B": 5,
+    "Loop A": 4
+   },
+   "by_time": {
+    "10-15 min": 32,
+    "5-10 min": 43,
+    "0-5 min": 14,
+    "15-20 min": 3
+   },
+   "by_state": {
+    "behind 50+": 49,
+    "level": 24,
+    "ahead 50+": 19
+   },
+   "deaths_by_state": {
+    "behind 50+": 97,
+    "level": 55,
+    "ahead 50+": 49
+   },
+   "clans": {
+    "top6": {
+     "BONKZ": 10,
+     "RESIN": 9,
+     "VRTUS": 3,
+     "KITE": 1,
+     "HTDOG": 1,
+     "H-SR": 1
+    },
+    "rest": {
+     "EPOXY": 8,
+     "BTLST": 6,
+     "UYSC": 6,
+     "HFANS": 6,
+     "5D": 5,
+     "KSE": 4,
+     "RSR": 4,
+     "MZY": 4,
+     "REEEE": 4,
+     "-BN-": 3,
+     "KITED": 3,
+     "MACH": 2,
+     "NGA": 2,
+     "SCCC2": 2,
+     "PFANS": 2,
+     "MANBA": 1,
+     "KM": 1,
+     "KSC": 1,
+     "INCA": 1,
+     "BONKY": 1,
+     "MACHX": 1
+    }
+   },
+   "clans_text": "Top 6: BONKZ 10, RESIN 9, VRTUS 3, KITE 1, HTDOG 1, H-SR 1 | Rest: EPOXY 8, BTLST 6, UYSC 6, HFANS 6, 5D 5, KSE 4, RSR 4, MZY 4, REEEE 4, -BN- 3, KITED 3, MACH 2, NGA 2, SCCC2 2, PFANS 2, MANBA 1, KM 1, KSC 1, INCA 1, BONKY 1, MACHX 1",
+   "attributed": 91,
+   "unattributed": 1,
+   "src_class": {
+    "cruiser": 80,
+    "destroyer": 11
+   },
+   "src_ship": {
+    "Moskva": 26,
+    "Brisbane": 10,
+    "Petropavlovsk": 10,
+    "Des Moines": 10,
+    "San Martín": 7,
+    "Gdańsk": 6,
+    "Salem": 5,
+    "Minotaur": 4,
+    "Stalingrad": 3,
+    "Svea": 3,
+    "Småland": 3,
+    "Yueyang": 2,
+    "Worcester": 2
+   },
+   "dist_km": {
+    "n": 91,
+    "min": 2.5,
+    "q25": 7.7,
+    "median": 9.0,
+    "q75": 10.4,
+    "max": 11.9
+   },
+   "dist_bands": {
+    "under 6 km": 7,
+    "6-8 km": 19,
+    "8-10 km": 37,
+    "10 km+": 28
+   },
+   "share_of_range": {
+    "n": 91,
+    "median": 88.1,
+    "q25": 75.7,
+    "q75": 94.8,
+    "beyond_80": 62,
+    "under_60": 8
+   },
+   "by_src_class": {
+    "cruiser": {
+     "n": 80,
+     "median_km": 9.3,
+     "median_share": 88.3
+    },
+    "destroyer": {
+     "n": 11,
+     "median_km": 7.0,
+     "median_share": 87.8
+    }
+   },
+   "ambiguous": 5,
+   "ambiguous_pct": 5.4,
+   "src_in_smoke": 3,
+   "src_in_smoke_pct": 3.3,
+   "target_in_this_smoke": 22,
+   "target_in_any_smoke": 23,
+   "lit_for_s": {
+    "median": 13.6,
+    "q25": 7.9,
+    "q75": 24.8,
+    "max": 41.9,
+    "under_10": 32,
+    "over_20": 30
+   },
+   "lit_at_death": 42,
+   "median_gap_to_death_s": 10.5
+  },
+  "vs_round5_deaths": {
+   "strict": 19,
+   "broad": 45,
+   "log40": 65,
+   "strict_and_log": 19,
+   "strict_not_log": 0,
+   "log_not_strict": 46,
+   "broad_and_log": 44,
+   "broad_not_log": 1,
+   "log_not_broad": 21,
+   "log_in_this_smoke": 21,
+   "log_not_broad_in_smoke": 3
+  },
+  "strict_check": {
+   "n": 19,
+   "same_radar_ship": 18,
+   "median_old_km": 10.0,
+   "median_log_km": 10.1,
+   "median_abs_diff_m": 0
+  },
+  "rates": {
+   "rad_any": [
+    {
+     "label": "radar log: a covered ship radar-lit while the smoke stood: with",
+     "n": 388,
+     "n_top6": 149,
+     "n_rest": 239,
+     "deaths": 81,
+     "per_100": 20.9,
+     "ci": [
+      16.1,
+      27.0
+     ],
+     "top6": 12.1,
+     "rest": 26.4,
+     "gap_ci": [
+      -21.2,
+      -6.8
+     ],
+     "clear": true
+    },
+    {
+     "label": "radar log: a covered ship radar-lit while the smoke stood: without",
+     "n": 686,
+     "n_top6": 238,
+     "n_rest": 448,
+     "deaths": 43,
+     "per_100": 6.3,
+     "ci": [
+      4.2,
+      9.0
+     ],
+     "top6": 4.6,
+     "rest": 7.1,
+     "gap_ci": [
+      -7.4,
+      2.4
+     ],
+     "clear": false
+    },
+    {
+     "label": "radar log: a covered ship radar-lit while the smoke stood: with, ahead 50+",
+     "n": 114,
+     "n_top6": 58,
+     "n_rest": 56,
+     "deaths": 15,
+     "per_100": 13.2,
+     "ci": [
+      6.8,
+      21.2
+     ],
+     "top6": 10.3,
+     "rest": 16.1,
+     "gap_ci": [
+      -18.8,
+      9.5
+     ],
+     "clear": false
+    },
+    {
+     "label": "radar log: a covered ship radar-lit while the smoke stood: without, ahead 50+",
+     "n": 258,
+     "n_top6": 109,
+     "n_rest": 149,
+     "deaths": 9,
+     "per_100": 3.5,
+     "ci": [
+      1.7,
+      6.0
+     ],
+     "top6": 2.8,
+     "rest": 4.0,
+     "gap_ci": [
+      -5.6,
+      2.2
+     ],
+     "clear": false
+    },
+    {
+     "label": "radar log: a covered ship radar-lit while the smoke stood: with, level",
+     "n": 168,
+     "n_top6": 66,
+     "n_rest": 102,
+     "deaths": 26,
+     "per_100": 15.5,
+     "ci": [
+      10.6,
+      22.0
+     ],
+     "top6": 6.1,
+     "rest": 21.6,
+     "gap_ci": [
+      -24.5,
+      -7.9
+     ],
+     "clear": true
+    },
+    {
+     "label": "radar log: a covered ship radar-lit while the smoke stood: without, level",
+     "n": 257,
+     "n_top6": 95,
+     "n_rest": 162,
+     "deaths": 10,
+     "per_100": 3.9,
+     "ci": [
+      1.6,
+      6.3
+     ],
+     "top6": 2.1,
+     "rest": 4.9,
+     "gap_ci": [
+      -6.7,
+      1.2
+     ],
+     "clear": false
+    },
+    {
+     "label": "radar log: a covered ship radar-lit while the smoke stood: with, behind 50+",
+     "n": 106,
+     "n_top6": 25,
+     "n_rest": 81,
+     "deaths": 40,
+     "per_100": 37.7,
+     "ci": [
+      27.8,
+      47.7
+     ],
+     "top6": 32.0,
+     "rest": 39.5,
+     "gap_ci": [
+      -24.4,
+      8.4
+     ],
+     "clear": false
+    },
+    {
+     "label": "radar log: a covered ship radar-lit while the smoke stood: without, behind 50+",
+     "n": 171,
+     "n_top6": 34,
+     "n_rest": 137,
+     "deaths": 24,
+     "per_100": 14.0,
+     "ci": [
+      8.2,
+      21.0
+     ],
+     "top6": 17.6,
+     "rest": 13.1,
+     "gap_ci": [
+      -14.3,
+      17.0
+     ],
+     "clear": false
+    }
+   ],
+   "rad_in": [
+    {
+     "label": "radar log: lit while placed inside this smoke: with",
+     "n": 120,
+     "n_top6": 44,
+     "n_rest": 76,
+     "deaths": 31,
+     "per_100": 25.8,
+     "ci": [
+      16.4,
+      37.4
+     ],
+     "top6": 13.6,
+     "rest": 32.9,
+     "gap_ci": [
+      -34.3,
+      2.9
+     ],
+     "clear": false
+    },
+    {
+     "label": "radar log: lit while placed inside this smoke: without",
+     "n": 954,
+     "n_top6": 343,
+     "n_rest": 611,
+     "deaths": 93,
+     "per_100": 9.7,
+     "ci": [
+      7.4,
+      12.7
+     ],
+     "top6": 6.7,
+     "rest": 11.5,
+     "gap_ci": [
+      -9.4,
+      -0.4
+     ],
+     "clear": true
+    },
+    {
+     "label": "radar log: lit while placed inside this smoke: with, ahead 50+",
+     "n": 37,
+     "n_top6": 17,
+     "n_rest": 20,
+     "deaths": 6,
+     "per_100": 16.2,
+     "ci": [
+      2.6,
+      33.3
+     ],
+     "top6": 11.8,
+     "rest": 20.0,
+     "gap_ci": [
+      -37.6,
+      22.8
+     ],
+     "clear": false
+    },
+    {
+     "label": "radar log: lit while placed inside this smoke: without, ahead 50+",
+     "n": 335,
+     "n_top6": 150,
+     "n_rest": 185,
+     "deaths": 18,
+     "per_100": 5.4,
+     "ci": [
+      3.2,
+      8.0
+     ],
+     "top6": 4.7,
+     "rest": 5.9,
+     "gap_ci": [
+      -6.6,
+      3.3
+     ],
+     "clear": false
+    },
+    {
+     "label": "radar log: lit while placed inside this smoke: with, level",
+     "n": 48,
+     "n_top6": 18,
+     "n_rest": 30,
+     "deaths": 10,
+     "per_100": 20.8,
+     "ci": [
+      8.8,
+      38.9
+     ],
+     "top6": 5.6,
+     "rest": 30.0,
+     "gap_ci": [
+      -51.0,
+      -6.5
+     ],
+     "clear": true
+    },
+    {
+     "label": "radar log: lit while placed inside this smoke: without, level",
+     "n": 377,
+     "n_top6": 143,
+     "n_rest": 234,
+     "deaths": 26,
+     "per_100": 6.9,
+     "ci": [
+      4.7,
+      9.4
+     ],
+     "top6": 3.5,
+     "rest": 9.0,
+     "gap_ci": [
+      -9.8,
+      -1.8
+     ],
+     "clear": true
+    },
+    {
+     "label": "radar log: lit while placed inside this smoke: with, behind 50+",
+     "n": 35,
+     "n_top6": 9,
+     "n_rest": 26,
+     "deaths": 15,
+     "per_100": 42.9,
+     "ci": [
+      27.9,
+      62.2
+     ],
+     "top6": 33.3,
+     "rest": 46.2,
+     "gap_ci": [
+      -48.9,
+      16.7
+     ],
+     "clear": false
+    },
+    {
+     "label": "radar log: lit while placed inside this smoke: without, behind 50+",
+     "n": 242,
+     "n_top6": 50,
+     "n_rest": 192,
+     "deaths": 49,
+     "per_100": 20.2,
+     "ci": [
+      13.7,
+      27.1
+     ],
+     "top6": 22.0,
+     "rest": 19.8,
+     "gap_ci": [
+      -13.4,
+      14.7
+     ],
+     "clear": false
+    }
+   ],
+   "old_strict": [
+    {
+     "label": "round 5 strict: with",
+     "n": 120,
+     "n_top6": 44,
+     "n_rest": 76,
+     "deaths": 30,
+     "per_100": 25.0,
+     "ci": [
+      16.5,
+      36.4
+     ],
+     "top6": 13.6,
+     "rest": 31.6,
+     "gap_ci": [
+      -34.3,
+      1.3
+     ],
+     "clear": false
+    },
+    {
+     "label": "round 5 strict: without",
+     "n": 954,
+     "n_top6": 343,
+     "n_rest": 611,
+     "deaths": 94,
+     "per_100": 9.9,
+     "ci": [
+      7.5,
+      13.1
+     ],
+     "top6": 6.7,
+     "rest": 11.6,
+     "gap_ci": [
+      -9.8,
+      -0.6
+     ],
+     "clear": true
+    },
+    {
+     "label": "round 5 strict: with, ahead 50+",
+     "n": 36,
+     "n_top6": 17,
+     "n_rest": 19,
+     "deaths": 4,
+     "per_100": 11.1,
+     "ci": [
+      2.5,
+      24.1
+     ],
+     "top6": 11.8,
+     "rest": 10.5,
+     "gap_ci": [
+      -18.0,
+      28.3
+     ],
+     "clear": false
+    },
+    {
+     "label": "round 5 strict: without, ahead 50+",
+     "n": 336,
+     "n_top6": 150,
+     "n_rest": 186,
+     "deaths": 20,
+     "per_100": 6.0,
+     "ci": [
+      3.7,
+      8.8
+     ],
+     "top6": 4.7,
+     "rest": 7.0,
+     "gap_ci": [
+      -7.4,
+      2.6
+     ],
+     "clear": false
+    },
+    {
+     "label": "round 5 strict: with, level",
+     "n": 48,
+     "n_top6": 18,
+     "n_rest": 30,
+     "deaths": 10,
+     "per_100": 20.8,
+     "ci": [
+      9.3,
+      37.5
+     ],
+     "top6": 5.6,
+     "rest": 30.0,
+     "gap_ci": [
+      -50.0,
+      -5.6
+     ],
+     "clear": true
+    },
+    {
+     "label": "round 5 strict: without, level",
+     "n": 377,
+     "n_top6": 143,
+     "n_rest": 234,
+     "deaths": 26,
+     "per_100": 6.9,
+     "ci": [
+      4.4,
+      9.6
+     ],
+     "top6": 3.5,
+     "rest": 9.0,
+     "gap_ci": [
+      -9.4,
+      -2.1
+     ],
+     "clear": true
+    },
+    {
+     "label": "round 5 strict: with, behind 50+",
+     "n": 36,
+     "n_top6": 9,
+     "n_rest": 27,
+     "deaths": 16,
+     "per_100": 44.4,
+     "ci": [
+      29.2,
+      64.5
+     ],
+     "top6": 33.3,
+     "rest": 48.1,
+     "gap_ci": [
+      -48.2,
+      15.8
+     ],
+     "clear": false
+    },
+    {
+     "label": "round 5 strict: without, behind 50+",
+     "n": 241,
+     "n_top6": 50,
+     "n_rest": 191,
+     "deaths": 48,
+     "per_100": 19.9,
+     "ci": [
+      13.4,
+      27.2
+     ],
+     "top6": 22.0,
+     "rest": 19.4,
+     "gap_ci": [
+      -12.5,
+      13.6
+     ],
+     "clear": false
+    }
+   ],
+   "old_broad": [
+    {
+     "label": "round 5 broad: with",
+     "n": 297,
+     "n_top6": 111,
+     "n_rest": 186,
+     "deaths": 83,
+     "per_100": 27.9,
+     "ci": [
+      22.2,
+      35.2
+     ],
+     "top6": 17.1,
+     "rest": 34.4,
+     "gap_ci": [
+      -25.9,
+      -8.1
+     ],
+     "clear": true
+    },
+    {
+     "label": "round 5 broad: without",
+     "n": 777,
+     "n_top6": 276,
+     "n_rest": 501,
+     "deaths": 41,
+     "per_100": 5.3,
+     "ci": [
+      3.3,
+      7.9
+     ],
+     "top6": 3.6,
+     "rest": 6.2,
+     "gap_ci": [
+      -6.9,
+      1.0
+     ],
+     "clear": false
+    },
+    {
+     "label": "round 5 broad: with, ahead 50+",
+     "n": 86,
+     "n_top6": 42,
+     "n_rest": 44,
+     "deaths": 14,
+     "per_100": 16.3,
+     "ci": [
+      9.2,
+      25.3
+     ],
+     "top6": 11.9,
+     "rest": 20.5,
+     "gap_ci": [
+      -22.6,
+      8.1
+     ],
+     "clear": false
+    },
+    {
+     "label": "round 5 broad: without, ahead 50+",
+     "n": 286,
+     "n_top6": 125,
+     "n_rest": 161,
+     "deaths": 10,
+     "per_100": 3.5,
+     "ci": [
+      1.9,
+      5.4
+     ],
+     "top6": 3.2,
+     "rest": 3.7,
+     "gap_ci": [
+      -4.5,
+      2.4
+     ],
+     "clear": false
+    },
+    {
+     "label": "round 5 broad: with, level",
+     "n": 125,
+     "n_top6": 48,
+     "n_rest": 77,
+     "deaths": 29,
+     "per_100": 23.2,
+     "ci": [
+      16.7,
+      30.8
+     ],
+     "top6": 10.4,
+     "rest": 31.2,
+     "gap_ci": [
+      -30.7,
+      -11.1
+     ],
+     "clear": true
+    },
+    {
+     "label": "round 5 broad: without, level",
+     "n": 300,
+     "n_top6": 113,
+     "n_rest": 187,
+     "deaths": 7,
+     "per_100": 2.3,
+     "ci": [
+      0.7,
+      4.5
+     ],
+     "top6": 0.9,
+     "rest": 3.2,
+     "gap_ci": [
+      -5.7,
+      0.7
+     ],
+     "clear": false
+    },
+    {
+     "label": "round 5 broad: with, behind 50+",
+     "n": 86,
+     "n_top6": 21,
+     "n_rest": 65,
+     "deaths": 40,
+     "per_100": 46.5,
+     "ci": [
+      34.7,
+      57.7
+     ],
+     "top6": 42.9,
+     "rest": 47.7,
+     "gap_ci": [
+      -27.1,
+      17.6
+     ],
+     "clear": false
+    },
+    {
+     "label": "round 5 broad: without, behind 50+",
+     "n": 191,
+     "n_top6": 38,
+     "n_rest": 153,
+     "deaths": 24,
+     "per_100": 12.6,
+     "ci": [
+      7.5,
+      18.9
+     ],
+     "top6": 13.2,
+     "rest": 12.4,
+     "gap_ci": [
+      -12.9,
+      10.1
+     ],
+     "clear": false
+    }
+   ],
+   "rad_any_track": [
+    {
+     "label": "radar log: with (track deaths)",
+     "n": 388,
+     "n_top6": 149,
+     "n_rest": 239,
+     "deaths": 112,
+     "per_100": 28.9,
+     "ci": [
+      23.7,
+      34.6
+     ],
+     "top6": 22.8,
+     "rest": 32.6,
+     "gap_ci": [
+      -21.1,
+      -0.1
+     ],
+     "clear": true
+    },
+    {
+     "label": "radar log: without (track deaths)",
+     "n": 686,
+     "n_top6": 238,
+     "n_rest": 448,
+     "deaths": 89,
+     "per_100": 13.0,
+     "ci": [
+      9.7,
+      17.6
+     ],
+     "top6": 8.8,
+     "rest": 15.2,
+     "gap_ci": [
+      -14.2,
+      -0.1
+     ],
+     "clear": true
+    },
+    {
+     "label": "radar log: with, ahead 50+ (track deaths)",
+     "n": 114,
+     "n_top6": 58,
+     "n_rest": 56,
+     "deaths": 26,
+     "per_100": 22.8,
+     "ci": [
+      13.5,
+      32.5
+     ],
+     "top6": 20.7,
+     "rest": 25.0,
+     "gap_ci": [
+      -23.2,
+      12.6
+     ],
+     "clear": false
+    },
+    {
+     "label": "radar log: without, ahead 50+ (track deaths)",
+     "n": 258,
+     "n_top6": 109,
+     "n_rest": 149,
+     "deaths": 23,
+     "per_100": 8.9,
+     "ci": [
+      6.0,
+      13.2
+     ],
+     "top6": 7.3,
+     "rest": 10.1,
+     "gap_ci": [
+      -10.5,
+      2.2
+     ],
+     "clear": false
+    },
+    {
+     "label": "radar log: with, level (track deaths)",
+     "n": 168,
+     "n_top6": 66,
+     "n_rest": 102,
+     "deaths": 33,
+     "per_100": 19.6,
+     "ci": [
+      14.6,
+      25.9
+     ],
+     "top6": 13.6,
+     "rest": 23.5,
+     "gap_ci": [
+      -20.3,
+      -1.6
+     ],
+     "clear": true
+    },
+    {
+     "label": "radar log: without, level (track deaths)",
+     "n": 257,
+     "n_top6": 95,
+     "n_rest": 162,
+     "deaths": 22,
+     "per_100": 8.6,
+     "ci": [
+      5.0,
+      12.6
+     ],
+     "top6": 5.3,
+     "rest": 10.5,
+     "gap_ci": [
+      -12.2,
+      2.7
+     ],
+     "clear": false
+    },
+    {
+     "label": "radar log: with, behind 50+ (track deaths)",
+     "n": 106,
+     "n_top6": 25,
+     "n_rest": 81,
+     "deaths": 53,
+     "per_100": 50.0,
+     "ci": [
+      39.8,
+      60.2
+     ],
+     "top6": 52.0,
+     "rest": 49.4,
+     "gap_ci": [
+      -27.0,
+      33.3
+     ],
+     "clear": false
+    },
+    {
+     "label": "radar log: without, behind 50+ (track deaths)",
+     "n": 171,
+     "n_top6": 34,
+     "n_rest": 137,
+     "deaths": 44,
+     "per_100": 25.7,
+     "ci": [
+      16.5,
+      37.7
+     ],
+     "top6": 23.5,
+     "rest": 26.3,
+     "gap_ci": [
+      -21.8,
+      10.5
+     ],
+     "clear": false
+    }
+   ]
+  },
+  "rate_diffs": {
+   "rad_any": {
+    "all": {
+     "diff": 14.6,
+     "ci": [
+      9.4,
+      20.8
+     ],
+     "clear": true
+    },
+    "ahead 50+": {
+     "diff": 9.7,
+     "ci": [
+      2.1,
+      17.6
+     ],
+     "clear": true
+    },
+    "level": {
+     "diff": 11.6,
+     "ci": [
+      6.3,
+      18.8
+     ],
+     "clear": true
+    },
+    "behind 50+": {
+     "diff": 23.7,
+     "ci": [
+      13.1,
+      33.8
+     ],
+     "clear": true
+    }
+   },
+   "rad_in": {
+    "all": {
+     "diff": 16.1,
+     "ci": [
+      7.3,
+      28.2
+     ],
+     "clear": true
+    },
+    "ahead 50+": {
+     "diff": 10.8,
+     "ci": [
+      -3.6,
+      31.1
+     ],
+     "clear": false
+    },
+    "level": {
+     "diff": 13.9,
+     "ci": [
+      1.8,
+      30.5
+     ],
+     "clear": true
+    },
+    "behind 50+": {
+     "diff": 22.6,
+     "ci": [
+      5.4,
+      43.0
+     ],
+     "clear": true
+    }
+   },
+   "old_strict": {
+    "all": {
+     "diff": 15.1,
+     "ci": [
+      6.9,
+      27.1
+     ],
+     "clear": true
+    },
+    "ahead 50+": {
+     "diff": 5.2,
+     "ci": [
+      -4.3,
+      18.2
+     ],
+     "clear": false
+    },
+    "level": {
+     "diff": 13.9,
+     "ci": [
+      1.3,
+      30.5
+     ],
+     "clear": true
+    },
+    "behind 50+": {
+     "diff": 24.5,
+     "ci": [
+      7.9,
+      44.2
+     ],
+     "clear": true
+    }
+   },
+   "old_broad": {
+    "all": {
+     "diff": 22.7,
+     "ci": [
+      16.5,
+      30.0
+     ],
+     "clear": true
+    },
+    "ahead 50+": {
+     "diff": 12.8,
+     "ci": [
+      5.5,
+      21.8
+     ],
+     "clear": true
+    },
+    "level": {
+     "diff": 20.9,
+     "ci": [
+      14.4,
+      29.2
+     ],
+     "clear": true
+    },
+    "behind 50+": {
+     "diff": 33.9,
+     "ci": [
+      21.8,
+      45.0
+     ],
+     "clear": true
+    }
+   },
+   "rad_any_track": {
+    "all": {
+     "diff": 15.9,
+     "ci": [
+      10.8,
+      20.8
+     ],
+     "clear": true
+    },
+    "ahead 50+": {
+     "diff": 13.9,
+     "ci": [
+      3.0,
+      23.7
+     ],
+     "clear": true
+    },
+    "level": {
+     "diff": 11.1,
+     "ci": [
+      4.0,
+      18.0
+     ],
+     "clear": true
+    },
+    "behind 50+": {
+     "diff": 24.3,
+     "ci": [
+      9.8,
+      36.2
+     ],
+     "clear": true
+    }
+   }
+  },
+  "reach": {
+   "rad_any": {
+    "top6": 38.5,
+    "rest": 34.8,
+    "gap_ci": [
+     -5.6,
+     10.8
+    ]
+   },
+   "rad_in": {
+    "top6": 11.4,
+    "rest": 11.1,
+    "gap_ci": [
+     -4.4,
+     4.4
+    ]
+   },
+   "old_strict": {
+    "top6": 11.4,
+    "rest": 11.1,
+    "gap_ci": [
+     -4.6,
+     4.5
+    ]
+   },
+   "old_broad": {
+    "top6": 28.7,
+    "rest": 27.1,
+    "gap_ci": [
+     -6.7,
+     8.7
+    ]
+   }
+  },
+  "smoke_by_smoke": [
+   {
+    "old": "round 5 strict",
+    "new": "radar log: lit while placed inside this smoke",
+    "old_n": 120,
+    "new_n": 120,
+    "both": 117,
+    "old_only": 3,
+    "new_only": 3,
+    "neither": 951
+   },
+   {
+    "old": "round 5 strict",
+    "new": "radar log: a covered ship radar-lit while the smoke stood",
+    "old_n": 120,
+    "new_n": 388,
+    "both": 117,
+    "old_only": 3,
+    "new_only": 271,
+    "neither": 683
+   },
+   {
+    "old": "round 5 broad",
+    "new": "radar log: a covered ship radar-lit while the smoke stood",
+    "old_n": 297,
+    "new_n": 388,
+    "both": 275,
+    "old_only": 22,
+    "new_only": 113,
+    "neither": 664
+   },
+   {
+    "old": "round 5 broad",
+    "new": "radar log: lit while placed inside this smoke",
+    "old_n": 297,
+    "new_n": 120,
+    "both": 119,
+    "old_only": 178,
+    "new_only": 1,
+    "neither": 776
+   }
+  ],
+  "log_only": {
+   "label": "in the log, not in round 5 broad",
+   "n": 113,
+   "n_top6": 44,
+   "n_rest": 69,
+   "deaths": 7,
+   "per_100": 6.2,
+   "ci": [
+    1.5,
+    12.3
+   ],
+   "top6": 2.3,
+   "rest": 8.7,
+   "gap_ci": [
+    -15.2,
+    1.7
+   ],
+   "clear": false
+  },
+  "calm": {
+   "old": {
+    "label": "round 5 definition (not 50+ behind, no strict or broad radar)",
+    "n": 585,
+    "n_top6": 238,
+    "n_rest": 347,
+    "deaths": 17,
+    "per_100": 2.9,
+    "ci": [
+     1.7,
+     4.5
+    ],
+    "top6": 2.1,
+    "rest": 3.5,
+    "gap_ci": [
+     -4.3,
+     0.8
+    ],
+    "clear": false
+   },
+   "new": {
+    "label": "radar log (not 50+ behind, no covered ship radar-lit while the smoke stood)",
+    "n": 515,
+    "n_top6": 204,
+    "n_rest": 311,
+    "deaths": 19,
+    "per_100": 3.7,
+    "ci": [
+     2.2,
+     5.6
+    ],
+    "top6": 2.5,
+    "rest": 4.5,
+    "gap_ci": [
+     -5.4,
+     0.9
+    ],
+    "clear": false
+   },
+   "new_in": {
+    "label": "not 50+ behind, no ship lit inside this smoke (log)",
+    "n": 712,
+    "n_top6": 293,
+    "n_rest": 419,
+    "deaths": 44,
+    "per_100": 6.2,
+    "ci": [
+     4.7,
+     8.0
+    ],
+    "top6": 4.1,
+    "rest": 7.6,
+    "gap_ci": [
+     -6.4,
+     -1.0
+    ],
+    "clear": true
+   },
+   "new_track": {
+    "label": "radar log definition, track deaths",
+    "n": 515,
+    "n_top6": 204,
+    "n_rest": 311,
+    "deaths": 45,
+    "per_100": 8.7,
+    "ci": [
+     6.7,
+     11.6
+    ],
+    "top6": 6.4,
+    "rest": 10.3,
+    "gap_ci": [
+     -8.7,
+     0.4
+    ],
+    "clear": false
+   },
+   "old_track": {
+    "label": "round 5 definition, track deaths",
+    "n": 585,
+    "n_top6": 238,
+    "n_rest": 347,
+    "deaths": 45,
+    "per_100": 7.7,
+    "ci": [
+     5.8,
+     10.4
+    ],
+    "top6": 5.9,
+    "rest": 8.9,
+    "gap_ci": [
+     -7.3,
+     0.4
+    ],
+    "clear": false
+   },
+   "other_new": {
+    "n": 559,
+    "deaths": 105
+   },
+   "total_deaths": 124,
+   "total_track_deaths": 201
+  }
+ }
+}

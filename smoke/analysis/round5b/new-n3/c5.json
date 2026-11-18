@@ -1,0 +1,4813 @@
+{
+ "note": "C5 Loop. before_X_W = a radar lit span on an enemy destroyer, attributed to a radar of the smoking team, overlapped the W seconds before the smoke was activated. any = anywhere on the map; near = while that destroyer was within 3 km of the edge of the cap nearest to the smoke. base = share of the moments between the game's first and last smoke (cut at the smoker's death) at which the same test is true (exact, no random draws). earlier / later = the round 5 control windows (120 to 60 s before; 60 to 120 s after). after = same test for the W seconds after activation; afterstart = a lit span began in those W seconds.",
+ "groups": {
+  "Daring on Loop": {
+   "n": 48,
+   "clans": 11,
+   "clans_txt": "Top 6: KITE 3 | Rest: REEEE 11, KITED 9, EPOXY 6, MACHX 3, -BN- 3, BONKY 3, SCCC2 3, HFANS 3, KSC 2, NGA 2",
+   "top6_n": 3,
+   "rest_n": 45,
+   "before_any_30": {
+    "k": 11,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 22.9,
+    "ci": [
+     11.1,
+     36.2
+    ],
+    "base_pct": 23.4,
+    "expected_k": 11.2,
+    "minus_base": -0.5,
+    "minus_base_ci": [
+     -11.5,
+     10.9
+    ],
+    "minus_base_clear": false
+   },
+   "after_any_30": {
+    "k": 10,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 20.8,
+    "ci": [
+     10.5,
+     33.3
+    ],
+    "base_pct": 22.8,
+    "expected_k": 10.9,
+    "minus_base": -1.9,
+    "minus_base_ci": [
+     -13.0,
+     8.3
+    ],
+    "minus_base_clear": false
+   },
+   "afterstart_any_30": {
+    "k": 8,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 16.7,
+    "ci": [
+     7.9,
+     26.2
+    ]
+   },
+   "beforestart_any_30": {
+    "k": 7,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 14.6,
+    "ci": [
+     3.3,
+     30.4
+    ]
+   },
+   "before_any_60": {
+    "k": 17,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 35.4,
+    "ci": [
+     26.7,
+     46.9
+    ],
+    "base_pct": 36.6,
+    "expected_k": 17.6,
+    "minus_base": -1.2,
+    "minus_base_ci": [
+     -8.3,
+     6.9
+    ],
+    "minus_base_clear": false
+   },
+   "after_any_60": {
+    "k": 14,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 29.2,
+    "ci": [
+     16.2,
+     44.0
+    ],
+    "base_pct": 35.9,
+    "expected_k": 17.2,
+    "minus_base": -6.7,
+    "minus_base_ci": [
+     -18.6,
+     6.6
+    ],
+    "minus_base_clear": false
+   },
+   "afterstart_any_60": {
+    "k": 12,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 25.0,
+    "ci": [
+     14.3,
+     34.9
+    ]
+   },
+   "beforestart_any_60": {
+    "k": 14,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 29.2,
+    "ci": [
+     18.2,
+     41.3
+    ]
+   },
+   "before_any_90": {
+    "k": 19,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 39.6,
+    "ci": [
+     28.8,
+     51.1
+    ],
+    "base_pct": 48.5,
+    "expected_k": 23.3,
+    "minus_base": -8.9,
+    "minus_base_ci": [
+     -15.7,
+     -1.9
+    ],
+    "minus_base_clear": true
+   },
+   "after_any_90": {
+    "k": 16,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 33.3,
+    "ci": [
+     20.0,
+     48.3
+    ],
+    "base_pct": 47.6,
+    "expected_k": 22.8,
+    "minus_base": -14.2,
+    "minus_base_ci": [
+     -28.3,
+     -0.6
+    ],
+    "minus_base_clear": true
+   },
+   "afterstart_any_90": {
+    "k": 15,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 31.2,
+    "ci": [
+     20.0,
+     42.0
+    ]
+   },
+   "beforestart_any_90": {
+    "k": 17,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 35.4,
+    "ci": [
+     26.3,
+     45.2
+    ]
+   },
+   "earlier_any": {
+    "k": 20,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 41.7,
+    "ci": [
+     25.8,
+     58.0
+    ]
+   },
+   "later_any": {
+    "k": 11,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 22.9,
+    "ci": [
+     11.1,
+     35.9
+    ]
+   },
+   "before_any_60_with_unattributed": {
+    "k": 17,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 35.4,
+    "ci": [
+     26.7,
+     45.2
+    ]
+   },
+   "before_any_60_minus_earlier_any": {
+    "diff": -6.2,
+    "ci": [
+     -20.0,
+     14.6
+    ],
+    "clear": false
+   },
+   "before_any_60_minus_later_any": {
+    "diff": 12.5,
+    "ci": [
+     2.9,
+     23.1
+    ],
+    "clear": true
+   },
+   "before_near_30": {
+    "k": 1,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 2.1,
+    "ci": [
+     0.0,
+     7.9
+    ],
+    "base_pct": 5.0,
+    "expected_k": 2.4,
+    "minus_base": -2.9,
+    "minus_base_ci": [
+     -8.2,
+     2.9
+    ],
+    "minus_base_clear": false
+   },
+   "after_near_30": {
+    "k": 5,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 10.4,
+    "ci": [
+     2.5,
+     21.9
+    ],
+    "base_pct": 4.9,
+    "expected_k": 2.3,
+    "minus_base": 5.5,
+    "minus_base_ci": [
+     -1.7,
+     15.2
+    ],
+    "minus_base_clear": false
+   },
+   "afterstart_near_30": {
+    "k": 4,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 8.3,
+    "ci": [
+     0.0,
+     19.5
+    ]
+   },
+   "beforestart_near_30": {
+    "k": 1,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 2.1,
+    "ci": [
+     0.0,
+     8.3
+    ]
+   },
+   "before_near_60": {
+    "k": 2,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 4.2,
+    "ci": [
+     0.0,
+     12.2
+    ],
+    "base_pct": 8.0,
+    "expected_k": 3.9,
+    "minus_base": -3.9,
+    "minus_base_ci": [
+     -11.1,
+     4.9
+    ],
+    "minus_base_clear": false
+   },
+   "after_near_60": {
+    "k": 5,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 10.4,
+    "ci": [
+     2.7,
+     22.2
+    ],
+    "base_pct": 7.7,
+    "expected_k": 3.7,
+    "minus_base": 2.7,
+    "minus_base_ci": [
+     -4.8,
+     11.0
+    ],
+    "minus_base_clear": false
+   },
+   "afterstart_near_60": {
+    "k": 4,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 8.3,
+    "ci": [
+     0.0,
+     19.4
+    ]
+   },
+   "beforestart_near_60": {
+    "k": 1,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 2.1,
+    "ci": [
+     0.0,
+     7.9
+    ]
+   },
+   "before_near_90": {
+    "k": 3,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 6.2,
+    "ci": [
+     0.0,
+     13.2
+    ],
+    "base_pct": 11.0,
+    "expected_k": 5.3,
+    "minus_base": -4.7,
+    "minus_base_ci": [
+     -14.9,
+     3.7
+    ],
+    "minus_base_clear": false
+   },
+   "after_near_90": {
+    "k": 6,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 12.5,
+    "ci": [
+     2.9,
+     27.3
+    ],
+    "base_pct": 10.5,
+    "expected_k": 5.1,
+    "minus_base": 2.0,
+    "minus_base_ci": [
+     -8.0,
+     11.2
+    ],
+    "minus_base_clear": false
+   },
+   "afterstart_near_90": {
+    "k": 5,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 10.4,
+    "ci": [
+     2.2,
+     22.0
+    ]
+   },
+   "beforestart_near_90": {
+    "k": 3,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 6.2,
+    "ci": [
+     1.4,
+     14.3
+    ]
+   },
+   "earlier_near": {
+    "k": 5,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 10.4,
+    "ci": [
+     4.7,
+     18.0
+    ]
+   },
+   "later_near": {
+    "k": 1,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 2.1,
+    "ci": [
+     0.0,
+     7.9
+    ]
+   },
+   "before_near_60_with_unattributed": {
+    "k": 2,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 4.2,
+    "ci": [
+     0.0,
+     12.2
+    ]
+   },
+   "before_near_60_minus_earlier_near": {
+    "diff": -6.2,
+    "ci": [
+     -11.1,
+     0.0
+    ],
+    "clear": false
+   },
+   "before_near_60_minus_later_near": {
+    "diff": 2.1,
+    "ci": [
+     0.0,
+     8.6
+    ],
+    "clear": false
+   },
+   "lit_now_any": {
+    "k": 3,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 6.2,
+    "ci": [
+     0.0,
+     18.4
+    ]
+   },
+   "lit_now_near": {
+    "k": 1,
+    "n": 48,
+    "clans": 11,
+    "small_n": false,
+    "pct": 2.1,
+    "ci": [
+     0.0,
+     7.7
+    ]
+   },
+   "top6_vs_rest_before_any_60": {
+    "top6_n": 3,
+    "rest_n": 45,
+    "top6_k": 1,
+    "rest_k": 16,
+    "note": "too few in one group"
+   },
+   "top6_vs_rest_before_near_60": {
+    "top6_n": 3,
+    "rest_n": 45,
+    "top6_k": 0,
+    "rest_k": 2,
+    "note": "too few in one group"
+   },
+   "top6_vs_rest_after_near_60": {
+    "top6_n": 3,
+    "rest_n": 45,
+    "top6_k": 0,
+    "rest_k": 5,
+    "note": "too few in one group"
+   }
+  },
+  "Daring on other maps": {
+   "n": 152,
+   "clans": 19,
+   "clans_txt": "Top 6: HTDOG 21, VRTUS 5, KITE 3, BONKZ 2 | Rest: SCCC2 23, -BN- 19, KSC 11, HFANS 10, EPOXY 10, MZY 9, KITED 7, MACHX 7, KSE 5, BTLST 4, INCA 4, MACH 4, UYSC 3, BONKY 3, NGA 2",
+   "top6_n": 31,
+   "rest_n": 121,
+   "before_any_30": {
+    "k": 42,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 27.6,
+    "ci": [
+     20.5,
+     36.9
+    ],
+    "base_pct": 26.8,
+    "expected_k": 40.8,
+    "minus_base": 0.8,
+    "minus_base_ci": [
+     -5.2,
+     7.3
+    ],
+    "minus_base_clear": false
+   },
+   "after_any_30": {
+    "k": 54,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 35.5,
+    "ci": [
+     29.1,
+     42.1
+    ],
+    "base_pct": 27.3,
+    "expected_k": 41.4,
+    "minus_base": 8.3,
+    "minus_base_ci": [
+     2.5,
+     12.9
+    ],
+    "minus_base_clear": true
+   },
+   "afterstart_any_30": {
+    "k": 38,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 25.0,
+    "ci": [
+     18.8,
+     32.0
+    ]
+   },
+   "beforestart_any_30": {
+    "k": 31,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 20.4,
+    "ci": [
+     14.0,
+     27.8
+    ]
+   },
+   "before_any_60": {
+    "k": 61,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 40.1,
+    "ci": [
+     31.1,
+     50.6
+    ],
+    "base_pct": 39.7,
+    "expected_k": 60.4,
+    "minus_base": 0.4,
+    "minus_base_ci": [
+     -7.0,
+     6.6
+    ],
+    "minus_base_clear": false
+   },
+   "after_any_60": {
+    "k": 71,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 46.7,
+    "ci": [
+     41.1,
+     54.4
+    ],
+    "base_pct": 40.1,
+    "expected_k": 61.0,
+    "minus_base": 6.6,
+    "minus_base_ci": [
+     2.1,
+     12.5
+    ],
+    "minus_base_clear": true
+   },
+   "afterstart_any_60": {
+    "k": 58,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 38.2,
+    "ci": [
+     31.5,
+     45.6
+    ]
+   },
+   "beforestart_any_60": {
+    "k": 53,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 34.9,
+    "ci": [
+     26.4,
+     44.8
+    ]
+   },
+   "before_any_90": {
+    "k": 77,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 50.7,
+    "ci": [
+     42.9,
+     60.0
+    ],
+    "base_pct": 50.3,
+    "expected_k": 76.5,
+    "minus_base": 0.4,
+    "minus_base_ci": [
+     -5.0,
+     7.2
+    ],
+    "minus_base_clear": false
+   },
+   "after_any_90": {
+    "k": 80,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 52.6,
+    "ci": [
+     44.9,
+     60.5
+    ],
+    "base_pct": 50.6,
+    "expected_k": 76.9,
+    "minus_base": 2.0,
+    "minus_base_ci": [
+     -3.3,
+     7.4
+    ],
+    "minus_base_clear": false
+   },
+   "afterstart_any_90": {
+    "k": 69,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 45.4,
+    "ci": [
+     39.1,
+     52.4
+    ]
+   },
+   "beforestart_any_90": {
+    "k": 67,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 44.1,
+    "ci": [
+     36.1,
+     53.8
+    ]
+   },
+   "earlier_any": {
+    "k": 59,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 38.8,
+    "ci": [
+     31.1,
+     46.9
+    ]
+   },
+   "later_any": {
+    "k": 44,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 28.9,
+    "ci": [
+     23.5,
+     34.9
+    ]
+   },
+   "before_any_60_with_unattributed": {
+    "k": 62,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 40.8,
+    "ci": [
+     32.0,
+     50.0
+    ]
+   },
+   "before_any_60_minus_earlier_any": {
+    "diff": 1.3,
+    "ci": [
+     -10.7,
+     13.6
+    ],
+    "clear": false
+   },
+   "before_any_60_minus_later_any": {
+    "diff": 11.2,
+    "ci": [
+     1.9,
+     20.7
+    ],
+    "clear": true
+   },
+   "before_near_30": {
+    "k": 18,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 11.8,
+    "ci": [
+     7.2,
+     17.4
+    ],
+    "base_pct": 10.4,
+    "expected_k": 15.8,
+    "minus_base": 1.4,
+    "minus_base_ci": [
+     -2.2,
+     6.0
+    ],
+    "minus_base_clear": false
+   },
+   "after_near_30": {
+    "k": 27,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 17.8,
+    "ci": [
+     12.5,
+     25.2
+    ],
+    "base_pct": 10.6,
+    "expected_k": 16.0,
+    "minus_base": 7.2,
+    "minus_base_ci": [
+     3.3,
+     12.2
+    ],
+    "minus_base_clear": true
+   },
+   "afterstart_near_30": {
+    "k": 18,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 11.8,
+    "ci": [
+     8.0,
+     16.4
+    ]
+   },
+   "beforestart_near_30": {
+    "k": 15,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 9.9,
+    "ci": [
+     4.8,
+     15.9
+    ]
+   },
+   "before_near_60": {
+    "k": 25,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 16.4,
+    "ci": [
+     10.5,
+     24.2
+    ],
+    "base_pct": 16.4,
+    "expected_k": 25.0,
+    "minus_base": 0.0,
+    "minus_base_ci": [
+     -3.4,
+     4.2
+    ],
+    "minus_base_clear": false
+   },
+   "after_near_60": {
+    "k": 36,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 23.7,
+    "ci": [
+     17.0,
+     32.8
+    ],
+    "base_pct": 16.5,
+    "expected_k": 25.0,
+    "minus_base": 7.2,
+    "minus_base_ci": [
+     2.8,
+     12.8
+    ],
+    "minus_base_clear": true
+   },
+   "afterstart_near_60": {
+    "k": 27,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 17.8,
+    "ci": [
+     12.6,
+     25.6
+    ]
+   },
+   "beforestart_near_60": {
+    "k": 20,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 13.2,
+    "ci": [
+     7.4,
+     20.8
+    ]
+   },
+   "before_near_90": {
+    "k": 32,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 21.1,
+    "ci": [
+     12.7,
+     31.0
+    ],
+    "base_pct": 21.3,
+    "expected_k": 32.4,
+    "minus_base": -0.2,
+    "minus_base_ci": [
+     -3.9,
+     5.7
+    ],
+    "minus_base_clear": false
+   },
+   "after_near_90": {
+    "k": 41,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 27.0,
+    "ci": [
+     19.6,
+     36.6
+    ],
+    "base_pct": 21.2,
+    "expected_k": 32.2,
+    "minus_base": 5.8,
+    "minus_base_ci": [
+     1.3,
+     10.6
+    ],
+    "minus_base_clear": true
+   },
+   "afterstart_near_90": {
+    "k": 34,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 22.4,
+    "ci": [
+     15.8,
+     29.3
+    ]
+   },
+   "beforestart_near_90": {
+    "k": 27,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 17.8,
+    "ci": [
+     11.2,
+     26.2
+    ]
+   },
+   "earlier_near": {
+    "k": 25,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 16.4,
+    "ci": [
+     10.3,
+     22.9
+    ]
+   },
+   "later_near": {
+    "k": 17,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 11.2,
+    "ci": [
+     7.3,
+     15.7
+    ]
+   },
+   "before_near_60_with_unattributed": {
+    "k": 25,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 16.4,
+    "ci": [
+     10.4,
+     24.1
+    ]
+   },
+   "before_near_60_minus_earlier_near": {
+    "diff": 0.0,
+    "ci": [
+     -5.1,
+     5.6
+    ],
+    "clear": false
+   },
+   "before_near_60_minus_later_near": {
+    "diff": 5.3,
+    "ci": [
+     -0.7,
+     12.3
+    ],
+    "clear": false
+   },
+   "lit_now_any": {
+    "k": 22,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 14.5,
+    "ci": [
+     10.6,
+     18.7
+    ]
+   },
+   "lit_now_near": {
+    "k": 9,
+    "n": 152,
+    "clans": 19,
+    "small_n": false,
+    "pct": 5.9,
+    "ci": [
+     3.0,
+     9.9
+    ]
+   },
+   "top6_vs_rest_before_any_60": {
+    "top6": 54.8,
+    "top6_n": 31,
+    "rest": 36.4,
+    "rest_n": 121,
+    "diff": 18.5,
+    "ci": [
+     -4.0,
+     29.3
+    ],
+    "clear": false
+   },
+   "top6_vs_rest_before_near_60": {
+    "top6": 25.8,
+    "top6_n": 31,
+    "rest": 14.0,
+    "rest_n": 121,
+    "diff": 11.8,
+    "ci": [
+     -1.1,
+     25.6
+    ],
+    "clear": false
+   },
+   "top6_vs_rest_after_near_60": {
+    "top6": 35.5,
+    "top6_n": 31,
+    "rest": 20.7,
+    "rest_n": 121,
+    "diff": 14.8,
+    "ci": [
+     -2.9,
+     67.3
+    ],
+    "clear": false
+   }
+  },
+  "Other cap sitters on Loop": {
+   "n": 40,
+   "clans": 13,
+   "clans_txt": "Top 6: H-SR 5, RESIN 4, VRTUS 3, HTDOG 3, BONKZ 3, KITE 2 | Rest: REEEE 6, MACHX 4, MACH 4, UYSC 2, EPOXY 2, RMN 1, KSE 1",
+   "top6_n": 20,
+   "rest_n": 20,
+   "before_any_30": {
+    "k": 10,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 25.0,
+    "ci": [
+     10.9,
+     45.5
+    ],
+    "base_pct": 26.9,
+    "expected_k": 10.5,
+    "minus_base": -1.9,
+    "minus_base_ci": [
+     -15.9,
+     16.9
+    ],
+    "minus_base_clear": false
+   },
+   "after_any_30": {
+    "k": 17,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 42.5,
+    "ci": [
+     29.3,
+     55.6
+    ],
+    "base_pct": 27.8,
+    "expected_k": 10.8,
+    "minus_base": 14.7,
+    "minus_base_ci": [
+     2.6,
+     28.1
+    ],
+    "minus_base_clear": true
+   },
+   "afterstart_any_30": {
+    "k": 11,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 27.5,
+    "ci": [
+     13.6,
+     40.4
+    ]
+   },
+   "beforestart_any_30": {
+    "k": 8,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 20.0,
+    "ci": [
+     9.5,
+     34.4
+    ]
+   },
+   "before_any_60": {
+    "k": 16,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 40.0,
+    "ci": [
+     23.1,
+     59.5
+    ],
+    "base_pct": 39.1,
+    "expected_k": 15.3,
+    "minus_base": 0.9,
+    "minus_base_ci": [
+     -16.6,
+     21.2
+    ],
+    "minus_base_clear": false
+   },
+   "after_any_60": {
+    "k": 20,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 50.0,
+    "ci": [
+     39.1,
+     61.1
+    ],
+    "base_pct": 42.1,
+    "expected_k": 16.4,
+    "minus_base": 7.9,
+    "minus_base_ci": [
+     -2.3,
+     18.7
+    ],
+    "minus_base_clear": false
+   },
+   "afterstart_any_60": {
+    "k": 14,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 35.0,
+    "ci": [
+     20.5,
+     47.7
+    ]
+   },
+   "beforestart_any_60": {
+    "k": 12,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 30.0,
+    "ci": [
+     15.9,
+     48.5
+    ]
+   },
+   "before_any_90": {
+    "k": 20,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 50.0,
+    "ci": [
+     38.1,
+     64.7
+    ],
+    "base_pct": 48.8,
+    "expected_k": 19.0,
+    "minus_base": 1.2,
+    "minus_base_ci": [
+     -13.0,
+     17.9
+    ],
+    "minus_base_clear": false
+   },
+   "after_any_90": {
+    "k": 22,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 55.0,
+    "ci": [
+     45.5,
+     65.8
+    ],
+    "base_pct": 53.3,
+    "expected_k": 20.8,
+    "minus_base": 1.7,
+    "minus_base_ci": [
+     -5.1,
+     9.9
+    ],
+    "minus_base_clear": false
+   },
+   "afterstart_any_90": {
+    "k": 16,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 40.0,
+    "ci": [
+     25.6,
+     51.3
+    ]
+   },
+   "beforestart_any_90": {
+    "k": 19,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 47.5,
+    "ci": [
+     36.4,
+     60.0
+    ]
+   },
+   "earlier_any": {
+    "k": 14,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 35.0,
+    "ci": [
+     25.0,
+     44.4
+    ]
+   },
+   "later_any": {
+    "k": 12,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 30.0,
+    "ci": [
+     22.2,
+     37.8
+    ]
+   },
+   "before_any_60_with_unattributed": {
+    "k": 17,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 42.5,
+    "ci": [
+     26.3,
+     61.1
+    ]
+   },
+   "before_any_60_minus_earlier_any": {
+    "diff": 5.0,
+    "ci": [
+     -12.5,
+     25.6
+    ],
+    "clear": false
+   },
+   "before_any_60_minus_later_any": {
+    "diff": 10.0,
+    "ci": [
+     -8.8,
+     29.2
+    ],
+    "clear": false
+   },
+   "before_near_30": {
+    "k": 7,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 17.5,
+    "ci": [
+     7.7,
+     31.2
+    ],
+    "base_pct": 12.3,
+    "expected_k": 4.8,
+    "minus_base": 5.2,
+    "minus_base_ci": [
+     -7.0,
+     19.1
+    ],
+    "minus_base_clear": false
+   },
+   "after_near_30": {
+    "k": 10,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 25.0,
+    "ci": [
+     12.8,
+     37.5
+    ],
+    "base_pct": 12.7,
+    "expected_k": 4.9,
+    "minus_base": 12.3,
+    "minus_base_ci": [
+     -0.1,
+     23.3
+    ],
+    "minus_base_clear": false
+   },
+   "afterstart_near_30": {
+    "k": 7,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 17.5,
+    "ci": [
+     5.7,
+     29.1
+    ]
+   },
+   "beforestart_near_30": {
+    "k": 6,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 15.0,
+    "ci": [
+     5.1,
+     29.7
+    ]
+   },
+   "before_near_60": {
+    "k": 9,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 22.5,
+    "ci": [
+     9.1,
+     36.8
+    ],
+    "base_pct": 19.0,
+    "expected_k": 7.4,
+    "minus_base": 3.5,
+    "minus_base_ci": [
+     -8.4,
+     16.8
+    ],
+    "minus_base_clear": false
+   },
+   "after_near_60": {
+    "k": 14,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 35.0,
+    "ci": [
+     20.6,
+     48.9
+    ],
+    "base_pct": 20.4,
+    "expected_k": 8.0,
+    "minus_base": 14.6,
+    "minus_base_ci": [
+     3.7,
+     26.1
+    ],
+    "minus_base_clear": true
+   },
+   "afterstart_near_60": {
+    "k": 11,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 27.5,
+    "ci": [
+     13.2,
+     41.2
+    ]
+   },
+   "beforestart_near_60": {
+    "k": 9,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 22.5,
+    "ci": [
+     10.0,
+     37.1
+    ]
+   },
+   "before_near_90": {
+    "k": 11,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 27.5,
+    "ci": [
+     16.2,
+     40.5
+    ],
+    "base_pct": 24.5,
+    "expected_k": 9.5,
+    "minus_base": 3.0,
+    "minus_base_ci": [
+     -7.0,
+     13.9
+    ],
+    "minus_base_clear": false
+   },
+   "after_near_90": {
+    "k": 14,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 35.0,
+    "ci": [
+     20.7,
+     48.8
+    ],
+    "base_pct": 26.8,
+    "expected_k": 10.5,
+    "minus_base": 8.2,
+    "minus_base_ci": [
+     -3.3,
+     19.5
+    ],
+    "minus_base_clear": false
+   },
+   "afterstart_near_90": {
+    "k": 11,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 27.5,
+    "ci": [
+     12.2,
+     41.9
+    ]
+   },
+   "beforestart_near_90": {
+    "k": 11,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 27.5,
+    "ci": [
+     15.4,
+     42.5
+    ]
+   },
+   "earlier_near": {
+    "k": 5,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 12.5,
+    "ci": [
+     0.0,
+     23.8
+    ]
+   },
+   "later_near": {
+    "k": 4,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 10.0,
+    "ci": [
+     2.8,
+     17.6
+    ]
+   },
+   "before_near_60_with_unattributed": {
+    "k": 10,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 25.0,
+    "ci": [
+     10.5,
+     40.5
+    ]
+   },
+   "before_near_60_minus_earlier_near": {
+    "diff": 10.0,
+    "ci": [
+     -7.9,
+     32.1
+    ],
+    "clear": false
+   },
+   "before_near_60_minus_later_near": {
+    "diff": 12.5,
+    "ci": [
+     -2.8,
+     31.4
+    ],
+    "clear": false
+   },
+   "lit_now_any": {
+    "k": 6,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 15.0,
+    "ci": [
+     6.4,
+     27.6
+    ]
+   },
+   "lit_now_near": {
+    "k": 3,
+    "n": 40,
+    "clans": 13,
+    "small_n": false,
+    "pct": 7.5,
+    "ci": [
+     0.0,
+     15.9
+    ]
+   },
+   "top6_vs_rest_before_any_60": {
+    "top6": 50.0,
+    "top6_n": 20,
+    "rest": 30.0,
+    "rest_n": 20,
+    "diff": 20.0,
+    "ci": [
+     -17.1,
+     50.7
+    ],
+    "clear": false
+   },
+   "top6_vs_rest_before_near_60": {
+    "top6": 25.0,
+    "top6_n": 20,
+    "rest": 20.0,
+    "rest_n": 20,
+    "diff": 5.0,
+    "ci": [
+     -27.8,
+     29.2
+    ],
+    "clear": false
+   },
+   "top6_vs_rest_after_near_60": {
+    "top6": 45.0,
+    "top6_n": 20,
+    "rest": 25.0,
+    "rest_n": 20,
+    "diff": 20.0,
+    "ci": [
+     -6.5,
+     46.7
+    ],
+    "clear": false
+   }
+  },
+  "Other destroyer smokes on Loop": {
+   "n": 54,
+   "clans": 17,
+   "clans_txt": "Top 6: RESIN 8, H-SR 7, BONKZ 3 | Rest: EPOXY 6, -BN- 5, KSC 4, KM 3, MZY 3, MACHX 3, 5D 2, INCA 2, NGA 2, HFANS 2, BTLST 1, OGF 1, PN 1, UYSC 1",
+   "top6_n": 18,
+   "rest_n": 36,
+   "before_any_30": {
+    "k": 14,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 25.9,
+    "ci": [
+     14.3,
+     40.3
+    ],
+    "base_pct": 25.4,
+    "expected_k": 13.5,
+    "minus_base": 0.5,
+    "minus_base_ci": [
+     -10.6,
+     10.7
+    ],
+    "minus_base_clear": false
+   },
+   "after_any_30": {
+    "k": 15,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 27.8,
+    "ci": [
+     18.8,
+     36.5
+    ],
+    "base_pct": 25.3,
+    "expected_k": 13.4,
+    "minus_base": 2.5,
+    "minus_base_ci": [
+     -7.0,
+     11.6
+    ],
+    "minus_base_clear": false
+   },
+   "afterstart_any_30": {
+    "k": 12,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 22.2,
+    "ci": [
+     13.7,
+     30.6
+    ]
+   },
+   "beforestart_any_30": {
+    "k": 9,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 16.7,
+    "ci": [
+     4.7,
+     30.6
+    ]
+   },
+   "before_any_60": {
+    "k": 19,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 35.2,
+    "ci": [
+     20.8,
+     50.9
+    ],
+    "base_pct": 38.7,
+    "expected_k": 20.5,
+    "minus_base": -3.5,
+    "minus_base_ci": [
+     -14.4,
+     8.3
+    ],
+    "minus_base_clear": false
+   },
+   "after_any_60": {
+    "k": 23,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 42.6,
+    "ci": [
+     29.2,
+     55.4
+    ],
+    "base_pct": 39.0,
+    "expected_k": 20.6,
+    "minus_base": 3.6,
+    "minus_base_ci": [
+     -7.7,
+     13.2
+    ],
+    "minus_base_clear": false
+   },
+   "afterstart_any_60": {
+    "k": 22,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 40.7,
+    "ci": [
+     26.5,
+     52.9
+    ]
+   },
+   "beforestart_any_60": {
+    "k": 16,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 29.6,
+    "ci": [
+     19.1,
+     41.9
+    ]
+   },
+   "before_any_90": {
+    "k": 24,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 44.4,
+    "ci": [
+     30.9,
+     60.0
+    ],
+    "base_pct": 49.7,
+    "expected_k": 26.3,
+    "minus_base": -5.2,
+    "minus_base_ci": [
+     -15.2,
+     5.5
+    ],
+    "minus_base_clear": false
+   },
+   "after_any_90": {
+    "k": 27,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 50.0,
+    "ci": [
+     35.6,
+     61.7
+    ],
+    "base_pct": 49.8,
+    "expected_k": 26.4,
+    "minus_base": 0.2,
+    "minus_base_ci": [
+     -12.5,
+     11.5
+    ],
+    "minus_base_clear": false
+   },
+   "afterstart_any_90": {
+    "k": 26,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 48.1,
+    "ci": [
+     32.7,
+     61.5
+    ]
+   },
+   "beforestart_any_90": {
+    "k": 22,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 40.7,
+    "ci": [
+     25.8,
+     59.1
+    ]
+   },
+   "earlier_any": {
+    "k": 17,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 31.5,
+    "ci": [
+     19.0,
+     46.0
+    ]
+   },
+   "later_any": {
+    "k": 16,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 29.6,
+    "ci": [
+     16.7,
+     43.4
+    ]
+   },
+   "before_any_60_with_unattributed": {
+    "k": 19,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 35.2,
+    "ci": [
+     20.0,
+     51.0
+    ]
+   },
+   "before_any_60_minus_earlier_any": {
+    "diff": 3.7,
+    "ci": [
+     -14.3,
+     23.5
+    ],
+    "clear": false
+   },
+   "before_any_60_minus_later_any": {
+    "diff": 5.6,
+    "ci": [
+     -16.1,
+     28.6
+    ],
+    "clear": false
+   },
+   "before_near_30": {
+    "k": 6,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 11.1,
+    "ci": [
+     2.0,
+     24.0
+    ],
+    "base_pct": 9.8,
+    "expected_k": 5.2,
+    "minus_base": 1.3,
+    "minus_base_ci": [
+     -7.5,
+     12.0
+    ],
+    "minus_base_clear": false
+   },
+   "after_near_30": {
+    "k": 6,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 11.1,
+    "ci": [
+     3.2,
+     19.0
+    ],
+    "base_pct": 10.0,
+    "expected_k": 5.3,
+    "minus_base": 1.2,
+    "minus_base_ci": [
+     -5.4,
+     8.0
+    ],
+    "minus_base_clear": false
+   },
+   "afterstart_near_30": {
+    "k": 5,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 9.3,
+    "ci": [
+     2.9,
+     15.6
+    ]
+   },
+   "beforestart_near_30": {
+    "k": 5,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 9.3,
+    "ci": [
+     0.0,
+     22.5
+    ]
+   },
+   "before_near_60": {
+    "k": 7,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 13.0,
+    "ci": [
+     3.6,
+     26.1
+    ],
+    "base_pct": 15.6,
+    "expected_k": 8.3,
+    "minus_base": -2.7,
+    "minus_base_ci": [
+     -10.9,
+     8.0
+    ],
+    "minus_base_clear": false
+   },
+   "after_near_60": {
+    "k": 12,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 22.2,
+    "ci": [
+     8.2,
+     35.5
+    ],
+    "base_pct": 16.1,
+    "expected_k": 8.5,
+    "minus_base": 6.2,
+    "minus_base_ci": [
+     -7.1,
+     19.1
+    ],
+    "minus_base_clear": false
+   },
+   "afterstart_near_60": {
+    "k": 11,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 20.4,
+    "ci": [
+     5.8,
+     33.9
+    ]
+   },
+   "beforestart_near_60": {
+    "k": 7,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 13.0,
+    "ci": [
+     3.6,
+     27.1
+    ]
+   },
+   "before_near_90": {
+    "k": 10,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 18.5,
+    "ci": [
+     8.8,
+     31.8
+    ],
+    "base_pct": 21.2,
+    "expected_k": 11.2,
+    "minus_base": -2.7,
+    "minus_base_ci": [
+     -10.5,
+     6.3
+    ],
+    "minus_base_clear": false
+   },
+   "after_near_90": {
+    "k": 14,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 25.9,
+    "ci": [
+     11.1,
+     41.4
+    ],
+    "base_pct": 21.5,
+    "expected_k": 11.4,
+    "minus_base": 4.4,
+    "minus_base_ci": [
+     -10.1,
+     16.3
+    ],
+    "minus_base_clear": false
+   },
+   "afterstart_near_90": {
+    "k": 13,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 24.1,
+    "ci": [
+     9.1,
+     39.3
+    ]
+   },
+   "beforestart_near_90": {
+    "k": 9,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 16.7,
+    "ci": [
+     7.1,
+     28.9
+    ]
+   },
+   "earlier_near": {
+    "k": 5,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 9.3,
+    "ci": [
+     3.2,
+     16.4
+    ]
+   },
+   "later_near": {
+    "k": 6,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 11.1,
+    "ci": [
+     4.1,
+     17.9
+    ]
+   },
+   "before_near_60_with_unattributed": {
+    "k": 7,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 13.0,
+    "ci": [
+     3.8,
+     26.0
+    ]
+   },
+   "before_near_60_minus_earlier_near": {
+    "diff": 3.7,
+    "ci": [
+     -9.6,
+     19.4
+    ],
+    "clear": false
+   },
+   "before_near_60_minus_later_near": {
+    "diff": 1.9,
+    "ci": [
+     -11.7,
+     19.1
+    ],
+    "clear": false
+   },
+   "lit_now_any": {
+    "k": 6,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 11.1,
+    "ci": [
+     4.0,
+     20.8
+    ]
+   },
+   "lit_now_near": {
+    "k": 2,
+    "n": 54,
+    "clans": 17,
+    "small_n": false,
+    "pct": 3.7,
+    "ci": [
+     0.0,
+     12.5
+    ]
+   },
+   "top6_vs_rest_before_any_60": {
+    "top6": 16.7,
+    "top6_n": 18,
+    "rest": 44.4,
+    "rest_n": 36,
+    "diff": -27.8,
+    "ci": [
+     -48.7,
+     -8.3
+    ],
+    "clear": true
+   },
+   "top6_vs_rest_before_near_60": {
+    "top6": 0.0,
+    "top6_n": 18,
+    "rest": 19.4,
+    "rest_n": 36,
+    "diff": -19.4,
+    "ci": [
+     -34.1,
+     -6.5
+    ],
+    "clear": true
+   },
+   "top6_vs_rest_after_near_60": {
+    "top6": 22.2,
+    "top6_n": 18,
+    "rest": 22.2,
+    "rest_n": 36,
+    "diff": 0.0,
+    "ci": [
+     -28.2,
+     28.3
+    ],
+    "clear": false
+   }
+  },
+  "All destroyer smokes, all maps": {
+   "n": 1074,
+   "clans": 30,
+   "clans_txt": null,
+   "top6_n": 387,
+   "rest_n": 687,
+   "before_any_30": {
+    "k": 301,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 28.0,
+    "ci": [
+     24.6,
+     31.8
+    ],
+    "base_pct": 28.4,
+    "expected_k": 304.0,
+    "minus_base": -0.4,
+    "minus_base_ci": [
+     -2.5,
+     1.5
+    ],
+    "minus_base_clear": false
+   },
+   "after_any_30": {
+    "k": 392,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 36.5,
+    "ci": [
+     32.6,
+     40.9
+    ],
+    "base_pct": 28.8,
+    "expected_k": 308.3,
+    "minus_base": 7.7,
+    "minus_base_ci": [
+     4.6,
+     10.7
+    ],
+    "minus_base_clear": true
+   },
+   "afterstart_any_30": {
+    "k": 293,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 27.3,
+    "ci": [
+     24.0,
+     30.5
+    ]
+   },
+   "beforestart_any_30": {
+    "k": 222,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 20.7,
+    "ci": [
+     17.7,
+     23.6
+    ]
+   },
+   "before_any_60": {
+    "k": 399,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 37.2,
+    "ci": [
+     33.3,
+     41.2
+    ],
+    "base_pct": 42.2,
+    "expected_k": 451.4,
+    "minus_base": -5.1,
+    "minus_base_ci": [
+     -6.9,
+     -3.2
+    ],
+    "minus_base_clear": true
+   },
+   "after_any_60": {
+    "k": 524,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 48.8,
+    "ci": [
+     43.7,
+     53.2
+    ],
+    "base_pct": 43.1,
+    "expected_k": 460.4,
+    "minus_base": 5.7,
+    "minus_base_ci": [
+     2.1,
+     8.8
+    ],
+    "minus_base_clear": true
+   },
+   "afterstart_any_60": {
+    "k": 441,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 41.1,
+    "ci": [
+     36.8,
+     45.2
+    ]
+   },
+   "beforestart_any_60": {
+    "k": 343,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 31.9,
+    "ci": [
+     28.5,
+     35.5
+    ]
+   },
+   "before_any_90": {
+    "k": 516,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 48.0,
+    "ci": [
+     43.0,
+     52.8
+    ],
+    "base_pct": 52.9,
+    "expected_k": 565.9,
+    "minus_base": -4.9,
+    "minus_base_ci": [
+     -7.1,
+     -2.7
+    ],
+    "minus_base_clear": true
+   },
+   "after_any_90": {
+    "k": 608,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 56.6,
+    "ci": [
+     52.1,
+     61.6
+    ],
+    "base_pct": 54.4,
+    "expected_k": 581.8,
+    "minus_base": 2.2,
+    "minus_base_ci": [
+     -0.7,
+     5.1
+    ],
+    "minus_base_clear": false
+   },
+   "afterstart_any_90": {
+    "k": 535,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 49.8,
+    "ci": [
+     45.7,
+     53.6
+    ]
+   },
+   "beforestart_any_90": {
+    "k": 461,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 42.9,
+    "ci": [
+     38.2,
+     48.0
+    ]
+   },
+   "earlier_any": {
+    "k": 369,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 34.4,
+    "ci": [
+     31.5,
+     37.1
+    ]
+   },
+   "later_any": {
+    "k": 387,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 36.0,
+    "ci": [
+     31.9,
+     39.9
+    ]
+   },
+   "before_any_60_with_unattributed": {
+    "k": 411,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 38.3,
+    "ci": [
+     34.6,
+     42.4
+    ]
+   },
+   "before_any_60_minus_earlier_any": {
+    "diff": 2.8,
+    "ci": [
+     -0.6,
+     6.0
+    ],
+    "clear": false
+   },
+   "before_any_60_minus_later_any": {
+    "diff": 1.1,
+    "ci": [
+     -3.2,
+     5.1
+    ],
+    "clear": false
+   },
+   "before_near_30": {
+    "k": 97,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 9.0,
+    "ci": [
+     7.3,
+     10.6
+    ],
+    "base_pct": 9.0,
+    "expected_k": 96.5,
+    "minus_base": 0.0,
+    "minus_base_ci": [
+     -1.3,
+     1.5
+    ],
+    "minus_base_clear": false
+   },
+   "after_near_30": {
+    "k": 172,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 16.0,
+    "ci": [
+     13.7,
+     18.4
+    ],
+    "base_pct": 9.0,
+    "expected_k": 96.4,
+    "minus_base": 7.0,
+    "minus_base_ci": [
+     5.1,
+     9.0
+    ],
+    "minus_base_clear": true
+   },
+   "afterstart_near_30": {
+    "k": 136,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 12.7,
+    "ci": [
+     10.6,
+     14.7
+    ]
+   },
+   "beforestart_near_30": {
+    "k": 72,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 6.7,
+    "ci": [
+     5.0,
+     8.5
+    ]
+   },
+   "before_near_60": {
+    "k": 129,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 12.0,
+    "ci": [
+     10.1,
+     13.9
+    ],
+    "base_pct": 14.3,
+    "expected_k": 152.6,
+    "minus_base": -2.3,
+    "minus_base_ci": [
+     -3.6,
+     -0.9
+    ],
+    "minus_base_clear": true
+   },
+   "after_near_60": {
+    "k": 227,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 21.1,
+    "ci": [
+     18.0,
+     24.1
+    ],
+    "base_pct": 14.1,
+    "expected_k": 150.7,
+    "minus_base": 7.0,
+    "minus_base_ci": [
+     4.8,
+     9.3
+    ],
+    "minus_base_clear": true
+   },
+   "afterstart_near_60": {
+    "k": 192,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 17.9,
+    "ci": [
+     15.0,
+     20.5
+    ]
+   },
+   "beforestart_near_60": {
+    "k": 110,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 10.2,
+    "ci": [
+     8.5,
+     11.9
+    ]
+   },
+   "before_near_90": {
+    "k": 182,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 16.9,
+    "ci": [
+     14.5,
+     19.3
+    ],
+    "base_pct": 18.8,
+    "expected_k": 201.2,
+    "minus_base": -1.9,
+    "minus_base_ci": [
+     -3.6,
+     -0.3
+    ],
+    "minus_base_clear": true
+   },
+   "after_near_90": {
+    "k": 263,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 24.5,
+    "ci": [
+     20.9,
+     27.6
+    ],
+    "base_pct": 18.5,
+    "expected_k": 197.7,
+    "minus_base": 6.0,
+    "minus_base_ci": [
+     3.9,
+     8.3
+    ],
+    "minus_base_clear": true
+   },
+   "afterstart_near_90": {
+    "k": 231,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 21.5,
+    "ci": [
+     18.2,
+     24.1
+    ]
+   },
+   "beforestart_near_90": {
+    "k": 156,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 14.5,
+    "ci": [
+     12.2,
+     16.9
+    ]
+   },
+   "earlier_near": {
+    "k": 128,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 11.9,
+    "ci": [
+     10.1,
+     13.7
+    ]
+   },
+   "later_near": {
+    "k": 130,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 12.1,
+    "ci": [
+     9.4,
+     14.3
+    ]
+   },
+   "before_near_60_with_unattributed": {
+    "k": 133,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 12.4,
+    "ci": [
+     10.4,
+     14.4
+    ]
+   },
+   "before_near_60_minus_earlier_near": {
+    "diff": 0.1,
+    "ci": [
+     -1.9,
+     2.1
+    ],
+    "clear": false
+   },
+   "before_near_60_minus_later_near": {
+    "diff": -0.1,
+    "ci": [
+     -2.5,
+     2.6
+    ],
+    "clear": false
+   },
+   "lit_now_any": {
+    "k": 139,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 12.9,
+    "ci": [
+     10.5,
+     15.6
+    ]
+   },
+   "lit_now_near": {
+    "k": 42,
+    "n": 1074,
+    "clans": 30,
+    "small_n": false,
+    "pct": 3.9,
+    "ci": [
+     2.7,
+     5.1
+    ]
+   },
+   "top6_vs_rest_before_any_60": {
+    "top6": 42.6,
+    "top6_n": 387,
+    "rest": 34.1,
+    "rest_n": 687,
+    "diff": 8.6,
+    "ci": [
+     1.0,
+     17.3
+    ],
+    "clear": true
+   },
+   "top6_vs_rest_before_near_60": {
+    "top6": 13.7,
+    "top6_n": 387,
+    "rest": 11.1,
+    "rest_n": 687,
+    "diff": 2.6,
+    "ci": [
+     -1.2,
+     6.5
+    ],
+    "clear": false
+   },
+   "top6_vs_rest_after_near_60": {
+    "top6": 25.1,
+    "top6_n": 387,
+    "rest": 18.9,
+    "rest_n": 687,
+    "diff": 6.1,
+    "ci": [
+     -0.1,
+     11.9
+    ],
+    "clear": false
+   }
+  }
+ },
+ "tests": [
+  {
+   "measure": "before_any_30",
+   "contrast": "Daring on Loop minus Daring on other maps",
+   "diff": -4.7,
+   "ci": [
+    -21.4,
+    11.6
+   ],
+   "clear": false
+  },
+  {
+   "measure": "before_any_30",
+   "contrast": "Daring on Loop minus Other cap sitters on Loop",
+   "diff": -2.1,
+   "ci": [
+    -28.3,
+    16.7
+   ],
+   "clear": false
+  },
+  {
+   "measure": "before_any_30",
+   "contrast": "Daring on Loop minus Other destroyer smokes on Loop",
+   "diff": -3.0,
+   "ci": [
+    -24.0,
+    16.4
+   ],
+   "clear": false
+  },
+  {
+   "measure": "before_any_60",
+   "contrast": "Daring on Loop minus Daring on other maps",
+   "diff": -4.7,
+   "ci": [
+    -19.1,
+    11.0
+   ],
+   "clear": false
+  },
+  {
+   "measure": "before_any_60",
+   "contrast": "Daring on Loop minus Other cap sitters on Loop",
+   "diff": -4.6,
+   "ci": [
+    -26.9,
+    14.1
+   ],
+   "clear": false
+  },
+  {
+   "measure": "before_any_60",
+   "contrast": "Daring on Loop minus Other destroyer smokes on Loop",
+   "diff": 0.2,
+   "ci": [
+    -17.2,
+    18.8
+   ],
+   "clear": false
+  },
+  {
+   "measure": "before_any_90",
+   "contrast": "Daring on Loop minus Daring on other maps",
+   "diff": -11.1,
+   "ci": [
+    -27.3,
+    2.3
+   ],
+   "clear": false
+  },
+  {
+   "measure": "before_any_90",
+   "contrast": "Daring on Loop minus Other cap sitters on Loop",
+   "diff": -10.4,
+   "ci": [
+    -32.5,
+    7.0
+   ],
+   "clear": false
+  },
+  {
+   "measure": "before_any_90",
+   "contrast": "Daring on Loop minus Other destroyer smokes on Loop",
+   "diff": -4.9,
+   "ci": [
+    -25.5,
+    14.7
+   ],
+   "clear": false
+  },
+  {
+   "measure": "before_near_60",
+   "contrast": "Daring on Loop minus Daring on other maps",
+   "diff": -12.3,
+   "ci": [
+    -21.1,
+    -1.8
+   ],
+   "clear": true
+  },
+  {
+   "measure": "before_near_60",
+   "contrast": "Daring on Loop minus Other cap sitters on Loop",
+   "diff": -18.3,
+   "ci": [
+    -34.5,
+    -4.8
+   ],
+   "clear": true
+  },
+  {
+   "measure": "before_near_60",
+   "contrast": "Daring on Loop minus Other destroyer smokes on Loop",
+   "diff": -8.8,
+   "ci": [
+    -25.0,
+    6.1
+   ],
+   "clear": false
+  },
+  {
+   "measure": "after_near_60",
+   "contrast": "Daring on Loop minus Daring on other maps",
+   "diff": -13.3,
+   "ci": [
+    -24.9,
+    -0.4
+   ],
+   "clear": true
+  },
+  {
+   "measure": "after_near_60",
+   "contrast": "Daring on Loop minus Other cap sitters on Loop",
+   "diff": -24.6,
+   "ci": [
+    -39.5,
+    -6.5
+   ],
+   "clear": true
+  },
+  {
+   "measure": "after_near_60",
+   "contrast": "Daring on Loop minus Other destroyer smokes on Loop",
+   "diff": -11.8,
+   "ci": [
+    -26.5,
+    4.4
+   ],
+   "clear": false
+  },
+  {
+   "measure": "afterstart_near_60",
+   "contrast": "Daring on Loop minus Daring on other maps",
+   "diff": -9.4,
+   "ci": [
+    -19.3,
+    4.7
+   ],
+   "clear": false
+  },
+  {
+   "measure": "afterstart_near_60",
+   "contrast": "Daring on Loop minus Other cap sitters on Loop",
+   "diff": -19.2,
+   "ci": [
+    -35.6,
+    1.1
+   ],
+   "clear": false
+  },
+  {
+   "measure": "afterstart_near_60",
+   "contrast": "Daring on Loop minus Other destroyer smokes on Loop",
+   "diff": -12.0,
+   "ci": [
+    -27.3,
+    5.2
+   ],
+   "clear": false
+  },
+  {
+   "measure": "before_any_60 minus base",
+   "contrast": "Daring on Loop minus Daring on other maps",
+   "diff": -1.6,
+   "ci": [
+    -13.0,
+    11.0
+   ],
+   "clear": false
+  },
+  {
+   "measure": "before_any_60 minus base",
+   "contrast": "Daring on Loop minus Other cap sitters on Loop",
+   "diff": -2.1,
+   "ci": [
+    -24.3,
+    15.7
+   ],
+   "clear": false
+  },
+  {
+   "measure": "before_near_60 minus base",
+   "contrast": "Daring on Loop minus Daring on other maps",
+   "diff": -3.9,
+   "ci": [
+    -11.6,
+    5.2
+   ],
+   "clear": false
+  },
+  {
+   "measure": "before_near_60 minus base",
+   "contrast": "Daring on Loop minus Other cap sitters on Loop",
+   "diff": -7.3,
+   "ci": [
+    -24.0,
+    6.5
+   ],
+   "clear": false
+  },
+  {
+   "measure": "after_near_60 minus base",
+   "contrast": "Daring on Loop minus Daring on other maps",
+   "diff": -4.5,
+   "ci": [
+    -14.6,
+    5.9
+   ],
+   "clear": false
+  },
+  {
+   "measure": "after_near_60 minus base",
+   "contrast": "Daring on Loop minus Other cap sitters on Loop",
+   "diff": -11.9,
+   "ci": [
+    -24.6,
+    1.0
+   ],
+   "clear": false
+  }
+ ],
+ "sequences": [
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7892_g1_80006.html",
+   "slug": "7892_g1_80006",
+   "team": "EPOXY",
+   "grp": "rest",
+   "time": "2:10",
+   "e0": 130.8,
+   "cell": "F4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -371.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "neutral",
+   "cap_changes_after": [
+    [
+     43.2,
+     "theirs"
+    ]
+   ],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 4.2,
+   "they_invading_s": 39.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 100.0,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7892_g1_80008.html",
+   "slug": "7892_g1_80008",
+   "team": "EPOXY",
+   "grp": "rest",
+   "time": "4:38",
+   "e0": 278.1,
+   "cell": "F5",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 548.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [
+    [
+     87.9,
+     "theirs"
+    ]
+   ],
+   "cap_changes_60s_before": [
+    [
+     -20.2,
+     "ours"
+    ]
+   ],
+   "we_invading_s": 0.0,
+   "they_invading_s": 26.9,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 100.0,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7892_g1_80012.html",
+   "slug": "7892_g1_80012",
+   "team": "EPOXY",
+   "grp": "rest",
+   "time": "8:10",
+   "e0": 490.6,
+   "cell": "G5",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 1393.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [
+    [
+     92.4,
+     "ours"
+    ]
+   ],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 96.0,
+   "conc": 2805,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7892_g1_80017.html",
+   "slug": "7892_g1_80017",
+   "team": "EPOXY",
+   "grp": "rest",
+   "time": "12:05",
+   "e0": 725.7,
+   "cell": "F4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -2640.0,
+   "near": false,
+   "lit": [
+    {
+     "radar_ship": "San Martín",
+     "radar_cls": "cruiser",
+     "target": "Fuyutsuki",
+     "lit_start_before_s": 14.7,
+     "lit_end_before_s": 2.7,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 9580.0,
+     "radar_ship_cell": "E1",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 8286.0,
+     "target_to_smoke_m": 13070.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      -707.2,
+      44.4
+     ],
+     "tgt_n": [
+      -572.5,
+      -266.7
+     ]
+    }
+   ],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 83.1,
+   "conc": 4852,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7892_g1_80019.html",
+   "slug": "7892_g1_80019",
+   "team": "EPOXY",
+   "grp": "rest",
+   "time": "13:16",
+   "e0": 796.7,
+   "cell": "F4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -1474.0,
+   "near": false,
+   "lit": [
+    {
+     "radar_ship": "Thor",
+     "radar_cls": "battleship",
+     "target": "Châteaurenault",
+     "lit_start_before_s": 29.4,
+     "lit_end_before_s": 12.7,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 15270.0,
+     "radar_ship_cell": "F8",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 17047.0,
+     "target_to_smoke_m": 19088.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      417.8,
+      -40.0
+     ],
+     "tgt_n": [
+      477.9,
+      -22.0
+     ]
+    }
+   ],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 83.1,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7892_g1_80021.html",
+   "slug": "7892_g1_80021",
+   "team": "EPOXY",
+   "grp": "rest",
+   "time": "15:16",
+   "e0": 916.1,
+   "cell": "E4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -555.0,
+   "near": false,
+   "lit": [
+    {
+     "radar_ship": "Moskva",
+     "radar_cls": "cruiser",
+     "target": "Vampire II",
+     "lit_start_before_s": 3.2,
+     "lit_end_before_s": -16.8,
+     "still_lit_at_activation": true,
+     "radar_ship_to_cap_edge_m": 2910.0,
+     "radar_ship_cell": "F6",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 13367.0,
+     "target_to_smoke_m": 15519.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      2.9,
+      -44.7
+     ],
+     "tgt_n": [
+      353.5,
+      49.3
+     ]
+    }
+   ],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 51.3,
+   "conc": 5894,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7917_g1_116009.html",
+   "slug": "7917_g1_116009",
+   "team": "MACHX",
+   "grp": "rest",
+   "time": "8:45",
+   "e0": 525.1,
+   "cell": "G4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 1993.0,
+   "near": false,
+   "lit": [
+    {
+     "radar_ship": "Stalingrad",
+     "radar_cls": "cruiser",
+     "target": "Yueyang",
+     "lit_start_before_s": 62.1,
+     "lit_end_before_s": 42.3,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 8916.0,
+     "radar_ship_cell": "G6",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 8908.0,
+     "target_to_smoke_m": 17028.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      156.0,
+      -207.7
+     ],
+     "tgt_n": [
+      188.5,
+      126.9
+     ]
+    },
+    {
+     "radar_ship": "Minotaur",
+     "radar_cls": "cruiser",
+     "target": "Yueyang",
+     "lit_start_before_s": 18.1,
+     "lit_end_before_s": -29.0,
+     "still_lit_at_activation": true,
+     "radar_ship_to_cap_edge_m": 15493.0,
+     "radar_ship_cell": "F8",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 8945.0,
+     "target_to_smoke_m": 17145.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      426.2,
+      -16.1
+     ],
+     "tgt_n": [
+      187.4,
+      134.9
+     ]
+    }
+   ],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 52.4,
+   "conc": 7799,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7917_g1_116010.html",
+   "slug": "7917_g1_116010",
+   "team": "KITED",
+   "grp": "rest",
+   "time": "8:49",
+   "e0": 529.6,
+   "cell": "E4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -2461.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 84.1,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7917_g1_116012.html",
+   "slug": "7917_g1_116012",
+   "team": "MACHX",
+   "grp": "rest",
+   "time": "10:12",
+   "e0": 612.3,
+   "cell": "G4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 3033.0,
+   "near": true,
+   "lit": [
+    {
+     "radar_ship": "Minotaur",
+     "radar_cls": "cruiser",
+     "target": "Yueyang",
+     "lit_start_before_s": 105.3,
+     "lit_end_before_s": 58.1,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 15493.0,
+     "radar_ship_cell": "F8",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 9429.0,
+     "target_to_smoke_m": 16126.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      426.2,
+      -16.1
+     ],
+     "tgt_n": [
+      201.1,
+      144.8
+     ]
+    },
+    {
+     "radar_ship": "Minotaur",
+     "radar_cls": "cruiser",
+     "target": "Cassard",
+     "lit_start_before_s": 60.3,
+     "lit_end_before_s": 58.1,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 15493.0,
+     "radar_ship_cell": "F8",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 22681.0,
+     "target_to_smoke_m": 27739.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      426.2,
+      -16.1
+     ],
+     "tgt_n": [
+      647.0,
+      184.6
+     ]
+    },
+    {
+     "radar_ship": "Stalingrad",
+     "radar_cls": "cruiser",
+     "target": "Yueyang",
+     "lit_start_before_s": 11.7,
+     "lit_end_before_s": -8.2,
+     "still_lit_at_activation": true,
+     "radar_ship_to_cap_edge_m": 9216.0,
+     "radar_ship_cell": "G7",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 9563.0,
+     "target_to_smoke_m": 16580.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      177.6,
+      -186.0
+     ],
+     "tgt_n": [
+      197.1,
+      169.4
+     ]
+    },
+    {
+     "radar_ship": "Stalingrad",
+     "radar_cls": "cruiser",
+     "target": "Daring",
+     "lit_start_before_s": 3.8,
+     "lit_end_before_s": -8.4,
+     "still_lit_at_activation": true,
+     "radar_ship_to_cap_edge_m": 9216.0,
+     "radar_ship_cell": "G7",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": -1515.0,
+     "target_to_smoke_m": 7981.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      177.6,
+      -186.0
+     ],
+     "tgt_n": [
+      -143.6,
+      24.5
+     ]
+    }
+   ],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 25.7,
+   "conc": 967,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7917_g1_116013.html",
+   "slug": "7917_g1_116013",
+   "team": "KITED",
+   "grp": "rest",
+   "time": "10:36",
+   "e0": 636.3,
+   "cell": "F5",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -703.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 42.5,
+   "conc": 28456,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7917_g1_116015.html",
+   "slug": "7917_g1_116015",
+   "team": "MACHX",
+   "grp": "rest",
+   "time": "11:52",
+   "e0": 712.8,
+   "cell": "G4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 1825.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 25.7,
+   "conc": 2242,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7917_g1_116016.html",
+   "slug": "7917_g1_116016",
+   "team": "KITED",
+   "grp": "rest",
+   "time": "11:54",
+   "e0": 715.0,
+   "cell": "E4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -2134.0,
+   "near": false,
+   "lit": [
+    {
+     "radar_ship": "Des Moines",
+     "radar_cls": "cruiser",
+     "target": "Daring",
+     "lit_start_before_s": 64.3,
+     "lit_end_before_s": 53.6,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 149.0,
+     "radar_ship_cell": "F5",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 3568.0,
+     "target_to_smoke_m": 6691.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      -132.4,
+      -111.5
+     ],
+     "tgt_n": [
+      -130.5,
+      245.6
+     ]
+    }
+   ],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 48.6,
+   "conc": 462,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7918_g1_55743.html",
+   "slug": "7918_g1_55743",
+   "team": "NGA",
+   "grp": "rest",
+   "time": "8:32",
+   "e0": 512.4,
+   "cell": "F9",
+   "cap": "C",
+   "cap_real": "C",
+   "cap_edge_m": -2021.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [
+    [
+     -54.9,
+     "ours"
+    ]
+   ],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 93.8,
+   "conc": 2244,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7918_g1_55746.html",
+   "slug": "7918_g1_55746",
+   "team": "NGA",
+   "grp": "rest",
+   "time": "11:18",
+   "e0": 678.3,
+   "cell": "G8",
+   "cap": "B",
+   "cap_real": "B",
+   "cap_edge_m": 3161.0,
+   "near": true,
+   "lit": [
+    {
+     "radar_ship": "Småland",
+     "radar_cls": "destroyer",
+     "target": "Z-42",
+     "lit_start_before_s": 60.9,
+     "lit_end_before_s": 45.6,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 2114.0,
+     "radar_ship_cell": "G7",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": -2967.0,
+     "target_to_smoke_m": 8473.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      267.5,
+      -218.7
+     ],
+     "tgt_n": [
+      191.3,
+      -15.5
+     ]
+    }
+   ],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 60.3,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7919_g1_94399.html",
+   "slug": "7919_g1_94399",
+   "team": "-BN-",
+   "grp": "rest",
+   "time": "4:54",
+   "e0": 294.8,
+   "cell": "F4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -2028.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 6.8,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 88.7,
+   "conc": 7151,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7919_g1_94400.html",
+   "slug": "7919_g1_94400",
+   "team": "BONKY",
+   "grp": "rest",
+   "time": "5:53",
+   "e0": 353.9,
+   "cell": "F3",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 717.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 51.1,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7919_g1_94402.html",
+   "slug": "7919_g1_94402",
+   "team": "BONKY",
+   "grp": "rest",
+   "time": "7:07",
+   "e0": 428.0,
+   "cell": "F3",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 564.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 59.6,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7919_g1_94403.html",
+   "slug": "7919_g1_94403",
+   "team": "-BN-",
+   "grp": "rest",
+   "time": "10:08",
+   "e0": 608.3,
+   "cell": "G2",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 7019.0,
+   "near": false,
+   "lit": [
+    {
+     "radar_ship": "Moskva",
+     "radar_cls": "cruiser",
+     "target": "Marceau",
+     "lit_start_before_s": 25.7,
+     "lit_end_before_s": 15.8,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 13537.0,
+     "radar_ship_cell": "G8",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 15232.0,
+     "target_to_smoke_m": 30320.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      322.0,
+      -213.7
+     ],
+     "tgt_n": [
+      398.5,
+      157.9
+     ]
+    }
+   ],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [
+    [
+     34.1,
+     "theirs"
+    ]
+   ],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 34.1,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 45.6,
+   "conc": 9924,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7919_g1_94407.html",
+   "slug": "7919_g1_94407",
+   "team": "BONKY",
+   "grp": "rest",
+   "time": "17:49",
+   "e0": 1070.0,
+   "cell": "F3",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 2137.0,
+   "near": false,
+   "lit": [
+    {
+     "radar_ship": "Moskva",
+     "radar_cls": "cruiser",
+     "target": "A. da Barbiano",
+     "lit_start_before_s": 48.8,
+     "lit_end_before_s": 37.7,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 9007.0,
+     "radar_ship_cell": "G6",
+     "radar_from_smoke": false,
+     "target_in_smoke": true,
+     "target_to_cap_edge_m": 13696.0,
+     "target_to_smoke_m": 24383.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      156.1,
+      -214.1
+     ],
+     "tgt_n": [
+      346.1,
+      156.1
+     ]
+    }
+   ],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [
+    [
+     -0.3,
+     "theirs"
+    ]
+   ],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 55.4,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7919_g1_94408.html",
+   "slug": "7919_g1_94408",
+   "team": "-BN-",
+   "grp": "rest",
+   "time": "18:16",
+   "e0": 1096.8,
+   "cell": "E2",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 3646.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [
+    [
+     -27.1,
+     "ours"
+    ]
+   ],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 35.9,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7920_g1_144967.html",
+   "slug": "7920_g1_144967",
+   "team": "SCCC2",
+   "grp": "rest",
+   "time": "10:18",
+   "e0": 618.9,
+   "cell": "E6",
+   "cap": "B",
+   "cap_real": "B",
+   "cap_edge_m": -591.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [
+    [
+     -14.2,
+     "ours"
+    ]
+   ],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 44.6,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7920_g1_144970.html",
+   "slug": "7920_g1_144970",
+   "team": "SCCC2",
+   "grp": "rest",
+   "time": "13:52",
+   "e0": 832.2,
+   "cell": "F7",
+   "cap": "B",
+   "cap_real": "B",
+   "cap_edge_m": -1875.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 51.7,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7920_g1_144971.html",
+   "slug": "7920_g1_144971",
+   "team": "SCCC2",
+   "grp": "rest",
+   "time": "18:28",
+   "e0": 1108.9,
+   "cell": "D7",
+   "cap": "B",
+   "cap_real": "B",
+   "cap_edge_m": 1390.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 38.7,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7961_g1_17463.html",
+   "slug": "7961_g1_17463",
+   "team": "KITE",
+   "grp": "top",
+   "time": "2:00",
+   "e0": 120.8,
+   "cell": "F4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -335.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "neutral",
+   "cap_changes_after": [
+    [
+     5.8,
+     "ours"
+    ]
+   ],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 5.8,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 100.0,
+   "conc": 561,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7961_g1_17467.html",
+   "slug": "7961_g1_17467",
+   "team": "KITE",
+   "grp": "top",
+   "time": "8:04",
+   "e0": 484.2,
+   "cell": "E6",
+   "cap": "B",
+   "cap_real": "B",
+   "cap_edge_m": -1505.0,
+   "near": false,
+   "lit": [
+    {
+     "radar_ship": "Des Moines",
+     "radar_cls": "cruiser",
+     "target": "Gearing",
+     "lit_start_before_s": 50.5,
+     "lit_end_before_s": 32.5,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 14750.0,
+     "radar_ship_cell": "F3",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 10928.0,
+     "target_to_smoke_m": 12331.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      -401.1,
+      -28.3
+     ],
+     "tgt_n": [
+      -239.6,
+      185.7
+     ]
+    },
+    {
+     "radar_ship": "Des Moines",
+     "radar_cls": "cruiser",
+     "target": "Gearing",
+     "lit_start_before_s": 50.5,
+     "lit_end_before_s": 32.5,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 14619.0,
+     "radar_ship_cell": "F3",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 10928.0,
+     "target_to_smoke_m": 12331.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      -396.8,
+      -26.1
+     ],
+     "tgt_n": [
+      -239.6,
+      185.7
+     ]
+    }
+   ],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [
+    [
+     -51.4,
+     "ours"
+    ]
+   ],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 100.0,
+   "conc": 8807,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7961_g1_17469.html",
+   "slug": "7961_g1_17469",
+   "team": "KITE",
+   "grp": "top",
+   "time": "9:21",
+   "e0": 561.8,
+   "cell": "E5",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 2670.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 71.2,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7962_g1_144948.html",
+   "slug": "7962_g1_144948",
+   "team": "REEEE",
+   "grp": "rest",
+   "time": "11:07",
+   "e0": 667.3,
+   "cell": "F4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -1432.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 50.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 65.6,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7973_g1_195444.html",
+   "slug": "7973_g1_195444",
+   "team": "KSC",
+   "grp": "rest",
+   "time": "12:59",
+   "e0": 779.7,
+   "cell": "E4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -1491.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [
+    [
+     -39.5,
+     "ours"
+    ]
+   ],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 66.7,
+   "conc": 1402,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7973_g1_195447.html",
+   "slug": "7973_g1_195447",
+   "team": "KSC",
+   "grp": "rest",
+   "time": "14:56",
+   "e0": 896.6,
+   "cell": "D5",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 4046.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 47.0,
+   "conc": 9946,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8070_g2_163984.html",
+   "slug": "8070_g2_163984",
+   "team": "REEEE",
+   "grp": "rest",
+   "time": "5:50",
+   "e0": 350.2,
+   "cell": "F4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -775.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [
+    [
+     41.8,
+     "ours"
+    ]
+   ],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 41.8,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 100.0,
+   "conc": 20343,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8070_g2_163985.html",
+   "slug": "8070_g2_163985",
+   "team": "REEEE",
+   "grp": "rest",
+   "time": "7:06",
+   "e0": 426.8,
+   "cell": "F4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -649.0,
+   "near": false,
+   "lit": [
+    {
+     "radar_ship": "Petropavlovsk",
+     "radar_cls": "cruiser",
+     "target": "Yueyang",
+     "lit_start_before_s": 31.8,
+     "lit_end_before_s": 25.4,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 13796.0,
+     "radar_ship_cell": "G8",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 15838.0,
+     "target_to_smoke_m": 22453.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      338.6,
+      -192.8
+     ],
+     "tgt_n": [
+      422.6,
+      143.5
+     ]
+    }
+   ],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [
+    [
+     54.2,
+     "theirs"
+    ]
+   ],
+   "cap_changes_60s_before": [
+    [
+     -34.8,
+     "ours"
+    ]
+   ],
+   "we_invading_s": 0.0,
+   "they_invading_s": 51.1,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 100.0,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8070_g2_163990.html",
+   "slug": "8070_g2_163990",
+   "team": "REEEE",
+   "grp": "rest",
+   "time": "9:49",
+   "e0": 589.0,
+   "cell": "F4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -95.0,
+   "near": false,
+   "lit": [
+    {
+     "radar_ship": "Petropavlovsk",
+     "radar_cls": "cruiser",
+     "target": "Yueyang",
+     "lit_start_before_s": 16.0,
+     "lit_end_before_s": 9.5,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 13886.0,
+     "radar_ship_cell": "G8",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 13486.0,
+     "target_to_smoke_m": 17943.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      339.9,
+      -198.4
+     ],
+     "tgt_n": [
+      348.5,
+      114.4
+     ]
+    }
+   ],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 71.6,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8070_g2_163991.html",
+   "slug": "8070_g2_163991",
+   "team": "KITED",
+   "grp": "rest",
+   "time": "11:34",
+   "e0": 694.8,
+   "cell": "F4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -3086.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 43.5,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 90.9,
+   "conc": 3691,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8070_g2_163992.html",
+   "slug": "8070_g2_163992",
+   "team": "REEEE",
+   "grp": "rest",
+   "time": "12:17",
+   "e0": 738.0,
+   "cell": "F4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -2981.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 51.2,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 52.1,
+   "conc": 9211,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8070_g2_163994.html",
+   "slug": "8070_g2_163994",
+   "team": "REEEE",
+   "grp": "rest",
+   "time": "14:05",
+   "e0": 845.0,
+   "cell": "F4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -1311.0,
+   "near": false,
+   "lit": [
+    {
+     "radar_ship": "Petropavlovsk",
+     "radar_cls": "cruiser",
+     "target": "Yueyang",
+     "lit_start_before_s": 37.7,
+     "lit_end_before_s": 30.6,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 13655.0,
+     "radar_ship_cell": "G8",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 12230.0,
+     "target_to_smoke_m": 16272.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      335.4,
+      -187.5
+     ],
+     "tgt_n": [
+      310.6,
+      88.5
+     ]
+    }
+   ],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [
+    [
+     43.0,
+     "ours"
+    ]
+   ],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 43.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 18.0,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8070_g2_163997.html",
+   "slug": "8070_g2_163997",
+   "team": "KITED",
+   "grp": "rest",
+   "time": "15:03",
+   "e0": 903.9,
+   "cell": "F5",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 2257.0,
+   "near": false,
+   "lit": [
+    {
+     "radar_ship": "Yueyang",
+     "radar_cls": "destroyer",
+     "target": "Z-42",
+     "lit_start_before_s": 41.5,
+     "lit_end_before_s": 26.5,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 11592.0,
+     "radar_ship_cell": "F7",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 10762.0,
+     "target_to_smoke_m": 11320.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      294.0,
+      -50.6
+     ],
+     "tgt_n": [
+      223.0,
+      210.8
+     ]
+    }
+   ],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [
+    [
+     -15.9,
+     "theirs"
+    ]
+   ],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 42.1,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8070_g2_164001.html",
+   "slug": "8070_g2_164001",
+   "team": "REEEE",
+   "grp": "rest",
+   "time": "18:56",
+   "e0": 1136.7,
+   "cell": "F5",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 2322.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 18.0,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8070_g2_164003.html",
+   "slug": "8070_g2_164003",
+   "team": "KITED",
+   "grp": "rest",
+   "time": "19:20",
+   "e0": 1160.6,
+   "cell": "G4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 3685.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 42.1,
+   "conc": 1646,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8139_g1_133061.html",
+   "slug": "8139_g1_133061",
+   "team": "KITED",
+   "grp": "rest",
+   "time": "3:47",
+   "e0": 227.3,
+   "cell": "G3",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 3106.0,
+   "near": false,
+   "lit": [
+    {
+     "radar_ship": "Des Moines",
+     "radar_cls": "cruiser",
+     "target": "Kléber",
+     "lit_start_before_s": 68.7,
+     "lit_end_before_s": 42.0,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 6897.0,
+     "radar_ship_cell": "F2",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 7410.0,
+     "target_to_smoke_m": 8712.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      -616.4,
+      -51.8
+     ],
+     "tgt_n": [
+      -634.5,
+      -44.9
+     ]
+    }
+   ],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 26.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 100.0,
+   "conc": 5203,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8139_g1_133063.html",
+   "slug": "8139_g1_133063",
+   "team": "KITED",
+   "grp": "rest",
+   "time": "7:54",
+   "e0": 474.0,
+   "cell": "H4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 6351.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 100.0,
+   "conc": 340,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8148_g1_20502.html",
+   "slug": "8148_g1_20502",
+   "team": "HFANS",
+   "grp": "rest",
+   "time": "3:15",
+   "e0": 196.0,
+   "cell": "F4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -1181.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "neutral",
+   "cap_changes_after": [
+    [
+     33.5,
+     "ours"
+    ]
+   ],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 33.5,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 100.0,
+   "conc": 13694,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8148_g1_20507.html",
+   "slug": "8148_g1_20507",
+   "team": "HFANS",
+   "grp": "rest",
+   "time": "6:30",
+   "e0": 390.0,
+   "cell": "F5",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -397.0,
+   "near": false,
+   "lit": [
+    {
+     "radar_ship": "Des Moines",
+     "radar_cls": "cruiser",
+     "target": "Tromp",
+     "lit_start_before_s": 40.5,
+     "lit_end_before_s": 4.9,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 15469.0,
+     "radar_ship_cell": "F8",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 17460.0,
+     "target_to_smoke_m": 19072.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      416.9,
+      -107.7
+     ],
+     "tgt_n": [
+      474.6,
+      158.6
+     ]
+    },
+    {
+     "radar_ship": "Des Moines",
+     "radar_cls": "cruiser",
+     "target": "Lüshun",
+     "lit_start_before_s": 40.5,
+     "lit_end_before_s": 4.9,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 15469.0,
+     "radar_ship_cell": "F8",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 21626.0,
+     "target_to_smoke_m": 23077.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      416.9,
+      -107.7
+     ],
+     "tgt_n": [
+      617.0,
+      154.5
+     ]
+    }
+   ],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 16.5,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 100.0,
+   "conc": 5505,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8148_g1_20511.html",
+   "slug": "8148_g1_20511",
+   "team": "REEEE",
+   "grp": "rest",
+   "time": "9:08",
+   "e0": 548.0,
+   "cell": "G4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 1092.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 52.9,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8148_g1_20514.html",
+   "slug": "8148_g1_20514",
+   "team": "HFANS",
+   "grp": "rest",
+   "time": "11:06",
+   "e0": 666.7,
+   "cell": "G8",
+   "cap": "C",
+   "cap_real": "C",
+   "cap_edge_m": 3168.0,
+   "near": false,
+   "lit": [
+    {
+     "radar_ship": "Thor",
+     "radar_cls": "battleship",
+     "target": "Daring",
+     "lit_start_before_s": 34.2,
+     "lit_end_before_s": 10.9,
+     "still_lit_at_activation": false,
+     "radar_ship_to_cap_edge_m": 19790.0,
+     "radar_ship_cell": "G4",
+     "radar_from_smoke": false,
+     "target_in_smoke": false,
+     "target_to_cap_edge_m": 21388.0,
+     "target_to_smoke_m": 21152.0,
+     "ambiguous": false,
+     "radar_is_the_daring": false,
+     "src_n": [
+      -168.6,
+      -165.5
+     ],
+     "tgt_n": [
+      -237.6,
+      48.8
+     ]
+    }
+   ],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 100.0,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8148_g1_20515.html",
+   "slug": "8148_g1_20515",
+   "team": "REEEE",
+   "grp": "rest",
+   "time": "11:26",
+   "e0": 686.3,
+   "cell": "F4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": -2721.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [
+    [
+     -25.8,
+     "ours"
+    ]
+   ],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 64.6,
+   "conc": 0,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8148_g1_20519.html",
+   "slug": "8148_g1_20519",
+   "team": "REEEE",
+   "grp": "rest",
+   "time": "16:00",
+   "e0": 960.8,
+   "cell": "G4",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 4292.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [
+    [
+     94.6,
+     "theirs"
+    ]
+   ],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 48.7,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 48.6,
+   "conc": 1683,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8148_g1_20521.html",
+   "slug": "8148_g1_20521",
+   "team": "REEEE",
+   "grp": "rest",
+   "time": "18:01",
+   "e0": 1081.6,
+   "cell": "H3",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 7789.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "theirs",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [
+    [
+     -26.1,
+     "theirs"
+    ]
+   ],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": false,
+   "daring_health_pct": 44.0,
+   "conc": 1806,
+   "one_sided": false
+  },
+  {
+   "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8150_g1_34873.html",
+   "slug": "8150_g1_34873",
+   "team": "KITED",
+   "grp": "rest",
+   "time": "6:02",
+   "e0": 362.8,
+   "cell": "G3",
+   "cap": "A",
+   "cap_real": "A",
+   "cap_edge_m": 2226.0,
+   "near": false,
+   "lit": [],
+   "cap_owner_at_activation": "ours",
+   "cap_changes_after": [],
+   "cap_changes_60s_before": [],
+   "we_invading_s": 0.0,
+   "they_invading_s": 0.0,
+   "daring_detected_at_activation": true,
+   "daring_health_pct": 74.9,
+   "conc": 0,
+   "one_sided": false
+  }
+ ],
+ "summary": {
+  "matched": {
+   "n": 17,
+   "cap_owner_at_activation": {
+    "ours": 9,
+    "theirs": 8
+   },
+   "cap": {
+    "A": 14,
+    "B": 2,
+    "C": 1
+   },
+   "we_took_it": 1,
+   "not_ours_at_activation": 8,
+   "enemy_took_it": 2,
+   "not_theirs_at_activation": 9,
+   "daring_detected_at_activation": 9,
+   "detection_known": 17,
+   "median_conc": 462,
+   "median_time": "11:06",
+   "in_first_3_min": 0
+  },
+  "not_matched": {
+   "n": 31,
+   "cap_owner_at_activation": {
+    "neutral": 3,
+    "ours": 17,
+    "theirs": 11
+   },
+   "cap": {
+    "A": 27,
+    "C": 1,
+    "B": 3
+   },
+   "we_took_it": 4,
+   "not_ours_at_activation": 14,
+   "enemy_took_it": 3,
+   "not_theirs_at_activation": 20,
+   "daring_detected_at_activation": 16,
+   "detection_known": 31,
+   "median_conc": 340,
+   "median_time": "10:18",
+   "in_first_3_min": 2
+  },
+  "radar_ships": {
+   "Des Moines": 6,
+   "Moskva": 3,
+   "Stalingrad": 3,
+   "Minotaur": 3,
+   "Petropavlovsk": 3,
+   "Thor": 2,
+   "San Martín": 1,
+   "Småland": 1,
+   "Yueyang": 1
+  },
+  "radar_class": {
+   "cruiser": 19,
+   "battleship": 2,
+   "destroyer": 2
+  },
+  "targets": {
+   "Yueyang": 7,
+   "Daring": 3,
+   "Z-42": 2,
+   "Gearing": 2,
+   "Fuyutsuki": 1,
+   "Châteaurenault": 1,
+   "Vampire II": 1,
+   "Cassard": 1,
+   "Marceau": 1,
+   "A. da Barbiano": 1,
+   "Kléber": 1,
+   "Tromp": 1,
+   "Lüshun": 1
+  },
+  "lit_spans": 23,
+  "radar_is_the_daring": 0,
+  "radar_from_smoke": 0,
+  "target_in_smoke": 1,
+  "ambiguous": 0,
+  "still_lit_at_activation_smokes": 3,
+  "median_lead_s": 40.5,
+  "lead_range_s": [
+   3.2,
+   105.3
+  ],
+  "median_radar_ship_to_cap_edge_m": 13655.0,
+  "median_target_to_cap_edge_m": 10928.0,
+  "median_target_to_smoke_m": 16580.0,
+  "radar_ship_cells": {
+   "F8": 6,
+   "G8": 4,
+   "G7": 3,
+   "G6": 2,
+   "F3": 2,
+   "E1": 1,
+   "F6": 1,
+   "F5": 1
+  },
+  "matched_clans": "Top 6: KITE 1 | Rest: EPOXY 3, KITED 3, REEEE 3, MACHX 2, HFANS 2, NGA 1, -BN- 1, BONKY 1",
+  "matched_near": 2,
+  "games_matched": 8,
+  "games_all": 12,
+  "loop_spans": 229,
+  "loop_games": 23,
+  "radar_cells_all": {
+   "F8": 6,
+   "G8": 4,
+   "G7": 3,
+   "G6": 2,
+   "F3": 2,
+   "E1": 1,
+   "F6": 1,
+   "F5": 1,
+   "F7": 1,
+   "F2": 1,
+   "G4": 1
+  }
+ },
+ "phase": {
+  "Daring on Loop": {
+   "median_time": "10:27",
+   "first_3_min_pct": 4.2,
+   "first_5_min_pct": 12.5,
+   "before_any_60_first_5_min": "1 of 6 (too few)",
+   "before_any_60_later": "16 of 42 (38.1%, 26.9 to 56.0; base 35.6%, minus base +2.5 (-8.8 to +18.4))"
+  },
+  "Daring on other maps": {
+   "median_time": "7:57",
+   "first_3_min_pct": 3.3,
+   "first_5_min_pct": 22.4,
+   "before_any_60_first_5_min": "13 of 34 (38.2%, 25.0 to 52.9; base 39.1%, minus base -0.8 (-15.8 to +16.1))",
+   "before_any_60_later": "48 of 118 (40.7%, 29.7 to 51.3; base 39.9%, minus base +0.7 (-7.3 to +6.7))"
+  },
+  "Other cap sitters on Loop": {
+   "median_time": "8:51",
+   "first_3_min_pct": 2.5,
+   "first_5_min_pct": 22.5,
+   "before_any_60_first_5_min": "2 of 9 (22.2%, 0.0 to 55.6; base 42.2%, minus base -19.9 (-44.6 to +8.1))",
+   "before_any_60_later": "14 of 31 (45.2%, 25.6 to 68.0; base 38.4%, minus base +6.8 (-12.9 to +29.4))"
+  },
+  "Other destroyer smokes on Loop": {
+   "median_time": "7:39",
+   "first_3_min_pct": 13.0,
+   "first_5_min_pct": 33.3,
+   "before_any_60_first_5_min": "5 of 18 (27.8%, 8.7 to 52.9; base 38.7%, minus base -11.0 (-30.0 to +11.9))",
+   "before_any_60_later": "14 of 36 (38.9%, 19.2 to 58.8; base 38.7%, minus base +0.2 (-15.5 to +15.2))"
+  }
+ },
+ "reverse": {
+  "episodes": 62,
+  "with_daring_alive": 55,
+  "followed_60": 14,
+  "followed_30": 7,
+  "followed_90": 19,
+  "alive_seconds": 14405.49,
+  "daring_smokes_in_alive_time": 48,
+  "base_daring_smokes_per_60s": 0.2,
+  "followed_60_pct": 25.5,
+  "base_followed_60_pct": 21.5,
+  "followed_minus_base": 3.9,
+  "followed_minus_base_ci": [
+   -4.3,
+   13.9
+  ],
+  "clans": 11,
+  "clans_txt": "Top 6: KITE 2 | Rest: KITED 14, REEEE 8, EPOXY 7, MACHX 5, HFANS 5, -BN- 4, KSC 4, NGA 3, BONKY 2, SCCC2 1"
+ },
+ "radar_ships_in_daring_team_games": {
+  "Thor": 3,
+  "San Martín": 8,
+  "Des Moines": 8,
+  "Moskva": 8,
+  "Petropavlovsk": 7,
+  "Yueyang": 4,
+  "Stalingrad": 1,
+  "Minotaur": 1,
+  "Småland": 2,
+  "Salem": 3,
+  "Brisbane": 1
+ },
+ "check": {
+  "before_any_60_straight_from_rows": 17,
+  "round5_proxy_hits": 1,
+  "round5_proxy_hits_also_in_radar_log": 1
+ }
+}

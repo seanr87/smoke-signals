@@ -1,6 +1,6 @@
-//! The analysis of Grand Final G1 must give byte-identical smokes.csv and
-//! smokes.json on two runs over the same inputs, apart from the run
-//! timestamp, which the test pins to one value on both.
+//! The analysis of Grand Final G1 must give byte-identical smoke tables and
+//! timeline files (`OUTPUT_FILES`) on two runs over the same inputs, apart
+//! from the run timestamp, which the test pins to one value on both.
 //!
 //! The replays and game data are local inputs (gitignored). The test fails
 //! when `config.toml` or the folders it names are missing, unless

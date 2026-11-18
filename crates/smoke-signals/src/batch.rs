@@ -347,13 +347,40 @@ pub fn run_batch(
     let results: Mutex<Vec<(usize, Vec<SmokeRecord>, JobReport)>> = Mutex::new(Vec::new());
     // Game files of the runs that were not first, kept in case the first failed.
     let spare_timelines: Mutex<Vec<(usize, crate::timelines::Timelines)>> = Mutex::new(Vec::new());
+    // Game folders are named by the last part of the replay folder, so two
+    // replay folders with the same last part would share one.
+    let mut folder_of: std::collections::HashMap<String, &Path> = std::collections::HashMap::new();
+    for job in jobs {
+        let Some(name) = job.game_name() else {
+            tracing::warn!(job = %job.name(), "Replay folder has no name; no game timelines for this run");
+            continue;
+        };
+        let first = *folder_of.entry(name.clone()).or_insert(job.folder.as_path());
+        if first != job.folder.as_path() {
+            bail!("replay folders {} and {} share the name {name}", first.display(), job.folder.display());
+        }
+    }
     // The first run of a game writes the files that are the same for both
-    // runs. Keyed on the folder written to, so no two runs share one.
+    // runs.
     let mut seen_games: std::collections::HashSet<String> = std::collections::HashSet::new();
     let timelines_dirs: Vec<Option<PathBuf>> = jobs
         .iter()
         .map(|j| j.game_name().filter(|name| seen_games.insert(name.clone())).map(|name| out_dir.join("timelines").join(name)))
         .collect();
+    // tracks.csv holds the recording team; a two-replay game with one run in
+    // scope leaves the other team's ships out.
+    let mut runs_per_game: std::collections::HashMap<String, usize> = std::collections::HashMap::new();
+    for name in jobs.iter().filter_map(Job::game_name) {
+        *runs_per_game.entry(name).or_default() += 1;
+    }
+    for job in jobs.iter().filter(|j| !j.sole_run) {
+        if job.game_name().is_some_and(|name| runs_per_game.get(&name) == Some(&1)) {
+            tracing::warn!(job = %job.name(), "Only one run of a two-replay game is in scope; tracks.csv will lack the other team");
+        }
+    }
+    // Lines for the batch log raised after the workers finish, by job index.
+    let mut late_notes: Vec<(usize, String)> = Vec::new();
+    let written: Mutex<std::collections::HashSet<usize>> = Mutex::new(std::collections::HashSet::new());
     std::thread::scope(|scope| {
         for _ in 0..workers.max(1) {
             scope.spawn(|| {
@@ -367,8 +394,10 @@ pub fn run_batch(
                     let warnings = sink.take(std::thread::current().id());
                     let (smokes, mut report) = match outcome {
                         Ok((smokes, report, timelines)) => {
-                            if timelines_dirs[i].is_none() {
-                                spare_timelines.lock().expect("spare timelines").push((i, timelines));
+                            if timelines_dirs[i].is_some() {
+                                written.lock().expect("written").insert(i);
+                            } else {
+                                spare_timelines.lock().expect("spare timelines").push((i, timelines.without_run_files()));
                             }
                             (smokes, report)
                         }
@@ -399,23 +428,45 @@ pub fn run_batch(
             });
         }
     });
+    // Games whose writing run succeeded, from memory: a folder on disk may be
+    // left over from an earlier attempt.
+    let written = written.into_inner().expect("written");
+    let mut done: std::collections::HashSet<String> = written.iter().filter_map(|i| jobs[*i].game_name()).collect();
     let mut spare = spare_timelines.into_inner().expect("spare timelines");
     spare.sort_by_key(|(i, _)| *i);
     for (i, timelines) in &spare {
-        let Some(dir) = jobs[*i].game_name().map(|name| out_dir.join("timelines").join(name)) else { continue };
-        if !dir.join("meta.json").exists() {
-            tracing::warn!(dir = %dir.display(), job = %jobs[*i].name(), "First run of the game failed; timelines written from this run");
-            timelines.write_game_files(&dir)?;
+        let Some(name) = jobs[*i].game_name() else { continue };
+        if done.contains(&name) {
+            continue;
+        }
+        let dir = out_dir.join("timelines").join(&name);
+        // One game's files failing must not cost the batch its combined tables.
+        match timelines.write_game_files(&dir) {
+            Ok(()) => {
+                tracing::warn!(dir = %dir.display(), job = %jobs[*i].name(), "First run of the game failed; timelines written from this run");
+                late_notes.push((*i, "WARN timelines written from this run: the first run of the game failed".to_string()));
+                done.insert(name);
+            }
+            Err(e) => {
+                tracing::error!(dir = %dir.display(), "Writing timelines from a later run failed: {e:?}");
+                late_notes.push((*i, format!("ERROR timelines not written from this run: {e:?}")));
+            }
         }
     }
-    for dir in timelines_dirs.iter().flatten().filter(|d| !d.join("meta.json").exists()) {
-        tracing::error!(dir = %dir.display(), "No timelines written: every run of the game failed");
+    for (i, dir) in timelines_dirs.iter().enumerate().filter_map(|(i, d)| d.as_ref().map(|d| (i, d))) {
+        if jobs[i].game_name().is_some_and(|name| !done.contains(&name)) {
+            tracing::error!(dir = %dir.display(), "No timelines written: every run of the game failed");
+            late_notes.push((i, "ERROR no timelines written: every run of the game failed".to_string()));
+        }
     }
+    // The lines above were raised on this thread, which no worker drains.
+    let _ = sink.take(std::thread::current().id());
     let mut results = results.into_inner().expect("results");
     results.sort_by_key(|(i, _, _)| *i);
     let mut smokes = Vec::new();
     let mut reports = Vec::new();
-    for (_, s, r) in results {
+    for (i, s, mut r) in results {
+        r.warnings.extend(late_notes.iter().filter(|(j, _)| *j == i).map(|(_, note)| note.clone()));
         smokes.extend(s);
         reports.push(r);
     }

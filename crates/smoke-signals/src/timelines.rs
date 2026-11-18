@@ -287,7 +287,9 @@ pub struct Meta {
     /// Replay whose clock `t_s` is.
     pub clock_replay: String,
     pub merged_replays: Vec<String>,
-    /// The game has one replay: the other team is seen only through it.
+    /// No other replay was merged in: the other team is seen only through
+    /// the primary replay. True for a game with one replay, and for a
+    /// two-replay folder analysed with merging off.
     pub one_sided: bool,
     pub battle_start_s: f32,
     pub step_s: f32,
@@ -483,7 +485,13 @@ impl Collector {
         let own_team: Option<i64> = ctx.recorder.and_then(|e| ships.get(&e)).map(|s| s.team_id);
         // Whether the ship's team recorded the primary replay. Unknown without a recorder.
         let own_replay = |e: EntityId| own_team.and_then(|team| ships.get(&e).map(|s| s.team_id == team));
-        // The only run of a game keeps the other team too, marked not own.
+        if own_team.is_none() {
+            tracing::warn!(
+                match_id = ctx.match_id,
+                "Recording player not found; tracks.csv keeps every ship with own_replay blank"
+            );
+        }
+        // With no other replay merged in, the other team is kept too, marked not own.
         let sole_run = ctx.merged_replays.is_empty();
         let mut score_csv = String::from("match_id,game_no,t_s,elapsed_s,clock,team_id,team,score\n");
         let mut order: Vec<EntityId> =
@@ -735,10 +743,16 @@ impl Collector {
 }
 
 impl Timelines {
+    /// Drop the per-run files, for a copy kept only to write the game files.
+    pub fn without_run_files(mut self) -> Self {
+        self.tracks_csv = String::new();
+        self.ribbons_csv = String::new();
+        self
+    }
+
     /// The files written once per game: caps, radar and hydro, score.
     pub fn write_game_files(&self, dir: &Path) -> Result<(), Report> {
         std::fs::create_dir_all(dir).attach_with(|| format!("creating {}", dir.display()))?;
-        crate::output::write_json(&dir.join("meta.json"), &self.meta)?;
         for (name, text) in [
             ("caps_timeline.csv", &self.caps_csv),
             ("radar.csv", &self.radar_csv),
@@ -747,12 +761,15 @@ impl Timelines {
             let path = dir.join(name);
             std::fs::write(&path, text).attach_with(|| format!("writing {}", path.display()))?;
         }
+        // Last, so a folder with meta.json holds every game file.
+        crate::output::write_json(&dir.join("meta.json"), &self.meta)?;
         Ok(())
     }
 
     /// The files written once per run: the recording team's ship tracks and
     /// the recording player's cap ribbons.
     pub fn write_run_files(&self, dir: &Path) -> Result<(), Report> {
+        std::fs::create_dir_all(dir).attach_with(|| format!("creating {}", dir.display()))?;
         for (name, text) in [("tracks.csv", &self.tracks_csv), ("ribbons.csv", &self.ribbons_csv)] {
             let path = dir.join(name);
             std::fs::write(&path, text).attach_with(|| format!("writing {}", path.display()))?;

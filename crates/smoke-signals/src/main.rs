@@ -199,6 +199,7 @@ fn main() -> Result<(), Report> {
             let name_of = |e: u32| analysis.game.player(e).map(|p| p.player.clone());
             output::write_damage_events_csv(&out_dir.join("damage_events.csv"), &analysis.damage_events, &name_of)?;
             output::write_json(&out_dir.join("damage_spike.json"), &analysis.damage_stats)?;
+            analysis.timelines.write_run_files(&out_dir)?;
             analysis.timelines.write_game_files(&out_dir.join("timelines"))?;
             let log = output::run_log(
                 &analysis.game,

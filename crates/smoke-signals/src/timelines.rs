@@ -731,6 +731,13 @@ impl Timelines {
         }
         Ok(())
     }
+
+    /// The file written once per run: the recording player's cap ribbons.
+    pub fn write_run_files(&self, dir: &Path) -> Result<(), Report> {
+        let path = dir.join("ribbons.csv");
+        std::fs::write(&path, &self.ribbons_csv).attach_with(|| format!("writing {}", path.display()))?;
+        Ok(())
+    }
 }
 
 #[cfg(test)]

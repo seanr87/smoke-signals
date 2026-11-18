@@ -199,7 +199,7 @@ pub fn run_job(
     game_timelines_dir: Option<&Path>,
     render_frames: bool,
     clip_ids: &[u32],
-) -> Result<(Vec<SmokeRecord>, JobReport), Report> {
+) -> Result<(Vec<SmokeRecord>, JobReport, crate::timelines::Timelines), Report> {
     let started = std::time::Instant::now();
     let config = job_config(base, job);
     let replays = replays::load_game_folder(
@@ -277,7 +277,7 @@ pub fn run_job(
         error: None,
         seconds: started.elapsed().as_secs_f32(),
     };
-    Ok((kept, report))
+    Ok((kept, report, analysis.timelines))
 }
 
 /// Captures WARN and ERROR events per thread so the batch log can list them
@@ -345,6 +345,8 @@ pub fn run_batch(
     let started = std::time::Instant::now();
     let next = std::sync::atomic::AtomicUsize::new(0);
     let results: Mutex<Vec<(usize, Vec<SmokeRecord>, JobReport)>> = Mutex::new(Vec::new());
+    // Game files of the runs that were not first, kept in case the first failed.
+    let spare_timelines: Mutex<Vec<(usize, crate::timelines::Timelines)>> = Mutex::new(Vec::new());
     // The first run of a game writes the files that are the same for both
     // runs. Keyed on the folder written to, so no two runs share one.
     let mut seen_games: std::collections::HashSet<String> = std::collections::HashSet::new();
@@ -364,7 +366,12 @@ pub fn run_batch(
                         run_job(config, game_data, job, &game_dir, timelines_dirs[i].as_deref(), render_frames, clip_ids);
                     let warnings = sink.take(std::thread::current().id());
                     let (smokes, mut report) = match outcome {
-                        Ok(v) => v,
+                        Ok((smokes, report, timelines)) => {
+                            if timelines_dirs[i].is_none() {
+                                spare_timelines.lock().expect("spare timelines").push((i, timelines));
+                            }
+                            (smokes, report)
+                        }
                         Err(e) => {
                             tracing::error!(job = %job.name(), "Job failed: {e:?}");
                             let report = JobReport {
@@ -392,8 +399,17 @@ pub fn run_batch(
             });
         }
     });
+    let mut spare = spare_timelines.into_inner().expect("spare timelines");
+    spare.sort_by_key(|(i, _)| *i);
+    for (i, timelines) in &spare {
+        let Some(dir) = jobs[*i].game_name().map(|name| out_dir.join("timelines").join(name)) else { continue };
+        if !dir.join("meta.json").exists() {
+            tracing::warn!(dir = %dir.display(), job = %jobs[*i].name(), "First run of the game failed; timelines written from this run");
+            timelines.write_game_files(&dir)?;
+        }
+    }
     for dir in timelines_dirs.iter().flatten().filter(|d| !d.join("meta.json").exists()) {
-        tracing::error!(dir = %dir.display(), "No timelines written: the run that writes them failed");
+        tracing::error!(dir = %dir.display(), "No timelines written: every run of the game failed");
     }
     let mut results = results.into_inner().expect("results");
     results.sort_by_key(|(i, _, _)| *i);

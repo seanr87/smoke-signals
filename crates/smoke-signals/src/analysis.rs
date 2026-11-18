@@ -1084,6 +1084,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
             match_id: &match_id,
             game_no: config.game.game_no,
             primary_replay: &primary_replay,
+            merged_replays: &merged_replays,
             clock_map: &map,
             timeline: &tl,
             flag_history: tracker.flag_history(),

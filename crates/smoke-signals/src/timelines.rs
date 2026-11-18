@@ -226,6 +226,8 @@ pub struct Context<'a> {
     pub match_id: &'a str,
     pub game_no: Option<u32>,
     pub primary_replay: &'a str,
+    /// The other replays merged into the session.
+    pub merged_replays: &'a [String],
     pub clock_map: &'a BattleClockMap,
     pub timeline: &'a PositionTimeline,
     pub flag_history: &'a HashMap<EntityId, Vec<(GameClock, VisibilityFlags)>>,
@@ -279,6 +281,9 @@ pub struct Meta {
     pub game_no: Option<u32>,
     /// Replay whose clock `t_s` is.
     pub clock_replay: String,
+    pub merged_replays: Vec<String>,
+    /// The game has one replay: the other team is seen only through it.
+    pub one_sided: bool,
     pub battle_start_s: f32,
     pub step_s: f32,
     pub time_base: &'static str,
@@ -519,6 +524,8 @@ impl Collector {
             match_id: ctx.match_id.to_string(),
             game_no: ctx.game_no,
             clock_replay: ctx.primary_replay.to_string(),
+            merged_replays: ctx.merged_replays.to_vec(),
+            one_sided: ctx.merged_replays.is_empty(),
             battle_start_s: start,
             step_s: TRACK_STEP_SECONDS,
             time_base: "t_s is the replay clock of clock_replay, the clock of the t_* columns in that run's smokes.csv. \

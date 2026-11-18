@@ -6,11 +6,11 @@ Live site: https://seanr87.github.io/smoke-signals/
 
 ## 1. Goal and scope
 
-For every smoke laid by H-SR, RESIN and PN in King of the Sea XIX NA, the tool produces two minimap frames, a zoomed view of each, a metadata record and (for award smokes) a clip, then builds a static site that compares how the three clans use smoke. The goal is to learn how competitive teams use smoke effectively.
+For every smoke laid in King of the Sea XIX NA, the tool produces two minimap frames, a zoomed view of each, a metadata record and (for award smokes) a clip, then builds a static site that compares how the clans use smoke. Since version 0.4.0 it also writes per-game timelines (section 15) for analysis. The goal is to learn how competitive teams use smoke effectively.
 
-- Teams: H-SR (NA regional winner), RESIN (runner-up), PN (our clan, the comparison). PN played the group stage only.
-- Games: 45 played games in the replay set (group stage and playoffs for H-SR and RESIN, group stage for PN); 43 of them have at least one analysed smoke. 217 smokes: H-SR 100, RESIN 103, PN 14.
-- Framing: a few hundred smokes supports descriptive patterns and strong examples, not causal claims. Purpose and intent tags are hand work that has not started; the site no longer says so on every page.
+- Teams: all 30 clans of the tournament. The first six rounds covered H-SR (NA regional winner), RESIN (runner-up) and PN (our clan); round 7 widened it to the full field. The analysis rounds compare a Top 6 by record (H-SR, RESIN, BONKZ, HTDOG, KITE, VRTUS) with the other 24 clans.
+- Games: 171 played games, 341 replays (170 games with both teams' replays, one with a single replay), one run per team per game. 1,547 smokes kept: 1,074 by destroyers, 439 by cruisers, 34 by battleships. One game has no kept smoke.
+- Framing: this supports descriptive patterns and strong examples, not causal claims. Purpose and intent tags are assigned by rule (section 5); hand tagging has not started.
 
 ## 2. Status
 
@@ -23,14 +23,17 @@ For every smoke laid by H-SR, RESIN and PN in King of the Sea XIX NA, the tool p
 | 2. Demo site, round 4 | Kills from smoke, smoke deaths, shooter and target tables, 14 km ship reach, half-map zoomed view with fire lines; map-crop thumbnails, Analysis folded into Clans (grouped charts, best first), Home key terms, smoke page in three groups, Maps filters fixed plus ships pie, Smokes table reworked, player chart labelled and clickable | Done and published 3 Nov 2026 |
 | 2. Demo site, round 5 | Classification of every smoke (smoker, movement, coverage, purpose tags with priority and confidence, counter_smoke), location context (map profiles, zone, lane, cap role, front line, caps in range), smokees with detection kinds, class and type lenses sitewide with destroyer defaults, Maps zone overlay, ANALYSIS and DECISIONS docs, review list, r5 export | Done and published 4 Nov 2026 (overnight, no approval stops) |
 | 2. Demo site, round 6 | Concealed vs detected damage with reasons, DD damage, stationary movement, cap_control on the contested cap with radar activated, damage purpose at 20k only, counter_smoke at 45 s and 12 km, merged Smokees table with badges, bare zoomed view sized to the smokees and targets, Maps overlay and grid orientation fixed with an overlay test, Tendencies group and softer wording, r6 export | Done and published 4 Nov 2026 |
-| 2. Full field, round 7 | Every clan and game (171 games, 341 replays, 30 clans): inventory of the whole tournament, one run per team per game, own-run rosters, one-sided runs, offset search to 12 s, torpedo classification by dead reckoning with a victim-aware floor, secondary and airstrike kinds, owner note only without an activation, standing sanity script, STEP reports in smoke/STEP*.md | Analysis done 16 Nov 2026; site plan approved, build pending |
+| 2. Full field, round 7 | Every clan and game (171 games, 341 replays, 30 clans): inventory of the whole tournament, one run per team per game, own-run rosters, one-sided runs, offset search to 12 s, torpedo classification by dead reckoning with a victim-aware floor, secondary and airstrike kinds, owner note only without an activation, standing sanity script, STEP reports in smoke/STEP*.md | Done and published 17 Nov 2026 (batch `output/20261117-122135`, site on gh-pages; STEP 3 to 8 reports) |
+| Analysis rounds 1 to 5 | Read-only studies of the published batch under `smoke/analysis/` (top clans, cap distance, round 3 modules, round 4 Smoke Atlas content, round 5 topic cards, ships, maps and clan styles) | Done 17 Nov 2026, on `full-field` up to tag `pre-r5b` |
+| Round 5b: timelines | smoke-signals 0.4.0: cap ownership timeline, radar and hydro log, ship tracks with real health, score timeline, cap ribbons (section 15); full rerun as `output/20261117-230933` with every existing field unchanged (`smoke/STEP9-R5B-RERUN.md`); round 5 redone as `smoke/analysis/round5b/` | Done 18 Nov 2026 on branch `r5b`; data zip on release `data-r5b` |
+| Round 5c | Remaining round 5 items redone with fixed definitions (two smoke-death metrics, replay-clock "early", cap results from the cap timeline): `smoke/analysis/round5c/` | Done 18 Nov 2026 on branch `r5b` |
 | 3. Interactive | Tagging, comments, hosting, login | Decided after the demo is presented |
 
 Deferred past the demo: build data (commander skills and upgrades) and effective smoke stats; hand tagging (pages show "untagged"); clips for every smoke; a second golden test game; image compression; the desktop app integration.
 
 ## 3. Repository, build, test, run, publish
 
-The work lives in a fork of [landaire/wows-toolkit](https://github.com/landaire/wows-toolkit) (MIT), GitHub `seanr87/smoke-signals`, branch `smoke-signals`, checked out at `C:\Users\soreill5\KOTS Analysis\wows-toolkit`. The fork's conventions apply: no AI attribution in commits, ASCII only, short commit messages. `jj` is preferred by the fork's AGENTS.md but is not installed, so `git` is used.
+The work lives in a fork of [landaire/wows-toolkit](https://github.com/landaire/wows-toolkit) (MIT), GitHub `seanr87/smoke-signals`. Branches: `main` (the published source, checked out at `C:\Users\soreill5\KOTS Analysis\wows-toolkit`), `full-field` (integration; also carries the analysis-core split and the destroyer-engagements work from another line of work), `r5b` (timelines and analysis rounds 5b and 5c, from `full-field` at tag `pre-r5b`, checked out in a second working folder `C:\Users\soreill5\KOTS Analysis\wows-toolkit-r5b`), `gh-pages` (the published site), and `smoke-signals` (the round 1 to 6 line). Batch outputs, replays and game data are not in git; a second working folder reads them from the first (`smoke/analysis/round5b/batch.json`, `SMOKE_SIGNALS_CONFIG` for the tests). The fork's conventions apply: no AI attribution in commits, ASCII only, short commit messages. `jj` is preferred by the fork's AGENTS.md but is not installed, so `git` is used.
 
 ```
 crates/smoke-signals/            the smoke_signals program (Rust, edition 2024)
@@ -38,6 +41,7 @@ crates/smoke-signals/            the smoke_signals program (Rust, edition 2024)
   src/damage.rs                  damage ledger merge, weapon classification, smoke credit
   src/classify.rs                round 5: movement, coverage, purpose tags, location, smokees, land mask
   src/tier2.rs                   ships inside smokes, detection flags, consumable ranges
+  src/timelines.rs               version 0.4.0: cap, radar, track, score and ribbon timelines (section 15)
   src/state.rs                   Tier 1 state at a moment, cap proximity
   src/frames.rs  clips.rs        frames, zoom images, clips
   src/records.rs  output.rs      the metadata record, CSV and JSON writers
@@ -49,6 +53,9 @@ smoke/inventory.csv              every game: match id, stage, round, map, teams,
 smoke/tools/build_site.py        static site builder
 smoke/tools/publish_site.py      GitHub Pages publisher
 smoke/tools/export_data.py       data zip (smokes, games, clans, breakdown, ship classes)
+smoke/tools/sanity.py           standing checks on a batch
+smoke/tools/check_timelines.py  checks on a batch with timelines against an earlier batch
+smoke/analysis/                 analysis rounds (round3 ... round5c), each with its scripts, findings and check file
 smoke/maps/<map>.yaml            DRAFT map profiles (layout, terrain, caps, zones)
 smoke/ANALYSIS.md  DECISIONS-ROUND5.md  REVIEW-ROUND5.md   round 5 method, decisions, review list
 smoke/tests/golden_gf_g1_hsr.csv golden test reference
@@ -65,9 +72,9 @@ cargo build -p smoke-signals --release --offline
 cargo test -p smoke-signals --release --offline
 ```
 
-The tests are 22 unit tests, the golden test (`smoke/tests/golden_gf_g1_hsr.csv`: Grand Final G1 H-SR smokes must match by player, ship, type, variant and activation and capture clocks within tolerance, with no owner flag) and the determinism test (the analysis run twice gives identical smokes.csv and smokes.json). Both integration tests need `config.toml`, the replays and the game data; set `SMOKE_SIGNALS_SKIP_GOLDEN=1` to skip them elsewhere.
+The tests are 31 unit tests (7 of them for the timelines), the golden test (`smoke/tests/golden_gf_g1_hsr.csv`: Grand Final G1 H-SR smokes must match by player, ship, type, variant and activation and capture clocks within tolerance, with no owner flag) and the determinism test (the analysis run twice gives identical smokes.csv, smokes.json and timeline files): 33 in all. Both integration tests need `config.toml`, the replays and the game data; set `SMOKE_SIGNALS_SKIP_GOLDEN=1` to skip them elsewhere, or `SMOKE_SIGNALS_CONFIG=<path to config.toml>` to run them from a second working folder.
 
-**Analyse every game (the batch).** Reads `smoke/inventory.csv`, finds `replays/<game folder>/`, uses the analysed team's own replay as the primary and merges the opponent's, one run per team in scope, and writes `output/<timestamp>/` with `smokes.json`, `smokes.csv`, `jobs.json`, `run_log.md` and `games/<run>/` (game.json, smokes.json, damage_spike.json, damage_events.csv, frames/, clips/). About 150 s for 53 runs with `--jobs 6`.
+**Analyse every game (the batch).** Reads `smoke/inventory.csv`, finds `replays/<game folder>/`, uses the analysed team's own replay as the primary and merges the opponent's, one run per team in scope, and writes `output/<timestamp>/` with `smokes.json`, `smokes.csv`, `jobs.json`, `run_log.md`, `games/<run>/` (game.json, smokes.json, damage_spike.json, damage_events.csv, tracks.csv, ribbons.csv, frames/, clips/) and `timelines/<game>/` (meta.json, caps_timeline.csv, radar.csv, score.csv). The full field is 341 runs: about 24 minutes with frames and `--jobs 6`. Teams are named with `--teams=`; a tag that starts with a dash (-BN-) goes last.
 
 ```bash
 target/release/smoke_signals.exe --config config.toml batch --jobs 6
@@ -75,7 +82,7 @@ target/release/smoke_signals.exe --config config.toml maps --names "Hotspot,Loop
 target/release/smoke_signals.exe --config config.toml batch --jobs 5 --matches 7924,8178,7901,7981,8147 --clips 46513,106317,27145,174224,120803 --clip-speed 5 --clip-bitrate-kbps 1200
 ```
 
-The second command exports the minimap images and `maps.json` (with in-game titles) that the site needs; the third renders the award clips (the ids are the current winners). Batch options: `--matches`, `--teams`, `--maps`, `--no-frames`, `--clips <ids>`, `--clip-speed`, `--clip-bitrate-kbps`. Never delete an output folder; every run gets its own timestamp. A full batch with frames takes about 7 minutes (the zoomed view is a second render). Current data: batch `output/20261117-104945`, maps `output/20261103-143026/maps`, clips in `output/20261116-225332/site-clips` (the award clips as `<match>_g<n>_<id>.mp4`, the folder the builder reads).
+The second command exports the minimap images and `maps.json` (with in-game titles) that the site needs; the third renders the award clips (the ids are the current winners). Batch options: `--matches`, `--teams`, `--maps`, `--no-frames`, `--clips <ids>`, `--clip-speed`, `--clip-bitrate-kbps`. Never delete an output folder; every run gets its own timestamp. Current data: analysis batch `output/20261117-230933` (version 0.4.0, with timelines); published site batch `output/20261117-122135` (version 0.3.0; every smoke field is the same in both); maps `output/20261103-143026/maps`, clips in `output/20261116-225332/site-clips` (the award clips as `<match>_g<n>_<id>.mp4`, the folder the builder reads).
 
 **Build the site.** Clips are passed as a folder of `<smoke_id>.mp4`.
 
@@ -279,7 +286,7 @@ History: round 1 and 2 Deepest Cap Smoke went to PN_Sean_O_Reill's Harugumo on M
 - The line-of-sight test uses the hull's base detection range, not the build's concealment; enemies within the base range but outside the real detection range can mark a smoke as needed.
 - The Deepest Cap Smoke can be a zero-damage smoke, since defending a contested cap is enough for eligibility (current winner).
 - Smoke objects come from the primary replay only; a smoke the primary recorder never saw is not in the table.
-- A team without a replay has every smoke flagged for owner attribution; 22 of 217 smokes carry an owner flag.
+- A team without a replay has every smoke flagged for owner attribution (the 9 one-sided smokes of the single-replay game); 103 of 1,547 smokes carry an owner flag.
 - Crawling smoke has no test coverage (none in the replay set).
 - The bracket shows only the series in the replay set; the other series are TBD placeholders.
 - The game and clips folders are large (`smoke-site/` about 240 MB, mostly frames); image compression is deferred.
@@ -287,7 +294,10 @@ History: round 1 and 2 Deepest Cap Smoke went to PN_Sean_O_Reill's Harugumo on M
 - The zoomed view is a 2x upscale of the 768 px minimap, so it is softer than a native render; drawing the minimap larger needs a change to the upstream renderer, whose size is a crate constant.
 - hydro_trap never fires in this set (33 hydro runs from smoke, no new sonar spot within range); it stays in the data and off the site. counter_smoke fires on 11 smokes at 45 s and 12 km, two of them at 12.0 km rounded (borderline). Movement is unknown for 23 smokes whose smoker or enemies had no position at laying start. Land is the drawn coastline from the map's land layer, not the collision mesh. The smoker counts as inside its own smoke while laying by rule, because the replay shows each puff some seconds after the ship passed.
 - Kills use the last damage event in the merged ledger within 10 s of the death; a sinking whose final hit neither replay saw, or whose final blow was a flood or unknown damage, credits no smoke.
-- A smoke death needs a visible detection flag change after concealment; a ship sunk while still undetected (blind fire, torpedoes) is not counted.
+- Smoke deaths have two definitions, and they differ by about a factor of two for destroyers. "Caught" is the batch `smoke_deaths` list (section 6): a ship the smoke concealed that was detected and sunk while concealed or within 20 s of the smoke clearing around it; it needs a visible detection flag change after concealment, so a ship sunk while still undetected (blind fire, torpedoes), a ship lit throughout, and a ship that sailed out and died elsewhere are not counted. 177 ships in all, 124 in destroyer smokes. "Died" is the analysis definition from ship tracks (`smoke/analysis/round5c/r5clib.py`): a covered ship (the smoker, or a ship the batch lists as inside or behind the smoke) whose death falls between activation and exactly 20 s after the smoke dispersed, each ship counted once. 259 ships in all, 194 in destroyer smokes. The site shows "caught"; the analysis rounds from 5c on report both.
+- Timelines (section 15): which radar lit a ship is attributed by range and time, not read from the replay (about 5% of lit rows are ambiguous and 3% of lit spans have no radar in range); ribbons exist for the recording player only (341 ships of 3,078); in the single-replay game the other team's health and detection are blank or stale while unseen; track samples are 2 s apart.
+- Elapsed time must come from the replay clock (`t_s` minus `battle_start_s`). Two games ran on a 15-minute clock, so "20:00 minus the HUD clock" is 300 s off for their 17 smokes; analysis rounds 3 to 5 used it, round 5b corrected it.
+- `cap_won` credits any cap within gun range of a ship in the smoke and `cap_defended` fires for any owned middle or enemy-side cap with an enemy inside, wherever the smoke is. Neither says the smoke took or held a cap; the analysis uses the cap timeline on a fixed cap instead.
 
 ## 11. Open questions
 

@@ -1,7 +1,7 @@
 # Round 5c: the remaining Round 5 items on fixed definitions
 
 Analysis only. No crate change, no batch rerun. Batch `output/20261117-230933` (smoke-signals 0.4.0). Written on branch
-`r5b`. Package content: see the next line once committed.
+`r5b`. Package content committed as b6cc85fc; the zip and this line follow in the next commit.
 
 ## What is here
 

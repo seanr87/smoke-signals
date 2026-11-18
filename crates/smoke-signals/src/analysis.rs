@@ -945,6 +945,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
     let recorder: Option<EntityId> =
         view.player_entities().iter().find(|(_, p)| p.relation().is_self()).map(|(id, _)| *id);
     let cap_positions = timelines.cap_positions();
+    let max_health = timelines.max_health();
     let scores: HashMap<usize, i64> = view.team_scores().iter().map(|s| (s.team_index, s.score)).collect();
     let winner_id = view.winning_team();
     let finish_type = view.finish_type().map(|f| match f {
@@ -1034,6 +1035,7 @@ pub fn analyze_game(config: &Config, game: &GameData, replays: &ReplaySet) -> Re
                         gun_range_m: tracker.ranges().get(e).and_then(|r| r.gun_m),
                         radar_m: tracker.ranges().get(e).and_then(|r| r.radar_m),
                         detection_m: tracker.ranges().get(e).and_then(|r| r.detection_m),
+                        max_health: max_health.get(e).copied(),
                     }
                 })
                 .collect();

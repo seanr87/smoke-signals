@@ -303,6 +303,8 @@ pub struct PlayerRecord {
     pub radar_m: Option<f32>,
     /// Base surface detection range in meters.
     pub detection_m: Option<f32>,
+    /// Largest maximum health seen on the ship over the game.
+    pub max_health: Option<f32>,
 }
 
 #[derive(Debug, Clone, Serialize)]

@@ -41,14 +41,28 @@ fn pin_timestamp(analysis: &mut Analysis) {
     }
 }
 
-fn write_outputs(analysis: &Analysis, dir: &Path) -> (Vec<u8>, Vec<u8>) {
+const OUTPUT_FILES: [&str; 8] = [
+    "smokes.csv",
+    "smokes.json",
+    "ribbons.csv",
+    "meta.json",
+    "caps_timeline.csv",
+    "radar.csv",
+    "tracks.csv",
+    "score.csv",
+];
+
+fn write_outputs(analysis: &Analysis, dir: &Path) -> Vec<Vec<u8>> {
     std::fs::create_dir_all(dir).expect("output dir");
-    let csv = dir.join("smokes.csv");
-    let json = dir.join("smokes.json");
-    output::write_smokes_csv(&csv, &analysis.smokes).expect("smokes.csv");
-    output::write_json(&json, &output::SmokesDocument { game: &analysis.game, smokes: &analysis.smokes })
-        .expect("smokes.json");
-    (std::fs::read(&csv).expect("read csv"), std::fs::read(&json).expect("read json"))
+    output::write_smokes_csv(&dir.join("smokes.csv"), &analysis.smokes).expect("smokes.csv");
+    output::write_json(
+        &dir.join("smokes.json"),
+        &output::SmokesDocument { game: &analysis.game, smokes: &analysis.smokes },
+    )
+    .expect("smokes.json");
+    analysis.timelines.write_run_files(dir).expect("run timelines");
+    analysis.timelines.write_game_files(dir).expect("game timelines");
+    OUTPUT_FILES.iter().map(|name| std::fs::read(dir.join(name)).unwrap_or_else(|e| panic!("reading {name}: {e}"))).collect()
 }
 
 fn first_difference(name: &str, a: &[u8], b: &[u8]) -> Option<String> {
@@ -92,12 +106,10 @@ fn grand_final_g1_analysis_is_repeatable() {
     }
     let _ = std::fs::remove_dir_all(&scratch);
 
-    let failures: Vec<String> = [
-        first_difference("smokes.csv", &outputs[0].0, &outputs[1].0),
-        first_difference("smokes.json", &outputs[0].1, &outputs[1].1),
-    ]
-    .into_iter()
-    .flatten()
-    .collect();
+    let failures: Vec<String> = OUTPUT_FILES
+        .iter()
+        .enumerate()
+        .filter_map(|(i, name)| first_difference(name, &outputs[0][i], &outputs[1][i]))
+        .collect();
     assert!(failures.is_empty(), "{}", failures.join("\n"));
 }

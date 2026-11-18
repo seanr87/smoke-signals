@@ -1,0 +1,8472 @@
+{
+ "anchors": {
+  "smokes": 1547,
+  "dd": 1074,
+  "dd_top": 387,
+  "dd_rest": 687,
+  "dd_early": 308,
+  "dd_rates": {
+   "n": 1074,
+   "n_died_base": 1067,
+   "died": 194,
+   "died_per100": 18.181818181818183,
+   "died_smoker_per100": 12.74601686972821,
+   "died_cr_per100_cov": 8.732876712328768,
+   "caught": 124,
+   "caught_per100": 11.54562383612663,
+   "caught_smoker_per100": 6.424581005586592,
+   "caught_cr_per100_cov": 8.17717206132879
+  },
+  "died_not_ok": 9
+ },
+ "B2": {
+  "rows": [
+   {
+    "label": "Napoli",
+    "n": 147,
+    "tag": "",
+    "clans": 25,
+    "top6": 15,
+    "rest": 132,
+    "n_died_base": 147,
+    "died_ships": 28,
+    "caught_ships": 24,
+    "died_smoker_n": 26,
+    "caught_smoker_n": 22,
+    "n_cr_cov": 8,
+    "n_cr_in": 8,
+    "died_cr_n": 0,
+    "caught_cr_n": 0,
+    "died": {
+     "v": 19.0,
+     "ci": [
+      13.1,
+      27.0
+     ]
+    },
+    "caught": {
+     "v": 16.3,
+     "ci": [
+      10.8,
+      25.0
+     ]
+    },
+    "died_smoker": {
+     "v": 17.7,
+     "ci": [
+      11.9,
+      25.0
+     ]
+    },
+    "caught_smoker": {
+     "v": 15.0,
+     "ci": [
+      9.8,
+      21.8
+     ]
+    }
+   },
+   {
+    "label": "Venezia",
+    "n": 21,
+    "tag": "",
+    "clans": 3,
+    "top6": 0,
+    "rest": 21,
+    "n_died_base": 21,
+    "died_ships": 6,
+    "caught_ships": 6,
+    "died_smoker_n": 5,
+    "caught_smoker_n": 5,
+    "n_cr_cov": 1,
+    "n_cr_in": 1,
+    "died_cr_n": 1,
+    "caught_cr_n": 1,
+    "died": {
+     "v": 28.6,
+     "ci": [
+      11.1,
+      60.0
+     ]
+    },
+    "caught": {
+     "v": 28.6,
+     "ci": [
+      11.1,
+      60.0
+     ]
+    },
+    "died_smoker": {
+     "v": 23.8,
+     "ci": [
+      11.1,
+      40.0
+     ]
+    },
+    "caught_smoker": {
+     "v": 23.8,
+     "ci": [
+      11.1,
+      40.0
+     ]
+    }
+   },
+   {
+    "label": "Italian cruisers together",
+    "n": 168,
+    "tag": "",
+    "clans": 25,
+    "top6": 15,
+    "rest": 153,
+    "n_died_base": 168,
+    "died_ships": 34,
+    "caught_ships": 30,
+    "died_smoker_n": 31,
+    "caught_smoker_n": 27,
+    "n_cr_cov": 9,
+    "n_cr_in": 9,
+    "died_cr_n": 1,
+    "caught_cr_n": 1,
+    "died": {
+     "v": 20.2,
+     "ci": [
+      14.6,
+      27.6
+     ]
+    },
+    "caught": {
+     "v": 17.9,
+     "ci": [
+      12.7,
+      25.0
+     ]
+    },
+    "died_smoker": {
+     "v": 18.5,
+     "ci": [
+      13.6,
+      25.2
+     ]
+    },
+    "caught_smoker": {
+     "v": 16.1,
+     "ci": [
+      11.5,
+      22.3
+     ]
+    }
+   },
+   {
+    "label": "C. Colombo (battleship)",
+    "n": 20,
+    "tag": "",
+    "clans": 13,
+    "top6": 2,
+    "rest": 18,
+    "n_died_base": 20,
+    "died_ships": 5,
+    "caught_ships": 2,
+    "died_smoker_n": 5,
+    "caught_smoker_n": 2,
+    "n_cr_cov": 1,
+    "n_cr_in": 1,
+    "died_cr_n": 0,
+    "caught_cr_n": 0,
+    "died": {
+     "v": 25.0,
+     "ci": [
+      9.1,
+      42.1
+     ]
+    },
+    "caught": {
+     "v": 10.0,
+     "ci": [
+      0.0,
+      23.8
+     ]
+    },
+    "died_smoker": {
+     "v": 25.0,
+     "ci": [
+      10.0,
+      41.2
+     ]
+    },
+    "caught_smoker": {
+     "v": 10.0,
+     "ci": [
+      0.0,
+      23.5
+     ]
+    }
+   },
+   {
+    "label": "Conte Verde (battleship)",
+    "n": 9,
+    "tag": "small n",
+    "clans": 2,
+    "top6": 8,
+    "rest": 1,
+    "n_died_base": 9,
+    "died_ships": 1,
+    "caught_ships": 1,
+    "died_smoker_n": 1,
+    "caught_smoker_n": 1,
+    "n_cr_cov": 3,
+    "n_cr_in": 3,
+    "died_cr_n": 0,
+    "caught_cr_n": 0,
+    "died": {
+     "v": 11.1,
+     "ci": null
+    },
+    "caught": {
+     "v": 11.1,
+     "ci": null
+    },
+    "died_smoker": {
+     "v": 11.1,
+     "ci": null
+    },
+    "caught_smoker": {
+     "v": 11.1,
+     "ci": null
+    }
+   },
+   {
+    "label": "All battleships",
+    "n": 34,
+    "tag": "",
+    "clans": 16,
+    "top6": 10,
+    "rest": 24,
+    "n_died_base": 34,
+    "died_ships": 6,
+    "caught_ships": 3,
+    "died_smoker_n": 6,
+    "caught_smoker_n": 3,
+    "n_cr_cov": 4,
+    "n_cr_in": 4,
+    "died_cr_n": 0,
+    "caught_cr_n": 0,
+    "died": {
+     "v": 17.6,
+     "ci": [
+      8.0,
+      28.6
+     ]
+    },
+    "caught": {
+     "v": 8.8,
+     "ci": [
+      0.0,
+      16.7
+     ]
+    },
+    "died_smoker": {
+     "v": 17.6,
+     "ci": [
+      8.1,
+      29.2
+     ]
+    },
+    "caught_smoker": {
+     "v": 8.8,
+     "ci": [
+      0.0,
+      16.7
+     ]
+    }
+   },
+   {
+    "label": "Baseline: all smokes",
+    "n": 1547,
+    "tag": "",
+    "clans": 30,
+    "top6": 538,
+    "rest": 1009,
+    "n_died_base": 1538,
+    "died_ships": 259,
+    "caught_ships": 177,
+    "died_smoker_n": 195,
+    "caught_smoker_n": 116,
+    "n_cr_cov": 610,
+    "n_cr_in": 613,
+    "died_cr_n": 53,
+    "caught_cr_n": 50,
+    "died": {
+     "v": 16.8,
+     "ci": [
+      14.1,
+      20.5
+     ]
+    },
+    "caught": {
+     "v": 11.4,
+     "ci": [
+      9.6,
+      13.9
+     ]
+    },
+    "died_smoker": {
+     "v": 12.7,
+     "ci": [
+      10.3,
+      16.1
+     ]
+    },
+    "caught_smoker": {
+     "v": 7.5,
+     "ci": [
+      5.8,
+      9.7
+     ]
+    }
+   },
+   {
+    "label": "Baseline: all other smokes (not exhaust, not battleship)",
+    "n": 1330,
+    "tag": "",
+    "clans": 30,
+    "top6": 511,
+    "rest": 819,
+    "n_died_base": 1321,
+    "died_ships": 216,
+    "caught_ships": 143,
+    "died_smoker_n": 156,
+    "caught_smoker_n": 85,
+    "n_cr_cov": 596,
+    "n_cr_in": 599,
+    "died_cr_n": 52,
+    "caught_cr_n": 49,
+    "died": {
+     "v": 16.4,
+     "ci": [
+      13.4,
+      20.2
+     ]
+    },
+    "caught": {
+     "v": 10.8,
+     "ci": [
+      9.0,
+      13.5
+     ]
+    },
+    "died_smoker": {
+     "v": 11.8,
+     "ci": [
+      9.3,
+      15.6
+     ]
+    },
+    "caught_smoker": {
+     "v": 6.4,
+     "ci": [
+      4.6,
+      8.7
+     ]
+    }
+   },
+   {
+    "label": "Baseline: cruiser smokers with ordinary smoke",
+    "n": 271,
+    "tag": "",
+    "clans": 22,
+    "top6": 126,
+    "rest": 145,
+    "n_died_base": 269,
+    "died_ships": 25,
+    "caught_ships": 20,
+    "died_smoker_n": 22,
+    "caught_smoker_n": 17,
+    "n_cr_cov": 13,
+    "n_cr_in": 13,
+    "died_cr_n": 1,
+    "caught_cr_n": 1,
+    "died": {
+     "v": 9.3,
+     "ci": [
+      7.0,
+      12.5
+     ]
+    },
+    "caught": {
+     "v": 7.4,
+     "ci": [
+      5.0,
+      10.5
+     ]
+    },
+    "died_smoker": {
+     "v": 8.2,
+     "ci": [
+      6.1,
+      11.4
+     ]
+    },
+    "caught_smoker": {
+     "v": 6.3,
+     "ci": [
+      4.3,
+      9.3
+     ]
+    }
+   },
+   {
+    "label": "Baseline: all cruiser smokers",
+    "n": 439,
+    "tag": "",
+    "clans": 29,
+    "top6": 141,
+    "rest": 298,
+    "n_died_base": 437,
+    "died_ships": 59,
+    "caught_ships": 50,
+    "died_smoker_n": 53,
+    "caught_smoker_n": 44,
+    "n_cr_cov": 22,
+    "n_cr_in": 22,
+    "died_cr_n": 2,
+    "caught_cr_n": 2,
+    "died": {
+     "v": 13.5,
+     "ci": [
+      11.0,
+      16.8
+     ]
+    },
+    "caught": {
+     "v": 11.4,
+     "ci": [
+      9.4,
+      14.0
+     ]
+    },
+    "died_smoker": {
+     "v": 12.1,
+     "ci": [
+      9.9,
+      15.1
+     ]
+    },
+    "caught_smoker": {
+     "v": 10.0,
+     "ci": [
+      8.1,
+      12.5
+     ]
+    }
+   },
+   {
+    "label": "Baseline: destroyer smokers",
+    "n": 1074,
+    "tag": "",
+    "clans": 30,
+    "top6": 387,
+    "rest": 687,
+    "n_died_base": 1067,
+    "died_ships": 194,
+    "caught_ships": 124,
+    "died_smoker_n": 136,
+    "caught_smoker_n": 69,
+    "n_cr_cov": 584,
+    "n_cr_in": 587,
+    "died_cr_n": 51,
+    "caught_cr_n": 48,
+    "died": {
+     "v": 18.2,
+     "ci": [
+      14.7,
+      22.5
+     ]
+    },
+    "caught": {
+     "v": 11.5,
+     "ci": [
+      9.2,
+      14.4
+     ]
+    },
+    "died_smoker": {
+     "v": 12.7,
+     "ci": [
+      9.9,
+      16.7
+     ]
+    },
+    "caught_smoker": {
+     "v": 6.4,
+     "ci": [
+      4.4,
+      9.0
+     ]
+    }
+   }
+  ],
+  "undet": [
+   {
+    "label": "Napoli",
+    "n": 147,
+    "n_track": 147,
+    "dropped": 0,
+    "with_some_none": 0,
+    "n_in": 147,
+    "track_life_median": 92.9,
+    "track_in_median": 96.3,
+    "batch_covered_median": 100.0,
+    "in_share_mean": 94.0,
+    "fully_detected_pct": 3.4,
+    "fully_undetected_pct": 46.9,
+    "track_life_mean": {
+     "v": 79.8,
+     "ci": [
+      75.0,
+      83.9
+     ]
+    },
+    "track_in_mean": {
+     "v": 81.4,
+     "ci": [
+      76.6,
+      85.2
+     ]
+    },
+    "batch_covered_mean": {
+     "v": 81.4,
+     "ci": [
+      76.4,
+      85.4
+     ]
+    },
+    "r5_life_mean": {
+     "v": 69.5,
+     "ci": [
+      63.0,
+      74.1
+     ]
+    }
+   },
+   {
+    "label": "Venezia",
+    "n": 21,
+    "n_track": 21,
+    "dropped": 0,
+    "with_some_none": 0,
+    "n_in": 21,
+    "track_life_median": 89.7,
+    "track_in_median": 96.6,
+    "batch_covered_median": 98.0,
+    "in_share_mean": 93.2,
+    "fully_detected_pct": 4.8,
+    "fully_undetected_pct": 28.6,
+    "track_life_mean": {
+     "v": 75.3,
+     "ci": [
+      52.3,
+      89.3
+     ]
+    },
+    "track_in_mean": {
+     "v": 77.9,
+     "ci": [
+      55.6,
+      90.2
+     ]
+    },
+    "batch_covered_mean": {
+     "v": 83.7,
+     "ci": [
+      70.3,
+      91.1
+     ]
+    },
+    "r5_life_mean": {
+     "v": 72.3,
+     "ci": [
+      52.3,
+      85.8
+     ]
+    }
+   },
+   {
+    "label": "Italian cruisers together",
+    "n": 168,
+    "n_track": 168,
+    "dropped": 0,
+    "with_some_none": 0,
+    "n_in": 168,
+    "track_life_median": 92.6,
+    "track_in_median": 96.3,
+    "batch_covered_median": 100.0,
+    "in_share_mean": 93.9,
+    "fully_detected_pct": 3.6,
+    "fully_undetected_pct": 44.6,
+    "track_life_mean": {
+     "v": 79.3,
+     "ci": [
+      74.1,
+      83.2
+     ]
+    },
+    "track_in_mean": {
+     "v": 80.9,
+     "ci": [
+      75.9,
+      84.8
+     ]
+    },
+    "batch_covered_mean": {
+     "v": 81.7,
+     "ci": [
+      76.9,
+      85.3
+     ]
+    },
+    "r5_life_mean": {
+     "v": 69.9,
+     "ci": [
+      63.2,
+      74.6
+     ]
+    }
+   },
+   {
+    "label": "C. Colombo (battleship)",
+    "n": 20,
+    "n_track": 20,
+    "dropped": 0,
+    "with_some_none": 0,
+    "n_in": 20,
+    "track_life_median": 64.4,
+    "track_in_median": 64.1,
+    "batch_covered_median": 63.8,
+    "in_share_mean": 96.1,
+    "fully_detected_pct": 5.0,
+    "fully_undetected_pct": 20.0,
+    "track_life_mean": {
+     "v": 66.1,
+     "ci": [
+      54.3,
+      76.5
+     ]
+    },
+    "track_in_mean": {
+     "v": 67.0,
+     "ci": [
+      53.9,
+      79.5
+     ]
+    },
+    "batch_covered_mean": {
+     "v": 64.7,
+     "ci": [
+      49.5,
+      78.3
+     ]
+    },
+    "r5_life_mean": {
+     "v": 56.4,
+     "ci": [
+      44.3,
+      68.2
+     ]
+    }
+   },
+   {
+    "label": "Conte Verde (battleship)",
+    "n": 9,
+    "n_track": 9,
+    "dropped": 0,
+    "with_some_none": 0,
+    "n_in": 9,
+    "track_life_median": 79.3,
+    "track_in_median": 84.6,
+    "batch_covered_median": 78.5,
+    "in_share_mean": 91.8,
+    "fully_detected_pct": 0.0,
+    "fully_undetected_pct": 0.0,
+    "track_life_mean": {
+     "v": 77.1,
+     "ci": null
+    },
+    "track_in_mean": {
+     "v": 82.7,
+     "ci": null
+    },
+    "batch_covered_mean": {
+     "v": 80.8,
+     "ci": null
+    },
+    "r5_life_mean": {
+     "v": 64.2,
+     "ci": null
+    }
+   },
+   {
+    "label": "All battleships",
+    "n": 34,
+    "n_track": 34,
+    "dropped": 0,
+    "with_some_none": 0,
+    "n_in": 34,
+    "track_life_median": 75.0,
+    "track_in_median": 78.5,
+    "batch_covered_median": 75.0,
+    "in_share_mean": 95.2,
+    "fully_detected_pct": 2.9,
+    "fully_undetected_pct": 17.6,
+    "track_life_mean": {
+     "v": 71.3,
+     "ci": [
+      60.2,
+      78.5
+     ]
+    },
+    "track_in_mean": {
+     "v": 73.3,
+     "ci": [
+      61.9,
+      81.5
+     ]
+    },
+    "batch_covered_mean": {
+     "v": 71.7,
+     "ci": [
+      59.3,
+      80.5
+     ]
+    },
+    "r5_life_mean": {
+     "v": 61.8,
+     "ci": [
+      50.9,
+      70.0
+     ]
+    }
+   },
+   {
+    "label": "Baseline: all smokes",
+    "n": 1547,
+    "n_track": 1544,
+    "dropped": 3,
+    "with_some_none": 1,
+    "n_in": 1541,
+    "track_life_median": 92.3,
+    "track_in_median": 96.6,
+    "batch_covered_median": 100.0,
+    "in_share_mean": 55.9,
+    "fully_detected_pct": 2.1,
+    "fully_undetected_pct": 44.8,
+    "track_life_mean": {
+     "v": 83.4,
+     "ci": [
+      81.0,
+      85.0
+     ]
+    },
+    "track_in_mean": {
+     "v": 84.5,
+     "ci": [
+      82.0,
+      86.1
+     ]
+    },
+    "batch_covered_mean": {
+     "v": 87.1,
+     "ci": [
+      84.9,
+      88.7
+     ]
+    },
+    "r5_life_mean": {
+     "v": 47.6,
+     "ci": [
+      44.0,
+      51.0
+     ]
+    }
+   },
+   {
+    "label": "Baseline: all other smokes (not exhaust, not battleship)",
+    "n": 1330,
+    "n_track": 1327,
+    "dropped": 3,
+    "with_some_none": 1,
+    "n_in": 1324,
+    "track_life_median": 92.3,
+    "track_in_median": 97.8,
+    "batch_covered_median": 100.0,
+    "in_share_mean": 49.6,
+    "fully_detected_pct": 1.9,
+    "fully_undetected_pct": 45.1,
+    "track_life_mean": {
+     "v": 84.1,
+     "ci": [
+      81.9,
+      85.8
+     ]
+    },
+    "track_in_mean": {
+     "v": 85.2,
+     "ci": [
+      82.7,
+      87.0
+     ]
+    },
+    "batch_covered_mean": {
+     "v": 88.1,
+     "ci": [
+      86.1,
+      89.6
+     ]
+    },
+    "r5_life_mean": {
+     "v": 44.1,
+     "ci": [
+      40.4,
+      47.1
+     ]
+    }
+   },
+   {
+    "label": "Baseline: cruiser smokers with ordinary smoke",
+    "n": 271,
+    "n_track": 271,
+    "dropped": 0,
+    "with_some_none": 0,
+    "n_in": 271,
+    "track_life_median": 95.0,
+    "track_in_median": 95.2,
+    "batch_covered_median": 100.0,
+    "in_share_mean": 74.2,
+    "fully_detected_pct": 3.0,
+    "fully_undetected_pct": 49.8,
+    "track_life_mean": {
+     "v": 85.0,
+     "ci": [
+      80.7,
+      88.0
+     ]
+    },
+    "track_in_mean": {
+     "v": 86.5,
+     "ci": [
+      82.6,
+      89.0
+     ]
+    },
+    "batch_covered_mean": {
+     "v": 90.1,
+     "ci": [
+      86.2,
+      92.5
+     ]
+    },
+    "r5_life_mean": {
+     "v": 65.8,
+     "ci": [
+      60.3,
+      71.2
+     ]
+    }
+   },
+   {
+    "label": "Baseline: all cruiser smokers",
+    "n": 439,
+    "n_track": 439,
+    "dropped": 0,
+    "with_some_none": 0,
+    "n_in": 439,
+    "track_life_median": 92.9,
+    "track_in_median": 95.8,
+    "batch_covered_median": 100.0,
+    "in_share_mean": 81.7,
+    "fully_detected_pct": 3.2,
+    "fully_undetected_pct": 47.8,
+    "track_life_mean": {
+     "v": 82.8,
+     "ci": [
+      78.9,
+      85.6
+     ]
+    },
+    "track_in_mean": {
+     "v": 84.4,
+     "ci": [
+      81.1,
+      86.8
+     ]
+    },
+    "batch_covered_mean": {
+     "v": 86.9,
+     "ci": [
+      83.3,
+      89.5
+     ]
+    },
+    "r5_life_mean": {
+     "v": 67.3,
+     "ci": [
+      62.9,
+      71.6
+     ]
+    }
+   },
+   {
+    "label": "Baseline: destroyer smokers",
+    "n": 1074,
+    "n_track": 1071,
+    "dropped": 3,
+    "with_some_none": 1,
+    "n_in": 1068,
+    "track_life_median": 92.3,
+    "track_in_median": 100.0,
+    "batch_covered_median": 100.0,
+    "in_share_mean": 44.1,
+    "fully_detected_pct": 1.7,
+    "fully_undetected_pct": 44.4,
+    "track_life_mean": {
+     "v": 84.0,
+     "ci": [
+      81.9,
+      85.5
+     ]
+    },
+    "track_in_mean": {
+     "v": 84.9,
+     "ci": [
+      82.7,
+      86.8
+     ]
+    },
+    "batch_covered_mean": {
+     "v": 87.6,
+     "ci": [
+      85.6,
+      89.2
+     ]
+    },
+    "r5_life_mean": {
+     "v": 38.9,
+     "ci": [
+      36.6,
+      41.5
+     ]
+    }
+   }
+  ],
+  "contrasts": [
+   {
+    "label": "Italian cruisers minus cruisers with ordinary smoke",
+    "n_a": 168,
+    "n_b": 271,
+    "died": {
+     "v": 10.9,
+     "ci": [
+      4.0,
+      18.5
+     ],
+     "clear": true
+    },
+    "caught": {
+     "v": 10.5,
+     "ci": [
+      3.7,
+      18.4
+     ],
+     "clear": true
+    },
+    "died_smoker": {
+     "v": 10.3,
+     "ci": [
+      3.3,
+      17.3
+     ],
+     "clear": true
+    },
+    "caught_smoker": {
+     "v": 9.8,
+     "ci": [
+      3.3,
+      16.8
+     ],
+     "clear": true
+    }
+   },
+   {
+    "label": "Italian cruisers minus all other smokes",
+    "n_a": 168,
+    "n_b": 1330,
+    "died": {
+     "v": 3.9,
+     "ci": [
+      -3.3,
+      12.9
+     ],
+     "clear": false
+    },
+    "caught": {
+     "v": 7.1,
+     "ci": [
+      1.3,
+      15.2
+     ],
+     "clear": true
+    },
+    "died_smoker": {
+     "v": 6.6,
+     "ci": [
+      0.0,
+      14.5
+     ],
+     "clear": true
+    },
+    "caught_smoker": {
+     "v": 9.7,
+     "ci": [
+      4.0,
+      16.9
+     ],
+     "clear": true
+    }
+   },
+   {
+    "label": "Battleships minus cruisers with ordinary smoke",
+    "n_a": 34,
+    "n_b": 271,
+    "died": {
+     "v": 8.4,
+     "ci": [
+      -2.0,
+      20.9
+     ],
+     "clear": false
+    },
+    "caught": {
+     "v": 1.4,
+     "ci": [
+      -7.3,
+      11.1
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "v": 9.5,
+     "ci": [
+      -0.4,
+      22.2
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "v": 2.6,
+     "ci": [
+      -6.3,
+      12.6
+     ],
+     "clear": false
+    }
+   },
+   {
+    "label": "Battleships minus all other smokes",
+    "n_a": 34,
+    "n_b": 1330,
+    "died": {
+     "v": 1.3,
+     "ci": [
+      -9.8,
+      13.2
+     ],
+     "clear": false
+    },
+    "caught": {
+     "v": -1.9,
+     "ci": [
+      -10.9,
+      6.4
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "v": 5.8,
+     "ci": [
+      -5.2,
+      17.5
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "v": 2.4,
+     "ci": [
+      -6.3,
+      10.6
+     ],
+     "clear": false
+    }
+   },
+   {
+    "label": "Battleships minus Italian cruisers",
+    "n_a": 34,
+    "n_b": 168,
+    "died": {
+     "v": -2.6,
+     "ci": [
+      -13.7,
+      9.1
+     ],
+     "clear": false
+    },
+    "caught": {
+     "v": -9.0,
+     "ci": [
+      -19.9,
+      0.6
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "v": -0.8,
+     "ci": [
+      -11.4,
+      11.0
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "v": -7.2,
+     "ci": [
+      -17.8,
+      2.0
+     ],
+     "clear": false
+    }
+   }
+  ],
+  "undet_contrasts": [
+   {
+    "label": "Italian cruisers minus cruisers with ordinary smoke",
+    "n_a": 168,
+    "n_b": 271,
+    "track_life_mean": {
+     "v": -5.7,
+     "ci": [
+      -10.9,
+      -0.7
+     ],
+     "clear": true
+    },
+    "track_in_mean": {
+     "v": -5.5,
+     "ci": [
+      -11.1,
+      -0.2
+     ],
+     "clear": true
+    },
+    "batch_covered_mean": {
+     "v": -8.4,
+     "ci": [
+      -13.3,
+      -4.0
+     ],
+     "clear": true
+    },
+    "r5_life_mean": {
+     "v": 4.1,
+     "ci": [
+      -4.2,
+      10.7
+     ],
+     "clear": false
+    }
+   },
+   {
+    "label": "Italian cruisers minus all other smokes",
+    "n_a": 168,
+    "n_b": 1330,
+    "track_life_mean": {
+     "v": -4.9,
+     "ci": [
+      -9.7,
+      -0.4
+     ],
+     "clear": true
+    },
+    "track_in_mean": {
+     "v": -4.3,
+     "ci": [
+      -9.4,
+      0.3
+     ],
+     "clear": false
+    },
+    "batch_covered_mean": {
+     "v": -6.4,
+     "ci": [
+      -11.5,
+      -2.4
+     ],
+     "clear": true
+    },
+    "r5_life_mean": {
+     "v": 25.8,
+     "ci": [
+      18.1,
+      31.3
+     ],
+     "clear": true
+    }
+   },
+   {
+    "label": "Battleships minus cruisers with ordinary smoke",
+    "n_a": 34,
+    "n_b": 271,
+    "track_life_mean": {
+     "v": -13.7,
+     "ci": [
+      -25.4,
+      -4.0
+     ],
+     "clear": true
+    },
+    "track_in_mean": {
+     "v": -13.2,
+     "ci": [
+      -25.9,
+      -3.7
+     ],
+     "clear": true
+    },
+    "batch_covered_mean": {
+     "v": -18.4,
+     "ci": [
+      -32.3,
+      -9.0
+     ],
+     "clear": true
+    },
+    "r5_life_mean": {
+     "v": -4.0,
+     "ci": [
+      -16.9,
+      7.3
+     ],
+     "clear": false
+    }
+   },
+   {
+    "label": "Battleships minus all other smokes",
+    "n_a": 34,
+    "n_b": 1330,
+    "track_life_mean": {
+     "v": -12.9,
+     "ci": [
+      -23.0,
+      -4.6
+     ],
+     "clear": true
+    },
+    "track_in_mean": {
+     "v": -11.9,
+     "ci": [
+      -23.3,
+      -3.1
+     ],
+     "clear": true
+    },
+    "batch_covered_mean": {
+     "v": -16.4,
+     "ci": [
+      -29.1,
+      -7.1
+     ],
+     "clear": true
+    },
+    "r5_life_mean": {
+     "v": 17.7,
+     "ci": [
+      5.6,
+      27.3
+     ],
+     "clear": true
+    }
+   },
+   {
+    "label": "Battleships minus Italian cruisers",
+    "n_a": 34,
+    "n_b": 168,
+    "track_life_mean": {
+     "v": -8.0,
+     "ci": [
+      -18.4,
+      1.0
+     ],
+     "clear": false
+    },
+    "track_in_mean": {
+     "v": -7.6,
+     "ci": [
+      -19.7,
+      1.8
+     ],
+     "clear": false
+    },
+    "batch_covered_mean": {
+     "v": -10.0,
+     "ci": [
+      -22.3,
+      0.1
+     ],
+     "clear": false
+    },
+    "r5_life_mean": {
+     "v": -8.1,
+     "ci": [
+      -18.7,
+      1.4
+     ],
+     "clear": false
+    }
+   }
+  ],
+  "tvr": [
+   {
+    "label": "Italian cruisers",
+    "n_top": 15,
+    "n_rest": 153,
+    "clans_top": 5,
+    "clans_rest": 20,
+    "died": {
+     "top": 33.3,
+     "rest": 19.0,
+     "v": 14.4,
+     "ci": [
+      -4.1,
+      48.0
+     ],
+     "clear": false
+    },
+    "caught": {
+     "top": 33.3,
+     "rest": 16.3,
+     "v": 17.0,
+     "ci": [
+      -0.8,
+      51.7
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "top": 33.3,
+     "rest": 17.0,
+     "v": 16.3,
+     "ci": [
+      -2.5,
+      49.6
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": 33.3,
+     "rest": 14.4,
+     "v": 19.0,
+     "ci": [
+      1.4,
+      53.2
+     ],
+     "clear": true
+    }
+   },
+   {
+    "label": "All battleships",
+    "n_top": 10,
+    "n_rest": 24,
+    "clans_top": 3,
+    "clans_rest": 13,
+    "died": {
+     "top": 10.0,
+     "rest": 20.8,
+     "v": -10.8,
+     "ci": [
+      -31.6,
+      2.0
+     ],
+     "clear": false
+    },
+    "caught": {
+     "top": 10.0,
+     "rest": 8.3,
+     "v": 1.7,
+     "ci": [
+      -16.0,
+      10.0
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "top": 10.0,
+     "rest": 20.8,
+     "v": -10.8,
+     "ci": [
+      -31.0,
+      2.0
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": 10.0,
+     "rest": 8.3,
+     "v": 1.7,
+     "ci": [
+      -16.0,
+      10.0
+     ],
+     "clear": false
+    }
+   },
+   {
+    "label": "Italian cruisers, undetected",
+    "n_top": 15,
+    "n_rest": 153,
+    "clans_top": 5,
+    "clans_rest": 20,
+    "track_life_mean": {
+     "top": 87.3,
+     "rest": 78.5,
+     "v": 8.8,
+     "ci": [
+      -5.5,
+      19.4
+     ],
+     "clear": false
+    }
+   },
+   {
+    "label": "All battleships, undetected",
+    "n_top": 10,
+    "n_rest": 24,
+    "clans_top": 3,
+    "clans_rest": 13,
+    "track_life_mean": {
+     "top": 75.6,
+     "rest": 69.4,
+     "v": 6.2,
+     "ci": [
+      -16.8,
+      19.7
+     ],
+     "clear": false
+    }
+   }
+  ],
+  "who_died": {
+   "Italian cruisers": {
+    "died": {
+     "smoker": 31,
+     "battleship": 2,
+     "cruiser": 1
+    },
+    "caught": {
+     "smoker": 27,
+     "battleship": 2,
+     "cruiser": 1
+    }
+   },
+   "All battleships": {
+    "died": {
+     "smoker": 6
+    },
+    "caught": {
+     "smoker": 3
+    }
+   }
+  },
+  "clans": {
+   "Napoli": "Top 6: VRTUS 6, RESIN 3, BONKZ 3, HTDOG 2, H-SR 1 | Rest: KITED 18, MACHX 16, BTLST 14, 5D 14, HFANS 11, UYSC 10, REEEE 8, MZY 6, KSE 5, KM 4, MANBA 4, INCA 4, BONKY 4, PFANS 3, MACH 3, NGA 3, PN 2, SCCC2 1, KSC 1, -BN- 1",
+   "Venezia": "Top 6: none | Rest: KITED 9, NGA 7, 5D 5",
+   "Italian cruisers together": "Top 6: VRTUS 6, RESIN 3, BONKZ 3, HTDOG 2, H-SR 1 | Rest: KITED 27, 5D 19, MACHX 16, BTLST 14, HFANS 11, NGA 10, UYSC 10, REEEE 8, MZY 6, KSE 5, KM 4, MANBA 4, INCA 4, BONKY 4, PFANS 3, MACH 3, PN 2, SCCC2 1, KSC 1, -BN- 1",
+   "C. Colombo (battleship)": "Top 6: VRTUS 1, RESIN 1 | Rest: BTLST 3, KITED 3, -BN- 3, EPOXY 2, PN 1, UYSC 1, BONKY 1, INCA 1, NGA 1, MZY 1, HFANS 1",
+   "Conte Verde (battleship)": "Top 6: H-SR 8 | Rest: EPOXY 1",
+   "All battleships": "Top 6: H-SR 8, VRTUS 1, RESIN 1 | Rest: EPOXY 3, BTLST 3, KITED 3, -BN- 3, HFANS 3, MACHX 2, PN 1, UYSC 1, BONKY 1, INCA 1, NGA 1, MZY 1, 5D 1"
+  },
+  "dropped_total": 3,
+  "dropped_one_sided": 2,
+  "some_none_total": 1,
+  "samples": {
+   "total": 73113,
+   "none": 207
+  },
+  "no_inside_sample": 3
+ },
+ "B3": {
+  "rows": [
+   {
+    "label": "Somers",
+    "n": 260,
+    "tag": "",
+    "clans": 18,
+    "top6": 90,
+    "rest": 170,
+    "n_died_base": 260,
+    "died_ships": 49,
+    "caught_ships": 27,
+    "died_smoker_n": 27,
+    "caught_smoker_n": 10,
+    "n_cr_cov": 234,
+    "n_cr_in": 234,
+    "died_cr_n": 22,
+    "caught_cr_n": 17,
+    "died": {
+     "v": 18.8,
+     "ci": [
+      12.3,
+      25.0
+     ]
+    },
+    "caught": {
+     "v": 10.4,
+     "ci": [
+      7.0,
+      13.4
+     ]
+    },
+    "died_smoker": {
+     "v": 10.4,
+     "ci": [
+      6.1,
+      15.2
+     ]
+    },
+    "caught_smoker": {
+     "v": 3.8,
+     "ci": [
+      1.9,
+      6.5
+     ]
+    },
+    "died_cr": {
+     "v": 9.4,
+     "ci": [
+      4.9,
+      13.7
+     ]
+    },
+    "caught_cr": {
+     "v": 7.3,
+     "ci": [
+      4.2,
+      10.1
+     ]
+    }
+   },
+   {
+    "label": "Gearing",
+    "n": 180,
+    "tag": "",
+    "clans": 16,
+    "top6": 74,
+    "rest": 106,
+    "n_died_base": 173,
+    "died_ships": 44,
+    "caught_ships": 32,
+    "died_smoker_n": 29,
+    "caught_smoker_n": 15,
+    "n_cr_cov": 146,
+    "n_cr_in": 149,
+    "died_cr_n": 12,
+    "caught_cr_n": 14,
+    "died": {
+     "v": 25.4,
+     "ci": [
+      17.7,
+      35.2
+     ]
+    },
+    "caught": {
+     "v": 17.8,
+     "ci": [
+      11.8,
+      26.8
+     ]
+    },
+    "died_smoker": {
+     "v": 16.8,
+     "ci": [
+      9.2,
+      31.0
+     ]
+    },
+    "caught_smoker": {
+     "v": 8.3,
+     "ci": [
+      2.2,
+      19.8
+     ]
+    },
+    "died_cr": {
+     "v": 8.2,
+     "ci": [
+      3.8,
+      11.8
+     ]
+    },
+    "caught_cr": {
+     "v": 9.4,
+     "ci": [
+      5.0,
+      13.8
+     ]
+    }
+   },
+   {
+    "label": "Harugumo",
+    "n": 100,
+    "tag": "",
+    "clans": 15,
+    "top6": 55,
+    "rest": 45,
+    "n_died_base": 100,
+    "died_ships": 22,
+    "caught_ships": 21,
+    "died_smoker_n": 12,
+    "caught_smoker_n": 10,
+    "n_cr_cov": 85,
+    "n_cr_in": 85,
+    "died_cr_n": 8,
+    "caught_cr_n": 8,
+    "died": {
+     "v": 22.0,
+     "ci": [
+      15.3,
+      37.7
+     ]
+    },
+    "caught": {
+     "v": 21.0,
+     "ci": [
+      12.9,
+      34.4
+     ]
+    },
+    "died_smoker": {
+     "v": 12.0,
+     "ci": [
+      7.1,
+      22.1
+     ]
+    },
+    "caught_smoker": {
+     "v": 10.0,
+     "ci": [
+      5.0,
+      18.8
+     ]
+    },
+    "died_cr": {
+     "v": 9.4,
+     "ci": [
+      5.0,
+      16.4
+     ]
+    },
+    "caught_cr": {
+     "v": 9.4,
+     "ci": [
+      4.9,
+      17.6
+     ]
+    }
+   },
+   {
+    "label": "Delny",
+    "n": 22,
+    "tag": "",
+    "clans": 2,
+    "top6": 18,
+    "rest": 4,
+    "n_died_base": 22,
+    "died_ships": 1,
+    "caught_ships": 0,
+    "died_smoker_n": 1,
+    "caught_smoker_n": 0,
+    "n_cr_cov": 20,
+    "n_cr_in": 20,
+    "died_cr_n": 0,
+    "caught_cr_n": 0,
+    "died": {
+     "v": 4.5,
+     "ci": null
+    },
+    "caught": {
+     "v": 0.0,
+     "ci": null
+    },
+    "died_smoker": {
+     "v": 4.5,
+     "ci": null
+    },
+    "caught_smoker": {
+     "v": 0.0,
+     "ci": null
+    },
+    "died_cr": {
+     "v": 0.0,
+     "ci": null
+    },
+    "caught_cr": {
+     "v": 0.0,
+     "ci": null
+    }
+   },
+   {
+    "label": "All four",
+    "n": 562,
+    "tag": "",
+    "clans": 27,
+    "top6": 237,
+    "rest": 325,
+    "n_died_base": 555,
+    "died_ships": 116,
+    "caught_ships": 80,
+    "died_smoker_n": 69,
+    "caught_smoker_n": 35,
+    "n_cr_cov": 485,
+    "n_cr_in": 488,
+    "died_cr_n": 42,
+    "caught_cr_n": 39,
+    "died": {
+     "v": 20.9,
+     "ci": [
+      16.4,
+      26.7
+     ]
+    },
+    "caught": {
+     "v": 14.2,
+     "ci": [
+      10.8,
+      18.6
+     ]
+    },
+    "died_smoker": {
+     "v": 12.4,
+     "ci": [
+      8.7,
+      17.3
+     ]
+    },
+    "caught_smoker": {
+     "v": 6.2,
+     "ci": [
+      3.8,
+      10.2
+     ]
+    },
+    "died_cr": {
+     "v": 8.7,
+     "ci": [
+      6.3,
+      11.7
+     ]
+    },
+    "caught_cr": {
+     "v": 8.0,
+     "ci": [
+      5.8,
+      10.9
+     ]
+    }
+   },
+   {
+    "label": "For comparison: cap sitters (Daring, Z-42, Gdansk, Grozovoi, Shimakaze)",
+    "n": 462,
+    "tag": "",
+    "clans": 28,
+    "top6": 135,
+    "rest": 327,
+    "n_died_base": 462,
+    "died_ships": 65,
+    "caught_ships": 34,
+    "died_smoker_n": 56,
+    "caught_smoker_n": 26,
+    "n_cr_cov": 87,
+    "n_cr_in": 87,
+    "died_cr_n": 8,
+    "caught_cr_n": 7,
+    "died": {
+     "v": 14.1,
+     "ci": [
+      10.1,
+      20.0
+     ]
+    },
+    "caught": {
+     "v": 7.4,
+     "ci": [
+      5.0,
+      10.6
+     ]
+    },
+    "died_smoker": {
+     "v": 12.1,
+     "ci": [
+      8.3,
+      17.1
+     ]
+    },
+    "caught_smoker": {
+     "v": 5.6,
+     "ci": [
+      3.1,
+      9.1
+     ]
+    },
+    "died_cr": {
+     "v": 9.2,
+     "ci": [
+      3.8,
+      16.7
+     ]
+    },
+    "caught_cr": {
+     "v": 8.0,
+     "ci": [
+      2.6,
+      15.2
+     ]
+    }
+   },
+   {
+    "label": "For comparison: all destroyer smokes",
+    "n": 1074,
+    "tag": "",
+    "clans": 30,
+    "top6": 387,
+    "rest": 687,
+    "n_died_base": 1067,
+    "died_ships": 194,
+    "caught_ships": 124,
+    "died_smoker_n": 136,
+    "caught_smoker_n": 69,
+    "n_cr_cov": 584,
+    "n_cr_in": 587,
+    "died_cr_n": 51,
+    "caught_cr_n": 48,
+    "died": {
+     "v": 18.2,
+     "ci": [
+      14.8,
+      22.6
+     ]
+    },
+    "caught": {
+     "v": 11.5,
+     "ci": [
+      9.2,
+      14.6
+     ]
+    },
+    "died_smoker": {
+     "v": 12.7,
+     "ci": [
+      10.1,
+      17.2
+     ]
+    },
+    "caught_smoker": {
+     "v": 6.4,
+     "ci": [
+      4.6,
+      9.5
+     ]
+    },
+    "died_cr": {
+     "v": 8.7,
+     "ci": [
+      6.5,
+      11.5
+     ]
+    },
+    "caught_cr": {
+     "v": 8.2,
+     "ci": [
+      6.1,
+      10.8
+     ]
+    }
+   }
+  ],
+  "long_minus_sitters": {
+   "label": "Long-smoke ships minus cap sitters",
+   "n_a": 562,
+   "n_b": 462,
+   "died": {
+    "v": 6.8,
+    "ci": [
+     1.0,
+     12.4
+    ],
+    "clear": true
+   },
+   "caught": {
+    "v": 6.9,
+    "ci": [
+     3.1,
+     11.1
+    ],
+    "clear": true
+   },
+   "died_smoker": {
+    "v": 0.3,
+    "ci": [
+     -4.9,
+     5.5
+    ],
+    "clear": false
+   },
+   "caught_smoker": {
+    "v": 0.6,
+    "ci": [
+     -2.7,
+     4.7
+    ],
+    "clear": false
+   },
+   "died_cr": {
+    "v": -0.5,
+    "ci": [
+     -8.6,
+     6.3
+    ],
+    "clear": false
+   },
+   "caught_cr": {
+    "v": -0.1,
+    "ci": [
+     -6.8,
+     6.2
+    ],
+    "clear": false
+   }
+  },
+  "tvr": [
+   {
+    "label": "Somers",
+    "n_top": 90,
+    "n_rest": 170,
+    "clans_top": 4,
+    "clans_rest": 14,
+    "died": {
+     "top": 17.8,
+     "rest": 19.4,
+     "v": -1.6,
+     "ci": [
+      -17.9,
+      12.5
+     ],
+     "clear": false
+    },
+    "caught": {
+     "top": 7.8,
+     "rest": 11.8,
+     "v": -4.0,
+     "ci": [
+      -11.4,
+      2.1
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "top": 10.0,
+     "rest": 10.6,
+     "v": -0.6,
+     "ci": [
+      -11.5,
+      10.2
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": 2.2,
+     "rest": 4.7,
+     "v": -2.5,
+     "ci": [
+      -6.5,
+      2.0
+     ],
+     "clear": false
+    },
+    "died_cr": {
+     "top": 8.2,
+     "rest": 10.1,
+     "v": -1.8,
+     "ci": [
+      -12.3,
+      6.6
+     ],
+     "clear": false
+    },
+    "caught_cr": {
+     "top": 5.9,
+     "rest": 8.1,
+     "v": -2.2,
+     "ci": [
+      -9.5,
+      3.4
+     ],
+     "clear": false
+    }
+   },
+   {
+    "label": "Gearing",
+    "n_top": 74,
+    "n_rest": 106,
+    "clans_top": 4,
+    "clans_rest": 12,
+    "died": {
+     "top": 16.2,
+     "rest": 32.3,
+     "v": -16.1,
+     "ci": [
+      -29.5,
+      -3.4
+     ],
+     "clear": true
+    },
+    "caught": {
+     "top": 9.5,
+     "rest": 23.6,
+     "v": -14.1,
+     "ci": [
+      -26.0,
+      -4.6
+     ],
+     "clear": true
+    },
+    "died_smoker": {
+     "top": 8.1,
+     "rest": 23.2,
+     "v": -15.1,
+     "ci": [
+      -31.1,
+      2.4
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": 1.4,
+     "rest": 13.2,
+     "v": -11.9,
+     "ci": [
+      -30.0,
+      -0.1
+     ],
+     "clear": true
+    },
+    "died_cr": {
+     "top": 6.8,
+     "rest": 9.6,
+     "v": -2.7,
+     "ci": [
+      -9.8,
+      6.8
+     ],
+     "clear": false
+    },
+    "caught_cr": {
+     "top": 6.8,
+     "rest": 11.8,
+     "v": -5.0,
+     "ci": [
+      -12.9,
+      3.5
+     ],
+     "clear": false
+    }
+   },
+   {
+    "label": "Harugumo",
+    "n_top": 55,
+    "n_rest": 45,
+    "clans_top": 4,
+    "clans_rest": 11,
+    "died": {
+     "top": 12.7,
+     "rest": 33.3,
+     "v": -20.6,
+     "ci": [
+      -45.6,
+      -5.6
+     ],
+     "clear": true
+    },
+    "caught": {
+     "top": 9.1,
+     "rest": 35.6,
+     "v": -26.5,
+     "ci": [
+      -43.3,
+      -13.6
+     ],
+     "clear": true
+    },
+    "died_smoker": {
+     "top": 5.5,
+     "rest": 20.0,
+     "v": -14.5,
+     "ci": [
+      -29.2,
+      -4.5
+     ],
+     "clear": true
+    },
+    "caught_smoker": {
+     "top": 3.6,
+     "rest": 17.8,
+     "v": -14.1,
+     "ci": [
+      -25.8,
+      -5.2
+     ],
+     "clear": true
+    },
+    "died_cr": {
+     "top": 6.4,
+     "rest": 13.2,
+     "v": -6.8,
+     "ci": [
+      -16.8,
+      6.5
+     ],
+     "clear": false
+    },
+    "caught_cr": {
+     "top": 4.3,
+     "rest": 15.8,
+     "v": -11.5,
+     "ci": [
+      -22.5,
+      -2.3
+     ],
+     "clear": true
+    }
+   },
+   {
+    "label": "Delny",
+    "n_top": 18,
+    "n_rest": 4,
+    "clans_top": 1,
+    "clans_rest": 1,
+    "died": {
+     "top": 5.6,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "caught": {
+     "top": 0.0,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "died_smoker": {
+     "top": 5.6,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": 0.0,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "died_cr": {
+     "top": 0.0,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "caught_cr": {
+     "top": 0.0,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    }
+   },
+   {
+    "label": "All four",
+    "n_top": 237,
+    "n_rest": 325,
+    "clans_top": 6,
+    "clans_rest": 21,
+    "died": {
+     "top": 15.2,
+     "rest": 25.2,
+     "v": -10.0,
+     "ci": [
+      -19.1,
+      -1.6
+     ],
+     "clear": true
+    },
+    "caught": {
+     "top": 8.0,
+     "rest": 18.8,
+     "v": -10.8,
+     "ci": [
+      -17.8,
+      -6.0
+     ],
+     "clear": true
+    },
+    "died_smoker": {
+     "top": 8.0,
+     "rest": 15.7,
+     "v": -7.7,
+     "ci": [
+      -16.7,
+      -0.8
+     ],
+     "clear": true
+    },
+    "caught_smoker": {
+     "top": 2.1,
+     "rest": 9.2,
+     "v": -7.1,
+     "ci": [
+      -13.2,
+      -3.1
+     ],
+     "clear": true
+    },
+    "died_cr": {
+     "top": 6.7,
+     "rest": 10.4,
+     "v": -3.7,
+     "ci": [
+      -8.5,
+      1.6
+     ],
+     "clear": false
+    },
+    "caught_cr": {
+     "top": 5.3,
+     "rest": 10.3,
+     "v": -4.9,
+     "ci": [
+      -9.0,
+      -0.8
+     ],
+     "clear": true
+    }
+   },
+   {
+    "label": "For comparison: cap sitters (Daring, Z-42, Gdansk, Grozovoi, Shimakaze)",
+    "n_top": 135,
+    "n_rest": 327,
+    "clans_top": 6,
+    "clans_rest": 22,
+    "died": {
+     "top": 9.6,
+     "rest": 15.9,
+     "v": -6.3,
+     "ci": [
+      -14.5,
+      1.0
+     ],
+     "clear": false
+    },
+    "caught": {
+     "top": 5.9,
+     "rest": 8.0,
+     "v": -2.0,
+     "ci": [
+      -7.7,
+      2.2
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "top": 7.4,
+     "rest": 14.1,
+     "v": -6.7,
+     "ci": [
+      -15.2,
+      1.0
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": 3.7,
+     "rest": 6.4,
+     "v": -2.7,
+     "ci": [
+      -7.7,
+      1.9
+     ],
+     "clear": false
+    }
+   },
+   {
+    "label": "For comparison: all destroyer smokes",
+    "n_top": 387,
+    "n_rest": 687,
+    "clans_top": 6,
+    "clans_rest": 24,
+    "died": {
+     "top": 13.4,
+     "rest": 20.9,
+     "v": -7.4,
+     "ci": [
+      -14.7,
+      -1.2
+     ],
+     "clear": true
+    },
+    "caught": {
+     "top": 7.5,
+     "rest": 13.8,
+     "v": -6.3,
+     "ci": [
+      -11.0,
+      -2.4
+     ],
+     "clear": true
+    },
+    "died_smoker": {
+     "top": 8.0,
+     "rest": 15.4,
+     "v": -7.4,
+     "ci": [
+      -14.3,
+      -2.4
+     ],
+     "clear": true
+    },
+    "caught_smoker": {
+     "top": 2.8,
+     "rest": 8.4,
+     "v": -5.6,
+     "ci": [
+      -10.2,
+      -2.4
+     ],
+     "clear": true
+    }
+   }
+  ],
+  "win_split": [
+   {
+    "label": "Somers | games won",
+    "n_top": 60,
+    "n_rest": 79,
+    "clans_top": 4,
+    "clans_rest": 11,
+    "died": {
+     "top": 10.0,
+     "rest": 10.1,
+     "v": -0.1,
+     "ci": [
+      -10.6,
+      11.6
+     ],
+     "clear": false
+    },
+    "caught": {
+     "top": 5.0,
+     "rest": 6.3,
+     "v": -1.3,
+     "ci": [
+      -6.9,
+      3.8
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "top": 5.0,
+     "rest": 3.8,
+     "v": 1.2,
+     "ci": [
+      -5.8,
+      9.4
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": 1.7,
+     "rest": 1.3,
+     "v": 0.4,
+     "ci": [
+      -3.2,
+      3.8
+     ],
+     "clear": false
+    },
+    "ship": "Somers",
+    "result": "games won"
+   },
+   {
+    "label": "Somers | games lost",
+    "n_top": 30,
+    "n_rest": 91,
+    "clans_top": 4,
+    "clans_rest": 13,
+    "died": {
+     "top": 33.3,
+     "rest": 27.5,
+     "v": 5.9,
+     "ci": [
+      -28.7,
+      21.5
+     ],
+     "clear": false
+    },
+    "caught": {
+     "top": 13.3,
+     "rest": 16.5,
+     "v": -3.2,
+     "ci": [
+      -17.5,
+      6.0
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "top": 20.0,
+     "rest": 16.5,
+     "v": 3.5,
+     "ci": [
+      -16.7,
+      12.4
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": 3.3,
+     "rest": 7.7,
+     "v": -4.4,
+     "ci": [
+      -10.8,
+      2.6
+     ],
+     "clear": false
+    },
+    "ship": "Somers",
+    "result": "games lost"
+   },
+   {
+    "ship": "Somers",
+    "result": "share of smokes laid in games won",
+    "top": 66.7,
+    "rest": 46.5
+   },
+   {
+    "label": "Gearing | games won",
+    "n_top": 60,
+    "n_rest": 37,
+    "clans_top": 4,
+    "clans_rest": 7,
+    "died": {
+     "top": 11.7,
+     "rest": 23.5,
+     "v": -11.9,
+     "ci": [
+      -28.8,
+      10.4
+     ],
+     "clear": false
+    },
+    "caught": {
+     "top": 8.3,
+     "rest": 16.2,
+     "v": -7.9,
+     "ci": [
+      -26.5,
+      6.3
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "top": 5.0,
+     "rest": 14.7,
+     "v": -9.7,
+     "ci": [
+      -27.1,
+      7.1
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": 1.7,
+     "rest": 8.1,
+     "v": -6.4,
+     "ci": [
+      -29.6,
+      5.3
+     ],
+     "clear": false
+    },
+    "ship": "Gearing",
+    "result": "games won"
+   },
+   {
+    "label": "Gearing | games lost",
+    "n_top": 14,
+    "n_rest": 69,
+    "clans_top": 3,
+    "clans_rest": 12,
+    "died": {
+     "top": 35.7,
+     "rest": 36.9,
+     "v": -1.2,
+     "ci": [
+      -29.3,
+      109.7
+     ],
+     "clear": false
+    },
+    "caught": {
+     "top": 14.3,
+     "rest": 27.5,
+     "v": -13.3,
+     "ci": [
+      -36.1,
+      67.6
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "top": 21.4,
+     "rest": 27.7,
+     "v": -6.3,
+     "ci": [
+      -25.0,
+      24.3
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": 0.0,
+     "rest": 15.9,
+     "v": -15.9,
+     "ci": [
+      -31.8,
+      -4.8
+     ],
+     "clear": true
+    },
+    "ship": "Gearing",
+    "result": "games lost"
+   },
+   {
+    "ship": "Gearing",
+    "result": "share of smokes laid in games won",
+    "top": 81.1,
+    "rest": 34.9
+   },
+   {
+    "label": "Harugumo | games won",
+    "n_top": 39,
+    "n_rest": 13,
+    "clans_top": 3,
+    "clans_rest": 4,
+    "died": {
+     "top": 12.8,
+     "rest": 0.0,
+     "v": 12.8,
+     "ci": [
+      11.1,
+      25.0
+     ],
+     "clear": true
+    },
+    "caught": {
+     "top": 10.3,
+     "rest": 0.0,
+     "v": 10.3,
+     "ci": [
+      5.6,
+      25.0
+     ],
+     "clear": true
+    },
+    "died_smoker": {
+     "top": 7.7,
+     "rest": 0.0,
+     "v": 7.7,
+     "ci": [
+      5.6,
+      25.0
+     ],
+     "clear": true
+    },
+    "caught_smoker": {
+     "top": 5.1,
+     "rest": 0.0,
+     "v": 5.1,
+     "ci": [
+      0.0,
+      25.0
+     ],
+     "clear": false
+    },
+    "ship": "Harugumo",
+    "result": "games won"
+   },
+   {
+    "label": "Harugumo | games lost",
+    "n_top": 16,
+    "n_rest": 32,
+    "clans_top": 4,
+    "clans_rest": 10,
+    "died": {
+     "top": 12.5,
+     "rest": 46.9,
+     "v": -34.4,
+     "ci": [
+      -65.3,
+      -13.7
+     ],
+     "clear": true
+    },
+    "caught": {
+     "top": 6.2,
+     "rest": 50.0,
+     "v": -43.8,
+     "ci": [
+      -72.2,
+      -23.6
+     ],
+     "clear": true
+    },
+    "died_smoker": {
+     "top": 0.0,
+     "rest": 28.1,
+     "v": -28.1,
+     "ci": [
+      -52.4,
+      -14.6
+     ],
+     "clear": true
+    },
+    "caught_smoker": {
+     "top": 0.0,
+     "rest": 25.0,
+     "v": -25.0,
+     "ci": [
+      -45.0,
+      -13.2
+     ],
+     "clear": true
+    },
+    "ship": "Harugumo",
+    "result": "games lost"
+   },
+   {
+    "ship": "Harugumo",
+    "result": "share of smokes laid in games won",
+    "top": 70.9,
+    "rest": 28.9
+   },
+   {
+    "label": "Delny | games won",
+    "n_top": 18,
+    "n_rest": 4,
+    "clans_top": 1,
+    "clans_rest": 1,
+    "died": {
+     "top": 5.6,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "caught": {
+     "top": 0.0,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "died_smoker": {
+     "top": 5.6,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": 0.0,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "ship": "Delny",
+    "result": "games won"
+   },
+   {
+    "label": "Delny | games lost",
+    "n_top": 0,
+    "n_rest": 0,
+    "clans_top": 0,
+    "clans_rest": 0,
+    "died": {
+     "top": null,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "caught": {
+     "top": null,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "died_smoker": {
+     "top": null,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": null,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "ship": "Delny",
+    "result": "games lost"
+   },
+   {
+    "ship": "Delny",
+    "result": "share of smokes laid in games won",
+    "top": 100.0,
+    "rest": 100.0
+   },
+   {
+    "label": "All four | games won",
+    "n_top": 177,
+    "n_rest": 133,
+    "clans_top": 6,
+    "clans_rest": 16,
+    "died": {
+     "top": 10.7,
+     "rest": 12.3,
+     "v": -1.6,
+     "ci": [
+      -10.0,
+      7.1
+     ],
+     "clear": false
+    },
+    "caught": {
+     "top": 6.8,
+     "rest": 8.3,
+     "v": -1.5,
+     "ci": [
+      -7.1,
+      4.3
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "top": 5.6,
+     "rest": 6.2,
+     "v": -0.5,
+     "ci": [
+      -6.8,
+      5.7
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": 2.3,
+     "rest": 3.0,
+     "v": -0.7,
+     "ci": [
+      -6.1,
+      2.5
+     ],
+     "clear": false
+    },
+    "ship": "All four",
+    "result": "games won"
+   },
+   {
+    "label": "All four | games lost",
+    "n_top": 60,
+    "n_rest": 192,
+    "clans_top": 6,
+    "clans_rest": 21,
+    "died": {
+     "top": 28.3,
+     "rest": 34.0,
+     "v": -5.7,
+     "ci": [
+      -25.4,
+      6.5
+     ],
+     "clear": false
+    },
+    "caught": {
+     "top": 11.7,
+     "rest": 26.0,
+     "v": -14.4,
+     "ci": [
+      -27.7,
+      -5.0
+     ],
+     "clear": true
+    },
+    "died_smoker": {
+     "top": 15.0,
+     "rest": 22.3,
+     "v": -7.3,
+     "ci": [
+      -18.6,
+      2.2
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": 1.7,
+     "rest": 13.5,
+     "v": -11.9,
+     "ci": [
+      -19.3,
+      -6.2
+     ],
+     "clear": true
+    },
+    "ship": "All four",
+    "result": "games lost"
+   },
+   {
+    "ship": "All four",
+    "result": "share of smokes laid in games won",
+    "top": 74.7,
+    "rest": 40.9
+   },
+   {
+    "label": "For comparison: all destroyer smokes | games won",
+    "n_top": 285,
+    "n_rest": 313,
+    "clans_top": 6,
+    "clans_rest": 20,
+    "died": {
+     "top": 7.7,
+     "rest": 8.4,
+     "v": -0.7,
+     "ci": [
+      -5.6,
+      3.5
+     ],
+     "clear": false
+    },
+    "caught": {
+     "top": 4.6,
+     "rest": 5.1,
+     "v": -0.6,
+     "ci": [
+      -3.7,
+      2.1
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "top": 4.2,
+     "rest": 5.8,
+     "v": -1.6,
+     "ci": [
+      -5.7,
+      1.1
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": 1.4,
+     "rest": 2.6,
+     "v": -1.2,
+     "ci": [
+      -3.7,
+      0.7
+     ],
+     "clear": false
+    },
+    "ship": "For comparison: all destroyer smokes",
+    "result": "games won"
+   },
+   {
+    "label": "For comparison: all destroyer smokes | games lost",
+    "n_top": 102,
+    "n_rest": 374,
+    "clans_top": 6,
+    "clans_rest": 24,
+    "died": {
+     "top": 29.4,
+     "rest": 31.4,
+     "v": -1.9,
+     "ci": [
+      -14.8,
+      8.3
+     ],
+     "clear": false
+    },
+    "caught": {
+     "top": 15.7,
+     "rest": 21.1,
+     "v": -5.4,
+     "ci": [
+      -12.7,
+      1.8
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "top": 18.6,
+     "rest": 23.5,
+     "v": -4.9,
+     "ci": [
+      -15.1,
+      4.5
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": 6.9,
+     "rest": 13.4,
+     "v": -6.5,
+     "ci": [
+      -14.3,
+      0.7
+     ],
+     "clear": false
+    },
+    "ship": "For comparison: all destroyer smokes",
+    "result": "games lost"
+   },
+   {
+    "ship": "For comparison: all destroyer smokes",
+    "result": "share of smokes laid in games won",
+    "top": 73.6,
+    "rest": 45.6
+   }
+  ],
+  "won_minus_lost": [
+   {
+    "label": "Top 6: games won minus games lost",
+    "n_a": 177,
+    "n_b": 60,
+    "died": {
+     "v": -17.6,
+     "ci": [
+      -28.3,
+      -0.1
+     ],
+     "clear": true
+    },
+    "caught": {
+     "v": -4.9,
+     "ci": [
+      -13.4,
+      8.1
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "v": -9.4,
+     "ci": [
+      -15.8,
+      -0.5
+     ],
+     "clear": true
+    },
+    "caught_smoker": {
+     "v": 0.6,
+     "ci": [
+      -2.1,
+      3.5
+     ],
+     "clear": false
+    }
+   },
+   {
+    "label": "Rest: games won minus games lost",
+    "n_a": 133,
+    "n_b": 192,
+    "died": {
+     "v": -21.7,
+     "ci": [
+      -30.9,
+      -12.6
+     ],
+     "clear": true
+    },
+    "caught": {
+     "v": -17.8,
+     "ci": [
+      -24.1,
+      -11.2
+     ],
+     "clear": true
+    },
+    "died_smoker": {
+     "v": -16.2,
+     "ci": [
+      -22.8,
+      -9.6
+     ],
+     "clear": true
+    },
+    "caught_smoker": {
+     "v": -10.5,
+     "ci": [
+      -15.1,
+      -6.4
+     ],
+     "clear": true
+    }
+   }
+  ],
+  "clans": {
+   "Somers": "Top 6: RESIN 38, H-SR 33, BONKZ 12, VRTUS 7 | Rest: HFANS 28, REEEE 25, MZY 22, EPOXY 18, MACHX 17, BONKY 14, -BN- 12, NGA 11, PFANS 8, PN 5, UYSC 5, KITED 3, RSR 1, INCA 1",
+   "Gearing": "Top 6: BONKZ 37, KITE 23, VRTUS 10, HTDOG 4 | Rest: KSC 29, -BN- 18, BTLST 11, 5D 9, OGF 9, RSR 9, INCA 7, HFANS 5, RMN 3, EPOXY 3, KM 2, UYSC 1",
+   "Harugumo": "Top 6: RESIN 22, H-SR 20, BONKZ 7, HTDOG 6 | Rest: EPOXY 14, -BN- 6, PFANS 4, BONKY 4, PN 4, KM 3, SCCC2 3, REEEE 2, KITED 2, MZY 2, RSR 1",
+   "Delny": "Top 6: H-SR 18 | Rest: MZY 4"
+  }
+ },
+ "C7a": [
+  {
+   "id": "sg-cell-1",
+   "map": "Sleeping Giant",
+   "cells": [
+    "G1"
+   ],
+   "n": 21,
+   "tag": "",
+   "top6": 12,
+   "rest": 9,
+   "clans": 10,
+   "clan_text": "Top 6: RESIN 5, VRTUS 3, BONKZ 2, HTDOG 1, H-SR 1 | Rest: BONKY 3, KSC 2, PFANS 2, NGA 1, -BN- 1",
+   "games": 13,
+   "early": 14,
+   "conc": 24101,
+   "conc_r5b": 24101,
+   "n_r5b": 21,
+   "conc_rest_of_map": 10709,
+   "conc_gap_ci": [
+    8134.0,
+    21004.0
+   ],
+   "r5b_cap_taken_pct": 19,
+   "r5b_cap_taken_n": 21,
+   "r5b_deaths_per_100": 14.3,
+   "caps": {
+    "_c": {
+     "ours": 0,
+     "neutral": 13,
+     "theirs": 8,
+     "we_took": {
+      "k": 6,
+      "n": 21,
+      "pct": 28.6
+     },
+     "enemy_took": {
+      "k": 7,
+      "n": 13,
+      "pct": 53.8
+     },
+     "enemy_took_when_ours": {
+      "k": 0,
+      "n": 0,
+      "pct": null
+     }
+    },
+    "_n": {
+     "ours": 0,
+     "neutral": 13,
+     "theirs": 8,
+     "we_took": {
+      "k": 6,
+      "n": 21,
+      "pct": 28.6
+     },
+     "enemy_took": {
+      "k": 7,
+      "n": 13,
+      "pct": 53.8
+     },
+     "enemy_took_when_ours": {
+      "k": 0,
+      "n": 0,
+      "pct": null
+     }
+    },
+    "same_cap": 21
+   },
+   "caps_rest": {
+    "_c": {
+     "ours": 78,
+     "neutral": 47,
+     "theirs": 92,
+     "we_took": {
+      "k": 35,
+      "n": 139,
+      "pct": 25.2
+     },
+     "enemy_took": {
+      "k": 23,
+      "n": 125,
+      "pct": 18.4
+     },
+     "enemy_took_when_ours": {
+      "k": 13,
+      "n": 78,
+      "pct": 16.7
+     }
+    },
+    "_n": {
+     "ours": 128,
+     "neutral": 39,
+     "theirs": 50,
+     "we_took": {
+      "k": 29,
+      "n": 89,
+      "pct": 32.6
+     },
+     "enemy_took": {
+      "k": 31,
+      "n": 167,
+      "pct": 18.6
+     },
+     "enemy_took_when_ours": {
+      "k": 22,
+      "n": 128,
+      "pct": 17.2
+     }
+    },
+    "same_cap": 164
+   },
+   "near_caps": {
+    "A": 21
+   },
+   "contested_caps": {
+    "A": 21
+   },
+   "deaths": {
+    "label": "cell",
+    "n": 21,
+    "tag": "",
+    "clans": 10,
+    "top6": 12,
+    "rest": 9,
+    "n_died_base": 21,
+    "died_ships": 4,
+    "caught_ships": 3,
+    "died_smoker_n": 2,
+    "caught_smoker_n": 1,
+    "n_cr_cov": 21,
+    "n_cr_in": 21,
+    "died_cr_n": 2,
+    "caught_cr_n": 2,
+    "died": {
+     "v": 19.0,
+     "ci": [
+      0.0,
+      42.1
+     ]
+    },
+    "caught": {
+     "v": 14.3,
+     "ci": [
+      0.0,
+      30.4
+     ]
+    },
+    "died_smoker": {
+     "v": 9.5,
+     "ci": [
+      0.0,
+      22.7
+     ]
+    },
+    "caught_smoker": {
+     "v": 4.8,
+     "ci": [
+      0.0,
+      13.8
+     ]
+    }
+   },
+   "deaths_rest": {
+    "label": "rest of map",
+    "n": 217,
+    "tag": "",
+    "clans": 25,
+    "top6": 98,
+    "rest": 119,
+    "n_died_base": 217,
+    "died_ships": 32,
+    "caught_ships": 25,
+    "died_smoker_n": 23,
+    "caught_smoker_n": 16,
+    "n_cr_cov": 116,
+    "n_cr_in": 116,
+    "died_cr_n": 8,
+    "caught_cr_n": 8,
+    "died": {
+     "v": 14.7,
+     "ci": [
+      10.1,
+      21.5
+     ]
+    },
+    "caught": {
+     "v": 11.5,
+     "ci": [
+      7.6,
+      17.3
+     ]
+    },
+    "died_smoker": {
+     "v": 10.6,
+     "ci": [
+      6.7,
+      16.1
+     ]
+    },
+    "caught_smoker": {
+     "v": 7.4,
+     "ci": [
+      4.0,
+      12.7
+     ]
+    }
+   },
+   "n_map": 238,
+   "vs_rest": {
+    "label": "cell minus rest of the map",
+    "n_a": 21,
+    "n_b": 217,
+    "we_took_c": {
+     "v": 3.4,
+     "ci": [
+      -15.0,
+      30.2
+     ],
+     "clear": false
+    },
+    "enemy_took_c": {
+     "v": 35.4,
+     "ci": [
+      8.4,
+      58.4
+     ],
+     "clear": true
+    },
+    "we_took_n": {
+     "v": -4.0,
+     "ci": [
+      -21.1,
+      21.5
+     ],
+     "clear": false
+    },
+    "enemy_took_n": {
+     "v": 35.3,
+     "ci": [
+      6.3,
+      57.5
+     ],
+     "clear": true
+    },
+    "died": {
+     "v": 4.3,
+     "ci": [
+      -14.8,
+      27.0
+     ],
+     "clear": false
+    },
+    "caught": {
+     "v": 2.8,
+     "ci": [
+      -11.4,
+      17.2
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "v": -1.1,
+     "ci": [
+      -13.1,
+      11.7
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "v": -2.6,
+     "ci": [
+      -11.5,
+      7.4
+     ],
+     "clear": false
+    }
+   },
+   "tvr": {
+    "we_took_c": {
+     "top": {
+      "k": 5,
+      "n": 12,
+      "pct": 41.7
+     },
+     "rest": {
+      "k": 1,
+      "n": 9,
+      "pct": 11.1
+     },
+     "ci": [
+      -1.9,
+      66.7
+     ]
+    },
+    "enemy_took_c": {
+     "top": {
+      "k": 3,
+      "n": 8,
+      "pct": 37.5
+     },
+     "rest": {
+      "k": 4,
+      "n": 5,
+      "pct": null
+     },
+     "ci": null
+    },
+    "we_took_n": {
+     "top": {
+      "k": 5,
+      "n": 12,
+      "pct": 41.7
+     },
+     "rest": {
+      "k": 1,
+      "n": 9,
+      "pct": 11.1
+     },
+     "ci": [
+      -3.2,
+      68.9
+     ]
+    },
+    "enemy_took_n": {
+     "top": {
+      "k": 3,
+      "n": 8,
+      "pct": 37.5
+     },
+     "rest": {
+      "k": 4,
+      "n": 5,
+      "pct": null
+     },
+     "ci": null
+    }
+   },
+   "tvr_deaths": {
+    "label": "cell",
+    "n_top": 12,
+    "n_rest": 9,
+    "clans_top": 5,
+    "clans_rest": 5,
+    "died": {
+     "top": 8.3,
+     "rest": 33.3,
+     "v": -25.0,
+     "ci": [
+      -66.7,
+      12.5
+     ],
+     "clear": false
+    },
+    "caught": {
+     "top": 8.3,
+     "rest": 22.2,
+     "v": -13.9,
+     "ci": [
+      -44.4,
+      14.3
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "top": 8.3,
+     "rest": 11.1,
+     "v": -2.8,
+     "ci": [
+      -28.6,
+      22.2
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": 8.3,
+     "rest": 0.0,
+     "v": 8.3,
+     "ci": [
+      0.0,
+      25.0
+     ],
+     "clear": false
+    }
+   }
+  },
+  {
+   "id": "hs-cell-1",
+   "map": "Hotspot",
+   "cells": [
+    "G10",
+    "H10"
+   ],
+   "n": 40,
+   "tag": "",
+   "top6": 13,
+   "rest": 27,
+   "clans": 18,
+   "clan_text": "Top 6: H-SR 5, RESIN 4, HTDOG 1, VRTUS 1, KITE 1, BONKZ 1 | Rest: REEEE 5, BONKY 4, BTLST 3, -BN- 3, MZY 2, HFANS 2, KITED 2, KSC 2, NGA 1, SCCC2 1, PFANS 1, EPOXY 1",
+   "games": 18,
+   "early": 16,
+   "conc": 16970,
+   "conc_r5b": 16970,
+   "n_r5b": 40,
+   "conc_rest_of_map": 11379,
+   "conc_gap_ci": [
+    437.0,
+    11146.0
+   ],
+   "r5b_cap_taken_pct": 34,
+   "r5b_cap_taken_n": 35,
+   "r5b_deaths_per_100": 10.0,
+   "caps": {
+    "_c": {
+     "ours": 5,
+     "neutral": 21,
+     "theirs": 14,
+     "we_took": {
+      "k": 14,
+      "n": 35,
+      "pct": 40.0
+     },
+     "enemy_took": {
+      "k": 9,
+      "n": 26,
+      "pct": 34.6
+     },
+     "enemy_took_when_ours": {
+      "k": 2,
+      "n": 5,
+      "pct": null
+     }
+    },
+    "_n": {
+     "ours": 5,
+     "neutral": 21,
+     "theirs": 14,
+     "we_took": {
+      "k": 14,
+      "n": 35,
+      "pct": 40.0
+     },
+     "enemy_took": {
+      "k": 9,
+      "n": 26,
+      "pct": 34.6
+     },
+     "enemy_took_when_ours": {
+      "k": 2,
+      "n": 5,
+      "pct": null
+     }
+    },
+    "same_cap": 40
+   },
+   "caps_rest": {
+    "_c": {
+     "ours": 68,
+     "neutral": 42,
+     "theirs": 85,
+     "we_took": {
+      "k": 42,
+      "n": 127,
+      "pct": 33.1
+     },
+     "enemy_took": {
+      "k": 33,
+      "n": 110,
+      "pct": 30.0
+     },
+     "enemy_took_when_ours": {
+      "k": 18,
+      "n": 68,
+      "pct": 26.5
+     }
+    },
+    "_n": {
+     "ours": 92,
+     "neutral": 44,
+     "theirs": 59,
+     "we_took": {
+      "k": 40,
+      "n": 103,
+      "pct": 38.8
+     },
+     "enemy_took": {
+      "k": 34,
+      "n": 136,
+      "pct": 25.0
+     },
+     "enemy_took_when_ours": {
+      "k": 19,
+      "n": 92,
+      "pct": 20.7
+     }
+    },
+    "same_cap": 168
+   },
+   "near_caps": {
+    "D": 40
+   },
+   "contested_caps": {
+    "D": 40
+   },
+   "deaths": {
+    "label": "cell",
+    "n": 40,
+    "tag": "",
+    "clans": 18,
+    "top6": 13,
+    "rest": 27,
+    "n_died_base": 40,
+    "died_ships": 8,
+    "caught_ships": 4,
+    "died_smoker_n": 4,
+    "caught_smoker_n": 1,
+    "n_cr_cov": 36,
+    "n_cr_in": 36,
+    "died_cr_n": 4,
+    "caught_cr_n": 3,
+    "died": {
+     "v": 20.0,
+     "ci": [
+      4.9,
+      41.2
+     ]
+    },
+    "caught": {
+     "v": 10.0,
+     "ci": [
+      2.7,
+      17.8
+     ]
+    },
+    "died_smoker": {
+     "v": 10.0,
+     "ci": [
+      0.0,
+      22.0
+     ]
+    },
+    "caught_smoker": {
+     "v": 2.5,
+     "ci": [
+      0.0,
+      7.9
+     ]
+    }
+   },
+   "deaths_rest": {
+    "label": "rest of map",
+    "n": 195,
+    "tag": "",
+    "clans": 30,
+    "top6": 67,
+    "rest": 128,
+    "n_died_base": 195,
+    "died_ships": 29,
+    "caught_ships": 14,
+    "died_smoker_n": 18,
+    "caught_smoker_n": 7,
+    "n_cr_cov": 123,
+    "n_cr_in": 123,
+    "died_cr_n": 11,
+    "caught_cr_n": 7,
+    "died": {
+     "v": 14.9,
+     "ci": [
+      10.3,
+      20.1
+     ]
+    },
+    "caught": {
+     "v": 7.2,
+     "ci": [
+      4.5,
+      9.6
+     ]
+    },
+    "died_smoker": {
+     "v": 9.2,
+     "ci": [
+      5.4,
+      13.4
+     ]
+    },
+    "caught_smoker": {
+     "v": 3.6,
+     "ci": [
+      1.1,
+      6.3
+     ]
+    }
+   },
+   "n_map": 235,
+   "vs_rest": {
+    "label": "cell minus rest of the map",
+    "n_a": 40,
+    "n_b": 195,
+    "we_took_c": {
+     "v": 6.9,
+     "ci": [
+      -12.3,
+      30.4
+     ],
+     "clear": false
+    },
+    "enemy_took_c": {
+     "v": 4.6,
+     "ci": [
+      -15.1,
+      22.5
+     ],
+     "clear": false
+    },
+    "we_took_n": {
+     "v": 1.2,
+     "ci": [
+      -20.6,
+      25.3
+     ],
+     "clear": false
+    },
+    "enemy_took_n": {
+     "v": 9.6,
+     "ci": [
+      -8.8,
+      26.6
+     ],
+     "clear": false
+    },
+    "died": {
+     "v": 5.1,
+     "ci": [
+      -12.5,
+      25.5
+     ],
+     "clear": false
+    },
+    "caught": {
+     "v": 2.8,
+     "ci": [
+      -5.6,
+      10.9
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "v": 0.8,
+     "ci": [
+      -10.3,
+      13.0
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "v": -1.1,
+     "ci": [
+      -5.9,
+      4.8
+     ],
+     "clear": false
+    }
+   },
+   "tvr": {
+    "we_took_c": {
+     "top": {
+      "k": 5,
+      "n": 12,
+      "pct": 41.7
+     },
+     "rest": {
+      "k": 9,
+      "n": 23,
+      "pct": 39.1
+     },
+     "ci": [
+      -36.5,
+      40.7
+     ]
+    },
+    "enemy_took_c": {
+     "top": {
+      "k": 2,
+      "n": 7,
+      "pct": null
+     },
+     "rest": {
+      "k": 7,
+      "n": 19,
+      "pct": 36.8
+     },
+     "ci": null
+    },
+    "we_took_n": {
+     "top": {
+      "k": 5,
+      "n": 12,
+      "pct": 41.7
+     },
+     "rest": {
+      "k": 9,
+      "n": 23,
+      "pct": 39.1
+     },
+     "ci": [
+      -36.7,
+      39.1
+     ]
+    },
+    "enemy_took_n": {
+     "top": {
+      "k": 2,
+      "n": 7,
+      "pct": null
+     },
+     "rest": {
+      "k": 7,
+      "n": 19,
+      "pct": 36.8
+     },
+     "ci": null
+    }
+   },
+   "tvr_deaths": {
+    "label": "cell",
+    "n_top": 13,
+    "n_rest": 27,
+    "clans_top": 6,
+    "clans_rest": 12,
+    "died": {
+     "top": 38.5,
+     "rest": 11.1,
+     "v": 27.4,
+     "ci": [
+      -13.3,
+      76.0
+     ],
+     "clear": false
+    },
+    "caught": {
+     "top": 15.4,
+     "rest": 7.4,
+     "v": 8.0,
+     "ci": [
+      -10.0,
+      33.3
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "top": 15.4,
+     "rest": 7.4,
+     "v": 8.0,
+     "ci": [
+      -14.8,
+      33.3
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": 0.0,
+     "rest": 3.7,
+     "v": -3.7,
+     "ci": [
+      -10.0,
+      0.0
+     ],
+     "clear": false
+    }
+   }
+  },
+  {
+   "id": "sof-cell-1",
+   "map": "Sea of Fortune",
+   "cells": [
+    "F9",
+    "G9"
+   ],
+   "n": 10,
+   "tag": "small n",
+   "top6": 4,
+   "rest": 6,
+   "clans": 6,
+   "clan_text": "Top 6: BONKZ 3, H-SR 1 | Rest: BONKY 2, MZY 2, HFANS 1, -BN- 1",
+   "games": 5,
+   "early": 6,
+   "conc": 24597,
+   "conc_r5b": 24597,
+   "n_r5b": 10,
+   "conc_rest_of_map": 10348,
+   "conc_gap_ci": [
+    951.0,
+    33723.0
+   ],
+   "r5b_cap_taken_pct": 25,
+   "r5b_cap_taken_n": 8,
+   "r5b_deaths_per_100": 0.0,
+   "caps": {
+    "_c": {
+     "ours": 2,
+     "neutral": 7,
+     "theirs": 1,
+     "we_took": {
+      "k": 2,
+      "n": 8,
+      "pct": 25.0
+     },
+     "enemy_took": {
+      "k": 2,
+      "n": 9,
+      "pct": 22.2
+     },
+     "enemy_took_when_ours": {
+      "k": 0,
+      "n": 2,
+      "pct": null
+     }
+    },
+    "_n": {
+     "ours": 2,
+     "neutral": 7,
+     "theirs": 1,
+     "we_took": {
+      "k": 2,
+      "n": 8,
+      "pct": 25.0
+     },
+     "enemy_took": {
+      "k": 2,
+      "n": 9,
+      "pct": 22.2
+     },
+     "enemy_took_when_ours": {
+      "k": 0,
+      "n": 2,
+      "pct": null
+     }
+    },
+    "same_cap": 10
+   },
+   "caps_rest": {
+    "_c": {
+     "ours": 30,
+     "neutral": 13,
+     "theirs": 64,
+     "we_took": {
+      "k": 15,
+      "n": 77,
+      "pct": 19.5
+     },
+     "enemy_took": {
+      "k": 14,
+      "n": 43,
+      "pct": 32.6
+     },
+     "enemy_took_when_ours": {
+      "k": 6,
+      "n": 30,
+      "pct": 20.0
+     }
+    },
+    "_n": {
+     "ours": 63,
+     "neutral": 9,
+     "theirs": 35,
+     "we_took": {
+      "k": 14,
+      "n": 44,
+      "pct": 31.8
+     },
+     "enemy_took": {
+      "k": 11,
+      "n": 72,
+      "pct": 15.3
+     },
+     "enemy_took_when_ours": {
+      "k": 6,
+      "n": 63,
+      "pct": 9.5
+     }
+    },
+    "same_cap": 69
+   },
+   "near_caps": {
+    "D": 10
+   },
+   "contested_caps": {
+    "D": 10
+   },
+   "deaths": {
+    "label": "cell",
+    "n": 10,
+    "tag": "small n",
+    "clans": 6,
+    "top6": 4,
+    "rest": 6,
+    "n_died_base": 10,
+    "died_ships": 0,
+    "caught_ships": 0,
+    "died_smoker_n": 0,
+    "caught_smoker_n": 0,
+    "n_cr_cov": 11,
+    "n_cr_in": 11,
+    "died_cr_n": 0,
+    "caught_cr_n": 0,
+    "died": {
+     "v": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "caught": {
+     "v": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "died_smoker": {
+     "v": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "caught_smoker": {
+     "v": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "deaths_rest": {
+    "label": "rest of map",
+    "n": 107,
+    "tag": "",
+    "clans": 26,
+    "top6": 34,
+    "rest": 73,
+    "n_died_base": 107,
+    "died_ships": 21,
+    "caught_ships": 16,
+    "died_smoker_n": 15,
+    "caught_smoker_n": 10,
+    "n_cr_cov": 62,
+    "n_cr_in": 62,
+    "died_cr_n": 5,
+    "caught_cr_n": 5,
+    "died": {
+     "v": 19.6,
+     "ci": [
+      12.4,
+      30.5
+     ]
+    },
+    "caught": {
+     "v": 15.0,
+     "ci": [
+      8.9,
+      24.7
+     ]
+    },
+    "died_smoker": {
+     "v": 14.0,
+     "ci": [
+      8.0,
+      25.3
+     ]
+    },
+    "caught_smoker": {
+     "v": 9.3,
+     "ci": [
+      3.9,
+      17.7
+     ]
+    }
+   },
+   "n_map": 117,
+   "vs_rest": {
+    "label": "cell minus rest of the map",
+    "n_a": 10,
+    "n_b": 107,
+    "we_took_c": {
+     "v": 5.5,
+     "ci": [
+      -20.5,
+      30.6
+     ],
+     "clear": false
+    },
+    "enemy_took_c": {
+     "v": -10.3,
+     "ci": [
+      -36.3,
+      18.4
+     ],
+     "clear": false
+    },
+    "we_took_n": {
+     "v": -6.8,
+     "ci": [
+      -35.2,
+      22.2
+     ],
+     "clear": false
+    },
+    "enemy_took_n": {
+     "v": 6.9,
+     "ci": [
+      -21.4,
+      37.7
+     ],
+     "clear": false
+    },
+    "died": {
+     "v": -19.6,
+     "ci": [
+      -30.2,
+      -12.3
+     ],
+     "clear": true
+    },
+    "caught": {
+     "v": -15.0,
+     "ci": [
+      -23.4,
+      -8.6
+     ],
+     "clear": true
+    },
+    "died_smoker": {
+     "v": -14.0,
+     "ci": [
+      -24.4,
+      -7.9
+     ],
+     "clear": true
+    },
+    "caught_smoker": {
+     "v": -9.3,
+     "ci": [
+      -17.9,
+      -3.6
+     ],
+     "clear": true
+    }
+   },
+   "tvr": {
+    "we_took_c": {
+     "top": {
+      "k": 1,
+      "n": 3,
+      "pct": null
+     },
+     "rest": {
+      "k": 1,
+      "n": 5,
+      "pct": null
+     },
+     "ci": null
+    },
+    "enemy_took_c": {
+     "top": {
+      "k": 0,
+      "n": 4,
+      "pct": null
+     },
+     "rest": {
+      "k": 2,
+      "n": 5,
+      "pct": null
+     },
+     "ci": null
+    },
+    "we_took_n": {
+     "top": {
+      "k": 1,
+      "n": 3,
+      "pct": null
+     },
+     "rest": {
+      "k": 1,
+      "n": 5,
+      "pct": null
+     },
+     "ci": null
+    },
+    "enemy_took_n": {
+     "top": {
+      "k": 0,
+      "n": 4,
+      "pct": null
+     },
+     "rest": {
+      "k": 2,
+      "n": 5,
+      "pct": null
+     },
+     "ci": null
+    }
+   },
+   "tvr_deaths": {
+    "label": "cell",
+    "n_top": 4,
+    "n_rest": 6,
+    "clans_top": 2,
+    "clans_rest": 4,
+    "died": {
+     "top": null,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "caught": {
+     "top": null,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "died_smoker": {
+     "top": null,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": null,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    }
+   }
+  },
+  {
+   "id": "c5-lp-f8",
+   "map": "Loop",
+   "cells": [
+    "F8"
+   ],
+   "n": 15,
+   "tag": "",
+   "top6": 7,
+   "rest": 8,
+   "clans": 9,
+   "clan_text": "Top 6: BONKZ 5, RESIN 1, H-SR 1 | Rest: MACHX 2, HFANS 2, OGF 1, INCA 1, -BN- 1, MZY 1",
+   "games": 10,
+   "early": 6,
+   "conc": 18318,
+   "conc_r5b": 18318,
+   "n_r5b": 15,
+   "conc_rest_of_map": 6825,
+   "conc_gap_ci": [
+    -4443.0,
+    23609.0
+   ],
+   "r5b_cap_taken_pct": null,
+   "r5b_cap_taken_n": null,
+   "r5b_deaths_per_100": 13.3,
+   "caps": {
+    "_c": {
+     "ours": 6,
+     "neutral": 4,
+     "theirs": 5,
+     "we_took": {
+      "k": 5,
+      "n": 9,
+      "pct": 55.6
+     },
+     "enemy_took": {
+      "k": 4,
+      "n": 10,
+      "pct": 40.0
+     },
+     "enemy_took_when_ours": {
+      "k": 3,
+      "n": 6,
+      "pct": null
+     }
+    },
+    "_n": {
+     "ours": 6,
+     "neutral": 4,
+     "theirs": 5,
+     "we_took": {
+      "k": 5,
+      "n": 9,
+      "pct": 55.6
+     },
+     "enemy_took": {
+      "k": 4,
+      "n": 10,
+      "pct": 40.0
+     },
+     "enemy_took_when_ours": {
+      "k": 3,
+      "n": 6,
+      "pct": null
+     }
+    },
+    "same_cap": 15
+   },
+   "caps_rest": {
+    "_c": {
+     "ours": 51,
+     "neutral": 21,
+     "theirs": 55,
+     "we_took": {
+      "k": 30,
+      "n": 76,
+      "pct": 39.5
+     },
+     "enemy_took": {
+      "k": 17,
+      "n": 72,
+      "pct": 23.6
+     },
+     "enemy_took_when_ours": {
+      "k": 10,
+      "n": 51,
+      "pct": 19.6
+     }
+    },
+    "_n": {
+     "ours": 51,
+     "neutral": 21,
+     "theirs": 55,
+     "we_took": {
+      "k": 30,
+      "n": 76,
+      "pct": 39.5
+     },
+     "enemy_took": {
+      "k": 17,
+      "n": 72,
+      "pct": 23.6
+     },
+     "enemy_took_when_ours": {
+      "k": 10,
+      "n": 51,
+      "pct": 19.6
+     }
+    },
+    "same_cap": 127
+   },
+   "near_caps": {
+    "B": 11,
+    "C": 4
+   },
+   "contested_caps": {
+    "B": 11,
+    "C": 4
+   },
+   "deaths": {
+    "label": "cell",
+    "n": 15,
+    "tag": "",
+    "clans": 9,
+    "top6": 7,
+    "rest": 8,
+    "n_died_base": 15,
+    "died_ships": 4,
+    "caught_ships": 2,
+    "died_smoker_n": 4,
+    "caught_smoker_n": 2,
+    "n_cr_cov": 9,
+    "n_cr_in": 9,
+    "died_cr_n": 0,
+    "caught_cr_n": 0,
+    "died": {
+     "v": 26.7,
+     "ci": [
+      7.1,
+      54.5
+     ]
+    },
+    "caught": {
+     "v": 13.3,
+     "ci": [
+      0.0,
+      40.0
+     ]
+    },
+    "died_smoker": {
+     "v": 26.7,
+     "ci": [
+      7.7,
+      54.5
+     ]
+    },
+    "caught_smoker": {
+     "v": 13.3,
+     "ci": [
+      0.0,
+      40.0
+     ]
+    }
+   },
+   "deaths_rest": {
+    "label": "rest of map",
+    "n": 127,
+    "tag": "",
+    "clans": 26,
+    "top6": 34,
+    "rest": 93,
+    "n_died_base": 127,
+    "died_ships": 22,
+    "caught_ships": 13,
+    "died_smoker_n": 16,
+    "caught_smoker_n": 7,
+    "n_cr_cov": 42,
+    "n_cr_in": 42,
+    "died_cr_n": 4,
+    "caught_cr_n": 4,
+    "died": {
+     "v": 17.3,
+     "ci": [
+      10.4,
+      26.3
+     ]
+    },
+    "caught": {
+     "v": 10.2,
+     "ci": [
+      5.3,
+      16.7
+     ]
+    },
+    "died_smoker": {
+     "v": 12.6,
+     "ci": [
+      7.5,
+      19.6
+     ]
+    },
+    "caught_smoker": {
+     "v": 5.5,
+     "ci": [
+      1.9,
+      11.1
+     ]
+    }
+   },
+   "n_map": 142,
+   "vs_rest": {
+    "label": "cell minus rest of the map",
+    "n_a": 15,
+    "n_b": 127,
+    "we_took_c": {
+     "v": 16.1,
+     "ci": [
+      -19.4,
+      48.5
+     ],
+     "clear": false
+    },
+    "enemy_took_c": {
+     "v": 16.4,
+     "ci": [
+      -12.2,
+      53.8
+     ],
+     "clear": false
+    },
+    "we_took_n": {
+     "v": 16.1,
+     "ci": [
+      -19.4,
+      48.5
+     ],
+     "clear": false
+    },
+    "enemy_took_n": {
+     "v": 16.4,
+     "ci": [
+      -12.2,
+      53.8
+     ],
+     "clear": false
+    },
+    "died": {
+     "v": 9.3,
+     "ci": [
+      -13.9,
+      42.8
+     ],
+     "clear": false
+    },
+    "caught": {
+     "v": 3.1,
+     "ci": [
+      -12.8,
+      31.8
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "v": 14.1,
+     "ci": [
+      -7.2,
+      45.8
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "v": 7.8,
+     "ci": [
+      -8.1,
+      37.4
+     ],
+     "clear": false
+    }
+   },
+   "tvr": {
+    "we_took_c": {
+     "top": {
+      "k": 2,
+      "n": 4,
+      "pct": null
+     },
+     "rest": {
+      "k": 3,
+      "n": 5,
+      "pct": null
+     },
+     "ci": null
+    },
+    "enemy_took_c": {
+     "top": {
+      "k": 1,
+      "n": 5,
+      "pct": null
+     },
+     "rest": {
+      "k": 3,
+      "n": 5,
+      "pct": null
+     },
+     "ci": null
+    },
+    "we_took_n": {
+     "top": {
+      "k": 2,
+      "n": 4,
+      "pct": null
+     },
+     "rest": {
+      "k": 3,
+      "n": 5,
+      "pct": null
+     },
+     "ci": null
+    },
+    "enemy_took_n": {
+     "top": {
+      "k": 1,
+      "n": 5,
+      "pct": null
+     },
+     "rest": {
+      "k": 3,
+      "n": 5,
+      "pct": null
+     },
+     "ci": null
+    }
+   },
+   "tvr_deaths": {
+    "label": "cell",
+    "n_top": 7,
+    "n_rest": 8,
+    "clans_top": 3,
+    "clans_rest": 6,
+    "died": {
+     "top": null,
+     "rest": 50.0,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "caught": {
+     "top": null,
+     "rest": 25.0,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "died_smoker": {
+     "top": null,
+     "rest": 50.0,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": null,
+     "rest": 25.0,
+     "v": null,
+     "ci": null,
+     "clear": false
+    }
+   }
+  },
+  {
+   "id": "c5-lp-f10",
+   "map": "Loop",
+   "cells": [
+    "F10"
+   ],
+   "n": 9,
+   "tag": "small n",
+   "top6": 2,
+   "rest": 7,
+   "clans": 6,
+   "clan_text": "Top 6: H-SR 2 | Rest: EPOXY 2, MZY 2, 5D 1, KM 1, MACHX 1",
+   "games": 6,
+   "early": 0,
+   "conc": 20728,
+   "conc_r5b": 20728,
+   "n_r5b": 9,
+   "conc_rest_of_map": 7181,
+   "conc_gap_ci": [
+    -1094.0,
+    29325.0
+   ],
+   "r5b_cap_taken_pct": null,
+   "r5b_cap_taken_n": null,
+   "r5b_deaths_per_100": 33.3,
+   "caps": {
+    "_c": {
+     "ours": 4,
+     "neutral": 1,
+     "theirs": 4,
+     "we_took": {
+      "k": 3,
+      "n": 5,
+      "pct": null
+     },
+     "enemy_took": {
+      "k": 1,
+      "n": 5,
+      "pct": null
+     },
+     "enemy_took_when_ours": {
+      "k": 1,
+      "n": 4,
+      "pct": null
+     }
+    },
+    "_n": {
+     "ours": 4,
+     "neutral": 1,
+     "theirs": 4,
+     "we_took": {
+      "k": 3,
+      "n": 5,
+      "pct": null
+     },
+     "enemy_took": {
+      "k": 1,
+      "n": 5,
+      "pct": null
+     },
+     "enemy_took_when_ours": {
+      "k": 1,
+      "n": 4,
+      "pct": null
+     }
+    },
+    "same_cap": 9
+   },
+   "caps_rest": {
+    "_c": {
+     "ours": 53,
+     "neutral": 24,
+     "theirs": 56,
+     "we_took": {
+      "k": 32,
+      "n": 80,
+      "pct": 40.0
+     },
+     "enemy_took": {
+      "k": 20,
+      "n": 77,
+      "pct": 26.0
+     },
+     "enemy_took_when_ours": {
+      "k": 12,
+      "n": 53,
+      "pct": 22.6
+     }
+    },
+    "_n": {
+     "ours": 53,
+     "neutral": 24,
+     "theirs": 56,
+     "we_took": {
+      "k": 32,
+      "n": 80,
+      "pct": 40.0
+     },
+     "enemy_took": {
+      "k": 20,
+      "n": 77,
+      "pct": 26.0
+     },
+     "enemy_took_when_ours": {
+      "k": 12,
+      "n": 53,
+      "pct": 22.6
+     }
+    },
+    "same_cap": 133
+   },
+   "near_caps": {
+    "C": 9
+   },
+   "contested_caps": {
+    "C": 9
+   },
+   "deaths": {
+    "label": "cell",
+    "n": 9,
+    "tag": "small n",
+    "clans": 6,
+    "top6": 2,
+    "rest": 7,
+    "n_died_base": 9,
+    "died_ships": 3,
+    "caught_ships": 3,
+    "died_smoker_n": 2,
+    "caught_smoker_n": 2,
+    "n_cr_cov": 6,
+    "n_cr_in": 6,
+    "died_cr_n": 1,
+    "caught_cr_n": 1,
+    "died": {
+     "v": 33.3,
+     "ci": [
+      9.1,
+      71.4
+     ]
+    },
+    "caught": {
+     "v": 33.3,
+     "ci": [
+      8.3,
+      66.7
+     ]
+    },
+    "died_smoker": {
+     "v": 22.2,
+     "ci": [
+      0.0,
+      57.1
+     ]
+    },
+    "caught_smoker": {
+     "v": 22.2,
+     "ci": [
+      0.0,
+      57.1
+     ]
+    }
+   },
+   "deaths_rest": {
+    "label": "rest of map",
+    "n": 133,
+    "tag": "",
+    "clans": 27,
+    "top6": 39,
+    "rest": 94,
+    "n_died_base": 133,
+    "died_ships": 23,
+    "caught_ships": 12,
+    "died_smoker_n": 18,
+    "caught_smoker_n": 7,
+    "n_cr_cov": 45,
+    "n_cr_in": 45,
+    "died_cr_n": 3,
+    "caught_cr_n": 3,
+    "died": {
+     "v": 17.3,
+     "ci": [
+      10.4,
+      25.2
+     ]
+    },
+    "caught": {
+     "v": 9.0,
+     "ci": [
+      4.1,
+      14.8
+     ]
+    },
+    "died_smoker": {
+     "v": 13.5,
+     "ci": [
+      8.0,
+      20.2
+     ]
+    },
+    "caught_smoker": {
+     "v": 5.3,
+     "ci": [
+      2.0,
+      10.1
+     ]
+    }
+   },
+   "n_map": 142,
+   "vs_rest": {
+    "label": "cell minus rest of the map",
+    "n_a": 9,
+    "n_b": 133,
+    "we_took_c": {
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "enemy_took_c": {
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "we_took_n": {
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "died": {
+     "v": 16.0,
+     "ci": [
+      -16.2,
+      55.4
+     ],
+     "clear": false
+    },
+    "caught": {
+     "v": 24.3,
+     "ci": [
+      -8.3,
+      63.1
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "v": 8.7,
+     "ci": [
+      -16.1,
+      51.8
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "v": 17.0,
+     "ci": [
+      -6.8,
+      58.5
+     ],
+     "clear": false
+    }
+   },
+   "tvr": {
+    "we_took_c": {
+     "top": {
+      "k": 0,
+      "n": 1,
+      "pct": null
+     },
+     "rest": {
+      "k": 3,
+      "n": 4,
+      "pct": null
+     },
+     "ci": null
+    },
+    "enemy_took_c": {
+     "top": {
+      "k": 0,
+      "n": 2,
+      "pct": null
+     },
+     "rest": {
+      "k": 1,
+      "n": 3,
+      "pct": null
+     },
+     "ci": null
+    },
+    "we_took_n": {
+     "top": {
+      "k": 0,
+      "n": 1,
+      "pct": null
+     },
+     "rest": {
+      "k": 3,
+      "n": 4,
+      "pct": null
+     },
+     "ci": null
+    },
+    "enemy_took_n": {
+     "top": {
+      "k": 0,
+      "n": 2,
+      "pct": null
+     },
+     "rest": {
+      "k": 1,
+      "n": 3,
+      "pct": null
+     },
+     "ci": null
+    }
+   },
+   "tvr_deaths": {
+    "label": "cell",
+    "n_top": 2,
+    "n_rest": 7,
+    "clans_top": 1,
+    "clans_rest": 5,
+    "died": {
+     "top": null,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "caught": {
+     "top": null,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "died_smoker": {
+     "top": null,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "caught_smoker": {
+     "top": null,
+     "rest": null,
+     "v": null,
+     "ci": null,
+     "clear": false
+    }
+   }
+  }
+ ],
+ "C7b": {
+  "n_map": 305,
+  "n_near": 119,
+  "rows": [
+   {
+    "label": "Cap A",
+    "n": 46,
+    "tag": "",
+    "top6": 21,
+    "rest": 25,
+    "clans": 17,
+    "caps": {
+     "_c": {
+      "ours": 28,
+      "neutral": 12,
+      "theirs": 6,
+      "we_took": {
+       "k": 10,
+       "n": 18,
+       "pct": 55.6
+      },
+      "enemy_took": {
+       "k": 7,
+       "n": 40,
+       "pct": 17.5
+      },
+      "enemy_took_when_ours": {
+       "k": 3,
+       "n": 28,
+       "pct": 10.7
+      }
+     },
+     "_n": {
+      "ours": 28,
+      "neutral": 12,
+      "theirs": 6,
+      "we_took": {
+       "k": 10,
+       "n": 18,
+       "pct": 55.6
+      },
+      "enemy_took": {
+       "k": 7,
+       "n": 40,
+       "pct": 17.5
+      },
+      "enemy_took_when_ours": {
+       "k": 3,
+       "n": 28,
+       "pct": 10.7
+      }
+     },
+     "same_cap": 46
+    },
+    "enemy_in_cap": {
+     "k": 13,
+     "n": 46,
+     "pct": 28.3
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 8,
+     "n": 28,
+     "pct": 28.6
+    },
+    "enemy_in_cap_median_s": 39.0,
+    "conc": 11952,
+    "deaths": {
+     "label": "Cap A",
+     "n": 46,
+     "tag": "",
+     "clans": 17,
+     "top6": 21,
+     "rest": 25,
+     "n_died_base": 46,
+     "died_ships": 6,
+     "caught_ships": 3,
+     "died_smoker_n": 6,
+     "caught_smoker_n": 2,
+     "n_cr_cov": 23,
+     "n_cr_in": 23,
+     "died_cr_n": 0,
+     "caught_cr_n": 1,
+     "died": {
+      "v": 13.0,
+      "ci": [
+       6.1,
+       22.6
+      ]
+     },
+     "caught": {
+      "v": 6.5,
+      "ci": [
+       0.0,
+       14.6
+      ]
+     },
+     "died_smoker": {
+      "v": 13.0,
+      "ci": [
+       5.6,
+       22.2
+      ]
+     },
+     "caught_smoker": {
+      "v": 4.3,
+      "ci": [
+       0.0,
+       11.6
+      ]
+     }
+    }
+   },
+   {
+    "label": "Cap B",
+    "n": 34,
+    "tag": "",
+    "top6": 13,
+    "rest": 21,
+    "clans": 12,
+    "caps": {
+     "_c": {
+      "ours": 16,
+      "neutral": 12,
+      "theirs": 6,
+      "we_took": {
+       "k": 7,
+       "n": 18,
+       "pct": 38.9
+      },
+      "enemy_took": {
+       "k": 1,
+       "n": 28,
+       "pct": 3.6
+      },
+      "enemy_took_when_ours": {
+       "k": 1,
+       "n": 16,
+       "pct": 6.2
+      }
+     },
+     "_n": {
+      "ours": 16,
+      "neutral": 12,
+      "theirs": 6,
+      "we_took": {
+       "k": 7,
+       "n": 18,
+       "pct": 38.9
+      },
+      "enemy_took": {
+       "k": 1,
+       "n": 28,
+       "pct": 3.6
+      },
+      "enemy_took_when_ours": {
+       "k": 1,
+       "n": 16,
+       "pct": 6.2
+      }
+     },
+     "same_cap": 34
+    },
+    "enemy_in_cap": {
+     "k": 6,
+     "n": 34,
+     "pct": 17.6
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 3,
+     "n": 16,
+     "pct": 18.8
+    },
+    "enemy_in_cap_median_s": 17.0,
+    "conc": 5747,
+    "deaths": {
+     "label": "Cap B",
+     "n": 34,
+     "tag": "",
+     "clans": 12,
+     "top6": 13,
+     "rest": 21,
+     "n_died_base": 34,
+     "died_ships": 5,
+     "caught_ships": 4,
+     "died_smoker_n": 5,
+     "caught_smoker_n": 4,
+     "n_cr_cov": 6,
+     "n_cr_in": 6,
+     "died_cr_n": 0,
+     "caught_cr_n": 0,
+     "died": {
+      "v": 14.7,
+      "ci": [
+       5.4,
+       26.5
+      ]
+     },
+     "caught": {
+      "v": 11.8,
+      "ci": [
+       2.9,
+       25.0
+      ]
+     },
+     "died_smoker": {
+      "v": 14.7,
+      "ci": [
+       5.7,
+       26.7
+      ]
+     },
+     "caught_smoker": {
+      "v": 11.8,
+      "ci": [
+       2.9,
+       23.3
+      ]
+     }
+    }
+   },
+   {
+    "label": "Cap C",
+    "n": 17,
+    "tag": "",
+    "top6": 7,
+    "rest": 10,
+    "clans": 12,
+    "caps": {
+     "_c": {
+      "ours": 8,
+      "neutral": 2,
+      "theirs": 7,
+      "we_took": {
+       "k": 4,
+       "n": 9,
+       "pct": 44.4
+      },
+      "enemy_took": {
+       "k": 2,
+       "n": 10,
+       "pct": 20.0
+      },
+      "enemy_took_when_ours": {
+       "k": 2,
+       "n": 8,
+       "pct": 25.0
+      }
+     },
+     "_n": {
+      "ours": 8,
+      "neutral": 2,
+      "theirs": 7,
+      "we_took": {
+       "k": 4,
+       "n": 9,
+       "pct": 44.4
+      },
+      "enemy_took": {
+       "k": 2,
+       "n": 10,
+       "pct": 20.0
+      },
+      "enemy_took_when_ours": {
+       "k": 2,
+       "n": 8,
+       "pct": 25.0
+      }
+     },
+     "same_cap": 17
+    },
+    "enemy_in_cap": {
+     "k": 4,
+     "n": 17,
+     "pct": 23.5
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 2,
+     "n": 8,
+     "pct": 25.0
+    },
+    "enemy_in_cap_median_s": 31.0,
+    "conc": 12877,
+    "deaths": {
+     "label": "Cap C",
+     "n": 17,
+     "tag": "",
+     "clans": 12,
+     "top6": 7,
+     "rest": 10,
+     "n_died_base": 17,
+     "died_ships": 5,
+     "caught_ships": 5,
+     "died_smoker_n": 4,
+     "caught_smoker_n": 4,
+     "n_cr_cov": 7,
+     "n_cr_in": 7,
+     "died_cr_n": 1,
+     "caught_cr_n": 1,
+     "died": {
+      "v": 29.4,
+      "ci": [
+       11.1,
+       57.1
+      ]
+     },
+     "caught": {
+      "v": 29.4,
+      "ci": [
+       10.0,
+       56.2
+      ]
+     },
+     "died_smoker": {
+      "v": 23.5,
+      "ci": [
+       5.9,
+       50.0
+      ]
+     },
+     "caught_smoker": {
+      "v": 23.5,
+      "ci": [
+       6.7,
+       50.0
+      ]
+     }
+    }
+   },
+   {
+    "label": "Cap D",
+    "n": 22,
+    "tag": "",
+    "top6": 5,
+    "rest": 17,
+    "clans": 13,
+    "caps": {
+     "_c": {
+      "ours": 1,
+      "neutral": 6,
+      "theirs": 15,
+      "we_took": {
+       "k": 1,
+       "n": 21,
+       "pct": 4.8
+      },
+      "enemy_took": {
+       "k": 1,
+       "n": 7,
+       "pct": null
+      },
+      "enemy_took_when_ours": {
+       "k": 0,
+       "n": 1,
+       "pct": null
+      }
+     },
+     "_n": {
+      "ours": 18,
+      "neutral": 0,
+      "theirs": 4,
+      "we_took": {
+       "k": 0,
+       "n": 4,
+       "pct": null
+      },
+      "enemy_took": {
+       "k": 0,
+       "n": 18,
+       "pct": 0.0
+      },
+      "enemy_took_when_ours": {
+       "k": 0,
+       "n": 18,
+       "pct": 0.0
+      }
+     },
+     "same_cap": 4
+    },
+    "enemy_in_cap": {
+     "k": 2,
+     "n": 22,
+     "pct": 9.1
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 2,
+     "n": 18,
+     "pct": 11.1
+    },
+    "enemy_in_cap_median_s": 16.0,
+    "conc": 7035,
+    "deaths": {
+     "label": "Cap D",
+     "n": 22,
+     "tag": "",
+     "clans": 13,
+     "top6": 5,
+     "rest": 17,
+     "n_died_base": 22,
+     "died_ships": 3,
+     "caught_ships": 3,
+     "died_smoker_n": 1,
+     "caught_smoker_n": 1,
+     "n_cr_cov": 7,
+     "n_cr_in": 7,
+     "died_cr_n": 0,
+     "caught_cr_n": 0,
+     "died": {
+      "v": 13.6,
+      "ci": [
+       0.0,
+       24.0
+      ]
+     },
+     "caught": {
+      "v": 13.6,
+      "ci": [
+       0.0,
+       24.1
+      ]
+     },
+     "died_smoker": {
+      "v": 4.5,
+      "ci": [
+       0.0,
+       11.5
+      ]
+     },
+     "caught_smoker": {
+      "v": 4.5,
+      "ci": [
+       0.0,
+       11.5
+      ]
+     }
+    }
+   },
+   {
+    "label": "Other caps together (A, C, D)",
+    "n": 85,
+    "tag": "",
+    "top6": 33,
+    "rest": 52,
+    "clans": 22,
+    "caps": {
+     "_c": {
+      "ours": 37,
+      "neutral": 20,
+      "theirs": 28,
+      "we_took": {
+       "k": 15,
+       "n": 48,
+       "pct": 31.2
+      },
+      "enemy_took": {
+       "k": 10,
+       "n": 57,
+       "pct": 17.5
+      },
+      "enemy_took_when_ours": {
+       "k": 5,
+       "n": 37,
+       "pct": 13.5
+      }
+     },
+     "_n": {
+      "ours": 54,
+      "neutral": 14,
+      "theirs": 17,
+      "we_took": {
+       "k": 14,
+       "n": 31,
+       "pct": 45.2
+      },
+      "enemy_took": {
+       "k": 9,
+       "n": 68,
+       "pct": 13.2
+      },
+      "enemy_took_when_ours": {
+       "k": 5,
+       "n": 54,
+       "pct": 9.3
+      }
+     },
+     "same_cap": 67
+    },
+    "enemy_in_cap": {
+     "k": 19,
+     "n": 85,
+     "pct": 22.4
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 12,
+     "n": 54,
+     "pct": 22.2
+    },
+    "enemy_in_cap_median_s": 39.0,
+    "conc": 10864,
+    "deaths": {
+     "label": "Other caps together (A, C, D)",
+     "n": 85,
+     "tag": "",
+     "clans": 22,
+     "top6": 33,
+     "rest": 52,
+     "n_died_base": 85,
+     "died_ships": 14,
+     "caught_ships": 11,
+     "died_smoker_n": 11,
+     "caught_smoker_n": 7,
+     "n_cr_cov": 37,
+     "n_cr_in": 37,
+     "died_cr_n": 1,
+     "caught_cr_n": 2,
+     "died": {
+      "v": 16.5,
+      "ci": [
+       10.6,
+       22.8
+      ]
+     },
+     "caught": {
+      "v": 12.9,
+      "ci": [
+       7.6,
+       19.2
+      ]
+     },
+     "died_smoker": {
+      "v": 12.9,
+      "ci": [
+       7.6,
+       18.4
+      ]
+     },
+     "caught_smoker": {
+      "v": 8.2,
+      "ci": [
+       3.7,
+       13.3
+      ]
+     }
+    }
+   }
+  ],
+  "b_vs_other": {
+   "label": "B minus other caps",
+   "n_a": 34,
+   "n_b": 85,
+   "enemy_took_n": {
+    "v": -9.7,
+    "ci": [
+     -21.8,
+     4.0
+    ],
+    "clear": false
+   },
+   "we_took_n": {
+    "v": -6.3,
+    "ci": [
+     -38.8,
+     27.3
+    ],
+    "clear": false
+   },
+   "enemy_took_c": {
+    "v": -14.0,
+    "ci": [
+     -29.5,
+     0.4
+    ],
+    "clear": false
+   },
+   "we_took_c": {
+    "v": 7.6,
+    "ci": [
+     -18.2,
+     35.0
+    ],
+    "clear": false
+   },
+   "ours_share": {
+    "v": -16.5,
+    "ci": [
+     -40.4,
+     11.6
+    ],
+    "clear": false
+   },
+   "enemy_in_cap": {
+    "v": -4.7,
+    "ci": [
+     -17.6,
+     6.7
+    ],
+    "clear": false
+   },
+   "died": {
+    "v": -1.8,
+    "ci": [
+     -14.8,
+     14.9
+    ],
+    "clear": false
+   },
+   "caught": {
+    "v": -1.2,
+    "ci": [
+     -12.3,
+     14.0
+    ],
+    "clear": false
+   },
+   "died_smoker": {
+    "v": 1.8,
+    "ci": [
+     -10.3,
+     18.8
+    ],
+    "clear": false
+   },
+   "caught_smoker": {
+    "v": 3.5,
+    "ci": [
+     -7.1,
+     18.4
+    ],
+    "clear": false
+   }
+  },
+  "ours_share": {
+   "B": {
+    "v": 47.1,
+    "ci": [
+     26.3,
+     68.8
+    ]
+   },
+   "other": {
+    "v": 63.5,
+    "ci": [
+     50.7,
+     75.5
+    ]
+   }
+  },
+  "B": {
+   "cls": {
+    "cruiser": 3,
+    "destroyer": 31
+   },
+   "ships": {
+    "Daring": 15,
+    "Gdańsk": 6,
+    "Harugumo": 3,
+    "G. Hoffmann": 2,
+    "Somers": 2,
+    "Napoli": 1,
+    "Z-52": 1,
+    "Z-42": 1,
+    "Shimakaze": 1,
+    "Venezia": 1,
+    "Jinan": 1
+   },
+   "habits": {
+    "moving exhaust": 2,
+    "cap sitters": 23,
+    "other": 3,
+    "flank smoke lines": 5,
+    "parked cruiser smoke": 1
+   },
+   "pp": {
+    "cap_contest": 26,
+    "none": 2,
+    "cap_control": 2,
+    "counter_smoke": 2,
+    "island_dive": 1,
+    "damage": 1
+   },
+   "inside": 10,
+   "clan_text": "Top 6: VRTUS 4, RESIN 4, HTDOG 3, BONKZ 2 | Rest: HFANS 7, KITED 4, 5D 3, KSE 3, EPOXY 1, INCA 1, BONKY 1, -BN- 1",
+   "clan_text_ours": "Top 6: VRTUS 4, HTDOG 3, BONKZ 1 | Rest: HFANS 3, KSE 1, BONKY 1, KITED 1, -BN- 1, 5D 1",
+   "own_snapshot": {
+    "theirs": 6,
+    "neutral": 12,
+    "ours": 16
+   },
+   "own_agree": 34,
+   "ours_by_grp": {
+    "top": 8,
+    "rest": 8
+   },
+   "enemy_took_list": [
+    {
+     "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8145_g1_161928.html",
+     "team": "5D",
+     "ship": "Shimakaze",
+     "own": "ours"
+    }
+   ],
+   "top": {
+    "label": "B, Top 6",
+    "n": 13,
+    "tag": "small n",
+    "top6": 13,
+    "rest": 0,
+    "clans": 4,
+    "caps": {
+     "_c": {
+      "ours": 8,
+      "neutral": 3,
+      "theirs": 2,
+      "we_took": {
+       "k": 4,
+       "n": 5,
+       "pct": null
+      },
+      "enemy_took": {
+       "k": 0,
+       "n": 11,
+       "pct": 0.0
+      },
+      "enemy_took_when_ours": {
+       "k": 0,
+       "n": 8,
+       "pct": 0.0
+      }
+     },
+     "_n": {
+      "ours": 8,
+      "neutral": 3,
+      "theirs": 2,
+      "we_took": {
+       "k": 4,
+       "n": 5,
+       "pct": null
+      },
+      "enemy_took": {
+       "k": 0,
+       "n": 11,
+       "pct": 0.0
+      },
+      "enemy_took_when_ours": {
+       "k": 0,
+       "n": 8,
+       "pct": 0.0
+      }
+     },
+     "same_cap": 13
+    },
+    "enemy_in_cap": {
+     "k": 4,
+     "n": 13,
+     "pct": 30.8
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 2,
+     "n": 8,
+     "pct": 25.0
+    },
+    "enemy_in_cap_median_s": 12.0,
+    "conc": 11440,
+    "deaths": {
+     "label": "B, Top 6",
+     "n": 13,
+     "tag": "small n",
+     "clans": 4,
+     "top6": 13,
+     "rest": 0,
+     "n_died_base": 13,
+     "died_ships": 1,
+     "caught_ships": 0,
+     "died_smoker_n": 1,
+     "caught_smoker_n": 0,
+     "n_cr_cov": 2,
+     "n_cr_in": 2,
+     "died_cr_n": 0,
+     "caught_cr_n": 0,
+     "died": {
+      "v": 7.7,
+      "ci": [
+       0.0,
+       20.0
+      ]
+     },
+     "caught": {
+      "v": 0.0,
+      "ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "died_smoker": {
+      "v": 7.7,
+      "ci": [
+       0.0,
+       20.0
+      ]
+     },
+     "caught_smoker": {
+      "v": 0.0,
+      "ci": [
+       0.0,
+       0.0
+      ]
+     }
+    }
+   },
+   "rest": {
+    "label": "B, Rest",
+    "n": 21,
+    "tag": "",
+    "top6": 0,
+    "rest": 21,
+    "clans": 8,
+    "caps": {
+     "_c": {
+      "ours": 8,
+      "neutral": 9,
+      "theirs": 4,
+      "we_took": {
+       "k": 3,
+       "n": 13,
+       "pct": 23.1
+      },
+      "enemy_took": {
+       "k": 1,
+       "n": 17,
+       "pct": 5.9
+      },
+      "enemy_took_when_ours": {
+       "k": 1,
+       "n": 8,
+       "pct": 12.5
+      }
+     },
+     "_n": {
+      "ours": 8,
+      "neutral": 9,
+      "theirs": 4,
+      "we_took": {
+       "k": 3,
+       "n": 13,
+       "pct": 23.1
+      },
+      "enemy_took": {
+       "k": 1,
+       "n": 17,
+       "pct": 5.9
+      },
+      "enemy_took_when_ours": {
+       "k": 1,
+       "n": 8,
+       "pct": 12.5
+      }
+     },
+     "same_cap": 21
+    },
+    "enemy_in_cap": {
+     "k": 2,
+     "n": 21,
+     "pct": 9.5
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 1,
+     "n": 8,
+     "pct": 12.5
+    },
+    "enemy_in_cap_median_s": 38.0,
+    "conc": 2224,
+    "deaths": {
+     "label": "B, Rest",
+     "n": 21,
+     "tag": "",
+     "clans": 8,
+     "top6": 0,
+     "rest": 21,
+     "n_died_base": 21,
+     "died_ships": 4,
+     "caught_ships": 4,
+     "died_smoker_n": 4,
+     "caught_smoker_n": 4,
+     "n_cr_cov": 4,
+     "n_cr_in": 4,
+     "died_cr_n": 0,
+     "caught_cr_n": 0,
+     "died": {
+      "v": 19.0,
+      "ci": [
+       5.6,
+       42.9
+      ]
+     },
+     "caught": {
+      "v": 19.0,
+      "ci": [
+       6.2,
+       40.0
+      ]
+     },
+     "died_smoker": {
+      "v": 19.0,
+      "ci": [
+       6.5,
+       38.5
+      ]
+     },
+     "caught_smoker": {
+      "v": 19.0,
+      "ci": [
+       6.2,
+       42.9
+      ]
+     }
+    }
+   }
+  },
+  "share_of_map": {
+   "label": "share of map smokes within 2 km of B",
+   "n_top": 137,
+   "n_rest": 168,
+   "clans_top": 6,
+   "clans_rest": 19,
+   "share": {
+    "top": 9.5,
+    "rest": 12.5,
+    "v": -3.0,
+    "ci": [
+     -12.1,
+     7.8
+    ],
+    "clear": false
+   }
+  },
+  "ours_tvr": {
+   "label": "B ours at activation",
+   "n_top": 13,
+   "n_rest": 21,
+   "clans_top": 4,
+   "clans_rest": 8,
+   "share": {
+    "top": 61.5,
+    "rest": 38.1,
+    "v": 23.4,
+    "ci": [
+     -26.4,
+     64.5
+    ],
+    "clear": false
+   }
+  }
+ },
+ "C7c": {
+  "n_map": 207,
+  "n_B": 68,
+  "rows": [
+   {
+    "label": "Radar smokes (round 5 tags), nearest cap B",
+    "n": 15,
+    "tag": "",
+    "top6": 12,
+    "rest": 3,
+    "clans": 6,
+    "caps": {
+     "_c": {
+      "ours": 9,
+      "neutral": 5,
+      "theirs": 1,
+      "we_took": {
+       "k": 4,
+       "n": 6,
+       "pct": null
+      },
+      "enemy_took": {
+       "k": 5,
+       "n": 14,
+       "pct": 35.7
+      },
+      "enemy_took_when_ours": {
+       "k": 4,
+       "n": 9,
+       "pct": 44.4
+      }
+     },
+     "_n": {
+      "ours": 9,
+      "neutral": 5,
+      "theirs": 1,
+      "we_took": {
+       "k": 4,
+       "n": 6,
+       "pct": null
+      },
+      "enemy_took": {
+       "k": 6,
+       "n": 14,
+       "pct": 42.9
+      },
+      "enemy_took_when_ours": {
+       "k": 5,
+       "n": 9,
+       "pct": 55.6
+      }
+     },
+     "same_cap": 14
+    },
+    "enemy_in_cap": {
+     "k": 8,
+     "n": 15,
+     "pct": 53.3
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 5,
+     "n": 9,
+     "pct": 55.6
+    },
+    "enemy_in_cap_median_s": 27.0,
+    "conc": 12843,
+    "deaths": {
+     "label": "Radar smokes (round 5 tags), nearest cap B",
+     "n": 15,
+     "tag": "",
+     "clans": 6,
+     "top6": 12,
+     "rest": 3,
+     "n_died_base": 15,
+     "died_ships": 1,
+     "caught_ships": 1,
+     "died_smoker_n": 1,
+     "caught_smoker_n": 1,
+     "n_cr_cov": 9,
+     "n_cr_in": 9,
+     "died_cr_n": 0,
+     "caught_cr_n": 0,
+     "died": {
+      "v": 6.7,
+      "ci": [
+       0.0,
+       16.7
+      ]
+     },
+     "caught": {
+      "v": 6.7,
+      "ci": [
+       0.0,
+       17.6
+      ]
+     },
+     "died_smoker": {
+      "v": 6.7,
+      "ci": [
+       0.0,
+       16.7
+      ]
+     },
+     "caught_smoker": {
+      "v": 6.7,
+      "ci": [
+       0.0,
+       16.7
+      ]
+     }
+    }
+   },
+   {
+    "label": "Other smokes, nearest cap B (no radar tag)",
+    "n": 53,
+    "tag": "",
+    "top6": 23,
+    "rest": 30,
+    "clans": 18,
+    "caps": {
+     "_c": {
+      "ours": 14,
+      "neutral": 17,
+      "theirs": 22,
+      "we_took": {
+       "k": 17,
+       "n": 39,
+       "pct": 43.6
+      },
+      "enemy_took": {
+       "k": 11,
+       "n": 31,
+       "pct": 35.5
+      },
+      "enemy_took_when_ours": {
+       "k": 4,
+       "n": 14,
+       "pct": 28.6
+      }
+     },
+     "_n": {
+      "ours": 15,
+      "neutral": 17,
+      "theirs": 21,
+      "we_took": {
+       "k": 17,
+       "n": 38,
+       "pct": 44.7
+      },
+      "enemy_took": {
+       "k": 12,
+       "n": 32,
+       "pct": 37.5
+      },
+      "enemy_took_when_ours": {
+       "k": 5,
+       "n": 15,
+       "pct": 33.3
+      }
+     },
+     "same_cap": 52
+    },
+    "enemy_in_cap": {
+     "k": 17,
+     "n": 53,
+     "pct": 32.1
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 4,
+     "n": 15,
+     "pct": 26.7
+    },
+    "enemy_in_cap_median_s": 25.0,
+    "conc": 9690,
+    "deaths": {
+     "label": "Other smokes, nearest cap B (no radar tag)",
+     "n": 53,
+     "tag": "",
+     "clans": 18,
+     "top6": 23,
+     "rest": 30,
+     "n_died_base": 51,
+     "died_ships": 8,
+     "caught_ships": 4,
+     "died_smoker_n": 6,
+     "caught_smoker_n": 2,
+     "n_cr_cov": 21,
+     "n_cr_in": 21,
+     "died_cr_n": 2,
+     "caught_cr_n": 2,
+     "died": {
+      "v": 15.7,
+      "ci": [
+       7.7,
+       26.2
+      ]
+     },
+     "caught": {
+      "v": 7.5,
+      "ci": [
+       1.6,
+       16.3
+      ]
+     },
+     "died_smoker": {
+      "v": 11.8,
+      "ci": [
+       4.2,
+       20.8
+      ]
+     },
+     "caught_smoker": {
+      "v": 3.8,
+      "ci": [
+       0.0,
+       10.6
+      ]
+     }
+    }
+   },
+   {
+    "label": "Radar smokes (round 5 tags), within 2 km of B",
+    "n": 7,
+    "tag": "too few",
+    "top6": 5,
+    "rest": 2,
+    "clans": 5,
+    "caps": {
+     "_c": {
+      "ours": 4,
+      "neutral": 2,
+      "theirs": 1,
+      "we_took": {
+       "k": 1,
+       "n": 3,
+       "pct": null
+      },
+      "enemy_took": {
+       "k": 2,
+       "n": 6,
+       "pct": null
+      },
+      "enemy_took_when_ours": {
+       "k": 1,
+       "n": 4,
+       "pct": null
+      }
+     },
+     "_n": {
+      "ours": 4,
+      "neutral": 2,
+      "theirs": 1,
+      "we_took": {
+       "k": 1,
+       "n": 3,
+       "pct": null
+      },
+      "enemy_took": {
+       "k": 2,
+       "n": 6,
+       "pct": null
+      },
+      "enemy_took_when_ours": {
+       "k": 1,
+       "n": 4,
+       "pct": null
+      }
+     },
+     "same_cap": 7
+    },
+    "enemy_in_cap": {
+     "k": 3,
+     "n": 7,
+     "pct": null
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 1,
+     "n": 4,
+     "pct": null
+    },
+    "enemy_in_cap_median_s": 30.0,
+    "conc": 15864,
+    "deaths": {
+     "label": "Radar smokes (round 5 tags), within 2 km of B",
+     "n": 7,
+     "tag": "too few",
+     "clans": 5,
+     "top6": 5,
+     "rest": 2,
+     "n_died_base": 7,
+     "died_ships": 0,
+     "caught_ships": 0,
+     "died_smoker_n": 0,
+     "caught_smoker_n": 0,
+     "n_cr_cov": 2,
+     "n_cr_in": 2,
+     "died_cr_n": 0,
+     "caught_cr_n": 0,
+     "died": {
+      "v": null,
+      "ci": null
+     },
+     "caught": {
+      "v": null,
+      "ci": null
+     },
+     "died_smoker": {
+      "v": null,
+      "ci": null
+     },
+     "caught_smoker": {
+      "v": null,
+      "ci": null
+     }
+    }
+   },
+   {
+    "label": "Other smokes within 2 km of B (no radar tag)",
+    "n": 24,
+    "tag": "",
+    "top6": 11,
+    "rest": 13,
+    "clans": 12,
+    "caps": {
+     "_c": {
+      "ours": 7,
+      "neutral": 8,
+      "theirs": 9,
+      "we_took": {
+       "k": 11,
+       "n": 17,
+       "pct": 64.7
+      },
+      "enemy_took": {
+       "k": 5,
+       "n": 15,
+       "pct": 33.3
+      },
+      "enemy_took_when_ours": {
+       "k": 2,
+       "n": 7,
+       "pct": null
+      }
+     },
+     "_n": {
+      "ours": 7,
+      "neutral": 8,
+      "theirs": 9,
+      "we_took": {
+       "k": 11,
+       "n": 17,
+       "pct": 64.7
+      },
+      "enemy_took": {
+       "k": 5,
+       "n": 15,
+       "pct": 33.3
+      },
+      "enemy_took_when_ours": {
+       "k": 2,
+       "n": 7,
+       "pct": null
+      }
+     },
+     "same_cap": 24
+    },
+    "enemy_in_cap": {
+     "k": 6,
+     "n": 24,
+     "pct": 25.0
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 1,
+     "n": 7,
+     "pct": null
+    },
+    "enemy_in_cap_median_s": 29.0,
+    "conc": 10071,
+    "deaths": {
+     "label": "Other smokes within 2 km of B (no radar tag)",
+     "n": 24,
+     "tag": "",
+     "clans": 12,
+     "top6": 11,
+     "rest": 13,
+     "n_died_base": 24,
+     "died_ships": 4,
+     "caught_ships": 2,
+     "died_smoker_n": 3,
+     "caught_smoker_n": 1,
+     "n_cr_cov": 11,
+     "n_cr_in": 11,
+     "died_cr_n": 1,
+     "caught_cr_n": 1,
+     "died": {
+      "v": 16.7,
+      "ci": [
+       5.0,
+       30.4
+      ]
+     },
+     "caught": {
+      "v": 8.3,
+      "ci": [
+       0.0,
+       19.2
+      ]
+     },
+     "died_smoker": {
+      "v": 12.5,
+      "ci": [
+       0.0,
+       26.3
+      ]
+     },
+     "caught_smoker": {
+      "v": 4.2,
+      "ci": [
+       0.0,
+       14.3
+      ]
+     }
+    }
+   },
+   {
+    "label": "Radar pressed from the smoke (radar log), nearest cap B",
+    "n": 15,
+    "tag": "",
+    "top6": 12,
+    "rest": 3,
+    "clans": 6,
+    "caps": {
+     "_c": {
+      "ours": 9,
+      "neutral": 5,
+      "theirs": 1,
+      "we_took": {
+       "k": 4,
+       "n": 6,
+       "pct": null
+      },
+      "enemy_took": {
+       "k": 5,
+       "n": 14,
+       "pct": 35.7
+      },
+      "enemy_took_when_ours": {
+       "k": 4,
+       "n": 9,
+       "pct": 44.4
+      }
+     },
+     "_n": {
+      "ours": 9,
+      "neutral": 5,
+      "theirs": 1,
+      "we_took": {
+       "k": 4,
+       "n": 6,
+       "pct": null
+      },
+      "enemy_took": {
+       "k": 6,
+       "n": 14,
+       "pct": 42.9
+      },
+      "enemy_took_when_ours": {
+       "k": 5,
+       "n": 9,
+       "pct": 55.6
+      }
+     },
+     "same_cap": 14
+    },
+    "enemy_in_cap": {
+     "k": 8,
+     "n": 15,
+     "pct": 53.3
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 5,
+     "n": 9,
+     "pct": 55.6
+    },
+    "enemy_in_cap_median_s": 27.0,
+    "conc": 12843,
+    "deaths": {
+     "label": "Radar pressed from the smoke (radar log), nearest cap B",
+     "n": 15,
+     "tag": "",
+     "clans": 6,
+     "top6": 12,
+     "rest": 3,
+     "n_died_base": 15,
+     "died_ships": 1,
+     "caught_ships": 1,
+     "died_smoker_n": 1,
+     "caught_smoker_n": 1,
+     "n_cr_cov": 9,
+     "n_cr_in": 9,
+     "died_cr_n": 0,
+     "caught_cr_n": 0,
+     "died": {
+      "v": 6.7,
+      "ci": [
+       0.0,
+       17.6
+      ]
+     },
+     "caught": {
+      "v": 6.7,
+      "ci": [
+       0.0,
+       16.7
+      ]
+     },
+     "died_smoker": {
+      "v": 6.7,
+      "ci": [
+       0.0,
+       16.7
+      ]
+     },
+     "caught_smoker": {
+      "v": 6.7,
+      "ci": [
+       0.0,
+       16.7
+      ]
+     }
+    }
+   },
+   {
+    "label": "Other smokes, nearest cap B (no radar pressed)",
+    "n": 53,
+    "tag": "",
+    "top6": 23,
+    "rest": 30,
+    "clans": 18,
+    "caps": {
+     "_c": {
+      "ours": 14,
+      "neutral": 17,
+      "theirs": 22,
+      "we_took": {
+       "k": 17,
+       "n": 39,
+       "pct": 43.6
+      },
+      "enemy_took": {
+       "k": 11,
+       "n": 31,
+       "pct": 35.5
+      },
+      "enemy_took_when_ours": {
+       "k": 4,
+       "n": 14,
+       "pct": 28.6
+      }
+     },
+     "_n": {
+      "ours": 15,
+      "neutral": 17,
+      "theirs": 21,
+      "we_took": {
+       "k": 17,
+       "n": 38,
+       "pct": 44.7
+      },
+      "enemy_took": {
+       "k": 12,
+       "n": 32,
+       "pct": 37.5
+      },
+      "enemy_took_when_ours": {
+       "k": 5,
+       "n": 15,
+       "pct": 33.3
+      }
+     },
+     "same_cap": 52
+    },
+    "enemy_in_cap": {
+     "k": 17,
+     "n": 53,
+     "pct": 32.1
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 4,
+     "n": 15,
+     "pct": 26.7
+    },
+    "enemy_in_cap_median_s": 25.0,
+    "conc": 9690,
+    "deaths": {
+     "label": "Other smokes, nearest cap B (no radar pressed)",
+     "n": 53,
+     "tag": "",
+     "clans": 18,
+     "top6": 23,
+     "rest": 30,
+     "n_died_base": 51,
+     "died_ships": 8,
+     "caught_ships": 4,
+     "died_smoker_n": 6,
+     "caught_smoker_n": 2,
+     "n_cr_cov": 21,
+     "n_cr_in": 21,
+     "died_cr_n": 2,
+     "caught_cr_n": 2,
+     "died": {
+      "v": 15.7,
+      "ci": [
+       7.4,
+       25.6
+      ]
+     },
+     "caught": {
+      "v": 7.5,
+      "ci": [
+       1.7,
+       16.7
+      ]
+     },
+     "died_smoker": {
+      "v": 11.8,
+      "ci": [
+       4.1,
+       21.2
+      ]
+     },
+     "caught_smoker": {
+      "v": 3.8,
+      "ci": [
+       0.0,
+       10.4
+      ]
+     }
+    }
+   },
+   {
+    "label": "Radar pressed from the smoke (radar log), within 2 km of B",
+    "n": 7,
+    "tag": "too few",
+    "top6": 5,
+    "rest": 2,
+    "clans": 5,
+    "caps": {
+     "_c": {
+      "ours": 4,
+      "neutral": 2,
+      "theirs": 1,
+      "we_took": {
+       "k": 1,
+       "n": 3,
+       "pct": null
+      },
+      "enemy_took": {
+       "k": 2,
+       "n": 6,
+       "pct": null
+      },
+      "enemy_took_when_ours": {
+       "k": 1,
+       "n": 4,
+       "pct": null
+      }
+     },
+     "_n": {
+      "ours": 4,
+      "neutral": 2,
+      "theirs": 1,
+      "we_took": {
+       "k": 1,
+       "n": 3,
+       "pct": null
+      },
+      "enemy_took": {
+       "k": 2,
+       "n": 6,
+       "pct": null
+      },
+      "enemy_took_when_ours": {
+       "k": 1,
+       "n": 4,
+       "pct": null
+      }
+     },
+     "same_cap": 7
+    },
+    "enemy_in_cap": {
+     "k": 3,
+     "n": 7,
+     "pct": null
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 1,
+     "n": 4,
+     "pct": null
+    },
+    "enemy_in_cap_median_s": 30.0,
+    "conc": 15864,
+    "deaths": {
+     "label": "Radar pressed from the smoke (radar log), within 2 km of B",
+     "n": 7,
+     "tag": "too few",
+     "clans": 5,
+     "top6": 5,
+     "rest": 2,
+     "n_died_base": 7,
+     "died_ships": 0,
+     "caught_ships": 0,
+     "died_smoker_n": 0,
+     "caught_smoker_n": 0,
+     "n_cr_cov": 2,
+     "n_cr_in": 2,
+     "died_cr_n": 0,
+     "caught_cr_n": 0,
+     "died": {
+      "v": null,
+      "ci": null
+     },
+     "caught": {
+      "v": null,
+      "ci": null
+     },
+     "died_smoker": {
+      "v": null,
+      "ci": null
+     },
+     "caught_smoker": {
+      "v": null,
+      "ci": null
+     }
+    }
+   },
+   {
+    "label": "Other smokes within 2 km of B (no radar pressed)",
+    "n": 24,
+    "tag": "",
+    "top6": 11,
+    "rest": 13,
+    "clans": 12,
+    "caps": {
+     "_c": {
+      "ours": 7,
+      "neutral": 8,
+      "theirs": 9,
+      "we_took": {
+       "k": 11,
+       "n": 17,
+       "pct": 64.7
+      },
+      "enemy_took": {
+       "k": 5,
+       "n": 15,
+       "pct": 33.3
+      },
+      "enemy_took_when_ours": {
+       "k": 2,
+       "n": 7,
+       "pct": null
+      }
+     },
+     "_n": {
+      "ours": 7,
+      "neutral": 8,
+      "theirs": 9,
+      "we_took": {
+       "k": 11,
+       "n": 17,
+       "pct": 64.7
+      },
+      "enemy_took": {
+       "k": 5,
+       "n": 15,
+       "pct": 33.3
+      },
+      "enemy_took_when_ours": {
+       "k": 2,
+       "n": 7,
+       "pct": null
+      }
+     },
+     "same_cap": 24
+    },
+    "enemy_in_cap": {
+     "k": 6,
+     "n": 24,
+     "pct": 25.0
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 1,
+     "n": 7,
+     "pct": null
+    },
+    "enemy_in_cap_median_s": 29.0,
+    "conc": 10071,
+    "deaths": {
+     "label": "Other smokes within 2 km of B (no radar pressed)",
+     "n": 24,
+     "tag": "",
+     "clans": 12,
+     "top6": 11,
+     "rest": 13,
+     "n_died_base": 24,
+     "died_ships": 4,
+     "caught_ships": 2,
+     "died_smoker_n": 3,
+     "caught_smoker_n": 1,
+     "n_cr_cov": 11,
+     "n_cr_in": 11,
+     "died_cr_n": 1,
+     "caught_cr_n": 1,
+     "died": {
+      "v": 16.7,
+      "ci": [
+       4.3,
+       29.2
+      ]
+     },
+     "caught": {
+      "v": 8.3,
+      "ci": [
+       0.0,
+       18.2
+      ]
+     },
+     "died_smoker": {
+      "v": 12.5,
+      "ci": [
+       0.0,
+       27.8
+      ]
+     },
+     "caught_smoker": {
+      "v": 4.2,
+      "ci": [
+       0.0,
+       13.6
+      ]
+     }
+    }
+   },
+   {
+    "label": "Radar smokes (round 5 tags), other maps, nearest cap",
+    "n": 112,
+    "tag": "",
+    "top6": 61,
+    "rest": 51,
+    "clans": 24,
+    "caps": {
+     "_c": {
+      "ours": 34,
+      "neutral": 37,
+      "theirs": 41,
+      "we_took": {
+       "k": 28,
+       "n": 78,
+       "pct": 35.9
+      },
+      "enemy_took": {
+       "k": 19,
+       "n": 71,
+       "pct": 26.8
+      },
+      "enemy_took_when_ours": {
+       "k": 6,
+       "n": 34,
+       "pct": 17.6
+      }
+     },
+     "_n": {
+      "ours": 52,
+      "neutral": 35,
+      "theirs": 25,
+      "we_took": {
+       "k": 28,
+       "n": 60,
+       "pct": 46.7
+      },
+      "enemy_took": {
+       "k": 20,
+       "n": 87,
+       "pct": 23.0
+      },
+      "enemy_took_when_ours": {
+       "k": 10,
+       "n": 52,
+       "pct": 19.2
+      }
+     },
+     "same_cap": 90
+    },
+    "enemy_in_cap": {
+     "k": 47,
+     "n": 112,
+     "pct": 42.0
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 23,
+     "n": 52,
+     "pct": 44.2
+    },
+    "enemy_in_cap_median_s": 35.0,
+    "conc": 18328,
+    "deaths": {
+     "label": "Radar smokes (round 5 tags), other maps, nearest cap",
+     "n": 112,
+     "tag": "",
+     "clans": 24,
+     "top6": 61,
+     "rest": 51,
+     "n_died_base": 112,
+     "died_ships": 16,
+     "caught_ships": 12,
+     "died_smoker_n": 7,
+     "caught_smoker_n": 3,
+     "n_cr_cov": 96,
+     "n_cr_in": 96,
+     "died_cr_n": 8,
+     "caught_cr_n": 8,
+     "died": {
+      "v": 14.3,
+      "ci": [
+       7.4,
+       22.5
+      ]
+     },
+     "caught": {
+      "v": 10.7,
+      "ci": [
+       5.3,
+       17.6
+      ]
+     },
+     "died_smoker": {
+      "v": 6.2,
+      "ci": [
+       1.6,
+       12.5
+      ]
+     },
+     "caught_smoker": {
+      "v": 2.7,
+      "ci": [
+       0.0,
+       6.1
+      ]
+     }
+    }
+   },
+   {
+    "label": "Radar pressed (radar log), other maps, nearest cap",
+    "n": 124,
+    "tag": "",
+    "top6": 65,
+    "rest": 59,
+    "clans": 25,
+    "caps": {
+     "_c": {
+      "ours": 36,
+      "neutral": 40,
+      "theirs": 48,
+      "we_took": {
+       "k": 30,
+       "n": 88,
+       "pct": 34.1
+      },
+      "enemy_took": {
+       "k": 20,
+       "n": 76,
+       "pct": 26.3
+      },
+      "enemy_took_when_ours": {
+       "k": 5,
+       "n": 36,
+       "pct": 13.9
+      }
+     },
+     "_n": {
+      "ours": 55,
+      "neutral": 38,
+      "theirs": 31,
+      "we_took": {
+       "k": 30,
+       "n": 69,
+       "pct": 43.5
+      },
+      "enemy_took": {
+       "k": 21,
+       "n": 93,
+       "pct": 22.6
+      },
+      "enemy_took_when_ours": {
+       "k": 9,
+       "n": 55,
+       "pct": 16.4
+      }
+     },
+     "same_cap": 101
+    },
+    "enemy_in_cap": {
+     "k": 50,
+     "n": 124,
+     "pct": 40.3
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 23,
+     "n": 55,
+     "pct": 41.8
+    },
+    "enemy_in_cap_median_s": 36.0,
+    "conc": 18111,
+    "deaths": {
+     "label": "Radar pressed (radar log), other maps, nearest cap",
+     "n": 124,
+     "tag": "",
+     "clans": 25,
+     "top6": 65,
+     "rest": 59,
+     "n_died_base": 124,
+     "died_ships": 22,
+     "caught_ships": 16,
+     "died_smoker_n": 11,
+     "caught_smoker_n": 5,
+     "n_cr_cov": 109,
+     "n_cr_in": 109,
+     "died_cr_n": 10,
+     "caught_cr_n": 10,
+     "died": {
+      "v": 17.7,
+      "ci": [
+       9.9,
+       26.2
+      ]
+     },
+     "caught": {
+      "v": 12.9,
+      "ci": [
+       7.4,
+       19.6
+      ]
+     },
+     "died_smoker": {
+      "v": 8.9,
+      "ci": [
+       4.1,
+       14.3
+      ]
+     },
+     "caught_smoker": {
+      "v": 4.0,
+      "ci": [
+       0.8,
+       8.3
+      ]
+     }
+    }
+   }
+  ],
+  "overlap": {
+   "tag": 15,
+   "log": 15,
+   "both": 15,
+   "tag_only": 0,
+   "log_only": 0
+  },
+  "contrasts": [
+   {
+    "label": "Radar (tags) minus other, nearest cap B",
+    "n_a": 15,
+    "n_b": 53,
+    "enemy_took_n": {
+     "v": 5.4,
+     "ci": [
+      -26.2,
+      32.4
+     ],
+     "clear": false
+    },
+    "we_took_n": {
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "ours_share": {
+     "v": 31.7,
+     "ci": [
+      6.7,
+      53.6
+     ],
+     "clear": true
+    },
+    "enemy_in_cap": {
+     "v": 21.3,
+     "ci": [
+      -6.7,
+      54.8
+     ],
+     "clear": false
+    },
+    "died": {
+     "v": -9.0,
+     "ci": [
+      -23.3,
+      3.9
+     ],
+     "clear": false
+    },
+    "caught": {
+     "v": -0.9,
+     "ci": [
+      -14.6,
+      13.2
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "v": -5.1,
+     "ci": [
+      -19.0,
+      5.9
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "v": 2.9,
+     "ci": [
+      -9.1,
+      14.3
+     ],
+     "clear": false
+    }
+   },
+   {
+    "label": "Radar (log) minus other, nearest cap B",
+    "n_a": 15,
+    "n_b": 53,
+    "enemy_took_n": {
+     "v": 5.4,
+     "ci": [
+      -26.2,
+      32.4
+     ],
+     "clear": false
+    },
+    "we_took_n": {
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "ours_share": {
+     "v": 31.7,
+     "ci": [
+      6.7,
+      53.6
+     ],
+     "clear": true
+    },
+    "enemy_in_cap": {
+     "v": 21.3,
+     "ci": [
+      -6.7,
+      54.8
+     ],
+     "clear": false
+    },
+    "died": {
+     "v": -9.0,
+     "ci": [
+      -23.3,
+      3.9
+     ],
+     "clear": false
+    },
+    "caught": {
+     "v": -0.9,
+     "ci": [
+      -14.6,
+      13.2
+     ],
+     "clear": false
+    },
+    "died_smoker": {
+     "v": -5.1,
+     "ci": [
+      -19.0,
+      5.9
+     ],
+     "clear": false
+    },
+    "caught_smoker": {
+     "v": 2.9,
+     "ci": [
+      -9.1,
+      14.3
+     ],
+     "clear": false
+    }
+   },
+   {
+    "label": "Radar at B (tags) minus radar on other maps",
+    "n_a": 15,
+    "n_b": 112,
+    "enemy_took_n": {
+     "v": 19.9,
+     "ci": [
+      -2.3,
+      45.8
+     ],
+     "clear": false
+    },
+    "we_took_n": {
+     "v": null,
+     "ci": null,
+     "clear": false
+    },
+    "ours_share": {
+     "v": 13.6,
+     "ci": [
+      -9.1,
+      36.4
+     ],
+     "clear": false
+    },
+    "enemy_in_cap": {
+     "v": 11.4,
+     "ci": [
+      -8.6,
+      38.9
+     ],
+     "clear": false
+    }
+   }
+  ],
+  "list": [
+   {
+    "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7948_g1_55897.html",
+    "slug": "7948_g1_55897",
+    "team": "KITE",
+    "ship": "Gearing",
+    "t": 82,
+    "own": "neutral",
+    "own_snapshot": "neutral",
+    "enemy_took": false,
+    "we_took": true,
+    "enemy_in_cap_s": 0.0,
+    "edge_m": 3685,
+    "tag": true,
+    "pressed": true,
+    "same_cap": true
+   },
+   {
+    "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8149_g1_68154.html",
+    "slug": "8149_g1_68154",
+    "team": "KITE",
+    "ship": "Gearing",
+    "t": 96,
+    "own": "neutral",
+    "own_snapshot": "neutral",
+    "enemy_took": false,
+    "we_took": true,
+    "enemy_in_cap_s": 0.0,
+    "edge_m": 2262,
+    "tag": true,
+    "pressed": true,
+    "same_cap": true
+   },
+   {
+    "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7929_g1_195744.html",
+    "slug": "7929_g1_195744",
+    "team": "SCCC2",
+    "ship": "Gdańsk",
+    "t": 190,
+    "own": "neutral",
+    "own_snapshot": "neutral",
+    "enemy_took": false,
+    "we_took": false,
+    "enemy_in_cap_s": 14.0,
+    "edge_m": 991,
+    "tag": true,
+    "pressed": true,
+    "same_cap": true
+   },
+   {
+    "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_175996.html",
+    "slug": "8147_g2_175996",
+    "team": "RESIN",
+    "ship": "Gdańsk",
+    "t": 213,
+    "own": "neutral",
+    "own_snapshot": "neutral",
+    "enemy_took": true,
+    "we_took": false,
+    "enemy_in_cap_s": 87.0,
+    "edge_m": 1726,
+    "tag": true,
+    "pressed": true,
+    "same_cap": true
+   },
+   {
+    "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7930_g1_51294.html",
+    "slug": "7930_g1_51294",
+    "team": "H-SR",
+    "ship": "Somers",
+    "t": 307,
+    "own": "neutral",
+    "own_snapshot": "neutral",
+    "enemy_took": false,
+    "we_took": true,
+    "enemy_in_cap_s": 105.0,
+    "edge_m": 2264,
+    "tag": true,
+    "pressed": true,
+    "same_cap": true
+   },
+   {
+    "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159427.html",
+    "slug": "7903_g1_159427",
+    "team": "HFANS",
+    "ship": "Somers",
+    "t": 309,
+    "own": "ours",
+    "own_snapshot": "ours",
+    "enemy_took": false,
+    "we_took": null,
+    "enemy_in_cap_s": 0.0,
+    "edge_m": 2118,
+    "tag": true,
+    "pressed": true,
+    "same_cap": true
+   },
+   {
+    "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8149_g1_68162.html",
+    "slug": "8149_g1_68162",
+    "team": "KITE",
+    "ship": "Gearing",
+    "t": 345,
+    "own": "ours",
+    "own_snapshot": "ours",
+    "enemy_took": false,
+    "we_took": null,
+    "enemy_in_cap_s": 0.0,
+    "edge_m": 1963,
+    "tag": true,
+    "pressed": true,
+    "same_cap": true
+   },
+   {
+    "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159439.html",
+    "slug": "7903_g1_159439",
+    "team": "HFANS",
+    "ship": "Somers",
+    "t": 608,
+    "own": "ours",
+    "own_snapshot": "ours",
+    "enemy_took": false,
+    "we_took": null,
+    "enemy_in_cap_s": 0.0,
+    "edge_m": -660,
+    "tag": true,
+    "pressed": true,
+    "same_cap": true
+   },
+   {
+    "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8149_g1_68172.html",
+    "slug": "8149_g1_68172",
+    "team": "KITE",
+    "ship": "Gearing",
+    "t": 641,
+    "own": "ours",
+    "own_snapshot": "ours",
+    "enemy_took": true,
+    "we_took": null,
+    "enemy_in_cap_s": 105.0,
+    "edge_m": 3008,
+    "tag": true,
+    "pressed": true,
+    "same_cap": false
+   },
+   {
+    "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176005.html",
+    "slug": "8147_g2_176005",
+    "team": "BONKZ",
+    "ship": "Svea",
+    "t": 801,
+    "own": "theirs",
+    "own_snapshot": "theirs",
+    "enemy_took": null,
+    "we_took": true,
+    "enemy_in_cap_s": 0.0,
+    "edge_m": -1251,
+    "tag": true,
+    "pressed": true,
+    "same_cap": true
+   },
+   {
+    "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176006.html",
+    "slug": "8147_g2_176006",
+    "team": "RESIN",
+    "ship": "Gdańsk",
+    "t": 809,
+    "own": "ours",
+    "own_snapshot": "theirs",
+    "enemy_took": true,
+    "we_took": null,
+    "enemy_in_cap_s": 0.0,
+    "edge_m": 6229,
+    "tag": true,
+    "pressed": true,
+    "same_cap": true
+   },
+   {
+    "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g2_121106.html",
+    "slug": "8146_g2_121106",
+    "team": "H-SR",
+    "ship": "Harugumo",
+    "t": 837,
+    "own": "ours",
+    "own_snapshot": "ours",
+    "enemy_took": true,
+    "we_took": null,
+    "enemy_in_cap_s": 24.0,
+    "edge_m": 2042,
+    "tag": true,
+    "pressed": true,
+    "same_cap": true
+   },
+   {
+    "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176007.html",
+    "slug": "8147_g2_176007",
+    "team": "BONKZ",
+    "ship": "Svea",
+    "t": 889,
+    "own": "ours",
+    "own_snapshot": "ours",
+    "enemy_took": false,
+    "we_took": null,
+    "enemy_in_cap_s": 0.0,
+    "edge_m": -62,
+    "tag": true,
+    "pressed": true,
+    "same_cap": true
+   },
+   {
+    "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176009.html",
+    "slug": "8147_g2_176009",
+    "team": "BONKZ",
+    "ship": "Svea",
+    "t": 962,
+    "own": "ours",
+    "own_snapshot": "ours",
+    "enemy_took": true,
+    "we_took": null,
+    "enemy_in_cap_s": 30.0,
+    "edge_m": -121,
+    "tag": true,
+    "pressed": true,
+    "same_cap": true
+   },
+   {
+    "link": "https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176011.html",
+    "slug": "8147_g2_176011",
+    "team": "BONKZ",
+    "ship": "Svea",
+    "t": 1033,
+    "own": "ours",
+    "own_snapshot": "ours",
+    "enemy_took": true,
+    "we_took": null,
+    "enemy_in_cap_s": 6.0,
+    "edge_m": 2064,
+    "tag": true,
+    "pressed": true,
+    "same_cap": true
+   }
+  ],
+  "clan_text": {
+   "tag": "Top 6: KITE 4, BONKZ 4, H-SR 2, RESIN 2 | Rest: HFANS 2, SCCC2 1",
+   "log": "Top 6: KITE 4, BONKZ 4, H-SR 2, RESIN 2 | Rest: HFANS 2, SCCC2 1"
+  },
+  "ships": {
+   "tag": {
+    "Gearing": 4,
+    "Svea": 4,
+    "Somers": 3,
+    "Gdańsk": 3,
+    "Harugumo": 1
+   },
+   "log": {
+    "Gearing": 4,
+    "Svea": 4,
+    "Somers": 3,
+    "Gdańsk": 3,
+    "Harugumo": 1
+   }
+  },
+  "lost_games": 3,
+  "share_tvr": {
+   "label": "radar smokes at B as a share of the map smokes",
+   "n_top": 88,
+   "n_rest": 119,
+   "clans_top": 6,
+   "clans_rest": 20,
+   "tag": {
+    "top": 13.6,
+    "rest": 2.5,
+    "v": 11.1,
+    "ci": [
+     1.3,
+     21.8
+    ],
+    "clear": true
+   },
+   "log": {
+    "top": 13.6,
+    "rest": 2.5,
+    "v": 11.1,
+    "ci": [
+     2.0,
+     22.6
+    ],
+    "clear": true
+   }
+  },
+  "whole_map": {
+   "A": {
+    "label": "All smokes, nearest cap A",
+    "n": 62,
+    "tag": "",
+    "top6": 28,
+    "rest": 34,
+    "clans": 21,
+    "caps": {
+     "_c": {
+      "ours": 11,
+      "neutral": 31,
+      "theirs": 20,
+      "we_took": {
+       "k": 9,
+       "n": 51,
+       "pct": 17.6
+      },
+      "enemy_took": {
+       "k": 10,
+       "n": 42,
+       "pct": 23.8
+      },
+      "enemy_took_when_ours": {
+       "k": 4,
+       "n": 11,
+       "pct": 36.4
+      }
+     },
+     "_n": {
+      "ours": 10,
+      "neutral": 31,
+      "theirs": 21,
+      "we_took": {
+       "k": 10,
+       "n": 52,
+       "pct": 19.2
+      },
+      "enemy_took": {
+       "k": 10,
+       "n": 41,
+       "pct": 24.4
+      },
+      "enemy_took_when_ours": {
+       "k": 4,
+       "n": 10,
+       "pct": 40.0
+      }
+     },
+     "same_cap": 61
+    },
+    "enemy_in_cap": {
+     "k": 28,
+     "n": 62,
+     "pct": 45.2
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 7,
+     "n": 10,
+     "pct": 70.0
+    },
+    "enemy_in_cap_median_s": 52.0,
+    "conc": 13949,
+    "deaths": {
+     "label": "All smokes, nearest cap A",
+     "n": 62,
+     "tag": "",
+     "clans": 21,
+     "top6": 28,
+     "rest": 34,
+     "n_died_base": 59,
+     "died_ships": 10,
+     "caught_ships": 7,
+     "died_smoker_n": 10,
+     "caught_smoker_n": 7,
+     "n_cr_cov": 17,
+     "n_cr_in": 19,
+     "died_cr_n": 0,
+     "caught_cr_n": 0,
+     "died": {
+      "v": 16.9,
+      "ci": [
+       8.9,
+       25.0
+      ]
+     },
+     "caught": {
+      "v": 11.3,
+      "ci": [
+       4.8,
+       18.4
+      ]
+     },
+     "died_smoker": {
+      "v": 16.9,
+      "ci": [
+       7.9,
+       25.0
+      ]
+     },
+     "caught_smoker": {
+      "v": 11.3,
+      "ci": [
+       4.4,
+       19.2
+      ]
+     }
+    }
+   },
+   "B": {
+    "label": "All smokes, nearest cap B",
+    "n": 68,
+    "tag": "",
+    "top6": 35,
+    "rest": 33,
+    "clans": 18,
+    "caps": {
+     "_c": {
+      "ours": 23,
+      "neutral": 22,
+      "theirs": 23,
+      "we_took": {
+       "k": 21,
+       "n": 45,
+       "pct": 46.7
+      },
+      "enemy_took": {
+       "k": 16,
+       "n": 45,
+       "pct": 35.6
+      },
+      "enemy_took_when_ours": {
+       "k": 8,
+       "n": 23,
+       "pct": 34.8
+      }
+     },
+     "_n": {
+      "ours": 24,
+      "neutral": 22,
+      "theirs": 22,
+      "we_took": {
+       "k": 21,
+       "n": 44,
+       "pct": 47.7
+      },
+      "enemy_took": {
+       "k": 18,
+       "n": 46,
+       "pct": 39.1
+      },
+      "enemy_took_when_ours": {
+       "k": 10,
+       "n": 24,
+       "pct": 41.7
+      }
+     },
+     "same_cap": 66
+    },
+    "enemy_in_cap": {
+     "k": 25,
+     "n": 68,
+     "pct": 36.8
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 9,
+     "n": 24,
+     "pct": 37.5
+    },
+    "enemy_in_cap_median_s": 25.0,
+    "conc": 10386,
+    "deaths": {
+     "label": "All smokes, nearest cap B",
+     "n": 68,
+     "tag": "",
+     "clans": 18,
+     "top6": 35,
+     "rest": 33,
+     "n_died_base": 66,
+     "died_ships": 9,
+     "caught_ships": 5,
+     "died_smoker_n": 7,
+     "caught_smoker_n": 3,
+     "n_cr_cov": 30,
+     "n_cr_in": 30,
+     "died_cr_n": 2,
+     "caught_cr_n": 2,
+     "died": {
+      "v": 13.6,
+      "ci": [
+       6.8,
+       21.4
+      ]
+     },
+     "caught": {
+      "v": 7.4,
+      "ci": [
+       2.5,
+       13.8
+      ]
+     },
+     "died_smoker": {
+      "v": 10.6,
+      "ci": [
+       3.9,
+       18.0
+      ]
+     },
+     "caught_smoker": {
+      "v": 4.4,
+      "ci": [
+       0.0,
+       9.3
+      ]
+     }
+    }
+   },
+   "C": {
+    "label": "All smokes, nearest cap C",
+    "n": 77,
+    "tag": "",
+    "top6": 25,
+    "rest": 52,
+    "clans": 21,
+    "caps": {
+     "_c": {
+      "ours": 37,
+      "neutral": 19,
+      "theirs": 21,
+      "we_took": {
+       "k": 11,
+       "n": 40,
+       "pct": 27.5
+      },
+      "enemy_took": {
+       "k": 12,
+       "n": 56,
+       "pct": 21.4
+      },
+      "enemy_took_when_ours": {
+       "k": 5,
+       "n": 37,
+       "pct": 13.5
+      }
+     },
+     "_n": {
+      "ours": 37,
+      "neutral": 19,
+      "theirs": 21,
+      "we_took": {
+       "k": 11,
+       "n": 40,
+       "pct": 27.5
+      },
+      "enemy_took": {
+       "k": 12,
+       "n": 56,
+       "pct": 21.4
+      },
+      "enemy_took_when_ours": {
+       "k": 5,
+       "n": 37,
+       "pct": 13.5
+      }
+     },
+     "same_cap": 77
+    },
+    "enemy_in_cap": {
+     "k": 23,
+     "n": 77,
+     "pct": 29.9
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 11,
+     "n": 37,
+     "pct": 29.7
+    },
+    "enemy_in_cap_median_s": 38.0,
+    "conc": 7803,
+    "deaths": {
+     "label": "All smokes, nearest cap C",
+     "n": 77,
+     "tag": "",
+     "clans": 21,
+     "top6": 25,
+     "rest": 52,
+     "n_died_base": 73,
+     "died_ships": 11,
+     "caught_ships": 6,
+     "died_smoker_n": 8,
+     "caught_smoker_n": 2,
+     "n_cr_cov": 22,
+     "n_cr_in": 23,
+     "died_cr_n": 3,
+     "caught_cr_n": 4,
+     "died": {
+      "v": 15.1,
+      "ci": [
+       6.6,
+       27.5
+      ]
+     },
+     "caught": {
+      "v": 7.8,
+      "ci": [
+       2.2,
+       17.2
+      ]
+     },
+     "died_smoker": {
+      "v": 11.0,
+      "ci": [
+       4.3,
+       20.7
+      ]
+     },
+     "caught_smoker": {
+      "v": 2.6,
+      "ci": [
+       0.0,
+       7.8
+      ]
+     }
+    }
+   }
+  }
+ },
+ "C7d": {
+  "n_sitters": 88,
+  "n_sitters_top": 23,
+  "n_sitters_rest": 65,
+  "rows": [
+   {
+    "label": "All 28",
+    "n": 28,
+    "tag": "",
+    "top6": 15,
+    "rest": 13,
+    "clans": 12,
+    "caps": {
+     "_c": {
+      "ours": 10,
+      "neutral": 6,
+      "theirs": 12,
+      "we_took": {
+       "k": 12,
+       "n": 18,
+       "pct": 66.7
+      },
+      "enemy_took": {
+       "k": 2,
+       "n": 16,
+       "pct": 12.5
+      },
+      "enemy_took_when_ours": {
+       "k": 1,
+       "n": 10,
+       "pct": 10.0
+      }
+     },
+     "_n": {
+      "ours": 10,
+      "neutral": 6,
+      "theirs": 12,
+      "we_took": {
+       "k": 12,
+       "n": 18,
+       "pct": 66.7
+      },
+      "enemy_took": {
+       "k": 2,
+       "n": 16,
+       "pct": 12.5
+      },
+      "enemy_took_when_ours": {
+       "k": 1,
+       "n": 10,
+       "pct": 10.0
+      }
+     },
+     "same_cap": 28
+    },
+    "enemy_in_cap": {
+     "k": 8,
+     "n": 28,
+     "pct": 28.6
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 3,
+     "n": 10,
+     "pct": 30.0
+    },
+    "enemy_in_cap_median_s": 17.0,
+    "conc": 3668,
+    "deaths": {
+     "label": "All 28",
+     "n": 28,
+     "tag": "",
+     "clans": 12,
+     "top6": 15,
+     "rest": 13,
+     "n_died_base": 28,
+     "died_ships": 2,
+     "caught_ships": 1,
+     "died_smoker_n": 1,
+     "caught_smoker_n": 0,
+     "n_cr_cov": 6,
+     "n_cr_in": 6,
+     "died_cr_n": 0,
+     "caught_cr_n": 0,
+     "died": {
+      "v": 7.1,
+      "ci": [
+       0.0,
+       16.7
+      ]
+     },
+     "caught": {
+      "v": 3.6,
+      "ci": [
+       0.0,
+       11.1
+      ]
+     },
+     "died_smoker": {
+      "v": 3.6,
+      "ci": [
+       0.0,
+       13.0
+      ]
+     },
+     "caught_smoker": {
+      "v": 0.0,
+      "ci": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "B": {
+     "ours": 11,
+     "neutral": 4,
+     "theirs": 13,
+     "we_took": {
+      "k": 11,
+      "n": 17,
+      "pct": 64.7
+     },
+     "enemy_took": {
+      "k": 2,
+      "n": 15,
+      "pct": 13.3
+     },
+     "enemy_took_when_ours": {
+      "k": 1,
+      "n": 11,
+      "pct": 9.1
+     },
+     "enemy_in_cap": {
+      "k": 8,
+      "n": 28,
+      "pct": 28.6
+     }
+    },
+    "near_caps": {
+     "C": 2,
+     "B": 26
+    },
+    "contested_caps": {
+     "C": 2,
+     "B": 26
+    },
+    "ships": {
+     "Z-42": 9,
+     "Gdańsk": 9,
+     "Shimakaze": 4,
+     "Daring": 3,
+     "Grozovoi": 3
+    }
+   },
+   {
+    "label": "Top 6",
+    "n": 15,
+    "tag": "",
+    "top6": 15,
+    "rest": 0,
+    "clans": 6,
+    "caps": {
+     "_c": {
+      "ours": 5,
+      "neutral": 4,
+      "theirs": 6,
+      "we_took": {
+       "k": 8,
+       "n": 10,
+       "pct": 80.0
+      },
+      "enemy_took": {
+       "k": 1,
+       "n": 9,
+       "pct": 11.1
+      },
+      "enemy_took_when_ours": {
+       "k": 1,
+       "n": 5,
+       "pct": null
+      }
+     },
+     "_n": {
+      "ours": 5,
+      "neutral": 4,
+      "theirs": 6,
+      "we_took": {
+       "k": 8,
+       "n": 10,
+       "pct": 80.0
+      },
+      "enemy_took": {
+       "k": 1,
+       "n": 9,
+       "pct": 11.1
+      },
+      "enemy_took_when_ours": {
+       "k": 1,
+       "n": 5,
+       "pct": null
+      }
+     },
+     "same_cap": 15
+    },
+    "enemy_in_cap": {
+     "k": 5,
+     "n": 15,
+     "pct": 33.3
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 2,
+     "n": 5,
+     "pct": null
+    },
+    "enemy_in_cap_median_s": 14.0,
+    "conc": 5834,
+    "deaths": {
+     "label": "Top 6",
+     "n": 15,
+     "tag": "",
+     "clans": 6,
+     "top6": 15,
+     "rest": 0,
+     "n_died_base": 15,
+     "died_ships": 1,
+     "caught_ships": 1,
+     "died_smoker_n": 0,
+     "caught_smoker_n": 0,
+     "n_cr_cov": 3,
+     "n_cr_in": 3,
+     "died_cr_n": 0,
+     "caught_cr_n": 0,
+     "died": {
+      "v": 6.7,
+      "ci": [
+       0.0,
+       16.7
+      ]
+     },
+     "caught": {
+      "v": 6.7,
+      "ci": [
+       0.0,
+       17.6
+      ]
+     },
+     "died_smoker": {
+      "v": 0.0,
+      "ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "caught_smoker": {
+      "v": 0.0,
+      "ci": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "B": {
+     "ours": 6,
+     "neutral": 2,
+     "theirs": 7,
+     "we_took": {
+      "k": 7,
+      "n": 9,
+      "pct": 77.8
+     },
+     "enemy_took": {
+      "k": 1,
+      "n": 8,
+      "pct": 12.5
+     },
+     "enemy_took_when_ours": {
+      "k": 1,
+      "n": 6,
+      "pct": null
+     },
+     "enemy_in_cap": {
+      "k": 5,
+      "n": 15,
+      "pct": 33.3
+     }
+    },
+    "near_caps": {
+     "C": 2,
+     "B": 13
+    },
+    "contested_caps": {
+     "C": 2,
+     "B": 13
+    },
+    "ships": {
+     "Gdańsk": 9,
+     "Shimakaze": 3,
+     "Z-42": 2,
+     "Daring": 1
+    }
+   },
+   {
+    "label": "Rest",
+    "n": 13,
+    "tag": "small n",
+    "top6": 0,
+    "rest": 13,
+    "clans": 6,
+    "caps": {
+     "_c": {
+      "ours": 5,
+      "neutral": 2,
+      "theirs": 6,
+      "we_took": {
+       "k": 4,
+       "n": 8,
+       "pct": 50.0
+      },
+      "enemy_took": {
+       "k": 1,
+       "n": 7,
+       "pct": null
+      },
+      "enemy_took_when_ours": {
+       "k": 0,
+       "n": 5,
+       "pct": null
+      }
+     },
+     "_n": {
+      "ours": 5,
+      "neutral": 2,
+      "theirs": 6,
+      "we_took": {
+       "k": 4,
+       "n": 8,
+       "pct": 50.0
+      },
+      "enemy_took": {
+       "k": 1,
+       "n": 7,
+       "pct": null
+      },
+      "enemy_took_when_ours": {
+       "k": 0,
+       "n": 5,
+       "pct": null
+      }
+     },
+     "same_cap": 13
+    },
+    "enemy_in_cap": {
+     "k": 3,
+     "n": 13,
+     "pct": 23.1
+    },
+    "enemy_in_cap_when_ours": {
+     "k": 1,
+     "n": 5,
+     "pct": null
+    },
+    "enemy_in_cap_median_s": 30.0,
+    "conc": 1169,
+    "deaths": {
+     "label": "Rest",
+     "n": 13,
+     "tag": "small n",
+     "clans": 6,
+     "top6": 0,
+     "rest": 13,
+     "n_died_base": 13,
+     "died_ships": 1,
+     "caught_ships": 0,
+     "died_smoker_n": 1,
+     "caught_smoker_n": 0,
+     "n_cr_cov": 3,
+     "n_cr_in": 3,
+     "died_cr_n": 0,
+     "caught_cr_n": 0,
+     "died": {
+      "v": 7.7,
+      "ci": [
+       0.0,
+       25.0
+      ]
+     },
+     "caught": {
+      "v": 0.0,
+      "ci": [
+       0.0,
+       0.0
+      ]
+     },
+     "died_smoker": {
+      "v": 7.7,
+      "ci": [
+       0.0,
+       30.0
+      ]
+     },
+     "caught_smoker": {
+      "v": 0.0,
+      "ci": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "B": {
+     "ours": 5,
+     "neutral": 2,
+     "theirs": 6,
+     "we_took": {
+      "k": 4,
+      "n": 8,
+      "pct": 50.0
+     },
+     "enemy_took": {
+      "k": 1,
+      "n": 7,
+      "pct": null
+     },
+     "enemy_took_when_ours": {
+      "k": 0,
+      "n": 5,
+      "pct": null
+     },
+     "enemy_in_cap": {
+      "k": 3,
+      "n": 13,
+      "pct": 23.1
+     }
+    },
+    "near_caps": {
+     "B": 13
+    },
+    "contested_caps": {
+     "B": 13
+    },
+    "ships": {
+     "Z-42": 7,
+     "Grozovoi": 3,
+     "Daring": 2,
+     "Shimakaze": 1
+    }
+   }
+  ],
+  "clan_text": "Top 6: RESIN 4, KITE 3, BONKZ 3, H-SR 2, HTDOG 2, VRTUS 1 | Rest: REEEE 6, MACHX 2, SCCC2 2, RMN 1, MACH 1, EPOXY 1",
+  "conc_r5b": 3668,
+  "deaths_r5b": 3.6,
+  "tvr_deaths": {
+   "label": "spot",
+   "n_top": 15,
+   "n_rest": 13,
+   "clans_top": 6,
+   "clans_rest": 6,
+   "died": {
+    "top": 6.7,
+    "rest": 7.7,
+    "v": -1.0,
+    "ci": [
+     -25.0,
+     14.3
+    ],
+    "clear": false
+   },
+   "caught": {
+    "top": 6.7,
+    "rest": 0.0,
+    "v": 6.7,
+    "ci": [
+     0.0,
+     16.7
+    ],
+    "clear": false
+   },
+   "died_smoker": {
+    "top": 0.0,
+    "rest": 7.7,
+    "v": -7.7,
+    "ci": [
+     -27.3,
+     0.0
+    ],
+    "clear": false
+   },
+   "caught_smoker": {
+    "top": 0.0,
+    "rest": 0.0,
+    "v": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "clear": false
+   }
+  },
+  "tvr_caps": {
+   "label": "spot",
+   "n_top": 15,
+   "n_rest": 13,
+   "clans_top": 6,
+   "clans_rest": 6,
+   "we_took_B": {
+    "top": 77.8,
+    "rest": 50.0,
+    "v": 27.8,
+    "ci": [
+     8.1,
+     54.2
+    ],
+    "clear": true
+   },
+   "enemy_took_B": {
+    "top": 12.5,
+    "rest": null,
+    "v": null,
+    "ci": null,
+    "clear": false
+   },
+   "we_took_n": {
+    "top": 80.0,
+    "rest": 50.0,
+    "v": 30.0,
+    "ci": [
+     8.1,
+     57.1
+    ],
+    "clear": true
+   },
+   "enemy_took_n": {
+    "top": 11.1,
+    "rest": null,
+    "v": null,
+    "ci": null,
+    "clear": false
+   },
+   "we_took_c": {
+    "top": 80.0,
+    "rest": 50.0,
+    "v": 30.0,
+    "ci": [
+     10.0,
+     57.6
+    ],
+    "clear": true
+   },
+   "enemy_took_c": {
+    "top": 11.1,
+    "rest": null,
+    "v": null,
+    "ci": null,
+    "clear": false
+   }
+  },
+  "tvr_conc": {
+   "label": "spot",
+   "n_top": 15,
+   "n_rest": 13,
+   "clans_top": 6,
+   "clans_rest": 6,
+   "conc": {
+    "top": 5834.0,
+    "rest": 1169.0,
+    "v": 4665.0,
+    "ci": [
+     1046.0,
+     8745.0
+    ],
+    "clear": true
+   }
+  },
+  "tvr_ours": {
+   "label": "spot",
+   "n_top": 15,
+   "n_rest": 13,
+   "clans_top": 6,
+   "clans_rest": 6,
+   "share": {
+    "top": 40.0,
+    "rest": 38.5,
+    "v": 1.5,
+    "ci": [
+     -60.8,
+     37.5
+    ],
+    "clear": false
+   }
+  },
+  "outside": {
+   "label": "Cap sitters on Loop outside the spot",
+   "n": 60,
+   "tag": "",
+   "top6": 8,
+   "rest": 52,
+   "clans": 17,
+   "caps": {
+    "_c": {
+     "ours": 29,
+     "neutral": 5,
+     "theirs": 26,
+     "we_took": {
+      "k": 5,
+      "n": 31,
+      "pct": 16.1
+     },
+     "enemy_took": {
+      "k": 6,
+      "n": 34,
+      "pct": 17.6
+     },
+     "enemy_took_when_ours": {
+      "k": 4,
+      "n": 29,
+      "pct": 13.8
+     }
+    },
+    "_n": {
+     "ours": 29,
+     "neutral": 5,
+     "theirs": 26,
+     "we_took": {
+      "k": 5,
+      "n": 31,
+      "pct": 16.1
+     },
+     "enemy_took": {
+      "k": 6,
+      "n": 34,
+      "pct": 17.6
+     },
+     "enemy_took_when_ours": {
+      "k": 4,
+      "n": 29,
+      "pct": 13.8
+     }
+    },
+    "same_cap": 60
+   },
+   "enemy_in_cap": {
+    "k": 12,
+    "n": 60,
+    "pct": 20.0
+   },
+   "enemy_in_cap_when_ours": {
+    "k": 9,
+    "n": 29,
+    "pct": 31.0
+   },
+   "enemy_in_cap_median_s": 38.0,
+   "conc": 3762,
+   "deaths": {
+    "label": "Cap sitters on Loop outside the spot",
+    "n": 60,
+    "tag": "",
+    "clans": 17,
+    "top6": 8,
+    "rest": 52,
+    "n_died_base": 60,
+    "died_ships": 9,
+    "caught_ships": 3,
+    "died_smoker_n": 9,
+    "caught_smoker_n": 3,
+    "n_cr_cov": 8,
+    "n_cr_in": 8,
+    "died_cr_n": 0,
+    "caught_cr_n": 0,
+    "died": {
+     "v": 15.0,
+     "ci": [
+      6.8,
+      26.7
+     ]
+    },
+    "caught": {
+     "v": 5.0,
+     "ci": [
+      0.0,
+      12.5
+     ]
+    },
+    "died_smoker": {
+     "v": 15.0,
+     "ci": [
+      6.8,
+      26.4
+     ]
+    },
+    "caught_smoker": {
+     "v": 5.0,
+     "ci": [
+      0.0,
+      12.2
+     ]
+    }
+   }
+  },
+  "in_vs_out": {
+   "label": "In the spot minus the other Loop cap-sitter smokes",
+   "n_a": 28,
+   "n_b": 60,
+   "we_took_n": {
+    "v": 50.5,
+    "ci": [
+     23.1,
+     87.0
+    ],
+    "clear": true
+   },
+   "enemy_took_n": {
+    "v": -5.1,
+    "ci": [
+     -20.0,
+     9.6
+    ],
+    "clear": false
+   },
+   "died": {
+    "v": -7.9,
+    "ci": [
+     -20.5,
+     3.9
+    ],
+    "clear": false
+   },
+   "caught": {
+    "v": -1.4,
+    "ci": [
+     -10.0,
+     7.6
+    ],
+    "clear": false
+   },
+   "died_smoker": {
+    "v": -11.4,
+    "ci": [
+     -24.0,
+     -1.3
+    ],
+    "clear": true
+   },
+   "caught_smoker": {
+    "v": -5.0,
+    "ci": [
+     -11.9,
+     0.0
+    ],
+    "clear": false
+   }
+  }
+ }
+}

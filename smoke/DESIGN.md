@@ -322,3 +322,17 @@ Sean tags smokes in a spreadsheet and one command imports the tags; reruns never
 - Each analysis publishes its site to its own GitHub Pages repository, which keeps every site under the 1 GB Pages limit; the hub at the root of this site links to them.
 - Large outputs (replays, frames, batch outputs) stay out of git. Data zips go on GitHub releases instead of being committed (the round 7 zips already in the tree stay; nothing is rewritten).
 - Published sites are tagged before anything is taken down (`site-r6-archive` holds the round 6 site; `r6` the source that built it), so any site can be republished from its tag.
+
+## 15. Timelines (version 0.4.0)
+
+Added beside the smoke records; no existing field changes. Game-level files are written once per game, by the first run of the game in batch order, under `output/<timestamp>/timelines/<game folder>/`. `ribbons.csv` is written once per run, in the run folder, because a replay holds only its own recording player's ribbons and a merged session keeps only the primary replay's.
+
+- Time base, every file: `t_s` is the replay clock of the run's primary replay, the clock of the `t_*` columns in that run's `smokes.csv`. `elapsed_s` is `t_s` minus that replay's battle start and is the same moment in both runs of a game. `clock` is the HUD countdown. `meta.json` names the replay whose clock `t_s` is and its `battle_start_s`.
+- Every row carries `match_id` and `game_no`; rows about a ship carry `entity_id`, `player`, `ship`, `team`.
+- `caps_timeline.csv`: one row per owner or invader change of a capture zone, found on every packet. `cap` is the real letter; `cap_frame_0` and `cap_frame_1` are the letter in each team's frame (the map mirrored across the midline for the team that spawns on the far side; blank when the frame cannot be told). `change` is `initial`, `owner`, `invader` or `owner+invader`.
+- `radar.csv`: radar and hydro (`kind`). One `activation` row per use (ship, position, range, duration, smokes the ship stood in). One `lit` row per enemy that carried the matching detection flag while inside the range during the activation: lit start and end, the enemy's position, distance, the smokes it stood in, and `ambiguous` with `other_sources` when more than one activation had it in range. One `lit_unattributed` row per flag span that no activation in range explains. The replay says a ship is lit, not by whom, so attribution is by range and time.
+- `tracks.csv`: every ship every 2 s: position (`pos_source` exact or minimap), `alive`, `detected`, `health`, `max_health`.
+- `score.csv`: both teams' score every 2 s.
+- `ribbons.csv`: Defended, Captured and AssistedInCapture ribbons of the recording player, each rise of the running total with its time.
+- `game.json` and the game block of `smokes.json`: `max_health` per player.
+- Size: about 0.8 MB per game, about 130 MB for 171 games. Batch outputs stay out of git (section 14).

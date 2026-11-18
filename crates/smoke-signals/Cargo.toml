@@ -1,6 +1,6 @@
 [package]
 name = "smoke-signals"
-version = "0.3.0"
+version = "0.4.0"
 publish = false
 description = "Smoke screen analysis for World of Warships tournament replays"
 edition.workspace = true

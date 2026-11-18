@@ -1,0 +1,2820 @@
+{
+ "tables": {
+  "n": 391,
+  "n_top6": 130,
+  "n_rest": 261,
+  "contested_is_nearest": 390,
+  "died_base": 390,
+  "by_cover": [
+   {
+    "cover": "radar cruiser inside",
+    "scope": "All",
+    "n": 104,
+    "note": "",
+    "clans": "Top 6: BONKZ 15, H-SR 14, RESIN 10, KITE 7, VRTUS 5, HTDOG 4 | Rest: -BN- 6, HFANS 6, EPOXY 5, INCA 5, MACHX 5, KSC 4, MZY 3, PFANS 3, PN 2, KITED 2, RSR 2, MACH 1, BTLST 1, UYSC 1, BONKY 1, SCCC2 1, REEEE 1",
+    "we_took_c": {
+     "value": 67.31,
+     "n": 52
+    },
+    "we_took_n": {
+     "value": 68.63,
+     "n": 51
+    },
+    "enemy_took_c": {
+     "value": 13.41,
+     "n": 82
+    },
+    "enemy_took_n": {
+     "value": 13.25,
+     "n": 83
+    },
+    "conc": {
+     "value": 16882.27,
+     "n": 104
+    },
+    "died100": {
+     "value": 14.56,
+     "n": 103
+    },
+    "caught100": {
+     "value": 10.58,
+     "n": 104
+    }
+   },
+   {
+    "cover": "radar cruiser inside",
+    "scope": "Top 6",
+    "n": 55,
+    "note": "",
+    "clans": "Top 6: BONKZ 15, H-SR 14, RESIN 10, KITE 7, VRTUS 5, HTDOG 4 | Rest: none",
+    "we_took_c": {
+     "value": 60.0,
+     "n": 30
+    },
+    "we_took_n": {
+     "value": 60.0,
+     "n": 30
+    },
+    "enemy_took_c": {
+     "value": 11.36,
+     "n": 44
+    },
+    "enemy_took_n": {
+     "value": 11.36,
+     "n": 44
+    },
+    "conc": {
+     "value": 19098.77,
+     "n": 55
+    },
+    "died100": {
+     "value": 12.73,
+     "n": 55
+    },
+    "caught100": {
+     "value": 10.91,
+     "n": 55
+    }
+   },
+   {
+    "cover": "radar cruiser inside",
+    "scope": "Rest",
+    "n": 49,
+    "note": "",
+    "clans": "Top 6: none | Rest: -BN- 6, HFANS 6, EPOXY 5, INCA 5, MACHX 5, KSC 4, MZY 3, PFANS 3, PN 2, KITED 2, RSR 2, MACH 1, BTLST 1, UYSC 1, BONKY 1, SCCC2 1, REEEE 1",
+    "we_took_c": {
+     "value": 77.27,
+     "n": 22
+    },
+    "we_took_n": {
+     "value": 80.95,
+     "n": 21
+    },
+    "enemy_took_c": {
+     "value": 15.79,
+     "n": 38
+    },
+    "enemy_took_n": {
+     "value": 15.38,
+     "n": 39
+    },
+    "conc": {
+     "value": 14394.35,
+     "n": 49
+    },
+    "died100": {
+     "value": 16.67,
+     "n": 48
+    },
+    "caught100": {
+     "value": 10.2,
+     "n": 49
+    }
+   },
+   {
+    "cover": "non-radar cruiser inside",
+    "scope": "All",
+    "n": 17,
+    "note": "",
+    "clans": "Top 6: H-SR 4, RESIN 2, VRTUS 1, HTDOG 1 | Rest: BTLST 2, HFANS 2, OGF 1, REEEE 1, -BN- 1, SCCC2 1, KITED 1",
+    "we_took_c": {
+     "value": 50.0,
+     "n": 8
+    },
+    "we_took_n": {
+     "value": 50.0,
+     "n": 8
+    },
+    "enemy_took_c": {
+     "value": 30.77,
+     "n": 13
+    },
+    "enemy_took_n": {
+     "value": 30.77,
+     "n": 13
+    },
+    "conc": {
+     "value": 15049.45,
+     "n": 17
+    },
+    "died100": {
+     "value": 17.65,
+     "n": 17
+    },
+    "caught100": {
+     "value": 23.53,
+     "n": 17
+    }
+   },
+   {
+    "cover": "non-radar cruiser inside",
+    "scope": "Top 6",
+    "n": 8,
+    "note": "small n",
+    "clans": "Top 6: H-SR 4, RESIN 2, VRTUS 1, HTDOG 1 | Rest: none",
+    "we_took_c": {
+     "value": null,
+     "n": 3
+    },
+    "we_took_n": {
+     "value": null,
+     "n": 3
+    },
+    "enemy_took_c": {
+     "value": null,
+     "n": 5
+    },
+    "enemy_took_n": {
+     "value": null,
+     "n": 5
+    },
+    "conc": {
+     "value": 20045.06,
+     "n": 8
+    },
+    "died100": {
+     "value": 25.0,
+     "n": 8
+    },
+    "caught100": {
+     "value": 12.5,
+     "n": 8
+    }
+   },
+   {
+    "cover": "non-radar cruiser inside",
+    "scope": "Rest",
+    "n": 9,
+    "note": "small n",
+    "clans": "Top 6: none | Rest: BTLST 2, HFANS 2, OGF 1, REEEE 1, -BN- 1, SCCC2 1, KITED 1",
+    "we_took_c": {
+     "value": null,
+     "n": 5
+    },
+    "we_took_n": {
+     "value": null,
+     "n": 5
+    },
+    "enemy_took_c": {
+     "value": 50.0,
+     "n": 8
+    },
+    "enemy_took_n": {
+     "value": 50.0,
+     "n": 8
+    },
+    "conc": {
+     "value": 10608.91,
+     "n": 9
+    },
+    "died100": {
+     "value": 11.11,
+     "n": 9
+    },
+    "caught100": {
+     "value": 33.33,
+     "n": 9
+    }
+   },
+   {
+    "cover": "no cruiser",
+    "scope": "All",
+    "n": 191,
+    "note": "",
+    "clans": "Top 6: RESIN 15, BONKZ 10, H-SR 7, HTDOG 6, VRTUS 5, KITE 3 | Rest: EPOXY 16, REEEE 15, HFANS 14, SCCC2 14, KITED 10, KSC 9, MACH 9, MACHX 9, -BN- 8, RSR 6, RMN 5, PFANS 4, UYSC 4, INCA 3, KSE 3, 5D 3, MZY 3, BTLST 2, OGF 2, KM 2, NGA 2, BONKY 1, MANBA 1",
+    "we_took_c": {
+     "value": 29.63,
+     "n": 108
+    },
+    "we_took_n": {
+     "value": 29.63,
+     "n": 108
+    },
+    "enemy_took_c": {
+     "value": 21.21,
+     "n": 132
+    },
+    "enemy_took_n": {
+     "value": 21.21,
+     "n": 132
+    },
+    "conc": {
+     "value": 3514.66,
+     "n": 191
+    },
+    "died100": {
+     "value": 14.66,
+     "n": 191
+    },
+    "caught100": {
+     "value": 7.33,
+     "n": 191
+    }
+   },
+   {
+    "cover": "no cruiser",
+    "scope": "Top 6",
+    "n": 46,
+    "note": "",
+    "clans": "Top 6: RESIN 15, BONKZ 10, H-SR 7, HTDOG 6, VRTUS 5, KITE 3 | Rest: none",
+    "we_took_c": {
+     "value": 69.57,
+     "n": 23
+    },
+    "we_took_n": {
+     "value": 69.57,
+     "n": 23
+    },
+    "enemy_took_c": {
+     "value": 16.22,
+     "n": 37
+    },
+    "enemy_took_n": {
+     "value": 16.22,
+     "n": 37
+    },
+    "conc": {
+     "value": 4121.48,
+     "n": 46
+    },
+    "died100": {
+     "value": 13.04,
+     "n": 46
+    },
+    "caught100": {
+     "value": 4.35,
+     "n": 46
+    }
+   },
+   {
+    "cover": "no cruiser",
+    "scope": "Rest",
+    "n": 145,
+    "note": "",
+    "clans": "Top 6: none | Rest: EPOXY 16, REEEE 15, HFANS 14, SCCC2 14, KITED 10, KSC 9, MACH 9, MACHX 9, -BN- 8, RSR 6, RMN 5, PFANS 4, UYSC 4, INCA 3, KSE 3, 5D 3, MZY 3, BTLST 2, OGF 2, KM 2, NGA 2, BONKY 1, MANBA 1",
+    "we_took_c": {
+     "value": 18.82,
+     "n": 85
+    },
+    "we_took_n": {
+     "value": 18.82,
+     "n": 85
+    },
+    "enemy_took_c": {
+     "value": 23.16,
+     "n": 95
+    },
+    "enemy_took_n": {
+     "value": 23.16,
+     "n": 95
+    },
+    "conc": {
+     "value": 3322.16,
+     "n": 145
+    },
+    "died100": {
+     "value": 15.17,
+     "n": 145
+    },
+    "caught100": {
+     "value": 8.28,
+     "n": 145
+    }
+   },
+   {
+    "cover": "other",
+    "scope": "All",
+    "n": 79,
+    "note": "",
+    "clans": "Top 6: VRTUS 4, BONKZ 4, RESIN 4, HTDOG 4, H-SR 3, KITE 2 | Rest: 5D 8, HFANS 5, MACHX 5, MZY 4, MACH 4, -BN- 4, NGA 4, EPOXY 4, BTLST 3, UYSC 3, REEEE 2, KSC 2, BONKY 2, RSR 2, OGF 1, KM 1, KITED 1, KSE 1, INCA 1, PFANS 1",
+    "we_took_c": {
+     "value": 54.55,
+     "n": 44
+    },
+    "we_took_n": {
+     "value": 54.55,
+     "n": 44
+    },
+    "enemy_took_c": {
+     "value": 25.0,
+     "n": 64
+    },
+    "enemy_took_n": {
+     "value": 25.0,
+     "n": 64
+    },
+    "conc": {
+     "value": 7767.99,
+     "n": 79
+    },
+    "died100": {
+     "value": 20.25,
+     "n": 79
+    },
+    "caught100": {
+     "value": 13.92,
+     "n": 79
+    }
+   },
+   {
+    "cover": "other",
+    "scope": "Top 6",
+    "n": 21,
+    "note": "",
+    "clans": "Top 6: VRTUS 4, BONKZ 4, RESIN 4, HTDOG 4, H-SR 3, KITE 2 | Rest: none",
+    "we_took_c": {
+     "value": 33.33,
+     "n": 9
+    },
+    "we_took_n": {
+     "value": 33.33,
+     "n": 9
+    },
+    "enemy_took_c": {
+     "value": 18.75,
+     "n": 16
+    },
+    "enemy_took_n": {
+     "value": 18.75,
+     "n": 16
+    },
+    "conc": {
+     "value": 7221.79,
+     "n": 21
+    },
+    "died100": {
+     "value": 19.05,
+     "n": 21
+    },
+    "caught100": {
+     "value": 14.29,
+     "n": 21
+    }
+   },
+   {
+    "cover": "other",
+    "scope": "Rest",
+    "n": 58,
+    "note": "",
+    "clans": "Top 6: none | Rest: 5D 8, HFANS 5, MACHX 5, MZY 4, MACH 4, -BN- 4, NGA 4, EPOXY 4, BTLST 3, UYSC 3, REEEE 2, KSC 2, BONKY 2, RSR 2, OGF 1, KM 1, KITED 1, KSE 1, INCA 1, PFANS 1",
+    "we_took_c": {
+     "value": 60.0,
+     "n": 35
+    },
+    "we_took_n": {
+     "value": 60.0,
+     "n": 35
+    },
+    "enemy_took_c": {
+     "value": 27.08,
+     "n": 48
+    },
+    "enemy_took_n": {
+     "value": 27.08,
+     "n": 48
+    },
+    "conc": {
+     "value": 7965.75,
+     "n": 58
+    },
+    "died100": {
+     "value": 20.69,
+     "n": 58
+    },
+    "caught100": {
+     "value": 13.79,
+     "n": 58
+    }
+   },
+   {
+    "cover": "all cap-contest smokes",
+    "scope": "All",
+    "n": 391,
+    "note": "",
+    "clans": "Top 6: RESIN 31, BONKZ 29, H-SR 28, VRTUS 15, HTDOG 15, KITE 12 | Rest: HFANS 27, EPOXY 25, REEEE 19, -BN- 19, MACHX 19, SCCC2 16, KSC 15, KITED 14, MACH 14, 5D 11, MZY 10, RSR 10, INCA 9, BTLST 8, PFANS 8, UYSC 8, NGA 6, RMN 5, OGF 4, KSE 4, BONKY 4, KM 3, PN 2, MANBA 1",
+    "we_took_c": {
+     "value": 44.81,
+     "n": 212
+    },
+    "we_took_n": {
+     "value": 45.02,
+     "n": 211
+    },
+    "enemy_took_c": {
+     "value": 20.27,
+     "n": 291
+    },
+    "enemy_took_n": {
+     "value": 20.21,
+     "n": 292
+    },
+    "conc": {
+     "value": 8431.12,
+     "n": 391
+    },
+    "died100": {
+     "value": 15.9,
+     "n": 390
+    },
+    "caught100": {
+     "value": 10.23,
+     "n": 391
+    }
+   },
+   {
+    "cover": "all cap-contest smokes",
+    "scope": "Top 6",
+    "n": 130,
+    "note": "",
+    "clans": "Top 6: RESIN 31, BONKZ 29, H-SR 28, VRTUS 15, HTDOG 15, KITE 12 | Rest: none",
+    "we_took_c": {
+     "value": 61.54,
+     "n": 65
+    },
+    "we_took_n": {
+     "value": 61.54,
+     "n": 65
+    },
+    "enemy_took_c": {
+     "value": 13.73,
+     "n": 102
+    },
+    "enemy_took_n": {
+     "value": 13.73,
+     "n": 102
+    },
+    "conc": {
+     "value": 11938.76,
+     "n": 130
+    },
+    "died100": {
+     "value": 14.62,
+     "n": 130
+    },
+    "caught100": {
+     "value": 9.23,
+     "n": 130
+    }
+   },
+   {
+    "cover": "all cap-contest smokes",
+    "scope": "Rest",
+    "n": 261,
+    "note": "",
+    "clans": "Top 6: none | Rest: HFANS 27, EPOXY 25, REEEE 19, -BN- 19, MACHX 19, SCCC2 16, KSC 15, KITED 14, MACH 14, 5D 11, MZY 10, RSR 10, INCA 9, BTLST 8, PFANS 8, UYSC 8, NGA 6, RMN 5, OGF 4, KSE 4, BONKY 4, KM 3, PN 2, MANBA 1",
+    "we_took_c": {
+     "value": 37.41,
+     "n": 147
+    },
+    "we_took_n": {
+     "value": 37.67,
+     "n": 146
+    },
+    "enemy_took_c": {
+     "value": 23.81,
+     "n": 189
+    },
+    "enemy_took_n": {
+     "value": 23.68,
+     "n": 190
+    },
+    "conc": {
+     "value": 6684.02,
+     "n": 261
+    },
+    "died100": {
+     "value": 16.54,
+     "n": 260
+    },
+    "caught100": {
+     "value": 10.73,
+     "n": 261
+    }
+   }
+  ],
+  "top6_minus_rest": [
+   {
+    "cover": "radar cruiser inside",
+    "we_took_c": {
+     "top6": 60.0,
+     "n_top6": 30,
+     "rest": 77.27,
+     "n_rest": 22,
+     "diff": -17.27,
+     "lo": -39.57,
+     "hi": 4.17,
+     "clear": false
+    },
+    "we_took_n": {
+     "top6": 60.0,
+     "n_top6": 30,
+     "rest": 80.95,
+     "n_rest": 21,
+     "diff": -20.95,
+     "lo": -44.44,
+     "hi": 0.22,
+     "clear": false
+    },
+    "enemy_took_c": {
+     "top6": 11.36,
+     "n_top6": 44,
+     "rest": 15.79,
+     "n_rest": 38,
+     "diff": -4.43,
+     "lo": -15.65,
+     "hi": 5.96,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "top6": 11.36,
+     "n_top6": 44,
+     "rest": 15.38,
+     "n_rest": 39,
+     "diff": -4.02,
+     "lo": -15.28,
+     "hi": 6.21,
+     "clear": false
+    },
+    "conc": {
+     "top6": 19098.77,
+     "n_top6": 55,
+     "rest": 14394.35,
+     "n_rest": 49,
+     "diff": 4704.41,
+     "lo": -4008.72,
+     "hi": 11272.58,
+     "clear": false
+    },
+    "died100": {
+     "top6": 12.73,
+     "n_top6": 55,
+     "rest": 16.67,
+     "n_rest": 48,
+     "diff": -3.94,
+     "lo": -24.91,
+     "hi": 10.83,
+     "clear": false
+    },
+    "caught100": {
+     "top6": 10.91,
+     "n_top6": 55,
+     "rest": 10.2,
+     "n_rest": 49,
+     "diff": 0.71,
+     "lo": -13.78,
+     "hi": 10.64,
+     "clear": false
+    }
+   },
+   {
+    "cover": "non-radar cruiser inside",
+    "we_took_c": {
+     "top6": null,
+     "n_top6": 3,
+     "rest": null,
+     "n_rest": 5,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "we_took_n": {
+     "top6": null,
+     "n_top6": 3,
+     "rest": null,
+     "n_rest": 5,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "enemy_took_c": {
+     "top6": null,
+     "n_top6": 5,
+     "rest": 50.0,
+     "n_rest": 8,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "top6": null,
+     "n_top6": 5,
+     "rest": 50.0,
+     "n_rest": 8,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "conc": {
+     "top6": 20045.06,
+     "n_top6": 8,
+     "rest": 10608.91,
+     "n_rest": 9,
+     "diff": 9436.15,
+     "lo": -13316.29,
+     "hi": 25027.71,
+     "clear": false
+    },
+    "died100": {
+     "top6": 25.0,
+     "n_top6": 8,
+     "rest": 11.11,
+     "n_rest": 9,
+     "diff": 13.89,
+     "lo": -22.22,
+     "hi": 66.67,
+     "clear": false
+    },
+    "caught100": {
+     "top6": 12.5,
+     "n_top6": 8,
+     "rest": 33.33,
+     "n_rest": 9,
+     "diff": -20.83,
+     "lo": -66.67,
+     "hi": 37.5,
+     "clear": false
+    }
+   },
+   {
+    "cover": "no cruiser",
+    "we_took_c": {
+     "top6": 69.57,
+     "n_top6": 23,
+     "rest": 18.82,
+     "n_rest": 85,
+     "diff": 50.74,
+     "lo": 40.88,
+     "hi": 66.43,
+     "clear": true
+    },
+    "we_took_n": {
+     "top6": 69.57,
+     "n_top6": 23,
+     "rest": 18.82,
+     "n_rest": 85,
+     "diff": 50.74,
+     "lo": 40.88,
+     "hi": 66.43,
+     "clear": true
+    },
+    "enemy_took_c": {
+     "top6": 16.22,
+     "n_top6": 37,
+     "rest": 23.16,
+     "n_rest": 95,
+     "diff": -6.94,
+     "lo": -24.45,
+     "hi": 7.14,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "top6": 16.22,
+     "n_top6": 37,
+     "rest": 23.16,
+     "n_rest": 95,
+     "diff": -6.94,
+     "lo": -24.45,
+     "hi": 7.14,
+     "clear": false
+    },
+    "conc": {
+     "top6": 4121.48,
+     "n_top6": 46,
+     "rest": 3322.16,
+     "n_rest": 145,
+     "diff": 799.32,
+     "lo": -1648.28,
+     "hi": 2619.93,
+     "clear": false
+    },
+    "died100": {
+     "top6": 13.04,
+     "n_top6": 46,
+     "rest": 15.17,
+     "n_rest": 145,
+     "diff": -2.13,
+     "lo": -17.92,
+     "hi": 7.55,
+     "clear": false
+    },
+    "caught100": {
+     "top6": 4.35,
+     "n_top6": 46,
+     "rest": 8.28,
+     "n_rest": 145,
+     "diff": -3.93,
+     "lo": -9.85,
+     "hi": 0.37,
+     "clear": false
+    }
+   },
+   {
+    "cover": "other",
+    "we_took_c": {
+     "top6": 33.33,
+     "n_top6": 9,
+     "rest": 60.0,
+     "n_rest": 35,
+     "diff": -26.67,
+     "lo": -56.31,
+     "hi": 2.5,
+     "clear": false
+    },
+    "we_took_n": {
+     "top6": 33.33,
+     "n_top6": 9,
+     "rest": 60.0,
+     "n_rest": 35,
+     "diff": -26.67,
+     "lo": -56.31,
+     "hi": 2.5,
+     "clear": false
+    },
+    "enemy_took_c": {
+     "top6": 18.75,
+     "n_top6": 16,
+     "rest": 27.08,
+     "n_rest": 48,
+     "diff": -8.33,
+     "lo": -29.79,
+     "hi": 9.8,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "top6": 18.75,
+     "n_top6": 16,
+     "rest": 27.08,
+     "n_rest": 48,
+     "diff": -8.33,
+     "lo": -29.79,
+     "hi": 9.8,
+     "clear": false
+    },
+    "conc": {
+     "top6": 7221.79,
+     "n_top6": 21,
+     "rest": 7965.75,
+     "n_rest": 58,
+     "diff": -743.96,
+     "lo": -6566.26,
+     "hi": 6096.82,
+     "clear": false
+    },
+    "died100": {
+     "top6": 19.05,
+     "n_top6": 21,
+     "rest": 20.69,
+     "n_rest": 58,
+     "diff": -1.64,
+     "lo": -25.56,
+     "hi": 20.15,
+     "clear": false
+    },
+    "caught100": {
+     "top6": 14.29,
+     "n_top6": 21,
+     "rest": 13.79,
+     "n_rest": 58,
+     "diff": 0.49,
+     "lo": -17.68,
+     "hi": 18.33,
+     "clear": false
+    }
+   },
+   {
+    "cover": "all cap-contest smokes",
+    "we_took_c": {
+     "top6": 61.54,
+     "n_top6": 65,
+     "rest": 37.41,
+     "n_rest": 147,
+     "diff": 24.12,
+     "lo": 10.42,
+     "hi": 38.29,
+     "clear": true
+    },
+    "we_took_n": {
+     "top6": 61.54,
+     "n_top6": 65,
+     "rest": 37.67,
+     "n_rest": 146,
+     "diff": 23.87,
+     "lo": 10.17,
+     "hi": 37.97,
+     "clear": true
+    },
+    "enemy_took_c": {
+     "top6": 13.73,
+     "n_top6": 102,
+     "rest": 23.81,
+     "n_rest": 189,
+     "diff": -10.08,
+     "lo": -19.46,
+     "hi": -2.36,
+     "clear": true
+    },
+    "enemy_took_n": {
+     "top6": 13.73,
+     "n_top6": 102,
+     "rest": 23.68,
+     "n_rest": 190,
+     "diff": -9.96,
+     "lo": -19.33,
+     "hi": -2.3,
+     "clear": true
+    },
+    "conc": {
+     "top6": 11938.76,
+     "n_top6": 130,
+     "rest": 6684.02,
+     "n_rest": 261,
+     "diff": 5254.73,
+     "lo": 259.8,
+     "hi": 8765.39,
+     "clear": true
+    },
+    "died100": {
+     "top6": 14.62,
+     "n_top6": 130,
+     "rest": 16.54,
+     "n_rest": 260,
+     "diff": -1.92,
+     "lo": -12.29,
+     "hi": 6.53,
+     "clear": false
+    },
+    "caught100": {
+     "top6": 9.23,
+     "n_top6": 130,
+     "rest": 10.73,
+     "n_rest": 261,
+     "diff": -1.5,
+     "lo": -8.64,
+     "hi": 4.92,
+     "clear": false
+    }
+   }
+  ],
+  "cover_gaps": [
+   {
+    "a": "radar cruiser inside",
+    "b": "no cruiser",
+    "scope": "All",
+    "n_a": 104,
+    "n_b": 191,
+    "note": "",
+    "we_took_c": {
+     "a": 67.31,
+     "n_a": 52,
+     "b": 29.63,
+     "n_b": 108,
+     "diff": 37.68,
+     "lo": 21.5,
+     "hi": 55.16,
+     "clear": true
+    },
+    "we_took_n": {
+     "a": 68.63,
+     "n_a": 51,
+     "b": 29.63,
+     "n_b": 108,
+     "diff": 39.0,
+     "lo": 21.66,
+     "hi": 57.89,
+     "clear": true
+    },
+    "enemy_took_c": {
+     "a": 13.41,
+     "n_a": 82,
+     "b": 21.21,
+     "n_b": 132,
+     "diff": -7.8,
+     "lo": -16.8,
+     "hi": 0.26,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "a": 13.25,
+     "n_a": 83,
+     "b": 21.21,
+     "n_b": 132,
+     "diff": -7.96,
+     "lo": -16.92,
+     "hi": 0.03,
+     "clear": false
+    },
+    "conc": {
+     "a": 16882.27,
+     "n_a": 104,
+     "b": 3514.66,
+     "n_b": 191,
+     "diff": 13367.6,
+     "lo": 8699.33,
+     "hi": 17029.09,
+     "clear": true
+    },
+    "died100": {
+     "a": 14.56,
+     "n_a": 103,
+     "b": 14.66,
+     "n_b": 191,
+     "diff": -0.1,
+     "lo": -8.89,
+     "hi": 9.72,
+     "clear": false
+    },
+    "caught100": {
+     "a": 10.58,
+     "n_a": 104,
+     "b": 7.33,
+     "n_b": 191,
+     "diff": 3.25,
+     "lo": -4.26,
+     "hi": 10.59,
+     "clear": false
+    }
+   },
+   {
+    "a": "radar cruiser inside",
+    "b": "no cruiser",
+    "scope": "Top 6",
+    "n_a": 55,
+    "n_b": 46,
+    "note": "",
+    "we_took_c": {
+     "a": 60.0,
+     "n_a": 30,
+     "b": 69.57,
+     "n_b": 23,
+     "diff": -9.57,
+     "lo": -29.02,
+     "hi": 3.82,
+     "clear": false
+    },
+    "we_took_n": {
+     "a": 60.0,
+     "n_a": 30,
+     "b": 69.57,
+     "n_b": 23,
+     "diff": -9.57,
+     "lo": -29.02,
+     "hi": 3.82,
+     "clear": false
+    },
+    "enemy_took_c": {
+     "a": 11.36,
+     "n_a": 44,
+     "b": 16.22,
+     "n_b": 37,
+     "diff": -4.85,
+     "lo": -22.22,
+     "hi": 8.54,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "a": 11.36,
+     "n_a": 44,
+     "b": 16.22,
+     "n_b": 37,
+     "diff": -4.85,
+     "lo": -22.22,
+     "hi": 8.54,
+     "clear": false
+    },
+    "conc": {
+     "a": 19098.77,
+     "n_a": 55,
+     "b": 4121.48,
+     "n_b": 46,
+     "diff": 14977.29,
+     "lo": 9601.59,
+     "hi": 18874.75,
+     "clear": true
+    },
+    "died100": {
+     "a": 12.73,
+     "n_a": 55,
+     "b": 13.04,
+     "n_b": 46,
+     "diff": -0.32,
+     "lo": -14.64,
+     "hi": 11.76,
+     "clear": false
+    },
+    "caught100": {
+     "a": 10.91,
+     "n_a": 55,
+     "b": 4.35,
+     "n_b": 46,
+     "diff": 6.56,
+     "lo": -1.5,
+     "hi": 12.21,
+     "clear": false
+    }
+   },
+   {
+    "a": "radar cruiser inside",
+    "b": "no cruiser",
+    "scope": "Rest",
+    "n_a": 49,
+    "n_b": 145,
+    "note": "",
+    "we_took_c": {
+     "a": 77.27,
+     "n_a": 22,
+     "b": 18.82,
+     "n_b": 85,
+     "diff": 58.45,
+     "lo": 43.01,
+     "hi": 75.5,
+     "clear": true
+    },
+    "we_took_n": {
+     "a": 80.95,
+     "n_a": 21,
+     "b": 18.82,
+     "n_b": 85,
+     "diff": 62.13,
+     "lo": 46.12,
+     "hi": 80.6,
+     "clear": true
+    },
+    "enemy_took_c": {
+     "a": 15.79,
+     "n_a": 38,
+     "b": 23.16,
+     "n_b": 95,
+     "diff": -7.37,
+     "lo": -20.86,
+     "hi": 3.44,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "a": 15.38,
+     "n_a": 39,
+     "b": 23.16,
+     "n_b": 95,
+     "diff": -7.77,
+     "lo": -21.02,
+     "hi": 2.8,
+     "clear": false
+    },
+    "conc": {
+     "a": 14394.35,
+     "n_a": 49,
+     "b": 3322.16,
+     "n_b": 145,
+     "diff": 11072.2,
+     "lo": 6196.48,
+     "hi": 16361.49,
+     "clear": true
+    },
+    "died100": {
+     "a": 16.67,
+     "n_a": 48,
+     "b": 15.17,
+     "n_b": 145,
+     "diff": 1.49,
+     "lo": -12.15,
+     "hi": 17.12,
+     "clear": false
+    },
+    "caught100": {
+     "a": 10.2,
+     "n_a": 49,
+     "b": 8.28,
+     "n_b": 145,
+     "diff": 1.93,
+     "lo": -8.86,
+     "hi": 13.97,
+     "clear": false
+    }
+   },
+   {
+    "a": "radar cruiser inside",
+    "b": "non-radar cruiser inside",
+    "scope": "All",
+    "n_a": 104,
+    "n_b": 17,
+    "note": "",
+    "we_took_c": {
+     "a": 67.31,
+     "n_a": 52,
+     "b": 50.0,
+     "n_b": 8,
+     "diff": 17.31,
+     "lo": -19.48,
+     "hi": 70.56,
+     "clear": false
+    },
+    "we_took_n": {
+     "a": 68.63,
+     "n_a": 51,
+     "b": 50.0,
+     "n_b": 8,
+     "diff": 18.63,
+     "lo": -17.37,
+     "hi": 72.09,
+     "clear": false
+    },
+    "enemy_took_c": {
+     "a": 13.41,
+     "n_a": 82,
+     "b": 30.77,
+     "n_b": 13,
+     "diff": -17.35,
+     "lo": -48.21,
+     "hi": 12.5,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "a": 13.25,
+     "n_a": 83,
+     "b": 30.77,
+     "n_b": 13,
+     "diff": -17.52,
+     "lo": -48.41,
+     "hi": 12.12,
+     "clear": false
+    },
+    "conc": {
+     "a": 16882.27,
+     "n_a": 104,
+     "b": 15049.45,
+     "n_b": 17,
+     "diff": 1832.82,
+     "lo": -7864.14,
+     "hi": 10479.22,
+     "clear": false
+    },
+    "died100": {
+     "a": 14.56,
+     "n_a": 103,
+     "b": 17.65,
+     "n_b": 17,
+     "diff": -3.08,
+     "lo": -31.19,
+     "hi": 18.27,
+     "clear": false
+    },
+    "caught100": {
+     "a": 10.58,
+     "n_a": 104,
+     "b": 23.53,
+     "n_b": 17,
+     "diff": -12.95,
+     "lo": -47.12,
+     "hi": 11.43,
+     "clear": false
+    }
+   },
+   {
+    "a": "radar cruiser inside",
+    "b": "non-radar cruiser inside",
+    "scope": "Top 6",
+    "n_a": 55,
+    "n_b": 8,
+    "note": "small n",
+    "we_took_c": {
+     "a": 60.0,
+     "n_a": 30,
+     "b": null,
+     "n_b": 3,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "we_took_n": {
+     "a": 60.0,
+     "n_a": 30,
+     "b": null,
+     "n_b": 3,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "enemy_took_c": {
+     "a": 11.36,
+     "n_a": 44,
+     "b": null,
+     "n_b": 5,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "a": 11.36,
+     "n_a": 44,
+     "b": null,
+     "n_b": 5,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "conc": {
+     "a": 19098.77,
+     "n_a": 55,
+     "b": 20045.06,
+     "n_b": 8,
+     "diff": -946.29,
+     "lo": -8287.85,
+     "hi": 10423.34,
+     "clear": false
+    },
+    "died100": {
+     "a": 12.73,
+     "n_a": 55,
+     "b": 25.0,
+     "n_b": 8,
+     "diff": -12.27,
+     "lo": -71.43,
+     "hi": 18.84,
+     "clear": false
+    },
+    "caught100": {
+     "a": 10.91,
+     "n_a": 55,
+     "b": 12.5,
+     "n_b": 8,
+     "diff": -1.59,
+     "lo": -65.24,
+     "hi": 15.94,
+     "clear": false
+    }
+   },
+   {
+    "a": "radar cruiser inside",
+    "b": "non-radar cruiser inside",
+    "scope": "Rest",
+    "n_a": 49,
+    "n_b": 9,
+    "note": "small n",
+    "we_took_c": {
+     "a": 77.27,
+     "n_a": 22,
+     "b": null,
+     "n_b": 5,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "we_took_n": {
+     "a": 80.95,
+     "n_a": 21,
+     "b": null,
+     "n_b": 5,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "enemy_took_c": {
+     "a": 15.79,
+     "n_a": 38,
+     "b": 50.0,
+     "n_b": 8,
+     "diff": -34.21,
+     "lo": -71.15,
+     "hi": 16.22,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "a": 15.38,
+     "n_a": 39,
+     "b": 50.0,
+     "n_b": 8,
+     "diff": -34.62,
+     "lo": -71.43,
+     "hi": 15.56,
+     "clear": false
+    },
+    "conc": {
+     "a": 14394.35,
+     "n_a": 49,
+     "b": 10608.91,
+     "n_b": 9,
+     "diff": 3785.45,
+     "lo": -13778.77,
+     "hi": 13376.37,
+     "clear": false
+    },
+    "died100": {
+     "a": 16.67,
+     "n_a": 48,
+     "b": 11.11,
+     "n_b": 9,
+     "diff": 5.56,
+     "lo": -25.19,
+     "hi": 27.27,
+     "clear": false
+    },
+    "caught100": {
+     "a": 10.2,
+     "n_a": 49,
+     "b": 33.33,
+     "n_b": 9,
+     "diff": -23.13,
+     "lo": -64.78,
+     "hi": 15.52,
+     "clear": false
+    }
+   }
+  ],
+  "own_c": {
+   "radar cruiser inside": {
+    "All": {
+     "ours": 52,
+     "neutral": 30,
+     "theirs": 22
+    },
+    "Top 6": {
+     "theirs": 11,
+     "ours": 25,
+     "neutral": 19
+    },
+    "Rest": {
+     "ours": 27,
+     "neutral": 11,
+     "theirs": 11
+    }
+   },
+   "non-radar cruiser inside": {
+    "All": {
+     "ours": 9,
+     "theirs": 4,
+     "neutral": 4
+    },
+    "Top 6": {
+     "ours": 5,
+     "theirs": 3
+    },
+    "Rest": {
+     "ours": 4,
+     "neutral": 4,
+     "theirs": 1
+    }
+   },
+   "no cruiser": {
+    "All": {
+     "theirs": 59,
+     "neutral": 49,
+     "ours": 83
+    },
+    "Top 6": {
+     "ours": 23,
+     "neutral": 14,
+     "theirs": 9
+    },
+    "Rest": {
+     "theirs": 50,
+     "neutral": 35,
+     "ours": 60
+    }
+   },
+   "other": {
+    "All": {
+     "ours": 35,
+     "neutral": 29,
+     "theirs": 15
+    },
+    "Top 6": {
+     "ours": 12,
+     "theirs": 5,
+     "neutral": 4
+    },
+    "Rest": {
+     "ours": 23,
+     "neutral": 25,
+     "theirs": 10
+    }
+   }
+  },
+  "neutral_cap_only": [
+   {
+    "cover": "radar cruiser inside",
+    "scope": "All",
+    "n": 30,
+    "we_took_c": {
+     "value": 66.67,
+     "n": 30
+    },
+    "enemy_took_c": {
+     "value": 16.67,
+     "n": 30
+    },
+    "early": 26
+   },
+   {
+    "cover": "radar cruiser inside",
+    "scope": "Top 6",
+    "n": 19,
+    "we_took_c": {
+     "value": 63.16,
+     "n": 19
+    },
+    "enemy_took_c": {
+     "value": 15.79,
+     "n": 19
+    },
+    "early": 15
+   },
+   {
+    "cover": "radar cruiser inside",
+    "scope": "Rest",
+    "n": 11,
+    "we_took_c": {
+     "value": 72.73,
+     "n": 11
+    },
+    "enemy_took_c": {
+     "value": 18.18,
+     "n": 11
+    },
+    "early": 11
+   },
+   {
+    "cover": "no cruiser",
+    "scope": "All",
+    "n": 49,
+    "we_took_c": {
+     "value": 38.78,
+     "n": 49
+    },
+    "enemy_took_c": {
+     "value": 20.41,
+     "n": 49
+    },
+    "early": 30
+   },
+   {
+    "cover": "no cruiser",
+    "scope": "Top 6",
+    "n": 14,
+    "we_took_c": {
+     "value": 78.57,
+     "n": 14
+    },
+    "enemy_took_c": {
+     "value": 7.14,
+     "n": 14
+    },
+    "early": 7
+   },
+   {
+    "cover": "no cruiser",
+    "scope": "Rest",
+    "n": 35,
+    "we_took_c": {
+     "value": 22.86,
+     "n": 35
+    },
+    "enemy_took_c": {
+     "value": 25.71,
+     "n": 35
+    },
+    "early": 23
+   }
+  ],
+  "neutral_cap_gaps": [
+   {
+    "scope": "All",
+    "we_took_c": {
+     "a": 66.67,
+     "n_a": 30,
+     "b": 38.78,
+     "n_b": 49,
+     "diff": 27.89,
+     "lo": 6.87,
+     "hi": 46.4,
+     "clear": true
+    },
+    "enemy_took_c": {
+     "a": 16.67,
+     "n_a": 30,
+     "b": 20.41,
+     "n_b": 49,
+     "diff": -3.74,
+     "lo": -20.0,
+     "hi": 12.47,
+     "clear": false
+    }
+   },
+   {
+    "scope": "Top 6",
+    "we_took_c": {
+     "a": 63.16,
+     "n_a": 19,
+     "b": 78.57,
+     "n_b": 14,
+     "diff": -15.41,
+     "lo": -60.0,
+     "hi": 12.25,
+     "clear": false
+    },
+    "enemy_took_c": {
+     "a": 15.79,
+     "n_a": 19,
+     "b": 7.14,
+     "n_b": 14,
+     "diff": 8.65,
+     "lo": -11.11,
+     "hi": 28.57,
+     "clear": false
+    }
+   },
+   {
+    "scope": "Rest",
+    "we_took_c": {
+     "a": 72.73,
+     "n_a": 11,
+     "b": 22.86,
+     "n_b": 35,
+     "diff": 49.87,
+     "lo": 34.07,
+     "hi": 75.24,
+     "clear": true
+    },
+    "enemy_took_c": {
+     "a": 18.18,
+     "n_a": 11,
+     "b": 25.71,
+     "n_b": 35,
+     "diff": -7.53,
+     "lo": -31.67,
+     "hi": 18.75,
+     "clear": false
+    }
+   }
+  ],
+  "pressed": [
+   {
+    "pressed": "radar pressed from the smoke",
+    "scope": "All",
+    "n": 8,
+    "note": "small n",
+    "by_cruiser": 7,
+    "clans": "Top 6: RESIN 5 | Rest: INCA 1, PN 1, SCCC2 1",
+    "we_took_c": {
+     "value": null,
+     "n": 7
+    },
+    "we_took_n": {
+     "value": null,
+     "n": 7
+    },
+    "enemy_took_c": {
+     "value": null,
+     "n": 4
+    },
+    "enemy_took_n": {
+     "value": null,
+     "n": 4
+    },
+    "conc": {
+     "value": 22260.21,
+     "n": 8
+    },
+    "died100": {
+     "value": 0.0,
+     "n": 8
+    },
+    "caught100": {
+     "value": 0.0,
+     "n": 8
+    }
+   },
+   {
+    "pressed": "radar pressed from the smoke",
+    "scope": "Top 6",
+    "n": 5,
+    "note": "too few",
+    "by_cruiser": 4,
+    "clans": "Top 6: RESIN 5 | Rest: none",
+    "we_took_c": {
+     "value": null,
+     "n": 5
+    },
+    "we_took_n": {
+     "value": null,
+     "n": 5
+    },
+    "enemy_took_c": {
+     "value": null,
+     "n": 2
+    },
+    "enemy_took_n": {
+     "value": null,
+     "n": 2
+    },
+    "conc": {
+     "value": null,
+     "n": 5
+    },
+    "died100": {
+     "value": null,
+     "n": 5
+    },
+    "caught100": {
+     "value": null,
+     "n": 5
+    }
+   },
+   {
+    "pressed": "radar pressed from the smoke",
+    "scope": "Rest",
+    "n": 3,
+    "note": "too few",
+    "by_cruiser": 3,
+    "clans": "Top 6: none | Rest: INCA 1, PN 1, SCCC2 1",
+    "we_took_c": {
+     "value": null,
+     "n": 2
+    },
+    "we_took_n": {
+     "value": null,
+     "n": 2
+    },
+    "enemy_took_c": {
+     "value": null,
+     "n": 2
+    },
+    "enemy_took_n": {
+     "value": null,
+     "n": 2
+    },
+    "conc": {
+     "value": null,
+     "n": 3
+    },
+    "died100": {
+     "value": null,
+     "n": 3
+    },
+    "caught100": {
+     "value": null,
+     "n": 3
+    }
+   },
+   {
+    "pressed": "not pressed",
+    "scope": "All",
+    "n": 96,
+    "note": "",
+    "by_cruiser": 0,
+    "clans": "Top 6: BONKZ 15, H-SR 14, KITE 7, VRTUS 5, RESIN 5, HTDOG 4 | Rest: -BN- 6, HFANS 6, EPOXY 5, MACHX 5, KSC 4, INCA 4, MZY 3, PFANS 3, KITED 2, RSR 2, PN 1, MACH 1, BTLST 1, UYSC 1, BONKY 1, REEEE 1",
+    "we_took_c": {
+     "value": 71.11,
+     "n": 45
+    },
+    "we_took_n": {
+     "value": 72.73,
+     "n": 44
+    },
+    "enemy_took_c": {
+     "value": 14.1,
+     "n": 78
+    },
+    "enemy_took_n": {
+     "value": 13.92,
+     "n": 79
+    },
+    "conc": {
+     "value": 16434.1,
+     "n": 96
+    },
+    "died100": {
+     "value": 15.79,
+     "n": 95
+    },
+    "caught100": {
+     "value": 11.46,
+     "n": 96
+    }
+   },
+   {
+    "pressed": "not pressed",
+    "scope": "Top 6",
+    "n": 50,
+    "note": "",
+    "by_cruiser": 0,
+    "clans": "Top 6: BONKZ 15, H-SR 14, KITE 7, VRTUS 5, RESIN 5, HTDOG 4 | Rest: none",
+    "we_took_c": {
+     "value": 64.0,
+     "n": 25
+    },
+    "we_took_n": {
+     "value": 64.0,
+     "n": 25
+    },
+    "enemy_took_c": {
+     "value": 11.9,
+     "n": 42
+    },
+    "enemy_took_n": {
+     "value": 11.9,
+     "n": 42
+    },
+    "conc": {
+     "value": 17483.97,
+     "n": 50
+    },
+    "died100": {
+     "value": 14.0,
+     "n": 50
+    },
+    "caught100": {
+     "value": 12.0,
+     "n": 50
+    }
+   },
+   {
+    "pressed": "not pressed",
+    "scope": "Rest",
+    "n": 46,
+    "note": "",
+    "by_cruiser": 0,
+    "clans": "Top 6: none | Rest: -BN- 6, HFANS 6, EPOXY 5, MACHX 5, KSC 4, INCA 4, MZY 3, PFANS 3, KITED 2, RSR 2, PN 1, MACH 1, BTLST 1, UYSC 1, BONKY 1, REEEE 1",
+    "we_took_c": {
+     "value": 80.0,
+     "n": 20
+    },
+    "we_took_n": {
+     "value": 84.21,
+     "n": 19
+    },
+    "enemy_took_c": {
+     "value": 16.67,
+     "n": 36
+    },
+    "enemy_took_n": {
+     "value": 16.22,
+     "n": 37
+    },
+    "conc": {
+     "value": 15292.94,
+     "n": 46
+    },
+    "died100": {
+     "value": 17.78,
+     "n": 45
+    },
+    "caught100": {
+     "value": 10.87,
+     "n": 46
+    }
+   }
+  ],
+  "pressed_gaps": [
+   {
+    "scope": "All",
+    "n_a": 8,
+    "n_b": 96,
+    "note": "small n",
+    "we_took_c": {
+     "a": null,
+     "n_a": 7,
+     "b": 71.11,
+     "n_b": 45,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "we_took_n": {
+     "a": null,
+     "n_a": 7,
+     "b": 72.73,
+     "n_b": 44,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "enemy_took_c": {
+     "a": null,
+     "n_a": 4,
+     "b": 14.1,
+     "n_b": 78,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "a": null,
+     "n_a": 4,
+     "b": 13.92,
+     "n_b": 79,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "conc": {
+     "a": 22260.21,
+     "n_a": 8,
+     "b": 16434.1,
+     "n_b": 96,
+     "diff": 5826.11,
+     "lo": -18280.97,
+     "hi": 17351.3,
+     "clear": false
+    },
+    "died100": {
+     "a": 0.0,
+     "n_a": 8,
+     "b": 15.79,
+     "n_b": 95,
+     "diff": -15.79,
+     "lo": -25.0,
+     "hi": -7.25,
+     "clear": true
+    },
+    "caught100": {
+     "a": 0.0,
+     "n_a": 8,
+     "b": 11.46,
+     "n_b": 96,
+     "diff": -11.46,
+     "lo": -17.33,
+     "hi": -4.94,
+     "clear": true
+    }
+   },
+   {
+    "scope": "Top 6",
+    "n_a": 5,
+    "n_b": 50,
+    "note": "too few",
+    "we_took_c": {
+     "a": null,
+     "n_a": 5,
+     "b": 64.0,
+     "n_b": 25,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "we_took_n": {
+     "a": null,
+     "n_a": 5,
+     "b": 64.0,
+     "n_b": 25,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "enemy_took_c": {
+     "a": null,
+     "n_a": 2,
+     "b": 11.9,
+     "n_b": 42,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "a": null,
+     "n_a": 2,
+     "b": 11.9,
+     "n_b": 42,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "conc": {
+     "a": null,
+     "n_a": 5,
+     "b": 17483.97,
+     "n_b": 50,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "died100": {
+     "a": null,
+     "n_a": 5,
+     "b": 14.0,
+     "n_b": 50,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "caught100": {
+     "a": null,
+     "n_a": 5,
+     "b": 12.0,
+     "n_b": 50,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    }
+   },
+   {
+    "scope": "Rest",
+    "n_a": 3,
+    "n_b": 46,
+    "note": "too few",
+    "we_took_c": {
+     "a": null,
+     "n_a": 2,
+     "b": 80.0,
+     "n_b": 20,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "we_took_n": {
+     "a": null,
+     "n_a": 2,
+     "b": 84.21,
+     "n_b": 19,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "enemy_took_c": {
+     "a": null,
+     "n_a": 2,
+     "b": 16.67,
+     "n_b": 36,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "a": null,
+     "n_a": 2,
+     "b": 16.22,
+     "n_b": 37,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "conc": {
+     "a": null,
+     "n_a": 3,
+     "b": 15292.94,
+     "n_b": 46,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "died100": {
+     "a": null,
+     "n_a": 3,
+     "b": 17.78,
+     "n_b": 45,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "caught100": {
+     "a": null,
+     "n_a": 3,
+     "b": 10.87,
+     "n_b": 46,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    }
+   }
+  ],
+  "pressed_top6_minus_rest": [
+   {
+    "pressed": "radar pressed from the smoke",
+    "we_took_c": {
+     "top6": null,
+     "n_top6": 5,
+     "rest": null,
+     "n_rest": 2,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "we_took_n": {
+     "top6": null,
+     "n_top6": 5,
+     "rest": null,
+     "n_rest": 2,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "enemy_took_c": {
+     "top6": null,
+     "n_top6": 2,
+     "rest": null,
+     "n_rest": 2,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "top6": null,
+     "n_top6": 2,
+     "rest": null,
+     "n_rest": 2,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "conc": {
+     "top6": null,
+     "n_top6": 5,
+     "rest": null,
+     "n_rest": 3,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "died100": {
+     "top6": null,
+     "n_top6": 5,
+     "rest": null,
+     "n_rest": 3,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "caught100": {
+     "top6": null,
+     "n_top6": 5,
+     "rest": null,
+     "n_rest": 3,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    }
+   },
+   {
+    "pressed": "not pressed",
+    "we_took_c": {
+     "top6": 64.0,
+     "n_top6": 25,
+     "rest": 80.0,
+     "n_rest": 20,
+     "diff": -16.0,
+     "lo": -40.7,
+     "hi": 4.96,
+     "clear": false
+    },
+    "we_took_n": {
+     "top6": 64.0,
+     "n_top6": 25,
+     "rest": 84.21,
+     "n_rest": 19,
+     "diff": -20.21,
+     "lo": -44.94,
+     "hi": -0.93,
+     "clear": true
+    },
+    "enemy_took_c": {
+     "top6": 11.9,
+     "n_top6": 42,
+     "rest": 16.67,
+     "n_rest": 36,
+     "diff": -4.76,
+     "lo": -16.04,
+     "hi": 6.31,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "top6": 11.9,
+     "n_top6": 42,
+     "rest": 16.22,
+     "n_rest": 37,
+     "diff": -4.31,
+     "lo": -15.78,
+     "hi": 6.62,
+     "clear": false
+    },
+    "conc": {
+     "top6": 17483.97,
+     "n_top6": 50,
+     "rest": 15292.94,
+     "n_rest": 46,
+     "diff": 2191.03,
+     "lo": -4774.74,
+     "hi": 8177.62,
+     "clear": false
+    },
+    "died100": {
+     "top6": 14.0,
+     "n_top6": 50,
+     "rest": 17.78,
+     "n_rest": 45,
+     "diff": -3.78,
+     "lo": -25.83,
+     "hi": 10.72,
+     "clear": false
+    },
+    "caught100": {
+     "top6": 12.0,
+     "n_top6": 50,
+     "rest": 10.87,
+     "n_rest": 46,
+     "diff": 1.13,
+     "lo": -13.22,
+     "hi": 10.74,
+     "clear": false
+    }
+   }
+  ],
+  "pressed_wide": [
+   {
+    "pressed": "a cruiser from inside pressed radar while the smoke stood",
+    "scope": "All",
+    "n": 43,
+    "note": "",
+    "clans": "Top 6: BONKZ 7, RESIN 6, H-SR 4, VRTUS 2, HTDOG 2, KITE 2 | Rest: INCA 3, HFANS 3, MACHX 2, RSR 2, MZY 2, EPOXY 1, BTLST 1, UYSC 1, PN 1, -BN- 1, KITED 1, SCCC2 1, KSC 1",
+    "we_took_c": {
+     "value": 68.18,
+     "n": 22
+    },
+    "we_took_n": {
+     "value": 71.43,
+     "n": 21
+    },
+    "enemy_took_c": {
+     "value": 18.75,
+     "n": 32
+    },
+    "enemy_took_n": {
+     "value": 18.18,
+     "n": 33
+    },
+    "conc": {
+     "value": 18366.33,
+     "n": 43
+    },
+    "died100": {
+     "value": 20.93,
+     "n": 43
+    },
+    "caught100": {
+     "value": 16.28,
+     "n": 43
+    }
+   },
+   {
+    "pressed": "a cruiser from inside pressed radar while the smoke stood",
+    "scope": "Top 6",
+    "n": 23,
+    "note": "",
+    "clans": "Top 6: BONKZ 7, RESIN 6, H-SR 4, VRTUS 2, HTDOG 2, KITE 2 | Rest: none",
+    "we_took_c": {
+     "value": 54.55,
+     "n": 11
+    },
+    "we_took_n": {
+     "value": 54.55,
+     "n": 11
+    },
+    "enemy_took_c": {
+     "value": 10.53,
+     "n": 19
+    },
+    "enemy_took_n": {
+     "value": 10.53,
+     "n": 19
+    },
+    "conc": {
+     "value": 25057.47,
+     "n": 23
+    },
+    "died100": {
+     "value": 21.74,
+     "n": 23
+    },
+    "caught100": {
+     "value": 17.39,
+     "n": 23
+    }
+   },
+   {
+    "pressed": "a cruiser from inside pressed radar while the smoke stood",
+    "scope": "Rest",
+    "n": 20,
+    "note": "",
+    "clans": "Top 6: none | Rest: INCA 3, HFANS 3, MACHX 2, RSR 2, MZY 2, EPOXY 1, BTLST 1, UYSC 1, PN 1, -BN- 1, KITED 1, SCCC2 1, KSC 1",
+    "we_took_c": {
+     "value": 81.82,
+     "n": 11
+    },
+    "we_took_n": {
+     "value": 90.0,
+     "n": 10
+    },
+    "enemy_took_c": {
+     "value": 30.77,
+     "n": 13
+    },
+    "enemy_took_n": {
+     "value": 28.57,
+     "n": 14
+    },
+    "conc": {
+     "value": 10671.52,
+     "n": 20
+    },
+    "died100": {
+     "value": 20.0,
+     "n": 20
+    },
+    "caught100": {
+     "value": 15.0,
+     "n": 20
+    }
+   },
+   {
+    "pressed": "no such press",
+    "scope": "All",
+    "n": 61,
+    "note": "",
+    "clans": "Top 6: H-SR 10, BONKZ 8, KITE 5, RESIN 4, VRTUS 3, HTDOG 2 | Rest: -BN- 5, EPOXY 4, KSC 3, PFANS 3, MACHX 3, HFANS 3, INCA 2, MZY 1, PN 1, MACH 1, KITED 1, BONKY 1, REEEE 1",
+    "we_took_c": {
+     "value": 66.67,
+     "n": 30
+    },
+    "we_took_n": {
+     "value": 66.67,
+     "n": 30
+    },
+    "enemy_took_c": {
+     "value": 10.0,
+     "n": 50
+    },
+    "enemy_took_n": {
+     "value": 10.0,
+     "n": 50
+    },
+    "conc": {
+     "value": 15836.12,
+     "n": 61
+    },
+    "died100": {
+     "value": 10.0,
+     "n": 60
+    },
+    "caught100": {
+     "value": 6.56,
+     "n": 61
+    }
+   },
+   {
+    "pressed": "no such press",
+    "scope": "Top 6",
+    "n": 32,
+    "note": "",
+    "clans": "Top 6: H-SR 10, BONKZ 8, KITE 5, RESIN 4, VRTUS 3, HTDOG 2 | Rest: none",
+    "we_took_c": {
+     "value": 63.16,
+     "n": 19
+    },
+    "we_took_n": {
+     "value": 63.16,
+     "n": 19
+    },
+    "enemy_took_c": {
+     "value": 12.0,
+     "n": 25
+    },
+    "enemy_took_n": {
+     "value": 12.0,
+     "n": 25
+    },
+    "conc": {
+     "value": 14815.95,
+     "n": 32
+    },
+    "died100": {
+     "value": 6.25,
+     "n": 32
+    },
+    "caught100": {
+     "value": 6.25,
+     "n": 32
+    }
+   },
+   {
+    "pressed": "no such press",
+    "scope": "Rest",
+    "n": 29,
+    "note": "",
+    "clans": "Top 6: none | Rest: -BN- 5, EPOXY 4, KSC 3, PFANS 3, MACHX 3, HFANS 3, INCA 2, MZY 1, PN 1, MACH 1, KITED 1, BONKY 1, REEEE 1",
+    "we_took_c": {
+     "value": 72.73,
+     "n": 11
+    },
+    "we_took_n": {
+     "value": 72.73,
+     "n": 11
+    },
+    "enemy_took_c": {
+     "value": 8.0,
+     "n": 25
+    },
+    "enemy_took_n": {
+     "value": 8.0,
+     "n": 25
+    },
+    "conc": {
+     "value": 16961.83,
+     "n": 29
+    },
+    "died100": {
+     "value": 14.29,
+     "n": 28
+    },
+    "caught100": {
+     "value": 6.9,
+     "n": 29
+    }
+   }
+  ],
+  "pressed_wide_gaps": [
+   {
+    "scope": "All",
+    "n_a": 43,
+    "n_b": 61,
+    "note": "",
+    "we_took_c": {
+     "a": 68.18,
+     "n_a": 22,
+     "b": 66.67,
+     "n_b": 30,
+     "diff": 1.52,
+     "lo": -15.71,
+     "hi": 23.16,
+     "clear": false
+    },
+    "we_took_n": {
+     "a": 71.43,
+     "n_a": 21,
+     "b": 66.67,
+     "n_b": 30,
+     "diff": 4.76,
+     "lo": -12.66,
+     "hi": 27.0,
+     "clear": false
+    },
+    "enemy_took_c": {
+     "a": 18.75,
+     "n_a": 32,
+     "b": 10.0,
+     "n_b": 50,
+     "diff": 8.75,
+     "lo": -8.75,
+     "hi": 25.49,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "a": 18.18,
+     "n_a": 33,
+     "b": 10.0,
+     "n_b": 50,
+     "diff": 8.18,
+     "lo": -8.79,
+     "hi": 25.0,
+     "clear": false
+    },
+    "conc": {
+     "a": 18366.33,
+     "n_a": 43,
+     "b": 15836.12,
+     "n_b": 61,
+     "diff": 2530.21,
+     "lo": -5431.7,
+     "hi": 9471.11,
+     "clear": false
+    },
+    "died100": {
+     "a": 20.93,
+     "n_a": 43,
+     "b": 10.0,
+     "n_b": 60,
+     "diff": 10.93,
+     "lo": -6.5,
+     "hi": 26.49,
+     "clear": false
+    },
+    "caught100": {
+     "a": 16.28,
+     "n_a": 43,
+     "b": 6.56,
+     "n_b": 61,
+     "diff": 9.72,
+     "lo": -4.69,
+     "hi": 25.93,
+     "clear": false
+    }
+   },
+   {
+    "scope": "Top 6",
+    "n_a": 23,
+    "n_b": 32,
+    "note": "",
+    "we_took_c": {
+     "a": 54.55,
+     "n_a": 11,
+     "b": 63.16,
+     "n_b": 19,
+     "diff": -8.61,
+     "lo": -32.22,
+     "hi": 17.93,
+     "clear": false
+    },
+    "we_took_n": {
+     "a": 54.55,
+     "n_a": 11,
+     "b": 63.16,
+     "n_b": 19,
+     "diff": -8.61,
+     "lo": -32.22,
+     "hi": 17.93,
+     "clear": false
+    },
+    "enemy_took_c": {
+     "a": 10.53,
+     "n_a": 19,
+     "b": 12.0,
+     "n_b": 25,
+     "diff": -1.47,
+     "lo": -20.0,
+     "hi": 18.75,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "a": 10.53,
+     "n_a": 19,
+     "b": 12.0,
+     "n_b": 25,
+     "diff": -1.47,
+     "lo": -20.0,
+     "hi": 18.75,
+     "clear": false
+    },
+    "conc": {
+     "a": 25057.47,
+     "n_a": 23,
+     "b": 14815.95,
+     "n_b": 32,
+     "diff": 10241.52,
+     "lo": 4275.25,
+     "hi": 16567.87,
+     "clear": true
+    },
+    "died100": {
+     "a": 21.74,
+     "n_a": 23,
+     "b": 6.25,
+     "n_b": 32,
+     "diff": 15.49,
+     "lo": -9.52,
+     "hi": 34.69,
+     "clear": false
+    },
+    "caught100": {
+     "a": 17.39,
+     "n_a": 23,
+     "b": 6.25,
+     "n_b": 32,
+     "diff": 11.14,
+     "lo": -9.52,
+     "hi": 32.4,
+     "clear": false
+    }
+   },
+   {
+    "scope": "Rest",
+    "n_a": 20,
+    "n_b": 29,
+    "note": "",
+    "we_took_c": {
+     "a": 81.82,
+     "n_a": 11,
+     "b": 72.73,
+     "n_b": 11,
+     "diff": 9.09,
+     "lo": -27.78,
+     "hi": 42.86,
+     "clear": false
+    },
+    "we_took_n": {
+     "a": 90.0,
+     "n_a": 10,
+     "b": 72.73,
+     "n_b": 11,
+     "diff": 17.27,
+     "lo": -20.83,
+     "hi": 50.0,
+     "clear": false
+    },
+    "enemy_took_c": {
+     "a": 30.77,
+     "n_a": 13,
+     "b": 8.0,
+     "n_b": 25,
+     "diff": 22.77,
+     "lo": -9.09,
+     "hi": 46.67,
+     "clear": false
+    },
+    "enemy_took_n": {
+     "a": 28.57,
+     "n_a": 14,
+     "b": 8.0,
+     "n_b": 25,
+     "diff": 20.57,
+     "lo": -9.09,
+     "hi": 43.75,
+     "clear": false
+    },
+    "conc": {
+     "a": 10671.52,
+     "n_a": 20,
+     "b": 16961.83,
+     "n_b": 29,
+     "diff": -6290.3,
+     "lo": -15153.67,
+     "hi": 3460.73,
+     "clear": false
+    },
+    "died100": {
+     "a": 20.0,
+     "n_a": 20,
+     "b": 14.29,
+     "n_b": 28,
+     "diff": 5.71,
+     "lo": -22.0,
+     "hi": 32.91,
+     "clear": false
+    },
+    "caught100": {
+     "a": 15.0,
+     "n_a": 20,
+     "b": 6.9,
+     "n_b": 29,
+     "diff": 8.1,
+     "lo": -11.76,
+     "hi": 36.11,
+     "clear": false
+    }
+   }
+  ],
+  "pressed_share": {
+   "top6": 9.09,
+   "n_top6": 55,
+   "rest": 6.12,
+   "n_rest": 49,
+   "diff": 2.97,
+   "lo": -12.9,
+   "hi": 23.15,
+   "clear": false
+  },
+  "changed": [
+   [
+    "radar cruiser inside, Top 6: we took the nearest cap %",
+    "53.3",
+    "60.0",
+    "cap timeline (was snapshots)"
+   ],
+   [
+    "radar cruiser inside, Top 6: enemy took the nearest cap %",
+    "9.1",
+    "11.4",
+    "cap timeline (was snapshots)"
+   ],
+   [
+    "radar cruiser inside, Top 6: deaths per 100, now died per 100",
+    "10.9",
+    "12.7",
+    "new death metric"
+   ],
+   [
+    "radar cruiser inside, Rest: we took the nearest cap %",
+    "76.2",
+    "81.0",
+    "cap timeline (was snapshots)"
+   ],
+   [
+    "radar cruiser inside, Rest: enemy took the nearest cap %",
+    "10.3",
+    "15.4",
+    "cap timeline (was snapshots)"
+   ],
+   [
+    "radar cruiser inside, Rest: deaths per 100, now died per 100",
+    "10.2",
+    "16.7",
+    "new death metric"
+   ],
+   [
+    "non-radar cruiser inside, Top 6: deaths per 100, now died per 100",
+    "12.5",
+    "25.0",
+    "new death metric"
+   ],
+   [
+    "non-radar cruiser inside, Rest: enemy took the nearest cap %",
+    "37.5",
+    "50.0",
+    "cap timeline (was snapshots)"
+   ],
+   [
+    "non-radar cruiser inside, Rest: deaths per 100, now died per 100",
+    "33.3",
+    "11.1",
+    "new death metric"
+   ],
+   [
+    "no cruiser, Top 6: we took the nearest cap %",
+    "47.8",
+    "69.6",
+    "cap timeline (was snapshots)"
+   ],
+   [
+    "no cruiser, Top 6: enemy took the nearest cap %",
+    "5.4",
+    "16.2",
+    "cap timeline (was snapshots)"
+   ],
+   [
+    "no cruiser, Top 6: deaths per 100, now died per 100",
+    "4.3",
+    "13.0",
+    "new death metric"
+   ],
+   [
+    "no cruiser, Rest: we took the nearest cap %",
+    "12.9",
+    "18.8",
+    "cap timeline (was snapshots)"
+   ],
+   [
+    "no cruiser, Rest: enemy took the nearest cap %",
+    "20.0",
+    "23.2",
+    "cap timeline (was snapshots)"
+   ],
+   [
+    "no cruiser, Rest: deaths per 100, now died per 100",
+    "8.3",
+    "15.2",
+    "new death metric"
+   ],
+   [
+    "other, Top 6: we took the nearest cap %",
+    "11.1",
+    "33.3",
+    "cap timeline (was snapshots)"
+   ],
+   [
+    "other, Top 6: enemy took the nearest cap %",
+    "6.2",
+    "18.8",
+    "cap timeline (was snapshots)"
+   ],
+   [
+    "other, Top 6: deaths per 100, now died per 100",
+    "14.3",
+    "19.1",
+    "new death metric"
+   ],
+   [
+    "other, Rest: we took the nearest cap %",
+    "57.1",
+    "60.0",
+    "cap timeline (was snapshots)"
+   ],
+   [
+    "other, Rest: enemy took the nearest cap %",
+    "22.9",
+    "27.1",
+    "cap timeline (was snapshots)"
+   ],
+   [
+    "other, Rest: deaths per 100, now died per 100",
+    "13.8",
+    "20.7",
+    "new death metric"
+   ]
+  ]
+ },
+ "md": "### A1. Cap-contest smokes by cover, and radar pressed from the smoke\n\n**Answer:** On the cap timeline, the Rest took the contested cap after 77% of their smokes with a radar cruiser inside against 19% with no cruiser (gap clear); the Top 6 took it after 60% against 70% (gap not clear). So round 5's \"76% vs 13% for the Rest, no difference for the Top 6\" holds on the timeline; on the nearest cap it is 81% vs 19% (Rest) and 60% vs 70% (Top 6). A radar cruiser inside went with more concealed damage (+13,368 (+8,699 to +17,029 *)) and no clear change in deaths (died -0.1 (-8.9 to +9.7), caught +3.2 (-4.3 to +10.6) per 100). Radar pressed from the smoke is rare here: 8 of 104 smokes, with no death on either metric, too few to split by group. On the wider reading (the cruiser inside pressed radar at some time while the smoke stood, 43 smokes) a press went with concealed damage +2,530 (-5,432 to +9,471), we took the contested cap +1.5 (-15.7 to +23.2), died +10.9 (-6.5 to +26.5) and caught +9.7 (-4.7 to +25.9) per 100.\n\n**Numbers:** 391 destroyer smokes carry the `cap_contest` tag (130 Top 6, 261 Rest). The contested cap and the nearest cap are the same cap in 390 of them. Cap results: an owner change on that cap between activation and 60 s after the smoke dispersed; (n) = smokes where the result could happen (the cap was not already that side's). \"Died\" rates leave out the 9 smokes of the single-replay game laid by the team with no replay (their covered ships are known from the other side only); \"caught\" rates keep them. Here that removes 1 smoke(s) from the died rates. Under 8 = too few, no rate.\n\nTable 1. By cover and group.\n| cover | group | n | we took, contested cap % (n) | we took, nearest cap % (n) | enemy took, contested cap % (n) | enemy took, nearest cap % (n) | concealed damage per smoke | died per 100 | caught per 100 | note |\n|---|---|---|---|---|---|---|---|---|---|---|\n| radar cruiser inside | All | 104 | 67.3 (52) | 68.6 (51) | 13.4 (82) | 13.2 (83) | 16,882 | 14.6 | 10.6 |  |\n| radar cruiser inside | Top 6 | 55 | 60.0 (30) | 60.0 (30) | 11.4 (44) | 11.4 (44) | 19,099 | 12.7 | 10.9 |  |\n| radar cruiser inside | Rest | 49 | 77.3 (22) | 81.0 (21) | 15.8 (38) | 15.4 (39) | 14,394 | 16.7 | 10.2 |  |\n| non-radar cruiser inside | All | 17 | 50.0 (8) | 50.0 (8) | 30.8 (13) | 30.8 (13) | 15,049 | 17.6 | 23.5 |  |\n| non-radar cruiser inside | Top 6 | 8 | too few (3) | too few (3) | too few (5) | too few (5) | 20,045 | 25.0 | 12.5 | small n |\n| non-radar cruiser inside | Rest | 9 | too few (5) | too few (5) | 50.0 (8) | 50.0 (8) | 10,609 | 11.1 | 33.3 | small n |\n| no cruiser | All | 191 | 29.6 (108) | 29.6 (108) | 21.2 (132) | 21.2 (132) | 3,515 | 14.7 | 7.3 |  |\n| no cruiser | Top 6 | 46 | 69.6 (23) | 69.6 (23) | 16.2 (37) | 16.2 (37) | 4,121 | 13.0 | 4.3 |  |\n| no cruiser | Rest | 145 | 18.8 (85) | 18.8 (85) | 23.2 (95) | 23.2 (95) | 3,322 | 15.2 | 8.3 |  |\n| other | All | 79 | 54.5 (44) | 54.5 (44) | 25.0 (64) | 25.0 (64) | 7,768 | 20.2 | 13.9 |  |\n| other | Top 6 | 21 | 33.3 (9) | 33.3 (9) | 18.8 (16) | 18.8 (16) | 7,222 | 19.1 | 14.3 |  |\n| other | Rest | 58 | 60.0 (35) | 60.0 (35) | 27.1 (48) | 27.1 (48) | 7,966 | 20.7 | 13.8 |  |\n| all cap-contest smokes | All | 391 | 44.8 (212) | 45.0 (211) | 20.3 (291) | 20.2 (292) | 8,431 | 15.9 | 10.2 |  |\n| all cap-contest smokes | Top 6 | 130 | 61.5 (65) | 61.5 (65) | 13.7 (102) | 13.7 (102) | 11,939 | 14.6 | 9.2 |  |\n| all cap-contest smokes | Rest | 261 | 37.4 (147) | 37.7 (146) | 23.8 (189) | 23.7 (190) | 6,684 | 16.5 | 10.7 |  |\n\n\"other\" is a footnote row: a cruiser screened but none inside, or a non-radar cruiser inside next to a radar ship of another class.\n\nTable 2. Top 6 minus Rest inside each cover group (difference, 95% interval; * = clear).\n| cover | we took, contested cap % | we took, nearest cap % | enemy took, contested cap % | enemy took, nearest cap % | concealed damage per smoke | died per 100 | caught per 100 |\n|---|---|---|---|---|---|---|---|\n| radar cruiser inside | -17.3 (-39.6 to +4.2) | -20.9 (-44.4 to +0.2) | -4.4 (-15.7 to +6.0) | -4.0 (-15.3 to +6.2) | +4,704 (-4,009 to +11,273) | -3.9 (-24.9 to +10.8) | +0.7 (-13.8 to +10.6) |\n| non-radar cruiser inside | too few | too few | too few | too few | +9,436 (-13,316 to +25,028) | +13.9 (-22.2 to +66.7) | -20.8 (-66.7 to +37.5) |\n| no cruiser | +50.7 (+40.9 to +66.4 *) | +50.7 (+40.9 to +66.4 *) | -6.9 (-24.4 to +7.1) | -6.9 (-24.4 to +7.1) | +799 (-1,648 to +2,620) | -2.1 (-17.9 to +7.5) | -3.9 (-9.8 to +0.4) |\n| other | -26.7 (-56.3 to +2.5) | -26.7 (-56.3 to +2.5) | -8.3 (-29.8 to +9.8) | -8.3 (-29.8 to +9.8) | -744 (-6,566 to +6,097) | -1.6 (-25.6 to +20.1) | +0.5 (-17.7 to +18.3) |\n| all cap-contest smokes | +24.1 (+10.4 to +38.3 *) | +23.9 (+10.2 to +38.0 *) | -10.1 (-19.5 to -2.4 *) | -10.0 (-19.3 to -2.3 *) | +5,255 (+260 to +8,765 *) | -1.9 (-12.3 to +6.5) | -1.5 (-8.6 to +4.9) |\n\nTable 3. The gap inside each group: one kind of cover minus another (difference, 95% interval; * = clear).\n| gap | group | n a / n b | we took, contested cap % | we took, nearest cap % | enemy took, contested cap % | enemy took, nearest cap % | concealed damage per smoke | died per 100 | caught per 100 | note |\n|---|---|---|---|---|---|---|---|---|---|---|\n| radar cruiser inside minus no cruiser | All | 104 / 191 | +37.7 (+21.5 to +55.2 *) | +39.0 (+21.7 to +57.9 *) | -7.8 (-16.8 to +0.3) | -8.0 (-16.9 to +0.0) | +13,368 (+8,699 to +17,029 *) | -0.1 (-8.9 to +9.7) | +3.2 (-4.3 to +10.6) |  |\n| radar cruiser inside minus no cruiser | Top 6 | 55 / 46 | -9.6 (-29.0 to +3.8) | -9.6 (-29.0 to +3.8) | -4.8 (-22.2 to +8.5) | -4.8 (-22.2 to +8.5) | +14,977 (+9,602 to +18,875 *) | -0.3 (-14.6 to +11.8) | +6.6 (-1.5 to +12.2) |  |\n| radar cruiser inside minus no cruiser | Rest | 49 / 145 | +58.5 (+43.0 to +75.5 *) | +62.1 (+46.1 to +80.6 *) | -7.4 (-20.9 to +3.4) | -7.8 (-21.0 to +2.8) | +11,072 (+6,196 to +16,361 *) | +1.5 (-12.2 to +17.1) | +1.9 (-8.9 to +14.0) |  |\n| radar cruiser inside minus non-radar cruiser inside | All | 104 / 17 | +17.3 (-19.5 to +70.6) | +18.6 (-17.4 to +72.1) | -17.4 (-48.2 to +12.5) | -17.5 (-48.4 to +12.1) | +1,833 (-7,864 to +10,479) | -3.1 (-31.2 to +18.3) | -12.9 (-47.1 to +11.4) |  |\n| radar cruiser inside minus non-radar cruiser inside | Top 6 | 55 / 8 | too few | too few | too few | too few | -946 (-8,288 to +10,423) | -12.3 (-71.4 to +18.8) | -1.6 (-65.2 to +15.9) | small n |\n| radar cruiser inside minus non-radar cruiser inside | Rest | 49 / 9 | too few | too few | -34.2 (-71.2 to +16.2) | -34.6 (-71.4 to +15.6) | +3,785 (-13,779 to +13,376) | +5.6 (-25.2 to +27.3) | -23.1 (-64.8 to +15.5) | small n |\n\nTable 3b. Like with like: only smokes whose contested cap was neutral at activation (a neutral cap is easier to take).\n| cover | group | n (early) | we took, contested cap % (n) | enemy took, contested cap % (n) |\n|---|---|---|---|---|\n| radar cruiser inside | All | 30 (26) | 66.7 (30) | 16.7 (30) |\n| radar cruiser inside | Top 6 | 19 (15) | 63.2 (19) | 15.8 (19) |\n| radar cruiser inside | Rest | 11 (11) | 72.7 (11) | 18.2 (11) |\n| no cruiser | All | 49 (30) | 38.8 (49) | 20.4 (49) |\n| no cruiser | Top 6 | 14 (7) | 78.6 (14) | 7.1 (14) |\n| no cruiser | Rest | 35 (23) | 22.9 (35) | 25.7 (35) |\n\nRadar cruiser inside minus no cruiser on neutral caps: All: we took +27.9 (+6.9 to +46.4 *), enemy took -3.7 (-20.0 to +12.5); Top 6: we took -15.4 (-60.0 to +12.2), enemy took +8.7 (-11.1 to +28.6); Rest: we took +49.9 (+34.1 to +75.2 *), enemy took -7.5 (-31.7 to +18.8).\n\nTable 4. Cap-contest smokes with a radar cruiser inside (104): radar pressed from the smoke or not. \"Pressed\" = a ship of the smoking team pressed radar while standing in this smoke (radar log).\n|  | group | n (pressed by a cruiser) | we took, contested cap % (n) | we took, nearest cap % (n) | enemy took, contested cap % (n) | enemy took, nearest cap % (n) | concealed damage per smoke | died per 100 | caught per 100 | note |\n|---|---|---|---|---|---|---|---|---|---|---|\n| radar pressed from the smoke | All | 8 (7) | too few (7) | too few (7) | too few (4) | too few (4) | 22,260 | 0.0 | 0.0 | small n |\n| radar pressed from the smoke | Top 6 | 5 (4) | too few (5) | too few (5) | too few (2) | too few (2) | too few | too few | too few | too few |\n| radar pressed from the smoke | Rest | 3 (3) | too few (2) | too few (2) | too few (2) | too few (2) | too few | too few | too few | too few |\n| not pressed | All | 96 (0) | 71.1 (45) | 72.7 (44) | 14.1 (78) | 13.9 (79) | 16,434 | 15.8 | 11.5 |  |\n| not pressed | Top 6 | 50 (0) | 64.0 (25) | 64.0 (25) | 11.9 (42) | 11.9 (42) | 17,484 | 14.0 | 12.0 |  |\n| not pressed | Rest | 46 (0) | 80.0 (20) | 84.2 (19) | 16.7 (36) | 16.2 (37) | 15,293 | 17.8 | 10.9 |  |\n\nTable 5. Pressed minus not pressed (difference, 95% interval; * = clear).\n| group | n pressed / not | we took, contested cap % | we took, nearest cap % | enemy took, contested cap % | enemy took, nearest cap % | concealed damage per smoke | died per 100 | caught per 100 | note |\n|---|---|---|---|---|---|---|---|---|---|\n| All | 8 / 96 | too few | too few | too few | too few | +5,826 (-18,281 to +17,351) | -15.8 (-25.0 to -7.2 *) | -11.5 (-17.3 to -4.9 *) | small n |\n| Top 6 | 5 / 50 | too few | too few | too few | too few | too few | too few | too few | too few |\n| Rest | 3 / 46 | too few | too few | too few | too few | too few | too few | too few | too few |\n\nTable 6. Top 6 minus Rest inside pressed and inside not pressed.\n|  | we took, contested cap % | we took, nearest cap % | enemy took, contested cap % | enemy took, nearest cap % | concealed damage per smoke | died per 100 | caught per 100 |\n|---|---|---|---|---|---|---|---|\n| radar pressed from the smoke | too few | too few | too few | too few | too few | too few | too few |\n| not pressed | -16.0 (-40.7 to +5.0) | -20.2 (-44.9 to -0.9 *) | -4.8 (-16.0 to +6.3) | -4.3 (-15.8 to +6.6) | +2,191 (-4,775 to +8,178) | -3.8 (-25.8 to +10.7) | +1.1 (-13.2 to +10.7) |\n\nTable 7. Wider reading, because Table 4 is so thin: a cruiser that was inside this smoke pressed radar at some time while the smoke stood, whether the log places the press in this smoke or not (the cruiser had often moved out, or the press was at the smoke edge).\n|  | group | n | we took, contested cap % (n) | we took, nearest cap % (n) | enemy took, contested cap % (n) | enemy took, nearest cap % (n) | concealed damage per smoke | died per 100 | caught per 100 | note |\n|---|---|---|---|---|---|---|---|---|---|---|\n| a cruiser from inside pressed radar while the smoke stood | All | 43 | 68.2 (22) | 71.4 (21) | 18.8 (32) | 18.2 (33) | 18,366 | 20.9 | 16.3 |  |\n| a cruiser from inside pressed radar while the smoke stood | Top 6 | 23 | 54.5 (11) | 54.5 (11) | 10.5 (19) | 10.5 (19) | 25,057 | 21.7 | 17.4 |  |\n| a cruiser from inside pressed radar while the smoke stood | Rest | 20 | 81.8 (11) | 90.0 (10) | 30.8 (13) | 28.6 (14) | 10,672 | 20.0 | 15.0 |  |\n| no such press | All | 61 | 66.7 (30) | 66.7 (30) | 10.0 (50) | 10.0 (50) | 15,836 | 10.0 | 6.6 |  |\n| no such press | Top 6 | 32 | 63.2 (19) | 63.2 (19) | 12.0 (25) | 12.0 (25) | 14,816 | 6.2 | 6.2 |  |\n| no such press | Rest | 29 | 72.7 (11) | 72.7 (11) | 8.0 (25) | 8.0 (25) | 16,962 | 14.3 | 6.9 |  |\n\nTable 8. Wider reading: press minus no press (difference, 95% interval; * = clear).\n| group | n press / none | we took, contested cap % | we took, nearest cap % | enemy took, contested cap % | enemy took, nearest cap % | concealed damage per smoke | died per 100 | caught per 100 | note |\n|---|---|---|---|---|---|---|---|---|---|\n| All | 43 / 61 | +1.5 (-15.7 to +23.2) | +4.8 (-12.7 to +27.0) | +8.8 (-8.8 to +25.5) | +8.2 (-8.8 to +25.0) | +2,530 (-5,432 to +9,471) | +10.9 (-6.5 to +26.5) | +9.7 (-4.7 to +25.9) |  |\n| Top 6 | 23 / 32 | -8.6 (-32.2 to +17.9) | -8.6 (-32.2 to +17.9) | -1.5 (-20.0 to +18.8) | -1.5 (-20.0 to +18.8) | +10,242 (+4,275 to +16,568 *) | +15.5 (-9.5 to +34.7) | +11.1 (-9.5 to +32.4) |  |\n| Rest | 20 / 29 | +9.1 (-27.8 to +42.9) | +17.3 (-20.8 to +50.0) | +22.8 (-9.1 to +46.7) | +20.6 (-9.1 to +43.8) | -6,290 (-15,154 to +3,461) | +5.7 (-22.0 to +32.9) | +8.1 (-11.8 to +36.1) |  |\n\nRadar was pressed from the smoke in 9% of the Top 6's 55 such smokes and 6% of the Rest's 49 (gap interval -12.9 to +23.1).\n\n**Top 6 or Shared:** Inside \"radar cruiser inside\" the Top 6 minus Rest gap is: we took the contested cap -17.3 (-39.6 to +4.2), enemy took it -4.4 (-15.7 to +6.0), died per 100 -3.9 (-24.9 to +10.8), caught per 100 +0.7 (-13.8 to +10.6). Inside \"no cruiser\": +50.7 (+40.9 to +66.4 *), -6.9 (-24.4 to +7.1), -2.1 (-17.9 to +7.5), -3.9 (-9.8 to +0.4). The extra concealed damage with a radar cruiser inside is in both groups (Top 6 +14,977 (+9,602 to +18,875 *), Rest +11,072 (+6,196 to +16,361 *)): Shared. The Top 6 difference is how often they do it (55 of 130 cap-contest smokes against 49 of 261).\n\n**Clans:** radar cruiser inside: Top 6: BONKZ 15, H-SR 14, RESIN 10, KITE 7, VRTUS 5, HTDOG 4 | Rest: -BN- 6, HFANS 6, EPOXY 5, INCA 5, MACHX 5, KSC 4, MZY 3, PFANS 3, PN 2, KITED 2, RSR 2, MACH 1, BTLST 1, UYSC 1, BONKY 1, SCCC2 1, REEEE 1. Radar pressed from it: Top 6: RESIN 5 | Rest: INCA 1, PN 1, SCCC2 1.\n\n**Could not be done / proxy:** Non-radar cruiser inside has 17 smokes (8 Top 6, 9 Rest): small n overall and too few inside a group wherever the table says so. The pressed split is small inside each group; read the direction only.\n\n**Verdict:** Keep (damage and deaths by cover). The cap line: Keep, reworded with the timeline numbers. Radar pressed from the smoke: Lead (8 smokes; the wider reading is in Tables 7 and 8).\n\n**Changed from round 5b:** round 5b did not redo this table, so the \"round 5b\" column is round 5 with the clock fix (`round5b/part-a/out-a1.json`). \"-\" = too few there. The contested-cap columns and the pressed split are new.\n\n| number | round 5b | round 5c | why |\n|---|---|---|---|\n| radar cruiser inside, Top 6: we took the nearest cap % | 53.3 | 60.0 | cap timeline (was snapshots) |\n| radar cruiser inside, Top 6: enemy took the nearest cap % | 9.1 | 11.4 | cap timeline (was snapshots) |\n| radar cruiser inside, Top 6: deaths per 100, now died per 100 | 10.9 | 12.7 | new death metric |\n| radar cruiser inside, Rest: we took the nearest cap % | 76.2 | 81.0 | cap timeline (was snapshots) |\n| radar cruiser inside, Rest: enemy took the nearest cap % | 10.3 | 15.4 | cap timeline (was snapshots) |\n| radar cruiser inside, Rest: deaths per 100, now died per 100 | 10.2 | 16.7 | new death metric |\n| non-radar cruiser inside, Top 6: deaths per 100, now died per 100 | 12.5 | 25.0 | new death metric |\n| non-radar cruiser inside, Rest: enemy took the nearest cap % | 37.5 | 50.0 | cap timeline (was snapshots) |\n| non-radar cruiser inside, Rest: deaths per 100, now died per 100 | 33.3 | 11.1 | new death metric |\n| no cruiser, Top 6: we took the nearest cap % | 47.8 | 69.6 | cap timeline (was snapshots) |\n| no cruiser, Top 6: enemy took the nearest cap % | 5.4 | 16.2 | cap timeline (was snapshots) |\n| no cruiser, Top 6: deaths per 100, now died per 100 | 4.3 | 13.0 | new death metric |\n| no cruiser, Rest: we took the nearest cap % | 12.9 | 18.8 | cap timeline (was snapshots) |\n| no cruiser, Rest: enemy took the nearest cap % | 20.0 | 23.2 | cap timeline (was snapshots) |\n| no cruiser, Rest: deaths per 100, now died per 100 | 8.3 | 15.2 | new death metric |\n| other, Top 6: we took the nearest cap % | 11.1 | 33.3 | cap timeline (was snapshots) |\n| other, Top 6: enemy took the nearest cap % | 6.2 | 18.8 | cap timeline (was snapshots) |\n| other, Top 6: deaths per 100, now died per 100 | 14.3 | 19.1 | new death metric |\n| other, Rest: we took the nearest cap % | 57.1 | 60.0 | cap timeline (was snapshots) |\n| other, Rest: enemy took the nearest cap % | 22.9 | 27.1 | cap timeline (was snapshots) |\n| other, Rest: deaths per 100, now died per 100 | 13.8 | 20.7 | new death metric |\n\n19 other numbers are unchanged: concealed damage in every row, and caught per 100 (it is the same list as round 5 deaths).\n",
+ "check": [
+  [
+   "A1 n cap-contest smokes",
+   "a1.py",
+   "len(CC)",
+   391
+  ],
+  [
+   "A1 Rest: radar cruiser inside vs no cruiser, we took the contested cap %",
+   "a1.py",
+   "T1 / J['by_cover'][..]['we_took_c']",
+   "77.27 vs 18.82"
+  ],
+  [
+   "A1 Top 6: radar cruiser inside vs no cruiser, we took the contested cap %",
+   "a1.py",
+   "T1 / J['by_cover'][..]['we_took_c']",
+   "60.0 vs 69.57"
+  ],
+  [
+   "A1 gap radar cruiser inside minus no cruiser, we took contested: Rest / Top 6",
+   "a1.py",
+   "T3 / J['cover_gaps']",
+   "+58.5 (+43.0 to +75.5 *) / -9.6 (-29.0 to +3.8)"
+  ],
+  [
+   "A1 gap radar cruiser inside minus no cruiser, all: damage, died, caught",
+   "a1.py",
+   "T3 / J['cover_gaps']",
+   "+13,368 (+8,699 to +17,029 *); -0.1 (-8.9 to +9.7); +3.2 (-4.3 to +10.6)"
+  ],
+  [
+   "A1 pressed minus not pressed, all: damage, died, caught",
+   "a1.py",
+   "T5 / J['pressed_gaps']",
+   "+5,826 (-18,281 to +17,351); -15.8 (-25.0 to -7.2 *); -11.5 (-17.3 to -4.9 *)"
+  ],
+  [
+   "A1 wider reading, press minus no press, all: damage, we took contested, died, caught",
+   "a1.py",
+   "T8 / J['pressed_wide_gaps']",
+   "+2,530 (-5,432 to +9,471); +1.5 (-15.7 to +23.2); +10.9 (-6.5 to +26.5); +9.7 (-4.7 to +25.9)"
+  ]
+ ]
+}

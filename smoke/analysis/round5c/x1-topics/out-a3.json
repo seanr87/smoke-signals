@@ -1,0 +1,958 @@
+{
+ "tables": {
+  "n_somers": 260,
+  "n_gearing": 180,
+  "clans": {
+   "Somers": "Top 6: RESIN 38, H-SR 33, BONKZ 12, VRTUS 7 | Rest: HFANS 28, REEEE 25, MZY 22, EPOXY 18, MACHX 17, BONKY 14, -BN- 12, NGA 11, PFANS 8, PN 5, UYSC 5, KITED 3, RSR 1, INCA 1",
+   "Gearing": "Top 6: BONKZ 37, KITE 23, VRTUS 10, HTDOG 4 | Rest: KSC 29, -BN- 18, BTLST 11, 5D 9, OGF 9, RSR 9, INCA 7, HFANS 5, RMN 3, EPOXY 3, KM 2, UYSC 1"
+  },
+  "rates": [
+   {
+    "scope": "All",
+    "ship": "Somers",
+    "n": 260,
+    "note": "",
+    "rates": {
+     "n": 260,
+     "n_died_base": 260,
+     "died": 49,
+     "died_per100": 18.846153846153847,
+     "died_smoker_per100": 10.384615384615385,
+     "died_cr_per100_cov": 9.401709401709402,
+     "caught": 27,
+     "caught_per100": 10.384615384615385,
+     "caught_smoker_per100": 3.8461538461538463,
+     "caught_cr_per100_cov": 7.264957264957265
+    },
+    "died100": {
+     "value": 18.85,
+     "n": 260,
+     "lo": 12.46,
+     "hi": 25.38
+    },
+    "caught100": {
+     "value": 10.38,
+     "n": 260,
+     "lo": 6.98,
+     "hi": 13.36
+    },
+    "died_smoker100": {
+     "value": 10.38,
+     "n": 260,
+     "lo": 6.22,
+     "hi": 15.25
+    },
+    "caught_smoker100": {
+     "value": 3.85,
+     "n": 260,
+     "lo": 1.88,
+     "hi": 6.19
+    },
+    "died_cr100": {
+     "value": 9.4,
+     "n": 234,
+     "lo": 5.19,
+     "hi": 13.95
+    },
+    "caught_cr100": {
+     "value": 7.26,
+     "n": 234,
+     "lo": 4.24,
+     "hi": 10.28
+    }
+   },
+   {
+    "scope": "All",
+    "ship": "Gearing",
+    "n": 180,
+    "note": "",
+    "rates": {
+     "n": 180,
+     "n_died_base": 173,
+     "died": 44,
+     "died_per100": 25.433526011560694,
+     "died_smoker_per100": 16.76300578034682,
+     "died_cr_per100_cov": 8.219178082191782,
+     "caught": 32,
+     "caught_per100": 17.77777777777778,
+     "caught_smoker_per100": 8.333333333333334,
+     "caught_cr_per100_cov": 9.395973154362416
+    },
+    "died100": {
+     "value": 25.43,
+     "n": 173,
+     "lo": 18.09,
+     "hi": 35.46
+    },
+    "caught100": {
+     "value": 17.78,
+     "n": 180,
+     "lo": 11.48,
+     "hi": 26.97
+    },
+    "died_smoker100": {
+     "value": 16.76,
+     "n": 173,
+     "lo": 8.84,
+     "hi": 30.51
+    },
+    "caught_smoker100": {
+     "value": 8.33,
+     "n": 180,
+     "lo": 2.25,
+     "hi": 20.0
+    },
+    "died_cr100": {
+     "value": 8.22,
+     "n": 146,
+     "lo": 3.64,
+     "hi": 12.1
+    },
+    "caught_cr100": {
+     "value": 9.4,
+     "n": 149,
+     "lo": 4.49,
+     "hi": 13.89
+    }
+   },
+   {
+    "scope": "Top 6",
+    "ship": "Somers",
+    "n": 90,
+    "note": "",
+    "rates": {
+     "n": 90,
+     "n_died_base": 90,
+     "died": 16,
+     "died_per100": 17.77777777777778,
+     "died_smoker_per100": 10.0,
+     "died_cr_per100_cov": 8.235294117647058,
+     "caught": 7,
+     "caught_per100": 7.777777777777778,
+     "caught_smoker_per100": 2.2222222222222223,
+     "caught_cr_per100_cov": 5.882352941176471
+    },
+    "died100": {
+     "value": 17.78,
+     "n": 90,
+     "lo": 2.5,
+     "hi": 30.0
+    },
+    "caught100": {
+     "value": 7.78,
+     "n": 90,
+     "lo": 2.5,
+     "hi": 12.4
+    },
+    "died_smoker100": {
+     "value": 10.0,
+     "n": 90,
+     "lo": 0.0,
+     "hi": 20.27
+    },
+    "caught_smoker100": {
+     "value": 2.22,
+     "n": 90,
+     "lo": 0.0,
+     "hi": 5.41
+    },
+    "died_cr100": {
+     "value": 8.24,
+     "n": 85,
+     "lo": 0.0,
+     "hi": 14.88
+    },
+    "caught_cr100": {
+     "value": 5.88,
+     "n": 85,
+     "lo": 0.0,
+     "hi": 9.92
+    }
+   },
+   {
+    "scope": "Top 6",
+    "ship": "Gearing",
+    "n": 74,
+    "note": "",
+    "rates": {
+     "n": 74,
+     "n_died_base": 74,
+     "died": 12,
+     "died_per100": 16.216216216216218,
+     "died_smoker_per100": 8.108108108108109,
+     "died_cr_per100_cov": 6.8493150684931505,
+     "caught": 7,
+     "caught_per100": 9.45945945945946,
+     "caught_smoker_per100": 1.3513513513513513,
+     "caught_cr_per100_cov": 6.8493150684931505
+    },
+    "died100": {
+     "value": 16.22,
+     "n": 74,
+     "lo": 11.11,
+     "hi": 22.64
+    },
+    "caught100": {
+     "value": 9.46,
+     "n": 74,
+     "lo": 5.71,
+     "hi": 10.74
+    },
+    "died_smoker100": {
+     "value": 8.11,
+     "n": 74,
+     "lo": 3.7,
+     "hi": 21.43
+    },
+    "caught_smoker100": {
+     "value": 1.35,
+     "n": 74,
+     "lo": 0.0,
+     "hi": 7.14
+    },
+    "died_cr100": {
+     "value": 6.85,
+     "n": 73,
+     "lo": 0.0,
+     "hi": 8.74
+    },
+    "caught_cr100": {
+     "value": 6.85,
+     "n": 73,
+     "lo": 0.0,
+     "hi": 8.74
+    }
+   },
+   {
+    "scope": "Rest",
+    "ship": "Somers",
+    "n": 170,
+    "note": "",
+    "rates": {
+     "n": 170,
+     "n_died_base": 170,
+     "died": 33,
+     "died_per100": 19.41176470588235,
+     "died_smoker_per100": 10.588235294117647,
+     "died_cr_per100_cov": 10.06711409395973,
+     "caught": 20,
+     "caught_per100": 11.764705882352942,
+     "caught_smoker_per100": 4.705882352941177,
+     "caught_cr_per100_cov": 8.053691275167786
+    },
+    "died100": {
+     "value": 19.41,
+     "n": 170,
+     "lo": 14.72,
+     "hi": 26.19
+    },
+    "caught100": {
+     "value": 11.76,
+     "n": 170,
+     "lo": 7.69,
+     "hi": 15.6
+    },
+    "died_smoker100": {
+     "value": 10.59,
+     "n": 170,
+     "lo": 6.51,
+     "hi": 16.38
+    },
+    "caught_smoker100": {
+     "value": 4.71,
+     "n": 170,
+     "lo": 2.06,
+     "hi": 7.79
+    },
+    "died_cr100": {
+     "value": 10.07,
+     "n": 149,
+     "lo": 5.11,
+     "hi": 15.86
+    },
+    "caught_cr100": {
+     "value": 8.05,
+     "n": 149,
+     "lo": 4.29,
+     "hi": 12.12
+    }
+   },
+   {
+    "scope": "Rest",
+    "ship": "Gearing",
+    "n": 106,
+    "note": "",
+    "rates": {
+     "n": 106,
+     "n_died_base": 99,
+     "died": 32,
+     "died_per100": 32.323232323232325,
+     "died_smoker_per100": 23.232323232323232,
+     "died_cr_per100_cov": 9.58904109589041,
+     "caught": 25,
+     "caught_per100": 23.58490566037736,
+     "caught_smoker_per100": 13.20754716981132,
+     "caught_cr_per100_cov": 11.842105263157896
+    },
+    "died100": {
+     "value": 32.32,
+     "n": 99,
+     "lo": 21.33,
+     "hi": 45.45
+    },
+    "caught100": {
+     "value": 23.58,
+     "n": 106,
+     "lo": 13.83,
+     "hi": 36.59
+    },
+    "died_smoker100": {
+     "value": 23.23,
+     "n": 99,
+     "lo": 10.53,
+     "hi": 40.82
+    },
+    "caught_smoker100": {
+     "value": 13.21,
+     "n": 106,
+     "lo": 2.99,
+     "hi": 30.88
+    },
+    "died_cr100": {
+     "value": 9.59,
+     "n": 73,
+     "lo": 0.0,
+     "hi": 14.75
+    },
+    "caught_cr100": {
+     "value": 11.84,
+     "n": 76,
+     "lo": 2.86,
+     "hi": 17.07
+    }
+   }
+  ],
+  "somers_minus_gearing": [
+   {
+    "scope": "All",
+    "n_a": 260,
+    "n_b": 180,
+    "died100": {
+     "a": 18.85,
+     "n_a": 260,
+     "b": 25.43,
+     "n_b": 173,
+     "diff": -6.59,
+     "lo": -18.42,
+     "hi": 3.51,
+     "clear": false
+    },
+    "caught100": {
+     "a": 10.38,
+     "n_a": 260,
+     "b": 17.78,
+     "n_b": 180,
+     "diff": -7.39,
+     "lo": -16.55,
+     "hi": -0.15,
+     "clear": true
+    },
+    "died_smoker100": {
+     "a": 10.38,
+     "n_a": 260,
+     "b": 16.76,
+     "n_b": 173,
+     "diff": -6.38,
+     "lo": -19.59,
+     "hi": 3.26,
+     "clear": false
+    },
+    "caught_smoker100": {
+     "a": 3.85,
+     "n_a": 260,
+     "b": 8.33,
+     "n_b": 180,
+     "diff": -4.49,
+     "lo": -15.96,
+     "hi": 2.44,
+     "clear": false
+    },
+    "died_cr100": {
+     "a": 9.4,
+     "n_a": 234,
+     "b": 8.22,
+     "n_b": 146,
+     "diff": 1.18,
+     "lo": -4.24,
+     "hi": 7.79,
+     "clear": false
+    },
+    "caught_cr100": {
+     "a": 7.26,
+     "n_a": 234,
+     "b": 9.4,
+     "n_b": 149,
+     "diff": -2.13,
+     "lo": -7.18,
+     "hi": 3.43,
+     "clear": false
+    }
+   },
+   {
+    "scope": "Top 6",
+    "n_a": 90,
+    "n_b": 74,
+    "died100": {
+     "a": 17.78,
+     "n_a": 90,
+     "b": 16.22,
+     "n_b": 74,
+     "diff": 1.56,
+     "lo": -18.18,
+     "hi": 17.45,
+     "clear": false
+    },
+    "caught100": {
+     "a": 7.78,
+     "n_a": 90,
+     "b": 9.46,
+     "n_b": 74,
+     "diff": -1.68,
+     "lo": -6.74,
+     "hi": 4.94,
+     "clear": false
+    },
+    "died_smoker100": {
+     "a": 10.0,
+     "n_a": 90,
+     "b": 8.11,
+     "n_b": 74,
+     "diff": 1.89,
+     "lo": -19.95,
+     "hi": 14.52,
+     "clear": false
+    },
+    "caught_smoker100": {
+     "a": 2.22,
+     "n_a": 90,
+     "b": 1.35,
+     "n_b": 74,
+     "diff": 0.87,
+     "lo": -7.59,
+     "hi": 5.58,
+     "clear": false
+    },
+    "died_cr100": {
+     "a": 8.24,
+     "n_a": 85,
+     "b": 6.85,
+     "n_b": 73,
+     "diff": 1.39,
+     "lo": -7.23,
+     "hi": 10.81,
+     "clear": false
+    },
+    "caught_cr100": {
+     "a": 5.88,
+     "n_a": 85,
+     "b": 6.85,
+     "n_b": 73,
+     "diff": -0.97,
+     "lo": -7.23,
+     "hi": 7.35,
+     "clear": false
+    }
+   },
+   {
+    "scope": "Rest",
+    "n_a": 170,
+    "n_b": 106,
+    "died100": {
+     "a": 19.41,
+     "n_a": 170,
+     "b": 32.32,
+     "n_b": 99,
+     "diff": -12.91,
+     "lo": -24.48,
+     "hi": -0.43,
+     "clear": true
+    },
+    "caught100": {
+     "a": 11.76,
+     "n_a": 170,
+     "b": 23.58,
+     "n_b": 106,
+     "diff": -11.82,
+     "lo": -23.73,
+     "hi": -2.06,
+     "clear": true
+    },
+    "died_smoker100": {
+     "a": 10.59,
+     "n_a": 170,
+     "b": 23.23,
+     "n_b": 99,
+     "diff": -12.64,
+     "lo": -28.42,
+     "hi": 0.17,
+     "clear": false
+    },
+    "caught_smoker100": {
+     "a": 4.71,
+     "n_a": 170,
+     "b": 13.21,
+     "n_b": 106,
+     "diff": -8.5,
+     "lo": -23.79,
+     "hi": 1.64,
+     "clear": false
+    },
+    "died_cr100": {
+     "a": 10.07,
+     "n_a": 149,
+     "b": 9.59,
+     "n_b": 73,
+     "diff": 0.48,
+     "lo": -6.98,
+     "hi": 11.53,
+     "clear": false
+    },
+    "caught_cr100": {
+     "a": 8.05,
+     "n_a": 149,
+     "b": 11.84,
+     "n_b": 76,
+     "diff": -3.79,
+     "lo": -10.38,
+     "hi": 6.97,
+     "clear": false
+    }
+   }
+  ],
+  "top6_minus_rest": [
+   {
+    "ship": "Somers",
+    "died100": {
+     "top6": 17.78,
+     "n_top6": 90,
+     "rest": 19.41,
+     "n_rest": 170,
+     "diff": -1.63,
+     "lo": -19.07,
+     "hi": 11.84,
+     "clear": false
+    },
+    "caught100": {
+     "top6": 7.78,
+     "n_top6": 90,
+     "rest": 11.76,
+     "n_rest": 170,
+     "diff": -3.99,
+     "lo": -10.72,
+     "hi": 2.1,
+     "clear": false
+    },
+    "died_smoker100": {
+     "top6": 10.0,
+     "n_top6": 90,
+     "rest": 10.59,
+     "n_rest": 170,
+     "diff": -0.59,
+     "lo": -12.21,
+     "hi": 9.43,
+     "clear": false
+    },
+    "caught_smoker100": {
+     "top6": 2.22,
+     "n_top6": 90,
+     "rest": 4.71,
+     "n_rest": 170,
+     "diff": -2.48,
+     "lo": -6.25,
+     "hi": 1.89,
+     "clear": false
+    },
+    "died_cr100": {
+     "top6": 8.24,
+     "n_top6": 85,
+     "rest": 10.07,
+     "n_rest": 149,
+     "diff": -1.83,
+     "lo": -12.23,
+     "hi": 6.82,
+     "clear": false
+    },
+    "caught_cr100": {
+     "top6": 5.88,
+     "n_top6": 85,
+     "rest": 8.05,
+     "n_rest": 149,
+     "diff": -2.17,
+     "lo": -9.24,
+     "hi": 3.4,
+     "clear": false
+    }
+   },
+   {
+    "ship": "Gearing",
+    "died100": {
+     "top6": 16.22,
+     "n_top6": 74,
+     "rest": 32.32,
+     "n_rest": 99,
+     "diff": -16.11,
+     "lo": -30.35,
+     "hi": -3.64,
+     "clear": true
+    },
+    "caught100": {
+     "top6": 9.46,
+     "n_top6": 74,
+     "rest": 23.58,
+     "n_rest": 106,
+     "diff": -14.13,
+     "lo": -26.59,
+     "hi": -4.85,
+     "clear": true
+    },
+    "died_smoker100": {
+     "top6": 8.11,
+     "n_top6": 74,
+     "rest": 23.23,
+     "n_rest": 99,
+     "diff": -15.12,
+     "lo": -32.12,
+     "hi": 1.78,
+     "clear": false
+    },
+    "caught_smoker100": {
+     "top6": 1.35,
+     "n_top6": 74,
+     "rest": 13.21,
+     "n_rest": 106,
+     "diff": -11.86,
+     "lo": -27.33,
+     "hi": -1.02,
+     "clear": true
+    },
+    "died_cr100": {
+     "top6": 6.85,
+     "n_top6": 73,
+     "rest": 9.59,
+     "n_rest": 73,
+     "diff": -2.74,
+     "lo": -10.47,
+     "hi": 5.36,
+     "clear": false
+    },
+    "caught_cr100": {
+     "top6": 6.85,
+     "n_top6": 73,
+     "rest": 11.84,
+     "n_rest": 76,
+     "diff": -4.99,
+     "lo": -12.14,
+     "hi": 3.44,
+     "clear": false
+    }
+   }
+  ],
+  "rest_gearing_by_clan": {
+   "KSC": {
+    "n": 29,
+    "died": 7,
+    "caught": 6
+   },
+   "-BN-": {
+    "n": 18,
+    "died": 3,
+    "caught": 2
+   },
+   "BTLST": {
+    "n": 11,
+    "died": 4,
+    "caught": 4
+   },
+   "5D": {
+    "n": 9,
+    "died": 6,
+    "caught": 6
+   },
+   "OGF": {
+    "n": 9,
+    "died": 6,
+    "caught": 3
+   },
+   "RSR": {
+    "n": 9,
+    "died": 3,
+    "caught": 2
+   },
+   "INCA": {
+    "n": 7,
+    "died": 0,
+    "caught": 0
+   },
+   "HFANS": {
+    "n": 5,
+    "died": 1,
+    "caught": 0
+   },
+   "RMN": {
+    "n": 3,
+    "died": 1,
+    "caught": 1
+   },
+   "EPOXY": {
+    "n": 3,
+    "died": 0,
+    "caught": 0
+   },
+   "KM": {
+    "n": 2,
+    "died": 0,
+    "caught": 0
+   },
+   "UYSC": {
+    "n": 1,
+    "died": 1,
+    "caught": 1
+   }
+  },
+  "rest_gearing_leave_one_out": [
+   {
+    "clan": "-BN-",
+    "died100": 34.5,
+    "caught100": 26.1
+   },
+   {
+    "clan": "5D",
+    "died100": 28.9,
+    "caught100": 19.6
+   },
+   {
+    "clan": "BTLST",
+    "died100": 31.8,
+    "caught100": 22.1
+   },
+   {
+    "clan": "EPOXY",
+    "died100": 33.3,
+    "caught100": 24.3
+   },
+   {
+    "clan": "HFANS",
+    "died100": 33.0,
+    "caught100": 24.8
+   },
+   {
+    "clan": "INCA",
+    "died100": 34.8,
+    "caught100": 25.3
+   },
+   {
+    "clan": "KM",
+    "died100": 33.0,
+    "caught100": 24.0
+   },
+   {
+    "clan": "KSC",
+    "died100": 33.8,
+    "caught100": 24.7
+   },
+   {
+    "clan": "OGF",
+    "died100": 28.9,
+    "caught100": 22.7
+   },
+   {
+    "clan": "RMN",
+    "died100": 32.3,
+    "caught100": 23.3
+   },
+   {
+    "clan": "RSR",
+    "died100": 32.2,
+    "caught100": 23.7
+   },
+   {
+    "clan": "UYSC",
+    "died100": 31.6,
+    "caught100": 22.9
+   }
+  ],
+  "changed": [
+   [
+    "Top 6, Somers, all ships: deaths per 100, now died",
+    "7.8",
+    "17.8",
+    "new death metric"
+   ],
+   [
+    "Top 6, Gearing, all ships: deaths per 100, now died",
+    "9.5",
+    "16.2",
+    "new death metric"
+   ],
+   [
+    "Top 6, all ships: Somers minus Gearing, now caught",
+    "-1.7 (-6.9 to +4.7)",
+    "-1.7 (-6.7 to +4.9)",
+    "same list; interval now from diff_ci"
+   ],
+   [
+    "Top 6, all ships: Somers minus Gearing, now died",
+    "-1.7 (-6.9 to +4.7)",
+    "+1.6 (-18.2 to +17.4)",
+    "new death metric"
+   ],
+   [
+    "Top 6, Somers, smoker: deaths per 100, now died",
+    "2.2",
+    "10.0",
+    "new death metric"
+   ],
+   [
+    "Top 6, Gearing, smoker: deaths per 100, now died",
+    "1.4",
+    "8.1",
+    "new death metric"
+   ],
+   [
+    "Top 6, smoker: Somers minus Gearing, now caught",
+    "+0.9 (-7.7 to +5.7)",
+    "+0.9 (-7.6 to +5.6)",
+    "same list; interval now from diff_ci"
+   ],
+   [
+    "Top 6, smoker: Somers minus Gearing, now died",
+    "+0.9 (-7.7 to +5.7)",
+    "+1.9 (-19.9 to +14.5)",
+    "new death metric"
+   ],
+   [
+    "Top 6, Somers, sheltering cruisers: deaths per 100, now died",
+    "5.9",
+    "8.2",
+    "new death metric"
+   ],
+   [
+    "Top 6, sheltering cruisers: Somers minus Gearing, now caught",
+    "-1.0 (-7.1 to +7.0)",
+    "-1.0 (-7.2 to +7.3)",
+    "same list; interval now from diff_ci"
+   ],
+   [
+    "Top 6, sheltering cruisers: Somers minus Gearing, now died",
+    "-1.0 (-7.1 to +7.0)",
+    "+1.4 (-7.2 to +10.8)",
+    "new death metric"
+   ],
+   [
+    "Rest, Somers, all ships: deaths per 100, now died",
+    "11.8",
+    "19.4",
+    "new death metric"
+   ],
+   [
+    "Rest, Gearing, all ships: deaths per 100, now died",
+    "23.6",
+    "32.3",
+    "new death metric"
+   ],
+   [
+    "Rest, all ships: Somers minus Gearing, now caught",
+    "-11.8 (-24.0 to -1.5)",
+    "-11.8 (-23.7 to -2.1)",
+    "same list; interval now from diff_ci"
+   ],
+   [
+    "Rest, all ships: Somers minus Gearing, now died",
+    "-11.8 (-24.0 to -1.5)",
+    "-12.9 (-24.5 to -0.4)",
+    "new death metric"
+   ],
+   [
+    "Rest, Somers, smoker: deaths per 100, now died",
+    "4.7",
+    "10.6",
+    "new death metric"
+   ],
+   [
+    "Rest, Gearing, smoker: deaths per 100, now died",
+    "13.2",
+    "23.2",
+    "new death metric"
+   ],
+   [
+    "Rest, smoker: Somers minus Gearing, now caught",
+    "-8.5 (-25.3 to +1.6)",
+    "-8.5 (-23.8 to +1.6)",
+    "same list; interval now from diff_ci"
+   ],
+   [
+    "Rest, smoker: Somers minus Gearing, now died",
+    "-8.5 (-25.3 to +1.6)",
+    "-12.6 (-28.4 to +0.2)",
+    "new death metric"
+   ],
+   [
+    "Rest, Somers, sheltering cruisers: deaths per 100, now died",
+    "8.1",
+    "10.1",
+    "new death metric"
+   ],
+   [
+    "Rest, Gearing, sheltering cruisers: deaths per 100, now died",
+    "11.8",
+    "9.6",
+    "new death metric"
+   ],
+   [
+    "Rest, sheltering cruisers: Somers minus Gearing, now caught",
+    "-3.8 (-10.4 to +6.5)",
+    "-3.8 (-10.4 to +7.0)",
+    "same list; interval now from diff_ci"
+   ],
+   [
+    "Rest, sheltering cruisers: Somers minus Gearing, now died",
+    "-3.8 (-10.4 to +6.5)",
+    "+0.5 (-7.0 to +11.5)",
+    "new death metric"
+   ]
+  ]
+ },
+ "md": "### A3. Somers vs Gearing inside Top 6 and inside Rest\n\n**Answer:** Inside the Top 6 the two ships lose about the same: died 17.8 (Somers) vs 16.2 (Gearing) per 100, caught 7.8 vs 9.5. Inside the Rest the Gearing loses more: died 19.4 vs 32.3 (gap -12.9 (-24.5 to -0.4 *)), caught 11.8 vs 23.6 (gap -11.8 (-23.7 to -2.1 *)). Both metrics agree (caught: clear; died: clear), and the extra loss is the smoker itself, not the sheltering cruisers (smoker died -12.6 (-28.4 to +0.2), cruisers died +0.5 (-7.0 to +11.5)). The gap goes with who sails the Gearing, not with the ship.\n\n**Numbers:** 260 Somers smokes (90 Top 6, 170 Rest) and 180 Gearing smokes (74 Top 6, 106 Rest). \"Died\" rates leave out the 9 smokes of the single-replay game laid by the team with no replay (their covered ships are known from the other side only); \"caught\" rates keep them. Smoker rates are per 100 smokes; cruiser rates are per 100 sheltering cruisers (n = cruisers).\n\nTable 1. Deaths per 100 by ship and group [95% interval].\n| group | ship | n | died: all | caught: all | died: smoker | caught: smoker | died: cruisers (n) | caught: cruisers (n) | note |\n|---|---|---|---|---|---|---|---|---|---|\n| All | Somers | 260 | 18.9 [12.5 to 25.4] | 10.4 [7.0 to 13.4] | 10.4 [6.2 to 15.2] | 3.9 [1.9 to 6.2] | 9.4 [5.2 to 13.9] (234) | 7.3 [4.2 to 10.3] (234) |  |\n| All | Gearing | 180 | 25.4 [18.1 to 35.5] | 17.8 [11.5 to 27.0] | 16.8 [8.8 to 30.5] | 8.3 [2.2 to 20.0] | 8.2 [3.6 to 12.1] (146) | 9.4 [4.5 to 13.9] (149) |  |\n| Top 6 | Somers | 90 | 17.8 [2.5 to 30.0] | 7.8 [2.5 to 12.4] | 10.0 [0.0 to 20.3] | 2.2 [0.0 to 5.4] | 8.2 [0.0 to 14.9] (85) | 5.9 [0.0 to 9.9] (85) |  |\n| Top 6 | Gearing | 74 | 16.2 [11.1 to 22.6] | 9.5 [5.7 to 10.7] | 8.1 [3.7 to 21.4] | 1.4 [0.0 to 7.1] | 6.8 [0.0 to 8.7] (73) | 6.8 [0.0 to 8.7] (73) |  |\n| Rest | Somers | 170 | 19.4 [14.7 to 26.2] | 11.8 [7.7 to 15.6] | 10.6 [6.5 to 16.4] | 4.7 [2.1 to 7.8] | 10.1 [5.1 to 15.9] (149) | 8.1 [4.3 to 12.1] (149) |  |\n| Rest | Gearing | 106 | 32.3 [21.3 to 45.5] | 23.6 [13.8 to 36.6] | 23.2 [10.5 to 40.8] | 13.2 [3.0 to 30.9] | 9.6 [0.0 to 14.8] (73) | 11.8 [2.9 to 17.1] (76) |  |\n\nTable 2. Somers minus Gearing inside each group (difference, 95% interval; * = clear).\n| group | n Somers / Gearing | died per 100 | caught per 100 | smoker died per 100 | smoker caught per 100 | cruisers died per 100 sheltering | cruisers caught per 100 sheltering |\n|---|---|---|---|---|---|---|---|\n| All | 260 / 180 | -6.6 (-18.4 to +3.5) | -7.4 (-16.6 to -0.1 *) | -6.4 (-19.6 to +3.3) | -4.5 (-16.0 to +2.4) | +1.2 (-4.2 to +7.8) | -2.1 (-7.2 to +3.4) |\n| Top 6 | 90 / 74 | +1.6 (-18.2 to +17.4) | -1.7 (-6.7 to +4.9) | +1.9 (-19.9 to +14.5) | +0.9 (-7.6 to +5.6) | +1.4 (-7.2 to +10.8) | -1.0 (-7.2 to +7.3) |\n| Rest | 170 / 106 | -12.9 (-24.5 to -0.4 *) | -11.8 (-23.7 to -2.1 *) | -12.6 (-28.4 to +0.2) | -8.5 (-23.8 to +1.6) | +0.5 (-7.0 to +11.5) | -3.8 (-10.4 to +7.0) |\n\nTable 3. Top 6 minus Rest on each ship (difference, 95% interval; * = clear).\n| ship | died per 100 | caught per 100 | smoker died per 100 | smoker caught per 100 | cruisers died per 100 sheltering | cruisers caught per 100 sheltering |\n|---|---|---|---|---|---|---|\n| Somers | -1.6 (-19.1 to +11.8) | -4.0 (-10.7 to +2.1) | -0.6 (-12.2 to +9.4) | -2.5 (-6.2 to +1.9) | -1.8 (-12.2 to +6.8) | -2.2 (-9.2 to +3.4) |\n| Gearing | -16.1 (-30.4 to -3.6 *) | -14.1 (-26.6 to -4.8 *) | -15.1 (-32.1 to +1.8) | -11.9 (-27.3 to -1.0 *) | -2.7 (-10.5 to +5.4) | -5.0 (-12.1 to +3.4) |\n\nRest Gearing, leaving one clan out at a time: died per 100 stays between 28.9 and 34.8, caught between 19.6 and 26.1. By clan (n smokes, died, caught): KSC 29/7/6, -BN- 18/3/2, BTLST 11/4/4, 5D 9/6/6, OGF 9/6/3, RSR 9/3/2, INCA 7/0/0, HFANS 5/1/0, RMN 3/1/1, EPOXY 3/0/0, KM 2/0/0, UYSC 1/1/1.\n\n**Top 6 or Shared:** Top 6. On the Gearing, Top 6 minus Rest is died -16.1 (-30.4 to -3.6 *) and caught -14.1 (-26.6 to -4.8 *); on the Somers it is died -1.6 (-19.1 to +11.8) and caught -4.0 (-10.7 to +2.1). The Rest lose more ships around their Gearing smokes; the Somers numbers are close in both groups.\n\n**Clans:** Somers: Top 6: RESIN 38, H-SR 33, BONKZ 12, VRTUS 7 | Rest: HFANS 28, REEEE 25, MZY 22, EPOXY 18, MACHX 17, BONKY 14, -BN- 12, NGA 11, PFANS 8, PN 5, UYSC 5, KITED 3, RSR 1, INCA 1. Gearing: Top 6: BONKZ 37, KITE 23, VRTUS 10, HTDOG 4 | Rest: KSC 29, -BN- 18, BTLST 11, 5D 9, OGF 9, RSR 9, INCA 7, HFANS 5, RMN 3, EPOXY 3, KM 2, UYSC 1.\n\n**Verdict:** Keep.\n\n**Changed from round 5b:** round 5b did not redo this item; the \"round 5b\" column is round 5 with the clock fix (`round5b/part-a/out-a3.json`).\n\n| number | round 5b | round 5c | why |\n|---|---|---|---|\n| Top 6, Somers, all ships: deaths per 100, now died | 7.8 | 17.8 | new death metric |\n| Top 6, Gearing, all ships: deaths per 100, now died | 9.5 | 16.2 | new death metric |\n| Top 6, all ships: Somers minus Gearing, now caught | -1.7 (-6.9 to +4.7) | -1.7 (-6.7 to +4.9) | same list; interval now from diff_ci |\n| Top 6, all ships: Somers minus Gearing, now died | -1.7 (-6.9 to +4.7) | +1.6 (-18.2 to +17.4) | new death metric |\n| Top 6, Somers, smoker: deaths per 100, now died | 2.2 | 10.0 | new death metric |\n| Top 6, Gearing, smoker: deaths per 100, now died | 1.4 | 8.1 | new death metric |\n| Top 6, smoker: Somers minus Gearing, now caught | +0.9 (-7.7 to +5.7) | +0.9 (-7.6 to +5.6) | same list; interval now from diff_ci |\n| Top 6, smoker: Somers minus Gearing, now died | +0.9 (-7.7 to +5.7) | +1.9 (-19.9 to +14.5) | new death metric |\n| Top 6, Somers, sheltering cruisers: deaths per 100, now died | 5.9 | 8.2 | new death metric |\n| Top 6, sheltering cruisers: Somers minus Gearing, now caught | -1.0 (-7.1 to +7.0) | -1.0 (-7.2 to +7.3) | same list; interval now from diff_ci |\n| Top 6, sheltering cruisers: Somers minus Gearing, now died | -1.0 (-7.1 to +7.0) | +1.4 (-7.2 to +10.8) | new death metric |\n| Rest, Somers, all ships: deaths per 100, now died | 11.8 | 19.4 | new death metric |\n| Rest, Gearing, all ships: deaths per 100, now died | 23.6 | 32.3 | new death metric |\n| Rest, all ships: Somers minus Gearing, now caught | -11.8 (-24.0 to -1.5) | -11.8 (-23.7 to -2.1) | same list; interval now from diff_ci |\n| Rest, all ships: Somers minus Gearing, now died | -11.8 (-24.0 to -1.5) | -12.9 (-24.5 to -0.4) | new death metric |\n| Rest, Somers, smoker: deaths per 100, now died | 4.7 | 10.6 | new death metric |\n| Rest, Gearing, smoker: deaths per 100, now died | 13.2 | 23.2 | new death metric |\n| Rest, smoker: Somers minus Gearing, now caught | -8.5 (-25.3 to +1.6) | -8.5 (-23.8 to +1.6) | same list; interval now from diff_ci |\n| Rest, smoker: Somers minus Gearing, now died | -8.5 (-25.3 to +1.6) | -12.6 (-28.4 to +0.2) | new death metric |\n| Rest, Somers, sheltering cruisers: deaths per 100, now died | 8.1 | 10.1 | new death metric |\n| Rest, Gearing, sheltering cruisers: deaths per 100, now died | 11.8 | 9.6 | new death metric |\n| Rest, sheltering cruisers: Somers minus Gearing, now caught | -3.8 (-10.4 to +6.5) | -3.8 (-10.4 to +7.0) | same list; interval now from diff_ci |\n| Rest, sheltering cruisers: Somers minus Gearing, now died | -3.8 (-10.4 to +6.5) | +0.5 (-7.0 to +11.5) | new death metric |\n\n13 other compared numbers are unchanged (the caught rates).\n",
+ "check": [
+  [
+   "A3 Top 6: Somers vs Gearing, died / caught per 100",
+   "a3.py",
+   "T1 / J['rates']",
+   "17.78 vs 16.22 / 7.78 vs 9.46"
+  ],
+  [
+   "A3 Rest: Somers vs Gearing, died / caught per 100",
+   "a3.py",
+   "T1 / J['rates']",
+   "19.41 vs 32.32 / 11.76 vs 23.58"
+  ],
+  [
+   "A3 Somers minus Gearing inside Rest: died / caught",
+   "a3.py",
+   "T2 / J['somers_minus_gearing']",
+   "-12.9 (-24.5 to -0.4 *) / -11.8 (-23.7 to -2.1 *)"
+  ],
+  [
+   "A3 Somers minus Gearing inside Top 6: died / caught",
+   "a3.py",
+   "T2 / J['somers_minus_gearing']",
+   "+1.6 (-18.2 to +17.4) / -1.7 (-6.7 to +4.9)"
+  ],
+  [
+   "A3 Gearing, Top 6 minus Rest: died / caught",
+   "a3.py",
+   "T3 / J['top6_minus_rest']",
+   "-16.1 (-30.4 to -3.6 *) / -14.1 (-26.6 to -4.8 *)"
+  ]
+ ]
+}

@@ -1,0 +1,1794 @@
+{
+ "tables": {
+  "summary": {
+   "n": 133,
+   "n_top6": 44,
+   "n_rest": 89,
+   "usable": 132,
+   "bands": {
+    "head-on (under 30)": 100,
+    "flanking (over 60)": 12,
+    "oblique (30-60)": 20
+   },
+   "died_base": 133,
+   "delay_band_moved": 6,
+   "rates": {
+    "n": 133,
+    "n_died_base": 133,
+    "died": 33,
+    "died_per100": 24.81203007518797,
+    "died_smoker_per100": 17.293233082706767,
+    "died_cr_per100_cov": 18.51851851851852,
+    "caught": 20,
+    "caught_per100": 15.037593984962406,
+    "caught_smoker_per100": 7.518796992481203,
+    "caught_cr_per100_cov": 18.51851851851852
+   }
+  },
+  "by_angle": [
+   {
+    "group": "head-on (under 30)",
+    "n": 100,
+    "n_top6": 35,
+    "n_rest": 65,
+    "note": "",
+    "clans": "Top 6: BONKZ 13, HTDOG 7, VRTUS 5, KITE 4, RESIN 3, H-SR 3 | Rest: EPOXY 10, HFANS 9, REEEE 6, MACHX 5, KITED 4, SCCC2 4, MZY 4, KSC 4, OGF 2, PN 2, INCA 2, NGA 2, RSR 2, -BN- 2, PFANS 2, 5D 1, MACH 1, BONKY 1, MANBA 1, UYSC 1",
+    "rates": {
+     "n": 100,
+     "n_died_base": 100,
+     "died": 24,
+     "died_per100": 24.0,
+     "died_smoker_per100": 16.0,
+     "died_cr_per100_cov": 17.77777777777778,
+     "caught": 15,
+     "caught_per100": 15.0,
+     "caught_smoker_per100": 7.0,
+     "caught_cr_per100_cov": 17.77777777777778
+    },
+    "conc": {
+     "value": 8947.16,
+     "n": 100,
+     "lo": 5933.18,
+     "hi": 12413.14
+    },
+    "win": {
+     "value": 42.0,
+     "n": 100,
+     "lo": 34.18,
+     "hi": 49.57
+    },
+    "ans_conc": {
+     "value": 8495.31,
+     "n": 100,
+     "lo": 5689.97,
+     "hi": 11722.47
+    },
+    "margin": {
+     "value": 451.85,
+     "n": 100,
+     "lo": -3039.26,
+     "hi": 3634.96
+    },
+    "died100": {
+     "value": 24.0,
+     "n": 100,
+     "lo": 16.35,
+     "hi": 34.48
+    },
+    "caught100": {
+     "value": 15.0,
+     "n": 100,
+     "lo": 9.09,
+     "hi": 23.46
+    },
+    "died_smoker100": {
+     "value": 16.0,
+     "n": 100,
+     "lo": 9.9,
+     "hi": 23.16
+    },
+    "caught_smoker100": {
+     "value": 7.0,
+     "n": 100,
+     "lo": 2.7,
+     "hi": 12.35
+    },
+    "tr_died100": {
+     "top6": 22.86,
+     "n_top6": 35,
+     "rest": 24.62,
+     "n_rest": 65,
+     "diff": -1.76,
+     "lo": -18.14,
+     "hi": 15.66,
+     "clear": false
+    },
+    "tr_caught100": {
+     "top6": 14.29,
+     "n_top6": 35,
+     "rest": 15.38,
+     "n_rest": 65,
+     "diff": -1.1,
+     "lo": -15.4,
+     "hi": 16.94,
+     "clear": false
+    }
+   },
+   {
+    "group": "oblique (30-60)",
+    "n": 20,
+    "n_top6": 6,
+    "n_rest": 14,
+    "note": "",
+    "clans": "Top 6: KITE 2, HTDOG 2, RESIN 1, H-SR 1 | Rest: MACHX 2, -BN- 2, SCCC2 2, MACH 2, HFANS 2, NGA 1, BTLST 1, KSC 1, MZY 1",
+    "rates": {
+     "n": 20,
+     "n_died_base": 20,
+     "died": 3,
+     "died_per100": 15.0,
+     "died_smoker_per100": 10.0,
+     "died_cr_per100_cov": 14.285714285714286,
+     "caught": 2,
+     "caught_per100": 10.0,
+     "caught_smoker_per100": 5.0,
+     "caught_cr_per100_cov": 14.285714285714286
+    },
+    "conc": {
+     "value": 6761.98,
+     "n": 20,
+     "lo": 3330.0,
+     "hi": 10424.2
+    },
+    "win": {
+     "value": 30.0,
+     "n": 20,
+     "lo": 11.11,
+     "hi": 50.0
+    },
+    "ans_conc": {
+     "value": 12781.13,
+     "n": 20,
+     "lo": 7323.41,
+     "hi": 19119.56
+    },
+    "margin": {
+     "value": -6019.15,
+     "n": 20,
+     "lo": -14289.73,
+     "hi": 1287.29
+    },
+    "died100": {
+     "value": 15.0,
+     "n": 20,
+     "lo": 0.0,
+     "hi": 30.0
+    },
+    "caught100": {
+     "value": 10.0,
+     "n": 20,
+     "lo": 0.0,
+     "hi": 23.81
+    },
+    "died_smoker100": {
+     "value": 10.0,
+     "n": 20,
+     "lo": 0.0,
+     "hi": 23.53
+    },
+    "caught_smoker100": {
+     "value": 5.0,
+     "n": 20,
+     "lo": 0.0,
+     "hi": 16.67
+    },
+    "tr_died100": {
+     "top6": null,
+     "n_top6": 6,
+     "rest": 21.43,
+     "n_rest": 14,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "tr_caught100": {
+     "top6": null,
+     "n_top6": 6,
+     "rest": 14.29,
+     "n_rest": 14,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    }
+   },
+   {
+    "group": "flanking (over 60)",
+    "n": 12,
+    "n_top6": 3,
+    "n_rest": 9,
+    "note": "small n",
+    "clans": "Top 6: KITE 2, RESIN 1 | Rest: HFANS 2, 5D 2, -BN- 1, BONKY 1, SCCC2 1, KSE 1, MACHX 1",
+    "rates": {
+     "n": 12,
+     "n_died_base": 12,
+     "died": 6,
+     "died_per100": 50.0,
+     "died_smoker_per100": 41.666666666666664,
+     "died_cr_per100_cov": 50.0,
+     "caught": 3,
+     "caught_per100": 25.0,
+     "caught_smoker_per100": 16.666666666666668,
+     "caught_cr_per100_cov": 50.0
+    },
+    "conc": {
+     "value": 2868.11,
+     "n": 12,
+     "lo": 746.84,
+     "hi": 6437.69
+    },
+    "win": {
+     "value": 16.67,
+     "n": 12,
+     "lo": 0.0,
+     "hi": 40.0
+    },
+    "ans_conc": {
+     "value": 5796.33,
+     "n": 12,
+     "lo": 3482.97,
+     "hi": 9402.82
+    },
+    "margin": {
+     "value": -2928.22,
+     "n": 12,
+     "lo": -7278.65,
+     "hi": 1887.36
+    },
+    "died100": {
+     "value": 50.0,
+     "n": 12,
+     "lo": 23.53,
+     "hi": 88.89
+    },
+    "caught100": {
+     "value": 25.0,
+     "n": 12,
+     "lo": 0.0,
+     "hi": 50.0
+    },
+    "died_smoker100": {
+     "value": 41.67,
+     "n": 12,
+     "lo": 15.38,
+     "hi": 72.73
+    },
+    "caught_smoker100": {
+     "value": 16.67,
+     "n": 12,
+     "lo": 0.0,
+     "hi": 38.46
+    },
+    "tr_died100": {
+     "top6": null,
+     "n_top6": 3,
+     "rest": 66.67,
+     "n_rest": 9,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "tr_caught100": {
+     "top6": null,
+     "n_top6": 3,
+     "rest": 33.33,
+     "n_rest": 9,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    }
+   }
+  ],
+  "what_pays": [
+   {
+    "group": "radar cruiser inside",
+    "n": 32,
+    "n_top6": 15,
+    "n_rest": 17,
+    "note": "",
+    "clans": "Top 6: BONKZ 9, KITE 3, H-SR 2, HTDOG 1 | Rest: HFANS 5, BONKY 2, EPOXY 2, SCCC2 2, KITED 1, INCA 1, KSC 1, PFANS 1, REEEE 1, -BN- 1",
+    "rates": {
+     "n": 32,
+     "n_died_base": 32,
+     "died": 9,
+     "died_per100": 28.125,
+     "died_smoker_per100": 12.5,
+     "died_cr_per100_cov": 14.285714285714286,
+     "caught": 6,
+     "caught_per100": 18.75,
+     "caught_smoker_per100": 3.125,
+     "caught_cr_per100_cov": 14.285714285714286
+    },
+    "conc": {
+     "value": 18316.07,
+     "n": 32,
+     "lo": 12796.18,
+     "hi": 24231.18
+    },
+    "win": {
+     "value": 59.38,
+     "n": 32,
+     "lo": 46.67,
+     "hi": 73.91
+    },
+    "ans_conc": {
+     "value": 9814.16,
+     "n": 32,
+     "lo": 4319.61,
+     "hi": 14451.47
+    },
+    "margin": {
+     "value": 8501.91,
+     "n": 32,
+     "lo": 3082.79,
+     "hi": 15949.46
+    },
+    "died100": {
+     "value": 28.12,
+     "n": 32,
+     "lo": 15.62,
+     "hi": 45.83
+    },
+    "caught100": {
+     "value": 18.75,
+     "n": 32,
+     "lo": 7.14,
+     "hi": 36.84
+    },
+    "died_smoker100": {
+     "value": 12.5,
+     "n": 32,
+     "lo": 3.45,
+     "hi": 25.0
+    },
+    "caught_smoker100": {
+     "value": 3.12,
+     "n": 32,
+     "lo": 0.0,
+     "hi": 11.11
+    },
+    "tr_died100": {
+     "top6": 26.67,
+     "n_top6": 15,
+     "rest": 29.41,
+     "n_rest": 17,
+     "diff": -2.75,
+     "lo": -31.25,
+     "hi": 45.83,
+     "clear": false
+    },
+    "tr_caught100": {
+     "top6": 20.0,
+     "n_top6": 15,
+     "rest": 17.65,
+     "n_rest": 17,
+     "diff": 2.35,
+     "lo": -23.25,
+     "hi": 56.67,
+     "clear": false
+    }
+   },
+   {
+    "group": "Gearing",
+    "n": 20,
+    "n_top6": 11,
+    "n_rest": 9,
+    "note": "",
+    "clans": "Top 6: BONKZ 8, KITE 3 | Rest: KSC 3, OGF 2, -BN- 2, BTLST 1, 5D 1",
+    "rates": {
+     "n": 20,
+     "n_died_base": 20,
+     "died": 9,
+     "died_per100": 45.0,
+     "died_smoker_per100": 20.0,
+     "died_cr_per100_cov": 27.77777777777778,
+     "caught": 7,
+     "caught_per100": 35.0,
+     "caught_smoker_per100": 10.0,
+     "caught_cr_per100_cov": 27.77777777777778
+    },
+    "conc": {
+     "value": 21202.46,
+     "n": 20,
+     "lo": 14133.36,
+     "hi": 27738.1
+    },
+    "win": {
+     "value": 60.0,
+     "n": 20,
+     "lo": 41.67,
+     "hi": 73.33
+    },
+    "ans_conc": {
+     "value": 8329.34,
+     "n": 20,
+     "lo": 4108.99,
+     "hi": 10675.86
+    },
+    "margin": {
+     "value": 12873.12,
+     "n": 20,
+     "lo": 7286.11,
+     "hi": 18693.74
+    },
+    "died100": {
+     "value": 45.0,
+     "n": 20,
+     "lo": 21.43,
+     "hi": 84.62
+    },
+    "caught100": {
+     "value": 35.0,
+     "n": 20,
+     "lo": 14.81,
+     "hi": 72.73
+    },
+    "died_smoker100": {
+     "value": 20.0,
+     "n": 20,
+     "lo": 7.69,
+     "hi": 41.67
+    },
+    "caught_smoker100": {
+     "value": 10.0,
+     "n": 20,
+     "lo": 0.0,
+     "hi": 35.71
+    },
+    "tr_died100": {
+     "top6": 18.18,
+     "n_top6": 11,
+     "rest": 77.78,
+     "n_rest": 9,
+     "diff": -59.6,
+     "lo": -90.91,
+     "hi": -24.68,
+     "clear": true
+    },
+    "tr_caught100": {
+     "top6": 9.09,
+     "n_top6": 11,
+     "rest": 66.67,
+     "n_rest": 9,
+     "diff": -57.58,
+     "lo": -80.91,
+     "hi": -30.36,
+     "clear": true
+    }
+   },
+   {
+    "group": "flank-smoke-line ships",
+    "n": 52,
+    "n_top6": 19,
+    "n_rest": 33,
+    "note": "",
+    "clans": "Top 6: BONKZ 10, KITE 3, H-SR 3, HTDOG 2, RESIN 1 | Rest: REEEE 5, HFANS 5, KSC 3, EPOXY 3, BONKY 2, OGF 2, PN 2, -BN- 2, NGA 2, SCCC2 2, MACHX 1, BTLST 1, PFANS 1, 5D 1, MZY 1",
+    "rates": {
+     "n": 52,
+     "n_died_base": 52,
+     "died": 17,
+     "died_per100": 32.69230769230769,
+     "died_smoker_per100": 15.384615384615385,
+     "died_cr_per100_cov": 20.0,
+     "caught": 12,
+     "caught_per100": 23.076923076923077,
+     "caught_smoker_per100": 5.769230769230769,
+     "caught_cr_per100_cov": 20.0
+    },
+    "conc": {
+     "value": 13696.2,
+     "n": 52,
+     "lo": 8684.44,
+     "hi": 18162.02
+    },
+    "win": {
+     "value": 46.15,
+     "n": 52,
+     "lo": 33.33,
+     "hi": 58.62
+    },
+    "ans_conc": {
+     "value": 9285.16,
+     "n": 52,
+     "lo": 5441.63,
+     "hi": 13161.43
+    },
+    "margin": {
+     "value": 4411.04,
+     "n": 52,
+     "lo": -106.67,
+     "hi": 9258.5
+    },
+    "died100": {
+     "value": 32.69,
+     "n": 52,
+     "lo": 20.0,
+     "hi": 52.17
+    },
+    "caught100": {
+     "value": 23.08,
+     "n": 52,
+     "lo": 12.0,
+     "hi": 39.13
+    },
+    "died_smoker100": {
+     "value": 15.38,
+     "n": 52,
+     "lo": 6.82,
+     "hi": 26.19
+    },
+    "caught_smoker100": {
+     "value": 5.77,
+     "n": 52,
+     "lo": 0.0,
+     "hi": 13.16
+    },
+    "tr_died100": {
+     "top6": 26.32,
+     "n_top6": 19,
+     "rest": 36.36,
+     "n_rest": 33,
+     "diff": -10.05,
+     "lo": -39.5,
+     "hi": 26.57,
+     "clear": false
+    },
+    "tr_caught100": {
+     "top6": 15.79,
+     "n_top6": 19,
+     "rest": 27.27,
+     "n_rest": 33,
+     "diff": -11.48,
+     "lo": -35.71,
+     "hi": 21.25,
+     "clear": false
+    }
+   },
+   {
+    "group": "laid 11-25 s after the enemy smoke",
+    "n": 43,
+    "n_top6": 15,
+    "n_rest": 28,
+    "note": "",
+    "clans": "Top 6: KITE 6, HTDOG 3, BONKZ 3, RESIN 1, VRTUS 1, H-SR 1 | Rest: SCCC2 4, HFANS 4, MACHX 3, REEEE 3, -BN- 2, KSC 2, EPOXY 2, KM 1, KITED 1, OGF 1, MANBA 1, MACH 1, BONKY 1, UYSC 1, 5D 1",
+    "rates": {
+     "n": 43,
+     "n_died_base": 43,
+     "died": 11,
+     "died_per100": 25.58139534883721,
+     "died_smoker_per100": 13.953488372093023,
+     "died_cr_per100_cov": 22.727272727272727,
+     "caught": 9,
+     "caught_per100": 20.930232558139537,
+     "caught_smoker_per100": 9.30232558139535,
+     "caught_cr_per100_cov": 22.727272727272727
+    },
+    "conc": {
+     "value": 10921.88,
+     "n": 43,
+     "lo": 6474.87,
+     "hi": 15825.6
+    },
+    "win": {
+     "value": 41.86,
+     "n": 43,
+     "lo": 26.32,
+     "hi": 54.17
+    },
+    "ans_conc": {
+     "value": 11256.7,
+     "n": 43,
+     "lo": 6660.07,
+     "hi": 17644.14
+    },
+    "margin": {
+     "value": -334.82,
+     "n": 43,
+     "lo": -7449.45,
+     "hi": 5091.43
+    },
+    "died100": {
+     "value": 25.58,
+     "n": 43,
+     "lo": 13.56,
+     "hi": 42.42
+    },
+    "caught100": {
+     "value": 20.93,
+     "n": 43,
+     "lo": 9.3,
+     "hi": 36.17
+    },
+    "died_smoker100": {
+     "value": 13.95,
+     "n": 43,
+     "lo": 4.76,
+     "hi": 26.67
+    },
+    "caught_smoker100": {
+     "value": 9.3,
+     "n": 43,
+     "lo": 2.08,
+     "hi": 20.0
+    },
+    "tr_died100": {
+     "top6": 13.33,
+     "n_top6": 15,
+     "rest": 32.14,
+     "n_rest": 28,
+     "diff": -18.81,
+     "lo": -47.62,
+     "hi": 29.23,
+     "clear": false
+    },
+    "tr_caught100": {
+     "top6": 13.33,
+     "n_top6": 15,
+     "rest": 25.0,
+     "n_rest": 28,
+     "diff": -11.67,
+     "lo": -36.36,
+     "hi": 36.3,
+     "clear": false
+    }
+   },
+   {
+    "group": "6-9 km from the answered smoke",
+    "n": 51,
+    "n_top6": 17,
+    "n_rest": 34,
+    "note": "",
+    "clans": "Top 6: BONKZ 7, HTDOG 5, RESIN 2, VRTUS 1, KITE 1, H-SR 1 | Rest: MACHX 5, HFANS 5, SCCC2 4, EPOXY 3, 5D 2, OGF 2, KSC 2, REEEE 2, MACH 1, PN 1, INCA 1, NGA 1, MZY 1, RSR 1, UYSC 1, KITED 1, PFANS 1",
+    "rates": {
+     "n": 51,
+     "n_died_base": 51,
+     "died": 15,
+     "died_per100": 29.41176470588235,
+     "died_smoker_per100": 19.607843137254903,
+     "died_cr_per100_cov": 29.41176470588235,
+     "caught": 10,
+     "caught_per100": 19.607843137254903,
+     "caught_smoker_per100": 9.803921568627452,
+     "caught_cr_per100_cov": 29.41176470588235
+    },
+    "conc": {
+     "value": 9740.03,
+     "n": 51,
+     "lo": 4695.82,
+     "hi": 15478.94
+    },
+    "win": {
+     "value": 39.22,
+     "n": 51,
+     "lo": 27.08,
+     "hi": 49.06
+    },
+    "ans_conc": {
+     "value": 9357.24,
+     "n": 51,
+     "lo": 5068.04,
+     "hi": 13827.9
+    },
+    "margin": {
+     "value": 382.78,
+     "n": 51,
+     "lo": -3867.54,
+     "hi": 4769.87
+    },
+    "died100": {
+     "value": 29.41,
+     "n": 51,
+     "lo": 14.81,
+     "hi": 47.73
+    },
+    "caught100": {
+     "value": 19.61,
+     "n": 51,
+     "lo": 8.77,
+     "hi": 35.14
+    },
+    "died_smoker100": {
+     "value": 19.61,
+     "n": 51,
+     "lo": 9.76,
+     "hi": 31.43
+    },
+    "caught_smoker100": {
+     "value": 9.8,
+     "n": 51,
+     "lo": 2.7,
+     "hi": 20.0
+    },
+    "tr_died100": {
+     "top6": 41.18,
+     "n_top6": 17,
+     "rest": 23.53,
+     "n_rest": 34,
+     "diff": 17.65,
+     "lo": -14.29,
+     "hi": 60.0,
+     "clear": false
+    },
+    "tr_caught100": {
+     "top6": 23.53,
+     "n_top6": 17,
+     "rest": 17.65,
+     "n_rest": 34,
+     "diff": 5.88,
+     "lo": -20.83,
+     "hi": 51.14,
+     "clear": false
+    }
+   },
+   {
+    "group": "answered smoke within 30 degrees of straight ahead",
+    "n": 65,
+    "n_top6": 22,
+    "n_rest": 43,
+    "note": "",
+    "clans": "Top 6: BONKZ 8, HTDOG 4, RESIN 4, VRTUS 2, KITE 2, H-SR 2 | Rest: EPOXY 6, REEEE 4, -BN- 4, KSC 4, HFANS 4, SCCC2 4, KITED 3, MACHX 3, BONKY 2, NGA 2, 5D 1, KM 1, RSR 1, OGF 1, BTLST 1, UYSC 1, PFANS 1",
+    "rates": {
+     "n": 65,
+     "n_died_base": 65,
+     "died": 16,
+     "died_per100": 24.615384615384617,
+     "died_smoker_per100": 12.307692307692308,
+     "died_cr_per100_cov": 20.512820512820515,
+     "caught": 11,
+     "caught_per100": 16.923076923076923,
+     "caught_smoker_per100": 4.615384615384615,
+     "caught_cr_per100_cov": 20.512820512820515
+    },
+    "conc": {
+     "value": 9023.32,
+     "n": 65,
+     "lo": 5725.1,
+     "hi": 12308.08
+    },
+    "win": {
+     "value": 43.08,
+     "n": 65,
+     "lo": 30.77,
+     "hi": 55.56
+    },
+    "ans_conc": {
+     "value": 7431.53,
+     "n": 65,
+     "lo": 4414.13,
+     "hi": 10919.26
+    },
+    "margin": {
+     "value": 1591.79,
+     "n": 65,
+     "lo": -2145.25,
+     "hi": 5333.76
+    },
+    "died100": {
+     "value": 24.62,
+     "n": 65,
+     "lo": 13.21,
+     "hi": 39.22
+    },
+    "caught100": {
+     "value": 16.92,
+     "n": 65,
+     "lo": 7.27,
+     "hi": 29.82
+    },
+    "died_smoker100": {
+     "value": 12.31,
+     "n": 65,
+     "lo": 5.95,
+     "hi": 20.0
+    },
+    "caught_smoker100": {
+     "value": 4.62,
+     "n": 65,
+     "lo": 0.0,
+     "hi": 10.71
+    },
+    "tr_died100": {
+     "top6": 22.73,
+     "n_top6": 22,
+     "rest": 25.58,
+     "n_rest": 43,
+     "diff": -2.85,
+     "lo": -28.21,
+     "hi": 24.31,
+     "clear": false
+    },
+    "tr_caught100": {
+     "top6": 18.18,
+     "n_top6": 22,
+     "rest": 16.28,
+     "n_rest": 43,
+     "diff": 1.9,
+     "lo": -18.89,
+     "hi": 31.75,
+     "clear": false
+    }
+   },
+   {
+    "group": "all counter-smokes",
+    "n": 133,
+    "n_top6": 44,
+    "n_rest": 89,
+    "note": "",
+    "clans": "Top 6: BONKZ 13, HTDOG 9, KITE 8, VRTUS 5, RESIN 5, H-SR 4 | Rest: HFANS 13, EPOXY 10, MACHX 8, SCCC2 7, REEEE 6, -BN- 5, MZY 5, KSC 5, KITED 4, 5D 3, MACH 3, NGA 3, BONKY 2, OGF 2, PN 2, INCA 2, RSR 2, PFANS 2, KM 1, MANBA 1, BTLST 1, UYSC 1, KSE 1",
+    "rates": {
+     "n": 133,
+     "n_died_base": 133,
+     "died": 33,
+     "died_per100": 24.81203007518797,
+     "died_smoker_per100": 17.293233082706767,
+     "died_cr_per100_cov": 18.51851851851852,
+     "caught": 20,
+     "caught_per100": 15.037593984962406,
+     "caught_smoker_per100": 7.518796992481203,
+     "caught_cr_per100_cov": 18.51851851851852
+    },
+    "conc": {
+     "value": 8002.8,
+     "n": 133,
+     "lo": 5498.97,
+     "hi": 10381.07
+    },
+    "win": {
+     "value": 37.59,
+     "n": 133,
+     "lo": 31.48,
+     "hi": 43.71
+    },
+    "ans_conc": {
+     "value": 8832.4,
+     "n": 133,
+     "lo": 6356.01,
+     "hi": 11303.74
+    },
+    "margin": {
+     "value": -829.6,
+     "n": 133,
+     "lo": -3565.27,
+     "hi": 1548.22
+    },
+    "died100": {
+     "value": 24.81,
+     "n": 133,
+     "lo": 17.42,
+     "hi": 34.75
+    },
+    "caught100": {
+     "value": 15.04,
+     "n": 133,
+     "lo": 9.87,
+     "hi": 22.09
+    },
+    "died_smoker100": {
+     "value": 17.29,
+     "n": 133,
+     "lo": 11.18,
+     "hi": 24.53
+    },
+    "caught_smoker100": {
+     "value": 7.52,
+     "n": 133,
+     "lo": 3.81,
+     "hi": 11.88
+    },
+    "tr_died100": {
+     "top6": 18.18,
+     "n_top6": 44,
+     "rest": 28.09,
+     "n_rest": 89,
+     "diff": -9.91,
+     "lo": -24.53,
+     "hi": 5.26,
+     "clear": false
+    },
+    "tr_caught100": {
+     "top6": 11.36,
+     "n_top6": 44,
+     "rest": 16.85,
+     "n_rest": 89,
+     "diff": -5.49,
+     "lo": -16.92,
+     "hi": 8.46,
+     "clear": false
+    }
+   },
+   {
+    "group": "all, Top 6",
+    "n": 44,
+    "n_top6": 44,
+    "n_rest": 0,
+    "note": "",
+    "clans": "Top 6: BONKZ 13, HTDOG 9, KITE 8, VRTUS 5, RESIN 5, H-SR 4 | Rest: none",
+    "rates": {
+     "n": 44,
+     "n_died_base": 44,
+     "died": 8,
+     "died_per100": 18.181818181818183,
+     "died_smoker_per100": 11.363636363636363,
+     "died_cr_per100_cov": 13.043478260869565,
+     "caught": 5,
+     "caught_per100": 11.363636363636363,
+     "caught_smoker_per100": 4.545454545454546,
+     "caught_cr_per100_cov": 13.043478260869565
+    },
+    "conc": {
+     "value": 11140.14,
+     "n": 44,
+     "lo": 7212.43,
+     "hi": 14552.35
+    },
+    "win": {
+     "value": 43.18,
+     "n": 44,
+     "lo": 36.84,
+     "hi": 48.89
+    },
+    "ans_conc": {
+     "value": 12184.14,
+     "n": 44,
+     "lo": 7511.11,
+     "hi": 17390.59
+    },
+    "margin": {
+     "value": -1043.99,
+     "n": 44,
+     "lo": -6108.25,
+     "hi": 1939.61
+    },
+    "died100": {
+     "value": 18.18,
+     "n": 44,
+     "lo": 8.33,
+     "hi": 29.03
+    },
+    "caught100": {
+     "value": 11.36,
+     "n": 44,
+     "lo": 4.17,
+     "hi": 25.0
+    },
+    "died_smoker100": {
+     "value": 11.36,
+     "n": 44,
+     "lo": 4.76,
+     "hi": 17.31
+    },
+    "caught_smoker100": {
+     "value": 4.55,
+     "n": 44,
+     "lo": 0.0,
+     "hi": 11.76
+    },
+    "tr_died100": {
+     "top6": 18.18,
+     "n_top6": 44,
+     "rest": null,
+     "n_rest": 0,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "tr_caught100": {
+     "top6": 11.36,
+     "n_top6": 44,
+     "rest": null,
+     "n_rest": 0,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    }
+   },
+   {
+    "group": "all, Rest",
+    "n": 89,
+    "n_top6": 0,
+    "n_rest": 89,
+    "note": "",
+    "clans": "Top 6: none | Rest: HFANS 13, EPOXY 10, MACHX 8, SCCC2 7, REEEE 6, -BN- 5, MZY 5, KSC 5, KITED 4, 5D 3, MACH 3, NGA 3, BONKY 2, OGF 2, PN 2, INCA 2, RSR 2, PFANS 2, KM 1, MANBA 1, BTLST 1, UYSC 1, KSE 1",
+    "rates": {
+     "n": 89,
+     "n_died_base": 89,
+     "died": 25,
+     "died_per100": 28.089887640449437,
+     "died_smoker_per100": 20.224719101123597,
+     "died_cr_per100_cov": 22.580645161290324,
+     "caught": 15,
+     "caught_per100": 16.853932584269664,
+     "caught_smoker_per100": 8.98876404494382,
+     "caught_cr_per100_cov": 22.580645161290324
+    },
+    "conc": {
+     "value": 6451.76,
+     "n": 89,
+     "lo": 3959.0,
+     "hi": 9193.65
+    },
+    "win": {
+     "value": 34.83,
+     "n": 89,
+     "lo": 26.25,
+     "hi": 43.43
+    },
+    "ans_conc": {
+     "value": 7175.37,
+     "n": 89,
+     "lo": 5096.26,
+     "hi": 10082.01
+    },
+    "margin": {
+     "value": -723.61,
+     "n": 89,
+     "lo": -4322.49,
+     "hi": 2567.5
+    },
+    "died100": {
+     "value": 28.09,
+     "n": 89,
+     "lo": 19.51,
+     "hi": 41.25
+    },
+    "caught100": {
+     "value": 16.85,
+     "n": 89,
+     "lo": 10.61,
+     "hi": 26.03
+    },
+    "died_smoker100": {
+     "value": 20.22,
+     "n": 89,
+     "lo": 11.88,
+     "hi": 30.99
+    },
+    "caught_smoker100": {
+     "value": 8.99,
+     "n": 89,
+     "lo": 4.0,
+     "hi": 14.61
+    },
+    "tr_died100": {
+     "top6": null,
+     "n_top6": 0,
+     "rest": 28.09,
+     "n_rest": 89,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "tr_caught100": {
+     "top6": null,
+     "n_top6": 0,
+     "rest": 16.85,
+     "n_rest": 89,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    }
+   }
+  ],
+  "flanking_minus_head_on": [
+   {
+    "scope": "All",
+    "n_a": 12,
+    "n_b": 100,
+    "note": "small n",
+    "conc": {
+     "a": 2868.11,
+     "n_a": 12,
+     "b": 8947.16,
+     "n_b": 100,
+     "diff": -6079.04,
+     "lo": -10221.68,
+     "hi": -561.95,
+     "clear": true
+    },
+    "margin": {
+     "a": -2928.22,
+     "n_a": 12,
+     "b": 451.85,
+     "n_b": 100,
+     "diff": -3380.07,
+     "lo": -8917.17,
+     "hi": 2950.06,
+     "clear": false
+    },
+    "died100": {
+     "a": 50.0,
+     "n_a": 12,
+     "b": 24.0,
+     "n_b": 100,
+     "diff": 26.0,
+     "lo": -5.0,
+     "hi": 63.29,
+     "clear": false
+    },
+    "caught100": {
+     "a": 25.0,
+     "n_a": 12,
+     "b": 15.0,
+     "n_b": 100,
+     "diff": 10.0,
+     "lo": -15.38,
+     "hi": 41.12,
+     "clear": false
+    },
+    "died_smoker100": {
+     "a": 41.67,
+     "n_a": 12,
+     "b": 16.0,
+     "n_b": 100,
+     "diff": 25.67,
+     "lo": -3.89,
+     "hi": 59.52,
+     "clear": false
+    },
+    "caught_smoker100": {
+     "a": 16.67,
+     "n_a": 12,
+     "b": 7.0,
+     "n_b": 100,
+     "diff": 9.67,
+     "lo": -9.46,
+     "hi": 30.58,
+     "clear": false
+    }
+   },
+   {
+    "scope": "Top 6",
+    "n_a": 3,
+    "n_b": 35,
+    "note": "too few",
+    "conc": {
+     "a": null,
+     "n_a": 3,
+     "b": 12696.9,
+     "n_b": 35,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "margin": {
+     "a": null,
+     "n_a": 3,
+     "b": 1505.42,
+     "n_b": 35,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "died100": {
+     "a": null,
+     "n_a": 3,
+     "b": 22.86,
+     "n_b": 35,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "caught100": {
+     "a": null,
+     "n_a": 3,
+     "b": 14.29,
+     "n_b": 35,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "died_smoker100": {
+     "a": null,
+     "n_a": 3,
+     "b": 14.29,
+     "n_b": 35,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    },
+    "caught_smoker100": {
+     "a": null,
+     "n_a": 3,
+     "b": 5.71,
+     "n_b": 35,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    }
+   },
+   {
+    "scope": "Rest",
+    "n_a": 9,
+    "n_b": 65,
+    "note": "small n",
+    "conc": {
+     "a": 2901.59,
+     "n_a": 9,
+     "b": 6928.06,
+     "n_b": 65,
+     "diff": -4026.48,
+     "lo": -9251.45,
+     "hi": 2381.16,
+     "clear": false
+    },
+    "margin": {
+     "a": -1752.63,
+     "n_a": 9,
+     "b": -115.46,
+     "n_b": 65,
+     "diff": -1637.17,
+     "lo": -7588.59,
+     "hi": 5803.49,
+     "clear": false
+    },
+    "died100": {
+     "a": 66.67,
+     "n_a": 9,
+     "b": 24.62,
+     "n_b": 65,
+     "diff": 42.05,
+     "lo": 6.67,
+     "hi": 78.79,
+     "clear": true
+    },
+    "caught100": {
+     "a": 33.33,
+     "n_a": 9,
+     "b": 15.38,
+     "n_b": 65,
+     "diff": 17.95,
+     "lo": -17.33,
+     "hi": 52.96,
+     "clear": false
+    },
+    "died_smoker100": {
+     "a": 55.56,
+     "n_a": 9,
+     "b": 16.92,
+     "n_b": 65,
+     "diff": 38.63,
+     "lo": 6.84,
+     "hi": 76.47,
+     "clear": true
+    },
+    "caught_smoker100": {
+     "a": 22.22,
+     "n_a": 9,
+     "b": 7.69,
+     "n_b": 65,
+     "diff": 14.53,
+     "lo": -11.11,
+     "hi": 42.98,
+     "clear": false
+    }
+   }
+  ],
+  "what_pays_vs_other": [
+   {
+    "group": "radar cruiser inside",
+    "conc": {
+     "a": 18316.07,
+     "n_a": 32,
+     "b": 4735.23,
+     "n_b": 101,
+     "diff": 13580.84,
+     "lo": 7799.11,
+     "hi": 19231.24,
+     "clear": true
+    },
+    "died100": {
+     "a": 28.12,
+     "n_a": 32,
+     "b": 23.76,
+     "n_b": 101,
+     "diff": 4.36,
+     "lo": -13.06,
+     "hi": 23.9,
+     "clear": false
+    },
+    "caught100": {
+     "a": 18.75,
+     "n_a": 32,
+     "b": 13.86,
+     "n_b": 101,
+     "diff": 4.89,
+     "lo": -11.12,
+     "hi": 23.78,
+     "clear": false
+    },
+    "died_smoker100": {
+     "a": 12.5,
+     "n_a": 32,
+     "b": 18.81,
+     "n_b": 101,
+     "diff": -6.31,
+     "lo": -18.27,
+     "hi": 6.97,
+     "clear": false
+    },
+    "caught_smoker100": {
+     "a": 3.12,
+     "n_a": 32,
+     "b": 8.91,
+     "n_b": 101,
+     "diff": -5.79,
+     "lo": -13.04,
+     "hi": 3.45,
+     "clear": false
+    }
+   },
+   {
+    "group": "Gearing",
+    "conc": {
+     "a": 21202.46,
+     "n_a": 20,
+     "b": 5666.58,
+     "n_b": 113,
+     "diff": 15535.88,
+     "lo": 4981.82,
+     "hi": 22170.15,
+     "clear": true
+    },
+    "died100": {
+     "a": 45.0,
+     "n_a": 20,
+     "b": 21.24,
+     "n_b": 113,
+     "diff": 23.76,
+     "lo": -3.01,
+     "hi": 69.86,
+     "clear": false
+    },
+    "caught100": {
+     "a": 35.0,
+     "n_a": 20,
+     "b": 11.5,
+     "n_b": 113,
+     "diff": 23.5,
+     "lo": 0.98,
+     "hi": 63.6,
+     "clear": true
+    },
+    "died_smoker100": {
+     "a": 20.0,
+     "n_a": 20,
+     "b": 16.81,
+     "n_b": 113,
+     "diff": 3.19,
+     "lo": -12.87,
+     "hi": 32.72,
+     "clear": false
+    },
+    "caught_smoker100": {
+     "a": 10.0,
+     "n_a": 20,
+     "b": 7.08,
+     "n_b": 113,
+     "diff": 2.92,
+     "lo": -8.7,
+     "hi": 28.89,
+     "clear": false
+    }
+   },
+   {
+    "group": "flank-smoke-line ships",
+    "conc": {
+     "a": 13696.2,
+     "n_a": 52,
+     "b": 4347.78,
+     "n_b": 81,
+     "diff": 9348.43,
+     "lo": 3944.33,
+     "hi": 13751.1,
+     "clear": true
+    },
+    "died100": {
+     "a": 32.69,
+     "n_a": 52,
+     "b": 19.75,
+     "n_b": 81,
+     "diff": 12.94,
+     "lo": -3.83,
+     "hi": 32.56,
+     "clear": false
+    },
+    "caught100": {
+     "a": 23.08,
+     "n_a": 52,
+     "b": 9.88,
+     "n_b": 81,
+     "diff": 13.2,
+     "lo": 0.22,
+     "hi": 27.94,
+     "clear": true
+    },
+    "died_smoker100": {
+     "a": 15.38,
+     "n_a": 52,
+     "b": 18.52,
+     "n_b": 81,
+     "diff": -3.13,
+     "lo": -16.02,
+     "hi": 10.97,
+     "clear": false
+    },
+    "caught_smoker100": {
+     "a": 5.77,
+     "n_a": 52,
+     "b": 8.64,
+     "n_b": 81,
+     "diff": -2.87,
+     "lo": -10.11,
+     "hi": 5.84,
+     "clear": false
+    }
+   },
+   {
+    "group": "laid 11-25 s after the enemy smoke",
+    "conc": {
+     "a": 10921.88,
+     "n_a": 43,
+     "b": 6608.13,
+     "n_b": 90,
+     "diff": 4313.75,
+     "lo": -501.95,
+     "hi": 8532.83,
+     "clear": false
+    },
+    "died100": {
+     "a": 25.58,
+     "n_a": 43,
+     "b": 24.44,
+     "n_b": 90,
+     "diff": 1.14,
+     "lo": -13.15,
+     "hi": 21.31,
+     "clear": false
+    },
+    "caught100": {
+     "a": 20.93,
+     "n_a": 43,
+     "b": 12.22,
+     "n_b": 90,
+     "diff": 8.71,
+     "lo": -2.94,
+     "hi": 26.44,
+     "clear": false
+    },
+    "died_smoker100": {
+     "a": 13.95,
+     "n_a": 43,
+     "b": 18.89,
+     "n_b": 90,
+     "diff": -4.94,
+     "lo": -18.53,
+     "hi": 11.07,
+     "clear": false
+    },
+    "caught_smoker100": {
+     "a": 9.3,
+     "n_a": 43,
+     "b": 6.67,
+     "n_b": 90,
+     "diff": 2.64,
+     "lo": -6.94,
+     "hi": 15.54,
+     "clear": false
+    }
+   },
+   {
+    "group": "6-9 km from the answered smoke",
+    "conc": {
+     "a": 9740.03,
+     "n_a": 51,
+     "b": 6922.33,
+     "n_b": 82,
+     "diff": 2817.69,
+     "lo": -2392.14,
+     "hi": 8362.25,
+     "clear": false
+    },
+    "died100": {
+     "a": 29.41,
+     "n_a": 51,
+     "b": 21.95,
+     "n_b": 82,
+     "diff": 7.46,
+     "lo": -12.39,
+     "hi": 26.38,
+     "clear": false
+    },
+    "caught100": {
+     "a": 19.61,
+     "n_a": 51,
+     "b": 12.2,
+     "n_b": 82,
+     "diff": 7.41,
+     "lo": -6.72,
+     "hi": 23.36,
+     "clear": false
+    },
+    "died_smoker100": {
+     "a": 19.61,
+     "n_a": 51,
+     "b": 15.85,
+     "n_b": 82,
+     "diff": 3.75,
+     "lo": -11.68,
+     "hi": 18.36,
+     "clear": false
+    },
+    "caught_smoker100": {
+     "a": 9.8,
+     "n_a": 51,
+     "b": 6.1,
+     "n_b": 82,
+     "diff": 3.71,
+     "lo": -5.07,
+     "hi": 15.18,
+     "clear": false
+    }
+   },
+   {
+    "group": "answered smoke within 30 degrees of straight ahead",
+    "conc": {
+     "a": 9023.32,
+     "n_a": 65,
+     "b": 7027.3,
+     "n_b": 68,
+     "diff": 1996.02,
+     "lo": -1977.97,
+     "hi": 6484.77,
+     "clear": false
+    },
+    "died100": {
+     "a": 24.62,
+     "n_a": 65,
+     "b": 25.0,
+     "n_b": 68,
+     "diff": -0.38,
+     "lo": -16.74,
+     "hi": 16.05,
+     "clear": false
+    },
+    "caught100": {
+     "a": 16.92,
+     "n_a": 65,
+     "b": 13.24,
+     "n_b": 68,
+     "diff": 3.69,
+     "lo": -9.7,
+     "hi": 17.73,
+     "clear": false
+    },
+    "died_smoker100": {
+     "a": 12.31,
+     "n_a": 65,
+     "b": 22.06,
+     "n_b": 68,
+     "diff": -9.75,
+     "lo": -22.71,
+     "hi": 1.92,
+     "clear": false
+    },
+    "caught_smoker100": {
+     "a": 4.62,
+     "n_a": 65,
+     "b": 10.29,
+     "n_b": 68,
+     "diff": -5.68,
+     "lo": -14.93,
+     "hi": 3.58,
+     "clear": false
+    }
+   }
+  ],
+  "changed": [
+   [
+    "head-on (under 30): deaths per 100, now died",
+    "15.0",
+    "24.0",
+    "new death metric"
+   ],
+   [
+    "head-on (under 30): smoker died per 100, now smoker died",
+    "7.0",
+    "16.0",
+    "new death metric"
+   ],
+   [
+    "oblique (30-60): deaths per 100, now died",
+    "10.0",
+    "15.0",
+    "new death metric"
+   ],
+   [
+    "oblique (30-60): smoker died per 100, now smoker died",
+    "5.0",
+    "10.0",
+    "new death metric"
+   ],
+   [
+    "flanking (over 60): deaths per 100, now died",
+    "25.0",
+    "50.0",
+    "new death metric"
+   ],
+   [
+    "flanking (over 60): smoker died per 100, now smoker died",
+    "16.7",
+    "41.7",
+    "new death metric"
+   ],
+   [
+    "radar cruiser inside: deaths per 100, now died",
+    "18.8",
+    "28.1",
+    "new death metric"
+   ],
+   [
+    "radar cruiser inside: smoker died per 100, now smoker died",
+    "3.1",
+    "12.5",
+    "new death metric"
+   ],
+   [
+    "Gearing: deaths per 100, now died",
+    "35.0",
+    "45.0",
+    "new death metric"
+   ],
+   [
+    "Gearing: smoker died per 100, now smoker died",
+    "10.0",
+    "20.0",
+    "new death metric"
+   ],
+   [
+    "flank-smoke-line ships: deaths per 100, now died",
+    "23.1",
+    "32.7",
+    "new death metric"
+   ],
+   [
+    "flank-smoke-line ships: smoker died per 100, now smoker died",
+    "5.8",
+    "15.4",
+    "new death metric"
+   ],
+   [
+    "laid 11-25 s after the enemy smoke: concealed damage",
+    "12,296",
+    "10,922",
+    "delay from the replay clock (different smokes in the row)"
+   ],
+   [
+    "laid 11-25 s after the enemy smoke: deaths per 100, now caught",
+    "18.6",
+    "20.9",
+    "delay from the replay clock (different smokes in the row)"
+   ],
+   [
+    "laid 11-25 s after the enemy smoke: deaths per 100, now died",
+    "18.6",
+    "25.6",
+    "new death metric"
+   ],
+   [
+    "laid 11-25 s after the enemy smoke: smoker died per 100, now smoker caught",
+    "7.0",
+    "9.3",
+    "delay from the replay clock (different smokes in the row)"
+   ],
+   [
+    "laid 11-25 s after the enemy smoke: smoker died per 100, now smoker died",
+    "7.0",
+    "13.9",
+    "new death metric"
+   ],
+   [
+    "6-9 km from the answered smoke: deaths per 100, now died",
+    "19.6",
+    "29.4",
+    "new death metric"
+   ],
+   [
+    "6-9 km from the answered smoke: smoker died per 100, now smoker died",
+    "9.8",
+    "19.6",
+    "new death metric"
+   ],
+   [
+    "answered smoke within 30 degrees of straight ahead: deaths per 100, now died",
+    "16.9",
+    "24.6",
+    "new death metric"
+   ],
+   [
+    "answered smoke within 30 degrees of straight ahead: smoker died per 100, now smoker died",
+    "4.6",
+    "12.3",
+    "new death metric"
+   ],
+   [
+    "all counter-smokes: deaths per 100, now died",
+    "15.0",
+    "24.8",
+    "new death metric"
+   ],
+   [
+    "all counter-smokes: smoker died per 100, now smoker died",
+    "7.5",
+    "17.3",
+    "new death metric"
+   ],
+   [
+    "flanking minus head-on, deaths per 100, now caught",
+    "+10.0 (-13.1 to +35.0)",
+    "+10.0 (-15.4 to +41.1)",
+    "same list; interval now from diff_ci"
+   ],
+   [
+    "flanking minus head-on, deaths per 100, now died",
+    "+10.0 (-13.1 to +35.0)",
+    "+26.0 (-5.0 to +63.3)",
+    "new death metric"
+   ]
+  ]
+ },
+ "md": "### A4. Counter-smokes: death rates by angle and for the \"what pays\" rows\n\n**Answer:** Counter-smokes are costly on both metrics: 24.8 died and 15.0 caught per 100, against 18.2 and 11.5 for all destroyer smokes. By angle, flanking counter-smokes lost 50.0 died / 25.0 caught per 100 against 24.0 / 15.0 head-on; the flanking minus head-on gap is +26.0 (-5.0 to +63.3) on died and +10.0 (-15.4 to +41.1) on caught, so over all clans angle does not clearly separate deaths. Inside the Rest the gap on died is +42.0 (+6.7 to +78.8 *) (clear; only 9 flanking smokes) and on caught +17.9 (-17.3 to +53.0). Of the \"what pays\" rows, Gearing and flank-smoke-line counter-smokes returned the most damage and also the most deaths (Gearing 45.0 died / 35.0 caught per 100).\n\n**Numbers:** 133 destroyer counter-smokes matched to the enemy smoke they answer (44 Top 6, 89 Rest); 132 have a usable line of fire. \"Died\" rates leave out the 9 smokes of the single-replay game laid by the team with no replay (their covered ships are known from the other side only); \"caught\" rates keep them. Here that removes 0 smoke(s). Geometry and damage columns are computed as in round 5; the delay after the enemy smoke now uses the replay clock, which moves 6 smoke(s) to another delay band.\n\nTable 1. By angle off the enemy smoke's line of fire.\n|  | n (Top 6 / Rest) | concealed damage [95%] | out-damaged answered % | answered smoke damage | margin [95%] | died per 100 [95%] | caught per 100 [95%] | smoker died / caught per 100 | died: Top 6 / Rest (gap) | caught: Top 6 / Rest (gap) | note |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| head-on (under 30) | 100 (35 / 65) | 8,947 [5,933 to 12,413] | 42.0 | 8,495 | +452 [-3,039 to +3,635] | 24.0 [16.4 to 34.5] | 15.0 [9.1 to 23.5] | 16.0 / 7.0 | 22.9 / 24.6 (-18.1 to +15.7) | 14.3 / 15.4 (-15.4 to +16.9) |  |\n| oblique (30-60) | 20 (6 / 14) | 6,762 [3,330 to 10,424] | 30.0 | 12,781 | -6,019 [-14,290 to +1,287] | 15.0 [0.0 to 30.0] | 10.0 [0.0 to 23.8] | 10.0 / 5.0 | too few / 21.4 (-) | too few / 14.3 (-) |  |\n| flanking (over 60) | 12 (3 / 9) | 2,868 [747 to 6,438] | 16.7 | 5,796 | -2,928 [-7,279 to +1,887] | 50.0 [23.5 to 88.9] | 25.0 [0.0 to 50.0] | 41.7 / 16.7 | too few / 66.7 (-) | too few / 33.3 (-) | small n |\n\nTable 2. Flanking minus head-on (difference, 95% interval; * = clear).\n| group | n flanking / head-on | concealed damage | margin | died per 100 | caught per 100 | smoker died per 100 | smoker caught per 100 | note |\n|---|---|---|---|---|---|---|---|---|\n| All | 12 / 100 | -6,079 (-10,222 to -562 *) | -3,380 (-8,917 to +2,950) | +26.0 (-5.0 to +63.3) | +10.0 (-15.4 to +41.1) | +25.7 (-3.9 to +59.5) | +9.7 (-9.5 to +30.6) | small n |\n| Top 6 | 3 / 35 | too few | too few | too few | too few | too few | too few | too few |\n| Rest | 9 / 65 | -4,026 (-9,251 to +2,381) | -1,637 (-7,589 to +5,803) | +42.0 (+6.7 to +78.8 *) | +17.9 (-17.3 to +53.0) | +38.6 (+6.8 to +76.5 *) | +14.5 (-11.1 to +43.0) | small n |\n\nTable 3. The \"what pays\" rows.\n|  | n (Top 6 / Rest) | concealed damage [95%] | out-damaged answered % | answered smoke damage | margin [95%] | died per 100 [95%] | caught per 100 [95%] | smoker died / caught per 100 | died: Top 6 / Rest (gap) | caught: Top 6 / Rest (gap) | note |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| radar cruiser inside | 32 (15 / 17) | 18,316 [12,796 to 24,231] | 59.4 | 9,814 | +8,502 [+3,083 to +15,949] | 28.1 [15.6 to 45.8] | 18.8 [7.1 to 36.8] | 12.5 / 3.1 | 26.7 / 29.4 (-31.2 to +45.8) | 20.0 / 17.6 (-23.2 to +56.7) |  |\n| Gearing | 20 (11 / 9) | 21,202 [14,133 to 27,738] | 60.0 | 8,329 | +12,873 [+7,286 to +18,694] | 45.0 [21.4 to 84.6] | 35.0 [14.8 to 72.7] | 20.0 / 10.0 | 18.2 / 77.8 (-90.9 to -24.7 *) | 9.1 / 66.7 (-80.9 to -30.4 *) |  |\n| flank-smoke-line ships | 52 (19 / 33) | 13,696 [8,684 to 18,162] | 46.1 | 9,285 | +4,411 [-107 to +9,258] | 32.7 [20.0 to 52.2] | 23.1 [12.0 to 39.1] | 15.4 / 5.8 | 26.3 / 36.4 (-39.5 to +26.6) | 15.8 / 27.3 (-35.7 to +21.2) |  |\n| laid 11-25 s after the enemy smoke | 43 (15 / 28) | 10,922 [6,475 to 15,826] | 41.9 | 11,257 | -335 [-7,449 to +5,091] | 25.6 [13.6 to 42.4] | 20.9 [9.3 to 36.2] | 13.9 / 9.3 | 13.3 / 32.1 (-47.6 to +29.2) | 13.3 / 25.0 (-36.4 to +36.3) |  |\n| 6-9 km from the answered smoke | 51 (17 / 34) | 9,740 [4,696 to 15,479] | 39.2 | 9,357 | +383 [-3,868 to +4,770] | 29.4 [14.8 to 47.7] | 19.6 [8.8 to 35.1] | 19.6 / 9.8 | 41.2 / 23.5 (-14.3 to +60.0) | 23.5 / 17.6 (-20.8 to +51.1) |  |\n| answered smoke within 30 degrees of straight ahead | 65 (22 / 43) | 9,023 [5,725 to 12,308] | 43.1 | 7,432 | +1,592 [-2,145 to +5,334] | 24.6 [13.2 to 39.2] | 16.9 [7.3 to 29.8] | 12.3 / 4.6 | 22.7 / 25.6 (-28.2 to +24.3) | 18.2 / 16.3 (-18.9 to +31.8) |  |\n| all counter-smokes | 133 (44 / 89) | 8,003 [5,499 to 10,381] | 37.6 | 8,832 | -830 [-3,565 to +1,548] | 24.8 [17.4 to 34.8] | 15.0 [9.9 to 22.1] | 17.3 / 7.5 | 18.2 / 28.1 (-24.5 to +5.3) | 11.4 / 16.9 (-16.9 to +8.5) |  |\n| all, Top 6 | 44 (44 / 0) | 11,140 [7,212 to 14,552] | 43.2 | 12,184 | -1,044 [-6,108 to +1,940] | 18.2 [8.3 to 29.0] | 11.4 [4.2 to 25.0] | 11.4 / 4.5 | 18.2 / too few (-) | 11.4 / too few (-) |  |\n| all, Rest | 89 (0 / 89) | 6,452 [3,959 to 9,194] | 34.8 | 7,175 | -724 [-4,322 to +2,568] | 28.1 [19.5 to 41.2] | 16.9 [10.6 to 26.0] | 20.2 / 9.0 | too few / 28.1 (-) | too few / 16.9 (-) |  |\n\nTable 4. Each \"what pays\" row minus the other counter-smokes (difference, 95% interval; * = clear).\n|  | concealed damage | died per 100 | caught per 100 | smoker died per 100 | smoker caught per 100 |\n|---|---|---|---|---|---|\n| radar cruiser inside | +13,581 (+7,799 to +19,231 *) | +4.4 (-13.1 to +23.9) | +4.9 (-11.1 to +23.8) | -6.3 (-18.3 to +7.0) | -5.8 (-13.0 to +3.5) |\n| Gearing | +15,536 (+4,982 to +22,170 *) | +23.8 (-3.0 to +69.9) | +23.5 (+1.0 to +63.6 *) | +3.2 (-12.9 to +32.7) | +2.9 (-8.7 to +28.9) |\n| flank-smoke-line ships | +9,348 (+3,944 to +13,751 *) | +12.9 (-3.8 to +32.6) | +13.2 (+0.2 to +27.9 *) | -3.1 (-16.0 to +11.0) | -2.9 (-10.1 to +5.8) |\n| laid 11-25 s after the enemy smoke | +4,314 (-502 to +8,533) | +1.1 (-13.2 to +21.3) | +8.7 (-2.9 to +26.4) | -4.9 (-18.5 to +11.1) | +2.6 (-6.9 to +15.5) |\n| 6-9 km from the answered smoke | +2,818 (-2,392 to +8,362) | +7.5 (-12.4 to +26.4) | +7.4 (-6.7 to +23.4) | +3.8 (-11.7 to +18.4) | +3.7 (-5.1 to +15.2) |\n| answered smoke within 30 degrees of straight ahead | +1,996 (-1,978 to +6,485) | -0.4 (-16.7 to +16.1) | +3.7 (-9.7 to +17.7) | -9.8 (-22.7 to +1.9) | -5.7 (-14.9 to +3.6) |\n\n**Top 6 or Shared:** All counter-smokes, Top 6 against Rest: died 18.2 vs 28.1 (-9.9 (-24.5 to +5.3)), caught 11.4 vs 16.9 (-5.5 (-16.9 to +8.5)). Flanking minus head-on inside the Top 6: died too few; inside the Rest: died +42.0 (+6.7 to +78.8 *). Gearing counter-smokes: Top 6 18.2 died / 9.1 caught per 100 against Rest 77.8 / 66.7 (gaps -90.9 to -24.7 * and -80.9 to -30.4 *; n 11 and 9, small). The deaths that go with the high-damage rows are mostly the Rest's.\n\n**Clans:** flanking counter-smokes: Top 6: KITE 2, RESIN 1 | Rest: HFANS 2, 5D 2, -BN- 1, BONKY 1, SCCC2 1, KSE 1, MACHX 1. Gearing counter-smokes: Top 6: BONKZ 8, KITE 3 | Rest: KSC 3, OGF 2, -BN- 2, BTLST 1, 5D 1.\n\n**Could not be done / proxy:** Nothing missing. The line of fire is itself a proxy (where the enemy smoke's damage landed, or where our ships were when it hit nobody), as in round 5.\n\n**Verdict:** Keep the \"what pays\" rows with both death columns; angle and deaths: Lead only.\n\n**Changed from round 5b:** round 5b did not redo this item; the \"round 5b\" column is round 5 with the clock fix (`round5b/part-a/out-a4.json`).\n\n| number | round 5b | round 5c | why |\n|---|---|---|---|\n| head-on (under 30): deaths per 100, now died | 15.0 | 24.0 | new death metric |\n| head-on (under 30): smoker died per 100, now smoker died | 7.0 | 16.0 | new death metric |\n| oblique (30-60): deaths per 100, now died | 10.0 | 15.0 | new death metric |\n| oblique (30-60): smoker died per 100, now smoker died | 5.0 | 10.0 | new death metric |\n| flanking (over 60): deaths per 100, now died | 25.0 | 50.0 | new death metric |\n| flanking (over 60): smoker died per 100, now smoker died | 16.7 | 41.7 | new death metric |\n| radar cruiser inside: deaths per 100, now died | 18.8 | 28.1 | new death metric |\n| radar cruiser inside: smoker died per 100, now smoker died | 3.1 | 12.5 | new death metric |\n| Gearing: deaths per 100, now died | 35.0 | 45.0 | new death metric |\n| Gearing: smoker died per 100, now smoker died | 10.0 | 20.0 | new death metric |\n| flank-smoke-line ships: deaths per 100, now died | 23.1 | 32.7 | new death metric |\n| flank-smoke-line ships: smoker died per 100, now smoker died | 5.8 | 15.4 | new death metric |\n| laid 11-25 s after the enemy smoke: concealed damage | 12,296 | 10,922 | delay from the replay clock (different smokes in the row) |\n| laid 11-25 s after the enemy smoke: deaths per 100, now caught | 18.6 | 20.9 | delay from the replay clock (different smokes in the row) |\n| laid 11-25 s after the enemy smoke: deaths per 100, now died | 18.6 | 25.6 | new death metric |\n| laid 11-25 s after the enemy smoke: smoker died per 100, now smoker caught | 7.0 | 9.3 | delay from the replay clock (different smokes in the row) |\n| laid 11-25 s after the enemy smoke: smoker died per 100, now smoker died | 7.0 | 13.9 | new death metric |\n| 6-9 km from the answered smoke: deaths per 100, now died | 19.6 | 29.4 | new death metric |\n| 6-9 km from the answered smoke: smoker died per 100, now smoker died | 9.8 | 19.6 | new death metric |\n| answered smoke within 30 degrees of straight ahead: deaths per 100, now died | 16.9 | 24.6 | new death metric |\n| answered smoke within 30 degrees of straight ahead: smoker died per 100, now smoker died | 4.6 | 12.3 | new death metric |\n| all counter-smokes: deaths per 100, now died | 15.0 | 24.8 | new death metric |\n| all counter-smokes: smoker died per 100, now smoker died | 7.5 | 17.3 | new death metric |\n| flanking minus head-on, deaths per 100, now caught | +10.0 (-13.1 to +35.0) | +10.0 (-15.4 to +41.1) | same list; interval now from diff_ci |\n| flanking minus head-on, deaths per 100, now died | +10.0 (-13.1 to +35.0) | +26.0 (-5.0 to +63.3) | new death metric |\n\n37 other compared numbers are unchanged (n, concealed damage and the caught rates wherever the row holds the same smokes).\n",
+ "check": [
+  [
+   "A4 n counter-smokes, usable line of fire",
+   "a4.py",
+   "len(CS), len(USE) / J['summary']",
+   "133, 132"
+  ],
+  [
+   "A4 all counter-smokes: died / caught per 100",
+   "a4.py",
+   "T_PAYS / J['what_pays'] row 'all counter-smokes'",
+   "24.81 / 15.04"
+  ],
+  [
+   "A4 flanking: died / caught per 100; head-on: died / caught",
+   "a4.py",
+   "T_ANGLE / J['by_angle']",
+   "50.0 / 25.0; 24.0 / 15.0"
+  ],
+  [
+   "A4 flanking minus head-on: died / caught",
+   "a4.py",
+   "T_DIFF / J['flanking_minus_head_on'] scope All",
+   "+26.0 (-5.0 to +63.3) / +10.0 (-15.4 to +41.1)"
+  ],
+  [
+   "A4 Gearing counter-smokes: died / caught per 100",
+   "a4.py",
+   "T_PAYS row 'Gearing'",
+   "45.0 / 35.0"
+  ]
+ ]
+}

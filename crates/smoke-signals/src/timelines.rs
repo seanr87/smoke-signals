@@ -538,7 +538,7 @@ impl Collector {
                 })
                 .collect(),
             recorder_entity_id: ctx.recorder.map(|e| e.raw() as u32),
-            files: vec!["caps_timeline.csv"],
+            files: vec!["caps_timeline.csv", "radar.csv"],
         };
         Timelines { meta, caps_csv, radar_csv, tracks_csv, score_csv, ribbons_csv }
     }
@@ -722,6 +722,7 @@ impl Timelines {
         crate::output::write_json(&dir.join("meta.json"), &self.meta)?;
         for (name, text) in [
             ("caps_timeline.csv", &self.caps_csv),
+            ("radar.csv", &self.radar_csv),
         ] {
             let path = dir.join(name);
             std::fs::write(&path, text).attach_with(|| format!("writing {}", path.display()))?;

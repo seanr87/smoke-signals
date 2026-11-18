@@ -1,0 +1,120 @@
+=== HS-1 west caps A + B
+ destroyer smokes A: Top 6 11 of 80 (14%) vs Rest 3 of 155 (2%); gap +12 pts (+6 to +16 *)
+ destroyer smokes B: Top 6 18 of 80 (22%) vs Rest 18 of 155 (12%); gap +11 pts (+2 to +22 *)
+ destroyer smokes C: Top 6 23 of 80 (29%) vs Rest 54 of 155 (35%); gap -6 pts (-23 to +10)
+ destroyer smokes D: Top 6 28 of 80 (35%) vs Rest 80 of 155 (52%); gap -17 pts (-32 to -4 *)
+ destroyer smokes A+B: Top 6 29 of 80 (36%) vs Rest 21 of 155 (14%); gap +23 pts (+14 to +35 *)
+ all smokes A: Top 6 12 of 90 (13%) vs Rest 8 of 198 (4%); gap +9 pts (+4 to +14 *)
+ all smokes B: Top 6 18 of 90 (20%) vs Rest 36 of 198 (18%); gap +2 pts (-6 to +13)
+ all smokes C: Top 6 25 of 90 (28%) vs Rest 61 of 198 (31%); gap -3 pts (-18 to +10)
+ all smokes D: Top 6 35 of 90 (39%) vs Rest 93 of 198 (47%); gap -8 pts (-20 to +4)
+ all smokes A+B: Top 6 30 of 90 (33%) vs Rest 44 of 198 (22%); gap +11 pts (+4 to +24 *)
+ A+B clans (DD) Top 6: H-SR 9, RESIN 6, VRTUS 5, BONKZ 5, HTDOG 2, KITE 2 | Rest: HFANS 5, KSC 4, MANBA 2, EPOXY 2, INCA 2, BONKY 2, KSE 1, MACH 1, MACHX 1, MZY 1
+ A clans Top 6: H-SR 4, BONKZ 3, VRTUS 2, RESIN 2 | Rest: MACH 1, KSC 1, HFANS 1
+ B clans Top 6: H-SR 5, RESIN 4, VRTUS 3, HTDOG 2, KITE 2, BONKZ 2 | Rest: HFANS 4, KSC 3, MANBA 2, EPOXY 2, INCA 2, BONKY 2, KSE 1, MACHX 1, MZY 1
+ A+B clans (all classes) Top 6: H-SR 9, RESIN 7, VRTUS 5, BONKZ 5, HTDOG 2, KITE 2 | Rest: EPOXY 9, HFANS 5, KITED 5, KSC 4, -BN- 3, BTLST 2, MANBA 2, INCA 2, BONKY 2, MZY 2, REEEE 2, KSE 1, PFANS 1, KM 1, MACH 1, NGA 1, MACHX 1
+   H-SR (top): 9 of 26 at A+B; games 5
+   BONKZ (top): 5 of 18 at A+B; games 4
+   RESIN (top): 6 of 17 at A+B; games 4
+   VRTUS (top): 5 of 8 at A+B; games 2
+   HTDOG (top): 2 of 6 at A+B; games 1
+   KITE (top): 2 of 5 at A+B; games 1
+   KSC (rest): 4 of 23 at A+B; games 3
+   EPOXY (rest): 2 of 20 at A+B; games 6
+   MZY (rest): 1 of 15 at A+B; games 4
+   HFANS (rest): 5 of 13 at A+B; games 2
+   REEEE (rest): 0 of 10 at A+B; games 4
+   -BN- (rest): 0 of 9 at A+B; games 2
+   BTLST (rest): 0 of 7 at A+B; games 1
+   KITED (rest): 0 of 7 at A+B; games 3
+   PFANS (rest): 0 of 6 at A+B; games 2
+   INCA (rest): 2 of 6 at A+B; games 1
+   MACHX (rest): 1 of 6 at A+B; games 2
+   BONKY (rest): 2 of 6 at A+B; games 1
+   5D (rest): 0 of 5 at A+B; games 2
+   MACH (rest): 1 of 4 at A+B; games 1
+   RMN (rest): 0 of 3 at A+B; games 1
+   KSE (rest): 1 of 3 at A+B; games 1
+   OGF (rest): 0 of 2 at A+B; games 1
+   MANBA (rest): 2 of 2 at A+B; games 1
+   NGA (rest): 0 of 2 at A+B; games 1
+   SCCC2 (rest): 0 of 2 at A+B; games 1
+   PN (rest): 0 of 1 at A+B; games 1
+   RSR (rest): 0 of 1 at A+B; games 1
+   UYSC (rest): 0 of 1 at A+B; games 1
+   KM (rest): 0 of 1 at A+B; games 1
+ top clans with any A+B smoke 6 of 6 | rest 10 of 24
+   Top 6 without BONKZ: 24 of 62 = 39%
+   Top 6 without H-SR: 20 of 54 = 37%
+   Top 6 without HTDOG: 27 of 74 = 36%
+   Top 6 without KITE: 27 of 75 = 36%
+   Top 6 without RESIN: 23 of 63 = 37%
+   Top 6 without VRTUS: 24 of 72 = 33%
+  A: n 14 conc 19.7k ci (10427.053333333333, 30448.252) deaths/100 7 ships Harugumo 4, Somers 3, Gearing 3, Delny 2, Gdańsk 1, Grozovoi 1 early 0 med time 9:01 we_took 7/7 edge q80 3270 max 5773
+     top: n 11 conc 17.9k ships Harugumo 4, Somers 2, Gearing 2, Delny 2, Gdańsk 1
+     rest: n 3 conc 26.3k ships Grozovoi 1, Gearing 1, Somers 1
+  B: n 36 conc 15.6k ci (8794.780540540542, 23940.9553125) deaths/100 8 ships Somers 13, Gearing 9, Gdańsk 5, Shimakaze 3, Delny 3, Harugumo 2 early 5 med time 7:06 we_took 3/9 edge q80 4734 max 8861
+     top: n 18 conc 10.5k ships Somers 7, Gearing 4, Delny 3, Harugumo 2, Gdańsk 1, Shimakaze 1
+     rest: n 18 conc 20.8k ships Somers 6, Gearing 5, Gdańsk 4, Shimakaze 2, Grozovoi 1
+  A+B: n 50 conc 16.8k ci (10905.35432835821, 24193.59568181818) deaths/100 8 ships Somers 16, Gearing 12, Gdańsk 6, Harugumo 6, Delny 5, Shimakaze 3 early 5 med time 7:30 we_took 10/16 edge q80 4330 max 8861
+     top: n 29 conc 13.3k ships Somers 9, Harugumo 6, Gearing 6, Delny 5, Gdańsk 2, Shimakaze 1
+     rest: n 21 conc 21.6k ships Somers 7, Gearing 6, Gdańsk 4, Shimakaze 2, Grozovoi 2
+  C: n 77 conc 8.5k ci (4862.752307692308, 12874.47347826087) deaths/100 5 ships Daring 22, Gdańsk 16, Somers 16, Gearing 11, Grozovoi 6, Harugumo 3 early 27 med time 6:56 we_took 14/47 edge q80 3575 max 12792
+     top: n 23 conc 13.1k ships Somers 8, Gdańsk 6, Gearing 6, Harugumo 2, Delny 1
+     rest: n 54 conc 6.5k ships Daring 22, Gdańsk 10, Somers 8, Grozovoi 6, Gearing 5, Shimakaze 2
+  D: n 108 conc 13.0k ci (8813.359902912622, 16568.337115384616) deaths/100 9 ships Somers 41, Gearing 20, Daring 14, Harugumo 13, Shimakaze 8, Grozovoi 6 early 36 med time 6:24 we_took 21/75 edge q80 4834 max 19332
+     top: n 28 conc 16.1k ships Somers 8, Gearing 7, Harugumo 6, Shimakaze 3, Grozovoi 3, Gdańsk 1
+     rest: n 80 conc 12.0k ships Somers 33, Daring 14, Gearing 13, Harugumo 7, Shimakaze 5, Z-42 4
+ west share by time: early Top 6 3 of 23 (13%) vs Rest 2 of 45 (4%); gap +9 pts (-7 to +38) | later Top 6 26 of 57 (46%) vs Rest 19 of 110 (17%); gap +28 pts (+20 to +38 *)
+ team-games with a DD smoke at A or B: Top 6 13 of 18 | Rest 14 of 44
+ stricter rule, inside or within 2 km of A or B: Top 6 14 of 80 (18%) vs Rest 14 of 155 (9%); gap +8 pts (-5 to +24) | Top 6: VRTUS 5, H-SR 5, RESIN 4 | Rest: HFANS 4, KSC 3, INCA 2, BONKY 2, MANBA 1, MACH 1, EPOXY 1 | median distance of the 50 west smokes from the cap edge 1821.2090352980201
+
+=== HS-2 opener at G10
+ ellipse membership instead of cluster membership: G10 32 G5 23
+ early DD smokes 68 | in G10 cluster 36 | in G5 cluster 27
+ map-wide radar cruiser inside: Top 6 20 of 23 (87%) vs Rest 17 of 45 (38%); gap +49 pts (+31 to +71 *)
+ G10 cluster: Top 6 10 of 12 (83%) vs Rest 11 of 24 (46%); gap +38 pts (+6 to +63 *)
+ G5 cluster: Top 6 7 of 8 (88%) vs Rest 5 of 19 (26%); gap +61 pts (+28 to +91 *)
+ share of early smokes in G10: Top 6 12 of 23 (52%) vs Rest 24 of 45 (53%); gap -1 pts (-25 to +20)
+ G10 clans Top 6: H-SR 5, BONKZ 3, RESIN 2, HTDOG 1, KITE 1 | Rest: REEEE 4, MZY 3, 5D 2, KSC 2, HFANS 2, KITED 2, BTLST 1, RMN 1, PN 1, MACH 1, -BN- 1, NGA 1, BONKY 1, PFANS 1, EPOXY 1
+ G10 ships Somers 16, Gearing 7, Harugumo 5, Shimakaze 3, Daring 3, Grozovoi 2 | cruisers inside top Brisbane 4, Des Moines 4, Worcester 2 | rest Brisbane 5, Des Moines 4, Utrecht 3, Minotaur 1, Stalingrad 1 | screened top Brisbane 1, Des Moines 1, Prins van Oranje 1 | rest San Martín 2, Bremen 2, Brisbane 1, Des Moines 1
+ G10 Rest without a radar cruiser inside: cover3 other 6, no cruiser 5, non-radar cruiser inside 2 | clans Top 6: H-SR 1, RESIN 1 | Rest: REEEE 3, 5D 2, MZY 2, KITED 2, RMN 1, MACH 1, -BN- 1, NGA 1
+ G10 radar cruiser inside by clan: H-SR 4/5, BONKZ 3/3, RESIN 1/2, HTDOG 1/1, KITE 1/1, REEEE 1/4, MZY 1/3, 5D 0/2, KSC 2/2, HFANS 2/2, KITED 0/2, BTLST 1/1, RMN 0/1, PN 1/1, MACH 0/1, -BN- 0/1, NGA 0/1, BONKY 1/1, PFANS 1/1, EPOXY 1/1
+ G10 conc 16.5k top 17.8k rest 15.9k deaths/100 5.555555555555555
+ standing definition (early smoke covering a cruiser), Hotspot: inside Top 6 20 of 23 (87%) vs Rest 20 of 45 (44%); gap +42 pts (+25 to +65 *) | screened Top 6 2 of 23 (9%) vs Rest 11 of 45 (24%); gap -16 pts (-34 to -1 *) | none Top 6 1 of 23 (4%) vs Rest 14 of 45 (31%); gap -27 pts (-45 to -10 *)
+ in G10: inside Top 6 10 of 12 (83%) vs Rest 13 of 24 (54%); gap +29 pts (+2 to +60 *) | screened Top 6 2 of 12 (17%) vs Rest 6 of 24 (25%); gap -8 pts (-32 to +14)
+   Hotspot: Top 6 20 of 23 (87%) vs Rest 17 of 45 (38%); gap +49 pts (+30 to +69 *)
+   Loop: Top 6 4 of 9 (44%) vs Rest 5 of 23 (22%); gap +23 pts (-25 to +50)
+   Okinawa: Top 6 2 of 3 (too few) vs Rest 4 of 23 (17%); gap +49 pts (-14 to +92)
+   Land of Fire: Top 6 5 of 12 (42%) vs Rest 8 of 25 (32%); gap +10 pts (-26 to +50)
+   Mountain Range: Top 6 9 of 14 (64%) vs Rest 8 of 25 (32%); gap +32 pts (-8 to +72)
+   Sleeping Giant: Top 6 15 of 32 (47%) vs Rest 22 of 37 (60%); gap -13 pts (-40 to +18)
+   Sea of Fortune: Top 6 6 of 9 (67%) vs Rest 6 of 22 (27%); gap +39 pts (+12 to +62 *)
+
+=== HS-3 rim of C lead
+ spot Top 6 13 of 64 (20%) vs Rest 7 of 80 (9%); gap +12 pts (-7 to +27) Top 6: RESIN 7, BONKZ 4, H-SR 2 | Rest: -BN- 4, INCA 1, KSC 1, MZY 1
+  top: n 13 | smoker Somers 8, Gearing 4, Delny 1 | cruisers inside Moskva 5, Brisbane 4, Petropavlovsk 2, Utrecht 1, Minotaur 1 | screened Worcester 1, Moskva 1 | smokes with a cruiser inside 12 | radar cruiser inside 12 | no cruiser 0 | conc 17.3k | deaths 1 | early 7 | med time 4:15
+      7915_g1_5497 H-SR Delny 1:29 G6 [('Utrecht', 'inside'), ('Minotaur', 'inside')] conc 0
+      8067_g1_60864 BONKZ Gearing 4:15 G6 [('Brisbane', 'inside')] conc 26325
+      8067_g1_60871 BONKZ Gearing 7:39 G6 [('Brisbane', 'inside')] conc 65507
+      8067_g1_60876 BONKZ Gearing 10:48 G6 [('Brisbane', 'inside')] conc 25114
+      8140_g1_190357 RESIN Somers 2:20 G7 [('Moskva', 'inside')] conc 2046
+      8140_g1_190360 RESIN Somers 5:48 F6 [('Moskva', 'inside')] conc 17260
+      8140_g1_190365 RESIN Somers 9:13 F6 [('Moskva', 'inside')] conc 22668
+      8144_g1_27547 BONKZ Gearing 2:18 G5 [('Brisbane', 'inside')] conc 0
+      8151_g3_85022 H-SR Somers 1:54 F6 [('Petropavlovsk', 'inside')] conc 40358
+      8176_g2_139975 RESIN Somers 1:31 G6 [('Petropavlovsk', 'inside'), ('Worcester', 'screened')] conc 1170
+      8178_g2_224000 RESIN Somers 1:01 G7 [('Moskva', 'inside')] conc 6160
+      8178_g2_224003 RESIN Somers 5:13 F6 [('Moskva', 'screened')] conc 0
+      8178_g2_224006 RESIN Somers 8:33 G7 [('Moskva', 'inside')] conc 18760
+  rest: n 7 | smoker Somers 5, Gearing 2 | cruisers inside Des Moines 2, Brisbane 1, Minotaur 1 | screened Brisbane 2 | smokes with a cruiser inside 4 | radar cruiser inside 4 | no cruiser 1 | conc 13.7k | deaths 0 | early 4 | med time 2:08
+      7888_g1_38984 INCA Gearing 1:25 G5 [] conc 0
+      7914_g1_53653 -BN- Somers 1:47 F6 [('Brisbane', 'screened')] conc 0
+      7914_g1_53655 -BN- Somers 5:06 G6 [('Brisbane', 'screened')] conc 710
+      7914_g1_53660 -BN- Somers 9:24 G5 [('Brisbane', 'inside')] conc 3548
+      8141_g2_161890 KSC Gearing 2:08 G6 [('Des Moines', 'inside')] conc 0
+      8141_g2_161895 -BN- Somers 5:58 G6 [('Des Moines', 'inside')] conc 89662
+      8174_g1_94344 MZY Somers 1:51 G6 [('Minotaur', 'inside')] conc 2016
+ without RESIN: top 6 of 49
+ cruisers fielded on Hotspot (roster, team-games): top Des Moines 10, Brisbane 10, Moskva 10, Petropavlovsk 6, San Martín 5, Stalingrad 5, Utrecht 3, Svea 3 | rest Des Moines 26, Moskva 23, San Martín 16, Brisbane 14, Stalingrad 13, Napoli 13, Marseille 10, Petropavlovsk 10, Salem 6, Bremen 6
+ all destroyer smokes in the ellipse Top 6 17 of 80 (21%) vs Rest 17 of 155 (11%); gap +10 pts (-5 to +22) | cruisers inside top Moskva 5, Brisbane 4, Petropavlovsk 3, Utrecht 1, Minotaur 1 | rest Des Moines 2, Brisbane 1, Minotaur 1

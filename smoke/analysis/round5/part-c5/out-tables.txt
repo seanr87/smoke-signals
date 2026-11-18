@@ -1,0 +1,64 @@
+SG-2 list
+| Smoke | Clan | Time | Cell | Cruiser | Other destroyers alive | Second destroyer recorded (where) |
+|---|---|---|---|---|---|---|
+| [8147_g1_120797](https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120797.html) | RESIN | 2:23 | G1 | Petropavlovsk inside | Yueyang, Somers | none recorded |
+| [8147_g1_120803](https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g1_120803.html) | RESIN | 7:00 | F2 | none | Yueyang, Somers | none recorded |
+| [8151_g1_29455](https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g1_29455.html) | H-SR | 1:44 | F1 | Des Moines inside | Marceau, Somers, Marceau | Marceau in F1, 2.0 km from the smoke, +4.0 km forward, 0.2 km outside cap A |
+| [8178_g1_166102](https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166102.html) | RESIN | 2:03 | G1 | Worcester inside | Ragnar, Gdańsk, Châteaurenault | Châteaurenault in G1, 1.1 km from the smoke, +1.4 km forward, inside the smoke |
+| [8178_g1_166103](https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166103.html) | BONKZ | 2:47 | G1 | Worcester inside | Ragnar, Somers | Ragnar in F1, 3.4 km from the smoke, +3.4 km forward, 0.8 km inside cap A |
+| [8178_g1_166106](https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g1_166106.html) | BONKZ | 6:16 | F1 | Worcester inside | Somers | none recorded |
+| [8183_g1_39283](https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g1_39283.html) | H-SR | 1:56 | G1 | Des Moines inside | Marceau, Somers | Marceau in F1, 3.2 km from the smoke, +3.2 km forward, 0.2 km inside cap A |
+| [8183_g1_39284](https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g1_39284.html) | RESIN | 2:02 | G1 | Des Moines inside | Marceau, Somers, Gdańsk | Marceau in G1, 1.4 km from the smoke, -1.0 km forward, inside the smoke |
+| [8183_g1_39285](https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g1_39285.html) | H-SR | 5:21 | F1 | Des Moines inside | Marceau, Somers | Marceau in G3, 11.7 km from the smoke, -2.1 km forward, 6.2 km outside cap A |
+| [8183_g1_39286](https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g1_39286.html) | RESIN | 5:29 | G1 | Des Moines inside | Marceau, Somers, Gdańsk | Marceau in G4, 11.0 km from the smoke, +3.3 km forward, 4.3 km outside cap B |
+| [8183_g1_39290](https://seanr87.github.io/smoke-signals/smoke/smokes/8183_g1_39290.html) | H-SR | 8:46 | F1 | Des Moines inside | Marceau, Somers | none recorded |
+| [8177_g1_176201](https://seanr87.github.io/smoke-signals/smoke/smokes/8177_g1_176201.html) | EPOXY | 2:42 | F1 | Petropavlovsk inside | Somers, 20 de Julio | 20 de Julio in F5, 13.9 km from the smoke, +1.1 km forward, 0.2 km outside cap B |
+
+HS-3 list
+- [INCA Gearing 1:25 G5](https://seanr87.github.io/smoke-signals/smoke/smokes/7888_g1_38984.html): no cruiser
+- [-BN- Somers 1:47 F6](https://seanr87.github.io/smoke-signals/smoke/smokes/7914_g1_53653.html): Brisbane screened
+- [-BN- Somers 5:06 G6](https://seanr87.github.io/smoke-signals/smoke/smokes/7914_g1_53655.html): Brisbane screened
+- [-BN- Somers 9:24 G5](https://seanr87.github.io/smoke-signals/smoke/smokes/7914_g1_53660.html): Brisbane inside
+- [H-SR Delny 1:29 G6](https://seanr87.github.io/smoke-signals/smoke/smokes/7915_g1_5497.html): Utrecht inside, Minotaur inside
+- [BONKZ Gearing 4:15 G6](https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g1_60864.html): Brisbane inside
+- [BONKZ Gearing 7:39 G6](https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g1_60871.html): Brisbane inside
+- [BONKZ Gearing 10:48 G6](https://seanr87.github.io/smoke-signals/smoke/smokes/8067_g1_60876.html): Brisbane inside
+- [RESIN Somers 2:20 G7](https://seanr87.github.io/smoke-signals/smoke/smokes/8140_g1_190357.html): Moskva inside
+- [RESIN Somers 5:48 F6](https://seanr87.github.io/smoke-signals/smoke/smokes/8140_g1_190360.html): Moskva inside
+- [RESIN Somers 9:13 F6](https://seanr87.github.io/smoke-signals/smoke/smokes/8140_g1_190365.html): Moskva inside
+- [KSC Gearing 2:08 G6](https://seanr87.github.io/smoke-signals/smoke/smokes/8141_g2_161890.html): Des Moines inside
+- [-BN- Somers 5:58 G6](https://seanr87.github.io/smoke-signals/smoke/smokes/8141_g2_161895.html): Des Moines inside
+- [BONKZ Gearing 2:18 G5](https://seanr87.github.io/smoke-signals/smoke/smokes/8144_g1_27547.html): Brisbane inside
+- [H-SR Somers 1:54 F6](https://seanr87.github.io/smoke-signals/smoke/smokes/8151_g3_85022.html): Petropavlovsk inside
+- [MZY Somers 1:51 G6](https://seanr87.github.io/smoke-signals/smoke/smokes/8174_g1_94344.html): Minotaur inside
+- [RESIN Somers 1:31 G6](https://seanr87.github.io/smoke-signals/smoke/smokes/8176_g2_139975.html): Petropavlovsk inside, Worcester screened
+- [RESIN Somers 1:01 G7](https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g2_224000.html): Moskva inside
+- [RESIN Somers 5:13 F6](https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g2_224003.html): Moskva screened
+- [RESIN Somers 8:33 G7](https://seanr87.github.io/smoke-signals/smoke/smokes/8178_g2_224006.html): Moskva inside
+
+MR-2 list
+- [KITE Gearing 1:23](https://seanr87.github.io/smoke-signals/smoke/smokes/7948_g1_55897.html): B neutral at start; enemy took B: False; we took B: True
+- [HFANS Somers 5:10](https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159427.html): B ours at start; enemy took B: False; we took B: None
+- [HFANS Somers 10:09](https://seanr87.github.io/smoke-signals/smoke/smokes/7903_g1_159439.html): B ours at start; enemy took B: False; we took B: None
+- [SCCC2 Gdańsk 3:10](https://seanr87.github.io/smoke-signals/smoke/smokes/7929_g1_195744.html): B neutral at start; enemy took B: False; we took B: False
+- [H-SR Somers 5:07](https://seanr87.github.io/smoke-signals/smoke/smokes/7930_g1_51294.html): B neutral at start; enemy took B: False; we took B: True
+- [H-SR Harugumo 13:58](https://seanr87.github.io/smoke-signals/smoke/smokes/8146_g2_121106.html): B ours at start; enemy took B: True; we took B: None
+- [KITE Gearing 1:37](https://seanr87.github.io/smoke-signals/smoke/smokes/8149_g1_68154.html): B neutral at start; enemy took B: False; we took B: False
+- [KITE Gearing 5:45](https://seanr87.github.io/smoke-signals/smoke/smokes/8149_g1_68162.html): B ours at start; enemy took B: False; we took B: None
+- [KITE Gearing 10:42](https://seanr87.github.io/smoke-signals/smoke/smokes/8149_g1_68172.html): B ours at start; enemy took B: True; we took B: None
+- [BONKZ Svea 13:21](https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176005.html): B theirs at start; enemy took B: None; we took B: True
+- [BONKZ Svea 14:49](https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176007.html): B ours at start; enemy took B: False; we took B: None
+- [BONKZ Svea 16:02](https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176009.html): B ours at start; enemy took B: True; we took B: None
+- [BONKZ Svea 17:14](https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176011.html): B ours at start; enemy took B: True; we took B: None
+- [RESIN Gdańsk 3:34](https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_175996.html): B neutral at start; enemy took B: True; we took B: False
+- [RESIN Gdańsk 13:29](https://seanr87.github.io/smoke-signals/smoke/smokes/8147_g2_176006.html): B theirs at start; enemy took B: None; we took B: False
+
+OK-1
+| Ship | Class | Smokes | Team-games with the ship in the lineup | Ships fielded | Smokes per team-game played | Top 6 smokes | Concealed dmg per smoke | Deaths per 100 |
+|---|---|---|---|---|---|---|---|---|
+| Napoli | cruiser | 32 | 21 (Top 6 1) | 24 | 1.52 | 1 | 4.2k | 12.5 |
+| Svea | cruiser | 25 | 6 (Top 6 1) | 7 | 4.17 | 3 | 9.6k | 4.0 |
+| Daring | destroyer | 22 | 11 (Top 6 2) | 11 | 2.0 | 4 | 6.0k | 9.1 |
+| Gearing | destroyer | 17 | 7 (Top 6 2) | 8 | 2.43 | 6 | 10.5k | 23.5 |
+| Somers | destroyer | 12 | 4 (Top 6 1) | 5 | 3.0 | 4 | 18.1k | 16.7 |
+| Shimakaze | destroyer | 11 | 10 (Top 6 2) | 11 | 1.1 | 1 | 11.7k | 18.2 |

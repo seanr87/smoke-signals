@@ -1,0 +1,94 @@
+Somers n 260 T6/Rest 90 170 | Gearing n 180 T6/Rest 74 106
+Somers clans: Top 6: RESIN 38, H-SR 33, BONKZ 12, VRTUS 7 | Rest: HFANS 28, REEEE 25, MZY 22, EPOXY 18, MACHX 17, BONKY 14, -BN- 12, NGA 11, PFANS 8, PN 5, UYSC 5, KITED 3, RSR 1, INCA 1
+Gearing clans: Top 6: BONKZ 37, KITE 23, VRTUS 10, HTDOG 4 | Rest: KSC 29, -BN- 18, BTLST 11, 5D 9, OGF 9, RSR 9, INCA 7, HFANS 5, RMN 3, EPOXY 3, KM 2, UYSC 1
+| scope | stat | Somers (n) | Gearing (n) | Somers - Gearing | interval |
+|---|---|---|---|---|---|
+| all clans | any death per 100 smokes | 10.4 (260) | 17.8 (180) | -7.4 | -17.7 to -0.4 * |
+| all clans | smoker died per 100 smokes | 3.8 (260) | 8.3 (180) | -4.5 | -16.4 to +2.0 |
+| all clans | smoker hurt per 100 smokes (est. health) | 11.9 (260) | 14.4 (180) | -2.5 | -16.3 to +6.4 |
+| all clans | cruiser died per 100 sheltering cruisers | 7.3 (234) | 9.4 (149) | -2.1 | -7.2 to +3.4 |
+| all clans | concealed damage per smoke | 14,524.0 (260) | 16,296.0 (180) | -1,771.0 | -5,334.0 to +3,247.0 |
+| Top 6 only | any death per 100 smokes | 7.8 (90) | 9.5 (74) | -1.7 | -6.9 to +4.7 |
+| Top 6 only | smoker died per 100 smokes | 2.2 (90) | 1.4 (74) | +0.9 | -7.7 to +5.7 |
+| Top 6 only | smoker hurt per 100 smokes (est. health) | 11.1 (90) | 5.4 (74) | +5.7 | -9.7 to +13.3 |
+| Top 6 only | cruiser died per 100 sheltering cruisers | 5.9 (85) | 6.8 (73) | -1.0 | -7.1 to +7.0 |
+| Top 6 only | concealed damage per smoke | 15,696.0 (90) | 17,996.0 (74) | -2,300.0 | -7,062.0 to +5,518.0 |
+| Rest only | any death per 100 smokes | 11.8 (170) | 23.6 (106) | -11.8 | -24.0 to -1.5 * |
+| Rest only | smoker died per 100 smokes | 4.7 (170) | 13.2 (106) | -8.5 | -25.3 to +1.6 |
+| Rest only | smoker hurt per 100 smokes (est. health) | 12.4 (170) | 20.8 (106) | -8.4 | -28.8 to +4.3 |
+| Rest only | cruiser died per 100 sheltering cruisers | 8.1 (149) | 11.8 (76) | -3.8 | -10.4 to +6.5 |
+| Rest only | concealed damage per smoke | 13,904.0 (170) | 15,109.0 (106) | -1,204.0 | -5,700.0 to +5,118.0 |
+
+Top 6 vs Rest within each ship
+| ship | stat | Top 6 (n) | Rest (n) | T6 - Rest | interval |
+|---|---|---|---|---|---|
+| Somers | any death per 100 smokes | 7.8 (90) | 11.8 (170) | -4.0 | -10.8 to +1.3 |
+| Somers | smoker died per 100 smokes | 2.2 (90) | 4.7 (170) | -2.5 | -6.0 to +1.9 |
+| Somers | smoker hurt per 100 smokes (est. health) | 11.1 (90) | 12.4 (170) | -1.2 | -8.8 to +5.5 |
+| Somers | cruiser died per 100 sheltering cruisers | 5.9 (85) | 8.1 (149) | -2.2 | -9.6 to +3.5 |
+| Somers | concealed damage per smoke | 15,696.0 (90) | 13,904.0 (170) | +1,792.0 | -2,341.0 to +4,525.0 |
+| Gearing | any death per 100 smokes | 9.5 (74) | 23.6 (106) | -14.1 | -26.8 to -4.8 * |
+| Gearing | smoker died per 100 smokes | 1.4 (74) | 13.2 (106) | -11.9 | -28.8 to -0.8 * |
+| Gearing | smoker hurt per 100 smokes (est. health) | 5.4 (74) | 20.8 (106) | -15.3 | -34.0 to -1.2 * |
+| Gearing | cruiser died per 100 sheltering cruisers | 6.8 (73) | 11.8 (76) | -5.0 | -12.4 to +3.6 |
+| Gearing | concealed damage per smoke | 17,996.0 (74) | 15,109.0 (106) | +2,888.0 | -5,871.0 to +11,496.0 |
+
+Within map (any death per 100; smoker died per 100)
+| map | scope | Somers (n) | Gearing (n) | diff | interval | smoker died: Somers / Gearing | interval | note |
+|---|---|---|---|---|---|---|---|---|
+| Hotspot | all clans | 6.8 (73) | 4.7 (43) | +2.2 | -7.4 to +9.2 | 2.7 / 0.0 | +0.0 to +6.1 |  |
+| Hotspot | Top 6 only | 8.0 (25) | 0.0 (19) | +8.0 | +0.0 to +15.4 | 0.0 / 0.0 | +0.0 to +0.0 |  |
+| Hotspot | Rest only | 6.2 (48) | 8.3 (24) | -2.1 | -10.1 to +8.0 | 4.2 / 0.0 | +0.0 to +7.9 |  |
+| Sleeping Giant | all clans | 12.0 (75) | 18.2 (33) | -6.2 | -25.5 to +5.9 | 8.0 / 9.1 | -20.5 to +8.7 |  |
+| Sleeping Giant | Top 6 only | 10.0 (30) | 15.4 (13) | -5.4 | -40.9 to +10.6 | 6.7 / 7.7 | -18.2 to +11.5 | small n |
+| Sleeping Giant | Rest only | 13.3 (45) | 20.0 (20) | -6.7 | -31.0 to +10.3 | 8.9 / 10.0 | -31.1 to +11.9 |  |
+| Mountain Range | all clans | 6.1 (33) | 14.7 (34) | -8.6 | -32.6 to +9.5 | 0.0 / 2.9 | -12.5 to +0.0 |  |
+| Mountain Range | Top 6 only | 0.0 (14) | 20.0 (15) | -20.0 | -38.9 to -7.1 * | 0.0 / 0.0 | +0.0 to +0.0 | small n |
+| Mountain Range | Rest only | 10.5 (19) | 10.5 (19) | +0.0 | -20.8 to +24.6 | 0.0 / 5.3 | -21.4 to +0.0 |  |
+| Sea of Fortune | all clans | 3.8 (26) | 26.3 (19) | -22.5 | -50.0 to -3.3 * | 0.0 / 10.5 | -36.4 to +0.0 |  |
+| Sea of Fortune | Top 6 only | too few (6) | 10.0 (10) | too few | - | too few / 0.0 | - | too few |
+| Sea of Fortune | Rest only | 5.0 (20) | 44.4 (9) | -39.4 | -66.7 to -5.2 * | 0.0 / 22.2 | -50.0 to +0.0 | small n |
+| Land of Fire | all clans | 18.2 (22) | 22.7 (22) | -4.5 | -46.5 to +32.0 | 9.1 / 13.6 | -30.8 to +15.4 |  |
+| Land of Fire | Top 6 only | too few (2) | 0.0 (8) | too few | - | too few / 0.0 | - | too few |
+| Land of Fire | Rest only | 20.0 (20) | 35.7 (14) | -15.7 | -72.2 to +34.5 | 10.0 / 21.4 | -54.3 to +15.0 | small n |
+| Loop | all clans | 21.1 (19) | 41.7 (12) | -20.6 | -55.7 to +4.2 | 0.0 / 33.3 | -72.7 to -7.7 * | small n |
+| Loop | Top 6 only | 22.2 (9) | too few (3) | too few | - | 0.0 / too few | - | too few |
+| Loop | Rest only | 20.0 (10) | 55.6 (9) | -35.6 | -54.2 to +1.5 | 0.0 / 44.4 | -66.7 to -10.0 * | small n |
+| Okinawa | all clans | 16.7 (12) | 23.5 (17) | -6.9 | -31.9 to +28.9 | 0.0 / 11.8 | -27.8 to +0.0 | small n |
+| Okinawa | Top 6 only | too few (4) | too few (6) | too few | - | too few / too few | - | too few |
+| Okinawa | Rest only | 25.0 (8) | 27.3 (11) | -2.3 | -37.5 to +33.3 | 0.0 / 18.2 | -36.4 to +0.0 | small n |
+
+Standardized (both ships given the same mix)
+| same mix of | stat | Somers | Gearing | diff | interval | smokes used |
+|---|---|---|---|---|---|---|
+| group | any death per 100 smokes | 10.3 | 18.3 | -8.0 | -16.9 to -1.6 * | 440 of 440 |
+| group | smoker died per 100 smokes | 3.8 | 8.8 | -5.0 | -17.6 to +1.7 | 440 of 440 |
+| map | any death per 100 smokes | 10.5 | 17.4 | -6.9 | -15.8 to -0.5 * | 440 of 440 |
+| map | smoker died per 100 smokes | 3.6 | 8.2 | -4.6 | -15.0 to +1.7 | 440 of 440 |
+| group and map | any death per 100 smokes | 10.1 | 18.1 | -8.0 | -19.3 to -2.4 * | 440 of 440 |
+| group and map | smoker died per 100 smokes | 3.4 | 8.5 | -5.1 | -17.4 to +1.4 | 440 of 440 |
+| group, map and score state | any death per 100 smokes | 11.1 | 16.9 | -5.8 | -16.5 to +2.2 | 426 of 440 |
+| group, map and score state | smoker died per 100 smokes | 3.6 | 8.5 | -4.9 | -17.1 to +1.7 | 426 of 440 |
+| clan | any death per 100 smokes | 7.1 | 10.7 | -3.6 | -16.3 to +6.0 | 174 of 440 |
+| clan | smoker died per 100 smokes | 3.7 | 5.7 | -2.0 | -16.8 to +4.2 | 174 of 440 |
+
+Context
+Somers behind 50+ % 17.3 radar reached % 11.9 cruiser sheltering % 81.9 radar cruiser inside % 63.5 median edge to cap m 2224 who died {'smoker': 10, 'cruiser': 17} maps {'Sleeping Giant': 75, 'Hotspot': 73, 'Mountain Range': 33, 'Sea of Fortune': 26, 'Land of Fire': 22, 'Loop': 19, 'Okinawa': 12}
+Gearing behind 50+ % 25.0 radar reached % 6.7 cruiser sheltering % 75.0 radar cruiser inside % 56.7 median edge to cap m 2034 who died {'smoker': 15, 'destroyer': 1, 'battleship': 2, 'cruiser': 14} maps {'Hotspot': 43, 'Mountain Range': 34, 'Sleeping Giant': 33, 'Land of Fire': 22, 'Sea of Fortune': 19, 'Okinawa': 17, 'Loop': 12}
+| scope | stat | Somers | Gearing | diff | interval |
+|---|---|---|---|---|---|
+| all | share laid 50+ behind | 17.3 | 25.0 | -7.7 | -18.9 to +0.3 |
+| Top 6 | share laid 50+ behind | 12.2 | 16.2 | -4.0 | -10.2 to +7.3 |
+| Rest | share laid 50+ behind | 20.0 | 31.1 | -11.1 | -26.3 to +0.6 |
+
+Clans with 8+ smokes of each ship
+| clan | group | Somers n | Somers deaths/100 | Gearing n | Gearing deaths/100 |
+|---|---|---|---|---|---|
+| -BN- | Rest | 12 | 0.0 | 18 | 11.1 |
+| BONKZ | Top 6 | 12 | 8.3 | 37 | 10.8 |
+clans where Somers lower: 2 higher: 0 of 2
+
+Rest Gearing by clan (n, deaths, smoker deaths): {'KSC': (29, 6, 0), '-BN-': (18, 2, 0), 'BTLST': (11, 4, 3), '5D': (9, 6, 6), 'OGF': (9, 3, 2), 'RSR': (9, 2, 2), 'INCA': (7, 0, 0), 'HFANS': (5, 0, 0), 'RMN': (3, 1, 0), 'EPOXY': (3, 0, 0), 'KM': (2, 0, 0), 'UYSC': (1, 1, 1)}
+Rest Somers by clan (n, deaths, smoker deaths): {'HFANS': (28, 3, 1), 'REEEE': (25, 4, 2), 'MZY': (22, 2, 0), 'EPOXY': (18, 3, 0), 'MACHX': (17, 2, 2), 'BONKY': (14, 0, 0), '-BN-': (12, 0, 0), 'NGA': (11, 2, 1), 'PFANS': (8, 2, 1), 'PN': (5, 1, 0), 'UYSC': (5, 1, 1), 'KITED': (3, 0, 0), 'RSR': (1, 0, 0), 'INCA': (1, 0, 0)}
+Top 6 Gearing by clan: {'BONKZ': (37, 4, 0), 'KITE': (23, 2, 0), 'HTDOG': (4, 0, 0), 'VRTUS': (10, 1, 1)} | Top 6 Somers by clan: {'VRTUS': (7, 0, 0), 'H-SR': (33, 1, 0), 'RESIN': (38, 5, 1), 'BONKZ': (12, 1, 1)}
+Rest Gearing deaths per 100 leaving one clan out: [('-BN-', 26.1), ('5D', 19.6), ('BTLST', 22.1), ('EPOXY', 24.3), ('HFANS', 24.8), ('INCA', 25.3), ('KM', 24.0), ('KSC', 24.7), ('OGF', 22.7), ('RMN', 23.3), ('RSR', 23.7), ('UYSC', 22.9)]

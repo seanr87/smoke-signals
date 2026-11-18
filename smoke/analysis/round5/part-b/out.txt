@@ -1,0 +1,546 @@
+totals 1547 DD top/rest 387 687
+
+===== B1 cap sitters
+Daring mrA smokes 2 | coverage labels {'selfish': 113, 'stacked': 20, 'screen': 67} | batch selfish flag % 83.5 | Top 6: HTDOG 21, KITE 6, VRTUS 5, BONKZ 2 | Rest: SCCC2 26, -BN- 22, KITED 16, EPOXY 16, KSC 13, HFANS 13, REEEE 11, MACHX 10, MZY 9, BONKY 6, KSE 5, BTLST 4, INCA 4, MACH 4, NGA 4, UYSC 3
+Gdańsk mrA smokes 3 | coverage labels {'screen': 48, 'selfish': 51, 'stacked': 19} | batch selfish flag % 69.5 | Top 6: RESIN 21, H-SR 15, BONKZ 13, HTDOG 9, KITE 2 | Rest: HFANS 13, KSE 10, EPOXY 9, UYSC 6, PFANS 6, KSC 5, SCCC2 3, RSR 2, MACHX 2, PN 1, KITED 1
+Z-42 mrA smokes 0 | coverage labels {'selfish': 32, 'stacked': 8, 'screen': 16} | batch selfish flag % 80.4 | Top 6: VRTUS 14, KITE 6 | Rest: MACH 11, HFANS 7, REEEE 6, MACHX 5, KSC 4, RSR 3
+Z-52 mrA smokes 0 | coverage labels {'screen': 2, 'selfish': 6, 'stacked': 2} | batch selfish flag % 100.0 | Top 6: KITE 6 | Rest: KITED 2, RSR 1, EPOXY 1
+Grozovoi mrA smokes 1 | coverage labels {'selfish': 14, 'stacked': 6, 'screen': 10} | batch selfish flag % 63.3 | Top 6: H-SR 3, RESIN 3 | Rest: MACHX 15, MZY 3, RMN 2, EPOXY 2, INCA 1, MACH 1
+Shimakaze mrA smokes 4 | coverage labels {'stacked': 28, 'screen': 15, 'selfish': 15} | batch selfish flag % 62.1 | Top 6: VRTUS 6, HTDOG 4, RESIN 3, BONKZ 2 | Rest: HFANS 13, 5D 8, UYSC 7, MANBA 5, RMN 4, EPOXY 3, INCA 2, BONKY 1
+| group | split | n | clans | edge_med_m | edge_med_no_mrA_m | inside_pct | teammate_pct | conc_per_smoke |
+|---|---|---|---|---|---|---|---|---|
+| Daring | all | 200 | 20 | 671 (-306 to 1,382) | 671 (-185 to 1,382) | 42.5 (32.8 to 51.6 *) | 43.5 (37.7 to 49.7 *) | 3,623 (2,852 to 4,325 *) |
+| Daring | top6 | 34 | 4 | 752 (-819 to 2,070) | 752 (-819 to 2,070) | 41.2 (35.0 to 57.1 *) | 50.0 (18.2 to 65.2 *) | 3,991 (2,732 to 4,582 *) |
+| Daring | rest | 166 | 16 | 602 (-371 to 1,443) | 602 (-267 to 1,505) | 42.8 (30.4 to 54.2 *) | 42.2 (37.3 to 47.6 *) | 3,548 (2,639 to 4,362 *) |
+| Daring | top6 minus rest |  |  | 150 (-1,448 to 1,772) | 150 (-1,506 to 1,731) | -1.6 (-14.1 to 16.8) | 7.8 (-23.9 to 25.6) | 443 (-1,003 to 1,435) |
+| Gdańsk | all | 118 | 16 | 1,544 (631 to 2,398 *) | 1,841 (828 to 2,422 *) | 26.3 (16.7 to 37.1 *) | 56.8 (47.9 to 68.5 *) | 8,205 (6,154 to 11,068 *) |
+| Gdańsk | top6 | 60 | 5 | 1,382 (771 to 2,422 *) | 1,382 (828 to 2,422 *) | 23.3 (14.0 to 32.2 *) | 55.0 (41.8 to 71.8 *) | 7,295 (5,497 to 9,619 *) |
+| Gdańsk | rest | 58 | 11 | 1,858 (116 to 3,364 *) | 1,874 (533 to 3,913 *) | 29.3 (11.3 to 49.3 *) | 58.6 (46.3 to 75.0 *) | 9,146 (5,367 to 13,361 *) |
+| Gdańsk | top6 minus rest |  |  | -476 (-1,959 to 1,729) | -492 (-2,555 to 1,500) | -6.0 (-28.6 to 14.7) | -3.6 (-24.9 to 17.1) | -1,850 (-7,179 to 2,761) |
+| Z-42 | all | 56 | 8 | 470 (-858 to 4,055) | 470 (-865 to 4,055) | 42.9 (18.8 to 66.7 *) | 42.9 (24.5 to 64.1 *) | 4,126 (2,377 to 6,548 *) |
+| Z-42 | top6 | 20 | 2 | 4,621 | 4,621 | 20.0 | 40.0 | 4,177 |
+| Z-42 | rest | 36 | 6 | -705 (-1,020 to 2,405) | -705 (-983 to 2,405) | 55.6 (21.4 to 81.0 *) | 44.4 (17.6 to 76.7 *) | 4,098 (1,551 to 7,915 *) |
+| Z-42 | top6 minus rest |  |  | 5,326 (1,818 to 6,228 *) | 5,326 (2,025 to 6,228 *) | -35.6 (-62.6 to 4.4) | -4.4 (-37.1 to 21.4) | 79 (-3,912 to 2,624) |
+| Z-52 | all | 10 | 4 | 4,522 (8 to 6,796 *) sn | 4,522 (8 to 6,796 *) sn | 10.0 (0.0 to 42.9) sn | 40.0 (22.2 to 80.0 *) sn | 2,025 (0 to 2,819) sn |
+| Z-52 | top6 | 6 | 1 | too few | too few | too few | too few | too few |
+| Z-52 | rest | 4 | 3 | too few | too few | too few | too few | too few |
+| Z-52 | top6 minus rest |  |  | too few | too few | too few | too few | too few |
+| Grozovoi | all | 30 | 8 | 998 (-500 to 2,142) | 1,028 (-412 to 2,142) | 33.3 (21.1 to 61.5 *) | 53.3 (35.9 to 87.5 *) | 6,452 (2,998 to 13,916 *) |
+| Grozovoi | top6 | 6 | 2 | too few | too few | too few | too few | too few |
+| Grozovoi | rest | 24 | 6 | 1,439 (-500 to 5,322) | 1,439 (-500 to 4,940) | 33.3 (23.5 to 66.7 *) | 54.2 (42.1 to 91.7 *) | 4,409 (1,545 to 7,315 *) |
+| Grozovoi | top6 minus rest |  |  | too few | too few | too few | too few | too few |
+| Shimakaze | all | 58 | 12 | 3,288 (-119 to 4,869) | 3,546 (-46 to 5,731) | 32.8 (20.7 to 49.0 *) | 74.1 (62.9 to 84.4 *) | 5,609 (2,637 to 10,748 *) |
+| Shimakaze | top6 | 15 | 4 | 3,789 (2,770 to 4,361 *) | 3,789 (2,770 to 4,361 *) | 33.3 (20.0 to 50.0 *) | 66.7 (50.0 to 80.0 *) | 5,185 (373 to 9,539 *) |
+| Shimakaze | rest | 43 | 8 | 2,758 (-652 to 5,610) | 3,407 (-1,138 to 5,861) | 32.6 (15.2 to 54.3 *) | 76.7 (63.0 to 91.7 *) | 5,757 (2,553 to 13,123 *) |
+| Shimakaze | top6 minus rest |  |  | 1,030 (-1,822 to 4,704) | 382 (-2,099 to 4,647) | 0.8 (-23.9 to 26.0) | -10.1 (-35.7 to 9.7) | -571 (-10,046 to 5,265) |
+Daring minus Gdańsk edge_med_m -873 -2,158 to 258
+Daring minus Gdańsk edge_med_no_mrA_m -1,170 -2,261 to 12
+Daring minus Gdańsk inside_pct 16.2 1.0 to 27.8 *
+Daring minus Gdańsk teammate_pct -13.3 -24.5 to -3.8 *
+Daring minus Gdańsk conc_per_smoke -4,582 -7,301 to -2,538 *
+Daring minus Gdańsk [top] n 34/60 edge_med_m -630 -1,979 to 1,139
+Daring minus Gdańsk [top] n 34/60 edge_med_no_mrA_m -630 -2,016 to 1,155
+Daring minus Gdańsk [top] n 34/60 inside_pct 17.8 6.2 to 34.4 *
+Daring minus Gdańsk [top] n 34/60 teammate_pct -5.0 -35.3 to 14.2
+Daring minus Gdańsk [top] n 34/60 conc_per_smoke -3,305 -6,027 to -999 *
+Daring minus Gdańsk [rest] n 166/58 edge_med_m -1,256 -3,240 to 925
+Daring minus Gdańsk [rest] n 166/58 edge_med_no_mrA_m -1,273 -3,460 to 407
+Daring minus Gdańsk [rest] n 166/58 inside_pct 13.5 -12.0 to 32.2
+Daring minus Gdańsk [rest] n 166/58 teammate_pct -16.5 -31.7 to -5.6 *
+Daring minus Gdańsk [rest] n 166/58 conc_per_smoke -5,598 -10,340 to -2,139 *
+check Daring mean edge 1164.0 share edge<1000 55.0 conc median 601.0 share conc>0 55.0 stacked% 10.0 screen% 42.0
+check Gdańsk mean edge 2479.0 share edge<1000 44.1 conc median 3564.0 share conc>0 74.6 stacked% 16.1 screen% 54.2
+
+===== B2 getaway smokes
+Napoli n 147 kinds {'exhaust': 147} deaths 24 smoker deaths 22 | Top 6: VRTUS 6, RESIN 3, BONKZ 3, HTDOG 2, H-SR 1 | Rest: KITED 18, MACHX 16, BTLST 14, 5D 14, HFANS 11, UYSC 10, REEEE 8, MZY 6, KSE 5, KM 4, MANBA 4, INCA 4, BONKY 4, PFANS 3, MACH 3, NGA 3, PN 2, SCCC2 1, KSC 1, -BN- 1
+Venezia n 21 kinds {'exhaust': 21} deaths 6 smoker deaths 5 | Top 6: none | Rest: KITED 9, NGA 7, 5D 5
+Italian cruisers (Napoli + Venezia) n 168 kinds {'exhaust': 168} deaths 30 smoker deaths 27 | Top 6: VRTUS 6, RESIN 3, BONKZ 3, HTDOG 2, H-SR 1 | Rest: KITED 27, 5D 19, MACHX 16, BTLST 14, HFANS 11, NGA 10, UYSC 10, REEEE 8, MZY 6, KSE 5, KM 4, MANBA 4, INCA 4, BONKY 4, PFANS 3, MACH 3, PN 2, SCCC2 1, KSC 1, -BN- 1
+C. Colombo (battleship) n 20 kinds {'exhaust': 20} deaths 2 smoker deaths 2 | Top 6: VRTUS 1, RESIN 1 | Rest: BTLST 3, KITED 3, -BN- 3, EPOXY 2, PN 1, UYSC 1, BONKY 1, INCA 1, NGA 1, MZY 1, HFANS 1
+Conte Verde (battleship) n 9 kinds {'exhaust': 9} deaths 1 smoker deaths 1 | Top 6: H-SR 8 | Rest: EPOXY 1
+Sicilia (battleship) n 3 kinds {'exhaust': 3} deaths 0 smoker deaths 0 | Top 6: none | Rest: HFANS 2, 5D 1
+Irresistible (battleship, ordinary smoke) n 2 kinds {'other': 2} deaths 0 smoker deaths 0 | Top 6: none | Rest: MACHX 2
+All battleships n 34 kinds {'exhaust': 32, 'other': 2} deaths 3 smoker deaths 3 | Top 6: H-SR 8, VRTUS 1, RESIN 1 | Rest: EPOXY 3, BTLST 3, KITED 3, -BN- 3, HFANS 3, MACHX 2, PN 1, UYSC 1, BONKY 1, INCA 1, NGA 1, MZY 1, 5D 1
+All getaway smokes (exhaust or battleship) n 217 kinds {'exhaust': 215, 'other': 2} deaths 34 smoker deaths 31 | Top 6: H-SR 9, VRTUS 7, RESIN 4, HTDOG 4, BONKZ 3 | Rest: KITED 30, 5D 20, MACHX 18, BTLST 17, HFANS 14, NGA 11, UYSC 11, -BN- 9, REEEE 8, KM 7, INCA 7, MZY 7, MACH 5, KSE 5, BONKY 5, MANBA 4, PN 3, PFANS 3, EPOXY 3, SCCC2 1, RSR 1, KSC 1
+| group | split | n | clans | deaths_per_100 | smoker_deaths_per_100 | hurt_smoker_per_100 | undetected_pct_of_covered_time | undetected_pct_of_smoke_life | escape_tag_pct | cut_short_pct | conc_per_smoke |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Napoli | all | 147 | 25 | 16.3 (10.6 to 24.1 *) | 15.0 (9.9 to 22.3 *) | 21.8 (16.9 to 27.9 *) | 81.4 (76.5 to 85.6 *) | 69.5 (63.7 to 73.8 *) | 17.0 (11.2 to 22.8 *) | 10.9 (5.7 to 18.1 *) | 4,077 (2,805 to 5,423 *) |
+| Napoli | top6 | 15 | 5 | 33.3 (17.6 to 66.7 *) | 33.3 (16.7 to 66.7 *) | 33.3 (16.7 to 70.0 *) | 89.8 (76.3 to 98.9 *) | 60.2 (39.9 to 75.2 *) | 20.0 (5.9 to 40.0 *) | 26.7 (6.7 to 58.3 *) | 3,224 (815 to 7,144 *) |
+| Napoli | rest | 132 | 20 | 14.4 (9.1 to 22.7 *) | 12.9 (7.9 to 19.1 *) | 20.5 (15.1 to 26.2 *) | 80.4 (74.8 to 84.1 *) | 70.6 (64.7 to 75.0 *) | 16.7 (10.4 to 23.4 *) | 9.1 (3.8 to 15.7 *) | 4,174 (2,835 to 5,523 *) |
+| Napoli | top6 minus rest |  |  | 18.9 (1.4 to 52.8 *) | 20.5 (2.5 to 55.6 *) | 12.9 (-5.1 to 40.1) | 9.4 (-4.6 to 19.7) | -10.4 (-31.3 to 4.6) | 3.3 (-13.0 to 24.3) | 17.6 (-2.1 to 50.3) | -949 (-4,045 to 2,652) |
+| Venezia | all | 21 | 3 | 28.6 (11.1 to 60.0 *) | 23.8 (11.1 to 40.0 *) | 28.6 (11.1 to 42.9 *) | 83.7 (70.3 to 90.1 *) | 72.3 (52.3 to 85.8 *) | 14.3 (0.0 to 22.2) | 14.3 (0.0 to 28.6) | 3,210 (435 to 6,392 *) |
+| Venezia | top6 | 0 | 0 | too few | too few | too few | too few | too few | too few | too few | too few |
+| Venezia | rest | 21 | 3 | 28.6 (11.1 to 60.0 *) | 23.8 (11.1 to 40.0 *) | 28.6 (11.1 to 42.9 *) | 83.7 (70.3 to 91.1 *) | 72.3 (52.3 to 85.8 *) | 14.3 (0.0 to 22.2) | 14.3 (0.0 to 28.6) | 3,210 (435 to 6,392 *) |
+| Venezia | top6 minus rest |  |  | too few | too few | too few | too few | too few | too few | too few | too few |
+| Italian cruisers (Napoli + Venezia) | all | 168 | 25 | 17.9 (12.7 to 25.0 *) | 16.1 (11.4 to 22.5 *) | 22.6 (18.0 to 28.4 *) | 81.7 (76.6 to 85.6 *) | 69.9 (63.2 to 74.4 *) | 16.7 (11.6 to 22.3 *) | 11.3 (7.1 to 17.8 *) | 3,969 (3,062 to 5,045 *) |
+| Italian cruisers (Napoli + Venezia) | top6 | 15 | 5 | 33.3 (16.7 to 64.3 *) | 33.3 (17.6 to 66.7 *) | 33.3 (16.7 to 66.7 *) | 89.8 (75.0 to 98.9 *) | 60.2 (39.9 to 74.6 *) | 20.0 (4.5 to 41.7 *) | 26.7 (6.7 to 58.3 *) | 3,224 (787 to 7,144 *) |
+| Italian cruisers (Napoli + Venezia) | rest | 153 | 20 | 16.3 (11.3 to 22.4 *) | 14.4 (9.8 to 19.7 *) | 21.6 (16.7 to 27.7 *) | 80.9 (75.2 to 84.8 *) | 70.8 (64.4 to 75.4 *) | 16.3 (10.9 to 22.5 *) | 9.8 (5.3 to 16.1 *) | 4,042 (3,134 to 5,167 *) |
+| Italian cruisers (Napoli + Venezia) | top6 minus rest |  |  | 17.0 (-2.1 to 50.7) | 19.0 (1.6 to 52.5 *) | 11.8 (-6.3 to 46.5) | 9.0 (-6.3 to 19.8) | -10.6 (-30.2 to 5.8) | 3.7 (-12.9 to 25.4) | 16.9 (-4.3 to 48.7) | -817 (-3,602 to 2,949) |
+| C. Colombo (battleship) | all | 20 | 13 | 10.0 (0.0 to 23.8) | 10.0 (0.0 to 23.8) | 25.0 (9.1 to 44.4 *) | 64.7 (51.0 to 78.6 *) | 56.4 (44.1 to 68.8 *) | 30.0 (13.3 to 50.0 *) | 20.0 (5.0 to 36.8 *) | 5,405 (2,515 to 8,336 *) |
+| C. Colombo (battleship) | top6 | 2 | 2 | too few | too few | too few | too few | too few | too few | too few | too few |
+| C. Colombo (battleship) | rest | 18 | 11 | 11.1 (0.0 to 25.0) | 11.1 (0.0 to 26.3) | 22.2 (5.9 to 42.1 *) | 65.0 (48.8 to 80.1 *) | 56.1 (40.1 to 68.4 *) | 33.3 (15.8 to 53.8 *) | 22.2 (5.9 to 43.8 *) | 5,456 (2,344 to 8,520 *) |
+| C. Colombo (battleship) | top6 minus rest |  |  | too few | too few | too few | too few | too few | too few | too few | too few |
+| Conte Verde (battleship) | all | 9 | 2 | 11.1 sn | 11.1 sn | 11.1 sn | 80.8 sn | 64.2 sn | 11.1 sn | 0.0 sn | 5,910 sn |
+| Conte Verde (battleship) | top6 | 8 | 1 | 12.5 sn | 12.5 sn | 12.5 sn | 82.6 sn | 69.4 sn | 12.5 sn | 0.0 sn | 5,542 sn |
+| Conte Verde (battleship) | rest | 1 | 1 | too few | too few | too few | too few | too few | too few | too few | too few |
+| Conte Verde (battleship) | top6 minus rest |  |  | too few | too few | too few | too few | too few | too few | too few | too few |
+| Sicilia (battleship) | all | 3 | 2 | too few | too few | too few | too few | too few | too few | too few | too few |
+| Sicilia (battleship) | top6 | 0 | 0 | too few | too few | too few | too few | too few | too few | too few | too few |
+| Sicilia (battleship) | rest | 3 | 2 | too few | too few | too few | too few | too few | too few | too few | too few |
+| Sicilia (battleship) | top6 minus rest |  |  | too few | too few | too few | too few | too few | too few | too few | too few |
+| Irresistible (battleship, ordinary smoke) | all | 2 | 1 | too few | too few | too few | too few | too few | too few | too few | too few |
+| Irresistible (battleship, ordinary smoke) | top6 | 0 | 0 | too few | too few | too few | too few | too few | too few | too few | too few |
+| Irresistible (battleship, ordinary smoke) | rest | 2 | 1 | too few | too few | too few | too few | too few | too few | too few | too few |
+| Irresistible (battleship, ordinary smoke) | top6 minus rest |  |  | too few | too few | too few | too few | too few | too few | too few | too few |
+| All battleships | all | 34 | 16 | 8.8 (0.0 to 17.6) | 8.8 (0.0 to 16.7) | 20.6 (10.3 to 37.5 *) | 71.7 (58.5 to 80.2 *) | 61.8 (50.3 to 69.6 *) | 23.5 (12.9 to 38.5 *) | 11.8 (2.7 to 26.7 *) | 6,296 (4,464 to 8,322 *) |
+| All battleships | top6 | 10 | 3 | 10.0 (0.0 to 12.5) sn | 10.0 (0.0 to 12.5) sn | 20.0 (0.0 to 100.0) sn | 78.6 (49.9 to 82.6 *) sn | 67.3 (46.8 to 71.2 *) sn | 10.0 (0.0 to 12.5) sn | 0.0 (0.0 to 0.0) sn | 5,424 (0 to 9,900) sn |
+| All battleships | rest | 24 | 13 | 8.3 (0.0 to 21.1) | 8.3 (0.0 to 21.1) | 20.8 (7.4 to 38.9 *) | 68.7 (53.7 to 80.4 *) | 59.4 (45.1 to 71.0 *) | 29.2 (14.3 to 47.1 *) | 16.7 (4.2 to 33.3 *) | 6,660 (4,337 to 9,218 *) |
+| All battleships | top6 minus rest |  |  | 1.7 (-15.4 to 11.8) | 1.7 (-18.2 to 11.8) | -0.8 (-25.1 to 71.4) | 9.9 (-18.3 to 25.6) | 8.0 (-13.6 to 22.1) | -19.2 (-42.1 to -5.4 *) | -16.7 (-31.6 to -4.0 *) | -1,236 (-6,373 to 2,607) |
+| All getaway smokes (exhaust or battleship) | all | 217 | 27 | 15.7 (11.4 to 20.6 *) | 14.3 (10.4 to 19.0 *) | 21.7 (17.0 to 27.1 *) | 81.0 (76.8 to 84.6 *) | 69.3 (64.1 to 73.6 *) | 17.5 (12.2 to 22.5 *) | 11.5 (7.1 to 16.8 *) | 4,780 (3,859 to 5,842 *) |
+| All getaway smokes (exhaust or battleship) | top6 | 27 | 5 | 22.2 (13.9 to 38.9 *) | 22.2 (13.9 to 40.0 *) | 25.9 (16.2 to 39.1 *) | 85.9 (79.0 to 90.3 *) | 64.0 (58.4 to 73.1 *) | 14.8 (6.1 to 27.8 *) | 18.5 (3.0 to 48.0 *) | 4,473 (2,701 to 7,012 *) |
+| All getaway smokes (exhaust or battleship) | rest | 190 | 22 | 14.7 (10.0 to 20.2 *) | 13.2 (9.0 to 17.4 *) | 21.1 (16.3 to 26.8 *) | 80.3 (75.2 to 84.4 *) | 70.0 (63.6 to 74.5 *) | 17.9 (12.2 to 23.3 *) | 10.5 (6.6 to 15.9 *) | 4,824 (3,907 to 6,124 *) |
+| All getaway smokes (exhaust or battleship) | top6 minus rest |  |  | 7.5 (-3.1 to 25.3) | 9.1 (-0.3 to 25.4) | 4.9 (-7.2 to 19.9) | 5.6 (-1.3 to 12.9) | -6.0 (-13.6 to 4.4) | -3.1 (-13.0 to 10.4) | 8.0 (-8.8 to 37.4) | -351 (-2,682 to 2,122) |
+| BASELINE all smokes | all | 1547 | 30 | 11.4 (9.4 to 13.9 *) | 7.5 (5.9 to 9.8 *) | 16.2 (13.9 to 19.3 *) | 87.1 (85.1 to 88.6 *) | 47.6 (44.2 to 51.1 *) | 15.5 (13.0 to 18.3 *) | 5.2 (3.9 to 6.8 *) | 9,618 (8,056 to 10,840 *) |
+| BASELINE all smokes | top6 | 538 | 6 | 7.8 (5.9 to 9.9 *) | 4.3 (2.7 to 5.9 *) | 12.5 (10.4 to 14.0 *) | 90.2 (89.2 to 91.4 *) | 46.9 (40.4 to 52.9 *) | 12.8 (9.5 to 17.3 *) | 3.2 (1.9 to 4.2 *) | 11,685 (9,408 to 13,709 *) |
+| BASELINE all smokes | rest | 1009 | 24 | 13.4 (11.1 to 16.3 *) | 9.2 (7.0 to 12.2 *) | 18.2 (14.9 to 22.7 *) | 85.4 (82.5 to 87.8 *) | 48.0 (43.9 to 51.9 *) | 16.9 (14.0 to 20.7 *) | 6.2 (4.7 to 8.7 *) | 8,515 (6,846 to 9,817 *) |
+| BASELINE all smokes | top6 minus rest |  |  | -5.6 (-9.2 to -2.3 *) | -4.9 (-8.3 to -2.0 *) | -5.8 (-10.8 to -2.1 *) | 4.8 (2.4 to 8.1 *) | -1.2 (-8.7 to 6.6) | -4.1 (-9.5 to 0.8) | -3.1 (-5.8 to -1.1 *) | 3,170 (469 to 5,750 *) |
+| BASELINE all other smokes (not getaway) | all | 1330 | 30 | 10.8 (8.8 to 13.5 *) | 6.4 (4.6 to 8.9 *) | 15.3 (12.9 to 18.8 *) | 88.1 (86.1 to 89.7 *) | 44.1 (40.6 to 47.5 *) | 15.2 (12.7 to 18.1 *) | 4.1 (3.1 to 5.8 *) | 10,407 (8,944 to 11,680 *) |
+| BASELINE all other smokes (not getaway) | top6 | 511 | 6 | 7.0 (5.1 to 9.2 *) | 3.3 (1.8 to 4.9 *) | 11.7 (10.0 to 13.0 *) | 90.4 (89.3 to 91.6 *) | 46.0 (39.4 to 53.1 *) | 12.7 (9.2 to 17.0 *) | 2.3 (1.3 to 3.1 *) | 12,066 (9,648 to 14,121 *) |
+| BASELINE all other smokes (not getaway) | rest | 819 | 24 | 13.1 (10.8 to 17.0 *) | 8.3 (6.0 to 11.8 *) | 17.6 (14.1 to 23.1 *) | 86.6 (83.6 to 89.0 *) | 42.9 (38.7 to 46.4 *) | 16.7 (13.4 to 21.0 *) | 5.3 (3.6 to 7.8 *) | 9,372 (7,757 to 10,748 *) |
+| BASELINE all other smokes (not getaway) | top6 minus rest |  |  | -6.0 (-10.0 to -2.8 *) | -5.0 (-8.9 to -2.1 *) | -5.8 (-11.5 to -2.0 *) | 3.9 (1.3 to 7.2 *) | 3.0 (-4.8 to 11.0) | -4.0 (-9.5 to 1.6) | -2.9 (-5.3 to -1.0 *) | 2,695 (18 to 5,329 *) |
+| BASELINE cruiser smokers, all | all | 439 | 29 | 11.4 (9.4 to 14.0 *) | 10.0 (8.2 to 12.4 *) | 17.5 (15.0 to 20.4 *) | 86.9 (83.6 to 89.5 *) | 67.3 (63.0 to 71.6 *) | 15.9 (11.4 to 19.9 *) | 5.9 (3.9 to 8.1 *) | 6,988 (5,479 to 8,305 *) |
+| BASELINE cruiser smokers, all | top6 | 141 | 6 | 8.5 (6.8 to 10.1 *) | 7.8 (5.9 to 9.7 *) | 17.0 (15.0 to 18.5 *) | 93.3 (92.0 to 95.1 *) | 66.9 (59.5 to 75.9 *) | 17.7 (9.2 to 24.9 *) | 5.7 (4.0 to 6.5 *) | 9,248 (6,976 to 10,132 *) |
+| BASELINE cruiser smokers, all | rest | 298 | 23 | 12.8 (9.7 to 16.1 *) | 11.1 (8.6 to 14.2 *) | 17.8 (14.3 to 22.1 *) | 83.9 (80.1 to 86.7 *) | 67.5 (62.0 to 72.3 *) | 15.1 (10.4 to 19.9 *) | 6.0 (3.4 to 8.8 *) | 5,918 (4,501 to 7,444 *) |
+| BASELINE cruiser smokers, all | top6 minus rest |  |  | -4.2 (-8.8 to -1.1 *) | -3.3 (-7.2 to -0.1 *) | -0.8 (-5.9 to 3.5) | 9.5 (6.2 to 13.5 *) | -0.6 (-10.4 to 9.6) | 2.6 (-8.1 to 11.6) | -0.4 (-3.9 to 2.3) | 3,330 (630 to 4,994 *) |
+| BASELINE cruiser smokers, ordinary smoke (Svea, Jinan...) | all | 271 | 22 | 7.4 (5.2 to 10.1 *) | 6.3 (4.2 to 9.3 *) | 14.4 (11.0 to 18.3 *) | 90.1 (86.6 to 92.5 *) | 65.8 (60.2 to 71.5 *) | 15.5 (8.7 to 21.1 *) | 2.6 (1.2 to 3.9 *) | 8,859 (7,204 to 10,054 *) |
+| BASELINE cruiser smokers, ordinary smoke (Svea, Jinan...) | top6 | 126 | 6 | 5.6 (3.1 to 7.4 *) | 4.8 (2.5 to 7.4 *) | 15.1 (12.8 to 17.0 *) | 93.7 (92.7 to 94.9 *) | 67.7 (57.1 to 78.9 *) | 17.5 (6.3 to 24.6 *) | 3.2 (1.0 to 5.2 *) | 9,965 (8,069 to 10,564 *) |
+| BASELINE cruiser smokers, ordinary smoke (Svea, Jinan...) | rest | 145 | 16 | 9.0 (5.0 to 13.4 *) | 7.6 (4.2 to 12.0 *) | 13.8 (7.9 to 21.0 *) | 87.0 (82.0 to 90.7 *) | 64.1 (57.7 to 69.8 *) | 13.8 (5.8 to 21.9 *) | 2.1 (0.0 to 4.2) | 7,898 (5,542 to 9,985 *) |
+| BASELINE cruiser smokers, ordinary smoke (Svea, Jinan...) | top6 minus rest |  |  | -3.4 (-8.6 to 0.4) | -2.8 (-8.0 to 1.7) | 1.3 (-6.2 to 7.3) | 6.8 (2.6 to 11.3 *) | 3.6 (-7.6 to 15.7) | 3.7 (-11.5 to 14.5) | 1.1 (-1.8 to 3.8) | 2,067 (-927 to 4,474) |
+| BASELINE destroyer smokers | all | 1074 | 30 | 11.5 (9.2 to 14.5 *) | 6.4 (4.3 to 9.4 *) | 15.5 (12.7 to 19.4 *) | 87.6 (85.6 to 89.2 *) | 38.9 (36.4 to 41.4 *) | 15.1 (12.5 to 18.5 *) | 4.7 (3.3 to 6.5 *) | 10,798 (8,974 to 12,399 *) |
+| BASELINE destroyer smokers | top6 | 387 | 6 | 7.5 (5.0 to 10.2 *) | 2.8 (1.5 to 4.4 *) | 10.6 (8.7 to 12.2 *) | 89.3 (88.3 to 90.8 *) | 38.7 (35.5 to 43.0 *) | 11.1 (8.5 to 14.8 *) | 2.3 (1.2 to 3.3 *) | 12,735 (9,298 to 15,033 *) |
+| BASELINE destroyer smokers | rest | 687 | 24 | 13.8 (11.0 to 17.8 *) | 8.4 (5.7 to 12.7 *) | 18.3 (14.0 to 24.5 *) | 86.6 (83.6 to 88.9 *) | 39.1 (35.6 to 42.1 *) | 17.3 (13.9 to 21.7 *) | 6.0 (4.1 to 8.8 *) | 9,707 (7,915 to 11,442 *) |
+| BASELINE destroyer smokers | top6 minus rest |  |  | -6.3 (-10.7 to -2.7 *) | -5.6 (-9.9 to -2.3 *) | -7.7 (-14.3 to -3.5 *) | 2.7 (0.1 to 6.3 *) | -0.3 (-5.0 to 4.9) | -6.2 (-11.5 to -0.8 *) | -3.6 (-6.6 to -1.4 *) | 3,028 (-651 to 6,113) |
+Italian cruisers minus cruiser ordinary smoke | deaths_per_100 10.5 3.4 to 18.8 *
+Italian cruisers minus cruiser ordinary smoke | smoker_deaths_per_100 9.8 3.3 to 17.3 *
+Italian cruisers minus cruiser ordinary smoke | hurt_smoker_per_100 8.2 2.0 to 14.7 *
+Italian cruisers minus cruiser ordinary smoke | undetected_pct_of_covered_time -8.4 -13.5 to -3.8 *
+Italian cruisers minus cruiser ordinary smoke | undetected_pct_of_smoke_life 4.1 -4.3 to 10.8
+Italian cruisers minus cruiser ordinary smoke | escape_tag_pct 1.2 -6.7 to 9.3
+Italian cruisers minus all other smokes | deaths_per_100 7.1 0.9 to 15.4 *
+Italian cruisers minus all other smokes | smoker_deaths_per_100 9.7 4.2 to 17.1 *
+Italian cruisers minus all other smokes | hurt_smoker_per_100 7.3 1.8 to 14.2 *
+Italian cruisers minus all other smokes | undetected_pct_of_covered_time -6.4 -11.4 to -2.2 *
+Italian cruisers minus all other smokes | undetected_pct_of_smoke_life 25.8 18.8 to 31.4 *
+Italian cruisers minus all other smokes | escape_tag_pct 1.5 -5.1 to 7.9
+Napoli minus cruiser ordinary smoke | deaths_per_100 8.9 1.6 to 18.0 *
+Napoli minus cruiser ordinary smoke | smoker_deaths_per_100 8.7 2.1 to 16.5 *
+Napoli minus cruiser ordinary smoke | hurt_smoker_per_100 7.4 0.5 to 14.2 *
+Napoli minus cruiser ordinary smoke | undetected_pct_of_covered_time -8.7 -13.7 to -4.1 *
+Napoli minus cruiser ordinary smoke | undetected_pct_of_smoke_life 3.7 -3.8 to 10.3
+Napoli minus cruiser ordinary smoke | escape_tag_pct 1.5 -6.1 to 10.5
+Battleships minus Italian cruisers | deaths_per_100 -9.0 -19.7 to 1.4
+Battleships minus Italian cruisers | smoker_deaths_per_100 -7.2 -18.0 to 2.6
+Battleships minus Italian cruisers | hurt_smoker_per_100 -2.0 -13.3 to 14.8
+Battleships minus Italian cruisers | undetected_pct_of_covered_time -10.0 -22.6 to -0.9 *
+Battleships minus Italian cruisers | undetected_pct_of_smoke_life -8.1 -19.2 to 1.3
+Battleships minus Italian cruisers | escape_tag_pct 6.9 -4.8 to 22.7
+Battleships minus all other smokes | deaths_per_100 -1.9 -11.1 to 6.9
+Battleships minus all other smokes | smoker_deaths_per_100 2.4 -5.9 to 10.5
+Battleships minus all other smokes | hurt_smoker_per_100 5.2 -6.9 to 22.7
+Battleships minus all other smokes | undetected_pct_of_covered_time -16.4 -30.2 to -7.2 *
+Battleships minus all other smokes | undetected_pct_of_smoke_life 17.7 4.1 to 25.9 *
+Battleships minus all other smokes | escape_tag_pct 8.3 -2.0 to 23.5
+Battleships minus cruiser ordinary smoke | deaths_per_100 1.4 -7.2 to 10.7
+Battleships minus cruiser ordinary smoke | smoker_deaths_per_100 2.6 -6.3 to 11.4
+Battleships minus cruiser ordinary smoke | hurt_smoker_per_100 6.2 -5.1 to 23.7
+Battleships minus cruiser ordinary smoke | undetected_pct_of_covered_time -18.4 -32.9 to -9.3 *
+Battleships minus cruiser ordinary smoke | undetected_pct_of_smoke_life -4.0 -17.2 to 6.1
+Battleships minus cruiser ordinary smoke | escape_tag_pct 8.0 -5.6 to 27.0
+All getaway minus all other smokes | deaths_per_100 4.9 0.1 to 11.3 *
+All getaway minus all other smokes | smoker_deaths_per_100 7.9 3.4 to 13.0 *
+All getaway minus all other smokes | hurt_smoker_per_100 6.3 1.2 to 12.4 *
+All getaway minus all other smokes | undetected_pct_of_covered_time -7.1 -11.1 to -3.2 *
+All getaway minus all other smokes | undetected_pct_of_smoke_life 25.2 19.0 to 30.3 *
+All getaway minus all other smokes | escape_tag_pct 2.3 -3.4 to 8.4
+Italian cruisers dead by class {('cruiser', 'smoker'): 27, ('battleship', 'other'): 2, ('cruiser', 'other'): 1} | primary purpose {'none': 54, 'cap_contest': 34, 'counter_smoke': 23, 'reposition': 20, 'island_dive': 16} | undetected None 4 | median covered s 51.0 median life s 58.0 | median undetected % covered 100.0 | fully detected whole time % 5.4 | movement {'kiting': 32, 'pushing': 72, 'horizontal': 45, 'unclassified': 11, 'stationary': 8}
+Battleships dead by class {('battleship', 'smoker'): 3} | primary purpose {'cap_contest': 12, 'none': 9, 'escape': 4, 'damage': 4, 'island_dive': 2} | undetected None 1 | median covered s 56.9 median life s 60.0 | median undetected % covered 75.0 | fully detected whole time % 5.9 | movement {'kiting': 8, 'stationary': 2, 'pushing': 16, 'unclassified': 1, 'horizontal': 7}
+escape-tagged getaway smokes vs not: smoker deaths per 100 10.5 38 15.1
+smoker hp at activation, mean %: Italian cruisers 67.5 BB 68.1 cruiser ordinary 72.9 spotted at activation %: It CA 70.2 BB 67.6 cruiser ordinary 54.2 DD 29.4
+
+===== B3 long smokes
+check shooters conc total vs smoke conc total 14878663 14878663
+land_m missing 230 of 1547 | on long ships 106
+detected_by kinds {'radar': 505, 'surface lit': 825, 'smoke fire penalty': 345, 'proximity': 13, 'hydro': 35, 'aircraft': 13} | narrow and broad 170 372 narrow but not broad 1
+selfish flag vs coverage label selfish agree 1283 of 1547
+land_m quantiles all DD [316, 906, 1958, 3091, 4017]
+Somers n 260 zone {'side lane': 115, 'map edge': 84, 'centre': 61} batch lane {'center': 39, 'right': 112, 'left': 109} | Top 6: RESIN 38, H-SR 33, BONKZ 12, VRTUS 7 | Rest: HFANS 28, REEEE 25, MZY 22, EPOXY 18, MACHX 17, BONKY 14, -BN- 12, NGA 11, PFANS 8, PN 5, UYSC 5, KITED 3, RSR 1, INCA 1
+Gearing n 180 zone {'map edge': 50, 'centre': 48, 'side lane': 82} batch lane {'left': 65, 'right': 87, 'center': 28} | Top 6: BONKZ 37, KITE 23, VRTUS 10, HTDOG 4 | Rest: KSC 29, -BN- 18, BTLST 11, 5D 9, OGF 9, RSR 9, INCA 7, HFANS 5, RMN 3, EPOXY 3, KM 2, UYSC 1
+Harugumo n 100 zone {'map edge': 42, 'centre': 17, 'side lane': 41} batch lane {'right': 50, 'center': 10, 'left': 40} | Top 6: RESIN 22, H-SR 20, BONKZ 7, HTDOG 6 | Rest: EPOXY 14, -BN- 6, PFANS 4, BONKY 4, PN 4, KM 3, SCCC2 3, REEEE 2, KITED 2, MZY 2, RSR 1
+Delny n 22 zone {'centre': 8, 'side lane': 13, 'map edge': 1} batch lane {'right': 7, 'center': 6, 'left': 9} | Top 6: H-SR 18 | Rest: MZY 4
+All four long-smoke ships n 562 zone {'map edge': 177, 'side lane': 251, 'centre': 134} batch lane {'left': 223, 'center': 83, 'right': 256} | Top 6: H-SR 71, RESIN 60, BONKZ 56, KITE 23, VRTUS 17, HTDOG 10 | Rest: -BN- 36, EPOXY 35, HFANS 33, KSC 29, MZY 28, REEEE 27, BONKY 18, MACHX 17, PFANS 12, BTLST 11, RSR 11, NGA 11, 5D 9, OGF 9, PN 9, INCA 8, UYSC 6, KM 5, KITED 5, RMN 3, SCCC2 3
+REFERENCE cap sitters (Daring, Z-42, Gdańsk, Grozovoi, Shimakaze) n 462 zone {'centre': 249, 'side lane': 167, 'map edge': 46} batch lane {'right': 165, 'center': 129, 'left': 168} | Top 6: HTDOG 34, RESIN 27, VRTUS 25, H-SR 18, BONKZ 17, KITE 14 | Rest: HFANS 46, MACHX 32, EPOXY 30, SCCC2 29, KSC 22, -BN- 22, KITED 17, REEEE 17, UYSC 16, MACH 16, KSE 15, MZY 12, 5D 8, INCA 7, BONKY 7, RMN 6, PFANS 6, MANBA 5, RSR 5, BTLST 4, NGA 4, PN 1
+REFERENCE all destroyer smokes n 1074 zone {'map edge': 236, 'centre': 396, 'side lane': 442} batch lane {'left': 415, 'right': 437, 'center': 222} | 
+| group | split | n | clans | conc_per_smoke | edge_med_m | teammate_share_of_damage_pct | selfish_pct | smoker_only_label_pct | enemy_radar_spotted_pct | enemy_radar_broad_pct | centre_pct | side_lane_pct | map_edge_pct | land_med_m | near_land_pct | open_water_pct | deaths_per_100 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Somers | all | 260 | 18 | 14,524 (12,538 to 16,081 *) | 2,224 (1,621 to 3,608 *) | 94.1 (90.4 to 97.6 *) | 17.3 (11.3 to 24.6 *) | 8.1 (4.7 to 13.5 *) | 11.9 (9.1 to 14.8 *) | 31.5 (25.5 to 37.0 *) | 23.5 (15.6 to 30.9 *) | 44.2 (37.2 to 52.6 *) | 32.3 (28.1 to 37.0 *) | 2,276 (2,025 to 2,564 *) | 20.1 (12.6 to 28.1 *) | 58.3 (51.8 to 64.9 *) | 10.4 (7.4 to 13.4 *) |
+| Somers | top6 | 90 | 4 | 15,696 (12,395 to 16,579 *) | 2,210 (1,967 to 6,911 *) | 91.6 (77.8 to 100.0 *) | 12.2 (3.7 to 26.3 *) | 5.6 (1.9 to 15.8 *) | 12.2 (0.0 to 16.8) | 34.4 (21.1 to 40.1 *) | 28.9 (5.3 to 37.2 *) | 36.7 (30.2 to 57.9 *) | 34.4 (27.3 to 44.2 *) | 2,651 (2,025 to 3,195 *) | 9.8 (5.0 to 12.9 *) | 63.9 (50.0 to 70.0 *) | 7.8 (2.5 to 12.4 *) |
+| Somers | rest | 170 | 14 | 13,904 (11,227 to 15,938 *) | 2,224 (1,501 to 3,957 *) | 95.7 (93.2 to 98.3 *) | 20.0 (11.7 to 29.9 *) | 9.4 (5.3 to 16.3 *) | 11.8 (9.4 to 15.4 *) | 30.0 (24.2 to 38.0 *) | 20.6 (13.7 to 29.6 *) | 48.2 (39.9 to 55.7 *) | 31.2 (25.3 to 37.2 *) | 2,189 (1,983 to 2,322 *) | 24.5 (14.9 to 33.6 *) | 55.9 (49.0 to 64.7 *) | 11.8 (7.9 to 15.4 *) |
+| Somers | top6 minus rest |  |  | 1,792 (-1,568 to 4,315) | -14 (-1,429 to 4,725) | -4.1 (-19.4 to 5.1) | -7.8 (-21.4 to 10.5) | -3.9 (-12.0 to 9.1) | 0.5 (-12.0 to 5.5) | 4.4 (-10.5 to 13.6) | 8.3 (-15.5 to 18.8) | -11.6 (-21.9 to 12.2) | 3.3 (-6.4 to 12.9) | 462 (-266 to 1,039) | -14.6 (-24.1 to -4.0 *) | 8.0 (-8.2 to 17.5) | -4.0 (-10.9 to 2.3) |
+| Gearing | all | 180 | 16 | 16,296 (11,558 to 19,675 *) | 2,034 (1,536 to 2,517 *) | 96.9 (91.3 to 99.4 *) | 22.8 (13.4 to 36.7 *) | 13.3 (6.8 to 24.0 *) | 6.7 (2.6 to 14.5 *) | 28.3 (22.0 to 37.2 *) | 26.7 (19.1 to 36.6 *) | 45.6 (35.4 to 57.9 *) | 27.8 (15.7 to 38.5 *) | 1,980 (1,643 to 2,399 *) | 27.9 (18.5 to 38.4 *) | 49.4 (38.3 to 57.1 *) | 17.8 (11.2 to 26.9 *) |
+| Gearing | top6 | 74 | 4 | 17,996 (11,062 to 21,980 *) | 1,995 (1,462 to 2,988 *) | 99.0 (96.0 to 100.0 *) | 10.8 (2.4 to 21.2 *) | 4.1 (0.0 to 11.4) | 2.7 (0.0 to 7.5) | 27.0 (18.5 to 47.1 *) | 20.3 (7.1 to 25.6 *) | 54.1 (35.8 to 74.1 *) | 25.7 (11.1 to 50.0 *) | 2,034 (1,770 to 2,399 *) | 28.4 (14.3 to 36.4 *) | 50.7 (39.4 to 54.8 *) | 9.5 (5.7 to 10.6 *) |
+| Gearing | rest | 106 | 12 | 15,109 (8,447 to 19,294 *) | 2,034 (1,470 to 2,840 *) | 95.2 (82.6 to 99.3 *) | 31.1 (20.4 to 50.5 *) | 19.8 (11.3 to 34.4 *) | 9.4 (3.5 to 20.7 *) | 29.2 (18.3 to 41.8 *) | 31.1 (19.8 to 46.1 *) | 39.6 (30.2 to 55.2 *) | 29.2 (10.7 to 40.4 *) | 1,950 (1,105 to 2,546 *) | 27.6 (14.8 to 45.5 *) | 48.3 (32.5 to 60.7 *) | 23.6 (13.9 to 36.8 *) |
+| Gearing | top6 minus rest |  |  | 2,888 (-5,703 to 11,152) | -39 (-1,227 to 1,120) | 3.8 (-1.2 to 17.3) | -20.3 (-40.8 to -3.5 *) | -15.8 (-32.3 to -3.6 *) | -6.7 (-18.2 to 2.0) | -2.2 (-17.4 to 16.0) | -10.9 (-31.5 to 1.5) | 14.4 (-9.1 to 36.3) | -3.6 (-23.1 to 27.8) | 84 (-564 to 877) | 0.8 (-20.6 to 14.7) | 2.5 (-13.2 to 18.7) | -14.1 (-27.7 to -5.3 *) |
+| Harugumo | all | 100 | 15 | 18,388 (12,865 to 22,389 *) | 2,017 (1,449 to 2,751 *) | 78.4 (68.2 to 86.9 *) | 18.0 (7.3 to 28.7 *) | 14.0 (4.6 to 22.3 *) | 16.0 (10.5 to 22.7 *) | 33.0 (27.6 to 37.2 *) | 17.0 (10.0 to 23.0 *) | 41.0 (30.5 to 52.3 *) | 42.0 (30.8 to 53.4 *) | 2,356 (1,642 to 2,742 *) | 25.0 (16.3 to 36.0 *) | 55.0 (41.1 to 65.4 *) | 21.0 (13.0 to 36.5 *) |
+| Harugumo | top6 | 55 | 4 | 17,526 (7,505 to 21,049 *) | 1,870 (1,282 to 2,818 *) | 77.6 (62.8 to 99.1 *) | 16.4 (1.5 to 30.1 *) | 12.7 (0.0 to 25.0) | 12.7 (0.0 to 16.7) | 32.7 (23.1 to 35.7 *) | 16.4 (7.4 to 25.0 *) | 38.2 (15.4 to 45.2 *) | 45.5 (34.9 to 69.2 *) | 2,695 (2,457 to 3,177 *) | 17.1 (8.8 to 24.0 *) | 65.9 (57.9 to 77.8 *) | 9.1 (2.5 to 19.5 *) |
+| Harugumo | rest | 45 | 11 | 19,441 (10,991 to 25,505 *) | 2,093 (1,449 to 3,291 *) | 79.2 (64.7 to 87.6 *) | 20.0 (6.2 to 32.4 *) | 15.6 (4.8 to 26.7 *) | 20.0 (11.8 to 34.2 *) | 33.3 (24.1 to 42.1 *) | 17.8 (9.1 to 26.8 *) | 44.4 (28.2 to 68.9 *) | 37.8 (16.2 to 54.2 *) | 1,795 (1,020 to 2,463 *) | 33.3 (15.4 to 50.0 *) | 43.6 (22.7 to 60.0 *) | 35.6 (27.1 to 50.0 *) |
+| Harugumo | top6 minus rest |  |  | -1,915 (-13,307 to 6,619) | -224 (-1,641 to 809) | -1.6 (-18.4 to 22.8) | -3.6 (-24.4 to 16.3) | -2.8 (-20.3 to 13.6) | -7.3 (-24.8 to 2.4) | -0.6 (-13.5 to 10.2) | -1.4 (-13.7 to 11.7) | -6.3 (-37.2 to 11.9) | 7.7 (-13.7 to 40.4) | 900 (113 to 1,891 *) | -16.3 (-34.9 to 2.0) | 22.3 (4.1 to 45.6 *) | -26.5 (-42.4 to -12.3 *) |
+| Delny | all | 22 | 2 | 14,470 | 2,023 | 98.9 | 22.7 | 13.6 | 4.5 | 22.7 | 36.4 | 59.1 | 4.5 | 2,151 | 27.8 | 55.6 | 0.0 |
+| Delny | top6 | 18 | 1 | 17,488 | 2,023 | 100.0 | 11.1 | 5.6 | 5.6 | 22.2 | 44.4 | 50.0 | 5.6 | 2,246 | 25.0 | 62.5 | 0.0 |
+| Delny | rest | 4 | 1 | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few |
+| Delny | top6 minus rest |  |  | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few |
+| All four long-smoke ships | all | 562 | 27 | 15,777 (13,583 to 17,385 *) | 2,079 (1,768 to 2,441 *) | 92.0 (87.9 to 95.1 *) | 19.4 (14.4 to 25.7 *) | 11.0 (7.8 to 14.9 *) | 10.7 (7.3 to 14.0 *) | 30.4 (26.3 to 34.5 *) | 23.8 (19.7 to 28.2 *) | 44.7 (39.9 to 50.4 *) | 31.5 (27.0 to 35.6 *) | 2,163 (1,967 to 2,367 *) | 23.9 (18.9 to 29.4 *) | 54.6 (48.9 to 59.4 *) | 14.2 (11.0 to 18.6 *) |
+| All four long-smoke ships | top6 | 237 | 6 | 16,975 (13,862 to 18,281 *) | 1,974 (1,783 to 2,396 *) | 91.4 (82.8 to 97.0 *) | 12.7 (8.1 to 18.3 *) | 6.8 (3.5 to 10.6 *) | 8.9 (1.2 to 13.4 *) | 30.8 (23.7 to 37.1 *) | 24.5 (15.7 to 29.7 *) | 43.5 (38.2 to 53.2 *) | 32.1 (25.2 to 37.2 *) | 2,399 (2,034 to 2,651 *) | 19.5 (14.4 to 26.5 *) | 59.5 (51.5 to 65.1 *) | 8.0 (4.6 to 10.9 *) |
+| All four long-smoke ships | rest | 325 | 21 | 14,903 (12,224 to 17,520 *) | 2,175 (1,594 to 2,751 *) | 92.5 (89.1 to 95.3 *) | 24.3 (17.9 to 31.4 *) | 14.2 (9.8 to 19.7 *) | 12.0 (8.8 to 17.4 *) | 30.2 (25.7 to 36.7 *) | 23.4 (18.2 to 29.7 *) | 45.5 (38.6 to 52.8 *) | 31.1 (24.1 to 37.0 *) | 2,045 (1,789 to 2,282 *) | 26.9 (19.6 to 34.3 *) | 51.3 (44.9 to 57.9 *) | 18.8 (14.7 to 24.5 *) |
+| All four long-smoke ships | top6 minus rest |  |  | 2,072 (-2,106 to 5,158) | -201 (-820 to 443) | -1.1 (-9.4 to 6.2) | -11.6 (-20.5 to -3.1 *) | -7.4 (-14.1 to -1.7 *) | -3.1 (-12.1 to 2.7) | 0.6 (-8.4 to 8.4) | 1.1 (-9.4 to 8.3) | -2.1 (-11.8 to 9.0) | 1.0 (-8.1 to 9.5) | 355 (-101 to 676) | -7.5 (-16.9 to 2.7) | 8.2 (-2.8 to 17.3) | -10.8 (-17.0 to -5.8 *) |
+| REFERENCE cap sitters (Daring, Z-42, Gdańsk, Grozovoi, Shimakaze) | all | 462 | 28 | 5,287 (4,300 to 6,100 *) | 1,028 (483 to 1,713 *) | 34.7 (23.9 to 47.4 *) | 75.5 (71.3 to 80.5 *) | 48.7 (43.1 to 53.8 *) | 10.8 (7.5 to 13.8 *) | 24.7 (19.5 to 29.6 *) | 53.9 (48.4 to 59.4 *) | 36.1 (30.8 to 41.2 *) | 10.0 (6.8 to 13.2 *) | 1,762 (1,564 to 1,930 *) | 29.1 (23.9 to 34.1 *) | 43.1 (38.5 to 47.5 *) | 7.4 (5.2 to 10.4 *) |
+| REFERENCE cap sitters (Daring, Z-42, Gdańsk, Grozovoi, Shimakaze) | top6 | 135 | 6 | 6,092 (5,213 to 6,942 *) | 1,405 (931 to 2,246 *) | 37.4 (21.4 to 54.1 *) | 68.9 (62.3 to 77.5 *) | 47.4 (37.7 to 57.0 *) | 14.8 (8.4 to 21.8 *) | 25.9 (17.6 to 33.9 *) | 56.3 (48.2 to 63.4 *) | 33.3 (25.0 to 43.9 *) | 10.4 (6.1 to 14.5 *) | 1,569 (1,157 to 1,962 *) | 33.1 (23.0 to 43.7 *) | 40.7 (30.5 to 47.6 *) | 5.9 (3.4 to 8.5 *) |
+| REFERENCE cap sitters (Daring, Z-42, Gdańsk, Grozovoi, Shimakaze) | rest | 327 | 22 | 4,955 (3,596 to 6,018 *) | 822 (129 to 1,766 *) | 33.3 (20.4 to 52.1 *) | 78.3 (73.7 to 84.0 *) | 49.2 (42.2 to 55.6 *) | 9.2 (5.7 to 12.0 *) | 24.2 (17.7 to 29.9 *) | 52.9 (46.1 to 60.8 *) | 37.3 (31.6 to 42.6 *) | 9.8 (5.5 to 14.0 *) | 1,838 (1,608 to 1,975 *) | 27.6 (20.4 to 33.9 *) | 44.1 (39.1 to 49.2 *) | 8.0 (4.7 to 12.5 *) |
+| REFERENCE cap sitters (Daring, Z-42, Gdańsk, Grozovoi, Shimakaze) | top6 minus rest |  |  | 1,137 (-278 to 2,699) | 583 (-426 to 1,783) | 4.1 (-18.7 to 25.9) | -9.4 (-18.3 to 0.5) | -1.8 (-14.4 to 10.4) | 5.6 (-1.4 to 13.5) | 1.8 (-9.0 to 12.9) | 3.4 (-8.3 to 12.9) | -4.0 (-13.6 to 8.1) | 0.6 (-5.1 to 6.8) | -268 (-680 to 233) | 5.4 (-6.6 to 17.6) | -3.4 (-14.7 to 6.6) | -2.0 (-7.5 to 2.2) |
+| REFERENCE all destroyer smokes | all | 1074 | 30 | 10,798 (8,899 to 12,294 *) | 1,742 (1,449 to 1,994 *) | 78.4 (72.7 to 83.6 *) | 45.9 (39.3 to 52.6 *) | 28.4 (24.1 to 33.4 *) | 11.2 (9.3 to 13.2 *) | 27.7 (23.9 to 31.2 *) | 36.9 (33.8 to 40.2 *) | 41.2 (37.6 to 45.4 *) | 22.0 (18.4 to 25.0 *) | 1,958 (1,825 to 2,069 *) | 26.9 (23.1 to 30.4 *) | 48.4 (44.5 to 52.3 *) | 11.5 (9.3 to 14.8 *) |
+| REFERENCE all destroyer smokes | top6 | 387 | 6 | 12,735 (8,810 to 15,108 *) | 1,904 (1,682 to 2,394 *) | 81.3 (68.1 to 89.3 *) | 34.6 (25.8 to 47.4 *) | 22.0 (15.6 to 30.9 *) | 11.4 (7.6 to 14.6 *) | 28.7 (21.4 to 34.8 *) | 35.4 (29.1 to 42.3 *) | 41.1 (35.3 to 51.2 *) | 23.5 (16.9 to 27.7 *) | 2,060 (1,825 to 2,324 *) | 25.6 (20.5 to 30.9 *) | 51.9 (45.9 to 59.1 *) | 7.5 (4.9 to 10.2 *) |
+| REFERENCE all destroyer smokes | rest | 687 | 24 | 9,707 (7,895 to 11,439 *) | 1,670 (1,247 to 2,035 *) | 76.2 (70.3 to 80.9 *) | 52.3 (47.6 to 58.8 *) | 32.0 (27.2 to 37.0 *) | 11.1 (8.6 to 13.8 *) | 27.1 (22.7 to 31.3 *) | 37.7 (34.2 to 41.5 *) | 41.2 (37.0 to 45.3 *) | 21.1 (17.3 to 25.0 *) | 1,893 (1,770 to 2,022 *) | 27.5 (23.0 to 32.1 *) | 46.6 (42.2 to 50.5 *) | 13.8 (11.1 to 17.5 *) |
+| REFERENCE all destroyer smokes | top6 minus rest |  |  | 3,028 (-1,412 to 5,975) | 234 (-180 to 827) | 5.1 (-8.5 to 15.1) | -17.6 (-29.3 to -4.9 *) | -10.1 (-18.5 to -0.3 *) | 0.3 (-4.5 to 4.5) | 1.6 (-6.5 to 8.8) | -2.3 (-8.9 to 5.1) | -0.1 (-7.9 to 10.4) | 2.4 (-5.2 to 8.1) | 167 (-130 to 463) | -1.9 (-8.7 to 5.6) | 5.3 (-1.9 to 13.0) | -6.3 (-11.1 to -2.2 *) |
+Harugumo minus Somers conc_per_smoke 3,863 -1,270 to 8,572
+Harugumo minus Somers edge_med_m -207 -1,629 to 638
+Harugumo minus Somers teammate_share_of_damage_pct -15.8 -25.9 to -6.0 *
+Harugumo minus Somers selfish_pct 0.7 -12.5 to 11.4
+Harugumo minus Somers smoker_only_label_pct 5.9 -4.4 to 15.3
+Harugumo minus Somers enemy_radar_spotted_pct 4.1 -1.2 to 10.8
+Harugumo minus Somers enemy_radar_broad_pct 1.5 -4.1 to 6.9
+Harugumo minus Somers centre_pct -6.5 -15.7 to 3.8
+Harugumo minus Somers side_lane_pct -3.2 -20.3 to 9.4
+Harugumo minus Somers map_edge_pct 9.7 0.7 to 21.4 *
+Harugumo minus Somers land_med_m 79 -624 to 526
+Harugumo minus Somers near_land_pct 4.9 -5.5 to 15.8
+Harugumo minus Somers open_water_pct -3.3 -17.2 to 7.2
+Harugumo minus Somers deaths_per_100 10.6 1.6 to 24.5 *
+Harugumo minus Gearing conc_per_smoke 2,092 -4,960 to 9,153
+Harugumo minus Gearing edge_med_m -17 -721 to 788
+Harugumo minus Gearing teammate_share_of_damage_pct -18.6 -29.0 to -7.7 *
+Harugumo minus Gearing selfish_pct -4.8 -22.7 to 8.4
+Harugumo minus Gearing smoker_only_label_pct 0.7 -14.4 to 11.3
+Harugumo minus Gearing enemy_radar_spotted_pct 9.3 2.5 to 16.0 *
+Harugumo minus Gearing enemy_radar_broad_pct 4.7 -4.4 to 12.0
+Harugumo minus Gearing centre_pct -9.7 -20.6 to 0.8
+Harugumo minus Gearing side_lane_pct -4.6 -21.6 to 12.8
+Harugumo minus Gearing map_edge_pct 14.2 -3.7 to 31.7
+Harugumo minus Gearing land_med_m 376 -467 to 889
+Harugumo minus Gearing near_land_pct -2.9 -16.0 to 12.7
+Harugumo minus Gearing open_water_pct 5.6 -10.8 to 18.7
+Harugumo minus Gearing deaths_per_100 3.2 -9.2 to 19.6
+Long minus cap sitters conc_per_smoke 10,490 8,368 to 12,226 *
+Long minus cap sitters edge_med_m 1,051 334 to 1,851 *
+Long minus cap sitters teammate_share_of_damage_pct 57.3 46.3 to 68.5 *
+Long minus cap sitters selfish_pct -56.1 -61.6 to -50.5 *
+Long minus cap sitters smoker_only_label_pct -37.7 -44.2 to -30.9 *
+Long minus cap sitters enemy_radar_spotted_pct -0.1 -4.8 to 4.9
+Long minus cap sitters enemy_radar_broad_pct 5.8 0.1 to 11.5 *
+Long minus cap sitters centre_pct -30.1 -37.9 to -22.6 *
+Long minus cap sitters side_lane_pct 8.5 2.2 to 15.0 *
+Long minus cap sitters map_edge_pct 21.5 15.3 to 27.2 *
+Long minus cap sitters land_med_m 400 115 to 696 *
+Long minus cap sitters near_land_pct -5.2 -12.5 to 3.2
+Long minus cap sitters open_water_pct 11.5 3.5 to 18.3 *
+Long minus cap sitters deaths_per_100 6.9 3.1 to 11.3 *
+  long ships on Hotspot 144 {'map edge': 47, 'side lane': 30, 'centre': 23}
+  long ships on Land of Fire 57 {'side lane': 49, 'centre': 28, 'map edge': 23}
+  long ships on Loop 45 {'centre': 29, 'map edge': 27, 'side lane': 44}
+  long ships on Mountain Range 78 {'side lane': 41, 'centre': 49, 'map edge': 10}
+  long ships on Okinawa 38 {'side lane': 47, 'centre': 29, 'map edge': 24}
+  long ships on Sea of Fortune 59 {'side lane': 75, 'centre': 10, 'map edge': 15}
+  long ships on Sleeping Giant 141 {'centre': 12, 'side lane': 47, 'map edge': 41}
+
+----- B3 Harugumo own guns and spotting proxies
+| group | split | n | clans | own_gun_share_pct | own_conc_per_smoke | mate_conc_per_smoke | smoker_dealt_any_pct | smoker_dealt_5k_pct | smoker_time_in_smoke_s_med | smoker_time_share_of_life_pct | stationary_pct | path_med_m | second_dd_recorded_pct | second_dd_forward_pct | second_dd_in_smoke_pct | radar_cruiser_inside_pct | our_radar_used_from_smoke_pct | cruiser_inside_pct | smoker_undetected_pct |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Harugumo | all | 100 | 15 | 21.6 (13.0 to 31.5 *) | 3,978 (2,017 to 5,714 *) | 14,409 (10,082 to 18,240 *) | 43.0 (27.9 to 51.4 *) | 18.0 (8.6 to 26.7 *) | 55.0 (52.9 to 71.0 *) | 44.5 (36.8 to 49.2 *) | 4.0 (0.0 to 8.1) | 3,857 (3,116 to 4,250 *) | 59.0 (50.0 to 68.9 *) | 33.0 (24.2 to 41.6 *) | 12.0 (5.2 to 15.9 *) | 69.0 (52.9 to 84.0 *) | 18.0 (9.1 to 27.2 *) | 70.0 (55.4 to 84.4 *) | 85.8 (78.8 to 91.1 *) |
+| Harugumo | top6 | 55 | 4 | 22.4 (1.2 to 36.0 *) | 3,925 (79 to 6,559 *) | 13,601 (7,413 to 18,165 *) | 45.5 (23.1 to 52.4 *) | 20.0 (0.0 to 32.9) | 55.2 (49.2 to 98.2 *) | 49.5 (40.5 to 54.1 *) | 3.6 (0.0 to 8.2) | 4,029 (2,775 to 4,329 *) | 56.4 (54.8 to 61.5 *) | 30.9 (20.7 to 44.0 *) | 16.4 (7.7 to 19.4 *) | 76.4 (60.7 to 92.6 *) | 21.8 (13.8 to 30.8 *) | 76.4 (60.7 to 92.6 *) | 87.5 (76.4 to 92.8 *) |
+| Harugumo | rest | 45 | 11 | 20.8 (12.5 to 34.9 *) | 4,044 (2,027 to 6,268 *) | 15,398 (8,231 to 21,009 *) | 40.0 (17.6 to 54.8 *) | 15.6 (7.3 to 23.5 *) | 54.9 (48.9 to 71.0 *) | 38.4 (32.1 to 44.7 *) | 4.4 (0.0 to 11.5) | 3,716 (2,807 to 4,455 *) | 62.2 (40.0 to 79.5 *) | 35.6 (22.2 to 46.7 *) | 6.7 (0.0 to 12.5) | 60.0 (40.0 to 84.8 *) | 13.3 (3.1 to 31.2 *) | 62.2 (43.2 to 85.2 *) | 83.7 (73.8 to 92.7 *) |
+| Harugumo | top6 minus rest |  |  | 1.6 (-22.5 to 18.4) | -119 (-4,409 to 3,038) | -1,797 (-11,035 to 7,210) | 5.5 (-20.4 to 28.5) | 4.4 (-16.0 to 19.7) | 0.3 (-15.9 to 44.3) | 11.1 (-0.4 to 18.1) | -0.8 (-10.7 to 5.7) | 313 (-1,130 to 1,316) | -5.9 (-23.1 to 14.9) | -4.6 (-20.5 to 16.2) | 9.7 (-1.8 to 16.4) | 16.4 (-12.0 to 42.4) | 8.5 (-12.8 to 23.6) | 14.1 (-14.7 to 39.8) | 3.8 (-9.2 to 14.7) |
+| Somers | all | 260 | 18 | 5.9 (2.5 to 10.0 *) | 851 (354 to 1,410 *) | 13,673 (11,735 to 15,167 *) | 9.6 (5.5 to 14.3 *) | 3.5 (1.6 to 5.2 *) | 41.0 (38.9 to 47.0 *) | 31.8 (29.2 to 34.1 *) | 3.1 (1.1 to 6.2 *) | 3,610 (3,247 to 4,006 *) | 45.8 (33.2 to 55.5 *) | 22.7 (15.5 to 28.1 *) | 5.8 (2.9 to 8.8 *) | 63.5 (51.7 to 72.4 *) | 19.2 (12.0 to 24.3 *) | 71.2 (60.7 to 78.6 *) | 88.9 (87.2 to 90.8 *) |
+| Somers | top6 | 90 | 4 | 8.4 (0.0 to 22.2) | 1,322 (0 to 3,024) | 14,374 (9,638 to 15,995 *) | 5.6 (0.0 to 12.2) | 3.3 (0.0 to 6.8) | 41.0 (38.7 to 49.0 *) | 33.6 (24.9 to 36.3 *) | 2.2 (0.0 to 5.4) | 3,861 (3,158 to 4,463 *) | 61.1 (51.5 to 68.0 *) | 31.1 (27.9 to 36.4 *) | 7.8 (2.5 to 13.5 *) | 71.1 (64.4 to 83.1 *) | 25.6 (20.3 to 28.9 *) | 78.9 (66.7 to 86.7 *) | 88.8 (86.2 to 93.4 *) |
+| Somers | rest | 170 | 14 | 4.3 (1.7 to 7.0 *) | 602 (241 to 1,031 *) | 13,302 (10,901 to 15,424 *) | 11.8 (6.2 to 17.1 *) | 3.5 (1.4 to 5.9 *) | 41.0 (38.8 to 48.9 *) | 30.9 (28.3 to 33.6 *) | 3.5 (0.7 to 7.1 *) | 3,501 (3,075 to 3,885 *) | 37.6 (26.2 to 49.1 *) | 18.2 (10.6 to 25.1 *) | 4.7 (1.5 to 8.5 *) | 59.4 (44.0 to 73.3 *) | 15.9 (6.7 to 24.0 *) | 67.1 (54.0 to 77.3 *) | 89.0 (86.9 to 90.9 *) |
+| Somers | top6 minus rest |  |  | 4.1 (-4.7 to 18.4) | 720 (-656 to 2,468) | 1,072 (-3,768 to 3,566) | -6.2 (-13.6 to 2.7) | -0.2 (-4.1 to 3.9) | 0.0 (-8.0 to 9.1) | 2.8 (-6.5 to 6.4) | -1.3 (-5.6 to 3.2) | 360 (-494 to 1,116) | 23.5 (8.5 to 38.5 *) | 12.9 (5.3 to 21.9 *) | 3.1 (-3.3 to 9.2) | 11.7 (-3.6 to 31.3) | 9.7 (0.4 to 19.0 *) | 11.8 (-2.5 to 27.8) | -0.2 (-3.6 to 4.9) |
+| Gearing | all | 180 | 16 | 3.1 (0.7 to 10.3 *) | 501 (116 to 1,186 *) | 15,795 (10,078 to 19,221 *) | 8.9 (3.6 to 17.1 *) | 2.8 (0.0 to 6.8) | 38.5 (34.8 to 39.1 *) | 28.3 (26.2 to 30.9 *) | 2.2 (0.0 to 5.6) | 3,085 (2,853 to 3,379 *) | 37.2 (28.2 to 46.4 *) | 17.2 (12.4 to 22.7 *) | 3.9 (1.4 to 7.0 *) | 56.7 (39.6 to 67.5 *) | 11.7 (5.6 to 16.6 *) | 64.4 (48.3 to 74.1 *) | 88.6 (83.9 to 91.6 *) |
+| Gearing | top6 | 74 | 4 | 1.0 (0.0 to 4.0) | 176 (0 to 451) | 17,820 (10,622 to 21,955 *) | 5.4 (0.0 to 11.4) | 1.4 (0.0 to 3.8) | 36.7 (36.4 to 38.7 *) | 27.8 (23.4 to 29.0 *) | 0.0 (0.0 to 0.0) | 3,336 (3,165 to 3,446 *) | 41.9 (8.8 to 55.6 *) | 16.2 (0.0 to 20.8) | 1.4 (0.0 to 2.5) | 75.7 (67.9 to 81.6 *) | 20.3 (14.9 to 31.4 *) | 77.0 (73.5 to 85.7 *) | 92.4 (91.1 to 95.2 *) |
+| Gearing | rest | 106 | 12 | 4.8 (0.8 to 17.1 *) | 728 (143 to 1,780 *) | 14,381 (7,220 to 18,914 *) | 11.3 (3.2 to 25.0 *) | 3.8 (0.0 to 10.3) | 38.6 (33.7 to 43.9 *) | 28.7 (26.0 to 33.0 *) | 3.8 (0.0 to 9.7) | 2,947 (2,263 to 3,283 *) | 34.0 (25.8 to 46.9 *) | 17.9 (10.9 to 27.4 *) | 5.7 (1.5 to 10.4 *) | 43.4 (22.5 to 57.4 *) | 5.7 (1.6 to 10.5 *) | 55.7 (29.5 to 71.6 *) | 85.9 (78.7 to 90.9 *) |
+| Gearing | top6 minus rest |  |  | -3.8 (-17.8 to 1.4) | -551 (-1,672 to 125) | 3,439 (-6,077 to 11,343) | -5.9 (-22.0 to 4.6) | -2.4 (-9.6 to 2.2) | -1.9 (-7.2 to 4.0) | -1.0 (-6.4 to 2.1) | -3.8 (-9.6 to 0.0) | 389 (-37 to 1,081) | 7.9 (-17.3 to 23.8) | -1.7 (-18.5 to 6.5) | -4.3 (-9.5 to -0.1 *) | 32.3 (16.4 to 54.6 *) | 14.6 (8.9 to 24.7 *) | 21.4 (5.5 to 48.8 *) | 6.5 (1.5 to 14.2 *) |
+| Delny | all | 22 | 2 | 1.1 | 162 | 14,308 | 4.5 | 0.0 | 38.7 | 25.0 | 0.0 | 5,022 | 72.7 | 40.9 | 22.7 | 9.1 | 0.0 | 50.0 | 89.3 |
+| Delny | top6 | 18 | 1 | 0.0 | 0 | 17,488 | 0.0 | 0.0 | 38.6 | 24.4 | 0.0 | 5,028 | 72.2 | 50.0 | 22.2 | 11.1 | 0.0 | 61.1 | 87.9 |
+| Delny | rest | 4 | 1 | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few |
+| Delny | top6 minus rest |  |  | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few |
+Harugumo minus Somers own_gun_share_pct 15.8 7.1 to 24.7 *
+Harugumo minus Somers own_conc_per_smoke 3,127 1,107 to 4,778 *
+Harugumo minus Somers mate_conc_per_smoke 736 -3,771 to 5,319
+Harugumo minus Somers smoker_dealt_any_pct 33.4 14.9 to 44.7 *
+Harugumo minus Somers smoker_dealt_5k_pct 14.5 4.7 to 21.9 *
+Harugumo minus Somers smoker_time_in_smoke_s_med 14.0 7.8 to 28.7 *
+Harugumo minus Somers smoker_time_share_of_life_pct 12.7 5.1 to 18.0 *
+Harugumo minus Somers stationary_pct 0.9 -4.1 to 5.6
+Harugumo minus Somers path_med_m 247 -459 to 748
+Harugumo minus Somers second_dd_recorded_pct 13.2 0.5 to 31.3 *
+Harugumo minus Somers second_dd_forward_pct 10.3 -0.1 to 22.9
+Harugumo minus Somers second_dd_in_smoke_pct 6.2 -0.4 to 10.3
+Harugumo minus Somers radar_cruiser_inside_pct 5.5 -11.9 to 23.9
+Harugumo minus Somers our_radar_used_from_smoke_pct -1.2 -9.8 to 9.0
+Harugumo minus Somers cruiser_inside_pct -1.2 -18.8 to 16.4
+Harugumo minus Somers smoker_undetected_pct -3.1 -10.5 to 1.8
+Harugumo minus Gearing own_gun_share_pct 18.6 6.9 to 28.7 *
+Harugumo minus Gearing own_conc_per_smoke 3,477 1,423 to 5,246 *
+Harugumo minus Gearing mate_conc_per_smoke -1,385 -7,383 to 5,549
+Harugumo minus Gearing smoker_dealt_any_pct 34.1 16.4 to 43.4 *
+Harugumo minus Gearing smoker_dealt_5k_pct 15.2 4.4 to 24.4 *
+Harugumo minus Gearing smoker_time_in_smoke_s_med 16.5 12.5 to 32.2 *
+Harugumo minus Gearing smoker_time_share_of_life_pct 16.2 9.2 to 20.9 *
+Harugumo minus Gearing stationary_pct 1.8 -3.0 to 6.4
+Harugumo minus Gearing path_med_m 771 -8 to 1,275
+Harugumo minus Gearing second_dd_recorded_pct 21.8 10.5 to 34.7 *
+Harugumo minus Gearing second_dd_forward_pct 15.8 6.8 to 26.4 *
+Harugumo minus Gearing second_dd_in_smoke_pct 8.1 0.6 to 13.3 *
+Harugumo minus Gearing radar_cruiser_inside_pct 12.3 -4.3 to 35.2
+Harugumo minus Gearing our_radar_used_from_smoke_pct 6.3 -3.3 to 18.0
+Harugumo minus Gearing cruiser_inside_pct 5.6 -13.7 to 30.3
+Harugumo minus Gearing smoker_undetected_pct -2.8 -10.4 to 3.3
+{'ship': 'Harugumo', 'case': 'radar cruiser inside', 'n': 69, 'clans': 13, 'own_gun_share_pct': 11.6, 'own_conc_per_smoke': 2413.0, 'conc_per_smoke': 20777.0, 'smoker_dealt_any_pct': 36.2, 'top6': 42}
+{'ship': 'Harugumo', 'case': 'no radar cruiser inside', 'n': 31, 'clans': 9, 'own_gun_share_pct': 57.1, 'own_conc_per_smoke': 7462.0, 'conc_per_smoke': 13070.0, 'smoker_dealt_any_pct': 58.1, 'top6': 13}
+{'ship': 'Harugumo', 'case': 'any cruiser inside', 'n': 70, 'clans': 14, 'own_gun_share_pct': 11.6, 'own_conc_per_smoke': 2379.0, 'conc_per_smoke': 20502.0, 'smoker_dealt_any_pct': 35.7, 'top6': 42}
+{'ship': 'Harugumo', 'case': 'no cruiser inside', 'n': 30, 'clans': 9, 'own_gun_share_pct': 57.3, 'own_conc_per_smoke': 7710.0, 'conc_per_smoke': 13455.0, 'smoker_dealt_any_pct': 60.0, 'top6': 13}
+Harugumo no radar CA minus radar CA own_conc_per_smoke 5,048.5 27.4 to 8,179.6 *
+Harugumo no radar CA minus radar CA own_gun_share_pct 45.5 18.1 to 71.6 *
+Harugumo no radar CA minus radar CA smoker_dealt_any_pct 21.8 4.8 to 36.5 *
+{'ship': 'Somers', 'case': 'radar cruiser inside', 'n': 165, 'clans': 16, 'own_gun_share_pct': 4.7, 'own_conc_per_smoke': 732.0, 'conc_per_smoke': 15590.0, 'smoker_dealt_any_pct': 7.3, 'top6': 64}
+{'ship': 'Somers', 'case': 'no radar cruiser inside', 'n': 95, 'clans': 17, 'own_gun_share_pct': 8.3, 'own_conc_per_smoke': 1058.0, 'conc_per_smoke': 12674.0, 'smoker_dealt_any_pct': 13.7, 'top6': 26}
+{'ship': 'Somers', 'case': 'any cruiser inside', 'n': 185, 'clans': 16, 'own_gun_share_pct': 4.6, 'own_conc_per_smoke': 740.0, 'conc_per_smoke': 15963.0, 'smoker_dealt_any_pct': 7.6, 'top6': 71}
+{'ship': 'Somers', 'case': 'no cruiser inside', 'n': 75, 'clans': 17, 'own_gun_share_pct': 10.3, 'own_conc_per_smoke': 1126.0, 'conc_per_smoke': 10975.0, 'smoker_dealt_any_pct': 14.7, 'top6': 19}
+Somers no radar CA minus radar CA own_conc_per_smoke 325.4 -841.0 to 2,070.8
+Somers no radar CA minus radar CA own_gun_share_pct 3.6 -4.5 to 17.1
+Somers no radar CA minus radar CA smoker_dealt_any_pct 6.4 -2.5 to 15.4
+{'ship': 'Gearing', 'case': 'radar cruiser inside', 'n': 102, 'clans': 12, 'own_gun_share_pct': 0.6, 'own_conc_per_smoke': 112.0, 'conc_per_smoke': 20219.0, 'smoker_dealt_any_pct': 2.9, 'top6': 56}
+{'ship': 'Gearing', 'case': 'no radar cruiser inside', 'n': 78, 'clans': 14, 'own_gun_share_pct': 9.0, 'own_conc_per_smoke': 1010.0, 'conc_per_smoke': 11165.0, 'smoker_dealt_any_pct': 16.7, 'top6': 18}
+{'ship': 'Gearing', 'case': 'any cruiser inside', 'n': 116, 'clans': 13, 'own_gun_share_pct': 0.5, 'own_conc_per_smoke': 99.0, 'conc_per_smoke': 21562.0, 'smoker_dealt_any_pct': 2.6, 'top6': 57}
+{'ship': 'Gearing', 'case': 'no cruiser inside', 'n': 64, 'clans': 14, 'own_gun_share_pct': 18.2, 'own_conc_per_smoke': 1231.0, 'conc_per_smoke': 6751.0, 'smoker_dealt_any_pct': 20.3, 'top6': 17}
+Gearing no radar CA minus radar CA own_conc_per_smoke 897.7 64.9 to 1,994.6 *
+Gearing no radar CA minus radar CA own_gun_share_pct 8.5 1.0 to 26.3 *
+Gearing no radar CA minus radar CA smoker_dealt_any_pct 13.7 2.6 to 27.3 *
+Harugumo all OWN-GUN targets: {'targets': 68, 'with_position': 53, 'nearest': {'another ship outside the smoke': 22, 'a second destroyer': 13, 'the smoker': 11, 'another ship in or behind the smoke': 4, 'a radar cruiser inside the smoke': 3}, 'nearest_pct': {'another ship outside the smoke': 42, 'a second destroyer': 25, 'the smoker': 21, 'another ship in or behind the smoke': 8, 'a radar cruiser inside the smoke': 6}, 'median_distance_m': 7824.0, 'within_8km_pct': 52.8, 'second_dd_where': {'forward of the smoke (1 km+)': 2, 'level or behind': 5, 'in or behind the smoke': 6}, 'second_dd_median_dist_from_smoke_m': 4991.0}
+Harugumo all ALL targets: {'targets': 182, 'with_position': 130, 'nearest': {'the smoker': 43, 'another ship outside the smoke': 41, 'a second destroyer': 31, 'a radar cruiser inside the smoke': 10, 'another ship in or behind the smoke': 5}, 'nearest_pct': {'the smoker': 33, 'another ship outside the smoke': 32, 'a second destroyer': 24, 'a radar cruiser inside the smoke': 8, 'another ship in or behind the smoke': 4}, 'median_distance_m': 8400.0, 'within_8km_pct': 42.3, 'second_dd_where': {'forward of the smoke (1 km+)': 16, 'level or behind': 6, 'in or behind the smoke': 9}, 'second_dd_median_dist_from_smoke_m': 4177.0}
+Harugumo top6 OWN-GUN targets: {'targets': 35, 'with_position': 29, 'nearest': {'another ship outside the smoke': 12, 'the smoker': 9, 'a second destroyer': 7, 'a radar cruiser inside the smoke': 1}, 'nearest_pct': {'another ship outside the smoke': 41, 'the smoker': 31, 'a second destroyer': 24, 'a radar cruiser inside the smoke': 3}, 'median_distance_m': 8850.0, 'within_8km_pct': 37.9, 'second_dd_where': {'level or behind': 3, 'in or behind the smoke': 4}, 'second_dd_median_dist_from_smoke_m': 1132.0}
+Harugumo top6 ALL targets: {'targets': 97, 'with_position': 72, 'nearest': {'the smoker': 27, 'another ship outside the smoke': 20, 'a second destroyer': 18, 'a radar cruiser inside the smoke': 7}, 'nearest_pct': {'the smoker': 38, 'another ship outside the smoke': 28, 'a second destroyer': 25, 'a radar cruiser inside the smoke': 10}, 'median_distance_m': 8770.0, 'within_8km_pct': 34.7, 'second_dd_where': {'forward of the smoke (1 km+)': 9, 'level or behind': 3, 'in or behind the smoke': 6}, 'second_dd_median_dist_from_smoke_m': 2696.0}
+Harugumo rest OWN-GUN targets: {'targets': 33, 'with_position': 24, 'nearest': {'another ship outside the smoke': 10, 'a second destroyer': 6, 'another ship in or behind the smoke': 4, 'the smoker': 2, 'a radar cruiser inside the smoke': 2}, 'nearest_pct': {'another ship outside the smoke': 42, 'a second destroyer': 25, 'another ship in or behind the smoke': 17, 'the smoker': 8, 'a radar cruiser inside the smoke': 8}, 'median_distance_m': 7065.0, 'within_8km_pct': 70.8, 'second_dd_where': {'forward of the smoke (1 km+)': 2, 'level or behind': 2, 'in or behind the smoke': 2}, 'second_dd_median_dist_from_smoke_m': 4994.0}
+Harugumo rest ALL targets: {'targets': 85, 'with_position': 58, 'nearest': {'another ship outside the smoke': 21, 'the smoker': 16, 'a second destroyer': 13, 'another ship in or behind the smoke': 5, 'a radar cruiser inside the smoke': 3}, 'nearest_pct': {'another ship outside the smoke': 36, 'the smoker': 28, 'a second destroyer': 22, 'another ship in or behind the smoke': 9, 'a radar cruiser inside the smoke': 5}, 'median_distance_m': 7914.0, 'within_8km_pct': 51.7, 'second_dd_where': {'forward of the smoke (1 km+)': 7, 'level or behind': 3, 'in or behind the smoke': 3}, 'second_dd_median_dist_from_smoke_m': 4991.0}
+Somers all OWN-GUN targets: {'targets': 35, 'with_position': 30, 'nearest': {'the smoker': 16, 'a second destroyer': 5, 'another ship outside the smoke': 5, 'a radar cruiser inside the smoke': 3, 'another ship in or behind the smoke': 1}, 'nearest_pct': {'the smoker': 53, 'a second destroyer': 17, 'another ship outside the smoke': 17, 'a radar cruiser inside the smoke': 10, 'another ship in or behind the smoke': 3}, 'median_distance_m': 6564.0, 'within_8km_pct': 73.3, 'second_dd_where': {'level or behind': 1, 'in or behind the smoke': 3, 'forward of the smoke (1 km+)': 1}, 'second_dd_median_dist_from_smoke_m': 2003.0}
+Somers all ALL targets: {'targets': 351, 'with_position': 266, 'nearest': {'the smoker': 151, 'a second destroyer': 40, 'another ship outside the smoke': 37, 'a radar cruiser inside the smoke': 31, 'another ship in or behind the smoke': 7}, 'nearest_pct': {'the smoker': 57, 'a second destroyer': 15, 'another ship outside the smoke': 14, 'a radar cruiser inside the smoke': 12, 'another ship in or behind the smoke': 3}, 'median_distance_m': 9319.0, 'within_8km_pct': 28.6, 'second_dd_where': {'in or behind the smoke': 10, 'level or behind': 7, 'forward of the smoke (1 km+)': 23}, 'second_dd_median_dist_from_smoke_m': 5667.0}
+Somers top6 OWN-GUN targets: {'targets': 8, 'with_position': 8, 'nearest': {'the smoker': 5, 'a second destroyer': 1, 'another ship in or behind the smoke': 1, 'a radar cruiser inside the smoke': 1}, 'nearest_pct': {'the smoker': 62, 'a second destroyer': 12, 'another ship in or behind the smoke': 12, 'a radar cruiser inside the smoke': 12}, 'median_distance_m': 7242.0, 'within_8km_pct': 75.0, 'second_dd_where': {'in or behind the smoke': 1}, 'second_dd_median_dist_from_smoke_m': 2003.0}
+Somers top6 ALL targets: {'targets': 124, 'with_position': 96, 'nearest': {'the smoker': 52, 'a second destroyer': 17, 'a radar cruiser inside the smoke': 11, 'another ship outside the smoke': 11, 'another ship in or behind the smoke': 5}, 'nearest_pct': {'the smoker': 54, 'a second destroyer': 18, 'a radar cruiser inside the smoke': 11, 'another ship outside the smoke': 11, 'another ship in or behind the smoke': 5}, 'median_distance_m': 9502.0, 'within_8km_pct': 27.1, 'second_dd_where': {'forward of the smoke (1 km+)': 12, 'in or behind the smoke': 3, 'level or behind': 2}, 'second_dd_median_dist_from_smoke_m': 6175.0}
+Somers rest OWN-GUN targets: {'targets': 27, 'with_position': 22, 'nearest': {'the smoker': 11, 'another ship outside the smoke': 5, 'a second destroyer': 4, 'a radar cruiser inside the smoke': 2}, 'nearest_pct': {'the smoker': 50, 'another ship outside the smoke': 23, 'a second destroyer': 18, 'a radar cruiser inside the smoke': 9}, 'median_distance_m': 6364.0, 'within_8km_pct': 72.7, 'second_dd_where': {'level or behind': 1, 'in or behind the smoke': 2, 'forward of the smoke (1 km+)': 1}, 'second_dd_median_dist_from_smoke_m': 2569.0}
+Somers rest ALL targets: {'targets': 227, 'with_position': 170, 'nearest': {'the smoker': 99, 'another ship outside the smoke': 26, 'a second destroyer': 23, 'a radar cruiser inside the smoke': 20, 'another ship in or behind the smoke': 2}, 'nearest_pct': {'the smoker': 58, 'another ship outside the smoke': 15, 'a second destroyer': 14, 'a radar cruiser inside the smoke': 12, 'another ship in or behind the smoke': 1}, 'median_distance_m': 9230.0, 'within_8km_pct': 29.4, 'second_dd_where': {'in or behind the smoke': 7, 'level or behind': 5, 'forward of the smoke (1 km+)': 11}, 'second_dd_median_dist_from_smoke_m': 5268.0}
+Gearing all OWN-GUN targets: {'targets': 21, 'with_position': 18, 'nearest': {'the smoker': 15, 'another ship outside the smoke': 3}, 'nearest_pct': {'the smoker': 83, 'another ship outside the smoke': 17}, 'median_distance_m': 7253.0, 'within_8km_pct': 61.1, 'second_dd_where': {}, 'second_dd_median_dist_from_smoke_m': None}
+Gearing all ALL targets: {'targets': 236, 'with_position': 180, 'nearest': {'the smoker': 105, 'another ship outside the smoke': 37, 'a second destroyer': 19, 'a radar cruiser inside the smoke': 12, 'another ship in or behind the smoke': 7}, 'nearest_pct': {'the smoker': 58, 'another ship outside the smoke': 21, 'a second destroyer': 11, 'a radar cruiser inside the smoke': 7, 'another ship in or behind the smoke': 4}, 'median_distance_m': 9329.0, 'within_8km_pct': 31.7, 'second_dd_where': {'forward of the smoke (1 km+)': 13, 'in or behind the smoke': 1, 'level or behind': 5}, 'second_dd_median_dist_from_smoke_m': 4793.0}
+Gearing top6 OWN-GUN targets: {'targets': 6, 'with_position': 4, 'nearest': {'the smoker': 4}, 'nearest_pct': {'the smoker': 100}, 'median_distance_m': 8283.0, 'within_8km_pct': 50.0, 'second_dd_where': {}, 'second_dd_median_dist_from_smoke_m': None}
+Gearing top6 ALL targets: {'targets': 104, 'with_position': 79, 'nearest': {'the smoker': 48, 'another ship outside the smoke': 12, 'a second destroyer': 10, 'a radar cruiser inside the smoke': 9}, 'nearest_pct': {'the smoker': 61, 'another ship outside the smoke': 15, 'a second destroyer': 13, 'a radar cruiser inside the smoke': 11}, 'median_distance_m': 9398.0, 'within_8km_pct': 27.8, 'second_dd_where': {'forward of the smoke (1 km+)': 6, 'level or behind': 4}, 'second_dd_median_dist_from_smoke_m': 4866.0}
+Gearing rest OWN-GUN targets: {'targets': 15, 'with_position': 14, 'nearest': {'the smoker': 11, 'another ship outside the smoke': 3}, 'nearest_pct': {'the smoker': 79, 'another ship outside the smoke': 21}, 'median_distance_m': 7129.0, 'within_8km_pct': 64.3, 'second_dd_where': {}, 'second_dd_median_dist_from_smoke_m': None}
+Gearing rest ALL targets: {'targets': 132, 'with_position': 101, 'nearest': {'the smoker': 57, 'another ship outside the smoke': 25, 'a second destroyer': 9, 'another ship in or behind the smoke': 7, 'a radar cruiser inside the smoke': 3}, 'nearest_pct': {'the smoker': 56, 'another ship outside the smoke': 25, 'a second destroyer': 9, 'another ship in or behind the smoke': 7, 'a radar cruiser inside the smoke': 3}, 'median_distance_m': 9269.0, 'within_8km_pct': 34.7, 'second_dd_where': {'forward of the smoke (1 km+)': 7, 'in or behind the smoke': 1, 'level or behind': 1}, 'second_dd_median_dist_from_smoke_m': 1685.0}
+Harugumo minus Somers nearest=a second destroyer 7.9 -11.7 to 25.0
+Harugumo minus Gearing nearest=a second destroyer 24.5 14.8 to 28.8 *
+  interval Harugumo a second destroyer 15.0 to 28.8 *
+Harugumo minus Somers nearest=the smoker -32.6 -57.1 to -16.8 *
+Harugumo minus Gearing nearest=the smoker -62.6 -82.1 to -41.9 *
+  interval Harugumo the smoker 7.4 to 28.6 *
+Harugumo minus Somers nearest=a radar cruiser inside the smoke -4.3 -14.6 to 8.5
+Harugumo minus Gearing nearest=a radar cruiser inside the smoke 5.7 0.0 to 14.0
+  interval Harugumo a radar cruiser inside the smoke 0.0 to 13.5
+Harugumo minus Somers nearest=another ship outside the smoke 24.8 1.7 to 40.4 *
+Harugumo minus Gearing nearest=another ship outside the smoke 24.8 2.6 to 41.8 *
+  interval Harugumo another ship outside the smoke 30.2 to 52.6 *
+Harugumo smokes where smoker dealt concealed dmg 43 | 2nd DD recorded 28 | median dist to smoke m 3255.0 | forward 1km+ % 46.4 | in/behind smoke % 28.6 | 2nd DD ships {'Marceau': 9, 'Shimakaze': 3, 'Ragnar': 3, 'Châteaurenault': 3, 'Lüshun': 2} | radar CA inside % 58.1 | allied positions recorded per smoke (median) 4
+   own conc when radar CA inside vs not 2413.0 69 7462.0 | when 2nd DD forward vs not 2925.0 33 4497.0
+   by kind own-gun: guns vs torp total 19328.0 435.0 | clans Top 6: RESIN 22, H-SR 20, BONKZ 7, HTDOG 6 | Rest: EPOXY 14, -BN- 6, PFANS 4, BONKY 4, PN 4, KM 3, SCCC2 3, REEEE 2, KITED 2, MZY 2, RSR 1
+Somers smokes where smoker dealt concealed dmg 25 | 2nd DD recorded 15 | median dist to smoke m 6694.0 | forward 1km+ % 20.0 | in/behind smoke % 13.3 | 2nd DD ships {'Tromp': 4, 'Châteaurenault': 4, 'Gdańsk': 3, 'Kléber': 1, 'Shimakaze': 1} | radar CA inside % 48.0 | allied positions recorded per smoke (median) 4
+   own conc when radar CA inside vs not 732.0 165 1058.0 | when 2nd DD forward vs not 282.0 59 1018.0
+   by kind own-gun: guns vs torp total 14830.0 701.0 | clans Top 6: RESIN 38, H-SR 33, BONKZ 12, VRTUS 7 | Rest: HFANS 28, REEEE 25, MZY 22, EPOXY 18, MACHX 17, BONKY 14, -BN- 12, NGA 11, PFANS 8, PN 5, UYSC 5, KITED 3, RSR 1, INCA 1
+Gearing smokes where smoker dealt concealed dmg 16 | 2nd DD recorded 4 | median dist to smoke m 9885.0 | forward 1km+ % 25.0 | in/behind smoke % 0.0 | 2nd DD ships {'Cassard': 2, 'Småland': 1, 'Gearing': 1} | radar CA inside % 18.8 | allied positions recorded per smoke (median) 4.0
+   own conc when radar CA inside vs not 112.0 102 1010.0 | when 2nd DD forward vs not 19.0 31 601.0
+   by kind own-gun: guns vs torp total 16633.0 584.0 | clans Top 6: BONKZ 37, KITE 23, VRTUS 10, HTDOG 4 | Rest: KSC 29, -BN- 18, BTLST 11, 5D 9, OGF 9, RSR 9, INCA 7, HFANS 5, RMN 3, EPOXY 3, KM 2, UYSC 1
+
+===== B4 hybrids
+path length missing by ship {'Grozovoi': 3, 'Shimakaze': 2, 'Daring': 3, 'Gdańsk': 3, 'Z-42': 1, 'Somers': 23, 'Harugumo': 15}
+| group | split | n | clans | spread_km | edge_iqr_m | edge_iqr_no_mrA_m | edge_med_m | top_purpose_pct | purpose_entropy_bits | parked_pct | between_pct | line_1km_pct | path_med_m | path_iqr_m |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Grozovoi | all | 30 | 8 | 9.70 (6.33 to 14.57 *) | 4,725 (1,534 to 7,310 *) | 5,058 (1,467 to 7,406 *) | 998 (-500 to 2,046) | 46.7 (36.8 to 66.7 *) | 2.21 (1.37 to 2.28 *) | 22.2 (0.0 to 52.6) | 40.7 (15.0 to 57.1 *) | 37.0 (17.6 to 60.0 *) | 747 (485 to 1,783 *) | 787 (319 to 2,094 *) |
+| Grozovoi | top6 | 6 | 2 | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few |
+| Grozovoi | rest | 24 | 6 | 7.63 (4.27 to 10.03 *) | 5,263 (1,996 to 6,585 *) | 5,263 (1,996 to 6,585 *) | 1,439 (-500 to 4,558) | 41.7 (33.3 to 66.7 *) | 2.05 (1.00 to 2.15 *) | 17.4 (0.0 to 50.0) | 43.5 (7.1 to 71.4 *) | 39.1 (22.2 to 57.1 *) | 890 (590 to 1,783 *) | 734 (319 to 1,904 *) |
+| Grozovoi | top6 minus rest |  |  | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few | too few |
+| Shimakaze | all | 58 | 12 | 11.46 (7.72 to 12.27 *) | 7,838 (4,791 to 9,810 *) | 7,561 (4,723 to 9,890 *) | 3,288 (251 to 4,934 *) | 36.2 (31.2 to 51.6 *) | 2.27 (1.68 to 2.57 *) | 26.8 (13.3 to 37.5 *) | 3.6 (0.0 to 10.0) | 69.6 (57.1 to 81.5 *) | 1,684 (1,155 to 1,864 *) | 1,642 (833 to 1,791 *) |
+| Shimakaze | top6 | 15 | 4 | too few | 8,419 (3,851 to 11,142 *) | 8,419 (3,851 to 11,142 *) | 3,789 (2,770 to 4,361 *) | 33.3 (31.2 to 50.0 *) | 2.09 (1.36 to 2.24 *) | 26.7 (0.0 to 42.9) | 6.7 (0.0 to 20.0) | 66.7 (38.9 to 100.0 *) | 1,269 (828 to 2,059 *) | 1,489 (383 to 2,135 *) |
+| Shimakaze | rest | 43 | 8 | 11.74 (7.14 to 13.38 *) | 7,359 (4,159 to 9,451 *) | 7,395 (4,159 to 9,807 *) | 2,758 (-961 to 5,240) | 37.2 (27.6 to 58.1 *) | 2.23 (1.54 to 2.64 *) | 26.8 (11.1 to 40.7 *) | 2.4 (0.0 to 9.4) | 70.7 (58.8 to 83.3 *) | 1,717 (1,447 to 1,900 *) | 1,663 (645 to 1,807 *) |
+| Shimakaze | top6 minus rest |  |  | too few | 1,061 (-4,065 to 6,466) | 1,024 (-3,734 to 6,562) | 1,030 (-1,490 to 4,704) | -3.9 (-23.8 to 13.1) | -0.14 (-0.93 to 0.63) | -0.2 (-28.9 to 22.9) | 4.2 (-6.7 to 17.6) | -4.1 (-33.3 to 32.5) | -448 (-910 to 342) | -174 (-1,049 to 1,013) |
+| Daring | all | 200 | 20 | 8.07 (5.99 to 8.72 *) | 4,127 (3,237 to 4,688 *) | 4,122 (3,200 to 4,691 *) | 671 (-207 to 1,382) | 55.0 (45.9 to 65.6 *) | 1.88 (1.53 to 2.14 *) | 64.5 (54.9 to 73.6 *) | 29.4 (22.2 to 37.3 *) | 6.1 (1.7 to 11.1 *) | 366 (310 to 471 *) | 435 (292 to 643 *) |
+| Daring | top6 | 34 | 4 | 6.63 (1.67 to 6.90 *) | 3,801 (1,753 to 7,525 *) | 3,780 (1,753 to 7,525 *) | 752 (-819 to 2,070) | 52.9 (42.0 to 100.0 *) | 1.64 (-0.00 to 1.79) | 60.6 (51.6 to 91.7 *) | 24.2 (12.5 to 33.3 *) | 15.2 (0.0 to 23.1) | 337 (258 to 341 *) | 435 (48 to 535 *) |
+| Daring | rest | 166 | 16 | 7.72 (5.72 to 8.64 *) | 4,167 (3,138 to 4,855 *) | 4,167 (3,133 to 4,792 *) | 602 (-306 to 1,382) | 55.4 (43.6 to 66.4 *) | 1.88 (1.51 to 2.19 *) | 65.2 (54.3 to 75.6 *) | 30.5 (22.7 to 38.8 *) | 4.3 (1.2 to 8.1 *) | 394 (302 to 477 *) | 433 (282 to 651 *) |
+| Daring | top6 minus rest |  |  | -1.09 (-6.05 to 0.49) | -366 (-2,682 to 3,619) | -387 (-2,718 to 3,871) | 150 (-1,558 to 1,708) | -2.5 (-18.8 to 45.6) | -0.23 (-1.91 to 0.16) | -4.6 (-20.1 to 24.2) | -6.2 (-20.6 to 5.1) | 10.9 (-7.2 to 19.5) | -57 (-189 to 23) | 2 (-459 to 203) |
+| Gdańsk | all | 118 | 16 | 8.36 (6.17 to 9.09 *) | 4,968 (3,395 to 6,311 *) | 5,048 (3,535 to 6,251 *) | 1,544 (631 to 2,398 *) | 36.4 (27.8 to 46.1 *) | 2.62 (2.37 to 2.77 *) | 41.7 (33.3 to 49.3 *) | 21.7 (14.2 to 29.0 *) | 36.5 (26.3 to 48.9 *) | 690 (546 to 996 *) | 1,034 (696 to 1,428 *) |
+| Gdańsk | top6 | 60 | 5 | 7.32 (4.92 to 7.50 *) | 3,945 (2,650 to 6,070 *) | 3,945 (2,650 to 6,070 *) | 1,382 (915 to 2,422 *) | 36.7 (29.6 to 47.5 *) | 2.45 (2.20 to 2.51 *) | 48.3 (40.3 to 57.1 *) | 27.6 (17.0 to 39.1 *) | 24.1 (16.0 to 37.9 *) | 524 (447 to 686 *) | 683 (522 to 1,239 *) |
+| Gdańsk | rest | 58 | 11 | 8.79 (5.18 to 9.51 *) | 5,590 (3,083 to 7,042 *) | 5,592 (2,858 to 7,159 *) | 1,858 (22 to 3,716 *) | 36.2 (26.1 to 51.4 *) | 2.67 (2.16 to 2.85 *) | 35.1 (26.2 to 43.2 *) | 15.8 (9.5 to 22.2 *) | 49.1 (37.5 to 62.5 *) | 951 (690 to 1,529 *) | 1,238 (883 to 1,687 *) |
+| Gdańsk | top6 minus rest |  |  | -1.47 (-3.37 to 1.80) | -1,644 (-3,618 to 1,828) | -1,647 (-3,432 to 1,706) | -476 (-2,497 to 1,762) | 0.5 (-16.4 to 16.6) | -0.22 (-0.53 to 0.25) | 13.2 (1.5 to 25.8 *) | 11.8 (-2.2 to 25.3) | -25.0 (-42.1 to -6.1 *) | -427 (-975 to -4 *) | -555 (-1,005 to 100) |
+| Z-42 | all | 56 | 8 | 7.24 (3.37 to 8.13 *) | 6,367 (1,936 to 7,769 *) | 6,367 (2,104 to 7,796 *) | 470 (-858 to 4,055) | 53.6 (34.1 to 77.3 *) | 1.99 (1.05 to 2.38 *) | 61.8 (53.2 to 70.0 *) | 27.3 (18.7 to 36.7 *) | 10.9 (4.1 to 16.1 *) | 355 (302 to 385 *) | 411 (319 to 595 *) |
+| Z-42 | top6 | 20 | 2 | 7.00 | 7,090 | 7,090 | 4,621 | 30.0 | 2.43 | 65.0 | 25.0 | 10.0 | 366 | 422 |
+| Z-42 | rest | 36 | 6 | 6.28 (1.53 to 6.65 *) | 3,512 (1,042 to 6,921 *) | 3,512 (967 to 7,022 *) | -705 (-1,020 to 2,405) | 66.7 (35.7 to 90.0 *) | 1.40 (0.59 to 1.89 *) | 60.0 (51.7 to 71.4 *) | 28.6 (20.8 to 34.4 *) | 11.4 (3.1 to 19.0 *) | 355 (194 to 385 *) | 414 (328 to 634 *) |
+| Z-42 | top6 minus rest |  |  | 0.72 (-1.44 to 5.25) | 3,578 (199 to 7,655 *) | 3,578 (272 to 7,477 *) | 5,326 (2,025 to 6,228 *) | -36.7 (-58.2 to -2.0 *) | 1.03 (0.10 to 1.78 *) | 5.0 (-16.7 to 17.1) | -3.6 (-18.1 to 25.6) | -1.4 (-16.7 to 10.0) | 11 (-20 to 182) | 8 (-183 to 168) |
+| Somers | all | 260 | 18 | 13.16 (10.92 to 13.98 *) | 5,830 (4,966 to 6,556 *) | 5,915 (4,966 to 6,503 *) | 2,224 (1,594 to 3,512 *) | 26.2 (23.7 to 32.3 *) | 2.76 (2.61 to 2.85 *) | 3.4 (1.3 to 6.3 *) | 0.8 (0.0 to 2.1) | 95.8 (92.8 to 97.9 *) | 3,610 (3,250 to 4,000 *) | 1,683 (1,335 to 2,104 *) |
+| Somers | top6 | 90 | 4 | 12.22 (5.63 to 12.95 *) | 6,740 (6,389 to 9,342 *) | 6,771 (6,389 to 9,384 *) | 2,210 (1,967 to 6,911 *) | 27.8 (22.2 to 34.8 *) | 2.73 (2.59 to 2.84 *) | 2.3 (0.0 to 5.8) | 0.0 (0.0 to 0.0) | 97.7 (94.2 to 100.0 *) | 3,861 (3,158 to 4,463 *) | 1,464 (911 to 1,841 *) |
+| Somers | rest | 170 | 14 | 12.30 (8.75 to 13.61 *) | 5,549 (3,861 to 6,071 *) | 5,465 (4,012 to 6,177 *) | 2,224 (1,468 to 3,768 *) | 27.6 (23.4 to 38.1 *) | 2.74 (2.46 to 2.84 *) | 4.0 (0.9 to 7.8 *) | 1.3 (0.0 to 3.1) | 94.7 (90.5 to 97.5 *) | 3,501 (3,065 to 3,885 *) | 1,832 (1,427 to 2,180 *) |
+| Somers | top6 minus rest |  |  | -0.08 (-6.55 to 2.78) | 1,190 (547 to 4,872 *) | 1,306 (620 to 4,444 *) | -14 (-1,591 to 4,908) | 0.1 (-12.0 to 7.0) | -0.00 (-0.18 to 0.27) | -1.6 (-6.6 to 3.4) | -1.3 (-3.0 to 0.0) | 3.0 (-1.9 to 7.5) | 360 (-484 to 1,110) | -367 (-1,068 to 184) |
+| Harugumo | all | 100 | 15 | 12.92 (8.72 to 14.37 *) | 5,014 (2,632 to 6,090 *) | 4,882 (2,474 to 5,894 *) | 2,017 (1,449 to 2,660 *) | 26.0 (21.3 to 35.2 *) | 2.66 (2.34 to 2.75 *) | 4.7 (0.0 to 9.3) | 10.6 (1.5 to 18.9 *) | 84.7 (73.3 to 96.3 *) | 3,857 (3,116 to 4,245 *) | 2,175 (1,323 to 3,302 *) |
+| Harugumo | top6 | 55 | 4 | 12.17 (9.36 to 15.92 *) | 5,254 (1,916 to 6,445 *) | 5,052 (1,779 to 6,665 *) | 1,870 (1,282 to 2,818 *) | 29.1 (22.6 to 37.9 *) | 2.68 (2.12 to 2.77 *) | 4.1 (0.0 to 8.6) | 14.3 (0.0 to 26.5) | 81.6 (64.7 to 100.0 *) | 4,029 (2,775 to 4,329 *) | 2,507 (850 to 3,363 *) |
+| Harugumo | rest | 45 | 11 | 8.47 (3.92 to 11.44 *) | 4,455 (1,761 to 6,095 *) | 4,412 (1,974 to 6,179 *) | 2,093 (1,449 to 3,181 *) | 31.1 (21.9 to 45.0 *) | 2.49 (2.11 to 2.64 *) | 5.6 (0.0 to 13.5) | 5.6 (0.0 to 9.8) | 88.9 (83.8 to 96.0 *) | 3,716 (2,657 to 4,455 *) | 2,084 (1,258 to 3,147 *) |
+| Harugumo | top6 minus rest |  |  | 3.70 (-0.29 to 9.28) | 799 (-2,910 to 3,770) | 640 (-2,881 to 3,784) | -224 (-1,614 to 822) | -2.0 (-16.4 to 10.7) | 0.18 (-0.35 to 0.50) | -1.5 (-11.8 to 5.6) | 8.7 (-6.4 to 22.3) | -7.3 (-24.3 to 12.9) | 313 (-1,087 to 1,441) | 423 (-1,775 to 1,834) |
+Grozovoi minus Daring spread_km 1.63 -1.49 to 6.48
+Grozovoi minus Daring edge_iqr_m 599 -2,511 to 3,628
+Grozovoi minus Daring edge_iqr_no_mrA_m 936 -2,846 to 3,347
+Grozovoi minus Daring edge_med_m 327 -1,185 to 1,729
+Grozovoi minus Daring top_purpose_pct -8.3 -22.0 to 15.7
+Grozovoi minus Daring purpose_entropy_bits 0.33 -0.72 to 0.63
+Grozovoi minus Daring parked_pct -42.2 -63.2 to -8.7 *
+Grozovoi minus Daring between_pct 11.3 -23.0 to 28.5
+Grozovoi minus Daring line_1km_pct 30.9 8.1 to 52.0 *
+Grozovoi minus Daring path_med_m 381 76 to 1,426 *
+Grozovoi minus Daring path_iqr_m 352 -151 to 1,691
+Grozovoi minus Gdańsk spread_km 1.34 -2.04 to 6.51
+Grozovoi minus Gdańsk edge_iqr_m -243 -3,319 to 2,693
+Grozovoi minus Gdańsk edge_iqr_no_mrA_m 10 -3,700 to 2,806
+Grozovoi minus Gdańsk edge_med_m -546 -2,375 to 922
+Grozovoi minus Gdańsk top_purpose_pct 10.2 -1.3 to 32.5
+Grozovoi minus Gdańsk purpose_entropy_bits -0.41 -1.37 to -0.16 *
+Grozovoi minus Gdańsk parked_pct -19.5 -37.8 to 9.1
+Grozovoi minus Gdańsk between_pct 19.0 -12.8 to 38.2
+Grozovoi minus Gdańsk line_1km_pct 0.5 -20.0 to 21.5
+Grozovoi minus Gdańsk path_med_m 56 -260 to 1,020
+Grozovoi minus Gdańsk path_iqr_m -247 -774 to 1,187
+Shimakaze minus Daring spread_km 3.39 -0.25 to 5.58
+Shimakaze minus Daring edge_iqr_m 3,711 377 to 6,252 *
+Shimakaze minus Daring edge_iqr_no_mrA_m 3,439 362 to 5,998 *
+Shimakaze minus Daring edge_med_m 2,617 -436 to 4,572
+Shimakaze minus Daring top_purpose_pct -18.8 -31.7 to 3.4
+Shimakaze minus Daring purpose_entropy_bits 0.39 -0.34 to 0.94
+Shimakaze minus Daring parked_pct -37.7 -54.6 to -22.2 *
+Shimakaze minus Daring between_pct -25.9 -34.4 to -16.9 *
+Shimakaze minus Daring line_1km_pct 63.6 48.7 to 77.9 *
+Shimakaze minus Daring path_med_m 1,318 898 to 1,518 *
+Shimakaze minus Daring path_iqr_m 1,207 337 to 1,415 *
+Shimakaze minus Gdańsk spread_km 3.10 0.33 to 5.40 *
+Shimakaze minus Gdańsk edge_iqr_m 2,870 -775 to 5,111
+Shimakaze minus Gdańsk edge_iqr_no_mrA_m 2,513 -781 to 5,045
+Shimakaze minus Gdańsk edge_med_m 1,744 -2,147 to 3,569
+Shimakaze minus Gdańsk top_purpose_pct -0.2 -11.3 to 19.5
+Shimakaze minus Gdańsk purpose_entropy_bits -0.35 -1.00 to 0.12
+Shimakaze minus Gdańsk parked_pct -15.0 -31.5 to -0.3 *
+Shimakaze minus Gdańsk between_pct -18.2 -25.9 to -10.1 *
+Shimakaze minus Gdańsk line_1km_pct 33.1 14.3 to 52.2 *
+Shimakaze minus Gdańsk path_med_m 994 474 to 1,260 *
+Shimakaze minus Gdańsk path_iqr_m 608 -245 to 877
+Gdańsk minus Daring spread_km 0.29 -2.15 to 2.35
+Gdańsk minus Daring edge_iqr_m 842 -847 to 2,513
+Gdańsk minus Daring edge_iqr_no_mrA_m 926 -841 to 2,490
+Gdańsk minus Daring edge_med_m 873 -220 to 2,063
+Gdańsk minus Daring top_purpose_pct -18.6 -29.9 to -4.2 *
+Gdańsk minus Daring purpose_entropy_bits 0.74 0.33 to 1.10 *
+Gdańsk minus Daring parked_pct -22.7 -35.2 to -10.2 *
+Gdańsk minus Daring between_pct -7.7 -18.7 to 2.2
+Gdańsk minus Daring line_1km_pct 30.4 18.9 to 45.6 *
+Gdańsk minus Daring path_med_m 324 115 to 631 *
+Gdańsk minus Daring path_iqr_m 599 199 to 986 *
+{'ship': 'Grozovoi', 'n': 30, 'cells_for_80pct_at_n30': 19.0, 'distinct_cells_at_n30': 25.0, 'purpose_entropy_bits_at_n30': 2.21, 'distinct_primary_purposes_at_n30': 7.0, 'distinct_tags_per_smoke': 1.1, 'maps': {'Hotspot': 14, 'Loop': 6, 'Mountain Range': 5, 'Sea of Fortune': 5}, 'primary_purposes': {'cap_contest': 47, 'none': 20, 'escape': 13, 'counter_smoke': 7, 'reposition': 7, 'cap_control': 3, 'island_dive': 3}, 'movement': {'kiting': 30, 'horizontal': 23, 'stationary': 20, 'pushing': 17, 'unclassified': 10}, 'spread_by_map_km': {'Hotspot': [14, 11.41]}}
+{'ship': 'Shimakaze', 'n': 58, 'cells_for_80pct_at_n30': 19.8, 'distinct_cells_at_n30': 25.7, 'purpose_entropy_bits_at_n30': 2.15, 'distinct_primary_purposes_at_n30': 6.7, 'distinct_tags_per_smoke': 1.12, 'maps': {'Hotspot': 13, 'Okinawa': 11, 'Loop': 9, 'Mountain Range': 8, 'Land of Fire': 7, 'Sea of Fortune': 6, 'Sleeping Giant': 4}, 'primary_purposes': {'cap_contest': 36, 'none': 34, 'escape': 9, 'counter_smoke': 7, 'reposition': 7, 'damage': 3, 'island_dive': 2, 'radar_trap': 2}, 'movement': {'horizontal': 29, 'kiting': 28, 'stationary': 26, 'pushing': 14, 'unclassified': 3}, 'spread_by_map_km': {'Hotspot': [13, 14.75], 'Loop': [9, 8.38], 'Okinawa': [11, 11.66], 'Mountain Range': [8, 12.51]}}
+{'ship': 'Daring', 'n': 200, 'cells_for_80pct_at_n30': 19.2, 'distinct_cells_at_n30': 25.2, 'purpose_entropy_bits_at_n30': 1.73, 'distinct_primary_purposes_at_n30': 5.4, 'distinct_tags_per_smoke': 1.01, 'maps': {'Loop': 48, 'Sleeping Giant': 38, 'Hotspot': 36, 'Land of Fire': 31, 'Okinawa': 22, 'Sea of Fortune': 15, 'Mountain Range': 10}, 'primary_purposes': {'cap_contest': 55, 'none': 24, 'escape': 8, 'counter_smoke': 6, 'damage': 2, 'reposition': 2, 'island_dive': 1, 'hydro_trap': 0}, 'movement': {'stationary': 64, 'kiting': 20, 'horizontal': 8, 'pushing': 6, 'unclassified': 2}, 'spread_by_map_km': {'Hotspot': [36, 9.61], 'Loop': [48, 6.2], 'Okinawa': [22, 9.47], 'Land of Fire': [31, 7.14], 'Mountain Range': [10, 7.32], 'Sleeping Giant': [38, 8.01], 'Sea of Fortune': [15, 10.86]}}
+{'ship': 'Gdańsk', 'n': 118, 'cells_for_80pct_at_n30': 19.6, 'distinct_cells_at_n30': 25.6, 'purpose_entropy_bits_at_n30': 2.45, 'distinct_primary_purposes_at_n30': 7.7, 'distinct_tags_per_smoke': 1.18, 'maps': {'Sleeping Giant': 37, 'Hotspot': 23, 'Mountain Range': 20, 'Loop': 13, 'Sea of Fortune': 11, 'Okinawa': 7, 'Land of Fire': 7}, 'primary_purposes': {'cap_contest': 36, 'none': 24, 'cap_control': 9, 'escape': 8, 'counter_smoke': 7, 'damage': 6, 'radar_trap': 5, 'reposition': 3, 'island_dive': 3}, 'movement': {'stationary': 41, 'kiting': 30, 'pushing': 14, 'horizontal': 14, 'unclassified': 3}, 'spread_by_map_km': {'Hotspot': [23, 6.75], 'Loop': [13, 7.45], 'Mountain Range': [20, 9.16], 'Sleeping Giant': [37, 7.09], 'Sea of Fortune': [11, 12.79]}}
+{'ship': 'Z-42', 'n': 56, 'cells_for_80pct_at_n30': 18.3, 'distinct_cells_at_n30': 24.2, 'purpose_entropy_bits_at_n30': 1.88, 'distinct_primary_purposes_at_n30': 6.1, 'distinct_tags_per_smoke': 1.05, 'maps': {'Land of Fire': 18, 'Loop': 12, 'Sea of Fortune': 9, 'Sleeping Giant': 8, 'Mountain Range': 5, 'Hotspot': 4}, 'primary_purposes': {'cap_contest': 54, 'none': 21, 'counter_smoke': 12, 'damage': 4, 'escape': 4, 'radar_trap': 2, 'cap_control': 2, 'island_dive': 2}, 'movement': {'stationary': 61, 'kiting': 21, 'horizontal': 11, 'pushing': 5, 'unclassified': 2}, 'spread_by_map_km': {'Loop': [12, 6.0], 'Land of Fire': [18, 8.08], 'Sleeping Giant': [8, 6.75], 'Sea of Fortune': [9, 8.52]}}
+{'ship': 'Somers', 'n': 260, 'cells_for_80pct_at_n30': 20.1, 'distinct_cells_at_n30': 26.3, 'purpose_entropy_bits_at_n30': 2.58, 'distinct_primary_purposes_at_n30': 7.8, 'distinct_tags_per_smoke': 1.31, 'maps': {'Sleeping Giant': 75, 'Hotspot': 73, 'Mountain Range': 33, 'Sea of Fortune': 26, 'Land of Fire': 22, 'Loop': 19, 'Okinawa': 12}, 'primary_purposes': {'cap_contest': 26, 'none': 25, 'reposition': 15, 'cap_control': 12, 'damage': 7, 'counter_smoke': 4, 'island_dive': 4, 'radar_trap': 4, 'escape': 3}, 'movement': {'horizontal': 48, 'pushing': 23, 'kiting': 17, 'unclassified': 9, 'stationary': 3}, 'spread_by_map_km': {'Hotspot': [73, 14.46], 'Loop': [19, 12.0], 'Okinawa': [12, 10.74], 'Land of Fire': [22, 7.7], 'Mountain Range': [33, 8.77], 'Sleeping Giant': [75, 15.47], 'Sea of Fortune': [26, 15.0]}}
+{'ship': 'Harugumo', 'n': 100, 'cells_for_80pct_at_n30': 19.2, 'distinct_cells_at_n30': 25.0, 'purpose_entropy_bits_at_n30': 2.52, 'distinct_primary_purposes_at_n30': 7.2, 'distinct_tags_per_smoke': 1.41, 'maps': {'Sleeping Giant': 33, 'Hotspot': 22, 'Mountain Range': 11, 'Loop': 9, 'Okinawa': 9, 'Sea of Fortune': 9, 'Land of Fire': 7}, 'primary_purposes': {'none': 26, 'cap_contest': 24, 'damage': 18, 'cap_control': 13, 'counter_smoke': 6, 'reposition': 6, 'island_dive': 5, 'radar_trap': 1, 'escape': 1}, 'movement': {'horizontal': 38, 'pushing': 31, 'unclassified': 15, 'kiting': 12, 'stationary': 4}, 'spread_by_map_km': {'Hotspot': [22, 17.05], 'Loop': [9, 8.44], 'Okinawa': [9, 8.09], 'Mountain Range': [11, 11.27], 'Sleeping Giant': [33, 12.66], 'Sea of Fortune': [9, 11.51]}}
+same-map spread km Hotspot {'Grozovoi': (14, 11.41), 'Shimakaze': (13, 14.75), 'Daring': (36, 9.61), 'Gdańsk': (23, 6.75)}
+same-map spread km Sea of Fortune {'Grozovoi': (5, None), 'Shimakaze': (6, None), 'Daring': (15, 10.86), 'Gdańsk': (11, 12.79)}
+same-map spread km Loop {'Grozovoi': (6, None), 'Shimakaze': (9, 8.38), 'Daring': (48, 6.2), 'Gdańsk': (13, 7.45)}
+same-map spread km Mountain Range {'Grozovoi': (5, None), 'Shimakaze': (8, 12.51), 'Daring': (10, 7.32), 'Gdańsk': (20, 9.16)}
+{'ship': 'Grozovoi', 'n': 27, 'bimodality_coefficient': 0.49, 'bic_one_minus_two': 4.2, 'ashman_d': 5.17, 'weight_low': 0.18, 'mode_low_m': 99, 'mode_high_m': 1063, 'valley_to_peak': 0.08, 'path_bands_pct': {'under 500 m': 22.2, '500 m to 1 km': 40.7, '1 to 2 km': 18.5, 'over 2 km': 18.5}, 'path_bands_n': [6, 11, 5, 5]}
+{'ship': 'Shimakaze', 'n': 56, 'bimodality_coefficient': 0.69, 'bic_one_minus_two': 38.8, 'ashman_d': 2.5, 'weight_low': 0.37, 'mode_low_m': 342, 'mode_high_m': 1968, 'valley_to_peak': 0.63, 'path_bands_pct': {'under 500 m': 26.8, '500 m to 1 km': 3.6, '1 to 2 km': 37.5, 'over 2 km': 32.1}, 'path_bands_n': [15, 2, 21, 18]}
+{'ship': 'Daring', 'n': 197, 'bimodality_coefficient': 0.48, 'bic_one_minus_two': 8.8, 'ashman_d': 2.36, 'weight_low': 0.14, 'mode_low_m': 83, 'mode_high_m': 425, 'valley_to_peak': 1.0, 'path_bands_pct': {'under 500 m': 64.5, '500 m to 1 km': 29.4, '1 to 2 km': 6.1, 'over 2 km': 0.0}, 'path_bands_n': [127, 58, 12, 0]}
+{'ship': 'Gdańsk', 'n': 115, 'bimodality_coefficient': 0.44, 'bic_one_minus_two': -0.3, 'ashman_d': 1.99, 'weight_low': 0.71, 'mode_low_m': 432, 'mode_high_m': 1609, 'valley_to_peak': 0.89, 'path_bands_pct': {'under 500 m': 41.7, '500 m to 1 km': 21.7, '1 to 2 km': 25.2, 'over 2 km': 11.3}, 'path_bands_n': [48, 25, 29, 13]}
+{'ship': 'Z-42', 'n': 55, 'bimodality_coefficient': 0.56, 'bic_one_minus_two': 14.0, 'ashman_d': 5.27, 'weight_low': 0.13, 'mode_low_m': 35, 'mode_high_m': 428, 'valley_to_peak': 0.05, 'path_bands_pct': {'under 500 m': 61.8, '500 m to 1 km': 27.3, '1 to 2 km': 10.9, 'over 2 km': 0.0}, 'path_bands_n': [34, 15, 6, 0]}
+{'ship': 'Somers', 'n': 237, 'bimodality_coefficient': 0.69, 'bic_one_minus_two': 183.0, 'ashman_d': 1.43, 'weight_low': 0.29, 'mode_low_m': 1626, 'mode_high_m': 3841, 'valley_to_peak': 0.99, 'path_bands_pct': {'under 500 m': 3.4, '500 m to 1 km': 0.8, '1 to 2 km': 11.0, 'over 2 km': 84.8}, 'path_bands_n': [8, 2, 26, 201]}
+{'ship': 'Harugumo', 'n': 85, 'bimodality_coefficient': 0.69, 'bic_one_minus_two': 70.2, 'ashman_d': 1.89, 'weight_low': 0.38, 'mode_low_m': 1158, 'mode_high_m': 4202, 'valley_to_peak': 0.8, 'path_bands_pct': {'under 500 m': 4.7, '500 m to 1 km': 10.6, '1 to 2 km': 9.4, 'over 2 km': 75.3}, 'path_bands_n': [4, 9, 8, 64]}
+Grozovoi vs random Daring samples of n=27: share with bimodality coefficient at least as high 24 % | BIC gain at least as high 9 %
+Grozovoi vs random Gdańsk samples of n=27: share with bimodality coefficient at least as high 18 % | BIC gain at least as high 2 %
+Grozovoi vs random Somers samples of n=27: share with bimodality coefficient at least as high 100 % | BIC gain at least as high 76 %
+Shimakaze vs random Daring samples of n=56: share with bimodality coefficient at least as high 0 % | BIC gain at least as high 0 %
+Shimakaze vs random Gdańsk samples of n=56: share with bimodality coefficient at least as high 0 % | BIC gain at least as high 0 %
+Shimakaze vs random Somers samples of n=56: share with bimodality coefficient at least as high 46 % | BIC gain at least as high 44 %
+{'ship': 'Grozovoi', 'players_total': 11, 'players_6plus': 1, 'both_at_least_1_each': 1, 'both_at_least_2_each': 1, 'both_at_least_quarter_each': 0, 'players_3plus': 4, 'players_3plus_with_both': 2, 'player_games_3plus': 4, 'player_games_with_both': 1}
+     {'clan': 'MACHX', 'n': 11, 'parked': 2, 'line_1km': 3, 'between': 6, 'inside_cap': 3, 'maps': 3, 'games': 5}
+{'ship': 'Shimakaze', 'players_total': 18, 'players_6plus': 2, 'both_at_least_1_each': 2, 'both_at_least_2_each': 2, 'both_at_least_quarter_each': 1, 'players_3plus': 8, 'players_3plus_with_both': 6, 'player_games_3plus': 4, 'player_games_with_both': 3}
+     {'clan': 'HFANS', 'n': 13, 'parked': 3, 'line_1km': 10, 'between': 0, 'inside_cap': 3, 'maps': 4, 'games': 7}
+     {'clan': 'UYSC', 'n': 7, 'parked': 3, 'line_1km': 4, 'between': 0, 'inside_cap': 2, 'maps': 4, 'games': 5}
+{'ship': 'Daring', 'players_total': 39, 'players_6plus': 13, 'both_at_least_1_each': 4, 'both_at_least_2_each': 2, 'both_at_least_quarter_each': 1, 'players_3plus': 26, 'players_3plus_with_both': 5, 'player_games_3plus': 42, 'player_games_with_both': 5}
+     {'clan': 'SCCC2', 'n': 16, 'parked': 8, 'line_1km': 1, 'between': 7, 'inside_cap': 8, 'maps': 5, 'games': 5}
+     {'clan': 'HTDOG', 'n': 14, 'parked': 6, 'line_1km': 5, 'between': 3, 'inside_cap': 3, 'maps': 2, 'games': 5}
+     {'clan': '-BN-', 'n': 12, 'parked': 9, 'line_1km': 0, 'between': 3, 'inside_cap': 2, 'maps': 2, 'games': 4}
+     {'clan': 'KSC', 'n': 11, 'parked': 9, 'line_1km': 0, 'between': 2, 'inside_cap': 8, 'maps': 3, 'games': 5}
+     {'clan': 'REEEE', 'n': 11, 'parked': 8, 'line_1km': 0, 'between': 3, 'inside_cap': 7, 'maps': 1, 'games': 3}
+     {'clan': 'MACHX', 'n': 10, 'parked': 9, 'line_1km': 0, 'between': 1, 'inside_cap': 3, 'maps': 3, 'games': 3}
+     {'clan': 'SCCC2', 'n': 10, 'parked': 5, 'line_1km': 2, 'between': 3, 'inside_cap': 4, 'maps': 2, 'games': 2}
+     {'clan': 'HFANS', 'n': 10, 'parked': 9, 'line_1km': 0, 'between': 1, 'inside_cap': 6, 'maps': 4, 'games': 4}
+     {'clan': 'EPOXY', 'n': 10, 'parked': 8, 'line_1km': 0, 'between': 2, 'inside_cap': 8, 'maps': 1, 'games': 3}
+     {'clan': 'KITED', 'n': 9, 'parked': 2, 'line_1km': 1, 'between': 6, 'inside_cap': 4, 'maps': 1, 'games': 4}
+     {'clan': 'MZY', 'n': 9, 'parked': 5, 'line_1km': 0, 'between': 4, 'inside_cap': 0, 'maps': 1, 'games': 4}
+     {'clan': '-BN-', 'n': 7, 'parked': 6, 'line_1km': 0, 'between': 1, 'inside_cap': 1, 'maps': 2, 'games': 2}
+     {'clan': 'EPOXY', 'n': 6, 'parked': 4, 'line_1km': 0, 'between': 2, 'inside_cap': 5, 'maps': 1, 'games': 1}
+{'ship': 'Gdańsk', 'players_total': 24, 'players_6plus': 8, 'both_at_least_1_each': 8, 'both_at_least_2_each': 6, 'both_at_least_quarter_each': 4, 'players_3plus': 14, 'players_3plus_with_both': 13, 'player_games_3plus': 14, 'player_games_with_both': 7}
+     {'clan': 'RESIN', 'n': 18, 'parked': 10, 'line_1km': 3, 'between': 5, 'inside_cap': 5, 'maps': 6, 'games': 10}
+     {'clan': 'HFANS', 'n': 13, 'parked': 4, 'line_1km': 7, 'between': 2, 'inside_cap': 3, 'maps': 5, 'games': 5}
+     {'clan': 'BONKZ', 'n': 11, 'parked': 5, 'line_1km': 1, 'between': 5, 'inside_cap': 2, 'maps': 4, 'games': 5}
+     {'clan': 'EPOXY', 'n': 9, 'parked': 4, 'line_1km': 3, 'between': 2, 'inside_cap': 5, 'maps': 3, 'games': 5}
+     {'clan': 'HTDOG', 'n': 9, 'parked': 4, 'line_1km': 2, 'between': 3, 'inside_cap': 1, 'maps': 1, 'games': 5}
+     {'clan': 'H-SR', 'n': 7, 'parked': 2, 'line_1km': 4, 'between': 1, 'inside_cap': 1, 'maps': 3, 'games': 3}
+     {'clan': 'UYSC', 'n': 6, 'parked': 1, 'line_1km': 5, 'between': 0, 'inside_cap': 5, 'maps': 3, 'games': 4}
+     {'clan': 'H-SR', 'n': 6, 'parked': 2, 'line_1km': 2, 'between': 2, 'inside_cap': 1, 'maps': 2, 'games': 3}
+{'ship': 'Z-42', 'players_total': 12, 'players_6plus': 3, 'both_at_least_1_each': 1, 'both_at_least_2_each': 1, 'both_at_least_quarter_each': 0, 'players_3plus': 11, 'players_3plus_with_both': 4, 'player_games_3plus': 11, 'player_games_with_both': 3}
+     {'clan': 'VRTUS', 'n': 11, 'parked': 7, 'line_1km': 2, 'between': 2, 'inside_cap': 2, 'maps': 2, 'games': 3}
+     {'clan': 'KITE', 'n': 6, 'parked': 3, 'line_1km': 0, 'between': 3, 'inside_cap': 2, 'maps': 3, 'games': 3}
+     {'clan': 'REEEE', 'n': 6, 'parked': 4, 'line_1km': 0, 'between': 2, 'inside_cap': 5, 'maps': 1, 'games': 1}
+{'ship': 'Somers', 'players_total': 38, 'players_6plus': 15, 'both_at_least_1_each': 4, 'both_at_least_2_each': 1, 'both_at_least_quarter_each': 0, 'players_3plus': 27, 'players_3plus_with_both': 5, 'player_games_3plus': 46, 'player_games_with_both': 3}
+     {'clan': 'H-SR', 'n': 27, 'parked': 0, 'line_1km': 26, 'between': 1, 'inside_cap': 4, 'maps': 6, 'games': 10}
+     {'clan': 'MZY', 'n': 22, 'parked': 1, 'line_1km': 15, 'between': 6, 'inside_cap': 5, 'maps': 3, 'games': 7}
+     {'clan': 'HFANS', 'n': 20, 'parked': 0, 'line_1km': 17, 'between': 3, 'inside_cap': 7, 'maps': 5, 'games': 7}
+     {'clan': 'REEEE', 'n': 19, 'parked': 2, 'line_1km': 17, 'between': 0, 'inside_cap': 3, 'maps': 3, 'games': 7}
+     {'clan': 'RESIN', 'n': 16, 'parked': 0, 'line_1km': 16, 'between': 0, 'inside_cap': 3, 'maps': 5, 'games': 8}
+     {'clan': 'EPOXY', 'n': 16, 'parked': 0, 'line_1km': 16, 'between': 0, 'inside_cap': 2, 'maps': 5, 'games': 6}
+     {'clan': 'RESIN', 'n': 13, 'parked': 1, 'line_1km': 12, 'between': 0, 'inside_cap': 4, 'maps': 3, 'games': 6}
+     {'clan': 'NGA', 'n': 11, 'parked': 0, 'line_1km': 10, 'between': 1, 'inside_cap': 0, 'maps': 5, 'games': 5}
+     {'clan': 'RESIN', 'n': 9, 'parked': 0, 'line_1km': 7, 'between': 2, 'inside_cap': 1, 'maps': 2, 'games': 4}
+     {'clan': 'HFANS', 'n': 8, 'parked': 0, 'line_1km': 6, 'between': 2, 'inside_cap': 3, 'maps': 3, 'games': 4}
+     {'clan': 'PFANS', 'n': 8, 'parked': 1, 'line_1km': 6, 'between': 1, 'inside_cap': 0, 'maps': 1, 'games': 3}
+     {'clan': 'BONKY', 'n': 7, 'parked': 0, 'line_1km': 7, 'between': 0, 'inside_cap': 1, 'maps': 3, 'games': 3}
+     {'clan': '-BN-', 'n': 7, 'parked': 0, 'line_1km': 6, 'between': 1, 'inside_cap': 0, 'maps': 2, 'games': 3}
+     {'clan': 'VRTUS', 'n': 6, 'parked': 0, 'line_1km': 6, 'between': 0, 'inside_cap': 1, 'maps': 2, 'games': 3}
+     {'clan': 'MACHX', 'n': 6, 'parked': 0, 'line_1km': 5, 'between': 1, 'inside_cap': 1, 'maps': 2, 'games': 3}
+{'ship': 'Harugumo', 'players_total': 23, 'players_6plus': 7, 'both_at_least_1_each': 2, 'both_at_least_2_each': 0, 'both_at_least_quarter_each': 0, 'players_3plus': 14, 'players_3plus_with_both': 4, 'player_games_3plus': 19, 'player_games_with_both': 2}
+     {'clan': 'EPOXY', 'n': 14, 'parked': 0, 'line_1km': 8, 'between': 6, 'inside_cap': 2, 'maps': 3, 'games': 5}
+     {'clan': 'RESIN', 'n': 12, 'parked': 1, 'line_1km': 6, 'between': 5, 'inside_cap': 5, 'maps': 4, 'games': 5}
+     {'clan': 'H-SR', 'n': 10, 'parked': 0, 'line_1km': 8, 'between': 2, 'inside_cap': 3, 'maps': 2, 'games': 4}
+     {'clan': '-BN-', 'n': 6, 'parked': 0, 'line_1km': 5, 'between': 1, 'inside_cap': 0, 'maps': 3, 'games': 3}
+     {'clan': 'H-SR', 'n': 6, 'parked': 0, 'line_1km': 4, 'between': 2, 'inside_cap': 0, 'maps': 2, 'games': 2}
+     {'clan': 'BONKZ', 'n': 6, 'parked': 0, 'line_1km': 6, 'between': 0, 'inside_cap': 2, 'maps': 2, 'games': 2}
+     {'clan': 'RESIN', 'n': 6, 'parked': 1, 'line_1km': 4, 'between': 1, 'inside_cap': 0, 'maps': 2, 'games': 2}
+Grozovoi Top 6: H-SR 3, RESIN 3 | Rest: MACHX 15, MZY 3, RMN 2, EPOXY 2, INCA 1, MACH 1 | players [('MACHX_SPAAAAAA/MACHX', 11), ('HSR_Yamiyonohi/H-SR', 3), ('RESIN_Maddog24/RESIN', 3), ('MZY_NagatoYuki/MZY', 3), ('MACHX_JulioElG/MACHX', 2), ('RMN_Miken6qzt/RMN', 2)]
+   bands without MACHX [4, 4, 1, 3]
+   without MACHX n 15 parked% 33.3 line% 33.3 spread km 13.11 edge IQR 3793.0 entropy 1.86
+Shimakaze Top 6: VRTUS 6, HTDOG 4, RESIN 3, BONKZ 2 | Rest: HFANS 13, 5D 8, UYSC 7, MANBA 5, RMN 4, EPOXY 3, INCA 2, BONKY 1 | players [('HFANS_T_Sakuya/HFANS', 13), ('UYSC_DMR7575/UYSC', 7), ('5D_Tsushimoid/5D', 5), ('VRTUS_ItsAGame/VRTUS', 5), ('MANBA_Catoverf/MANBA', 5), ('HTDOG_frostie1/HTDOG', 4)]
+   bands without HFANS [12, 2, 17, 12]
+   without HFANS n 45 parked% 27.9 line% 67.4 spread km 10.58 edge IQR 7283.0 entropy 2.28

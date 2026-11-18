@@ -1,0 +1,30 @@
+lit rows (deduped) 191 | on destroyers 77 | on Loop 17 destroyers 9
+| Group | Smokes | Our radar lit an enemy destroyer (in its smoke) in the 60 s before | control: same, 120 to 60 s before | control: same, 60 s after | Our radar lit any enemy ship (in its smoke) in the 60 s before | control: 120 to 60 s before | control: 60 s after | An allied smoke with radar run from inside stood in the 60 s before | same, and that radar spotted an enemy | control: 120 to 60 s before | An allied radar ship within radar range of the cap centre when the smoke was laid | An allied radar ship covering the whole cap | Radar run from inside this smoke | An allied radar ship within radar range of the nearest enemy destroyer with a known position |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Daring on Loop | 48 | 1 (2%, 0 to 8) | 1 (2%, 0 to 6) | 0 (0%, 0 to 0) | 1 (2%, 0 to 8) | 2 (4%, 0 to 9) | 1 (2%, 0 to 7) | 0 (0%, 0 to 0) | 0 (0%, 0 to 0) | 0 (0%, 0 to 0) | 18 (38%, 17 to 56) | 6 (12%, 3 to 22) | 0 (0%, 0 to 0) | 8 of 38 (21%) |
+| Daring on other maps | 152 | 7 (5%, 2 to 8) | 4 (3%, 1 to 6) | 6 (4%, 2 to 7) | 10 (7%, 2 to 11) | 9 (6%, 3 to 10) | 14 (9%, 4 to 13) | 15 (10%, 2 to 19) | 11 (7%, 2 to 15) | 15 (10%, 1 to 21) | 110 (72%, 63 to 79) | 75 (49%, 40 to 58) | 0 (0%, 0 to 0) | 57 of 123 (46%) |
+| Other cap sitters on Loop | 40 | 0 (0%, 0 to 0) | 0 (0%, 0 to 0) | 0 (0%, 0 to 0) | 1 (2%, 0 to 8) | 0 (0%, 0 to 0) | 0 (0%, 0 to 0) | 2 (5%, 0 to 12) | 1 (2%, 0 to 9) | 2 (5%, 0 to 12) | 28 (70%, 56 to 84) | 21 (52%, 33 to 70) | 1 (2%, 0 to 8) | 16 of 37 (43%) |
+| Other destroyer smokes on Loop | 54 | 0 (0%, 0 to 0) | 0 (0%, 0 to 0) | 1 (2%, 0 to 6) | 2 (4%, 0 to 11) | 0 (0%, 0 to 0) | 2 (4%, 0 to 9) | 4 (7%, 0 to 17) | 3 (6%, 0 to 12) | 5 (9%, 0 to 18) | 34 (63%, 50 to 77) | 14 (26%, 15 to 38) | 7 (13%, 4 to 23) | 14 of 43 (33%) |
+| All destroyer smokes, all maps | 1074 | 24 (2%, 1 to 3) | 17 (2%, 1 to 3) | 23 (2%, 1 to 3) | 52 (5%, 3 to 6) | 41 (4%, 3 to 5) | 65 (6%, 4 to 8) | 119 (11%, 7 to 15) | 77 (7%, 5 to 10) | 121 (11%, 7 to 15) | 728 (68%, 63 to 72) | 497 (46%, 41 to 51) | 113 (11%, 7 to 14) | 353 of 873 (40%) |
+ Daring on Loop clans Top 6: KITE 3 | Rest: REEEE 11, KITED 9, EPOXY 6, MACHX 3, -BN- 3, BONKY 3, SCCC2 3, HFANS 3, KSC 2, NGA 2 | zone A 41, B 5, C 2 | Top 6 n 3
+ radar ship positions recorded per Daring smoke: median 1.0 | none recorded 16
+ team radar ships in Daring team-games on Loop Moskva 8, Des Moines 8, San Martín 8, Petropavlovsk 7, Yueyang 4, Thor 3, Salem 3, Småland 2
+  lit_dd_before: Daring on Loop minus Daring other maps: -3 pts (-7 to +5)
+  lit_dd_before: Daring on Loop minus other sitters on Loop: +2 pts (+0 to +8)
+  lit_dd_before: Daring on Loop minus other DD smokes on Loop: +2 pts (+0 to +8)
+  lit_any_before: Daring on Loop minus Daring other maps: -4 pts (-10 to +2)
+  lit_any_before: Daring on Loop minus other sitters on Loop: -0 pts (-7 to +7)
+  lit_any_before: Daring on Loop minus other DD smokes on Loop: -2 pts (-10 to +7)
+  radar_smoke_before: Daring on Loop minus Daring other maps: -10 pts (-20 to -2 *)
+  radar_smoke_before: Daring on Loop minus other sitters on Loop: -5 pts (-13 to +0)
+  radar_smoke_before: Daring on Loop minus other DD smokes on Loop: -7 pts (-17 to +0)
+  radar_in_range_of_cap: Daring on Loop minus Daring other maps: -35 pts (-55 to -15 *)
+  radar_in_range_of_cap: Daring on Loop minus other sitters on Loop: -32 pts (-56 to -11 *)
+  radar_in_range_of_cap: Daring on Loop minus other DD smokes on Loop: -25 pts (-52 to +1)
+  Daring on Loop, lit_dd_before minus lit_dd_earlier: +0 pts (-5 to +7)
+  Daring on Loop, lit_dd_before minus lit_dd_after: +2 pts (+0 to +8)
+  Daring on Loop, lit_any_before minus lit_any_earlier: -2 pts (-8 to +6)
+  Daring on Loop, radar_smoke_before minus radar_smoke_earlier: +0 pts (+0 to +0)
+ Daring on Loop smokes with a signal:
+    7919_g1_94407 BONKY 17:51 F3 zone A | lit: [('A. da Barbiano', '49 s before', 'by Moskva')] | allied radar smoke stood: False | conc 0
+ reverse view: {'episodes': 9, 'with_daring': 2, 'followed': 1, 'base_daring_smokes_per_60s': 0.176} | Daring team-games 16 | Daring smokes per team-game 3.0

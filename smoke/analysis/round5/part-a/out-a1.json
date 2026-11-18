@@ -1,0 +1,1489 @@
+{
+ "definition": "destroyer smokes with the cap_contest purpose tag (identical to primary purpose cap_contest in this batch)",
+ "n": 391,
+ "rows": [
+  {
+   "group": "radar cruiser inside",
+   "n": 104,
+   "n_top6": 55,
+   "n_rest": 49,
+   "note": "",
+   "clans": {
+    "top6": {
+     "BONKZ": 15,
+     "H-SR": 14,
+     "RESIN": 10,
+     "KITE": 7,
+     "VRTUS": 5,
+     "HTDOG": 4
+    },
+    "rest": {
+     "-BN-": 6,
+     "HFANS": 6,
+     "EPOXY": 5,
+     "INCA": 5,
+     "MACHX": 5,
+     "KSC": 4,
+     "MZY": 3,
+     "PFANS": 3,
+     "PN": 2,
+     "KITED": 2,
+     "RSR": 2,
+     "MACH": 1,
+     "BTLST": 1,
+     "UYSC": 1,
+     "BONKY": 1,
+     "SCCC2": 1,
+     "REEEE": 1
+    }
+   },
+   "clans_text": "Top 6: BONKZ 15, H-SR 14, RESIN 10, KITE 7, VRTUS 5, HTDOG 4 | Rest: -BN- 6, HFANS 6, EPOXY 5, INCA 5, MACHX 5, KSC 4, MZY 3, PFANS 3, PN 2, KITED 2, RSR 2, MACH 1, BTLST 1, UYSC 1, BONKY 1, SCCC2 1, REEEE 1",
+   "cap_taken_snapshot_pct": {
+    "all": {
+     "value": 62.7,
+     "n": 51,
+     "lo": 52.8,
+     "hi": 75.0
+    },
+    "split": {
+     "top6": 53.3,
+     "n_top6": 30,
+     "rest": 76.2,
+     "n_rest": 21,
+     "diff": -22.9,
+     "lo": -42.1,
+     "hi": -5.8,
+     "clear": true
+    }
+   },
+   "cap_won_batch_pct": {
+    "all": {
+     "value": 73.1,
+     "n": 52,
+     "lo": 60.4,
+     "hi": 87.2
+    },
+    "split": {
+     "top6": 63.3,
+     "n_top6": 30,
+     "rest": 86.4,
+     "n_rest": 22,
+     "diff": -23.0,
+     "lo": -42.8,
+     "hi": 1.4,
+     "clear": false
+    }
+   },
+   "enemy_prevented_pct": {
+    "all": {
+     "value": 90.4,
+     "n": 83,
+     "lo": 86.1,
+     "hi": 95.3
+    },
+    "split": {
+     "top6": 90.9,
+     "n_top6": 44,
+     "rest": 89.7,
+     "n_rest": 39,
+     "diff": 1.2,
+     "lo": -7.5,
+     "hi": 10.7,
+     "clear": false
+    }
+   },
+   "concealed_damage": {
+    "all": {
+     "value": 16882.0,
+     "n": 104,
+     "lo": 12675.0,
+     "hi": 20512.0
+    },
+    "split": {
+     "top6": 19099.0,
+     "n_top6": 55,
+     "rest": 14394.0,
+     "n_rest": 49,
+     "diff": 4704.0,
+     "lo": -3637.0,
+     "hi": 11740.0,
+     "clear": false
+    }
+   },
+   "deaths_per_100": {
+    "all": {
+     "value": 10.6,
+     "n": 104,
+     "lo": 4.6,
+     "hi": 16.2
+    },
+    "split": {
+     "top6": 10.9,
+     "n_top6": 55,
+     "rest": 10.2,
+     "n_rest": 49,
+     "diff": 0.7,
+     "lo": -12.3,
+     "hi": 10.8,
+     "clear": false
+    }
+   }
+  },
+  {
+   "group": "non-radar cruiser inside",
+   "n": 17,
+   "n_top6": 8,
+   "n_rest": 9,
+   "note": "small n",
+   "clans": {
+    "top6": {
+     "H-SR": 4,
+     "RESIN": 2,
+     "VRTUS": 1,
+     "HTDOG": 1
+    },
+    "rest": {
+     "BTLST": 2,
+     "HFANS": 2,
+     "OGF": 1,
+     "REEEE": 1,
+     "-BN-": 1,
+     "SCCC2": 1,
+     "KITED": 1
+    }
+   },
+   "clans_text": "Top 6: H-SR 4, RESIN 2, VRTUS 1, HTDOG 1 | Rest: BTLST 2, HFANS 2, OGF 1, REEEE 1, -BN- 1, SCCC2 1, KITED 1",
+   "cap_taken_snapshot_pct": {
+    "all": {
+     "value": 37.5,
+     "n": 8,
+     "lo": 18.2,
+     "hi": 60.0
+    },
+    "split": {
+     "top6": null,
+     "n_top6": 3,
+     "rest": null,
+     "n_rest": 5,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    }
+   },
+   "cap_won_batch_pct": {
+    "all": {
+     "value": 62.5,
+     "n": 8,
+     "lo": 33.3,
+     "hi": 90.0
+    },
+    "split": {
+     "top6": null,
+     "n_top6": 3,
+     "rest": null,
+     "n_rest": 5,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    }
+   },
+   "enemy_prevented_pct": {
+    "all": {
+     "value": 76.9,
+     "n": 13,
+     "lo": 53.8,
+     "hi": 93.3
+    },
+    "split": {
+     "top6": null,
+     "n_top6": 5,
+     "rest": 62.5,
+     "n_rest": 8,
+     "diff": null,
+     "lo": null,
+     "hi": null,
+     "clear": false
+    }
+   },
+   "concealed_damage": {
+    "all": {
+     "value": 15049.0,
+     "n": 17,
+     "lo": 4873.0,
+     "hi": 26077.0
+    },
+    "split": {
+     "top6": 20045.0,
+     "n_top6": 8,
+     "rest": 10609.0,
+     "n_rest": 9,
+     "diff": 9436.0,
+     "lo": -8495.0,
+     "hi": 23488.0,
+     "clear": false
+    }
+   },
+   "deaths_per_100": {
+    "all": {
+     "value": 23.5,
+     "n": 17,
+     "lo": 0.0,
+     "hi": 57.1
+    },
+    "split": {
+     "top6": 12.5,
+     "n_top6": 8,
+     "rest": 33.3,
+     "n_rest": 9,
+     "diff": -20.8,
+     "lo": -65.0,
+     "hi": 12.5,
+     "clear": false
+    }
+   }
+  },
+  {
+   "group": "no cruiser",
+   "n": 191,
+   "n_top6": 46,
+   "n_rest": 145,
+   "note": "",
+   "clans": {
+    "top6": {
+     "RESIN": 15,
+     "BONKZ": 10,
+     "H-SR": 7,
+     "HTDOG": 6,
+     "VRTUS": 5,
+     "KITE": 3
+    },
+    "rest": {
+     "EPOXY": 16,
+     "REEEE": 15,
+     "HFANS": 14,
+     "SCCC2": 14,
+     "KITED": 10,
+     "KSC": 9,
+     "MACH": 9,
+     "MACHX": 9,
+     "-BN-": 8,
+     "RSR": 6,
+     "RMN": 5,
+     "PFANS": 4,
+     "UYSC": 4,
+     "INCA": 3,
+     "KSE": 3,
+     "5D": 3,
+     "MZY": 3,
+     "BTLST": 2,
+     "OGF": 2,
+     "KM": 2,
+     "NGA": 2,
+     "BONKY": 1,
+     "MANBA": 1
+    }
+   },
+   "clans_text": "Top 6: RESIN 15, BONKZ 10, H-SR 7, HTDOG 6, VRTUS 5, KITE 3 | Rest: EPOXY 16, REEEE 15, HFANS 14, SCCC2 14, KITED 10, KSC 9, MACH 9, MACHX 9, -BN- 8, RSR 6, RMN 5, PFANS 4, UYSC 4, INCA 3, KSE 3, 5D 3, MZY 3, BTLST 2, OGF 2, KM 2, NGA 2, BONKY 1, MANBA 1",
+   "cap_taken_snapshot_pct": {
+    "all": {
+     "value": 20.4,
+     "n": 108,
+     "lo": 12.6,
+     "hi": 28.9
+    },
+    "split": {
+     "top6": 47.8,
+     "n_top6": 23,
+     "rest": 12.9,
+     "n_rest": 85,
+     "diff": 34.9,
+     "lo": 16.5,
+     "hi": 60.3,
+     "clear": true
+    }
+   },
+   "cap_won_batch_pct": {
+    "all": {
+     "value": 27.8,
+     "n": 108,
+     "lo": 18.9,
+     "hi": 37.2
+    },
+    "split": {
+     "top6": 65.2,
+     "n_top6": 23,
+     "rest": 17.6,
+     "n_rest": 85,
+     "diff": 47.6,
+     "lo": 36.2,
+     "hi": 67.1,
+     "clear": true
+    }
+   },
+   "enemy_prevented_pct": {
+    "all": {
+     "value": 84.1,
+     "n": 132,
+     "lo": 77.6,
+     "hi": 90.1
+    },
+    "split": {
+     "top6": 94.6,
+     "n_top6": 37,
+     "rest": 80.0,
+     "n_rest": 95,
+     "diff": 14.6,
+     "lo": 4.1,
+     "hi": 25.2,
+     "clear": true
+    }
+   },
+   "concealed_damage": {
+    "all": {
+     "value": 3515.0,
+     "n": 191,
+     "lo": 2506.0,
+     "hi": 4578.0
+    },
+    "split": {
+     "top6": 4121.0,
+     "n_top6": 46,
+     "rest": 3322.0,
+     "n_rest": 145,
+     "diff": 799.0,
+     "lo": -1520.0,
+     "hi": 2782.0,
+     "clear": false
+    }
+   },
+   "deaths_per_100": {
+    "all": {
+     "value": 7.3,
+     "n": 191,
+     "lo": 4.8,
+     "hi": 10.6
+    },
+    "split": {
+     "top6": 4.3,
+     "n_top6": 46,
+     "rest": 8.3,
+     "n_rest": 145,
+     "diff": -3.9,
+     "lo": -9.7,
+     "hi": 1.1,
+     "clear": false
+    }
+   }
+  },
+  {
+   "group": "other",
+   "n": 79,
+   "n_top6": 21,
+   "n_rest": 58,
+   "note": "",
+   "clans": {
+    "top6": {
+     "VRTUS": 4,
+     "BONKZ": 4,
+     "RESIN": 4,
+     "HTDOG": 4,
+     "H-SR": 3,
+     "KITE": 2
+    },
+    "rest": {
+     "5D": 8,
+     "HFANS": 5,
+     "MACHX": 5,
+     "MZY": 4,
+     "MACH": 4,
+     "-BN-": 4,
+     "NGA": 4,
+     "EPOXY": 4,
+     "BTLST": 3,
+     "UYSC": 3,
+     "REEEE": 2,
+     "KSC": 2,
+     "BONKY": 2,
+     "RSR": 2,
+     "OGF": 1,
+     "KM": 1,
+     "KITED": 1,
+     "KSE": 1,
+     "INCA": 1,
+     "PFANS": 1
+    }
+   },
+   "clans_text": "Top 6: VRTUS 4, BONKZ 4, RESIN 4, HTDOG 4, H-SR 3, KITE 2 | Rest: 5D 8, HFANS 5, MACHX 5, MZY 4, MACH 4, -BN- 4, NGA 4, EPOXY 4, BTLST 3, UYSC 3, REEEE 2, KSC 2, BONKY 2, RSR 2, OGF 1, KM 1, KITED 1, KSE 1, INCA 1, PFANS 1",
+   "cap_taken_snapshot_pct": {
+    "all": {
+     "value": 47.7,
+     "n": 44,
+     "lo": 30.8,
+     "hi": 63.6
+    },
+    "split": {
+     "top6": 11.1,
+     "n_top6": 9,
+     "rest": 57.1,
+     "n_rest": 35,
+     "diff": -46.0,
+     "lo": -67.9,
+     "hi": -21.0,
+     "clear": true
+    }
+   },
+   "cap_won_batch_pct": {
+    "all": {
+     "value": 38.6,
+     "n": 44,
+     "lo": 24.4,
+     "hi": 52.9
+    },
+    "split": {
+     "top6": 22.2,
+     "n_top6": 9,
+     "rest": 42.9,
+     "n_rest": 35,
+     "diff": -20.6,
+     "lo": -48.8,
+     "hi": 6.8,
+     "clear": false
+    }
+   },
+   "enemy_prevented_pct": {
+    "all": {
+     "value": 81.2,
+     "n": 64,
+     "lo": 74.2,
+     "hi": 87.8
+    },
+    "split": {
+     "top6": 93.8,
+     "n_top6": 16,
+     "rest": 77.1,
+     "n_rest": 48,
+     "diff": 16.7,
+     "lo": 3.7,
+     "hi": 28.9,
+     "clear": true
+    }
+   },
+   "concealed_damage": {
+    "all": {
+     "value": 7768.0,
+     "n": 79,
+     "lo": 5204.0,
+     "hi": 10424.0
+    },
+    "split": {
+     "top6": 7222.0,
+     "n_top6": 21,
+     "rest": 7966.0,
+     "n_rest": 58,
+     "diff": -744.0,
+     "lo": -6601.0,
+     "hi": 6042.0,
+     "clear": false
+    }
+   },
+   "deaths_per_100": {
+    "all": {
+     "value": 13.9,
+     "n": 79,
+     "lo": 6.8,
+     "hi": 22.2
+    },
+    "split": {
+     "top6": 14.3,
+     "n_top6": 21,
+     "rest": 13.8,
+     "n_rest": 58,
+     "diff": 0.5,
+     "lo": -17.4,
+     "hi": 19.0,
+     "clear": false
+    }
+   }
+  }
+ ],
+ "group_differences": [
+  {
+   "a": 62.7,
+   "n_a": 51,
+   "b": 37.5,
+   "n_b": 8,
+   "diff": 25.2,
+   "lo": -2.5,
+   "hi": 51.1,
+   "clear": false,
+   "scope": "all",
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "cap_taken_snapshot_pct"
+  },
+  {
+   "a": 73.1,
+   "n_a": 52,
+   "b": 62.5,
+   "n_b": 8,
+   "diff": 10.6,
+   "lo": -24.6,
+   "hi": 44.2,
+   "clear": false,
+   "scope": "all",
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "cap_won_batch_pct"
+  },
+  {
+   "a": 90.4,
+   "n_a": 83,
+   "b": 76.9,
+   "n_b": 13,
+   "diff": 13.4,
+   "lo": -6.6,
+   "hi": 37.1,
+   "clear": false,
+   "scope": "all",
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "enemy_prevented_pct"
+  },
+  {
+   "a": 16882.0,
+   "n_a": 104,
+   "b": 15049.0,
+   "n_b": 17,
+   "diff": 1833.0,
+   "lo": -7630.0,
+   "hi": 9247.0,
+   "clear": false,
+   "scope": "all",
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "concealed_damage"
+  },
+  {
+   "a": 10.6,
+   "n_a": 104,
+   "b": 23.5,
+   "n_b": 17,
+   "diff": -13.0,
+   "lo": -43.1,
+   "hi": 8.8,
+   "clear": false,
+   "scope": "all",
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "deaths_per_100"
+  },
+  {
+   "a": 62.7,
+   "n_a": 51,
+   "b": 20.4,
+   "n_b": 108,
+   "diff": 42.4,
+   "lo": 30.3,
+   "hi": 58.9,
+   "clear": true,
+   "scope": "all",
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "cap_taken_snapshot_pct"
+  },
+  {
+   "a": 73.1,
+   "n_a": 52,
+   "b": 27.8,
+   "n_b": 108,
+   "diff": 45.3,
+   "lo": 28.8,
+   "hi": 64.8,
+   "clear": true,
+   "scope": "all",
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "cap_won_batch_pct"
+  },
+  {
+   "a": 90.4,
+   "n_a": 83,
+   "b": 84.1,
+   "n_b": 132,
+   "diff": 6.3,
+   "lo": 0.2,
+   "hi": 14.5,
+   "clear": true,
+   "scope": "all",
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "enemy_prevented_pct"
+  },
+  {
+   "a": 16882.0,
+   "n_a": 104,
+   "b": 3515.0,
+   "n_b": 191,
+   "diff": 13368.0,
+   "lo": 9359.0,
+   "hi": 17048.0,
+   "clear": true,
+   "scope": "all",
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "concealed_damage"
+  },
+  {
+   "a": 10.6,
+   "n_a": 104,
+   "b": 7.3,
+   "n_b": 191,
+   "diff": 3.2,
+   "lo": -4.3,
+   "hi": 9.7,
+   "clear": false,
+   "scope": "all",
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "deaths_per_100"
+  },
+  {
+   "a": 37.5,
+   "n_a": 8,
+   "b": 20.4,
+   "n_b": 108,
+   "diff": 17.1,
+   "lo": -4.0,
+   "hi": 38.0,
+   "clear": false,
+   "scope": "all",
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "cap_taken_snapshot_pct"
+  },
+  {
+   "a": 62.5,
+   "n_a": 8,
+   "b": 27.8,
+   "n_b": 108,
+   "diff": 34.7,
+   "lo": 6.4,
+   "hi": 60.2,
+   "clear": true,
+   "scope": "all",
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "cap_won_batch_pct"
+  },
+  {
+   "a": 76.9,
+   "n_a": 13,
+   "b": 84.1,
+   "n_b": 132,
+   "diff": -7.2,
+   "lo": -29.5,
+   "hi": 13.0,
+   "clear": false,
+   "scope": "all",
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "enemy_prevented_pct"
+  },
+  {
+   "a": 15049.0,
+   "n_a": 17,
+   "b": 3515.0,
+   "n_b": 191,
+   "diff": 11535.0,
+   "lo": 1016.0,
+   "hi": 22386.0,
+   "clear": true,
+   "scope": "all",
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "concealed_damage"
+  },
+  {
+   "a": 23.5,
+   "n_a": 17,
+   "b": 7.3,
+   "n_b": 191,
+   "diff": 16.2,
+   "lo": -5.5,
+   "hi": 46.5,
+   "clear": false,
+   "scope": "all",
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "deaths_per_100"
+  },
+  {
+   "a": 53.3,
+   "n_a": 30,
+   "b": null,
+   "n_b": 3,
+   "diff": null,
+   "lo": null,
+   "hi": null,
+   "clear": false,
+   "scope": "top6",
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "cap_taken_snapshot_pct"
+  },
+  {
+   "a": 63.3,
+   "n_a": 30,
+   "b": null,
+   "n_b": 3,
+   "diff": null,
+   "lo": null,
+   "hi": null,
+   "clear": false,
+   "scope": "top6",
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "cap_won_batch_pct"
+  },
+  {
+   "a": 90.9,
+   "n_a": 44,
+   "b": null,
+   "n_b": 5,
+   "diff": null,
+   "lo": null,
+   "hi": null,
+   "clear": false,
+   "scope": "top6",
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "enemy_prevented_pct"
+  },
+  {
+   "a": 19099.0,
+   "n_a": 55,
+   "b": 20045.0,
+   "n_b": 8,
+   "diff": -946.0,
+   "lo": -5449.0,
+   "hi": 2119.0,
+   "clear": false,
+   "scope": "top6",
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "concealed_damage"
+  },
+  {
+   "a": 10.9,
+   "n_a": 55,
+   "b": 12.5,
+   "n_b": 8,
+   "diff": -1.6,
+   "lo": -26.8,
+   "hi": 14.8,
+   "clear": false,
+   "scope": "top6",
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "deaths_per_100"
+  },
+  {
+   "a": 53.3,
+   "n_a": 30,
+   "b": 47.8,
+   "n_b": 23,
+   "diff": 5.5,
+   "lo": -11.3,
+   "hi": 15.2,
+   "clear": false,
+   "scope": "top6",
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "cap_taken_snapshot_pct"
+  },
+  {
+   "a": 63.3,
+   "n_a": 30,
+   "b": 65.2,
+   "n_b": 23,
+   "diff": -1.9,
+   "lo": -22.6,
+   "hi": 7.6,
+   "clear": false,
+   "scope": "top6",
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "cap_won_batch_pct"
+  },
+  {
+   "a": 90.9,
+   "n_a": 44,
+   "b": 94.6,
+   "n_b": 37,
+   "diff": -3.7,
+   "lo": -9.1,
+   "hi": 3.4,
+   "clear": false,
+   "scope": "top6",
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "enemy_prevented_pct"
+  },
+  {
+   "a": 19099.0,
+   "n_a": 55,
+   "b": 4121.0,
+   "n_b": 46,
+   "diff": 14977.0,
+   "lo": 9579.0,
+   "hi": 18687.0,
+   "clear": true,
+   "scope": "top6",
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "concealed_damage"
+  },
+  {
+   "a": 10.9,
+   "n_a": 55,
+   "b": 4.3,
+   "n_b": 46,
+   "diff": 6.6,
+   "lo": -1.7,
+   "hi": 12.1,
+   "clear": false,
+   "scope": "top6",
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "deaths_per_100"
+  },
+  {
+   "a": null,
+   "n_a": 3,
+   "b": 47.8,
+   "n_b": 23,
+   "diff": null,
+   "lo": null,
+   "hi": null,
+   "clear": false,
+   "scope": "top6",
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "cap_taken_snapshot_pct"
+  },
+  {
+   "a": null,
+   "n_a": 3,
+   "b": 65.2,
+   "n_b": 23,
+   "diff": null,
+   "lo": null,
+   "hi": null,
+   "clear": false,
+   "scope": "top6",
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "cap_won_batch_pct"
+  },
+  {
+   "a": null,
+   "n_a": 5,
+   "b": 94.6,
+   "n_b": 37,
+   "diff": null,
+   "lo": null,
+   "hi": null,
+   "clear": false,
+   "scope": "top6",
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "enemy_prevented_pct"
+  },
+  {
+   "a": 20045.0,
+   "n_a": 8,
+   "b": 4121.0,
+   "n_b": 46,
+   "diff": 15924.0,
+   "lo": 9599.0,
+   "hi": 24835.0,
+   "clear": true,
+   "scope": "top6",
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "concealed_damage"
+  },
+  {
+   "a": 12.5,
+   "n_a": 8,
+   "b": 4.3,
+   "n_b": 46,
+   "diff": 8.2,
+   "lo": -6.7,
+   "hi": 33.6,
+   "clear": false,
+   "scope": "top6",
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "deaths_per_100"
+  },
+  {
+   "a": 76.2,
+   "n_a": 21,
+   "b": null,
+   "n_b": 5,
+   "diff": null,
+   "lo": null,
+   "hi": null,
+   "clear": false,
+   "scope": "rest",
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "cap_taken_snapshot_pct"
+  },
+  {
+   "a": 86.4,
+   "n_a": 22,
+   "b": null,
+   "n_b": 5,
+   "diff": null,
+   "lo": null,
+   "hi": null,
+   "clear": false,
+   "scope": "rest",
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "cap_won_batch_pct"
+  },
+  {
+   "a": 89.7,
+   "n_a": 39,
+   "b": 62.5,
+   "n_b": 8,
+   "diff": 27.2,
+   "lo": 2.7,
+   "hi": 54.5,
+   "clear": true,
+   "scope": "rest",
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "enemy_prevented_pct"
+  },
+  {
+   "a": 14394.0,
+   "n_a": 49,
+   "b": 10609.0,
+   "n_b": 9,
+   "diff": 3785.0,
+   "lo": -9155.0,
+   "hi": 13071.0,
+   "clear": false,
+   "scope": "rest",
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "concealed_damage"
+  },
+  {
+   "a": 10.2,
+   "n_a": 49,
+   "b": 33.3,
+   "n_b": 9,
+   "diff": -23.1,
+   "lo": -61.8,
+   "hi": 12.5,
+   "clear": false,
+   "scope": "rest",
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "deaths_per_100"
+  },
+  {
+   "a": 76.2,
+   "n_a": 21,
+   "b": 12.9,
+   "n_b": 85,
+   "diff": 63.2,
+   "lo": 47.0,
+   "hi": 80.3,
+   "clear": true,
+   "scope": "rest",
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "cap_taken_snapshot_pct"
+  },
+  {
+   "a": 86.4,
+   "n_a": 22,
+   "b": 17.6,
+   "n_b": 85,
+   "diff": 68.7,
+   "lo": 51.9,
+   "hi": 84.3,
+   "clear": true,
+   "scope": "rest",
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "cap_won_batch_pct"
+  },
+  {
+   "a": 89.7,
+   "n_a": 39,
+   "b": 80.0,
+   "n_b": 95,
+   "diff": 9.7,
+   "lo": -0.8,
+   "hi": 21.3,
+   "clear": false,
+   "scope": "rest",
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "enemy_prevented_pct"
+  },
+  {
+   "a": 14394.0,
+   "n_a": 49,
+   "b": 3322.0,
+   "n_b": 145,
+   "diff": 11072.0,
+   "lo": 6504.0,
+   "hi": 16293.0,
+   "clear": true,
+   "scope": "rest",
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "concealed_damage"
+  },
+  {
+   "a": 10.2,
+   "n_a": 49,
+   "b": 8.3,
+   "n_b": 145,
+   "diff": 1.9,
+   "lo": -8.5,
+   "hi": 14.4,
+   "clear": false,
+   "scope": "rest",
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "deaths_per_100"
+  },
+  {
+   "a": null,
+   "n_a": 5,
+   "b": 12.9,
+   "n_b": 85,
+   "diff": null,
+   "lo": null,
+   "hi": null,
+   "clear": false,
+   "scope": "rest",
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "cap_taken_snapshot_pct"
+  },
+  {
+   "a": null,
+   "n_a": 5,
+   "b": 17.6,
+   "n_b": 85,
+   "diff": null,
+   "lo": null,
+   "hi": null,
+   "clear": false,
+   "scope": "rest",
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "cap_won_batch_pct"
+  },
+  {
+   "a": 62.5,
+   "n_a": 8,
+   "b": 80.0,
+   "n_b": 95,
+   "diff": -17.5,
+   "lo": -38.9,
+   "hi": 4.9,
+   "clear": false,
+   "scope": "rest",
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "enemy_prevented_pct"
+  },
+  {
+   "a": 10609.0,
+   "n_a": 9,
+   "b": 3322.0,
+   "n_b": 145,
+   "diff": 7287.0,
+   "lo": -3496.0,
+   "hi": 22074.0,
+   "clear": false,
+   "scope": "rest",
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "concealed_damage"
+  },
+  {
+   "a": 33.3,
+   "n_a": 9,
+   "b": 8.3,
+   "n_b": 145,
+   "diff": 25.1,
+   "lo": -8.0,
+   "hi": 63.4,
+   "clear": false,
+   "scope": "rest",
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "deaths_per_100"
+  }
+ ],
+ "by_cap_owner": [
+  {
+   "cap_at_activation": "neutral",
+   "group": "radar cruiser inside",
+   "n": 30,
+   "n_top6": 19,
+   "n_rest": 11,
+   "cap_taken": {
+    "value": 60.0,
+    "n": 30,
+    "lo": 45.8,
+    "hi": 71.4
+   },
+   "cap_won_batch": {
+    "value": 73.3,
+    "n": 30,
+    "lo": 58.1,
+    "hi": 88.0
+   },
+   "enemy_prevented": {
+    "value": 83.3,
+    "n": 30,
+    "lo": 71.4,
+    "hi": 96.2
+   }
+  },
+  {
+   "cap_at_activation": "neutral",
+   "group": "non-radar cruiser inside",
+   "n": 4,
+   "n_top6": 0,
+   "n_rest": 4,
+   "cap_taken": {
+    "value": null,
+    "n": 4,
+    "lo": null,
+    "hi": null
+   },
+   "cap_won_batch": {
+    "value": null,
+    "n": 4,
+    "lo": null,
+    "hi": null
+   },
+   "enemy_prevented": {
+    "value": null,
+    "n": 4,
+    "lo": null,
+    "hi": null
+   }
+  },
+  {
+   "cap_at_activation": "neutral",
+   "group": "no cruiser",
+   "n": 49,
+   "n_top6": 14,
+   "n_rest": 35,
+   "cap_taken": {
+    "value": 24.5,
+    "n": 49,
+    "lo": 10.0,
+    "hi": 39.3
+   },
+   "cap_won_batch": {
+    "value": 36.7,
+    "n": 49,
+    "lo": 24.4,
+    "hi": 50.0
+   },
+   "enemy_prevented": {
+    "value": 87.8,
+    "n": 49,
+    "lo": 78.8,
+    "hi": 97.3
+   }
+  },
+  {
+   "cap_at_activation": "theirs",
+   "group": "radar cruiser inside",
+   "n": 21,
+   "n_top6": 11,
+   "n_rest": 10,
+   "cap_taken": {
+    "value": 66.7,
+    "n": 21,
+    "lo": 44.8,
+    "hi": 93.8
+   },
+   "cap_won_batch": {
+    "value": 76.2,
+    "n": 21,
+    "lo": 65.2,
+    "hi": 93.3
+   },
+   "enemy_prevented": {
+    "value": null,
+    "n": 0,
+    "lo": null,
+    "hi": null
+   }
+  },
+  {
+   "cap_at_activation": "theirs",
+   "group": "non-radar cruiser inside",
+   "n": 4,
+   "n_top6": 3,
+   "n_rest": 1,
+   "cap_taken": {
+    "value": null,
+    "n": 4,
+    "lo": null,
+    "hi": null
+   },
+   "cap_won_batch": {
+    "value": null,
+    "n": 4,
+    "lo": null,
+    "hi": null
+   },
+   "enemy_prevented": {
+    "value": null,
+    "n": 0,
+    "lo": null,
+    "hi": null
+   }
+  },
+  {
+   "cap_at_activation": "theirs",
+   "group": "no cruiser",
+   "n": 59,
+   "n_top6": 9,
+   "n_rest": 50,
+   "cap_taken": {
+    "value": 16.9,
+    "n": 59,
+    "lo": 8.2,
+    "hi": 24.6
+   },
+   "cap_won_batch": {
+    "value": 20.3,
+    "n": 59,
+    "lo": 8.3,
+    "hi": 31.7
+   },
+   "enemy_prevented": {
+    "value": null,
+    "n": 0,
+    "lo": null,
+    "hi": null
+   }
+  },
+  {
+   "cap_at_activation": "ours",
+   "group": "radar cruiser inside",
+   "n": 53,
+   "n_top6": 25,
+   "n_rest": 28,
+   "cap_taken": {
+    "value": null,
+    "n": 0,
+    "lo": null,
+    "hi": null
+   },
+   "cap_won_batch": {
+    "value": null,
+    "n": 1,
+    "lo": null,
+    "hi": null
+   },
+   "enemy_prevented": {
+    "value": 94.3,
+    "n": 53,
+    "lo": 89.3,
+    "hi": 100.0
+   }
+  },
+  {
+   "cap_at_activation": "ours",
+   "group": "non-radar cruiser inside",
+   "n": 9,
+   "n_top6": 5,
+   "n_rest": 4,
+   "cap_taken": {
+    "value": null,
+    "n": 0,
+    "lo": null,
+    "hi": null
+   },
+   "cap_won_batch": {
+    "value": null,
+    "n": 0,
+    "lo": null,
+    "hi": null
+   },
+   "enemy_prevented": {
+    "value": 88.9,
+    "n": 9,
+    "lo": 62.5,
+    "hi": 100.0
+   }
+  },
+  {
+   "cap_at_activation": "ours",
+   "group": "no cruiser",
+   "n": 83,
+   "n_top6": 23,
+   "n_rest": 60,
+   "cap_taken": {
+    "value": null,
+    "n": 0,
+    "lo": null,
+    "hi": null
+   },
+   "cap_won_batch": {
+    "value": null,
+    "n": 0,
+    "lo": null,
+    "hi": null
+   },
+   "enemy_prevented": {
+    "value": 81.9,
+    "n": 83,
+    "lo": 73.0,
+    "hi": 89.1
+   }
+  }
+ ],
+ "neutral_only_differences": [
+  {
+   "a": 60.0,
+   "n_a": 30,
+   "b": null,
+   "n_b": 4,
+   "diff": null,
+   "lo": null,
+   "hi": null,
+   "clear": false,
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "cap_taken_snapshot_pct"
+  },
+  {
+   "a": 73.3,
+   "n_a": 30,
+   "b": null,
+   "n_b": 4,
+   "diff": null,
+   "lo": null,
+   "hi": null,
+   "clear": false,
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "cap_won_batch_pct"
+  },
+  {
+   "a": 83.3,
+   "n_a": 30,
+   "b": null,
+   "n_b": 4,
+   "diff": null,
+   "lo": null,
+   "hi": null,
+   "clear": false,
+   "a_group": "radar cruiser inside",
+   "b_group": "non-radar cruiser inside",
+   "stat": "enemy_prevented_pct"
+  },
+  {
+   "a": 60.0,
+   "n_a": 30,
+   "b": 24.5,
+   "n_b": 49,
+   "diff": 35.5,
+   "lo": 19.0,
+   "hi": 51.2,
+   "clear": true,
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "cap_taken_snapshot_pct"
+  },
+  {
+   "a": 73.3,
+   "n_a": 30,
+   "b": 36.7,
+   "n_b": 49,
+   "diff": 36.6,
+   "lo": 16.2,
+   "hi": 57.9,
+   "clear": true,
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "cap_won_batch_pct"
+  },
+  {
+   "a": 83.3,
+   "n_a": 30,
+   "b": 87.8,
+   "n_b": 49,
+   "diff": -4.4,
+   "lo": -19.6,
+   "hi": 10.7,
+   "clear": false,
+   "a_group": "radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "enemy_prevented_pct"
+  },
+  {
+   "a": null,
+   "n_a": 4,
+   "b": 24.5,
+   "n_b": 49,
+   "diff": null,
+   "lo": null,
+   "hi": null,
+   "clear": false,
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "cap_taken_snapshot_pct"
+  },
+  {
+   "a": null,
+   "n_a": 4,
+   "b": 36.7,
+   "n_b": 49,
+   "diff": null,
+   "lo": null,
+   "hi": null,
+   "clear": false,
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "cap_won_batch_pct"
+  },
+  {
+   "a": null,
+   "n_a": 4,
+   "b": 87.8,
+   "n_b": 49,
+   "diff": null,
+   "lo": null,
+   "hi": null,
+   "clear": false,
+   "a_group": "non-radar cruiser inside",
+   "b_group": "no cruiser",
+   "stat": "enemy_prevented_pct"
+  }
+ ]
+}

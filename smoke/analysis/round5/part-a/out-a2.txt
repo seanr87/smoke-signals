@@ -1,0 +1,295 @@
+raw field check: hp_act sample [100.0, 100.0, 100.0, 100.0, 77.44, 100.0] spotted {False: 758, True: 316} near_en_km None 60 outnumbered {False: 876, True: 198}
+
+== 1. Totals (destroyer smokes)
+death records 124 | distinct ships 124 (a ship covered by two overlapping smokes is listed under both) | smokes with a death 117 of 1074
+all classes: death records 177 distinct ships 174
+| who died | n | share % | Top 6 | Rest | inside | behind | ships |
+|---|---|---|---|---|---|---|---|
+| smoker destroyer | 69 | 55.6 | 11 | 58 | 65 | 4 | {'Gearing': 15, 'Somers': 10, 'Harugumo': 10, 'Daring': 9, 'Shimakaze': 9, 'Gdańsk': 6, 'Z-52': 3, 'G. Hoffmann': 2} |
+| sheltering cruiser | 48 | 38.7 | 15 | 33 | 27 | 21 | {'Des Moines': 11, 'Minotaur': 6, 'San Martín': 5, 'Brisbane': 5, 'Utrecht': 4, 'Salem': 4, 'Worcester': 3, 'Napoli': 2} |
+| other sheltering ship | 7 | 5.6 | 3 | 4 | 7 | 0 | {'Småland': 1, 'Kremlin': 1, 'Schlieffen': 1, 'Rhode Island': 1, 'Willem de Eerste': 1, 'Marceau': 1, 'Conqueror': 1} |
+share of death-smokes where a sheltering cruiser died: T6 vs Rest {'top6': 53.6, 'n_top6': 28, 'rest': 37.1, 'n_rest': 89, 'diff': 16.5, 'lo': -2.2, 'hi': 36.2, 'clear': False}
+
+== 2. Where and when (deaths per 100 destroyer smokes; smoke placed by activation time and score)
+
+Baseline
+|  | n (T6/Rest) | deaths | per 100 [95%] | T6 | Rest | T6-Rest | smoker per 100 | cruiser per 100 sheltering (n cruisers) | note |
+|---|---|---|---|---|---|---|---|---|---|
+| all destroyer smokes | 1074 (387/687) | 124 | 11.5 [9.2 to 14.8 *] | 7.5 | 13.8 | -10.9 to -2.5 * | 6.4 | 8.2 (587) |  |
+
+By map
+|  | n (T6/Rest) | deaths | per 100 [95%] | T6 | Rest | T6-Rest | smoker per 100 | cruiser per 100 sheltering (n cruisers) | note |
+|---|---|---|---|---|---|---|---|---|---|
+| Sleeping Giant | 238 (110/128) | 28 | 11.8 [8.1 to 17.7 *] | 6.4 | 16.4 | -19.6 to -2.3 * | 7.1 | 7.3 (137) |  |
+| Hotspot | 235 (80/155) | 18 | 7.7 [5.2 to 10.2 *] | 7.5 | 7.7 | -6.2 to +6.4 | 3.4 | 6.3 (159) |  |
+| Loop | 142 (41/101) | 15 | 10.6 [5.7 to 16.8 *] | 9.8 | 10.9 | -14.5 to +11.2 | 6.3 | 7.8 (51) |  |
+| Mountain Range | 132 (55/77) | 11 | 8.3 [3.4 to 15.0 *] | 7.3 | 9.1 | -13.5 to +11.4 | 3.8 | 8.3 (72) |  |
+| Land of Fire | 128 (48/80) | 18 | 14.1 [6.8 to 25.6 *] | 4.2 | 20.0 | -34.2 to -2.3 * | 7.8 | 13.2 (53) |  |
+| Sea of Fortune | 117 (38/79) | 16 | 13.7 [7.8 to 22.0 *] | 7.9 | 16.5 | -25.9 to +3.4 | 8.5 | 6.8 (73) |  |
+| Okinawa | 82 (15/67) | 18 | 22.0 [12.3 to 31.3 *] | 20.0 | 22.4 | -19.5 to +20.8 | 12.2 | 14.3 (42) |  |
+
+By map and nearest cap (normalized letter; own spawn at the bottom), n >= 8, highest first
+|  | n (T6/Rest) | deaths | per 100 [95%] | T6 | Rest | T6-Rest | smoker per 100 | cruiser per 100 sheltering (n cruisers) | note |
+|---|---|---|---|---|---|---|---|---|---|
+| Okinawa cap C | 40 (8/32) | 10 | 25.0 [9.1 to 46.7 *] | 12.5 | 28.1 | -46.2 to +10.6 | 15.0 | 17.6 (17) |  |
+| Sleeping Giant cap C | 28 (9/19) | 6 | 21.4 [7.4 to 40.7 *] | 22.2 | 21.1 | -26.3 to +22.2 | 17.9 | 5.6 (18) |  |
+| Sea of Fortune cap C | 19 (7/12) | 4 | 21.1 [4.8 to 43.8 *] | too few | 25.0 | - | 21.1 | too few (7) |  |
+| Okinawa cap A | 26 (2/24) | 5 | 19.2 [3.7 to 35.7 *] | too few | 16.7 | - | 11.5 | 11.1 (18) |  |
+| Sea of Fortune cap A | 18 (7/11) | 3 | 16.7 [0.0 to 35.3] | too few | 9.1 | - | 5.6 | 15.4 (13) |  |
+| Okinawa cap D | 13 (3/10) | 2 | 15.4 [0.0 to 54.5] | too few | 20.0 | - | 7.7 | too few (4) | small n |
+| Land of Fire cap B | 50 (22/28) | 7 | 14.0 [3.3 to 36.4 *] | 4.5 | 21.4 | -48.4 to +8.9 | 10.0 | 11.1 (18) |  |
+| Loop cap C | 36 (14/22) | 5 | 13.9 [4.7 to 28.1 *] | 7.1 | 18.2 | -31.6 to +11.0 | 5.6 | 11.1 (18) |  |
+| Sleeping Giant cap B | 52 (21/31) | 7 | 13.5 [5.8 to 26.1 *] | 4.8 | 19.4 | -34.8 to +6.7 | 13.5 | 0.0 (10) |  |
+| Land of Fire cap A | 52 (13/39) | 7 | 13.5 [5.0 to 23.8 *] | 0.0 | 17.9 | -31.4 to -7.3 * | 7.7 | 10.3 (29) |  |
+| Loop cap B | 47 (18/29) | 6 | 12.8 [4.4 to 23.5 *] | 11.1 | 13.8 | -22.7 to +13.3 | 10.6 | 0.0 (21) |  |
+| Sleeping Giant cap A | 91 (46/45) | 11 | 12.1 [6.2 to 20.2 *] | 6.5 | 17.8 | -22.6 to +2.4 | 4.4 | 10.3 (68) |  |
+| Sea of Fortune cap B | 43 (10/33) | 5 | 11.6 [4.0 to 22.2 *] | 0.0 | 15.2 | -26.5 to -5.3 * | 2.3 | 9.4 (32) |  |
+| Sea of Fortune cap D | 37 (14/23) | 4 | 10.8 [2.3 to 25.0 *] | 0.0 | 17.4 | -44.4 to -3.7 * | 10.8 | 0.0 (21) |  |
+| Land of Fire cap D | 19 (12/7) | 2 | 10.5 [0.0 to 30.0] | 8.3 | too few | - | 0.0 | too few (4) |  |
+| Mountain Range cap C | 53 (17/36) | 5 | 9.4 [1.8 to 20.5 *] | 11.8 | 8.3 | -14.7 to +39.5 | 1.9 | 17.4 (23) |  |
+| Hotspot cap D | 108 (28/80) | 10 | 9.3 [4.2 to 14.6 *] | 17.9 | 6.2 | -3.9 to +29.8 | 2.8 | 9.5 (74) |  |
+| Hotspot cap B | 36 (18/18) | 3 | 8.3 [0.0 to 18.2] | 0.0 | 16.7 | -31.2 to -4.5 * | 5.6 | 2.9 (34) |  |
+| Mountain Range cap B | 49 (24/25) | 4 | 8.2 [1.9 to 16.7 *] | 4.2 | 12.0 | -25.2 to +4.3 | 4.1 | 6.7 (30) |  |
+| Hotspot cap A | 14 (11/3) | 1 | 7.1 [0.0 to 27.3] | 0.0 | too few | - | 0.0 | 5.9 (17) | small n |
+| Loop cap A | 59 (9/50) | 4 | 6.8 [1.7 to 12.7 *] | 11.1 | 6.0 | -0.7 to +16.3 | 3.4 | 16.7 (12) |  |
+| Mountain Range cap A | 30 (14/16) | 2 | 6.7 [0.0 to 15.2] | 7.1 | 6.2 | -13.0 to +18.8 | 6.7 | 0.0 (19) |  |
+| Sleeping Giant cap D | 67 (34/33) | 4 | 6.0 [0.0 to 14.6] | 2.9 | 9.1 | -22.2 to +5.3 | 1.5 | 4.9 (41) |  |
+| Hotspot cap C | 77 (23/54) | 4 | 5.2 [1.4 to 10.6 *] | 4.3 | 5.6 | -10.4 to +7.3 | 3.9 | 2.9 (34) |  |
+  clans with a death there: Okinawa cap C | Top 6: KITE 1 | Rest: EPOXY 2, BTLST 1, 5D 1, PN 1, REEEE 1, MZY 1
+  clans with a death there: Sleeping Giant cap C | Top 6: RESIN 1, BONKZ 1 | Rest: RSR 2, UYSC 1, SCCC2 1
+  clans with a death there: Sea of Fortune cap C | Top 6: BONKZ 1 | Rest: 5D 1, UYSC 1, MACHX 1
+  clans with a death there: Okinawa cap A | Top 6: HTDOG 1 | Rest: HFANS 2, -BN- 1, REEEE 1
+  clans with a death there: Sea of Fortune cap A | Top 6: VRTUS 1, BONKZ 1 | Rest: RSR 1
+  clans with a death there: Okinawa cap D | Top 6: none | Rest: -BN- 1
+
+By time of activation
+|  | n (T6/Rest) | deaths | per 100 [95%] | T6 | Rest | T6-Rest | smoker per 100 | cruiser per 100 sheltering (n cruisers) | note |
+|---|---|---|---|---|---|---|---|---|---|
+| 0-5 min | 302 (102/200) | 23 | 7.6 [4.6 to 11.4 *] | 2.9 | 10.0 | -12.7 to -1.7 * | 3.6 | 5.2 (213) |  |
+| 5-10 min | 495 (180/315) | 62 | 12.5 [9.1 to 16.5 *] | 8.3 | 14.9 | -13.8 to +0.2 | 7.5 | 8.1 (270) |  |
+| 10-15 min | 248 (96/152) | 35 | 14.1 [9.6 to 18.9 *] | 9.4 | 17.1 | -17.3 to +0.7 | 7.7 | 14.4 (97) |  |
+| 15-20 min | 29 (9/20) | 4 | 13.8 [3.7 to 25.0 *] | 22.2 | 10.0 | -5.6 to +27.3 | 6.9 | too few (7) |  |
+
+By score state at activation
+|  | n (T6/Rest) | deaths | per 100 [95%] | T6 | Rest | T6-Rest | smoker per 100 | cruiser per 100 sheltering (n cruisers) | note |
+|---|---|---|---|---|---|---|---|---|---|
+| ahead 50+ | 372 (167/205) | 24 | 6.5 [4.4 to 9.2 *] | 5.4 | 7.3 | -6.5 to +3.0 | 3.8 | 4.8 (187) |  |
+| level | 425 (161/264) | 36 | 8.5 [6.2 to 11.3 *] | 3.7 | 11.4 | -11.8 to -4.3 * | 3.8 | 6.9 (288) |  |
+| behind 50+ | 277 (59/218) | 64 | 23.1 [17.2 to 30.3 *] | 23.7 | 22.9 | -13.9 to +13.5 | 14.1 | 17.0 (112) |  |
+
+By time and score state
+|  | n (T6/Rest) | deaths | per 100 [95%] | T6 | Rest | T6-Rest | smoker per 100 | cruiser per 100 sheltering (n cruisers) | note |
+|---|---|---|---|---|---|---|---|---|---|
+| 0-5 min, ahead 50+ | 29 (13/16) | 1 | 3.4 [0.0 to 13.3] | 0.0 | 6.2 | -23.1 to +0.0 | 3.4 | 0.0 (19) |  |
+| 0-5 min, level | 249 (87/162) | 20 | 8.0 [5.0 to 11.9 *] | 3.4 | 10.5 | -14.2 to -1.4 * | 3.6 | 6.0 (183) |  |
+| 0-5 min, behind 50+ | 24 (2/22) | 2 | 8.3 [0.0 to 20.0] | too few | 9.1 | - | 4.2 | 0.0 (11) |  |
+| 5-10 min, ahead 50+ | 183 (81/102) | 10 | 5.5 [2.7 to 9.8 *] | 4.9 | 5.9 | -8.4 to +4.0 | 4.4 | 2.0 (102) |  |
+| 5-10 min, level | 157 (66/91) | 13 | 8.3 [4.2 to 13.7 *] | 3.0 | 12.1 | -16.8 to -1.3 * | 3.8 | 7.4 (95) |  |
+| 5-10 min, behind 50+ | 155 (33/122) | 39 | 25.2 [17.4 to 34.0 *] | 27.3 | 24.6 | -16.4 to +16.3 | 14.8 | 17.8 (73) |  |
+| 10-15 min, ahead 50+ | 141 (66/75) | 12 | 8.5 [4.5 to 13.2 *] | 6.1 | 10.7 | -12.7 to +3.3 | 3.5 | 9.7 (62) |  |
+| 10-15 min, level | 18 (7/11) | 3 | 16.7 [0.0 to 30.0] | too few | 18.2 | - | 5.6 | 22.2 (9) |  |
+| 10-15 min, behind 50+ | 89 (23/66) | 20 | 22.5 [13.6 to 32.1 *] | 17.4 | 24.2 | -26.7 to +8.7 | 14.6 | 23.1 (26) |  |
+| 15-20 min, ahead 50+ | 19 (7/12) | 1 | 5.3 [0.0 to 15.0] | too few | 0.0 | - | 0.0 | too few (4) |  |
+| 15-20 min, behind 50+ | 9 (1/8) | 3 | 33.3 [11.1 to 55.6 *] | too few | 25.0 | - | 22.2 | too few (2) | small n |
+death-time of the ships (elapsed at death): {'10-15 min': 50, '5-10 min': 54, '15-20 min': 8, '0-5 min': 12}
+who dies by score state: {'ahead 50+': {'sheltering cruiser': 9, 'smoker destroyer': 14, 'other sheltering ship': 1}, 'level': {'sheltering cruiser': 20, 'smoker destroyer': 16}, 'behind 50+': {'smoker destroyer': 39, 'sheltering cruiser': 19, 'other sheltering ship': 6}}
+who dies by time: {'0-5 min': {'smoker destroyer': 11, 'sheltering cruiser': 11, 'other sheltering ship': 1}, '5-10 min': {'smoker destroyer': 37, 'sheltering cruiser': 22, 'other sheltering ship': 3}, '10-15 min': {'smoker destroyer': 19, 'sheltering cruiser': 14, 'other sheltering ship': 2}, '15-20 min': {'smoker destroyer': 2, 'sheltering cruiser': 1, 'other sheltering ship': 1}}
+
+== 3. Radar deaths (enemy radar detected the ship in this smoke within 40 s before it died)
+radar deaths 19 of 124 (15%) | distinct ships 19 | Top 6 3 Rest 16
+who {'sheltering cruiser': 4, 'smoker destroyer': 13, 'other sheltering ship': 2} | where {'inside': 18, 'behind': 1} | after cleared {False: 19}
+by map {'Sleeping Giant': 7, 'Loop': 5, 'Hotspot': 2, 'Okinawa': 2, 'Sea of Fortune': 2, 'Land of Fire': 1}
+by map+cap {'Loop B': 3, 'Sleeping Giant A': 3, 'Loop C': 2, 'Sleeping Giant C': 2, 'Hotspot B': 1, 'Okinawa C': 1, 'Sleeping Giant B': 1, 'Sleeping Giant D': 1, 'Sea of Fortune C': 1, 'Sea of Fortune B': 1, 'Okinawa A': 1, 'Land of Fire A': 1, 'Hotspot C': 1}
+by time of smoke {'5-10 min': 7, '10-15 min': 5, '15-20 min': 3, '0-5 min': 4} | by state {'level': 5, 'behind 50+': 11, 'ahead 50+': 3}
+radar ship class {'cruiser': 16, 'destroyer': 3} | radar ship {'Moskva': 6, 'Brisbane': 3, 'Petropavlovsk': 3, 'San Martín': 2, 'Gdańsk': 2, 'Småland': 1, 'Des Moines': 1, 'Minotaur': 1}
+distance from the radar ship (m): min 3507 q25 7510 median 10026 q75 10858 max 11696
+distance bands: {'under 6 km': 1, '6-8 km': 6, '8-10 km': 2, '10 km+': 10}
+distance as share of that ship's radar range: n 19 median 0.85 share beyond 80% of range 73.7 share under 60% 10.5
+by radar class: n, median distance {'cruiser': (16, 10138), 'destroyer': (3, 7004)}
+killing damage in radar deaths: top kind {'shell': 16, 'unknown': 1, None: 1, 'fire': 1} | torpedo damage in last 20 s 0 | biggest damage from class {'battleship': 3, 'cruiser': 8, 'destroyer': 7, 'none': 1}
+
+Deaths per 100 where enemy radar reached a ship in the smoke
+|  | n (T6/Rest) | deaths | per 100 [95%] | T6 | Rest | T6-Rest | smoker per 100 | cruiser per 100 sheltering (n cruisers) | note |
+|---|---|---|---|---|---|---|---|---|---|
+| enemy radar reached the smoke | 120 (44/76) | 30 | 25.0 [16.5 to 37.5 *] | 13.6 | 31.6 | -35.2 to +3.9 | 13.3 | 16.4 (73) |  |
+| no enemy radar | 954 (343/611) | 94 | 9.9 [7.5 to 13.0 *] | 6.7 | 11.6 | -9.9 to -0.7 * | 5.6 | 7.0 (514) |  |
+| radar from an enemy cruiser | 101 (34/67) | 25 | 24.8 [15.5 to 37.0 *] | 14.7 | 29.9 | -34.7 to +14.6 | 13.9 | 14.3 (63) |  |
+| radar from an enemy destroyer | 16 (9/7) | 5 | 31.2 [7.7 to 58.8 *] | 11.1 | too few | - | 18.8 | 25.0 (8) |  |
+| radar from an enemy battleship | 1 (0/1) | 0 | too few [-] | too few | too few | - | too few | too few (1) | too few |
+| radar reached, Sleeping Giant | 33 (13/20) | 10 | 30.3 [14.7 to 50.0 *] | 0.0 | 50.0 | -70.4 to -27.8 * | 18.2 | 15.0 (20) |  |
+| radar reached, Hotspot | 18 (4/14) | 3 | 16.7 [0.0 to 31.2] | too few | 14.3 | - | 5.6 | 22.2 (9) |  |
+| radar reached, Loop | 12 (2/10) | 5 | 41.7 [18.2 to 66.7 *] | too few | 40.0 | - | 25.0 | too few (7) | small n |
+| radar reached, Mountain Range | 14 (8/6) | 1 | 7.1 [0.0 to 30.0] | 12.5 | too few | - | 0.0 | 8.3 (12) | small n |
+| radar reached, Land of Fire | 16 (8/8) | 3 | 18.8 [0.0 to 44.4] | 0.0 | 37.5 | -62.5 to -12.5 * | 0.0 | 30.0 (10) |  |
+| radar reached, Sea of Fortune | 17 (6/11) | 3 | 17.6 [0.0 to 33.3] | too few | 18.2 | - | 17.6 | 0.0 (9) |  |
+| radar reached, Okinawa | 10 (3/7) | 5 | 50.0 [11.1 to 92.3 *] | too few | too few | - | 30.0 | too few (6) | small n |
+| radar reached, 0-5 min | 29 (7/22) | 7 | 24.1 [7.1 to 42.9 *] | too few | 31.8 | - | 13.8 | 13.6 (22) |  |
+| radar reached, 5-10 min | 62 (24/38) | 13 | 21.0 [11.9 to 32.0 *] | 12.5 | 26.3 | -32.1 to +5.5 | 9.7 | 15.8 (38) |  |
+| radar reached, 10-15 min | 25 (12/13) | 7 | 28.0 [9.5 to 52.2 *] | 16.7 | 38.5 | -61.4 to +25.0 | 16.0 | 25.0 (12) |  |
+| radar reached, 15-20 min | 4 (1/3) | 3 | too few [-] | too few | too few | - | too few | too few (1) | too few |
+| radar reached, ahead 50+ | 36 (17/19) | 4 | 11.1 [2.5 to 23.3 *] | 11.8 | 10.5 | -19.7 to +25.0 | 8.3 | 6.2 (16) |  |
+| radar reached, level | 48 (18/30) | 10 | 20.8 [9.3 to 37.2 *] | 5.6 | 30.0 | -52.2 to -5.3 * | 8.3 | 17.6 (34) |  |
+| radar reached, behind 50+ | 36 (9/27) | 16 | 44.4 [28.9 to 64.9 *] | 33.3 | 48.1 | -46.6 to +14.0 | 25.0 | 21.7 (23) |  |
+| radar reached, a cruiser sheltering | 67 (24/43) | 17 | 25.4 [14.8 to 39.7 *] | 8.3 | 34.9 | -43.6 to -7.0 * | 7.5 | 15.1 (73) |  |
+| radar reached, no cruiser sheltering | 53 (20/33) | 13 | 24.5 [14.5 to 37.2 *] | 20.0 | 27.3 | -31.3 to +14.0 | 20.8 | too few (0) |  |
+radar reached vs not, difference: {'a': 25.0, 'n_a': 120, 'b': 9.9, 'n_b': 954, 'diff': 15.1, 'lo': 6.2, 'hi': 26.6, 'clear': True}
+share of smokes radar reached: T6 vs Rest {'top6': 11.4, 'n_top6': 387, 'rest': 11.1, 'n_rest': 687, 'diff': 0.3, 'lo': -4.2, 'hi': 4.7, 'clear': False}
+
+Radar-reached smokes by map and cap (n >= 8)
+|  | n (T6/Rest) | deaths | per 100 [95%] | T6 | Rest | T6-Rest | smoker per 100 | cruiser per 100 sheltering (n cruisers) | note |
+|---|---|---|---|---|---|---|---|---|---|
+| Sleeping Giant cap A, radar reached | 9 (4/5) | 3 | 33.3 [9.1 to 62.5 *] | too few | too few | - | 22.2 | too few (6) | small n |
+| Sleeping Giant cap B, radar reached | 9 (4/5) | 1 | 11.1 [0.0 to 37.5] | too few | too few | - | 11.1 | too few (2) | small n |
+| Sleeping Giant cap D, radar reached | 8 (4/4) | 3 | 37.5 [0.0 to 87.5] | too few | too few | - | 12.5 | too few (7) | small n |
+| Hotspot cap C, radar reached | 10 (3/7) | 2 | 20.0 [11.1 to 33.3 *] | too few | too few | - | 10.0 | too few (4) | small n |
+| Mountain Range cap B, radar reached | 9 (7/2) | 1 | 11.1 [0.0 to 25.0] | too few | too few | - | 0.0 | too few (6) | small n |
+| Land of Fire cap B, radar reached | 11 (7/4) | 1 | 9.1 [0.0 to 25.0] | too few | too few | - | 0.0 | too few (5) | small n |
+clans (radar deaths): Top 6: KITE 1, HTDOG 1, RESIN 1 | Rest: RSR 3, MANBA 1, KM 1, -BN- 1, SCCC2 1, BTLST 1, INCA 1, KITED 1, UYSC 1, MZY 1, PFANS 1, REEEE 1, HFANS 1, EPOXY 1
+
+BROAD radar deaths (radar flag on the victim in its last 40 s, per-ship detection list): 45 of 124 (36%) | of which also strict 18 | strict but not broad 1
+  Top 6 5 Rest 40 | who {'smoker destroyer': 27, 'sheltering cruiser': 16, 'other sheltering ship': 2} | where {'inside': 37, 'behind': 8} | after cleared 4
+  by map {'Sleeping Giant': 12, 'Hotspot': 7, 'Loop': 7, 'Okinawa': 7, 'Land of Fire': 5, 'Sea of Fortune': 5, 'Mountain Range': 2} | deaths on that map {'Sleeping Giant': 28, 'Hotspot': 18, 'Okinawa': 18, 'Land of Fire': 18, 'Sea of Fortune': 16, 'Loop': 15, 'Mountain Range': 11}
+  by map+cap {'Sleeping Giant A': 5, 'Hotspot D': 4, 'Sleeping Giant B': 4, 'Okinawa A': 4, 'Loop B': 3, 'Land of Fire A': 3, 'Hotspot C': 2, 'Loop A': 2, 'Loop C': 2, 'Okinawa C': 2}
+  by time of smoke {'10-15 min': 12, '5-10 min': 19, '0-5 min': 11, '15-20 min': 3} | by state {'behind 50+': 22, 'level': 16, 'ahead 50+': 7}
+  also surface lit in the last 40 s 24 | biggest damage from class {'destroyer': 15, 'battleship': 5, 'cruiser': 23, 'none': 2}
+  clans: Top 6: BONKZ 2, RESIN 2, HTDOG 1 | Rest: HFANS 5, BTLST 4, UYSC 4, -BN- 3, RSR 3, EPOXY 3, REEEE 3, KITED 2, MZY 2, PFANS 2, 5D 2, MANBA 1, BONKY 1, KM 1, SCCC2 1, KSE 1, INCA 1, MACH 1
+  share of smokes with the broad radar flag:  {'value': 27.7, 'n': 1074, 'lo': 24.1, 'hi': 31.3} {'top6': 28.7, 'n_top6': 387, 'rest': 27.1, 'n_rest': 687, 'diff': 1.6, 'lo': -7.4, 'hi': 8.7, 'clear': False} | strict radar_on_us and broad both 119 strict only 1 broad only 178
+
+Deaths per 100 by the broad radar measure
+|  | n (T6/Rest) | deaths | per 100 [95%] | T6 | Rest | T6-Rest | smoker per 100 | cruiser per 100 sheltering (n cruisers) | note |
+|---|---|---|---|---|---|---|---|---|---|
+| radar flag on a covered ship (broad) | 297 (111/186) | 83 | 27.9 [22.2 to 35.4 *] | 17.1 | 34.4 | -25.9 to -7.6 * | 15.2 | 17.1 (199) |  |
+| no radar flag (broad) | 777 (276/501) | 41 | 5.3 [3.3 to 7.9 *] | 3.6 | 6.2 | -6.8 to +1.1 | 3.1 | 3.6 (388) |  |
+| radar flag (broad), Sleeping Giant | 79 (35/44) | 20 | 25.3 [16.1 to 37.0 *] | 8.6 | 38.6 | -44.6 to -16.6 * | 15.2 | 14.3 (49) |  |
+| radar flag (broad), Hotspot | 53 (18/35) | 14 | 26.4 [17.0 to 36.0 *] | 33.3 | 22.9 | -13.5 to +30.5 | 13.2 | 18.9 (37) |  |
+| radar flag (broad), Loop | 29 (6/23) | 11 | 37.9 [18.5 to 60.0 *] | too few | 30.4 | - | 20.7 | 26.7 (15) |  |
+| radar flag (broad), Mountain Range | 31 (16/15) | 5 | 16.1 [2.7 to 33.3 *] | 18.8 | 13.3 | -25.0 to +40.0 | 6.5 | 13.0 (23) |  |
+| radar flag (broad), Land of Fire | 35 (12/23) | 9 | 25.7 [10.0 to 46.2 *] | 0.0 | 39.1 | -68.8 to -22.6 * | 8.6 | 25.0 (24) |  |
+| radar flag (broad), Sea of Fortune | 41 (17/24) | 9 | 22.0 [9.4 to 40.5 *] | 5.9 | 33.3 | -52.0 to -5.4 * | 14.6 | 7.1 (28) |  |
+| radar flag (broad), Okinawa | 29 (7/22) | 15 | 51.7 [26.9 to 75.0 *] | too few | 59.1 | - | 31.0 | 21.7 (23) |  |
+| radar flag (broad), ahead 50+ | 86 (42/44) | 14 | 16.3 [9.6 to 25.8 *] | 11.9 | 20.5 | -23.3 to +7.6 | 9.3 | 11.3 (53) |  |
+| radar flag (broad), level | 125 (48/77) | 29 | 23.2 [16.7 to 31.4 *] | 10.4 | 31.2 | -32.8 to -11.2 * | 12.0 | 14.1 (99) |  |
+| radar flag (broad), behind 50+ | 86 (21/65) | 40 | 46.5 [35.0 to 57.9 *] | 42.9 | 47.7 | -28.5 to +20.2 | 25.6 | 29.8 (47) |  |
+| radar flag (broad), 0-5 min | 83 (24/59) | 18 | 21.7 [12.3 to 33.8 *] | 8.3 | 27.1 | -35.3 to +9.7 | 9.6 | 13.6 (66) |  |
+| radar flag (broad), 5-10 min | 139 (56/83) | 36 | 25.9 [17.4 to 35.7 *] | 17.9 | 31.3 | -29.8 to +3.9 | 14.4 | 15.6 (96) |  |
+| radar flag (broad), 10-15 min | 70 (30/40) | 26 | 37.1 [25.8 to 49.1 *] | 20.0 | 50.0 | -45.9 to -11.7 * | 21.4 | 27.8 (36) |  |
+| radar flag (broad), 15-20 min | 5 (1/4) | 3 | too few [-] | too few | too few | - | too few | too few (1) | too few |
+broad radar vs not, difference: {'a': 27.9, 'n_a': 297, 'b': 5.3, 'n_b': 777, 'diff': 22.7, 'lo': 16.6, 'hi': 29.6, 'clear': True}
+
+== 4. What else goes with deaths (smoke level: deaths per 100 with the condition vs without)
+
+All destroyer smokes
+| condition | n with / without | deaths per 100 with | without | diff interval | smoker per 100 with / without (interval) | cruiser per 100 sheltering with (n) / without (n) (interval) | T6 with (n) | Rest with (n) |
+|---|---|---|---|---|---|---|---|---|
+| smoke emission cut short | 50 / 1024 | 36.0 | 10.4 | +10.3 to +41.0 * | 30.0 / 5.3 (+11.3 to +39.8 *) | 27.3 (11) / 7.8 (576) (-3.1 to +47.5) | 11.1 (9) | 41.5 (41) |
+| enemy hydro reached a covered ship | 17 / 1057 | 35.3 | 11.2 | +2.9 to +43.2 * | 17.6 / 6.2 (-5.8 to +29.1) | 20.0 (10) / 8.0 (577) (-8.3 to +36.0) | too few (6) | 36.4 (11) |
+| a covered ship carried the radar flag while concealed (broad measure) | 297 / 777 | 27.9 | 5.3 | +17.0 to +29.1 * | 15.2 / 3.1 (+6.8 to +18.3 *) | 17.1 (199) / 3.6 (388) (+8.2 to +19.7 *) | 17.1 (111) | 34.4 (186) |
+| team outnumbered at activation | 198 / 876 | 27.3 | 8.0 | +11.7 to +27.5 * | 16.7 / 4.1 (+6.5 to +20.7 *) | 24.3 (74) / 5.8 (513) (+9.1 to +27.3 *) | 26.7 (45) | 27.5 (153) |
+| overlaps another smoke | 32 / 1042 | 28.1 | 11.0 | -1.8 to +37.4 | 9.4 / 6.3 (-6.0 to +18.2) | 20.7 (29) / 7.5 (558) (-1.8 to +25.1) | 23.1 (13) | 31.6 (19) |
+| a covered ship lit for firing from smoke (smoke fire penalty) | 203 / 871 | 25.1 | 8.4 | +9.4 to +24.8 * | 9.9 / 5.6 (-0.4 to +10.3) | 15.9 (164) / 5.2 (423) (+4.2 to +17.3 *) | 14.6 (82) | 32.2 (121) |
+| 50+ behind at activation | 277 / 797 | 23.1 | 7.5 | +9.1 to +22.0 * | 14.1 / 3.8 (+5.6 to +16.1 *) | 17.0 (112) / 6.1 (475) (+4.8 to +16.3 *) | 23.7 (59) | 22.9 (218) |
+| enemy radar reached a ship in the smoke | 120 / 954 | 25.0 | 9.9 | +5.7 to +27.1 * | 13.3 / 5.6 (+1.1 to +15.7 *) | 16.4 (73) / 7.0 (514) (+2.0 to +21.6 *) | 13.6 (44) | 31.6 (76) |
+| a covered ship was lit by surface spotting (seen by an enemy ship) | 512 / 562 | 19.1 | 4.6 | +10.7 to +19.0 * | 10.2 / 3.0 (+3.9 to +11.6 *) | 12.3 (332) / 2.7 (255) (+5.5 to +14.4 *) | 11.4 (185) | 23.5 (327) |
+| smoker lit by surface spotting | 233 / 841 | 22.7 | 8.4 | +8.9 to +20.6 * | 15.9 / 3.8 (+6.5 to +18.1 *) | 13.7 (102) / 7.0 (485) (+2.2 to +12.7 *) | 14.5 (76) | 26.8 (157) |
+| enemy destroyer within 6 km of the smoke when laid | 145 / 929 | 17.9 | 10.5 | -0.2 to +16.2 | 13.8 / 5.3 (+1.5 to +16.8 *) | 18.8 (32) / 7.6 (555) (-1.6 to +26.1) | 14.3 (35) | 19.1 (110) |
+| smoker already spotted at activation | 316 / 758 | 15.2 | 10.0 | -0.0 to +11.1 | 12.7 / 3.8 (+4.5 to +13.6 *) | 8.5 (59) / 8.1 (528) (-7.7 to +10.4) | 11.8 (76) | 16.2 (240) |
+| smoker under half health at activation | 234 / 840 | 15.4 | 10.5 | -0.1 to +10.2 | 9.8 / 5.5 (+1.0 to +7.8 *) | 14.1 (78) / 7.3 (509) (-0.9 to +14.7) | 17.1 (70) | 14.6 (164) |
+| nearest enemy under 6 km at activation | 166 / 908 | 15.1 | 10.9 | -1.6 to +9.8 | 13.3 / 5.2 (+3.5 to +13.3 *) | 12.0 (25) / 8.0 (562) (-8.1 to +22.9) | 8.8 (34) | 16.7 (132) |
+| a cruiser sheltering (inside or behind) | 535 / 539 | 13.6 | 9.5 | -0.0 to +9.2 | 3.9 / 8.9 (-8.6 to -2.4 *) | 8.0 (587) / too few (0) (-) | 7.9 (239) | 18.2 (296) |
+| several ships share the smoke (batch coverage = stacked) | 407 / 667 | 13.3 | 10.5 | -1.6 to +7.2 | 3.9 / 7.9 (-7.0 to -1.1 *) | 9.1 (394) / 6.2 (193) (-0.9 to +7.4) | 7.6 (170) | 17.3 (237) |
+| smoke centre inside the cap | 290 / 784 | 12.1 | 11.4 | -4.3 to +6.3 | 6.9 / 6.2 (-2.9 to +4.0) | 9.8 (123) / 7.8 (464) (-4.9 to +8.7) | 11.8 (93) | 12.2 (197) |
+| first 5 minutes | 302 / 772 | 7.6 | 13.1 | -9.4 to -1.5 * | 3.6 / 7.5 (-6.5 to -1.4 *) | 5.2 (213) / 9.9 (374) (-8.5 to -1.0 *) | 2.9 (102) | 10.0 (200) |
+
+smokes neither 50+ behind nor reached by radar (strict or broad): 585 deaths 17 per 100 2.9 | the other smokes: 489 deaths 107
+
+Only smokes that were neither 50+ behind nor reached by enemy radar
+| condition | n with / without | deaths per 100 with | without | diff interval | smoker per 100 with / without (interval) | cruiser per 100 sheltering with (n) / without (n) (interval) | T6 with (n) | Rest with (n) |
+|---|---|---|---|---|---|---|---|---|
+| overlaps another smoke | 9 / 576 | 11.1 | 2.8 | -3.8 to +28.1 | 0.0 / 1.2 (-2.3 to -0.4 *) | 12.5 (8) / 2.5 (315) (-3.7 to +31.1) | too few (7) | too few (2) |
+| team outnumbered at activation | 23 / 562 | 8.7 | 2.7 | -3.0 to +18.8 | 0.0 / 1.2 (-2.5 to -0.4 *) | 13.3 (15) / 2.3 (308) (-2.6 to +35.5) | 10.0 (10) | 7.7 (13) |
+| a covered ship lit for firing from smoke (smoke fire penalty) | 108 / 477 | 6.5 | 2.1 | +0.7 to +8.8 * | 1.9 / 1.0 (-1.2 to +4.0) | 5.4 (92) / 1.7 (231) (-0.7 to +9.2) | 4.0 (50) | 8.6 (58) |
+| a covered ship was lit by surface spotting (seen by an enemy ship) | 238 / 347 | 5.5 | 1.2 | +1.4 to +8.4 * | 1.7 / 0.9 (-1.1 to +3.9) | 5.2 (155) / 0.6 (168) (+1.2 to +8.3 *) | 3.1 (98) | 7.1 (140) |
+| smoker lit by surface spotting | 100 / 485 | 6.0 | 2.3 | -0.0 to +9.7 | 3.0 / 0.8 (-0.6 to +6.1) | 7.1 (42) / 2.1 (281) (-1.9 to +15.4) | 3.0 (33) | 7.5 (67) |
+| a cruiser sheltering (inside or behind) | 294 / 291 | 4.1 | 1.7 | -0.1 to +5.9 | 0.7 / 1.7 (-2.5 to +0.4) | 2.8 (323) / too few (0) (-) | 2.7 (146) | 5.4 (148) |
+| smoke centre inside the cap | 163 / 422 | 3.7 | 2.6 | -1.5 to +4.0 | 1.8 / 0.9 (-0.9 to +3.0) | 4.1 (73) / 2.4 (250) (-2.4 to +6.9) | 4.8 (62) | 3.0 (101) |
+| nearest enemy under 6 km at activation | 74 / 511 | 2.7 | 2.9 | -4.2 to +4.0 | 1.4 / 1.2 (-2.2 to +3.5) | 9.1 (11) / 2.6 (312) (-3.8 to +24.5) | 5.3 (19) | 1.8 (55) |
+| several ships share the smoke (batch coverage = stacked) | 210 / 375 | 2.4 | 3.2 | -3.3 to +1.5 | 0.0 / 1.9 (-3.7 to -0.6 *) | 2.4 (211) / 3.6 (112) (-5.2 to +2.1) | 3.0 (101) | 1.8 (109) |
+| smoker already spotted at activation | 146 / 439 | 2.1 | 3.2 | -4.2 to +2.3 | 2.1 / 0.9 (-1.3 to +4.0) | 0.0 (22) / 3.0 (301) (-5.2 to -1.5 *) | 0.0 (42) | 2.9 (104) |
+| enemy destroyer within 6 km of the smoke when laid | 60 / 525 | 1.7 | 3.0 | -4.5 to +2.3 | 0.0 / 1.3 (-2.5 to -0.4 *) | 8.3 (12) / 2.6 (311) (-3.8 to +19.4) | 5.9 (17) | 0.0 (43) |
+| first 5 minutes | 201 / 384 | 2.0 | 3.4 | -4.0 to +1.4 | 1.0 / 1.3 (-1.5 to +1.3) | 1.4 (141) / 3.8 (182) (-5.6 to +0.9) | 1.3 (76) | 2.4 (125) |
+| smoker under half health at activation | 107 / 478 | 0.9 | 3.3 | -5.1 to +0.2 | 0.0 / 1.5 (-2.9 to -0.4 *) | 3.0 (33) / 2.8 (290) (-4.4 to +6.2) | 2.4 (41) | 0.0 (66) |
+| smoke emission cut short | 12 / 573 | 0.0 | 3.0 | -4.7 to -1.6 * | 0.0 / 1.2 (-2.6 to -0.4 *) | too few (1) / 2.8 (322) (-) | too few (4) | 0.0 (8) |
+| 50+ behind at activation | 0 / 585 | too few | 2.9 | - | too few / 1.2 (-) | too few (0) / 2.8 (323) (-) | too few (0) | too few (0) |
+| enemy radar reached a ship in the smoke | 0 / 585 | too few | 2.9 | - | too few / 1.2 (-) | too few (0) / 2.8 (323) (-) | too few (0) | too few (0) |
+| enemy hydro reached a covered ship | 7 / 578 | too few | 2.8 | - | too few / 1.0 (-) | too few (6) / 2.8 (317) (-) | too few (3) | too few (4) |
+| a covered ship carried the radar flag while concealed (broad measure) | 0 / 585 | too few | 2.9 | - | too few / 1.2 (-) | too few (0) / 2.8 (323) (-) | too few (0) | too few (0) |
+calm T6 vs Rest {'top6': 2.1, 'n_top6': 238, 'rest': 3.5, 'n_rest': 347, 'diff': -1.4, 'lo': -4.2, 'hi': 0.9, 'clear': False}
+
+Surface spotting x radar x score
+|  | n (T6/Rest) | deaths | per 100 [95%] | T6 | Rest | T6-Rest | smoker per 100 | cruiser per 100 sheltering (n cruisers) | note |
+|---|---|---|---|---|---|---|---|---|---|
+| surface lit, radar, behind 50+ | 21 (5/16) | 12 | 57.1 [33.3 to 85.0 *] | too few | 62.5 | - | 28.6 | 28.6 (14) |  |
+| surface lit, radar, not behind | 48 (19/29) | 13 | 27.1 [14.8 to 44.4 *] | 10.5 | 37.9 | -51.3 to -2.4 * | 12.5 | 19.4 (36) |  |
+| surface lit, no radar, behind 50+ | 124 (26/98) | 37 | 29.8 [20.5 to 39.8 *] | 26.9 | 30.6 | -26.3 to +12.4 | 18.5 | 21.8 (55) |  |
+| surface lit, no radar, not behind | 319 (135/184) | 36 | 11.3 [8.2 to 14.8 *] | 7.4 | 14.1 | -12.2 to -0.7 * | 5.3 | 7.9 (227) |  |
+| not surface lit, radar, behind 50+ | 15 (4/11) | 4 | 26.7 [7.1 to 50.0 *] | too few | 27.3 | - | 20.0 | 11.1 (9) |  |
+| not surface lit, radar, not behind | 36 (16/20) | 1 | 2.8 [0.0 to 9.4] | 6.2 | 0.0 | +0.0 to +25.0 | 2.8 | 0.0 (14) |  |
+| not surface lit, no radar, behind 50+ | 117 (24/93) | 11 | 9.4 [4.2 to 14.8 *] | 16.7 | 7.5 | -4.6 to +19.4 | 6.0 | 5.9 (34) |  |
+| not surface lit, no radar, not behind | 394 (158/236) | 10 | 2.5 [1.2 to 4.0 *] | 1.3 | 3.4 | -4.7 to +0.4 | 1.5 | 2.0 (198) |  |
+
+Victim level (each death record in a destroyer smoke)
+all deaths n 124
+  detection kinds on the victim in the 40 s before death: {'radar': 45, 'surface lit': 39, 'smoke fire penalty': 14, 'hydro': 5, 'proximity': 4, 'aircraft': 2} | none recorded 50
+  died just after the smoke cleared: 27 | torpedo damage in last 20 s: 6 | no damage rows in last 20 s: 13
+  top damage kind: {'shell': 102, None: 13, 'torpedo': 4, 'secondary': 3, 'unknown': 1, 'fire': 1} | biggest damage came from class: {'cruiser': 52, 'destroyer': 44, 'battleship': 15, 'none': 13}
+  median share of concealed time undetected (victim): 63.4
+smoker destroyer n 69
+  detection kinds on the victim in the 40 s before death: {'radar': 27, 'surface lit': 20, 'proximity': 4, 'hydro': 3, 'smoke fire penalty': 2} | none recorded 30
+  died just after the smoke cleared: 12 | torpedo damage in last 20 s: 3 | no damage rows in last 20 s: 9
+  top damage kind: {'shell': 54, None: 9, 'torpedo': 3, 'secondary': 2, 'fire': 1} | biggest damage came from class: {'destroyer': 35, 'cruiser': 21, 'none': 9, 'battleship': 4}
+  median share of concealed time undetected (victim): 64.2
+sheltering cruiser n 48
+  detection kinds on the victim in the 40 s before death: {'surface lit': 18, 'radar': 16, 'smoke fire penalty': 11, 'aircraft': 2, 'hydro': 1} | none recorded 15
+  died just after the smoke cleared: 12 | torpedo damage in last 20 s: 3 | no damage rows in last 20 s: 4
+  top damage kind: {'shell': 42, None: 4, 'torpedo': 1, 'secondary': 1} | biggest damage came from class: {'cruiser': 27, 'battleship': 9, 'destroyer': 8, 'none': 4}
+  median share of concealed time undetected (victim): 64.8
+radar deaths n 19
+  detection kinds on the victim in the 40 s before death: {'radar': 18, 'surface lit': 9, 'smoke fire penalty': 3, 'hydro': 1} | none recorded 1
+  died just after the smoke cleared: 0 | torpedo damage in last 20 s: 0 | no damage rows in last 20 s: 1
+  top damage kind: {'shell': 16, 'unknown': 1, None: 1, 'fire': 1} | biggest damage came from class: {'cruiser': 8, 'destroyer': 7, 'battleship': 3, 'none': 1}
+  median share of concealed time undetected (victim): 30.8
+non-radar deaths n 105
+  detection kinds on the victim in the 40 s before death: {'surface lit': 30, 'radar': 27, 'smoke fire penalty': 11, 'proximity': 4, 'hydro': 4, 'aircraft': 2} | none recorded 49
+  died just after the smoke cleared: 27 | torpedo damage in last 20 s: 6 | no damage rows in last 20 s: 12
+  top damage kind: {'shell': 86, None: 12, 'torpedo': 4, 'secondary': 3} | biggest damage came from class: {'cruiser': 44, 'destroyer': 37, 'battleship': 12, 'none': 12}
+  median share of concealed time undetected (victim): 66.9
+non-radar, not 50+ behind n 52
+  detection kinds on the victim in the 40 s before death: {'radar': 15, 'surface lit': 14, 'smoke fire penalty': 6, 'proximity': 3, 'hydro': 2, 'aircraft': 1} | none recorded 23
+  died just after the smoke cleared: 15 | torpedo damage in last 20 s: 4 | no damage rows in last 20 s: 5
+  top damage kind: {'shell': 43, None: 5, 'torpedo': 2, 'secondary': 2} | biggest damage came from class: {'cruiser': 24, 'destroyer': 15, 'battleship': 8, 'none': 5}
+  median share of concealed time undetected (victim): 67.0
+non-radar deaths, marks (a death can carry several): {'behind 50+': 53, 'surface lit': 30, 'radar flag (broad)': 27, 'after smoke cleared': 27, 'lit for firing': 11, 'torpedo': 6, 'hydro': 4} | no mark at all 13
+non-radar deaths, exclusive order (radar flag broad > after cleared > surface lit > lit for firing > hydro > torpedo > behind 50+ only > none): {'radar flag (broad)': 27, 'after smoke cleared': 23, 'behind 50+': 18, 'none': 13, 'surface lit': 11, 'lit for firing': 7, 'torpedo': 3, 'hydro': 3}
+
+smoke cut short: n 50 median seconds lost 4.0 smoker died 15 deaths 18 | cut short and smoker died BEFORE dispersal (the cut may be the death itself): 15
+
+== 5. Like-with-like baselines
+| measure | all (n) [95%] | Top 6 (n) | Rest (n) | T6-Rest interval |
+|---|---|---|---|---|
+| destroyer died in its own smoke, per 100 destroyer smokes | 6.4 (1074) [4.4 to 9.5 *] | 2.8 (387) | 8.4 (687) | -9.6 to -2.5 * |
+| cruiser died while sheltering, per 100 sheltering cruisers | 8.2 (587) [6.0 to 10.9 *] | 5.7 (262) | 10.2 (325) | -8.2 to -0.6 * |
+| destroyer hurt in its own smoke (died or lost 1/3+ of estimated health), per 100 | 15.5 (1074) [12.5 to 19.6 *] | 10.6 (387) | 18.3 (687) | -14.0 to -3.3 * |
+| cruiser hurt while sheltering, per 100 sheltering cruisers | 22.5 (587) [17.4 to 27.7 *] | 18.3 (262) | 25.8 (325) | -17.7 to +2.6 |
+| any death, per 100 destroyer smokes | 11.5 (1074) [9.2 to 14.4 *] | 7.5 (387) | 13.8 (687) | -11.1 to -2.3 * |
+cruiser inside the smoke: died per 100 {'value': 7.9, 'n': 468, 'lo': 5.6, 'hi': 11.0} {'top6': 5.5, 'n_top6': 217, 'rest': 10.0, 'n_rest': 251, 'diff': -4.4, 'lo': -9.2, 'hi': 0.1, 'clear': False}
+cruiser behind the smoke: died per 100 {'value': 8.4, 'n': 119, 'lo': 4.1, 'hi': 13.0} {'top6': 6.7, 'n_top6': 45, 'rest': 9.5, 'n_rest': 74, 'diff': -2.8, 'lo': -9.9, 'hi': 4.6, 'clear': False}
+radar cruiser vs other cruiser sheltering (deaths / sheltering): {True: (37, 469), False: (10, 118)}
+
+All classes of smoker
+| smoker class | n (T6/Rest) | any death per 100 | smoker died per 100 [95%] | T6 | Rest | T6-Rest | radar reached: smoker died with/without (interval) | 50+ behind: with/without (interval) | death records (radar-lit, after cleared) |
+|---|---|---|---|---|---|---|---|---|---|
+| destroyer | 1074 (387/687) | 11.5 | 6.4 [4.4 to 9.3 *] | 2.8 | 8.4 | -10.2 to -2.0 * | 13.3 (120) / 5.6 (954) (+1.4 to +15.5 *) | 14.1 (277) / 3.8 (797) (+5.5 to +15.7 *) | 124 (19, 27) |
+| cruiser | 439 (141/298) | 11.4 | 10.0 [8.1 to 12.3 *] | 7.8 | 11.1 | -7.0 to -0.0 | 34.1 (44) / 7.3 (395) (+15.2 to +38.7 *) | 15.7 (153) / 7.0 (286) (+0.3 to +16.9 *) | 50 (13, 15) |
+| battleship | 34 (10/24) | 8.8 | 8.8 [0.0 to 17.6] | 10.0 | 8.3 | -11.7 to +11.8 | too few (6) / 0.0 (28) (-) | 23.1 (13) / 0.0 (21) (+0.0 to +50.0) | 3 (2, 2) |
+cruiser smokes: smoker deaths by ship {'Napoli': 22, 'Svea': 10, 'Venezia': 5, 'Jinan': 3, 'Cerberus': 2, 'Almte. Irízar': 1, 'Smolensk': 1} smokes by ship {'Svea': 199, 'Napoli': 147, 'Jinan': 42, 'Venezia': 21, 'Smolensk': 14, 'Cerberus': 13, 'Almte. Irízar': 2, 'Plymouth': 1}
+cruiser smokes: smoker died per 100 by kind {'exhaust': (168, 16.1), 'cruiser': (271, 6.3)}

@@ -1,0 +1,267 @@
+--B3
+Somers all 260 | conc_per_smoke=14524.0 [12538.0, 16081.0] | edge_med_m=2224.0 [1621.0, 3608.0] | teammate_share_of_damage_pct=94.1 [90.4, 97.6] | selfish_pct=17.3 [11.3, 24.6] | smoker_only_label_pct=8.1 [4.7, 13.5] | enemy_radar_spotted_pct=11.9 [9.1, 14.8] | enemy_radar_broad_pct=31.5 [25.5, 37.0]
+Somers top6 90 | conc_per_smoke=15696.0 [12395.0, 16579.0] | edge_med_m=2210.0 [1967.0, 6911.0] | teammate_share_of_damage_pct=91.6 [77.8, 100.0] | selfish_pct=12.2 [3.7, 26.3] | smoker_only_label_pct=5.6 [1.9, 15.8] | enemy_radar_spotted_pct=12.2 [0.0, 16.8] | enemy_radar_broad_pct=34.4 [21.1, 40.1]
+Somers rest 170 | conc_per_smoke=13904.0 [11227.0, 15938.0] | edge_med_m=2224.0 [1501.0, 3957.0] | teammate_share_of_damage_pct=95.7 [93.2, 98.3] | selfish_pct=20.0 [11.7, 29.9] | smoker_only_label_pct=9.4 [5.3, 16.3] | enemy_radar_spotted_pct=11.8 [9.4, 15.4] | enemy_radar_broad_pct=30.0 [24.2, 38.0]
+Somers top6 minus rest  | conc_per_smoke=1792.0 [-1568.0, 4315.0] | edge_med_m=-14.0 [-1429.0, 4725.0] | teammate_share_of_damage_pct=-4.1 [-19.4, 5.1] | selfish_pct=-7.8 [-21.4, 10.5] | smoker_only_label_pct=-3.9 [-12.0, 9.1] | enemy_radar_spotted_pct=0.5 [-12.0, 5.5] | enemy_radar_broad_pct=4.4 [-10.5, 13.6]
+Gearing all 180 | conc_per_smoke=16296.0 [11558.0, 19675.0] | edge_med_m=2034.0 [1536.0, 2517.0] | teammate_share_of_damage_pct=96.9 [91.3, 99.4] | selfish_pct=22.8 [13.4, 36.7] | smoker_only_label_pct=13.3 [6.8, 24.0] | enemy_radar_spotted_pct=6.7 [2.6, 14.5] | enemy_radar_broad_pct=28.3 [22.0, 37.2]
+Gearing top6 74 | conc_per_smoke=17996.0 [11062.0, 21980.0] | edge_med_m=1995.0 [1462.0, 2988.0] | teammate_share_of_damage_pct=99.0 [96.0, 100.0] | selfish_pct=10.8 [2.4, 21.2] | smoker_only_label_pct=4.1 [0.0, 11.4] | enemy_radar_spotted_pct=2.7 [0.0, 7.5] | enemy_radar_broad_pct=27.0 [18.5, 47.1]
+Gearing rest 106 | conc_per_smoke=15109.0 [8447.0, 19294.0] | edge_med_m=2034.0 [1470.0, 2840.0] | teammate_share_of_damage_pct=95.2 [82.6, 99.3] | selfish_pct=31.1 [20.4, 50.5] | smoker_only_label_pct=19.8 [11.3, 34.4] | enemy_radar_spotted_pct=9.4 [3.5, 20.7] | enemy_radar_broad_pct=29.2 [18.3, 41.8]
+Gearing top6 minus rest  | conc_per_smoke=2888.0 [-5703.0, 11152.0] | edge_med_m=-39.0 [-1227.0, 1120.0] | teammate_share_of_damage_pct=3.8 [-1.2, 17.3] | selfish_pct=-20.3 [-40.8, -3.5] | smoker_only_label_pct=-15.8 [-32.3, -3.6] | enemy_radar_spotted_pct=-6.7 [-18.2, 2.0] | enemy_radar_broad_pct=-2.2 [-17.4, 16.0]
+Harugumo all 100 | conc_per_smoke=18388.0 [12865.0, 22389.0] | edge_med_m=2017.0 [1449.0, 2751.0] | teammate_share_of_damage_pct=78.4 [68.2, 86.9] | selfish_pct=18.0 [7.3, 28.7] | smoker_only_label_pct=14.0 [4.6, 22.3] | enemy_radar_spotted_pct=16.0 [10.5, 22.7] | enemy_radar_broad_pct=33.0 [27.6, 37.2]
+Harugumo top6 55 | conc_per_smoke=17526.0 [7505.0, 21049.0] | edge_med_m=1870.0 [1282.0, 2818.0] | teammate_share_of_damage_pct=77.6 [62.8, 99.1] | selfish_pct=16.4 [1.5, 30.1] | smoker_only_label_pct=12.7 [0.0, 25.0] | enemy_radar_spotted_pct=12.7 [0.0, 16.7] | enemy_radar_broad_pct=32.7 [23.1, 35.7]
+Harugumo rest 45 | conc_per_smoke=19441.0 [10991.0, 25505.0] | edge_med_m=2093.0 [1449.0, 3291.0] | teammate_share_of_damage_pct=79.2 [64.7, 87.6] | selfish_pct=20.0 [6.2, 32.4] | smoker_only_label_pct=15.6 [4.8, 26.7] | enemy_radar_spotted_pct=20.0 [11.8, 34.2] | enemy_radar_broad_pct=33.3 [24.1, 42.1]
+Harugumo top6 minus rest  | conc_per_smoke=-1915.0 [-13307.0, 6619.0] | edge_med_m=-224.0 [-1641.0, 809.0] | teammate_share_of_damage_pct=-1.6 [-18.4, 22.8] | selfish_pct=-3.6 [-24.4, 16.3] | smoker_only_label_pct=-2.8 [-20.3, 13.6] | enemy_radar_spotted_pct=-7.3 [-24.8, 2.4] | enemy_radar_broad_pct=-0.6 [-13.5, 10.2]
+Delny all 22 | conc_per_smoke=14470.0 | edge_med_m=2023.0 | teammate_share_of_damage_pct=98.9 | selfish_pct=22.7 | smoker_only_label_pct=13.6 | enemy_radar_spotted_pct=4.5 | enemy_radar_broad_pct=22.7
+Delny top6 18 | conc_per_smoke=17488.0 | edge_med_m=2023.0 | teammate_share_of_damage_pct=100.0 | selfish_pct=11.1 | smoker_only_label_pct=5.6 | enemy_radar_spotted_pct=5.6 | enemy_radar_broad_pct=22.2
+Delny rest 4 | conc_per_smoke=None | edge_med_m=None | teammate_share_of_damage_pct=None | selfish_pct=None | smoker_only_label_pct=None | enemy_radar_spotted_pct=None | enemy_radar_broad_pct=None
+Delny top6 minus rest  | conc_per_smoke=None | edge_med_m=None | teammate_share_of_damage_pct=None | selfish_pct=None | smoker_only_label_pct=None | enemy_radar_spotted_pct=None | enemy_radar_broad_pct=None
+All four long-smoke ships all 562 | conc_per_smoke=15777.0 [13583.0, 17385.0] | edge_med_m=2079.0 [1768.0, 2441.0] | teammate_share_of_damage_pct=92.0 [87.9, 95.1] | selfish_pct=19.4 [14.4, 25.7] | smoker_only_label_pct=11.0 [7.8, 14.9] | enemy_radar_spotted_pct=10.7 [7.3, 14.0] | enemy_radar_broad_pct=30.4 [26.3, 34.5]
+All four long-smoke ships top6 237 | conc_per_smoke=16975.0 [13862.0, 18281.0] | edge_med_m=1974.0 [1783.0, 2396.0] | teammate_share_of_damage_pct=91.4 [82.8, 97.0] | selfish_pct=12.7 [8.1, 18.3] | smoker_only_label_pct=6.8 [3.5, 10.6] | enemy_radar_spotted_pct=8.9 [1.2, 13.4] | enemy_radar_broad_pct=30.8 [23.7, 37.1]
+All four long-smoke ships rest 325 | conc_per_smoke=14903.0 [12224.0, 17520.0] | edge_med_m=2175.0 [1594.0, 2751.0] | teammate_share_of_damage_pct=92.5 [89.1, 95.3] | selfish_pct=24.3 [17.9, 31.4] | smoker_only_label_pct=14.2 [9.8, 19.7] | enemy_radar_spotted_pct=12.0 [8.8, 17.4] | enemy_radar_broad_pct=30.2 [25.7, 36.7]
+All four long-smoke ships top6 minus rest  | conc_per_smoke=2072.0 [-2106.0, 5158.0] | edge_med_m=-201.0 [-820.0, 443.0] | teammate_share_of_damage_pct=-1.1 [-9.4, 6.2] | selfish_pct=-11.6 [-20.5, -3.1] | smoker_only_label_pct=-7.4 [-14.1, -1.7] | enemy_radar_spotted_pct=-3.1 [-12.1, 2.7] | enemy_radar_broad_pct=0.6 [-8.4, 8.4]
+REFERENCE cap sitters (Darin all 462 | conc_per_smoke=5287.0 [4300.0, 6100.0] | edge_med_m=1028.0 [483.0, 1713.0] | teammate_share_of_damage_pct=34.7 [23.9, 47.4] | selfish_pct=75.5 [71.3, 80.5] | smoker_only_label_pct=48.7 [43.1, 53.8] | enemy_radar_spotted_pct=10.8 [7.5, 13.8] | enemy_radar_broad_pct=24.7 [19.5, 29.6]
+REFERENCE cap sitters (Darin top6 135 | conc_per_smoke=6092.0 [5213.0, 6942.0] | edge_med_m=1405.0 [931.0, 2246.0] | teammate_share_of_damage_pct=37.4 [21.4, 54.1] | selfish_pct=68.9 [62.3, 77.5] | smoker_only_label_pct=47.4 [37.7, 57.0] | enemy_radar_spotted_pct=14.8 [8.4, 21.8] | enemy_radar_broad_pct=25.9 [17.6, 33.9]
+REFERENCE cap sitters (Darin rest 327 | conc_per_smoke=4955.0 [3596.0, 6018.0] | edge_med_m=822.0 [129.0, 1766.0] | teammate_share_of_damage_pct=33.3 [20.4, 52.1] | selfish_pct=78.3 [73.7, 84.0] | smoker_only_label_pct=49.2 [42.2, 55.6] | enemy_radar_spotted_pct=9.2 [5.7, 12.0] | enemy_radar_broad_pct=24.2 [17.7, 29.9]
+REFERENCE cap sitters (Darin top6 minus rest  | conc_per_smoke=1137.0 [-278.0, 2699.0] | edge_med_m=583.0 [-426.0, 1783.0] | teammate_share_of_damage_pct=4.1 [-18.7, 25.9] | selfish_pct=-9.4 [-18.3, 0.5] | smoker_only_label_pct=-1.8 [-14.4, 10.4] | enemy_radar_spotted_pct=5.6 [-1.4, 13.5] | enemy_radar_broad_pct=1.8 [-9.0, 12.9]
+REFERENCE all destroyer smok all 1074 | conc_per_smoke=10798.0 [8899.0, 12294.0] | edge_med_m=1742.0 [1449.0, 1994.0] | teammate_share_of_damage_pct=78.4 [72.7, 83.6] | selfish_pct=45.9 [39.3, 52.6] | smoker_only_label_pct=28.4 [24.1, 33.4] | enemy_radar_spotted_pct=11.2 [9.3, 13.2] | enemy_radar_broad_pct=27.7 [23.9, 31.2]
+REFERENCE all destroyer smok top6 387 | conc_per_smoke=12735.0 [8810.0, 15108.0] | edge_med_m=1904.0 [1682.0, 2394.0] | teammate_share_of_damage_pct=81.3 [68.1, 89.3] | selfish_pct=34.6 [25.8, 47.4] | smoker_only_label_pct=22.0 [15.6, 30.9] | enemy_radar_spotted_pct=11.4 [7.6, 14.6] | enemy_radar_broad_pct=28.7 [21.4, 34.8]
+REFERENCE all destroyer smok rest 687 | conc_per_smoke=9707.0 [7895.0, 11439.0] | edge_med_m=1670.0 [1247.0, 2035.0] | teammate_share_of_damage_pct=76.2 [70.3, 80.9] | selfish_pct=52.3 [47.6, 58.8] | smoker_only_label_pct=32.0 [27.2, 37.0] | enemy_radar_spotted_pct=11.1 [8.6, 13.8] | enemy_radar_broad_pct=27.1 [22.7, 31.3]
+REFERENCE all destroyer smok top6 minus rest  | conc_per_smoke=3028.0 [-1412.0, 5975.0] | edge_med_m=234.0 [-180.0, 827.0] | teammate_share_of_damage_pct=5.1 [-8.5, 15.1] | selfish_pct=-17.6 [-29.3, -4.9] | smoker_only_label_pct=-10.1 [-18.5, -0.3] | enemy_radar_spotted_pct=0.3 [-4.5, 4.5] | enemy_radar_broad_pct=1.6 [-6.5, 8.8]
+
+Somers all 260 | centre_pct=23.5 [15.6, 30.9] | side_lane_pct=44.2 [37.2, 52.6] | map_edge_pct=32.3 [28.1, 37.0] | land_med_m=2276.0 [2025.0, 2564.0] | near_land_pct=20.1 [12.6, 28.1] | open_water_pct=58.3 [51.8, 64.9] | deaths_per_100=10.4 [7.4, 13.4]
+Somers top6 90 | centre_pct=28.9 [5.3, 37.2] | side_lane_pct=36.7 [30.2, 57.9] | map_edge_pct=34.4 [27.3, 44.2] | land_med_m=2651.0 [2025.0, 3195.0] | near_land_pct=9.8 [5.0, 12.9] | open_water_pct=63.9 [50.0, 70.0] | deaths_per_100=7.8 [2.5, 12.4]
+Somers rest 170 | centre_pct=20.6 [13.7, 29.6] | side_lane_pct=48.2 [39.9, 55.7] | map_edge_pct=31.2 [25.3, 37.2] | land_med_m=2189.0 [1983.0, 2322.0] | near_land_pct=24.5 [14.9, 33.6] | open_water_pct=55.9 [49.0, 64.7] | deaths_per_100=11.8 [7.9, 15.4]
+Somers top6 minus rest  | centre_pct=8.3 [-15.5, 18.8] | side_lane_pct=-11.6 [-21.9, 12.2] | map_edge_pct=3.3 [-6.4, 12.9] | land_med_m=462.0 [-266.0, 1039.0] | near_land_pct=-14.6 [-24.1, -4.0] | open_water_pct=8.0 [-8.2, 17.5] | deaths_per_100=-4.0 [-10.9, 2.3]
+Gearing all 180 | centre_pct=26.7 [19.1, 36.6] | side_lane_pct=45.6 [35.4, 57.9] | map_edge_pct=27.8 [15.7, 38.5] | land_med_m=1980.0 [1643.0, 2399.0] | near_land_pct=27.9 [18.5, 38.4] | open_water_pct=49.4 [38.3, 57.1] | deaths_per_100=17.8 [11.2, 26.9]
+Gearing top6 74 | centre_pct=20.3 [7.1, 25.6] | side_lane_pct=54.1 [35.8, 74.1] | map_edge_pct=25.7 [11.1, 50.0] | land_med_m=2034.0 [1770.0, 2399.0] | near_land_pct=28.4 [14.3, 36.4] | open_water_pct=50.7 [39.4, 54.8] | deaths_per_100=9.5 [5.7, 10.6]
+Gearing rest 106 | centre_pct=31.1 [19.8, 46.1] | side_lane_pct=39.6 [30.2, 55.2] | map_edge_pct=29.2 [10.7, 40.4] | land_med_m=1950.0 [1105.0, 2546.0] | near_land_pct=27.6 [14.8, 45.5] | open_water_pct=48.3 [32.5, 60.7] | deaths_per_100=23.6 [13.9, 36.8]
+Gearing top6 minus rest  | centre_pct=-10.9 [-31.5, 1.5] | side_lane_pct=14.4 [-9.1, 36.3] | map_edge_pct=-3.6 [-23.1, 27.8] | land_med_m=84.0 [-564.0, 877.0] | near_land_pct=0.8 [-20.6, 14.7] | open_water_pct=2.5 [-13.2, 18.7] | deaths_per_100=-14.1 [-27.7, -5.3]
+Harugumo all 100 | centre_pct=17.0 [10.0, 23.0] | side_lane_pct=41.0 [30.5, 52.3] | map_edge_pct=42.0 [30.8, 53.4] | land_med_m=2356.0 [1642.0, 2742.0] | near_land_pct=25.0 [16.3, 36.0] | open_water_pct=55.0 [41.1, 65.4] | deaths_per_100=21.0 [13.0, 36.5]
+Harugumo top6 55 | centre_pct=16.4 [7.4, 25.0] | side_lane_pct=38.2 [15.4, 45.2] | map_edge_pct=45.5 [34.9, 69.2] | land_med_m=2695.0 [2457.0, 3177.0] | near_land_pct=17.1 [8.8, 24.0] | open_water_pct=65.9 [57.9, 77.8] | deaths_per_100=9.1 [2.5, 19.5]
+Harugumo rest 45 | centre_pct=17.8 [9.1, 26.8] | side_lane_pct=44.4 [28.2, 68.9] | map_edge_pct=37.8 [16.2, 54.2] | land_med_m=1795.0 [1020.0, 2463.0] | near_land_pct=33.3 [15.4, 50.0] | open_water_pct=43.6 [22.7, 60.0] | deaths_per_100=35.6 [27.1, 50.0]
+Harugumo top6 minus rest  | centre_pct=-1.4 [-13.7, 11.7] | side_lane_pct=-6.3 [-37.2, 11.9] | map_edge_pct=7.7 [-13.7, 40.4] | land_med_m=900.0 [113.0, 1891.0] | near_land_pct=-16.3 [-34.9, 2.0] | open_water_pct=22.3 [4.1, 45.6] | deaths_per_100=-26.5 [-42.4, -12.3]
+Delny all 22 | centre_pct=36.4 | side_lane_pct=59.1 | map_edge_pct=4.5 | land_med_m=2151.0 | near_land_pct=27.8 | open_water_pct=55.6 | deaths_per_100=0.0
+Delny top6 18 | centre_pct=44.4 | side_lane_pct=50.0 | map_edge_pct=5.6 | land_med_m=2246.0 | near_land_pct=25.0 | open_water_pct=62.5 | deaths_per_100=0.0
+Delny rest 4 | centre_pct=None | side_lane_pct=None | map_edge_pct=None | land_med_m=None | near_land_pct=None | open_water_pct=None | deaths_per_100=None
+Delny top6 minus rest  | centre_pct=None | side_lane_pct=None | map_edge_pct=None | land_med_m=None | near_land_pct=None | open_water_pct=None | deaths_per_100=None
+All four long-smoke ships all 562 | centre_pct=23.8 [19.7, 28.2] | side_lane_pct=44.7 [39.9, 50.4] | map_edge_pct=31.5 [27.0, 35.6] | land_med_m=2163.0 [1967.0, 2367.0] | near_land_pct=23.9 [18.9, 29.4] | open_water_pct=54.6 [48.9, 59.4] | deaths_per_100=14.2 [11.0, 18.6]
+All four long-smoke ships top6 237 | centre_pct=24.5 [15.7, 29.7] | side_lane_pct=43.5 [38.2, 53.2] | map_edge_pct=32.1 [25.2, 37.2] | land_med_m=2399.0 [2034.0, 2651.0] | near_land_pct=19.5 [14.4, 26.5] | open_water_pct=59.5 [51.5, 65.1] | deaths_per_100=8.0 [4.6, 10.9]
+All four long-smoke ships rest 325 | centre_pct=23.4 [18.2, 29.7] | side_lane_pct=45.5 [38.6, 52.8] | map_edge_pct=31.1 [24.1, 37.0] | land_med_m=2045.0 [1789.0, 2282.0] | near_land_pct=26.9 [19.6, 34.3] | open_water_pct=51.3 [44.9, 57.9] | deaths_per_100=18.8 [14.7, 24.5]
+All four long-smoke ships top6 minus rest  | centre_pct=1.1 [-9.4, 8.3] | side_lane_pct=-2.1 [-11.8, 9.0] | map_edge_pct=1.0 [-8.1, 9.5] | land_med_m=355.0 [-101.0, 676.0] | near_land_pct=-7.5 [-16.9, 2.7] | open_water_pct=8.2 [-2.8, 17.3] | deaths_per_100=-10.8 [-17.0, -5.8]
+REFERENCE cap sitters (Darin all 462 | centre_pct=53.9 [48.4, 59.4] | side_lane_pct=36.1 [30.8, 41.2] | map_edge_pct=10.0 [6.8, 13.2] | land_med_m=1762.0 [1564.0, 1930.0] | near_land_pct=29.1 [23.9, 34.1] | open_water_pct=43.1 [38.5, 47.5] | deaths_per_100=7.4 [5.2, 10.4]
+REFERENCE cap sitters (Darin top6 135 | centre_pct=56.3 [48.2, 63.4] | side_lane_pct=33.3 [25.0, 43.9] | map_edge_pct=10.4 [6.1, 14.5] | land_med_m=1569.0 [1157.0, 1962.0] | near_land_pct=33.1 [23.0, 43.7] | open_water_pct=40.7 [30.5, 47.6] | deaths_per_100=5.9 [3.4, 8.5]
+REFERENCE cap sitters (Darin rest 327 | centre_pct=52.9 [46.1, 60.8] | side_lane_pct=37.3 [31.6, 42.6] | map_edge_pct=9.8 [5.5, 14.0] | land_med_m=1838.0 [1608.0, 1975.0] | near_land_pct=27.6 [20.4, 33.9] | open_water_pct=44.1 [39.1, 49.2] | deaths_per_100=8.0 [4.7, 12.5]
+REFERENCE cap sitters (Darin top6 minus rest  | centre_pct=3.4 [-8.3, 12.9] | side_lane_pct=-4.0 [-13.6, 8.1] | map_edge_pct=0.6 [-5.1, 6.8] | land_med_m=-268.0 [-680.0, 233.0] | near_land_pct=5.4 [-6.6, 17.6] | open_water_pct=-3.4 [-14.7, 6.6] | deaths_per_100=-2.0 [-7.5, 2.2]
+REFERENCE all destroyer smok all 1074 | centre_pct=36.9 [33.8, 40.2] | side_lane_pct=41.2 [37.6, 45.4] | map_edge_pct=22.0 [18.4, 25.0] | land_med_m=1958.0 [1825.0, 2069.0] | near_land_pct=26.9 [23.1, 30.4] | open_water_pct=48.4 [44.5, 52.3] | deaths_per_100=11.5 [9.3, 14.8]
+REFERENCE all destroyer smok top6 387 | centre_pct=35.4 [29.1, 42.3] | side_lane_pct=41.1 [35.3, 51.2] | map_edge_pct=23.5 [16.9, 27.7] | land_med_m=2060.0 [1825.0, 2324.0] | near_land_pct=25.6 [20.5, 30.9] | open_water_pct=51.9 [45.9, 59.1] | deaths_per_100=7.5 [4.9, 10.2]
+REFERENCE all destroyer smok rest 687 | centre_pct=37.7 [34.2, 41.5] | side_lane_pct=41.2 [37.0, 45.3] | map_edge_pct=21.1 [17.3, 25.0] | land_med_m=1893.0 [1770.0, 2022.0] | near_land_pct=27.5 [23.0, 32.1] | open_water_pct=46.6 [42.2, 50.5] | deaths_per_100=13.8 [11.1, 17.5]
+REFERENCE all destroyer smok top6 minus rest  | centre_pct=-2.3 [-8.9, 5.1] | side_lane_pct=-0.1 [-7.9, 10.4] | map_edge_pct=2.4 [-5.2, 8.1] | land_med_m=167.0 [-130.0, 463.0] | near_land_pct=-1.9 [-8.7, 5.6] | open_water_pct=5.3 [-1.9, 13.0] | deaths_per_100=-6.3 [-11.1, -2.2]
+Harugumo minus Somers | conc_per_smoke 3863.0 [-1270.0, 8572.0] 
+Harugumo minus Somers | edge_med_m -207.0 [-1629.0, 638.0] 
+Harugumo minus Somers | teammate_share_of_damage_pct -15.8 [-25.9, -6.0] *
+Harugumo minus Somers | selfish_pct 0.7 [-12.5, 11.4] 
+Harugumo minus Somers | smoker_only_label_pct 5.9 [-4.4, 15.3] 
+Harugumo minus Somers | enemy_radar_spotted_pct 4.1 [-1.2, 10.8] 
+Harugumo minus Somers | enemy_radar_broad_pct 1.5 [-4.1, 6.9] 
+Harugumo minus Somers | centre_pct -6.5 [-15.7, 3.8] 
+Harugumo minus Somers | side_lane_pct -3.2 [-20.3, 9.4] 
+Harugumo minus Somers | map_edge_pct 9.7 [0.7, 21.4] *
+Harugumo minus Somers | land_med_m 79.0 [-624.0, 526.0] 
+Harugumo minus Somers | near_land_pct 4.9 [-5.5, 15.8] 
+Harugumo minus Somers | open_water_pct -3.3 [-17.2, 7.2] 
+Harugumo minus Somers | deaths_per_100 10.6 [1.6, 24.5] *
+Harugumo minus Gearing | conc_per_smoke 2092.0 [-4960.0, 9153.0] 
+Harugumo minus Gearing | edge_med_m -17.0 [-721.0, 788.0] 
+Harugumo minus Gearing | teammate_share_of_damage_pct -18.6 [-29.0, -7.7] *
+Harugumo minus Gearing | selfish_pct -4.8 [-22.7, 8.4] 
+Harugumo minus Gearing | smoker_only_label_pct 0.7 [-14.4, 11.3] 
+Harugumo minus Gearing | enemy_radar_spotted_pct 9.3 [2.5, 16.0] *
+Harugumo minus Gearing | enemy_radar_broad_pct 4.7 [-4.4, 12.0] 
+Harugumo minus Gearing | centre_pct -9.7 [-20.6, 0.8] 
+Harugumo minus Gearing | side_lane_pct -4.6 [-21.6, 12.8] 
+Harugumo minus Gearing | map_edge_pct 14.2 [-3.7, 31.7] 
+Harugumo minus Gearing | land_med_m 376.0 [-467.0, 889.0] 
+Harugumo minus Gearing | near_land_pct -2.9 [-16.0, 12.7] 
+Harugumo minus Gearing | open_water_pct 5.6 [-10.8, 18.7] 
+Harugumo minus Gearing | deaths_per_100 3.2 [-9.2, 19.6] 
+Long-smoke ships minus cap sitters | conc_per_smoke 10490.0 [8368.0, 12226.0] *
+Long-smoke ships minus cap sitters | edge_med_m 1051.0 [334.0, 1851.0] *
+Long-smoke ships minus cap sitters | teammate_share_of_damage_pct 57.3 [46.3, 68.5] *
+Long-smoke ships minus cap sitters | selfish_pct -56.1 [-61.6, -50.5] *
+Long-smoke ships minus cap sitters | smoker_only_label_pct -37.7 [-44.2, -30.9] *
+Long-smoke ships minus cap sitters | enemy_radar_spotted_pct -0.1 [-4.8, 4.9] 
+Long-smoke ships minus cap sitters | enemy_radar_broad_pct 5.8 [0.1, 11.5] *
+Long-smoke ships minus cap sitters | centre_pct -30.1 [-37.9, -22.6] *
+Long-smoke ships minus cap sitters | side_lane_pct 8.5 [2.2, 15.0] *
+Long-smoke ships minus cap sitters | map_edge_pct 21.5 [15.3, 27.2] *
+Long-smoke ships minus cap sitters | land_med_m 400.0 [115.0, 696.0] *
+Long-smoke ships minus cap sitters | near_land_pct -5.2 [-12.5, 3.2] 
+Long-smoke ships minus cap sitters | open_water_pct 11.5 [3.5, 18.3] *
+Long-smoke ships minus cap sitters | deaths_per_100 6.9 [3.1, 11.3] *
+--B3H
+Harugumo all 100 | own_gun_share_pct=21.6 [13.0, 31.5] | own_conc_per_smoke=3978.0 [2017.0, 5714.0] | mate_conc_per_smoke=14409.0 [10082.0, 18240.0] | smoker_dealt_any_pct=43.0 [27.9, 51.4] | smoker_dealt_5k_pct=18.0 [8.6, 26.7] | smoker_time_in_smoke_s_med=55.0 [52.9, 71.0] | smoker_time_share_of_life_pct=44.5 [36.8, 49.2]
+Harugumo top6 55 | own_gun_share_pct=22.4 [1.2, 36.0] | own_conc_per_smoke=3925.0 [79.0, 6559.0] | mate_conc_per_smoke=13601.0 [7413.0, 18165.0] | smoker_dealt_any_pct=45.5 [23.1, 52.4] | smoker_dealt_5k_pct=20.0 [0.0, 32.9] | smoker_time_in_smoke_s_med=55.2 [49.2, 98.2] | smoker_time_share_of_life_pct=49.5 [40.5, 54.1]
+Harugumo rest 45 | own_gun_share_pct=20.8 [12.5, 34.9] | own_conc_per_smoke=4044.0 [2027.0, 6268.0] | mate_conc_per_smoke=15398.0 [8231.0, 21009.0] | smoker_dealt_any_pct=40.0 [17.6, 54.8] | smoker_dealt_5k_pct=15.6 [7.3, 23.5] | smoker_time_in_smoke_s_med=54.9 [48.9, 71.0] | smoker_time_share_of_life_pct=38.4 [32.1, 44.7]
+Harugumo top6 minus rest  | own_gun_share_pct=1.6 [-22.5, 18.4] | own_conc_per_smoke=-119.0 [-4409.0, 3038.0] | mate_conc_per_smoke=-1797.0 [-11035.0, 7210.0] | smoker_dealt_any_pct=5.5 [-20.4, 28.5] | smoker_dealt_5k_pct=4.4 [-16.0, 19.7] | smoker_time_in_smoke_s_med=0.3 [-15.9, 44.3] | smoker_time_share_of_life_pct=11.1 [-0.4, 18.1]
+Somers all 260 | own_gun_share_pct=5.9 [2.5, 10.0] | own_conc_per_smoke=851.0 [354.0, 1410.0] | mate_conc_per_smoke=13673.0 [11735.0, 15167.0] | smoker_dealt_any_pct=9.6 [5.5, 14.3] | smoker_dealt_5k_pct=3.5 [1.6, 5.2] | smoker_time_in_smoke_s_med=41.0 [38.9, 47.0] | smoker_time_share_of_life_pct=31.8 [29.2, 34.1]
+Somers top6 90 | own_gun_share_pct=8.4 [0.0, 22.2] | own_conc_per_smoke=1322.0 [0.0, 3024.0] | mate_conc_per_smoke=14374.0 [9638.0, 15995.0] | smoker_dealt_any_pct=5.6 [0.0, 12.2] | smoker_dealt_5k_pct=3.3 [0.0, 6.8] | smoker_time_in_smoke_s_med=41.0 [38.7, 49.0] | smoker_time_share_of_life_pct=33.6 [24.9, 36.3]
+Somers rest 170 | own_gun_share_pct=4.3 [1.7, 7.0] | own_conc_per_smoke=602.0 [241.0, 1031.0] | mate_conc_per_smoke=13302.0 [10901.0, 15424.0] | smoker_dealt_any_pct=11.8 [6.2, 17.1] | smoker_dealt_5k_pct=3.5 [1.4, 5.9] | smoker_time_in_smoke_s_med=41.0 [38.8, 48.9] | smoker_time_share_of_life_pct=30.9 [28.3, 33.6]
+Somers top6 minus rest  | own_gun_share_pct=4.1 [-4.7, 18.4] | own_conc_per_smoke=720.0 [-656.0, 2468.0] | mate_conc_per_smoke=1072.0 [-3768.0, 3566.0] | smoker_dealt_any_pct=-6.2 [-13.6, 2.7] | smoker_dealt_5k_pct=-0.2 [-4.1, 3.9] | smoker_time_in_smoke_s_med=0.0 [-8.0, 9.1] | smoker_time_share_of_life_pct=2.8 [-6.5, 6.4]
+Gearing all 180 | own_gun_share_pct=3.1 [0.7, 10.3] | own_conc_per_smoke=501.0 [116.0, 1186.0] | mate_conc_per_smoke=15795.0 [10078.0, 19221.0] | smoker_dealt_any_pct=8.9 [3.6, 17.1] | smoker_dealt_5k_pct=2.8 [0.0, 6.8] | smoker_time_in_smoke_s_med=38.5 [34.8, 39.1] | smoker_time_share_of_life_pct=28.3 [26.2, 30.9]
+Gearing top6 74 | own_gun_share_pct=1.0 [0.0, 4.0] | own_conc_per_smoke=176.0 [0.0, 451.0] | mate_conc_per_smoke=17820.0 [10622.0, 21955.0] | smoker_dealt_any_pct=5.4 [0.0, 11.4] | smoker_dealt_5k_pct=1.4 [0.0, 3.8] | smoker_time_in_smoke_s_med=36.7 [36.4, 38.7] | smoker_time_share_of_life_pct=27.8 [23.4, 29.0]
+Gearing rest 106 | own_gun_share_pct=4.8 [0.8, 17.1] | own_conc_per_smoke=728.0 [143.0, 1780.0] | mate_conc_per_smoke=14381.0 [7220.0, 18914.0] | smoker_dealt_any_pct=11.3 [3.2, 25.0] | smoker_dealt_5k_pct=3.8 [0.0, 10.3] | smoker_time_in_smoke_s_med=38.6 [33.7, 43.9] | smoker_time_share_of_life_pct=28.7 [26.0, 33.0]
+Gearing top6 minus rest  | own_gun_share_pct=-3.8 [-17.8, 1.4] | own_conc_per_smoke=-551.0 [-1672.0, 125.0] | mate_conc_per_smoke=3439.0 [-6077.0, 11343.0] | smoker_dealt_any_pct=-5.9 [-22.0, 4.6] | smoker_dealt_5k_pct=-2.4 [-9.6, 2.2] | smoker_time_in_smoke_s_med=-1.9 [-7.2, 4.0] | smoker_time_share_of_life_pct=-1.0 [-6.4, 2.1]
+Delny all 22 | own_gun_share_pct=1.1 | own_conc_per_smoke=162.0 | mate_conc_per_smoke=14308.0 | smoker_dealt_any_pct=4.5 | smoker_dealt_5k_pct=0.0 | smoker_time_in_smoke_s_med=38.7 | smoker_time_share_of_life_pct=25.0
+Delny top6 18 | own_gun_share_pct=0.0 | own_conc_per_smoke=0.0 | mate_conc_per_smoke=17488.0 | smoker_dealt_any_pct=0.0 | smoker_dealt_5k_pct=0.0 | smoker_time_in_smoke_s_med=38.6 | smoker_time_share_of_life_pct=24.4
+Delny rest 4 | own_gun_share_pct=None | own_conc_per_smoke=None | mate_conc_per_smoke=None | smoker_dealt_any_pct=None | smoker_dealt_5k_pct=None | smoker_time_in_smoke_s_med=None | smoker_time_share_of_life_pct=None
+Delny top6 minus rest  | own_gun_share_pct=None | own_conc_per_smoke=None | mate_conc_per_smoke=None | smoker_dealt_any_pct=None | smoker_dealt_5k_pct=None | smoker_time_in_smoke_s_med=None | smoker_time_share_of_life_pct=None
+
+Harugumo all 100 | second_dd_recorded_pct=59.0 [50.0, 68.9] | second_dd_forward_pct=33.0 [24.2, 41.6] | second_dd_in_smoke_pct=12.0 [5.2, 15.9] | radar_cruiser_inside_pct=69.0 [52.9, 84.0] | our_radar_used_from_smoke_pct=18.0 [9.1, 27.2] | path_med_m=3857.0 [3116.0, 4250.0]
+Harugumo top6 55 | second_dd_recorded_pct=56.4 [54.8, 61.5] | second_dd_forward_pct=30.9 [20.7, 44.0] | second_dd_in_smoke_pct=16.4 [7.7, 19.4] | radar_cruiser_inside_pct=76.4 [60.7, 92.6] | our_radar_used_from_smoke_pct=21.8 [13.8, 30.8] | path_med_m=4029.0 [2775.0, 4329.0]
+Harugumo rest 45 | second_dd_recorded_pct=62.2 [40.0, 79.5] | second_dd_forward_pct=35.6 [22.2, 46.7] | second_dd_in_smoke_pct=6.7 [0.0, 12.5] | radar_cruiser_inside_pct=60.0 [40.0, 84.8] | our_radar_used_from_smoke_pct=13.3 [3.1, 31.2] | path_med_m=3716.0 [2807.0, 4455.0]
+Harugumo top6 minus rest  | second_dd_recorded_pct=-5.9 [-23.1, 14.9] | second_dd_forward_pct=-4.6 [-20.5, 16.2] | second_dd_in_smoke_pct=9.7 [-1.8, 16.4] | radar_cruiser_inside_pct=16.4 [-12.0, 42.4] | our_radar_used_from_smoke_pct=8.5 [-12.8, 23.6] | path_med_m=313.0 [-1130.0, 1316.0]
+Somers all 260 | second_dd_recorded_pct=45.8 [33.2, 55.5] | second_dd_forward_pct=22.7 [15.5, 28.1] | second_dd_in_smoke_pct=5.8 [2.9, 8.8] | radar_cruiser_inside_pct=63.5 [51.7, 72.4] | our_radar_used_from_smoke_pct=19.2 [12.0, 24.3] | path_med_m=3610.0 [3247.0, 4006.0]
+Somers top6 90 | second_dd_recorded_pct=61.1 [51.5, 68.0] | second_dd_forward_pct=31.1 [27.9, 36.4] | second_dd_in_smoke_pct=7.8 [2.5, 13.5] | radar_cruiser_inside_pct=71.1 [64.4, 83.1] | our_radar_used_from_smoke_pct=25.6 [20.3, 28.9] | path_med_m=3861.0 [3158.0, 4463.0]
+Somers rest 170 | second_dd_recorded_pct=37.6 [26.2, 49.1] | second_dd_forward_pct=18.2 [10.6, 25.1] | second_dd_in_smoke_pct=4.7 [1.5, 8.5] | radar_cruiser_inside_pct=59.4 [44.0, 73.3] | our_radar_used_from_smoke_pct=15.9 [6.7, 24.0] | path_med_m=3501.0 [3075.0, 3885.0]
+Somers top6 minus rest  | second_dd_recorded_pct=23.5 [8.5, 38.5] | second_dd_forward_pct=12.9 [5.3, 21.9] | second_dd_in_smoke_pct=3.1 [-3.3, 9.2] | radar_cruiser_inside_pct=11.7 [-3.6, 31.3] | our_radar_used_from_smoke_pct=9.7 [0.4, 19.0] | path_med_m=360.0 [-494.0, 1116.0]
+Gearing all 180 | second_dd_recorded_pct=37.2 [28.2, 46.4] | second_dd_forward_pct=17.2 [12.4, 22.7] | second_dd_in_smoke_pct=3.9 [1.4, 7.0] | radar_cruiser_inside_pct=56.7 [39.6, 67.5] | our_radar_used_from_smoke_pct=11.7 [5.6, 16.6] | path_med_m=3085.0 [2853.0, 3379.0]
+Gearing top6 74 | second_dd_recorded_pct=41.9 [8.8, 55.6] | second_dd_forward_pct=16.2 [0.0, 20.8] | second_dd_in_smoke_pct=1.4 [0.0, 2.5] | radar_cruiser_inside_pct=75.7 [67.9, 81.6] | our_radar_used_from_smoke_pct=20.3 [14.9, 31.4] | path_med_m=3336.0 [3165.0, 3446.0]
+Gearing rest 106 | second_dd_recorded_pct=34.0 [25.8, 46.9] | second_dd_forward_pct=17.9 [10.9, 27.4] | second_dd_in_smoke_pct=5.7 [1.5, 10.4] | radar_cruiser_inside_pct=43.4 [22.5, 57.4] | our_radar_used_from_smoke_pct=5.7 [1.6, 10.5] | path_med_m=2947.0 [2263.0, 3283.0]
+Gearing top6 minus rest  | second_dd_recorded_pct=7.9 [-17.3, 23.8] | second_dd_forward_pct=-1.7 [-18.5, 6.5] | second_dd_in_smoke_pct=-4.3 [-9.5, -0.1] | radar_cruiser_inside_pct=32.3 [16.4, 54.6] | our_radar_used_from_smoke_pct=14.6 [8.9, 24.7] | path_med_m=389.0 [-37.0, 1081.0]
+Delny all 22 | second_dd_recorded_pct=72.7 | second_dd_forward_pct=40.9 | second_dd_in_smoke_pct=22.7 | radar_cruiser_inside_pct=9.1 | our_radar_used_from_smoke_pct=0.0 | path_med_m=5022.0
+Delny top6 18 | second_dd_recorded_pct=72.2 | second_dd_forward_pct=50.0 | second_dd_in_smoke_pct=22.2 | radar_cruiser_inside_pct=11.1 | our_radar_used_from_smoke_pct=0.0 | path_med_m=5028.0
+Delny rest 4 | second_dd_recorded_pct=None | second_dd_forward_pct=None | second_dd_in_smoke_pct=None | radar_cruiser_inside_pct=None | our_radar_used_from_smoke_pct=None | path_med_m=None
+Delny top6 minus rest  | second_dd_recorded_pct=None | second_dd_forward_pct=None | second_dd_in_smoke_pct=None | radar_cruiser_inside_pct=None | our_radar_used_from_smoke_pct=None | path_med_m=None
+Harugumo minus Somers | own_gun_share_pct 15.8 [7.1, 24.7] *
+Harugumo minus Somers | own_conc_per_smoke 3127.0 [1107.0, 4778.0] *
+Harugumo minus Somers | mate_conc_per_smoke 736.0 [-3771.0, 5319.0] 
+Harugumo minus Somers | smoker_dealt_any_pct 33.4 [14.9, 44.7] *
+Harugumo minus Somers | smoker_dealt_5k_pct 14.5 [4.7, 21.9] *
+Harugumo minus Somers | smoker_time_in_smoke_s_med 14.0 [7.8, 28.7] *
+Harugumo minus Somers | smoker_time_share_of_life_pct 12.7 [5.1, 18.0] *
+Harugumo minus Somers | stationary_pct 0.9 [-4.1, 5.6] 
+Harugumo minus Somers | path_med_m 247.0 [-459.0, 748.0] 
+Harugumo minus Somers | second_dd_recorded_pct 13.2 [0.5, 31.3] *
+Harugumo minus Somers | second_dd_forward_pct 10.3 [-0.1, 22.9] 
+Harugumo minus Somers | second_dd_in_smoke_pct 6.2 [-0.4, 10.3] 
+Harugumo minus Somers | radar_cruiser_inside_pct 5.5 [-11.9, 23.9] 
+Harugumo minus Somers | our_radar_used_from_smoke_pct -1.2 [-9.8, 9.0] 
+Harugumo minus Somers | cruiser_inside_pct -1.2 [-18.8, 16.4] 
+Harugumo minus Somers | smoker_undetected_pct -3.1 [-10.5, 1.8] 
+Harugumo minus Gearing | own_gun_share_pct 18.6 [6.9, 28.7] *
+Harugumo minus Gearing | own_conc_per_smoke 3477.0 [1423.0, 5246.0] *
+Harugumo minus Gearing | mate_conc_per_smoke -1385.0 [-7383.0, 5549.0] 
+Harugumo minus Gearing | smoker_dealt_any_pct 34.1 [16.4, 43.4] *
+Harugumo minus Gearing | smoker_dealt_5k_pct 15.2 [4.4, 24.4] *
+Harugumo minus Gearing | smoker_time_in_smoke_s_med 16.5 [12.5, 32.2] *
+Harugumo minus Gearing | smoker_time_share_of_life_pct 16.2 [9.2, 20.9] *
+Harugumo minus Gearing | stationary_pct 1.8 [-3.0, 6.4] 
+Harugumo minus Gearing | path_med_m 771.0 [-8.0, 1275.0] 
+Harugumo minus Gearing | second_dd_recorded_pct 21.8 [10.5, 34.7] *
+Harugumo minus Gearing | second_dd_forward_pct 15.8 [6.8, 26.4] *
+Harugumo minus Gearing | second_dd_in_smoke_pct 8.1 [0.6, 13.3] *
+Harugumo minus Gearing | radar_cruiser_inside_pct 12.3 [-4.3, 35.2] 
+Harugumo minus Gearing | our_radar_used_from_smoke_pct 6.3 [-3.3, 18.0] 
+Harugumo minus Gearing | cruiser_inside_pct 5.6 [-13.7, 30.3] 
+Harugumo minus Gearing | smoker_undetected_pct -2.8 [-10.4, 3.3] 
+Harugumo: no radar cruiser inside minus radar cruiser inside | own_conc_per_smoke 5048.5 [27.4, 8179.6] *
+Harugumo: no radar cruiser inside minus radar cruiser inside | own_gun_share_pct 45.5 [18.1, 71.6] *
+Harugumo: no radar cruiser inside minus radar cruiser inside | smoker_dealt_any_pct 21.8 [4.8, 36.5] *
+Somers: no radar cruiser inside minus radar cruiser inside | own_conc_per_smoke 325.4 [-841.0, 2070.8] 
+Somers: no radar cruiser inside minus radar cruiser inside | own_gun_share_pct 3.6 [-4.5, 17.1] 
+Somers: no radar cruiser inside minus radar cruiser inside | smoker_dealt_any_pct 6.4 [-2.5, 15.4] 
+Gearing: no radar cruiser inside minus radar cruiser inside | own_conc_per_smoke 897.7 [64.9, 1994.6] *
+Gearing: no radar cruiser inside minus radar cruiser inside | own_gun_share_pct 8.5 [1.0, 26.3] *
+Gearing: no radar cruiser inside minus radar cruiser inside | smoker_dealt_any_pct 13.7 [2.6, 27.3] *
+Harugumo minus Somers | nearest ally to own-gun targets is a second destroyer, % 7.9 [-11.7, 25.0] 
+Harugumo minus Gearing | nearest ally to own-gun targets is a second destroyer, % 24.5 [14.8, 28.8] *
+Harugumo minus Somers | nearest ally to own-gun targets is the smoker, % -32.6 [-57.1, -16.8] *
+Harugumo minus Gearing | nearest ally to own-gun targets is the smoker, % -62.6 [-82.1, -41.9] *
+Harugumo minus Somers | nearest ally to own-gun targets is a radar cruiser inside the smoke, % -4.3 [-14.6, 8.5] 
+Harugumo minus Gearing | nearest ally to own-gun targets is a radar cruiser inside the smoke, % 5.7 [0.0, 14.0] 
+Harugumo minus Somers | nearest ally to own-gun targets is another ship outside the smoke, % 24.8 [1.7, 40.4] *
+Harugumo minus Gearing | nearest ally to own-gun targets is another ship outside the smoke, % 24.8 [2.6, 41.8] *
+--B4
+Grozovoi all 30 | spread_km=9.7 [6.33, 14.57] | edge_iqr_m=4725.0 [1534.0, 7310.0] | edge_med_m=998.0 [-500.0, 2046.0] | top_purpose_pct=46.7 [36.8, 66.7] | purpose_entropy_bits=2.21 [1.37, 2.28] | parked_pct=22.2 [0.0, 52.6] | between_pct=40.7 [15.0, 57.1] | line_1km_pct=37.0 [17.6, 60.0] | path_med_m=747.0 [485.0, 1783.0]
+Grozovoi top6 6 | spread_km=None | edge_iqr_m=None | edge_med_m=None | top_purpose_pct=None | purpose_entropy_bits=None | parked_pct=None | between_pct=None | line_1km_pct=None | path_med_m=None
+Grozovoi rest 24 | spread_km=7.63 [4.27, 10.03] | edge_iqr_m=5263.0 [1996.0, 6585.0] | edge_med_m=1439.0 [-500.0, 4558.0] | top_purpose_pct=41.7 [33.3, 66.7] | purpose_entropy_bits=2.05 [1.0, 2.15] | parked_pct=17.4 [0.0, 50.0] | between_pct=43.5 [7.1, 71.4] | line_1km_pct=39.1 [22.2, 57.1] | path_med_m=890.0 [590.0, 1783.0]
+Grozovoi top6 minus rest  | spread_km=None | edge_iqr_m=None | edge_med_m=None | top_purpose_pct=None | purpose_entropy_bits=None | parked_pct=None | between_pct=None | line_1km_pct=None | path_med_m=None
+Shimakaze all 58 | spread_km=11.46 [7.72, 12.27] | edge_iqr_m=7838.0 [4791.0, 9810.0] | edge_med_m=3288.0 [251.0, 4934.0] | top_purpose_pct=36.2 [31.2, 51.6] | purpose_entropy_bits=2.27 [1.68, 2.57] | parked_pct=26.8 [13.3, 37.5] | between_pct=3.6 [0.0, 10.0] | line_1km_pct=69.6 [57.1, 81.5] | path_med_m=1684.0 [1155.0, 1864.0]
+Shimakaze top6 15 | spread_km=None [5.38, 14.41] | edge_iqr_m=8419.0 [3851.0, 11142.0] | edge_med_m=3789.0 [2770.0, 4361.0] | top_purpose_pct=33.3 [31.2, 50.0] | purpose_entropy_bits=2.09 [1.36, 2.24] | parked_pct=26.7 [0.0, 42.9] | between_pct=6.7 [0.0, 20.0] | line_1km_pct=66.7 [38.9, 100.0] | path_med_m=1269.0 [828.0, 2059.0]
+Shimakaze rest 43 | spread_km=11.74 [7.14, 13.38] | edge_iqr_m=7359.0 [4159.0, 9451.0] | edge_med_m=2758.0 [-961.0, 5240.0] | top_purpose_pct=37.2 [27.6, 58.1] | purpose_entropy_bits=2.23 [1.54, 2.64] | parked_pct=26.8 [11.1, 40.7] | between_pct=2.4 [0.0, 9.4] | line_1km_pct=70.7 [58.8, 83.3] | path_med_m=1717.0 [1447.0, 1900.0]
+Shimakaze top6 minus rest  | spread_km=None [-6.21, 4.39] | edge_iqr_m=1061.0 [-4065.0, 6466.0] | edge_med_m=1030.0 [-1490.0, 4704.0] | top_purpose_pct=-3.9 [-23.8, 13.1] | purpose_entropy_bits=-0.14 [-0.93, 0.63] | parked_pct=-0.2 [-28.9, 22.9] | between_pct=4.2 [-6.7, 17.6] | line_1km_pct=-4.1 [-33.3, 32.5] | path_med_m=-448.0 [-910.0, 342.0]
+Daring all 200 | spread_km=8.07 [5.99, 8.72] | edge_iqr_m=4127.0 [3237.0, 4688.0] | edge_med_m=671.0 [-207.0, 1382.0] | top_purpose_pct=55.0 [45.9, 65.6] | purpose_entropy_bits=1.88 [1.53, 2.14] | parked_pct=64.5 [54.9, 73.6] | between_pct=29.4 [22.2, 37.3] | line_1km_pct=6.1 [1.7, 11.1] | path_med_m=366.0 [310.0, 471.0]
+Daring top6 34 | spread_km=6.63 [1.67, 6.9] | edge_iqr_m=3801.0 [1753.0, 7525.0] | edge_med_m=752.0 [-819.0, 2070.0] | top_purpose_pct=52.9 [42.0, 100.0] | purpose_entropy_bits=1.64 [-0.0, 1.79] | parked_pct=60.6 [51.6, 91.7] | between_pct=24.2 [12.5, 33.3] | line_1km_pct=15.2 [0.0, 23.1] | path_med_m=337.0 [258.0, 341.0]
+Daring rest 166 | spread_km=7.72 [5.72, 8.64] | edge_iqr_m=4167.0 [3138.0, 4855.0] | edge_med_m=602.0 [-306.0, 1382.0] | top_purpose_pct=55.4 [43.6, 66.4] | purpose_entropy_bits=1.88 [1.51, 2.19] | parked_pct=65.2 [54.3, 75.6] | between_pct=30.5 [22.7, 38.8] | line_1km_pct=4.3 [1.2, 8.1] | path_med_m=394.0 [302.0, 477.0]
+Daring top6 minus rest  | spread_km=-1.09 [-6.05, 0.49] | edge_iqr_m=-366.0 [-2682.0, 3619.0] | edge_med_m=150.0 [-1558.0, 1708.0] | top_purpose_pct=-2.5 [-18.8, 45.6] | purpose_entropy_bits=-0.23 [-1.91, 0.16] | parked_pct=-4.6 [-20.1, 24.2] | between_pct=-6.2 [-20.6, 5.1] | line_1km_pct=10.9 [-7.2, 19.5] | path_med_m=-57.0 [-189.0, 23.0]
+Gdańsk all 118 | spread_km=8.36 [6.17, 9.09] | edge_iqr_m=4968.0 [3395.0, 6311.0] | edge_med_m=1544.0 [631.0, 2398.0] | top_purpose_pct=36.4 [27.8, 46.1] | purpose_entropy_bits=2.62 [2.37, 2.77] | parked_pct=41.7 [33.3, 49.3] | between_pct=21.7 [14.2, 29.0] | line_1km_pct=36.5 [26.3, 48.9] | path_med_m=690.0 [546.0, 996.0]
+Gdańsk top6 60 | spread_km=7.32 [4.92, 7.5] | edge_iqr_m=3945.0 [2650.0, 6070.0] | edge_med_m=1382.0 [915.0, 2422.0] | top_purpose_pct=36.7 [29.6, 47.5] | purpose_entropy_bits=2.45 [2.2, 2.51] | parked_pct=48.3 [40.3, 57.1] | between_pct=27.6 [17.0, 39.1] | line_1km_pct=24.1 [16.0, 37.9] | path_med_m=524.0 [447.0, 686.0]
+Gdańsk rest 58 | spread_km=8.79 [5.18, 9.51] | edge_iqr_m=5590.0 [3083.0, 7042.0] | edge_med_m=1858.0 [22.0, 3716.0] | top_purpose_pct=36.2 [26.1, 51.4] | purpose_entropy_bits=2.67 [2.16, 2.85] | parked_pct=35.1 [26.2, 43.2] | between_pct=15.8 [9.5, 22.2] | line_1km_pct=49.1 [37.5, 62.5] | path_med_m=951.0 [690.0, 1529.0]
+Gdańsk top6 minus rest  | spread_km=-1.47 [-3.37, 1.8] | edge_iqr_m=-1644.0 [-3618.0, 1828.0] | edge_med_m=-476.0 [-2497.0, 1762.0] | top_purpose_pct=0.5 [-16.4, 16.6] | purpose_entropy_bits=-0.22 [-0.53, 0.25] | parked_pct=13.2 [1.5, 25.8] | between_pct=11.8 [-2.2, 25.3] | line_1km_pct=-25.0 [-42.1, -6.1] | path_med_m=-427.0 [-975.0, -4.0]
+Z-42 all 56 | spread_km=7.24 [3.37, 8.13] | edge_iqr_m=6367.0 [1936.0, 7769.0] | edge_med_m=470.0 [-858.0, 4055.0] | top_purpose_pct=53.6 [34.1, 77.3] | purpose_entropy_bits=1.99 [1.05, 2.38] | parked_pct=61.8 [53.2, 70.0] | between_pct=27.3 [18.7, 36.7] | line_1km_pct=10.9 [4.1, 16.1] | path_med_m=355.0 [302.0, 385.0]
+Z-42 top6 20 | spread_km=7.0 | edge_iqr_m=7090.0 | edge_med_m=4621.0 | top_purpose_pct=30.0 | purpose_entropy_bits=2.43 | parked_pct=65.0 | between_pct=25.0 | line_1km_pct=10.0 | path_med_m=366.0
+Z-42 rest 36 | spread_km=6.28 [1.53, 6.65] | edge_iqr_m=3512.0 [1042.0, 6921.0] | edge_med_m=-705.0 [-1020.0, 2405.0] | top_purpose_pct=66.7 [35.7, 90.0] | purpose_entropy_bits=1.4 [0.59, 1.89] | parked_pct=60.0 [51.7, 71.4] | between_pct=28.6 [20.8, 34.4] | line_1km_pct=11.4 [3.1, 19.0] | path_med_m=355.0 [194.0, 385.0]
+Z-42 top6 minus rest  | spread_km=0.72 [-1.44, 5.25] | edge_iqr_m=3578.0 [199.0, 7655.0] | edge_med_m=5326.0 [2025.0, 6228.0] | top_purpose_pct=-36.7 [-58.2, -2.0] | purpose_entropy_bits=1.03 [0.1, 1.78] | parked_pct=5.0 [-16.7, 17.1] | between_pct=-3.6 [-18.1, 25.6] | line_1km_pct=-1.4 [-16.7, 10.0] | path_med_m=11.0 [-20.0, 182.0]
+Somers all 260 | spread_km=13.16 [10.92, 13.98] | edge_iqr_m=5830.0 [4966.0, 6556.0] | edge_med_m=2224.0 [1594.0, 3512.0] | top_purpose_pct=26.2 [23.7, 32.3] | purpose_entropy_bits=2.76 [2.61, 2.85] | parked_pct=3.4 [1.3, 6.3] | between_pct=0.8 [0.0, 2.1] | line_1km_pct=95.8 [92.8, 97.9] | path_med_m=3610.0 [3250.0, 4000.0]
+Somers top6 90 | spread_km=12.22 [5.63, 12.95] | edge_iqr_m=6740.0 [6389.0, 9342.0] | edge_med_m=2210.0 [1967.0, 6911.0] | top_purpose_pct=27.8 [22.2, 34.8] | purpose_entropy_bits=2.73 [2.59, 2.84] | parked_pct=2.3 [0.0, 5.8] | between_pct=0.0 [0.0, 0.0] | line_1km_pct=97.7 [94.2, 100.0] | path_med_m=3861.0 [3158.0, 4463.0]
+Somers rest 170 | spread_km=12.3 [8.75, 13.61] | edge_iqr_m=5549.0 [3861.0, 6071.0] | edge_med_m=2224.0 [1468.0, 3768.0] | top_purpose_pct=27.6 [23.4, 38.1] | purpose_entropy_bits=2.74 [2.46, 2.84] | parked_pct=4.0 [0.9, 7.8] | between_pct=1.3 [0.0, 3.1] | line_1km_pct=94.7 [90.5, 97.5] | path_med_m=3501.0 [3065.0, 3885.0]
+Somers top6 minus rest  | spread_km=-0.08 [-6.55, 2.78] | edge_iqr_m=1190.0 [547.0, 4872.0] | edge_med_m=-14.0 [-1591.0, 4908.0] | top_purpose_pct=0.1 [-12.0, 7.0] | purpose_entropy_bits=-0.0 [-0.18, 0.27] | parked_pct=-1.6 [-6.6, 3.4] | between_pct=-1.3 [-3.0, 0.0] | line_1km_pct=3.0 [-1.9, 7.5] | path_med_m=360.0 [-484.0, 1110.0]
+Harugumo all 100 | spread_km=12.92 [8.72, 14.37] | edge_iqr_m=5014.0 [2632.0, 6090.0] | edge_med_m=2017.0 [1449.0, 2660.0] | top_purpose_pct=26.0 [21.3, 35.2] | purpose_entropy_bits=2.66 [2.34, 2.75] | parked_pct=4.7 [0.0, 9.3] | between_pct=10.6 [1.5, 18.9] | line_1km_pct=84.7 [73.3, 96.3] | path_med_m=3857.0 [3116.0, 4245.0]
+Harugumo top6 55 | spread_km=12.17 [9.36, 15.92] | edge_iqr_m=5254.0 [1916.0, 6445.0] | edge_med_m=1870.0 [1282.0, 2818.0] | top_purpose_pct=29.1 [22.6, 37.9] | purpose_entropy_bits=2.68 [2.12, 2.77] | parked_pct=4.1 [0.0, 8.6] | between_pct=14.3 [0.0, 26.5] | line_1km_pct=81.6 [64.7, 100.0] | path_med_m=4029.0 [2775.0, 4329.0]
+Harugumo rest 45 | spread_km=8.47 [3.92, 11.44] | edge_iqr_m=4455.0 [1761.0, 6095.0] | edge_med_m=2093.0 [1449.0, 3181.0] | top_purpose_pct=31.1 [21.9, 45.0] | purpose_entropy_bits=2.49 [2.11, 2.64] | parked_pct=5.6 [0.0, 13.5] | between_pct=5.6 [0.0, 9.8] | line_1km_pct=88.9 [83.8, 96.0] | path_med_m=3716.0 [2657.0, 4455.0]
+Harugumo top6 minus rest  | spread_km=3.7 [-0.29, 9.28] | edge_iqr_m=799.0 [-2910.0, 3770.0] | edge_med_m=-224.0 [-1614.0, 822.0] | top_purpose_pct=-2.0 [-16.4, 10.7] | purpose_entropy_bits=0.18 [-0.35, 0.5] | parked_pct=-1.5 [-11.8, 5.6] | between_pct=8.7 [-6.4, 22.3] | line_1km_pct=-7.3 [-24.3, 12.9] | path_med_m=313.0 [-1087.0, 1441.0]
+Grozovoi minus Daring | spread_km 1.63 [-1.49, 6.48] 
+Grozovoi minus Daring | edge_iqr_m 599.0 [-2511.0, 3628.0] 
+Grozovoi minus Daring | edge_iqr_no_mrA_m 936.0 [-2846.0, 3347.0] 
+Grozovoi minus Daring | edge_med_m 327.0 [-1185.0, 1729.0] 
+Grozovoi minus Daring | top_purpose_pct -8.3 [-22.0, 15.7] 
+Grozovoi minus Daring | purpose_entropy_bits 0.33 [-0.72, 0.63] 
+Grozovoi minus Daring | parked_pct -42.2 [-63.2, -8.7] *
+Grozovoi minus Daring | between_pct 11.3 [-23.0, 28.5] 
+Grozovoi minus Daring | line_1km_pct 30.9 [8.1, 52.0] *
+Grozovoi minus Daring | path_med_m 381.0 [76.0, 1426.0] *
+Grozovoi minus Daring | path_iqr_m 352.0 [-151.0, 1691.0] 
+Grozovoi minus Gdańsk | spread_km 1.34 [-2.04, 6.51] 
+Grozovoi minus Gdańsk | edge_iqr_m -243.0 [-3319.0, 2693.0] 
+Grozovoi minus Gdańsk | edge_iqr_no_mrA_m 10.0 [-3700.0, 2806.0] 
+Grozovoi minus Gdańsk | edge_med_m -546.0 [-2375.0, 922.0] 
+Grozovoi minus Gdańsk | top_purpose_pct 10.2 [-1.3, 32.5] 
+Grozovoi minus Gdańsk | purpose_entropy_bits -0.41 [-1.37, -0.16] *
+Grozovoi minus Gdańsk | parked_pct -19.5 [-37.8, 9.1] 
+Grozovoi minus Gdańsk | between_pct 19.0 [-12.8, 38.2] 
+Grozovoi minus Gdańsk | line_1km_pct 0.5 [-20.0, 21.5] 
+Grozovoi minus Gdańsk | path_med_m 56.0 [-260.0, 1020.0] 
+Grozovoi minus Gdańsk | path_iqr_m -247.0 [-774.0, 1187.0] 
+Shimakaze minus Daring | spread_km 3.39 [-0.25, 5.58] 
+Shimakaze minus Daring | edge_iqr_m 3711.0 [377.0, 6252.0] *
+Shimakaze minus Daring | edge_iqr_no_mrA_m 3439.0 [362.0, 5998.0] *
+Shimakaze minus Daring | edge_med_m 2617.0 [-436.0, 4572.0] 
+Shimakaze minus Daring | top_purpose_pct -18.8 [-31.7, 3.4] 
+Shimakaze minus Daring | purpose_entropy_bits 0.39 [-0.34, 0.94] 
+Shimakaze minus Daring | parked_pct -37.7 [-54.6, -22.2] *
+Shimakaze minus Daring | between_pct -25.9 [-34.4, -16.9] *
+Shimakaze minus Daring | line_1km_pct 63.6 [48.7, 77.9] *
+Shimakaze minus Daring | path_med_m 1318.0 [898.0, 1518.0] *
+Shimakaze minus Daring | path_iqr_m 1207.0 [337.0, 1415.0] *
+Shimakaze minus Gdańsk | spread_km 3.1 [0.33, 5.4] *
+Shimakaze minus Gdańsk | edge_iqr_m 2870.0 [-775.0, 5111.0] 
+Shimakaze minus Gdańsk | edge_iqr_no_mrA_m 2513.0 [-781.0, 5045.0] 
+Shimakaze minus Gdańsk | edge_med_m 1744.0 [-2147.0, 3569.0] 
+Shimakaze minus Gdańsk | top_purpose_pct -0.2 [-11.3, 19.5] 
+Shimakaze minus Gdańsk | purpose_entropy_bits -0.35 [-1.0, 0.12] 
+Shimakaze minus Gdańsk | parked_pct -15.0 [-31.5, -0.3] *
+Shimakaze minus Gdańsk | between_pct -18.2 [-25.9, -10.1] *
+Shimakaze minus Gdańsk | line_1km_pct 33.1 [14.3, 52.2] *
+Shimakaze minus Gdańsk | path_med_m 994.0 [474.0, 1260.0] *
+Shimakaze minus Gdańsk | path_iqr_m 608.0 [-245.0, 877.0] 
+Gdańsk minus Daring | spread_km 0.29 [-2.15, 2.35] 
+Gdańsk minus Daring | edge_iqr_m 842.0 [-847.0, 2513.0] 
+Gdańsk minus Daring | edge_iqr_no_mrA_m 926.0 [-841.0, 2490.0] 
+Gdańsk minus Daring | edge_med_m 873.0 [-220.0, 2063.0] 
+Gdańsk minus Daring | top_purpose_pct -18.6 [-29.9, -4.2] *
+Gdańsk minus Daring | purpose_entropy_bits 0.74 [0.33, 1.1] *
+Gdańsk minus Daring | parked_pct -22.7 [-35.2, -10.2] *
+Gdańsk minus Daring | between_pct -7.7 [-18.7, 2.2] 
+Gdańsk minus Daring | line_1km_pct 30.4 [18.9, 45.6] *
+Gdańsk minus Daring | path_med_m 324.0 [115.0, 631.0] *
+Gdańsk minus Daring | path_iqr_m 599.0 [199.0, 986.0] *
